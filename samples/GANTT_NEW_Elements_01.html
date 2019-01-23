@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content=""/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      {
+        id: "1",
+        name: "Parent Task",
+        actualStart: "2018-01-25",
+        actualEnd: "2018-03-14",
+        children: [
+          {
+            id: "1_1",
+            name: "Task",
+            actualStart: "2018-01-25",
+            actualEnd: "2018-02-08"
+          },
+          {
+            id: "1_2",
+            name: "Task",
+            actualStart: "2018-02-04",
+            actualEnd: "2018-02-24"
+          },
+          {
+            id: "1_3",
+            name: "Milestone",
+            actualStart: "2018-02-25",
+            actualEnd: "2018-02-25"
+          },
+          {
+            id: "1_4",
+            name: "Parent Task",
+            actualStart: "2018-02-25",
+            actualEnd: "2018-03-14",
+            children: [
+              {
+                id: "1_4_1",
+                name: "Task",
+                actualStart: "2018-02-25",
+                actualEnd: "2018-03-01"
+              },
+              {
+                id: "1_4_2",
+                name: "Task",
+                actualStart: "2018-03-02",
+                actualEnd: "2018-03-14"
+              }
+          ]},
+          {
+            id: "2",
+            name: "Task",
+            actualStart: "2018-02-25",
+            actualEnd: "2018-04-28",
+          }
+      ]}
+    ];
+    
+    // create a data tree
+    var treeData = anychart.data.tree(data, "as-tree");
+
+    // create a chart
+    var chart = anychart.ganttProject();
+    
+    // set the data
+    chart.data(treeData);
+
+    var timeline = chart.getTimeline()
+    var tasks = timeline.tasks();
+    var parentTasks = timeline.groupingTasks();
+    var milestones = timeline.milestones();
+
+    // configure tasks
+    tasks.normal().fill("#00bfa5 0.5");
+    tasks.selected().fill("#dd2c00 0.5");
+    tasks.normal().stroke("#00bfa5");
+    tasks.selected().stroke("#dd2c00");
+
+    // configure parent tasks
+    parentTasks.normal().fill("#00838f");
+    parentTasks.selected().fill("#dd2c00");
+    parentTasks.normal().stroke(null);
+    parentTasks.selected().stroke(null);
+
+    // configure milestones
+    milestones.normal().fill("#00838f");
+    milestones.selected().fill("#dd2c00");
+    milestones.normal().stroke(null);
+    milestones.selected().stroke(null);
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+
+    // fit items to the width of the timeline
+    chart.fitAll();
+});
+</script>
+</body>
+</html>
