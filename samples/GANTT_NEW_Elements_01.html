@@ -96,21 +96,21 @@ anychart.onDocumentReady(function () {
 
     // configure tasks
     tasks.normal().fill("#00bfa5 0.5");
-    tasks.selected().fill("#dd2c00 0.5");
+    tasks.selected().fill("#dd2c00");
     tasks.normal().stroke("#00bfa5");
     tasks.selected().stroke("#dd2c00");
 
     // configure parent tasks
     parentTasks.normal().fill("#00838f");
     parentTasks.selected().fill("#dd2c00");
-    parentTasks.normal().stroke(null);
-    parentTasks.selected().stroke(null);
+    parentTasks.normal().stroke("#00838f");
+    parentTasks.selected().stroke("#dd2c00");
 
     // configure milestones
-    milestones.normal().fill("#00838f");
+    milestones.normal().fill("#dd2c00 0.5");
     milestones.selected().fill("#dd2c00");
-    milestones.normal().stroke(null);
-    milestones.selected().stroke(null);
+    milestones.normal().stroke("#dd2c00");
+    milestones.selected().stroke("#dd2c00");
 
     // set the container id
     chart.container("container");

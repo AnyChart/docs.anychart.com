@@ -16,6 +16,12 @@
 
 ### Tasks (Actual)
 
+```
+
+```
+
+{sample :height 240}GANTT\_NEW\_Elements\_01{sample}
+
 #### Regular Tasks
 
 * {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
