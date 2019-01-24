@@ -89,24 +89,22 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
-    var timeline = chart.getTimeline()
-    var tasks = timeline.tasks();
-    var parentTasks = timeline.groupingTasks();
-    var milestones = timeline.milestones();
-
     // configure tasks
+    var tasks = chart.getTimeline().tasks();
     tasks.normal().fill("#00bfa5 0.5");
     tasks.selected().fill("#dd2c00");
     tasks.normal().stroke("#00bfa5");
     tasks.selected().stroke("#dd2c00");
 
     // configure parent tasks
+    var parentTasks = chart.getTimeline().groupingTasks();
     parentTasks.normal().fill("#00838f");
     parentTasks.selected().fill("#dd2c00");
     parentTasks.normal().stroke("#00838f");
     parentTasks.selected().stroke("#dd2c00");
 
     // configure milestones
+    var milestones = chart.getTimeline().milestones();
     milestones.normal().fill("#dd2c00 0.5");
     milestones.selected().fill("#dd2c00");
     milestones.normal().stroke("#dd2c00");

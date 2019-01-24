@@ -26,11 +26,13 @@
 
 * {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
 * [Project Chart: Tasks](Project_Chart#tasks_\(actual\))
+* [Progress Bars](#progress_bars)
 
 #### Parent Tasks
 
 * {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api}
 * [Project Chart: Tasks](Project_Chart#tasks_\(actual\))
+* [Progress Bars](#progress_bars)
 
 #### Milestones
 
@@ -43,16 +45,36 @@
 * {api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api}
 * [Progress Chart: Baselines](Project_Chart#baselines_\(planned\))
 
+```
+
+```
+
+{sample :height 240}GANTT\_NEW\_Elements\_02{sample}
+
 ### Progress Bars
 
 * {api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api}
 * два метода progress() - [basic](#basic_tasks) and [parent](#parent_tasks) tasks
 * [Progress Chart: Progress Bars](Project_Chart#progress_bars)
+* [Regular Tasks](#regular_tasks)
+* [Parent Tasks](#parent_tasks)
+
+```
+
+```
+
+{sample :height 240}GANTT\_NEW\_Elements\_03{sample}
 
 ### Connectors
 
 * {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api}
 * [Progress Chart: Connectors](Project_Chart#connectors)
+
+```
+
+```
+
+{sample :height 240}GANTT\_NEW\_Elements\_04{sample}
 
 ## Resource Chart
 

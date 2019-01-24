@@ -25,74 +25,65 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-
+    
     // create data
     var data = [
       {
         id: "1",
-        name: "Development",
-        baselineStart: "2018-01-25",
-        baselineEnd: "2018-04-07",
-        actualStart: "2018-01-25",
-        actualEnd: "2018-04-20",
+        name: "Tasks",
+        actualStart: "2018-02-02",
+        actualEnd: "2018-02-27",
         children: [
           {
             id: "1_1",
-            name: "Analysis",
-            baselineStart: "2018-01-25",
-            baselineEnd: "2018-02-08",
-            actualStart: "2018-01-27",
-            actualEnd: "2018-02-08"
+            name: "Task 1",
+            actualStart: "2018-02-02",
+            actualEnd: "2018-02-07",
+            connectTo: "1_2",
+            connectorType: "finish-start"
           },
           {
             id: "1_2",
-            name: "Design",
-            baselineStart: "2018-02-04",
-            baselineEnd: "2018-02-24",
-            actualStart: "2018-02-04",
-            actualEnd: "2018-03-02"
+            name: "Task 2",
+            actualStart: "2018-02-09",
+            actualEnd: "2018-02-09",
+            connectTo: "1_5",
+            connectorType: "start-start"
           },
           {
             id: "1_3",
-            name: "Meeting",
-            actualStart: "2018-03-02",
-            actualEnd: "2018-03-02"
+            name: "Task 3",
+            actualStart: "2018-02-11",
+            actualEnd: "2018-02-23",
+            connectTo: "1_4",
+            connectorType: "finish-finish"
           },
           {
             id: "1_4",
-            name: "Implementation",
-            baselineStart: "2018-02-25",
-            baselineEnd: "2018-03-14",
-            actualStart: "2018-03-02",
-            actualEnd: "2018-03-24"
+            name: "Task 4",
+            actualStart: "2018-02-18",
+            actualEnd: "2018-02-25",
+            connectTo: "1_5",
+            connectorType: "start-finish"
           },
           {
             id: "1_5",
-            name: "Testing",
-            baselineStart: "2018-03-15",
-            baselineEnd: "2018-04-07",
-            actualStart: "2018-03-25",
-            actualEnd: "2018-04-20"
+            name: "Task 5",
+            actualStart: "2018-02-15",
+            actualEnd: "2018-02-21"
           }
       ]}
     ];
-    
+
     // create a data tree
     var treeData = anychart.data.tree(data, "as-tree");
-
+    
     // create a chart
     var chart = anychart.ganttProject();
-
-    // configure baselines
-    var baselines = chart.getTimeline().baselines();
-    baselines.normal().fill("#00bfa5 0.5");
-    baselines.normal().stroke(null);
-    baselines.selected().fill("#ef6c00 0.5");
-    baselines.selected().stroke(null);
     
     // set the data
     chart.data(treeData);
-    
+
     // set the container id
     chart.container("container");
 
