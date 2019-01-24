@@ -91,24 +91,24 @@ anychart.onDocumentReady(function () {
 
     // configure tasks
     var tasks = chart.getTimeline().tasks();
-    tasks.normal().fill("#00bfa5 0.5");
-    tasks.selected().fill("#dd2c00");
-    tasks.normal().stroke("#00bfa5");
-    tasks.selected().stroke("#dd2c00");
+    tasks.normal().fill("#00bfa5");
+    tasks.selected().fill("#455a64");
+    tasks.normal().stroke(null);
+    tasks.selected().stroke(null);
 
     // configure parent tasks
     var parentTasks = chart.getTimeline().groupingTasks();
-    parentTasks.normal().fill("#00838f");
-    parentTasks.selected().fill("#dd2c00");
-    parentTasks.normal().stroke("#00838f");
-    parentTasks.selected().stroke("#dd2c00");
+    parentTasks.normal().fill("#dd2c00");
+    parentTasks.selected().fill("#455a64");
+    parentTasks.normal().stroke("#dd2c00");
+    parentTasks.selected().stroke("#455a64");
 
     // configure milestones
     var milestones = chart.getTimeline().milestones();
-    milestones.normal().fill("#dd2c00 0.5");
-    milestones.selected().fill("#dd2c00");
-    milestones.normal().stroke("#dd2c00");
-    milestones.selected().stroke("#dd2c00");
+    milestones.normal().fill(null);
+    milestones.selected().fill(null);
+    milestones.normal().stroke("2 #dd2c00");
+    milestones.selected().stroke("2 #455a64");
 
     // set the container id
     chart.container("container");
