@@ -85,6 +85,13 @@
 * {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api}
 * [Resource Chart: Periods](Resource_Chart#periods)
 
+
+```
+
+```
+
+{sample :height 240}GANTT\_NEW\_Elements\_05{sample}
+
 ## All Elements
 
 * {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
