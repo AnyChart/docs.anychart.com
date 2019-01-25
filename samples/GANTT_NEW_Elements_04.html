@@ -84,6 +84,13 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
+    // configure connectors
+    var connectors = chart.getTimeline().connectors();
+    connectors.normal().fill("#dd2c00");
+    connectors.selected().fill("#455a64");
+    connectors.normal().stroke("2 #dd2c00");
+    connectors.selected().stroke("2 #455a64");
+
     // set the container id
     chart.container("container");
 
