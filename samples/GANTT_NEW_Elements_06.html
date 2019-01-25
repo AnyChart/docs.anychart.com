@@ -89,26 +89,12 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
-    // configure tasks
-    var tasks = chart.getTimeline().tasks();
-    tasks.normal().fill("#455a64 0.5");
-    tasks.selected().fill("#dd2c00 0.5");
-    tasks.normal().stroke(null);
-    tasks.selected().stroke("2 #dd2c00");
-
-    // configure parent tasks
-    var parentTasks = chart.getTimeline().groupingTasks();
-    parentTasks.normal().fill("#00838f");
-    parentTasks.selected().fill("#dd2c00");
-    parentTasks.normal().stroke("#00838f");
-    parentTasks.selected().stroke("#dd2c00");
-
-    // configure milestones
-    var milestones = chart.getTimeline().milestones();
-    milestones.normal().fill(null);
-    milestones.selected().fill(null);
-    milestones.normal().stroke("2 #00838f");
-    milestones.selected().stroke("2 #dd2c00");
+    // configure timeline elements
+    var elements = chart.getTimeline().elements();
+    elements.normal().fill("#455a64 0.5");
+    elements.selected().fill("#dd2c00");
+    elements.normal().stroke("#455a64");
+    elements.selected().stroke("#dd2c00");
 
     // set the container id
     chart.container("container");
