@@ -95,7 +95,14 @@
 ## All Elements
 
 * {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
-* 2 примера, на Project и Resource
+* примечание про Resource
+
+
+```
+
+```
+
+{sample :height 240}GANTT\_NEW\_Elements\_06{sample}
 
 ## Individual Elements
 
@@ -104,7 +111,19 @@
 * `"progress"`
 * `"connector"`
 * + объяснить, как настраивать отдельные ресурсы
-* 2 примера, на Project и Resource
+
+
+```
+
+```
+
+{sample :height 240}GANTT\_NEW\_Elements\_07{sample}
+
+```
+
+```
+
+{sample :height 240}GANTT\_NEW\_Elements\_08{sample}
 
 ## Markers
 
@@ -114,3 +133,16 @@
 * один общий параметр настроить методом {api:anychart.core.ui.Timeline#markers}markers(){api}
 * сослаться куда-то, где приведены все настройки
 * [Milestones](#milestones)
+
+
+```
+
+```
+
+{sample :height 240}GANTT\_NEW\_Elements\_09{sample}
+
+```
+
+```
+
+{sample :height 240}GANTT\_NEW\_Elements\_10{sample}
