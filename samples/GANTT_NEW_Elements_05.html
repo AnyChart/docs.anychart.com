@@ -62,10 +62,10 @@ anychart.onDocumentReady(function () {
 
     // configure periods
     var periods = chart.getTimeline().periods();
-    periods.normal().fill("#dd2c00 0.5");
-    periods.selected().fill("#455a64  0.5");
-    periods.normal().stroke("#dd2c00");
-    periods.selected().stroke("#455a64");
+    periods.normal().fill("#455a64 0.5");
+    periods.selected().fill("#dd2c00 0.5");
+    periods.normal().stroke(null);
+    periods.selected().stroke(null);
 
     // set the container id
     chart.container("container");
