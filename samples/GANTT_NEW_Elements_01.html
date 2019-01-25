@@ -100,8 +100,8 @@ anychart.onDocumentReady(function () {
     var parentTasks = chart.getTimeline().groupingTasks();
     parentTasks.normal().fill("#00838f");
     parentTasks.selected().fill("#dd2c00");
-    parentTasks.normal().stroke(null);
-    parentTasks.selected().stroke(null);
+    parentTasks.normal().stroke("#00838f");
+    parentTasks.selected().stroke("#dd2c00");
 
     // configure milestones
     var milestones = chart.getTimeline().milestones();
