@@ -84,6 +84,9 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
+    // disable task labels
+    chart.getTimeline().tasks().labels(false);
+
     // set the container id
     chart.container("container");
 

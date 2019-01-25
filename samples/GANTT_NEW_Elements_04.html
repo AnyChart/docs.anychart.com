@@ -91,6 +91,9 @@ anychart.onDocumentReady(function () {
     connectors.normal().stroke("3 #ffa000");
     connectors.selected().stroke("3 #ef6c00");
 
+    // disable task labels
+    chart.getTimeline().tasks().labels(false);
+
     // set the container id
     chart.container("container");
 
