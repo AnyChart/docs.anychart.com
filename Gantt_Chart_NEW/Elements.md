@@ -104,7 +104,8 @@
 ## All Elements
 
 * {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
-* примечание про Resource
+* [Project Chart](#project_chart)
+* [Resource Chart](#resource_Chart)
 
 
 ```
