@@ -30,35 +30,67 @@ anychart.onDocumentReady(function () {
     var data = [
       {
         id: "1",
-        name: "Resource 1",
-        periods: [
-          {id:"1_1", start: "2018-01-02", end: "2018-01-25"},
-          {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
-          {id:"1_3", start: "2018-03-03", end: "2018-03-17"}
-      ]},
-      {
-        id: "2",
-        name: "Resource 2",
-        periods: [
-          {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
-          {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
-      ]},
-      {
-        id: "3",
-        name: "Resource 3",
-        periods: [
-          {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
+        name: "Parent Task",
+        actualStart: "2018-01-25",
+        actualEnd: "2018-03-14",
+        children: [
+          {
+            id: "1_1",
+            name: "Task",
+            actualStart: "2018-01-25",
+            actualEnd: "2018-02-08"
+          },
+          {
+            id: "1_2",
+            name: "Task",
+            actualStart: "2018-02-04",
+            actualEnd: "2018-02-24"
+          },
+          {
+            id: "1_3",
+            name: "Milestone",
+            actualStart: "2018-02-25",
+            actualEnd: "2018-02-25"
+          },
+          {
+            id: "1_4",
+            name: "Parent Task",
+            actualStart: "2018-02-25",
+            actualEnd: "2018-03-14",
+            children: [
+              {
+                id: "1_4_1",
+                name: "Task",
+                actualStart: "2018-02-25",
+                actualEnd: "2018-03-01"
+              },
+              {
+                id: "1_4_2",
+                name: "Task",
+                actualStart: "2018-03-02",
+                actualEnd: "2018-03-14"
+              }
+          ]},
+          {
+            id: "2",
+            name: "Task",
+            actualStart: "2018-02-25",
+            actualEnd: "2018-04-22",
+          }
       ]}
     ];
-
+    
     // create a data tree
     var treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart
-    var chart = anychart.ganttResource(); 
+    var chart = anychart.ganttProject();
     
     // set the data
-    chart.data(treeData);  
+    chart.data(treeData);
+
+    // configure the scale
+    chart.getTimeline().scale().maximum("2018-04-30");
 
     // set the container id
     chart.container("container");
