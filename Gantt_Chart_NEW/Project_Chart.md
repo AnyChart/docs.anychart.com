@@ -181,7 +181,7 @@ var data = [
     id: "2",
     name: "PR Campaign",
     actualStart: "2018-02-25",
-    actualEnd: "2018-04-28",
+    actualEnd: "2018-04-22",
     children: [
       {
         id: "2_1",
@@ -193,7 +193,7 @@ var data = [
         id: "2_2",
         name: "Promoting",
         actualStart: "2018-03-26",
-        actualEnd: "2018-04-28"
+        actualEnd: "2018-04-22"
       }
   ]}
 ];
