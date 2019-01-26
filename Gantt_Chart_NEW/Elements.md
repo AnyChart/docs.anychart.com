@@ -125,13 +125,13 @@
 
 ```
 
-{sample :height 160}GANTT\_NEW\_Elements\_07{sample}
+{sample :height 240}GANTT\_NEW\_Elements\_07{sample}
 
 ```
 
 ```
 
-{sample :height 240}GANTT\_NEW\_Elements\_08{sample}
+{sample :height 160}GANTT\_NEW\_Elements\_08{sample}
 
 ## Labels
 
@@ -162,10 +162,10 @@
 
 ```
 
-{sample :height 240}GANTT\_NEW\_Elements\_09{sample}
+{sample :height 260}GANTT\_NEW\_Elements\_09{sample}
 
 ```
 
 ```
 
-{sample :height 240}GANTT\_NEW\_Elements\_10{sample}
+{sample :height 160}GANTT\_NEW\_Elements\_10{sample}
