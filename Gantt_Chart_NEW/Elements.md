@@ -125,7 +125,7 @@
 
 ```
 
-{sample :height 240}GANTT\_NEW\_Elements\_07{sample}
+{sample :height 220}GANTT\_NEW\_Elements\_07{sample}
 
 ```
 
