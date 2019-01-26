@@ -50,7 +50,7 @@ anychart.onDocumentReady(function () {
           },
           {
             id: "1_3",
-            name: "Meeting",
+            name: "Meeting 1",
             actualStart: "2018-02-25",
             actualEnd: "2018-02-25"
           },
@@ -66,6 +66,12 @@ anychart.onDocumentReady(function () {
             name: "Testing",
             actualStart: "2018-03-15",
             actualEnd: "2018-04-07"
+          },
+          {
+            id: "1_6",
+            name: "Meeting 2",
+            actualStart: "2018-04-08",
+            actualEnd: "2018-04-08"
           }
       ]}
     ];
@@ -95,7 +101,7 @@ anychart.onDocumentReady(function () {
     timeline.milestones().labels().format("{%name}: {%actualStart}{dateTimeFormat:dd MMM}");
 
     // configure the scale
-    chart.getTimeline().scale().maximum("2018-04-30");
+    chart.getTimeline().scale().maximum("2018-05-10");
 
     // set the container id
     chart.container("container");

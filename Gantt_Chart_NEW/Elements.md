@@ -160,7 +160,7 @@
 
 ```
 
-{sample :height 220}GANTT\_NEW\_Elements\_09{sample}
+{sample :height 240}GANTT\_NEW\_Elements\_09{sample}
 
 ```
 
@@ -177,7 +177,7 @@
 
 ```
 
-{sample :height 220}GANTT\_NEW\_Elements\_11{sample}
+{sample :height 240}GANTT\_NEW\_Elements\_11{sample}
 
 ```
 

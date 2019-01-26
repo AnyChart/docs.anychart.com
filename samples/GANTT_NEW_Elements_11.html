@@ -32,7 +32,7 @@ anychart.onDocumentReady(function () {
         id: "1",
         name: "Development",
         actualStart: "2018-01-25",
-        actualEnd: "2018-04-07",
+        actualEnd: "2018-04-08",
         children: [
           {
             id: "1_1",
@@ -50,7 +50,7 @@ anychart.onDocumentReady(function () {
           },
           {
             id: "1_3",
-            name: "Meeting",
+            name: "Meeting 1",
             actualStart: "2018-02-25",
             actualEnd: "2018-02-25"
           },
@@ -66,6 +66,12 @@ anychart.onDocumentReady(function () {
             name: "Testing",
             actualStart: "2018-03-15",
             actualEnd: "2018-04-07"
+          },
+          {
+            id: "1_6",
+            name: "Meeting 2",
+            actualStart: "2018-04-08",
+            actualEnd: "2018-04-08"
           }
       ]}
     ];
@@ -101,13 +107,22 @@ anychart.onDocumentReady(function () {
       return this.name + ": " + duration + " days";
     });
 
-    //// configure milestone labels
-    //timeline.milestones().labels().format(function() {
-    //  return "lol";
-    //});
+    // configure milestone labels
+    timeline.milestones().labels().format(function() {
+      var children = this.item.getParent().getChildren(); 
+      var text = ""; 
+      for (var i = 0; i < children.length; i++) {
+        if (children[i].get("name") == this.name & i > 0) {
+          var previousTask = children[i-1].get("name");
+          text = ": " + previousTask + " Review";
+          break;
+        }
+      }   
+      return this.name + text;
+    });
 
     // configure the scale
-    chart.getTimeline().scale().maximum("2018-04-30");
+    chart.getTimeline().scale().maximum("2018-05-10");
 
     // set the container id
     chart.container("container");
