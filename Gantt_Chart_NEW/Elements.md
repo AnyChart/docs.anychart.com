@@ -105,7 +105,7 @@
 
 * {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
 * [Project Chart](#project_chart)
-* [Resource Chart](#resource_Chart)
+* [Resource Chart](#resource_chart)
 
 
 ```
