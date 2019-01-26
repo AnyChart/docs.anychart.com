@@ -83,15 +83,18 @@ anychart.onDocumentReady(function () {
     // create a chart
     var chart = anychart.ganttProject();
 
+    // set the data
+    chart.data(treeData);    
+
     // configure baselines
     var baselines = chart.getTimeline().baselines();
     baselines.normal().fill("#dd2c00 0.3");
     baselines.normal().stroke(null);
     baselines.selected().fill("#ef6c00 0.3");
     baselines.selected().stroke(null);
-    
-    // set the data
-    chart.data(treeData);
+
+    // configure the scale
+    chart.getTimeline().scale().maximum("2018-04-25");
     
     // set the container id
     chart.container("container");

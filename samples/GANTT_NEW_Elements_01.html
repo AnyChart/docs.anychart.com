@@ -110,6 +110,9 @@ anychart.onDocumentReady(function () {
     milestones.normal().stroke("#dd2c00");
     milestones.selected().stroke("#dd2c00");
 
+    // configure the scale
+    chart.getTimeline().scale().maximum("2018-05-01");
+
     // set the container id
     chart.container("container");
 

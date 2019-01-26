@@ -91,6 +91,9 @@ anychart.onDocumentReady(function () {
 
     // create a chart
     var chart = anychart.ganttProject();
+
+    // configure the scale
+    chart.getTimeline().scale().maximum("2018-05-01");
     
     // set the data
     chart.data(treeData);

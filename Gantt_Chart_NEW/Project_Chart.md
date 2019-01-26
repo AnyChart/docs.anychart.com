@@ -67,9 +67,6 @@ chart.container("container");
 
 // initiate drawing the chart
 chart.draw();
-
-// fit items to the width of the timeline
-chart.fitAll();
 ```
 
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_01{sample}
