@@ -251,7 +251,7 @@ chart = anychart.ganttProject();
 chart.data(mapping);
 ```
 
-{sample :height 250}WD\_Tree\_Data\_05{sample}
+{sample :height 240}WD\_Tree\_Data\_05{sample}
 
 ## Accessing Items
 
@@ -458,7 +458,7 @@ function comparisonFunction(fieldValue, comparisonValue) {
 var items = treeData.searchItems("employee", "JohnDoe", comparisonFunction);
 ```
 
-{sample :height 300}WD\_Tree\_Data\_12{sample}
+{sample :height 280}WD\_Tree\_Data\_12{sample}
 
 #### filter()
 
@@ -596,4 +596,4 @@ treeData.listen("treeItemCreate", function (e) {
 });
 ```
 
-{sample}WD\_Tree\_Data\_16{sample}
+{sample :height 280}WD\_Tree\_Data\_16{sample}
