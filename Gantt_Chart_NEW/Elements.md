@@ -140,6 +140,10 @@
 * {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}
 * метод labels() таймлайна
 * три метода labels() для трех типов тасков
+
+
+### Tokens
+
 * `{%actualStart}`
 * `{%actualEnd}`
 * `{%baselineStart}`
@@ -149,9 +153,8 @@
 * `{%name}`
 * `{%progress}`
 * (?) `{%progress}`
-* + что у ресурса?
+* (?) что у ресурса?
 
-### Tokens
 
 ```
 
@@ -166,6 +169,9 @@
 {sample :height 160}GANTT\_NEW\_Elements\_10{sample}
 
 ### Formatting functions
+
+* сказать, как добраться до данных
+
 
 ```
 
