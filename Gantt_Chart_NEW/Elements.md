@@ -144,22 +144,6 @@
 
 ### Tokens
 
-* 2 примера, на Project и Resource
-
-### Formatting functions
-
-* 2 примера, на Project и Resource
-
-## Markers
-
-* могут быть добавлены к заданию любого типа
-* 2 примера, на Project и Resource
-* показать: множественные маркеры; на элементе, вне элемента; в строке, где больше ничего нет
-* один общий параметр настроить методом {api:anychart.core.ui.Timeline#markers}markers(){api}
-* сослаться куда-то, где приведены все настройки
-* [Milestones](#milestones)
-
-
 ```
 
 ```
@@ -171,3 +155,26 @@
 ```
 
 {sample :height 160}GANTT\_NEW\_Elements\_10{sample}
+
+### Formatting functions
+
+```
+
+```
+
+{sample :height 260}GANTT\_NEW\_Elements\_11{sample}
+
+```
+
+```
+
+{sample :height 160}GANTT\_NEW\_Elements\_12{sample}
+
+## Markers
+
+* могут быть добавлены к заданию любого типа
+* 2 примера, на Project и Resource
+* показать: множественные маркеры; на элементе, вне элемента; в строке, где больше ничего нет
+* один общий параметр настроить методом {api:anychart.core.ui.Timeline#markers}markers(){api}
+* сослаться куда-то, где приведены все настройки
+* [Milestones](#milestones)
