@@ -396,7 +396,7 @@ var chart = anychart.ganttProject();
 chart.data(treeData);
 ```
 
-{sample :height 240}GANTT\_NEW\_Project\_Chart\_04{sample}
+{sample :height 260}GANTT\_NEW\_Project\_Chart\_04{sample}
 
 ### Baselines (Planned)
 
