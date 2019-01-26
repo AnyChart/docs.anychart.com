@@ -266,7 +266,7 @@ var data = [
     parent: null,
     name: "PR Campaign",
     actualStart: "2018-02-25",
-    actualEnd: "2018-04-228"
+    actualEnd: "2018-04-22"
   },
   {
     id: "2_1",
