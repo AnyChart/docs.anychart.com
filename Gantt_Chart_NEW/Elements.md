@@ -9,6 +9,7 @@
 * [all elements](#all_elements) at once
 * [individual elements](#individual_elements)
 * [markers](#markers)
+* [sample](#sample)
 
 ## Project Chart
 
@@ -16,29 +17,34 @@
 
 ### Tasks (Actual)
 
-```
-
-```
-
-{sample :height 240}GANTT\_NEW\_Elements\_01{sample}
-
 #### Regular Tasks
 
 * {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
 * [Project Chart: Tasks](Project_Chart#tasks_\(actual\))
 * [Progress Bars](#progress_bars)
+* [sample](#sample)
 
 #### Parent Tasks
 
 * {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api}
 * [Project Chart: Tasks](Project_Chart#tasks_\(actual\))
 * [Progress Bars](#progress_bars)
+* [sample](#sample)
 
 #### Milestones
 
 * {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api}
 * [Project Chart: Tasks](Project_Chart#tasks_\(actual\))
 * [Markers](#markers)
+* [sample](#sample)
+
+#### Sample
+
+```
+
+```
+
+{sample :height 240}GANTT\_NEW\_Elements\_01{sample}
 
 ### Baselines (Planned)
 
