@@ -45,6 +45,7 @@
 * {api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api}
 * [Progress Chart: Baselines](Project_Chart#baselines_\(planned\))
 
+
 ```
 
 ```
@@ -125,6 +126,21 @@
 ```
 
 {sample :height 240}GANTT\_NEW\_Elements\_08{sample}
+
+## Labels
+
+* {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}
+* упомянуть метод labels() таймлайна, возможно показать в примерах
+* три метода labels() для трех типов тасков
+* токены: name, progress...
+
+### Tokens
+
+* 2 примера, на Project и Resource
+
+### Formatting functions
+
+* 2 примера, на Project и Resource
 
 ## Markers
 

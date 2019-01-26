@@ -5,6 +5,8 @@
 
 * {api:anychart.core.ui.Timeline}anychart.core.ui.Timeline{api}
 
+## Scale
+
 ## Timeline Markers
 
 ### Line
@@ -26,7 +28,8 @@
 ## Labels
 
 * {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}
-
+* упомянуть метод labels(), но примера не надо
+* [Elements: Labels](Elements#labels)
 
 ## Tooltips
 
