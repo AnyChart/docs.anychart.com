@@ -458,7 +458,7 @@ function comparisonFunction(fieldValue, comparisonValue) {
 var items = treeData.searchItems("employee", "JohnDoe", comparisonFunction);
 ```
 
-{sample :height 280}WD\_Tree\_Data\_12{sample}
+{sample :height 300}WD\_Tree\_Data\_12{sample}
 
 #### filter()
 
@@ -596,4 +596,4 @@ treeData.listen("treeItemCreate", function (e) {
 });
 ```
 
-{sample :height 280}WD\_Tree\_Data\_16{sample}
+{sample :height 300}WD\_Tree\_Data\_16{sample}
