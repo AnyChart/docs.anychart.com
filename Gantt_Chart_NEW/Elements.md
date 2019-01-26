@@ -152,7 +152,7 @@
 * `{%id}`
 * `{%name}`
 * `{%progress}`
-* (?) `{%progress}`
+* (?) `{%progressValue}`
 * (?) что у ресурса?
 
 
