@@ -104,8 +104,8 @@
 ## All Elements
 
 * {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
-* [Project Chart](#project_chart)
-* [Resource Chart](#resource_chart)
+* [Project Chart](#project_chart): everything except for [connectors](#connectors)
+* [Resource Chart](#resource_chart): [Periods](#periods)
 
 
 ```
@@ -140,7 +140,10 @@
 * {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}
 * упомянуть метод labels() таймлайна, возможно показать в примерах
 * три метода labels() для трех типов тасков
-* токены: name, progress...
+* `{%name}`
+* `{%progress}`
+* `{%actualStart}`
+* `{%actualEnd}`
 
 ### Tokens
 
@@ -148,7 +151,7 @@
 
 ```
 
-{sample :height 260}GANTT\_NEW\_Elements\_09{sample}
+{sample :height 220}GANTT\_NEW\_Elements\_09{sample}
 
 ```
 
@@ -162,7 +165,7 @@
 
 ```
 
-{sample :height 260}GANTT\_NEW\_Elements\_11{sample}
+{sample :height 220}GANTT\_NEW\_Elements\_11{sample}
 
 ```
 
