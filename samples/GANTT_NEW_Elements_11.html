@@ -95,10 +95,11 @@ anychart.onDocumentReady(function () {
       }
     });
 
-    //// configure parent task labels
-    //timeline.groupingTasks().labels().format(function() {
-    //  return "lol";
-    //});
+    // configure parent task labels
+    timeline.groupingTasks().labels().format(function() {
+      var duration = (this.actualEnd - this.actualStart) / 1000 / 3600 / 24;
+      return this.name + ": " + duration + " days";
+    });
 
     //// configure milestone labels
     //timeline.milestones().labels().format(function() {

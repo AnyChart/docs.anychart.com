@@ -168,7 +168,7 @@
 
 {sample :height 160}GANTT\_NEW\_Elements\_10{sample}
 
-### Formatting functions
+### Formatting Functions
 
 * сказать, как добраться до данных: `this.item.get("name");`
 
