@@ -101,7 +101,7 @@ anychart.onDocumentReady(function () {
     timeline.tasks().labels().format("{%name}: {%progress}");
 
     // configure parent task labels
-    timeline.groupingTasks().labels().format("{%name}: {%progress}");
+    timeline.groupingTasks().labels().format("{%name}");
 
     // configure milestone labels
     timeline.milestones().labels().format("{%name}: {%actualStart}{dateTimeFormat:dd MMM}");

@@ -138,12 +138,18 @@
 ## Labels
 
 * {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}
-* упомянуть метод labels() таймлайна, возможно показать в примерах
+* метод labels() таймлайна
 * три метода labels() для трех типов тасков
-* `{%name}`
-* `{%progress}`
 * `{%actualStart}`
 * `{%actualEnd}`
+* `{%baselineStart}`
+* `{%baselineEnd}`
+* (?) `{%connectorType}`
+* `{%id}`
+* `{%name}`
+* `{%progress}`
+* (?) `{%progress}`
+* + что у ресурса?
 
 ### Tokens
 
