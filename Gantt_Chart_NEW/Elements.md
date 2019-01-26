@@ -44,7 +44,7 @@
 
 ```
 
-{sample :height 240}GANTT\_NEW\_Elements\_01{sample}
+{sample :height 260}GANTT\_NEW\_Elements\_01{sample}
 
 ### Baselines (Planned)
 
@@ -56,7 +56,7 @@
 
 ```
 
-{sample :height 240}GANTT\_NEW\_Elements\_02{sample}
+{sample :height 220}GANTT\_NEW\_Elements\_02{sample}
 
 ### Progress Bars
 
@@ -71,7 +71,7 @@
 
 ```
 
-{sample :height 240}GANTT\_NEW\_Elements\_03{sample}
+{sample :height 220}GANTT\_NEW\_Elements\_03{sample}
 
 ### Connectors
 
@@ -82,7 +82,7 @@
 
 ```
 
-{sample :height 240}GANTT\_NEW\_Elements\_04{sample}
+{sample :height 220}GANTT\_NEW\_Elements\_04{sample}
 
 ## Resource Chart
 
@@ -98,7 +98,7 @@
 
 ```
 
-{sample :height 240}GANTT\_NEW\_Elements\_05{sample}
+{sample :height 160}GANTT\_NEW\_Elements\_05{sample}
 
 ## All Elements
 
@@ -110,7 +110,7 @@
 
 ```
 
-{sample :height 240}GANTT\_NEW\_Elements\_06{sample}
+{sample :height 260}GANTT\_NEW\_Elements\_06{sample}
 
 ## Individual Elements
 
@@ -125,7 +125,7 @@
 
 ```
 
-{sample :height 240}GANTT\_NEW\_Elements\_07{sample}
+{sample :height 160}GANTT\_NEW\_Elements\_07{sample}
 
 ```
 
