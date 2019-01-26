@@ -56,7 +56,7 @@
 
 ```
 
-{sample :height 220}GANTT\_NEW\_Elements\_02{sample}
+{sample :height 280}GANTT\_NEW\_Elements\_02{sample}
 
 ### Progress Bars
 
