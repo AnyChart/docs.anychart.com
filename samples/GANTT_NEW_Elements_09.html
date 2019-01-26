@@ -31,51 +31,41 @@ anychart.onDocumentReady(function () {
       {
         id: "1",
         name: "Development",
-        baselineStart: "2018-01-25",
-        baselineEnd: "2018-04-07",
         actualStart: "2018-01-25",
-        actualEnd: "2018-04-20",
+        actualEnd: "2018-04-07",
         children: [
           {
             id: "1_1",
             name: "Analysis",
-            baselineStart: "2018-01-25",
-            baselineEnd: "2018-02-08",
-            actualStart: "2018-01-27",
+            actualStart: "2018-01-25",
             actualEnd: "2018-02-08",
             progressValue: "75%"
           },
           {
             id: "1_2",
             name: "Design",
-            baselineStart: "2018-02-04",
-            baselineEnd: "2018-02-24",
             actualStart: "2018-02-04",
-            actualEnd: "2018-03-02",
+            actualEnd: "2018-02-24",
             progressValue: "100%"
           },
           {
             id: "1_3",
             name: "Meeting",
-            actualStart: "2018-03-02",
-            actualEnd: "2018-03-02"
+            actualStart: "2018-02-25",
+            actualEnd: "2018-02-25"
           },
           {
             id: "1_4",
             name: "Implementation",
-            baselineStart: "2018-02-25",
-            baselineEnd: "2018-03-14",
-            actualStart: "2018-03-02",
-            actualEnd: "2018-03-24",
+            actualStart: "2018-02-25",
+            actualEnd: "2018-03-14",
             progressValue: "60%"
           },
           {
             id: "1_5",
             name: "Testing",
-            baselineStart: "2018-03-15",
-            baselineEnd: "2018-04-07",
-            actualStart: "2018-03-25",
-            actualEnd: "2018-04-20"
+            actualStart: "2018-03-15",
+            actualEnd: "2018-04-07"
           }
       ]}
     ];
@@ -105,7 +95,7 @@ anychart.onDocumentReady(function () {
     timeline.milestones().labels().format("{%name}: {%actualStart}{dateTimeFormat:dd MMM}");
 
     // configure the scale
-    chart.getTimeline().scale().maximum("2018-05-15");
+    chart.getTimeline().scale().maximum("2018-04-25");
 
     // set the container id
     chart.container("container");
