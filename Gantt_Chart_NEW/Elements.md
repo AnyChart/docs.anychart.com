@@ -78,6 +78,7 @@
 * {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api}
 * [Progress Chart: Connectors](Project_Chart#connectors)
 
+
 ```
 
 ```
