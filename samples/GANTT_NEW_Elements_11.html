@@ -110,7 +110,7 @@ anychart.onDocumentReady(function () {
 
     // configure milestone labels
     timeline.milestones().labels().format(function() {
-      var relatedTaskId = this.item.get("custom_field");
+      var relatedTaskId = this.getData("custom_field");
       var relatedTaskItem = treeData.search("id", relatedTaskId);
       var relatedTaskName = relatedTaskItem.get("name");
       return relatedTaskName + " Review";
