@@ -53,7 +53,7 @@ anychart.onDocumentReady(function () {
             name: "Meeting 1",
             actualStart: "2018-02-25",
             actualEnd: "2018-02-25",
-            custom_field: "(?)"
+            custom_field: "(?) "
           },
           {
             id: "1_4",
@@ -73,7 +73,7 @@ anychart.onDocumentReady(function () {
             name: "Meeting 2",
             actualStart: "2018-04-08",
             actualEnd: "2018-04-08",
-            custom_field: "(!)"
+            custom_field: "(!) "
           }
       ]}
     ];
@@ -101,7 +101,7 @@ anychart.onDocumentReady(function () {
 
     // configure milestone labels
     timeline.milestones().labels().format(
-        "{%custom_field} {%name}: {%actualStart}{dateTimeFormat:dd MMM}"
+        "{%custom_field}{%name}: {%actualStart}{dateTimeFormat:dd MMM}"
     );
 
     // configure the scale
