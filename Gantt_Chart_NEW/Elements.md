@@ -201,10 +201,10 @@
 
 ```
 
-{sample :height 240}GANTT\_NEW\_Elements\_13{sample}
+{sample :height 220}GANTT\_NEW\_Elements\_13{sample}
 
 ```
 
 ```
 
-{sample :height 160}GANTT\_NEW\_Elements\_14{sample}
+{sample :height 200}GANTT\_NEW\_Elements\_14{sample}
