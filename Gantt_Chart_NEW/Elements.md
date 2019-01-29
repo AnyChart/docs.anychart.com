@@ -254,32 +254,34 @@ var data = [
     id: "1",
     name: "Resource 1",
     periods: [
-      {id:"1_1", start: "2018-01-02", end: "
+      {id:"1_1", start: "2018-01-02", end: "2018-01-25",
        fill: "#dd2c00", stroke: "#dd2c00"},
-      {id:"1_2", start: "2018-01-28", end: "
-      {id:"1_3", start: "2018-03-03", end: "
+      {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
+      {id:"1_3", start: "2018-03-03", end: "2018-03-25"}
   ]},
   {
     id: "2",
     name: "Resource 2",
     periods: [
-      {id: "2_1", start: "2018-01-05", end: 
-      {id: "2_2", start: "2018-02-26", end: 
+      {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
+      {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
   ]},
   {
     id: "3",
     name: "Resource 3",
     periods: [
-      {id: "3_1", start: "2018-01-04", end: 
+      {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
   ]}
 ];
+
 // create a data tree
-var treeData = anychart.data.tree(data, "as-
+var treeData = anychart.data.tree(data, "as-tree");
+
 // create a chart
 var chart = anychart.ganttResource(); 
 
 // set the data
-chart.data(treeData);  
+chart.data(treeData);   
 ```
 
 {sample :height 160}GANTT\_NEW\_Elements\_08{sample}
@@ -565,10 +567,11 @@ var data = [
     id: "3",
     name: "Resource 3",
     periods: [
-      {id: "3_1", start: "2018-01-04", end: "2018-03-25", custom_field: "lol"}
+      {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
   ],
   custom_field: "(?)"}
 ];
+
 // create a data tree
 var treeData = anychart.data.tree(data, "as-tree");
 
