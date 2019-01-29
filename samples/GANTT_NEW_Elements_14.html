@@ -32,8 +32,9 @@ anychart.onDocumentReady(function () {
         id: "A",
         name: "Location A",
         markers: [
-          {value: "2018-02-18", type: "cross"},
-          {value: "2018-02-23", type: "diamond", fill: "#ffa000"},
+          {value: "2018-01-10", type: "diagonal-cross"},
+          {value: "2018-01-17", type: "cross"},
+          {value: "2018-03-15", type: "diamond", fill: "#ffa000"}
         ],
         children: [
           {
@@ -43,18 +44,18 @@ anychart.onDocumentReady(function () {
               {id: "1_1", start: "2018-01-02", end: "2018-01-25"},
               {id: "1_2", start: "2018-01-28", end: "2018-02-22"},
               {id: "1_3", start: "2018-03-03", end: "2018-03-25"}
-            ],
-            markers: [
-              {value: "2018-01-10", type: "diagonal-cross"},
-              {value: "2018-01-17", type: "diagonal-cross"}
-            ]
-          },
+          ]},
           {
             id: "2",
             name: "Server 2",
             periods: [
               {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
-              {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
+              {id: "2_2", start: "2018-02-26", end: "2018-03-20"},
+            ],
+            markers: [
+              {value: "2018-01-10", type: "diagonal-cross"},
+              {value: "2018-01-17", type: "cross"},
+              {value: "2018-03-15", type: "diamond", fill: "#ffa000"}
           ]}
       ]},
       {
@@ -66,7 +67,7 @@ anychart.onDocumentReady(function () {
             name: "Server 3",
             periods: [
               {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
-          ]}
+        ]}
       ]}
     ];
 
