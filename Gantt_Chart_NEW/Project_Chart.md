@@ -77,9 +77,9 @@ chart.draw();
 
 The Project chart requires setting [tasks](#tasks_\(actual\)) by using the following data fields:
 
-* `name` to set names
 * `id` to set unique identifiers
-* `actualStrart` to set start dates
+* `name` to set names
+* `actualStart` to set start dates
 * `actualEnd` to set end dates
 
 You can also use optional fields:

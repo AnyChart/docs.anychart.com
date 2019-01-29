@@ -298,15 +298,17 @@ chart.data(treeData);
 
 Project:
 
+* `{%id}`
+* `{%name}`
 * `{%actualStart}`
 * `{%actualEnd}`
 * `{%baselineStart}`
 * `{%baselineEnd}`
 * (?) `{%connectorType}`
-* `{%id}`
-* `{%name}`
 * `{%progress}`
 * (?) `{%progressValue}`
+* (?) `{%markers}`
+* (?) `{%collapsed}`
 
 Resource:
 
@@ -314,6 +316,9 @@ Resource:
 * `{%name}`
 * `{%start}`
 * `{%end}`
+* (?) `{%periods}`
+* (?) `{%markers}`
+* (?) `{%collapsed}`
 
 
 ```

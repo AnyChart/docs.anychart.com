@@ -64,8 +64,8 @@ chart.fitAll();
 
 The Resource chart requires setting [resources](#periods_and_resources) by using the following data fields:
 
-* `name` to set names
 * `id` to set unique identifiers
+* `name` to set names
 
 A resource can include a [period](#periods_and_resources) or periods. Use these fields:
 
