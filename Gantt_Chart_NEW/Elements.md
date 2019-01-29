@@ -195,3 +195,16 @@
 * один общий параметр настроить методом {api:anychart.core.ui.Timeline#markers}markers(){api}
 * сослаться куда-то, где приведены все настройки
 * [Milestones](#milestones)
+
+
+```
+
+```
+
+{sample :height 240}GANTT\_NEW\_Elements\_13{sample}
+
+```
+
+```
+
+{sample :height 160}GANTT\_NEW\_Elements\_14{sample}
