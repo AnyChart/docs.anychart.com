@@ -113,11 +113,11 @@ anychart.onDocumentReady(function () {
       var relatedTaskId = this.item.get("custom_field");
       var relatedTaskItem = treeData.search("id", relatedTaskId);
       var relatedTaskName = relatedTaskItem.get("name");
-      return this.name + ": " + relatedTaskName + " Review";
+      return relatedTaskName + " Review";
     });
 
     // configure the scale
-    chart.getTimeline().scale().maximum("2018-05-20");
+    chart.getTimeline().scale().maximum("2018-05-10");
 
     // set the container id
     chart.container("container");

@@ -101,11 +101,11 @@ anychart.onDocumentReady(function () {
 
     // configure milestone labels
     timeline.milestones().labels().format(
-        "{%custom_field}{%name}: {%actualStart}{dateTimeFormat:dd MMM}"
+        "{%custom_field}: {%actualStart}{dateTimeFormat:dd MMM}"
     );
 
     // configure the scale
-    chart.getTimeline().scale().maximum("2018-05-20");
+    chart.getTimeline().scale().maximum("2018-05-10");
 
     // set the container id
     chart.container("container");
