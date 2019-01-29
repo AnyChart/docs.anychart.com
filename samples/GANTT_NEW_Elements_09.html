@@ -90,8 +90,8 @@ anychart.onDocumentReady(function () {
     var timeline = chart.getTimeline();
 
     // configure labels of elements
-    timeline.labels().elements().fontColor("red");
-    timeline.labels().elements().fontWeight(600);
+    timeline.elements().labels().fontColor("red");
+    timeline.elements().labels().fontWeight(600);
 
     // configure labels of tasks
     timeline.tasks().labels().format("{%name}: {%progress}");
