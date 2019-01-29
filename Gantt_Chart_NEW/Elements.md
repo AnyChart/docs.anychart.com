@@ -412,8 +412,8 @@ periodLabels.format(function() {
 
 * могут быть добавлены к заданию любого типа
 * {api:anychart.core.ui.Timeline#markers}markers(){api}
-* сослаться куда-то, где приведены все настройки
 * [Milestones](#milestones)
+* сослаться куда-то, где приведены все настройки
 
 
 ```
