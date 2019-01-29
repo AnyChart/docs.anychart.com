@@ -112,7 +112,7 @@ series.selected().size(15);
 
 The type (shape) of markers can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Marker#normal}normal(){api}, {api:anychart.core.cartesian.series.Marker#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Marker#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#size}type(){api}:
 
-Here is the list of available marker types: {api:anychart.enums.MarkerType}Marker Types{api}.
+Here is the list of available marker types: {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}.
 
 This sample shows how to set the type of markers:
 
