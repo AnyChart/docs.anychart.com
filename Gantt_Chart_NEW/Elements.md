@@ -140,6 +140,7 @@
 * {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}
 * метод labels() таймлайна
 * три метода labels() для трех типов тасков
+* ресурс: все равно, использовать метод таймлайна или периодов
 
 
 ### Tokens

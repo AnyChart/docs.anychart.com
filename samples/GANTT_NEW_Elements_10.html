@@ -62,15 +62,12 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData); 
 
-    var timeline = chart.getTimeline();
-
-    // configure timeline labels
-    timeline.labels().enabled(true);
-    timeline.labels().fontColor("#990000");
-    timeline.labels().fontWeight(600);
-
     // configure period labels
-    timeline.periods().labels().format(
+    var periodLabels = chart.getTimeline().periods().labels();
+    periodLabels.enabled(true);
+    periodLabels.fontColor("#990000");
+    periodLabels.fontWeight(600);
+    periodLabels.format(
       "{%custom_field}start: {%start}{dateTimeFormat:dd MMM}"
     );
 
