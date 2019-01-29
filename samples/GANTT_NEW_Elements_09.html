@@ -52,7 +52,8 @@ anychart.onDocumentReady(function () {
             id: "1_3",
             name: "Meeting 1",
             actualStart: "2018-02-25",
-            actualEnd: "2018-02-25"
+            actualEnd: "2018-02-25",
+            custom_field: "(?)"
           },
           {
             id: "1_4",
@@ -71,7 +72,8 @@ anychart.onDocumentReady(function () {
             id: "1_6",
             name: "Meeting 2",
             actualStart: "2018-04-08",
-            actualEnd: "2018-04-08"
+            actualEnd: "2018-04-08",
+            custom_field: "(!)"
           }
       ]}
     ];
@@ -98,7 +100,9 @@ anychart.onDocumentReady(function () {
     timeline.groupingTasks().labels().format("{%name}");
 
     // configure milestone labels
-    timeline.milestones().labels().format("{%name}: {%actualStart}{dateTimeFormat:dd MMM}");
+    timeline.milestones().labels().format(
+        "{%custom_field} {%name}: {%actualStart}{dateTimeFormat:dd MMM}"
+    );
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-05-10");

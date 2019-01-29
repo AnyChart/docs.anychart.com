@@ -52,7 +52,8 @@ anychart.onDocumentReady(function () {
             id: "1_3",
             name: "Meeting 1",
             actualStart: "2018-02-25",
-            actualEnd: "2018-02-25"
+            actualEnd: "2018-02-25",
+            custom_field: "1_2"
           },
           {
             id: "1_4",
@@ -71,7 +72,8 @@ anychart.onDocumentReady(function () {
             id: "1_6",
             name: "Meeting 2",
             actualStart: "2018-04-08",
-            actualEnd: "2018-04-08"
+            actualEnd: "2018-04-08",
+            custom_field: "1_5"
           }
       ]}
     ];
@@ -88,7 +90,6 @@ anychart.onDocumentReady(function () {
     var timeline = chart.getTimeline();
 
     // configure timeline labels
-    //timeline.labels().fontColor("red");
     timeline.labels().fontWeight(600);
 
     // configure task labels
@@ -109,16 +110,10 @@ anychart.onDocumentReady(function () {
 
     // configure milestone labels
     timeline.milestones().labels().format(function() {
-      var children = this.item.getParent().getChildren(); 
-      var text = ""; 
-      for (var i = 0; i < children.length; i++) {
-        if (children[i].get("name") == this.name & i > 0) {
-          var previousTask = children[i-1].get("name");
-          text = ": " + previousTask + " Review";
-          break;
-        }
-      }   
-      return this.name + text;
+      var relatedTaskId = this.item.get("custom_field");
+      var relatedTaskItem = treeData.search("id", relatedTaskId);
+      var relatedTaskName = relatedTaskItem.get("name");
+      return this.name + ": " + relatedTaskName + " Review";
     });
 
     // configure the scale

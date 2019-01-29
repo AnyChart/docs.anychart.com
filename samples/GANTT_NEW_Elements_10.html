@@ -34,7 +34,7 @@ anychart.onDocumentReady(function () {
         periods: [
           {id:"1_1", start: "2018-01-02", end: "2018-01-25"},
           {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
-          {id:"1_3", start: "2018-03-03", end: "2018-03-17"}
+          {id:"1_3", start: "2018-03-03", end: "2018-03-25"}
       ]},
       {
         id: "2",
@@ -58,7 +58,19 @@ anychart.onDocumentReady(function () {
     var chart = anychart.ganttResource(); 
     
     // set the data
-    chart.data(treeData);  
+    chart.data(treeData); 
+
+    var timeline = chart.getTimeline();
+
+    // configure timeline labels
+    timeline.labels().enabled(true);
+    timeline.labels().fontColor("#990000");
+    timeline.labels().fontWeight(600);
+
+    // configure period labels
+    timeline.periods().labels().format(
+      "{%name}"
+    );
 
     // set the container id
     chart.container("container");

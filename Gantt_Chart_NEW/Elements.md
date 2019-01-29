@@ -170,6 +170,7 @@
 
 ### Formatting Functions
 
+* поле `item`
 * сказать, как добраться до данных: `this.item.get("name");`
 
 
