@@ -35,7 +35,9 @@ anychart.onDocumentReady(function () {
           {id:"1_1", start: "2018-01-02", end: "2018-01-25"},
           {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
           {id:"1_3", start: "2018-03-03", end: "2018-03-25"},
-      ]},
+        ],
+        custom_field: "(*)"
+      },
       {
         id: "2",
         name: "Resource 2",
@@ -43,14 +45,15 @@ anychart.onDocumentReady(function () {
           {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
           {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
         ],
-        custom_field: "(!) "
+        custom_field: "(!)"
       },
       {
         id: "3",
         name: "Resource 3",
         periods: [
           {id: "3_1", start: "2018-01-04", end: "2018-03-25", custom_field: "lol"}
-      ]}
+      ],
+      custom_field: "(?)"}
     ];
 
     // create a data tree
@@ -68,7 +71,7 @@ anychart.onDocumentReady(function () {
     periodLabels.fontColor("#990000");
     periodLabels.fontWeight(600);
     periodLabels.format(
-      "{%custom_field}start: {%start}{dateTimeFormat:dd MMM}"
+      "{%custom_field} start: {%start}{dateTimeFormat:dd MMM}"
     );
 
     // set the container id

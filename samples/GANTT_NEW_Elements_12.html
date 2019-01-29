@@ -34,23 +34,27 @@ anychart.onDocumentReady(function () {
         periods: [
           {id:"1_1", start: "2018-01-02", end: "2018-01-25"},
           {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
-          {id:"1_3", start: "2018-03-03", end: "2018-03-25"}
-      ]},
+          {id:"1_3", start: "2018-03-03", end: "2018-03-25"},
+        ],
+        custom_field: "(*) "
+      },
       {
         id: "2",
         name: "Resource 2",
         periods: [
           {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
           {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
-      ]},
+        ],
+        custom_field: "(!)"
+      },
       {
         id: "3",
         name: "Resource 3",
         periods: [
-          {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
-      ]}
+          {id: "3_1", start: "2018-01-04", end: "2018-03-25", custom_field: "lol"}
+      ],
+      custom_field: "(?)"}
     ];
-
     // create a data tree
     var treeData = anychart.data.tree(data, "as-tree");
 
@@ -59,6 +63,16 @@ anychart.onDocumentReady(function () {
     
     // set the data
     chart.data(treeData);  
+
+    // configure period labels
+    var periodLabels = chart.getTimeline().periods().labels();
+    periodLabels.enabled(true);
+    periodLabels.fontColor("#990000");
+    periodLabels.fontWeight(600);
+    periodLabels.format(function() {
+      var duration = (this.end - this.start) / 1000 / 3600 / 24;
+      return this.getData("custom_field") + " " + duration + " days";
+    });
 
     // set the container id
     chart.container("container");
