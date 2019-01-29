@@ -89,17 +89,17 @@ anychart.onDocumentReady(function () {
 
     var timeline = chart.getTimeline();
 
-    // configure timeline labels
-    timeline.labels().fontColor("red");
-    timeline.labels().fontWeight(600);
+    // configure labels of elements
+    timeline.labels().elements().fontColor("red");
+    timeline.labels().elements().fontWeight(600);
 
-    // configure task labels
+    // configure labels of tasks
     timeline.tasks().labels().format("{%name}: {%progress}");
 
-    // configure parent task labels
+    // configure labels of parent tasks
     timeline.groupingTasks().labels().format("{%name}");
 
-    // configure milestone labels
+    // configure labels of milestones
     timeline.milestones().labels().format(
         "{%custom_field} {%actualStart}{dateTimeFormat:dd MMM}"
     );

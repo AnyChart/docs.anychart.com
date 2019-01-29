@@ -64,14 +64,20 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);  
 
-    // configure period labels
+    // configure labels of periods
     var periodLabels = chart.getTimeline().periods().labels();
     periodLabels.enabled(true);
-    periodLabels.fontColor("#990000");
+    periodLabels.useHtml(true);
+    periodLabels.fontColor("black");
     periodLabels.fontWeight(600);
     periodLabels.format(function() {
       var duration = (this.end - this.start) / 1000 / 3600 / 24;
-      return this.getData("custom_field") + " " + duration + " days";
+      if (duration > 30) {
+        return "<span style='color:#990000'>" + this.getData("custom_field") +
+               " " + duration + " days</span>"
+      } else {  
+        return this.getData("custom_field") + " " + duration + " d";
+      }
     });
 
     // set the container id

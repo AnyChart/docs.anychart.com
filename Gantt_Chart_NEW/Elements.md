@@ -3,13 +3,27 @@
 
 ## Overview
 
+Misc:
+
 * elements are shown on the [Timeline](Timeline)
 * the [Project](#project_chart) and [Resource](#resource_chart) charts: different types of elements are available
 * all elements of one type: [tasks](#tasks_\(actual\)), [baselines](#baselines_\(planned\)), [progress bars](#progress_bars), [connectors](#connectors), [periods](#periods)
 * [all elements](#all_elements) at once
 * [individual elements](#individual_elements)
 * [markers](#markers)
-* [sample](#sample)
+* {api:anychart.charts.Gantt#getTimeline}getTimeline(){api}
+* methods of the {api:anychart.core.ui.Timeline}anychart.core.ui.Timeline{api} allowing to access elements
+
+Classes:
+
+* basic tasks – {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
+* parent tasks – {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api}
+* milestones – {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api}
+* baselines – {api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api}
+* progress bars – {api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api}
+* connectors – {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api}
+* periods – {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api}
+* all elements – {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
 
 ## Project Chart
 
@@ -85,7 +99,7 @@ baselines.selected().stroke(null);
 ### Progress Bars
 
 * {api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api}
-* два метода progress() - [basic](#basic_tasks) and [parent](#parent_tasks) tasks
+* два метода {api:?entry=progress}progress(){api} - [basic](#basic_tasks) and [parent](#parent_tasks) tasks
 * [Progress Chart: Progress Bars](Project_Chart#progress_bars)
 * [Regular Tasks](#regular_tasks)
 * [Parent Tasks](#parent_tasks)
@@ -170,7 +184,10 @@ elements.selected().stroke("#dd2c00");
 * `"progress"`
 * `"connector"`
 * + объяснить, как настраивать отдельные периоды
-
+* {api:anychart.core.ui.Timeline#elements}elements(){api}
+* {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
+* [Project Chart](Project_Chart)
+* [Resource Chart](Resource_Chart)
 
 ```
 // create data
@@ -288,14 +305,24 @@ chart.data(treeData);
 
 ## Labels
 
+* [Labels](../../Common_Settings/Labels)
+* [text formatters](../../Common_Settings/Text_Formatters)
 * {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}
-* метод labels() таймлайна
-* три метода labels() для трех типов тасков
-* ресурс: все равно, использовать метод таймлайна или периодов
+* {api:anychart.core.gantt.elements.TimelineElement#labels}labels(){api}: {api:anychart.core.ui.Timeline#elements}elements(){api} + {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
+* (?) {api:anychart.core.ui.Timeline#labels}labels(){api} таймлайна
+* три метода **labels()** для трех типов тасков
+* ресурс: все равно, использовать метод элементов / таймлайна или периодов
 * кастомные поля
+* [Project Chart](Project_Chart)
+* [Resource Chart](Resource_Chart)
 
 
 ### Tokens
+
+Misc:
+
+* {api:anychart.core.ui.LabelsFactory#format}format(){api} 
+* [tokens](../../Common_Settings/Text_Formatters#string_tokens)
 
 Project:
 
@@ -325,17 +352,17 @@ Resource:
 ```
 var timeline = chart.getTimeline();
 
-// configure timeline labels
-timeline.labels().fontColor("red");
-timeline.labels().fontWeight(600);
+// configure labels of elements
+timeline.elements().labels().fontColor("red");
+timeline.elements().labels().fontWeight(600);
 
-// configure task labels
+// configure labels of tasks
 timeline.tasks().labels().format("{%name}: {%progress}");
 
-// configure parent task labels
+// configure labels of parent task
 timeline.groupingTasks().labels().format("{%name}");
 
-// configure milestone labels
+// configure labels of milestones
 timeline.milestones().labels().format(
     "{%custom_field} {%actualStart}{dateTimeFormat:dd MMM}"
 );
@@ -344,7 +371,7 @@ timeline.milestones().labels().format(
 {sample :height 240}GANTT\_NEW\_Elements\_09{sample}
 
 ```
-// configure period labels
+// configure labels of periods
 var periodLabels = chart.getTimeline().periods().labels();
 periodLabels.enabled(true);
 periodLabels.fontColor("#990000");
@@ -358,16 +385,39 @@ periodLabels.format(
 
 ### Formatting Functions
 
-* метод getData() или поле `item` + метод get()?
+Misc:
 
+* {api:anychart.core.ui.LabelsFactory#format}format(){api} 
+* [formatting functions](../Common_Settings/Text_Formatters#formatting_functions)
+* метод {api:anychart.format.Context#getData}getData(){api} или поле `item` + метод {api:anychart.data.Tree.DataItem#get}get(){api}?
+* {api:anychart.data.Tree#search}search(){api}
+
+Project:
+
+* `id`
+* `name`
+* `actualStart`
+* `actualEnd`
+* `baselineStart`
+* `baselineEnd`
+* `progress`
+* (?)
+
+Resource:
+
+* `id`
+* `name`
+* `start`
+* `end`
+* (?)
 
 ```
 var timeline = chart.getTimeline();
 
-// configure timeline labels
-timeline.labels().fontWeight(600);
+// configure labels of elements
+timeline.elements().labels().fontWeight(600);
 
-// configure task labels
+// configure labels of tasks
 timeline.tasks().labels().useHtml(true);
 timeline.tasks().labels().format(function() {
   if (this.progress == 1) {
@@ -377,13 +427,13 @@ timeline.tasks().labels().format(function() {
   }
 });
 
-// configure parent task labels
+// configure labels of parent tasks
 timeline.groupingTasks().labels().format(function() {
   var duration = (this.actualEnd - this.actualStart) / 1000 / 3600 / 24;
   return this.name + ": " + duration + " days";
 });
 
-// configure milestone labels
+// configure labels of milestones
 timeline.milestones().labels().format(function() {
   var relatedTaskId = this.getData("custom_field");
   var relatedTaskItem = treeData.search("id", relatedTaskId);
@@ -395,14 +445,20 @@ timeline.milestones().labels().format(function() {
 {sample :height 240}GANTT\_NEW\_Elements\_11{sample}
 
 ```
-// configure period labels
+// configure labels of periods
 var periodLabels = chart.getTimeline().periods().labels();
 periodLabels.enabled(true);
-periodLabels.fontColor("#990000");
+periodLabels.useHtml(true);
+periodLabels.fontColor("black");
 periodLabels.fontWeight(600);
 periodLabels.format(function() {
   var duration = (this.end - this.start) / 1000 / 3600 / 24;
-  return this.getData("custom_field") + " " + duration + " days";
+  if (duration > 30) {
+    return "<span style='color:#990000'>" + this.getData("custom_field") +
+           " " + duration + " days</span>"
+  } else {  
+    return this.getData("custom_field") + " " + duration + " days";
+  }
 });
 ```
 
@@ -411,9 +467,11 @@ periodLabels.format(function() {
 ## Markers
 
 * могут быть добавлены к заданию любого типа
-* {api:anychart.core.ui.Timeline#markers}markers(){api}
 * [Milestones](#milestones)
-* сослаться куда-то, где приведены все настройки
+* {api:anychart.core.ui.Timeline#markers}markers(){api}
+* (?) {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api}
+* [Project Chart](Project_Chart)
+* [Resource Chart](Resource_Chart)
 
 
 ```
