@@ -296,6 +296,8 @@ chart.data(treeData);
 
 ### Tokens
 
+Project:
+
 * `{%actualStart}`
 * `{%actualEnd}`
 * `{%baselineStart}`
@@ -305,71 +307,16 @@ chart.data(treeData);
 * `{%name}`
 * `{%progress}`
 * (?) `{%progressValue}`
-* (?) что у ресурса?
+
+Resource:
+
+* `{%id}`
+* `{%name}`
+* `{%start}`
+* `{%end}`
 
 
 ```
-// create data
-var data = [
-  {
-    id: "1",
-    name: "Development",
-    actualStart: "2018-01-25",
-    actualEnd: "2018-04-07",
-    children: [
-      {
-        id: "1_1",
-        name: "Analysis",
-        actualStart: "2018-01-25",
-        actualEnd: "2018-02-08",
-        progressValue: "75%"
-      },
-      {
-        id: "1_2",
-        name: "Design",
-        actualStart: "2018-02-04",
-        actualEnd: "2018-02-24",
-        progressValue: "100%"
-      },
-      {
-        id: "1_3",
-        name: "Meeting 1",
-        actualStart: "2018-02-25",
-        actualEnd: "2018-02-25",
-        custom_field: "(?)"
-      },
-      {
-        id: "1_4",
-        name: "Implementation",
-        actualStart: "2018-02-25",
-        actualEnd: "2018-03-14",
-        progressValue: "60%"
-      },
-      {
-        id: "1_5",
-        name: "Testing",
-        actualStart: "2018-03-15",
-        actualEnd: "2018-04-07"
-      },
-      {
-        id: "1_6",
-        name: "Meeting 2",
-        actualStart: "2018-04-08",
-        actualEnd: "2018-04-08",
-        custom_field: "(!)"
-      }
-  ]}
-];
-
-// create a data tree
-var treeData = anychart.data.tree(data, "as-tree");
-
-// create a chart
-var chart = anychart.ganttProject();
-
-// set the data
-chart.data(treeData);
-
 var timeline = chart.getTimeline();
 
 // configure timeline labels
@@ -391,45 +338,6 @@ timeline.milestones().labels().format(
 {sample :height 240}GANTT\_NEW\_Elements\_09{sample}
 
 ```
-// create data
-var data = [
-  {
-    id: "1",
-    name: "Resource 1",
-    periods: [
-      {id:"1_1", start: "2018-01-02", end: "2018-01-25"},
-      {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
-      {id:"1_3", start: "2018-03-03", end: "2018-03-25"},
-    ],
-    custom_field: "(*)"
-  },
-  {
-    id: "2",
-    name: "Resource 2",
-    periods: [
-      {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
-      {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
-    ],
-    custom_field: "(!)"
-  },
-  {
-    id: "3",
-    name: "Resource 3",
-    periods: [
-      {id: "3_1", start: "2018-01-04", end: "2018-03-25", custom_field: "lol"}
-  ],
-  custom_field: "(?)"}
-];
-
-// create a data tree
-var treeData = anychart.data.tree(data, "as-tree");
-
-// create a chart
-var chart = anychart.ganttResource(); 
-
-// set the data
-chart.data(treeData); 
-
 // configure period labels
 var periodLabels = chart.getTimeline().periods().labels();
 periodLabels.enabled(true);
@@ -448,67 +356,6 @@ periodLabels.format(
 
 
 ```
-// create data
-var data = [
-  {
-    id: "1",
-    name: "Development",
-    actualStart: "2018-01-25",
-    actualEnd: "2018-04-08",
-    children: [
-      {
-        id: "1_1",
-        name: "Analysis",
-        actualStart: "2018-01-25",
-        actualEnd: "2018-02-08",
-        progressValue: "75%"
-      },
-      {
-        id: "1_2",
-        name: "Design",
-        actualStart: "2018-02-04",
-        actualEnd: "2018-02-24",
-        progressValue: "100%"
-      },
-      {
-        id: "1_3",
-        name: "Meeting 1",
-        actualStart: "2018-02-25",
-        actualEnd: "2018-02-25",
-        custom_field: "1_2"
-      },
-      {
-        id: "1_4",
-        name: "Implementation",
-        actualStart: "2018-02-25",
-        actualEnd: "2018-03-14",
-        progressValue: "60%"
-      },
-      {
-        id: "1_5",
-        name: "Testing",
-        actualStart: "2018-03-15",
-        actualEnd: "2018-04-07"
-      },
-      {
-        id: "1_6",
-        name: "Meeting 2",
-        actualStart: "2018-04-08",
-        actualEnd: "2018-04-08",
-        custom_field: "1_5"
-      }
-  ]}
-];
-
-// create a data tree
-var treeData = anychart.data.tree(data, "as-tree");
-
-// create a chart
-var chart = anychart.ganttProject();
-
-// set the data
-chart.data(treeData);
-
 var timeline = chart.getTimeline();
 
 // configure timeline labels
@@ -542,45 +389,6 @@ timeline.milestones().labels().format(function() {
 {sample :height 240}GANTT\_NEW\_Elements\_11{sample}
 
 ```
-// create data
-var data = [
-  {
-    id: "1",
-    name: "Resource 1",
-    periods: [
-      {id:"1_1", start: "2018-01-02", end: "2018-01-25"},
-      {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
-      {id:"1_3", start: "2018-03-03", end: "2018-03-25"},
-    ],
-    custom_field: "(*) "
-  },
-  {
-    id: "2",
-    name: "Resource 2",
-    periods: [
-      {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
-      {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
-    ],
-    custom_field: "(!)"
-  },
-  {
-    id: "3",
-    name: "Resource 3",
-    periods: [
-      {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
-  ],
-  custom_field: "(?)"}
-];
-
-// create a data tree
-var treeData = anychart.data.tree(data, "as-tree");
-
-// create a chart
-var chart = anychart.ganttResource(); 
-
-// set the data
-chart.data(treeData);  
-
 // configure period labels
 var periodLabels = chart.getTimeline().periods().labels();
 periodLabels.enabled(true);
@@ -597,9 +405,7 @@ periodLabels.format(function() {
 ## Markers
 
 * могут быть добавлены к заданию любого типа
-* 2 примера, на Project и Resource
-* показать: множественные маркеры; на элементе, вне элемента; в строке, где больше ничего нет
-* один общий параметр настроить методом {api:anychart.core.ui.Timeline#markers}markers(){api}
+* {api:anychart.core.ui.Timeline#markers}markers(){api}
 * сослаться куда-то, где приведены все настройки
 * [Milestones](#milestones)
 
