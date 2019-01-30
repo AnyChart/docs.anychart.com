@@ -332,11 +332,7 @@ Project:
 * `{%actualEnd}`
 * `{%baselineStart}`
 * `{%baselineEnd}`
-* (?) `{%connectorType}`
 * `{%progress}`
-* (?) `{%progressValue}`
-* (?) `{%markers}`
-* (?) `{%collapsed}`
 
 Resource:
 
@@ -344,9 +340,6 @@ Resource:
 * `{%name}`
 * `{%start}`
 * `{%end}`
-* (?) `{%periods}`
-* (?) `{%markers}`
-* (?) `{%collapsed}`
 
 
 ```
@@ -389,8 +382,8 @@ Misc:
 
 * {api:anychart.core.ui.LabelsFactory#format}format(){api} 
 * [formatting functions](../Common_Settings/Text_Formatters#formatting_functions)
-* метод {api:anychart.format.Context#getData}getData(){api} или поле `item` + метод {api:anychart.data.Tree.DataItem#get}get(){api}?
-* {api:anychart.data.Tree#search}search(){api}
+* метод {api:anychart.format.Context#getData}getData(){api}
+* [Tree Data Model](../Working_with_Data/Tree_Data_Model)
 
 Project:
 
@@ -401,7 +394,6 @@ Project:
 * `baselineStart`
 * `baselineEnd`
 * `progress`
-* (?)
 
 Resource:
 
@@ -409,7 +401,7 @@ Resource:
 * `name`
 * `start`
 * `end`
-* (?)
+
 
 ```
 var timeline = chart.getTimeline();
