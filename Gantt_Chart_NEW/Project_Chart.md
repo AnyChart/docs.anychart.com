@@ -95,6 +95,8 @@ You can also use optional fields:
 
 To learn how to rename the default data fields, see [Data: Mapping](Data#mapping).
 
+You can also add custom fields to your data and use them to configure [data grid tooltips](Data_Grid#tooltips), [timeline tooltips](Timeline#tooltips), and [labels of elements](Elements#labels).
+
 ### Setting Data
 
 To create a Project chart, you should use the [tree data model](../Working_with_Data/Tree_Data_Model) and organize your data either [as a tree](#as_tree) or [as a table](#as_table).
