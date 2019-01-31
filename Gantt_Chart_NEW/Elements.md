@@ -47,10 +47,10 @@ methods:
 
 * {api:anychart.core.gantt.elements.TasksElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.TasksElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.TasksElement#position}position(){api} to set the anchor, offset, and position
 * {api:anychart.core.gantt.elements.TasksElement#fill}fill(){api}, {api:anychart.core.gantt.elements.TasksElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.TasksElement#height}height(){api} to set the fill, stroke, and height
-* {api:anychart.core.gantt.elements.TasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.TasksElement#selected}selected(){api} to access the settings of the normal and selected [states](../Common_Settings/Interactivity/States)
-* {api:anychart.core.gantt.elements.TasksElement#labels}labels(){api} to access the settings of [labels](#labels)
-* {api:anychart.core.gantt.elements.TasksElement#progress}progress(){api} to access the settings of [progress bars](#progress_bars)
-* {api:anychart.core.gantt.elements.TasksElement#edit}edit(){api} to access the settings of the [Live Edit](Live_Edit_UI) mode
+* {api:anychart.core.gantt.elements.TasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.TasksElement#selected}selected(){api} to access the normal and selected [states](../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.TasksElement#labels}labels(){api} to access t[labels](#labels)
+* {api:anychart.core.gantt.elements.TasksElement#progress}progress(){api} to access [progress bars](#progress_bars)
+* {api:anychart.core.gantt.elements.TasksElement#edit}edit(){api} to access the [Live Edit](Live_Edit_UI) settings
 * {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api} to access the [rendering](Custom_Drawing) settings
 
 states:
