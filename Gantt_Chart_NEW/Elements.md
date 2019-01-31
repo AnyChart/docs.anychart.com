@@ -31,8 +31,6 @@ Classes:
 
 ### Tasks (Actual)
 
-* [sample](#sample)
-
 A **task** is the main element of the Project chart. It shows the **actual duration** of a task, while the planned duration is represented by the [baseline](#baselines_\(planned\)).
 
 There are three types of tasks, each of them visualized in a different way and configured by different methods:
