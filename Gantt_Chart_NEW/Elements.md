@@ -100,7 +100,7 @@ baselines.selected().stroke(null);
 ### Progress Bars
 
 * {api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api}
-* два метода {api:?entry=progress}progress(){api} - [basic](#basic_tasks) and [parent](#parent_tasks) tasks
+* два метода {api:?entry=progress}progress(){api} - [regular](#regular_tasks) and [parent](#parent_tasks) tasks
 * [Progress Chart: Progress Bars](Project_Chart#progress_bars)
 * [Regular Tasks](#regular_tasks)
 * [Parent Tasks](#parent_tasks)
