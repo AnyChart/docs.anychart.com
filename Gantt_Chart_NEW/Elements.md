@@ -55,10 +55,6 @@ To configure regular tasks, combine the {api:anychart.core.ui.Timeline#tasks}tas
 * {api:anychart.core.gantt.elements.TasksElement#edit}edit(){api} to access the [Live Edit](Live_Edit_UI) settings
 * {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api} to access the [rendering](Custom_Drawing) settings
 
-The [appearance settings](../Appearance_Settings) of a regular task can be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **selected**. Combine the {api:anychart.core.gantt.elements.TasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.TasksElement#selected}selected(){api} methods with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}, like in the [sample](#sample).
-
-Also, regular tasks have [labels](#labels) and [progress bars](#progress_bars).
-
 #### Parent Tasks
 
 **Parent tasks** are tasks that have child elements. They are defined as instances of the {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api} class. 
@@ -73,9 +69,7 @@ To configure parent tasks, combine the {api:anychart.core.ui.Timeline#groupingTa
 * {api:anychart.core.gantt.elements.GroupingTasksElement#edit}edit(){api} to access the [Live Edit](Live_Edit_UI) settings
 * {api:anychart.core.gantt.elements.GroupingTasksElement#rendering}rendering(){api} to access the [rendering](Custom_Drawing) settings
 
-The [appearance settings](../Appearance_Settings) of a parent task can be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **selected**. Combine the {api:anychart.core.gantt.elements.GroupingTasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.GroupingTasksElement#selected}selected(){api} methods with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}, like in the [sample](#sample).
-
-Also, regular tasks have [labels](#labels) and [progress bars](#progress_bars) and can be (?) [expanded or collapsed](Basic_Settings#navigation).
+(?) Also, regular tasks can be [expanded or collapsed](Basic_Settings#navigation).
 
 #### Milestones
 
@@ -90,11 +84,7 @@ To configure milestones, combine the {api:anychart.core.ui.Timeline#milestones}m
 * {api:anychart.core.gantt.elements.MilestonesElement#edit}edit(){api} to access the [Live Edit](Live_Edit_UI) settings
 * {api:anychart.core.gantt.elements.MilestonesElement#rendering}rendering(){api} to access the [rendering](Custom_Drawing) settings
 
-The [appearance settings](../Appearance_Settings) of a milestone can be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **selected**. Combine the {api:anychart.core.gantt.elements.MilestonesElement#normal}normal(){api}  and {api:anychart.core.gantt.elements.MilestonesElement#selected}selected(){api} methods with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}, like in the [sample](#sample).
-
-Also, milestones have [labels](#labels).
-
-**Note:** If you need to create multiple milestones in one row, use an alternative way to visualize events – add [markers](#markers).
+If you need to create multiple milestones in one row, use an alternative way to visualize events – add [markers](#markers).
 
 #### Sample
 
