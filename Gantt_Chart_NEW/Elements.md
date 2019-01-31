@@ -43,7 +43,7 @@ The sections below explain how to adjust them. Also, in the last section there i
 
 #### Regular Tasks
 
-**Regular tasks** are tasks that do not have child elements. They are defined as instances of {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}. 
+**Regular tasks** are tasks that do not have child elements. They are defined as instances of the {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api} class. 
 
 To configure regular tasks, combine the {api:anychart.core.ui.Timeline#tasks}tasks(){api} method of the timeline with the following methods:
 
@@ -61,13 +61,9 @@ Also, regular tasks have [labels](#labels) and [progress bars](#progress_bars).
 
 #### Parent Tasks
 
-misc:
+**Parent tasks** are tasks that have child elements. They are defined as instances of the {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api} class. 
 
-* {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api}
-* [Project Chart: Tasks](Project_Chart#tasks_\(actual\))
-* [Progress Bars](#progress_bars)
-
-methods:
+To configure parent tasks, combine the {api:anychart.core.ui.Timeline#groupingTasks}groupingTasks(){api} method of the timeline with the following methods:
 
 * {api:anychart.core.gantt.elements.GroupingTasksElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.GroupingTasksElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.GroupingTasksElement#position}position(){api} to set the anchor, offset, and position
 * {api:anychart.core.gantt.elements.GroupingTasksElement#fill}fill(){api}, {api:anychart.core.gantt.elements.GroupingTasksElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.GroupingTasksElement#height}height(){api} to set the fill, stroke, and height
@@ -77,12 +73,9 @@ methods:
 * {api:anychart.core.gantt.elements.GroupingTasksElement#edit}edit(){api} to access the [Live Edit](Live_Edit_UI) settings
 * {api:anychart.core.gantt.elements.GroupingTasksElement#rendering}rendering(){api} to access the [rendering](Custom_Drawing) settings
 
-states:
+The [appearance settings](../Appearance_Settings) of a parent task can be configured in two [states](../Common_Settings/Interactivity/States), **normal** and **selected**. Combine the {api:anychart.core.gantt.elements.GroupingTasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.GroupingTasksElement#selected}selected(){api} methods with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}, like in the [sample](#sample).
 
-* [appearance settings](../Appearance_Settings)
-* 2 [states](../Common_Settings/Interactivity/States): **normal** and **selected**
-* {api:anychart.core.gantt.elements.GroupingTasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.GroupingTasksElement#selected}selected(){api}
-* {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to set the fill and stroke
+Also, regular tasks have [labels](#labels) and [progress bars](#progress_bars) and can be (?) [expanded or collapsed](Basic_Settings#navigation).
 
 #### Milestones
 

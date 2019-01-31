@@ -413,7 +413,7 @@ Use the following data fields:
 * `baselineEnd` to set end dates
 * `baseline` (optional) to configure [individual baselines](Elements#individual_elements)
 
-By default, baselines are shown under tasks, but can be placed above them with the help of the {api:anychart.core.gantt.elements.BaselinesElement#above}above(){api} method. To learn more about this and other settings, see the [Elements: Baselines](Elements#baselines_\(planned\)) section.
+By default, baselines are shown under tasks, but can be placed above them – see the [Elements: Baselines](Elements#baselines_\(planned\)) section.
 
 In this sample, baselines are added to all regular tasks and the parent one:
 
