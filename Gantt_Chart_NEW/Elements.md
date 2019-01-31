@@ -46,7 +46,7 @@ misc:
 methods:
 
 * {api:anychart.core.gantt.elements.TasksElement#anchor}anchor(){api} to set the anchor
-* {api:anychart.core.gantt.elements.TasksElement#edit}edit(){api} to configure the [Live Edit](Live_Edit_UI) mode
+* {api:anychart.core.gantt.elements.TasksElement#edit}edit(){api} to access the settings of the [Live Edit](Live_Edit_UI) mode
 * {api:anychart.core.gantt.elements.TasksElement#fill}fill(){api} to set the fill
 * {api:anychart.core.gantt.elements.TasksElement#height}height(){api} to set the height
 * {api:anychart.core.gantt.elements.TasksElement#labels}labels(){api} to configure [labels](#labels)
