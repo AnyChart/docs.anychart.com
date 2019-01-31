@@ -55,6 +55,12 @@ To configure regular tasks, combine the {api:anychart.core.ui.Timeline#tasks}tas
 * {api:anychart.core.gantt.elements.TasksElement#edit}edit(){api} to access the [Live Edit](Live_Edit_UI) settings
 * {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api} to access the [rendering](Custom_Drawing) settings
 
+
+```
+// configure the height of tasks
+chart.getTimeline().tasks().height(15);
+```
+
 #### Parent Tasks
 
 **Parent tasks** are tasks that have child elements. They are defined as instances of the {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api} class. 
@@ -69,7 +75,13 @@ To configure parent tasks, combine the {api:anychart.core.ui.Timeline#groupingTa
 * {api:anychart.core.gantt.elements.GroupingTasksElement#edit}edit(){api} to access the [Live Edit](Live_Edit_UI) settings
 * {api:anychart.core.gantt.elements.GroupingTasksElement#rendering}rendering(){api} to access the [rendering](Custom_Drawing) settings
 
-(?) Also, regular tasks can be [expanded or collapsed](Basic_Settings#navigation).
+
+```
+// configure the height of parent tasks
+chart.getTimeline().groupingTasks()..height(15);
+```
+
+(?) Also, parent tasks can be [expanded or collapsed](Basic_Settings#navigation).
 
 #### Milestones
 
@@ -83,6 +95,12 @@ To configure milestones, combine the {api:anychart.core.ui.Timeline#milestones}m
 * {api:anychart.core.gantt.elements.MilestonesElement#labels}labels(){api} to access [labels](#labels)
 * {api:anychart.core.gantt.elements.MilestonesElement#edit}edit(){api} to access the [Live Edit](Live_Edit_UI) settings
 * {api:anychart.core.gantt.elements.MilestonesElement#rendering}rendering(){api} to access the [rendering](Custom_Drawing) settings
+
+
+```
+// configure the height of milestones
+chart.getTimeline().milestones().height(15);
+```
 
 If you need to create multiple milestones in one row, use an alternative way to visualize events – add [markers](#markers).
 
