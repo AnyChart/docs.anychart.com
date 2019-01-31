@@ -55,7 +55,7 @@ To configure regular tasks, combine the {api:anychart.core.ui.Timeline#tasks}tas
 * {api:anychart.core.gantt.elements.TasksElement#edit}edit(){api} to access the [Live Edit](Live_Edit_UI) settings
 * {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api} to access the [rendering](Custom_Drawing) settings
 
-The [appearance settings](../Appearance_Settings) of a regular task can be configured in two [states](../Common_Settings/Interactivity/States), **normal** and **selected**: combine the {api:anychart.core.gantt.elements.TasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.TasksElement#selected}selected(){api} methods with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}.
+The [appearance settings](../Appearance_Settings) of a regular task can be configured in two [states](../Common_Settings/Interactivity/States), **normal** and **selected**: combine the {api:anychart.core.gantt.elements.TasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.TasksElement#selected}selected(){api} methods with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}, like in the [sample](#sample).
 
 #### Parent Tasks
 
