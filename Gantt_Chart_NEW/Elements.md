@@ -39,7 +39,7 @@ There are three types of tasks, each of them visualized in a different way and c
 * [parent tasks](#parent_tasks)
 * [milestones](#milestones)
 
-The sections below explain how to adjust them. Also, in the last section there is a [sample](#sample) Project chart with tasks configured. To learn more about the difference between the types and data fields used to set them, see [Project Chart: Tasks](Project_Chart#tasks_\(actual\)).
+The sections below explain how to adjust them. Also, in the last section there is a [sample Project chart](#sample) with tasks configured. To learn more about the difference between the types and data fields used to set them, see [Project Chart: Tasks](Project_Chart#tasks_\(actual\)).
 
 #### Regular Tasks
 
