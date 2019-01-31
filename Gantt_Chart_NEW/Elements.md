@@ -101,7 +101,7 @@ baselines.selected().stroke(null);
 
 * {api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api}
 * два метода {api:?entry=progress}progress(){api} - [regular](#regular_tasks) and [parent](#parent_tasks) tasks
-* [Progress Chart: Progress Bars](Project_Chart#progress_bars)
+* [Project Chart: Progress Bars](Project_Chart#progress_bars)
 * [Regular Tasks](#regular_tasks)
 * [Parent Tasks](#parent_tasks)
 
@@ -146,7 +146,7 @@ connectors.selected().stroke("2 #ef6c00");
 ### Periods
 
 * {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api}
-* [Resource Chart: Periods](Resource_Chart#periods)
+* [Resource Chart: Periods](Resource_Chart#periods_and_resources)
 
 
 ```
