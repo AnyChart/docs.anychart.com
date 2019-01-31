@@ -57,7 +57,7 @@ To configure regular tasks, combine the {api:anychart.core.ui.Timeline#tasks}tas
 
 The [appearance settings](../Appearance_Settings) of a regular task can be configured in two [states](../Common_Settings/Interactivity/States), **normal** and **selected**. Combine the {api:anychart.core.gantt.elements.TasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.TasksElement#selected}selected(){api} methods with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}, like in the [sample](#sample).
 
-Also, regular tasks have [labels](#labels) and [progress bars](#progress_bars).
+Also, regular tasks have labels and progress bars – see the [Labels](#labels) and [Progress Bars](#progress_bars) sections.
 
 #### Parent Tasks
 
