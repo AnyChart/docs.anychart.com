@@ -82,6 +82,7 @@ milestones.selected().stroke("#dd2c00");
 ### Baselines (Planned)
 
 * {api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api}
+* {api:anychart.core.gantt.elements.BaselinesElement#above}above(){api}
 * [Progress Chart: Baselines](Project_Chart#baselines_\(planned\))
 
 

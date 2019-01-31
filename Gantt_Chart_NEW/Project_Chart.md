@@ -323,6 +323,8 @@ There are three types of tasks, each of them visualized in a different way:
 
 The difference between **regular tasks** and **parent tasks** lies in their relationships with other tasks: parent tasks have children, and regular ones do not. To set these relationships, use the  `children` or `parent` data field – read the [Hierarchy](#hierarchy) section to learn more.
 
+Note that if you do not specify the  `actualStart` and `actualEnd` dates of a parent task, they are calculated automatically from the dates of its children.
+
 **Milestones** are elements representing events. To add a milestone, you should create a task with zero duration: specify the same date in the `actualStart` and `actualEnd` fields.
 
 If you need to create multiple milestones in one row, use an alternative way to visualize events – add **markers**. Multiple markers can be shown in one row – on a task or anywhere on the timeline depending on the dates you specify. For more information, see [Elements: Markers](Elements#markers).
@@ -408,7 +410,7 @@ Use the following data fields:
 * `baselineEnd` to set end dates
 * `baseline` (optional) to configure [individual baselines](Elements#individual_elements)
 
-To learn how to configure baselines, see the [Elements: Baselines](Elements#baselines_\(planned\)) section.
+By default, baselines are shown under tasks, but can be placed above them with the help of the {api:anychart.core.gantt.elements.BaselinesElement#above}above(){api} method. To learn more about this and other settings, see the [Elements: Baselines](Elements#baselines_\(planned\)) section.
 
 In this sample, baselines are added to all regular tasks and the parent one:
 
