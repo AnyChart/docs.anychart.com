@@ -49,8 +49,7 @@ methods:
 * {api:anychart.core.gantt.elements.TasksElement#height}height(){api} to set the height
 * {api:anychart.core.gantt.elements.TasksElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.TasksElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.TasksElement#position}position(){api} to set the anchor, offset, and position
 * {api:anychart.core.gantt.elements.TasksElement#labels}labels(){api} to configure [labels](#labels)
-* {api:anychart.core.gantt.elements.TasksElement#normal}normal(){api} to access the settings of the normal [state](../Common_Settings/Interactivity/States)
-* {api:anychart.core.gantt.elements.TasksElement#selected}selected(){api} to access the settings of the selected [state](../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.TasksElement#normal}normal(){api} to access the settings of the normal [state](../Common_Settings/Interactivity/States) and {api:anychart.core.gantt.elements.TasksElement#selected}selected(){api} to access the settings of the normal and selected [states](../Common_Settings/Interactivity/States)
 * {api:anychart.core.gantt.elements.TasksElement#progress}progress(){api} to access the settings of [progress bars](#progress_bars)
 * {api:anychart.core.gantt.elements.TasksElement#edit}edit(){api} to access the settings of the [Live Edit](Live_Edit_UI) mode
 * {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api} to access the [rendering](Custom_Drawing) settings
