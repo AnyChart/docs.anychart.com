@@ -47,7 +47,7 @@ methods:
 
 * {api:anychart.core.gantt.elements.TasksElement#fill}fill(){api} and {api:anychart.core.gantt.elements.TasksElement#stroke}stroke(){api} to set the fill and stroke
 * {api:anychart.core.gantt.elements.TasksElement#height}height(){api} to set the height
-* {api:anychart.core.gantt.elements.TasksElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.TasksElement#offset}offset(){api}, {api:anychart.core.gantt.elements.TasksElement#position}position(){api} to set the anchor, offset, and position
+* {api:anychart.core.gantt.elements.TasksElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.TasksElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.TasksElement#position}position(){api} to set the anchor, offset, and position
 * {api:anychart.core.gantt.elements.TasksElement#labels}labels(){api} to configure [labels](#labels)
 * {api:anychart.core.gantt.elements.TasksElement#normal}normal(){api} to access the settings of the normal [state](../Common_Settings/Interactivity/States)
 * {api:anychart.core.gantt.elements.TasksElement#selected}selected(){api} to access the settings of the selected [state](../Common_Settings/Interactivity/States)
