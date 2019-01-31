@@ -146,7 +146,7 @@ connectors.selected().stroke("2 #ef6c00");
 ### Periods
 
 * {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api}
-* [Resource Chart: Periods](Resource_Chart#periods_and_resources)
+* [Resource Chart: Periods and Resources](Resource_Chart#periods_and_resources)
 
 
 ```
