@@ -58,7 +58,7 @@ states:
 * [appearance settings](../Appearance_Settings)
 * 2 [states](../Common_Settings/Interactivity/States): **normal** and **selected**
 * {api:anychart.core.gantt.elements.TasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.TasksElement#selected}selected(){api}
-* {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to set the and stroke
+* {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to set the fill and stroke
 
 #### Parent Tasks
 
@@ -71,6 +71,21 @@ misc:
 
 methods:
 
+* {api:anychart.core.gantt.elements.GroupingTasksElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.GroupingTasksElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.GroupingTasksElement#position}position(){api} to set the anchor, offset, and position
+* {api:anychart.core.gantt.elements.GroupingTasksElement#fill}fill(){api}, {api:anychart.core.gantt.elements.GroupingTasksElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.GroupingTasksElement#height}height(){api} to set the fill, stroke, and height
+* {api:anychart.core.gantt.elements.GroupingTasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.GroupingTasksElement#selected}selected(){api} to access [states](../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.GroupingTasksElement#labels}labels(){api} to access [labels](#labels)
+* {api:anychart.core.gantt.elements.GroupingTasksElement#progress}progress(){api} to access [progress bars](#progress_bars)
+* {api:anychart.core.gantt.elements.GroupingTasksElement#edit}edit(){api} to access the [Live Edit](Live_Edit_UI) settings
+* {api:anychart.core.gantt.elements.GroupingTasksElement#rendering}rendering(){api} to access the [rendering](Custom_Drawing) settings
+
+states:
+
+* [appearance settings](../Appearance_Settings)
+* 2 [states](../Common_Settings/Interactivity/States): **normal** and **selected**
+* {api:anychart.core.gantt.elements.GroupingTasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.GroupingTasksElement#selected}selected(){api}
+* {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to set the fill and stroke
+
 #### Milestones
 
 misc:
@@ -81,6 +96,20 @@ misc:
 * [sample](#sample)
 
 methods:
+
+* {api:anychart.core.gantt.elements.MilestonesElement#anchor}anchor(){api} to set the anchor
+* {api:anychart.core.gantt.elements.MilestonesElement#fill}fill(){api}, {api:anychart.core.gantt.elements.MilestonesElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.MilestonesElement#height}height(){api} to set the fill, stroke, and height
+* {api:anychart.core.gantt.elements.MilestonesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.MilestonesElement#selected}selected(){api} to access [states](../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.MilestonesElement#labels}labels(){api} to access [labels](#labels)
+* {api:anychart.core.gantt.elements.MilestonesElement#edit}edit(){api} to access the [Live Edit](Live_Edit_UI) settings
+* {api:anychart.core.gantt.elements.MilestonesElement#rendering}rendering(){api} to access the [rendering](Custom_Drawing) settings
+
+states:
+
+* [appearance settings](../Appearance_Settings)
+* 2 [states](../Common_Settings/Interactivity/States): **normal** and **selected**
+* {api:anychart.core.gantt.elements.MilestonesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.MilestonesElement#selected}selected(){api}
+* {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to set the fill and stroke
 
 #### Sample
 
