@@ -79,13 +79,9 @@ Also, regular tasks have [labels](#labels) and [progress bars](#progress_bars) a
 
 #### Milestones
 
-misc:
+**Milestones** are tasks with zero duration, representing events. They are defined as instances of the {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api} class. 
 
-* {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api}
-* [Project Chart: Tasks](Project_Chart#tasks_\(actual\))
-* [Markers](#markers)
-
-methods:
+To configure milestones, combine the {api:anychart.core.ui.Timeline#milestones}milestones(){api} method of the timeline with the following methods:
 
 * {api:anychart.core.gantt.elements.MilestonesElement#anchor}anchor(){api} to set the anchor
 * {api:anychart.core.gantt.elements.MilestonesElement#fill}fill(){api}, {api:anychart.core.gantt.elements.MilestonesElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.MilestonesElement#height}height(){api} to set the fill, stroke, and height
@@ -94,12 +90,13 @@ methods:
 * {api:anychart.core.gantt.elements.MilestonesElement#edit}edit(){api} to access the [Live Edit](Live_Edit_UI) settings
 * {api:anychart.core.gantt.elements.MilestonesElement#rendering}rendering(){api} to access the [rendering](Custom_Drawing) settings
 
-states:
+The [appearance settings](../Appearance_Settings) of a milestone can be configured in two [states](../Common_Settings/Interactivity/States), **normal** and **selected**. Combine the {api:anychart.core.gantt.elements.MilestonesElement#normal}normal(){api}  and {api:anychart.core.gantt.elements.MilestonesElement#selected}selected(){api} methods with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}, like in the [sample](#sample).
 
-* [appearance settings](../Appearance_Settings)
-* 2 [states](../Common_Settings/Interactivity/States): **normal** and **selected**
-* {api:anychart.core.gantt.elements.MilestonesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.MilestonesElement#selected}selected(){api}
-* {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to set the fill and stroke
+Also, milestones have [labels](#labels).
+
+**Note:** If you need to create multiple milestones in one row, use an alternative way to visualize events – add [markers](#markers).
+
+* [Markers](#markers)
 
 #### Sample
 
