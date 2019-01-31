@@ -31,19 +31,25 @@ Classes:
 
 ### Tasks (Actual)
 
-* [regular tasks](#regular_tasks), [parent tasks](#parent_tasks), [milestones](#milestones)
 * [sample](#sample)
+
+A **task** is the main element of the Project chart. It shows the **actual duration** of a task, while the planned duration is represented by the [baseline](#baselines_\(planned\)).
+
+There are three types of tasks, each of them visualized in a different way and configured by different methods:
+
+* [regular tasks](#regular_tasks)
+* [parent tasks](#parent_tasks)
+* [milestones](#milestones)
+
+The sections below explain how to adjust them. Also, in the last section there is a [sample](#sample) Project chart with tasks configured. To learn more about the difference between the types and data fields used to set them, see [Project Chart: Tasks](Project_Chart#tasks_\(actual\)).
 
 #### Regular Tasks
 
-misc:
-
-* {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
-* [Project Chart: Tasks](Project_Chart#tasks_\(actual\))
-* [Progress Bars](#progress_bars)
 * [sample](#sample)
 
-methods:
+**Regular tasks** are tasks that do not have child elements.
+
+To configure them, combine the {api:anychart.core.ui.Timeline#tasks}tasks(){api} method of the timeline with methods of the {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api} class:
 
 * {api:anychart.core.gantt.elements.TasksElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.TasksElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.TasksElement#position}position(){api} to set the anchor, offset, and position
 * {api:anychart.core.gantt.elements.TasksElement#fill}fill(){api}, {api:anychart.core.gantt.elements.TasksElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.TasksElement#height}height(){api} to set the fill, stroke, and height
@@ -53,12 +59,7 @@ methods:
 * {api:anychart.core.gantt.elements.TasksElement#edit}edit(){api} to access the [Live Edit](Live_Edit_UI) settings
 * {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api} to access the [rendering](Custom_Drawing) settings
 
-states:
-
-* [appearance settings](../Appearance_Settings)
-* 2 [states](../Common_Settings/Interactivity/States): **normal** and **selected**
-* {api:anychart.core.gantt.elements.TasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.TasksElement#selected}selected(){api}
-* {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to set the fill and stroke
+The [appearance settings](../Appearance_Settings) of a regular task can be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **selected**. Combine the {api:anychart.core.gantt.elements.TasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.TasksElement#selected}selected(){api} methods with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to set the fill and stroke.
 
 #### Parent Tasks
 
