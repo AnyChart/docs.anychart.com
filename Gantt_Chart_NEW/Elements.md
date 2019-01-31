@@ -43,7 +43,9 @@ The sections below explain how to adjust them. Also, in the last section there i
 
 #### Regular Tasks
 
-**Regular tasks** are tasks that do not have child elements.
+**Regular tasks** are tasks that do not have child elements, defined as instances of {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}. 
+
+To configure them, combine the {api:anychart.core.ui.Timeline#tasks}tasks(){api} method of the timeline with the following methods:
 
 To configure them, combine the {api:anychart.core.ui.Timeline#tasks}tasks(){api} method of the timeline with methods of the {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api} class:
 
