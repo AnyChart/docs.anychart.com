@@ -190,6 +190,7 @@ elements.selected().stroke("#dd2c00");
 * [Project Chart](Project_Chart)
 * [Resource Chart](Resource_Chart)
 
+
 ```
 // create data
 var data = [
