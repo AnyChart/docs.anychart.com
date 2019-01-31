@@ -310,7 +310,7 @@ chart.data(treeData);
 * [text formatters](../../Common_Settings/Text_Formatters)
 * {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}
 * {api:anychart.core.gantt.elements.TimelineElement#labels}labels(){api}: {api:anychart.core.ui.Timeline#elements}elements(){api} + {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
-* три метода **labels()** для трех типов тасков + для прогресс баров
+* три метода **labels()** для all types of [tasks](#tasks_\(actual\)) + для [progress bars](#progress_bars)
 * ресурс: все равно, использовать метод элементов / таймлайна или периодов
 * кастомные поля
 * [Project Chart](Project_Chart)
