@@ -45,8 +45,6 @@ The sections below explain how to adjust them. Also, in the last section there i
 
 #### Regular Tasks
 
-* [sample](#sample)
-
 **Regular tasks** are tasks that do not have child elements.
 
 To configure them, combine the {api:anychart.core.ui.Timeline#tasks}tasks(){api} method of the timeline with methods of the {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api} class:
@@ -68,7 +66,6 @@ misc:
 * {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api}
 * [Project Chart: Tasks](Project_Chart#tasks_\(actual\))
 * [Progress Bars](#progress_bars)
-* [sample](#sample)
 
 methods:
 
@@ -94,7 +91,6 @@ misc:
 * {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api}
 * [Project Chart: Tasks](Project_Chart#tasks_\(actual\))
 * [Markers](#markers)
-* [sample](#sample)
 
 methods:
 
