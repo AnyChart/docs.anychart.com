@@ -78,7 +78,7 @@ To configure parent tasks, combine the {api:anychart.core.ui.Timeline#groupingTa
 
 ```
 // configure the height of parent tasks
-chart.getTimeline().groupingTasks()..height(15);
+chart.getTimeline().groupingTasks().height(15);
 ```
 
 (?) Also, parent tasks can be [expanded or collapsed](Basic_Settings#navigation).
