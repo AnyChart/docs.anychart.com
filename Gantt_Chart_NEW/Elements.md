@@ -31,7 +31,7 @@ Classes:
 
 ### Tasks (Actual)
 
-* [regular tasks](#regula_tasks), [parent tasks](#parent_tasks), [milestones](#milestones)
+* [regular tasks](#regular_tasks), [parent tasks](#parent_tasks), [milestones](#milestones)
 * [sample](#sample)
 
 #### Regular Tasks
