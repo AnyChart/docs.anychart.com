@@ -54,7 +54,7 @@ methods:
 * {api:anychart.core.gantt.elements.TasksElement#offset}offset(){api} to set the offset
 * {api:anychart.core.gantt.elements.TasksElement#position}position(){api} to set the position
 * {api:anychart.core.gantt.elements.TasksElement#progress}progress(){api} to access the settings of [progress bars](#progress_bars)
-* {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api} to access the rendering settings
+* {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api} to access the [rendering](Custom_Drawing) settings
 * {api:anychart.core.gantt.elements.TasksElement#selected}selected(){api} to access the settings of the selected [state](../Common_Settings/Interactivity/States)
 * {api:anychart.core.gantt.elements.TasksElement#stroke}stroke(){api} to set the stroke
 
