@@ -31,26 +31,63 @@ Classes:
 
 ### Tasks (Actual)
 
+* [regular tasks](#regula_tasks), [parent tasks](#parent_tasks), [milestones](#milestones)
+* [sample](#sample)
+
 #### Regular Tasks
+
+misc:
 
 * {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
 * [Project Chart: Tasks](Project_Chart#tasks_\(actual\))
 * [Progress Bars](#progress_bars)
 * [sample](#sample)
 
+methods:
+
+* {api:anychart.core.gantt.elements.TasksElement#anchor}anchor(){api} to set the anchor
+* {api:anychart.core.gantt.elements.TasksElement#edit}edit(){api} to configure the [Live Edit](Live_Edit_UI) mode
+* {api:anychart.core.gantt.elements.TasksElement#fill}fill(){api} to set the fill
+* {api:anychart.core.gantt.elements.TasksElement#height}height(){api} to set the height
+* {api:anychart.core.gantt.elements.TasksElement#labels}labels(){api} to configure [labels](#labels)
+* {api:anychart.core.gantt.elements.TasksElement#normal}normal(){api} to configure the normal [state](../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.TasksElement#offset}offset(){api} to set the offset
+* {api:anychart.core.gantt.elements.TasksElement#position}position(){api} to set the position
+* {api:anychart.core.gantt.elements.TasksElement#progress}progress(){api} to configure [progress bars](#progress_bars)
+* {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api} to access the rendering settings
+* {api:anychart.core.gantt.elements.TasksElement#selected}selected(){api} to configure the selected [state](../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.TasksElement#stroke}stroke(){api} to set the stroke
+
+states:
+
+* [appearance settings](../Appearance_Settings)
+* 2 [states](../Common_Settings/Interactivity/States): **normal** and **selected**
+* {api:anychart.core.gantt.elements.TasksElement#normal}normal(){api}
+* {api:anychart.core.gantt.elements.TasksElement#selected}selected(){api}
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
+
 #### Parent Tasks
+
+misc:
 
 * {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api}
 * [Project Chart: Tasks](Project_Chart#tasks_\(actual\))
 * [Progress Bars](#progress_bars)
 * [sample](#sample)
 
+methods:
+
 #### Milestones
+
+misc:
 
 * {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api}
 * [Project Chart: Tasks](Project_Chart#tasks_\(actual\))
 * [Markers](#markers)
 * [sample](#sample)
+
+methods:
 
 #### Sample
 
