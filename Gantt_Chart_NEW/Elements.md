@@ -43,11 +43,9 @@ The sections below explain how to adjust them. Also, in the last section there i
 
 #### Regular Tasks
 
-**Regular tasks** are tasks that do not have child elements, defined as instances of {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}. 
+**Regular tasks** are tasks that do not have child elements. They are defined as instances of {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}. 
 
-To configure them, combine the {api:anychart.core.ui.Timeline#tasks}tasks(){api} method of the timeline with the following methods:
-
-To configure them, combine the {api:anychart.core.ui.Timeline#tasks}tasks(){api} method of the timeline with methods of the {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api} class:
+To configure regular tasks, combine the {api:anychart.core.ui.Timeline#tasks}tasks(){api} method of the timeline with the following methods:
 
 * {api:anychart.core.gantt.elements.TasksElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.TasksElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.TasksElement#position}position(){api} to set the anchor, offset, and position
 * {api:anychart.core.gantt.elements.TasksElement#fill}fill(){api}, {api:anychart.core.gantt.elements.TasksElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.TasksElement#height}height(){api} to set the fill, stroke, and height
