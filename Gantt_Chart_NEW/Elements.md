@@ -309,12 +309,13 @@ chart.data(treeData);
 * [text formatters](../../Common_Settings/Text_Formatters)
 * {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}
 * {api:anychart.core.gantt.elements.TimelineElement#labels}labels(){api}: {api:anychart.core.ui.Timeline#elements}elements(){api} + {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
-* (?) {api:anychart.core.ui.Timeline#labels}labels(){api} таймлайна
-* три метода **labels()** для трех типов тасков
+* три метода **labels()** для трех типов тасков + для прогресс баров
 * ресурс: все равно, использовать метод элементов / таймлайна или периодов
 * кастомные поля
 * [Project Chart](Project_Chart)
 * [Resource Chart](Resource_Chart)
+* [Project Chart](#project_chart) + [Progress Bars](#progress_bars)
+* [Resource Chart](#resource_chart)
 
 
 ### Tokens
@@ -324,7 +325,7 @@ Misc:
 * {api:anychart.core.ui.LabelsFactory#format}format(){api} 
 * [tokens](../../Common_Settings/Text_Formatters#string_tokens)
 
-Project:
+**Project chart** + **progress bars**:
 
 * `{%id}`
 * `{%name}`
@@ -334,7 +335,7 @@ Project:
 * `{%baselineEnd}`
 * `{%progress}`
 
-Resource:
+**Resource chart**:
 
 * `{%id}`
 * `{%name}`
@@ -385,7 +386,7 @@ Misc:
 * метод {api:anychart.format.Context#getData}getData(){api}
 * [Tree Data Model](../Working_with_Data/Tree_Data_Model)
 
-Project:
+**Project chart** + **progress bars**:
 
 * `id`
 * `name`
@@ -395,7 +396,7 @@ Project:
 * `baselineEnd`
 * `progress`
 
-Resource:
+**Resource chart**:
 
 * `id`
 * `name`
@@ -532,7 +533,7 @@ var chart = anychart.ganttProject();
 chart.data(treeData);
 
 // configure markers
-chart.getTimeline().markers().fill("red");
+chart.getTimeline().markers().fill("#dd2c00");
 chart.getTimeline().markers().stroke("black");
 ```
 
@@ -594,7 +595,7 @@ var chart = anychart.ganttResource();
 chart.data(treeData);  
 
 // configure markers
-chart.getTimeline().markers().fill("red");
+chart.getTimeline().markers().fill("#dd2c00");
 chart.getTimeline().markers().stroke("black");
 ```
 
