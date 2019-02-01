@@ -137,9 +137,24 @@ milestones.selected().stroke("#dd2c00");
 
 ### Baselines (Planned)
 
-* {api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api}
-* {api:anychart.core.gantt.elements.BaselinesElement#above}above(){api}
-* [Progress Chart: Baselines](Project_Chart#baselines_\(planned\))
+**Baseline** are elements showing the **planned duration** of a regular or parent [task](#tasks_\(actual\)). They are defined as instances of the {api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api} class. 
+
+To configure baselines, combine the {api:anychart.core.ui.Timeline#baselines}baselines(){api} method of the timeline with the following methods:
+
+* {api:anychart.core.gantt.elements.BaselinesElement#above}above(){api} to place baselines above tasks
+* {api:anychart.core.gantt.elements.BaselinesElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.BaselinesElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.BaselinesElement#position}position(){api} to set the anchor, offset, and position
+* {api:anychart.core.gantt.elements.BaselinesElement#fill}fill(){api}, {api:anychart.core.gantt.elements.BaselinesElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.BaselinesElement#height}height(){api} to set the fill, stroke, and height
+* {api:anychart.core.gantt.elements.BaselinesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.BaselinesElement#selected}selected(){api} to access [states](../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.BaselinesElement#labels}labels(){api} to access [labels](#labels)
+* {api:anychart.core.gantt.elements.BaselinesElement#edit}edit(){api} to access the [Live Edit](Live_Edit_UI) settings
+* (?) {api:anychart.core.gantt.elements.BaselinesElement#removeAllListeners}removeAllListeners(){api} to remove all [event listeners](Events)
+* {api:anychart.core.gantt.elements.BaselinesElement#rendering}rendering(){api} to access the [rendering](Custom_Drawing) settings
+
+Please note: by default, baselines are shown under tasks, but can be placed above them with the help of the {api:anychart.core.gantt.elements.BaselinesElement#above}above(){api} method.
+
+To learn about data fields used to set baselines, see [Progress Chart: Baselines](Project_Chart#baselines_\(planned\)).
+
+In the following sample, the {api:anychart.core.ui.Timeline#baselines}baselines(){api} method is used to access baselines. The {api:anychart.core.gantt.elements.BaselinesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.BaselinesElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../Appearance_Settings) in two [states](../Common_Settings/Interactivity/States), **normal** and **selected**. Finally, the {api:anychart.core.gantt.elements.BaselinesElement#above}above(){api} method places baselines above tasks.
 
 
 ```
@@ -149,6 +164,7 @@ baselines.normal().fill("#dd2c00 0.3");
 baselines.normal().stroke(null);
 baselines.selected().fill("#ef6c00 0.3");
 baselines.selected().stroke(null);
+baselines.above(true);
 ```
 
 {sample :height 260}GANTT\_NEW\_Elements\_02{sample}
