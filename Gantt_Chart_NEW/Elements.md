@@ -283,7 +283,7 @@ To configure elements, combine the {api:anychart.core.ui.Timeline#elements}eleme
 * {api:anychart.core.gantt.elements.TimelineElement#edit}edit(){api} to access the [Live Edit](Live_Edit_UI) settings
 * {api:anychart.core.gantt.elements.TimelineElement#rendering}rendering(){api} to access the [rendering](Custom_Drawing) settings
 
-In the sample below, the {api:anychart.core.ui.Timeline#elements}elements(){api} method is used to access elements. The {api:anychart.core.gantt.elements.TimelineElement#normal}normal(){api} and {api:anychart.core.gantt.elements.TimelineElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../Appearance_Settings) in two [states](../Common_Settings/Interactivity/States): **normal** and **selected**.
+In the sample below, the {api:anychart.core.ui.Timeline#elements}elements(){api} method is used to access elements of a Project chart. The {api:anychart.core.gantt.elements.TimelineElement#normal}normal(){api} and {api:anychart.core.gantt.elements.TimelineElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../Appearance_Settings) in two [states](../Common_Settings/Interactivity/States): **normal** and **selected**.
 
 ```
 // configure timeline elements
@@ -305,14 +305,7 @@ To adjust individual elements of a **Project chart**, use the following data fie
 * `"progress"` to configure [progress bars](#progress_bars)
 * `"connector"` to configure [connectors](#connectors)
 
-Combine them with fields corresponding to the methods listed in the subsections of the [Project Chart](#project_chart) section.
-
-To adjust  individual[periods](#periods) of a **Resource chart**... data fields corresponding to the methods listed in the subsections of the [Resource Chart](#project_chart) section.
-
-* + объяснить, как настраивать отдельные периоды
-* {api:anychart.core.ui.Timeline#elements}elements(){api}
-* {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
-
+Combine them with fields corresponding to the methods listed in the subsections of the [Project Chart](#project_chart) section:
 
 ```
 // create data
@@ -386,6 +379,8 @@ var chart = anychart.ganttProject();
 // set the data
 chart.data(treeData);   
 ```
+
+To adjust  individual[periods](#periods) of a **Resource chart**... data fields corresponding to the methods listed in the subsections of the [Resource Chart](#project_chart) section:
 
 {sample :height 220}GANTT\_NEW\_Elements\_07{sample}
 
