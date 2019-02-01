@@ -171,7 +171,7 @@ baselines.above(true);
 
 ### Progress Bars
 
-**Progress bars** are elements showing the progress of regular and parent [tasks](#tasks_\(actual\)). They are defined as instances of the {api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api}. 
+**Progress bars** are elements showing the progress of regular and parent [tasks](#tasks_\(actual\)). They are defined as instances of the {api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api} class. 
 
 To access progress bars, first access [regular](#regular_tasks) or [parent](#parent_tasks) tasks by calling {api:anychart.core.ui.Timeline#tasks}tasks(){api} or {api:anychart.core.ui.Timeline#groupingTasks}groupingTasks(){api}. Then call {api:?entry=progress}progress(){api} (?).
 
@@ -208,9 +208,17 @@ parentTasks.progress().selected().stroke(null);
 
 ### Connectors
 
-* {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api}
-* [Progress Chart: Connectors](Project_Chart#connectors)
+**Connectors** are elements showing the dependencies between all types of  [tasks](#tasks_\(actual\)). They are defined as instances of the {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api} class. 
 
+To configure connectors, combine the {api:anychart.core.ui.Timeline#connectors}connectors(){api} method of the timeline with the following methods:
+
+* {api:anychart.core.gantt.elements.ConnectorElement#fill}fill(){api} and {api:anychart.core.gantt.elements.ConnectorElement#stroke}stroke(){api} to set the fill and stroke
+* {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} to access [states](../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.BaselinesElement#edit}edit(){api} to set the preview stroke in the [Live Edit](Live_Edit_UI) mode
+
+To learn about types of connectors and data fields used to set them, see [Progress Chart: Connectors](Project_Chart#connectors).
+
+In the sample below, the {api:anychart.core.ui.Timeline#connectors}connectors(){api} method is used to access connectors. The {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../Appearance_Settings) in two [states](../Common_Settings/Interactivity/States), **normal** and **selected**.
 
 ```
 // configure connectors
