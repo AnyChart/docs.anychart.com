@@ -483,7 +483,7 @@ chart.data(treeData);
 
 ### Progress Bars
 
-A **progress bar** is an element showing the progress of a regular or parent [task](#tasks_\(actual\)). Also, the progress is shown in [labels](Timeline#labels). 
+A **progress bar** is an element showing the progress of a regular or parent [task](#tasks_\(actual\)). Also, the progress is shown in [labels](Timeline#labels) of tasks. 
 
 Use the following data fields:
 
