@@ -188,7 +188,7 @@ Please note: by default, progress is shown in [labels](#labels) of tasks. Howeve
 
 To learn about data fields used to set progress bars, see [Project Chart: Progress Bars](Project_Chart#progress_bars).
 
-In the sample below, the {api:?entry=progress}progress(){api} method (?) is used to access progress bars. The {api:anychart.core.gantt.elements.ProgressElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ProgressElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../Appearance_Settings) in two [states](../Common_Settings/Interactivity/States), **normal** and **selected**.
+In the sample below, the {api:?entry=progress}progress(){api} method (?) is used to access progress bars of both regular and parent tasks. The {api:anychart.core.gantt.elements.ProgressElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ProgressElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../Appearance_Settings) in two [states](../Common_Settings/Interactivity/States), **normal** and **selected**.
 
 ```
 // configure progress bars of regular tasks
