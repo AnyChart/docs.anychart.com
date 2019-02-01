@@ -112,7 +112,7 @@ If you need to create multiple milestones in one row, use an alternative way to 
 
 In the sample below, the {api:anychart.core.ui.Timeline#tasks}tasks(){api}, {api:anychart.core.ui.Timeline#groupingTasks}groupingTasks(){api}, and {api:anychart.core.ui.Timeline#milestones}milestones(){api} methods of the timeline are used to access [regular tasks](#regular_tasks), [parent tasks](#parent_tasks), and [milestones](#milestones).
 
-The **normal()** and **selected()** methods of each task type are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../Appearance_Settings) in two [states](../Common_Settings/Interactivity/States), **normal** and **selected**.
+The **normal()** and **selected()** methods of each task type are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../Appearance_Settings) in two [states](../Common_Settings/Interactivity/States): **normal** and **selected**.
 
 ```
 // configure tasks
@@ -158,7 +158,7 @@ Please note: by default, baselines are shown under tasks, but can be placed abov
 
 To learn about data fields used to set baselines, see [Progress Chart: Baselines](Project_Chart#baselines_\(planned\)).
 
-In the sample below, the {api:anychart.core.ui.Timeline#baselines}baselines(){api} method is used to access baselines. The {api:anychart.core.gantt.elements.BaselinesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.BaselinesElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../Appearance_Settings) in two [states](../Common_Settings/Interactivity/States), **normal** and **selected**. Finally, the {api:anychart.core.gantt.elements.BaselinesElement#above}above(){api} method places baselines above tasks.
+In the sample below, the {api:anychart.core.ui.Timeline#baselines}baselines(){api} method is used to access baselines. The {api:anychart.core.gantt.elements.BaselinesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.BaselinesElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../Appearance_Settings) in two [states](../Common_Settings/Interactivity/States): **normal** and **selected**. Finally, the {api:anychart.core.gantt.elements.BaselinesElement#above}above(){api} method places baselines above tasks.
 
 
 ```
@@ -192,7 +192,7 @@ Please note: by default, progress is shown in [labels](#labels) of tasks. Howeve
 
 To learn about data fields used to set progress bars, see [Project Chart: Progress Bars](Project_Chart#progress_bars).
 
-In the sample below, the {api:?entry=progress}progress(){api} method (?) is used to access progress bars of both regular and parent tasks. The {api:anychart.core.gantt.elements.ProgressElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ProgressElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../Appearance_Settings) in two [states](../Common_Settings/Interactivity/States), **normal** and **selected**.
+In the sample below, the {api:?entry=progress}progress(){api} method (?) is used to access progress bars of both regular and parent tasks. The {api:anychart.core.gantt.elements.ProgressElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ProgressElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../Appearance_Settings) in two [states](../Common_Settings/Interactivity/States): **normal** and **selected**.
 
 ```
 // configure progress bars of regular tasks
@@ -222,7 +222,7 @@ To configure connectors, combine the {api:anychart.core.ui.Timeline#connectors}c
 
 To learn about types of connectors and data fields used to set them, see [Progress Chart: Connectors](Project_Chart#connectors).
 
-In the sample below, the {api:anychart.core.ui.Timeline#connectors}connectors(){api} method is used to access connectors. The {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../Appearance_Settings) in two [states](../Common_Settings/Interactivity/States), **normal** and **selected**.
+In the sample below, the {api:anychart.core.ui.Timeline#connectors}connectors(){api} method is used to access connectors. The {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../Appearance_Settings) in two [states](../Common_Settings/Interactivity/States): **normal** and **selected**.
 
 ```
 // configure connectors
@@ -244,7 +244,7 @@ connectors.selected().stroke("2 #ef6c00");
 
 (?) **Periods** are visual elements representing time intervals related to resources. They are defined as instances of the {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api} class. 
 
-To configure baselines, combine the {api:anychart.core.ui.Timeline#periods}periods(){api} method of the timeline with the following methods:
+To configure periods, combine the {api:anychart.core.ui.Timeline#periods}periods(){api} method of the timeline with the following methods:
 
 * {api:anychart.core.gantt.elements.PeriodsElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.PeriodsElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.PeriodsElement#position}position(){api} to set the anchor, offset, and position
 * {api:anychart.core.gantt.elements.PeriodsElement#fill}fill(){api}, {api:anychart.core.gantt.elements.PeriodsElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.PeriodsElement#height}height(){api} to set the fill, stroke, and height
@@ -255,7 +255,7 @@ To configure baselines, combine the {api:anychart.core.ui.Timeline#periods}perio
 
 To learn about data fields used to set periods, see [Resource Chart: Periods and Resources](Resource_Chart#periods_and_resources).
 
-In the sample below, the {api:anychart.core.ui.Timeline#periods}periods(){api} method is used to access periods. The {api:anychart.core.gantt.elements.PeriodsElement#normal}normal(){api} and {api:anychart.core.gantt.elements.PeriodsElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../Appearance_Settings) in two [states](../Common_Settings/Interactivity/States), **normal** and **selected**.
+In the sample below, the {api:anychart.core.ui.Timeline#periods}periods(){api} method is used to access periods. The {api:anychart.core.gantt.elements.PeriodsElement#normal}normal(){api} and {api:anychart.core.gantt.elements.PeriodsElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../Appearance_Settings) in two [states](../Common_Settings/Interactivity/States): **normal** and **selected**.
 
 ```
 // configure periods
@@ -274,6 +274,20 @@ periods.selected().stroke("#dd2c00");
 * [Project Chart](#project_chart): everything except for [connectors](#connectors)
 * [Resource Chart](#resource_chart): [Periods](#periods)
 
+You can access almost **all elements** of a **Project chart** chart at once: [tasks](#tasks_\(actual\)) of all types, [baselines](#baselines_\(planned\)), [progress bars](#progress_bars) (but not [connectors](#connectors)). They are defined as instances of the {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api} class.
+
+The same is true for the **Resource chart**, but makes little difference since it supports elements of only one type – [periods](#periods).
+
+To configure elements, combine the {api:anychart.core.ui.Timeline#elements}elements(){api} method of the timeline with the following methods:
+
+* {api:anychart.core.gantt.elements.TimelineElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.TimelineElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.TimelineElement#position}position(){api} to set the anchor, offset, and position
+* {api:anychart.core.gantt.elements.TimelineElement#fill}fill(){api}, {api:anychart.core.gantt.elements.TimelineElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.TimelineElement#height}height(){api} to set the fill, stroke, and height
+* {api:anychart.core.gantt.elements.TimelineElement#normal}normal(){api} and {api:anychart.core.gantt.elements.TimelineElement#selected}selected(){api} to access [states](../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.TimelineElement#labels}labels(){api} to access [labels](#labels)
+* {api:anychart.core.gantt.elements.TimelineElement#edit}edit(){api} to access the [Live Edit](Live_Edit_UI) settings
+* {api:anychart.core.gantt.elements.TimelineElement#rendering}rendering(){api} to access the [rendering](Custom_Drawing) settings
+
+In the sample below, the {api:anychart.core.ui.Timeline#elements}elements(){api} method is used to access elements. The {api:anychart.core.gantt.elements.TimelineElement#normal}normal(){api} and {api:anychart.core.gantt.elements.TimelineElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../Appearance_Settings) in two [states](../Common_Settings/Interactivity/States): **normal** and **selected**.
 
 ```
 // configure timeline elements
