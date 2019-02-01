@@ -270,7 +270,7 @@ periods.selected().stroke("#dd2c00");
 
 ## All Elements
 
-You can access almost **all elements** of a **Project chart** chart at once: [tasks](#tasks_\(actual\)) of all types, [baselines](#baselines_\(planned\)), [progress bars](#progress_bars) (but not [connectors](#connectors)). They are defined as instances of the {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api} class.
+You can access almost **all elements** of a **Project chart** chart at once: [tasks](#tasks_\(actual\)) of all types, [baselines](#baselines_\(planned\)), and [progress bars](#progress_bars) (but not [connectors](#connectors)). They are defined as instances of the {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api} class.
 
 The same is true for the **Resource chart**, but makes little difference since it supports elements of only one type – [periods](#periods).
 
