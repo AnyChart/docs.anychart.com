@@ -13,6 +13,9 @@ Misc:
 * [markers](#markers)
 * {api:anychart.charts.Gantt#getTimeline}getTimeline(){api}
 * methods of the {api:anychart.core.ui.Timeline}anychart.core.ui.Timeline{api} allowing to access elements
+* (?) [appearance settings](../Appearance_Settings)
+* (?) [states](../Common_Settings/Interactivity/States): **normal** and **selected**
+* (?)
 
 Classes:
 
@@ -28,6 +31,7 @@ Classes:
 ## Project Chart
 
 * [Project Chart](Project_Chart)
+* (?)
 
 ### Tasks (Actual)
 
@@ -234,12 +238,24 @@ connectors.selected().stroke("2 #ef6c00");
 ## Resource Chart
 
 * [Resource Chart](Resource_Chart)
+* (?)
 
 ### Periods
 
-* {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api}
-* [Resource Chart: Periods and Resources](Resource_Chart#periods_and_resources)
+(?) **Periods** are visual elements representing time intervals related to resources. They are defined as instances of the {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api} class. 
 
+To configure baselines, combine the {api:anychart.core.ui.Timeline#periods}periods(){api} method of the timeline with the following methods:
+
+* {api:anychart.core.gantt.elements.PeriodsElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.PeriodsElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.PeriodsElement#position}position(){api} to set the anchor, offset, and position
+* {api:anychart.core.gantt.elements.PeriodsElement#fill}fill(){api}, {api:anychart.core.gantt.elements.PeriodsElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.PeriodsElement#height}height(){api} to set the fill, stroke, and height
+* {api:anychart.core.gantt.elements.PeriodsElement#normal}normal(){api} and {api:anychart.core.gantt.elements.PeriodsElement#selected}selected(){api} to access [states](../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.PeriodsElement#labels}labels(){api} to access [labels](#labels)
+* {api:anychart.core.gantt.elements.PeriodsElement#edit}edit(){api} to access the [Live Edit](Live_Edit_UI) settings
+* {api:anychart.core.gantt.elements.PeriodsElement#rendering}rendering(){api} to access the [rendering](Custom_Drawing) settings
+
+To learn about data fields used to set periods, see [Resource Chart: Periods and Resources](Resource_Chart#periods_and_resources).
+
+In the sample below, the {api:anychart.core.ui.Timeline#periods}periods(){api} method is used to access periods. The {api:anychart.core.gantt.elements.PeriodsElement#normal}normal(){api} and {api:anychart.core.gantt.elements.PeriodsElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../Appearance_Settings) in two [states](../Common_Settings/Interactivity/States), **normal** and **selected**.
 
 ```
 // configure periods

@@ -3,6 +3,9 @@
 
 ## Appearance
 
+* [appearance settings](../Appearance_Settings)
+* [states](../Common_Settings/Interactivity/States): **normal** and **selected**
+
 ### Background
 
 * background()
