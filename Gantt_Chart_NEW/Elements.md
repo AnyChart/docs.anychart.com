@@ -298,15 +298,20 @@ elements.selected().stroke("#dd2c00");
 
 ## Individual Elements
 
-* `"actual"`
-* `"baseline"`
-* `"progress"`
-* `"connector"`
+To adjust individual elements of a **Project chart**, use the following data fields:
+
+* `"actual"` to configure [tasks](#tasks_\(actual\)) of all types
+* `"baseline"` to configure [baselines](#baselines_\(planned\))
+* `"progress"` to configure [progress bars](#progress_bars)
+* `"connector"` to configure [connectors](#connectors)
+
+Combine them with fields corresponding to the methods listed in the subsections of the [Project Chart](#project_chart) section.
+
+To adjust  individual[periods](#periods) of a **Resource chart**... data fields corresponding to the methods listed in the subsections of the [Resource Chart](#project_chart) section.
+
 * + объяснить, как настраивать отдельные периоды
 * {api:anychart.core.ui.Timeline#elements}elements(){api}
 * {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
-* [Project Chart](Project_Chart)
-* [Resource Chart](Resource_Chart)
 
 
 ```
