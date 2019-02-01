@@ -214,7 +214,7 @@ To configure connectors, combine the {api:anychart.core.ui.Timeline#connectors}c
 
 * {api:anychart.core.gantt.elements.ConnectorElement#fill}fill(){api} and {api:anychart.core.gantt.elements.ConnectorElement#stroke}stroke(){api} to set the fill and stroke
 * {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} to access [states](../Common_Settings/Interactivity/States)
-* {api:anychart.core.gantt.elements.BaselinesElement#edit}edit(){api} to set the preview stroke in the [Live Edit](Live_Edit_UI) mode
+* {api:anychart.core.gantt.elements.ConnectorElement#previewStroke}previewStroke(){api} to set the preview stroke in the [Live Edit](Live_Edit_UI) mode
 
 To learn about types of connectors and data fields used to set them, see [Progress Chart: Connectors](Project_Chart#connectors).
 
