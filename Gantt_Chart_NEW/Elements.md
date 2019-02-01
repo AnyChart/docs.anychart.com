@@ -30,8 +30,7 @@ Classes:
 
 ## Project Chart
 
-* [Project Chart](Project_Chart)
-* (?)
+This section explains how to configure the elements of a [Project Chart](Project_Chart).
 
 ### Tasks (Actual)
 
@@ -237,8 +236,7 @@ connectors.selected().stroke("2 #ef6c00");
 
 ## Resource Chart
 
-* [Resource Chart](Resource_Chart)
-* (?)
+This section explains how to configure the elements of a [Resource Chart](Resource_Chart).
 
 ### Periods
 
@@ -272,7 +270,7 @@ periods.selected().stroke("#dd2c00");
 
 You can access almost **all elements** of a **Project chart** chart at once: [tasks](#tasks_\(actual\)) of all types, [baselines](#baselines_\(planned\)), and [progress bars](#progress_bars) (but not [connectors](#connectors)). They are defined as instances of the {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api} class.
 
-The same is true for the **Resource chart**, but makes little difference since it supports elements of only one type – [periods](#periods).
+The same is true for the **Resource chart**, but makes little difference since it supports only one type of element – the [period](#periods).
 
 To configure elements, combine the {api:anychart.core.ui.Timeline#elements}elements(){api} method of the timeline with the following methods:
 
