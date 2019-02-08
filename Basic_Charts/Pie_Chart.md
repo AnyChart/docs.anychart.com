@@ -125,7 +125,7 @@ By default, outlines are enabled only in the **hover** and **selected** [states]
 
 Combine these methods with the following ones:
 
-* {api:anychart.core.ui.Outline#enabled}enabled(){api} to enable / disable the outline
+* {api:anychart.core.ui.Outline#enabled}enabled(){api} to enable/disable the outline
 * {api:anychart.core.ui.Outline#fill}fill(){api} to set the fill
 * {api:anychart.core.ui.Outline#offset}offset(){api} to set the offset
 * {api:anychart.core.ui.Outline#stroke}stroke(){api} to set the stroke

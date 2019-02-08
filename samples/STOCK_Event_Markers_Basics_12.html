@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Event Markers Basics 12"/>
+    <meta name="ac:name" content="STOCK Event Markers Basics 10"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -10,86 +10,82 @@
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js"></script>
+    <script src="https://cdn.anychart.com/csv-data/msft-daily-short.js"></script>
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        button {
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
+<button onclick="stickToLeftEnabled(false)">Disable</button>
+<button onclick="stickToLeftEnabled(true)">Enable</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
-    // the data used in this sample can be obtained from the CDN
-    // https://cdn.anychart.com/csv-data/csco-daily.js
-    // create a data table using this data
-    var dataTable = anychart.data.table();
-    dataTable.addData(get_csco_daily_short_data());
+    // create data
+    dataTable = anychart.data.table();
+    dataTable.addData([
+        ["2016-01-05",  -2.0],
+        ["2016-01-07",  -9.4],
+        ["2016-01-08",  -4.5],
+        ["2016-01-11",  -3.1],
+        ["2016-01-12",  -7.9]
+    ]); 
 
     // map the data
-    var mapping = dataTable.mapAs({value: 4});
+    var mapping = dataTable.mapAs({value: 1});
 
     // create a stock chart
-    var chart = anychart.stock();
+    chart = anychart.stock();
 
     // create a plot on the chart
-    var plot = chart.plot(0);
+    plot = chart.plot(0);
 
     // create a line series
-    plot.line(mapping).name("CSCO");
+    var series = plot.line(mapping);
 
     // add event markers
     plot.eventMarkers({"groups": [
       {
         "data": [
           {
-            "symbol": "1",
-            "date": "2006-06-08",
-            "description": "Cisco announced the acquisition of Audium Corporation.",
-            "normal":   {"type": "circle",
-                         "fill": "#d1ead9", "stroke": "2 #009933",
-                         "fontColor": "#009933", "fontWeight": 600,
-                         "connector": {"stroke": "2 #009933"}},
-            "hovered":  {"fill": "white", "stroke": "2 #009933",
-                         "fontColor": "#009933",
-                         "connector": {"stroke": "2 #009933"}},
-            "selected": {"fill": "white", "stroke": "2 #194d00",
-                         "fontColor": "#194d00",
-                         "connector": {"stroke": "2 #194d00"}}
+            "date": "2016-01-06",
+            "description": "Event 1"
           },
           {
-            "symbol": "2",
-            "date": "2008-04-27",
-            "description": "Cisco announced its intent to acquire PostPath, Inc.",
-            "normal":   {"type": "rect", "width": 40,
-                         "fill": "#ead9d1", "stroke": "2 #990033",
-                         "fontColor": "#990033", "fontWeight": 600,
-                         "connector": {"stroke": "2 #990033"}},
-            "hovered":  {"fill": "white", "stroke": "2 #990033",
-                         "fontColor": "#990033",
-                         "connector": {"stroke": "2 #990033"}},
-            "selected": {"fill": "white", "stroke": "2 #4d1a00",
-                         "fontColor": "#4d1a00",
-                         "connector": {"stroke": "2 #4d1a00"}}   
+            "date": "2016-01-09",
+            "description": "Event 2"
+          },
+          {
+            "date": "2016-01-10",
+            "description": "Event 3"
           },
         ]
       }
     ]});
 
-    // set the symbol of event markers
-    plot.eventMarkers().format(function() {
-      return this.getData("symbol");
-    });
-
     // set the chart title
-    chart.title("Event Markers: Individual Markers");
+    chart.listen("chartDraw", function () {
+      chart.title("Event Markers: Sticking to Left (Enabled = "
+              + plot.eventMarkers().stickToLeft() + ")");
+    });
 
     // set the container id
     chart.container("container");
@@ -97,6 +93,13 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
+
+// enable/disable sticking to the left point
+function stickToLeftEnabled(enabled) {
+  plot.eventMarkers().stickToLeft(enabled);
+  chart.title("Event Markers: Sticking to Left (Enabled = "
+              + plot.eventMarkers().stickToLeft() + ")");
+}
 </script>
 </body>
 </html>
