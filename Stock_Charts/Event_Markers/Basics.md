@@ -352,6 +352,7 @@ By default, the direction of markers is adjusted automatically so that they over
 * `"down"`
 * `"up"`
 
+
 ```
 // set the position of event markers
 plot.eventMarkers().direction("down");
@@ -360,6 +361,53 @@ plot.eventMarkers().direction("down");
 In the default [position](#position) (`"axis"`), all markers are vertically oriented, no matter what direction you set. However, in other positions the direction matters. The following sample shows how changing the direction of markers affects them when the position is set to `"series"`:
 
 {sample}STOCK\_Event\_Markers\_Basics\_11{sample}
+
+## Sticking to Left Point
+
+By default, each event marker sticks to the left closest point. You can disable or enable this mode by passing `false` or `true`  to the {api:anychart.core.stock.eventMarkers.Controller#stickToLeft}stickToLeft(){api} method: 
+
+```
+// disable sticking to the left point
+plot.eventMarkers().stickToLeft(false);
+```
+
+In the following sample, data does not include dates the event markers are bound to, so they are displayed in the points to the left of them. When sticking to the left point is disabled, markers are shown in their actual dates:
+
+```
+// create data
+dataTable = anychart.data.table();
+dataTable.addData([
+    ["2016-01-05",  -2.0],
+    ["2016-01-07",  -9.4],
+    ["2016-01-08",  -4.5],
+    ["2016-01-11",  -3.1],
+    ["2016-01-12",  -7.9]
+]);
+```
+
+```
+// add event markers
+plot.eventMarkers({"groups": [
+  {
+    "data": [
+      {
+        "date": "2016-01-06",
+        "description": "Event 1"
+      },
+      {
+        "date": "2016-01-09",
+        "description": "Event 2"
+      },
+      {
+        "date": "2016-01-10",
+        "description": "Event 3"
+      },
+    ]
+  }
+]});
+```
+
+{sample}STOCK\_Event\_Markers\_Basics\_12{sample}
 
 ## Individual Markers
 
@@ -414,4 +462,4 @@ plot.eventMarkers().format(function() {
 });
 ```
 
-{sample}STOCK\_Event\_Markers\_Basics\_12{sample}
+{sample}STOCK\_Event\_Markers\_Basics\_13{sample}
