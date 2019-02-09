@@ -75,6 +75,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Sunburst Chart](../Basic_Charts/Sunburst_Chart)</td></tr>
 <tr><td>[Surface Chart](../Basic_Charts/Sunburst_Chart)</td></tr>
 <tr><td>[Tag Cloud](../3D_Plot/Surface_Chart)</td></tr>
+<tr><td>[Timeline Chart](../Basic_Charts/Timeline_Chart)</td></tr>
 <tr><td>[Treemap Chart](../Basic_Charts/Treemap_Chart)</td></tr>
 <tr><td>[Venn Diagram](../Basic_Charts/Venn_Diagram)</td></tr>
 <tr><td>[Vertical Area Chart](../Basic_Charts/Vertical/Area_Chart)</td></tr>

@@ -10,7 +10,6 @@ This article explains how to create a basic Tag Cloud chart as well as configure
 <table border="1" class="seriesTABLE">
 <tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Tag Cloud](../Quick_Start/Modules#tag_cloud)</td></tr>
 <tr><th colspan=2>API</th></tr>
-<tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.TagCloud}anychart.charts.TagCloud{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
 <tr><td>Data Fields</td><td>[x, value, category](../Working_with_Data/Overview)</td></tr>

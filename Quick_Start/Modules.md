@@ -280,6 +280,14 @@ A module for creating [Tag Clouds](../Basic_Charts/Tag_Cloud):
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-tag-cloud.min.js"></script>
 ```
 
+### Tag Cloud
+
+A module for creating [Timeline](../Basic_Charts/Timeline_Chart) charts:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-timeline.min.js"></script>
+```
+
 ### Treemap
 
 A module for creating [Treemap](../Basic_Charts/Treemap_Chart) charts:
