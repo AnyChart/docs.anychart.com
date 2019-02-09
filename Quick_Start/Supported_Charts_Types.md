@@ -24,6 +24,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Gantt Chart](../Gantt_Chart/Quick_Start)</td></tr>
 <tr><td>[Gauge Circular](../Gauges/Circular_Gauge)</td></tr>
 <tr><td>[Gauge Linear](../Gauges/Linear_Gauge)</td></tr>
+<tr><td>[Graph Chart](../Basic_Charts/Graph_Chart)</td></tr>
 <tr><td>[Heat Map Chart](../Basic_Charts/Heat_Map_Chart)</td></tr>
 <tr><td>[HiLo Chart](../Basic_Charts/HiLo_Chart)</td></tr>
 <tr><td>[Jump Line Chart](../Basic_Charts/Jump_Line_Chart)</td></tr>

@@ -136,6 +136,22 @@ A module for creating [Gantt and Gantt Resource](../Gantt_Chart/Quick_Start) cha
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js"></script>
 ```
 
+### Geo Maps
+
+A module for creating [Geo Maps](../Maps/Quick_Start):
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-map.min.js"></script>
+```
+
+### Graph Chart
+
+A module for creating [Graph](../Basic_Charts/Graph_Chart) charts:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-graph.min.js"></script>
+```
+
 ### Heat Map
 
 A module for creating [Heat Maps](../Basic_Charts/Heat_Map_Chart):
@@ -150,14 +166,6 @@ A module for creating [Linear Gauges](../Gauges/Linear_Gauge):
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-linear-gauge.min.js"></script>
-```
-
-### Geo Maps
-
-A module for creating [Geo Maps](../Maps/Quick_Start):
-
-```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-map.min.js"></script>
 ```
 
 ### Mekko
