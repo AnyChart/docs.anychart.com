@@ -380,7 +380,7 @@ chart.data(treeData);
 
 {sample :height 220}GANTT\_NEW\_Elements\_07{sample}
 
-To adjust an individual [period](#periods) of a **Resource chart**, you need to add extra data fields to the object specifying this period (?). Use fields corresponding to the methods listed in the subsections of the [Resource Chart](#project_chart) sectionб for example `fill` and `stroke`:
+To adjust an individual [period](#periods) of a **Resource chart**, you need to add extra data fields to the object specifying this period (?). Use fields corresponding to the methods listed in the subsections of the [Resource Chart](#project_chart) section, for example `fill` and `stroke`:
 
 ```
 // create data
