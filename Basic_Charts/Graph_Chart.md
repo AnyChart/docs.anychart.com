@@ -54,6 +54,7 @@ To create a Graph chart, use the {api:anychart#graph}anychart.graph(){api} chart
 
 ```
 
+
 {sample}BCT\_Graph\_Chart\_01{sample}
 
 ## General Settings
