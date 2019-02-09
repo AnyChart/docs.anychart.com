@@ -1,5 +1,4 @@
 {:index 4.1}
-
 # Sankey Diagram
 
 ## Overview

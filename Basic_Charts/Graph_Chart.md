@@ -1,10 +1,9 @@
 {:index 1.5}
-
 # Graph Chart
 
 ## Overview
 
-A Graph chart ...
+A graph chart ...
 
 This article explains how to create a basic Graph chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Graph chart's characteristics:
 
