@@ -1,4 +1,4 @@
-{:index 6.2}
+{:index 6.3}
 # Treemap Chart
 
 ## Overview
