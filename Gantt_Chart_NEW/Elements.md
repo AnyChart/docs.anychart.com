@@ -426,7 +426,7 @@ Labels are supported by the following elements of the **Project** chart:
 
 Also, labels are supported by the only element of the **Resource** chart – [period](#periods).
 
-**To access** labels of a particular element type, call its **labels()** method. Alternatively, you can access labels of [all elements](#all_elements) at once by calling {api:anychart.core.ui.Timeline#elements}elements(){api}.
+**To access** labels, call the **labels()** method of a particular element type or of [all elements](#all_elements):
 
 ```
 // access labels of regular tasks
