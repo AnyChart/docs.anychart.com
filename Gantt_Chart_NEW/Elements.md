@@ -426,7 +426,7 @@ Labels are supported by the following elements of the **Project** chart:
 
 Also, labels are supported by the only element of the **Resource** chart – [period](#periods).
 
-To access labels, call the **labels()** method of a particular element type or of [all elements](#all_elements):
+To access labels, call the **labels()** method of a particular element type or of [all elements](#all_elements) (elements that cannot have labels are not affected):
 
 ```
 // access labels of regular tasks
@@ -434,7 +434,7 @@ var labels = chart.getTimeline().tasks().labels();
 ```
 
 ```
-// access labels of all timeline elements
+// access labels of timeline elements
 var labels = chart.getTimeline().elements().labels();
 ```
 
