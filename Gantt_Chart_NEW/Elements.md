@@ -30,7 +30,7 @@ Classes:
 
 ## Project Chart
 
-(?) This section explains how to configure the elements of a [Project Chart](Project_Chart).
+(?) This section explains how to configure the elements of a [Project](Project_Chart) chart.
 
 ### Tasks (Actual)
 
@@ -232,7 +232,7 @@ connectors.selected().stroke("2 #ef6c00");
 
 ## Resource Chart
 
-(?) This section explains how to configure the elements of a [Resource Chart](Resource_Chart).
+(?) This section explains how to configure the elements of a [Resource](Resource_Chart) chart.
 
 ### Periods
 
