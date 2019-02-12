@@ -419,7 +419,7 @@ chart.data(treeData);
 
 ## Labels
 
-Some elements have [labels](../../Common_Settings/Labels) – special text or image components, which are defined as instances of the {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api} class.
+Some elements have [labels](../../Common_Settings/Labels) – special text or image components, defined as instances of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}.
 
 Labels are supported by the following elements of the **Project** chart:
 
