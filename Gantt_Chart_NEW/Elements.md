@@ -299,7 +299,7 @@ To adjust individual elements of a **Project** chart, use the following data fie
 * `"progress"` to configure [progress bars](#progress_bars)
 * `"connector"` to configure [connectors](#connectors)
 
-Combine them with fields corresponding to the methods listed in the subsections of the [Project Chart](#project_chart) section, for example `fill` and `stroke`:
+Combine them with fields corresponding to the methods of elements, for example `fill` and `stroke`:
 
 ```
 // create data
@@ -376,7 +376,7 @@ chart.data(treeData);
 
 {sample :height 220}GANTT\_NEW\_Elements\_07{sample}
 
-To adjust an individual [period](#periods) of a **Resource** chart, you need to add extra data fields to the object specifying this period (?). Use fields corresponding to the methods listed in the subsections of the [Resource Chart](#project_chart) section, for example `fill` and `stroke`:
+To adjust an individual [period](#periods) of a **Resource** chart, you need to add extra data fields to the object specifying this period (?). Use fields corresponding to the methods of periods, for example `fill` and `stroke`:
 
 ```
 // create data
