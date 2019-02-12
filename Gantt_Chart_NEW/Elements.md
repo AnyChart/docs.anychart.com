@@ -6,7 +6,7 @@
 Misc:
 
 * elements are shown on the [Timeline](Timeline)
-* the [Project](#project_chart) and [Resource](#resource_chart) charts: different element types are available
+* the [Project](Project_Chart) and [Resource](Resource_Chart) charts: different element types are available, see the [Project Chart](#project_chart) and [Resource Chart](#resource_chart) sections
 * all elements of one type: [tasks](#tasks_\(actual\)), [baselines](#baselines_\(planned\)), [progress bars](#progress_bars), [connectors](#connectors), [periods](#periods)
 * [all elements](#all_elements) at once
 * [individual elements](#individual_elements)
