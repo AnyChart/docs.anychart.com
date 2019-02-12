@@ -432,7 +432,27 @@ Also, labels are supported by the only element of the **Resource** chart – [pe
 
 To access labels of a particular element type, call its **labels()** method. Alternatively, you can access labels of [all elements](#all_elements) at once: call the {api:anychart.core.ui.Timeline#elements}elements(){api} method of the {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api} class.
 
+```
+// configure labels of regular tasks
+chart.getTimeline().tasks().labels();
+```
+
+```
+// configure labels of all timeline elements
+chart.getTimeline().elements().labels();
+```
+
 To enable or disable labels, pass `true` or `false` either directly to **labels()** or to the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method of labels.
+
+```
+// enable labels of periods
+chart.getTimeline().periods.labels(true);
+```
+
+```
+// enable labels of periods
+chart.getTimeline().periods.labels().enabled(true);
+```
 
 To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}. For example, you can set the text format of labels by using the {api:anychart.core.ui.LabelsFactory#format}format(){api} method, combined with either [tokens](../../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions). Read the sections below to learn more.
 
