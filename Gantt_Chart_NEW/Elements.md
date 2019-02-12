@@ -294,7 +294,7 @@ elements.selected().stroke("#dd2c00");
 
 To adjust individual elements of a **Project chart**, use the following data fields:
 
-* `"actual"` to configure [tasks](#tasks_\(actual\)) of all types
+* `"actual"` to configure all [task](#tasks_\(actual\)) types
 * `"baseline"` to configure [baselines](#baselines_\(planned\))
 * `"progress"` to configure [progress bars](#progress_bars)
 * `"connector"` to configure [connectors](#connectors)
