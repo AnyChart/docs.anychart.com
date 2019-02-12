@@ -6,7 +6,7 @@
 Misc:
 
 * elements are shown on the [Timeline](Timeline)
-* the [Project](#project_chart) and [Resource](#resource_chart) charts: different types of elements are available
+* the [Project](#project_chart) and [Resource](#resource_chart) charts: different element types are available
 * all elements of one type: [tasks](#tasks_\(actual\)), [baselines](#baselines_\(planned\)), [progress bars](#progress_bars), [connectors](#connectors), [periods](#periods)
 * [all elements](#all_elements) at once
 * [individual elements](#individual_elements)
@@ -36,7 +36,7 @@ Classes:
 
 A **task** is the main element of the Project chart. It shows the **actual duration** of a task, while the planned duration is represented by the [baseline](#baselines_\(planned\)).
 
-The sections below describe three types of tasks, which are visualized in a different way and configured by different methods: [regular tasks](#regular_tasks), [parent tasks](#parent_tasks), and [milestones](#milestones). In the last section, there is a [sample](#sample) showing how to adjust each type.
+The sections below explain how to adjust the three task types available: [regular tasks](#regular_tasks), [parent tasks](#parent_tasks), and [milestones](#milestones). In the last section, there is a [sample](#sample) showing how their settings look like.
 
 To learn more about the difference between the types and data fields used to set them, see [Project Chart: Tasks](Project_Chart#tasks_\(actual\)).
 
@@ -207,7 +207,7 @@ parentTasks.progress().selected().stroke(null);
 
 ### Connectors
 
-**Connectors** are elements showing the dependencies between all types of  [tasks](#tasks_\(actual\)). They are defined as instances of the {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api} class. 
+**Connectors** are elements showing the dependencies between all [task](#tasks_\(actual\)) types. They are defined as instances of the {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api} class. 
 
 To configure connectors, combine the {api:anychart.core.ui.Timeline#connectors}connectors(){api} method of the timeline with the following methods:
 
@@ -215,7 +215,7 @@ To configure connectors, combine the {api:anychart.core.ui.Timeline#connectors}c
 * {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} to access [states](../Common_Settings/Interactivity/States)
 * {api:anychart.core.gantt.elements.ConnectorElement#previewStroke}previewStroke(){api} to set the preview stroke in the [Live Edit](Live_Edit_UI) mode
 
-To learn about types of connectors and data fields used to set them, see [Progress Chart: Connectors](Project_Chart#connectors).
+To learn about the available types of connectors and the data fields used to set them, see [Progress Chart: Connectors](Project_Chart#connectors).
 
 In the sample below, the {api:anychart.core.ui.Timeline#connectors}connectors(){api} method is used to access connectors. The {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../Appearance_Settings) in two [states](../Common_Settings/Interactivity/States): **normal** and **selected**.
 
@@ -266,7 +266,7 @@ periods.selected().stroke("#dd2c00");
 
 You can access almost all elements of a **Project chart** chart at once: [tasks](#tasks_\(actual\)) of all types, [baselines](#baselines_\(planned\)), and [progress bars](#progress_bars) (but not [connectors](#connectors)). They are defined as instances of the {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api} class.
 
-The same is true for the **Resource chart**, but it makes little difference since this chart type supports only type of element is supported – the [period](#periods).
+The same is true for the **Resource chart**, but it makes little difference since only one element type is supported – the [period](#periods).
 
 To configure elements, combine the {api:anychart.core.ui.Timeline#elements}elements(){api} method of the timeline with the following methods:
 
@@ -423,7 +423,7 @@ chart.data(treeData);
 
 * {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}
 * {api:anychart.core.gantt.elements.TimelineElement#labels}labels(){api}: {api:anychart.core.ui.Timeline#elements}elements(){api} + {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
-* три метода **labels()** для all types of [tasks](#tasks_\(actual\)) + для [progress bars](#progress_bars)
+* три метода **labels()** для all [task](#tasks_\(actual\)) types + для [progress bars](#progress_bars)
 * ресурс: все равно, использовать метод элементов / таймлайна или периодов
 * кастомные поля
 * [Project Chart](Project_Chart)

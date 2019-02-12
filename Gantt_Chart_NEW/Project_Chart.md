@@ -318,7 +318,7 @@ Use the following data fields:
 * `children` / `parent` (optional) to set the [hierarchy](#hierarchy)
 * `actual` (optional) to configure [individual tasks](Elements#individual_elements)
 
-There are three types of tasks, each of them visualized in a different way:
+There are three task types, each of them visualized in a different way:
 
 * regular tasks
 * parent tasks
@@ -334,7 +334,7 @@ If you need to create multiple milestones in one row, use an alternative way to 
 
 To learn how to configure tasks, see the [Elements: Tasks](Elements#tasks_\(actual\)) section. 
 
-The sample below demonstrates all types of tasks. Also, it shows that regular and parent tasks can occupy different places in the hierarchy: a parent task can be a child itself, and a regular task can be a root.
+The sample below demonstrates task types. Also, it shows that regular and parent tasks can occupy different places in the hierarchy: a parent task can be a child itself, and a regular task can be a root.
 
 ```
 // create data
@@ -555,7 +555,7 @@ chart.data(treeData);
 
 ### Connectors
 
-A **connector** is an element showing the dependencies between all types of [tasks](#tasks_\(actual\)). 
+A **connector** is an element showing the dependencies between all [task](#tasks_\(actual\)) types. 
 
 Use the following data fields:
 
