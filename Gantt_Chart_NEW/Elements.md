@@ -30,23 +30,19 @@ Classes:
 
 ## Project Chart
 
-This section explains how to configure the elements of a [Project Chart](Project_Chart).
+(?) This section explains how to configure the elements of a [Project Chart](Project_Chart).
 
 ### Tasks (Actual)
 
 A **task** is the main element of the Project chart. It shows the **actual duration** of a task, while the planned duration is represented by the [baseline](#baselines_\(planned\)).
 
-There are three types of tasks, each of them visualized in a different way and configured by different methods:
+The sections below describe three types of tasks, which are visualized in a different way and configured by different methods: [regular tasks](#regular_tasks), [parent tasks](#parent_tasks), and [milestones](#milestones). In the last section, there is a [sample](#sample) showing how to adjust each type.
 
-* [regular tasks](#regular_tasks)
-* [parent tasks](#parent_tasks)
-* [milestones](#milestones)
-
-The sections below explain how to adjust them. Also, in the last section there is a [sample](#sample) with tasks configured. To learn more about the difference between the types and data fields used to set them, see [Project Chart: Tasks](Project_Chart#tasks_\(actual\)).
+To learn more about the difference between the types and data fields used to set them, see [Project Chart: Tasks](Project_Chart#tasks_\(actual\)).
 
 #### Regular Tasks
 
-**Regular tasks** are tasks that do not have child elements. They are defined as instances of the {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api} class. 
+**Regular tasks** are [tasks](Project_Chart#tasks_\(actual\)) that do not have child elements. They are defined as instances of the {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api} class. 
 
 To configure regular tasks, combine the {api:anychart.core.ui.Timeline#tasks}tasks(){api} method of the timeline with the following methods:
 
@@ -66,7 +62,7 @@ chart.getTimeline().tasks().height(15);
 
 #### Parent Tasks
 
-**Parent tasks** are tasks that have child elements. They are defined as instances of the {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api} class. 
+**Parent tasks** are [tasks](Project_Chart#tasks_\(actual\)) that have child elements. They are defined as instances of the {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api} class. 
 
 To configure parent tasks, combine the {api:anychart.core.ui.Timeline#groupingTasks}groupingTasks(){api} method of the timeline with the following methods:
 
@@ -88,7 +84,7 @@ chart.getTimeline().groupingTasks().height(15);
 
 #### Milestones
 
-**Milestones** are tasks with zero duration, representing events. They are defined as instances of the {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api} class. 
+**Milestones** are [tasks](Project_Chart#tasks_\(actual\)) with zero duration, representing events. They are defined as instances of the {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api} class. 
 
 To configure milestones, combine the {api:anychart.core.ui.Timeline#milestones}milestones(){api} method of the timeline with the following methods:
 
@@ -236,7 +232,7 @@ connectors.selected().stroke("2 #ef6c00");
 
 ## Resource Chart
 
-This section explains how to configure the elements of a [Resource Chart](Resource_Chart).
+(?) This section explains how to configure the elements of a [Resource Chart](Resource_Chart).
 
 ### Periods
 
@@ -268,9 +264,9 @@ periods.selected().stroke("#dd2c00");
 
 ## All Elements
 
-You can access almost **all elements** of a **Project chart** chart at once: [tasks](#tasks_\(actual\)) of all types, [baselines](#baselines_\(planned\)), and [progress bars](#progress_bars) (but not [connectors](#connectors)). They are defined as instances of the {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api} class.
+You can access almost all elements of a **Project chart** chart at once: [tasks](#tasks_\(actual\)) of all types, [baselines](#baselines_\(planned\)), and [progress bars](#progress_bars) (but not [connectors](#connectors)). They are defined as instances of the {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api} class.
 
-The same is true for the **Resource chart**, but makes little difference since it supports only one type of element – the [period](#periods).
+The same is true for the **Resource chart**, but it makes little difference since this chart type supports only type of element is supported – the [period](#periods).
 
 To configure elements, combine the {api:anychart.core.ui.Timeline#elements}elements(){api} method of the timeline with the following methods:
 
@@ -423,8 +419,8 @@ chart.data(treeData);
 
 ## Labels
 
-* [Labels](../../Common_Settings/Labels)
-* [text formatters](../../Common_Settings/Text_Formatters)
+[Labels](../../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../../Common_Settings/Text_Formatters) are available.
+
 * {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}
 * {api:anychart.core.gantt.elements.TimelineElement#labels}labels(){api}: {api:anychart.core.ui.Timeline#elements}elements(){api} + {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
 * три метода **labels()** для all types of [tasks](#tasks_\(actual\)) + для [progress bars](#progress_bars)
