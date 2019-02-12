@@ -419,18 +419,22 @@ chart.data(treeData);
 
 ## Labels
 
-[Labels](../../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../../Common_Settings/Text_Formatters) are available.
+Some elements have [labels](../../Common_Settings/Labels) – special text or image elements, which are defined as instances of the {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api} class.
 
-* {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}
-* {api:anychart.core.gantt.elements.TimelineElement#labels}labels(){api}: {api:anychart.core.ui.Timeline#elements}elements(){api} + {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
-* три метода **labels()** для all [task](#tasks_\(actual\)) types + для [progress bars](#progress_bars)
-* ресурс: все равно, использовать метод элементов / таймлайна или периодов
-* кастомные поля
-* [Project Chart](Project_Chart)
-* [Resource Chart](Resource_Chart)
-* [Project Chart](#project_chart) + [Progress Bars](#progress_bars)
-* [Resource Chart](#resource_chart)
+Labels are supported by the following elements of the [Project](#project_chart) chart:
 
+* [regular tasks](#regular_tasks)
+* [parent tasks](#parent_tasks)
+* [milestones](#milestones)
+* [progress bar](#progress_bars)
+
+Also, labels are supported by the only element type of the [Resource Chart](#resource_chart) – [period](#period).
+
+To **access** labels of a particular element type, call its **labels()** method. Alternatively, you can access labels of [all elements](#all_elements) at once: call the {api:anychart.core.ui.Timeline#elements}elements(){api} of the api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api} class.
+
+To enable or disable labels, pass `true` or `false` either directly to **labels()** or to the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method of labels. To configure them, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}.
+
+You can set the text format of labels with the help of the {api:anychart.core.ui.LabelsFactory#format}format(){api} method combined with either [tokens](../../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions). Read the sections below to learn more.
 
 ### Tokens
 
@@ -438,8 +442,9 @@ Misc:
 
 * {api:anychart.core.ui.LabelsFactory#format}format(){api} 
 * [tokens](../../Common_Settings/Text_Formatters#string_tokens)
+* custom fields
 
-**Project chart** + **progress bars**:
+**Project chart**:
 
 * `{%id}`
 * `{%name}`
@@ -499,8 +504,9 @@ Misc:
 * [formatting functions](../Common_Settings/Text_Formatters#formatting_functions)
 * метод {api:anychart.format.Context#getData}getData(){api}
 * [Tree Data Model](../Working_with_Data/Tree_Data_Model)
+* custom fields
 
-**Project chart** + **progress bars**:
+**Project chart**:
 
 * `id`
 * `name`
