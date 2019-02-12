@@ -426,7 +426,7 @@ Labels are supported by the following elements of the **Project** chart:
 
 Also, labels are supported by the only element of the **Resource** chart – [period](#periods).
 
-To access labels, call the **labels()** method of a particular element type or of [all elements](#all_elements) (elements that cannot have labels are not affected):
+To access labels, call the **labels()** method of a particular element type or of [all elements](#all_elements) (of course, only the elements that can have labels are affected):
 
 ```
 // access labels of regular tasks
