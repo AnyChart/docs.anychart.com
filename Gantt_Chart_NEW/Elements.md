@@ -30,8 +30,6 @@ Classes:
 
 ## Project Chart
 
-(?) This section explains how to configure the elements of a [Project](Project_Chart) chart.
-
 ### Tasks (Actual)
 
 A **task** is the main element of the Project chart. It shows the **actual duration** of a task, while the planned duration is represented by the [baseline](#baselines_\(planned\)).
@@ -231,8 +229,6 @@ connectors.selected().stroke("2 #ef6c00");
 {sample :height 220}GANTT\_NEW\_Elements\_04{sample}
 
 ## Resource Chart
-
-(?) This section explains how to configure the elements of a [Resource](Resource_Chart) chart.
 
 ### Periods
 
