@@ -441,13 +441,13 @@ var labels = chart.getTimeline().elements().labels();
 **To enable or disable** labels, pass `true` or `false` either directly to **labels()** or to the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method of labels.
 
 ```
-// enable labels of periods
-var chart.getTimeline().periods.labels(true);
+// enable labels of regular tasks
+var chart.getTimeline().tasks().labels(true);
 ```
 
 ```
-// enable labels of periods
-chart.getTimeline().periods.labels().enabled(true);
+// enable labels of regular tasks
+chart.getTimeline().tasks().labels().enabled(true);
 ```
 
 **To configure** labels, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}. For example, you can set the text format of labels by using the {api:anychart.core.ui.LabelsFactory#format}format(){api} method, combined with either [tokens](../../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions). Read the sections below to learn more.
