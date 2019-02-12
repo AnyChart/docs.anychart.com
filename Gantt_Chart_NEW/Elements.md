@@ -426,9 +426,9 @@ Labels are supported by the following elements of the [Project](#project_chart) 
 * [regular tasks](#regular_tasks)
 * [parent tasks](#parent_tasks)
 * [milestones](#milestones)
-* [progress bar](#progress_bars)
+* [progress bars](#progress_bars)
 
-Also, labels are supported by the only element type of the [Resource Chart](#resource_chart) – [period](#period).
+Also, labels are supported by the only element type of the [Resource](#resource_chart) chart – [period](#periods).
 
 To **access** labels of a particular element type, call its **labels()** method. Alternatively, you can access labels of [all elements](#all_elements) at once: call the {api:anychart.core.ui.Timeline#elements}elements(){api} of the api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api} class.
 
