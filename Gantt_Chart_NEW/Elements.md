@@ -430,7 +430,7 @@ Labels are supported by the following elements of the **Project** chart:
 
 Also, labels are supported by the only element type of the **Resource** chart – [period](#periods).
 
-To access labels of a particular element type, call its **labels()** method. Alternatively, you can access labels of [all elements](#all_elements) at once: call the {api:anychart.core.ui.Timeline#elements}elements(){api} of the api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api} class.
+To access labels of a particular element type, call its **labels()** method. Alternatively, you can access labels of [all elements](#all_elements) at once: call the {api:anychart.core.ui.Timeline#elements}elements(){api} of the {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api} class.
 
 To enable or disable labels, pass `true` or `false` either directly to **labels()** or to the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method of labels. To configure them, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}.
 
