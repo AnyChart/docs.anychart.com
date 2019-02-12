@@ -426,7 +426,7 @@ Labels are supported by the following elements of the **Project** chart:
 
 Also, labels are supported by the only element of the **Resource** chart – [period](#periods).
 
-To access labels of a particular element type, call its **labels()** method. Alternatively, you can access labels of [all elements](#all_elements) at once: call the {api:anychart.core.ui.Timeline#elements}elements(){api} method of the {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api} class.
+**1. Acessing.** To access labels of a particular element type, call its {api:?entry=labels}labels(){api} method. Alternatively, you can access labels of [all elements](#all_elements) at once: call the {api:anychart.core.ui.Timeline#elements}elements(){api} method of the {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api} class.
 
 ```
 // access labels of regular tasks
@@ -438,7 +438,7 @@ var labels = chart.getTimeline().tasks().labels();
 var labels = chart.getTimeline().elements().labels();
 ```
 
-To enable or disable labels, pass `true` or `false` either directly to **labels()** or to the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method of labels.
+**1. Enabling / Disabling.** To enable or disable labels, pass `true` or `false` either directly to {api:?entry=labels}labels(){api} or to the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method of labels.
 
 ```
 // access labels of periods
@@ -450,7 +450,7 @@ var chart.getTimeline().periods.labels(true);
 chart.getTimeline().periods.labels().enabled(true);
 ```
 
-To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}. For example, you can set the text format of labels by using the {api:anychart.core.ui.LabelsFactory#format}format(){api} method, combined with either [tokens](../../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions). Read the sections below to learn more.
+**1. Configuring.** To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}. For example, you can set the text format of labels by using the {api:anychart.core.ui.LabelsFactory#format}format(){api} method, combined with either [tokens](../../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions). Read the sections below to learn more.
 
 ### Tokens
 
