@@ -441,7 +441,7 @@ var labels = chart.getTimeline().elements().labels();
 **To enable or disable** labels, pass `true` or `false` either directly to **labels()** or to the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method of labels.
 
 ```
-// access labels of periods
+// enable labels of periods
 var chart.getTimeline().periods.labels(true);
 ```
 
