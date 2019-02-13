@@ -434,11 +434,11 @@ var labels = chart.getTimeline().tasks().labels();
 ```
 
 ```
-// access labels of timeline elements
+// access labels of elements
 var labels = chart.getTimeline().elements().labels();
 ```
 
-To enable or disable labels, pass `true` or `false` either directly to **labels()** or to the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method of labels.
+To enable or disable labels, pass `true` or `false` either directly to **labels()** or to the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method of labels:
 
 ```
 // enable labels of regular tasks
@@ -454,13 +454,11 @@ To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}an
 
 ### Tokens
 
-Misc:
+You can adjust the text of labels by combining the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [tokens](../../Common_Settings/Text_Formatters#string_tokens).
 
-* {api:anychart.core.ui.LabelsFactory#format}format(){api} 
-* [tokens](../../Common_Settings/Text_Formatters#string_tokens)
-* custom fields
+Please keep in mind that in addition to default tokens you can always add a custom field to your data and use a custom token corresponding to it.
 
-**Project** chart:
+For the **Project** chart, the following tokens are available:
 
 * `{%id}`
 * `{%name}`
@@ -470,13 +468,7 @@ Misc:
 * `{%baselineEnd}`
 * `{%progress}`
 
-**Resource** chart:
-
-* `{%id}`
-* `{%name}`
-* `{%start}`
-* `{%end}`
-
+In the sample below, there is a Project chart with labels of regular tasks, parent tasks, and milestones configured – they share font settings but have different text format:
 
 ```
 var timeline = chart.getTimeline();
@@ -496,6 +488,15 @@ timeline.milestones().labels().format(
     "{%custom_field} {%actualStart}{dateTimeFormat:dd MMM}"
 );
 ```
+
+**Resource** chart supports these tokens:
+
+* `{%id}`
+* `{%name}`
+* `{%start}`
+* `{%end}`
+
+...
 
 {sample :height 240}GANTT\_NEW\_Elements\_09{sample}
 
