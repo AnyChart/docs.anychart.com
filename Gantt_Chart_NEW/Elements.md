@@ -450,7 +450,10 @@ var chart.getTimeline().tasks().labels(true);
 chart.getTimeline().tasks().labels().enabled(true);
 ```
 
-To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}. For example, you can adjust font ({api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api}, {api:anychart.core.ui.LabelsFactory#fontFamily}fontFamily(){api}, {api:anychart.core.ui.LabelsFactory#fontSize}fontSize(){api}, {api:anychart.core.ui.LabelsFactory#fontStyle}fontStyle(){api}, {api:anychart.core.ui.LabelsFactory#fontWeight}fontWeight(){api}, etc.) or set the text format by combining the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with either [tokens](../../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions). Read the sections below to learn more.
+To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}. For example, you can adjust the font by using {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api}, {api:anychart.core.ui.LabelsFactory#fontSize}fontSize(){api}, {api:anychart.core.ui.LabelsFactory#fontWeight}fontWeight(){api}, etc.
+
+
+To set the text format, combine the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with either [tokens](../../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions). Read the sections below to learn more.
 
 ### Tokens
 
