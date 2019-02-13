@@ -468,7 +468,7 @@ For the **Project** chart, the following tokens are available:
 * `{%baselineEnd}`
 * `{%progress}`
 
-In the sample below, labels of different elements have the same font settings but different text {api:anychart.core.ui.LabelsFactory#format}format(){api}, which is configured with the help of tokens including a custom one:
+In the sample below, labels of different elements have the same font settings but different text {api:anychart.core.ui.LabelsFactory#format}format(){api}, which is configured with the help of tokens, including a custom one:
 
 ```
 var timeline = chart.getTimeline();
