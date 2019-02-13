@@ -568,14 +568,14 @@ timeline.milestones().labels().format(function() {
 
 {sample :height 240}GANTT\_NEW\_Elements\_11{sample}
 
-For **Resource** chart, the following fields are available:
+For **Resource** chart, these fields are available in formatting functions:
 
 * `id`
 * `name`
 * `start`
 * `end`
 
-Here...
+Here a formatting function is used to calculate and display the duration of each period as well as the value of a custom field:
 
 ```
 // configure labels of periods
