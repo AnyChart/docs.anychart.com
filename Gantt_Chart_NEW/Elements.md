@@ -454,7 +454,7 @@ To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}an
 
 ### Tokens
 
-To adjust the text of labels, combine the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [tokens](../../Common_Settings/Text_Formatters#string_tokens).
+To format the text of labels, combine the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [tokens](../../Common_Settings/Text_Formatters#string_tokens).
 
 Please keep in mind that in addition to default tokens you can always use a custom token corresponding to a custom field in your data.
 
@@ -468,7 +468,7 @@ For the **Project** chart, the following tokens are available:
 * `{%baselineEnd}`
 * `{%progress}`
 
-In the sample below, labels of different elements have the same font settings but different text {api:anychart.core.ui.LabelsFactory#format}format(){api}, which is configured with the help of tokens, including a custom one:
+In the sample below, labels of different elements have the same font settings but different text format, which is configured with the help of tokens, including a custom one:
 
 ```
 var timeline = chart.getTimeline();
@@ -517,11 +517,11 @@ periodLabels.format(
 
 Misc:
 
-* {api:anychart.core.ui.LabelsFactory#format}format(){api} 
-* [formatting functions](../Common_Settings/Text_Formatters#formatting_functions)
-* метод {api:anychart.format.Context#getData}getData(){api}
-* [Tree Data Model](../Working_with_Data/Tree_Data_Model)
-* custom fields
+You can configure the text of labels by combining the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [formatting functions](../Common_Settings/Text_Formatters#formatting_functions).
+
+Please keep in mind: the {api:anychart.format.Context#getData}getData(){api} method allows you to refer to a custom field in your data. Also, in functions you can use methods of the [tree data model](../Working_with_Data/Tree_Data_Model) to perform operations on data.
+
+Here are fields supported by the **Project** chart:
 
 **Project** chart:
 
@@ -533,13 +533,7 @@ Misc:
 * `baselineEnd`
 * `progress`
 
-**Resource** chart:
-
-* `id`
-* `name`
-* `start`
-* `end`
-
+In the sample below, labels of different elements have the same font weight but different text format, which is configured with the help of formatting functions. The label text of each milestone includes the name of another task that is related to it – the `id` values of these related tasks are linked in a custom data field.
 
 ```
 var timeline = chart.getTimeline();
@@ -573,6 +567,15 @@ timeline.milestones().labels().format(function() {
 ```
 
 {sample :height 240}GANTT\_NEW\_Elements\_11{sample}
+
+For **Resource** chart, the following fields are available:
+
+* `id`
+* `name`
+* `start`
+* `end`
+
+Here...
 
 ```
 // configure labels of periods
