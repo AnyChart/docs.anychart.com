@@ -529,7 +529,9 @@ Here are fields supported by the **Project** chart:
 * `baselineEnd`
 * `progress`
 
-In the sample below, labels of different elements have the same font weight but different text format, which is configured with the help of formatting functions. The label text of each milestone includes the name of another task that is related to it – the `id` values of these related tasks are linked in a custom data field.
+In the sample below, labels of different elements have the same font weight but different text format, which is configured with the help of formatting functions.
+
+The label text of each milestone includes the name of another task – its `id` value is linked in a custom data field.
 
 ```
 var timeline = chart.getTimeline();
