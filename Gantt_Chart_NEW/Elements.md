@@ -429,7 +429,7 @@ Also, labels are supported by the only element of the **Resource** chart – [pe
 To access labels, call the **labels()** method of a particular element type or of [all elements](#all_elements) (of course, only the elements that can have labels are affected):
 
 ```
-// access labels of regular tasks
+// access labels of tasks
 var labels = chart.getTimeline().tasks().labels();
 ```
 
@@ -441,12 +441,12 @@ var labels = chart.getTimeline().elements().labels();
 To enable or disable labels, pass `true` or `false` either directly to **labels()** or to the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method of labels:
 
 ```
-// enable labels of regular tasks
+// enable labels of tasks
 var chart.getTimeline().tasks().labels(true);
 ```
 
 ```
-// enable labels of regular tasks
+// enable labels of tasks
 chart.getTimeline().tasks().labels().enabled(true);
 ```
 
@@ -531,7 +531,7 @@ Here are fields supported by the **Project** chart:
 
 In the sample below, labels of different elements have the same font weight but different text format, which is configured with the help of formatting functions.
 
-The label text of each milestone includes the name of another task – its `id` value is linked in a custom data field.
+The label text of regular tasks depends on their progress. The label of the parent task displays its duration. Finally, labels of milestones refer to other tasks, which are linked in a custom data field.
 
 ```
 var timeline = chart.getTimeline();
