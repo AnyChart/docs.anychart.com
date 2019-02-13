@@ -489,7 +489,7 @@ timeline.milestones().labels().format(
 );
 ```
 
-**Resource** chart supports these tokens:
+The **Resource** chart supports these tokens:
 
 * `{%id}`
 * `{%name}`
