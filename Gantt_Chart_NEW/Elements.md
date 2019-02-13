@@ -468,7 +468,7 @@ For the **Project** chart, the following tokens are available:
 * `{%baselineEnd}`
 * `{%progress}`
 
-In the sample below, labels of different elements have the same font settings but different text format, which is configured with the help of tokens including a custom one:
+In the sample below, labels of different elements on a Project chart have the same font settings but different text format, which is configured with the help of tokens including a custom one:
 
 ```
 var timeline = chart.getTimeline();
@@ -496,7 +496,7 @@ timeline.milestones().labels().format(
 * `{%start}`
 * `{%end}`
 
-...
+In the following sample, tokens, including a custom one, are used to format the text of period labels. Also, text font is adjusted.
 
 {sample :height 240}GANTT\_NEW\_Elements\_09{sample}
 
