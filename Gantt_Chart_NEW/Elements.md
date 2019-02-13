@@ -450,14 +450,11 @@ var chart.getTimeline().tasks().labels(true);
 chart.getTimeline().tasks().labels().enabled(true);
 ```
 
-To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}. For example, you can adjust the font by using {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api}, {api:anychart.core.ui.LabelsFactory#fontSize}fontSize(){api}, {api:anychart.core.ui.LabelsFactory#fontWeight}fontWeight(){api}, etc.
-
-
-To set the text format, combine the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with either [tokens](../../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions). Read the sections below to learn more.
+To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}. For example, you can set the text format by combining the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with either [tokens](../../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions). Read the sections below to learn more.
 
 ### Tokens
 
-You can adjust the text of labels by combining the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [tokens](../../Common_Settings/Text_Formatters#string_tokens).
+To adjust the text of labels, combine the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [tokens](../../Common_Settings/Text_Formatters#string_tokens).
 
 Please keep in mind that in addition to default tokens you can always use a custom token corresponding to a custom field in your data.
 
@@ -471,7 +468,7 @@ For the **Project** chart, the following tokens are available:
 * `{%baselineEnd}`
 * `{%progress}`
 
-In the sample below, labels of different elements have the same font settings but different text format, which is configured with the help of tokens including a custom one:
+In the sample below, labels of different elements have the same {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api} and {api:anychart.core.ui.LabelsFactory#fontWeight}fontWeight(){api} but different text {api:anychart.core.ui.LabelsFactory#format}format(){api}, which is configured with the help of tokens including a custom one:
 
 ```
 var timeline = chart.getTimeline();
