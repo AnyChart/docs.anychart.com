@@ -468,7 +468,7 @@ For the **Project** chart, the following tokens are available:
 * `{%baselineEnd}`
 * `{%progress}`
 
-In the sample below, there is a Project chart with labels of regular tasks, parent tasks, and milestones configured – they share font settings but have different text format:
+In the sample below, labels of different elements have the same font settings but different text format, which is configured with the help of tokens:
 
 ```
 var timeline = chart.getTimeline();
