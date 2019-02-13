@@ -456,7 +456,7 @@ To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}an
 
 You can adjust the text of labels by combining the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [tokens](../../Common_Settings/Text_Formatters#string_tokens).
 
-Please keep in mind that in addition to default tokens you can always add a custom field to your data and use a custom token corresponding to it.
+Please keep in mind that in addition to default tokens you can always use a custom token corresponding to a custom field in your data.
 
 For the **Project** chart, the following tokens are available:
 
