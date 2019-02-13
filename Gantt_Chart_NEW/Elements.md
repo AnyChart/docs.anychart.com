@@ -489,6 +489,8 @@ timeline.milestones().labels().format(
 );
 ```
 
+{sample :height 240}GANTT\_NEW\_Elements\_09{sample}
+
 The **Resource** chart supports these tokens:
 
 * `{%id}`
@@ -497,8 +499,6 @@ The **Resource** chart supports these tokens:
 * `{%end}`
 
 In the following sample, tokens, including a custom one, are used to format the text of period labels. Also, text font is adjusted.
-
-{sample :height 240}GANTT\_NEW\_Elements\_09{sample}
 
 ```
 // configure labels of periods
