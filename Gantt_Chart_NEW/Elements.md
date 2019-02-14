@@ -5,7 +5,7 @@
 
 This article explains how to configure elements that are shown on the [timeline](Timeline):
 
-* all elements of one type (types are listed in the [Project Chart](#project_chart) and [Resource Chart](#resource_chart) sections)
+* all elements of one type – see [Project Chart](#project_chart) and [Resource Chart](#resource_chart)
 * [all elements at once](#all_elements)
 * [individual elements](#individual_elements)
 
