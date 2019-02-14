@@ -7,7 +7,7 @@ Misc:
 
 * elements are shown on the [Timeline](Timeline)
 * the [Project](Project_Chart) and [Resource](Resource_Chart) charts: different element types are available, see the [Project Chart](#project_chart) and [Resource Chart](#resource_chart) sections
-* all elements of one type: [tasks](#tasks_\(actual\)), [baselines](#baselines_\(planned\)), [progress bars](#progress_bars), [connectors](#connectors), [periods](#periods_and_resources)
+* all elements of one type: [tasks](#tasks_\(actual\)), [baselines](#baselines_\(planned\)), [progress bars](#progress_bars), [connectors](#connectors), [periods](#periods)
 * [all elements](#all_elements) at once
 * [individual elements](#individual_elements)
 * [markers](#markers)
@@ -262,7 +262,7 @@ periods.selected().stroke("#dd2c00");
 
 You can access almost all elements of a **Project** chart at once: [tasks](#tasks_\(actual\)) of all types, [baselines](#baselines_\(planned\)), and [progress bars](#progress_bars) (but not [connectors](#connectors)). They are defined as instances of the {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api} class.
 
-The same is true for the **Resource** chart, but it makes little difference since only one element type is supported – the [period](#periods_and_resources).
+The same is true for the **Resource** chart, but it makes little difference since only one element type is supported – the [period](#periods).
 
 To configure elements, combine the {api:anychart.core.ui.Timeline#elements}elements(){api} method of the timeline with the following methods:
 
@@ -372,7 +372,7 @@ chart.data(treeData);
 
 {sample :height 220}GANTT\_NEW\_Elements\_07{sample}
 
-To adjust an individual [period](#periods_and_resources) of a **Resource** chart, you need to add extra data fields to the object specifying this period (?). Use fields corresponding to the methods of periods, for example `fill` and `stroke`:
+To adjust an individual [period](#periods) of a **Resource** chart, you need to add extra data fields to the object specifying this period (?). Use fields corresponding to the methods of periods, for example `fill` and `stroke`:
 
 ```
 // create data
@@ -424,7 +424,7 @@ Labels are supported by the following elements of the **Project** chart:
 * [milestones](#milestones)
 * [progress bars](#progress_bars)
 
-Also, labels are supported by the only element of the **Resource** chart – [period](#periods_and_resources).
+Also, labels are supported by the only element of the **Resource** chart – [period](#periods).
 
 To access labels, call the **labels()** method of a particular element type or of [all elements](#all_elements) (of course, only the elements that can have labels are affected):
 
@@ -615,7 +615,7 @@ To access markers, combine the {api:anychart.core.ui.Timeline#markers}markers(){
 
 Also, you can configure individual markers with the help of extra data fields corresponding to these methods.
 
-It is possible to add markers to any task of a **Project** chart: a [regular task](#regular_taks), a [parent task](#parent_tasks), or a [milestone](#milestones). The following sample shows how to do it and how to apply both individual and general settings:
+It is possible to add markers to any task of a **Project** chart: a [regular task](Project_Chart#regular_tasks), a [parent task](Project_Chart#parent_tasks), or a [milestone](Project_Chart#milestones). The following sample shows how to do it and how to apply both individual and general settings:
 
 ```
 // create data
@@ -689,7 +689,7 @@ chart.getTimeline().markers().stroke("black");
 
 {sample :height 220}GANTT\_NEW\_Elements\_13{sample}
 
-In the case of a **Resource** chart, markers are added to [resources](#periods_and_resources), like in the sample below. It also shows demonstrates both individual and general settings of markers.
+In the case of a **Resource** chart, markers are added to [resources](Resource_Chart#periods_and_resources), like in the sample below. It also shows demonstrates both individual and general settings of markers.
 
 ```
 // create data
