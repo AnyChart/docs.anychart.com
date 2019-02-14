@@ -9,9 +9,9 @@ This article explains how to configure elements that are shown on the [timeline]
 * [all elements at once](#all_elements)
 * [individual elements](#individual_elements)
 
-The first step before configuring any element calling {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} to access the timeline.
+To access the timeline, call the {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} method.
 
-Here is the full list of elements and methods that allow accessing them:
+To access elements, use the following methods:
 
 * [regular tasks](#regular_tasks) – {api:anychart.core.ui.Timeline#tasks}tasks(){api}
 * [parent tasks](#parent_tasks) – {api:anychart.core.ui.Timeline#groupingTask}groupingTask(){api}
