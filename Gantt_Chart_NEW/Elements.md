@@ -611,11 +611,17 @@ markers: [
 ],
 ```
 
-To access markers, combine the {api:anychart.core.ui.Timeline#markers}markers(){api} method with methods {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api}.
+To configure markers, combine the {api:anychart.core.ui.Timeline#markers}markers(){api} method with methods {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api}.
+
+```
+// configure markers
+chart.getTimeline().markers().fill("#dd2c00");
+chart.getTimeline().markers().stroke("black");
+```
 
 Also, you can configure individual markers with the help of extra data fields corresponding to these methods.
 
-It is possible to add markers to any [task](Project_Chart#tasks_\(actual\)) of a **Project** chart: a regular task, a parent task, or a milestone. The following sample shows how to do it and how to apply both individual and general settings:
+It is possible to add markers to any [task](Project_Chart#tasks_\(actual\)) of a **Project** chart – a regular task, a parent task, or a milestone:
 
 ```
 // create data
@@ -689,7 +695,7 @@ chart.getTimeline().markers().stroke("black");
 
 {sample :height 220}GANTT\_NEW\_Elements\_13{sample}
 
-In the case of a **Resource** chart, markers are added to [resources](Resource_Chart#periods_and_resources), like in the sample below. It also demonstrates how individual and general settings are applied to markers.
+In the case of a **Resource** chart, markers are added to [resources](Resource_Chart#periods_and_resources):
 
 ```
 // create data
