@@ -24,7 +24,9 @@ Elements are defined as instances of the following classes:
 * [periods](#periods) – {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api}
 * [all elements](#all_elements) – {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
 
-To access elements, first call {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} to get the timeline, and then use the following methods:
+Accessing elements requires combining {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with the following methods:
+
+Accessing elements requires getting the timeline first – combine the {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with the following methods:
 
 * [regular tasks](#regular_tasks) – {api:anychart.core.ui.Timeline#tasks}tasks(){api}
 * [parent tasks](#parent_tasks) – {api:anychart.core.ui.Timeline#groupingTask}groupingTask(){api}
