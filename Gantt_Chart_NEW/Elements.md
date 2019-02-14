@@ -611,17 +611,31 @@ markers: [
 ],
 ```
 
-To configure markers, combine the {api:anychart.core.ui.Timeline#markers}markers(){api} method with methods {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api}, for example {api:anychart.core.ui.MarkersFactory#fill}fill(){api} and {api:anychart.core.ui.MarkersFactory#stroke}stroke(){api}:
+To configure markers, combine the {api:anychart.core.ui.Timeline#markers}markers(){api} method with methods {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api}, for example:
+
+* {api:anychart.core.ui.MarkersFactory#fill}fill(){api}
+* {api:anychart.core.ui.MarkersFactory#stroke}stroke(){api}
 
 ```
-// configure markers
 chart.getTimeline().markers().fill("#dd2c00");
 chart.getTimeline().markers().stroke("black");
 ```
 
-Also, you can configure individual markers with the help of extra data fields corresponding to the available methods.
+Also, you can configure individual markers with the help of extra data fields corresponding to the available methods:
+
+```
+markers: [
+  {value: "2018-01-29", type: "cross"},
+  {value: "2018-02-20", type: "circle"},
+  {value: "2018-02-25", type: "diamond", fill: "#ffa000"},
+  {value: "2018-03-20", type: "diagonal-cross"},
+  {value: "2018-03-26", type: "diagonal-cross"}
+]
+```
 
 It is possible to add markers to any [task](Project_Chart#tasks_\(actual\)) of a **Project** chart – a regular task, a parent task, or a milestone:
+
+{sample :height 220}GANTT\_NEW\_Elements\_13{sample}
 
 ```
 // create data
@@ -693,9 +707,9 @@ chart.getTimeline().markers().fill("#dd2c00");
 chart.getTimeline().markers().stroke("black");
 ```
 
-{sample :height 220}GANTT\_NEW\_Elements\_13{sample}
-
 In the case of a **Resource** chart, markers are added to [resources](Resource_Chart#periods_and_resources):
+
+{sample :height 200}GANTT\_NEW\_Elements\_14{sample}
 
 ```
 // create data
@@ -756,5 +770,3 @@ chart.data(treeData);
 chart.getTimeline().markers().fill("#dd2c00");
 chart.getTimeline().markers().stroke("black");
 ```
-
-{sample :height 200}GANTT\_NEW\_Elements\_14{sample}
