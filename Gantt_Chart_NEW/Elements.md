@@ -9,7 +9,7 @@ This article explains how to configure elements that are shown on the [timeline]
 * [all elements at once](#all_elements)
 * [individual elements](#individual_elements)
 
-Elements are defined as instances of the classes listed below, along with methods used to access them:
+Below, you can find the full list of elements, their classes, and methods that allow accessing them:
 
 * [regular tasks](#regular_tasks) – {api:anychart.core.ui.Timeline#tasks}tasks(){api}, {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
 * [parent tasks](#parent_tasks) – {api:anychart.core.ui.Timeline#groupingTask}groupingTask(){api}, {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api}
