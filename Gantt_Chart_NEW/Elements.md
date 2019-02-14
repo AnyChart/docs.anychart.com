@@ -9,7 +9,7 @@ This article explains how to configure elements that are shown on the [timeline]
 * [all elements at once](#all_elements)
 * [individual elements](#individual_elements)
 
-The first step before configuring any element is accessing timeline with the help of the {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} method.
+The first step before configuring any element is accessing the timeline with the help of the {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} method.
 
 Here is the full list of elements and methods that allow accessing them:
 
