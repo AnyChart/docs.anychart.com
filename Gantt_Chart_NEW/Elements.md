@@ -22,10 +22,7 @@ To configure all elements or all elements of one type, you should access the tim
 * [periods](#periods) – {api:anychart.core.ui.Timeline#periods}periods(){api}, {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api}
 * [all elements](#all_elements) – {api:anychart.core.ui.Timeline#elements}elements(){api}, {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
 
-Also, you can add [markers](#markers).
-
-* (?) [appearance settings](../Appearance_Settings)
-* (?) [states](../Common_Settings/Interactivity/States): **normal** and **selected**
+Also, the [Labels](#labels) and [Markers](#markers) sections explain how to configure labels and markers.
 
 ## Project Chart
 
