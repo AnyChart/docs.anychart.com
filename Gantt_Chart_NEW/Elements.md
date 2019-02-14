@@ -619,7 +619,7 @@ chart.getTimeline().markers().fill("#dd2c00");
 chart.getTimeline().markers().stroke("black");
 ```
 
-Also, you can configure individual markers with the help of extra data fields corresponding to these methods.
+Also, you can configure individual markers with the help of extra data fields corresponding to the available methods.
 
 It is possible to add markers to any [task](Project_Chart#tasks_\(actual\)) of a **Project** chart – a regular task, a parent task, or a milestone:
 
