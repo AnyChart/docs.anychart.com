@@ -11,7 +11,7 @@ You can configure:
 * [all elements at once](#all_elements)
 * [individual elements](#individual_elements)
 
-Also, see the [Labels](#labels) and [Labels](#labels) sections to learn how to adjust labels and add markers.
+Also, see the [Labels](#labels) and [Markers](#markers) sections to learn how to adjust labels and add markers.
 
 Elements are defined as instances of the following classes:
 
