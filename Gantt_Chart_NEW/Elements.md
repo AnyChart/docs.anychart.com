@@ -20,8 +20,6 @@ Elements are defined as instances of the classes listed below, along with method
 * [periods](#periods) – {api:anychart.core.ui.Timeline#periods}periods(){api}, {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api}
 * [all elements](#all_elements) – {api:anychart.core.ui.Timeline#elements}elements(){api}, {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
 
-Also, the [Labels](#labels) and [Markers](#markers) sections explain how to configure labels and markers.
-
 **Note:** To access the timeline, call the {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} method.
 
 ## Project Chart
