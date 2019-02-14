@@ -22,14 +22,14 @@ Here is the full list of elements and their classes:
 
 Here are the methods allowing to access them:
 
-* [regular tasks](#regular_tasks){api:anychart.core.ui.Timeline#tasks}tasks(){api}
-* [parent tasks](#parent_tasks) {api:anychart.core.ui.Timeline#groupingTask}groupingTask(){api}
-* [milestones](#milestones) {api:anychart.core.ui.Timeline#milestones}milestones(){api}
-* [baselines](#baselines_\(planned\)) {api:anychart.core.ui.Timeline#baselines}baselines(){api}
-* [progress bars](#progress_bars) {api:?entry=progress}progress(){api}
-* [connectors](#connectors) {api:anychart.core.ui.Timeline#connectors}connectors(){api}
-* [periods](#periods) {api:anychart.core.ui.Timeline#periods}periods(){api}
-* [all elements](#all_elements) {api:anychart.core.ui.Timeline#elements}elements(){api}
+* [regular tasks](#regular_tasks) – {api:anychart.core.ui.Timeline#tasks}tasks(){api}
+* [parent tasks](#parent_tasks) – {api:anychart.core.ui.Timeline#groupingTask}groupingTask(){api}
+* [milestones](#milestones) – {api:anychart.core.ui.Timeline#milestones}milestones(){api}
+* [baselines](#baselines_\(planned\)) – {api:anychart.core.ui.Timeline#baselines}baselines(){api}
+* [progress bars](#progress_bars) – {api:?entry=progress}progress(){api}
+* [connectors](#connectors) – {api:anychart.core.ui.Timeline#connectors}connectors(){api}
+* [periods](#periods) – {api:anychart.core.ui.Timeline#periods}periods(){api}
+* [all elements](#all_elements) – {api:anychart.core.ui.Timeline#elements}elements(){api}
 
 **Note:** To access the timeline, call the {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} method.
 
