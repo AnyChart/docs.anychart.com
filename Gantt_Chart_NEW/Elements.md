@@ -11,9 +11,9 @@ This article explains how to configure elements that are shown on the [timeline]
 
 Below, you can find the full list of elements, their classes, and methods that allow accessing them:
 
-* [regular tasks](#regular_tasks) – {api:anychart.core.ui.Timeline#tasks}tasks(){api}, {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
-* [parent tasks](#parent_tasks) – {api:anychart.core.ui.Timeline#groupingTask}groupingTask(){api}, {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api}
-* [milestones](#milestones) – {api:anychart.core.ui.Timeline#milestones}milestones(){api}, {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api}
+* [regular tasks](#regular_tasks) – {api:anychart.core.ui.Timeline#tasks}tasks(){api} / {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
+* [parent tasks](#parent_tasks) – {api:anychart.core.ui.Timeline#groupingTask}groupingTask(){api} / {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api}
+* [milestones](#milestones) – {api:anychart.core.ui.Timeline#milestones}milestones(){api} / {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api}
 * [baselines](#baselines_\(planned\)) – {api:anychart.core.ui.Timeline#baselines}baselines(){api}, {api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api}
 * [progress bars](#progress_bars) – {api:?entry=progress}progress(){api}, {api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api}
 * [connectors](#connectors) – {api:anychart.core.ui.Timeline#connectors}connectors(){api}, {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api}
