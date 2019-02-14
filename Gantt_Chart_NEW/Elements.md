@@ -689,7 +689,7 @@ chart.getTimeline().markers().stroke("black");
 
 {sample :height 220}GANTT\_NEW\_Elements\_13{sample}
 
-In the case of a **Resource** chart, markers are added to [resources](Resource_Chart#periods_and_resources), like in the sample below. It also shows demonstrates both individual and general settings of markers.
+In the case of a **Resource** chart, markers are added to [resources](Resource_Chart#periods_and_resources), like in the sample below. It also demonstrates both individual and general settings of markers.
 
 ```
 // create data
