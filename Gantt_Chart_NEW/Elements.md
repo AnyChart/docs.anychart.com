@@ -15,7 +15,7 @@ To configure all elements or all elements of one type, you should access the tim
 
 * [regular tasks](#regular_tasks) – method: {api:anychart.core.ui.Timeline#tasks}tasks(){api}, class: {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
 * [parent tasks](#parent_tasks) – method: {api:anychart.core.ui.Timeline#groupingTask}groupingTask(){api}, class: {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api}
-* [milestones](#milestones) – method: {api:anychart.core.ui.Timeline#}(){api}, class: {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api}
+* [milestones](#milestones) – method: {api:anychart.core.ui.Timeline#milestones}milestones(){api}, class: {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api}
 * [baselines](#baselines_\(planned\)) – method: {api:anychart.core.ui.Timeline#baselines}baselines(){api}, class: {api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api}
 * [progress bars](#progress_bars) – method: {api:?entry=progress#}progress(){api}, class:{api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api}
 * [connectors](#connectors) – method: {api:anychart.core.ui.Timeline#connectors}connectors(){api}, class: {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api}
