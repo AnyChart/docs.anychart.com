@@ -13,14 +13,14 @@ Individual elements are configured with the help of special data fields.
 
 To configure all elements or all elements of one type, you should access the timeline by calling {api:anychart.charts.Gantt#getTimeline}getTimeline(){api}. Then access the elements by using the methods that are listed below, along with their classes:
 
-* [regular tasks](#regular_tasks) – {api:anychart.core.ui.Timeline#tasks}tasks(){api}, {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
-* [parent tasks](#parent_tasks) – {api:anychart.core.ui.Timeline#groupingTask}groupingTask(){api}{api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api}
-* [milestones](#milestones) – {api:anychart.core.ui.Timeline#}(){api}{api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api}
-* [baselines](#baselines_\(planned\)) – {api:anychart.core.ui.Timeline#baselines}baselines(){api}{api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api}
-* [progress bars](#progress_bars) – {api:?entry=progress#}progress(){api}{api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api}
-* [connectors](#connectors) – {api:anychart.core.ui.Timeline#connectors}connectors(){api}{api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api}
-* [periods](#periods) – {api:anychart.core.ui.Timeline#periods}periods(){api}{api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api}
-* [all elements](#all_elements) – {api:anychart.core.ui.Timeline#elements}elements(){api}{api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
+* [regular tasks](#regular_tasks) – method: {api:anychart.core.ui.Timeline#tasks}tasks(){api}, class: {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
+* [parent tasks](#parent_tasks) – method: {api:anychart.core.ui.Timeline#groupingTask}groupingTask(){api}, class: {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api}
+* [milestones](#milestones) – method: {api:anychart.core.ui.Timeline#}(){api}, class: {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api}
+* [baselines](#baselines_\(planned\)) – method: {api:anychart.core.ui.Timeline#baselines}baselines(){api}, class: {api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api}
+* [progress bars](#progress_bars) – method: {api:?entry=progress#}progress(){api}, class:{api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api}
+* [connectors](#connectors) – method: {api:anychart.core.ui.Timeline#connectors}connectors(){api}, class: {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api}
+* [periods](#periods) – method: {api:anychart.core.ui.Timeline#periods}periods(){api}, class: {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api}
+* [all elements](#all_elements) – method: {api:anychart.core.ui.Timeline#elements}elements(){api}, class: {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
 
 Also, you can add [markers](#markers).
 
