@@ -519,7 +519,7 @@ You can configure the text of labels by combining the {api:anychart.core.ui.Labe
 
 Please keep in mind: the {api:anychart.format.Context#getData}getData(){api} method allows you to refer to a custom field in your data. (?) Also, in formatting functions you can use methods of the [tree data model](../Working_with_Data/Tree_Data_Model) to perform operations on data.
 
-Here are the fields supported by the **Project** chart:
+For the **Project** chart, the following default fields are available:
 
 * `id`
 * `name`
@@ -566,14 +566,14 @@ timeline.milestones().labels().format(function() {
 
 {sample :height 240}GANTT\_NEW\_Elements\_11{sample}
 
-For the **Resource** chart, the following fields are available in formatting functions:
+Here are the fields supported by the **Resource** chart:
 
 * `id`
 * `name`
 * `start`
 * `end`
 
-In this sample, a formatting function is used to calculate and display the duration of each period as well as the value of a custom field:
+In this sample a formatting function is used to calculate and display the duration of each period as well as the value of a custom field:
 
 ```
 // configure labels of periods
