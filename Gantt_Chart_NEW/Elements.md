@@ -260,9 +260,9 @@ periods.selected().stroke("#dd2c00");
 
 ## All Elements
 
-You can access almost all elements of a **Project** chart at once: [tasks](#tasks_\(actual\)) of all types, [baselines](#baselines_\(planned\)), and [progress bars](#progress_bars) (but not [connectors](#connectors)). They are defined as instances of the {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api} class.
+You can access almost all elements of a **Project chart** at once: [tasks](#tasks_\(actual\)) of all types, [baselines](#baselines_\(planned\)), and [progress bars](#progress_bars) (but not [connectors](#connectors)). They are defined as instances of the {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api} class.
 
-The same is true for the **Resource** chart, but it makes little difference since only one element type is supported – the [period](#periods).
+The same is true for the **Resource chart**, but it makes little difference since only one element type is supported – the [period](#periods).
 
 To configure elements, combine the {api:anychart.core.ui.Timeline#elements}elements(){api} method of the timeline with the following methods:
 
@@ -288,7 +288,7 @@ elements.selected().stroke("#dd2c00");
 
 ## Individual Elements
 
-To adjust individual elements of a **Project** chart, use the following data fields:
+To adjust individual elements of a **Project chart**, use the following data fields:
 
 * `"actual"` to configure all [task](#tasks_\(actual\)) types
 * `"baseline"` to configure [baselines](#baselines_\(planned\))
@@ -372,7 +372,7 @@ chart.data(treeData);
 
 {sample :height 220}GANTT\_NEW\_Elements\_07{sample}
 
-To adjust an individual [period](#periods) of a **Resource** chart, you need to add extra data fields to the object specifying this period (?). Use fields corresponding to the methods of periods, for example `fill` and `stroke`:
+To adjust an individual [period](#periods) of a **Resource chart**, you need to add extra data fields to the object specifying this period (?). Use fields corresponding to the methods of periods, for example `fill` and `stroke`:
 
 ```
 // create data
@@ -417,14 +417,14 @@ chart.data(treeData);
 
 Some elements have [labels](../../Common_Settings/Labels) – text or image components, which are defined as instances of the {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api} class.
 
-Labels are supported by the following elements of the **Project** chart:
+Labels are supported by the following elements of the **Project chart**:
 
 * [regular tasks](#regular_tasks)
 * [parent tasks](#parent_tasks)
 * [milestones](#milestones)
 * [progress bars](#progress_bars)
 
-Also, labels are supported by the only element of the **Resource** chart – [period](#periods).
+Also, labels are supported by the only element of the **Resource chart** – [period](#periods).
 
 To access labels, call the **labels()** method of a particular element type or of [all elements](#all_elements) (of course, only the elements that can have labels are affected):
 
@@ -458,7 +458,7 @@ To format the text of labels, combine the {api:anychart.core.ui.LabelsFactory#fo
 
 Please keep in mind that in addition to default tokens you can always use a custom token corresponding to a custom field in your data.
 
-For the **Project** chart, the following tokens are available:
+For the **Project chart**, the following tokens are available:
 
 * `{%id}`
 * `{%name}`
@@ -491,7 +491,7 @@ timeline.milestones().labels().format(
 
 {sample :height 240}GANTT\_NEW\_Elements\_09{sample}
 
-The **Resource** chart supports these tokens:
+The **Resource chart** supports these tokens:
 
 * `{%id}`
 * `{%name}`
@@ -519,7 +519,7 @@ You can configure the text of labels by combining the {api:anychart.core.ui.Labe
 
 In these functions, a number of default fields is available, and the {api:anychart.format.Context#getData}getData(){api} method allows you to refer to a custom field in your data. (?) Also, you can use methods of the [tree data model](../Working_with_Data/Tree_Data_Model) to perform operations on data.
 
-For the **Project** chart, the following fields are available in formatting functions:
+For the **Project chart**, the following fields are available in formatting functions:
 
 * `id`
 * `name`
@@ -566,7 +566,7 @@ timeline.milestones().labels().format(function() {
 
 {sample :height 240}GANTT\_NEW\_Elements\_11{sample}
 
-Here are the fields supported by the **Resource** chart:
+Here are the fields supported by the **Resource chart**:
 
 * `id`
 * `name`
@@ -635,7 +635,7 @@ markers: [
 ]
 ```
 
-It is possible to add markers to any [task](Project_Chart#tasks_\(actual\)) of a **Project** chart – a regular task, a parent task, or a milestone:
+It is possible to add markers to any [task](Project_Chart#tasks_\(actual\)) of a **Project chart** – a regular task, a parent task, or a milestone:
 
 {sample :height 220}GANTT\_NEW\_Elements\_13{sample}
 
@@ -709,7 +709,7 @@ chart.getTimeline().markers().fill("#dd2c00");
 chart.getTimeline().markers().stroke("black");
 ```
 
-In the case of the **Resource** chart, markers are added to [resources](Resource_Chart#periods_and_resources):
+In the case of the **Resource chart**, markers are added to [resources](Resource_Chart#periods_and_resources):
 
 {sample :height 200}GANTT\_NEW\_Elements\_14{sample}
 
