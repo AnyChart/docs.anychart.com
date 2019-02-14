@@ -597,7 +597,7 @@ periodLabels.format(function() {
 
 ## Markers
 
-Like [milestones](#milestones), **markers** represent events. You can display multiple markers in one row – on a task or anywhere on the timeline depending on the dates you specify.
+Like [milestones](#milestones), **markers** represent events. You can display multiple markers in one row – on a task or anywhere on the timeline depending on the dates you set.
 
 Use the `markers` data field to add an array of markers to your data. In this array, specify the `value` of each marker – its date:
 
@@ -611,7 +611,7 @@ markers: [
 ],
 ```
 
-To access and configure markers, combine the {api:anychart.core.ui.Timeline#markers}markers(){api} method with methods of the {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api} class.
+To access markers, combine the {api:anychart.core.ui.Timeline#markers}markers(){api} method with methods {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api}.
 
 Also, you can configure individual markers with the help of extra data fields corresponding to these methods.
 
