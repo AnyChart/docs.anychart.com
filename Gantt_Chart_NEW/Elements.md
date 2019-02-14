@@ -3,30 +3,27 @@
 
 ## Overview
 
-Misc:
+This article explains how to configure elements that are shown on the [timeline](Timeline):
 
-* elements are shown on the [Timeline](Timeline)
-* the [Project](Project_Chart) and [Resource](Resource_Chart) charts: different element types are available, see the [Project Chart](#project_chart) and [Resource Chart](#resource_chart) sections
-* all elements of one type: [tasks](#tasks_\(actual\)), [baselines](#baselines_\(planned\)), [progress bars](#progress_bars), [connectors](#connectors), [periods](#periods)
+* all elements of one type (see the [Project Chart](#project_chart) and [Resource Chart](#resource_chart) sections)
 * [all elements](#all_elements) at once
 * [individual elements](#individual_elements)
-* [markers](#markers)
-* {api:anychart.charts.Gantt#getTimeline}getTimeline(){api}
-* methods of the {api:anychart.core.ui.Timeline}anychart.core.ui.Timeline{api} allowing to access elements
+
+Individual elements are configured with the help of special data fields. To configure all elements or all elements of one type, you should access the timeline by calling {api:anychart.charts.Gantt#getTimeline}getTimeline(){api}. Then access the elements by using the methods that are listed below, along with their classes:
+
+* [regular tasks](#regular_tasks) – {api:anychart.core.ui.Timeline#tasks}tasks(){api}, {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
+* [parent tasks](#parent_tasks) – {api:anychart.core.ui.Timeline#groupingTask}groupingTask(){api}{api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api}
+* [milestones](#milestones) – {api:anychart.core.ui.Timeline#}(){api}{api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api}
+* [baselines](#baselines_\(planned\)) – {api:anychart.core.ui.Timeline#baselines}baselines(){api}{api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api}
+* [progress bars](#progress_bars) – {api:?entry=progress#}progress(){api}{api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api}
+* [connectors](#connectors) – {api:anychart.core.ui.Timeline#connectors}connectors(){api}{api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api}
+* [periods](#periods) – {api:anychart.core.ui.Timeline#periods}periods(){api}{api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api}
+* [all elements](#all_elements) – {api:anychart.core.ui.Timeline#elements}elements(){api}{api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
+
+Also, you can add [markers](#markers).
+
 * (?) [appearance settings](../Appearance_Settings)
 * (?) [states](../Common_Settings/Interactivity/States): **normal** and **selected**
-* (?)
-
-Classes:
-
-* basic tasks – {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
-* parent tasks – {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api}
-* milestones – {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api}
-* baselines – {api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api}
-* progress bars – {api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api}
-* connectors – {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api}
-* periods – {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api}
-* all elements – {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
 
 ## Project Chart
 
@@ -260,7 +257,7 @@ periods.selected().stroke("#dd2c00");
 
 ## All Elements
 
-You can access almost all elements of a **Project chart** at once: [tasks](#tasks_\(actual\)) of all types, [baselines](#baselines_\(planned\)), and [progress bars](#progress_bars) (but not [connectors](#connectors)). They are defined as instances of the {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api} class.
+You can access almost all elements of a **Project chart** at once: [tasks](#tasks_\(actual\)) of all types, [baselines](#baselines_\(planned\)), and [progress bars](#progress_bars) (but not [connectors](#connectors) and [markers](#markers)). They are defined as instances of the {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api} class.
 
 The same is true for the **Resource chart**, but it makes little difference since only one element type is supported – the [period](#periods).
 
