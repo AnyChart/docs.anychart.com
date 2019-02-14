@@ -611,7 +611,7 @@ markers: [
 ],
 ```
 
-To configure markers, combine the {api:anychart.core.ui.Timeline#markers}markers(){api} method with methods {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api}.
+To configure markers, combine the {api:anychart.core.ui.Timeline#markers}markers(){api} method with methods {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api}, for example {api:anychart.core.ui.MarkersFactory#fill}fill{api} and {api:anychart.core.ui.MarkersFactory#stroke}stroke{api}:
 
 ```
 // configure markers
