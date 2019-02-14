@@ -613,9 +613,9 @@ markers: [
 
 To configure markers, combine the {api:anychart.core.ui.Timeline#markers}markers(){api} method with methods {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api}, for example:
 
+* {api:anychart.core.ui.MarkersFactory#type}type(){api} to set the type
 * {api:anychart.core.ui.MarkersFactory#fill}fill(){api} to set the fill
 * {api:anychart.core.ui.MarkersFactory#stroke}stroke(){api} to set the stroke
-* {api:anychart.core.ui.MarkersFactory#type}type(){api} to set the type
 
 
 ```
@@ -709,7 +709,7 @@ chart.getTimeline().markers().fill("#dd2c00");
 chart.getTimeline().markers().stroke("black");
 ```
 
-In the case of a **Resource** chart, markers are added to [resources](Resource_Chart#periods_and_resources):
+In the case of the **Resource** chart, markers are added to [resources](Resource_Chart#periods_and_resources):
 
 {sample :height 200}GANTT\_NEW\_Elements\_14{sample}
 
