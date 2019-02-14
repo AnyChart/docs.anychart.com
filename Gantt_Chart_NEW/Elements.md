@@ -597,7 +597,7 @@ periodLabels.format(function() {
 
 ## Markers
 
-Like [milestones](Project_Chart#milestones), **markers** represent events. You can display multiple markers in one row – on a task or anywhere on the timeline depending on the dates you set.
+Like [milestones](#milestones), **markers** represent events. You can display multiple markers in one row – on a task or anywhere on the timeline depending on the dates you set.
 
 Use the `markers` data field to add an array of markers to your data. In this array, specify the `value` of each marker – its date:
 
@@ -615,7 +615,7 @@ To access markers, combine the {api:anychart.core.ui.Timeline#markers}markers(){
 
 Also, you can configure individual markers with the help of extra data fields corresponding to these methods.
 
-It is possible to add markers to any task of a **Project** chart: a [regular task](Project_Chart#regular_tasks), a [parent task](Project_Chart#parent_tasks), or a [milestone](Project_Chart#milestones). The following sample shows how to do it and how to apply both individual and general settings:
+It is possible to add markers to any [task](Project_Chart#tasks_\(actual\)) of a **Project** chart: a regular task, a parent task, or a milestone. The following sample shows how to do it and how to apply both individual and general settings:
 
 ```
 // create data
