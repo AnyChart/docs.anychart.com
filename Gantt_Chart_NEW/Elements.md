@@ -613,8 +613,10 @@ markers: [
 
 To configure markers, combine the {api:anychart.core.ui.Timeline#markers}markers(){api} method with methods {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api}, for example:
 
-* {api:anychart.core.ui.MarkersFactory#fill}fill(){api}
-* {api:anychart.core.ui.MarkersFactory#stroke}stroke(){api}
+* {api:anychart.core.ui.MarkersFactory#fill}fill(){api} to set the fill
+* {api:anychart.core.ui.MarkersFactory#stroke}stroke(){api} to set the stroke
+* {api:anychart.core.ui.MarkersFactory#type}type(){api} to set the type
+
 
 ```
 chart.getTimeline().markers().fill("#dd2c00");
