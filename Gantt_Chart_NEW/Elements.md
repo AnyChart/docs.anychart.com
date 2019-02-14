@@ -22,7 +22,7 @@ Elements are defined as instances of the following classes:
 * [periods](#periods) – {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api}
 * [all elements](#all_elements) – {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
 
-Before configuring elements you need to access the timeline by calling {api:anychart.charts.Gantt#getTimeline}getTimeline(){api}.
+To configure elements, you should first access the timeline by calling {api:anychart.charts.Gantt#getTimeline}getTimeline(){api}.
 
 The following methods are used to access elements:
 
