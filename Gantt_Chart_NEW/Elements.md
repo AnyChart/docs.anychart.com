@@ -517,9 +517,9 @@ periodLabels.format(
 
 You can configure the text of labels by combining the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [formatting functions](../Common_Settings/Text_Formatters#formatting_functions).
 
-Please keep in mind: the {api:anychart.format.Context#getData}getData(){api} method allows you to refer to a custom field in your data. (?) Also, in functions you can use methods of the [tree data model](../Working_with_Data/Tree_Data_Model) to perform operations on data.
+In these functions, a number of default fields is available, and the {api:anychart.format.Context#getData}getData(){api} method allows you to refer to a custom field in your data. (?) Also, you can use methods of the [tree data model](../Working_with_Data/Tree_Data_Model) to perform operations on data.
 
-For the **Project** chart, the following default fields are available in formatting functions:
+For the **Project** chart, the following fields are available in formatting functions:
 
 * `id`
 * `name`
