@@ -35,7 +35,7 @@ The following methods are used to access elements:
 * [periods](#periods) – {api:anychart.core.ui.Timeline#periods}periods(){api}
 * [all elements](#all_elements) – {api:anychart.core.ui.Timeline#elements}elements(){api}
 
-Please keep in mind that before configuring elements you should access the timeline by calling the {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} method.
+Before configuring elements you need to access the timeline by calling {api:anychart.charts.Gantt#getTimeline}getTimeline(){api}.
 
 ## Project Chart
 
