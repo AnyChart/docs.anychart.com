@@ -9,7 +9,9 @@ This article explains how to configure elements that are shown on the [timeline]
 * [all elements](#all_elements) at once
 * [individual elements](#individual_elements)
 
-Individual elements are configured with the help of special data fields. To configure all elements or all elements of one type, you should access the timeline by calling {api:anychart.charts.Gantt#getTimeline}getTimeline(){api}. Then access the elements by using the methods that are listed below, along with their classes:
+Individual elements are configured with the help of special data fields.
+
+To configure all elements or all elements of one type, you should access the timeline by calling {api:anychart.charts.Gantt#getTimeline}getTimeline(){api}. Then access the elements by using the methods that are listed below, along with their classes:
 
 * [regular tasks](#regular_tasks) – {api:anychart.core.ui.Timeline#tasks}tasks(){api}, {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
 * [parent tasks](#parent_tasks) – {api:anychart.core.ui.Timeline#groupingTask}groupingTask(){api}{api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api}
