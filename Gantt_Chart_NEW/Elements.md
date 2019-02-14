@@ -10,8 +10,8 @@ You can configure:
 * all elements of one type – [Project Chart](#project_chart), [Resource Chart](#resource_chart)
 * all elements at once – [All Elements](#all_elements)
 * individual elements – [Individual Elements](#individual_elements)
-
-Also, see the [Labels](#labels) and [Markers](#markers) sections to learn how to adjust labels and add markers.
+* [Labels](#labels)
+* [Markers](#markers)
 
 Elements are defined as instances of the following classes:
 
