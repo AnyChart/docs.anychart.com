@@ -3,11 +3,26 @@
 
 ## Overview
 
-This article explains how to configure elements that are shown on the [timeline](Timeline):
+This article explains how to configure elements that are shown on the [timeline](Timeline). The available types of elements are listed in the [Project Chart](#project_chart) and [Resource Chart](#resource_chart) sections.
 
-* all elements of one type – see [Project Chart](#project_chart) and [Resource Chart](#resource_chart)
+You can configure:
+
+* all elements of one type
 * [all elements at once](#all_elements)
 * [individual elements](#individual_elements)
+
+Also, see the [Labels](#labels) and [Labels](#labels) sections to learn how to adjust labels and add markers.
+
+Elements are defined as instances of the following classes:
+
+* [regular tasks](#regular_tasks) – {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
+* [parent tasks](#parent_tasks) – {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api}
+* [milestones](#milestones) – {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api}
+* [baselines](#baselines_\(planned\)) – {api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api}
+* [progress bars](#progress_bars) – {api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api}
+* [connectors](#connectors) – {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api}
+* [periods](#periods) – {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api}
+* [all elements](#all_elements) – {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
 
 To access the timeline, call the {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} method.
 
@@ -21,17 +36,6 @@ To access elements, use the following methods:
 * [connectors](#connectors) – {api:anychart.core.ui.Timeline#connectors}connectors(){api}
 * [periods](#periods) – {api:anychart.core.ui.Timeline#periods}periods(){api}
 * [all elements](#all_elements) – {api:anychart.core.ui.Timeline#elements}elements(){api}
-
-Elements are defined as instances of the following classes:
-
-* [regular tasks](#regular_tasks) – {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
-* [parent tasks](#parent_tasks) – {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api}
-* [milestones](#milestones) – {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api}
-* [baselines](#baselines_\(planned\)) – {api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api}
-* [progress bars](#progress_bars) – {api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api}
-* [connectors](#connectors) – {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api}
-* [periods](#periods) – {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api}
-* [all elements](#all_elements) – {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
 
 ## Project Chart
 
