@@ -7,7 +7,7 @@ Misc:
 
 * elements are shown on the [Timeline](Timeline)
 * the [Project](Project_Chart) and [Resource](Resource_Chart) charts: different element types are available, see the [Project Chart](#project_chart) and [Resource Chart](#resource_chart) sections
-* all elements of one type: [tasks](#tasks_\(actual\)), [baselines](#baselines_\(planned\)), [progress bars](#progress_bars), [connectors](#connectors), [periods](#periods)
+* all elements of one type: [tasks](#tasks_\(actual\)), [baselines](#baselines_\(planned\)), [progress bars](#progress_bars), [connectors](#connectors), [periods](#periods_and_resources)
 * [all elements](#all_elements) at once
 * [individual elements](#individual_elements)
 * [markers](#markers)
@@ -260,9 +260,9 @@ periods.selected().stroke("#dd2c00");
 
 ## All Elements
 
-You can access almost all elements of a **Project** chart chart at once: [tasks](#tasks_\(actual\)) of all types, [baselines](#baselines_\(planned\)), and [progress bars](#progress_bars) (but not [connectors](#connectors)). They are defined as instances of the {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api} class.
+You can access almost all elements of a **Project** chart at once: [tasks](#tasks_\(actual\)) of all types, [baselines](#baselines_\(planned\)), and [progress bars](#progress_bars) (but not [connectors](#connectors)). They are defined as instances of the {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api} class.
 
-The same is true for the **Resource** chart, but it makes little difference since only one element type is supported – the [period](#periods).
+The same is true for the **Resource** chart, but it makes little difference since only one element type is supported – the [period](#periods_and_resources).
 
 To configure elements, combine the {api:anychart.core.ui.Timeline#elements}elements(){api} method of the timeline with the following methods:
 
@@ -372,7 +372,7 @@ chart.data(treeData);
 
 {sample :height 220}GANTT\_NEW\_Elements\_07{sample}
 
-To adjust an individual [period](#periods) of a **Resource** chart, you need to add extra data fields to the object specifying this period (?). Use fields corresponding to the methods of periods, for example `fill` and `stroke`:
+To adjust an individual [period](#periods_and_resources) of a **Resource** chart, you need to add extra data fields to the object specifying this period (?). Use fields corresponding to the methods of periods, for example `fill` and `stroke`:
 
 ```
 // create data
@@ -424,7 +424,7 @@ Labels are supported by the following elements of the **Project** chart:
 * [milestones](#milestones)
 * [progress bars](#progress_bars)
 
-Also, labels are supported by the only element of the **Resource** chart – [period](#periods).
+Also, labels are supported by the only element of the **Resource** chart – [period](#periods_and_resources).
 
 To access labels, call the **labels()** method of a particular element type or of [all elements](#all_elements) (of course, only the elements that can have labels are affected):
 
@@ -597,11 +597,25 @@ periodLabels.format(function() {
 
 ## Markers
 
-* могут быть добавлены к заданию любого типа
-* [Milestones](#milestones)
-* {api:anychart.core.ui.Timeline#markers}markers(){api}
-* (?) {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api}
+Like [milestones](#milestones), **markers** represent events. You can display multiple markers in one row – on a task or anywhere on the timeline depending on the dates you specify.
 
+Use the `markers` data field to add an array of markers to your data. In this array, specify the `value` of each marker – its date:
+
+```
+markers: [
+  {value: "2018-01-29"},
+  {value: "2018-02-20"},
+  {value: "2018-02-25"},
+  {value: "2018-03-20"},
+  {value: "2018-03-26"}
+],
+```
+
+To access and configure markers, combine the {api:anychart.core.ui.Timeline#markers}markers(){api} method with methods of the {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api} class.
+
+Also, you can configure individual markers with the help of extra data fields corresponding to these methods.
+
+It is possible to add markers to any task of a **Project** chart: a [regular task](#regular_taks), a [parent task](#parent_tasks), or a [milestone](#milestones). The following sample shows how to do it and how to apply both individual and general settings:
 
 ```
 // create data
@@ -674,6 +688,8 @@ chart.getTimeline().markers().stroke("black");
 ```
 
 {sample :height 220}GANTT\_NEW\_Elements\_13{sample}
+
+In the case of a **Resource** chart, markers are added to [resources](#periods_and_resources), like in the sample below. It also shows demonstrates both individual and general settings of markers.
 
 ```
 // create data
