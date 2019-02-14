@@ -20,7 +20,7 @@ Here is the full list of elements and their classes:
 * [periods](#periods) – {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api}
 * [all elements](#all_elements) – {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
 
-Here are the methods allowing to access them:
+To access them, the following methods are used:
 
 * [regular tasks](#regular_tasks) – {api:anychart.core.ui.Timeline#tasks}tasks(){api}
 * [parent tasks](#parent_tasks) – {api:anychart.core.ui.Timeline#groupingTask}groupingTask(){api}
