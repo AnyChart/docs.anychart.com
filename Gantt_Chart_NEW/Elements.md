@@ -3,13 +3,13 @@
 
 ## Overview
 
-This article explains how to configure elements that are shown on the [timeline](Timeline). The available element types are listed in the [Project Chart](#project_chart) and [Resource Chart](#resource_chart) sections.
+This article explains how to configure elements that are shown on the [timeline](Timeline).
 
 You can configure:
 
-* all elements of one type – the available types are listed in the [Project Chart](#project_chart) and [Resource Chart](#resource_chart) sections
-* all elements at once – see the [All Elements](#all_elements) section
-* individual elements – see [Individual Elements](#individual_elements)
+* all elements of one type – the available types are listed in [Project Chart](#project_chart) and [Resource Chart](#resource_chart)
+* [all elements at once](#all_elements)
+* [individual elements](#individual_elements)
 
 Also, see the [Labels](#labels) and [Markers](#markers) sections to learn how to adjust labels and add markers.
 
