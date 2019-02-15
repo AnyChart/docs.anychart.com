@@ -1,13 +1,18 @@
 {:index 10}
 # Timeline
 
-* {api:anychart.core.ui.Timeline}anychart.core.ui.Timeline{api}
+## Overview
 
-## (?) Appearance
+* {api:anychart.core.ui.Timeline}anychart.core.ui.Timeline{api}
+* (?)
+
+## Appearance
 
 {sample :height 220}GANTT\_NEW\_Timeline\_01{sample}
 
 ## Scale
+
+{sample :height 220}GANTT\_NEW\_Timeline\_02{sample}
 
 ## Timeline Markers
 
@@ -16,21 +21,21 @@
 * {api:anychart.core.axisMarkers.GanttLine}anychart.core.axisMarkers.GanttLine{api}
 
 
-{sample :height 220}GANTT\_NEW\_Timeline\_02{sample}
+{sample :height 220}GANTT\_NEW\_Timeline\_03{sample}
 
 ### Range
 
 * {api:anychart.core.axisMarkers.GanttRange}anychart.core.axisMarkers.GanttRange{api}
 
 
-{sample :height 220}GANTT\_NEW\_Timeline\_03{sample}
+{sample :height 220}GANTT\_NEW\_Timeline\_04{sample}
 
 ### Text
 
 {api:anychart.core.axisMarkers.GanttText}anychart.core.axisMarkers.GanttText{api}
 
 
-{sample :height 220}GANTT\_NEW\_Timeline\_04{sample}
+{sample :height 220}GANTT\_NEW\_Timeline\_05{sample}
 
 ## Header
 
