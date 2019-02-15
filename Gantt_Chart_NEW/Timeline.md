@@ -8,11 +8,14 @@
 
 ## Appearance
 
+* Basic Settings: Rows and Columns
+
 {sample :height 220}GANTT\_NEW\_Timeline\_01{sample}
 
 ## Scale
 
 * {api:anychart.scales.GanttDateTime}anychart.scales.GanttDateTime{api}
+* добавить пример на zoomLevels()
 
 {sample :height 220}GANTT\_NEW\_Timeline\_02{sample}
 
@@ -22,8 +25,6 @@
 
 * {api:anychart.core.axisMarkers.GanttLine}anychart.core.axisMarkers.GanttLine{api}
 * {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}
-* {api:}
-
 
 {sample :height 220}GANTT\_NEW\_Timeline\_03{sample}
 
@@ -43,25 +44,25 @@
 
 ## Header
 
-{api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api}
-
+* {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api}
 
 {sample :height 220}GANTT\_NEW\_Timeline\_06{sample}
 
+{sample :height 220}GANTT\_NEW\_Timeline\_07{sample}
+
 ## Labels
 
-* (?) {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}
-* (?) упомянуть метод labels(), но примера не надо
 * [Elements: Labels](Elements#labels)
 
 ## Tooltips
 
 * {api:anychart.core.ui.Tooltip}anychart.core.ui.Tooltip{api}
+* Data Grid: Tooltips
 
 ### Tokens
 
-{sample :height 220}GANTT\_NEW\_Timeline\_07{sample}
+{sample :height 220}GANTT\_NEW\_Timeline\_08{sample}
 
 ### Formatting Functions
 
-{sample :height 220}GANTT\_NEW\_Timeline\_08{sample}
+{sample :height 220}GANTT\_NEW\_Timeline\_09{sample}

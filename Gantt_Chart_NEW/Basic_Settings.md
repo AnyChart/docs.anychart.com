@@ -10,6 +10,13 @@
 
 * background()
 
+### Rows and Columns
+
+* columnStroke()
+* rowHoverFill()
+* rowSelectedFill()
+* rowStroke()
+
 ### Data Grid
 ### Timeline
 ### Elements

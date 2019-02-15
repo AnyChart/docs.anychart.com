@@ -5,6 +5,10 @@
 
 * {api:anychart.core.ui.DataGrid}anychart.core.ui.DataGrid{api}
 
+## Appearance
+
+* Basic Settings: Rows and Columns
+
 ## Columns
 
 * {api:anychart.core.ui.DataGrid.Column}anychart.core.ui.DataGrid.Column{api}

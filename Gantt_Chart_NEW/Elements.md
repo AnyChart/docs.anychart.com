@@ -85,7 +85,7 @@ To configure parent tasks, combine the {api:anychart.core.ui.Timeline#groupingTa
 chart.getTimeline().groupingTasks().height(15);
 ```
 
-(?) Also, parent tasks can be [expanded or collapsed](Basic_Settings#navigation).
+Also, parent tasks can be [expanded or collapsed](Basic_Settings#navigation).
 
 #### Milestones
 
@@ -151,7 +151,6 @@ To configure baselines, combine the {api:anychart.core.ui.Timeline#baselines}bas
 * {api:anychart.core.gantt.elements.BaselinesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.BaselinesElement#selected}selected(){api} to access [states](../Common_Settings/Interactivity/States)
 * {api:anychart.core.gantt.elements.BaselinesElement#labels}labels(){api} to access [labels](#labels)
 * {api:anychart.core.gantt.elements.BaselinesElement#edit}edit(){api} to access the [Live Edit](Live_Edit_UI) settings
-* (?) {api:anychart.core.gantt.elements.BaselinesElement#removeAllListeners}removeAllListeners(){api} to remove all [event listeners](Events)
 * {api:anychart.core.gantt.elements.BaselinesElement#rendering}rendering(){api} to access the [rendering](Custom_Drawing) settings
 
 Please note: by default, baselines are shown under tasks, but can be placed above them with the help of the {api:anychart.core.gantt.elements.BaselinesElement#above}above(){api} method.
@@ -177,7 +176,7 @@ baselines.above(true);
 
 **Progress bars** are elements showing the progress of regular and parent [tasks](#tasks_\(actual\)). They are defined as instances of the {api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api} class. 
 
-To access progress bars, first access [regular](#regular_tasks) or [parent](#parent_tasks) tasks by calling {api:anychart.core.ui.Timeline#tasks}tasks(){api} or {api:anychart.core.ui.Timeline#groupingTasks}groupingTasks(){api}. Then call {api:?entry=progress}progress(){api} (?).
+To access progress bars, first access [regular](#regular_tasks) or [parent](#parent_tasks) tasks by calling {api:anychart.core.ui.Timeline#tasks}tasks(){api} or {api:anychart.core.ui.Timeline#groupingTasks}groupingTasks(){api}. Then call {api:?entry=progress}progress(){api}.
 
  To configure progress bars, use the following methods:
 
@@ -192,7 +191,7 @@ Please note: by default, progress is shown in [labels](#labels) of tasks. Howeve
 
 To learn about data fields used to set progress bars, see [Project Chart: Progress Bars](Project_Chart#progress_bars).
 
-In the sample below, the {api:?entry=progress}progress(){api} method (?) is used to access progress bars of both regular and parent tasks. The {api:anychart.core.gantt.elements.ProgressElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ProgressElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../Appearance_Settings) in two [states](../Common_Settings/Interactivity/States): **normal** and **selected**.
+In the sample below, the {api:?entry=progress}progress(){api} method is used to access progress bars of both regular and parent tasks. The {api:anychart.core.gantt.elements.ProgressElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ProgressElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../Appearance_Settings) in two [states](../Common_Settings/Interactivity/States): **normal** and **selected**.
 
 ```
 // configure progress bars of regular tasks
@@ -239,7 +238,7 @@ connectors.selected().stroke("2 #ef6c00");
 
 ### Periods
 
-(?) **Periods** are visual elements representing time intervals related to resources. They are defined as instances of the {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api} class. 
+**Periods** are visual elements representing time intervals related to resources. They are defined as instances of the {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api} class. 
 
 To configure periods, combine the {api:anychart.core.ui.Timeline#periods}periods(){api} method of the timeline with the following methods:
 
@@ -379,7 +378,7 @@ chart.data(treeData);
 
 {sample :height 220}GANTT\_NEW\_Elements\_07{sample}
 
-To adjust an individual [period](#periods) of a **Resource chart**, you need to add extra data fields to the object specifying this period (?). Use fields corresponding to the methods of periods, for example `fill` and `stroke`:
+To adjust an individual [period](#periods) of a **Resource chart**, you need to add extra data fields to the object that defines this period. Use fields corresponding to the methods of periods, for example `fill` and `stroke`:
 
 ```
 // create data
@@ -524,7 +523,7 @@ periodLabels.format(
 
 You can configure the text of labels by combining the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [formatting functions](../Common_Settings/Text_Formatters#formatting_functions).
 
-In these functions, a number of default fields is available, and the {api:anychart.format.Context#getData}getData(){api} method allows you to refer to a custom field in your data. (?) Also, you can use methods of the [tree data model](../Working_with_Data/Tree_Data_Model) to perform operations on data.
+In these functions, a number of default fields is available, and the {api:anychart.format.Context#getData}getData(){api} method allows you to refer to a custom field in your data. Also, you can use methods of the [tree data model](../Working_with_Data/Tree_Data_Model) to perform operations on data.
 
 For the **Project chart**, the following fields are available in formatting functions:
 
@@ -601,6 +600,11 @@ periodLabels.format(function() {
 ```
 
 {sample :height 160}GANTT\_NEW\_Elements\_12{sample}
+
+## Tooltips (?)
+
+* Timeline: Tooltips
+* Data Grid: Tooltips
 
 ## Markers
 
