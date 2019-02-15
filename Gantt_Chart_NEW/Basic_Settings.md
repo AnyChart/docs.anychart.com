@@ -20,6 +20,7 @@
 * title()
 
 ## Header and Row Height
+
 * headerHeight()
 * defaultRowHeight() + (?) примеч про индивид таск: поле rowHeight - примера не надо
 
