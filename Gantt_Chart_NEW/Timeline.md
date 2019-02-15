@@ -12,6 +12,8 @@
 
 ## Scale
 
+* {api:anychart.scales.GanttDateTime}anychart.scales.GanttDateTime{api}
+
 {sample :height 220}GANTT\_NEW\_Timeline\_02{sample}
 
 ## Timeline Markers
@@ -42,7 +44,7 @@
 {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api}
 
 
-{sample :height 220}GANTT\_NEW\_Timeline\_05{sample}
+{sample :height 220}GANTT\_NEW\_Timeline\_06{sample}
 
 ## Labels
 
@@ -56,8 +58,8 @@
 
 ### Tokens
 
-{sample :height 220}GANTT\_NEW\_Timeline\_06{sample}
+{sample :height 220}GANTT\_NEW\_Timeline\_07{sample}
 
 ### Formatting Functions
 
-{sample :height 220}GANTT\_NEW\_Timeline\_06{sample}
+{sample :height 220}GANTT\_NEW\_Timeline\_08{sample}
