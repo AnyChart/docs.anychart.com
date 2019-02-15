@@ -21,6 +21,8 @@
 ### Line
 
 * {api:anychart.core.axisMarkers.GanttLine}anychart.core.axisMarkers.GanttLine{api}
+* {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}
+* {api:}
 
 
 {sample :height 220}GANTT\_NEW\_Timeline\_03{sample}
