@@ -17,7 +17,9 @@
 ## Scale
 
 * {api:anychart.scales.GanttDateTime}anychart.scales.GanttDateTime{api}
-* добавить пример на zoomLevels()
+* {api:anychart.scales.GanttDateTime.ZoomLevelsSettings}anychart.scales.GanttDateTime.ZoomLevelsSettings{api}
+* [header](#header)
+* уровни нужно задавать в порядке от самого мелкого к самому крупному
 
 {sample :height 220}GANTT\_NEW\_Timeline\_02{sample}
 
@@ -26,6 +28,7 @@
 ## Header
 
 * {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api}
+* [scale](#scale)
 * [tokens](../../Common_Settings/Text_Formatters#string_tokens)
 * [formatting functions](../Common_Settings/Text_Formatters#formatting_functions)
 * [Project Gantt](Project_Chart)

@@ -77,6 +77,12 @@ anychart.onDocumentReady(function () {
     chart.data(treeData);
 
     // configure the scale
+    chart.getTimeline().scale().zoomLevels([
+      [
+        {unit: 'month', count: 1},
+        {unit: 'quarter', count: 1}
+      ]
+    ]);
     chart.getTimeline().scale().maximum("2018-04-15");
 
     // set the container id
