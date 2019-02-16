@@ -603,11 +603,9 @@ periodLabels.format(function() {
 
 ## Tooltips
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a timeline or data grid row is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a timeline or data grid row is hovered over.
 
-The [Timeline: Tooltips](Timeline#tooltips) section explains how to configure timeline tooltips.
-
-To learn how to adjust data grid tooltips, see [Data Grid: Tooltips](Data_Grid#tooltips).
+To learn how to adjust tooltips, see the [Data Grid: Tooltips](Data_Grid#tooltips) and [Timeline: Tooltips](Timeline#tooltips) sections.
 
 ## Markers
 
