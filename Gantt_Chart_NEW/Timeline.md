@@ -18,6 +18,7 @@
 
 * {api:anychart.scales.GanttDateTime}anychart.scales.GanttDateTime{api}
 * {api:anychart.scales.GanttDateTime.ZoomLevelsSettings}anychart.scales.GanttDateTime.ZoomLevelsSettings{api}
+* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper}anychart.core.gantt.TimeLineHeader.LevelWrapper{api}
 * [header](#header)
 * уровни нужно задавать в порядке от самого мелкого к самому крупному
 
@@ -27,12 +28,24 @@
 
 ## Header
 
+methods:
+
 * {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api}
+* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper}anychart.core.gantt.TimeLineHeader.LevelWrapper{api}
 * [scale](#scale)
+* [Basic Settings: Header and Row Height](Basic_Settings#header_and_row_height)
 * [tokens](../../Common_Settings/Text_Formatters#string_tokens)
 * [formatting functions](../Common_Settings/Text_Formatters#formatting_functions)
 * [Project Gantt](Project_Chart)
 * [Resource Gantt](Resource_Chart)
+
+methods:
+
+* enabled()
+* fill(), stroke()
+* fontColor(), fontDecoration(), fontFamily(), fontOpacity(), fontSize(), fontStyle(), fontVariant(), fontWeight()
+* format()
+* levelHeight(), level()
 
 {sample :height 220}GANTT\_NEW\_Timeline\_04{sample}
 
