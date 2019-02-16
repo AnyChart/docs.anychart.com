@@ -26,6 +26,8 @@
 ## Header
 
 * {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api}
+* [tokens](../../Common_Settings/Text_Formatters#string_tokens)
+* [formatting functions](../Common_Settings/Text_Formatters#formatting_functions)
 * [Project Gantt](Project_Chart)
 * [Resource Gantt](Resource_Chart)
 
@@ -65,6 +67,8 @@
 ## Tooltips
 
 * {api:anychart.core.ui.Tooltip}anychart.core.ui.Tooltip{api}
+* [tokens](../../Common_Settings/Text_Formatters#string_tokens)
+* [formatting functions](../Common_Settings/Text_Formatters#formatting_functions)
 * [Project Gantt](Project_Chart)
 * [Resource Gantt](Resource_Chart)
 
