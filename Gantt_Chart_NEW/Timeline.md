@@ -56,8 +56,11 @@
 
 ## Tooltips
 
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed a timeline or data grid row is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+
 * {api:anychart.core.ui.Tooltip}anychart.core.ui.Tooltip{api}
-* Data Grid: Tooltips
+
+To learn how to adjust data grid tooltips, see [Data Grid: Tooltips](Data_Grid#tooltips).
 
 ### Tokens
 
