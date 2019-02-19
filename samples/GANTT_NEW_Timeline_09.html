@@ -33,36 +33,45 @@ anychart.onDocumentReady(function () {
         name: "Development",
         actualStart: "2018-01-25",
         actualEnd: "2018-04-07",
+        manager: "John Doe",
         children: [
           {
             id: "1_1",
             name: "Analysis",
             actualStart: "2018-01-25",
-            actualEnd: "2018-02-08"
+            actualEnd: "2018-02-08",
+            progressValue: "75%",
+            manager: "Richard Roe"
           },
           {
             id: "1_2",
             name: "Design",
             actualStart: "2018-02-04",
-            actualEnd: "2018-02-24"
+            actualEnd: "2018-02-24",
+            progressValue: "100%",
+            manager: "Larry Loe"
           },
           {
             id: "1_3",
             name: "Meeting",
             actualStart: "2018-02-25",
-            actualEnd: "2018-02-25"
+            actualEnd: "2018-02-25",
+            manager: "John Doe"
           },
           {
             id: "1_4",
             name: "Implementation",
             actualStart: "2018-02-25",
-            actualEnd: "2018-03-14"
+            actualEnd: "2018-03-14",
+            manager: "Marta Moe",
+            progressValue: "60%"
           },
           {
             id: "1_5",
             name: "Testing",
             actualStart: "2018-03-15",
-            actualEnd: "2018-04-07"
+            actualEnd: "2018-04-07",
+            manager: "Jane Poe"
           }
       ]}
     ];
@@ -75,6 +84,20 @@ anychart.onDocumentReady(function () {
     
     // set the data
     chart.data(treeData);
+
+    // configure tooltips of the timeline
+
+    chart.getTimeline().tooltip().useHtml(true);
+
+    chart.getTimeline().tooltip().titleFormat(
+      "{%name}: <span style='color:red'>{%progress}</span>"
+    );
+
+    chart.getTimeline().tooltip().format(
+      "Start: {%actualStart}{dateTimeFormat:dd MMMM}<br>" +
+      "End: {%actualEnd}{dateTimeFormat:dd MMMM}<br><br>" +
+      "Manager: {%manager}"
+    );
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-04-15");
