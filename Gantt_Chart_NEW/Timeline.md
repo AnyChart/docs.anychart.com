@@ -51,8 +51,6 @@ methods:
 
 {sample :height 220}GANTT\_NEW\_Timeline\_05{sample}
 
-{sample :height 220}GANTT\_NEW\_Timeline\_06{sample}
-
 ## Timeline Markers
 
 ### Line
@@ -60,21 +58,21 @@ methods:
 * {api:anychart.core.axisMarkers.GanttLine}anychart.core.axisMarkers.GanttLine{api}
 * {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}
 
-{sample :height 220}GANTT\_NEW\_Timeline\_07{sample}
+{sample :height 220}GANTT\_NEW\_Timeline\_06{sample}
 
 ### Range
 
 * {api:anychart.core.axisMarkers.GanttRange}anychart.core.axisMarkers.GanttRange{api}
 
 
-{sample :height 220}GANTT\_NEW\_Timeline\_08{sample}
+{sample :height 220}GANTT\_NEW\_Timeline\_07{sample}
 
 ### Text
 
 {api:anychart.core.axisMarkers.GanttText}anychart.core.axisMarkers.GanttText{api}
 
 
-{sample :height 220}GANTT\_NEW\_Timeline\_09{sample}
+{sample :height 220}GANTT\_NEW\_Timeline\_08{sample}
 
 ## Labels
 
@@ -94,12 +92,12 @@ To learn how to adjust data grid tooltips, see [Data Grid: Tooltips](Data_Grid#t
 
 ### Tokens
 
-{sample :height 220}GANTT\_NEW\_Timeline\_10{sample}
+{sample :height 220}GANTT\_NEW\_Timeline\_09{sample}
 
-{sample :height 220}GANTT\_NEW\_Timeline\_11{sample}
+{sample :height 220}GANTT\_NEW\_Timeline\_10{sample}
 
 ### Formatting Functions
 
-{sample :height 220}GANTT\_NEW\_Timeline\_12{sample}
+{sample :height 220}GANTT\_NEW\_Timeline\_11{sample}
 
-{sample :height 220}GANTT\_NEW\_Timeline\_13{sample}
+{sample :height 220}GANTT\_NEW\_Timeline\_12{sample}

@@ -76,6 +76,14 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
+    // create and configure two line markers
+    var marker_1 = chart.getTimeline().lineMarker(0);
+    var marker_2 = chart.getTimeline().lineMarker(1);
+    marker_1.value("2018-02-15");
+    marker_2.value("start");
+    marker_1.stroke("2 #455a64");
+    marker_2.stroke("2 #dd2c00");
+
     // configure the scale
     chart.getTimeline().scale().maximum("2018-04-15");
 
