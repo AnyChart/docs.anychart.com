@@ -76,13 +76,13 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
-    // create and configure two range markers
+    // create and configure range markers
 
     var marker_1 = chart.getTimeline().rangeMarker(0);
     var marker_2 = chart.getTimeline().rangeMarker(1);
 
-    marker_1.from("2018-02-15");
-    marker_1.to("2018-02-22");
+    marker_1.from("2018-03-05");
+    marker_1.to("2018-03-12");
 
     marker_2.from("2018-03-25");
     marker_2.to("end");
@@ -90,7 +90,8 @@ anychart.onDocumentReady(function () {
     marker_1.fill("#455a64 0.3");
     marker_2.fill("#dd2c00 0.3");
 
-    marker_1.scale().maximum("2018-02-15");
+    // configure the scale
+    chart.getTimeline().scale().maximum("2018-04-15");
 
     // set the container id
     chart.container("container");
