@@ -76,29 +76,37 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
-    // create and configure text markers
-
+    // create text markers
     var marker_1 = chart.getTimeline().textMarker(0);
     var marker_2 = chart.getTimeline().textMarker(1);
 
+    // set values of markers
     marker_1.value("2018-02-15");
     marker_2.value("end");
 
+    // set the text of markers
     marker_1.useHtml(true);
     marker_1.text(
       "marker <span style='font-size:26'>1</span>"
     );
     marker_2.text("marker 2");
 
+    // configure the position of markers
     marker_1.rotation(0);
+    marker_1.padding(5)
     marker_1.offsetY(31);
     marker_2.offsetX(-10);
 
+    // configure the font of markers
     marker_1.fontColor("#455a64");
     marker_2.fontColor("#dd2c00");
-
     marker_1.fontWeight(600);
     marker_2.fontWeight(600);
+    
+    // configure the background of the first marker
+    marker_1.background().enabled(true);
+    marker_1.background().fill("#e3e8e8");
+    marker_1.background().stroke("2 #455a64");
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-04-15");
