@@ -97,10 +97,10 @@ To learn how to adjust data grid tooltips, see [Data Grid: Tooltips](Data_Grid#t
 
 {sample :height 220}GANTT\_NEW\_Timeline\_09{sample}
 
-{sample :height 220}GANTT\_NEW\_Timeline\_10{sample}
+{sample :height 160}GANTT\_NEW\_Timeline\_10{sample}
 
 ### Formatting Functions
 
 {sample :height 220}GANTT\_NEW\_Timeline\_11{sample}
 
-{sample :height 220}GANTT\_NEW\_Timeline\_12{sample}
+{sample :height 160}GANTT\_NEW\_Timeline\_12{sample}
