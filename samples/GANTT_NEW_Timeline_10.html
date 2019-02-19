@@ -36,7 +36,7 @@ anychart.onDocumentReady(function () {
           {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
           {id:"1_3", start: "2018-03-03", end: "2018-03-25"},
         ],
-        disc_space: "1.5 TB"
+        disc_space: "5 TB"
       },
       {
         id: "2",
@@ -45,7 +45,7 @@ anychart.onDocumentReady(function () {
           {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
           {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
         ],
-        disc_space: "2.0 TB"
+        disc_space: "7 TB"
       },
       {
         id: "3",
@@ -53,7 +53,7 @@ anychart.onDocumentReady(function () {
         periods: [
           {id: "3_1", start: "2018-01-04", end: "2018-03-25", custom_field: "lol"}
         ],
-        disc_space: "2.5 TB"
+        disc_space: "9 TB"
       }
     ];
 
@@ -73,7 +73,7 @@ anychart.onDocumentReady(function () {
     );
     chart.getTimeline().tooltip().format(
       "Start: {%start}{dateTimeFormat:dd MMMM}<br>" +
-      "End: {%end}{dateTimeFormat:dd MMMM}<br><br>"
+      "End: {%end}{dateTimeFormat:dd MMMM}"
     );
 
     // set the container id
