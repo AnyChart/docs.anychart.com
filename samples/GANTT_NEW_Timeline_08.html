@@ -81,23 +81,23 @@ anychart.onDocumentReady(function () {
     var marker_1 = chart.getTimeline().textMarker(0);
     var marker_2 = chart.getTimeline().textMarker(1);
 
-    marker_1.value("2018-03-08");
+    marker_1.value("2018-03-20");
     marker_2.value("end");
 
-    marker_1.text("text 1");
-    marker_2.text("text 2");
+    marker_1.text("marker 1");
+    marker_2.text("marker 2");
 
-    //marker_1.width(130);
-    //marker_2.width(130);
+    marker_1.offsetX(-10);
+    marker_2.offsetX(-10);
 
-    marker_1.align("center");
-    marker_2.align("center");
-
-    marker_1.background("#455a64 0.3");
-    marker_2.background("#dd2c00 0.3");
+    marker_1.background("#455a64 0.2");
+    marker_2.background("#dd2c00 0.2");
 
     marker_1.fontColor("#455a64");
     marker_2.fontColor("#dd2c00");
+
+    marker_1.fontWeight(600);
+    marker_2.fontWeight(600);
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-04-15");
