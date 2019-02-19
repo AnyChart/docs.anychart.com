@@ -77,10 +77,13 @@ anychart.onDocumentReady(function () {
     chart.data(treeData);
 
     // create and configure two line markers
+
     var marker_1 = chart.getTimeline().lineMarker(0);
     var marker_2 = chart.getTimeline().lineMarker(1);
+
     marker_1.value("2018-02-15");
-    marker_2.value("start");
+    marker_2.value("end");
+
     marker_1.stroke("2 #455a64");
     marker_2.stroke("2 #dd2c00");
 

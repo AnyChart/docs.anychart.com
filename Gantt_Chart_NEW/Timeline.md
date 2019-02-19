@@ -57,20 +57,23 @@ methods:
 
 * {api:anychart.core.axisMarkers.GanttLine}anychart.core.axisMarkers.GanttLine{api}
 * {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}
+* можно задать как объект
 
 {sample :height 220}GANTT\_NEW\_Timeline\_06{sample}
 
 ### Range
 
 * {api:anychart.core.axisMarkers.GanttRange}anychart.core.axisMarkers.GanttRange{api}
-
+* {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}
+* можно задать как объект
 
 {sample :height 220}GANTT\_NEW\_Timeline\_07{sample}
 
 ### Text
 
 {api:anychart.core.axisMarkers.GanttText}anychart.core.axisMarkers.GanttText{api}
-
+* {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}
+* можно задать как объект
 
 {sample :height 220}GANTT\_NEW\_Timeline\_08{sample}
 
