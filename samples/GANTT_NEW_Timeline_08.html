@@ -84,7 +84,10 @@ anychart.onDocumentReady(function () {
     marker_1.value("2018-02-15");
     marker_2.value("end");
 
-    marker_1.text("marker 1");
+    marker_1.useHtml(true);
+    marker_1.text(
+      "marker <span style='font-size:26'>1</span>"
+    );
     marker_2.text("marker 2");
 
     marker_1.rotation(0);
