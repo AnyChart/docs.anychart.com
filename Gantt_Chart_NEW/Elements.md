@@ -385,7 +385,7 @@ To adjust an individual [period](#periods) of a **Resource chart**, you need to 
 var data = [
   {
     id: "1",
-    name: "Resource 1",
+    name: "Server 1",
     periods: [
       {id:"1_1", start: "2018-01-02", end: "2018-01-25",
        fill: "#dd2c00", stroke: "#dd2c00"},
@@ -394,14 +394,14 @@ var data = [
   ]},
   {
     id: "2",
-    name: "Resource 2",
+    name: "Server 2",
     periods: [
       {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
       {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
   ]},
   {
     id: "3",
-    name: "Resource 3",
+    name: "Server 3",
     periods: [
       {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
   ]}
