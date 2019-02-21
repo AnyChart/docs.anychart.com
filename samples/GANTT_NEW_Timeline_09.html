@@ -86,10 +86,13 @@ anychart.onDocumentReady(function () {
     chart.data(treeData);
 
     // configure tooltips of the timeline
+
     chart.getTimeline().tooltip().useHtml(true);
+
     chart.getTimeline().tooltip().titleFormat(
       "<span style='color:red'>{%name}</span> – {%progress}"
     );
+    
     chart.getTimeline().tooltip().format(
       "Start: {%actualStart}{dateTimeFormat:dd MMM}<br>" +
       "End: {%actualEnd}{dateTimeFormat:dd MMM}<br><br>" +
