@@ -69,14 +69,14 @@ anychart.onDocumentReady(function () {
     // configure tooltips of the timeline
 
     chart.getTimeline().tooltip().useHtml(true);
-    
-    chart.getTimeline().tooltip().titleFormat(
-      "<span style='color:red'>{%name}</span> ({%disc_space})"
-    );
 
+    // configure tooltips of the timeline
+    chart.getTimeline().tooltip().useHtml(true);    
     chart.getTimeline().tooltip().format(
-      "Start: {%start}{dateTimeFormat:dd MMM}<br>" +
-      "End: {%end}{dateTimeFormat:dd MMM}"
+      "<span style='font-weight:600;font-size:12pt'>" +
+      "{%start}{dateTimeFormat:dd MMM} – " +
+      "{%end}{dateTimeFormat:dd MMM}</span><br><br>" +
+      "Disc Space: {%disc_space}"
     );
 
     // set the container id

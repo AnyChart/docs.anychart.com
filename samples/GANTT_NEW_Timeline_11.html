@@ -86,22 +86,16 @@ anychart.onDocumentReady(function () {
     chart.data(treeData);
 
     // configure tooltips of the timeline
-
     chart.getTimeline().tooltip().useHtml(true);
-
-    chart.getTimeline().tooltip().titleFormat(function() {
-      if (this.progress == 1) {
-        return "<span style='color:red'>" + this.name +
-               "</span> – COMPLETE";
-      } else {
-        return "<span style='color:red'>" + this.name +
-               "</span> – " + this.progress * 100 + "%";
-      }
-    });
-
     chart.getTimeline().tooltip().format(function() {
       var duration = (this.actualEnd - this.actualStart) / 1000 / 3600 / 24;
-      return "Duration: " + duration + " days <br>" +
+      var progress = this.progress * 100 + "%";
+      if (this.progress == 1) {
+        progress = "COMPLETE";
+      }
+      return "<span style='font-weight:600;font-size:12pt'>" +
+             duration + " days </span><br><br>" +
+             "Progress: " + progress + "<br>" +
              "Manager: " + this.getData("manager");
     });
 

@@ -67,17 +67,12 @@ anychart.onDocumentReady(function () {
     chart.data(treeData); 
 
     // configure tooltips of the timeline
-
     chart.getTimeline().tooltip().useHtml(true);
-
-    chart.getTimeline().tooltip().titleFormat(function() {
-      return "<span style='color:red'>" + this.name +
-             "</span> (" + this.getData("disc_space") + ")";
-    });
-
     chart.getTimeline().tooltip().format(function() {
       var duration = (this.end - this.start) / 1000 / 3600 / 24;
-      return "Duration: " + duration + " days"
+      return "<span style='font-weight:600;font-size:12pt'>" +
+             duration + " days </span><br><br>" +
+             "Disc Space: " + this.getData("disc_space");
     });
 
     // set the container id
