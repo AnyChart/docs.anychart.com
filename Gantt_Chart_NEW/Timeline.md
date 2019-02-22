@@ -202,7 +202,7 @@ misc:
 {api:anychart.core.axisMarkers.GanttText}anychart.core.axisMarkers.GanttText{api}
 * {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}
 * {api:anychart.core.ui.Timeline#textMarker}textMarker(){api}
-* можно задать как объект
+* можно задать настройки как объект
 
 methods:
 
