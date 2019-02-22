@@ -210,7 +210,7 @@ methods:
 * {api:anychart.core.axisMarkers.GanttText#}(){api}, {api:anychart.core.axisMarkers.GanttText#}(){api}, {api:anychart.core.axisMarkers.GanttText#}(){api}
 * {api:anychart.core.axisMarkers.GanttText#}(){api}, {api:anychart.core.axisMarkers.GanttText#}(){api}, {api:anychart.core.axisMarkers.GanttText#}(){api}
 * {api:anychart.core.axisMarkers.GanttText#}(){api}, {api:anychart.core.axisMarkers.GanttText#}(){api}, {api:anychart.core.axisMarkers.GanttText#}(){api}
-anychart.core.axisMarkers.GanttText
+
 
 ```
 // create two text markers
