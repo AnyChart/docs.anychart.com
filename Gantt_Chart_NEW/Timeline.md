@@ -41,12 +41,12 @@ misc:
 
 * {api:anychart.scales.GanttDateTime}anychart.scales.GanttDateTime{api}
 * {api:anychart.scales.GanttDateTime.ZoomLevelsSettings}anychart.scales.GanttDateTime.ZoomLevelsSettings{api}
-* [header](#header)
+* [Header](#header)
 * уровни нужно задавать в порядке от самого мелкого к самому крупному
 
 methods:
 
-* {api:anychart.core.ui.Timeline#scale}scale(){api}
+* scale: {api:anychart.core.ui.Timeline#scale}scale(){api}
 * {api:anychart.scales.GanttDateTime#maximum}maximum(){api}
 * {api:anychart.scales.GanttDateTime#minimum}minimum(){api}
 * {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api}
@@ -74,24 +74,27 @@ chart.getTimeline().scale().zoomLevels([
 
 ## Header
 
-methods:
+misc:
 
 * {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api}
 * {api:anychart.core.gantt.TimeLineHeader.LevelWrapper}anychart.core.gantt.TimeLineHeader.LevelWrapper{api}
-* [scale](#scale)
+* [Scale](#scale)
 * [Basic Settings: Header and Row Height](Basic_Settings#header_and_row_height)
-* [tokens](../../Common_Settings/Text_Formatters#string_tokens)
-* [formatting functions](../Common_Settings/Text_Formatters#formatting_functions)
+* [tokens](../../Common_Settings/Text_Formatters#string_tokens), [formatting functions](../Common_Settings/Text_Formatters#formatting_functions)
 * [Project Gantt](Project_Chart)
 * [Resource Gantt](Resource_Chart)
 
 methods:
 
-* enabled()
-* fill(), stroke()
-* fontColor(), fontDecoration(), fontFamily(), fontOpacity(), fontSize(), fontStyle(), fontVariant(), fontWeight()
-* format()
-* levelHeight(), level()
+* header: {api:anychart.core.ui.Timeline#header}header(){api}
+* {api:anychart.core.gantt.TimeLineHeader#enabled}enabled(){api} + `true` / `false`
+* {api:anychart.core.gantt.TimeLineHeader#fill}fill(){api} and {api:anychart.core.gantt.TimeLineHeader#stroke()}{api}
+* {api:anychart.core.gantt.TimeLineHeader#}(){api}, {api:anychart.core.gantt.TimeLineHeader#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader#fontFamily}fontFamily(){api}, {api:anychart.core.gantt.TimeLineHeader#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader#fontWeight}fontWeight(){api}, and other font settings
+* {api:anychart.core.gantt.TimeLineHeader#format}format(){api}
+* {api:anychart.core.gantt.TimeLineHeader#level}level(){api} and {api:anychart.core.gantt.TimeLineHeader#levelHeight}levelHeight(){api} 
+
+methods (levels):
+
 
 
 ```
