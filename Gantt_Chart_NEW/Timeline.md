@@ -94,6 +94,11 @@ methods:
 * {api:anychart.core.gantt.TimeLineHeader#level}level(){api} and {api:anychart.core.gantt.TimeLineHeader#levelHeight}levelHeight(){api} 
 
 methods (levels):
+* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#enabled}enabled(){api} + `true` / `false`
+* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fill}fill(){api} and {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#stroke()}{api}
+* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#}(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontFamily}fontFamily(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontWeight}fontWeight(){api}, and other font settings
+* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#format}format(){api}
+* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#level}level(){api} and {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#levelHeight}levelHeight(){api} 
 
 
 
