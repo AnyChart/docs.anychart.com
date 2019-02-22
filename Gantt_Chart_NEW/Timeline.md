@@ -169,7 +169,8 @@ marker_2.stroke("2 #dd2c00");
 ### Range
 
 * {api:anychart.core.axisMarkers.GanttRange}anychart.core.axisMarkers.GanttRange{api}
-* {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}
+* {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api} + `current`, `end`, `start`
+* {api:anychart.core.ui.Background}anychart.core.ui.Background{api}
 * {api:anychart.core.ui.Timeline#rangeMarker}rangeMarker(){api}
 * {api:anychart.core.axisMarkers.GanttRange#from}from(){api}, {api:anychart.core.axisMarkers.GanttRange#to}to(){api}, {api:anychart.core.axisMarkers.GanttRange#fill}fill(){api}, {api:anychart.core.axisMarkers.GanttRange#enabled}enabled(){api}
 * можно задать как объект
@@ -199,17 +200,18 @@ marker_2.fill("#dd2c00 0.2");
 
 misc:
 
-{api:anychart.core.axisMarkers.GanttText}anychart.core.axisMarkers.GanttText{api}
-* {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}
+* {api:anychart.core.axisMarkers.GanttText}anychart.core.axisMarkers.GanttText{api}
+* {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api} + `current`, `end`, `start`
 * {api:anychart.core.ui.Timeline#textMarker}textMarker(){api}
 * можно задать настройки как объект
 
 methods:
 
 * {api:anychart.core.axisMarkers.GanttText#enabled}enabled(){api}, {api:anychart.core.axisMarkers.GanttText#value}value(){api}, {api:anychart.core.axisMarkers.GanttText#text}text(){api}
-* {api:anychart.core.axisMarkers.GanttText#}(){api}, {api:anychart.core.axisMarkers.GanttText#}(){api}, {api:anychart.core.axisMarkers.GanttText#}(){api}
-* {api:anychart.core.axisMarkers.GanttText#}(){api}, {api:anychart.core.axisMarkers.GanttText#}(){api}, {api:anychart.core.axisMarkers.GanttText#}(){api}
-* {api:anychart.core.axisMarkers.GanttText#}(){api}, {api:anychart.core.axisMarkers.GanttText#}(){api}, {api:anychart.core.axisMarkers.GanttText#}(){api}
+* {api:anychart.core.axisMarkers.GanttText#useHtmle}useHtml(){api}
+* {api:anychart.core.axisMarkers.GanttText#fontColor}fontColor(){api}, {api:anychart.core.axisMarkers.GanttText#fontFamily}fontFamily(){api}, {api:anychart.core.axisMarkers.GanttText#fontSize}fontSize(){api}, {api:anychart.core.axisMarkers.GanttText#fontWeight}fontWeight(){api}
+* {api:anychart.core.axisMarkers.GanttText#background}background(){api}
+* {api:anychart.core.axisMarkers.GanttText#rotation}rotation(){api}, {api:anychart.core.axisMarkers.GanttText#padding}padding(){api}, {api:anychart.core.axisMarkers.GanttText#offsetX}offsetX(){api}, {api:anychart.core.axisMarkers.GanttText#offsetY}offsetY(){api}
 
 
 ```
