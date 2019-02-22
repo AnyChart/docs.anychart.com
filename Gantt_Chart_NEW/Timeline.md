@@ -10,7 +10,17 @@
 
 ## Appearance
 
-* Basic Settings: Rows and Columns
+misc:
+
+* [Basic Settings: Rows and Columns](Basic_Settings#rows_and_columns)
+* (?) [Data Grid](Data_Grid)
+
+methods:
+
+* {api:anychart.core.ui.Timeline#backgroundFill}backgroundFill(){api} to set the background fill
+* {api:anychart.core.ui.Timeline#columnStroke}columnStroke(){api} to set the stroke of columns
+* {api:anychart.core.ui.Timeline#rowFill}rowFill(){api}, {api:anychart.core.ui.Timeline#rowHoverFill}rowHoverFill(){api}, and {api:anychart.core.ui.Timeline#rowSelectedFill}rowSelectedFill(){api} to set the fill of rows
+* {api:anychart.core.ui.Timeline#rowEvenFill}rowEvenFill(){api} and {api:anychart.core.ui.Timeline#rowOddFill}rowOddFill(){api} to set the fill of even and odd rows
 
 
 ```
@@ -27,11 +37,19 @@ timeline.rowSelectedFill("#ffd54f 0.3");
 
 ## Scale
 
+misc:
+
 * {api:anychart.scales.GanttDateTime}anychart.scales.GanttDateTime{api}
 * {api:anychart.scales.GanttDateTime.ZoomLevelsSettings}anychart.scales.GanttDateTime.ZoomLevelsSettings{api}
-* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper}anychart.core.gantt.TimeLineHeader.LevelWrapper{api}
 * [header](#header)
 * уровни нужно задавать в порядке от самого мелкого к самому крупному
+
+methods:
+
+* {api:anychart.core.ui.Timeline#scale}scale(){api}
+* {api:anychart.scales.GanttDateTime#maximum}maximum(){api}
+* {api:anychart.scales.GanttDateTime#minimum}minimum(){api}
+* {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api}
 
 
 ```
@@ -119,6 +137,7 @@ header.level(0).format(function() {
 * {api:anychart.core.axisMarkers.GanttLine}anychart.core.axisMarkers.GanttLine{api}
 * {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}
 * можно задать как объект
+
 
 ```
 // create two line markers
