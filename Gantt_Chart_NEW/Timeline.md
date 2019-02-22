@@ -138,11 +138,16 @@ header.level(0).format(function() {
 
 ## Timeline Markers
 
+* [line](#line), [range](#range), [text](#text)
+* {api:anychart.core.ui.Timeline#lineMarker}lineMarker(){api}, {api:anychart.core.ui.Timeline#rangeMarker}rangeMarker(){api}, {api:anychart.core.ui.Timeline#textMarker}textMarker(){api}
+
 ### Line
 
 * {api:anychart.core.axisMarkers.GanttLine}anychart.core.axisMarkers.GanttLine{api}
 * {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}
-* можно задать как объект
+* {api:anychart.core.ui.Timeline#lineMarker}lineMarker(){api}
+* {api:anychart.core.axisMarkers.GanttLine#value}value(){api}, {api:anychart.core.axisMarkers.GanttLine#stroke}stroke(){api}, {api:anychart.core.axisMarkers.GanttLine#enabled}enabled(){api}
+* можно задать настройки как объект
 
 
 ```
@@ -165,6 +170,8 @@ marker_2.stroke("2 #dd2c00");
 
 * {api:anychart.core.axisMarkers.GanttRange}anychart.core.axisMarkers.GanttRange{api}
 * {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}
+* {api:anychart.core.ui.Timeline#rangeMarker}rangeMarker(){api}
+* {api:anychart.core.axisMarkers.GanttRange#from}from(){api}, {api:anychart.core.axisMarkers.GanttRange#to}to(){api}, {api:anychart.core.axisMarkers.GanttRange#fill}fill(){api}, {api:anychart.core.axisMarkers.GanttRange#enabled}enabled(){api}
 * можно задать как объект
 
 
@@ -192,6 +199,8 @@ marker_2.fill("#dd2c00 0.2");
 
 {api:anychart.core.axisMarkers.GanttText}anychart.core.axisMarkers.GanttText{api}
 * {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}
+* {api:anychart.core.ui.Timeline#textMarker}textMarker(){api}
+* {api:#}(){api}, {api:#}(){api}, {api:#}(){api}
 * можно задать как объект
 
 
