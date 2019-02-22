@@ -98,8 +98,6 @@ methods (levels):
 * {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fill}fill(){api} and {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#stroke}stroke{api}
 * {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontFamily}fontFamily(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontWeight}fontWeight(){api}, and other font settings
 * {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#format}format(){api}
-* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#level}level(){api} and {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#levelHeight}levelHeight(){api} 
-
 
 
 ```
