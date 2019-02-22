@@ -197,12 +197,20 @@ marker_2.fill("#dd2c00 0.2");
 
 ### Text
 
+misc:
+
 {api:anychart.core.axisMarkers.GanttText}anychart.core.axisMarkers.GanttText{api}
 * {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}
 * {api:anychart.core.ui.Timeline#textMarker}textMarker(){api}
-* {api:#}(){api}, {api:#}(){api}, {api:#}(){api}
 * можно задать как объект
 
+methods:
+
+* {api:anychart.core.axisMarkers.GanttText#enabled}enabled(){api}, {api:anychart.core.axisMarkers.GanttText#value}value(){api}, {api:anychart.core.axisMarkers.GanttText#text}text(){api}
+* {api:anychart.core.axisMarkers.GanttText#}(){api}, {api:anychart.core.axisMarkers.GanttText#}(){api}, {api:anychart.core.axisMarkers.GanttText#}(){api}
+* {api:anychart.core.axisMarkers.GanttText#}(){api}, {api:anychart.core.axisMarkers.GanttText#}(){api}, {api:anychart.core.axisMarkers.GanttText#}(){api}
+* {api:anychart.core.axisMarkers.GanttText#}(){api}, {api:anychart.core.axisMarkers.GanttText#}(){api}, {api:anychart.core.axisMarkers.GanttText#}(){api}
+anychart.core.axisMarkers.GanttText
 
 ```
 // create two text markers
