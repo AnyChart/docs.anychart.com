@@ -85,10 +85,11 @@
 
 tokens:
 
-* ``
-* ``
-* ``
-* ``
+* `{%value}` – имя элемента
+* `{%endValue}` – имя следующего элемента
+* `{%tickValue}` – дата начальной точки
+* `{%end}` – дата конечной точки
+
 
 **all levels**:
 
@@ -110,10 +111,10 @@ tokens:
 
 fields:
 
-* ``
-* ``
-* ``
-* ``
+* `value` – имя элемента
+* `endValue` – имя следующего элемента
+* `tickValue` – дата начальной точки
+* `end` – дата конечной точки
 
 **all levels**:
 
@@ -123,25 +124,13 @@ fields:
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_07{sample}
 
-```
-
-```
-
-{sample :height 220}GANTT\_NEW\_Timeline\_Header\_08{sample}
-
 **individual levels**:
 
 ```
 
 ```
 
-{sample :height 220}GANTT\_NEW\_Timeline\_Header\_09{sample}
-
-```
-
-```
-
-{sample :height 220}GANTT\_NEW\_Timeline\_Header\_10{sample}
+{sample :height 220}GANTT\_NEW\_Timeline\_Header\_08{sample}
 
 ## Height
 

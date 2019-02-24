@@ -76,9 +76,11 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
-    // configure the first level of the timeline header
+    // configure the levels of the timeline header
     var header = chart.getTimeline().header();
-    // header.level(0).format();
+    header.level(0).format("Month: {%value}");
+    header.level(1).format("Quarter: {%value}");
+    header.level(2).format("Year: {%value}");
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-31");

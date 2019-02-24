@@ -76,15 +76,15 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
-    // configure the timeline header
+    // configure the first level of the timeline header
     var header = chart.getTimeline().header();
-    // header.format(function() {
-    //   if (this.value == "March") {
-    //     return "(!) " + this.value;
-    //   } else {
-    //     return this.value;
-    //   }
-    // });
+    header.level(0).format(function() {
+      if (this.value == "February") {
+        return this.value.toUpperCase();
+      } else {
+        return this.value;
+      }
+    });
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-31");
