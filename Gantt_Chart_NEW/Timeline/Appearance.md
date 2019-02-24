@@ -4,6 +4,7 @@
 misc:
 
 * [Basic Settings: Rows and Columns](../Basic_Settings#rows_and_columns)
+* [Header](Header)
 * (?) [Data Grid](../Data_Grid)
 
 methods:

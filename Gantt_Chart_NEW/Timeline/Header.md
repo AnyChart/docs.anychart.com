@@ -1,31 +1,87 @@
 {:index 4}
 # Header
 
-misc:
+## Overview
 
 * {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api}
 * {api:anychart.core.gantt.TimeLineHeader.LevelWrapper}anychart.core.gantt.TimeLineHeader.LevelWrapper{api}
-* [Scale](Scale)
-* [Basic Settings: Header and Row Height](../Basic_Settings#header_and_row_height)
-* [tokens](../../Common_Settings/Text_Formatters#string_tokens), [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions)
+* [All Levels](#all_levels), [Individual Levels](#individual_levels)
+* [Appearance](#appearance)
+* [Text Format](#text_format)
 * [Project Gantt](../Project_Chart)
 * [Resource Gantt](../Resource_Chart)
 
-methods:
+## Levels
 
-* header: {api:anychart.core.ui.Timeline#header}header(){api}
-* {api:anychart.core.gantt.TimeLineHeader#enabled}enabled(){api} + `true` / `false`
-* {api:anychart.core.gantt.TimeLineHeader#fill}fill(){api} and {api:anychart.core.gantt.TimeLineHeader#stroke}stroke(){api}
-* {api:anychart.core.gantt.TimeLineHeader#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader#fontFamily}fontFamily(){api}, {api:anychart.core.gantt.TimeLineHeader#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader#fontWeight}fontWeight(){api}, and other font settings
-* {api:anychart.core.gantt.TimeLineHeader#format}format(){api}
-* {api:anychart.core.gantt.TimeLineHeader#level}level(){api} and {api:anychart.core.gantt.TimeLineHeader#levelHeight}levelHeight(){api} 
+* [Scale](Scale)
 
-methods (levels):
+### All Levels
 
-* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#enabled}enabled(){api} + `true` / `false`
-* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fill}fill(){api} and {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#stroke}stroke{api}
-* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontFamily}fontFamily(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontWeight}fontWeight(){api}, and other font settings
-* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#format}format(){api}
+* {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api}
+* to acces the header: {api:anychart.core.ui.Timeline#header}header(){api}
+* {api:anychart.core.gantt.TimeLineHeader#enabled}enabled(){api} to enable or disable the header
+* {api:anychart.core.gantt.TimeLineHeader#background}background(){api}, {api:anychart.core.gantt.TimeLineHeader#fill}fill(){api} and {api:anychart.core.gantt.TimeLineHeader#stroke}stroke(){api} to configure the [appearance](#appearance)
+* {api:anychart.core.gantt.TimeLineHeader#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader#fontFamily}fontFamily(){api}, {api:anychart.core.gantt.TimeLineHeader#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader#fontWeight}fontWeight(){api}, etc. to configure the font [appearance](#appearance)
+* {api:anychart.core.gantt.TimeLineHeader#format}format(){api} to set the [text format](#text_format)
+* {api:anychart.core.gantt.TimeLineHeader#levelHeight}levelHeight(){api} {api:anychart.core.gantt.TimeLineHeader#level}level(){api} to set the level height and configure [individual levels](#individual_levels)
+
+
+```
+
+```
+
+{sample :height 220}GANTT\_NEW\_Timeline\_Header\_01{sample}
+
+### Individual Levels
+
+* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper}anychart.core.gantt.TimeLineHeader.LevelWrapper{api}
+* to access a level: {api:anychart.core.gantt.TimeLineHeader#level}level(){api}
+* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#enabled}enabled(){api} to enable or disable a level
+* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#background}background(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fill}fill(){api}, and {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#stroke}stroke{api} to configure the [appearance](#appearance)
+* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontFamily}fontFamily(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontWeight}fontWeight(){api}, etc. to configure the font [appearance](#appearance)
+* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#format}format(){api} to set the [text format](#text_format)
+
+
+```
+
+```
+
+{sample :height 220}GANTT\_NEW\_Timeline\_Header\_02{sample}
+
+## Appearance
+
+**all levels**:
+
+* {api:anychart.core.gantt.TimeLineHeader#background}background(){api}, {api:anychart.core.gantt.TimeLineHeader#fill}fill(){api} and {api:anychart.core.gantt.TimeLineHeader#stroke}stroke(){api} to set the background, fill, and stroke
+* {api:anychart.core.gantt.TimeLineHeader#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader#fontFamily}fontFamily(){api}, {api:anychart.core.gantt.TimeLineHeader#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader#fontWeight}fontWeight(){api}, etc. to configure the font
+
+
+```
+
+```
+
+{sample :height 220}GANTT\_NEW\_Timeline\_Header\_03{sample}
+
+**individual levels**
+
+* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#background}background(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fill}fill(){api}, and {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#stroke}stroke{api} to set the background, filln, and stroke
+* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontFamily}fontFamily(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontWeight}fontWeight(){api}, etc. to configure the font
+
+
+```
+
+```
+
+{sample :height 220}GANTT\_NEW\_Timeline\_Header\_04{sample}
+
+## Text Format
+
+* [tokens](../../Common_Settings/Text_Formatters#string_tokens)
+* [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions)
+* all levels: {api:anychart.core.gantt.TimeLineHeader}format(){api}
+* individual levels: {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#format}format(){api}
+
+### Tokens
 
 tokens:
 
@@ -34,6 +90,24 @@ tokens:
 * ``
 * ``
 
+**all levels**:
+
+```
+
+```
+
+{sample :height 220}GANTT\_NEW\_Timeline\_Header\_05{sample}
+
+**individual levels**:
+
+```
+
+```
+
+{sample :height 220}GANTT\_NEW\_Timeline\_Header\_06{sample}
+
+### Formatting Functions
+
 fields:
 
 * ``
@@ -41,39 +115,35 @@ fields:
 * ``
 * ``
 
+**all levels**:
 
 ```
-// configure the timeline header
-var header = chart.getTimeline().header();
-header.fill("#64b5f6 0.2");
-header.stroke("#64b5f6");
-header.fontColor("#64b5f6");
-header.fontWeight(600);
-header.format(function() {
-  if (this.value == "March") {
-    return "(!) " + this.value;
-  } else {
-    return this.value;
-  }
-});
-```
-
-{sample :height 220}GANTT\_NEW\_Timeline\_Header\_01{sample}
 
 ```
-// configure the first level of the timeline header
-var header = chart.getTimeline().header();
-header.level(0).fill("#64b5f6 0.2");
-header.level(0).stroke("#64b5f6");
-header.level(0).fontColor("#64b5f6");
-header.level(0).fontWeight(600);
-header.level(0).format(function() {
-  if (this.value == "March") {
-    return "(!) " + this.value;
-  } else {
-    return this.value;
-  }
-});
- ```
 
-{sample :height 220}GANTT\_NEW\_Timeline\_Header\_02{sample}
+{sample :height 220}GANTT\_NEW\_Timeline\_Header\_07{sample}
+
+```
+
+```
+
+{sample :height 220}GANTT\_NEW\_Timeline\_Header\_08{sample}
+
+**individual levels**:
+
+```
+
+```
+
+{sample :height 220}GANTT\_NEW\_Timeline\_Header\_09{sample}
+
+```
+
+```
+
+{sample :height 220}GANTT\_NEW\_Timeline\_Header\_10{sample}
+
+## Height
+
+* {api:anychart.core.gantt.TimeLineHeader#levelHeight}levelHeight(){api} 
+* [Basic Settings: Header and Row Height](../Basic_Settings#header_and_row_height)

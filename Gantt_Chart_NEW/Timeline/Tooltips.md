@@ -13,6 +13,14 @@ To learn how to adjust data grid tooltips, see [Data Grid: Tooltips](../Data_Gri
 
 ## Tokens
 
+tokens:
+
+* ``
+* ``
+* ``
+* ``
+
+
 ```
 // configure tooltips of the timeline
 chart.getTimeline().tooltip().useHtml(true);    
@@ -41,6 +49,14 @@ chart.getTimeline().tooltip().format(
 {sample :height 160}GANTT\_NEW\_Timeline\_Tooltips\_02{sample}
 
 ## Formatting Functions
+
+fields:
+
+* ``
+* ``
+* ``
+* ``
+
 
 ```
 // configure tooltips of the timeline
