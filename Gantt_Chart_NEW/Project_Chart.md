@@ -83,7 +83,7 @@ The Project chart requires setting [tasks](#tasks_\(actual\)) by using the follo
 * `actualStart` to set start dates
 * `actualEnd` to set end dates
 
-You can also use optional fields:
+In addition, you can use optional fields:
 
 * `children` / `parent` to set the [hierarchy](#hierarchy)
 * `baselineStart` and `baselineEnd` to add [baselines](#baselines_\(planned\))
@@ -96,7 +96,7 @@ You can also use optional fields:
 
 To learn how to rename the default data fields, see [Data: Mapping](Data#mapping).
 
-(?) You can also add custom fields to your data and use them to configure [data grid tooltips](Data_Grid#tooltips), [timeline tooltips](Timeline#tooltips), and [labels of elements](Elements#labels).
+(?) You can also add custom fields to your data and use them to configure [data grid tooltips](Data_Grid#tooltips), [timeline tooltips](Timeline_Tooltips), and [labels of elements](Elements#labels).
 
 ### Setting Data
 

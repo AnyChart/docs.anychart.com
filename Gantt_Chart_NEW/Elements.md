@@ -456,11 +456,11 @@ var chart.getTimeline().tasks().labels(true);
 chart.getTimeline().tasks().labels().enabled(true);
 ```
 
-To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}. For example, you can set the text format by combining the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with either [tokens](../../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions). Read the sections below to learn more.
+To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}. For example, you can set the text format by combining the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with either [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions). Read the sections below to learn more.
 
 ### Tokens
 
-To format the text of labels, combine the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [tokens](../../Common_Settings/Text_Formatters#string_tokens).
+To format the text of labels, combine the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
 Please keep in mind that in addition to default tokens you can always use a custom token corresponding to a custom field in your data.
 
@@ -605,7 +605,7 @@ periodLabels.format(function() {
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a timeline or data grid row is hovered over.
 
-To learn how to adjust tooltips, see the [Data Grid: Tooltips](Data_Grid#tooltips) and [Timeline: Tooltips](Timeline#tooltips) sections.
+To learn how to adjust tooltips, see the [Data Grid: Tooltips](Data_Grid#tooltips) and [Timeline: Tooltips](Timeline_Tooltips) sections.
 
 ## Markers
 
