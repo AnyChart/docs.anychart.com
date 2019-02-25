@@ -76,16 +76,17 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
-    // configure the appearance of the timeline
-    var timeline = chart.getTimeline();
-    timeline.rowEvenFill("gray 0.3");
-    timeline.rowOddFill("gray 0.1");
-    timeline.rowHoverFill("#ffd54f 0.3");
-    timeline.rowSelectedFill("#ffd54f 0.3");
-    timeline.columnStroke(null);
+    // configure the appearance of the data grid
+    var dataGrid = chart.dataGrid();
+    dataGrid.rowEvenFill("gray 0.3");
+    dataGrid.rowOddFill("gray 0.1");
+    dataGrid.rowHoverFill("#ffd54f 0.3");
+    dataGrid.rowSelectedFill("#ffd54f 0.3");
+    dataGrid.columnStroke("2 #64b5f6");
+    dataGrid.headerFill("#64b5f6 0.2");
 
     // configure the scale
-    timeline.scale().maximum("2018-04-15");
+    chart.getTimeline().scale().maximum("2018-04-15");
 
     // set the container id
     chart.container("container");

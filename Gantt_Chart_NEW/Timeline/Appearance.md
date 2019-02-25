@@ -18,11 +18,11 @@ methods:
 ```
 // configure the appearance of the timeline
 var timeline = chart.getTimeline();
-timeline.columnStroke(null);
 timeline.rowEvenFill("gray 0.3");
 timeline.rowOddFill("gray 0.1");
 timeline.rowHoverFill("#ffd54f 0.3");
 timeline.rowSelectedFill("#ffd54f 0.3");
+timeline.columnStroke(null);
 ```
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Appearance{sample}

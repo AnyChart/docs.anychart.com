@@ -33,36 +33,43 @@ anychart.onDocumentReady(function () {
         name: "Development",
         actualStart: "2018-01-25",
         actualEnd: "2018-04-07",
+        manager: "J. Doe",
         children: [
           {
             id: "1_1",
             name: "Analysis",
             actualStart: "2018-01-25",
-            actualEnd: "2018-02-08"
+            actualEnd: "2018-02-08",
+            progressValue: "75%"
           },
           {
             id: "1_2",
             name: "Design",
             actualStart: "2018-02-04",
-            actualEnd: "2018-02-24"
+            actualEnd: "2018-02-24",
+            progressValue: "100%",
+            custom_field: "!"
           },
           {
             id: "1_3",
             name: "Meeting",
             actualStart: "2018-02-25",
-            actualEnd: "2018-02-25"
+            actualEnd: "2018-02-25",
+            custom_field: "!"
           },
           {
             id: "1_4",
             name: "Implementation",
             actualStart: "2018-02-25",
-            actualEnd: "2018-03-14"
+            actualEnd: "2018-03-14",
+            progressValue: "60%"
           },
           {
             id: "1_5",
             name: "Testing",
             actualStart: "2018-03-15",
-            actualEnd: "2018-04-07"
+            actualEnd: "2018-04-07",
+            custom_field: "?"
           }
       ]}
     ];
@@ -76,16 +83,19 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
-    // configure the appearance of the timeline
-    var timeline = chart.getTimeline();
-    timeline.rowEvenFill("gray 0.3");
-    timeline.rowOddFill("gray 0.1");
-    timeline.rowHoverFill("#ffd54f 0.3");
-    timeline.rowSelectedFill("#ffd54f 0.3");
-    timeline.columnStroke(null);
+    // configure the first column of the data grid
+    var column_1 = chart.dataGrid().column(0);
+    column_1.width(25);
+    column_1.labels().fontColor("#64b5f6");
+    column_1.labels().fontWeight(600);
+    column_1.labels().format("{%linearIndex}{%custom_field}");
+
+    // configure the second column of the data grid
+    var column_2 = chart.dataGrid().column(1);
+    column_2.labels().format("{%name}: {%progress}");
 
     // configure the scale
-    timeline.scale().maximum("2018-04-15");
+    chart.getTimeline().scale().maximum("2018-04-15");
 
     // set the container id
     chart.container("container");
