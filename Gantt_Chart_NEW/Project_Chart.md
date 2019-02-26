@@ -96,7 +96,7 @@ In addition, you can use optional fields:
 
 To learn how to rename the default data fields, see [Data: Mapping](Data#mapping).
 
-(?) You can also add custom fields to your data and use them to configure [data grid tooltips](Data_Grid/Tooltips), [timeline tooltips](Timeline/Tooltips), and [labels of elements](Elements#labels).
+(?) You can also add custom fields to your data and use them to configure [data grid tooltips](Data_Grid/Tooltips), [data grid labels](Data_Grid/Text(Labels)), [timeline tooltips](Timeline/Tooltips), and [labels of elements](Elements#labels).
 
 ### Setting Data
 

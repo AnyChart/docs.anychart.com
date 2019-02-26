@@ -82,7 +82,7 @@ In addition, you can use optional fields:
 
 To learn how to rename the default data fields, see [Data: Mapping](Data#mapping).
 
-(?) You can also add custom fields to your data and use them to configure [data grid tooltips](Data_Grid/Tooltips), [timeline tooltips](Timeline/Tooltips), and [labels of elements](Elements#labels).
+(?) You can also add custom fields to your data and use them to configure [data grid tooltips](Data_Grid/Tooltips), [data grid labels](Data_Grid/Text(Labels)), [timeline tooltips](Timeline/Tooltips), and [labels of elements](Elements#labels).
 
 ### Setting Data
 
@@ -241,7 +241,7 @@ The main timeline element of the Resource chart is the period, but logically, pe
 
 ### Periods and Resources
 
-**Resources** are logical elements. They have no direct representation on the [timeline](Timeline), but their names are shown on the [data grid](Data_Grid). Any resource can include a **period** or periods, which are visualized as timeline elements.
+**Resources** are logical elements. They have no direct representation on the [timeline](Timeline), but their names are shown as [data grid labels](Data_Grid/Text(Labels)). Any resource can include a **period** or periods, which are visualized as timeline elements.
 
 For resources, use the following data fields:
 
