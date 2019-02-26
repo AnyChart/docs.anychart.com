@@ -79,11 +79,8 @@ anychart.onDocumentReady(function () {
     // configure the first level of the timeline header
     var header = chart.getTimeline().header();
     header.level(0).format(function() {
-      if (this.value == "February") {
-        return this.value.toUpperCase();
-      } else {
-        return this.value;
-      }
+      var duration = (this.end - this.tickValue) / 1000 / 3600 / 24;
+      return this.value + ": " + duration + " days"
     });
 
     // configure the scale
