@@ -83,10 +83,10 @@ anychart.onDocumentReady(function () {
 
     column_1.labels().format( function() {
 
-      var parent = this.item.getParent();
+      var children = this.item.numChildren();
       var index = this.linearIndex;
 
-      if (parent == null) {
+      if (children > 0) {
         return "<span style='color:#dd2c00'>" + index + ".</span>";
       } else {
         return "<span style='color:#64b5f6'>" + index + ".</span>";
@@ -101,7 +101,7 @@ anychart.onDocumentReady(function () {
 
     column_2.labels().format(function() {
 
-      var parent = this.item.getParent();
+      var children = this.item.numChildren();
       var duration = (this.end - this.start) / 1000 / 3600 / 24;
       var custom = " ";
 
@@ -110,7 +110,7 @@ anychart.onDocumentReady(function () {
                  this.getData("custom_field") + custom + "</span>";
       }
 
-      if (parent == null) {
+      if (children > 0) {
         return "<span style='color:#dd2c00;font-weight:bold'>" +
                this.name.toUpperCase() + "<span>";
       } else {

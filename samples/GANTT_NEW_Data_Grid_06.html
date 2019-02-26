@@ -92,11 +92,11 @@ anychart.onDocumentReady(function () {
 
     column_1.labels().format( function() {
 
-      var parent = this.item.getParent();
+      var children = this.item.numChildren();
       var index = this.linearIndex;
       var duration = (this.actualEnd - this.actualStart);
 
-      if (parent == null) {
+      if (children > 0) {
         return "<span style='color:#dd2c00'>" + index + ".</span>";
       } else {
         if (duration == 0) {
@@ -116,16 +116,16 @@ anychart.onDocumentReady(function () {
 
     column_2.labels().format(function() {
 
-      var parent = this.item.getParent();
+      var children = this.item.numChildren();
       var duration = (this.actualEnd - this.actualStart) / 1000 / 3600 / 24;
-      var custom = " ";
+      var custom = "";
 
       if (this.getData("custom_field")) {
         custom = "<span style='font-weight:bold'>" +
-                 this.getData("custom_field") + custom + "</span>";
+                 this.getData("custom_field") + " </span>";
       }
 
-      if (parent == null) {
+      if (children > 0) {
         return "<span style='color:#dd2c00;font-weight:bold'>" +
                this.name + "<span>: " + duration + "d";
       } else {

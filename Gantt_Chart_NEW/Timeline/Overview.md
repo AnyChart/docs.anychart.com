@@ -9,5 +9,3 @@
 * [Appearance](Appearance), [Scale](Scale), [Header](Header), [Markers](Markers), [Tooltip](Tooltip)
 * [Elements: Labels](../Elements#labels)
 * (?)
-
-## (?) Enabling / Disabling

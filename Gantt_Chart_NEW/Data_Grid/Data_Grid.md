@@ -15,6 +15,7 @@
 
 * {api:anychart.core.ui.DataGrid.Column}anychart.core.ui.DataGrid.Column{api}
 * не забыть про метод cellTextSettingsOverrider()
+* не забыть про метод setColumnFormat()
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_02{sample}
 

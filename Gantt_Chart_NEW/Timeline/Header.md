@@ -24,7 +24,7 @@
 * {api:anychart.core.gantt.TimeLineHeader#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader#fontWeight}fontWeight(){api},
 {api:anychart.core.gantt.TimeLineHeader#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader#fontFamily}fontFamily(){api}, etc. to configure the font [appearance](#appearance)
 * {api:anychart.core.gantt.TimeLineHeader#format}format(){api} to set the [text format](#text_format)
-* {api:anychart.core.gantt.TimeLineHeader#levelHeight}levelHeight(){api} and {api:anychart.core.gantt.TimeLineHeader#level}level(){api} to set the level height and configure [individual levels](#individual_levels)
+* {api:anychart.core.gantt.TimeLineHeader#levelHeight}levelHeight(){api} and {api:anychart.core.gantt.TimeLineHeader#level}level(){api} to set the level [height](#height) and configure [individual levels](#individual_levels)
 
 
 ```
