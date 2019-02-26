@@ -84,39 +84,61 @@ anychart.onDocumentReady(function () {
     chart.data(treeData);
 
     // configure the first column of the data grid
+
     var column_1 = chart.dataGrid().column(0);
-    column_1.width(30);
-    column_1.labels().useHtml(true)
-    //column_1.labels().fontWeight(600);
+
+    column_1.width(25);
+    column_1.labels().fontWeight(600);
+    column_1.labels().useHtml(true);
+
     column_1.labels().format( function() {
+
       var parent = this.item.getParent();
       var index = this.linearIndex;
+      var duration = (this.actualEnd - this.actualStart);
+
       if (parent == null) {
-        return "<span style='color:red;font-weight:bold'>" +
-               index + "</span>";
+        return "<span style='color:#dd2c00'>" + index + ".</span>";
       } else {
-        if (this.getData("custom_field")) {
-          return index + this.getData("custom_field");
+        if (duration == 0) {
+          return "<span style='color:#ef6c00'>" + index + ".</span>";
         } else {
-          return index;
+          return "<span style='color:#64b5f6'>" + index + ".</span>";
         }
       }
+
     });
 
     // configure the second column of the data grid
+
     var column_2 = chart.dataGrid().column(1);
+
+    column_2.labels().useHtml(true);
+
     column_2.labels().format(function() {
+
       var parent = this.item.getParent();
       var duration = (this.actualEnd - this.actualStart) / 1000 / 3600 / 24;
+      var custom = " ";
+
+      if (this.getData("custom_field")) {
+        custom = "<span style='font-weight:bold'>" +
+                 this.getData("custom_field") + custom + "</span>";
+      }
+
       if (parent == null) {
-        return this.name.toUpperCase() + ": " + duration + "d";
+        return "<span style='color:#dd2c00;font-weight:bold'>" +
+               this.name + "<span>: " + duration + "d";
       } else {
         if (duration == 0) {
-          return this.name;
+          return "<span style='color:#ef6c00;font-weight:bold'>" + 
+                 custom + this.name + "</span";
         } else {
-          return this.name + ": " + this.progress * 100 + "%";
+          return "<span style='color:#64b5f6'>" + custom + 
+                 this.name + ": " + this.progress * 100 + "%</span>";
         }
       }
+
     });
 
     // configure the scale

@@ -88,12 +88,15 @@ anychart.onDocumentReady(function () {
     column_1.width(25);
     column_1.labels().fontColor("#64b5f6");
     column_1.labels().fontWeight(600);
-    column_1.labels().format("{%linearIndex}{%custom_field}");
+    column_1.labels().format("{%linearIndex}.");
 
     // configure the second column of the data grid
     var column_2 = chart.dataGrid().column(1);
     column_2.labels().useHtml(true);
-    column_2.labels().format("<span style='color:#dd2c00;font-weight:bold'>{%name}: {%progress}</span>");
+    column_2.labels().format(
+      "<span style='color:#dd2c00;font-weight:bold'>{%custom_field} </span>" +
+      "{%name}: <span style='color:#64b5f6'>{%progress}</span>"
+    );
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-04-15");
