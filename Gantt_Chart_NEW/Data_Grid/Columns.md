@@ -11,6 +11,10 @@ misc:
 
 ## Title
 
+misc:
+
+* [Basic Settings: Splitter](../Basic_Settings#splitter)
+
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_02{sample}
 
 ## Text (Labels)
