@@ -9,10 +9,24 @@
 
 * Basic Settings: Rows and Columns
 
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_01{sample}
+
 ## Columns
 
 * {api:anychart.core.ui.DataGrid.Column}anychart.core.ui.DataGrid.Column{api}
 * не забыть про метод cellTextSettingsOverrider()
+
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_02{sample}
+
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_03{sample}
+
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_04{sample}
+
+{sample :height 160}GANTT\_NEW\_Data\_Grid\_05{sample}
+
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_06{sample}
+
+{sample :height 160}GANTT\_NEW\_Data\_Grid\_07{sample}
 
 ## Buttons
 
