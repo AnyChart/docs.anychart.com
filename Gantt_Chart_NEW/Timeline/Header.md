@@ -51,7 +51,7 @@
 
 ## Appearance
 
-* [appearance settings](../Appearance_Settings) 
+* [appearance settings](../../Appearance_Settings) 
 
 **all levels**:
 
