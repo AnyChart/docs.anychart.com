@@ -480,7 +480,7 @@ In the sample below, labels of different elements have the same font settings bu
 var timeline = chart.getTimeline();
 
 // configure labels of elements
-timeline.elements().labels().fontColor("red");
+timeline.elements().labels().fontColor("#990000");
 timeline.elements().labels().fontWeight(600);
 
 // configure labels of tasks
@@ -549,7 +549,7 @@ timeline.elements().labels().fontWeight(600);
 timeline.tasks().labels().useHtml(true);
 timeline.tasks().labels().format(function() {
   if (this.progress == 1) {
-    return "<span style='color:red'>" + this.name + ": COMPLETE</span>";
+    return "<span style='color:#990000'>" + this.name + ": COMPLETE</span>";
   } else {
     return this.name + ": " + this.progress * 100 + "%";
   }

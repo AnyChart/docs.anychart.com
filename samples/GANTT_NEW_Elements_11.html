@@ -96,7 +96,7 @@ anychart.onDocumentReady(function () {
     timeline.tasks().labels().useHtml(true);
     timeline.tasks().labels().format(function() {
       if (this.progress == 1) {
-        return "<span style='color:red'>" + this.name + ": COMPLETE</span>";
+        return "<span style='color:#990000'>" + this.name + ": COMPLETE</span>";
       } else {
         return this.name + ": " + this.progress * 100 + "%";
       }

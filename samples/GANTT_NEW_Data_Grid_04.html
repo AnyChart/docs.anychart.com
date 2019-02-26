@@ -5,10 +5,10 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4" type="text/javascript"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-4198-use-html-optimized-text/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-4198-use-html-optimized-text/js/anychart-gantt.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-4198-use-html-optimized-text/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-4198-use-html-optimized-text/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
     
@@ -92,7 +92,8 @@ anychart.onDocumentReady(function () {
 
     // configure the second column of the data grid
     var column_2 = chart.dataGrid().column(1);
-    column_2.labels().format("{%name}: {%progress}");
+    column_2.labels().useHtml(true);
+    column_2.labels().format("<span style='color:#dd2c00;font-weight:bold'>{%name}: {%progress}</span>");
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-04-15");

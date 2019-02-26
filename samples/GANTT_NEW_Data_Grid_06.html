@@ -5,10 +5,10 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4" type="text/javascript"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-4198-use-html-optimized-text/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-4198-use-html-optimized-text/js/anychart-gantt.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-4198-use-html-optimized-text/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-4198-use-html-optimized-text/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
     
@@ -87,13 +87,13 @@ anychart.onDocumentReady(function () {
     var column_1 = chart.dataGrid().column(0);
     column_1.width(30);
     column_1.labels().useHtml(true)
-    column_1.labels().fontColor("#64b5f6");
-    column_1.labels().fontWeight(600);
+    //column_1.labels().fontWeight(600);
     column_1.labels().format( function() {
       var parent = this.item.getParent();
       var index = this.linearIndex;
       if (parent == null) {
-        return "[" + index + "]";
+        return "<span style='color:red;font-weight:bold'>" +
+               index + "</span>";
       } else {
         if (this.getData("custom_field")) {
           return index + this.getData("custom_field");
