@@ -28,7 +28,9 @@
 
 
 ```
-
+// configure the timeline header
+var header = chart.getTimeline().header();
+header.background().stroke("3 #455a64");
 ```
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_01{sample}
@@ -44,7 +46,9 @@
 
 
 ```
-
+// configure the first level of the timeline header
+var header = chart.getTimeline().header();
+header.level(0).background().stroke("3 #455a64");
 ```
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_02{sample}
@@ -61,7 +65,12 @@
 
 
 ```
-
+// configure the timeline header
+var header = chart.getTimeline().header();
+header.fill("#64b5f6 0.2");
+header.stroke("#64b5f6");
+header.fontColor("#64b5f6");
+header.fontWeight(600);
 ```
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_03{sample}
@@ -73,7 +82,12 @@
 
 
 ```
-
+// configure the first level of the timeline header
+var header = chart.getTimeline().header();
+header.level(0).fill("#64b5f6 0.2");
+header.level(0).stroke("#64b5f6");
+header.level(0).fontColor("#64b5f6");
+header.level(0).fontWeight(600);
 ```
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_04{sample}
@@ -98,7 +112,11 @@ tokens:
 **all levels**:
 
 ```
-
+// configure the timeline header
+var header = chart.getTimeline().header();
+header.format(
+  "{%value} – {%endValue}"
+);
 ```
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_05{sample}
@@ -106,7 +124,11 @@ tokens:
 **individual levels**:
 
 ```
-
+// configure the levels of the timeline header
+var header = chart.getTimeline().header();
+header.level(0).format("Month: {%value}");
+header.level(1).format("Quarter: {%value}");
+header.level(2).format("Year: {%value}");
 ```
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_06{sample}
@@ -123,7 +145,12 @@ fields:
 **all levels**:
 
 ```
-
+// configure the timeline header
+var header = chart.getTimeline().header();
+header.format(function() {
+  var duration = (this.end - this.tickValue) / 1000 / 3600 / 24;
+  return this.value + ": " + duration + " days"
+});
 ```
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_07{sample}
@@ -131,7 +158,12 @@ fields:
 **individual levels**:
 
 ```
-
+// configure the first level of the timeline header
+var header = chart.getTimeline().header();
+header.level(0).format(function() {
+  var duration = (this.end - this.tickValue) / 1000 / 3600 / 24;
+  return this.value + ": " + duration + " days"
+});
 ```
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_08{sample}
