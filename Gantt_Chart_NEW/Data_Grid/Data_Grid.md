@@ -23,11 +23,11 @@
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_04{sample}
 
-{sample :height 160}GANTT\_NEW\_Data\_Grid\_05{sample}
+{sample :height 200}GANTT\_NEW\_Data\_Grid\_05{sample}
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_06{sample}
 
-{sample :height 160}GANTT\_NEW\_Data\_Grid\_07{sample}
+{sample :height 200}GANTT\_NEW\_Data\_Grid\_07{sample}
 
 ## Buttons
 
