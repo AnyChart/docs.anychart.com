@@ -1,9 +1,9 @@
 {:index 3}
 # Columns
 
+misc:
+
 * {api:anychart.core.ui.DataGrid.Column}anychart.core.ui.DataGrid.Column{api}
-* не забыть про метод cellTextSettingsOverrider()
-* не забыть про метод setColumnFormat()
 
 ## Width
 
@@ -14,6 +14,11 @@
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_02{sample}
 
 ## Text (Labels)
+
+misc:
+
+* не забыть про метод cellTextSettingsOverrider()
+* не забыть про метод setColumnFormat()
 
 ### Tokens
 
