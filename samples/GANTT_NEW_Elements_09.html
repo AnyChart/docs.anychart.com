@@ -90,18 +90,22 @@ anychart.onDocumentReady(function () {
     var timeline = chart.getTimeline();
 
     // configure labels of elements
-    timeline.elements().labels().fontColor("#990000");
     timeline.elements().labels().fontWeight(600);
 
     // configure labels of tasks
-    timeline.tasks().labels().format("{%name}: {%progress}");
+    timeline.tasks().labels().useHtml(true);
+    timeline.tasks().labels().format(
+      "{%name}: <span style='color:#64b5f6'>{%progress}</span>"
+    );
 
     // configure labels of parent tasks
     timeline.groupingTasks().labels().format("{%name}");
 
     // configure labels of milestones
+    timeline.milestones().labels().useHtml(true);
     timeline.milestones().labels().format(
-        "{%custom_field} {%actualStart}{dateTimeFormat:dd MMM}"
+        "<span style='color:#ef6c00'>{%custom_field}</span> " + 
+        "{%actualStart}{dateTimeFormat:dd MMM}"
     );
 
     // configure the scale

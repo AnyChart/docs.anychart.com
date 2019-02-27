@@ -69,10 +69,12 @@ anychart.onDocumentReady(function () {
     // configure labels of periods
     var periodLabels = chart.getTimeline().periods().labels();
     periodLabels.enabled(true);
-    periodLabels.fontColor("#990000");
+    periodLabels.useHtml(true);
+    periodLabels.fontColor("#104d89");
     periodLabels.fontWeight(600);
     periodLabels.format(
-      "{%custom_field} start: {%start}{dateTimeFormat:dd MMM}"
+      "<span style='color:#991f00'>{%custom_field}</span> " +
+      "start: {%start}{dateTimeFormat:dd MMM}"
     );
 
     // set the container id

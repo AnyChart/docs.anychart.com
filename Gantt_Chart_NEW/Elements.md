@@ -474,24 +474,26 @@ For the **Project chart**, the following tokens are available:
 * `{%baselineEnd}`
 * `{%progress}`
 
-In the sample below, labels of different elements have the same font settings but different text format, which is configured with the help of tokens, including a custom one:
+In the sample below, labels of different elements have the same font weight but different text format, which is configured with the help of tokens, including a custom one:
 
 ```
-var timeline = chart.getTimeline();
-
 // configure labels of elements
-timeline.elements().labels().fontColor("#990000");
 timeline.elements().labels().fontWeight(600);
 
 // configure labels of tasks
-timeline.tasks().labels().format("{%name}: {%progress}");
+timeline.tasks().labels().useHtml(true);
+timeline.tasks().labels().format(
+  "{%name}: <span style='color:#64b5f6'>{%progress}</span>"
+);
 
-// configure labels of parent task
+// configure labels of parent tasks
 timeline.groupingTasks().labels().format("{%name}");
 
 // configure labels of milestones
+timeline.milestones().labels().useHtml(true);
 timeline.milestones().labels().format(
-    "{%custom_field} {%actualStart}{dateTimeFormat:dd MMM}"
+    "<span style='color:#ef6c00'>{%custom_field}</span> " + 
+    "{%actualStart}{dateTimeFormat:dd MMM}"
 );
 ```
 
@@ -510,10 +512,12 @@ In the following sample, tokens, including a custom one, are used to format the 
 // configure labels of periods
 var periodLabels = chart.getTimeline().periods().labels();
 periodLabels.enabled(true);
-periodLabels.fontColor("#990000");
+periodLabels.useHtml(true);
+periodLabels.fontColor("#104d89");
 periodLabels.fontWeight(600);
 periodLabels.format(
-  "{%custom_field} start: {%start}{dateTimeFormat:dd MMM}"
+  "<span style='color:#991f00'>{%custom_field}</span> " +
+  "start: {%start}{dateTimeFormat:dd MMM}"
 );
 ```
 
@@ -540,8 +544,6 @@ In the sample below, labels of different elements have the same font weight but 
 The label text of regular tasks depends on their progress. The label of the parent task displays its duration. Finally, labels of milestones refer to other tasks, which are linked in a custom data field.
 
 ```
-var timeline = chart.getTimeline();
-
 // configure labels of elements
 timeline.elements().labels().fontWeight(600);
 
@@ -549,19 +551,23 @@ timeline.elements().labels().fontWeight(600);
 timeline.tasks().labels().useHtml(true);
 timeline.tasks().labels().format(function() {
   if (this.progress == 1) {
-    return "<span style='color:#990000'>" + this.name + ": COMPLETE</span>";
+    return this.name + ": <span style='color:#1976d2'>COMPLETE</span>";
   } else {
-    return this.name + ": " + this.progress * 100 + "%";
+    return this.name +": <span style='color:#64b5f6'>" +
+           this.progress * 100 + "%</span>";
   }
 });
 
 // configure labels of parent tasks
+timeline.groupingTasks().labels().useHtml(true);
 timeline.groupingTasks().labels().format(function() {
   var duration = (this.actualEnd - this.actualStart) / 1000 / 3600 / 24;
-  return this.name + ": " + duration + " days";
+  return this.name + ": <span style='color:#dd2c00'>" +
+         duration + " days</span>";
 });
 
 // configure labels of milestones
+timeline.milestones().labels().useHtml(true);
 timeline.milestones().labels().format(function() {
   var relatedTaskId = this.getData("custom_field");
   var relatedTaskItem = treeData.search("id", relatedTaskId);
@@ -586,12 +592,12 @@ In this sample a formatting function is used to calculate and display the durati
 var periodLabels = chart.getTimeline().periods().labels();
 periodLabels.enabled(true);
 periodLabels.useHtml(true);
-periodLabels.fontColor("black");
+periodLabels.fontColor("#104d89");
 periodLabels.fontWeight(600);
 periodLabels.format(function() {
   var duration = (this.end - this.start) / 1000 / 3600 / 24;
   if (duration > 30) {
-    return "<span style='color:#990000'>" + this.getData("custom_field") +
+    return "<span style='color:#991f00'>" + this.getData("custom_field") +
            " " + duration + " days</span>"
   } else {  
     return this.getData("custom_field") + " " + duration + " days";

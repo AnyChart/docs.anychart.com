@@ -70,12 +70,12 @@ anychart.onDocumentReady(function () {
     var periodLabels = chart.getTimeline().periods().labels();
     periodLabels.enabled(true);
     periodLabels.useHtml(true);
-    periodLabels.fontColor("black");
+    periodLabels.fontColor("#104d89");
     periodLabels.fontWeight(600);
     periodLabels.format(function() {
       var duration = (this.end - this.start) / 1000 / 3600 / 24;
       if (duration > 30) {
-        return "<span style='color:#990000'>" + this.getData("custom_field") +
+        return "<span style='color:#991f00'>" + this.getData("custom_field") +
                " " + duration + " days</span>"
       } else {  
         return this.getData("custom_field") + " " + duration + " days";

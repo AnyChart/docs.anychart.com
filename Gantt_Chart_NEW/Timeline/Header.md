@@ -114,9 +114,7 @@ tokens:
 ```
 // configure the timeline header
 var header = chart.getTimeline().header();
-header.format(
-  "{%value} – {%endValue}"
-);
+header.format("{%value} – {%endValue}");
 ```
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_05{sample}

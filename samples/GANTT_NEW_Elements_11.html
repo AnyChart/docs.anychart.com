@@ -96,19 +96,23 @@ anychart.onDocumentReady(function () {
     timeline.tasks().labels().useHtml(true);
     timeline.tasks().labels().format(function() {
       if (this.progress == 1) {
-        return "<span style='color:#990000'>" + this.name + ": COMPLETE</span>";
+        return this.name + ": <span style='color:#1976d2'>COMPLETE</span>";
       } else {
-        return this.name + ": " + this.progress * 100 + "%";
+        return this.name +": <span style='color:#64b5f6'>" +
+               this.progress * 100 + "%</span>";
       }
     });
 
     // configure labels of parent tasks
+    timeline.groupingTasks().labels().useHtml(true);
     timeline.groupingTasks().labels().format(function() {
       var duration = (this.actualEnd - this.actualStart) / 1000 / 3600 / 24;
-      return this.name + ": " + duration + " days";
+      return this.name + ": <span style='color:#dd2c00'>" +
+             duration + " days</span>";
     });
 
     // configure labels of milestones
+    timeline.milestones().labels().useHtml(true);
     timeline.milestones().labels().format(function() {
       var relatedTaskId = this.getData("custom_field");
       var relatedTaskItem = treeData.search("id", relatedTaskId);
