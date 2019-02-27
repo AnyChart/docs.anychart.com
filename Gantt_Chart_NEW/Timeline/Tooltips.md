@@ -34,6 +34,7 @@ For the [Project Gantt](../Project_Chart) chart, the following tokens are availa
 * ``
 * ``
 
+...
 
 ```
 // configure tooltips of the timeline
@@ -56,6 +57,7 @@ The [Resource Gantt](../Resource_Chart) chart supports these tokens:
 * ``
 * ``
 
+...
 
 ```
 // configure tooltips of the timeline
@@ -83,6 +85,7 @@ For the [Project Gantt](../Project_Chart), the following fields are available in
 * ``
 * ``
 
+...
 
 ```
 // configure tooltips of the timeline
@@ -109,6 +112,7 @@ Here are the fields supported by the [Resource Gantt](../Resource_Chart):
 * ``
 * ``
 
+...
 
 ```
 // configure tooltips of the timeline
