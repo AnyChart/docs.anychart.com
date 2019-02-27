@@ -7,7 +7,7 @@
 
 To access tooltips, call the {api:anychart.core.ui.Timeline#tooltip}tooltip(){api} method of the timeline.
 
-To enable or disable tooltips, pass `true` / `false` either directly to {api:anychart.core.ui.Timeline#tooltip}tooltip(){api} or to the {api:anychart.core.ui.Tooltip#enabled}enabled(){api} method:
+To enable or disable tooltips, pass `true` / `false` either directly to {api:anychart.core.ui.Timeline#tooltip}tooltip(){api} or to the {api:anychart.core.ui.Tooltip#enabled}enabled(){api} method of tooltips:
 
 ```
 var chart.getTimeline().tooltip(true);
@@ -17,7 +17,7 @@ var chart.getTimeline().tooltip(true);
 chart.getTimeline().tooltip).enabled(true);
 ```
 
-To configure tooltips, use other methods of {api:anychart.core.ui.Timeline#tooltip}tooltip(){api}, for example:
+To configure tooltips, use other methods of {api:anychart.core.ui.Tooltip}anychart.core.ui.Tooltip{api}, for example:
 
 * {api:anychart.core.ui.Tooltip#fontColor}fontColor(){api}
 * {api:anychart.core.ui.Tooltip#fontWeight}fontWeight(){api}
