@@ -466,11 +466,13 @@ chart.getTimeline().tasks().labels().enabled(true);
 * {api:anychart.core.ui.LabelsFactory#format}format(){api}
 
 
-You can set the text format by combining the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with either [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions). To use HTML in formatters, pass `true` to {api:anychart.core.ui.LabelsFactory#useHtml()}useHtml(){api}. Read the sections below to learn more.
+You can set the text format by combining the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with either [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) – read the sections below to learn more.
 
 ### Tokens
 
 To format the text of labels, combine the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [tokens](../Common_Settings/Text_Formatters#string_tokens).
+
+If you need to enable HTML, pass `true` to {api:anychart.core.ui.LabelsFactory#useHtml()}useHtml(){api}.
 
 Please keep in mind that in addition to default tokens you can always use a custom token corresponding to a custom field in your data.
 
@@ -538,6 +540,8 @@ periodLabels.format(
 You can configure the text of labels by combining the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [formatting functions](../Common_Settings/Text_Formatters#formatting_functions).
 
 In these functions, a number of default fields is available, and the {api:anychart.format.Context#getData}getData(){api} method allows you to refer to a custom field in your data. Also, you can use methods of the [tree data model](../Working_with_Data/Tree_Data_Model) to perform operations on data.
+
+If you need to enable HTML, pass `true` to {api:anychart.core.ui.LabelsFactory#useHtml()}useHtml(){api}.
 
 For the **Project chart**, the following fields are available in formatting functions:
 
