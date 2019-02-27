@@ -1,6 +1,8 @@
 {:index 3}
 # Columns
 
+## Overview
+
 misc:
 
 * {api:anychart.core.ui.DataGrid.Column}anychart.core.ui.DataGrid.Column{api}

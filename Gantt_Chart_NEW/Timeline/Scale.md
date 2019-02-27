@@ -1,6 +1,8 @@
 {:index 3}
 # Scale
 
+## Overview
+
 misc:
 
 * {api:anychart.scales.GanttDateTime}anychart.scales.GanttDateTime{api}
