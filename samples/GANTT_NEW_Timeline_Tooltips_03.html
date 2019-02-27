@@ -86,17 +86,45 @@ anychart.onDocumentReady(function () {
     chart.data(treeData);
 
     // configure tooltips of the timeline
+
     chart.getTimeline().tooltip().useHtml(true);
+
     chart.getTimeline().tooltip().format(function() {
+
+      var children = this.item.numChildren();
       var duration = (this.actualEnd - this.actualStart) / 1000 / 3600 / 24;
+      var startValue = new Date(this.actualStart);
+      var startDate = startValue.toLocaleDateString(
+        "en-US", {month: 'short', day: 'numeric'}
+      );
       var progress = this.progress * 100 + "%";
-      if (this.progress == 1) {
-        progress = "COMPLETE";
+
+      var parentText = "";
+      var milestoneText = "";
+      var taskText = "";
+      var completedTaskText = "";
+
+      if (children > 0) {
+        return "<span style='font-weight:600;font-size:12pt'>" +
+               duration + " days (" + children + " tasks)</span><br><br>" +
+               "Manager: " + this.getData("manager");
+      } else {
+        if (duration == 0) {
+          return "<span style='font-weight:600;font-size:12pt'>" +
+                 startDate + "</span><br><br>" +
+                 "Manager: " + this.getData("manager");
+        } else {
+          if (this.progress == 1) {
+            progress = "COMPLETE";
+          } else {
+            return "<span style='font-weight:600;font-size:12pt'>" +
+                   duration + " days </span><br><br>" +
+                   "Progress: " + progress + "<br>" +
+                   "Manager: " + this.getData("manager");
+          }
+        }
       }
-      return "<span style='font-weight:600;font-size:12pt'>" +
-             duration + " days </span><br><br>" +
-             "Progress: " + progress + "<br>" +
-             "Manager: " + this.getData("manager");
+
     });
 
     // configure the scale
