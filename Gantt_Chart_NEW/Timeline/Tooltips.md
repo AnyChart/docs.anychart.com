@@ -31,10 +31,13 @@ Also, if you need to enable HTML, pass `true` to {api:anychart.core.ui.Tooltip#u
 
 For the [Project Gantt](../Project_Chart) chart, the following tokens are available:
 
-* ``
-* ``
-* ``
-* ``
+* `{%id}`
+* `{%name}`
+* `{%actualStart}`
+* `{%actualEnd}`
+* `{%baselineStart}`
+* `{%baselineEnd}`
+* `{%progress}`
 
 ...
 
@@ -54,10 +57,10 @@ chart.getTimeline().tooltip().format(
 
 The [Resource Gantt](../Resource_Chart) chart supports these tokens:
 
-* ``
-* ``
-* ``
-* ``
+* `{%id}`
+* `{%name}`
+* `{%start}`
+* `{%end}`
 
 ...
 
@@ -84,10 +87,13 @@ Also, if you need to enable HTML, pass `true` to {api:anychart.core.ui.Tooltip#u
 
 For the [Project Gantt](../Project_Chart), the following fields are available in formatting functions:
 
-* ``
-* ``
-* ``
-* ``
+* `id`
+* `name`
+* `actualStart`
+* `actualEnd`
+* `baselineStart`
+* `baselineEnd`
+* `progress`
 
 ...
 
@@ -111,10 +117,10 @@ chart.getTimeline().tooltip().format(function() {
 
 Here are the fields supported by the [Resource Gantt](../Resource_Chart):
 
-* ``
-* ``
-* ``
-* ``
+* `id`
+* `name`
+* `start`
+* `end`
 
 ...
 
