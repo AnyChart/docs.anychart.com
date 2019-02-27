@@ -56,6 +56,7 @@ The [Resource Gantt](../Resource_Chart) chart supports these tokens:
 * ``
 * ``
 
+
 ```
 // configure tooltips of the timeline
 chart.getTimeline().tooltip().useHtml(true);    
