@@ -19,7 +19,7 @@ chart.getTimeline().tooltip).enabled(true);
 
 To configure tooltips, use other methods of {api:anychart.core.ui.Tooltip}anychart.core.ui.Tooltip{api}. For example you can set the text format by combining the {api:anychart.core.ui.Tooltip#format}format(){api} method with either [tokens](../../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions). To use HTML in formatters, pass `true` to {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}. Read the sections below to learn more.
 
-**Note:** The tooltips that are shown on data grid are configured independently from the timeline tooltips. See [Data Grid: Tooltips](../Data_Grid/Tooltips) to learn more.
+**Note:** The tooltips that are shown on data grid are configured independently from the timeline tooltips. See [Data Grid: Tooltips](../Data_Grid/Tooltips).
 
 ## Tokens
 
