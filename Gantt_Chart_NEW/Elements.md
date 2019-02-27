@@ -432,7 +432,7 @@ Labels are supported by the following elements of the **Project chart**:
 
 Also, labels are supported by the only element of the **Resource chart** – [period](#periods).
 
-To access labels, call the **labels()** method of a particular element type or of [all elements](#all_elements) (of course, only the elements that can have labels are affected):
+**1.** To access labels, call the **labels()** method of a particular element type or of [all elements](#all_elements) (of course, only the elements that can have labels are affected):
 
 ```
 // access labels of tasks
@@ -444,7 +444,7 @@ var labels = chart.getTimeline().tasks().labels();
 var labels = chart.getTimeline().elements().labels();
 ```
 
-To enable or disable labels, pass `true` / `false` either directly to **labels()** or to the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method of labels:
+**2.** To enable or disable labels, pass `true` / `false` either directly to **labels()** or to the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method of labels:
 
 ```
 // enable labels of tasks
@@ -456,7 +456,7 @@ var chart.getTimeline().tasks().labels(true);
 chart.getTimeline().tasks().labels().enabled(true);
 ```
 
-To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}, for example:
+**3.** To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}, for example:
 
 * {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api}
 * {api:anychart.core.ui.LabelsFactory#fontWeight}fontWeight(){api}
