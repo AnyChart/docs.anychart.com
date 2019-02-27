@@ -589,7 +589,7 @@ Here are the fields supported by the **Resource chart**:
 * `start`
 * `end`
 
-In this sample a formatting function is used to calculate and display the duration of each period as well as the value of a custom field:
+In this sample a formatting function is used to display the duration of each period as well as the value of a custom field:
 
 ```
 // configure labels of periods

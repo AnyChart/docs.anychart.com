@@ -39,7 +39,7 @@ For the [Project Gantt](../Project_Chart) chart, the following tokens are availa
 * `{%baselineEnd}`
 * `{%progress}`
 
-...
+In the sample below, there is a Project chart with tooltips showing the start and end dates of elements, the progress, and the content of the custom field `manager`:
 
 ```
 // configure tooltips of the timeline
@@ -62,7 +62,7 @@ The [Resource Gantt](../Resource_Chart) chart supports these tokens:
 * `{%start}`
 * `{%end}`
 
-...
+In the following sample, tokens, including a custom one (`disc_space`), are used to format the text of tooltips of a Resource chart:
 
 ```
 // configure tooltips of the timeline
@@ -95,7 +95,7 @@ For the [Project Gantt](../Project_Chart), the following fields are available in
 * `baselineEnd`
 * `progress`
 
-...
+In the sample below, there is a Project chart. Its tooltips show the duration of elements, the progress, and the content of the custom field `manager`:
 
 ```
 // configure tooltips of the timeline
@@ -122,7 +122,7 @@ Here are the fields supported by the [Resource Gantt](../Resource_Chart):
 * `start`
 * `end`
 
-...
+In this sample a formatting function is used to display the duration of each period as well as the value of a custom field `disc_space`:
 
 ```
 // configure tooltips of the timeline
