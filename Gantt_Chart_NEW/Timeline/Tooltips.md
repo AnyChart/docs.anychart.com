@@ -23,7 +23,11 @@ To configure tooltips, use other methods of {api:anychart.core.ui.Tooltip}anycha
 
 ## Tokens
 
-For the [Project Gantt](../Project_Chart) chart, the following [tokens](../../Common_Settings/Text_Formatters#string_tokens) are available:
+To format the text of tooltips, combine the {api:anychart.core.ui.Tooltip#format}format(){api} method with [tokens](../../Common_Settings/Text_Formatters#string_tokens).
+
+Please keep in mind that in addition to default tokens you can always use a custom token corresponding to a custom field in your data.
+
+For the [Project Gantt](../Project_Chart) chart, the following tokens are available:
 
 * ``
 * ``
@@ -67,7 +71,11 @@ chart.getTimeline().tooltip().format(
 
 ## Formatting Functions
 
-fields:
+You can configure the text of tooltips by combining the {api:anychart.core.ui.Tooltip#format}format(){api} method with [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions).
+
+In these functions, a number of default fields is available, and the {api:anychart.format.Context#getData}getData(){api} method allows you to refer to a custom field in your data.
+
+For the [Project Gantt](../Project_Chart), the following fields are available in formatting functions:
 
 * ``
 * ``
@@ -92,6 +100,14 @@ chart.getTimeline().tooltip().format(function() {
 ```
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Tooltips\_03{sample}
+
+Here are the fields supported by the [Resource Gantt](../Resource_Chart):
+
+* ``
+* ``
+* ``
+* ``
+
 
 ```
 // configure tooltips of the timeline
