@@ -472,9 +472,9 @@ You can set the text format by combining the {api:anychart.core.ui.LabelsFactory
 
 To format the text of labels, combine the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
-If you need to enable HTML, pass `true` to {api:anychart.core.ui.LabelsFactory#useHtml()}useHtml(){api}.
-
 Please keep in mind that in addition to default tokens you can always use a custom token corresponding to a custom field in your data.
+
+If you need to enable HTML, pass `true` to {api:anychart.core.ui.LabelsFactory#useHtml()}useHtml(){api}.
 
 For the **Project chart**, the following tokens are available:
 
