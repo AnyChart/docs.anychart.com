@@ -27,7 +27,7 @@ To format the text of tooltips, combine the {api:anychart.core.ui.Tooltip#format
 
 Please keep in mind that in addition to default tokens you can always use a custom token corresponding to a custom field in your data.
 
-If you need to enable HTML, pass `true` to {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}.
+Also, if you need to enable HTML, pass `true` to {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}.
 
 For the [Project Gantt](../Project_Chart) chart, the following tokens are available:
 
@@ -80,7 +80,7 @@ You can configure the text of tooltips by combining the {api:anychart.core.ui.To
 
 In these functions, a number of default fields is available, and the {api:anychart.format.Context#getData}getData(){api} method allows you to refer to a custom field in your data.
 
-If you need to enable HTML, pass `true` to {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}.
+Also, if you need to enable HTML, pass `true` to {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}.
 
 For the [Project Gantt](../Project_Chart), the following fields are available in formatting functions:
 
