@@ -444,7 +444,7 @@ var labels = chart.getTimeline().tasks().labels();
 var labels = chart.getTimeline().elements().labels();
 ```
 
-To enable or disable labels, pass `true` or `false` either directly to **labels()** or to the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method of labels:
+To enable or disable labels, pass `true` / `false` either directly to **labels()** or to the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method of labels:
 
 ```
 // enable labels of tasks
@@ -456,7 +456,17 @@ var chart.getTimeline().tasks().labels(true);
 chart.getTimeline().tasks().labels().enabled(true);
 ```
 
-To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}. For example, you can set the text format by combining the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with either [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions). Read the sections below to learn more.
+To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}, for example:
+
+* {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api}
+* {api:anychart.core.ui.LabelsFactory#fontWeight}fontWeight(){api}
+* {api:anychart.core.ui.LabelsFactory#fontSize}fontSize(){api}
+* {api:anychart.core.ui.LabelsFactory#fontFamily}fontFamily(){api}
+* {api:anychart.core.ui.LabelsFactory#useHtml()}useHtml(){api}
+* {api:anychart.core.ui.LabelsFactory#format}format(){api}
+
+
+You can set the text format by combining the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with either [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions). To use HTML in formatters, pass `true` to {api:anychart.core.ui.LabelsFactory#useHtml()}useHtml(){api}. Read the sections below to learn more.
 
 ### Tokens
 

@@ -3,21 +3,37 @@
 
 ## Overview
 
-misc:
+[Tooltips](../../Common_Settings/Tooltip) are text boxes displayed when timeline or [data grid](../Data_Grid) rows are hovered over. They are defined as instances of the {api:anychart.core.ui.Tooltip}anychart.core.ui.Tooltip{api} class.
 
-* {api:anychart.core.ui.Tooltip}anychart.core.ui.Tooltip{api}
-* [tokens](../../Common_Settings/Text_Formatters#string_tokens)
-* [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions)
-* [Project Gantt](../Project_Chart)
-* [Resource Gantt](../Resource_Chart)
+To access tooltips, call the {api:anychart.core.ui.Timeline#tooltip}tooltip(){api} method of the timeline.
 
-A [Tooltip](../../Common_Settings/Tooltip) is a text box displayed a timeline or data grid row is hovered over.
+To enable or disable tooltips, pass `true` / `false` either directly to {api:anychart.core.ui.Timeline#tooltip}tooltip(){api} or to the {api:anychart.core.ui.Tooltip#enabled}enabled(){api} method:
 
-To learn how to adjust data grid tooltips, see [Data Grid: Tooltips](../Data_Grid#tooltips).
+```
+var chart.getTimeline().tooltip(true);
+```
+
+```
+chart.getTimeline().tooltip).enabled(true);
+```
+
+To configure tooltips, use other methods of {api:anychart.core.ui.Timeline#tooltip}tooltip(){api}, for example:
+
+* {api:anychart.core.ui.Tooltip#fontColor}fontColor(){api}
+* {api:anychart.core.ui.Tooltip#fontWeight}fontWeight(){api}
+* {api:anychart.core.ui.Tooltip#fontSize}fontSize(){api}
+* {api:anychart.core.ui.Tooltip#fontFamily}fontFamily(){api}
+* {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}
+* {api:anychart.core.ui.Tooltip#format}format(){api}
+
+
+You can set the text format by combining the {api:anychart.core.ui.Tooltip#format}format(){api} method with either [tokens](../../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions). To use HTML in formatters, pass `true` to {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}. Read the sections below to learn more.
+
+**Note:** The tooltips that are shown on data grid are configured independently from the timeline tooltips. See [Data Grid: Tooltips](../Data_Grid/Tooltips) to learn more.
 
 ## Tokens
 
-tokens:
+For the [Project Gantt](../Project_Chart) chart, the following tokens are available:
 
 * ``
 * ``
@@ -38,6 +54,13 @@ chart.getTimeline().tooltip().format(
 ```
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Tooltips\_01{sample}
+
+The [Resource Gantt](../Resource_Chart) chart supports these tokens:
+
+* ``
+* ``
+* ``
+* ``
 
 ```
 // configure tooltips of the timeline
