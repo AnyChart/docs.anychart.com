@@ -91,37 +91,36 @@ anychart.onDocumentReady(function () {
 
     chart.getTimeline().tooltip().format(function() {
 
-      var children = this.item.numChildren();
+      var startDate = anychart.format.dateTime(this.actualStart, "dd MMM");
+      var endDate = anychart.format.dateTime(this.actualEnd, "dd MMM");
       var duration = (this.actualEnd - this.actualStart) / 1000 / 3600 / 24;
-      var startValue = new Date(this.actualStart);
-      var startDate = startValue.toLocaleDateString(
-        "en-US", {month: 'short', day: 'numeric'}
-      );
+      var children = this.item.numChildren();
       var progress = this.progress * 100 + "%";
 
-      var parentText = "";
-      var milestoneText = "";
-      var taskText = "";
-      var completedTaskText = "";
+      var parentText = "<span style='font-weight:600;font-size:12pt'>" + 
+                       startDate + " – " + endDate + "</span><br><br>" +
+                       "Duration: " + duration + " days<br>" +
+                       "Number of Tasks: " + children + "<br><br>" +                       
+                       "Manager: " + this.getData("manager");
 
+      var milestoneText = "<span style='font-weight:600;font-size:12pt'>" +
+                          startDate + "</span><br><br>" +
+                          "Manager: " + this.getData("manager");
+
+      var taskText = "<span style='font-weight:600;font-size:12pt'>" + 
+                     startDate + " – " + endDate + "</span><br><br>" +
+                     "Duration: " + duration + " days<br>" +
+                     "Progress: " + progress + "<br><br>" +
+                     "Manager: " + this.getData("manager");
+
+      // identify the task type and display the corresponding text
       if (children > 0) {
-        return "<span style='font-weight:600;font-size:12pt'>" +
-               duration + " days (" + children + " tasks)</span><br><br>" +
-               "Manager: " + this.getData("manager");
+        return parentText;
       } else {
         if (duration == 0) {
-          return "<span style='font-weight:600;font-size:12pt'>" +
-                 startDate + "</span><br><br>" +
-                 "Manager: " + this.getData("manager");
+          return milestoneText;
         } else {
-          if (this.progress == 1) {
-            progress = "COMPLETE";
-          } else {
-            return "<span style='font-weight:600;font-size:12pt'>" +
-                   duration + " days </span><br><br>" +
-                   "Progress: " + progress + "<br>" +
-                   "Manager: " + this.getData("manager");
-          }
+          return taskText;
         }
       }
 

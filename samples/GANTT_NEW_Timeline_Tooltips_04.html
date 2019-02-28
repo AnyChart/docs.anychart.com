@@ -29,32 +29,42 @@ anychart.onDocumentReady(function () {
     // create data
     var data = [
       {
-        id: "1",
-        name: "Server 1",
-        periods: [
-          {id:"1_1", start: "2018-01-02", end: "2018-01-25"},
-          {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
-          {id:"1_3", start: "2018-03-03", end: "2018-03-25"}
-        ],
-        disc_space: "5 TB"
-      },
+        id: "A",
+        name: "Location A",
+        children: [
+          {
+            id: "1",
+            name: "Server 1",
+            periods: [
+              {id: "1_1", start: "2018-01-02", end: "2018-01-25"},
+              {id: "1_2", start: "2018-01-28", end: "2018-02-22"},
+              {id: "1_3", start: "2018-03-03", end: "2018-03-25"}
+            ],
+            disc_space: "5 TB"
+          },
+          {
+            id: "2",
+            name: "Server 2",
+            periods: [
+              {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
+              {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
+            ],
+            disc_space: "7 TB"
+          }
+      ]},
       {
-        id: "2",
-        name: "Server 2",
-        periods: [
-          {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
-          {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
-        ],
-        disc_space: "7 TB"
-      },
-      {
-        id: "3",
-        name: "Server 3",
-        periods: [
-          {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
-        ],
-        disc_space: "9 TB"
-      }
+        id: "B",
+        name: "Location B",
+        children: [
+          {
+            id: "3",
+            name: "Server 3",
+            periods: [
+              {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
+            ],
+            disc_space: "9 TB"
+          }
+      ]}
     ];
 
     // create a data tree
@@ -67,12 +77,30 @@ anychart.onDocumentReady(function () {
     chart.data(treeData); 
 
     // configure tooltips of the timeline
+
     chart.getTimeline().tooltip().useHtml(true);
+
     chart.getTimeline().tooltip().format(function() {
+
+      var startDate = anychart.format.dateTime(this.start, "dd MMM");
+      var endDate = anychart.format.dateTime(this.end, "dd MMM");
       var duration = (this.end - this.start) / 1000 / 3600 / 24;
-      return "<span style='font-weight:600;font-size:12pt'>" +
-             duration + " days </span><br><br>" +
-             "Disc Space: " + this.getData("disc_space");
+      var children = this.item.numChildren();
+
+      var parentText = "Number of Servers: " + children;
+
+      var childText = "<span style='font-weight:600;font-size:12pt'>" + 
+                     startDate + " – " + endDate + "</span><br><br>" +
+                     "Duration: " + duration + " days<br>" +
+                     "Disc Space: " + this.getData("disc_space");
+
+      // identify the resource type and display the corresponding text
+      if (children > 0) {
+        return parentText;
+      } else {
+        return childText;
+      }
+
     });
 
     // set the container id

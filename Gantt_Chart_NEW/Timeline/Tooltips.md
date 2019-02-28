@@ -75,7 +75,7 @@ chart.getTimeline().tooltip().format(
 );
 ```
 
-{sample :height 160}GANTT\_NEW\_Timeline\_Tooltips\_02{sample}
+{sample :height 200}GANTT\_NEW\_Timeline\_Tooltips\_02{sample}
 
 ## Formatting Functions
 
@@ -99,17 +99,44 @@ In the sample below, there is a Project chart. Its tooltips show the duration of
 
 ```
 // configure tooltips of the timeline
+
 chart.getTimeline().tooltip().useHtml(true);
+
 chart.getTimeline().tooltip().format(function() {
+
+  var startDate = anychart.format.dateTime(this.actualStart, "dd MMM");
+  var endDate = anychart.format.dateTime(this.actualEnd, "dd MMM");
   var duration = (this.actualEnd - this.actualStart) / 1000 / 3600 / 24;
+  var children = this.item.numChildren();
   var progress = this.progress * 100 + "%";
-  if (this.progress == 1) {
-    progress = "COMPLETE";
+
+  var parentText = "<span style='font-weight:600;font-size:12pt'>" + 
+                   startDate + " – " + endDate + "</span><br><br>" +
+                   "Duration: " + duration + " days<br>" +
+                   "Number of Tasks: " + children + "<br><br>" +                       
+                   "Manager: " + this.getData("manager");
+
+  var milestoneText = "<span style='font-weight:600;font-size:12pt'>" +
+                      startDate + "</span><br><br>" +
+                      "Manager: " + this.getData("manager");
+
+  var taskText = "<span style='font-weight:600;font-size:12pt'>" + 
+                 startDate + " – " + endDate + "</span><br><br>" +
+                 "Duration: " + duration + " days<br>" +
+                 "Progress: " + progress + "<br><br>" +
+                 "Manager: " + this.getData("manager");
+
+  // identify the task type and display the corresponding text
+  if (children > 0) {
+    return parentText;
+  } else {
+    if (duration == 0) {
+      return milestoneText;
+    } else {
+      return taskText;
+    }
   }
-  return "<span style='font-weight:600;font-size:12pt'>" +
-         duration + " days </span><br><br>" +
-         "Progress: " + progress + "<br>" +
-         "Manager: " + this.getData("manager");
+
 });
 ```
 
@@ -126,13 +153,31 @@ In this sample a formatting function is used to display the duration of each per
 
 ```
 // configure tooltips of the timeline
+
 chart.getTimeline().tooltip().useHtml(true);
+
 chart.getTimeline().tooltip().format(function() {
-  var duration = (this.end - this.start) / 1000 / 3600 
-  return "<span style='font-weight:600;font-size:12pt'>
-         duration + " days </span><br><br>" +
-         "Disc Space: " + this.getData("disc_space");
+
+  var startDate = anychart.format.dateTime(this.start, "dd MMM");
+  var endDate = anychart.format.dateTime(this.end, "dd MMM");
+  var duration = (this.end - this.start) / 1000 / 3600 / 24;
+  var children = this.item.numChildren();
+
+  var parentText = "Number of Servers: " + children;
+
+  var childText = "<span style='font-weight:600;font-size:12pt'>" + 
+                 startDate + " – " + endDate + "</span><br><br>" +
+                 "Duration: " + duration + " days<br>" +
+                 "Disc Space: " + this.getData("disc_space");
+
+  // identify the resource type and display the corresponding text
+  if (children > 0) {
+    return parentText;
+  } else {
+    return childText;
+  }
+
 });
 ```
 
-{sample :height 160}GANTT\_NEW\_Timeline\_Tooltips\_04{sample}
+{sample :height 200}GANTT\_NEW\_Timeline\_Tooltips\_04{sample}
