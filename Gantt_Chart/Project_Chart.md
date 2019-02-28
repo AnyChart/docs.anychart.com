@@ -61,7 +61,7 @@ Read more about handling tree data at: [Tree Data Model](../Working_with_Data/Tr
 
 ## Tasks Types
 
-There are following types of tasks in Project Gantt Chart: Normal, Parent and Milestone.
+There are the following types of tasks in Project Gantt Chart: Normal, Parent and Milestone.
 
 <table border="1" class="dtTABLE">
 <tbody>
