@@ -76,9 +76,9 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData); 
 
-    // configure tooltips of the timeline
-    chart.getTimeline().tooltip().useHtml(true);    
-    chart.getTimeline().tooltip().format(
+    // configure tooltips of the data grid
+    chart.dataGrid().tooltip().useHtml(true);    
+    chart.dataGrid().tooltip().format(
       "<span style='font-weight:600;font-size:12pt'>" +
       "{%start}{dateTimeFormat:dd MMM} – " +
       "{%end}{dateTimeFormat:dd MMM}</span><br><br>" +
