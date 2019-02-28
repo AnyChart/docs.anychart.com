@@ -95,7 +95,7 @@ For the [Project Gantt](../Project_Chart), the following fields are available in
 * `baselineEnd`
 * `progress`
 
-In the sample below, there is a Project chart. Its tooltips show the duration of elements, the progress, and the content of the custom field `manager`:
+In the sample below, there is a Project chart. A formatting function is used to identify the [type of each task](../Project_Chart#tasks_\(actual\)) and display a different tooltips text for each type. In all tooltips the content of a custom field `manager` is shown.
 
 ```
 // configure tooltips of the timeline
@@ -149,7 +149,7 @@ Here are the fields supported by the [Resource Gantt](../Resource_Chart):
 * `start`
 * `end`
 
-In this sample a formatting function is used to display the duration of each period as well as the value of a custom field `disc_space`:
+In this sample a formatting function is used to display a different tooltip text for parent and child [resources](../Resource_Chart#periods_and_resources). For example, the value of a custom field `disc_space` is shown only for child resources.
 
 ```
 // configure tooltips of the timeline
