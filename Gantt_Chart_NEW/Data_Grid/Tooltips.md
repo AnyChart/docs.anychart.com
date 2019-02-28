@@ -143,7 +143,7 @@ chart.dataGrid().tooltip().format(function() {
 });
 ```
 
-{sample :height 220}GANTT\_NEW\_Timeline\_Tooltips\_03{sample}
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Tooltips\_03{sample}
 
 Here are the fields supported by the [Resource Gantt](../Resource_Chart):
 
@@ -186,4 +186,4 @@ chart.dataGrid().tooltip().format(function() {
 });
 ```
 
-{sample :height 200}GANTT\_NEW\_Timeline\_Tooltips\_04{sample}
+{sample :height 200}GANTT\_NEW\_Data\_Grid\_Tooltips\_04{sample}
