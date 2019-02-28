@@ -95,7 +95,7 @@ For the [Project Gantt](../Project_Chart), the following fields are available in
 * `baselineEnd`
 * `progress`
 
-In the sample below, there is a Project chart. A formatting function is used to identify the type of each [task](../Project_Chart#tasks_\(actual\)) and display a different tooltip text for each type. In all tooltips the content of a custom field `manager` is shown.
+In the sample below, there is a Project chart. A formatting function is used to identify the type of each [task](../Project_Chart#tasks_\(actual\)) and display a tooltip text corresponding to the type. In all tooltips the content of a custom field `manager` is shown.
 
 ```
 // configure tooltips of the timeline
