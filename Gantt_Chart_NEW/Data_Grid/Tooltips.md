@@ -95,7 +95,7 @@ For the [Project Gantt](../Project_Chart), the following fields are available in
 * `baselineEnd`
 * `progress`
 
-In the sample below, there is a Project chart. A formatting function is used to display different tooltip texts for the different types of [tasks](../Project_Chart#tasks_\(actual\)).
+In the sample below, there is a Project chart. A formatting function is used to display different tooltips for the different types of [tasks](../Project_Chart#tasks_\(actual\)).
 
 In all tooltips the content of a custom data field `manager` is shown. Also, a special context field `item` and the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../Working_with_Data/Tree_Data_Model) are used to get the number of the current data item's children.
 
@@ -152,7 +152,7 @@ Here are the fields supported by the [Resource Gantt](../Resource_Chart):
 * `start`
 * `end`
 
-In this sample a formatting function is used to display a different tooltip text for parent and child [resources](../Resource_Chart#periods_and_resources). For example, the value of a custom field `disc_space` is shown only for child resources.
+In this sample a formatting function is used to display different tooltips for parent and child [resources](../Resource_Chart#periods_and_resources). For example, the value of a custom field `disc_space` is shown only for child resources.
 
 A special context field `item` and the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../Working_with_Data/Tree_Data_Model) are used to get the number of the current data item's children.
 
