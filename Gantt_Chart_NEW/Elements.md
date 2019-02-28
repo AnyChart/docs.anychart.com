@@ -545,7 +545,9 @@ For the **Project chart**, the following fields are available in formatting func
 
 In the sample below, labels of different elements have the same font weight but different text format, which is configured with the help of formatting functions.
 
-The label text of regular tasks depends on their progress. The label of the parent task displays its duration. Finally, labels of milestones refer to other tasks, which are linked in a custom data field.
+For instance, the label text of regular tasks depends on their progress, and the label of the parent task displays its duration.
+
+Labels of milestones refer to other tasks related to them – the ids of these tasks are linked in a custom data field. The {api:anychart.format.Context#getData}getData(){api} and the {api:anychart.data.Tree.DataItem#search}search(){api} and {api:anychart.data.Tree.DataItem#get}get(){api} methods of the [Tree Data Model](../Working_with_Data/Tree_Data_Model) are used to get the ids and find the names corresponding to them.
 
 ```
 // configure labels of elements

@@ -95,7 +95,11 @@ For the [Project Gantt](../Project_Chart), the following fields are available in
 * `baselineEnd`
 * `progress`
 
-In the sample below, there is a Project chart. A formatting function is used to identify the type of each [task](../Project_Chart#tasks_\(actual\)) and display a tooltip text corresponding to the type. In all tooltips the content of a custom field `manager` is shown.
+In the sample below, there is a Project chart. A formatting function is used to identify the type of each [task](../Project_Chart#tasks_\(actual\)) and display a tooltip text corresponding to the type.
+
+In all tooltips the content of a custom data field `manager` is shown with the help of {api:anychart.format.Context#getData}getData(){api}.
+
+Also, a special context field, `item`, is used to access data items and call the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../Working_with_Data/Tree_Data_Model).
 
 ```
 // configure tooltips of the timeline
@@ -149,7 +153,9 @@ Here are the fields supported by the [Resource Gantt](../Resource_Chart):
 * `start`
 * `end`
 
-In this sample a formatting function is used to display a different tooltip text for parent and child [resources](../Resource_Chart#periods_and_resources). For example, the value of a custom field `disc_space` is shown only for child resources.
+In this sample a formatting function is used to display a different tooltip text for parent and child [resources](../Resource_Chart#periods_and_resources). For example, the value of a custom field `disc_space` is shown, with the help of {api:anychart.format.Context#getData}getData(){api}, only for child resources.
+
+A special context field, `item`, is used to access data items and call the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../Working_with_Data/Tree_Data_Model).
 
 ```
 // configure tooltips of the timeline
