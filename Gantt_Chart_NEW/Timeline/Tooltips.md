@@ -106,30 +106,31 @@ chart.getTimeline().tooltip().useHtml(true);
 
 chart.getTimeline().tooltip().format(function() {
 
+  var numChildren = this.item.numChildren();
+  var duration = (this.actualEnd - this.actualStart) / 1000 / 3600 / 24;      
   var startDate = anychart.format.dateTime(this.actualStart, "dd MMM");
   var endDate = anychart.format.dateTime(this.actualEnd, "dd MMM");
-  var duration = (this.actualEnd - this.actualStart) / 1000 / 3600 / 24;
-  var children = this.item.numChildren();
   var progress = this.progress * 100 + "%";
+  var manager = this.getData("manager");
 
   var parentText = "<span style='font-weight:600;font-size:12pt'>" + 
                    startDate + " – " + endDate + "</span><br><br>" +
                    "Duration: " + duration + " days<br>" +
-                   "Number of Tasks: " + children + "<br><br>" +                       
-                   "Manager: " + this.getData("manager");
+                   "Number of Tasks: " + numChildren + "<br><br>" +                       
+                   "Manager: " + manager;
 
   var milestoneText = "<span style='font-weight:600;font-size:12pt'>" +
                       startDate + "</span><br><br>" +
-                      "Manager: " + this.getData("manager");
+                      "Manager: " + manager;
 
   var taskText = "<span style='font-weight:600;font-size:12pt'>" + 
                  startDate + " – " + endDate + "</span><br><br>" +
                  "Duration: " + duration + " days<br>" +
                  "Progress: " + progress + "<br><br>" +
-                 "Manager: " + this.getData("manager");
+                 "Manager: " + manager;
 
   // identify the task type and display the corresponding text
-  if (children > 0) {
+  if (numChildren > 0) {
     return parentText;
   } else {
     if (duration == 0) {
@@ -162,20 +163,21 @@ chart.getTimeline().tooltip().useHtml(true);
 
 chart.getTimeline().tooltip().format(function() {
 
+  var numChildren = this.item.numChildren();
+  var duration = (this.end - this.start) / 1000 / 3600 / 24;
   var startDate = anychart.format.dateTime(this.start, "dd MMM");
   var endDate = anychart.format.dateTime(this.end, "dd MMM");
-  var duration = (this.end - this.start) / 1000 / 3600 / 24;
-  var children = this.item.numChildren();
+  var discSpace = this.getData("disc_space");
 
-  var parentText = "Number of Servers: " + children;
+  var parentText = "Number of Servers: " + numChildren;
 
   var childText = "<span style='font-weight:600;font-size:12pt'>" + 
                  startDate + " – " + endDate + "</span><br><br>" +
                  "Duration: " + duration + " days<br>" +
-                 "Disc Space: " + this.getData("disc_space");
+                 "Disc Space: " + discSpace;
 
   // identify the resource type and display the corresponding text
-  if (children > 0) {
+  if (numChildren > 0) {
     return parentText;
   } else {
     return childText;

@@ -25,6 +25,7 @@ misc:
 
 * не забыть про метод cellTextSettingsOverrider()
 * не забыть про метод setColumnFormat()
+* `linearIndex`, `{%linearIndex}`
 
 ### Tokens
 

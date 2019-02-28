@@ -101,26 +101,26 @@ anychart.onDocumentReady(function () {
 
     column_2.labels().format(function() {
 
-      var children = this.item.numChildren();
+      var numChildren = this.item.numChildren();
       var duration = (this.end - this.start) / 1000 / 3600 / 24;
-      var custom = " ";
+      var customField = " ";
 
       if (this.getData("custom_field")) {
-        custom = "<span style='font-weight:bold'>" +
-                 this.getData("custom_field") + custom + "</span>";
+        customField = "<span style='font-weight:bold'>" +
+                 this.getData("custom_field") + customField + "</span>";
       }
 
-      if (children > 0) {
-        return "<span style='color:#dd2c00;font-weight:bold'>" +
-               this.name.toUpperCase() + "<span>";
+      var parentText = "<span style='color:#dd2c00;font-weight:bold'>" +
+                       this.name.toUpperCase() + "<span>";
+
+      var childText = "<span style='color:#64b5f6'>" + customField + 
+                      this.name + ": " + duration + "d</span>";
+
+      // identify the resource type and display the corresponding text
+      if (numChildren > 0) {
+        return parentText;
       } else {
-        if (duration == 0) {
-          return custom + "<span style='color:#ef6c00;font-weight:bold'>" + 
-                 this.name + "</span";
-        } else {
-          return "<span style='color:#64b5f6'>" + custom + 
-                 this.name + ": " + duration + "d</span>";
-        }
+        return childText;
       }
 
     });

@@ -82,20 +82,21 @@ anychart.onDocumentReady(function () {
 
     chart.getTimeline().tooltip().format(function() {
 
+      var numChildren = this.item.numChildren();
+      var duration = (this.end - this.start) / 1000 / 3600 / 24;
       var startDate = anychart.format.dateTime(this.start, "dd MMM");
       var endDate = anychart.format.dateTime(this.end, "dd MMM");
-      var duration = (this.end - this.start) / 1000 / 3600 / 24;
-      var children = this.item.numChildren();
+      var discSpace = this.getData("disc_space");
 
-      var parentText = "Number of Servers: " + children;
+      var parentText = "Number of Servers: " + numChildren;
 
       var childText = "<span style='font-weight:600;font-size:12pt'>" + 
                      startDate + " – " + endDate + "</span><br><br>" +
                      "Duration: " + duration + " days<br>" +
-                     "Disc Space: " + this.getData("disc_space");
+                     "Disc Space: " + discSpace;
 
       // identify the resource type and display the corresponding text
-      if (children > 0) {
+      if (numChildren > 0) {
         return parentText;
       } else {
         return childText;
