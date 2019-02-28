@@ -97,9 +97,7 @@ For the [Project Gantt](../Project_Chart), the following fields are available in
 
 In the sample below, there is a Project chart. A formatting function is used to identify the type of each [task](../Project_Chart#tasks_\(actual\)) and display a tooltip text corresponding to the type.
 
-In all tooltips the content of a custom data field `manager` is shown with the help of {api:anychart.format.Context#getData}getData(){api}.
-
-Also, a special context field, `item`, is used to access data items and call the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../Working_with_Data/Tree_Data_Model).
+In all tooltips the content of a custom data field `manager` is shown with the help of {api:anychart.format.Context#getData}getData(){api}. Also, a special context field, `item`, is used to access data items and call the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../Working_with_Data/Tree_Data_Model).
 
 ```
 // configure tooltips of the timeline
