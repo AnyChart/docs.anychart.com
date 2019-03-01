@@ -37,7 +37,7 @@ As you can see, setting minimum and maximum affects the size and position of tim
 
 (?) The settings of zoom levels affect the number and position of timeline columns and content of the timeline [header](Header).
 
-By default, there are three levels: the **month**, the **quarter**, and the **year**. You can change this configuration by combining {api:anychart.core.ui.Timeline#scale}scale(){api} with {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api} and specifying...
+By default, there are three levels: the **month**, **quarter**, and **year**. You can change this configuration by combining {api:anychart.core.ui.Timeline#scale}scale(){api} with {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api} and specifying...
 
 * {api:anychart.scales.GanttDateTime.ZoomLevelsSettings}anychart.scales.GanttDateTime.ZoomLevelsSettings{api}
 * уровни нужно задавать в порядке от самого мелкого к самому крупному
