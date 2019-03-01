@@ -85,7 +85,7 @@ In these functions, a number of default context fields is available, and the {ap
 
 Also, if you need to enable HTML, pass `true` to {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}.
 
-For the [Project Gantt](../Project_Chart), the following fields are available in formatting functions:
+For the [Project Gantt](../Project_Chart) chart, the following fields are available in formatting functions:
 
 * `id`
 * `name`
@@ -145,7 +145,7 @@ chart.dataGrid().tooltip().format(function() {
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Tooltips\_03{sample}
 
-Here are the fields supported by the [Resource Gantt](../Resource_Chart):
+Here are the fields supported by the [Resource Gantt](../Resource_Chart) chart:
 
 * `id`
 * `name`
