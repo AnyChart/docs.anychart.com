@@ -37,11 +37,9 @@ As you can see, setting minimum and maximum affects the size and position of tim
 
 (?) The settings of zoom levels affect the number and position of timeline columns and content of the timeline [header](Header).
 
-By default, there are three levels: the **month**, **quarter**, and **year**. You can change this configuration by combining {api:anychart.core.ui.Timeline#scale}scale(){api} with {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api} and specifying...
+By default, there are three levels: the **month**, **quarter**, and **year**. You can change this configuration by combining {api:anychart.core.ui.Timeline#scale}scale(){api} with {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api} and passing an array of settings.
 
-* {api:anychart.scales.GanttDateTime.ZoomLevelsSettings}anychart.scales.GanttDateTime.ZoomLevelsSettings{api}
-* уровни нужно задавать в порядке от самого мелкого к самому крупному
-
+Each entry of the array is an object standing for a level. You should specify two fields: `unit` and `count`:
 
 ```
 // configure the scale
@@ -52,5 +50,16 @@ chart.getTimeline().scale().zoomLevels([
   ]
 ]);
 ```
+Alternatively, you can pass just an array of units (by default, the count equals 1):
+
+```
+// configure the scale
+chart.getTimeline().scale().zoomLevels([["month", "quarter"]]);
+```
+
+Please note that level settings must be specified in a particular order: from the smallest to the largest scale, for example from the month to the year.
+
+* {api:anychart.enums.Interval}anychart.scales.GanttDateTime.ZoomLevelsSettings{api}
+
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Scale\_02{sample}
