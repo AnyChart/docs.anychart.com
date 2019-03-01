@@ -98,7 +98,7 @@ anychart.onDocumentReady(function () {
       if (this.progress == 1) {
         return this.name + ": <span style='color:#1976d2'>COMPLETE</span>";
       } else {
-        return this.name +": <span style='color:#64b5f6'>" +
+        return this.name +": <span style='color:#1976d2'>" +
                this.progress * 100 + "%</span>";
       }
     });
@@ -117,7 +117,7 @@ anychart.onDocumentReady(function () {
       var relatedTaskId = this.getData("custom_field");
       var relatedTaskItem = treeData.search("id", relatedTaskId);
       var relatedTaskName = relatedTaskItem.get("name");
-      return relatedTaskName + " Review";
+      return "Review: <span style='color:#ef6c00'>" + relatedTaskName + "</span>";
     });
 
     // configure the scale

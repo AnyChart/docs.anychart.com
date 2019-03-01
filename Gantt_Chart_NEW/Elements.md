@@ -485,11 +485,14 @@ timeline.elements().labels().fontWeight(600);
 // configure labels of tasks
 timeline.tasks().labels().useHtml(true);
 timeline.tasks().labels().format(
-  "{%name}: <span style='color:#64b5f6'>{%progress}</span>"
+  "{%name}: <span style='color:#1976d2'>{%progress}</span>"
 );
 
 // configure labels of parent tasks
-timeline.groupingTasks().labels().format("{%name}");
+timeline.groupingTasks().labels().useHtml(true);
+timeline.groupingTasks().labels().format(
+    "{%name}: <span style='color:#dd2c00'>{%progress}</span>"
+);
 
 // configure labels of milestones
 timeline.milestones().labels().useHtml(true);
@@ -557,7 +560,7 @@ timeline.tasks().labels().format(function() {
   if (this.progress == 1) {
     return this.name + ": <span style='color:#1976d2'>COMPLETE</span>";
   } else {
-    return this.name +": <span style='color:#64b5f6'>" +
+    return this.name +": <span style='color:#1976d2'>" +
            this.progress * 100 + "%</span>";
   }
 });
@@ -576,7 +579,8 @@ timeline.milestones().labels().format(function() {
   var relatedTaskId = this.getData("custom_field");
   var relatedTaskItem = treeData.search("id", relatedTaskId);
   var relatedTaskName = relatedTaskItem.get("name");
-  return relatedTaskName + " Review";
+  return "Review: <span style='color:#ef6c00'>" + 
+         relatedTaskName + "</span>";
 });
 ```
 
