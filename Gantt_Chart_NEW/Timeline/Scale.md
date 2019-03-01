@@ -3,21 +3,31 @@
 
 ## Overview
 
-misc:
+You can configure the timeline scale, for example set its [minimum and maximum](#minimum_&_maximum) values and [levels](#levels). These settings affect the position of the [elements](../Elements) on the timeline and the content of the [header](Header).
 
-* {api:anychart.scales.GanttDateTime}anychart.scales.GanttDateTime{api}
-* {api:anychart.scales.GanttDateTime.ZoomLevelsSettings}anychart.scales.GanttDateTime.ZoomLevelsSettings{api}
-* [Header](Header)
-* уровни нужно задавать в порядке от самого мелкого к самому крупному
+The scale is defined as an instance of the {api:anychart.scales.GanttDateTime}anychart.scales.GanttDateTime{api} class. To access the scale, call the {api:anychart.core.ui.Timeline#scale}scale(){api} method.
 
-methods:
+Here is the full list of available settings:
 
-* scale: {api:anychart.core.ui.Timeline#scale}scale(){api}
-* {api:anychart.scales.GanttDateTime#maximum}maximum(){api}
-* {api:anychart.scales.GanttDateTime#minimum}minimum(){api}
-* {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api}
+* {api:anychart.scales.GanttDateTime#}(){api}
+* {api:anychart.scales.GanttDateTime#}(){api}
+* {api:anychart.scales.GanttDateTime#}(){api}
+* {api:anychart.scales.GanttDateTime#}(){api}
+* {api:anychart.scales.GanttDateTime#}(){api}
+* {api:anychart.scales.GanttDateTime#}(){api}
+* {api:anychart.scales.GanttDateTime#}(){api}
+* {api:anychart.scales.GanttDateTime#}(){api}
+* {api:anychart.scales.GanttDateTime#}(){api}
+* {api:anychart.scales.GanttDateTime#}(){api}
+* {api:anychart.scales.GanttDateTime#}(){api}
+* {api:anychart.scales.GanttDateTime#}(){api}
+* {api:anychart.scales.GanttDateTime#}(){api}
+* {api:anychart.scales.GanttDateTime#}(){api}
 
 ## Minimum & Maximum
+
+* {api:anychart.scales.GanttDateTime#maximum}maximum(){api}
+* {api:anychart.scales.GanttDateTime#minimum}minimum(){api}
 
 
 ```
@@ -29,6 +39,12 @@ chart.getTimeline().scale().maximum("2018-07-15");
 {sample :height 220}GANTT\_NEW\_Timeline\_Scale\_01{sample}
 
 ## Levels
+
+* {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api}
+* {api:anychart.scales.GanttDateTime.ZoomLevelsSettings}anychart.scales.GanttDateTime.ZoomLevelsSettings{api}
+* [Header](Header)
+* уровни нужно задавать в порядке от самого мелкого к самому крупному
+
 
 ```
 // configure the scale
