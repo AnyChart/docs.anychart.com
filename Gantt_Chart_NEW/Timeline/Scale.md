@@ -29,7 +29,7 @@ chart.getTimeline().scale().minimum("2018-01-01");
 chart.getTimeline().scale().maximum("2018-07-15");
 ```
 
-As you can see in this sample, setting minimum and maximum affects the size and position of timeline [elements](../Elements):
+As you can see, setting minimum and maximum affects the size and position of timeline [elements](../Elements):
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Scale\_01{sample}
 
