@@ -1,7 +1,7 @@
 {:index 2}
 # Appearance
 
-You can configure the [appearance](../../Appearance_Settings) of the timeline: set the fill of even and odd rows, the stroke of columns, etc.
+You can configure the [appearance](../../Appearance_Settings) of the timeline: set the fill of even and odd rows, the stroke of columns, etc. It is possible to apply the same color to all rows or different colors to odd and even rows.
 
 Use the following methods:
 
