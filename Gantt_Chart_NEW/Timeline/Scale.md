@@ -5,7 +5,9 @@
 
 You can configure the timeline scale, for example set its [minimum & maximum](#minimum_&_maximum) values and specify [levels](#levels). These settings affect the position of the [elements](../Elements) on the timeline and the content of the [header](Header).
 
-The scale is defined as an instance of the {api:anychart.scales.GanttDateTime}anychart.scales.GanttDateTime{api} class. To access the scale, call the {api:anychart.core.ui.Timeline#scale}scale(){api} method.
+The scale is defined as an instance of the {api:anychart.scales.GanttDateTime}anychart.scales.GanttDateTime{api} class.
+
+To access it, Use the {api:anychart.core.ui.Timeline#scale}scale(){api} method.
 
 Here is the full list of available settings:
 
