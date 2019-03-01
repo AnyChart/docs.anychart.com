@@ -51,7 +51,7 @@ chart.getTimeline().scale().zoomLevels([
 ]);
 ```
 
-Alternatively, you can pass just an array of units (the default count equals 1):
+Alternatively, you can pass just an array of units (the default count is 1):
 
 ```
 // configure the scale
