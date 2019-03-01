@@ -51,6 +51,13 @@ chart.getTimeline().scale().zoomLevels([
 ]);
 ```
 
+Alternatively, you can pass just an array of units (the default count equals 1):
+
+```
+// configure the scale
+chart.getTimeline().scale().zoomLevels([["month", "quarter"]]);
+```
+
 **Note:** Level settings must be listed in a particular order: from the level with the smallest time unit to the level with the largest one, for example from the millisecond to the year.
 
 The available units are listed in {api:anychart.enums.Interval}anychart.scales.GanttDateTime.ZoomLevelsSettings{api}:
@@ -66,13 +73,6 @@ The available units are listed in {api:anychart.enums.Interval}anychart.scales.G
 * `"third-of-month"`
 * `"week"`
 * `"year"`
-
-Alternatively, you can pass just an array of units (the default count equals 1):
-
-```
-// configure the scale
-chart.getTimeline().scale().zoomLevels([["month", "quarter"]]);
-```
 
 In this sample, there are two levels: the month and quarter:
 
