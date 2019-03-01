@@ -11,13 +11,13 @@ To access the scale, call {api:anychart.core.ui.Timeline#scale}scale(){api}.
 
 To configure it, call the following methods:
 
-* {api:anychart.scales.GanttDateTime#minimum}minimum(){api} – to set the minimum
-* {api:anychart.scales.GanttDateTime#maximum}maximum(){api} – to set the maximum
+* {api:anychart.scales.GanttDateTime#minimum}minimum(){api} – to set the [minimum](#minimum_&_maximum)
+* {api:anychart.scales.GanttDateTime#maximum}maximum(){api} – to set the [maximum](#minimum_&_maximum)
 * {api:anychart.scales.GanttDateTime#softMinimum}softMinimum(){api} – to set the soft minimum
 * {api:anychart.scales.GanttDateTime#softMaximum}softMaximum(){api} – to set the soft maximum
 * {api:anychart.scales.GanttDateTime#minimumGap}minimumGap(){api} – to set the minimum gap
 * {api:anychart.scales.GanttDateTime#maximumGap}maximumGap(){api} – to set the maximum gap
-* {api:anychart.scales.GanttDateTime#zoomlevels}zoomlevels(){api} – to access zoom levels
+* {api:anychart.scales.GanttDateTime#zoomlevels}zoomlevels(){api} – to access zoom [levels](#levels)
 
 ## Minimum & Maximum
 
