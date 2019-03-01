@@ -10,11 +10,11 @@ You can configure the [appearance](../../Appearance_Settings) of the timeline: s
 Use the following methods to adjust the appearance of the timeline:
 
 * {api:anychart.core.ui.Timeline#backgroundFill}backgroundFill(){api} to set the background fill
-* {api:anychart.core.ui.Timeline#rowEvenFill}rowEvenFill(){api} to set the fill of even rows
-* {api:anychart.core.ui.Timeline#rowOddFill}rowOddFill(){api} to set the fill of odd rows
-* {api:anychart.core.ui.Timeline#rowFill}rowFill(){api} to set the fill of all rows
+* {api:anychart.core.ui.Timeline#rowFill}rowFill(){api} to set the fill of rows
 * {api:anychart.core.ui.Timeline#rowHoverFill}rowHoverFill(){api} to set the fill of rows when they are being hovered over
 * {api:anychart.core.ui.Timeline#rowSelectedFill}rowSelectedFill(){api} to set the fill of rows when they are being selected
+* {api:anychart.core.ui.Timeline#rowEvenFill}rowEvenFill(){api} to set the fill of even rows
+* {api:anychart.core.ui.Timeline#rowOddFill}rowOddFill(){api} to set the fill of odd rows
 * {api:anychart.core.ui.Timeline#columnStroke}columnStroke(){api} to set the stroke of columns
 
 
