@@ -3,7 +3,7 @@
 
 You can configure the [appearance](../../Appearance_Settings) of the timeline: set the fill of even and odd rows, the stroke of columns, etc.
 
-See also the [Data Grid: Appearance](../Data_Grid/Appearance) and [Header: Appearance](Header#appearance) sections to learn how to configure the appearance of the **data grid** and the **timeline header**.
+See also the [Data Grid: Appearance](../Data_Grid/Appearance) and [Header: Appearance](Header#appearance) sections to learn how to configure the appearance of the data grid and the timeline header.
 
 The [Basic Settings: Appearance](../Basic_Settings#rows_and_columns) explains how to apply some appearance settings simultaneously to the timeline and data grid. Please note that this is the only way to set the **row stroke**.
 
