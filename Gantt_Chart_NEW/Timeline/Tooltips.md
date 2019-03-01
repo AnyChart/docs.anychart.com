@@ -81,7 +81,7 @@ chart.getTimeline().tooltip().format(
 
 You can configure the text of tooltips by combining the {api:anychart.core.ui.Tooltip#format}format(){api} method with [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions).
 
-In these functions, a number of default fields is available, and the {api:anychart.format.Context#getData}getData(){api} method allows you to refer to a custom field in your data.
+In these functions, a number of default context fields is available, and the {api:anychart.format.Context#getData}getData(){api} method allows you to refer to a custom field in your data.
 
 Also, if you need to enable HTML, pass `true` to {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}.
 
