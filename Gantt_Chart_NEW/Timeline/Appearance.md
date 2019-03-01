@@ -15,7 +15,7 @@ Use the following methods:
 
 **Note 1:** See also the [Data Grid: Appearance](../Data_Grid/Appearance) and [Header: Appearance](Header#appearance) sections to learn how to configure the appearance of the data grid and the timeline header.
 
-**Note 2:** The [Basic Settings: Appearance](../Basic_Settings#rows_and_columns) section explains how to apply some appearance settings simultaneously to the timeline and data grid. Please note that this is the only way to set the **row stroke**.
+**Note 2:** The [Basic Settings: Appearance](../Basic_Settings#rows_and_columns) section explains how to apply some appearance settings simultaneously to the data grid and timeline. Please note that this is the only way to set the **row stroke**.
 
 The sample below shows how to adjust the appearance of the timeline:
 
