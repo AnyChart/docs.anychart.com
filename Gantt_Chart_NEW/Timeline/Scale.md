@@ -3,7 +3,7 @@
 
 ## Overview
 
-You can configure the timeline scale, for example set its [minimum & maximum](#minimum_&_maximum) values and specify zoom [levels](#levels). (?) These settings affect the size and position of the [elements](../Elements) on the timeline and the content of the [header](Header).
+You can configure the timeline scale, for example set its [minimum & maximum](#minimum_&_maximum) values and specify zoom [levels](#levels). (?) These settings affect the size and position of timeline [elements](../Elements) and the content of the timeline [header](Header).
 
 The scale is defined as an instance of the {api:anychart.scales.GanttDateTime}anychart.scales.GanttDateTime{api} class.
 
@@ -29,7 +29,7 @@ chart.getTimeline().scale().minimum("2018-01-01");
 chart.getTimeline().scale().maximum("2018-07-15");
 ```
 
-As you can see in this sample, setting minimum and maximum affects the size and position of the [elements](../Elements) on the timeline:
+As you can see in this sample, setting minimum and maximum affects the size and position of timeline [elements](../Elements):
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Scale\_01{sample}
 
