@@ -5,14 +5,14 @@ You can configure the [appearance](../../Appearance_Settings) of the data grid: 
 
 Use the following methods:
 
-* {anychart.core.ui.DataGrid#backgroundFill}backgroundFill(){api} to set the background fill
-* {anychart.core.ui.DataGrid#backgroundFill}backgroundFill(){api} to set the fill of the header
-* {anychart.core.ui.DataGrid#rowFill}rowFill(){api} to set the fill of rows
-* {anychart.core.ui.DataGrid#rowHoverFill}rowHoverFill(){api} to set the fill of rows when they are being hovered over
-* {anychart.core.ui.DataGrid#rowSelectedFill}rowSelectedFill(){api} to set the fill of rows when they are being selected
-* {anychart.core.ui.DataGrid#rowEvenFill}rowEvenFill(){api} to set the fill of even rows
-* {anychart.core.ui.DataGrid#rowOddFill}rowOddFill(){api} to set the fill of odd rows
-* {anychart.core.ui.DataGrid#columnStroke}columnStroke(){api} to set the stroke of columns
+* {api:anychart.core.ui.DataGrid#backgroundFill}backgroundFill(){api} to set the background fill
+* {api:anychart.core.ui.DataGrid#headerFill}headerFill(){api} to set the fill of the header
+* {api:anychart.core.ui.DataGrid#rowFill}rowFill(){api} to set the fill of rows
+* {api:anychart.core.ui.DataGrid#rowHoverFill}rowHoverFill(){api} to set the fill of rows when they are being hovered over
+* {api:anychart.core.ui.DataGrid#rowSelectedFill}rowSelectedFill(){api} to set the fill of rows when they are being selected
+* {api:anychart.core.ui.DataGrid#rowEvenFill}rowEvenFill(){api} to set the fill of even rows
+* {api:anychart.core.ui.DataGrid#rowOddFill}rowOddFill(){api} to set the fill of odd rows
+* {api:anychart.core.ui.DataGrid#columnStroke}columnStroke(){api} to set the stroke of columns
 
 **Note 1:** See also the [Timeline: Appearance](../Timeline/Appearance) to learn how to configure the appearance of the timeline.
 
