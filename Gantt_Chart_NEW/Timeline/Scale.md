@@ -39,7 +39,42 @@ As you can see, setting minimum and maximum affects the size and position of tim
 
 By default, there are three levels: the **month**, **quarter**, and **year**. You can change this configuration by combining {api:anychart.core.ui.Timeline#scale}scale(){api} with {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api} and passing an array of settings.
 
-Each entry of the array is an object standing for a level. You should specify two fields: `unit` and `count`:
+Each entry of the array is an object standing for a level. In each object, you should specify two values, `unit` and `count` – the time unit of the level and the number of time units per column:
+
+```
+// configure the scale
+chart.getTimeline().scale().zoomLevels([
+  [
+    {unit: 'year', count: 1},
+    {unit: 'month', count: 3}
+  ]
+]);
+```
+
+Please note that level settings must be listed in a particular order: from the level with the smallest time unit to the level with the largest one, for example from the millisecond to the year.
+
+The available units are listed in {api:anychart.enums.Interval}anychart.scales.GanttDateTime.ZoomLevelsSettings{api}:
+
+* `"day"`
+* `"hour"`
+* `"millisecond"`
+* `"minute"`
+* `"month"`
+* `"quarter"`
+* `"second"`
+* `"semester"`
+* `"third-of-month"`
+* `"week"`
+* `"year"`
+
+Alternatively, you can pass just an array of units (the default count equals 1):
+
+```
+// configure the scale
+chart.getTimeline().scale().zoomLevels([["month", "quarter"]]);
+```
+
+In this sample, there are two levels: the month and quarter:
 
 ```
 // configure the scale
@@ -50,16 +85,5 @@ chart.getTimeline().scale().zoomLevels([
   ]
 ]);
 ```
-Alternatively, you can pass just an array of units (the default count equals 1):
-
-```
-// configure the scale
-chart.getTimeline().scale().zoomLevels([["month", "quarter"]]);
-```
-
-Please note that level settings must be specified in a particular order: from the smallest to the largest scale, for example from the month to the year.
-
-* {api:anychart.enums.Interval}anychart.scales.GanttDateTime.ZoomLevelsSettings{api}
-
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Scale\_02{sample}
