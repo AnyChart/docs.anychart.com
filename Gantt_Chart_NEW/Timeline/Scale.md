@@ -9,22 +9,22 @@ The scale is defined as an instance of the {api:anychart.scales.GanttDateTime}an
 
 To access the scale, use the {api:anychart.core.ui.Timeline#scale}scale(){api} method.
 
-Here is the full list of available settings:
+The following settings are available:
 
-* {api:anychart.scales.GanttDateTime#}(){api}
-* {api:anychart.scales.GanttDateTime#}(){api}
-* {api:anychart.scales.GanttDateTime#}(){api}
-* {api:anychart.scales.GanttDateTime#}(){api}
-* {api:anychart.scales.GanttDateTime#}(){api}
-* {api:anychart.scales.GanttDateTime#}(){api}
-* {api:anychart.scales.GanttDateTime#}(){api}
-* {api:anychart.scales.GanttDateTime#}(){api}
-* {api:anychart.scales.GanttDateTime#}(){api}
-* {api:anychart.scales.GanttDateTime#}(){api}
-* {api:anychart.scales.GanttDateTime#}(){api}
-* {api:anychart.scales.GanttDateTime#}(){api}
-* {api:anychart.scales.GanttDateTime#}(){api}
-* {api:anychart.scales.GanttDateTime#}(){api}
+* {api:anychart.scales.GanttDateTime#}(){api} – 
+* {api:anychart.scales.GanttDateTime#}(){api} – 
+* {api:anychart.scales.GanttDateTime#}(){api} – 
+* {api:anychart.scales.GanttDateTime#}(){api} – 
+* {api:anychart.scales.GanttDateTime#}(){api} – 
+* {api:anychart.scales.GanttDateTime#}(){api} – 
+* {api:anychart.scales.GanttDateTime#}(){api} – 
+* {api:anychart.scales.GanttDateTime#}(){api} – 
+* {api:anychart.scales.GanttDateTime#}(){api} – 
+* {api:anychart.scales.GanttDateTime#}(){api} – 
+* {api:anychart.scales.GanttDateTime#}(){api} – 
+* {api:anychart.scales.GanttDateTime#}(){api} – 
+* {api:anychart.scales.GanttDateTime#}(){api} – 
+* {api:anychart.scales.GanttDateTime#}(){api} – 
 
 ## Minimum & Maximum
 
