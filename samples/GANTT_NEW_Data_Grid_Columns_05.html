@@ -132,13 +132,13 @@ anychart.onDocumentReady(function () {
       }
 
       var parentText = "<span style='color:#dd2c00;font-weight:bold'>" +
-                       this.name + "<span>: " + duration + "d";
+                       this.name + ": " + duration + "d</span>";
 
       var milestoneText = "<span style='color:#ef6c00;font-weight:bold'>" + 
                           customField + this.name + "</span";
 
       var taskText = "<span style='color:#64b5f6'>" + customField + 
-                     this.name + ": " + progress + "%</span>";
+                     this.name + ": " + progress + "</span>";
 
       // identify the task type and display the corresponding text
       if (numChildren > 0) {
