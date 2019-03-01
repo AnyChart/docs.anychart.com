@@ -12,6 +12,7 @@
 
 ### Rows and Columns
 
+* background()
 * columnStroke()
 * rowHoverFill()
 * rowSelectedFill()
