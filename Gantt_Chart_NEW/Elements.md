@@ -485,7 +485,7 @@ timeline.elements().labels().fontWeight(600);
 // configure labels of tasks
 timeline.tasks().labels().useHtml(true);
 timeline.tasks().labels().format(
-  "{%name}: <span style='color:#1976d2'>{%progress}</span>"
+  "{%name}: <span style='color:#64b5f6'>{%progress}</span>"
 );
 
 // configure labels of parent tasks
@@ -558,9 +558,9 @@ timeline.elements().labels().fontWeight(600);
 timeline.tasks().labels().useHtml(true);
 timeline.tasks().labels().format(function() {
   if (this.progress == 1) {
-    return this.name + ": <span style='color:#1976d2'>COMPLETE</span>";
+    return this.name + ": <span style='color:#64b5f6'>COMPLETE</span>";
   } else {
-    return this.name +": <span style='color:#1976d2'>" +
+    return this.name +": <span style='color:#64b5f6'>" +
            this.progress * 100 + "%</span>";
   }
 });
