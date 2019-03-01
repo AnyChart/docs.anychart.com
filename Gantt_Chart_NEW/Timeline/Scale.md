@@ -74,7 +74,7 @@ The available units are listed in {api:anychart.enums.Interval}anychart.scales.G
 * `"week"`
 * `"year"`
 
-In this sample, there are two levels: the month and quarter:
+In this sample, there are two levels, the month and the quarter:
 
 ```
 // configure the scale
