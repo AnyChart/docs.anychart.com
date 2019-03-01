@@ -39,7 +39,7 @@ As you can see, setting minimum and maximum affects the size and position of tim
 
 By default, there are three levels: the **month**, **quarter**, and **year**. You can change this configuration by combining {api:anychart.core.ui.Timeline#scale}scale(){api} with {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api} and passing an array of settings.
 
-Each entry of the array is an object standing for a level. In each object, you should specify two values, `unit` and `count` – the time unit of the level and the number of time units per column:
+Each entry of the array is an object standing for a level. There you should specify two values, `unit` and `count` – the time unit of the level and the number of time units per column:
 
 ```
 // configure the scale
