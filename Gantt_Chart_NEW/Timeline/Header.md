@@ -110,7 +110,7 @@ header.format("{%value} – {%endValue}");
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_05{sample}
 
-The following sample shows how to use tokens with **individual levels**. All three default levels are configured:
+The following sample shows how to use tokens with **individual levels**. Each of the three default levels has its own text format:
 
 ```
 // configure the levels of the timeline header
