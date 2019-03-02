@@ -3,9 +3,7 @@
 
 ## Overview
 
-The configuration of the timeline header depends on the settings of the scale – see [Scale: Levels](#Scale#levels) to learn more.
-
-There are also some settings that can be applied directly to the header – to [all levels](#all_levels) simultaneosly or to an individual [level](#level): you can adjust the [appearance](#appearance), [text format](#text_format), and [height](#height).
+The configuration of the timeline header depends on the settings of the scale – see [Scale: Levels](#Scale#levels) to learn more. There are also some settings that can be applied directly to the header – to [all levels](#all_levels) simultaneosly or to an individual [level](#level): you can adjust the [appearance](#appearance), [text format](#text_format), and [height](#height).
 
 The header is defined as an instacne of the {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api} class.
 
