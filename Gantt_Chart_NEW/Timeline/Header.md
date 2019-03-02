@@ -19,13 +19,7 @@ Other settings can be applied either to [all levels](#all_levels) of the header 
 
 To configure all levels, access the header by combining {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#header}header(){api}.
 
-Then use methods of {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api}, for example:
-
-* {api:anychart.core.gantt.TimeLineHeader#enabled}enabled(){api} to enable or disable the header
-* {api:anychart.core.gantt.TimeLineHeader#background}background(){api}, {api:anychart.core.gantt.TimeLineHeader#fill}fill(){api} and {api:anychart.core.gantt.TimeLineHeader#stroke}stroke(){api} to configure the [appearance](#appearance)
-* {api:anychart.core.gantt.TimeLineHeader#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader#fontWeight}fontWeight(){api},
-{api:anychart.core.gantt.TimeLineHeader#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader#fontFamily}fontFamily(){api}, etc. to configure the font [appearance](#appearance)
-* {api:anychart.core.gantt.TimeLineHeader#format}format(){api} to set the [text format](#text_format)
+Then use methods of {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api}, for example {api:anychart.core.gantt.TimeLineHeader#enabled}enabled(){api} to enable or disable the header.
 
 In the sample below, the background stroke is set for all levels (other appearance settings are shown in [Appearance](#appearance)):
 
@@ -39,18 +33,13 @@ header.background().stroke("3 #455a64");
 
 ### Individual Levels
 
-Levels are defined as instancess of the {api:anychart.core.gantt.TimeLineHeader.LevelWrapper}anychart.core.gantt.TimeLineHeader.LevelWrapper{api} class.
+Levels are defined as instances of the {api:anychart.core.gantt.TimeLineHeader.LevelWrapper}anychart.core.gantt.TimeLineHeader.LevelWrapper{api} class.
 
 To access a level, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#header}header(){api} and {api:anychart.core.gantt.TimeLineHeader#level}level(){api}. Specify the index of the level.
 
-**Note:** (?) Levels are numbered automatically from the level with the smallest time unit to the level with the largest one. For instance, the default levels – the month, quarter, and year – are assigned the indexes 0, 1, 2.
+**Note:** (?) Levels are numbered automatically from the level with the smallest time unit to the level with the largest one. The default levels – the month, quarter, and year – are assigned the indexes 0, 1, 2.
 
-To configure a level, use the following methods:
-
-* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#enabled}enabled(){api} to enable or disable a level
-* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#background}background(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fill}fill(){api}, and {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#stroke}stroke{api} to configure the [appearance](#appearance)
-* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontWeight}fontWeight(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontFamily}fontFamily(){api}, etc. to configure the font [appearance](#appearance)
-* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#format}format(){api} to set the [text format](#text_format)
+Then use methods of the level, for example {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#enabled}enabled(){api} to enable or disable it.
 
 In this sample, the background stroke is set only for the first level (other appearance settings are shown in [Appearance](#appearance)):
 
