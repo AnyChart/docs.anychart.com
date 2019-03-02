@@ -51,6 +51,8 @@ To configure a level, use the following methods:
 * {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontWeight}fontWeight(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontFamily}fontFamily(){api}, etc. to configure the font [appearance](#appearance)
 * {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#format}format(){api} to set the [text format](#text_format)
 
+In this sample, the background stroke is set only for the first level (other appearance settings are shown in the [Appearance](#appearance) section):
+
 ```
 // configure the first level of the timeline header
 var header = chart.getTimeline().header();
