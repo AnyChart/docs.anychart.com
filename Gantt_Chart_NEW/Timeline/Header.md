@@ -66,9 +66,7 @@ header.level(0).background().stroke("3 #455a64");
 
 ## Appearance
 
-* [appearance settings](../../Appearance_Settings) 
-
-**all levels**:
+To configure the [appearance](../../Appearance_Settings) of **all levels**, use these methods:
 
 * {api:anychart.core.gantt.TimeLineHeader#background}background(){api}, {api:anychart.core.gantt.TimeLineHeader#fill}fill(){api} and {api:anychart.core.gantt.TimeLineHeader#stroke}stroke(){api} to set the background, fill, and stroke
 * {api:anychart.core.gantt.TimeLineHeader#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader#fontWeight}fontWeight(){api},
@@ -86,7 +84,7 @@ header.fontWeight(600);
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_03{sample}
 
-**individual levels**
+To adjust **individual levels**, use the following methods:
 
 * {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#background}background(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fill}fill(){api}, and {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#stroke}stroke{api} to set the background, fill, and stroke
 * {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontWeight}fontWeight(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontFamily}fontFamily(){api}, etc. to configure the font
