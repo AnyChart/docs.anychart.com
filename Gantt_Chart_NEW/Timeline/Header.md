@@ -44,7 +44,7 @@ Levels are defined as instancess of the {api:anychart.core.gantt.TimeLineHeader.
 
 To access a level, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#header}header(){api} and {api:anychart.core.gantt.TimeLineHeader#level}level(){api}. Specify the index of the level.
 
-**Note:** (?) Levels are numbered automatically from the level with the smallest time unit to the level with the largest one. For example, the default levels – the month, quarter, and year – are assigned the indexes 0, 1, and 2.
+**Note:** (?) Levels are numbered automatically from the level with the smallest time unit to the level with the largest one. For example, the default levels – the month, quarter, and year – are assigned the indexes 0, 1, 2.
 
 To configure a level, use the following methods:
 
