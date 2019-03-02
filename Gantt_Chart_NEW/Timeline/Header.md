@@ -9,7 +9,9 @@ You can configure either [all levels](#all_levels) of the header at once or an [
 
 ## Levels
 
-Each level of the header represents a certain time unit. By default, there are three levels: **the month**, **quarter**, and **year**. To change the number of levels and their time units, you should adjust the scale of the timeline, as explained in [Scale: Levels](#Scale#levels).
+Each level of the header represents a time unit. Levels are shown in a particular order: from the level with the smallest unit at the bottom to the level with the largest one at the top.
+
+By default, there are three levels: **the month**, **quarter**, and **year**. To change the number of levels and their time units, you should adjust the scale of the timeline, as explained in [Scale: Levels](#Scale#levels).
 
 Other settings can be applied either to [all levels](#all_levels) of the header or to  an [individual level](#level) – see the sections below to learn more.
 
@@ -180,5 +182,8 @@ header.level(0).format(function() {
 
 ## Height
 
+misc:
+
 * {api:anychart.core.gantt.TimeLineHeader#levelHeight}levelHeight(){api} 
 * [Basic Settings: Header and Row Height](../Basic_Settings#header_and_row_height)
+* In this case the height of the header as a whole does not change. To set it, use the ... method of the chart...
