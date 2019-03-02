@@ -29,6 +29,8 @@ Please keep in mind that in addition to default tokens you can always use a cust
 
 Also, if you need to enable HTML, pass `true` to {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}.
 
+### Project Tokens
+
 For the [Project Gantt](../Project_Chart) chart, the following tokens are available:
 
 * `{%id}`
@@ -54,6 +56,8 @@ chart.dataGrid().tooltip().format(
 ```
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Tooltips\_01{sample}
+
+### Resource Tokens
 
 The [Resource Gantt](../Resource_Chart) chart supports these tokens:
 
@@ -84,6 +88,8 @@ You can configure the text of tooltips by combining the {api:anychart.core.ui.To
 In these functions, a number of default context fields is available, and the {api:anychart.format.Context#getData}getData(){api} method allows you to refer to a custom field in your data.
 
 Also, if you need to enable HTML, pass `true` to {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}.
+
+### Project Fields
 
 For the [Project Gantt](../Project_Chart) chart, the following fields are available in formatting functions:
 
@@ -144,6 +150,8 @@ chart.dataGrid().tooltip().format(function() {
 ```
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Tooltips\_03{sample}
+
+### Resource Fields
 
 Here are the fields supported by the [Resource Gantt](../Resource_Chart) chart:
 
