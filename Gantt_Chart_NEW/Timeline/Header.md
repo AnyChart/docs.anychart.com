@@ -3,27 +3,30 @@
 
 ## Overview
 
-The configuration of the timeline header depends on the settings of the scale – see [Scale: Levels](#Scale#levels) to learn more. There are also some settings that can be applied directly to the header – to [all levels](#all_levels) simultaneosly or to an individual [level](#level): you can adjust the [appearance](#appearance), [text format](#text_format), and [height](#height).
+The header is a component on the top of the timeline, representing its [Scale](Scale) and defined as an instance of the {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api} class.
 
-The header is defined as an instacne of the {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api} class.
-
-To access the header, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#header}header(){api}.
+You can configure either [all levels](#all_levels) of the header at once or an individual [level](#level). The available settings include the [appearance](#appearance), [text format](#text_format), and [height](#height).
 
 ## Levels
 
-* [Scale](Scale)
+Each level of the header represents a certain time unit. By default, there are three levels: **the month**, **quarter**, and **year**. To change the number of levels and their time units, you should adjust the scale of the timeline, as explained in [Scale: Levels](#Scale#levels).
+
+Other settings can be applied either to [all levels](#all_levels) of the header or to  an individual [level](#level) – see the sections below to learn more.
 
 ### All Levels
 
-* {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api}
-* to acces the header: {api:anychart.core.ui.Timeline#header}header(){api}
+The header is defined as an instance of the {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api} class.
+
+To access the header, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#header}header(){api}.
+
+To configure the header, use the methods listed below, which affect all levels:
+
 * {api:anychart.core.gantt.TimeLineHeader#enabled}enabled(){api} to enable or disable the header
 * {api:anychart.core.gantt.TimeLineHeader#background}background(){api}, {api:anychart.core.gantt.TimeLineHeader#fill}fill(){api} and {api:anychart.core.gantt.TimeLineHeader#stroke}stroke(){api} to configure the [appearance](#appearance)
 * {api:anychart.core.gantt.TimeLineHeader#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader#fontWeight}fontWeight(){api},
 {api:anychart.core.gantt.TimeLineHeader#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader#fontFamily}fontFamily(){api}, etc. to configure the font [appearance](#appearance)
 * {api:anychart.core.gantt.TimeLineHeader#format}format(){api} to set the [text format](#text_format)
-* {api:anychart.core.gantt.TimeLineHeader#levelHeight}levelHeight(){api} and {api:anychart.core.gantt.TimeLineHeader#level}level(){api} to set the level [height](#height) and configure [individual levels](#individual_levels)
-
+* {api:anychart.core.gantt.TimeLineHeader#levelHeight}levelHeight(){api} to set the height of levels
 
 ```
 // configure the timeline header
@@ -36,7 +39,7 @@ header.background().stroke("3 #455a64");
 ### Individual Levels
 
 * {api:anychart.core.gantt.TimeLineHeader.LevelWrapper}anychart.core.gantt.TimeLineHeader.LevelWrapper{api}
-* to access a level: {api:anychart.core.gantt.TimeLineHeader#level}level(){api}
+* to access a level: combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#header}header(){api} and {api:anychart.core.gantt.TimeLineHeader#level}level(){api}
 * {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#enabled}enabled(){api} to enable or disable a level
 * {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#background}background(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fill}fill(){api}, and {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#stroke}stroke{api} to configure the [appearance](#appearance)
 * {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontWeight}fontWeight(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontFamily}fontFamily(){api}, etc. to configure the font [appearance](#appearance)
