@@ -7,7 +7,7 @@ You can configure the timeline scale, for example set its [minimum & maximum](#m
 
 The scale is defined as an instance of the {api:anychart.scales.GanttDateTime}anychart.scales.GanttDateTime{api} class.
 
-To access the scale, {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#scale}scale(){api}.
+To access the scale, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#scale}scale(){api}.
 
 To configure it, call the following methods (?):
 

@@ -7,9 +7,9 @@ The configuration of the timeline header depends on the settings of the scale â€
 
 There are also some settings that can be applied directly to the header â€“ to [all levels](#all_levels) simultaneosly or to an individual [level](#level): you can adjust the [appearance](#appearance), [text format](#text_format), and [height](#height).
 
-The header is defined as an instacne of the {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api} class. Combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#header}header(){api} to access it.
+The header is defined as an instacne of the {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api} class.
 
-Levels are defined as instances of {api:anychart.core.gantt.TimeLineHeader.LevelWrapper}anychart.core.gantt.TimeLineHeader.LevelWrapper{api}. To access them, combine {api:anychart.core.ui.Timeline#header}header(){api} and {api:anychart.core.gantt.TimeLineHeader#level}level(){api}.
+To access it, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#header}header(){api}.
 
 ## Levels
 
