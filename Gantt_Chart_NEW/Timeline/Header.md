@@ -3,7 +3,7 @@
 
 ## Overview
 
-The header is a component on the top of the timeline, representing its [Scale](Scale) and defined as an instance of the {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api} class.
+The header is a component on the top of the timeline, representing its [scale](Scale) and defined as an instance of the {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api} class.
 
 You can configure either [all levels](#all_levels) of the header at once or an individual [level](#level). The available settings include the [appearance](#appearance), [text format](#text_format), and [height](#height).
 
