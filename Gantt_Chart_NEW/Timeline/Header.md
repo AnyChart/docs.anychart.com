@@ -3,15 +3,13 @@
 
 ## Overview
 
-misc:
+The configuration of the timeline header depends on the settings of the scale – see [Scale: Levels](#Scale#levels) to learn more.
 
-* {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api}
-* {api:anychart.core.gantt.TimeLineHeader.LevelWrapper}anychart.core.gantt.TimeLineHeader.LevelWrapper{api}
-* [All Levels](#all_levels), [Individual Levels](#individual_levels)
-* [Appearance](#appearance)
-* [Text Format](#text_format)
-* [Project Gantt](../Project_Chart)
-* [Resource Gantt](../Resource_Chart)
+There are also some settings that can be applied directly to the header – to [all levels](#all_levels) simultaneosly or to an individual [level](#level) or of [all levels](#all_levels): [appearance](#appearance), [text format](#text_format), [height](#height).
+
+The header is defined as an instacne of the {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api} class. Combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#header}header(){api} to access it.
+
+Levels are defined as instances of {api:anychart.core.gantt.TimeLineHeader.LevelWrapper}anychart.core.gantt.TimeLineHeader.LevelWrapper{api}. To access them, combine {api:anychart.core.ui.Timeline#header}header(){api} and {api:anychart.core.gantt.TimeLineHeader#level}level(){api}.
 
 ## Levels
 
@@ -100,6 +98,8 @@ header.level(0).fontWeight(600);
 * [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions)
 * all levels: {api:anychart.core.gantt.TimeLineHeader}format(){api}
 * individual levels: {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#format}format(){api}
+* [Project Gantt](../Project_Chart)
+* [Resource Gantt](../Resource_Chart)
 
 ### Tokens
 

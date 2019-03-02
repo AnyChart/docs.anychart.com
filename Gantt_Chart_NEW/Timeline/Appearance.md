@@ -3,7 +3,7 @@
 
 You can configure the [appearance](../../Appearance_Settings) of the timeline: set the background fill, the stroke of columns, etc. It is possible to apply the same color to all rows or different colors to odd and even rows.
 
-Use the following methods:
+Combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with the following methods:
 
 * {api:anychart.core.ui.Timeline#backgroundFill}backgroundFill(){api} to set the background fill
 * {api:anychart.core.ui.Timeline#rowFill}rowFill(){api} to set the fill of rows

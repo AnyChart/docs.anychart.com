@@ -7,7 +7,7 @@ You can configure the timeline scale, for example set its [minimum & maximum](#m
 
 The scale is defined as an instance of the {api:anychart.scales.GanttDateTime}anychart.scales.GanttDateTime{api} class.
 
-To access the scale, call {api:anychart.core.ui.Timeline#scale}scale(){api}.
+To access the scale, {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#scale}scale(){api}.
 
 To configure it, call the following methods (?):
 
@@ -29,7 +29,7 @@ chart.getTimeline().scale().minimum("2018-01-01");
 chart.getTimeline().scale().maximum("2018-07-15");
 ```
 
-As you can see, setting minimum and maximum affects the position and relative size of timeline [elements](../Elements):
+As you can see, the minimum and maximum affect the position and relative size of timeline [elements](../Elements):
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Scale\_01{sample}
 
@@ -39,7 +39,7 @@ As you can see, setting minimum and maximum affects the position and relative si
 
 By default, there are three levels: the **month**, **quarter**, and **year**. You can change this preset by combining {api:anychart.core.ui.Timeline#scale}scale(){api} with {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api} and passing an array of settings.
 
-Each entry of the array is an object standing for a level. There you should specify two values, `unit` and `count`: the time unit of the level and the number of time units per column.
+Each entry of the array is an object standing for a level. (?) There you should specify two values, `unit` and `count`: the time unit of the level and the number of units per column.
 
 ```
 // configure the scale
