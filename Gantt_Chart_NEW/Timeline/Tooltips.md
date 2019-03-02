@@ -151,7 +151,7 @@ chart.getTimeline().tooltip().format(function() {
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Tooltips\_03{sample}
 
-### Gantt Fields
+### Resource Fields
 
 Here are the fields supported by the [Resource Gantt](../Resource_Chart) chart:
 
