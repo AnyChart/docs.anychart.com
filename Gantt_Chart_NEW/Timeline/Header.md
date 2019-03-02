@@ -5,7 +5,7 @@
 
 The header is a component on the top of the timeline, representing its [scale](Scale) and defined as an instance of the {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api} class.
 
-You can configure either [all levels](#all_levels) of the header at once or an [individual level](#level). The available settings include the [appearance](#appearance), [text format](#text_format), and [height](#height).
+You can configure either [all levels](#all_levels) of the header at once or an [individual level](#level). The available settings include the [appearance](#appearance) and [text format](#text_format).
 
 ## Levels
 
@@ -28,7 +28,6 @@ To configure the header, use the methods listed below, which affect all levels:
 * {api:anychart.core.gantt.TimeLineHeader#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader#fontWeight}fontWeight(){api},
 {api:anychart.core.gantt.TimeLineHeader#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader#fontFamily}fontFamily(){api}, etc. to configure the font [appearance](#appearance)
 * {api:anychart.core.gantt.TimeLineHeader#format}format(){api} to set the [text format](#text_format)
-* {api:anychart.core.gantt.TimeLineHeader#levelHeight}levelHeight(){api} to set the height of levels
 
 In the sample below, the background stroke is set for all levels (other appearance settings are shown in [Appearance](#appearance)):
 
@@ -184,6 +183,4 @@ header.level(0).format(function() {
 
 misc:
 
-* {api:anychart.core.gantt.TimeLineHeader#levelHeight}levelHeight(){api} 
 * [Basic Settings: Header and Row Height](../Basic_Settings#header_and_row_height)
-* In this case the height of the header as a whole does not change. To set it, use the ... method of the chart...
