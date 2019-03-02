@@ -28,7 +28,7 @@ To configure the header, use the methods listed below, which affect all levels:
 * {api:anychart.core.gantt.TimeLineHeader#format}format(){api} to set the [text format](#text_format)
 * {api:anychart.core.gantt.TimeLineHeader#levelHeight}levelHeight(){api} to set the height of levels
 
-In the sample below, the background stroke is set for all levels (other appearance settings are shown in the [Appearance](#appearance) section):
+In the sample below, the background stroke is set for all levels (other appearance settings are shown in [Appearance](#appearance)):
 
 ```
 // configure the timeline header
@@ -53,7 +53,7 @@ To configure a level, use the following methods:
 * {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontWeight}fontWeight(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontFamily}fontFamily(){api}, etc. to configure the font [appearance](#appearance)
 * {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#format}format(){api} to set the [text format](#text_format)
 
-In this sample, the background stroke is set only for the first level (other appearance settings are shown in the [Appearance](#appearance) section):
+In this sample, the background stroke is set only for the first level (other appearance settings are shown in [Appearance](#appearance)):
 
 ```
 // configure the first level of the timeline header
