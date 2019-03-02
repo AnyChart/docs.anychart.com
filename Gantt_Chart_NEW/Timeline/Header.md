@@ -5,7 +5,7 @@
 
 The header is a component on the top of the timeline, representing its [scale](Scale) and defined as an instance of the {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api} class. To access it, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#header}header(){api}.
 
-You can configure either [all levels](#all_levels) of the header at once or an [individual level](#level). In particular, the [appearance](#appearance) and [text format](#text_format) settings are available.
+You can configure either [all levels](#all_levels) of the header at once or an [individual level](#individual_levels). In particular, the [appearance](#appearance) and [text format](#text_format) settings are available.
 
 ## Levels
 
@@ -13,7 +13,7 @@ Each level of the header represents a time unit. Levels are shown in a particula
 
 By default, there are three levels: **the month**, **quarter**, and **year**. To change the number of levels and their time units, you should adjust the scale of the timeline, as explained in [Scale: Levels](#Scale#levels).
 
-Other settings can be applied either to [all levels](#all_levels) of the header or to  an [individual level](#level) – see the sections below to learn more.
+Other settings can be applied either to [all levels](#all_levels) of the header or to  an [individual level](#individual_levels) – see the sections below to learn more.
 
 ### All Levels
 
