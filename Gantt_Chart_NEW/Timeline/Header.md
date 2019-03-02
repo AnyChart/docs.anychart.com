@@ -11,8 +11,6 @@ You can configure either [all levels](#all_levels) of the header at once or an [
 
 Each level of the header represents a certain time unit. By default, there are three levels: **the month**, **quarter**, and **year**. To change the number of levels and their time units, you should adjust the scale of the timeline, as explained in [Scale: Levels](#Scale#levels).
 
-Please note that the level with the smallest time unit is always shown at the bottom of the header, and the level with the largest time unit is shown on the top.
-
 Other settings can be applied either to [all levels](#all_levels) of the header or to  an [individual level](#level) – see the sections below to learn more.
 
 ### All Levels
