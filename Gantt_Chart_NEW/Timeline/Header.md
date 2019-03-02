@@ -28,6 +28,8 @@ To configure the header, use the methods listed below, which affect all levels:
 * {api:anychart.core.gantt.TimeLineHeader#format}format(){api} to set the [text format](#text_format)
 * {api:anychart.core.gantt.TimeLineHeader#levelHeight}levelHeight(){api} to set the height of levels
 
+In the sample below, the background stroke is set for all levels (other appearance settings are shown in the [Appearance](#appearance) section):
+
 ```
 // configure the timeline header
 var header = chart.getTimeline().header();
