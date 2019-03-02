@@ -87,24 +87,20 @@ header.level(0).fontWeight(600);
 
 ## Text Format
 
-* [tokens](../../Common_Settings/Text_Formatters#string_tokens)
-* [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions)
-* all levels: {api:anychart.core.gantt.TimeLineHeader}format(){api}
-* individual levels: {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#format}format(){api}
-* [Project Gantt](../Project_Chart)
-* [Resource Gantt](../Resource_Chart)
+The {api:anychart.core.gantt.TimeLineHeader}format(){api} method of the header allows you to format the text of all levels. To configure an individual level, use the {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#format}format(){api} method of the level.
+
+Combine these methods either with [tokens](../../Common_Settings/Text_Formatters#string_tokens) or with [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions).
 
 ### Tokens
 
-tokens:
+The available [tokens](../../Common_Settings/Text_Formatters#string_tokens) include:
 
 * `{%value}` – имя элемента
 * `{%endValue}` – имя следующего элемента
 * `{%tickValue}` – дата начальной точки
 * `{%end}` – дата конечной точки
 
-
-**all levels**:
+This sample shows how to format the text of **all levels**:
 
 ```
 // configure the timeline header
@@ -114,7 +110,7 @@ header.format("{%value} – {%endValue}");
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_05{sample}
 
-**individual levels**:
+The following sample shows how to use tokens with **individual levels**. All three default levels are configured:
 
 ```
 // configure the levels of the timeline header
