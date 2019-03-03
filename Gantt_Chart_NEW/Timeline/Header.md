@@ -161,6 +161,4 @@ header.level(0).format(function() {
 
 ## Height
 
-misc:
-
-* [Basic Settings: Header and Row Height](../Basic_Settings#header_and_row_height)
+To learn how to set the height of the header, see [Basic Settings: Header and Row Height](../Basic_Settings#header_and_row_height).
