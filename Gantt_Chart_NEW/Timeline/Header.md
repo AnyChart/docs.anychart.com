@@ -11,7 +11,7 @@ You can configure either [all levels](#all_levels) of the header at once or an [
 
 Each level of the header represents a time unit. Levels are shown in a particular order: from the level with the smallest unit at the bottom to the level with the largest one at the top.
 
-By default, there are three levels representing **months**, **quarters**, and **years**. To change the number of levels and show other time units, you should adjust the scale of the timeline, as explained in [Scale: Levels](#Scale#levels).
+By default, there are three levels, which represent **months**, **quarters**, and **years**. To change the number of levels and show other time units, you should adjust the scale of the timeline, as explained in [Scale: Levels](#Scale#levels).
 
 Other settings can be applied either to [all levels](#all_levels) of the header or to  an [individual level](#individual_levels) – see the sections below to learn more.
 
