@@ -87,20 +87,22 @@ header.level(0).fontWeight(600);
 
 ## Text Format
 
-The {api:anychart.core.gantt.TimeLineHeader}format(){api} method of the header allows you to format the text of all levels. To configure an individual level, use the {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#format}format(){api} method of the level.
+The {api:anychart.core.gantt.TimeLineHeader}format(){api} method of the header allows you to format the text of all levels.
+
+To configure an individual level, use the {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#format}format(){api} method of the level.
 
 Combine these methods either with [tokens](../../Common_Settings/Text_Formatters#string_tokens) or with [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions).
 
 ### Tokens
 
-The available [tokens](../../Common_Settings/Text_Formatters#string_tokens) include:
+(?) The available [tokens](../../Common_Settings/Text_Formatters#string_tokens) include:
 
-* `{%value}` – имя элемента
-* `{%endValue}` – имя следующего элемента
-* `{%tickValue}` – дата начальной точки
-* `{%end}` – дата конечной точки
+* `{%value}` – the name of the column
+* `{%endValue}` – the name of the next column
+* `{%tickValue}` – the initial timestamp of the column
+* `{%end}` – the initial timestamp of the next column
 
-This sample shows how to format the text of **all levels**:
+The following sample shows how to format the text of **all levels** simultaneously:
 
 ```
 // configure the timeline header
@@ -124,14 +126,14 @@ header.level(2).format("Year: {%value}");
 
 ### Formatting Functions
 
-fields:
+(?) In [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions), the following fields are available:
 
-* `value` – имя элемента
-* `endValue` – имя следующего элемента
-* `tickValue` – дата начальной точки
-* `end` – дата конечной точки
+* `value` – the name of the column
+* `endValue` – the name of the next column
+* `tickValue` – the initial timestamp of the column
+* `end` – the initial timestamp of the next column
 
-**all levels**:
+The sample below shows how to format the text of **all levels** at once:
 
 ```
 // configure the timeline header
@@ -144,7 +146,7 @@ header.format(function() {
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_07{sample}
 
-**individual levels**:
+This sample shows how to adjust **individual levels**. The of the level representing months is adjusted:
 
 ```
 // configure the first level of the timeline header
