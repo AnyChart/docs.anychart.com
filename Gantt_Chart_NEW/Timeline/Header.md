@@ -146,7 +146,7 @@ header.format(function() {
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_07{sample}
 
-This sample shows how to adjust **individual levels**. The of the level representing months is adjusted:
+This sample shows how to adjust **individual levels**. The level representing months is adjusted:
 
 ```
 // configure the first level of the timeline header
