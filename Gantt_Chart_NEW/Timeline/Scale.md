@@ -37,7 +37,7 @@ As you can see, the minimum and maximum affect the position and relative size of
 
 (?) The settings of zoom levels affect the number of timeline columns and the configruation of the [header](Header).
 
-By default, there are three levels: the **month**, **quarter**, and **year**. You can change this preset by combining {api:anychart.core.ui.Timeline#scale}scale(){api} with {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api} and passing an array of settings.
+By default, there are three levels representing **months**, **quarters**, and **years**. You can change this preset by combining {api:anychart.core.ui.Timeline#scale}scale(){api} with {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api} and passing an array of settings.
 
 Each entry of the array is an object standing for a level. (?) There you should specify two values, `unit` and `count`: the time unit of the level and the number of units per column.
 
