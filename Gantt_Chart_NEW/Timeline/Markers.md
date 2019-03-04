@@ -34,7 +34,7 @@ To configure the marker, use methods of the {api:anychart.core.axisMarkers.Gantt
 * {api:anychart.core.axisMarkers.GanttLine#stroke}stroke(){api} to set the stroke
 * {api:anychart.core.axisMarkers.GanttLine#enabled}enabled(){api} to enable / disable the marker
 
-**Note:** Alternatively, you can specify these settings as an object and pass it to {api:anychart.core.ui.Timeline#lineMarker}lineMarker(){api} as the second parameter (after the index).
+**Note:** (?) Alternatively, you can specify these settings as an object and pass it to {api:anychart.core.ui.Timeline#lineMarker}lineMarker(){api} as the second parameter (after the index).
 
 The {api:anychart.core.axisMarkers.GanttLine#value}value(){api} method is required to set the date on which you want the marker to be displayed. You can either set an exact date or use one of the enums from {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}:
 
