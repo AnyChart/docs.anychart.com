@@ -12,6 +12,8 @@ Articles in this section explain how to configure:
 * [Buttons](Buttons) – the expand / collapse buttons
 * [Tooltips](Tooltips) – the data grid tooltips
 
+**Enabling / Disabling**
+
 The data grid is enabled by default. To disable / enable it, pass `true` / `false` either directly to {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} or to the {api:anychart.core.ui.DataGrid#enabled}enabled(){api} method of the data grid:
 
 ```
