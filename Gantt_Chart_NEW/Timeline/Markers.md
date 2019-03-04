@@ -7,7 +7,7 @@ You can add three types of markers to the timeline: line, range, and text. Use t
 * [range markers](#range) – {api:anychart.core.ui.Timeline#rangeMarker}rangeMarker(){api}
 * [text markers](#text) – {api:anychart.core.ui.Timeline#textMarker}textMarker(){api}
 
-The sections below explain in detail how to configure and add markers.
+The sections below explain in detail how to add and configure each type.
 
 ## Line
 
