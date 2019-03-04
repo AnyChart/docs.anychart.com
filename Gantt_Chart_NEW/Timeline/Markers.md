@@ -127,7 +127,7 @@ The {api:anychart.core.axisMarkers.GanttText#value}value(){api} method is requir
 * `end` – the end date of the last data item
 * `current` – the current date
 
-In this sample, there are two text markers with the stroke configured:
+In the following sample, there are two text markers with the font, background, and position configured. In the text of the first marker, HTML is used.
 
 ```
 // create two text markers
@@ -145,12 +145,6 @@ marker_1.text(
 );
 marker_2.text("marker 2");
 
-// configure the position of markers
-marker_1.rotation(0);
-marker_1.padding(5)
-marker_1.offsetY(31);
-marker_2.offsetX(-10);
-
 // configure the font of markers
 marker_1.fontColor("#455a64");
 marker_2.fontColor("#dd2c00");
@@ -161,6 +155,12 @@ marker_2.fontWeight(600);
 marker_1.background().enabled(true);
 marker_1.background().fill("#e3e8e8");
 marker_1.background().stroke("2 #455a64");
+
+// configure the position of markers
+marker_1.rotation(0);
+marker_1.padding(5)
+marker_1.offsetY(31);
+marker_2.offsetX(-10);
 ```
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Markers\_03{sample}
