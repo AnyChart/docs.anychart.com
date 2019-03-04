@@ -1,9 +1,10 @@
 {:index 1}
 # Overview
 
-The timeline is the main element of gantt chart where its [elements](Elements) are displayed. It is defined as an instance of the {api:anychart.core.ui.Timeline}anychart.core.ui.Timeline{api} class.
+The timeline is the main element of the Gantt chart where its [elements](Elements) are displayed
 
-To access the timeline, use {api:anychart.charts.Gantt#getTimeline}getTimeline(){api}.
+
+It is defined as an instance of the {api:anychart.core.ui.Timeline}anychart.core.ui.Timeline{api} class. To access it, use {api:anychart.charts.Gantt#getTimeline}getTimeline(){api}.
 
 Articles in this section explain how to configure:
 
@@ -13,4 +14,4 @@ Articles in this section explain how to configure:
 * [Markers](Markers)
 * [Tooltips](Tooltips)
 
-**Note:** See [Elements: Labels](../Elements#labels) to learn how to set labels shown near elements of the timeline.
+**Note:** See [Elements: Labels](../Elements#labels) to learn how to adjust labels shown near elements of the timeline.
