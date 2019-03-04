@@ -28,7 +28,7 @@ var marker_1 = chart.getTimeline().lineMarker(0);
 var marker_2 = chart.getTimeline().lineMarker(1);
 ```
 
-Then use methods of the {api:anychart.core.axisMarkers.GanttLine}anychart.core.axisMarkers.GanttLine{api} class:
+To configure the marker, use methods of the {api:anychart.core.axisMarkers.GanttLine}anychart.core.axisMarkers.GanttLine{api} class:
 
 * {api:anychart.core.axisMarkers.GanttLine#value}value(){api} to set the value
 * {api:anychart.core.axisMarkers.GanttLine#enabled}enabled(){api} to enable / disable the marker
