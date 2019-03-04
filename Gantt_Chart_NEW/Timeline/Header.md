@@ -11,7 +11,7 @@ You can configure either [all levels](#all_levels) of the header at once or an [
 
 Each level of the header represents a time unit. Levels are shown in a specific order: from the level with the smallest unit at the bottom to the level with the largest one at the top.
 
-By default, there are three levels that represent **months**, **quarters**, and **years**. To change the number of levels and show other time units, you should adjust the scale of the timeline, as explained in [Scale: Levels](#Scale#levels).
+By default, there are three levels, each of them representing a time unit. The exact set of units depends on your data. To change the number of levels and show other time units, you should adjust the scale of the timeline, as explained in [Scale: Levels](#Scale#levels).
 
 Other settings can be applied either to [all levels](#all_levels) of the header or to  an [individual level](#individual_levels) – see the sections below to learn more.
 
@@ -35,7 +35,7 @@ header.background().stroke("3 #455a64");
 
 To access an individual level, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#header}header(){api} and {api:anychart.core.gantt.TimeLineHeader#level}level(){api}. Specify the index of the level.
 
-**Note:** (?) Levels are numbered automatically from the level with the smallest time unit to the level with the largest one. The default levels – the month, quarter, and year – are assigned the indexes 0, 1, 2.
+**Note:** Levels are numbered automatically from the level with the smallest time unit to the level with the largest one. The default levels are assigned the indexes 0, 1, 2.
 
 Levels are defined as instances of {api:anychart.core.gantt.TimeLineHeader.LevelWrapper}anychart.core.gantt.TimeLineHeader.LevelWrapper{api}. To configure them, use methods of this class, for example {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#enabled}enabled(){api} to enable or disable a level.
 
@@ -117,9 +117,9 @@ This sample shows how to adjust **individual levels** – each of the three defa
 ```
 // configure the levels of the timeline header
 var header = chart.getTimeline().header();
-header.level(0).format("Month: {%value}");
-header.level(1).format("Quarter: {%value}");
-header.level(2).format("Year: {%value}");
+header.level(0).format("{%tickValue}{dateTimeFormat:dd MMM}");
+header.level(1).format("{%value}");
+header.level(2).format("{%value} – {%endValue}");
 ```
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_06{sample}

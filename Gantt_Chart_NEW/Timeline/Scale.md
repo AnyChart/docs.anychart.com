@@ -3,7 +3,7 @@
 
 ## Overview
 
-You can configure the timeline scale, for example set its [minimum & maximum](#minimum_&_maximum) values and specify zoom [levels](#levels). (?) These settings affect the position and relative size of timeline [elements](../Elements), the number of timeline columns, and the configuration of the [header](Header).
+You can configure the timeline scale, for example set its [minimum & maximum](#minimum_&_maximum) values and specify zoom [levels](#levels). These settings affect the position and relative size of timeline [elements](../Elements), the number of timeline columns, and the configuration of the [header](Header).
 
 The scale is defined as an instance of the {api:anychart.scales.GanttDateTime}anychart.scales.GanttDateTime{api} class.
 
@@ -35,11 +35,11 @@ As you can see, the minimum and maximum affect the position and relative size of
 
 ## Levels
 
-(?) The settings of zoom levels affect the number of timeline columns and the configruation of the [header](Header).
+The settings of zoom levels affect the number of timeline columns and the configuration of the [header](Header).
 
-By default, there are three levels that represent **months**, **quarters**, and **years**. You can change this preset by combining {api:anychart.core.ui.Timeline#scale}scale(){api} with {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api} and passing an array of settings.
+By default, there are three levels, each of them representing a time unit. The exact set of units depends on your data. You can change this preset by combining {api:anychart.core.ui.Timeline#scale}scale(){api} with {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api} and passing an array of settings.
 
-Each entry of the array is an object standing for a level. (?) There you should specify two values, `unit` and `count`: the time unit of the level and the number of units per column.
+Each entry of the array is an object standing for a level. There you should specify two values, `unit` and `count`: the time unit of the level and the number of units per column.
 
 ```
 // configure the scale
@@ -58,7 +58,7 @@ Alternatively, you can pass just an array of units (the default count is 1):
 chart.getTimeline().scale().zoomLevels([["month", "quarter"]]);
 ```
 
-**Note:** (?) Levels must be listed in a particular order: from the level with the smallest time unit to the level with the largest one. For example, the millisecond goes before the second, the month goes before the year, and so on.
+**Note:** Levels must be listed in a particular order: from the level with the smallest time unit to the level with the largest one. For example, the millisecond goes before the second, the month goes before the year, and so on.
 
 The available units can be found in {api:anychart.enums.Interval}anychart.scales.GanttDateTime.ZoomLevelsSettings{api}:
 
