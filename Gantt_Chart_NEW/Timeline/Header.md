@@ -95,12 +95,12 @@ Combine these methods either with [tokens](../../Common_Settings/Text_Formatters
 
 ### Tokens
 
-(?) The available [tokens](../../Common_Settings/Text_Formatters#string_tokens) include:
+The available [tokens](../../Common_Settings/Text_Formatters#string_tokens) include:
 
 * `{%value}` – the name of the column
 * `{%endValue}` – the name of the next column
-* `{%tickValue}` – the initial timestamp of the column
-* `{%end}` – the initial timestamp of the next column
+* `{%tickValue}` – the start timestamp of the column
+* `{%end}` – the start timestamp of the next column
 
 The following sample shows how to format the text of **all levels** simultaneously:
 
@@ -126,12 +126,12 @@ header.level(2).format("{%value} – {%endValue}");
 
 ### Formatting Functions
 
-(?) In [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions), the following fields are available:
+In [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions), the following fields are available:
 
 * `value` – the name of the column
 * `endValue` – the name of the next column
-* `tickValue` – the initial timestamp of the column
-* `end` – the initial timestamp of the next column
+* `tickValue` – the start timestamp of the column
+* `end` – the start timestamp of the next column
 
 The sample below shows how to format the text of **all levels** at once:
 
