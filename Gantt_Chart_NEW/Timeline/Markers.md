@@ -31,8 +31,8 @@ var marker_2 = chart.getTimeline().lineMarker(1);
 To configure the marker, use methods of the {api:anychart.core.axisMarkers.GanttLine}anychart.core.axisMarkers.GanttLine{api} class:
 
 * {api:anychart.core.axisMarkers.GanttLine#value}value(){api} to set the value
+* {api:anychart.core.axisMarkers.GanttLine#stroke}stroke(){api} to set the stroke
 * {api:anychart.core.axisMarkers.GanttLine#enabled}enabled(){api} to enable / disable the marker
-* {api:anychart.core.axisMarkers.GanttLine#stroke}stroke(){api} to configure the stroke
 
 **Note:** Alternatively, you can specify these settings as an object and pass it to {api:anychart.core.ui.Timeline#lineMarker}lineMarker(){api}.
 
