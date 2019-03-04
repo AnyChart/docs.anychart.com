@@ -18,4 +18,4 @@ Articles in this section explain how to configure:
 
 ```
 
-{sample :height 220}GANTT\_NEW\_Data\_Grid\_Overview{sample}
+{sample :height 255}GANTT\_NEW\_Data\_Grid\_Overview{sample}
