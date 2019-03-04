@@ -1,21 +1,29 @@
 {:index 5}
 # Markers
 
-You can add three types of markers to the timeline: [line](#line), [range](#range), and [text](#text).
+You can add three types of markers to the timeline: **line**, **range**, and **text**.
 
-Use the following methods:
+They are defined as instances of the following classes:
 
-* {api:anychart.core.ui.Timeline#lineMarker}lineMarker(){api}
-* {api:anychart.core.ui.Timeline#rangeMarker}rangeMarker(){api}
-* {api:anychart.core.ui.Timeline#textMarker}textMarker(){api}
+* [line](#line) – {api:anychart.core.axisMarkers.GanttLine}anychart.core.axisMarkers.GanttLine{api} 
+* [range](#range) – {api:anychart.core.axisMarkers.GanttRange}anychart.core.axisMarkers.GanttRange{api}
+* [text](#text) – {api:anychart.core.axisMarkers.GanttText}anychart.core.axisMarkers.GanttText{api}
+
+To add markers, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with the following methods:
+
+* [line](#line) – {api:anychart.core.ui.Timeline#lineMarker}lineMarker(){api}
+* [range](#range) – {api:anychart.core.ui.Timeline#rangeMarker}rangeMarker(){api}
+* [text](#text) – {api:anychart.core.ui.Timeline#textMarker}textMarker(){api}
 
 The sections below explain in detail how to configure each type.
 
 ## Line
 
-* {api:anychart.core.axisMarkers.GanttLine}anychart.core.axisMarkers.GanttLine{api}
+To add a **line marker**, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#lineMarker}lineMarker(){api}.
+
+Then use methods of the {api:anychart.core.axisMarkers.GanttLine}anychart.core.axisMarkers.GanttLine{api} class:
+
 * {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}
-* {api:anychart.core.ui.Timeline#lineMarker}lineMarker(){api}
 * {api:anychart.core.axisMarkers.GanttLine#value}value(){api}, {api:anychart.core.axisMarkers.GanttLine#stroke}stroke(){api}, {api:anychart.core.axisMarkers.GanttLine#enabled}enabled(){api}
 * можно задать настройки как объект
 
