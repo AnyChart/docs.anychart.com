@@ -104,21 +104,30 @@ marker_2.fill("#dd2c00 0.2");
 
 ## Text
 
-misc:
+To add a **text marker**, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#textMarker}textMarker(){api}. Specify the index of the marker:
 
-* {api:anychart.core.axisMarkers.GanttText}anychart.core.axisMarkers.GanttText{api}
-* {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api} + `current`, `end`, `start`
-* {api:anychart.core.ui.Timeline#textMarker}textMarker(){api}
-* можно задать настройки как объект
+```
+var marker_1 = chart.getTimeline().lineMarker(0);
+var marker_2 = chart.getTimeline().lineMarker(1);
+```
 
-methods:
+To configure the marker, use methods of the {api:anychart.core.axisMarkers.GanttText}anychart.core.axisMarkers.GanttText{api} class:
 
-* {api:anychart.core.axisMarkers.GanttText#enabled}enabled(){api}, {api:anychart.core.axisMarkers.GanttText#value}value(){api}, {api:anychart.core.axisMarkers.GanttText#text}text(){api}
-* {api:anychart.core.axisMarkers.GanttText#useHtmle}useHtml(){api}
-* {api:anychart.core.axisMarkers.GanttText#fontColor}fontColor(){api}, {api:anychart.core.axisMarkers.GanttText#fontFamily}fontFamily(){api}, {api:anychart.core.axisMarkers.GanttText#fontSize}fontSize(){api}, {api:anychart.core.axisMarkers.GanttText#fontWeight}fontWeight(){api}
-* {api:anychart.core.axisMarkers.GanttText#background}background(){api}
-* {api:anychart.core.axisMarkers.GanttText#rotation}rotation(){api}, {api:anychart.core.axisMarkers.GanttText#padding}padding(){api}, {api:anychart.core.axisMarkers.GanttText#offsetX}offsetX(){api}, {api:anychart.core.axisMarkers.GanttText#offsetY}offsetY(){api}
+* {api:anychart.core.axisMarkers.GanttText#value}value(){api} to set the date
+* {api:anychart.core.axisMarkers.GanttText#text}text(){api} to set the text
+* {api:anychart.core.axisMarkers.GanttText#useHtmle}useHtml(){api} to enable HTML
+* {api:anychart.core.axisMarkers.GanttText#fontColor}fontColor(){api}, {api:anychart.core.axisMarkers.GanttText#fontFamily}fontFamily(){api}, {api:anychart.core.axisMarkers.GanttText#fontSize}fontSize(){api}, {api:anychart.core.axisMarkers.GanttText#fontWeight}fontWeight(){api}, etc. to configure the font
+* {api:anychart.core.axisMarkers.GanttText#background}background(){api} to set the background
+* {api:anychart.core.axisMarkers.GanttText#rotation}rotation(){api}, {api:anychart.core.axisMarkers.GanttText#padding}padding(){api}, {api:anychart.core.axisMarkers.GanttText#offsetX}offsetX(){api}, {api:anychart.core.axisMarkers.GanttText#offsetY}offsetY(){api}, etc. to set the position
+* {api:anychart.core.axisMarkers.GanttText#enabled}enabled(){api},  to enable / disable the marker
 
+The {api:anychart.core.axisMarkers.GanttText#value}value(){api} method is required to set the date on which you want the marker to be displayed. You can either specify an exact date or use one of the enums from {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}:
+
+* `start` – the start date of the first data item
+* `end` – the end date of the last data item
+* `current` – the current date
+
+In this sample, there are two text markers with the stroke configured:
 
 ```
 // create two text markers
