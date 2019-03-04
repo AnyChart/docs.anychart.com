@@ -30,15 +30,15 @@ var marker_2 = chart.getTimeline().lineMarker(1);
 
 To configure the marker, use methods of the {api:anychart.core.axisMarkers.GanttLine}anychart.core.axisMarkers.GanttLine{api} class:
 
-* {api:anychart.core.axisMarkers.GanttLine#value}value(){api} to set the value
+* {api:anychart.core.axisMarkers.GanttLine#value}value(){api} to set the date
 * {api:anychart.core.axisMarkers.GanttLine#stroke}stroke(){api} to set the stroke
 * {api:anychart.core.axisMarkers.GanttLine#enabled}enabled(){api} to enable / disable the marker
 
-The {api:anychart.core.axisMarkers.GanttLine#value}value(){api} method is required to set the date on which you want the marker to be displayed. You can either set an exact date or use one of the enums from {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}:
+The {api:anychart.core.axisMarkers.GanttLine#value}value(){api} method is required to set the date on which you want the marker to be displayed. You can either specify an exact date or use one of the enums from {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}:
 
-* `start`
-* `end`
-* `current`
+* `start` – the start date of the first data item
+* `end` – the end date of the last data item
+* `current` – the current date
 
 In this sample, there are two line markers with the stroke configured:
 
@@ -60,13 +60,27 @@ marker_2.stroke("2 #dd2c00");
 
 ## Range
 
-* {api:anychart.core.axisMarkers.GanttRange}anychart.core.axisMarkers.GanttRange{api}
-* {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api} + `current`, `end`, `start`
-* {api:anychart.core.ui.Background}anychart.core.ui.Background{api}
-* {api:anychart.core.ui.Timeline#rangeMarker}rangeMarker(){api}
-* {api:anychart.core.axisMarkers.GanttRange#from}from(){api}, {api:anychart.core.axisMarkers.GanttRange#to}to(){api}, {api:anychart.core.axisMarkers.GanttRange#fill}fill(){api}, {api:anychart.core.axisMarkers.GanttRange#enabled}enabled(){api}
-* можно задать как объект
+To add a **range marker**, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#rangeMarker}rangeMarker(){api}. Specify the index of the marker:
 
+```
+var marker_1 = chart.getTimeline().rangeMarker(0);
+var marker_2 = chart.getTimeline().rangeMarker(1);
+```
+
+To configure the marker, use methods of the {api:anychart.core.axisMarkers.GanttRange}api:anychart.core.axisMarkers.GanttRange{api} class:
+
+* {api:anychart.core.axisMarkers.GanttRange#from}from(){api} to set the start date
+* {api:anychart.core.axisMarkers.GanttRange#to}to(){api} to set the end date
+* {api:anychart.core.axisMarkers.GanttRange#fill}fill(){api} to set the stroke
+* {api:anychart.core.axisMarkers.GanttRange#enabled}enabled(){api} to enable / disable the marker
+
+The {api:anychart.core.axisMarkers.GanttRange#from}from(){api} and {api:anychart.core.axisMarkers.GanttRange#to}to(){api} methods are required to set the range of dates on which you want the marker to be displayed. You can either specify exact dates or use enums from {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}:
+
+* `start` – the start date of the first data item
+* `end` – the end date of the last data item
+* `current` – the current date
+
+In this sample, there are two range markers with the fill configured:
 
 ```
 // create two range markers
