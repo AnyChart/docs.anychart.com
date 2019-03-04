@@ -49,7 +49,7 @@ To learn more about the difference between the types and data fields used to set
 
 **Regular tasks** are [tasks](Project_Chart#tasks_\(actual\)) that do not have child elements. They are defined as instances of the {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api} class. 
 
-To configure regular tasks, combine the {api:anychart.core.ui.Timeline#tasks}tasks(){api} method of the timeline with the following methods:
+To configure regular tasks, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#tasks}tasks(){api} with the following methods:
 
 * {api:anychart.core.gantt.elements.TasksElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.TasksElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.TasksElement#position}position(){api} to set the anchor, offset, and position
 * {api:anychart.core.gantt.elements.TasksElement#fill}fill(){api}, {api:anychart.core.gantt.elements.TasksElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.TasksElement#height}height(){api} to set the fill, stroke, and height
@@ -69,7 +69,7 @@ chart.getTimeline().tasks().height(15);
 
 **Parent tasks** are [tasks](Project_Chart#tasks_\(actual\)) that have child elements. They are defined as instances of the {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api} class. 
 
-To configure parent tasks, combine the {api:anychart.core.ui.Timeline#groupingTasks}groupingTasks(){api} method of the timeline with the following methods:
+To configure parent tasks, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#groupingTasks}groupingTasks(){api} with the following methods:
 
 * {api:anychart.core.gantt.elements.GroupingTasksElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.GroupingTasksElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.GroupingTasksElement#position}position(){api} to set the anchor, offset, and position
 * {api:anychart.core.gantt.elements.GroupingTasksElement#fill}fill(){api}, {api:anychart.core.gantt.elements.GroupingTasksElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.GroupingTasksElement#height}height(){api} to set the fill, stroke, and height
@@ -91,7 +91,7 @@ Also, parent tasks can be [expanded or collapsed](Basic_Settings#navigation).
 
 **Milestones** are [tasks](Project_Chart#tasks_\(actual\)) with zero duration, representing events. They are defined as instances of the {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api} class. 
 
-To configure milestones, combine the {api:anychart.core.ui.Timeline#milestones}milestones(){api} method of the timeline with the following methods:
+To configure milestones, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#milestones}milestones(){api} with the following methods:
 
 * {api:anychart.core.gantt.elements.MilestonesElement#anchor}anchor(){api} to set the anchor
 * {api:anychart.core.gantt.elements.MilestonesElement#fill}fill(){api}, {api:anychart.core.gantt.elements.MilestonesElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.MilestonesElement#height}height(){api} to set the fill, stroke, and height
@@ -143,7 +143,7 @@ milestones.selected().stroke("#dd2c00");
 
 **Baselines** are elements showing the **planned duration** of regular and parent [tasks](#tasks_\(actual\)). They are defined as instances of the {api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api} class. 
 
-To configure baselines, combine the {api:anychart.core.ui.Timeline#baselines}baselines(){api} method of the timeline with the following methods:
+To configure baselines, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#baselines}baselines(){api} with the following methods:
 
 * {api:anychart.core.gantt.elements.BaselinesElement#above}above(){api} to place baselines above tasks
 * {api:anychart.core.gantt.elements.BaselinesElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.BaselinesElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.BaselinesElement#position}position(){api} to set the anchor, offset, and position
@@ -176,7 +176,7 @@ baselines.above(true);
 
 **Progress bars** are elements showing the progress of regular and parent [tasks](#tasks_\(actual\)). They are defined as instances of the {api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api} class. 
 
-To access progress bars, first access [regular](#regular_tasks) or [parent](#parent_tasks) tasks by calling {api:anychart.core.ui.Timeline#tasks}tasks(){api} or {api:anychart.core.ui.Timeline#groupingTasks}groupingTasks(){api}. Then call {api:?entry=progress}progress(){api}.
+To access progress bars, first access [regular](#regular_tasks) or [parent](#parent_tasks) tasks by combining {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#tasks}tasks(){api} or {api:anychart.core.ui.Timeline#groupingTasks}groupingTasks(){api}. Then call {api:?entry=progress}progress(){api}.
 
  To configure progress bars, use the following methods:
 
@@ -213,7 +213,7 @@ parentTasks.progress().selected().stroke(null);
 
 **Connectors** are elements showing the dependencies between all [task](#tasks_\(actual\)) types. They are defined as instances of the {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api} class. 
 
-To configure connectors, combine the {api:anychart.core.ui.Timeline#connectors}connectors(){api} method of the timeline with the following methods:
+To configure connectors, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#connectors}connectors(){api} with the following methods:
 
 * {api:anychart.core.gantt.elements.ConnectorElement#fill}fill(){api} and {api:anychart.core.gantt.elements.ConnectorElement#stroke}stroke(){api} to set the fill and stroke
 * {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} to access [states](../Common_Settings/Interactivity/States)
@@ -240,7 +240,7 @@ connectors.selected().stroke("2 #ef6c00");
 
 **Periods** are visual elements representing time intervals related to resources. They are defined as instances of the {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api} class. 
 
-To configure periods, combine the {api:anychart.core.ui.Timeline#periods}periods(){api} method of the timeline with the following methods:
+To configure periods, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#periods}periods(){api} with the following methods:
 
 * {api:anychart.core.gantt.elements.PeriodsElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.PeriodsElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.PeriodsElement#position}position(){api} to set the anchor, offset, and position
 * {api:anychart.core.gantt.elements.PeriodsElement#fill}fill(){api}, {api:anychart.core.gantt.elements.PeriodsElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.PeriodsElement#height}height(){api} to set the fill, stroke, and height
@@ -270,7 +270,7 @@ You can access almost all elements of a **Project chart** at once: [tasks](#task
 
 The same is true for the **Resource chart**, but it makes little difference since only one element type is supported – the [period](#periods).
 
-To configure elements, combine the {api:anychart.core.ui.Timeline#elements}elements(){api} method of the timeline with the following methods:
+To configure elements, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#elements}elements(){api} with the following methods:
 
 * {api:anychart.core.gantt.elements.TimelineElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.TimelineElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.TimelineElement#position}position(){api} to set the anchor, offset, and position
 * {api:anychart.core.gantt.elements.TimelineElement#fill}fill(){api}, {api:anychart.core.gantt.elements.TimelineElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.TimelineElement#height}height(){api} to set the fill, stroke, and height
@@ -637,7 +637,7 @@ markers: [
 ],
 ```
 
-To configure markers, combine the {api:anychart.core.ui.Timeline#markers}markers(){api} method with methods {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api}, for example:
+To configure markers, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#markers}markers(){api} with methods {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api}, for example:
 
 * {api:anychart.core.ui.MarkersFactory#type}type(){api} to set the type
 * {api:anychart.core.ui.MarkersFactory#fill}fill(){api} to set the fill
