@@ -1,7 +1,7 @@
 {:index 1}
 # Overview
 
-The timeline, defined as an instance of {api:anychart.core.ui.Timeline}anychart.core.ui.Timeline{api}, is on of the main parts of the Gantt chart where its [elements](Elements) are displayed.
+The timeline, defined as an instance of {api:anychart.core.ui.Timeline}anychart.core.ui.Timeline{api}, is one of the main parts of the Gantt chart where its [elements](Elements) are displayed.
 
 To access the timeline, use the {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} method.
 
