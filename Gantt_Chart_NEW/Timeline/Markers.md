@@ -21,14 +21,28 @@ The sections below explain in detail how to configure each type.
 
 ## Line
 
-To add a **line marker**, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#lineMarker}lineMarker(){api}.
+To add a **line marker**, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#lineMarker}lineMarker(){api}. Spesify the index of the marker:
+
+```
+var marker_1 = chart.getTimeline().lineMarker(0);
+var marker_2 = chart.getTimeline().lineMarker(1);
+```
 
 Then use methods of the {api:anychart.core.axisMarkers.GanttLine}anychart.core.axisMarkers.GanttLine{api} class:
 
-* {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}
-* {api:anychart.core.axisMarkers.GanttLine#value}value(){api}, {api:anychart.core.axisMarkers.GanttLine#stroke}stroke(){api}, {api:anychart.core.axisMarkers.GanttLine#enabled}enabled(){api}
-* можно задать настройки как объект
+* {api:anychart.core.axisMarkers.GanttLine#value}value(){api} to set the value
+* {api:anychart.core.axisMarkers.GanttLine#enabled}enabled(){api} to enable / disable the marker
+* {api:anychart.core.axisMarkers.GanttLine#stroke}stroke(){api} to configure the stroke
 
+**Note:** Alternatively, you can specify these settings as an object and pass it to the {api:anychart.core.ui.Timeline#lineMarker}lineMarker(){api} method.
+
+The {api:anychart.core.axisMarkers.GanttLine#value}value(){api} method is required to set the date on which you want the marker to be displayed. You can either specify the exact date or use one of the enums from {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}
+
+* `start`
+* `end`
+* `current`
+
+In this sample...
 
 ```
 // create two line markers
