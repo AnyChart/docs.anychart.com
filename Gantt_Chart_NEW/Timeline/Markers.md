@@ -21,7 +21,7 @@ The sections below explain in detail how to configure each type.
 
 ## Line
 
-To add a **line marker**, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#lineMarker}lineMarker(){api}. Spesify the index of the marker:
+To add a **line marker**, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#lineMarker}lineMarker(){api}. Specify the index of the marker:
 
 ```
 var marker_1 = chart.getTimeline().lineMarker(0);
