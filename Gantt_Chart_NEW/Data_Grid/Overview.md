@@ -13,3 +13,9 @@ Articles in this section explain how to configure:
 * [Tooltips](Tooltips) – the data grid tooltips
 
 ## Enabling / Disabling
+
+```
+
+```
+
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Overview{sample}
