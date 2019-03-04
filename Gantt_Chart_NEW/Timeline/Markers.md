@@ -140,9 +140,7 @@ marker_2.value("end");
 
 // set the text of markers
 marker_1.useHtml(true);
-marker_1.text(
-  "marker <span style='font-size:26'>1</span>"
-);
+marker_1.text("marker <span style='font-size:26'>1</span>");
 marker_2.text("marker 2");
 
 // configure the font of markers
