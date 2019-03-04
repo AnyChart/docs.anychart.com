@@ -107,8 +107,8 @@ marker_2.fill("#dd2c00 0.2");
 To add a **text marker**, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#textMarker}textMarker(){api}. Specify the index of the marker:
 
 ```
-var marker_1 = chart.getTimeline().lineMarker(0);
-var marker_2 = chart.getTimeline().lineMarker(1);
+var marker_1 = chart.getTimeline().textMarker(0);
+var marker_2 = chart.getTimeline().textMarker(1);
 ```
 
 To configure the marker, use methods of the {api:anychart.core.axisMarkers.GanttText}anychart.core.axisMarkers.GanttText{api} class:
