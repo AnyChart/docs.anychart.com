@@ -11,4 +11,4 @@ Articles in this section explain how to configure:
 * [Markers](Markers)
 * [Tooltips](Tooltips)
 
-**Note:** See [Elements: Labels](../Elements#labels) to learn how to adjust labels shown near elements of the timeline.
+**Note:** To learn how to adjust labels shown near elements of the timeline, see [Elements: Labels](../Elements#labels) 
