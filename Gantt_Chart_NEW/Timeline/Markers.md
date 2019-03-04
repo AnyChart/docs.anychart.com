@@ -42,7 +42,7 @@ The {api:anychart.core.axisMarkers.GanttLine#value}value(){api} method is requir
 * `end`
 * `current`
 
-In this sample...
+In this sample, there are two line markers with the stroke configured:
 
 ```
 // create two line markers
