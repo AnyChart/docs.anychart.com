@@ -9,14 +9,14 @@ The scale is defined as an instance of the {api:anychart.scales.GanttDateTime}an
 
 To access the scale, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#scale}scale(){api}.
 
-To configure it, call the following methods (?):
+To configure it, call the following methods:
 
 * {api:anychart.scales.GanttDateTime#minimum}minimum(){api} to set the [minimum](#minimum_&_maximum)
 * {api:anychart.scales.GanttDateTime#maximum}maximum(){api} to set the [maximum](#minimum_&_maximum)
 * {api:anychart.scales.GanttDateTime#softMinimum}softMinimum(){api} to set the soft minimum
 * {api:anychart.scales.GanttDateTime#softMaximum}softMaximum(){api} to set the soft maximum
-* {api:anychart.scales.GanttDateTime#minimumGap}minimumGap(){api} to set the minimum gap (?)
-* {api:anychart.scales.GanttDateTime#maximumGap}maximumGap(){api} to set the maximum gap (?)
+* {api:anychart.scales.GanttDateTime#minimumGap}minimumGap(){api} to set the minimum offset
+* {api:anychart.scales.GanttDateTime#maximumGap}maximumGap(){api} to set the maximum offset
 * {api:anychart.scales.GanttDateTime#zoomlevels}zoomlevels(){api} to set zoom [levels](#levels)
 
 ## Minimum & Maximum
