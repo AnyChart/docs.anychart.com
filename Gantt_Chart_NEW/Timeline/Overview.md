@@ -7,10 +7,10 @@ To access the timeline, use the {api:anychart.charts.Gantt#getTimeline}getTimeli
 
 Articles in this section explain how to configure:
 
-* [Appearance](Appearance)
-* [Scale](Scale)
-* [Header](Header)
-* [Markers](Markers)
-* [Tooltips](Tooltips)
+* [Appearance](Appearance) – the fill of rows, stroke of columns, etc.
+* [Scale](Scale) – the mininum & maximum values and levels of the scale
+* [Header](Header) – the levels, appearance, and text format of the header
+* [Markers](Markers) – the line, range, and text markers
+* [Tooltips](Tooltips) – the timeline tooltips
 
 **Note:** To learn how to adjust labels shown near elements of the timeline, see [Elements: Labels](../Elements#labels).

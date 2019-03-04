@@ -7,9 +7,9 @@ To access the data grid, use the {api:anychart.charts.Gantt#dataGrid}dataGrid(){
 
 Articles in this section explain how to configure:
 
-* [Appearance](Appearance)
-* [Columns](Columns)
-* [Buttons](Buttons)
-* [Tooltips](Tooltips)
+* [Appearance](Appearance) – the fill of rows, stroke of columns, etc.
+* [Columns](Columns) – the title, text, and other settings of each column
+* [Buttons](Buttons) – the expand / collapse buttons
+* [Tooltips](Tooltips) – the data grid tooltips
 
 ## Enabling / Disabling
