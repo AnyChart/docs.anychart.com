@@ -1,6 +1,8 @@
 {:index 5}
 # Markers
 
+## Overview
+
 You can add three types of markers to the timeline: **line**, **range**, and **text**.
 
 They are defined as instances of the following classes:
