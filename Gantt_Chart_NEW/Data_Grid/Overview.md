@@ -14,8 +14,14 @@ Articles in this section explain how to configure:
 
 ## Enabling / Disabling
 
+The data grid is enabled by default. To disable / enable it, pass `true` / `false` either directly to {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} or to the {api:anychart.core.ui.DataGrid#enabled}enabled(){api} method of the data grid:
+
+```
+chart.dataGrid(false);
 ```
 
+```
+chart.dataGrid().enabled(false);
 ```
 
 {sample :height 255}GANTT\_NEW\_Data\_Grid\_Overview{sample}
