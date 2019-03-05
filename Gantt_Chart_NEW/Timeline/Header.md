@@ -173,4 +173,4 @@ var header = chart.getTimeline().header();
 header.level(0).height(35);
 ```
 
-{sample :height 220}GANTT\_NEW\_Timeline\_Header\_08{sample}
+{sample :height 220}GANTT\_NEW\_Timeline\_Header\_09{sample}
