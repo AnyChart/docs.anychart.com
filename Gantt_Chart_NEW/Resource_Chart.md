@@ -235,7 +235,7 @@ chart.data(treeData);
 
 ## Elements
 
-This section briefly explains how to add and configure the elements that are shown on the [timeline](Timeline) of the Resource chart. To learn more, see the [Elements: Resource Chart](Elements/Resource_Chart) article.
+This section briefly explains how to add and configure the elements that are shown on the [timeline](Timeline) of the Resource chart. To learn more, see the [Elements](Elements) section.
 
 The main timeline element of the Resource chart is the period, but logically, periods are grouped into resources – see [Periods and Resources](#periods_and_resources). Also, you can set [markers](Elements/Markers#resource_chart) by adding special data fields to resources.
 

@@ -301,7 +301,7 @@ chart.data(treeData);
 
 ## Elements
 
-This section briefly explains how to add and configure the elements that are shown on the [timeline](Timeline) of the Project chart. To learn more, see the [Elements: Project Chart](Elements/Project_Chart) article.
+This section briefly explains how to add and configure the elements that are shown on the [timeline](Timeline) of the Project chart. To learn more, see the [Elements](Elements/Project_Chart) section.
 
 The main element of the Project chart is the [task](#tasks_\(actual\)). Other elements, such as [baselines](#baselines_\(planned\)), [progress bars](#progress_bars), [connectors](#connectors), and [markers](Elements/Markers), are set by adding special data fields to tasks.
 
