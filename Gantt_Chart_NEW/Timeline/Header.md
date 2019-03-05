@@ -102,7 +102,7 @@ The available [tokens](../../Common_Settings/Text_Formatters#string_tokens) incl
 * `{%tickValue}` – the start timestamp of the column
 * `{%end}` – the start timestamp of the next column
 
-The following sample shows how to format the text of all levels simultaneously:
+The following sample shows how to format the text of **all levels** simultaneously:
 
 ```
 // configure the timeline header
@@ -112,7 +112,7 @@ header.format("{%value}–{%endValue}");
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_05{sample}
 
-This sample shows how to adjust individual levels – each of the three default levels has its own format:
+This sample shows how to adjust **individual levels** – each of the three default levels has its own format:
 
 ```
 // configure the levels of the timeline header
@@ -133,7 +133,7 @@ In [formatting functions](../../Common_Settings/Text_Formatters#formatting_funct
 * `tickValue` – the start timestamp of the column
 * `end` – the start timestamp of the next column
 
-The sample below shows how to format the text of all levels at once:
+The sample below shows how to format the text of **all levels** at once:
 
 ```
 // configure the timeline header
@@ -146,7 +146,7 @@ header.format(function() {
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_07{sample}
 
-In this sample an individual level is adjusted – the one representing months:
+In this sample an **individual level** is adjusted – the one representing months:
 
 ```
 // configure the first level of the timeline header
