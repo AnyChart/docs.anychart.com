@@ -40,6 +40,7 @@ For the [Project Gantt](../Project_Chart) chart, the following tokens are availa
 * `{%baselineStart}`
 * `{%baselineEnd}`
 * `{%progress}`
+* `{%linearIndex}`
 
 In the sample below, there is a Project chart with tooltips showing the start and end dates of elements, the progress, and the content of the custom field `manager`:
 
@@ -65,6 +66,7 @@ The [Resource Gantt](../Resource_Chart) chart supports these tokens:
 * `{%name}`
 * `{%start}`
 * `{%end}`
+* `{%linearIndex}`
 
 In the following sample, tokens, including a custom one (`disc_space`), are used to format the text of tooltips of a Resource chart:
 
@@ -100,6 +102,7 @@ For the [Project Gantt](../Project_Chart) chart, the following fields are availa
 * `baselineStart`
 * `baselineEnd`
 * `progress`
+* `linearIndex`
 
 In the sample below, there is a Project chart. A formatting function is used to display different tooltips for the different types of [tasks](../Project_Chart#tasks_\(actual\)).
 
@@ -159,6 +162,7 @@ Here are the fields supported by the [Resource Gantt](../Resource_Chart) chart:
 * `name`
 * `start`
 * `end`
+* `linearIndex`
 
 In this sample a formatting function is used to display different tooltips for parent and child [resources](../Resource_Chart#periods_and_resources). For example, the value of a custom field `disc_space` is shown only for child resources.
 

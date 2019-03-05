@@ -475,6 +475,7 @@ For the **Project chart**, the following tokens are available:
 * `{%baselineStart}`
 * `{%baselineEnd}`
 * `{%progress}`
+* `{%linearIndex}`
 
 In the sample below, labels of different elements have the same font weight but different text format, which is configured with the help of tokens, including a custom one:
 
@@ -497,7 +498,7 @@ timeline.groupingTasks().labels().format(
 // configure labels of milestones
 timeline.milestones().labels().useHtml(true);
 timeline.milestones().labels().format(
-    "<span style='color:#ef6c00'>{%custom_field}</span> " + 
+    "<span style='color:#ffa000'>{%custom_field}</span> " + 
     "{%actualStart}{dateTimeFormat:dd MMM}"
 );
 ```
@@ -510,6 +511,7 @@ The **Resource chart** supports these tokens:
 * `{%name}`
 * `{%start}`
 * `{%end}`
+* `{%linearIndex}`
 
 In the following sample, tokens, including a custom one, are used to format the text of period labels. Also, text font is adjusted.
 
@@ -545,6 +547,7 @@ For the **Project chart**, the following fields are available in formatting func
 * `baselineStart`
 * `baselineEnd`
 * `progress`
+* `linearIndex`
 
 In the sample below, labels of different elements have the same font weight but different text format, which is configured with the help of formatting functions. For instance, the label text of regular tasks depends on their progress, and the label of the parent task displays its duration.
 
@@ -579,7 +582,7 @@ timeline.milestones().labels().format(function() {
   var relatedTaskId = this.getData("custom_field");
   var relatedTaskItem = treeData.search("id", relatedTaskId);
   var relatedTaskName = relatedTaskItem.get("name");
-  return "Review: <span style='color:#ef6c00'>" + 
+  return "Review: <span style='color:#ffa000'>" + 
          relatedTaskName + "</span>";
 });
 ```
@@ -592,6 +595,7 @@ Here are the fields supported by the **Resource chart**:
 * `name`
 * `start`
 * `end`
+* `linearIndex`
 
 In this sample a formatting function is used to display the duration of each period as well as the value of a custom field:
 

@@ -80,7 +80,7 @@ anychart.onDocumentReady(function () {
     var header = chart.getTimeline().header();
     header.level(0).format("{%tickValue}{dateTimeFormat:dd MMM}");
     header.level(1).format("{%value}");
-    header.level(2).format("{%value} – {%endValue}");
+    header.level(2).format("{%value}–{%endValue}");
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-31");

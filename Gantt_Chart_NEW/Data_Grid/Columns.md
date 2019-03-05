@@ -45,3 +45,5 @@ misc:
 
 * пример на включение / выключение кнопок
 * [Buttons](Buttons)
+
+## Custom Columns

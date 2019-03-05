@@ -5,7 +5,7 @@
 
 The header is a component on the top of the timeline, representing its [scale](Scale) and defined as an instance of the {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api} class. To access it, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#header}header(){api}.
 
-You can configure either [all levels](#all_levels) of the header at once or an [individual level](#individual_levels). In particular, the [appearance](#appearance) and [text format](#text_format) settings are available.
+You can configure either [all levels](#all_levels) of the header at once or an [individual level](#individual_levels). In particular, the [appearance](#appearance), [text format](#text_format), and [level height](#level_height) settings are available.
 
 ## Levels
 
@@ -107,7 +107,7 @@ The following sample shows how to format the text of **all levels** simultaneous
 ```
 // configure the timeline header
 var header = chart.getTimeline().header();
-header.format("{%value} – {%endValue}");
+header.format("{%value}–{%endValue}");
 ```
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_05{sample}
@@ -119,7 +119,7 @@ This sample shows how to adjust **individual levels** – each of the three defa
 var header = chart.getTimeline().header();
 header.level(0).format("{%tickValue}{dateTimeFormat:dd MMM}");
 header.level(1).format("{%value}");
-header.level(2).format("{%value} – {%endValue}");
+header.level(2).format("{%value}–{%endValue}");
 ```
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_06{sample}
@@ -159,6 +159,18 @@ header.level(0).format(function() {
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_08{sample}
 
-## Height
+## Level Height
 
-To learn how to set the height of the header, see [Basic Settings: Header and Row Height](../Basic_Settings#header_and_row_height).
+You can change the height of an **individual level** by using the {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#height}height(){api} method.
+
+To learn how to set the height of the entire header, see [Basic Settings: Header and Row Height](../Basic_Settings#header_and_row_height).
+
+In the following sample, the height of the first header is configured, which makes the height of others automatically adjust:
+
+```
+// configure the first level of the timeline header
+var header = chart.getTimeline().header();
+header.level(0).height(35);
+```
+
+{sample :height 220}GANTT\_NEW\_Timeline\_Header\_08{sample}
