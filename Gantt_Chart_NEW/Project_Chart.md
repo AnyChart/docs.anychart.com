@@ -303,7 +303,7 @@ chart.data(treeData);
 
 This section briefly explains how to add and configure the elements that are shown on the [timeline](Timeline) of the Project chart. To learn more, see the [Elements: Project Chart](Elements/Project_Chart) article.
 
-The main element of the Project chart is the [task](#tasks_\(actual\)). Other elements, such as [baselines](#baselines_\(planned\)), [progress bars](#progress_bars), [connectors](#connectors), and [markers](Elements/Markers#project_chart), are set by adding special data fields to tasks.
+The main element of the Project chart is the [task](#tasks_\(actual\)). Other elements, such as [baselines](#baselines_\(planned\)), [progress bars](#progress_bars), [connectors](#connectors), and [markers](Elements/Markers), are set by adding special data fields to tasks.
 
 ### Tasks (Actual)
 
@@ -330,7 +330,7 @@ Note that if you do not specify the  `actualStart` and `actualEnd` dates of a pa
 
 **Milestones** are elements representing events. To add a milestone, you should create a task with zero duration: specify the same date in the `actualStart` and `actualEnd` fields.
 
-If you need to create multiple milestones in one row, use an alternative way to visualize events – add **markers**. Multiple markers can be shown in one row – on a task or anywhere on the timeline depending on the dates you specify. For more information, see [Elements: Markers](Elements/Markers#project_chart).
+If you need to create multiple milestones in one row, use an alternative way to visualize events – add **markers**. Multiple markers can be shown in one row – on a task or anywhere on the timeline depending on the dates you specify. For more information, see [Elements: Markers](Elements/Markers).
 
 To learn how to configure tasks, see the [Elements: Project Chart](Elements/Project_Chart#tasks_\(actual\)) article. 
 
@@ -667,6 +667,6 @@ chart.data(treeData);
 
 To visualize an event, add a task with zero duration, or **milestone**. See the [Tasks (Actual)](#tasks_\(actual\)) section and [Elements: Project Chart](Elements/Project_Chart#milestones) article to learn more. 
 
-If you need to create multiple milestones in one row, use an alternative way to visualize events – add **markers**. Multiple markers can be shown in one row – on a task or anywhere on the timeline depending on the dates you specify. For more information, see [Elements: Markers](Elements/Markers#project_chart).
+If you need to create multiple milestones in one row, use an alternative way to visualize events – add **markers**. Multiple markers can be shown in one row – on a task or anywhere on the timeline depending on the dates you specify. For more information, see [Elements: Markers](Elements/Markers).
 
 ## (?) Other Settings
