@@ -116,7 +116,7 @@ periodLabels.format(
 
 {sample :height 160}GANTT\_NEW\_Elements\_Labels\_02{sample}
 
-### Formatting Functions
+## Formatting Functions
 
 You can configure the text of labels by combining the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [formatting functions](../Common_Settings/Text_Formatters#formatting_functions).
 

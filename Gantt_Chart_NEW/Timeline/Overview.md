@@ -13,4 +13,4 @@ Articles in this section explain how to configure:
 * [Markers](Markers) – the line, range, and text markers
 * [Tooltips](Tooltips) – the timeline tooltips
 
-**Note:** To learn how to adjust labels shown near elements of the timeline, see [Elements: Labels](../Elements#labels).
+**Note:** To learn how to adjust labels shown near elements of the timeline, see [Elements: Labels](../Elements/Labels).

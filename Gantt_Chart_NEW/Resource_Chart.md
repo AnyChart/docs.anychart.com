@@ -82,7 +82,7 @@ In addition, you can use optional fields:
 
 To learn how to rename the default data fields, see [Data: Mapping](Data#mapping).
 
-(?) You can also add custom fields to your data and use them to configure [labels of elements](Elements#labels), [data grid labels](Data_Grid/Columns#text_\(labels\), [data grid tooltips](Data_Grid/Tooltips), and [timeline tooltips](Timeline/Tooltips).
+(?) You can also add custom fields to your data and use them to configure [labels of elements](Elements/Labels), [data grid text](Data_Grid/Columns#text_\(labels\), [data grid tooltips](Data_Grid/Tooltips), and [timeline tooltips](Timeline/Tooltips).
 
 ### Setting Data
 
@@ -237,7 +237,7 @@ chart.data(treeData);
 
 This section briefly explains how to add and configure the elements that are shown on the [timeline](Timeline) of the Resource chart. To learn more, see the [Elements](Elements) article.
 
-The main timeline element of the Resource chart is the period, but logically, periods are grouped into resources – see [Periods and Resources](#periods_and_resources). Also, you can set [markers](Elements#markers) by adding special data fields to resources.
+The main timeline element of the Resource chart is the period, but logically, periods are grouped into resources – see [Periods and Resources](#periods_and_resources). Also, you can set [markers](Elements/Markers#resource_chart) by adding special data fields to resources.
 
 ### Periods and Resources
 
@@ -256,7 +256,7 @@ For periods, use:
 * `start` to set start dates
 * `end` to set end dates
 
-To learn how to configure periods, see the [Elements: Periods](Elements#periods) section. 
+To learn how to configure periods, see the [Elements: Resource Chart](Elements/Resource_Chart) article. 
 
 The sample below demonstrates how to set periods and resources and how they look like:
 
@@ -300,6 +300,6 @@ chart.data(treeData);
 
 ### Markers
 
-You can add a **marker** or multiple markers to a resource. A marker can be shown on a period or anywhere on the timeline, depending on the date you specify. For more information, see [Elements: Markers](Elements#markers).
+You can add a **marker** or multiple markers to a resource. A marker can be shown on a period or anywhere on the timeline, depending on the date you specify. For more information, see [Elements: Markers](Elements/Markers#resource_chart).
 
 ## (?) Other Settings

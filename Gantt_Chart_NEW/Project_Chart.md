@@ -89,14 +89,14 @@ In addition, you can use optional fields:
 * `baselineStart` and `baselineEnd` to add [baselines](#baselines_\(planned\))
 * `progressValue` to add [progress bars](#progress_bars)
 * `connectTo` and `connectorType` to add [connectors](#connectors)
-* `actual`, `baseline`, `progress`, and `connector` to configure [individual elements](Elements#individual_elements)
+* `actual`, `baseline`, `progress`, and `connector` to configure [individual elements](Elements/Individual_Elements#project_chart)
 * `markers` to add [markers](#milestones_and_markers)
 * `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
 * `collapsed` to [expand or collapse](Basic_Settings#navigation) a parent task
 
 To learn how to rename the default data fields, see [Data: Mapping](Data#mapping).
 
-(?) You can also add custom fields to your data and use them to configure [labels of elements](Elements#labels), [data grid labels](Data_Grid/Columns#text_\(labels\), [data grid tooltips](Data_Grid/Tooltips), and [timeline tooltips](Timeline/Tooltips).
+(?) You can also add custom fields to your data and use them to configure [labels of elements](Elements/Labels), [data grid text](Data_Grid/Columns#text_\(labels\), [data grid tooltips](Data_Grid/Tooltips), and [timeline tooltips](Timeline/Tooltips).
 
 ### Setting Data
 
@@ -301,9 +301,9 @@ chart.data(treeData);
 
 ## Elements
 
-This section briefly explains how to add and configure the elements that are shown on the [timeline](Timeline) of the Project chart. To learn more, see the [Elements](Elements) article.
+This section briefly explains how to add and configure the elements that are shown on the [timeline](Timeline) of the Project chart. To learn more, see the [Elements: Project Chart](Elements/Project_Chart) article.
 
-The main element of the Project chart is the [task](#tasks_\(actual\)). Other elements, such as [baselines](#baselines_\(planned\)), [progress bars](#progress_bars), [connectors](#connectors), and [markers](Elements#markers), are set by adding special data fields to tasks.
+The main element of the Project chart is the [task](#tasks_\(actual\)). Other elements, such as [baselines](#baselines_\(planned\)), [progress bars](#progress_bars), [connectors](#connectors), and [markers](Elements/Markers#project_chart), are set by adding special data fields to tasks.
 
 ### Tasks (Actual)
 
@@ -316,7 +316,7 @@ Use the following data fields:
 * `actualStart` to set start dates
 * `actualEnd` to set end dates
 * `children` / `parent` (optional) to set the [hierarchy](#hierarchy)
-* `actual` (optional) to configure [individual tasks](Elements#individual_elements)
+* `actual` (optional) to configure [individual tasks](Elements/Individual_Elements#project_chart)
 
 There are three task types, each of them visualized in a different way:
 
@@ -330,9 +330,9 @@ Note that if you do not specify the  `actualStart` and `actualEnd` dates of a pa
 
 **Milestones** are elements representing events. To add a milestone, you should create a task with zero duration: specify the same date in the `actualStart` and `actualEnd` fields.
 
-If you need to create multiple milestones in one row, use an alternative way to visualize events – add **markers**. Multiple markers can be shown in one row – on a task or anywhere on the timeline depending on the dates you specify. For more information, see [Elements: Markers](Elements#markers).
+If you need to create multiple milestones in one row, use an alternative way to visualize events – add **markers**. Multiple markers can be shown in one row – on a task or anywhere on the timeline depending on the dates you specify. For more information, see [Elements: Markers](Elements/Markers#project_chart).
 
-To learn how to configure tasks, see the [Elements: Tasks](Elements#tasks_\(actual\)) section. 
+To learn how to configure tasks, see the [Elements: Project Chart](Elements/Project_Chart#tasks_\(actual\)) article. 
 
 The sample below demonstrates task types. Also, it shows that regular and parent tasks can occupy different places in the hierarchy: a parent task can be a child itself, and a regular task can be a root.
 
@@ -411,9 +411,9 @@ Use the following data fields:
 
 * `baselineStart` to set start dates
 * `baselineEnd` to set end dates
-* `baseline` (optional) to configure [individual baselines](Elements#individual_elements)
+* `baseline` (optional) to configure [individual baselines](Elements/Individual_Elements#project_chart)
 
-By default, baselines are shown under tasks, but can be placed above them – see the [Elements: Baselines](Elements#baselines_\(planned\)) section.
+By default, baselines are shown under tasks, but can be placed above them – see the [Elements: Project Chart](Elements/Project_Chart#baselines_\(planned\)) article.
 
 In this sample, baselines are added to all regular tasks and the parent one:
 
@@ -483,16 +483,16 @@ chart.data(treeData);
 
 ### Progress Bars
 
-A **progress bar** is an element showing the progress of a regular or parent [task](#tasks_\(actual\)). Also, the progress is shown in [labels](Elements#labels) of tasks. 
+A **progress bar** is an element showing the progress of a regular or parent [task](#tasks_\(actual\)). Also, the progress is shown in [labels](Elements/Labels) of tasks. 
 
 Use the following data fields:
 
 * `progressValue` to set the progress value as a percentage
-* `progress` (optional) to configure [individual progress bars](Elements#individual_elements)
+* `progress` (optional) to configure [individual progress bars](Elements/Individual_Elements#project_chart)
 
 By default, the progress value of all tasks is 0%, so progress bars are not shown. If you do not set the progress value of a parent task, it is calculated automatically from the progress values of its children.
 
-To learn how to configure progress bars, see the [Elements: Progress Bars](Elements#progress_bars) section.
+To learn how to configure progress bars, see the [Elements: Project Chart](Elements/Project_Chart#progress_bars) article.
 
 In the following sample, progress values are added to all regular tasks except for the last one. The progress value of the parent task is calculated automatically.
 
@@ -561,7 +561,7 @@ Use the following data fields:
 
 * `connectTo` to set the target task
 * `connectorType` to set the connector type
-* `connector` (optional) to configure [individual connectors](Elements#individual_elements)
+* `connector` (optional) to configure [individual connectors](Elements/Individual_Elements#project_chart)
 
 To add a connector, you should add these fields to a **predecessor task**. In the `connectTo` field, specify the `id` value of the **successor task**. In `connectorType`, specify the type of the connector.
 
@@ -592,7 +592,7 @@ There are four connector types, which are listed in {api:anychart.enums.Connecto
 </tbody>
 </table>
 
-To learn how to configure connectors, see the [Elements: Connectors](Elements#connectors) section.
+To learn how to configure connectors, see the [Elements: Project Chart](Elements/Project_Chart#connectors) article.
 
 Please note that a task can have several predecessors, but only one successor. Also, a task can be at the same time a successor to one task or tasks and a predecessor to another. All these nuances are illustrated by the sample below, which visualizes the following dependencies between tasks:
 
@@ -665,8 +665,8 @@ chart.data(treeData);
 
 ### Milestones and Markers
 
-To visualize an event, add a task with zero duration, or **milestone**. See the [Tasks (Actual)](#tasks_\(actual\)) and [Elements: Milestones](Elements#milestones) sections to learn more. 
+To visualize an event, add a task with zero duration, or **milestone**. See the [Tasks (Actual)](#tasks_\(actual\)) section and [Elements: Project Chart](Elements/Project_Chart#milestones) article to learn more. 
 
-If you need to create multiple milestones in one row, use an alternative way to visualize events – add **markers**. Multiple markers can be shown in one row – on a task or anywhere on the timeline depending on the dates you specify. For more information, see [Elements: Markers](Elements#markers).
+If you need to create multiple milestones in one row, use an alternative way to visualize events – add **markers**. Multiple markers can be shown in one row – on a task or anywhere on the timeline depending on the dates you specify. For more information, see [Elements: Markers](Elements/Markers#project_chart).
 
 ## (?) Other Settings
