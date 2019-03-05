@@ -256,7 +256,7 @@ For periods, use:
 * `start` to set start dates
 * `end` to set end dates
 
-To learn how to configure periods, see the [Elements: Resource Chart](Elements/Resource_Chart) article. 
+To learn how to configure periods, see the [Elements: Resource Chart](Elements/Resource_Chart#periods) article. 
 
 The sample below demonstrates how to set periods and resources and how they look like:
 
