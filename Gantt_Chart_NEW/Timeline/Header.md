@@ -165,7 +165,7 @@ You can change the height of an **individual level** by using the {api:anychart.
 
 To learn how to set the height of the entire header, see [Basic Settings: Header and Row Height](../Basic_Settings#header_and_row_height).
 
-In the following sample, the height of the first header is configured, which makes the height of others automatically adjust:
+In the following sample, the height of the first level is configured, which makes the height of others automatically adjust:
 
 ```
 // configure the first level of the timeline header
