@@ -51,7 +51,7 @@ header.level(0).background().stroke("3 #455a64");
 
 ## Appearance
 
-To configure the [appearance](../../Appearance_Settings) of **all levels**, use these methods:
+To configure the [appearance](../../Appearance_Settings) of [all levels](#all_levels), use these methods:
 
 * {api:anychart.core.gantt.TimeLineHeader#background}background(){api}, {api:anychart.core.gantt.TimeLineHeader#fill}fill(){api} and {api:anychart.core.gantt.TimeLineHeader#stroke}stroke(){api} to set the background, fill, and stroke
 * {api:anychart.core.gantt.TimeLineHeader#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader#fontWeight}fontWeight(){api}, {api:anychart.core.gantt.TimeLineHeader#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader#fontFamily}fontFamily(){api}, etc. to configure the font
@@ -68,7 +68,7 @@ header.fontWeight(600);
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_03{sample}
 
-To adjust **individual levels**, use the following methods:
+To adjust [individual levels](#individual_levels), use the following methods:
 
 * {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#background}background(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fill}fill(){api}, and {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#stroke}stroke{api} to set the background, fill, and stroke
 * {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontWeight}fontWeight(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#fontFamily}fontFamily(){api}, etc. to configure the font
@@ -87,9 +87,9 @@ header.level(0).fontWeight(600);
 
 ## Text Format
 
-The {api:anychart.core.gantt.TimeLineHeader}format(){api} method of the header allows you to format the text of all levels.
+The {api:anychart.core.gantt.TimeLineHeader}format(){api} method of the header allows you to format the text of [all levels](#all_levels).
 
-To configure an individual level, use the {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#format}format(){api} method of the level.
+To configure an [individual level](#individual_levels), use the {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#format}format(){api} method of the level.
 
 Combine these methods either with [tokens](../../Common_Settings/Text_Formatters#string_tokens) or with [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions).
 
@@ -102,7 +102,7 @@ The available [tokens](../../Common_Settings/Text_Formatters#string_tokens) incl
 * `{%tickValue}` – the start timestamp of the column
 * `{%end}` – the start timestamp of the next column
 
-The following sample shows how to format the text of **all levels** simultaneously:
+The following sample shows how to format the text of all levels simultaneously:
 
 ```
 // configure the timeline header
@@ -112,7 +112,7 @@ header.format("{%value}–{%endValue}");
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_05{sample}
 
-This sample shows how to adjust **individual levels** – each of the three default levels has its own format:
+This sample shows how to adjust individual levels – each of the three default levels has its own format:
 
 ```
 // configure the levels of the timeline header
@@ -133,7 +133,7 @@ In [formatting functions](../../Common_Settings/Text_Formatters#formatting_funct
 * `tickValue` – the start timestamp of the column
 * `end` – the start timestamp of the next column
 
-The sample below shows how to format the text of **all levels** at once:
+The sample below shows how to format the text of all levels at once:
 
 ```
 // configure the timeline header
@@ -146,7 +146,7 @@ header.format(function() {
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Header\_07{sample}
 
-In this sample an **individual level** is adjusted – the one representing months:
+In this sample an individual level is adjusted – the one representing months:
 
 ```
 // configure the first level of the timeline header
@@ -161,7 +161,7 @@ header.level(0).format(function() {
 
 ## Level Height
 
-You can change the height of an **individual level** by using the {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#height}height(){api} method.
+You can change the height of an [individual level](#individual_levels) by using the {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#height}height(){api} method.
 
 To learn how to set the height of the entire header, see [Basic Settings: Header and Row Height](../Basic_Settings#header_and_row_height).
 
