@@ -7,14 +7,14 @@ Some elements have [labels](../../Common_Settings/Labels) – text or image comp
 
 Labels are supported by the following elements of the **Project chart**:
 
-* [regular tasks](#regular_tasks)
-* [parent tasks](#parent_tasks)
-* [milestones](#milestones)
-* [progress bars](#progress_bars)
+* [regular tasks](Project_Chart#regular_tasks)
+* [parent tasks](Project_Chart#parent_tasks)
+* [milestones](Project_Chart#milestones)
+* [progress bars](Project_Chart#progress_bars)
 
-Also, labels are supported by the only element of the **Resource chart** – [period](#periods).
+Also, labels are supported by the only element of the **Resource chart** – [period](Resource_Chart#periods).
 
-To access labels, call the **labels()** method of a particular element type or of [all elements](#all_elements) (of course, only the elements that can have labels are affected):
+To access labels, call the **labels()** method of a particular element type or of [all elements](All_Elements) (of course, only the elements that can have labels are affected):
 
 ```
 // access labels of tasks
@@ -38,11 +38,11 @@ var chart.getTimeline().tasks().labels(true);
 chart.getTimeline().tasks().labels().enabled(true);
 ```
 
-To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}, for example {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api}, {api:anychart.core.ui.LabelsFactory#fontWeight}fontWeight(){api}, {api:anychart.core.ui.LabelsFactory#fontSize}fontSize(){api}, etc. The {api:anychart.core.ui.LabelsFactory#format}format(){api} method, combined with either [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions), allows setting the text format – read the sections below to learn more.
+To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}, for example {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api}, {api:anychart.core.ui.LabelsFactory#fontWeight}fontWeight(){api}, {api:anychart.core.ui.LabelsFactory#fontSize}fontSize(){api}, etc. The {api:anychart.core.ui.LabelsFactory#format}format(){api} method, combined with either [tokens](../../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions), allows setting the text format – read the sections below to learn more.
 
 ## Tokens
 
-To format the text of labels, combine the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [tokens](../Common_Settings/Text_Formatters#string_tokens).
+To format the text of labels, combine the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [tokens](../../Common_Settings/Text_Formatters#string_tokens).
 
 Please keep in mind that in addition to default tokens you can always use a custom token corresponding to a custom field in your data.
 
@@ -118,9 +118,9 @@ periodLabels.format(
 
 ## Formatting Functions
 
-You can configure the text of labels by combining the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [formatting functions](../Common_Settings/Text_Formatters#formatting_functions).
+You can configure the text of labels by combining the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions).
 
-In these functions, a number of default context fields is available, and the {api:anychart.format.Context#getData}getData(){api} method allows you to refer to a custom field in your data. Also, you can use methods of the [tree data model](../Working_with_Data/Tree_Data_Model) to perform operations on data.
+In these functions, a number of default context fields is available, and the {api:anychart.format.Context#getData}getData(){api} method allows you to refer to a custom field in your data. Also, you can use methods of the [tree data model](../../Working_with_Data/Tree_Data_Model) to perform operations on data.
 
 Also, if you need to enable HTML, pass `true` to {api:anychart.core.ui.LabelsFactory#useHtml()}useHtml(){api}.
 
@@ -139,7 +139,7 @@ For the **Project chart**, the following fields are available in formatting func
 
 In the sample below, labels of different elements have the same font weight but different text format, which is configured with the help of formatting functions. For instance, the label text of regular tasks depends on their progress, and the label of the parent task displays its duration.
 
-Labels of milestones refer to other tasks related to them – the ids of these tasks are linked in a custom data field. The {api:anychart.format.Context#getData}getData(){api} method and the {api:anychart.data.Tree.DataItem#search}search(){api} and {api:anychart.data.Tree.DataItem#get}get(){api} methods of the [Tree Data Model](../Working_with_Data/Tree_Data_Model) are used to get the ids and find the names corresponding to them.
+Labels of milestones refer to other tasks related to them – the ids of these tasks are linked in a custom data field. The {api:anychart.format.Context#getData}getData(){api} method and the {api:anychart.data.Tree.DataItem#search}search(){api} and {api:anychart.data.Tree.DataItem#get}get(){api} methods of the [Tree Data Model](../../Working_with_Data/Tree_Data_Model) are used to get the ids and find the names corresponding to them.
 
 ```
 // configure labels of elements
