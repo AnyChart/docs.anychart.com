@@ -7,7 +7,7 @@ To access the timeline, use the {api:anychart.charts.Gantt#getTimeline}getTimeli
 
 ## Articles
 
-Articles in this section explain how to configure:
+The articles in this section explain how to configure:
 
 * [Appearance](Appearance) – the fill of rows, stroke of columns, etc.
 * [Scale](Scale) – the mininum & maximum values and levels of the scale
