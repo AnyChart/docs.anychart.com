@@ -7,7 +7,7 @@ On the [Project Gantt](Project_Chart) chart and [Resource Gantt](Resource_Chart)
 
 ## Articles
 
-The articles in this section explain how to configure:
+Articles in this section explain how to configure:
 
 * [Project Chart](#project_chart), [Resource Chart](#resource_chart) – all elements of one type
 * [All Elements](#all_elements) – all elements at once

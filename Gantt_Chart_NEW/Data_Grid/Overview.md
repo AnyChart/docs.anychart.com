@@ -7,7 +7,7 @@ To access the data grid, use the {api:anychart.charts.Gantt#dataGrid}dataGrid(){
 
 ## Articles
 
-The articles in this section explain how to configure:
+Articles in this section explain how to configure:
 
 * [Appearance](Appearance) – the fill of rows, stroke of columns, etc.
 * [Columns](Columns) – the title, text, and other settings of each column
