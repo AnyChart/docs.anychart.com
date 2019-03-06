@@ -7,14 +7,14 @@
 
 To access tooltips of data grid, combine the {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} method with {api:anychart.core.ui.DataGrid#tooltip}tooltip(){api}.
 
-To enable or disable tooltips, pass `true` / `false` either directly to {api:anychart.core.ui.DataGrid#tooltip}tooltip(){api} or to the {api:anychart.core.ui.Tooltip#enabled}enabled(){api} method of tooltips:
+By default, tooltips are enable. To disable or enable them, pass `false` / `true` either directly to {api:anychart.core.ui.DataGrid#tooltip}tooltip(){api} or to the {api:anychart.core.ui.Tooltip#enabled}enabled(){api} method of tooltips:
 
 ```
-var chart.dataGrid().tooltip(true);
+var chart.dataGrid().tooltip(false);
 ```
 
 ```
-chart.dataGrid().tooltip).enabled(true);
+chart.dataGrid().tooltip).enabled(false);
 ```
 
 To configure tooltips, use other methods of {api:anychart.core.ui.Tooltip}anychart.core.ui.Tooltip{api}, for example {api:anychart.core.ui.Tooltip#fontColor}fontColor(){api}, {api:anychart.core.ui.Tooltip#fontWeight}fontWeight(){api}, {api:anychart.core.ui.Tooltip#fontSize}fontSize(){api}, etc. The {api:anychart.core.ui.Tooltip#format}format(){api} method, combined with either [tokens](../../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions), allows setting the text format – read the sections below to learn more.

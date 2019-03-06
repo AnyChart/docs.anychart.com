@@ -26,16 +26,16 @@ var labels = chart.getTimeline().tasks().labels();
 var labels = chart.getTimeline().elements().labels();
 ```
 
-To enable or disable labels, pass `true` / `false` either directly to **labels()** or to the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method of labels:
+By default, labels are enabled on Project charts and disabled on Resource charts. To disable or enable them, pass `false` / `true` either directly to **labels()** or to the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method of labels:
 
 ```
-// enable labels of tasks
-var chart.getTimeline().tasks().labels(true);
+// disable labels of tasks
+var chart.getTimeline().tasks().labels(false);
 ```
 
 ```
-// enable labels of tasks
-chart.getTimeline().tasks().labels().enabled(true);
+// disable labels of tasks
+chart.getTimeline().tasks().labels().enabled(false);
 ```
 
 To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}, for example {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api}, {api:anychart.core.ui.LabelsFactory#fontWeight}fontWeight(){api}, {api:anychart.core.ui.LabelsFactory#fontSize}fontSize(){api}, etc. The {api:anychart.core.ui.LabelsFactory#format}format(){api} method, combined with either [tokens](../../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions), allows setting the text format – read the sections below to learn more.
