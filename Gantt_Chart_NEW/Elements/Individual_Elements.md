@@ -5,7 +5,7 @@
 
 To adjust individual elements of a **Project chart**, use the following data fields:
 
-* `"actual"` to configure all [task](#tasks_\(actual\)) types
+* `"actual"` to configure all [task types](#tasks_\(actual\))
 * `"baseline"` to configure [baselines](#baselines_\(planned\))
 * `"progress"` to configure [progress bars](#progress_bars)
 * `"connector"` to configure [connectors](#connectors)

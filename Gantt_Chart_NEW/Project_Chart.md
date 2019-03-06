@@ -555,7 +555,7 @@ chart.data(treeData);
 
 ### Connectors
 
-A **connector** is an element showing the dependencies between all [task](#tasks_\(actual\)) types. 
+A **connector** is an element showing the dependencies between all [task types](#tasks_\(actual\)). 
 
 Use the following data fields:
 
