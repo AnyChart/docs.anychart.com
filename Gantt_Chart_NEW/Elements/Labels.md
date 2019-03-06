@@ -46,7 +46,7 @@ To format the text of labels, combine the {api:anychart.core.ui.LabelsFactory#fo
 
 Please keep in mind that in addition to default tokens you can always use a custom token corresponding to a custom field in your data.
 
-Also, if you need to enable HTML, pass `true` to {api:anychart.core.ui.LabelsFactory#useHtml()}useHtml(){api}.
+Also, if you need to enable HTML in tokens, pass `true` to {api:anychart.core.ui.LabelsFactory#useHtml()}useHtml(){api}.
 
 ### Project Tokens
 
@@ -122,7 +122,7 @@ You can configure the text of labels by combining the {api:anychart.core.ui.Labe
 
 In these functions, a number of default context fields is available, and the {api:anychart.format.Context#getData}getData(){api} method allows you to refer to a custom field in your data. Also, you can use methods of the [tree data model](../../Working_with_Data/Tree_Data_Model) to perform operations on data.
 
-Also, if you need to enable HTML, pass `true` to {api:anychart.core.ui.LabelsFactory#useHtml()}useHtml(){api}.
+Also, if you need to enable HTML in formatting functions, pass `true` to {api:anychart.core.ui.LabelsFactory#useHtml()}useHtml(){api}.
 
 ### Project Fields
 

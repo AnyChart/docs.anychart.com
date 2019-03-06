@@ -27,7 +27,7 @@ To format the text of tooltips, combine the {api:anychart.core.ui.Tooltip#format
 
 For the [Project Gantt](../Project_Chart) and [Resource Gantt](../Resource_Chart) charts, different tokens are available. Also, please keep in mind that in addition to default tokens you can always use a custom token corresponding to a custom field in your data.
 
-If you need to enable HTML, pass `true` to {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}.
+If you need to enable HTML in tokens, pass `true` to {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}.
 
 ### Project Tokens
 
@@ -89,7 +89,7 @@ You can configure the text of tooltips by combining the {api:anychart.core.ui.To
 
 For the [Project Gantt](../Project_Chart) and [Resource Gantt](../Resource_Chart) charts, different context fields are available. Also, the {api:anychart.format.Context#getData}getData(){api} method allows you to refer to a custom field in your data.
 
-If you need to enable HTML, pass `true` to {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}.
+If you need to enable HTML in formatting functions, pass `true` to {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}.
 
 ### Project Fields
 
