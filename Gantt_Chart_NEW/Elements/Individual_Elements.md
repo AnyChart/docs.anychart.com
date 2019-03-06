@@ -3,7 +3,7 @@
 
 ## Project Chart
 
-To adjust individual elements of a **Project chart**, use the following data fields:
+To adjust individual elements of a Project chart, use the following data fields:
 
 * `"actual"` to configure all [task types](Project_Chart#tasks_\(actual\))
 * `"baseline"` to configure [baselines](Project_Chart#baselines_\(planned\))
@@ -89,7 +89,7 @@ chart.data(treeData);
 
 ## Resource Chart
 
-To adjust an individual [period](Resource_Chart#periods) of a **Resource chart**, you need to add extra data fields to the object that defines this period. Use fields corresponding to the methods of periods, for example `fill` and `stroke`:
+To adjust an individual [period](Resource_Chart#periods) of a Resource chart, you need to add extra data fields to the object that defines this period. Use fields corresponding to the methods of periods, for example `fill` and `stroke`:
 
 ```
 // create data

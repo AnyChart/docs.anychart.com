@@ -50,7 +50,7 @@ Also, if you need to enable HTML in tokens, pass `true` to {api:anychart.core.ui
 
 ### Project Tokens
 
-For the **Project chart**, the following tokens are available:
+For the Project chart, the following tokens are available:
 
 * `{%id}`
 * `{%name}`
@@ -91,7 +91,7 @@ timeline.milestones().labels().format(
 
 ### Resource Tokens
 
-The **Resource chart** supports these tokens:
+The Resource chart supports these tokens:
 
 * `{%id}`
 * `{%name}`
@@ -126,7 +126,7 @@ If you need to enable HTML in formatting functions, pass `true` to {api:anychart
 
 ### Project Fields
 
-For the **Project chart**, the following fields are available in formatting functions:
+For the Project chart, the following fields are available in formatting functions:
 
 * `id`
 * `name`
@@ -179,7 +179,7 @@ timeline.milestones().labels().format(function() {
 
 ### Resource Fields
 
-Here are the fields supported by the **Resource chart**:
+Here are the fields supported by the Resource chart:
 
 * `id`
 * `name`

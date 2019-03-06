@@ -43,7 +43,7 @@ markers: [
 
 ## Project Chart
 
-It is possible to add markers to any [task](../Project_Chart#tasks_\(actual\)) of a **Project chart** – a regular task, a parent task, or a milestone:
+It is possible to add markers to any [task](../Project_Chart#tasks_\(actual\)) of a Project chart – a regular task, a parent task, or a milestone:
 
 {sample :height 220}GANTT\_NEW\_Elements\_Markers\_01{sample}
 
@@ -119,7 +119,7 @@ chart.getTimeline().markers().stroke("black");
 
 ## Resource Chart
 
-In the case of the **Resource chart**, markers are added to [resources](../Resource_Chart#periods_and_resources):
+In the case of the Resource chart, markers are added to [resources](../Resource_Chart#periods_and_resources):
 
 {sample :height 200}GANTT\_NEW\_Elements\_Markers\_02{sample}
 
