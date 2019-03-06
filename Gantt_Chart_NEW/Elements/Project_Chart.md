@@ -105,7 +105,7 @@ milestones.selected().stroke("#dd2c00");
 
 ## Baselines (Planned)
 
-**Baselines** are elements showing the **planned duration** of regular and parent [tasks](#tasks_\(actual\)). They are defined as instances of the {api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api} class. 
+**Baselines** are elements showing the **planned duration** of [regular tasks](#regular_tasks) and [parent tasks](#parent_tasks). They are defined as instances of the {api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api} class. 
 
 To configure baselines, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#baselines}baselines(){api} with the following methods:
 
@@ -138,9 +138,9 @@ baselines.above(true);
 
 ## Progress Bars
 
-**Progress bars** are elements showing the progress of regular and parent tasks. They are defined as instances of the {api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api} class. 
+**Progress bars** are elements showing the progress of [regular tasks](#regular_tasks) and [parent tasks](#parent_tasks). They are defined as instances of the {api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api} class. 
 
-To access progress bars, first access [regular tasks](#regular_tasks) or [parent tasks](#parent_tasks) by combining {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#tasks}tasks(){api} or {api:anychart.core.ui.Timeline#groupingTasks}groupingTasks(){api}. Then call {api:?entry=progress}progress(){api}.
+To access progress bars, first access regular or parent tasks by combining {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#tasks}tasks(){api} or {api:anychart.core.ui.Timeline#groupingTasks}groupingTasks(){api}. Then call {api:?entry=progress}progress(){api}.
 
  To configure progress bars, use the following methods:
 
