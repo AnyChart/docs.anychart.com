@@ -3,7 +3,7 @@
 
 Timeline elements are the parts of the Gantt chart that are shown on the [timeline](Timeline).
 
-On the [Project Gantt](Project_Chart) and [Resource Gantt](Resource_Chart) charts different types of elements are displayed, and for each element type slightly different settings are available.
+On the [Project Gantt](Project_Chart) chart and [Resource Gantt](Resource_Chart) chart, different types of elements are displayed, and for each element type slightly different settings are available.
 
 ## Articles
 
