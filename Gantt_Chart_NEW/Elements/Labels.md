@@ -26,7 +26,7 @@ var labels = chart.getTimeline().tasks().labels();
 var labels = chart.getTimeline().elements().labels();
 ```
 
-By default, labels are enabled on Project charts and disabled on Resource charts. To disable or enable them, pass `false` / `true` either directly to **labels()** or to the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method of labels:
+By default, labels are enabled on Project charts and disabled on Resource charts. To enable or disable labels, pass `true` / `false` either directly to **labels()** or to the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method of labels:
 
 ```
 // disable labels of tasks
