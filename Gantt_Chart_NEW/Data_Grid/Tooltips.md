@@ -87,7 +87,7 @@ chart.dataGrid().tooltip().format(
 
 You can configure the text of tooltips by combining the {api:anychart.core.ui.Tooltip#format}format(){api} method with [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions).
 
-For the [Project Gantt](../Project_Chart) and [Resource Gantt](../Resource_Chart) charts, different context fields are available. Also, the {api:anychart.format.Context#getData}getData(){api} method allows you to refer to a custom field in your data.
+For the [Project Gantt](../Project_Chart) and [Resource Gantt](../Resource_Chart) charts, different context fields are available. Also, you can use {api:anychart.format.Context#getData}getData(){api} to refer to a custom field in your data and methods of the [tree data model](../../Working_with_Data/Tree_Data_Model) to perform operations on data.
 
 If you need to enable HTML in formatting functions, pass `true` to {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}.
 
