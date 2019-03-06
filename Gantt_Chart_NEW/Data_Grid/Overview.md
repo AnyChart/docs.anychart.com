@@ -3,9 +3,9 @@
 
 The data grid is the part of the Gantt chart where names of its [elements](Elements) are displayed. Alternatively, you can display any other text – see [Columns: Text](Columns#text_\(labels\)).
 
-The data grid is defined as an instance of the {api:anychart.core.ui.DataGrid}anychart.core.ui.DataGrid{api} class.
+It is defined as an instance of the {api:anychart.core.ui.DataGrid}anychart.core.ui.DataGrid{api} class.
 
-Use the {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} method to access it.
+Use the {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} method to access the data grid.
 
 ## Articles
 
