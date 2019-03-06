@@ -31,7 +31,7 @@ Also, if you need to enable HTML in tokens, pass `true` to {api:anychart.core.ui
 
 ### Project Tokens
 
-For the **Project chart**, the following tokens are available:
+The following tokens are available for the [Project Gantt](../Project_Chart) chart:
 
 * `{%id}`
 * `{%name}`
@@ -60,7 +60,7 @@ chart.getTimeline().tooltip().format(
 
 ### Resource Tokens
 
-The following tokens are available for the **Project chart**:
+The following tokens are available for the [Resource Gantt](../Resource_Chart) chart:
 
 * `{%id}`
 * `{%name}`
@@ -93,7 +93,7 @@ If you need to enable HTML in formatting functions, pass `true` to {api:anychart
 
 ### Project Fields
 
-For the **Project chart**, the following fields are available in formatting functions:
+For the [Project Gantt](../Project_Chart) chart, the following fields are available in formatting functions:
 
 * `id`
 * `name`
@@ -156,7 +156,7 @@ chart.getTimeline().tooltip().format(function() {
 
 ### Resource Fields
 
-Here are the fields supported by the **Resource chart**:
+Here are the fields supported by the [Resource Gantt](../Resource_Chart) chart:
 
 * `id`
 * `name`
