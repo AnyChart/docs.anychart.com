@@ -23,7 +23,7 @@ To configure tooltips, use other methods of {api:anychart.core.ui.Tooltip}anycha
 
 ## Tokens
 
-To format the text of tooltips, combine the {api:anychart.core.ui.Tooltip#format}format(){api} method with [tokens](../../Common_Settings/Text_Formatters#string_tokens).
+To format the text of tooltips, combine the {api:anychart.core.ui.Tooltip#format}format(){api} method with [text formatters](../../Common_Settings/Text_Formatters#string_tokens).
 
 Please keep in mind that in addition to default tokens you can always use a custom token corresponding to a custom field in your data.
 
