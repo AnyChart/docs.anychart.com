@@ -76,7 +76,7 @@ If you need to create multiple milestones in one row, use an alternative way to 
 
 In the sample below, the {api:anychart.core.ui.Timeline#tasks}tasks(){api}, {api:anychart.core.ui.Timeline#groupingTasks}groupingTasks(){api}, and {api:anychart.core.ui.Timeline#milestones}milestones(){api} methods of the timeline are used to access [regular tasks](#regular_tasks), [parent tasks](#parent_tasks), and [milestones](#milestones).
 
-The **normal()** and **selected()** methods of each task type are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../Appearance_Settings) in two [states](../../Common_Settings/Interactivity/States): **normal** and **selected**.
+The **normal()** and **selected()** methods of each task type are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../Appearance_Settings) in two [states](../../Common_Settings/Interactivity/States): normal and selected.
 
 ```
 // configure tasks
@@ -121,7 +121,7 @@ Please note: by default, baselines are shown under tasks, but can be placed abov
 
 To learn about data fields used to set baselines, see [Progress Chart: Baselines](../Project_Chart#baselines_\(planned\)).
 
-In the sample below, the {api:anychart.core.ui.Timeline#baselines}baselines(){api} method is used to access baselines. The {api:anychart.core.gantt.elements.BaselinesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.BaselinesElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../Appearance_Settings) in two [states](../../Common_Settings/Interactivity/States): **normal** and **selected**. Finally, the {api:anychart.core.gantt.elements.BaselinesElement#above}above(){api} method places baselines above tasks.
+In the sample below, the {api:anychart.core.ui.Timeline#baselines}baselines(){api} method is used to access baselines. The {api:anychart.core.gantt.elements.BaselinesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.BaselinesElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../Appearance_Settings) in two [states](../../Common_Settings/Interactivity/States): normal and selected. Finally, the {api:anychart.core.gantt.elements.BaselinesElement#above}above(){api} method places baselines above tasks.
 
 
 ```
@@ -155,7 +155,7 @@ Please note: by default, progress is shown in [labels](Labels) of tasks. However
 
 To learn about data fields used to set progress bars, see [Project Chart: Progress Bars](../Project_Chart#progress_bars).
 
-In the sample below, the {api:?entry=progress}progress(){api} method is used to access progress bars of both regular and parent tasks. The {api:anychart.core.gantt.elements.ProgressElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ProgressElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../Appearance_Settings) in two [states](../../Common_Settings/Interactivity/States): **normal** and **selected**.
+In the sample below, the {api:?entry=progress}progress(){api} method is used to access progress bars of both regular and parent tasks. The {api:anychart.core.gantt.elements.ProgressElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ProgressElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../Appearance_Settings) in two [states](../../Common_Settings/Interactivity/States): normal and selected.
 
 ```
 // configure progress bars of regular tasks
@@ -185,7 +185,7 @@ To configure connectors, combine {api:anychart.charts.Gantt#getTimeline}getTimel
 
 To learn about the available types of connectors and the data fields used to set them, see [Progress Chart: Connectors](../Project_Chart#connectors).
 
-In the sample below, the {api:anychart.core.ui.Timeline#connectors}connectors(){api} method is used to access connectors. The {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../Appearance_Settings) in two [states](../../Common_Settings/Interactivity/States): **normal** and **selected**.
+In the sample below, the {api:anychart.core.ui.Timeline#connectors}connectors(){api} method is used to access connectors. The {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../Appearance_Settings) in two [states](../../Common_Settings/Interactivity/States): normal and selected.
 
 ```
 // configure connectors
