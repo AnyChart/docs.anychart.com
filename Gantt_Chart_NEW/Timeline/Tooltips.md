@@ -60,7 +60,7 @@ chart.getTimeline().tooltip().format(
 
 ### Resource Tokens
 
-The **Resource chart** supports these tokens:
+The following tokens are available for the **Project chart**:
 
 * `{%id}`
 * `{%name}`
