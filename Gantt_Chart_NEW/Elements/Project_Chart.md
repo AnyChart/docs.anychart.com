@@ -11,7 +11,7 @@ To learn more about the difference between the types and data fields used to set
 
 ### Regular Tasks
 
-**Regular tasks** are [tasks](../Project_Chart#tasks_\(actual\)) that do not have child elements. They are defined as instances of the {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api} class. 
+**Regular tasks** are tasks that do not have child elements. They are defined as instances of the {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api} class. 
 
 To configure regular tasks, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#tasks}tasks(){api} with the following methods:
 
@@ -31,7 +31,7 @@ chart.getTimeline().tasks().height(15);
 
 ### Parent Tasks
 
-**Parent tasks** are [tasks](../Project_Chart#tasks_\(actual\)) that have child elements. They are defined as instances of the {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api} class. 
+**Parent tasks** are tasks that have child elements. They are defined as instances of the {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api} class. 
 
 To configure parent tasks, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#groupingTasks}groupingTasks(){api} with the following methods:
 
@@ -53,7 +53,7 @@ Also, parent tasks can be [expanded or collapsed](../Basic_Settings#navigation).
 
 ### Milestones
 
-**Milestones** are [tasks](../Project_Chart#tasks_\(actual\)) with zero duration, representing events. They are defined as instances of the {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api} class. 
+**Milestones** are tasks with zero duration, representing events. They are defined as instances of the {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api} class. 
 
 To configure milestones, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#milestones}milestones(){api} with the following methods:
 
