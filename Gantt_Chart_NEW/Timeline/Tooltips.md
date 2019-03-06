@@ -5,7 +5,7 @@
 
 [Tooltips](../../Common_Settings/Tooltip) are text boxes displayed when timeline or [data grid](../Data_Grid) rows are hovered over. They are defined as instances of the {api:anychart.core.ui.Tooltip}anychart.core.ui.Tooltip{api} class.
 
-To access tooltips of timeline, combine the {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} method with {api:anychart.core.ui.Timeline#tooltip}tooltip(){api}.
+To access tooltips of the timeline, combine the {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} method with {api:anychart.core.ui.Timeline#tooltip}tooltip(){api}.
 
 By default, tooltips are enabled. To disable or enable them, pass `false` / `true` either directly to {api:anychart.core.ui.Timeline#tooltip}tooltip(){api} or to the {api:anychart.core.ui.Tooltip#enabled}enabled(){api} method of tooltips:
 
