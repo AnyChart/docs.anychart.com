@@ -5,6 +5,8 @@ The timeline, defined as an instance of {api:anychart.core.ui.Timeline}anychart.
 
 To access the timeline, use the {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} method.
 
+## Articles
+
 Articles in this section explain how to configure:
 
 * [Appearance](Appearance) – the fill of rows, stroke of columns, etc.

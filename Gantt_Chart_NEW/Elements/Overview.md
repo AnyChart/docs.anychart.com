@@ -3,6 +3,8 @@
 
 Timeline elements are the parts of the Gantt chart that are shown on the [timeline](Timeline). The [Project Gantt](Project_Chart) and [Resource Gantt](Resource_Chart) charts include different types of elements, and for each element type slightly different settings are available.
 
+## Articles
+
 The sections below explain how to configure:
 
 * all elements of one type – [Project Chart](#project_chart), [Resource Chart](#resource_chart)
@@ -12,6 +14,8 @@ The sections below explain how to configure:
 * markers – [Markers](#markers)
 
 **Note:** To learn how to adjust tooltips shown when the timeline is hovered over, see [Timeline: Tooltips](Timeline/Tooltips).
+
+## Classes
 
 Elements are defined as instances of the following classes:
 
@@ -23,6 +27,8 @@ Elements are defined as instances of the following classes:
 * [connectors](#connectors) – {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api}
 * [periods](#periods) – {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api}
 * [all elements](#all_elements) – {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
+
+## Methods
 
 The following methods, combined with {api:anychart.charts.Gantt#getTimeline}getTimeline(){api}, are used to access elements:
 

@@ -3,7 +3,7 @@
 
 You can configure the [appearance](../../Appearance_Settings) of the data grid: set the background and header fill, the stroke of columns, etc. It is possible to apply the same color to all rows or different colors to odd and even rows.
 
-Use the following methods:
+Combine {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with the following methods:
 
 * {api:anychart.core.ui.DataGrid#backgroundFill}backgroundFill(){api} to set the background fill
 * {api:anychart.core.ui.DataGrid#headerFill}headerFill(){api} to set the fill of the header

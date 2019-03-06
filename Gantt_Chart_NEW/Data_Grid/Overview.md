@@ -5,6 +5,8 @@ The data grid, defined as an instance of {api:anychart.core.ui.DataGrid}anychart
 
 To access the data grid, use the {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} method.
 
+## Articles
+
 Articles in this section explain how to configure:
 
 * [Appearance](Appearance) – the fill of rows, stroke of columns, etc.
@@ -12,7 +14,7 @@ Articles in this section explain how to configure:
 * [Buttons](Buttons) – the expand / collapse buttons
 * [Tooltips](Tooltips) – the data grid tooltips
 
-**Enabling / Disabling**
+## Enabling / Disabling
 
 The data grid is enabled by default. To disable / enable it, pass `true` / `false` to {api:anychart.charts.Gantt#dataGrid}dataGrid(){api}:
 
