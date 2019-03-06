@@ -7,11 +7,11 @@ Timeline elements are the parts of the Gantt chart that are shown on the [timeli
 
 The sections below explain how to configure:
 
-* all elements of one type – [Project Chart](#project_chart), [Resource Chart](#resource_chart)
-* all elements at once – [All Elements](#all_elements)
-* individual elements – [Individual Elements](#individual_elements)
-* labels of elements – [Labels](#labels)
-* markers – [Markers](#markers)
+* [Project Chart](#project_chart), [Resource Chart](#resource_chart) – all elements of one type
+* [All Elements](#all_elements) – all elements at once
+* [Individual Elements](#individual_elements) – individual elements
+* [Labels](#labels) – labels of elements
+* [Markers](#markers) – markers
 
 **Note:** See [Timeline: Tooltips](Timeline/Tooltips) to learn how to adjust tooltips shown when the timeline is hovered over.
 
