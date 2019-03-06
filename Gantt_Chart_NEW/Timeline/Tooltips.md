@@ -31,7 +31,7 @@ Also, if you need to enable HTML in tokens, pass `true` to {api:anychart.core.ui
 
 ### Project Tokens
 
-The following tokens are available for the [Project Gantt](../Project_Chart) chart:
+For the [Project Gantt](../Project_Chart) chart, the following tokens are available:
 
 * `{%id}`
 * `{%name}`
