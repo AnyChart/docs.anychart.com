@@ -25,7 +25,7 @@ To configure tooltips, use other methods of {api:anychart.core.ui.Tooltip}anycha
 
 To format the text of tooltips, combine the {api:anychart.core.ui.Tooltip#format}format(){api} method with [tokens](../../Common_Settings/Text_Formatters#string_tokens).
 
-For the [Project Gantt](../Project_Chart) and [Resource Gantt](../Resource_Chart) charts, different tokens are available. Also, please keep in mind that in addition to default tokens you can always use a custom token corresponding to a custom field in your data.
+For the Project and Resource charts, different tokens are available. Also, please keep in mind that in addition to default tokens you can always use a custom token corresponding to a custom field in your data.
 
 If you need to enable HTML in tokens, pass `true` to {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}.
 
@@ -87,7 +87,7 @@ chart.getTimeline().tooltip().format(
 
 You can configure the text of tooltips by combining the {api:anychart.core.ui.Tooltip#format}format(){api} method with [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions).
 
-For the [Project Gantt](../Project_Chart) and [Resource Gantt](../Resource_Chart) charts, different context fields are available. Also, you can use {api:anychart.format.Context#getData}getData(){api} to refer to a custom field in your data and methods of the [tree data model](../../Working_with_Data/Tree_Data_Model) to perform operations on data.
+For the Project and Resource charts, different context fields are available. Also, you can use {api:anychart.format.Context#getData}getData(){api} to refer to a custom field in your data and methods of the [tree data model](../../Working_with_Data/Tree_Data_Model) to perform operations on data.
 
 If you need to enable HTML in formatting functions, pass `true` to {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}.
 
