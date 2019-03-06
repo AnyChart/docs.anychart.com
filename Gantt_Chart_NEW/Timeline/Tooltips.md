@@ -25,13 +25,13 @@ To configure tooltips, use other methods of {api:anychart.core.ui.Tooltip}anycha
 
 To format the text of tooltips, combine the {api:anychart.core.ui.Tooltip#format}format(){api} method with [tokens](../../Common_Settings/Text_Formatters#string_tokens).
 
-Please keep in mind that in addition to default tokens you can always use a custom token corresponding to a custom field in your data.
+For the [Project Gantt](../Project_Chart) and [Resource Gantt](../Resource_Chart) charts, different tokens are available. Also, please keep in mind that in addition to default tokens you can always use a custom token corresponding to a custom field in your data.
 
-Also, if you need to enable HTML, pass `true` to {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}.
+If you need to enable HTML, pass `true` to {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}.
 
 ### Project Tokens
 
-For the [Project Gantt](../Project_Chart) chart, the following tokens are available:
+For the **Project chart**, the following tokens are available:
 
 * `{%id}`
 * `{%name}`
@@ -60,7 +60,7 @@ chart.getTimeline().tooltip().format(
 
 ### Resource Tokens
 
-The [Resource Gantt](../Resource_Chart) chart supports these tokens:
+The **Resource chart** supports these tokens:
 
 * `{%id}`
 * `{%name}`
@@ -87,13 +87,13 @@ chart.getTimeline().tooltip().format(
 
 You can configure the text of tooltips by combining the {api:anychart.core.ui.Tooltip#format}format(){api} method with [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions).
 
-In these functions, a number of default context fields is available, and the {api:anychart.format.Context#getData}getData(){api} method allows you to refer to a custom field in your data.
+For the [Project Gantt](../Project_Chart) and [Resource Gantt](../Resource_Chart) charts, different context fields are available. Also, the {api:anychart.format.Context#getData}getData(){api} method allows you to refer to a custom field in your data.
 
-Also, if you need to enable HTML, pass `true` to {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}.
+If you need to enable HTML, pass `true` to {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}.
 
 ### Project Fields
 
-For the [Project Gantt](../Project_Chart) chart, the following fields are available in formatting functions:
+For the **Project chart**, the following fields are available in formatting functions:
 
 * `id`
 * `name`
@@ -156,7 +156,7 @@ chart.getTimeline().tooltip().format(function() {
 
 ### Resource Fields
 
-Here are the fields supported by the [Resource Gantt](../Resource_Chart) chart:
+Here are the fields supported by the **Resource chart**:
 
 * `id`
 * `name`
