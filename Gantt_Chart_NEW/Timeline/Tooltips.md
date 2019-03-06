@@ -7,7 +7,7 @@
 
 To access tooltips of the timeline, combine the {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} method with {api:anychart.core.ui.Timeline#tooltip}tooltip(){api}.
 
-By default, tooltips are enabled. To disable or enable them, pass `false` / `true` either directly to {api:anychart.core.ui.Timeline#tooltip}tooltip(){api} or to the {api:anychart.core.ui.Tooltip#enabled}enabled(){api} method of tooltips:
+By default, tooltips are enabled. To enable or disable them, pass `true` / `false` either directly to {api:anychart.core.ui.Timeline#tooltip}tooltip(){api} or to the {api:anychart.core.ui.Tooltip#enabled}enabled(){api} method of tooltips:
 
 ```
 var chart.getTimeline().tooltip(false);
