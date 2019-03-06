@@ -38,7 +38,7 @@ var chart.getTimeline().tasks().labels(false);
 chart.getTimeline().tasks().labels().enabled(false);
 ```
 
-To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}, for example {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api}, {api:anychart.core.ui.LabelsFactory#fontWeight}fontWeight(){api}, {api:anychart.core.ui.LabelsFactory#fontSize}fontSize(){api}, etc. The {api:anychart.core.ui.LabelsFactory#format}format(){api} method, combined with either [tokens](../../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions), allows setting the text format – read the sections below to learn more.
+To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}, for example {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api}, {api:anychart.core.ui.LabelsFactory#fontWeight}fontWeight(){api}, {api:anychart.core.ui.LabelsFactory#fontSize}fontSize(){api}, etc. The {api:anychart.core.ui.LabelsFactory#format}format(){api} method, combined with [tokens](../../Common_Settings/Text_Formatters), allows setting the text format – read the sections below to learn more.
 
 ## Tokens
 
