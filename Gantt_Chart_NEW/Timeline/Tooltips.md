@@ -17,7 +17,7 @@ var chart.getTimeline().tooltip(true);
 chart.getTimeline().tooltip).enabled(true);
 ```
 
-To configure tooltips, use other methods of {api:anychart.core.ui.Tooltip}anychart.core.ui.Tooltip{api}, for example for example {api:anychart.core.ui.Tooltip#fontColor}fontColor(){api}, {api:anychart.core.ui.Tooltip#fontWeight}fontWeight(){api}, {api:anychart.core.ui.Tooltip#fontSize}fontSize(){api}, etc. The {api:anychart.core.ui.Tooltip#format}format(){api} method, combined with either [tokens](../../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions), allows setting the text format – read the sections below to learn more.
+To configure tooltips, use other methods of {api:anychart.core.ui.Tooltip}anychart.core.ui.Tooltip{api}, for example {api:anychart.core.ui.Tooltip#fontColor}fontColor(){api}, {api:anychart.core.ui.Tooltip#fontWeight}fontWeight(){api}, {api:anychart.core.ui.Tooltip#fontSize}fontSize(){api}, etc. The {api:anychart.core.ui.Tooltip#format}format(){api} method, combined with either [tokens](../../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions), allows setting the text format – read the sections below to learn more.
 
 **Note:** The tooltips that are shown on data grid are configured independently from the timeline tooltips. See [Data Grid: Tooltips](../Data_Grid/Tooltips).
 
