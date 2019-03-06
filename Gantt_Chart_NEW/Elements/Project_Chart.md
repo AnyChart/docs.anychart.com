@@ -105,7 +105,7 @@ milestones.selected().stroke("#dd2c00");
 
 ## Baselines (Planned)
 
-**Baselines** are elements showing the **planned duration** of regular and parent tasks. They are defined as instances of the {api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api} class. 
+**Baselines** are elements showing the **planned duration** of regular and parent [tasks](#tasks_\(actual\)). They are defined as instances of the {api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api} class. 
 
 To configure baselines, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#baselines}baselines(){api} with the following methods:
 
@@ -175,7 +175,7 @@ parentTasks.progress().selected().stroke(null);
 
 ## Connectors
 
-**Connectors** are elements showing the dependencies between all task typs. They are defined as instances of the {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api} class. 
+**Connectors** are elements showing the dependencies between all [task types](#tasks_\(actual\)). They are defined as instances of the {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api} class. 
 
 To configure connectors, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#connectors}connectors(){api} with the following methods:
 
