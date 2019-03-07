@@ -31,42 +31,42 @@ anychart.onDocumentReady(function () {
       {
         id: "1",
         name: "Development",
-        actualStart: "2018-01-02",
-        actualEnd: "2018-03-25",
+        actualStart: "2018-01-15",
+        actualEnd: "2018-03-10",
         children: [
           {
             id: "1_1",
             name: "Analysis",
-            actualStart: "2018-01-02",
-            actualEnd: "2018-02-08"
+            actualStart: "2018-01-15",
+            actualEnd: "2018-02-02"
           },
           {
             id: "1_2",
             name: "Design",
-            actualStart: "2018-02-04",
-            actualEnd: "2018-02-24"
+            actualStart: "2018-01-25",
+            actualEnd: "2018-02-14"
           },
           {
             id: "1_3",
             name: "Meeting",
-            actualStart: "2018-02-25",
-            actualEnd: "2018-02-25"
+            actualStart: "2018-02-15",
+            actualEnd: "2018-02-15"
           },
           {
             id: "1_4",
             name: "Implementation",
-            actualStart: "2018-02-25",
-            actualEnd: "2018-03-14"
+            actualStart: "2018-02-15",
+            actualEnd: "2018-02-27"
           },
           {
             id: "1_5",
             name: "Testing",
-            actualStart: "2018-03-15",
-            actualEnd: "2018-03-25"
+            actualStart: "2018-02-28",
+            actualEnd: "2018-03-10"
           }
       ]}
     ];
-    
+        
     // create a data tree
     var treeData = anychart.data.tree(data, "as-tree");
 
@@ -81,7 +81,7 @@ anychart.onDocumentReady(function () {
     header.format("{%value}–{%endValue}");
 
     // configure the scale
-    chart.getTimeline().scale().maximum("2018-03-31");
+    chart.getTimeline().scale().maximum("2018-03-15");
 
     // set the container id
     chart.container("container");
