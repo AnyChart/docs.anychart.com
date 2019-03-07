@@ -69,7 +69,7 @@ anychart.onDocumentReady(function () {
         id: "2",
         name: "PR Campaign",
         actualStart: "2018-02-25",
-        actualEnd: "2018-04-04",
+        actualEnd: "2018-04-01",
         children: [
           {
             id: "2_1",
@@ -81,7 +81,7 @@ anychart.onDocumentReady(function () {
             id: "2_2",
             name: "Promoting",
             actualStart: "2018-03-26",
-            actualEnd: "2018-04-04"
+            actualEnd: "2018-04-01"
           }
       ]}
     ];
@@ -93,7 +93,7 @@ anychart.onDocumentReady(function () {
     var chart = anychart.ganttProject();
 
     // configure the scale
-    chart.getTimeline().scale().maximum("2018-04-10");
+    chart.getTimeline().scale().maximum("2018-04-07");
     
     // set the data
     chart.data(treeData);
