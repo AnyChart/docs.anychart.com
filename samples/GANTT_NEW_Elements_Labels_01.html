@@ -94,10 +94,7 @@ anychart.onDocumentReady(function () {
     // configure labels of parent tasks
     timeline.groupingTasks().labels().useHtml(true);
     timeline.groupingTasks().labels().format(
-        "<span style='color:#dd2c00'>" +
-        "{%actualStart}{dateTimeFormat:MM}" +
-        "</span>–<span style='color:#dd2c00'>" +
-        "{%actualEnd}{dateTimeFormat:MM}</span>"
+        "– <span style='color:#dd2c00'>{%progress}</span>"
     );
 
     // configure labels of milestones
@@ -108,7 +105,7 @@ anychart.onDocumentReady(function () {
     );
 
     // configure the scale
-    chart.getTimeline().scale().maximum("2018-03-31");
+    chart.getTimeline().scale().maximum("2018-04-07");
 
     // set the container id
     chart.container("container");
