@@ -32,7 +32,7 @@ anychart.onDocumentReady(function () {
         id: "1",
         name: "Parent Task",
         actualStart: "2018-01-25",
-        actualEnd: "2018-03-14",
+        actualEnd: "2018-03-10",
         children: [
           {
             id: "1_1",
@@ -44,38 +44,38 @@ anychart.onDocumentReady(function () {
             id: "1_2",
             name: "Task",
             actualStart: "2018-02-04",
-            actualEnd: "2018-02-24"
+            actualEnd: "2018-02-14"
           },
           {
             id: "1_3",
             name: "Milestone",
-            actualStart: "2018-02-25",
-            actualEnd: "2018-02-25"
+            actualStart: "2018-02-15",
+            actualEnd: "2018-02-15"
           },
           {
             id: "1_4",
             name: "Parent Task",
-            actualStart: "2018-02-25",
-            actualEnd: "2018-03-14",
+            actualStart: "2018-02-15",
+            actualEnd: "2018-02-27",
             children: [
               {
                 id: "1_4_1",
                 name: "Task",
-                actualStart: "2018-02-25",
-                actualEnd: "2018-03-01"
+                actualStart: "2018-02-15",
+                actualEnd: "2018-02-20"
               },
               {
                 id: "1_4_2",
                 name: "Task",
-                actualStart: "2018-03-02",
-                actualEnd: "2018-03-14"
+                actualStart: "2018-02-21",
+                actualEnd: "2018-02-27"
               }
           ]},
           {
             id: "2",
             name: "Task",
-            actualStart: "2018-02-25",
-            actualEnd: "2018-04-22",
+            actualStart: "2018-02-15",
+            actualEnd: "2018-03-10",
           }
       ]}
     ];
@@ -90,7 +90,7 @@ anychart.onDocumentReady(function () {
     chart.data(treeData);
 
     // configure the scale
-    chart.getTimeline().scale().maximum("2018-04-30");
+    chart.getTimeline().scale().maximum("2018-03-31");
 
     // set the container id
     chart.container("container");

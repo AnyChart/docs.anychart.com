@@ -224,10 +224,9 @@ This sample shows how to set data with two roots as a table:
 var data = [
   {
     id: "1",
-    parent: null,
     name: "Development",
     actualStart: "2018-01-25",
-    actualEnd: "2018-03-14"
+    actualEnd: "2018-03-10"
   },
   {
     id: "1_2",
@@ -241,52 +240,51 @@ var data = [
     parent: "1",
     name: "Design",
     actualStart: "2018-02-04",
-    actualEnd: "2018-02-24"
+    actualEnd: "2018-02-14"
   },
   {
     id: "1_4",
     parent: "1",
     name: "Meeting",
-    actualStart: "2018-02-25",
-    actualEnd: "2018-02-25"
+    actualStart: "2018-02-15",
+    actualEnd: "2018-02-15"
   },
   {
     id: "1_5",
     parent: "1",
     name: "Implementation",
-    actualStart: "2018-02-25",
-    actualEnd: "2018-03-14"
+    actualStart: "2018-02-15",
+    actualEnd: "2018-02-27"
   },
   {
     id: "1_6",
     parent: "1",
     name: "Testing",
-    actualStart: "2018-03-15",
-    actualEnd: "2018-04-07"
+    actualStart: "2018-02-28",
+    actualEnd: "2018-03-10"
   },
   {
     id: "2",
-    parent: null,
     name: "PR Campaign",
-    actualStart: "2018-02-25",
-    actualEnd: "2018-04-22"
+    actualStart: "2018-02-28",
+    actualEnd: "2018-03-22"
   },
   {
     id: "2_1",
     parent: "2",
     name: "Planning",
-    actualStart: "2018-02-25",
-    actualEnd: "2018-03-25"
+    actualStart: "2018-02-15",
+    actualEnd: "2018-03-10"
   },
   {
     id: "2_2",
     parent: "2",
     name: "Promoting",
-    actualStart: "2018-03-26",
-    actualEnd: "2018-04-22"
+    actualStart: "2018-03-11",
+    actualEnd: "2018-03-22"
   }
 ];
-
+    
 // create a data tree
 var treeData = anychart.data.tree(data, "as-table");
 
