@@ -46,4 +46,9 @@ misc:
 * пример на включение / выключение кнопок
 * [Buttons](Buttons)
 
+
+{sample :height 200}GANTT\_NEW\_Data\_Grid\_Columns\_07{sample}
+
 ## Custom Columns
+
+{sample :height 200}GANTT\_NEW\_Data\_Grid\_Columns\_08{sample}
