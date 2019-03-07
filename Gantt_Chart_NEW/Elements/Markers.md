@@ -3,7 +3,7 @@
 
 ## Overview
 
-Like [milestones](Project_Chart#milestones), markers represent events. You can display multiple markers in one row – on a task or anywhere on the timeline depending on the dates you set.
+Like [milestones](Project_Chart#milestones), **markers** represent events. You can display multiple markers in one row – on a task or anywhere on the timeline depending on the dates you set.
 
 Use the `markers` data field to add an array of markers to your data. In this array, specify the `value` of each marker – its date:
 
