@@ -41,9 +41,8 @@ misc:
 
 {sample :height 200}GANTT\_NEW\_Data\_Grid\_Columns\_06{sample}
 
-## (?) Buttons
+## Buttons
 
-* пример на включение / выключение кнопок
 * [Buttons](Buttons)
 
 
