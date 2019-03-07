@@ -64,19 +64,16 @@ For the Project chart, the following tokens are available:
 In the sample below, labels of different elements have the same font weight but different text format, which is configured with the help of tokens, including a custom one:
 
 ```
-// configure labels of elements
-timeline.elements().labels().fontWeight(600);
-
 // configure labels of tasks
 timeline.tasks().labels().useHtml(true);
 timeline.tasks().labels().format(
-  "{%name}: <span style='color:#64b5f6'>{%progress}</span>"
+  "– <span style='color:#64b5f6'>{%progress}</span>"
 );
 
 // configure labels of parent tasks
 timeline.groupingTasks().labels().useHtml(true);
 timeline.groupingTasks().labels().format(
-    "{%name}: <span style='color:#dd2c00'>{%progress}</span>"
+    "– <span style='color:#dd2c00'>{%progress}</span>"
 );
 
 // configure labels of milestones
@@ -142,17 +139,14 @@ In the sample below, labels of different elements have the same font weight but 
 Labels of milestones refer to other tasks related to them – the ids of these tasks are linked in a custom data field. The {api:anychart.format.Context#getData}getData(){api} method and the {api:anychart.data.Tree.DataItem#search}search(){api} and {api:anychart.data.Tree.DataItem#get}get(){api} methods of the [Tree Data Model](../../Working_with_Data/Tree_Data_Model) are used to get the ids and find the names corresponding to them.
 
 ```
-// configure labels of elements
-timeline.elements().labels().fontWeight(600);
-
 // configure labels of tasks
 timeline.tasks().labels().useHtml(true);
 timeline.tasks().labels().format(function() {
   if (this.progress == 1) {
-    return this.name + ": <span style='color:#64b5f6'>COMPLETE</span>";
+    return "<span style='color:#64b5f6'>COMPLETE</span>";
   } else {
-    return this.name +": <span style='color:#64b5f6'>" +
-           this.progress * 100 + "%</span>";
+    return "<span style='color:#64b5f6'>" +
+           this.progress * 100 + "</span>%";
   }
 });
 
@@ -160,8 +154,8 @@ timeline.tasks().labels().format(function() {
 timeline.groupingTasks().labels().useHtml(true);
 timeline.groupingTasks().labels().format(function() {
   var duration = (this.actualEnd - this.actualStart) / 1000 / 3600 / 24;
-  return this.name + ": <span style='color:#dd2c00'>" +
-         duration + " days</span>";
+  return "<span style='color:#dd2c00'>" + 
+         duration + "</span>d";
 });
 
 // configure labels of milestones
@@ -170,7 +164,7 @@ timeline.milestones().labels().format(function() {
   var relatedTaskId = this.getData("custom_field");
   var relatedTaskItem = treeData.search("id", relatedTaskId);
   var relatedTaskName = relatedTaskItem.get("name");
-  return "Review: <span style='color:#ffa000'>" + 
+  return "Review: <span style='color:#ffa000'>" +
          relatedTaskName + "</span>";
 });
 ```

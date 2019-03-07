@@ -32,7 +32,7 @@ anychart.onDocumentReady(function () {
         id: "1",
         name: "Development",
         actualStart: "2018-01-25",
-        actualEnd: "2018-03-26",
+        actualEnd: "2018-04-07",
         children: [
           {
             id: "1_1",
@@ -50,7 +50,7 @@ anychart.onDocumentReady(function () {
           },
           {
             id: "1_3",
-            name: "Meeting 1",
+            name: "Meeting",
             actualStart: "2018-02-25",
             actualEnd: "2018-02-25",
             custom_field: "1_2"
@@ -66,14 +66,7 @@ anychart.onDocumentReady(function () {
             id: "1_5",
             name: "Testing",
             actualStart: "2018-03-15",
-            actualEnd: "2018-03-25"
-          },
-          {
-            id: "1_6",
-            name: "Meeting 2",
-            actualStart: "2018-03-26",
-            actualEnd: "2018-03-26",
-            custom_field: "1_5"
+            actualEnd: "2018-04-07"
           }
       ]}
     ];
@@ -96,10 +89,10 @@ anychart.onDocumentReady(function () {
     timeline.tasks().labels().useHtml(true);
     timeline.tasks().labels().format(function() {
       if (this.progress == 1) {
-        return this.name + ": <span style='color:#64b5f6'>COMPLETE</span>";
+        return "<span style='color:#64b5f6'>COMPLETE</span>";
       } else {
-        return this.name +": <span style='color:#64b5f6'>" +
-               this.progress * 100 + "%</span>";
+        return "<span style='color:#64b5f6'>" +
+               this.progress * 100 + "</span>%";
       }
     });
 
@@ -107,8 +100,8 @@ anychart.onDocumentReady(function () {
     timeline.groupingTasks().labels().useHtml(true);
     timeline.groupingTasks().labels().format(function() {
       var duration = (this.actualEnd - this.actualStart) / 1000 / 3600 / 24;
-      return this.name + ": <span style='color:#dd2c00'>" +
-             duration + " days</span>";
+      return "<span style='color:#dd2c00'>" + 
+             duration + "</span>d";
     });
 
     // configure labels of milestones
@@ -117,12 +110,12 @@ anychart.onDocumentReady(function () {
       var relatedTaskId = this.getData("custom_field");
       var relatedTaskItem = treeData.search("id", relatedTaskId);
       var relatedTaskName = relatedTaskItem.get("name");
-      return "Review: <span style='color:#ffa000'>" + 
+      return "Review: <span style='color:#ffa000'>" +
              relatedTaskName + "</span>";
     });
 
     // configure the scale
-    chart.getTimeline().scale().maximum("2018-04-20");
+    chart.getTimeline().scale().maximum("2018-04-15");
 
     // set the container id
     chart.container("container");

@@ -32,7 +32,7 @@ anychart.onDocumentReady(function () {
         id: "1",
         name: "Development",
         actualStart: "2018-01-25",
-        actualEnd: "2018-03-26",
+        actualEnd: "2018-04-07",
         children: [
           {
             id: "1_1",
@@ -50,7 +50,7 @@ anychart.onDocumentReady(function () {
           },
           {
             id: "1_3",
-            name: "Meeting 1",
+            name: "Meeting",
             actualStart: "2018-02-25",
             actualEnd: "2018-02-25",
             custom_field: "(?)"
@@ -66,14 +66,7 @@ anychart.onDocumentReady(function () {
             id: "1_5",
             name: "Testing",
             actualStart: "2018-03-15",
-            actualEnd: "2018-03-25"
-          },
-          {
-            id: "1_6",
-            name: "Meeting 2",
-            actualStart: "2018-03-26",
-            actualEnd: "2018-03-26",
-            custom_field: "(!)"
+            actualEnd: "2018-04-07"
           }
       ]}
     ];
@@ -95,13 +88,13 @@ anychart.onDocumentReady(function () {
     // configure labels of tasks
     timeline.tasks().labels().useHtml(true);
     timeline.tasks().labels().format(
-      "{%name}: <span style='color:#64b5f6'>{%progress}</span>"
+      "– <span style='color:#64b5f6'>{%progress}</span>"
     );
 
     // configure labels of parent tasks
     timeline.groupingTasks().labels().useHtml(true);
     timeline.groupingTasks().labels().format(
-        "{%name}: <span style='color:#dd2c00'>{%progress}</span>"
+        "– <span style='color:#dd2c00'>{%progress}</span>"
     );
 
     // configure labels of milestones
@@ -112,7 +105,7 @@ anychart.onDocumentReady(function () {
     );
 
     // configure the scale
-    chart.getTimeline().scale().maximum("2018-04-20");
+    chart.getTimeline().scale().maximum("2018-04-15");
 
     // set the container id
     chart.container("container");
