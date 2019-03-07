@@ -76,10 +76,24 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
-    // configure columns of the data grid
-    var dataGrid = chart.dataGrid();
-    dataGrid.column(0).width(25);
-    dataGrid.column(1).width(120);
+    // disable the first data grid column
+    chart.dataGrid().column(0).enabled(false);
+
+    // set the width of the second data grid column
+    chart.dataGrid().column(1).width(120);
+
+    // create and configure a custom data grid column
+    var newColumn = chart.dataGrid().column(2);
+    newColumn.width(100);
+    newColumn.title("Date");
+    newColumn.title().fontColor("#64b5f6");
+    newColumn.title().fontWeight(600);
+    newColumn.labels().fontColor("#64b5f6");
+    newColumn.labels().format(
+      "{%actualStart}{dateTimeFormat:dd.MM}–" +
+      "{%actualEnd}{dateTimeFormat:dd.MM}"
+    );
+    newColumn.collapseExpandButtons(true);
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-04-15");

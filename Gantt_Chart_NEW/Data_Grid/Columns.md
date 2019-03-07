@@ -46,8 +46,8 @@ misc:
 * [Buttons](Buttons)
 
 
-{sample :height 200}GANTT\_NEW\_Data\_Grid\_Columns\_07{sample}
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_07{sample}
 
 ## Custom Columns
 
-{sample :height 200}GANTT\_NEW\_Data\_Grid\_Columns\_08{sample}
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_08{sample}
