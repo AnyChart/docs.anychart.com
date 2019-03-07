@@ -84,7 +84,7 @@ timeline.milestones().labels().format(
 );
 ```
 
-{sample :height 240}GANTT\_NEW\_Elements\_Labels\_01{sample}
+{sample :height 220}GANTT\_NEW\_Elements\_Labels\_01{sample}
 
 ### Resource Tokens
 
@@ -169,7 +169,7 @@ timeline.milestones().labels().format(function() {
 });
 ```
 
-{sample :height 240}GANTT\_NEW\_Elements\_Labels\_03{sample}
+{sample :height 220}GANTT\_NEW\_Elements\_Labels\_03{sample}
 
 ### Resource Fields
 

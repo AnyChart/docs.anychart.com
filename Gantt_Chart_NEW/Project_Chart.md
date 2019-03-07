@@ -19,7 +19,7 @@ var data = [
     id: "1",
     name: "Development",
     actualStart: "2018-01-25",
-    actualEnd: "2018-04-07",
+    actualEnd: "2018-03-25",
     children: [
       {
         id: "1_1",
@@ -49,7 +49,7 @@ var data = [
         id: "1_5",
         name: "Testing",
         actualStart: "2018-03-15",
-        actualEnd: "2018-04-07"
+        actualEnd: "2018-03-25"
       }
   ]}
 ];
