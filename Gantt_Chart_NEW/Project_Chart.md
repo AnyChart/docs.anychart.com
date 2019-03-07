@@ -346,44 +346,44 @@ var data = [
       {
         id: "1_1",
         name: "Task",
-        actualStart: "2018-01-25",
-        actualEnd: "2018-02-08"
+        actualStart: "2018-01-15",
+        actualEnd: "2018-01-25"
       },
       {
         id: "1_2",
         name: "Task",
-        actualStart: "2018-02-04",
-        actualEnd: "2018-02-14"
+        actualStart: "2018-01-20",
+        actualEnd: "2018-02-04"
       },
       {
         id: "1_3",
         name: "Milestone",
-        actualStart: "2018-02-15",
-        actualEnd: "2018-02-15"
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-05"
       },
       {
         id: "1_4",
         name: "Parent Task",
-        actualStart: "2018-02-15",
-        actualEnd: "2018-02-27",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-24",
         children: [
           {
             id: "1_4_1",
             name: "Task",
-            actualStart: "2018-02-15",
-            actualEnd: "2018-02-20"
+            actualStart: "2018-02-05",
+            actualEnd: "2018-02-10"
           },
           {
             id: "1_4_2",
             name: "Task",
-            actualStart: "2018-02-21",
-            actualEnd: "2018-02-27"
+            actualStart: "2018-02-11",
+            actualEnd: "2018-02-24"
           }
       ]},
       {
         id: "2",
         name: "Task",
-        actualStart: "2018-02-15",
+        actualStart: "2018-02-05",
         actualEnd: "2018-03-10",
       }
   ]}
@@ -421,47 +421,47 @@ var data = [
   {
     id: "1",
     name: "Development",
-    baselineStart: "2018-01-22",
+    baselineStart: "2018-01-12",
     baselineEnd: "2018-03-04",
-    actualStart: "2018-01-25",
+    actualStart: "2018-01-15",
     actualEnd: "2018-03-10",
     children: [
       {
         id: "1_1",
         name: "Analysis",
-        baselineStart: "2018-01-22",
-        baselineEnd: "2018-02-08",
-        actualStart: "2018-01-25",
-        actualEnd: "2018-02-08"
+        baselineStart: "2018-01-12",
+        baselineEnd: "2018-01-25",
+        actualStart: "2018-01-15",
+        actualEnd: "2018-01-25"
       },
       {
         id: "1_2",
         name: "Design",
-        baselineStart: "2018-02-04",
-        baselineEnd: "2018-02-11",
-        actualStart: "2018-02-04",
-        actualEnd: "2018-02-14"
+        baselineStart: "2018-01-20",
+        baselineEnd: "2018-01-31",
+        actualStart: "2018-01-20",
+        actualEnd: "2018-02-04"
       },
       {
         id: "1_3",
         name: "Meeting",
-        actualStart: "2018-02-15",
-        actualEnd: "2018-02-15"
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-05"
       },
       {
         id: "1_4",
         name: "Implementation",
-        baselineStart: "2018-02-12",
-        baselineEnd: "2018-02-22",
-        actualStart: "2018-02-15",
-        actualEnd: "2018-02-27"
+        baselineStart: "2018-02-01",
+        baselineEnd: "2018-02-19",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-24"
       },
       {
         id: "1_5",
         name: "Testing",
-        baselineStart: "2018-02-23",
-        baselineEnd: "2018-03-04",
-        actualStart: "2018-02-28",
+        baselineStart: "2018-02-20",
+        baselineEnd: "2018-03-05",
+        actualStart: "2018-02-25",
         actualEnd: "2018-03-10"
       }
   ]}
@@ -500,41 +500,41 @@ var data = [
   {
     id: "1",
     name: "Development",
-    actualStart: "2018-01-25",
+    actualStart: "2018-01-15",
     actualEnd: "2018-03-10",
     children: [
       {
         id: "1_1",
         name: "Analysis",
-        actualStart: "2018-01-25",
-        actualEnd: "2018-02-08",
+        actualStart: "2018-01-15",
+        actualEnd: "2018-01-25",
         progressValue: "75%"
       },
       {
         id: "1_2",
         name: "Design",
-        actualStart: "2018-02-04",
-        actualEnd: "2018-02-14",
+        actualStart: "2018-01-20",
+        actualEnd: "2018-02-04",
         progressValue: "100%"
       },
       {
         id: "1_3",
         name: "Meeting",
-        actualStart: "2018-02-15",
-        actualEnd: "2018-02-15",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-05",
         custom_field: "(?)"
       },
       {
         id: "1_4",
         name: "Implementation",
-        actualStart: "2018-02-15",
-        actualEnd: "2018-02-27",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-24",
         progressValue: "60%"
       },
       {
         id: "1_5",
         name: "Testing",
-        actualStart: "2018-02-28",
+        actualStart: "2018-02-25",
         actualEnd: "2018-03-10"
       }
   ]}
