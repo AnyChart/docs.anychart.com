@@ -609,7 +609,7 @@ var data = [
     id: "1",
     name: "Tasks",
     actualStart: "2018-02-02",
-    actualEnd: "2018-02-27",
+    actualEnd: "2018-02-25",
     children: [
       {
         id: "1_1",
@@ -651,15 +651,6 @@ var data = [
       }
   ]}
 ];
-
-// create a data tree
-var treeData = anychart.data.tree(data, "as-tree");
-
-// create a chart
-var chart = anychart.ganttProject();
-
-// set the data
-chart.data(treeData);
 ```
 
 ### Milestones and Markers
