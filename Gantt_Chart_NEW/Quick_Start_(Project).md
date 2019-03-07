@@ -26,8 +26,8 @@ var data = [
   {
     id: "1",
     name: "Development",
-    actualStart: "2018-03-25",
-    actualEnd: "2018-04-07",
+    actualStart: "2018-01-25",
+    actualEnd: "2018-03-10",
     children: [
       {
         id: "1_1",
@@ -39,25 +39,25 @@ var data = [
         id: "1_2",
         name: "Design",
         actualStart: "2018-02-04",
-        actualEnd: "2018-02-24"
+        actualEnd: "2018-02-14"
       },
       {
         id: "1_3",
         name: "Meeting",
-        actualStart: "2018-02-25",
-        actualEnd: "2018-02-25"
+        actualStart: "2018-02-15",
+        actualEnd: "2018-02-15"
       },
       {
         id: "1_4",
         name: "Implementation",
-        actualStart: "2018-02-25",
-        actualEnd: "2018-03-14"
+        actualStart: "2018-02-15",
+        actualEnd: "2018-02-27"
       },
       {
         id: "1_5",
         name: "Testing",
-        actualStart: "2018-03-15",
-        actualEnd: "2018-03-25"
+        actualStart: "2018-02-28",
+        actualEnd: "2018-03-10"
       }
   ]}
 ];
@@ -74,7 +74,7 @@ var data = [
         id: "1",
         name: "Development",
         actualStart: "2018-01-25",
-        actualEnd: "2018-03-25",
+        actualEnd: "2018-03-10",
         children: [
           {
             id: "1_1",
@@ -86,25 +86,25 @@ var data = [
             id: "1_2",
             name: "Design",
             actualStart: "2018-02-04",
-            actualEnd: "2018-02-24"
+            actualEnd: "2018-02-14"
           },
           {
             id: "1_3",
             name: "Meeting",
-            actualStart: "2018-02-25",
-            actualEnd: "2018-02-25"
+            actualStart: "2018-02-15",
+            actualEnd: "2018-02-15"
           },
           {
             id: "1_4",
             name: "Implementation",
-            actualStart: "2018-02-25",
-            actualEnd: "2018-03-14"
+            actualStart: "2018-02-15",
+            actualEnd: "2018-02-27"
           },
           {
             id: "1_5",
             name: "Testing",
-            actualStart: "2018-03-15",
-            actualEnd: "2018-03-25"
+            actualStart: "2018-02-28",
+            actualEnd: "2018-03-10"
           }
       ]}
     ];
@@ -147,7 +147,7 @@ var data = [
             id: "1",
             name: "Development",
             actualStart: "2018-01-25",
-            actualEnd: "2018-03-25",
+            actualEnd: "2018-03-10",
             children: [
               {
                 id: "1_1",
@@ -159,25 +159,25 @@ var data = [
                 id: "1_2",
                 name: "Design",
                 actualStart: "2018-02-04",
-                actualEnd: "2018-02-24"
+                actualEnd: "2018-02-14"
               },
               {
                 id: "1_3",
                 name: "Meeting",
-                actualStart: "2018-02-25",
-                actualEnd: "2018-02-25"
+                actualStart: "2018-02-15",
+                actualEnd: "2018-02-15"
               },
               {
                 id: "1_4",
                 name: "Implementation",
-                actualStart: "2018-02-25",
-                actualEnd: "2018-03-14"
+                actualStart: "2018-02-15",
+                actualEnd: "2018-02-27"
               },
               {
                 id: "1_5",
                 name: "Testing",
-                actualStart: "2018-03-15",
-                actualEnd: "2018-03-25"
+                actualStart: "2018-02-28",
+                actualEnd: "2018-03-10"
               }
           ]}
         ];
