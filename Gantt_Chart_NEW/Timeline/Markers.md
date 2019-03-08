@@ -48,7 +48,7 @@ var marker_1 = chart.getTimeline().lineMarker(0);
 var marker_2 = chart.getTimeline().lineMarker(1);
 
 // set values of markers
-marker_1.value("2018-02-15");
+marker_1.value("2018-01-20");
 marker_2.value("end");
 
 // set the stroke of markers
@@ -88,11 +88,11 @@ var marker_1 = chart.getTimeline().rangeMarker(0);
 var marker_2 = chart.getTimeline().rangeMarker(1);
 
 // set the range of the first marker
-marker_1.from("2018-02-15");
-marker_1.to("2018-02-22");
+marker_1.from("2018-01-20");
+marker_1.to("2018-02-01");
 
 // set the range of the second marker
-marker_2.from("2018-03-25");
+marker_2.from("2018-03-03");
 marker_2.to("end");
 
 // set the fill of markers
