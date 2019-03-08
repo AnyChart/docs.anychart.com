@@ -79,8 +79,8 @@ timeline.groupingTasks().labels().format(
 // configure labels of milestones
 timeline.milestones().labels().useHtml(true);
 timeline.milestones().labels().format(
-    "<span style='color:#ffa000'>{%custom_field}</span> " + 
-    "{%actualStart}{dateTimeFormat:dd MMM}"
+    "<span style='color:#ffa000'> " +
+    "{%actualStart}{dateTimeFormat:dd MMM}</span> {%custom_field}"
 );
 ```
 
@@ -164,8 +164,8 @@ timeline.milestones().labels().format(function() {
   var relatedTaskId = this.getData("custom_field");
   var relatedTaskItem = treeData.search("id", relatedTaskId);
   var relatedTaskName = relatedTaskItem.get("name");
-  return "Review: <span style='color:#ffa000'>" +
-         relatedTaskName + "</span>";
+  return "<span style='color:#ffa000'>Review:</span> " +
+         relatedTaskName;
 });
 ```
 

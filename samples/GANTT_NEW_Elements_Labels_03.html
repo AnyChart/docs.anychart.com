@@ -110,8 +110,8 @@ anychart.onDocumentReady(function () {
       var relatedTaskId = this.getData("custom_field");
       var relatedTaskItem = treeData.search("id", relatedTaskId);
       var relatedTaskName = relatedTaskItem.get("name");
-      return "Review: <span style='color:#ffa000'>" +
-             relatedTaskName + "</span>";
+      return "<span style='color:#ffa000'>Review:</span> " +
+             relatedTaskName;
     });
 
     // configure the scale

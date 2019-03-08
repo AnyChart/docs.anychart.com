@@ -100,8 +100,8 @@ anychart.onDocumentReady(function () {
     // configure labels of milestones
     timeline.milestones().labels().useHtml(true);
     timeline.milestones().labels().format(
-        "<span style='color:#ffa000'>{%custom_field}</span> " + 
-        "{%actualStart}{dateTimeFormat:dd MMM}"
+        "<span style='color:#ffa000'> " +
+        "{%actualStart}{dateTimeFormat:dd MMM}</span> {%custom_field}"
     );
 
     // configure the scale
