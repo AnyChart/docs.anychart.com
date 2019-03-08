@@ -9,11 +9,11 @@ Use the `markers` data field to add an array of markers to your data. In this ar
 
 ```
 markers: [
-  {value: "2018-01-29"},
-  {value: "2018-02-20"},
-  {value: "2018-02-25"},
-  {value: "2018-03-20"},
-  {value: "2018-03-26"}
+  {value: "2018-01-18"},
+  {value: "2018-02-02"},
+  {value: "2018-02-05"},
+  {value: "2018-03-01"},
+  {value: "2018-03-06"}
 ],
 ```
 
@@ -33,11 +33,11 @@ Also, you can configure individual markers with the help of extra data fields co
 
 ```
 markers: [
-  {value: "2018-01-29", type: "cross"},
-  {value: "2018-02-20", type: "circle"},
-  {value: "2018-02-25", type: "diamond", fill: "#ffa000"},
-  {value: "2018-03-20", type: "diagonal-cross"},
-  {value: "2018-03-26", type: "diagonal-cross"}
+  {value: "2018-01-18", type: "cross"},
+  {value: "2018-02-02", type: "circle"},
+  {value: "2018-02-05", type: "diamond", fill: "#ffa000"},
+  {value: "2018-03-01", type: "diagonal-cross"},
+  {value: "2018-03-06", type: "diagonal-cross"}
 ]
 ```
 
@@ -53,52 +53,52 @@ var data = [
   {
     id: "1",
     name: "Development",
-    actualStart: "2018-01-25",
-    actualEnd: "2018-04-07",
+    actualStart: "2018-01-15",
+    actualEnd: "2018-03-10",
     markers: [
-      {value: "2018-01-29", type: "cross"},
-      {value: "2018-02-20", type: "circle"},
-      {value: "2018-02-25", type: "diamond", fill: "#ffa000"},
-      {value: "2018-03-20", type: "diagonal-cross"},
-      {value: "2018-03-26", type: "diagonal-cross"}
+      {value: "2018-01-18", type: "cross"},
+      {value: "2018-02-02", type: "circle"},
+      {value: "2018-02-05", type: "diamond", fill: "#ffa000"},
+      {value: "2018-03-01", type: "diagonal-cross"},
+      {value: "2018-03-06", type: "diagonal-cross"}
     ],
     children: [
       {
         id: "1_1",
         name: "Analysis",
-        actualStart: "2018-01-25",
-        actualEnd: "2018-02-08"
+        actualStart: "2018-01-15",
+        actualEnd: "2018-01-25"
       },
       {
         id: "1_2",
         name: "Design",
-        actualStart: "2018-02-04",
-        actualEnd: "2018-02-24",
+        actualStart: "2018-01-20",
+        actualEnd: "2018-02-04",
         markers: [
-          {value: "2018-01-29", type: "cross"}
+          {value: "2018-01-18", type: "cross"}
       ]},
       {
         id: "1_3",
         name: "Meeting",
-        actualStart: "2018-02-25",
-        actualEnd: "2018-02-25",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-05",
         markers: [
-          {value: "2018-02-20", type: "circle"},
+          {value: "2018-02-02", type: "circle"},
       ]},
       {
         id: "1_4",
         name: "Implementation",
-        actualStart: "2018-02-25",
-        actualEnd: "2018-03-14"
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-24"
       },
       {
         id: "1_5",
         name: "Testing",
-        actualStart: "2018-03-15",
-        actualEnd: "2018-04-07",
+        actualStart: "2018-02-25",
+        actualEnd: "2018-03-10",
         markers: [
-          {value: "2018-03-20", type: "diagonal-cross"},
-          {value: "2018-03-26", type: "diagonal-cross"}
+          {value: "2018-03-01", type: "diagonal-cross"},
+          {value: "2018-03-06", type: "diagonal-cross"}
       ]}
   ]}
 ];
