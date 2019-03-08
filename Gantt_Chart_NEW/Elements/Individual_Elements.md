@@ -18,22 +18,22 @@ var data = [
   {
     id: "1",
     name: "Development",
-    baselineStart: "2018-01-25",
-    baselineEnd: "2018-04-07",
-    actualStart: "2018-01-25",
-    actualEnd: "2018-04-20",
+    baselineStart: "2018-01-12",
+    baselineEnd: "2018-03-04",
+    actualStart: "2018-01-15",
+    actualEnd: "2018-03-10",
     children: [
       {
         id: "1_1",
         name: "Analysis",
         baselineStart: "2018-01-25",
         baselineEnd: "2018-02-08",
-        baseline: {fill: "#dd2c00 0.3", stroke: "0.5 #dd2c00"}
+        baseline: {fill: "#dd2c00 0.3", stroke: "0.5 #dd2c00"},
         actualStart: "2018-01-27",
         actualEnd: "2018-02-08",
         actual: {fill: "#dd2c00", stroke: "0.5 #dd2c00"},
         progressValue: "75%",
-        progress: {fill: "#455a64 0.5", stroke: "0.5 #dd2c00"}
+        progress: {fill: "#455a64 0.5", stroke: "0.5 #dd2c00"},
         connectTo: "1_2",
         connectorType: "finish-finish",
         connector: {fill: "#dd2c00", stroke: "2 #dd2c00"}
@@ -41,10 +41,10 @@ var data = [
       {
         id: "1_2",
         name: "Design",
-        baselineStart: "2018-02-04",
-        baselineEnd: "2018-02-24",
-        actualStart: "2018-02-04",
-        actualEnd: "2018-03-02",
+        baselineStart: "2018-01-20",
+        baselineEnd: "2018-01-31",
+        actualStart: "2018-01-20",
+        actualEnd: "2018-02-04",
         progressValue: "100%",
         connectTo: "1_4",
         connectorType: "start-start"
@@ -52,28 +52,29 @@ var data = [
       {
         id: "1_3",
         name: "Meeting",
-        actualStart: "2018-03-02",
-        actualEnd: "2018-03-02"
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-05"
       },
       {
         id: "1_4",
         name: "Implementation",
-        baselineStart: "2018-02-25",
-        baselineEnd: "2018-03-14",
-        actualStart: "2018-03-02",
-        actualEnd: "2018-03-24",
+        baselineStart: "2018-02-01",
+        baselineEnd: "2018-02-19",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-24",
         progressValue: "60%"
       },
       {
         id: "1_5",
         name: "Testing",
-        baselineStart: "2018-03-15",
-        baselineEnd: "2018-04-07",
-        actualStart: "2018-03-25",
-        actualEnd: "2018-04-20"
+        baselineStart: "2018-02-20",
+        baselineEnd: "2018-03-05",
+        actualStart: "2018-02-25",
+        actualEnd: "2018-03-10"
       }
   ]}
 ];
+    
  
 // create a data tree
 var treeData = anychart.data.tree(data, "as-tree");
