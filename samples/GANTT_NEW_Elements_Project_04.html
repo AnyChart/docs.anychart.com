@@ -32,7 +32,7 @@ anychart.onDocumentReady(function () {
         id: "1",
         name: "Tasks",
         actualStart: "2018-02-02",
-        actualEnd: "2018-02-27",
+        actualEnd: "2018-02-25",
         children: [
           {
             id: "1_1",
@@ -91,8 +91,11 @@ anychart.onDocumentReady(function () {
     connectors.normal().stroke("2 #ffa000");
     connectors.selected().stroke("2 #ef6c00");
 
-    // disable task labels
-    chart.getTimeline().tasks().labels(false);
+    // disable labels of elements
+    chart.getTimeline().elements().labels(false);
+
+    // configure the scale
+    chart.getTimeline().scale().maximum("2018-02-28");
 
     // set the container id
     chart.container("container");
