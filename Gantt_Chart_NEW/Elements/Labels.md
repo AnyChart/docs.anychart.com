@@ -134,7 +134,9 @@ For the Project chart, the following fields are available in formatting function
 * `progress`
 * `linearIndex`
 
-In the sample below, labels of different elements have the same font weight but different text format, which is configured with the help of formatting functions. The label of the milestone refers to another task. The {api:anychart.format.Context#getData}getData(){api} method and the {api:anychart.data.Tree.DataItem#search}search(){api} and {api:anychart.data.Tree.DataItem#get}get(){api} methods of the [Tree Data Model](../../Working_with_Data/Tree_Data_Model) are used to find the name of this task by its id, which is linked in a custom data field.
+In the sample below, labels of different elements have the same font weight but different text format, which is configured with the help of formatting functions.
+
+The label of the milestone refers to another task – the {api:anychart.format.Context#getData}getData(){api} method and the {api:anychart.data.Tree.DataItem#search}search(){api} and {api:anychart.data.Tree.DataItem#get}get(){api} methods of the [Tree Data Model](../../Working_with_Data/Tree_Data_Model) are used to find its name by its id, which is linked in a custom data field.
 
 ```
 // configure labels of tasks
