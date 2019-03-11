@@ -99,20 +99,19 @@ anychart.onDocumentReady(function () {
 
     var buttons = chart.dataGrid().buttons();
 
-    buttons.height(20);
-    buttons.width(20);
+    buttons.fontSize(16);
 
     buttons.normal().background().fill(null);
-    buttons.normal().background().stroke("#ef6c00");
+    buttons.normal().background().stroke(null);
     buttons.normal().fontColor("#ef6c00");
     buttons.normal().content("⮟");
 
     buttons.hovered().background().fill(null);
-    buttons.hovered().background().stroke("#ffa000");
+    buttons.hovered().background().stroke(null);
     buttons.hovered().fontColor("#ffa000");
 
     buttons.selected().background().fill(null);
-    buttons.selected().background().stroke("#64b5f6");
+    buttons.selected().background().stroke(null);
     buttons.selected().fontColor("#64b5f6");
     buttons.selected().content("⮞");
 
