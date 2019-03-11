@@ -88,7 +88,7 @@ column_2.labels().format(
 
 ### Formatting Functions
 
-* упомянуть поле item, но не в основном списке
+* упомянуть поле `item`, но не в основном списке
 
 
 ```
