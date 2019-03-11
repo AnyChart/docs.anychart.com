@@ -38,8 +38,6 @@ misc:
 misc:
 
 * {api:anychart.core.ui.DataGrid.Column#labels()}labels(){api}
-* не забыть про метод cellTextSettingsOverrider()
-* (?) setColumnFormat()
 * `linearIndex`, `{%linearIndex}`
 
 ### Tokens
