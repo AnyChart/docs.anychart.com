@@ -6,6 +6,7 @@
 misc:
 
 * {api:anychart.core.ui.DataGrid.Column}anychart.core.ui.DataGrid.Column{api}
+* {api:anychart.core.ui.DataGrid#column}column(){api}
 
 ## Width
 
@@ -85,6 +86,9 @@ misc:
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_07{sample}
 
 ## Custom Columns
+
+* {api:anychart.core.ui.DataGrid#column}column(){api}
+
 
 ```
 
