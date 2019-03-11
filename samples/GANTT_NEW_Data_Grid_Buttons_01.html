@@ -96,25 +96,16 @@ anychart.onDocumentReady(function () {
     chart.data(treeData);
 
     // configure data grid buttons
-
     var buttons = chart.dataGrid().buttons();
-
+    buttons.background().fill(null);
+    buttons.background().stroke(null);
     buttons.fontSize(16);
     buttons.cursor("default");
-
-    buttons.normal().background().fill(null);
-    buttons.normal().background().stroke(null);
-    buttons.normal().fontColor("#ef6c00");
     buttons.normal().content("⮟");
-
-    buttons.hovered().background().fill(null);
-    buttons.hovered().background().stroke(null);
-    buttons.hovered().fontColor("#ffa000");
-
-    buttons.selected().background().fill(null);
-    buttons.selected().background().stroke(null);
-    buttons.selected().fontColor("#64b5f6");
+    buttons.normal().fontColor("#ef6c00");
     buttons.selected().content("⮞");
+    buttons.selected().fontColor("#64b5f6");
+    buttons.hovered().fontColor("#ffa000");
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-27");
