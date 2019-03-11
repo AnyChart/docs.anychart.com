@@ -7,6 +7,6 @@ misc:
 * [Columns: Buttons](Columns#buttons)
 
 
-{sample :height 220}GANTT\_NEW\_Data\_Grid\_Buttons\_01{sample}
+{sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_01{sample}
 
-{sample :height 220}GANTT\_NEW\_Data\_Grid\_Buttons\_02{sample}
+{sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_02{sample}
