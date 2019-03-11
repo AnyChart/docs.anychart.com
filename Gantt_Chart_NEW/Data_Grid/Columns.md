@@ -17,7 +17,7 @@ misc:
 
 
 ```
-// configure columns of the data grid
+// configure data grid columns
 var dataGrid = chart.dataGrid();
 dataGrid.column(0).width(25);
 dataGrid.column(1).width(120);
@@ -31,7 +31,7 @@ dataGrid.column(1).width(120);
 
 
 ```
-// configure columns the data grid
+// configure data grid columns
 var dataGrid = chart.dataGrid();
 dataGrid.column(0).title().enabled(false);
 dataGrid.column(1).title().text("TASK");
@@ -51,13 +51,13 @@ misc:
 ### Tokens
 
 ```
-// configure the first column of the data grid
+// configure the first data grid column
 var column_1 = chart.dataGrid().column(0);
 column_1.labels().fontColor("#64b5f6");
 column_1.labels().fontWeight(600);
 column_1.labels().format("{%linearIndex}.");
 
-// configure the second column of the data grid
+// configure the second data grid column
 var column_2 = chart.dataGrid().column(1);
 column_2.labels().useHtml(true);
 column_2.labels().format(
@@ -69,13 +69,13 @@ column_2.labels().format(
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_03{sample}
 
 ```
-// configure the first column of the data grid
+// configure the first data grid column
 var column_1 = chart.dataGrid().column(0);
 column_1.labels().fontColor("#64b5f6");
 column_1.labels().fontWeight(600);
 column_1.labels().format("{%linearIndex}.");
 
-// configure the second column of the data grid
+// configure the second data grid column
 var column_2 = chart.dataGrid().column(1);
 column_2.labels().useHtml(true);
 column_2.labels().format(
@@ -92,7 +92,7 @@ column_2.labels().format(
 
 
 ```
-// configure the first column of the data grid
+// configure the first data grid column
 
 var column_1 = chart.dataGrid().column(0);
 
@@ -122,7 +122,7 @@ column_1.labels().format( function() {
 
 });
 
-// configure the second column of the data grid
+// configure the second data grid column
 
 var column_2 = chart.dataGrid().column(1);
 
@@ -166,7 +166,7 @@ column_2.labels().format(function() {
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_05{sample}
 
 ```
-// configure the first column of the data grid
+// configure the first data grid column
 
 var column_1 = chart.dataGrid().column(0);
 
@@ -186,7 +186,7 @@ column_1.labels().format( function() {
 
 });
 
-// configure the second column of the data grid
+// configure the second data grid column
 
 var column_2 = chart.dataGrid().column(1);    
 column_2.labels().useHtml(true);
