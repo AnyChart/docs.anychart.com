@@ -5,6 +5,7 @@ misc:
 
 * {api:anychart.core.gantt.DataGridButton}anychart.core.gantt.DataGridButton{api}
 * [Columns: Buttons](Columns#buttons)
+* [Basic Settings: Navigation](../Basic_Settings#navigation)
 
 
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_01{sample}

@@ -44,6 +44,7 @@ misc:
 ## Buttons
 
 * [Buttons](Buttons)
+buttons.fontSize(16);
 
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_07{sample}
