@@ -114,7 +114,9 @@ column_1.labels().format( function() {
     }
   }
 });
+```
 
+```
 // set the text of the second data grid column
 var column_2 = chart.dataGrid().column(1);
 column_2.labels().useHtml(true);
@@ -162,7 +164,9 @@ column_1.labels().format( function() {
     return "<span style='color:#64b5f6'>" + index + ".</span>";
   }
 });
+```
 
+```
 // set the text of the second data grid column
 var column_2 = chart.dataGrid().column(1);    
 column_2.labels().useHtml(true);
