@@ -24,7 +24,7 @@ To configure it, call the following methods:
 Combine {api:anychart.core.ui.Timeline#scale}scale(){api} with the {api:anychart.scales.GanttDateTime#maximum}maximum(){api} and {api:anychart.scales.GanttDateTime#minimum}minimum(){api} methods to set the minimum and maximum dates of the scale:
 
 ```
-// configure the scale
+// set the minimun and maximum values of the scale
 chart.getTimeline().scale().minimum("2018-01-01");
 chart.getTimeline().scale().maximum("2018-07-15");
 ```
@@ -42,7 +42,7 @@ By default, there are three levels, each of them representing a time unit. The e
 Each entry of the array is an object standing for a level. There you should specify two values, `unit` and `count`: the time unit of the level and the number of units per column.
 
 ```
-// configure the scale
+// set zoom levels of the scale
 chart.getTimeline().scale().zoomLevels([
   [
     {unit: 'year', count: 1},

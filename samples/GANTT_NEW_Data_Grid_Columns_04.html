@@ -74,13 +74,13 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData); 
 
-    // configure the first data grid column
+    // set the text of the first data grid column
     var column_1 = chart.dataGrid().column(0);
     column_1.labels().fontColor("#64b5f6");
     column_1.labels().fontWeight(600);
     column_1.labels().format("{%linearIndex}.");
 
-    // configure the second data grid column
+    // set the text of the second data grid column
     var column_2 = chart.dataGrid().column(1);
     column_2.labels().useHtml(true);
     column_2.labels().format(
