@@ -261,3 +261,9 @@ newColumn_2.depthPaddingMultiplier(20);
 ```
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_09{sample}
+
+```
+
+```
+
+{sample :height 200}GANTT\_NEW\_Data\_Grid\_Columns\_10{sample}
