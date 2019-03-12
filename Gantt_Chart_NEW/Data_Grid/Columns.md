@@ -204,7 +204,7 @@ column_2.labels().format(function() {
 ## Buttons
 
 * {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons()}collapseExpandButtons(){api}
-* [Hierarchical Identation](#hierarchical_indentation) + {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier()}depthPaddingMultiplier(){api}
+* [Hierarchical Indentation](#hierarchical_indentation) + {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier()}depthPaddingMultiplier(){api}
 * [Buttons](Buttons)
 
 
