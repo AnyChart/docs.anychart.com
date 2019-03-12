@@ -1,6 +1,8 @@
 {:index 4}
 # Buttons
 
+## Overview
+
 misc:
 
 * {api:anychart.core.gantt.DataGridButton}anychart.core.gantt.DataGridButton{api}
@@ -17,8 +19,7 @@ methods:
 * {api:anychart.core.gantt.DataGridButton#cursor}cursor(){api} to adjust the cursor
 * {api:anychart.core.gantt.DataGridButton#normal}normal(){api}, {api:anychart.core.gantt.DataGridButton#hovered}hovered(){api}, and {api:anychart.core.gantt.DataGridButton#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
 
-
-## (?)
+## Basic Settings
 
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_01{sample}
 
@@ -35,7 +36,7 @@ methods:
 misc:
 
 * all button-related settings include...
-* [(?)](#)
+* [Basic Settings](#basic_settings)
 * [Basic Settings: Navigation](../Basic_Settings#navigation)
 * [Columns: Hierarchical Indentation](Columns#hierarchical_indentation)
 * [Columns: Enabling / Disabling Buttons](Columns#enabling_/_disabling_buttons)
