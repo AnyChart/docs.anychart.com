@@ -95,16 +95,28 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
-    // configure data grid buttons
     var buttons = chart.dataGrid().buttons();
+
+    // configure data grid buttons in all states
+    buttons.height(20);
+    buttons.width(20);
     buttons.background().fill(null);
-    buttons.background().stroke(null);
+    buttons.background().cornerType("round");
+    buttons.background().corners(5);
     buttons.fontSize(16);
     buttons.cursor("default");
-    buttons.normal().content("⮟");
+
+    // configure data grid buttons in the normal state
+    buttons.normal().background().stroke("#ef6c00");
     buttons.normal().fontColor("#ef6c00");
-    buttons.selected().content("⮞");
+    buttons.normal().content("+");
+
+    // configure data grid buttons in the selected state
+    buttons.selected().background().stroke("#64b5f6");
     buttons.selected().fontColor("#64b5f6");
+    buttons.selected().content("-");
+
+    // configure data grid buttons in the hover state
     buttons.hovered().fontColor("#ffa000");
 
     // configure the scale
