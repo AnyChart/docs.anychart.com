@@ -196,15 +196,21 @@ column_2.labels().format(function() {
 ## Hierarchical Indentation
 
 * In case there are hierarchical relationships...
-* set the indent for nested labels...
-* {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier()}depthPaddingMultiplier(){api}
+* {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier}depthPaddingMultiplier(){api}
+
+In the sample below the indent for nested labels in the second column is set to 60. The first column is left with the default indent of 0.
+
+```
+// set the indent for nested labels in the second column
+chart.dataGrid().column(1).depthPaddingMultiplier(60);
+```
 
 {sample :height 260}GANTT\_NEW\_Data\_Grid\_Columns\_07{sample}
 
 ## Buttons
 
 * {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons()}collapseExpandButtons(){api}
-* [Hierarchical Indentation](#hierarchical_indentation) + {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier()}depthPaddingMultiplier(){api}
+* [Hierarchical Indentation](#hierarchical_indentation) + {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier}depthPaddingMultiplier(){api}
 * [Buttons](Buttons)
 
 

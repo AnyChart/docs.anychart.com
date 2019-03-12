@@ -89,6 +89,9 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
+    // set the indent for nested labels in the second column
+    chart.dataGrid().column(1).depthPaddingMultiplier(60);
+
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-15");
 
