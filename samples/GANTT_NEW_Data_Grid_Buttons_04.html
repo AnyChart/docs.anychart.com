@@ -30,56 +30,62 @@ anychart.onDocumentReady(function () {
     var data = [
       {
         id: "1",
-        name: "Parent Task",
-        actualStart: "2018-01-15",
+        name: "Development",
+        actualStart: "2018-01-25",
         actualEnd: "2018-03-10",
         children: [
           {
-            id: "1_1",
-            name: "Task",
-            actualStart: "2018-01-15",
-            actualEnd: "2018-01-25"
-          },
-          {
             id: "1_2",
-            name: "Task",
-            actualStart: "2018-01-20",
-            actualEnd: "2018-02-04"
+            name: "Analysis",
+            actualStart: "2018-01-25",
+            actualEnd: "2018-02-08"
           },
           {
             id: "1_3",
-            name: "Milestone",
-            actualStart: "2018-02-05",
-            actualEnd: "2018-02-05"
+            name: "Design",
+            actualStart: "2018-02-04",
+            actualEnd: "2018-02-14"
           },
           {
             id: "1_4",
-            name: "Parent Task",
-            actualStart: "2018-02-05",
-            actualEnd: "2018-02-24",
-            children: [
-              {
-                id: "1_4_1",
-                name: "Task",
-                actualStart: "2018-02-05",
-                actualEnd: "2018-02-10"
-              },
-              {
-                id: "1_4_2",
-                name: "Task",
-                actualStart: "2018-02-11",
-                actualEnd: "2018-02-24"
-              }
-          ]},
+            name: "Meeting",
+            actualStart: "2018-02-15",
+            actualEnd: "2018-02-15"
+          },
           {
-            id: "2",
-            name: "Task",
-            actualStart: "2018-02-05",
-            actualEnd: "2018-03-10",
+            id: "1_5",
+            name: "Implementation",
+            actualStart: "2018-02-15",
+            actualEnd: "2018-02-27"
+          },
+          {
+            id: "1_6",
+            name: "Testing",
+            actualStart: "2018-02-28",
+            actualEnd: "2018-03-10"
+          }
+      ]},
+      { 
+        id: "2",
+        name: "PR Campaign",
+        actualStart: "2018-02-15",
+        actualEnd: "2018-03-22",
+        children: [
+          {
+            id: "2_1",
+            name: "Planning",
+            actualStart: "2018-02-15",
+            actualEnd: "2018-03-10"
+          },
+          {
+            id: "2_2",
+            name: "Promoting",
+            actualStart: "2018-03-11",
+            actualEnd: "2018-03-22"
           }
       ]}
     ];
-    
+
     // create a data tree
     var treeData = anychart.data.tree(data, "as-tree");
 
@@ -89,11 +95,14 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
-    // collapse the task "1_4"
-    chart.collapseTask("1_4");
+    // collapse the task "2"
+    chart.collapseTask("2");
 
     // set the indent for nested labels in the second column
-    chart.dataGrid().column(1).depthPaddingMultiplier(0);
+    chart.dataGrid().column(0).depthPaddingMultiplier(35);
+
+    // set the indent for nested labels in the second column
+    chart.dataGrid().column(1).depthPaddingMultiplier(35);
 
     // enable buttons on the first column
     chart.dataGrid().column(0).collapseExpandButtons(true);

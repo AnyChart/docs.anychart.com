@@ -57,4 +57,4 @@ chart.dataGrid().column(1).depthPaddingMultiplier(0);
 chart.dataGrid().column(0).collapseExpandButtons(true);
 ```
 
-{sample :height 260}GANTT\_NEW\_Data\_Grid\_Buttons\_04{sample}
+{sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_04{sample}
