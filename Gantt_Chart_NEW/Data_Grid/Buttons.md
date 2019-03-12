@@ -43,8 +43,8 @@ misc:
 
 
 ```
-// collapse the task "1_4"
-chart.collapseTask("1_4");
+// collapse the task with the id "2"
+chart.collapseTask("2");
 ```
 
 ```
