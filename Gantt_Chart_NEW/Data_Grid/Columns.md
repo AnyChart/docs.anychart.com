@@ -285,4 +285,4 @@ newColumn_2.labels().fontColor("#64b5f6");
 newColumn_2.labels().format("{%end}{dateTimeFormat:dd MMM}");
 ```
 
-{sample :height 200}GANTT\_NEW\_Data\_Grid\_Columns\_10{sample}
+{sample :height 160}GANTT\_NEW\_Data\_Grid\_Columns\_10{sample}
