@@ -228,6 +228,7 @@ misc:
 * {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons()}collapseExpandButtons(){api}
 * [Hierarchical Indentation](#hierarchical_indentation) + {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier}depthPaddingMultiplier(){api}
 * [Buttons](Buttons)
+* [Basic Settings: Navigation](../Basic_Settings#navigation)
 
 
 ```
@@ -245,10 +246,11 @@ chart.dataGrid().column(0).depthPaddingMultiplier(20);
 
 ## Custom Columns
 
-### Project Chart
+misc:
 
 * {api:anychart.core.ui.DataGrid#column}column(){api}
 
+### Project Chart
 
 ```
 // disable the second data grid column
