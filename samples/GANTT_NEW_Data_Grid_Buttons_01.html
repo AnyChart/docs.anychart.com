@@ -95,9 +95,8 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
-    var buttons = chart.dataGrid().buttons();
-
     // configure data grid buttons in all states
+    var buttons = chart.dataGrid().buttons();
     buttons.background().fill(null);
     buttons.background().cornerType("round");
     buttons.background().corners(4);

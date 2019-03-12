@@ -10,7 +10,7 @@ To access tooltips of the data grid, combine the {api:anychart.charts.Gantt#data
 By default, tooltips are enabled. To enable or disable them, pass `true` / `false` either directly to {api:anychart.core.ui.DataGrid#tooltip}tooltip(){api} or to the {api:anychart.core.ui.Tooltip#enabled}enabled(){api} method of tooltips:
 
 ```
-var chart.dataGrid().tooltip(false);
+chart.dataGrid().tooltip(false);
 ```
 
 ```

@@ -18,8 +18,18 @@ methods:
 * {api:anychart.core.gantt.DataGridButton#normal}normal(){api}, {api:anychart.core.gantt.DataGridButton#hovered}hovered(){api}, and {api:anychart.core.gantt.DataGridButton#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
 
 
+## ?
+
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_01{sample}
+
+## ?
 
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_02{sample}
 
+## ?
+
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_03{sample}
+
+## (?) Full Customization
+
+{sample :height 260}GANTT\_NEW\_Data\_Grid\_Buttons\_04{sample}

@@ -102,16 +102,21 @@ misc:
 
 ```
 // set the text of the first data grid column
+
 var column_1 = chart.dataGrid().column(0);
 column_1.labels().fontWeight(600);
 column_1.labels().useHtml(true);
+
 column_1.labels().format( function() {
+
   var children = this.item.numChildren();
   var duration = (this.actualEnd - this.actualStart);
   var index = this.linearIndex;
+
   var parentText = "<span style='color:#dd2c00'>" + index + ".</span>";
   var milestoneText = "<span style='color:#ffa000'>" + index + ".</span>";
   var taskText =  "<span style='color:#64b5f6'>" + index + ".</span>";
+
   // identify the task type and display the corresponding text
   if (children > 0) {
     return parentText;
@@ -122,14 +127,18 @@ column_1.labels().format( function() {
       return taskText;
     }
   }
+
 });
 ```
 
 ```
 // set the text of the second data grid column
+
 var column_2 = chart.dataGrid().column(1);
 column_2.labels().useHtml(true);
+
 column_2.labels().format(function() {
+
   var numChildren = this.item.numChildren();
   var duration = (this.actualEnd - this.actualStart) / 1000 / 3600 / 24;
   var progress = this.progress * 100 + "%";
@@ -138,12 +147,14 @@ column_2.labels().format(function() {
     customField = "<span style='font-weight:bold'>" +
              this.getData("custom_field") + " </span>";
   }
+
   var parentText = "<span style='color:#dd2c00;font-weight:bold'>" +
                    this.name + ": " + duration + "d</span>";
   var milestoneText = "<span style='color:#ffa000;font-weight:bold'>" + 
                       customField + this.name + "</span";
   var taskText = "<span style='color:#64b5f6'>" + customField + 
                  this.name + ": " + progress + "</span>";
+
   // identify the task type and display the corresponding text
   if (numChildren > 0) {
     return parentText;
@@ -154,6 +165,7 @@ column_2.labels().format(function() {
       return taskText;
     }
   }
+
 });
 ```
 
@@ -163,25 +175,34 @@ column_2.labels().format(function() {
 
 ```
 // set the text of the first data grid column
+
 var column_1 = chart.dataGrid().column(0);
 column_1.labels().fontWeight(600);
 column_1.labels().useHtml(true);
+
 column_1.labels().format( function() {
+
   var children = this.item.numChildren();
   var index = this.linearIndex;
+
+  // identify the resource type and display the corresponding text
   if (children > 0) {
     return "<span style='color:#dd2c00'>" + index + ".</span>";
   } else {
     return "<span style='color:#64b5f6'>" + index + ".</span>";
   }
+
 });
 ```
 
 ```
 // set the text of the second data grid column
+
 var column_2 = chart.dataGrid().column(1);    
 column_2.labels().useHtml(true);
+
 column_2.labels().format(function() {
+
   var numChildren = this.item.numChildren();
   var duration = (this.end - this.start) / 1000 / 3600 / 24;
   var customField = " ";
@@ -189,16 +210,19 @@ column_2.labels().format(function() {
     customField = "<span style='font-weight:bold'>" +
              this.getData("custom_field") + customField + "</span>";
   }
+  
   var parentText = "<span style='color:#dd2c00;font-weight:bold'>" +
                    this.name.toUpperCase() + "<span>";
   var childText = "<span style='color:#64b5f6'>" + customField + 
                   this.name + ": " + duration + "d</span>";
+
   // identify the resource type and display the corresponding text
   if (numChildren > 0) {
     return parentText;
   } else {
     return childText;
   }
+
 });
 ```
 
@@ -264,8 +288,8 @@ newColumn_1.title().fontColor("#64b5f6");
 newColumn_1.title().fontWeight(600);
 newColumn_1.labels().fontColor("#64b5f6");
 newColumn_1.labels().format("{%actualStart}{dateTimeFormat:dd MMM}");
-newColumn_1.collapseExpandButtons(true);
 newColumn_1.depthPaddingMultiplier(20);
+newColumn_1.collapseExpandButtons(true);
 
 // create and configure one more custom column
 var newColumn_2 = chart.dataGrid().column(3);
@@ -275,8 +299,8 @@ newColumn_2.title().fontColor("#64b5f6");
 newColumn_2.title().fontWeight(600);
 newColumn_2.labels().fontColor("#64b5f6");
 newColumn_2.labels().format("{%actualEnd}{dateTimeFormat:dd MMM}");
-newColumn_2.collapseExpandButtons(true);
 newColumn_2.depthPaddingMultiplier(20);
+newColumn_2.collapseExpandButtons(true);
 ```
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_09{sample}
