@@ -95,27 +95,8 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
-    var buttons = chart.dataGrid().buttons();
-
-    // configure data grid buttons in all states
-    buttons.background().fill(null);
-    buttons.background().cornerType("round");
-    buttons.background().corners(4);
-    buttons.cursor("default");
-
-    // configure data grid buttons in the normal state
-    buttons.normal().background().stroke("#ef6c00");
-    buttons.normal().fontColor("#ef6c00");
-    buttons.normal().content("+");
-
-    // configure data grid buttons in the selected state
-    buttons.selected().background().stroke("#64b5f6");
-    buttons.selected().fontColor("#64b5f6");
-    buttons.selected().content("-");
-
-    // configure data grid buttons in the hover state
-    buttons.hovered().fontColor("#ffa000");
-
+    // configure data grid buttons
+    
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-27");
 
