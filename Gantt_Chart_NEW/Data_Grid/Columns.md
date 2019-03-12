@@ -210,7 +210,7 @@ column_2.labels().format(function() {
     customField = "<span style='font-weight:bold'>" +
              this.getData("custom_field") + customField + "</span>";
   }
-  
+
   var parentText = "<span style='color:#dd2c00;font-weight:bold'>" +
                    this.name.toUpperCase() + "<span>";
   var childText = "<span style='color:#64b5f6'>" + customField + 
@@ -245,13 +245,13 @@ chart.dataGrid().column(1).depthPaddingMultiplier(60);
 
 {sample :height 260}GANTT\_NEW\_Data\_Grid\_Columns\_07{sample}
 
-## Buttons
+## Enabling / Disabling Buttons
 
 misc:
 
 * {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons()}collapseExpandButtons(){api}
 * [Hierarchical Indentation](#hierarchical_indentation) + {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier}depthPaddingMultiplier(){api}
-* [Buttons](Buttons)
+* [Buttons](Buttons) + [Buttons: Full Customization](Buttons#full_customization) 
 * [Basic Settings: Navigation](../Basic_Settings#navigation)
 
 

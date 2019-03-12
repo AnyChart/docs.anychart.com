@@ -5,7 +5,7 @@ misc:
 
 * {api:anychart.core.gantt.DataGridButton}anychart.core.gantt.DataGridButton{api}
 * {api:anychart.enums.Cursor}anychart.enums.Cursor{api}
-* [Columns: Buttons](Columns#buttons)
+* [Columns: Enabling / Disabling Buttons](Columns#enabling_/_disabling_buttons)
 * [Basic Settings: Navigation](../Basic_Settings#navigation)
 
 methods:
@@ -18,18 +18,42 @@ methods:
 * {api:anychart.core.gantt.DataGridButton#normal}normal(){api}, {api:anychart.core.gantt.DataGridButton#hovered}hovered(){api}, and {api:anychart.core.gantt.DataGridButton#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
 
 
-## ?
+## (?)
 
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_01{sample}
 
-## ?
+## Background Images
 
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_02{sample}
 
-## ?
+## Custom Drawing
 
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_03{sample}
 
-## (?) Full Customization
+## Full Customization
+
+misc:
+
+* all button-related settings include...
+* [(?)](#)
+* [Basic Settings: Navigation](../Basic_Settings#navigation)
+* [Columns: Hierarchical Indentation](Columns#hierarchical_indentation)
+* [Columns: Enabling / Disabling Buttons](Columns#enabling_/_disabling_buttons)
+
+
+```
+// collapse the task "1_4"
+chart.collapseTask("1_4");
+```
+
+```
+// set the indent for nested labels in the second column
+chart.dataGrid().column(1).depthPaddingMultiplier(0);
+```
+
+```
+// enable buttons on the first column
+chart.dataGrid().column(0).collapseExpandButtons(true);
+```
 
 {sample :height 260}GANTT\_NEW\_Data\_Grid\_Buttons\_04{sample}
