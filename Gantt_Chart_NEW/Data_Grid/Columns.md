@@ -193,9 +193,10 @@ column_2.labels().format(function() {
 
 {sample :height 200}GANTT\_NEW\_Data\_Grid\_Columns\_06{sample}
 
-## Padding of Nested Labels
+## Hierarchical Indentation
 
 * In case there are hierarchical relationships...
+* set the indent for nested labels...
 * {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier()}depthPaddingMultiplier(){api}
 
 {sample :height 260}GANTT\_NEW\_Data\_Grid\_Columns\_07{sample}
@@ -203,7 +204,7 @@ column_2.labels().format(function() {
 ## Buttons
 
 * {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons()}collapseExpandButtons(){api}
-* [Padding of Nested Labels](#padding_for_nested_labels) + {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier()}depthPaddingMultiplier(){api}
+* [Hierarchical Identation](#hierarchical_indentation) + {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier()}depthPaddingMultiplier(){api}
 * [Buttons](Buttons)
 
 
@@ -214,7 +215,7 @@ chart.dataGrid().column(1).collapseExpandButtons(false);
 // enable buttons on the first column
 chart.dataGrid().column(0).collapseExpandButtons(true);
 
-// set the padding of nested labels in the first column
+// set the indent for nested labels in the first column
 chart.dataGrid().column(0).depthPaddingMultiplier(20);
 ```
 
