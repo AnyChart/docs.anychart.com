@@ -48,13 +48,19 @@ chart.collapseTask("1_4");
 ```
 
 ```
-// set the indent for nested labels in the second column
-chart.dataGrid().column(1).depthPaddingMultiplier(0);
+ // set the indent for nested labels in the first column
+ chart.dataGrid().column(0).depthPaddingMultiplier(35);
+
+ // set the indent for nested labels in the second column
+ chart.dataGrid().column(1).depthPaddingMultiplier(0);
 ```
 
 ```
 // enable buttons on the first column
 chart.dataGrid().column(0).collapseExpandButtons(true);
+
+// disable buttons on the second column
+chart.dataGrid().column(1).collapseExpandButtons(false);
 ```
 
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_04{sample}

@@ -98,14 +98,17 @@ anychart.onDocumentReady(function () {
     // collapse the task "2"
     chart.collapseTask("2");
 
-    // set the indent for nested labels in the second column
+    // set the indent for nested labels in the first column
     chart.dataGrid().column(0).depthPaddingMultiplier(35);
 
     // set the indent for nested labels in the second column
-    chart.dataGrid().column(1).depthPaddingMultiplier(35);
+    chart.dataGrid().column(1).depthPaddingMultiplier(0);
 
     // enable buttons on the first column
     chart.dataGrid().column(0).collapseExpandButtons(true);
+
+    // disable buttons on the second column
+    chart.dataGrid().column(1).collapseExpandButtons(false);
 
     // configure data grid buttons in all states
     var buttons = chart.dataGrid().buttons();
