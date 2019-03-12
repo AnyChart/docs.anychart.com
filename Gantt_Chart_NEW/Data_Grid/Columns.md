@@ -27,6 +27,8 @@ dataGrid.column(1).width(120);
 
 ## Title
 
+misc:
+
 * {api:anychart.core.ui.DataGrid.Column#title()}title(){api}
 
 
@@ -50,6 +52,8 @@ misc:
 
 ### Tokens
 
+#### Project Tokens
+
 ```
 // set the text of the first data grid column
 var column_1 = chart.dataGrid().column(0);
@@ -67,6 +71,8 @@ column_2.labels().format(
 ```
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_03{sample}
+
+#### Resource Tokens
 
 ```
 // set the text of the first data grid column
@@ -88,8 +94,11 @@ column_2.labels().format(
 
 ### Formatting Functions
 
+misc:
+
 * упомянуть поле `item`, но не в основном списке
 
+#### Project Fields
 
 ```
 // set the text of the first data grid column
@@ -150,6 +159,8 @@ column_2.labels().format(function() {
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_05{sample}
 
+#### Resource Fields
+
 ```
 // set the text of the first data grid column
 var column_1 = chart.dataGrid().column(0);
@@ -195,6 +206,8 @@ column_2.labels().format(function() {
 
 ## Hierarchical Indentation
 
+misc:
+
 * In case there are hierarchical relationships...
 * ... set the indent for nested labels ...
 * {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier}depthPaddingMultiplier(){api}
@@ -209,6 +222,8 @@ chart.dataGrid().column(1).depthPaddingMultiplier(60);
 {sample :height 260}GANTT\_NEW\_Data\_Grid\_Columns\_07{sample}
 
 ## Buttons
+
+misc:
 
 * {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons()}collapseExpandButtons(){api}
 * [Hierarchical Indentation](#hierarchical_indentation) + {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier}depthPaddingMultiplier(){api}
@@ -229,6 +244,8 @@ chart.dataGrid().column(0).depthPaddingMultiplier(20);
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_08{sample}
 
 ## Custom Columns
+
+### Project Chart
 
 * {api:anychart.core.ui.DataGrid#column}column(){api}
 
@@ -261,6 +278,8 @@ newColumn_2.depthPaddingMultiplier(20);
 ```
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_09{sample}
+
+### Resource Chart
 
 ```
 // disable the second data grid column
