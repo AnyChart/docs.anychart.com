@@ -71,19 +71,24 @@ anychart.onDocumentReady(function () {
     var treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart
-    chart = anychart.ganttProject();
+    var chart = anychart.ganttProject();
     
     // set the data
     chart.data(treeData);
 
-    // disable buttons on the second column
-    chart.dataGrid().column(1).collapseExpandButtons(false);
+    // configure the first and second data grid columns
+    chart.dataGrid().column(0).width(25);
+    chart.dataGrid().column(1).width(120);
 
-    // enable buttons on the first column
-    chart.dataGrid().column(0).collapseExpandButtons(true);
-
-    // set the padding for nested labels in the first column
-    chart.dataGrid().column(0).depthPaddingMultiplier(20);
+    // create and configure a custom data grid column
+    var newColumn = chart.dataGrid().column(2);
+    newColumn.width(75);
+    newColumn.title("Start");
+    newColumn.title().fontColor("#64b5f6");
+    newColumn.title().fontWeight(600);
+    newColumn.labels().fontColor("#64b5f6");
+    newColumn.labels().format("{%actualStart}{dateTimeFormat:dd MMM}");
+    newColumn.collapseExpandButtons(true);
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-15");

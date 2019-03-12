@@ -193,21 +193,33 @@ column_2.labels().format(function() {
 
 {sample :height 200}GANTT\_NEW\_Data\_Grid\_Columns\_06{sample}
 
+## Padding for Nested Labels
+
+* In case there are hierarchical relationships...
+* padding for nested labels
+* {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier()}depthPaddingMultiplier(){api}
+
+{sample :height 260}GANTT\_NEW\_Data\_Grid\_Columns\_07{sample}
+
 ## Buttons
 
-* [Buttons](Buttons)
 * {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons()}collapseExpandButtons(){api}
+* [Padding for Nested Labels](#padding_for_nested_labels) + {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier()}depthPaddingMultiplier(){api}
+* [Buttons](Buttons)
 
 
 ```
+// disable buttons on the second column
+chart.dataGrid().column(1).collapseExpandButtons(false);
+
 // enable buttons on the first column
 chart.dataGrid().column(0).collapseExpandButtons(true);
 
-// disable buttons on the second column
-chart.dataGrid().column(1).collapseExpandButtons(false);
+// set the padding for nested labels in the first column
+chart.dataGrid().column(0).depthPaddingMultiplier(20);
 ```
 
-{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_07{sample}
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_08{sample}
 
 ## Custom Columns
 
@@ -226,4 +238,4 @@ newColumn.labels().format("{%actualStart}{dateTimeFormat:dd MMM}");
 newColumn.collapseExpandButtons(true);
 ```
 
-{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_08{sample}
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_09{sample}
