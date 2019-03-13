@@ -7,9 +7,9 @@ misc:
 
 * {api:anychart.core.gantt.DataGridButton}anychart.core.gantt.DataGridButton{api}
 * {api:anychart.enums.Cursor}anychart.enums.Cursor{api}
-* [Columns: Enabling / Disabling Buttons](Columns#enabling_/_disabling_buttons)
-* [Columns: Hierarchical Indentation](Columns#hierarchical_indentation)
 * [Basic Settings: Navigation](../Basic_Settings#navigation)
+* [Columns: Hierarchical Indentation](Columns#hierarchical_indentation)
+* [Columns: Enabling / Disabling Buttons](Columns#enabling_/_disabling_buttons)
 
 methods:
 
