@@ -95,12 +95,35 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
-    // configure data grid buttons in all states
+    // access data grid buttons
     var buttons = chart.dataGrid().buttons();
 
-    // draw a custom content for buttons
-    //buttons.content(
-    //);
+    // configure data grid buttons
+    buttons.background().fill(null);
+    buttons.background().stroke(null);
+
+    // a function for drawing custom content for buttons
+    var contentFunction = function (path) {
+      var half = this.width / 2;
+      var shape = anychart.graphics.vector.primitives.diagonalCross(path.clear(), half, half, half);
+      switch (this.state) {
+        case "normal":
+          shape.fill("#ef6c00");
+          break;
+        case "hovered":
+          shape.fill(anychart.color.lighten("#ef6c00"));
+          break;
+        case "selected":
+          shape.fill("#64b5f6");
+          break;
+      }
+    };
+
+    // set the content of data grid buttons in the normal state
+    buttons.normal().content(contentFunction);
+
+    // set the content of data grid buttons in the selected state
+    buttons.selected().content(contentFunction);
     
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-27");
