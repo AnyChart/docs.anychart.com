@@ -52,8 +52,8 @@ column_1.title().enabled(false);
 // configure the title of the second data grid column
 var column_2 = chart.dataGrid().column(1);
 column_2.title().text("TASK");
-column_2.column(1).title().fontColor("#64b5f6");
-column_2.column(1).title().fontWeight(600);
+column_2.column(1).fontColor("#64b5f6");
+column_2.column(1).fontWeight(600);
 ```
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_03{sample}
