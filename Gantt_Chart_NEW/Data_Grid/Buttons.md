@@ -30,6 +30,40 @@ methods:
 
 ## Custom Drawing
 
+```
+// access data grid buttons
+var buttons = chart.dataGrid().buttons();
+
+// configure data grid buttons
+buttons.background().fill(null);
+buttons.background().stroke(null);
+
+// a function for drawing custom content for buttons
+var contentFunction = function () {
+  var half = this.width / 2;
+  switch (this.state) {
+    case "normal":
+      var shape = anychart.graphics.vector.primitives.cross(this.path.clear(), half, half, half);
+      shape.fill("#ef6c00");
+      break;
+    case "hovered":
+      var shape = anychart.graphics.vector.primitives.cross(this.path.clear(), half, half, half);
+      shape.fill(anychart.color.lighten("#ef6c00"));
+      break;
+    case "selected":
+      var shape = anychart.graphics.vector.primitives.hLine(this.path.clear(), half, half, half);
+      shape.fill("#64b5f6");
+      break;
+  }
+}
+
+// set the content of data grid buttons in the normal state
+buttons.normal().content(contentFunction);
+
+// set the content of data grid buttons in the selected state
+buttons.selected().content(contentFunction);
+```
+
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_03{sample}
 
 ## Full Customization
