@@ -103,27 +103,23 @@ anychart.onDocumentReady(function () {
     buttons.background().stroke(null);
 
     // a function for drawing custom content for buttons
-
-    var contentFunction = function (path) {
-
+    var contentFunction = function () {
       var half = this.width / 2;
-
-      var shapeExpand = anychart.graphics.vector.primitives.cross(path.clear(), half, half, half);
-      var shapeCollapse = anychart.graphics.vector.primitives.hLine(path.clear(), half, half, half);
-
       switch (this.state) {
         case "normal":
-          shapeExpand.fill("#ef6c00");
+          var shape = anychart.graphics.vector.primitives.cross(this.path.clear(), half, half, half);
+          shape.fill("#ef6c00");
           break;
         case "hovered":
-          shapeExpand.fill(anychart.color.lighten("#ef6c00"));
+          var shape = anychart.graphics.vector.primitives.cross(this.path.clear(), half, half, half);
+          shape.fill(anychart.color.lighten("#ef6c00"));
           break;
         case "selected":
-          shapeCollapse.fill("#64b5f6");
+          var shape = anychart.graphics.vector.primitives.hLine(this.path.clear(), half, half, half);
+          shape.fill("#64b5f6");
           break;
       }
-
-    };
+    }
 
     // set the content of data grid buttons in the normal state
     buttons.normal().content(contentFunction);
