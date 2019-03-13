@@ -97,24 +97,24 @@ anychart.onDocumentReady(function () {
 
     // configure data grid buttons in all states
     var buttons = chart.dataGrid().buttons();
-    buttons.width(20);
     buttons.height(20);
+    buttons.width(20);
 
     // configure data grid buttons in the normal state
+    buttons.normal().content(null);
+    buttons.normal().background().stroke(null);
     buttons.normal().background().fill({
        src: "https://cdn.anychart.com/samples/gantt-general-features/data-grid-buttons/close.png",
        mode: "stretch"
     });
-    buttons.normal().background().stroke(null);
-    buttons.normal().content(null);
 
     // configure data grid buttons in the selected state
+    buttons.selected().content(null);
+    buttons.selected().background().stroke(null);
     buttons.selected().background().fill({
        src: "https://cdn.anychart.com/samples/gantt-general-features/data-grid-buttons/open.png",
        mode: "stretch"
     });   
-    buttons.selected().background().stroke(null);
-    buttons.selected().content(null);
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-27");

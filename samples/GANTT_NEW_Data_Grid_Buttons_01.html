@@ -97,21 +97,21 @@ anychart.onDocumentReady(function () {
 
     // configure data grid buttons in all states
     var buttons = chart.dataGrid().buttons();
-    buttons.width(30);
-    buttons.background().fill(null);
-    buttons.background().stroke(null);
     buttons.fontWeight(600);
     buttons.fontSize(16);
     buttons.fontFamily("Courier");
+    buttons.background().fill(null);
+    buttons.background().stroke(null);
+    buttons.width(30);
     buttons.cursor("default");
 
     // configure data grid buttons in the normal state
-    buttons.normal().fontColor("#ef6c00");
     buttons.normal().content("[+]");
+    buttons.normal().fontColor("#ef6c00");
 
     // configure data grid buttons in the selected state
-    buttons.selected().fontColor("#64b5f6");
     buttons.selected().content("[-]");
+    buttons.selected().fontColor("#64b5f6");
 
     // configure data grid buttons in the hover state
     buttons.hovered().fontColor("#ffa000");
