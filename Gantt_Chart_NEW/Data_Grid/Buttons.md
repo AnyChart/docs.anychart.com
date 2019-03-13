@@ -64,6 +64,9 @@ var contentFunction = function () {
 // set the content of data grid buttons in the normal state
 buttons.normal().content(contentFunction);
 
+// set the content of data grid buttons in the hover state
+buttons.hovered().content(contentFunction);
+
 // set the content of data grid buttons in the selected state
 buttons.selected().content(contentFunction);
 ```
