@@ -72,7 +72,7 @@ anychart.onDocumentReady(function () {
 });
 
 // get data
-function getData(){
+function getData() {
   // create data
   var data = [
     {name:       "Root", children: [
@@ -120,32 +120,32 @@ function getData(){
     ]} 
   ];
   return data;
-};
+}
 
 // convert the current drilldown path to a string
-function printPath(path){
+function printPath(path) {
   /* go through the array of data items
   and use the get() method to obtain the "name" field */
   var text = "";
-  for (i = 0; i <  path.length; i++){ 
+  for (i = 0; i <  path.length; i++) { 
     text += path[i].get("name") + "\\";
   }
   return text;
-};
-    
+}
+  
 // drill down to a data item
-function drillToItem(){
+function drillToItem() {
   /* locate an item in the data tree
   and get it as an object */
   var item = treeData.search("name", "Item 3-4");
   // drill down to the item
   chart.drillTo(item);
-};
+}
 
 // drill up a level
-function drillUpALevel(){
+function drillUpALevel() {
    chart.drillUp();
-};
+}
 </script>
 </body>
 </html>

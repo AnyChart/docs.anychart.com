@@ -388,7 +388,7 @@ function filterValue() {
     return value >= minValue;
   });
   series.data(newMapping);
-};
+}
 ```
 
 {sample}WD\_Data\_Sets\_12{sample}

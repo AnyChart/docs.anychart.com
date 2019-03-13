@@ -30,6 +30,10 @@ methods:
 
 ## Custom Drawing
 
+misc:
+
+* [Graphics](../../Graphics)
+
 ```
 // access data grid buttons
 var buttons = chart.dataGrid().buttons();

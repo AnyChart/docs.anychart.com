@@ -74,16 +74,16 @@ anychart.onDocumentReady(function () {
 });  
 
 // switch the series type
-function switchType(){
+function switchType() {
   var select = document.getElementById("typeSelect");
   // switch the type of the main series
   series.seriesType(select.value);
   // switch the type of the scroller series
   scrollerSeries.seriesType(select.value);
-};   
+}
 
 // create data
-function data_acme_stock (){
+function data_acme_stock() {
   return[
     {'x': '2015-04-01', 'o': 18.23, 'h': 19.36, 'l': 18.18, 'c': 19.31},
     {'x': '2015-04-02', 'o': 19.50, 'h': 19.89, 'l': 19.00, 'c': 19.29},
@@ -150,7 +150,7 @@ function data_acme_stock (){
     {'x': '2015-06-30', 'o': 23.97, 'h': 24.24, 'l': 23.63, 'c': 23.77},
     {'x': '2015-07-01', 'o': 24.05, 'h': 24.30, 'l': 23.96, 'c': 24.04},
     {'x': '2015-07-02', 'o': 23.76, 'h': 24.04, 'l': 23.21, 'c': 23.37}
-]};
+]}
 </script>
 </body>
 </html>

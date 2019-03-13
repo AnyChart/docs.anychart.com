@@ -112,23 +112,23 @@ anychart.onDocumentReady(function () {
 });
 
 // create annotations
-function create(){
+function create() {
   var select = document.getElementById("typeSelect");
   chart.plot(0).annotations().startDrawing(select.value);
-};
+}
 
 // remove all annotations
-function removeAll(){
+function removeAll() {
   chart.plot(0).annotations().removeAllAnnotations();
-};
+}
 
 // copy annotations to the second plot
-function copy(){
+function copy() {
   // serialize annotations from the first plot
   var json = chart.plot(0).annotations().toJson();
   // deserialize the annotations to the second plot
   chart.plot(1).annotations().fromJson(json);
-};
+}
 </script>
 </body>
 </html>

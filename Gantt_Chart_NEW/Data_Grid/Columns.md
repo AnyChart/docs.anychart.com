@@ -8,6 +8,19 @@ misc:
 * {api:anychart.core.ui.DataGrid.Column}anychart.core.ui.DataGrid.Column{api}
 * {api:anychart.core.ui.DataGrid#column}column(){api}
 
+## Enabling / Disabling
+
+misc:
+
+* {api:anychart.core.ui.DataGrid.Column#enabled()}enabled(){api}
+
+```
+// disable the first data grid column
+chart.dataGrid().column(0).enabled(false);
+```
+
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_01{sample}
+
 ## Width
 
 misc:
@@ -18,12 +31,11 @@ misc:
 
 ```
 // set the width of data grid columns
-var dataGrid = chart.dataGrid();
-dataGrid.column(0).width(25);
-dataGrid.column(1).width(120);
+chart.dataGrid().column(0).width(25);
+chart.dataGrid().column(1).width(120);
 ```
 
-{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_01{sample}
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_02{sample}
 
 ## Title
 
@@ -33,15 +45,18 @@ misc:
 
 
 ```
-// configure the title of data grid columns
-var dataGrid = chart.dataGrid();
-dataGrid.column(0).title().enabled(false);
-dataGrid.column(1).title().text("TASK");
-dataGrid.column(1).title().fontColor("#64b5f6");
-dataGrid.column(1).title().fontWeight(600);
+// configure the title of the first data grid column
+var column_1 = chart.dataGrid().column(0);
+column_1.title().enabled(false);
+
+// configure the title of the second data grid column
+var column_2 = chart.dataGrid().column(1);
+column_2.title().text("TASK");
+column_2.column(1).title().fontColor("#64b5f6");
+column_2.column(1).title().fontWeight(600);
 ```
 
-{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_02{sample}
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_03{sample}
 
 ## Text (Labels)
 
@@ -70,7 +85,7 @@ column_2.labels().format(
 );
 ```
 
-{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_03{sample}
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_04{sample}
 
 #### Resource Tokens
 
@@ -90,7 +105,7 @@ column_2.labels().format(
 );
 ```
 
-{sample :height 200}GANTT\_NEW\_Data\_Grid\_Columns\_04{sample}
+{sample :height 200}GANTT\_NEW\_Data\_Grid\_Columns\_05{sample}
 
 ### Formatting Functions
 
@@ -169,7 +184,7 @@ column_2.labels().format(function() {
 });
 ```
 
-{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_05{sample}
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_06{sample}
 
 #### Resource Fields
 
@@ -226,7 +241,7 @@ column_2.labels().format(function() {
 });
 ```
 
-{sample :height 200}GANTT\_NEW\_Data\_Grid\_Columns\_06{sample}
+{sample :height 200}GANTT\_NEW\_Data\_Grid\_Columns\_07{sample}
 
 ## Hierarchical Indentation
 
@@ -243,7 +258,7 @@ In the sample below the indent in the second column is set to 60. The first colu
 chart.dataGrid().column(1).depthPaddingMultiplier(60);
 ```
 
-{sample :height 260}GANTT\_NEW\_Data\_Grid\_Columns\_07{sample}
+{sample :height 260}GANTT\_NEW\_Data\_Grid\_Columns\_08{sample}
 
 ## Enabling / Disabling Buttons
 
@@ -266,7 +281,7 @@ chart.dataGrid().column(0).collapseExpandButtons(true);
 chart.dataGrid().column(0).depthPaddingMultiplier(20);
 ```
 
-{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_08{sample}
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_09{sample}
 
 ## Custom Columns
 
@@ -303,7 +318,7 @@ newColumn_2.depthPaddingMultiplier(20);
 newColumn_2.collapseExpandButtons(true);
 ```
 
-{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_09{sample}
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_10{sample}
 
 ### Resource Chart
 
@@ -330,4 +345,4 @@ newColumn_2.labels().fontColor("#64b5f6");
 newColumn_2.labels().format("{%end}{dateTimeFormat:dd MMM}");
 ```
 
-{sample :height 160}GANTT\_NEW\_Data\_Grid\_Columns\_10{sample}
+{sample :height 160}GANTT\_NEW\_Data\_Grid\_Columns\_11{sample}

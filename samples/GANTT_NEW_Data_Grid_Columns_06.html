@@ -29,50 +29,59 @@ anychart.onDocumentReady(function () {
     // create data
     var data = [
       {
-        id: "A",
-        name: "Location A",
+        id: "1",
+        name: "Development",
+        actualStart: "2018-01-15",
+        actualEnd: "2018-03-10",
+        manager: "J. Doe",
         children: [
           {
-            id: "1",
-            name: "Server 1",
-            periods: [
-              {id: "1_1", start: "2018-01-02", end: "2018-01-25"},
-              {id: "1_2", start: "2018-01-28", end: "2018-02-22"},
-              {id: "1_3", start: "2018-03-03", end: "2018-03-25"}
-            ],
+            id: "1_1",
+            name: "Analysis",
+            actualStart: "2018-01-15",
+            actualEnd: "2018-01-25",
+            progressValue: "75%"
+          },
+          {
+            id: "1_2",
+            name: "Design",
+            actualStart: "2018-01-20",
+            actualEnd: "2018-02-04",
+            progressValue: "100%",
             custom_field: "!"
           },
           {
-            id: "2",
-            name: "Server 2",
-            periods: [
-              {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
-              {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
-          ]}
-      ]},
-      {
-        id: "B",
-        name: "Location B",
-        children: [
+            id: "1_3",
+            name: "Meeting",
+            actualStart: "2018-02-05",
+            actualEnd: "2018-02-05",
+            custom_field: "!"
+          },
           {
-            id: "3",
-            name: "Server 3",
-            periods: [
-              {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
-            ],
+            id: "1_4",
+            name: "Implementation",
+            actualStart: "2018-02-05",
+            actualEnd: "2018-02-24",
+            progressValue: "60%"
+          },
+          {
+            id: "1_5",
+            name: "Testing",
+            actualStart: "2018-02-25",
+            actualEnd: "2018-03-10",
             custom_field: "?"
           }
       ]}
     ];
-
+    
     // create a data tree
     var treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart
-    var chart = anychart.ganttResource(); 
+    var chart = anychart.ganttProject();
     
     // set the data
-    chart.data(treeData); 
+    chart.data(treeData);
 
     // set the text of the first data grid column
 
@@ -83,46 +92,65 @@ anychart.onDocumentReady(function () {
     column_1.labels().format( function() {
 
       var children = this.item.numChildren();
+      var duration = (this.actualEnd - this.actualStart);
       var index = this.linearIndex;
 
-      // identify the resource type and display the corresponding text
+      var parentText = "<span style='color:#dd2c00'>" + index + ".</span>";
+      var milestoneText = "<span style='color:#ffa000'>" + index + ".</span>";
+      var taskText =  "<span style='color:#64b5f6'>" + index + ".</span>";
+
+      // identify the task type and display the corresponding text
       if (children > 0) {
-        return "<span style='color:#dd2c00'>" + index + ".</span>";
+        return parentText;
       } else {
-        return "<span style='color:#64b5f6'>" + index + ".</span>";
+        if (duration == 0) {
+          return milestoneText;
+        } else {
+          return taskText;
+        }
       }
 
     });
-
+    
     // set the text of the second data grid column
 
-    var column_2 = chart.dataGrid().column(1);    
+    var column_2 = chart.dataGrid().column(1);
     column_2.labels().useHtml(true);
 
     column_2.labels().format(function() {
 
       var numChildren = this.item.numChildren();
-      var duration = (this.end - this.start) / 1000 / 3600 / 24;
-      var customField = " ";
+      var duration = (this.actualEnd - this.actualStart) / 1000 / 3600 / 24;
+      var progress = this.progress * 100 + "%";
+      var customField = "";
       if (this.getData("custom_field")) {
         customField = "<span style='font-weight:bold'>" +
-                 this.getData("custom_field") + customField + "</span>";
+                 this.getData("custom_field") + " </span>";
       }
-      
-      var parentText = "<span style='color:#dd2c00;font-weight:bold'>" +
-                       this.name.toUpperCase() + "<span>";
-      var childText = "<span style='color:#64b5f6'>" + customField + 
-                      this.name + ": " + duration + "d</span>";
 
-      // identify the resource type and display the corresponding text
+      var parentText = "<span style='color:#dd2c00;font-weight:bold'>" +
+                       this.name + ": " + duration + "d</span>";
+      var milestoneText = "<span style='color:#ffa000;font-weight:bold'>" + 
+                          customField + this.name + "</span";
+      var taskText = "<span style='color:#64b5f6'>" + customField + 
+                     this.name + ": " + progress + "</span>";
+                     
+      // identify the task type and display the corresponding text
       if (numChildren > 0) {
         return parentText;
       } else {
-        return childText;
+        if (duration == 0) {
+          return milestoneText;
+        } else {
+          return taskText;
+        }
       }
 
     });
-    
+
+    // configure the scale
+    chart.getTimeline().scale().maximum("2018-03-20");
+
     // set the container id
     chart.container("container");
 

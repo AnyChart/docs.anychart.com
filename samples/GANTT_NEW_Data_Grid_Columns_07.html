@@ -5,10 +5,10 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4" type="text/javascript"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-4198-use-html-optimized-text/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-4198-use-html-optimized-text/js/anychart-gantt.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-4198-use-html-optimized-text/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-4198-use-html-optimized-text/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
     
@@ -29,72 +29,100 @@ anychart.onDocumentReady(function () {
     // create data
     var data = [
       {
-        id: "1",
-        name: "Parent Task",
-        actualStart: "2018-01-15",
-        actualEnd: "2018-03-10",
+        id: "A",
+        name: "Location A",
         children: [
           {
-            id: "1_1",
-            name: "Task",
-            actualStart: "2018-01-15",
-            actualEnd: "2018-01-25"
+            id: "1",
+            name: "Server 1",
+            periods: [
+              {id: "1_1", start: "2018-01-02", end: "2018-01-25"},
+              {id: "1_2", start: "2018-01-28", end: "2018-02-22"},
+              {id: "1_3", start: "2018-03-03", end: "2018-03-25"}
+            ],
+            custom_field: "!"
           },
-          {
-            id: "1_2",
-            name: "Task",
-            actualStart: "2018-01-20",
-            actualEnd: "2018-02-04"
-          },
-          {
-            id: "1_3",
-            name: "Milestone",
-            actualStart: "2018-02-05",
-            actualEnd: "2018-02-05"
-          },
-          {
-            id: "1_4",
-            name: "Parent Task",
-            actualStart: "2018-02-05",
-            actualEnd: "2018-02-24",
-            children: [
-              {
-                id: "1_4_1",
-                name: "Task",
-                actualStart: "2018-02-05",
-                actualEnd: "2018-02-10"
-              },
-              {
-                id: "1_4_2",
-                name: "Task",
-                actualStart: "2018-02-11",
-                actualEnd: "2018-02-24"
-              }
-          ]},
           {
             id: "2",
-            name: "Task",
-            actualStart: "2018-02-05",
-            actualEnd: "2018-03-10",
+            name: "Server 2",
+            periods: [
+              {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
+              {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
+          ]}
+      ]},
+      {
+        id: "B",
+        name: "Location B",
+        children: [
+          {
+            id: "3",
+            name: "Server 3",
+            periods: [
+              {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
+            ],
+            custom_field: "?"
           }
       ]}
     ];
-    
+
     // create a data tree
     var treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart
-    var chart = anychart.ganttProject();
+    var chart = anychart.ganttResource(); 
     
     // set the data
-    chart.data(treeData);
+    chart.data(treeData); 
 
-    // set the indent for nested labels in the second column
-    chart.dataGrid().column(1).depthPaddingMultiplier(60);
+    // set the text of the first data grid column
 
-    // configure the scale
-    chart.getTimeline().scale().maximum("2018-03-15");
+    var column_1 = chart.dataGrid().column(0);
+    column_1.labels().fontWeight(600);
+    column_1.labels().useHtml(true);
 
+    column_1.labels().format( function() {
+
+      var children = this.item.numChildren();
+      var index = this.linearIndex;
+
+      // identify the resource type and display the corresponding text
+      if (children > 0) {
+        return "<span style='color:#dd2c00'>" + index + ".</span>";
+      } else {
+        return "<span style='color:#64b5f6'>" + index + ".</span>";
+      }
+
+    });
+
+    // set the text of the second data grid column
+
+    var column_2 = chart.dataGrid().column(1);    
+    column_2.labels().useHtml(true);
+
+    column_2.labels().format(function() {
+
+      var numChildren = this.item.numChildren();
+      var duration = (this.end - this.start) / 1000 / 3600 / 24;
+      var customField = " ";
+      if (this.getData("custom_field")) {
+        customField = "<span style='font-weight:bold'>" +
+                 this.getData("custom_field") + customField + "</span>";
+      }
+      
+      var parentText = "<span style='color:#dd2c00;font-weight:bold'>" +
+                       this.name.toUpperCase() + "<span>";
+      var childText = "<span style='color:#64b5f6'>" + customField + 
+                      this.name + ": " + duration + "d</span>";
+
+      // identify the resource type and display the corresponding text
+      if (numChildren > 0) {
+        return parentText;
+      } else {
+        return childText;
+      }
+
+    });
+    
     // set the container id
     chart.container("container");
 

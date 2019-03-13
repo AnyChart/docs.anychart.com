@@ -30,39 +30,52 @@ anychart.onDocumentReady(function () {
     var data = [
       {
         id: "1",
-        name: "Development",
+        name: "Parent Task",
         actualStart: "2018-01-15",
         actualEnd: "2018-03-10",
         children: [
           {
             id: "1_1",
-            name: "Analysis",
+            name: "Task",
             actualStart: "2018-01-15",
             actualEnd: "2018-01-25"
           },
           {
             id: "1_2",
-            name: "Design",
+            name: "Task",
             actualStart: "2018-01-20",
             actualEnd: "2018-02-04"
           },
           {
             id: "1_3",
-            name: "Meeting",
+            name: "Milestone",
             actualStart: "2018-02-05",
             actualEnd: "2018-02-05"
           },
           {
             id: "1_4",
-            name: "Implementation",
+            name: "Parent Task",
             actualStart: "2018-02-05",
-            actualEnd: "2018-02-24"
-          },
+            actualEnd: "2018-02-24",
+            children: [
+              {
+                id: "1_4_1",
+                name: "Task",
+                actualStart: "2018-02-05",
+                actualEnd: "2018-02-10"
+              },
+              {
+                id: "1_4_2",
+                name: "Task",
+                actualStart: "2018-02-11",
+                actualEnd: "2018-02-24"
+              }
+          ]},
           {
-            id: "1_5",
-            name: "Testing",
-            actualStart: "2018-02-25",
-            actualEnd: "2018-03-10"
+            id: "2",
+            name: "Task",
+            actualStart: "2018-02-05",
+            actualEnd: "2018-03-10",
           }
       ]}
     ];
@@ -71,19 +84,13 @@ anychart.onDocumentReady(function () {
     var treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart
-    chart = anychart.ganttProject();
+    var chart = anychart.ganttProject();
     
     // set the data
     chart.data(treeData);
 
-    // disable buttons on the second column
-    chart.dataGrid().column(1).collapseExpandButtons(false);
-
-    // enable buttons on the first column
-    chart.dataGrid().column(0).collapseExpandButtons(true);
-
-    // set the indent for nested labels in the first column
-    chart.dataGrid().column(0).depthPaddingMultiplier(20);
+    // set the indent for nested labels in the second column
+    chart.dataGrid().column(1).depthPaddingMultiplier(60);
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-15");

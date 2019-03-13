@@ -76,10 +76,8 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
-    // set the width of data grid columns
-    var dataGrid = chart.dataGrid();
-    dataGrid.column(0).width(25);
-    dataGrid.column(1).width(120);
+    // disable the first data grid column
+    chart.dataGrid().column(0).enabled(false);
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-15");
