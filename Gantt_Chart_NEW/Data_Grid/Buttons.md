@@ -10,6 +10,7 @@ misc:
 * [Basic Settings: Navigation](../Basic_Settings#navigation)
 * [Columns: Hierarchical Indentation](Columns#hierarchical_indentation)
 * [Columns: Enabling / Disabling Buttons](Columns#enabling_/_disabling_buttons)
+* [Full Customization](#full_customization)
 
 methods:
 
@@ -20,6 +21,13 @@ methods:
 * {api:anychart.core.gantt.DataGridButton#height}height(){api} and {api:anychart.core.gantt.DataGridButton#width}width(){api} to set the height and width
 * {api:anychart.core.gantt.DataGridButton#cursor}cursor(){api} to adjust the cursor
 * {api:anychart.core.gantt.DataGridButton#normal}normal(){api}, {api:anychart.core.gantt.DataGridButton#hovered}hovered(){api}, and {api:anychart.core.gantt.DataGridButton#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
+
+## Enabling / Disabling
+
+misc:
+
+* [Columns: Enabling / Disabling Buttons](Columns#enabling_/_disabling_buttons)
+* [Full Customization](#full_customization)
 
 ## Basic Settings
 
@@ -75,14 +83,6 @@ buttons.selected().content(contentFunction);
 ```
 
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_03{sample}
-
-## Other Settings
-
-### Enabling / Disabling
-
-### Hierarchical Indentation
-
-### Expanding / Collapsing
 
 ## Full Customization
 
