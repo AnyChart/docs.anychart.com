@@ -25,11 +25,13 @@ methods:
 
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_01{sample}
 
-## Background Images
+## Advanced Settins
+
+### Background Images
 
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_02{sample}
 
-## Custom Drawing
+### Custom Drawing
 
 misc:
 
@@ -73,6 +75,14 @@ buttons.selected().content(contentFunction);
 ```
 
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_03{sample}
+
+## Other Settings
+
+### Enabling / Disabling
+
+### Hierarchical Indentation
+
+### Expanding / Collapsing
 
 ## Full Customization
 
