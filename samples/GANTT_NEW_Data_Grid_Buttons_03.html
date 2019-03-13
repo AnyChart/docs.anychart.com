@@ -95,7 +95,12 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
-    // configure data grid buttons
+    // configure data grid buttons in all states
+    var buttons = chart.dataGrid().buttons();
+
+    // draw a custom content for buttons
+    //buttons.content(
+    //);
     
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-27");
