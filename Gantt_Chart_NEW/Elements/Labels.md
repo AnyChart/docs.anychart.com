@@ -64,6 +64,9 @@ For the Project chart, the following tokens are available:
 In the sample below, labels of different elements have the same font weight but different text format, which is configured with the help of tokens, including a custom one:
 
 ```
+// access the timeline
+var timeline = chart.getTimeline();
+
 // configure labels of tasks
 timeline.tasks().labels().useHtml(true);
 timeline.tasks().labels().format(
@@ -139,6 +142,9 @@ In the sample below, labels of different elements have the same font weight but 
 The label of the milestone refers to another task – its id is linked in a custom data field. The  {api:anychart.format.Context#getData}getData(){api} method is used to get the id, and the {api:anychart.data.Tree.DataItem#search}search(){api} and {api:anychart.data.Tree.DataItem#get}get(){api} methods of the [Tree Data Model](../../Working_with_Data/Tree_Data_Model) are used to find the task and get its name.
 
 ```
+// access the timeline
+var timeline = chart.getTimeline();
+
 // configure labels of tasks
 timeline.tasks().labels().useHtml(true);
 timeline.tasks().labels().format(function() {

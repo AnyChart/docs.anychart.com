@@ -14,7 +14,7 @@ chart.getTimeline().tooltip(false);
 ```
 
 ```
-chart.getTimeline().tooltip).enabled(false);
+chart.getTimeline().tooltip.enabled(false);
 ```
 
 To configure tooltips, use other methods of {api:anychart.core.ui.Tooltip}anychart.core.ui.Tooltip{api}, for example {api:anychart.core.ui.Tooltip#fontColor}fontColor(){api}, {api:anychart.core.ui.Tooltip#fontWeight}fontWeight(){api}, {api:anychart.core.ui.Tooltip#fontSize}fontSize(){api}, etc. The {api:anychart.core.ui.Tooltip#format}format(){api} method, combined with [text formatters](../../Common_Settings/Text_Formatters), allows setting the text format – read the sections below to learn more.
