@@ -95,11 +95,8 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
-    // collapse the task with the id "2"
-    chart.collapseTask("2");
-
     // set the indent for nested labels in the first column
-    chart.dataGrid().column(0).depthPaddingMultiplier(35);
+    chart.dataGrid().column(0).depthPaddingMultiplier(20);
 
     // set the indent for nested labels in the second column
     chart.dataGrid().column(1).depthPaddingMultiplier(0);
@@ -110,29 +107,8 @@ anychart.onDocumentReady(function () {
     // disable buttons on the second column
     chart.dataGrid().column(1).collapseExpandButtons(false);
 
-    // access data grid buttons
-    var buttons = chart.dataGrid().buttons();
-
-    // configure data grid buttons
-    buttons.fontWeight(600);
-    buttons.fontSize(16);
-    buttons.fontFamily("Courier");
-    buttons.background().fill(null);
-    buttons.background().stroke(null);
-    buttons.width(30);
-    buttons.cursor("default");
-
-    // configure data grid buttons in the normal state
-    buttons.normal().content("[+]");
-    buttons.normal().fontColor("#ef6c00");
-
-    // configure data grid buttons in the hover state
-    buttons.hovered().content("[+]")
-    buttons.hovered().fontColor(anychart.color.lighten("#ef6c00"));
-
-    // configure data grid buttons in the selected state
-    buttons.selected().content("[-]");
-    buttons.selected().fontColor("#64b5f6");
+    // collapse the task with the id "2"
+    chart.collapseTask("2");
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-27");

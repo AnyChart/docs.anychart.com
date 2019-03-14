@@ -7,6 +7,7 @@ misc:
 
 * {api:anychart.core.gantt.DataGridButton}anychart.core.gantt.DataGridButton{api}
 * {api:anychart.enums.Cursor}anychart.enums.Cursor{api}
+* other button-related settings: [sample](#sample)
 * [Basic Settings: Navigation](../Basic_Settings#navigation)
 * [Columns: Hierarchical Indentation](Columns#indentation)
 * [Columns: Enabling / Disabling Buttons](Columns#enabling_/_disabling_buttons)
@@ -131,25 +132,26 @@ buttons.selected().content(contentFunction);
 
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_03{sample}
 
-## Full Customization
+## Other Settings
+
+### Enabling / Disabling
 
 misc:
 
-* all button-related settings include...
-* [Basic Settings](#basic_settings)
-* [Basic Settings: Navigation](../Basic_Settings#navigation)
-* [Columns: Hierarchical Indentation](Columns#hierarchical_indentation)
 * [Columns: Enabling / Disabling Buttons](Columns#enabling_/_disabling_buttons)
+* [Columns: Indentation](Columns#indentation)
 
+### Expanding / Collapsing
 
-```
-// collapse the task with the id "2"
-chart.collapseTask("2");
-```
+misc:
+
+* [Basic Settings: Navigation](../Basic_Settings#navigation)
+
+### Sample
 
 ```
 // set the indent for nested labels in the first column
-chart.dataGrid().column(0).depthPaddingMultiplier(35);
+chart.dataGrid().column(0).depthPaddingMultiplier(20);
 
 // set the indent for nested labels in the second column
 chart.dataGrid().column(1).depthPaddingMultiplier(0);
@@ -164,27 +166,8 @@ chart.dataGrid().column(1).collapseExpandButtons(false);
 ```
 
 ```
-// configure data grid buttons
-buttons.fontWeight(600);
-buttons.fontSize(16);
-buttons.fontFamily("Courier");
-buttons.background().fill(null);
-buttons.background().stroke(null);
-buttons.width(30);
-buttons.cursor("default");
-
-// configure data grid buttons in the normal state
-buttons.normal().content("[+]");
-buttons.normal().fontColor("#ef6c00");
-
-// configure data grid buttons in the hover state
-buttons.hovered().content("[+]")
-buttons.hovered().fontColor(anychart.color.lighten("#ef6c00"));
-
-// configure data grid buttons in the selected state
-buttons.selected().content("[-]");
-buttons.selected().fontColor("#64b5f6");
+// collapse the task with the id "2"
+chart.collapseTask("2");
 ```
-
 
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_04{sample}
