@@ -9,8 +9,8 @@ misc:
 * {api:anychart.enums.Cursor}anychart.enums.Cursor{api}
 * other button-related settings: [sample](#sample)
 * [Basic Settings: Navigation](../Basic_Settings#navigation)
-* [Columns: Hierarchical Indentation](Columns#indentation)
-* [Columns: Enabling / Disabling Buttons](Columns#enabling_/_disabling_buttons)
+* [Columns: Indentation](Columns#indentation)
+* [Columns: Buttons](Columns#buttons)
 * [Full Customization](#full_customization)
 
 methods:
@@ -129,7 +129,7 @@ buttons.selected().content(contentFunction);
 
 misc:
 
-* [Columns: Enabling / Disabling Buttons](Columns#enabling_/_disabling_buttons)
+* [Columns: Buttons](Columns#buttons)
 * [Columns: Indentation](Columns#indentation)
 
 ## Expanding / Collapsing

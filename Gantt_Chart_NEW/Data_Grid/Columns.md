@@ -260,7 +260,7 @@ chart.dataGrid().column(1).depthPaddingMultiplier(60);
 
 {sample :height 260}GANTT\_NEW\_Data\_Grid\_Columns\_08{sample}
 
-## Enabling / Disabling Buttons
+## Buttons
 
 misc:
 

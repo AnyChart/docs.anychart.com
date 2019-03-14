@@ -43,5 +43,5 @@
 * expandAll(), expandTask()
 * zoomIn(), zoomOut(), zoomTo()
 * scrollTo(), scrollToEnd(), scrollToRow()
-* [Columns: Enabling / Disabling Buttons](Data_Grid/Columns#enabling_/_disabling_buttons)
+* [Columns: Buttons](Data_Grid/Columns#buttons)
 * [Buttons](Data_Grid/Buttons) 
