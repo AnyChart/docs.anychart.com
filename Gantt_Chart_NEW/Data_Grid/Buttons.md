@@ -7,7 +7,12 @@ misc:
 
 * {api:anychart.core.gantt.DataGridButton}anychart.core.gantt.DataGridButton{api}
 * {api:anychart.enums.Cursor}anychart.enums.Cursor{api}
-* other button-related settings: [Enabling / Disabling](#enabling_/_disabling) + [Expanding / Collapsing](#expanding_/_collapsing)
+
+other button-related settings:
+
+* [Columns: Buttons](Columns#buttons)
+* [Columns: Indentation](Columns#indentation)
+* [Basic Settings: Navigation](../Basic_Settings#navigation)
 
 methods:
 
