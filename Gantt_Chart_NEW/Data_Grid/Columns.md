@@ -293,9 +293,6 @@ misc:
 ### Project Chart
 
 ```
-// disable the second data grid column
-chart.dataGrid().column(1).enabled(false);
-
 // create and configure a custom data grid column
 var newColumn_1 = chart.dataGrid().column(2);
 newColumn_1.width(85);

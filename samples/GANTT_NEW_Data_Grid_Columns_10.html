@@ -76,8 +76,8 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
-    // disable the second data grid column
-    chart.dataGrid().column(1).enabled(false);
+    // ...
+    chart.splitterPosition("50%");
 
     // create and configure a custom data grid column
     var newColumn_1 = chart.dataGrid().column(2);
