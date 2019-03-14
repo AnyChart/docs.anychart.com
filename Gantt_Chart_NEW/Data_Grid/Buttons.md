@@ -23,13 +23,6 @@ methods:
 * {api:anychart.core.gantt.DataGridButton#cursor}cursor(){api} to adjust the cursor
 * {api:anychart.core.gantt.DataGridButton#normal}normal(){api}, {api:anychart.core.gantt.DataGridButton#hovered}hovered(){api}, and {api:anychart.core.gantt.DataGridButton#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
 
-## Enabling / Disabling
-
-misc:
-
-* [Columns: Enabling / Disabling Buttons](Columns#enabling_/_disabling_buttons)
-* [Full Customization](#full_customization)
-
 ## Basic Settings
 
 ```
