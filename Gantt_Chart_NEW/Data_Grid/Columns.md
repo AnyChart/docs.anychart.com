@@ -296,7 +296,7 @@ misc:
 ```
 // create and configure a custom data grid column
 var newColumn = chart.dataGrid().column(2);
-newColumn.width(85);
+newColumn.width(90);
 newColumn.title("Start");
 newColumn.title().fontColor("#64b5f6");
 newColumn.title().fontWeight(600);
@@ -313,7 +313,7 @@ newColumn.collapseExpandButtons(true);
 ```
 // create and configure a custom data grid column
 var newColumn = chart.dataGrid().column(2);
-newColumn.width(85);
+newColumn.width(90);
 newColumn.title("Start");
 newColumn.title().fontColor("#64b5f6");
 newColumn.title().fontWeight(600);
