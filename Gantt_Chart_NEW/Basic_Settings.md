@@ -35,6 +35,7 @@
 ## Splitter
 
 * splitterPosition()
+* the width of the timeline automatically adjusts to the area outlined by the splitter
 
 ## Navigation
 
