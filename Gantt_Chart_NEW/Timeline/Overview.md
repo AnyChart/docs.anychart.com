@@ -15,4 +15,7 @@ Articles in this section explain how to configure:
 * [Markers](Markers) – the line, range, and text markers
 * [Tooltips](Tooltips) – the timeline tooltips
 
-**Note:** See [Elements: Labels](../Elements/Labels) to learn how to adjust labels shown near elements of the timeline.
+Articles in other sections explain how to adjust:
+
+* [Elements: Labels](../Elements/Labels) – labels shown near elements of the timeline
+* [Basic Settings: Splitter](../Basic_Settings#splitter) – the width of the timeline

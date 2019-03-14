@@ -77,7 +77,7 @@ anychart.onDocumentReady(function () {
     chart.data(treeData);
 
     // set the position of the splitteer
-    chart.splitterPosition("55%");
+    chart.splitterPosition("45%");
 
     // create and configure a custom data grid column
     var newColumn_1 = chart.dataGrid().column(2);
@@ -89,17 +89,6 @@ anychart.onDocumentReady(function () {
     newColumn_1.labels().format("{%actualStart}{dateTimeFormat:dd MMM}");
     newColumn_1.depthPaddingMultiplier(20);
     newColumn_1.collapseExpandButtons(true);
-
-    // create and configure one more custom column
-    var newColumn_2 = chart.dataGrid().column(3);
-    newColumn_2.width(85);
-    newColumn_2.title("End");
-    newColumn_2.title().fontColor("#64b5f6");
-    newColumn_2.title().fontWeight(600);
-    newColumn_2.labels().fontColor("#64b5f6");
-    newColumn_2.labels().format("{%actualEnd}{dateTimeFormat:dd MMM}");
-    newColumn_2.depthPaddingMultiplier(20);
-    newColumn_2.collapseExpandButtons(true);
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-15");
