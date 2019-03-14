@@ -294,26 +294,15 @@ misc:
 
 ```
 // create and configure a custom data grid column
-var newColumn_1 = chart.dataGrid().column(2);
-newColumn_1.width(85);
-newColumn_1.title("Start");
-newColumn_1.title().fontColor("#64b5f6");
-newColumn_1.title().fontWeight(600);
-newColumn_1.labels().fontColor("#64b5f6");
-newColumn_1.labels().format("{%actualStart}{dateTimeFormat:dd MMM}");
-newColumn_1.depthPaddingMultiplier(20);
-newColumn_1.collapseExpandButtons(true);
-
-// create and configure one more custom column
-var newColumn_2 = chart.dataGrid().column(3);
-newColumn_2.width(85);
-newColumn_2.title("End");
-newColumn_2.title().fontColor("#64b5f6");
-newColumn_2.title().fontWeight(600);
-newColumn_2.labels().fontColor("#64b5f6");
-newColumn_2.labels().format("{%actualEnd}{dateTimeFormat:dd MMM}");
-newColumn_2.depthPaddingMultiplier(20);
-newColumn_2.collapseExpandButtons(true);
+var newColumn = chart.dataGrid().column(2);
+newColumn.width(85);
+newColumn.title("Start");
+newColumn.title().fontColor("#64b5f6");
+newColumn.title().fontWeight(600);
+newColumn.labels().fontColor("#64b5f6");
+newColumn.labels().format("{%actualStart}{dateTimeFormat:dd MMM}");
+newColumn.depthPaddingMultiplier(20);
+newColumn.collapseExpandButtons(true);
 ```
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_10{sample}
