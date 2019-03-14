@@ -125,42 +125,15 @@ buttons.selected().content(contentFunction);
 
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_03{sample}
 
-## Other Settings
-
-### Enabling / Disabling
+## Enabling / Disabling
 
 misc:
 
 * [Columns: Enabling / Disabling Buttons](Columns#enabling_/_disabling_buttons)
 * [Columns: Indentation](Columns#indentation)
 
-### Expanding / Collapsing
+## Expanding / Collapsing
 
 misc:
 
 * [Basic Settings: Navigation](../Basic_Settings#navigation)
-
-### Sample
-
-```
-// set the indent for nested labels in the first column
-chart.dataGrid().column(0).depthPaddingMultiplier(20);
-
-// set the indent for nested labels in the second column
-chart.dataGrid().column(1).depthPaddingMultiplier(0);
-```
-
-```
-// enable buttons on the first column
-chart.dataGrid().column(0).collapseExpandButtons(true);
-
-// disable buttons on the second column
-chart.dataGrid().column(1).collapseExpandButtons(false);
-```
-
-```
-// collapse the task with the id "2"
-chart.collapseTask("2");
-```
-
-{sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_04{sample}
