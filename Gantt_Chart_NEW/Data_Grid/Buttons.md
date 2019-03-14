@@ -31,11 +31,57 @@ misc:
 
 ## Basic Settings
 
+```
+// access data grid buttons
+var buttons = chart.dataGrid().buttons();
+
+// configure data grid buttons
+buttons.fontWeight(600);
+buttons.fontSize(16);
+buttons.fontFamily("Courier");
+buttons.background().fill(null);
+buttons.background().stroke(null);
+buttons.width(30);
+buttons.cursor("default");
+
+// configure data grid buttons in the normal state
+buttons.normal().content("[+]");
+buttons.normal().fontColor("#ef6c00");
+
+// configure data grid buttons in the hover state
+buttons.hovered().content("[+]");
+buttons.hovered().fontColor(anychart.color.lighten("#ef6c00"));
+
+// configure data grid buttons in the selected state
+buttons.selected().content("[-]");
+buttons.selected().fontColor("#64b5f6");
+```
+
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_01{sample}
 
 ## Advanced Settins
 
 ### Background Images
+
+```
+// configure data grid buttons
+buttons.background().stroke(null);
+buttons.normal().content(null);
+buttons.hovered().content(null);
+buttons.selected().content(null);
+
+// set the background fill of data grid buttons in the normal state
+buttons.normal().background().fill({
+   src: "https://cdn.anychart.com/samples/gantt-general-features/data-grid-buttons/close.png",
+   mode: "stretch"
+});
+
+// set the background fill of data grid buttons in the selected state
+buttons.selected().background().fill({
+   src: "https://cdn.anychart.com/samples/gantt-general-features/data-grid-buttons/open.png",
+   mode: "stretch"
+});   
+```
 
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_02{sample}
 
@@ -44,6 +90,7 @@ misc:
 misc:
 
 * [Graphics](../../Graphics)
+
 
 ```
 // access data grid buttons
@@ -115,5 +162,29 @@ chart.dataGrid().column(0).collapseExpandButtons(true);
 // disable buttons on the second column
 chart.dataGrid().column(1).collapseExpandButtons(false);
 ```
+
+```
+// configure data grid buttons
+buttons.fontWeight(600);
+buttons.fontSize(16);
+buttons.fontFamily("Courier");
+buttons.background().fill(null);
+buttons.background().stroke(null);
+buttons.width(30);
+buttons.cursor("default");
+
+// configure data grid buttons in the normal state
+buttons.normal().content("[+]");
+buttons.normal().fontColor("#ef6c00");
+
+// configure data grid buttons in the hover state
+buttons.hovered().content("[+]")
+buttons.hovered().fontColor(anychart.color.lighten("#ef6c00"));
+
+// configure data grid buttons in the selected state
+buttons.selected().content("[-]");
+buttons.selected().fontColor("#64b5f6");
+```
+
 
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_04{sample}
