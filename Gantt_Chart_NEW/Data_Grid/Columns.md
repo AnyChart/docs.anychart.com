@@ -29,6 +29,7 @@ misc:
 * [Basic Settings: Splitter](../Basic_Settings#splitter)
 * {api:anychart.core.ui.DataGrid.Column#width()}width(){api}
 
+**Note:** The overall width of the data grid depends on the width of its columns. Also, you can adjust the position of the splitter between the data grid and timeline – see [Basic Settings: Splitter](../Basic_Settings#splitter).
 
 ```
 // set the width of data grid columns

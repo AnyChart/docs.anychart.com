@@ -14,6 +14,8 @@ Articles in this section explain how to configure:
 * [Buttons](Buttons) – the expand / collapse buttons
 * [Tooltips](Tooltips) – the data grid tooltips
 
+**Note:** The overall width of the data grid depends on the [width of its columns](Columns#width). Also, you can adjust the position of the splitter between the data grid and timeline – see [Basic Settings: Splitter](../Basic_Settings#splitter).
+
 ## Enabling / Disabling
 
 The data grid is enabled by default. To disable / enable it, pass `true` / `false` to {api:anychart.charts.Gantt#dataGrid}dataGrid(){api}:
