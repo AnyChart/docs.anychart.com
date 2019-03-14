@@ -271,10 +271,10 @@ misc:
 
 
 ```
-// disable buttons on the second column
+// disable buttons in the second column
 chart.dataGrid().column(1).collapseExpandButtons(false);
 
-// enable buttons on the first column
+// enable buttons in the first column
 chart.dataGrid().column(0).collapseExpandButtons(true);
 
 // set the indent for nested labels in the first column
