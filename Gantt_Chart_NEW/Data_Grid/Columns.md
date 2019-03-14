@@ -14,6 +14,7 @@ misc:
 
 * {api:anychart.core.ui.DataGrid.Column#enabled()}enabled(){api}
 
+
 ```
 // disable the first data grid column
 chart.dataGrid().column(0).enabled(false);
