@@ -290,6 +290,7 @@ chart.dataGrid().column(0).depthPaddingMultiplier(20);
 misc:
 
 * {api:anychart.core.ui.DataGrid#column}column(){api}
+* (?) [Basic Settings: Splitter](../Basic_Settings#splitter)
 
 ### Project Chart
 
