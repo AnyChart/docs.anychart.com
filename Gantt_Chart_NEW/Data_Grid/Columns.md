@@ -64,7 +64,7 @@ column_2.column(1).fontWeight(600);
 
 misc:
 
-* {api:anychart.core.ui.DataGrid.Column#labels()}labels(){api}
+* {api:anychart.core.ui.DataGrid.Column#labels()}labels(){api} + {api:anychart.core.ui.LabelsFactory#format}format(){api}
 * `linearIndex`, `{%linearIndex}`
 
 ### Tokens
