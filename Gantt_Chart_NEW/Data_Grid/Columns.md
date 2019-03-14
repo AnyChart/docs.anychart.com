@@ -243,7 +243,7 @@ column_2.labels().format(function() {
 
 {sample :height 200}GANTT\_NEW\_Data\_Grid\_Columns\_07{sample}
 
-## Hierarchical Indentation
+## Indentation
 
 misc:
 
@@ -265,8 +265,8 @@ chart.dataGrid().column(1).depthPaddingMultiplier(60);
 misc:
 
 * {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons()}collapseExpandButtons(){api}
-* [Hierarchical Indentation](#hierarchical_indentation) + {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier}depthPaddingMultiplier(){api}
-* [Buttons](Buttons) + [Buttons: Full Customization](Buttons#full_customization) 
+* [Indentation](#indentation) + {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier}depthPaddingMultiplier(){api}
+* [Buttons](Buttons)
 * [Basic Settings: Navigation](../Basic_Settings#navigation)
 
 
