@@ -63,9 +63,6 @@ anychart.onDocumentReady(function () {
     // set the position of the splitteer
     chart.splitterPosition("45%");
 
-    // set the indent for nested labels in the second column
-    chart.dataGrid().column(1).depthPaddingMultiplier(20);
-
     // create and configure a custom data grid column
     var newColumn = chart.dataGrid().column(2);
     newColumn.width(90);
