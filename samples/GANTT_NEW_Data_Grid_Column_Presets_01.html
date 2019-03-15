@@ -19,7 +19,8 @@
             margin: 0;
             padding: 0;
         }
-        select {
+        label {
+            display: inline-block;
             margin: 10px 0 0 10px;
         }
         #container {
@@ -31,12 +32,11 @@
     </style>
 </head>
 <body>
-<select id="typeSelect" onchange="switchPreset()">
-    <option value="dateCommonLog">dateCommonLog</option>
-    <option value="dateDmyDots">dateDmyDots</option>
-    <option value="dateIso8601">dateIso8601</option>
-    <option value="dateUsShort">dateUsShort</option>
-</select>
+<label>Select Preset:</label>
+<label><input onclick="switchPreset('dateCommonLog')" type="radio" name="preset" checked>dateCommonLog</label>
+<label><input onclick="switchPreset('dateDmyDots')" type="radio"  name="preset">dateDmyDots</label>
+<label><input onclick="switchPreset('dateIso8601')" type="radio" name="preset">dateIso8601</label>
+<label><input onclick="switchPreset('dateUsShort')" type="radio"  name="preset">dateUsShort</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -86,7 +86,7 @@ anychart.onDocumentReady(function () {
     var treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart
-    chart = anychart.ganttProject();
+    var chart = anychart.ganttProject();
     
     // set the data
     chart.data(treeData);
@@ -95,20 +95,21 @@ anychart.onDocumentReady(function () {
     chart.splitterPosition("45%");
 
     // configure the first data grid column
-    var column_1 = chart.dataGrid().column(0);
+    column_1 = chart.dataGrid().column(0);
+    column_1.setColumnFormat("actualStart", "text");
     column_1.width(170);
     column_1.title().useHtml(true);
-    column_1.title("Start<br>Timestamp");
-    column_1.setColumnFormat("actualStart", "text");
+    column_1.title(
+      "Start:<br>Timestamp (<span style='color:#64b5f6'>text</span>)"
+    );
 
     // configure the second data grid column
-    var column_2 = chart.dataGrid().column(1);
-    var select = document.getElementById("typeSelect");
-    column_2.setColumnFormat("actualStart", select.value);
+    column_2 = chart.dataGrid().column(1);
+    column_2.setColumnFormat("actualStart", "dateCommonLog");
     column_2.width(170);
     column_2.title().useHtml(true);
     column_2.title(
-     "Start<br><span style='color:#64b5f6'>" + select.value + "</span>"
+     "Start:<br><span style='color:#64b5f6'>dateCommonLog</span>"
     );
     column_2.depthPaddingMultiplier(0);
     column_2.collapseExpandButtons(false);
@@ -126,10 +127,14 @@ anychart.onDocumentReady(function () {
     chart.fitAll();
 });
 
-// switch the preset...
-function switchPreset() {
-  var select = document.getElementById("typeSelect");
-  chart.dataGrid().column(1).setColumnFormat("actualStart", select.value);
+// switch the preset of the second data grid column
+function switchPreset(preset) {
+  column_2.setColumnFormat("actualStart", preset);
+  // update the width and title
+  column_2.width(170);
+  column_2.title(
+   "Start<br><span style='color:#64b5f6'>" + preset + "</span>"
+  );
 }
 </script>
 </body>
