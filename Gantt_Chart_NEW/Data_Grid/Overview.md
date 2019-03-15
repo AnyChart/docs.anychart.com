@@ -24,4 +24,4 @@ The data grid is enabled by default. To disable / enable it, pass `true` / `fals
 chart.dataGrid(false);
 ```
 
-{sample :height 255}GANTT\_NEW\_Data\_Grid\_Overview{sample}
+{sample :height 260}GANTT\_NEW\_Data\_Grid\_Overview{sample}
