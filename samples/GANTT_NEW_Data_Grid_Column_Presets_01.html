@@ -98,15 +98,17 @@ anychart.onDocumentReady(function () {
     var column_1 = chart.dataGrid().column(0);
     column_1.width(170);
     column_1.title().useHtml(true);
-    column_1.title("Start: Timestamp");
+    column_1.title("Start<br>Timestamp");
     column_1.setColumnFormat("actualStart", "text");
 
     // configure the second data grid column
     var column_2 = chart.dataGrid().column(1);
+    var select = document.getElementById("typeSelect");
+    column_2.setColumnFormat("actualStart", select.value);
     column_2.width(170);
     column_2.title().useHtml(true);
     column_2.title(
-     "Start: <span style='color:#64b5f6'>preset</span>"
+     "Start<br><span style='color:#64b5f6'>" + select.value + "</span>"
     );
     column_2.depthPaddingMultiplier(0);
     column_2.collapseExpandButtons(false);
