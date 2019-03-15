@@ -100,7 +100,7 @@ anychart.onDocumentReady(function () {
     column_1.width(170);
     column_1.title().useHtml(true);
     column_1.title(
-      "Start:<br>Timestamp (<span style='color:#64b5f6'>text</span>)"
+      "Actual Start<br><span style='color:#64b5f6'>text</span>"
     );
 
     // configure the second data grid column
@@ -109,7 +109,7 @@ anychart.onDocumentReady(function () {
     column_2.width(170);
     column_2.title().useHtml(true);
     column_2.title(
-     "Start:<br><span style='color:#64b5f6'>dateCommonLog</span>"
+     "Actual Start<br><span style='color:#64b5f6'>dateCommonLog</span>"
     );
     column_2.depthPaddingMultiplier(0);
     column_2.collapseExpandButtons(false);
@@ -133,7 +133,7 @@ function switchPreset(preset) {
   // update the width and title
   column_2.width(170);
   column_2.title(
-   "Start:<br><span style='color:#64b5f6'>" + preset + "</span>"
+   "Actual Start<br><span style='color:#64b5f6'>" + preset + "</span>"
   );
 }
 </script>
