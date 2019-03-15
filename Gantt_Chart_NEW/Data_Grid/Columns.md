@@ -38,7 +38,7 @@ chart.dataGrid().column(0).width(25);
 chart.dataGrid().column(1).width(120);
 ```
 
-{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_02{sample}
+{sample :height 260}GANTT\_NEW\_Data\_Grid\_Columns\_02{sample}
 
 ## Title
 

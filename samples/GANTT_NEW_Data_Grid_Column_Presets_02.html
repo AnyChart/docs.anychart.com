@@ -31,38 +31,44 @@ anychart.onDocumentReady(function () {
       {
         id: "1",
         name: "Development",
-        actualStart: "2018-01-15",
-        actualEnd: "2018-03-10",
+        actualStart: 1515974400000,
+        actualEnd: 1520640000000,
+        progressValue: 0.6,
         children: [
           {
             id: "1_1",
             name: "Analysis",
-            actualStart: "2018-01-15",
-            actualEnd: "2018-01-25"
+            actualStart: 1515974400000,
+            actualEnd: 1516838400000,
+            progressValue: 0.75
           },
           {
             id: "1_2",
             name: "Design",
-            actualStart: "2018-01-20",
-            actualEnd: "2018-02-04"
+            actualStart: 1516406400000,
+            actualEnd: 1517702400000,
+            progressValue: 1
           },
           {
             id: "1_3",
             name: "Meeting",
-            actualStart: "2018-02-05",
-            actualEnd: "2018-02-05"
+            actualStart: 1517788800000,
+            actualEnd: 1517788800000,
+            progressValue: 0
           },
           {
             id: "1_4",
             name: "Implementation",
-            actualStart: "2018-02-05",
-            actualEnd: "2018-02-24"
+            actualStart: 1517788800000,
+            actualEnd: 1519430400000,
+            progressValue: 0.6
           },
           {
             id: "1_5",
             name: "Testing",
-            actualStart: "2018-02-25",
-            actualEnd: "2018-03-10"
+            actualStart: 1519516800000,
+            actualEnd: 1520640000000,
+            progressValue: 0
           }
       ]}
     ];
@@ -75,6 +81,32 @@ anychart.onDocumentReady(function () {
     
     // set the data
     chart.data(treeData);
+
+    // set the position of the splitter
+    chart.splitterPosition("60%");
+
+    // disable labels of elements
+    chart.getTimeline().elements().labels(false);
+
+    // configure the first data grid column
+    column_1 = chart.dataGrid().column(0);
+    column_1.setColumnFormat("progressValue", "text");
+    column_1.width(170);
+    column_1.title().useHtml(true);
+    column_1.title(
+      "Progress Value<br><span style='color:#64b5f6'>text</span>"
+    );
+
+    // configure the second data grid column
+    column_2 = chart.dataGrid().column(1);
+    column_2.setColumnFormat("progressValue", "percent");
+    column_2.width(170);
+    column_2.title().useHtml(true);
+    column_2.title(
+     "Progress Value<br><span style='color:#64b5f6'>percent</span>"
+    );
+    column_2.depthPaddingMultiplier(0);
+    column_2.collapseExpandButtons(false);
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-15");
