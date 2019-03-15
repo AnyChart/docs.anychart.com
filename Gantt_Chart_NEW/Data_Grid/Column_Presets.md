@@ -17,7 +17,7 @@ misc:
 
 ```
 
-{sample :height 255}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_01{sample}
+{sample :height 260}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_01{sample}
 
 ```
 
