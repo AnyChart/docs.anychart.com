@@ -32,16 +32,10 @@
 </head>
 <body>
 <select id="typeSelect" onchange="switchPreset()">
-    <option value="area">Area</option>
-    <option value="column">Column</option>
-    <option value="jump-line">Jump Line</option>
-    <option value="line">Line</option>
-    <option value="marker">Marker</option>  
-    <option value="spline-area">Spline Area</option>  
-    <option value="spline">Spline</option>
-    <option value="step-area">Step Area</option>
-    <option value="step-line">Step Line</option>
-    <option value="stick">Stick</option>
+    <option value="dateCommonLog">dateCommonLog</option>
+    <option value="dateDmyDots">dateDmyDots</option>
+    <option value="dateIso8601">dateIso8601</option>
+    <option value="dateUsShort">dateUsShort</option>
 </select>
 <div id="container"></div>
 <script>
@@ -92,19 +86,20 @@ anychart.onDocumentReady(function () {
     var treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart
-    var chart = anychart.ganttProject();
+    chart = anychart.ganttProject();
     
     // set the data
     chart.data(treeData);
 
     // set the position of the splitteer
-    chart.splitterPosition("50%");
+    chart.splitterPosition("45%");
 
     // configure the first data grid column
     var column_1 = chart.dataGrid().column(0);
     column_1.width(170);
     column_1.title().useHtml(true);
     column_1.title("Start: Timestamp");
+    column_1.setColumnFormat("actualStart", "text");
 
     // configure the second data grid column
     var column_2 = chart.dataGrid().column(1);
@@ -132,7 +127,7 @@ anychart.onDocumentReady(function () {
 // switch the preset...
 function switchPreset() {
   var select = document.getElementById("typeSelect");
-  series.seriesType(select.value);
+  chart.dataGrid().column(1).setColumnFormat("actualStart", select.value);
 }
 </script>
 </body>
