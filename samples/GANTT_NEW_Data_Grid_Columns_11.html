@@ -60,9 +60,6 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData); 
 
-    // set the position of the splitter
-    chart.splitterPosition("42%");
-
     // create and configure a custom data grid column
     var newColumn = chart.dataGrid().column(2);
     newColumn.width(90);
@@ -71,6 +68,9 @@ anychart.onDocumentReady(function () {
     newColumn.title().fontWeight(600);
     newColumn.labels().fontColor("#64b5f6");
     newColumn.labels().format("{%start}{dateTimeFormat:dd MMM}");
+
+    // set the position of the splitter
+    chart.splitterPosition("42%");
 
     // set the container id
     chart.container("container");

@@ -33,7 +33,7 @@ anychart.onDocumentReady(function () {
         name: "Development",
         actualStart: 1515974400000,
         actualEnd: 1520640000000,
-        progressValue: 0.6,
+        progressValue: "0.6",
         children: [
           {
             id: "1_1",
@@ -82,12 +82,6 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
-    // set the position of the splitter
-    chart.splitterPosition("60%");
-
-    // disable labels of elements
-    chart.getTimeline().elements().labels(false);
-
     // configure the first data grid column
     column_1 = chart.dataGrid().column(0);
     column_1.setColumnFormat("progressValue", "text");
@@ -107,6 +101,12 @@ anychart.onDocumentReady(function () {
     );
     column_2.depthPaddingMultiplier(0);
     column_2.collapseExpandButtons(false);
+
+    // disable labels of elements
+    chart.getTimeline().elements().labels(false);
+
+    // set the position of the splitter
+    chart.splitterPosition("60%");
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-15");

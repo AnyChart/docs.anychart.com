@@ -76,12 +76,6 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
-    // set the position of the splitter
-    chart.splitterPosition("42%");
-
-    // set the indent for nested labels in the second column
-    chart.dataGrid().column(1).depthPaddingMultiplier(20);
-
     // create and configure a custom data grid column
     var newColumn = chart.dataGrid().column(2);
     newColumn.width(90);
@@ -92,6 +86,12 @@ anychart.onDocumentReady(function () {
     newColumn.labels().format("{%actualStart}{dateTimeFormat:dd MMM}");
     newColumn.depthPaddingMultiplier(20);
     newColumn.collapseExpandButtons(true);
+
+    // set the indent for nested labels in the second column
+    chart.dataGrid().column(1).depthPaddingMultiplier(20);
+
+    // set the position of the splitter
+    chart.splitterPosition("42%");
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-15");

@@ -21,7 +21,7 @@ misc:
 chart.dataGrid().column(0).enabled(false);
 ```
 
-{sample :height 255}GANTT\_NEW\_Data\_Grid\_Columns\_01{sample}
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_01{sample}
 
 ## Width
 
