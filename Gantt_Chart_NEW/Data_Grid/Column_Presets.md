@@ -11,6 +11,24 @@ misc:
 * [Columns: Tokens](Columns#tokens)
 * [Columns: Formatting Functions](Columns#formatting_functions)
 
-## (?)
+## Default Presets
 
-## (?)
+```
+
+```
+
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_01{sample}
+
+```
+
+```
+
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_02{sample}
+
+## Custom Presets
+
+```
+
+```
+
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_03{sample}

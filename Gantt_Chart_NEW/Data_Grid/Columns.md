@@ -7,6 +7,7 @@ misc:
 
 * {api:anychart.core.ui.DataGrid.Column}anychart.core.ui.DataGrid.Column{api}
 * {api:anychart.core.ui.DataGrid#column}column(){api}
+* [Column Presets](#column_presets)
 
 ## Enabling / Disabling
 
