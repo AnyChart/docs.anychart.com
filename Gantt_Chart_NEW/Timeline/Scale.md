@@ -45,8 +45,8 @@ Each entry of the array is an object standing for a level. There you should spec
 // set zoom levels of the scale
 chart.getTimeline().scale().zoomLevels([
   [
-    {unit: 'year', count: 1},
-    {unit: 'month', count: 3}
+    {unit: "year", count: 1},
+    {unit: "month", count: 3}
   ]
 ]);
 ```
@@ -80,8 +80,8 @@ In this sample, there are two levels, the month and the quarter:
 // configure the scale
 chart.getTimeline().scale().zoomLevels([
   [
-    {unit: 'month', count: 1},
-    {unit: 'quarter', count: 1}
+    {unit: "month", count: 1},
+    {unit: "quarter", count: 1}
   ]
 ]);
 ```
