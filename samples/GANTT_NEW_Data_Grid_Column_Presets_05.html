@@ -84,13 +84,13 @@ anychart.onDocumentReady(function () {
 
     // configure the first data grid column
     column_1 = chart.dataGrid().column(0);
-    column_1.setColumnFormat("progressValue", "direct-numbering");
+    column_1.setColumnFormat("name", "text");
     column_1.title("value");
     column_1.title().fontSize(10);
 
     // configure the second data grid column
     column_2 = chart.dataGrid().column(1);
-    column_2.setColumnFormat("progressValue", "percent");
+    column_2.setColumnFormat("name", "short-text");
     column_2.title().useHtml(true);
     column_2.title("preset");
     column_2.title().fontSize(10);
@@ -101,7 +101,7 @@ anychart.onDocumentReady(function () {
     // chart.getTimeline().elements().labels(false);
 
     // set the position of the splitter
-    // chart.splitterPosition("60%");
+    chart.splitterPosition("40%");
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-15");
