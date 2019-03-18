@@ -42,6 +42,10 @@ text and numbers:
 * `"text"`
 * `"direct-numbering"`
 
+sample:
+
+* `"id"`
+
 
 {sample :height 260}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_01{sample}
 
@@ -54,6 +58,10 @@ dates:
 * `"date-iso-8601"`
 * `"date-us-short"`
 
+sample:
+
+* `"actualStart"`
+
 
 {sample :height 260}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_02{sample}
 
@@ -63,6 +71,9 @@ percents:
 
 * `"percent"`
 
+sample:
+
+* `"progressValue"`
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_03{sample}
 
@@ -72,6 +83,10 @@ financial:
 
 * `"financial"`
 
+sample:
+
+* `"?"`
+
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_04{sample}
 
@@ -80,6 +95,10 @@ financial:
 short text:
 
 * `"short text"`
+
+sample:
+
+* `"?"`
 
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_05{sample}
