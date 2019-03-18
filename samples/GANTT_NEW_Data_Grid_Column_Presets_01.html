@@ -81,8 +81,6 @@ anychart.onDocumentReady(function () {
     column_1.setColumnFormat("id", "text");
     column_1.title("text");
     column_1.title().fontSize(10);
-    column_1.title().wordWrap("break-word");
-    column_1.title().padding(7);
 
     // configure the second data grid column
     column_2 = chart.dataGrid().column(1);
@@ -90,8 +88,6 @@ anychart.onDocumentReady(function () {
     column_2.title().useHtml(true);
     column_2.title("short-text");
     column_2.title().fontSize(10);
-    column_2.title().wordWrap("break-word");
-    column_2.title().padding(7);
     column_2.depthPaddingMultiplier(0);
     column_2.collapseExpandButtons(false);
 
