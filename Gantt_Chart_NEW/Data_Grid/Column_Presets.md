@@ -39,7 +39,7 @@ chart.dataGrid().column(0).setColumnFormat("actualStart", "date-common-log");
 
 ### Values
 
-text & numberic values:
+text & numeric values:
 
 * `"text"`
 * `"direct-numbering"`
