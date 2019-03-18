@@ -33,42 +33,36 @@ anychart.onDocumentReady(function () {
         name: "Development",
         actualStart: 1515974400000,
         actualEnd: 1520640000000,
-        progressValue: "0.6",
         children: [
           {
             id: "1_1",
             name: "Analysis",
             actualStart: 1515974400000,
-            actualEnd: 1516838400000,
-            progressValue: 0.75
+            actualEnd: 1516838400000
           },
           {
             id: "1_2",
             name: "Design",
             actualStart: 1516406400000,
-            actualEnd: 1517702400000,
-            progressValue: 1
+            actualEnd: 1517702400000
           },
           {
             id: "1_3",
             name: "Meeting",
             actualStart: 1517788800000,
-            actualEnd: 1517788800000,
-            progressValue: 0
+            actualEnd: 1517788800000
           },
           {
             id: "1_4",
             name: "Implementation",
             actualStart: 1517788800000,
-            actualEnd: 1519430400000,
-            progressValue: 0.6
+            actualEnd: 1519430400000
           },
           {
             id: "1_5",
             name: "Testing",
             actualStart: 1519516800000,
-            actualEnd: 1520640000000,
-            progressValue: 0
+            actualEnd: 1520640000000
           }
       ]}
     ];
@@ -84,24 +78,18 @@ anychart.onDocumentReady(function () {
 
     // configure the first data grid column
     column_1 = chart.dataGrid().column(0);
-    column_1.setColumnFormat("progressValue", "direct-numbering");
-    column_1.title("value");
-    column_1.title().fontSize(13);
+    column_1.setColumnFormat("id", "text");
+    column_1.title("text");
+    column_1.title().fontSize(10);
 
     // configure the second data grid column
     column_2 = chart.dataGrid().column(1);
-    column_2.setColumnFormat("progressValue", "percent");
+    column_2.setColumnFormat("id", "direct-numbering");
     column_2.title().useHtml(true);
-    column_2.title("preset");
-    column_2.title().fontSize(13);
+    column_2.title("number");
+    column_2.title().fontSize(10);
     column_2.depthPaddingMultiplier(0);
     column_2.collapseExpandButtons(false);
-
-    // disable labels of elements
-    // chart.getTimeline().elements().labels(false);
-
-    // set the position of the splitter
-    // chart.splitterPosition("60%");
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-15");

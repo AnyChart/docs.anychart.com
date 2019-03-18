@@ -86,14 +86,14 @@ anychart.onDocumentReady(function () {
     column_1 = chart.dataGrid().column(0);
     column_1.setColumnFormat("progressValue", "direct-numbering");
     column_1.title("value");
-    column_1.title().fontSize(13);
+    column_1.title().fontSize(10);
 
     // configure the second data grid column
     column_2 = chart.dataGrid().column(1);
     column_2.setColumnFormat("progressValue", "percent");
     column_2.title().useHtml(true);
     column_2.title("preset");
-    column_2.title().fontSize(13);
+    column_2.title().fontSize(10);
     column_2.depthPaddingMultiplier(0);
     column_2.collapseExpandButtons(false);
 
