@@ -87,7 +87,7 @@ financial:
 
 sample:
 
-* `"?"`
+* custom field `"budget"`
 
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_04{sample}
@@ -100,7 +100,7 @@ short text:
 
 sample:
 
-* `"?"`
+* (?) `"name"`
 
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_05{sample}

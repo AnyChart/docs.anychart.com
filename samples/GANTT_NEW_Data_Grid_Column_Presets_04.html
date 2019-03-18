@@ -33,42 +33,42 @@ anychart.onDocumentReady(function () {
         name: "Development",
         actualStart: 1515974400000,
         actualEnd: 1520640000000,
-        progressValue: "0.6",
+        budget: 80000,
         children: [
           {
             id: "1_1",
             name: "Analysis",
             actualStart: 1515974400000,
             actualEnd: 1516838400000,
-            progressValue: 0.75
+            budget: 10000
           },
           {
             id: "1_2",
             name: "Design",
             actualStart: 1516406400000,
             actualEnd: 1517702400000,
-            progressValue: 1
+            budget: 20000
           },
           {
             id: "1_3",
             name: "Meeting",
             actualStart: 1517788800000,
             actualEnd: 1517788800000,
-            progressValue: 0
+            budget: 0
           },
           {
             id: "1_4",
             name: "Implementation",
             actualStart: 1517788800000,
             actualEnd: 1519430400000,
-            progressValue: 0.6
+            budget: 30000
           },
           {
             id: "1_5",
             name: "Testing",
             actualStart: 1519516800000,
             actualEnd: 1520640000000,
-            progressValue: 0
+            budget: 20000
           }
       ]}
     ];
@@ -84,13 +84,13 @@ anychart.onDocumentReady(function () {
 
     // configure the first data grid column
     column_1 = chart.dataGrid().column(0);
-    column_1.setColumnFormat("progressValue", "direct-numbering");
+    column_1.setColumnFormat("budget", "direct-numbering");
     column_1.title("direct-\nnumber\ning");
     column_1.title().fontSize(10);
 
     // configure the second data grid column
     column_2 = chart.dataGrid().column(1);
-    column_2.setColumnFormat("progressValue", "financial");
+    column_2.setColumnFormat("budget", "financial");
     column_2.title().useHtml(true);
     column_2.title("financial");
     column_2.title().fontSize(10);
