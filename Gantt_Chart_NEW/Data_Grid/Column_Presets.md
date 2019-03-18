@@ -18,7 +18,7 @@ misc:
 * {api:anychart.core.ui.DataGrid.Column#setColumnFormat}setColumnFormat(){api}
 * {api:anychart.enums.ColumnFormats}anychart.enums.ColumnFormats{api}
 * `"text"` = value of the data field
-* пресеты влияют на ширину колонки
+* presets affect the width of the column
 
 default presets:
 
