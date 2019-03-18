@@ -22,15 +22,15 @@ misc:
 
 default presets:
 
-* `"text"` – [values](#values)
-* `"direct-numbering"` – [values](#values)
-* `"date-common-log"` – [dates](#dates)
-* `"date-dmy-dots"` – [dates](#dates)
-* `"date-iso-8601"` – [dates](#dates)
-* `"date-us-short"` – [dates](#dates)
-* `"percent"` – [percents](#percents)
-* `"percent"` – [financial](#financial)
-* `"percent"` – [short-text](#short-text)
+* `"text"` – to display text [values](#values)
+* `"direct-numbering"` – to display numeric [values](#values)
+* `"date-common-log"` – to format [dates](#dates)
+* `"date-dmy-dots"` – to format [dates](#dates)
+* `"date-iso-8601"` – to format [dates](#dates)
+* `"date-us-short"` – to format [dates](#dates)
+* `"percent"` – to format [percents](#percents)
+* `"financial"` – to format [financial data](#financial_data)
+* `"percent"` – to format [short text](#short_text)
 
 
 ```
@@ -39,7 +39,7 @@ chart.dataGrid().column(0).setColumnFormat("actualStart", "date-common-log");
 
 ### Values
 
-text and numbers:
+text & numberic values:
 
 * `"text"`
 * `"direct-numbering"`
@@ -79,7 +79,7 @@ sample:
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_03{sample}
 
-### Financial
+### Financial Data
 
 financial:
 
