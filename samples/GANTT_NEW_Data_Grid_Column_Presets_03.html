@@ -76,6 +76,18 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
+    // configure the second data grid column
+    chart.dataGrid().column(1).setColumnFormat(
+        "name",
+        {
+          "formatter": function(value) {
+            return value.toUpperCase();
+          },
+          "textStyle": {"fontColor": "#64b5f6"},
+          "width": 130
+        }
+    );
+
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-15");
 
