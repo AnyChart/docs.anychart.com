@@ -100,7 +100,7 @@ anychart.onDocumentReady(function () {
     // configure the second data grid column
     column_2 = chart.dataGrid().column(1);
     column_2.setColumnFormat("actualStart", "date-common-log");
-    column_2.title("date\n-common\n-log");
+    column_2.title("date-\ncommon-log");
     column_2.title().fontSize(10);
     column_2.depthPaddingMultiplier(0);
     column_2.collapseExpandButtons(false);
@@ -124,6 +124,19 @@ anychart.onDocumentReady(function () {
 // switch the preset of the second data grid column
 function switchPreset(preset) {
   column_2.setColumnFormat("actualStart", preset);
+  // update the column title
+  if (preset == "date-common-log") {
+    column_2.title("date-\ncommon-log");
+  }
+  if (preset == "date-dmy-dots") {
+    column_2.title("date-dmy-dots");
+  }
+    if (preset == "date-iso-8601") {
+    column_2.title("date-iso-8601");
+  }
+    if (preset == "date-us-short") {
+    column_2.title("date-us-short");
+  }
 }
 </script>
 </body>
