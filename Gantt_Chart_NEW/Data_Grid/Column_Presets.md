@@ -16,12 +16,9 @@ misc:
 misc:
 
 * {api:anychart.core.ui.DataGrid.Column#setColumnFormat}setColumnFormat(){api}
-* {api:}{api}
+* {api:anychart.enums.ColumnFormats}anychart.enums.ColumnFormats{api}
+* [dates](#dates), [percents](#percents)
 
-
-```
-chart.dataGrid().column(0).setColumnFormat("actualStart", "date-common-log");
-```
 default presets:
 
 * `"text"`
@@ -31,7 +28,29 @@ default presets:
 * `"date-us-short"`
 * `"percent"`
 
+
+```
+chart.dataGrid().column(0).setColumnFormat("actualStart", "date-common-log");
+```
+
+### Dates
+
+dates:
+
+* `"date-common-log"`
+* `"date-dmy-dots"`
+* `"date-iso-8601"`
+* `"date-us-short"`
+
+
 {sample :height 260}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_01{sample}
+
+### Percents
+
+percents:
+
+* `"percent"`
+
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_02{sample}
 
