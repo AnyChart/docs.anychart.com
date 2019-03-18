@@ -18,6 +18,7 @@ misc:
 * {api:anychart.core.ui.DataGrid.Column#setColumnFormat}setColumnFormat(){api}
 * {api:anychart.enums.ColumnFormats}anychart.enums.ColumnFormats{api}
 * [dates](#dates), [percents](#percents)
+* (?) пресеты влияют на ширину колонки, но ее можно поменять после задания пресета
 
 default presets:
 
