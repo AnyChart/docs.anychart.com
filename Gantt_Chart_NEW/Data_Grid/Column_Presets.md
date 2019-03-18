@@ -35,6 +35,16 @@ default presets:
 chart.dataGrid().column(0).setColumnFormat("actualStart", "date-common-log");
 ```
 
+### Text and Numbers
+
+text and numbers:
+
+* `"text"`
+* `"direct-numbering"`
+
+
+{sample :height 260}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_01{sample}
+
 ### Dates
 
 dates:
@@ -45,7 +55,7 @@ dates:
 * `"date-us-short"`
 
 
-{sample :height 260}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_01{sample}
+{sample :height 260}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_02{sample}
 
 ### Percents
 
@@ -54,7 +64,25 @@ percents:
 * `"percent"`
 
 
-{sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_02{sample}
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_03{sample}
+
+### Financial
+
+financial:
+
+* `"financial"`
+
+
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_04{sample}
+
+### Short Text
+
+short text:
+
+* `"short text"`
+
+
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_05{sample}
 
 ## Custom Presets
 
@@ -72,4 +100,4 @@ chart.dataGrid().column(1).setColumnFormat(
 );
 ```
 
-{sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_03{sample}
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_06{sample}
