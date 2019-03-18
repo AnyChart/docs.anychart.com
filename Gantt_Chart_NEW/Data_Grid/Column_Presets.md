@@ -31,7 +31,6 @@ default presets:
 * `"date-us-short"` – to format [dates](#dates)
 * `"percent"` – to format [percents](#percents)
 * `"financial"` – to format [financial data](#financial_data)
-* `"percent"` – to format [short text](#short_text)
 
 
 ```
