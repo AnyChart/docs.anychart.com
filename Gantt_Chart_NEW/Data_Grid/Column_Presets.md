@@ -19,23 +19,25 @@ misc:
 * {api:anychart.enums.ColumnFormats}anychart.enums.ColumnFormats{api}
 * `"text"` = value of the data field
 * пресеты влияют на ширину колонки
-* [dates](#dates), [percents](#percents)
 
 default presets:
 
-* `"text"`
-* `"date-common-log"`
-* `"date-dmy-dots"`
-* `"date-iso-8601"`
-* `"date-us-short"`
-* `"percent"`
+* `"text"` – [values](#values)
+* `"direct-numbering"` – [values](#values)
+* `"date-common-log"` – [dates](#dates)
+* `"date-dmy-dots"` – [dates](#dates)
+* `"date-iso-8601"` – [dates](#dates)
+* `"date-us-short"` – [dates](#dates)
+* `"percent"` – [percents](#percents)
+* `"percent"` – [financial](#financial)
+* `"percent"` – [short-text](#short-text)
 
 
 ```
 chart.dataGrid().column(0).setColumnFormat("actualStart", "date-common-log");
 ```
 
-### Text and Numbers
+### Values
 
 text and numbers:
 
