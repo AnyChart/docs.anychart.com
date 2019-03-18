@@ -85,8 +85,9 @@ anychart.onDocumentReady(function () {
     // configure the first data grid column
     column_1 = chart.dataGrid().column(0);
     column_1.setColumnFormat("progressValue", "direct-numbering");
-    column_1.title("direct-\nnumber\ning");
+    column_1.title("direct-numbering");
     column_1.title().fontSize(10);
+    column_1.title().wordWrap("break-word");
 
     // configure the second data grid column
     column_2 = chart.dataGrid().column(1);
@@ -94,14 +95,9 @@ anychart.onDocumentReady(function () {
     column_2.title().useHtml(true);
     column_2.title("percent");
     column_2.title().fontSize(10);
+    column_2.title().wordWrap("break-word");
     column_2.depthPaddingMultiplier(0);
     column_2.collapseExpandButtons(false);
-
-    // disable labels of elements
-    // chart.getTimeline().elements().labels(false);
-
-    // set the position of the splitter
-    // chart.splitterPosition("60%");
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-15");
