@@ -35,7 +35,7 @@ misc:
 ```
 // set the width of data grid columns
 chart.dataGrid().column(0).width(25);
-chart.dataGrid().column(1).width(120);
+chart.dataGrid().column(1).width(130);
 ```
 
 {sample :height 260}GANTT\_NEW\_Data\_Grid\_Columns\_02{sample}
