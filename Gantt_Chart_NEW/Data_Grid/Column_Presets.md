@@ -23,6 +23,7 @@ misc:
 default presets:
 
 * `"text"` – to display text [values](#values)
+* `"short-text"` – to display short text [values](#values)
 * `"direct-numbering"` – to display numeric [values](#values)
 * `"date-common-log"` – to format [dates](#dates)
 * `"date-dmy-dots"` – to format [dates](#dates)
@@ -42,6 +43,7 @@ chart.dataGrid().column(0).setColumnFormat("actualStart", "date-common-log");
 text & numeric values:
 
 * `"text"`
+* `"short-text"`
 * `"direct-numbering"`
 
 sample:
@@ -92,19 +94,6 @@ sample:
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_04{sample}
 
-### Short Text
-
-short text:
-
-* `"short text"`
-
-sample:
-
-* (?) `"name"`
-
-
-{sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_05{sample}
-
 ## Custom Presets
 
 ```
@@ -121,4 +110,4 @@ chart.dataGrid().column(1).setColumnFormat(
 );
 ```
 
-{sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_06{sample}
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_05{sample}

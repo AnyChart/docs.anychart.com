@@ -31,38 +31,38 @@ anychart.onDocumentReady(function () {
       {
         id: "1",
         name: "Development",
-        actualStart: 1515974400000,
-        actualEnd: 1520640000000,
+        actualStart: "2018-01-15",
+        actualEnd: "2018-03-10",
         children: [
           {
             id: "1_1",
             name: "Analysis",
-            actualStart: 1515974400000,
-            actualEnd: 1516838400000
+            actualStart: "2018-01-15",
+            actualEnd: "2018-01-25"
           },
           {
             id: "1_2",
             name: "Design",
-            actualStart: 1516406400000,
-            actualEnd: 1517702400000
+            actualStart: "2018-01-20",
+            actualEnd: "2018-02-04"
           },
           {
             id: "1_3",
             name: "Meeting",
-            actualStart: 1517788800000,
-            actualEnd: 1517788800000
+            actualStart: "2018-02-05",
+            actualEnd: "2018-02-05"
           },
           {
             id: "1_4",
             name: "Implementation",
-            actualStart: 1517788800000,
-            actualEnd: 1519430400000
+            actualStart: "2018-02-05",
+            actualEnd: "2018-02-24"
           },
           {
             id: "1_5",
             name: "Testing",
-            actualStart: 1519516800000,
-            actualEnd: 1520640000000
+            actualStart: "2018-02-25",
+            actualEnd: "2018-03-10"
           }
       ]}
     ];
@@ -76,25 +76,17 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
-    // configure the first data grid column
-    column_1 = chart.dataGrid().column(0);
-    column_1.setColumnFormat("name", "text");
-    column_1.title("text");
-    column_1.title().fontSize(10);
-    column_1.title().wordWrap("break-word");
-
     // configure the second data grid column
-    column_2 = chart.dataGrid().column(1);
-    column_2.setColumnFormat("name", "short-text");
-    column_2.title().useHtml(true);
-    column_2.title("short-text");
-    column_2.title().fontSize(10);
-    column_2.title().wordWrap("break-word");
-    column_2.depthPaddingMultiplier(0);
-    column_2.collapseExpandButtons(false);
-
-    // set the position of the splitter
-    chart.splitterPosition("40%");
+    chart.dataGrid().column(1).setColumnFormat(
+        "name",
+        {
+          formatter: function(value) {
+            return value.toUpperCase();
+          },
+          textStyle: {fontColor: "#64b5f6"},
+          width: 130
+        }
+    );
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-15");

@@ -85,13 +85,24 @@ anychart.onDocumentReady(function () {
 
     // configure the second data grid column
     column_2 = chart.dataGrid().column(1);
-    column_2.setColumnFormat("id", "direct-numbering");
+    column_2.setColumnFormat("id", "short-text");
     column_2.title().useHtml(true);
-    column_2.title("direct-numbering");
+    column_2.title("short-text");
     column_2.title().fontSize(10);
     column_2.title().wordWrap("break-word");
     column_2.depthPaddingMultiplier(0);
     column_2.collapseExpandButtons(false);
+
+    // add and configure the third data grid column
+    column_3 = chart.dataGrid().column(2);
+    column_3.setColumnFormat("id", "direct-numbering");
+    column_3.title().useHtml(true);
+    column_3.title("direct-numbering");
+    column_3.title().fontSize(10);
+    column_3.title().wordWrap("break-word");
+
+    // set the position of the splitter
+    chart.splitterPosition("50%");
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-15");
