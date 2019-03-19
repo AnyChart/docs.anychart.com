@@ -40,7 +40,7 @@ chart.dataGrid().column(1).width(130);
 
 ## Title
 
-To configure [titles](../../Common_Settings/Title) of columns, use the {api:anychart.core.ui.DataGrid.Column#title}title(){api} method:
+To configure [titles](../../Common_Settings/Title) of columns, use the {api:anychart.core.ui.DataGrid.Column#title}title(){api} method with methods of the {api:anychart.core.ui.Title} class, for example {api:anychart.core.ui.Title#enabled}enabled(){api}, {api:anychart.core.ui.Title#text}text(){api}, {api:anychart.core.ui.Title#fontColor}fontColor(){api}, {api:anychart.core.ui.Title#fontWeight}fontWeight(){api}, etc.:
 
 ```
 // configure the title of the first data grid column
@@ -50,22 +50,40 @@ column_1.title().enabled(false);
 // configure the title of the second data grid column
 var column_2 = chart.dataGrid().column(1);
 column_2.title().text("TASK");
-column_2.column(1).fontColor("#64b5f6");
-column_2.column(1).fontWeight(600);
+column_2.title().fontColor("#64b5f6");
+column_2.title().fontWeight(600);
 ```
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_03{sample}
 
 ## Text (Labels)
 
-misc:
+To adjust the text of columns combine {api:anychart.core.ui.DataGrid.Column#labels}labels(){api} with methods of the {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api} class, for example {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api}, {api:anychart.core.ui.LabelsFactory#fontWeight}fontWeight(){api}, {api:anychart.core.ui.LabelsFactory#fontSize}fontSize(){api}, etc.
 
-* {api:anychart.core.ui.DataGrid.Column#labels()}labels(){api} + {api:anychart.core.ui.LabelsFactory#format}format(){api}
-* `linearIndex`, `{%linearIndex}`
+The {api:anychart.core.ui.LabelsFactory#format}format(){api} method, combined with [text formatters](../../Common_Settings/Text_Formatters), allows setting the text format – read the sections below to learn more.
 
 ### Tokens
 
+To format the text of columns, combine the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [tokens](../../Common_Settings/Text_Formatters#string_tokens).
+
+Please keep in mind that in addition to default tokens you can always use a custom token corresponding to a custom field in your data.
+
+Also, if you need to enable HTML in tokens, pass `true` to {api:anychart.core.ui.LabelsFactory#useHtml()}useHtml(){api}.
+
 #### Project Tokens
+
+For the [Project Gantt](../Project_Chart) chart, the following tokens are available:
+
+* `{%id}`
+* `{%name}`
+* `{%actualStart}`
+* `{%actualEnd}`
+* `{%baselineStart}`
+* `{%baselineEnd}`
+* `{%progress}`
+* `{%linearIndex}`
+
+In the sample below, there is a Project chart with the text font and format of both default columns adjusted. The format is set with the help of tokens, including a custom one.
 
 ```
 // set the text of the first data grid column
@@ -87,6 +105,16 @@ column_2.labels().format(
 
 #### Resource Tokens
 
+The [Resource Gantt](../Resource_Chart) chart supports these tokens:
+
+* `{%id}`
+* `{%name}`
+* `{%start}`
+* `{%end}`
+* `{%linearIndex}`
+
+In the following sample, tokens, including a custom one, are used to format the text of period labels. Also, text font is adjusted.
+
 ```
 // set the text of the first data grid column
 var column_1 = chart.dataGrid().column(0);
@@ -107,11 +135,30 @@ column_2.labels().format(
 
 ### Formatting Functions
 
+You can configure the text of columns by combining the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions).
+
+In these functions, a number of default context fields is available. Also, you can use {api:anychart.format.Context#getData}getData(){api} to refer to a custom field in your data and methods of the [tree data model](../../Working_with_Data/Tree_Data_Model) to perform operations on data.
+
+If you need to enable HTML in formatting functions, pass `true` to {api:anychart.core.ui.LabelsFactory#useHtml()}useHtml(){api}.
+
+#### Project Fields
+
+For the [Project Gantt](../Project_Chart) chart, the following fields are available in formatting functions:
+
+* `id`
+* `name`
+* `actualStart`
+* `actualEnd`
+* `baselineStart`
+* `baselineEnd`
+* `progress`
+* `linearIndex`
+
 misc:
 
 * упомянуть поле `item`, но не в основном списке
 
-#### Project Fields
+In the sample below, there is a Project chart. A formatting function is used to display different column text for the different types of [tasks](../Project_Chart#tasks_\(actual\)).
 
 ```
 // set the text of the first data grid column
