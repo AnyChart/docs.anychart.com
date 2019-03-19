@@ -11,7 +11,7 @@ To access a column, combine {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} 
 var column_1 = chart.dataGrid().column(0);
 ```
 
-The sections below explain how to configure default columns or create [custom columns](#custom_columns). Also, you can use column presets – see the [Column Presets](#column_presets) article.
+The sections below explain how to configure default columns or create [custom columns](#custom_columns). Also, you can use column presets – see the [Column Presets](Сolumn_Зresets) article.
 
 ## Enabling / Disabling
 
