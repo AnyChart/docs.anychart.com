@@ -356,7 +356,7 @@ To configure a custom column, use methods of the {api:anychart.core.ui.DataGrid.
 
 ### Project Chart
 
-In this sample, there is a [Project Gantt](../Project_Chart) chart with two default columns and custom one. The text of the custom column is formatted with the help of a token – see the [Project Tokens](#project_tokens) section.
+In the following sample, there is a [Project Gantt](../Project_Chart) chart with two default columns and custom one. The text of the custom column is formatted with the help of a token – see the [Project Tokens](#project_tokens) section.
 
 ```
 // create and configure a custom data grid column
@@ -375,7 +375,7 @@ newColumn.collapseExpandButtons(true);
 
 ### Resource Chart
 
-In the following sample, there is a [Resource Gantt](../Resource_Chart) chart with two default columns and custom one.  The text of the custom column is formatted with the help of a token – see the [Resource Tokens](#resource_tokens) section.
+In the sample below, there is a [Resource Gantt](../Resource_Chart) chart with two default columns and custom one.  The text of the custom column is formatted with the help of a token – see the [Resource Tokens](#resource_tokens) section.
 
 ```
 // create and configure a custom data grid column
