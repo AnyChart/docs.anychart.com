@@ -92,7 +92,7 @@ In addition, you can use optional fields:
 * `actual`, `baseline`, `progress`, and `connector` to configure [individual elements](Elements/Individual_Elements#project_chart)
 * `markers` to add [markers](#milestones_and_markers)
 * `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
-* `collapsed` to [expand or collapse](Basic_Settings#navigation) a parent task
+* `collapsed` to [expand or collapse](Basic_Settings#navigation) a parent task (?)
 
 To learn how to rename the default data fields, see [Data: Mapping](Data#mapping).
 

@@ -49,7 +49,7 @@ To configure parent tasks, combine {api:anychart.charts.Gantt#getTimeline}getTim
 chart.getTimeline().groupingTasks().height(15);
 ```
 
-Also, parent tasks can be [expanded or collapsed](../Basic_Settings#navigation).
+(?) Also, parent tasks can be [expanded or collapsed](../Basic_Settings#navigation).
 
 ### Milestones
 
