@@ -40,7 +40,7 @@ chart.dataGrid().column(1).width(130);
 
 ## Title
 
-To configure [titles](../../Common_Settings/Title) of columns, use the {api:anychart.core.ui.DataGrid.Column#title}title(){api} method with methods of the {api:anychart.core.ui.Title} class, for example {api:anychart.core.ui.Title#enabled}enabled(){api}, {api:anychart.core.ui.Title#text}text(){api}, {api:anychart.core.ui.Title#fontColor}fontColor(){api}, {api:anychart.core.ui.Title#fontWeight}fontWeight(){api}, etc.:
+To configure [titles](../../Common_Settings/Title) of columns, use the {api:anychart.core.ui.DataGrid.Column#title}title(){api} method with methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class, for example {api:anychart.core.ui.Title#enabled}enabled(){api}, {api:anychart.core.ui.Title#text}text(){api}, {api:anychart.core.ui.Title#fontColor}fontColor(){api}, {api:anychart.core.ui.Title#fontWeight}fontWeight(){api}, etc.:
 
 ```
 // configure the title of the first data grid column
