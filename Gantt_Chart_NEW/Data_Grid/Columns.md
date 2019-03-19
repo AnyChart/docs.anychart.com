@@ -345,12 +345,17 @@ chart.dataGrid().column(0).depthPaddingMultiplier(20);
 
 ## Custom Columns
 
-misc:
+You can create custom data grid columns by combining {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with {api:anychart.core.ui.DataGrid#column}column(){api} and specifying indexes:
 
-* {api:anychart.core.ui.DataGrid#column}column(){api}
-* (?) [Basic Settings: Splitter](../Basic_Settings#splitter)
+```
+var newColumn = chart.dataGrid().column(2);
+```
+
+To configure a custom column, use methods of the {api:anychart.core.ui.DataGrid.Column}anychart.core.ui.DataGrid.Column{api} class, which are listed in the previous sections of this article.
 
 ### Project Chart
+
+In this sample, there is a [Project Gantt](../Project_Chart) chart with two default columns and custom one. The text of the custom column is formatted with the help of a token – see the [Project Tokens](#project_tokens) section.
 
 ```
 // create and configure a custom data grid column
@@ -368,6 +373,8 @@ newColumn.collapseExpandButtons(true);
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_10{sample}
 
 ### Resource Chart
+
+In the following sample, there is a [Resource Gantt](../Resource_Chart) chart with two default columns and custom one.  The text of the custom column is formatted with the help of a token – see the [Resource Tokens](#resource_tokens) section.
 
 ```
 // create and configure a custom data grid column
