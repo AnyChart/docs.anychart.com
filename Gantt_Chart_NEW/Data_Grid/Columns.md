@@ -235,6 +235,14 @@ column_2.labels().format(function() {
 
 #### Resource Fields
 
+Here are the fields supported by the [Resource Gantt](../Resource_Chart) chart:
+
+* `id`
+* `name`
+* `start`
+* `end`
+* `linearIndex`
+
 In this sample, formatting functions are used to display different column labels for parent and child [resources](../Resource_Chart#periods_and_resources). Also, a custom data field is shown in the second column.
 
 {sample :height 200}GANTT\_NEW\_Data\_Grid\_Columns\_07{sample}
