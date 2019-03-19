@@ -108,7 +108,7 @@ In the sample below, a formatting function is used to display different tooltips
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Tooltips\_03{sample}
 
-A special context field `item` and the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../Working_with_Data/Tree_Data_Model) are used to get the number of the current data item's children and distinguish regular tasks from parent ones. To distinguish regular tasks from milestones, the duration of tasks is calculated.
+A special context field `item` and the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../../Working_with_Data/Tree_Data_Model) are used to get the number of the current data item's children and distinguish regular tasks from parent ones. To distinguish regular tasks from milestones, the duration of tasks is calculated.
 
 ```
 // configure tooltips of the data grid
@@ -166,7 +166,9 @@ Here are the fields supported by the [Resource Gantt](../Resource_Chart) chart:
 
 In this sample, a formatting function is used to display different tooltips for parent and child [resources](../Resource_Chart#periods_and_resources). For example, the value of a custom field `disc_space` is shown only for child resources.
 
-A special context field `item` and the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../Working_with_Data/Tree_Data_Model) are used to get the number of the current data item's children.
+{sample :height 200}GANTT\_NEW\_Data\_Grid\_Tooltips\_04{sample}
+
+A special context field `item` and the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../../Working_with_Data/Tree_Data_Model) are used to get the number of the current data item's children and distinguish regular resources from parent ones:
 
 ```
 // configure tooltips of the data grid
@@ -197,5 +199,3 @@ chart.dataGrid().tooltip().format(function() {
 
 });
 ```
-
-{sample :height 200}GANTT\_NEW\_Data\_Grid\_Tooltips\_04{sample}

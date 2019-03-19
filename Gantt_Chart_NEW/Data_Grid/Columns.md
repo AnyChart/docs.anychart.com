@@ -193,7 +193,7 @@ column_1.labels().format( function() {
 });
 ```
 
-The second column is configured in a similar way:
+The second column is adjusted in a similar way:
 
 ```
 // set the text of the second data grid column
@@ -235,6 +235,14 @@ column_2.labels().format(function() {
 
 #### Resource Fields
 
+In this sample, formatting functions are used to display different column labels for parent and child [resources](../Resource_Chart#periods_and_resources). Also, a custom data field is shown in the second column.
+
+{sample :height 200}GANTT\_NEW\_Data\_Grid\_Columns\_07{sample}
+
+A special context field `item` and the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../../Working_with_Data/Tree_Data_Model) are used to get the number of the current data item's children and distinguish regular resources from parent ones.
+
+This is how the first column is configured:
+
 ```
 // set the text of the first data grid column
 
@@ -256,6 +264,7 @@ column_1.labels().format( function() {
 
 });
 ```
+The second column is adjusted in a similar way:
 
 ```
 // set the text of the second data grid column
@@ -287,8 +296,6 @@ column_2.labels().format(function() {
 
 });
 ```
-
-{sample :height 200}GANTT\_NEW\_Data\_Grid\_Columns\_07{sample}
 
 ## Indentation
 
