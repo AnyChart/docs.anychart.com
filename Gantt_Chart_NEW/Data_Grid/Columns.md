@@ -58,7 +58,7 @@ column_2.title().fontWeight(600);
 
 ## Text (Labels)
 
-To adjust the text of columns combine {api:anychart.core.ui.DataGrid.Column#labels}labels(){api} with methods of the {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api} class, for example {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api}, {api:anychart.core.ui.LabelsFactory#fontWeight}fontWeight(){api}, {api:anychart.core.ui.LabelsFactory#fontSize}fontSize(){api}, etc.
+To adjust the text of columns, combine {api:anychart.core.ui.DataGrid.Column#labels}labels(){api} with methods of the {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api} class, for example {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api}, {api:anychart.core.ui.LabelsFactory#fontWeight}fontWeight(){api}, {api:anychart.core.ui.LabelsFactory#fontSize}fontSize(){api}, etc.
 
 The {api:anychart.core.ui.LabelsFactory#format}format(){api} method, combined with [text formatters](../../Common_Settings/Text_Formatters), allows setting the text format – read the sections below to learn more.
 
