@@ -11,7 +11,9 @@ To access a column, combine {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} 
 var column_1 = chart.dataGrid().column(0);
 ```
 
-The sections below explain how to configure default columns or create [custom columns](#custom_columns). Also, you can use column presets – see the [Column Presets](Column_Presets) article.
+By default, there are two columns, numbered from left to right. The first column displays linear indexes of data items, and the second one displays their names.
+
+As explained in the sections below, you can change the [text](#text_\(labels|)) as well as other parameters of default columns or create completely [custom columns](#custom_columns). Also, you can use column presets – see the [Column Presets](Column_Presets) article.
 
 ## Enabling / Disabling
 
