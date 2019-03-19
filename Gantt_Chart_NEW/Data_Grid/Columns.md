@@ -326,7 +326,7 @@ If there are hierarchical relationships between data items, special buttons are 
 
 With the help of the {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons()}collapseExpandButtons(){api} method, you can enable or disable buttons on any column. As a rule, it also makes sense to adjust the hierarchical indentation – see the [Indentation](#indentation) section.
 
-Other button settings are listed in the [Buttons](Buttons) article. (?) To learn how to expand or collapse an element, read [Basic Settings: Navigation](../Basic_Settings#navigation) (by default, the chart is drawn with all elements expanded).
+Other button settings are listed in the [Buttons](Buttons) article. To learn how to expand or collapse an element, read [Basic Settings: Navigation](../Basic_Settings#navigation) (?) (by default, the chart is drawn with all elements expanded).
 
 The sample below shows how to enable and disable buttons:
 
