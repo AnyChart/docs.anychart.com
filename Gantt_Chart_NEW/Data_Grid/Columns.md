@@ -309,7 +309,7 @@ column_2.labels().format(function() {
 
 ## Indentation
 
-In case there are hierarchical relationships between data items, there is an indent before nested data grid labels in the second column. To set and indent in any column, call the {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier}depthPaddingMultiplier(){api} method.
+In case there are hierarchical relationships between data items, there is an indent before nested data grid labels in the second column. To set an indent in any column, call the {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier}depthPaddingMultiplier(){api} method.
 
 In the following sample, the indent in the second column is set to 60, and the first column is left with the default indent of 0:
 
