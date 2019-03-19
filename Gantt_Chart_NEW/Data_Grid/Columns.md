@@ -3,18 +3,19 @@
 
 ## Overview
 
-misc:
+Columns of the data grid are defined as instances of the {api:anychart.core.ui.DataGrid.Column}anychart.core.ui.DataGrid.Column{api} class.
 
-* {api:anychart.core.ui.DataGrid.Column}anychart.core.ui.DataGrid.Column{api}
-* {api:anychart.core.ui.DataGrid#column}column(){api}
-* [Column Presets](#column_presets)
+To access a column, combine {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with {api:anychart.core.ui.DataGrid#column}column(){api} and specify its index:
+
+```
+var column_1 = chart.dataGrid().column(0);
+```
+
+The sections below explain how to configure default columns or create [custom columns](#custom_columns). Also, you can use column presets – see the [Column Presets](#column_presets) article.
 
 ## Enabling / Disabling
 
-misc:
-
-* {api:anychart.core.ui.DataGrid.Column#enabled()}enabled(){api}
-
+Passing `true` or `false` to the {api:anychart.core.ui.DataGrid.Column#enabled()}enabled(){api} method allows enabling or disabling a column:
 
 ```
 // disable the first data grid column
@@ -25,12 +26,9 @@ chart.dataGrid().column(0).enabled(false);
 
 ## Width
 
-misc:
+To set the width of a column, call the {api:anychart.core.ui.DataGrid.Column#width()}width(){api} method.
 
-* [Basic Settings: Splitter](../Basic_Settings#splitter)
-* {api:anychart.core.ui.DataGrid.Column#width()}width(){api}
-
-**Note:** The overall width of the data grid depends on the width of its columns. Also, you can adjust the position of the splitter between the data grid and timeline – see [Basic Settings: Splitter](../Basic_Settings#splitter).
+**Note:** The overall width of the data grid depends on the [width of its columns](Columns#width). Also, you can adjust the position of the splitter between the data grid and timeline – see [Basic Settings: Splitter](../Basic_Settings#splitter).
 
 ```
 // set the width of data grid columns
@@ -42,10 +40,7 @@ chart.dataGrid().column(1).width(130);
 
 ## Title
 
-misc:
-
-* {api:anychart.core.ui.DataGrid.Column#title()}title(){api}
-
+To configure [titles](../../Common_Settings/Title) of columns, use the {api:anychart.core.ui.DataGrid.Column#title}title(){api} method:
 
 ```
 // configure the title of the first data grid column
