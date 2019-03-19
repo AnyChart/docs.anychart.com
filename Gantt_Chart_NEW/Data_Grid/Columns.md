@@ -113,7 +113,7 @@ The [Resource Gantt](../Resource_Chart) chart supports these tokens:
 * `{%end}`
 * `{%linearIndex}`
 
-In the following sample, tokens, including a custom one, are used to format the text of period labels. Also, text font is adjusted.
+In the following sample, tokens, including a custom one, are used to format the text of columns. Also, the text font is adjusted.
 
 ```
 // set the text of the first data grid column

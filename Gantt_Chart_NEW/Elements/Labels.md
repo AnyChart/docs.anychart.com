@@ -99,7 +99,7 @@ The Resource chart supports these tokens:
 * `{%end}`
 * `{%linearIndex}`
 
-In the following sample, tokens, including a custom one, are used to format the text of period labels. Also, text font is adjusted.
+In the following sample, tokens, including a custom one, are used to format the text of period labels. Also, the text font is adjusted.
 
 ```
 // configure labels of periods
