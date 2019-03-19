@@ -328,7 +328,7 @@ With the help of the {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons
 
 Other button settings are listed in the [Buttons](Buttons) article. (?) To learn how to expand or collapse an element, read [Basic Settings: Navigation](../Basic_Settings#navigation) (by default, the chart is drawn with all elements expanded).
 
-
+The sample below shows how to enable and disable buttons:
 
 ```
 // disable buttons in the second column
