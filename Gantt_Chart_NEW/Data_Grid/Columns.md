@@ -154,11 +154,13 @@ For the [Project Gantt](../Project_Chart) chart, the following fields are availa
 * `progress`
 * `linearIndex`
 
-misc:
-
-* упомянуть поле `item`, но не в основном списке
-
 In the sample below, there is a Project chart. A formatting function is used to display different column text for the different types of [tasks](../Project_Chart#tasks_\(actual\)).
+
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_06{sample}
+
+A special context field `item` and the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../Working_with_Data/Tree_Data_Model) are used to get the number of the current data item's children. It allows distinguishing regular tasks from parent tasks. To distinguish regular tasks from milestones, the duration of tasks is calculated.
+
+This is how the first column is configured:
 
 ```
 // set the text of the first data grid column
@@ -190,6 +192,8 @@ column_1.labels().format( function() {
 
 });
 ```
+
+In the second column,  the content of a custom data field is shown:
 
 ```
 // set the text of the second data grid column
@@ -228,8 +232,6 @@ column_2.labels().format(function() {
 
 });
 ```
-
-{sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_06{sample}
 
 #### Resource Fields
 
