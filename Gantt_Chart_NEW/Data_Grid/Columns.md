@@ -83,7 +83,7 @@ For the [Project Gantt](../Project_Chart) chart, the following tokens are availa
 * `{%progress}`
 * `{%linearIndex}`
 
-In the sample below, there is a Project chart with the text font and format of both default columns adjusted. The format is set with the help of tokens, including a custom one.
+In the sample below, the text format of both default columns is set with the help of tokens. In the second column a custom token is used. Also, the text font of the first column is  adjusted.
 
 ```
 // set the text of the first data grid column
@@ -113,7 +113,7 @@ The [Resource Gantt](../Resource_Chart) chart supports these tokens:
 * `{%end}`
 * `{%linearIndex}`
 
-In the following sample, tokens, including a custom one, are used to format the text of columns. Also, the text font is adjusted.
+In the following sample, tokens are used to format the text of both default columns. In the second column a custom token is used. Also, the text font of the first column is  adjusted.
 
 ```
 // set the text of the first data grid column
@@ -154,13 +154,13 @@ For the [Project Gantt](../Project_Chart) chart, the following fields are availa
 * `progress`
 * `linearIndex`
 
-In the sample below, formatting functions are used to display different column labels for different types of [tasks](../Project_Chart#tasks_\(actual\)). Also, a custom data field is shown in the second column.
+In the sample below, formatting functions are used to display different column labels for different types of [tasks](../Project_Chart#tasks_\(actual\)):
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_06{sample}
 
 A special context field `item` and the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../../Working_with_Data/Tree_Data_Model) are used to get the number of the current data item's children and distinguish regular tasks from parent ones. To distinguish regular tasks from milestones, the duration of tasks is calculated.
 
-This is how the first column is configured:
+This is how the first column is configured – please note that both text font and text format are set:
 
 ```
 // set the text of the first data grid column
@@ -193,7 +193,7 @@ column_1.labels().format( function() {
 });
 ```
 
-The second column is adjusted in a similar way:
+The text of the second column includes the content of a custom data field:
 
 ```
 // set the text of the second data grid column
@@ -243,13 +243,13 @@ Here are the fields supported by the [Resource Gantt](../Resource_Chart) chart:
 * `end`
 * `linearIndex`
 
-In this sample, formatting functions are used to display different column labels for parent and child [resources](../Resource_Chart#periods_and_resources). Also, a custom data field is shown in the second column.
+In this sample, formatting functions are used to display different column labels for parent and child [resources](../Resource_Chart#periods_and_resources):
 
 {sample :height 200}GANTT\_NEW\_Data\_Grid\_Columns\_07{sample}
 
 A special context field `item` and the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../../Working_with_Data/Tree_Data_Model) are used to get the number of the current data item's children and distinguish regular resources from parent ones.
 
-This is how the first column is configured:
+This is how the first column is configured – please note that both text font and text format are set:
 
 ```
 // set the text of the first data grid column
@@ -272,7 +272,7 @@ column_1.labels().format( function() {
 
 });
 ```
-The second column is adjusted in a similar way:
+The text of the second column includes the content of a custom data field:
 
 ```
 // set the text of the second data grid column

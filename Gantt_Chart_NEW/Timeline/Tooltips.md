@@ -164,7 +164,7 @@ Here are the fields supported by the [Resource Gantt](../Resource_Chart) chart:
 * `end`
 * `linearIndex`
 
-In this sample, a formatting function is used to display different tooltips for parent and child [resources](../Resource_Chart#periods_and_resources). For example, the value of a custom field `disc_space` is shown only for child resources.
+In this sample, a formatting function is used to display different tooltips for parent and child [resources](../Resource_Chart#periods_and_resources). For example, the content of a custom field `disc_space` is shown only for child resources.
 
 {sample :height 200}GANTT\_NEW\_Timeline\_Tooltips\_04{sample}
 
