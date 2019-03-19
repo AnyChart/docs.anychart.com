@@ -154,7 +154,7 @@ For the [Project Gantt](../Project_Chart) chart, the following fields are availa
 * `progress`
 * `linearIndex`
 
-In the sample below, a different column text for different types of [tasks](../Project_Chart#tasks_\(actual\)) is displayed with the help of formatting functions:
+In the sample below, formatting functions are used to display different column labels for different types of [tasks](../Project_Chart#tasks_\(actual\)). Also, a custom data field is shown in the second column.
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_06{sample}
 
@@ -193,7 +193,7 @@ column_1.labels().format( function() {
 });
 ```
 
-In the second column,  the content of a custom data field is shown:
+The second column is configured in a similar way:
 
 ```
 // set the text of the second data grid column

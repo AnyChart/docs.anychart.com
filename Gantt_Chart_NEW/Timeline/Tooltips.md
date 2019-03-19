@@ -104,7 +104,7 @@ For the [Project Gantt](../Project_Chart) chart, the following fields are availa
 * `progress`
 * `linearIndex`
 
-In the sample below, different tooltips for different types of [tasks](../Project_Chart#tasks_\(actual\)) are displayed with the help of a formatting function. Also, in all tooltips the content of a custom data field `manager` is shown.
+In the sample below, a formatting functiond is used to display different tooltips for different types of [tasks](../Project_Chart#tasks_\(actual\)). Also, in all tooltips the content of a custom data field `manager` is shown.
 
 {sample :height 220}GANTT\_NEW\_Timeline\_Tooltips\_03{sample}
 
@@ -164,7 +164,7 @@ Here are the fields supported by the [Resource Gantt](../Resource_Chart) chart:
 * `end`
 * `linearIndex`
 
-In this sample a formatting function is used to display different tooltips for parent and child [resources](../Resource_Chart#periods_and_resources). For example, the value of a custom field `disc_space` is shown only for child resources.
+In this sample, a formatting function is used to display different tooltips for parent and child [resources](../Resource_Chart#periods_and_resources). For example, the value of a custom field `disc_space` is shown only for child resources.
 
 A special context field `item` and the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../Working_with_Data/Tree_Data_Model) are used to get the number of the current data item's children.
 
