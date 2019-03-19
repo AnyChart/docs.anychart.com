@@ -154,11 +154,11 @@ For the [Project Gantt](../Project_Chart) chart, the following fields are availa
 * `progress`
 * `linearIndex`
 
-In the sample below, a formatting function is used to display different column text for the different types of [tasks](../Project_Chart#tasks_\(actual\)):
+In the sample below, a different column text for the different types of [tasks](../Project_Chart#tasks_\(actual\)) is displayed with the help of formatting functions:
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_06{sample}
 
-A special context field `item` and the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../Working_with_Data/Tree_Data_Model) are used to get the number of the current data item's children. It allows distinguishing regular tasks from parent tasks. To distinguish regular tasks from milestones, the duration of tasks is calculated.
+A special context field `item` and the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../../Working_with_Data/Tree_Data_Model) are used to get the number of the current data item's children. It allows distinguishing regular tasks from parent tasks. To distinguish regular tasks from milestones, the duration of tasks is calculated.
 
 This is how the first column is configured:
 
