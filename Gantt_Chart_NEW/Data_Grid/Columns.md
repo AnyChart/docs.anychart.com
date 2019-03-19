@@ -154,7 +154,7 @@ For the [Project Gantt](../Project_Chart) chart, the following fields are availa
 * `progress`
 * `linearIndex`
 
-In the sample below, a different column text for the different types of [tasks](../Project_Chart#tasks_\(actual\)) is displayed with the help of formatting functions:
+In the sample below, a different column text for different types of [tasks](../Project_Chart#tasks_\(actual\)) is displayed with the help of formatting functions:
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Columns\_06{sample}
 
