@@ -348,7 +348,8 @@ chart.dataGrid().column(0).depthPaddingMultiplier(20);
 You can create custom data grid columns by combining {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with {api:anychart.core.ui.DataGrid#column}column(){api} and specifying indexes:
 
 ```
-var newColumn = chart.dataGrid().column(2);
+var newColumn_1 = chart.dataGrid().column(2);
+var newColumn_2 = chart.dataGrid().column(3);
 ```
 
 To configure a custom column, use methods of the {api:anychart.core.ui.DataGrid.Column}anychart.core.ui.DataGrid.Column{api} class, which are listed in the previous sections of this article.
