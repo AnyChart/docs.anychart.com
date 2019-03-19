@@ -104,9 +104,11 @@ For the [Project Gantt](../Project_Chart) chart, the following fields are availa
 * `progress`
 * `linearIndex`
 
-In the sample below, there is a Project chart. A formatting function is used to display different tooltips for the different types of [tasks](../Project_Chart#tasks_\(actual\)).
+In the sample below, different tooltips for different types of [tasks](../Project_Chart#tasks_\(actual\)) are displayed with the help of a formatting function. Also, in all tooltips the content of a custom data field `manager` is shown.
 
-In all tooltips the content of a custom data field `manager` is shown. Also, a special context field `item` and the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../Working_with_Data/Tree_Data_Model) are used to get the number of the current data item's children.
+{sample :height 220}GANTT\_NEW\_Data\_Grid\_Tooltips\_03{sample}
+
+A special context field `item` and the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../Working_with_Data/Tree_Data_Model) are used to get the number of the current data item's children and distinguish regular tasks from parent ones. To distinguish regular tasks from milestones, the duration of tasks is calculated.
 
 ```
 // configure tooltips of the data grid
@@ -151,8 +153,6 @@ chart.dataGrid().tooltip().format(function() {
 
 });
 ```
-
-{sample :height 220}GANTT\_NEW\_Data\_Grid\_Tooltips\_03{sample}
 
 ### Resource Fields
 
