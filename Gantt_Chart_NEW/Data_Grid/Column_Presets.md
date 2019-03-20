@@ -27,7 +27,7 @@ To apply a default preset, access a column and call the {api:anychart.core.ui.Da
 chart.dataGrid().column(0).setColumnFormat("actualStart", "date-common-log");
 ```
 
-You can display the values of data fields as:
+You can display values as:
 
 * [values](#values) (without formatting) – `"text"`, `"short-text"`, `"direct-numbering"`
 * [dates](#dates) – `"date-common-log"`, `"date-dmy-dots"`, `"date-iso-8601"`, `"date-us-short"`
