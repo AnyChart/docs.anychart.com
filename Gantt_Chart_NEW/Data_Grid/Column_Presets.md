@@ -36,7 +36,7 @@ You can display values as:
 
 ### Values
 
-The following presets are used to display values without formatting – the only difference between them is the column width:
+These presets allow displaying values without formatting – the only difference between them is the column width:
 
 * `"text"` for text values
 * `"short-text"` for short text values
@@ -62,7 +62,7 @@ column_3.setColumnFormat("id", "direct-numbering");
 
 ### Dates
 
-These presets allow you to apply different formats to dates:
+These presets are used to apply different formats to dates:
 
 * `"date-common-log"` – *dd/MMM/yyyy*
 * `"date-dmy-dots"` – *dd.MM.yy*
