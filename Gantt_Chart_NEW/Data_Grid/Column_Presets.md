@@ -89,7 +89,7 @@ column_2.setColumnFormat("actualStart", "date-common-log");
 
 ### Percents
 
-The `"percent"` preset allows to format values as percents.
+The `"percent"` preset allows formatting values as percents.
 
 In this sample, both columns show the content of the `"progressValue"` data field – the first one displays [values without formatting](#values), and in the second one they are formatted as percents:
 
@@ -108,7 +108,7 @@ column_2.setColumnFormat("progressValue", "percent");
 
 ### Financial Data
 
-The `"financial"` preset allows to format values as financial data.
+The `"financial"` preset allows formatting values as financial data.
 
 In the following sample, both columns show the content of the custom `"budget"` data field – first one displays [values without formatting](#values), and in the second one they are formatted as financial data:
 
