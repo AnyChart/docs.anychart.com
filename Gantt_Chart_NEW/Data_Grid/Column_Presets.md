@@ -139,7 +139,7 @@ In the object, you can use the following fields:
 * `textStyle` to set the text style
 * `width` to set the column width
 
-In the sample below, ...
+In the sample below, a custom preset is used to configure the second data grid column, which displays the content of the `"name"` data field.
 
 ```
 // configure the second data grid column
