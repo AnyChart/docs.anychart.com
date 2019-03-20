@@ -13,6 +13,8 @@ var column_1 = chart.dataGrid().column(0);
 
 Then call the {api:anychart.core.ui.DataGrid.Column#setColumnFormat}setColumnFormat(){api} with two parameters: a data field you want to use in the column text and either a [default preset](#default_presets) or a [custom one](#custom_presets).
 
+Please note that both default and custom data fields can be formatted.
+
 ## Default Presets
 
 misc:
