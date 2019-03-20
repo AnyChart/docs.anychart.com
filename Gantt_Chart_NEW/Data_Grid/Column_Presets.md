@@ -36,15 +36,13 @@ You can display values as:
 
 ### Values
 
-To display text or numeric values without formatting, use these presets:
+The following presets are used to display values without formatting – the only difference between them is the column width:
 
 * `"text"` for text values
 * `"short-text"` for short text values
 * `"direct-numbering"` for numeric values
 
-The only difference between them is the column width.
-
-In the following sample, there are three columns displaying the content of the `"id"` data field with different presets.  As you can see, the text is the same everywhere, but the width is different:
+In the sample below, there are three columns displaying the content of the `"id"` data field with different presets.  As you can see, the text is the same everywhere, but the width is different:
 
 ```
 // configure the first data grid column
@@ -64,7 +62,7 @@ column_3.setColumnFormat("id", "direct-numbering");
 
 ### Dates
 
-The following presets allow you to apply different formats to dates:
+These presets allow you to apply different formats to dates:
 
 * `"date-common-log"` – *dd/MMM/yyyy*
 * `"date-dmy-dots"` – *dd.MM.yy*
@@ -73,7 +71,7 @@ The following presets allow you to apply different formats to dates:
 
 **Note:** (?) These presets can be applied only to dates set as Unix timestamps – see [Date and Time Formats](../Date_and_Time_Formats).
 
-In the sample below, there are two columns, both showing the content of the `"actualStart"` data field. The first column displays [values without formatting](#values), and in the second one they are formatted as `"date-common-log"`. You can also try other date formats.
+In the following sample, there are two columns, both showing the content of the `"actualStart"` data field. The first column displays [values without formatting](#values), and in the second one they are formatted as `"date-common-log"`. You can also try other date formats.
 
 ```
 // configure the first data grid column
@@ -110,7 +108,7 @@ column_2.setColumnFormat("progressValue", "percent");
 
 The `"financial"` preset allows formatting values as financial data.
 
-In the following sample, both columns show the content of the custom `"budget"` data field – first one displays [values without formatting](#values), and in the second one they are formatted as financial data:
+In the sample below, both columns show the content of the custom `"budget"` data field – first one displays [values without formatting](#values), and in the second one they are formatted as financial data:
 
 ```
 // configure the first data grid column
