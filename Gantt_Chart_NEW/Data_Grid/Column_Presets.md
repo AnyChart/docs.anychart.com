@@ -29,10 +29,10 @@ chart.dataGrid().column(0).setColumnFormat("actualStart", "date-common-log");
 
 You can display the values of data fields as:
 
-* [Values](#values) (without formatting) – `"text"`, `"short-text"`, `"direct-numbering"`
-* [Dates](#dates) – `"date-common-log"`, `"date-dmy-dots"`, `"date-iso-8601"`, `"date-us-short"`
-* [Percents](#percents) – `"percent"`
-* [Financial data](#financial_data): – `"financial"`
+* [values](#values) (without formatting) – `"text"`, `"short-text"`, `"direct-numbering"`
+* [dates](#dates) – `"date-common-log"`, `"date-dmy-dots"`, `"date-iso-8601"`, `"date-us-short"`
+* [percents](#percents) – `"percent"`
+* [financial data](#financial_data): – `"financial"`
 
 ### Values
 
