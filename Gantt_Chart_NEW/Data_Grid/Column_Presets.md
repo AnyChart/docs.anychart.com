@@ -22,27 +22,28 @@ Default presets affect the **text format** and **width** of columns.
 
 To apply a default preset, access a column and call the {api:anychart.core.ui.DataGrid.Column#setColumnFormat}setColumnFormat(){api} method with two parameters: a data field you are going to format and one of the enums listed in {api:anychart.enums.ColumnFormats}anychart.enums.ColumnFormats{api}:
 
-* `"text"` – to display text [values](#values)
-* `"short-text"` – to display short text [values](#values)
-* `"direct-numbering"` – to display numeric [values](#values)
-* `"date-common-log"` – to format [dates](#dates)
-* `"date-dmy-dots"` – to format [dates](#dates)
-* `"date-iso-8601"` – to format [dates](#dates)
-* `"date-us-short"` – to format [dates](#dates)
-* `"percent"` – to format [percents](#percents)
-* `"financial"` – to format [financial data](#financial_data)
-
-That is how it looks like:
-
 ```
 // configure the first data grid column
 chart.dataGrid().column(0).setColumnFormat("actualStart", "date-common-log");
 ```
 
-misc:
+To display [values](#values) of a data field without formatting, use the presets below – the only difference between them is the column width: 
 
-* `"text"` = value of the data field
+* `"text"` – to display text values
+* `"short-text"` – to display short text values
+* `"direct-numbering"` – to display numeric values
 
+The following presets presets allow formatting dates:
+
+* `"date-common-log"` – to format [dates](#dates)
+* `"date-dmy-dots"` – to format [dates](#dates)
+* `"date-iso-8601"` – to format [dates](#dates)
+* `"date-us-short"` – to format [dates](#dates)
+
+To format percents and financial data, use:
+
+* `"percent"` – to format [percents](#percents)
+* `"financial"` – to format [financial data](#financial_data)
 
 ### Values
 
