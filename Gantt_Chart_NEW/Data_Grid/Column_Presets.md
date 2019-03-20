@@ -61,17 +61,14 @@ In the sample below, there are three columns displaying the content of the `"id"
 
 ### Dates
 
-dates:
+These presets allow you to apply different formats to dates:
 
-* `"date-common-log"`
-* `"date-dmy-dots"`
-* `"date-iso-8601"`
-* `"date-us-short"`
+* `"date-common-log"` –
+* `"date-dmy-dots"` –
+* `"date-iso-8601"` –
+* `"date-us-short"` –
 
-sample:
-
-* `"actualStart"`
-
+In the following sample, there are two columns, both showing the content of the `"actualStart"` data field. The first column displays it without formatting, and in the second column dates are formatted as `"date-common-log"` (you can try other date formats as well):
 
 {sample :height 260}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_02{sample}
 
