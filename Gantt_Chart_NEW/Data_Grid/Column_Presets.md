@@ -20,30 +20,17 @@ Please note that both default and custom data fields can be formatted. Default f
 
 Default presets affect the **text format** and **width** of columns.
 
-To apply a default preset, access a column and call the {api:anychart.core.ui.DataGrid.Column#setColumnFormat}setColumnFormat(){api} method with two parameters: a data field you are going to format and one of the enums listed in {api:anychart.enums.ColumnFormats}anychart.enums.ColumnFormats{api}:
+To apply a default preset, access a column and call the {api:anychart.core.ui.DataGrid.Column#setColumnFormat}setColumnFormat(){api} method with two parameters – a data field you are going to format and one of the enums listed in {api:anychart.enums.ColumnFormats}anychart.enums.ColumnFormats{api}:
+
+* [Values](#values) (without formatting): `"text"`, `"short-text"`, `"direct-numbering"`
+* [Dates](#dates): `"date-common-log"`, `"date-dmy-dots"`, `"date-iso-8601"`, `"date-us-short"`
+* [Percents](#percents): `"percent"`
+* [Financial data](#financial_data):  `"financial"`
 
 ```
 // configure the first data grid column
 chart.dataGrid().column(0).setColumnFormat("actualStart", "date-common-log");
 ```
-
-To display [values](#values) without formatting, use the following presets: 
-
-* `"text"`
-* `"short-text"`
-* `"direct-numbering"`
-
-These presets presets allow formatting [dates](#dates):
-
-* `"date-common-log"`
-* `"date-dmy-dots"`
-* `"date-iso-8601"`
-* `"date-us-short"`
-
-To format [percents](#percents) and [financial data](#financial_data), use:
-
-* `"percent"`
-* `"financial"`
 
 ### Values
 
@@ -82,7 +69,7 @@ These presets allow you to apply different formats to dates:
 * `"date-iso-8601"` –
 * `"date-us-short"` –
 
-In the following sample, there are two columns, both showing the content of the `"actualStart"` data field. The first column displays it without formatting (as timestamps), and in the second one dates are formatted as `"date-common-log"`. You can also try other date formats.
+In the following sample, there are two columns, both showing the content of the `"actualStart"` data field. The first column displays [values](#values) without formatting (as timestamps), and in the second one dates are formatted as `"date-common-log"`. You can also try other date formats.
 
 ```
 // configure the first data grid column
