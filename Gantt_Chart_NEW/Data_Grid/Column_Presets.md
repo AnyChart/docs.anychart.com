@@ -89,13 +89,20 @@ column_2.setColumnFormat("actualStart", "date-common-log");
 
 ### Percents
 
-percents:
+The `"percent"` preset allows to format values as percents.
 
-* `"percent"`
+In the sample below, both columns show the content of the `"progressValue"` data field. The first one displays [values without formatting](#values), and in the second one they are formatted as percents:
 
-sample:
+```
+// configure the first data grid column
+column_1 = chart.dataGrid().column(0);
+column_1.setColumnFormat("progressValue", "direct-numbering");
 
-* `"progressValue"`
+
+// configure the second data grid column
+column_2 = chart.dataGrid().column(1);
+column_2.setColumnFormat("progressValue", "percent");
+```
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_03{sample}
 
