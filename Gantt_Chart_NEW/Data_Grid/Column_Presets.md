@@ -66,10 +66,10 @@ column_3.setColumnFormat("id", "direct-numbering");
 
 These presets allow you to apply different formats to dates:
 
-* `"date-common-log"` – dd/MMM/yyyy
-* `"date-dmy-dots"` – dd.MM.yy
-* `"date-iso-8601"` – yyyy-MM-dd
-* `"date-us-short"` – d/MM/yyyy
+* `"date-common-log"` – *dd/MMM/yyyy*
+* `"date-dmy-dots"` – *dd.MM.yy*
+* `"date-iso-8601"` – *yyyy-MM-dd*
+* `"date-us-short"` – *d/MM/yyyy*
 
 **Note:** (?) These presets can be applied only to dates set as Unix timestamps – see [Date and Time Formats](../Date_and_Time_Formats).
 
