@@ -136,7 +136,7 @@ To apply a custom preset, access a column and call the {api:anychart.core.ui.Dat
 In the object, you can use the following fields:
 
 * `formatter` to format the text with the help of a [formatting function](../../Common_Settings/Text_Formatters#formatting_functions)
-* `textStyle` to set the text style – use fields corresponding to the font-related methods of the {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api} class
+* `textStyle` to set the text style – see the font-related methods of the {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api} class
 * `width` to set the width
 
 In the sample below, ...
