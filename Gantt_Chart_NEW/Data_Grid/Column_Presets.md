@@ -91,7 +91,7 @@ column_2.setColumnFormat("actualStart", "date-common-log");
 
 The `"percent"` preset allows to format values as percents.
 
-In the sample below, both columns show the content of the `"progressValue"` data field. The first one displays [values without formatting](#values), and in the second one they are formatted as percents:
+In this sample, both columns show the content of the `"progressValue"` data field – the first one displays [values without formatting](#values), and in the second one they are formatted as percents:
 
 ```
 // configure the first data grid column
@@ -108,14 +108,19 @@ column_2.setColumnFormat("progressValue", "percent");
 
 ### Financial Data
 
-financial:
+The `"financial"` preset allows to format values as financial data.
 
-* `"financial"`
+In the following sample, both columns show the content of the custom `"budget"` data field – first one displays [values without formatting](#values), and in the second one they are formatted as financial data:
 
-sample:
+```
+// configure the first data grid column
+column_1 = chart.dataGrid().column(0);
+column_1.setColumnFormat("budget", "direct-numbering");
 
-* custom field `"budget"`
-
+// configure the second data grid column
+column_2 = chart.dataGrid().column(1);
+column_2.setColumnFormat("budget", "financial");
+```
 
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_04{sample}
 
