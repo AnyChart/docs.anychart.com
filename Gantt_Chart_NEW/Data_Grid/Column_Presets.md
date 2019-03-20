@@ -64,12 +64,14 @@ column_3.setColumnFormat("id", "direct-numbering");
 
 These presets allow you to apply different formats to dates:
 
-* `"date-common-log"` –
-* `"date-dmy-dots"` –
-* `"date-iso-8601"` –
-* `"date-us-short"` –
+* `"date-common-log"` – dd/MMM/yyyy
+* `"date-dmy-dots"` – dd.MM.yy
+* `"date-iso-8601"` – yyyy-MM-dd
+* `"date-us-short"` – d/MM/yyyy
 
-In the following sample, there are two columns, both showing the content of the `"actualStart"` data field. The first column displays [values](#values) without formatting (as timestamps), and in the second one dates are formatted as `"date-common-log"`. You can also try other date formats.
+**Note:** (?) These presets can be applied only to dates set as Unix timestamps – see [Date and Time Formats](../Date_and_Time_Formats).
+
+In the following sample, there are two columns, both showing the content of the `"actualStart"` data field. The first column displays [values](#values) without formatting, and in the second one dates are formatted as `"date-common-log"`. You can also try other date formats.
 
 ```
 // configure the first data grid column
