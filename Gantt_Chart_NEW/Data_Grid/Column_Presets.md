@@ -3,7 +3,7 @@
 
 ## Overview
 
-Using column presets is an alternative way of adjusting the [text](Columns#text) and [width](Columns#width) of data grid columns.
+Using column presets is an alternative way of adjusting the [text](Columns#text_\(labels\)) and [width](Columns#width) of data grid columns.
 
 To apply a preset, you should first access a column: combine {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with {api:anychart.core.ui.DataGrid#column}column(){api} and specify its index:
 
