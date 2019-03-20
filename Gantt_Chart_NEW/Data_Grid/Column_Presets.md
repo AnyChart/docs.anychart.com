@@ -36,7 +36,7 @@ You can display values as:
 
 ### Values
 
-These presets allow displaying values without formatting – the only difference between them is the column width:
+These presets allow displaying values without formatting – they differ only in the column width:
 
 * `"text"` for text values
 * `"short-text"` for short text values
