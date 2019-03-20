@@ -57,6 +57,20 @@ The only difference between them is the column width.
 
 In the sample below, there are three columns displaying the content of the `"id"` data field with different presets.  As you can see, the text is the same everywhere, but the width is different:
 
+```
+// configure the first data grid column
+column_1 = chart.dataGrid().column(0);
+column_1.setColumnFormat("id", "text");
+
+// configure the second data grid column
+column_2 = chart.dataGrid().column(1);
+column_2.setColumnFormat("id", "short-text");
+
+// add and configure the third data grid column
+column_3 = chart.dataGrid().column(2);
+column_3.setColumnFormat("id", "direct-numbering");
+```
+
 {sample :height 260}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_01{sample}
 
 ### Dates
@@ -68,7 +82,17 @@ These presets allow you to apply different formats to dates:
 * `"date-iso-8601"` –
 * `"date-us-short"` –
 
-In the following sample, there are two columns, both showing the content of the `"actualStart"` data field. The first column displays it without formatting, and in the second column dates are formatted as `"date-common-log"` (you can try other date formats as well):
+In the following sample, there are two columns, both showing the content of the `"actualStart"` data field. The first column displays it without formatting (as timestamps), and in the second one dates are formatted as `"date-common-log"`. You can also try other date formats.
+
+```
+// configure the first data grid column
+column_1 = chart.dataGrid().column(0);
+column_1.setColumnFormat("actualStart", "text");
+
+// configure the second data grid column
+column_2 = chart.dataGrid().column(1);
+column_2.setColumnFormat("actualStart", "date-common-log");
+```
 
 {sample :height 260}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_02{sample}
 
