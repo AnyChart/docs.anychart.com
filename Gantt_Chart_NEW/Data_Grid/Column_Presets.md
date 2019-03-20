@@ -27,36 +27,35 @@ To apply a default preset, access a column and call the {api:anychart.core.ui.Da
 chart.dataGrid().column(0).setColumnFormat("actualStart", "date-common-log");
 ```
 
-To display [values](#values) of a data field without formatting, use the presets below – the only difference between them is the column width: 
-
-* `"text"` – to display text values
-* `"short-text"` – to display short text values
-* `"direct-numbering"` – to display numeric values
-
-The following presets presets allow formatting dates:
-
-* `"date-common-log"` – to format [dates](#dates)
-* `"date-dmy-dots"` – to format [dates](#dates)
-* `"date-iso-8601"` – to format [dates](#dates)
-* `"date-us-short"` – to format [dates](#dates)
-
-To format percents and financial data, use:
-
-* `"percent"` – to format [percents](#percents)
-* `"financial"` – to format [financial data](#financial_data)
-
-### Values
-
-text & numeric values:
+To display [values](#values) without formatting, use the following presets: 
 
 * `"text"`
 * `"short-text"`
 * `"direct-numbering"`
 
-sample:
+These presets presets allow formatting [dates](#dates):
 
-* `"id"`
+* `"date-common-log"`
+* `"date-dmy-dots"`
+* `"date-iso-8601"`
+* `"date-us-short"`
 
+To format [percents](#percents) and [financial data](#financial_data), use:
+
+* `"percent"`
+* `"financial"`
+
+### Values
+
+To display text or numeric values without formatting, use the following presets:
+
+* `"text"` for text values
+* `"short-text"` for short text values
+* `"direct-numbering"` for numeric values
+
+The only difference between them is the column width.
+
+In the sample below, there are three columns displaying the content of the `"id"` data field with different presets.  As you can see, the text is the same everywhere, but the width is different:
 
 {sample :height 260}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_01{sample}
 
