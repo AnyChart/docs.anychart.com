@@ -36,7 +36,7 @@ You can display values as:
 
 ### Values
 
-To display text or numeric values without formatting, use the following presets:
+To display text or numeric values without formatting, use these presets:
 
 * `"text"` for text values
 * `"short-text"` for short text values
@@ -44,7 +44,7 @@ To display text or numeric values without formatting, use the following presets:
 
 The only difference between them is the column width.
 
-In the sample below, there are three columns displaying the content of the `"id"` data field with different presets.  As you can see, the text is the same everywhere, but the width is different:
+In the following sample, there are three columns displaying the content of the `"id"` data field with different presets.  As you can see, the text is the same everywhere, but the width is different:
 
 ```
 // configure the first data grid column
@@ -64,7 +64,7 @@ column_3.setColumnFormat("id", "direct-numbering");
 
 ### Dates
 
-These presets allow you to apply different formats to dates:
+The following presets allow you to apply different formats to dates:
 
 * `"date-common-log"` – *dd/MMM/yyyy*
 * `"date-dmy-dots"` – *dd.MM.yy*
@@ -73,7 +73,7 @@ These presets allow you to apply different formats to dates:
 
 **Note:** (?) These presets can be applied only to dates set as Unix timestamps – see [Date and Time Formats](../Date_and_Time_Formats).
 
-In the following sample, there are two columns, both showing the content of the `"actualStart"` data field. The first column displays [values](#values) without formatting, and in the second one dates are formatted as `"date-common-log"`. You can also try other date formats.
+In the sample below, there are two columns, both showing the content of the `"actualStart"` data field. The first column displays [values](#values) without formatting, and in the second one dates are formatted as `"date-common-log"`. You can also try other date formats.
 
 ```
 // configure the first data grid column
