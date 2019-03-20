@@ -12,7 +12,7 @@ To apply a preset, you should first access a default column or create a [new one
 var column_1 = chart.dataGrid().column(0);
 ```
 
-Then call the {api:anychart.core.ui.DataGrid.Column#setColumnFormat}setColumnFormat(){api} with two parameters: a data field you want to use in the column text and either a [default preset](#default_presets) or a [custom one](#custom_presets).
+Then call the {api:anychart.core.ui.DataGrid.Column#setColumnFormat}setColumnFormat(){api} with two parameters: a data field you want to use in the column text and either a [default preset](#default_presets) or a [custom preset](#custom_presets).
 
 **Note:** Both default and custom data fields can be formatted. Default fields are listed in the [Project Chart](../Project_Chart#data_fields) and [Resource Chart](../Resource_Chart#data_fields) articles. (?)
 
