@@ -118,7 +118,7 @@ You can as well skip the first step and pass your data directly to the {api:anyc
 
 ### Hierarchy
 
-You can specify the hierarchical relationships between the data items of a Resource Gantt chart. There are two ways to set them, depending on how you organize the data: [as a tree](#as_tree) or [as a table](#as_table).
+You can specify hierarchical relationships between the data items of a Resource Gantt chart. There are two ways to set them, depending on how you organize the data: [as a tree](#as_tree) or [as a table](#as_table).
 
 Please note that Resource charts can have multiple roots. Also, you can create data without specifying the hierarchy, like in the [Quick Start](#quick_start) section. In this case, technically, all items are roots.
 
@@ -241,7 +241,9 @@ The main timeline element of the Resource chart is the period, but logically, pe
 
 ### Periods and Resources
 
-**Resources** are logical elements. They have no direct representation on the [timeline](Timeline), but their names are shown in [data grid labels](Data_Grid/Columns#text_\(labels\)). Any resource can include a **period** or periods, which are visualized as timeline elements.
+**Resources** are logical elements that do not have a direct representation on the [timeline](Timeline), but their names are shown in [data grid labels](Data_Grid/Columns#text_\(labels\)). Also, if there are [hierarchical relationships](#hierarchy) between data items, parent resources are visualized as empty rows on the timeline.
+
+Any resource can include a **period** or periods, which are visualized as timeline elements.
 
 For resources, use the following data fields:
 
