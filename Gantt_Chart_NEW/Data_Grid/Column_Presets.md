@@ -73,7 +73,7 @@ The following presets allow you to apply different formats to dates:
 
 **Note:** (?) These presets can be applied only to dates set as Unix timestamps – see [Date and Time Formats](../Date_and_Time_Formats).
 
-In the sample below, there are two columns, both showing the content of the `"actualStart"` data field. The first column displays [values](#values) without formatting, and in the second one dates are formatted as `"date-common-log"`. You can also try other date formats.
+In the sample below, there are two columns, both showing the content of the `"actualStart"` data field. The first column displays [values without formatting](#values), and in the second one dates are formatted as `"date-common-log"`. You can also try other date formats.
 
 ```
 // configure the first data grid column
