@@ -64,6 +64,8 @@ To adjust the text of columns, combine {api:anychart.core.ui.DataGrid.Column#lab
 
 The {api:anychart.core.ui.LabelsFactory#format}format(){api} method, combined with [text formatters](../../Common_Settings/Text_Formatters), allows setting the text format – read the sections below to learn more.
 
+Alternatively, you can configure the text (and width) with the help of column presets – see [Column Presets](Column_Presets).
+
 ### Tokens
 
 To format the text of columns, combine the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [tokens](../../Common_Settings/Text_Formatters#string_tokens).

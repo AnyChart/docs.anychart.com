@@ -3,13 +3,15 @@
 
 ## Overview
 
-misc:
+Using column presets is an alternative way of adjusting the [text](Columns#text) and [width](Columns#width) of data grid columns.
 
-* {api:anychart.core.ui.DataGrid.Column#setColumnFormat}setColumnFormat(){api}
-* {api:anychart.enums.ColumnFormats}anychart.enums.ColumnFormats{api}
-* {api:anychart.core.ui.DataGrid.Column#labels}labels(){api} + {api:anychart.core.ui.LabelsFactory#format}format(){api}
-* [Columns: Tokens](Columns#tokens)
-* [Columns: Formatting Functions](Columns#formatting_functions)
+To apply a preset, you should first access a column: combine {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with {api:anychart.core.ui.DataGrid#column}column(){api} and specify its index:
+
+```
+var column_1 = chart.dataGrid().column(0);
+```
+
+Then call the {api:anychart.core.ui.DataGrid.Column#setColumnFormat}setColumnFormat(){api} with two parameters: a data field you want to use in the column text and either a [default preset](#default_presets) or a [custom one](#custom_presets).
 
 ## Default Presets
 
@@ -94,6 +96,14 @@ sample:
 {sample :height 220}GANTT\_NEW\_Data\_Grid\_Column\_Presets\_04{sample}
 
 ## Custom Presets
+
+misc:
+
+* {api:anychart.core.ui.DataGrid.Column#setColumnFormat}setColumnFormat(){api}
+* [text formatters](../../Common_Settings/Text_Formatters)
+* [Columns: Tokens](Columns#tokens)
+* [Columns: Formatting Functions](Columns#formatting_functions)
+
 
 ```
 // configure the second data grid column
