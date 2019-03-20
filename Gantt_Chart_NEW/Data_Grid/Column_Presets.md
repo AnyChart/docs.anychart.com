@@ -22,15 +22,17 @@ Default presets affect the **text format** and **width** of columns.
 
 To apply a default preset, access a column and call the {api:anychart.core.ui.DataGrid.Column#setColumnFormat}setColumnFormat(){api} method with two parameters – a data field you are going to format and one of the enums listed in {api:anychart.enums.ColumnFormats}anychart.enums.ColumnFormats{api}:
 
-* [Values](#values) (without formatting): `"text"`, `"short-text"`, `"direct-numbering"`
-* [Dates](#dates): `"date-common-log"`, `"date-dmy-dots"`, `"date-iso-8601"`, `"date-us-short"`
-* [Percents](#percents): `"percent"`
-* [Financial data](#financial_data):  `"financial"`
-
 ```
 // configure the first data grid column
 chart.dataGrid().column(0).setColumnFormat("actualStart", "date-common-log");
 ```
+
+You can display:
+
+* [Values](#values) (without formatting) – `"text"`, `"short-text"`, `"direct-numbering"`
+* [Dates](#dates) – `"date-common-log"`, `"date-dmy-dots"`, `"date-iso-8601"`, `"date-us-short"`
+* [Percents](#percents) – `"percent"`
+* [Financial data](#financial_data): – `"financial"`
 
 ### Values
 
