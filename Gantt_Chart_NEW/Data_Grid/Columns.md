@@ -8,6 +8,7 @@ Columns of the data grid are defined as instances of the {api:anychart.core.ui.D
 To access a column, combine {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with {api:anychart.core.ui.DataGrid#column}column(){api} and specify its index:
 
 ```
+// access the first data grid column
 var column_1 = chart.dataGrid().column(0);
 ```
 

@@ -5,9 +5,10 @@
 
 Using column presets is an alternative way of adjusting the [text](Columns#text_\(labels\)) and [width](Columns#width) of data grid columns.
 
-To apply a preset, you should first access a column: combine {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with {api:anychart.core.ui.DataGrid#column}column(){api} and specify its index:
+To apply a preset, you should first access a default column or create a [new one](Columns#custom_columns): combine {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with {api:anychart.core.ui.DataGrid#column}column(){api} and specify its index:
 
 ```
+// access the first data grid column
 var column_1 = chart.dataGrid().column(0);
 ```
 
@@ -17,14 +18,9 @@ Please note that both default and custom data fields can be formatted. Default f
 
 ## Default Presets
 
-misc:
+Default presets affect the **text format** and **width** of columns.
 
-* {api:anychart.core.ui.DataGrid.Column#setColumnFormat}setColumnFormat(){api}
-* {api:anychart.enums.ColumnFormats}anychart.enums.ColumnFormats{api}
-* `"text"` = value of the data field
-* presets affect the width of the column
-
-default presets:
+To apply a default preset, access a column and call the {api:anychart.core.ui.DataGrid.Column#setColumnFormat}setColumnFormat(){api} method with two parameters: a data field you are going to format and one of the enums listed in {api:anychart.enums.ColumnFormats}anychart.enums.ColumnFormats{api}:
 
 * `"text"` – to display text [values](#values)
 * `"short-text"` – to display short text [values](#values)
@@ -36,10 +32,17 @@ default presets:
 * `"percent"` – to format [percents](#percents)
 * `"financial"` – to format [financial data](#financial_data)
 
+That is how it looks like:
 
 ```
+// configure the first data grid column
 chart.dataGrid().column(0).setColumnFormat("actualStart", "date-common-log");
 ```
+
+misc:
+
+* `"text"` = value of the data field
+
 
 ### Values
 
