@@ -3,10 +3,11 @@
 
 ## Overview
 
-misc:
+If there are hierarchical relationships between data items, special buttons are shown in the second data grid column. They allow expanding or collapsing parent [tasks](../Project_Chart#tasks_\(actual\)) or [resources](../Resource_Chart#periods_and_resources) on the [timeline](../Timeline) as well as their labels on the data grid.
 
-* {api:anychart.core.gantt.DataGridButton}anychart.core.gantt.DataGridButton{api}
-* {api:anychart.enums.Cursor}anychart.enums.Cursor{api}
+Buttons are defined as instances of the {api:anychart.core.gantt.DataGridButton}anychart.core.gantt.DataGridButton{api} class.
+
+To access buttons, combine {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with {api:anychart.core.ui.DataGrid#buttons}buttons(){api}.
 
 other button-related settings:
 
@@ -21,7 +22,8 @@ methods:
 * {api:anychart.core.gantt.DataGridButton#fontColor}fontColor(){api}, {api:anychart.core.gantt.DataGridButton#fontWeight}fontWeight(){api}, {api:anychart.core.gantt.DataGridButton#fontSize}fontSize(){api}, {api:anychart.core.gantt.DataGridButton#fontFamily}fontFamily(){api}, etc. to configure the font
 * {api:anychart.core.gantt.DataGridButton#background}background(){api} to set the [background](../../Appearance_Settings/Background)
 * {api:anychart.core.gantt.DataGridButton#height}height(){api} and {api:anychart.core.gantt.DataGridButton#width}width(){api} to set the height and width
-* {api:anychart.core.gantt.DataGridButton#cursor}cursor(){api} to adjust the cursor
+* {api:anychart.core.gantt.DataGridButton#cursor}cursor(){api} + enums from * {api:anychart.enums.Cursor}anychart.enums.Cursor{api}
+ to adjust the cursor
 * {api:anychart.core.gantt.DataGridButton#normal}normal(){api}, {api:anychart.core.gantt.DataGridButton#hovered}hovered(){api}, and {api:anychart.core.gantt.DataGridButton#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
 
 ## Basic Settings
