@@ -35,6 +35,7 @@ With the help of the following methods, buttons can be configured in three state
 * {api:anychart.core.gantt.DataGridButton#hovered}hovered(){api} – collapsed and hovered over 
 * {api:anychart.core.gantt.DataGridButton#selected}selected(){api} – expanded
 
+The sample below shows how to adjust buttons. Please note that they have different content and color in different states.
 
 ```
 // access data grid buttons
