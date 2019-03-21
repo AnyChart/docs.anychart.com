@@ -19,7 +19,7 @@ Also, you can find button-relating settings in the following sections:
 
 ## Basic Settings
 
-To configure buttons, use the following methods:
+To configure buttons, use these methods:
 
 * {api:anychart.core.gantt.DataGridButton#content}content(){api} to set the content
 * {api:anychart.core.gantt.DataGridButton#useHtml}useHtml(){api} to enable HTML
@@ -28,8 +28,12 @@ To configure buttons, use the following methods:
 * {api:anychart.core.gantt.DataGridButton#height}height(){api} and {api:anychart.core.gantt.DataGridButton#width}width(){api} to set the height and width
 * {api:anychart.core.gantt.DataGridButton#cursor}cursor(){api} + enums from {api:anychart.enums.Cursor}anychart.enums.Cursor{api}
  to adjust the cursor
-* {api:anychart.core.gantt.DataGridButton#normal}normal(){api}, {api:anychart.core.gantt.DataGridButton#hovered}hovered(){api}, and {api:anychart.core.gantt.DataGridButton#selected}selected(){api} to access states
 
+With the help of the following methods, buttons can be configured in three states:
+
+* {api:anychart.core.gantt.DataGridButton#normal}normal(){api} – collapsed
+* {api:anychart.core.gantt.DataGridButton#hovered}hovered(){api} – collapsed and hovered over 
+* {api:anychart.core.gantt.DataGridButton#selected}selected(){api} – expanded
 
 ```
 // access data grid buttons
