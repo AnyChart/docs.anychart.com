@@ -9,7 +9,7 @@ Buttons are defined as instances of the {api:anychart.core.gantt.DataGridButton}
 
 To access buttons, combine {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with {api:anychart.core.ui.DataGrid#buttons}buttons(){api}.
 
-This article explains how to configure the [basic settings](#basic_settings) of buttons: content, font, background, etc. The [advanced settings](#advanced_settings) include background images and custom drawing.
+This article explains how to configure [basic settings](#basic_settings) of buttons: content, font, background, etc. [Advanced settings](#advanced_settings) include background images and custom drawing.
 
 Also, you can find button-relating settings in the following sections:
 
