@@ -9,9 +9,9 @@ Buttons are defined as instances of the {api:anychart.core.gantt.DataGridButton}
 
 To access buttons, combine {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with {api:anychart.core.ui.DataGrid#buttons}buttons(){api}.
 
-The sections of this article explain how to...
+The sections of this article explain how to configure [basic](#basic_settings) (content, font, background, etc.) and [advanced settings](#advanced_settings) (background images, custom drawing) of buttons.
 
-Also, you can find button-relating settings in the following sections:
+Also, you can find button-relating settings in the following sections of other articles:
 
 * [Columns: Buttons](Columns#buttons) – enabling / disabling buttons on a column
 * [Columns: Indentation](Columns#indentation) – setting the hierarchical indentation for data grid labels
@@ -28,7 +28,7 @@ To configure buttons, use the following methods:
 * {api:anychart.core.gantt.DataGridButton#height}height(){api} and {api:anychart.core.gantt.DataGridButton#width}width(){api} to set the height and width
 * {api:anychart.core.gantt.DataGridButton#cursor}cursor(){api} + enums from {api:anychart.enums.Cursor}anychart.enums.Cursor{api}
  to adjust the cursor
-* {api:anychart.core.gantt.DataGridButton#normal}normal(){api}, {api:anychart.core.gantt.DataGridButton#hovered}hovered(){api}, and {api:anychart.core.gantt.DataGridButton#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.DataGridButton#normal}normal(){api}, {api:anychart.core.gantt.DataGridButton#hovered}hovered(){api}, and {api:anychart.core.gantt.DataGridButton#selected}selected(){api} to access states
 
 
 ```
@@ -82,6 +82,8 @@ buttons.selected().background().fill({
    mode: "stretch"
 });   
 ```
+
+
 
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_02{sample}
 
