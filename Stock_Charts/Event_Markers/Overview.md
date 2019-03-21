@@ -14,7 +14,7 @@ Here is a basic sample of a chart with event markers:
 
 ## Articles and Demos
 
-This section explains how to adjust basic settings of event markers, configure tooltips, and handle events to embed event markers into your application. See the following articles:
+This section explains how to adjust the basic settings of event markers, configure tooltips, and handle events to embed event markers into your application. See the following articles:
 
 * [Event Markers Basics](Basics)
 * [Tooltips](Tooltips) 
