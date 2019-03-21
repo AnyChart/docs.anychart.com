@@ -67,7 +67,7 @@ anychart.onDocumentReady(function () {
              "</span><br/>" + sales + " mln";
     });
 
-    // configure the labels of leaves
+    // configure labels of leaves
     chart.leaves().labels().format(function() {
       var sales = Math.round(this.value/100000)/10;
       return sales + " mln";
