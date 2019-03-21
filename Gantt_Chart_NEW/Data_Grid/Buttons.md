@@ -17,7 +17,9 @@ Also, you can find button-relating settings in the following sections:
 * [Columns: Indentation](Columns#indentation) – setting the hierarchical indentation for data grid labels
 * [Basic Settings: Navigation](../Basic_Settings#navigation) – expanding / collapsing elements by default
 
-methods:
+## Basic Settings
+
+To configure buttons, use the following methods:
 
 * {api:anychart.core.gantt.DataGridButton#content}content(){api} to set the content
 * {api:anychart.core.gantt.DataGridButton#useHtml}useHtml(){api} to enable HTML
@@ -28,7 +30,6 @@ methods:
  to adjust the cursor
 * {api:anychart.core.gantt.DataGridButton#normal}normal(){api}, {api:anychart.core.gantt.DataGridButton#hovered}hovered(){api}, and {api:anychart.core.gantt.DataGridButton#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
 
-## Basic Settings
 
 ```
 // access data grid buttons

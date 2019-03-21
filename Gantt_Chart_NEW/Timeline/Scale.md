@@ -21,7 +21,7 @@ To configure it, call the following methods:
 
 ## Minimum & Maximum
 
-Combine {api:anychart.core.ui.Timeline#scale}scale(){api} with the {api:anychart.scales.GanttDateTime#maximum}maximum(){api} and {api:anychart.scales.GanttDateTime#minimum}minimum(){api} methods to set the minimum and maximum dates of the scale:
+The {api:anychart.scales.GanttDateTime#maximum}maximum(){api} and {api:anychart.scales.GanttDateTime#minimum}minimum(){api} methods allow setting the minimum and maximum dates of the scale:
 
 ```
 // set the minimun and maximum values of the scale
@@ -37,7 +37,7 @@ As you can see, the minimum and maximum affect the position and relative size of
 
 The settings of zoom levels affect the number of timeline columns and the configuration of the [header](Header).
 
-By default, there are three levels, each of them representing a time unit. The exact set of units depends on your data. You can change this preset by combining {api:anychart.core.ui.Timeline#scale}scale(){api} with {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api} and passing an array of settings.
+By default, there are three levels, each of them representing a time unit. The exact set of units depends on your data. You can change this preset by passing an array of settings to the {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api} method.
 
 Each entry of the array is an object standing for a level. There you should specify two values, `unit` and `count`: the time unit of the level and the number of units per column.
 
