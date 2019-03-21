@@ -3,7 +3,7 @@
 
 ## Overview
 
-If there are hierarchical relationships between data items, special buttons are shown in the second data grid column. They allow expanding or collapsing parent [tasks](../Project_Chart#tasks_\(actual\)) or [resources](../Resource_Chart#periods_and_resources) on the [timeline](../Timeline) as well as their labels on the data grid.
+If there are hierarchical relationships between data items, special buttons are shown in the second [data grid column](Columns). They allow expanding or collapsing parent [tasks](../Project_Chart#tasks_\(actual\)) or [resources](../Resource_Chart#periods_and_resources) on the [timeline](../Timeline) as well as their labels on the data grid.
 
 Buttons are defined as instances of the {api:anychart.core.gantt.DataGridButton}anychart.core.gantt.DataGridButton{api} class.
 
