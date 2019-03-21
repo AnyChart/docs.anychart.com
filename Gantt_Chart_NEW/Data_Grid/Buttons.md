@@ -9,11 +9,13 @@ Buttons are defined as instances of the {api:anychart.core.gantt.DataGridButton}
 
 To access buttons, combine {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with {api:anychart.core.ui.DataGrid#buttons}buttons(){api}.
 
-other button-related settings:
+The sections of this article explain how to...
 
-* [Columns: Buttons](Columns#buttons)
-* [Columns: Indentation](Columns#indentation)
-* [Basic Settings: Navigation](../Basic_Settings#navigation)
+Also, you can find button-relating settings in the following sections:
+
+* [Columns: Buttons](Columns#buttons) – enabling / disabling buttons on a column
+* [Columns: Indentation](Columns#indentation) – setting the hierarchical indentation for data grid labels
+* [Basic Settings: Navigation](../Basic_Settings#navigation) – expanding / collapsing elements by default
 
 methods:
 
