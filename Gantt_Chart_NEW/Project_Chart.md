@@ -324,7 +324,10 @@ There are three task types, each of them visualized in a different way:
 
 The difference between **regular tasks** and **parent tasks** lies in their relationships with other tasks: parent tasks have children, and regular ones do not. To set these relationships, use the  `children` or `parent` data field – read the [Hierarchy](#hierarchy) section to learn more.
 
+
 Note that if you do not specify the  `actualStart` and `actualEnd` dates of a parent task, they are calculated automatically from the dates of its children.
+
+Also, see [Basic Settings: Navigation](Basic_Settings#navigation) (?) to learn how to expand or collapse parent tasks.
 
 **Milestones** are elements representing events. To add a milestone, you should create a task with zero duration: specify the same date in the `actualStart` and `actualEnd` fields.
 
