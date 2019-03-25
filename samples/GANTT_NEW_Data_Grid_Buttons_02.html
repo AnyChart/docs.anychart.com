@@ -98,11 +98,11 @@ anychart.onDocumentReady(function () {
     // access data grid buttons
     var buttons = chart.dataGrid().buttons();
 
-    // configure data grid buttons
-    buttons.background().stroke(null);
+    // disable the default settings of data grid buttons
     buttons.normal().content(null);
     buttons.hovered().content(null);
     buttons.selected().content(null);
+    buttons.background().stroke(null);
 
     // set the background fill of data grid buttons in the normal state
     buttons.normal().background().fill({

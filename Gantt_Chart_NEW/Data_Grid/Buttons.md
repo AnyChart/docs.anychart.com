@@ -69,12 +69,16 @@ buttons.selected().fontColor("#64b5f6");
 
 ### Background Images
 
+The {api:anychart.core.gantt.DataGridButton#background}background(){api} method, combined with {api:anychart.core.ui.Background#fill}fill(){api}, allows you to set a custom image as a background fill of data grid buttons.
+
+To disable the default content and stroke, use the {api:anychart.core.gantt.DataGridButton#content}content(){api} method and {api:anychart.core.gantt.DataGridButton#background}background(){api} + {api:anychart.core.gantt.DataGridButton#stroke}stroke(){api}.
+
 ```
-// configure data grid buttons
-buttons.background().stroke(null);
+// disable the default settings of data grid buttons
 buttons.normal().content(null);
 buttons.hovered().content(null);
 buttons.selected().content(null);
+buttons.background().stroke(null);
 
 // set the background fill of data grid buttons in the normal state
 buttons.normal().background().fill({
@@ -104,7 +108,7 @@ misc:
 // access data grid buttons
 var buttons = chart.dataGrid().buttons();
 
-// configure data grid buttons
+// disable the default settings of data grid buttons
 buttons.background().fill(null);
 buttons.background().stroke(null);
 
