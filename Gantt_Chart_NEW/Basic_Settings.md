@@ -10,13 +10,16 @@
 
 * background()
 
+{sample :height 220}GANTT\_NEW\_Basic\_Settings\_01{sample}
+
 ### Rows and Columns
 
-* background()
 * columnStroke()
 * rowHoverFill()
 * rowSelectedFill()
 * rowStroke()
+
+{sample :height 220}GANTT\_NEW\_Basic\_Settings\_02{sample}
 
 ### Data Grid
 ### Timeline
@@ -27,15 +30,21 @@
 
 * title()
 
+{sample :height 220}GANTT\_NEW\_Basic\_Settings\_03{sample}
+
 ## Header and Row Height
 
 * headerHeight()
 * defaultRowHeight() + (?) примеч про индивид таск: поле rowHeight - примера не надо
 
+{sample :height 220}GANTT\_NEW\_Basic\_Settings\_04{sample}
+
 ## Splitter
 
 * splitterPosition()
 * the width of the timeline automatically adjusts to the area outlined by the splitter
+
+{sample :height 220}GANTT\_NEW\_Basic\_Settings\_05{sample}
 
 ## Navigation
 
