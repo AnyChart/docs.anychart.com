@@ -99,7 +99,7 @@ buttons.selected().background().fill({
 
 ### Custom Drawing
 
-You can replace the default content of data grid buttons with a custom drawing by passing a function to the {api:anychart.core.gantt.DataGridButton#content}content method(){api}. To learn more, read [Graphics](../../Graphics).
+You can replace the default content of data grid buttons with a custom drawing by passing a function to the {api:anychart.core.gantt.DataGridButton#content}content(){api} method. To learn more, read [Graphics](../../Graphics).
 
 In the sample below, a function is used to draw different images in different states. The default background fill and stroke are disabled.
 
