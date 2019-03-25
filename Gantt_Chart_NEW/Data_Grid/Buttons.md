@@ -69,9 +69,9 @@ buttons.selected().fontColor("#64b5f6");
 
 ### Background Images
 
-The {api:anychart.core.gantt.DataGridButton#background}background(){api} method, combined with {api:anychart.core.ui.Background#fill}fill(){api}, allows you to set a custom image as a background fill of data grid buttons.
+The {api:anychart.core.gantt.DataGridButton#background}background(){api} method, combined with {api:anychart.core.ui.Background#fill}fill(){api}, allows you to set a custom image as a background fill of data grid buttons. 
 
-To disable the default content and stroke, use the {api:anychart.core.gantt.DataGridButton#content}content(){api} method and {api:anychart.core.gantt.DataGridButton#background}background(){api} + {api:anychart.core.gantt.DataGridButton#stroke}stroke(){api}.
+In the following sample, different background images are used in different states. The default content and background stroke are disabled.
 
 ```
 // disable the default settings of data grid buttons
@@ -99,10 +99,9 @@ buttons.selected().background().fill({
 
 ### Custom Drawing
 
-misc:
+You can replace the default content of data grid buttons with a custom drawing by passing a function to the {api:anychart.core.gantt.DataGridButton#content}content method(){api}. To learn more, read [Graphics](../../Graphics).
 
-* [Graphics](../../Graphics)
-
+In the sample below, a function is used to draw different images in different states. The default background fill and stroke are disabled.
 
 ```
 // access data grid buttons
