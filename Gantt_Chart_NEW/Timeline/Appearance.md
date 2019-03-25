@@ -20,7 +20,7 @@ Combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with the follo
 The sample below shows how to adjust the appearance of the timeline:
 
 ```
-// configure the appearance of the timeline
+// configure the visual settings of the timeline
 var timeline = chart.getTimeline();
 timeline.rowEvenFill("gray 0.3");
 timeline.rowOddFill("gray 0.1");

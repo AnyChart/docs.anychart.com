@@ -79,6 +79,12 @@ anychart.onDocumentReady(function () {
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-15");
 
+    // configure the visual settings of the chart
+    chart.rowHoverFill("#ffd54f 0.3");
+    chart.rowSelectedFill("#ffd54f 0.3");
+    chart.rowStroke("0.5 #64b5f6");
+    chart.columnStroke("0.5 #64b5f6");
+
     // set the container id
     chart.container("container");
 

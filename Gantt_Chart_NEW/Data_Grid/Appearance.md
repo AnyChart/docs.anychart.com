@@ -21,7 +21,7 @@ Combine {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with the following m
 The sample below shows how to adjust the appearance of the data grid:
 
 ```
-// configure the appearance of the data grid
+// configure the visual settings of the data grid
 var dataGrid = chart.dataGrid();
 dataGrid.rowEvenFill("gray 0.3");
 dataGrid.rowOddFill("gray 0.1");
