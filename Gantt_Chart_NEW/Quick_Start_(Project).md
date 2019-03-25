@@ -118,7 +118,7 @@ var data = [
     chart.container("container");  
     // initiate drawing the chart
     chart.draw();
-    // fit items to the width of the timeline
+    // fit elements to the width of the timeline
     chart.fitAll();
   });  
 </script>
@@ -192,7 +192,7 @@ var data = [
         chart.container("container");    
         // initiate drawing the chart
         chart.draw();    
-        // fit items to the width of the timeline
+        // fit elements to the width of the timeline
         chart.fitAll();
       });    
     </script>

@@ -56,7 +56,7 @@
 * [Columns: Buttons](Data_Grid/Columns#buttons)
 * [Buttons](Data_Grid/Buttons) 
 
-{sample :height 220}GANTT\_NEW\_Basic\_Settings\_06{sample}
+{sample :height 260}GANTT\_NEW\_Basic\_Settings\_06{sample}
 
 {sample :height 220}GANTT\_NEW\_Basic\_Settings\_07{sample}
 
