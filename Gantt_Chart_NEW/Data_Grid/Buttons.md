@@ -144,13 +144,11 @@ buttons.selected().content(contentFunction);
 
 ## Enabling / Disabling
 
-misc:
+To learn how to enable or disable buttons and set the hierarchical indentation for data grid labels, see the following sections:
 
 * [Columns: Buttons](Columns#buttons)
 * [Columns: Indentation](Columns#indentation)
 
 ## Expanding / Collapsing
 
-misc:
-
-* [Basic Settings: Navigation](../Basic_Settings#navigation)
+By default, the chart is drawn with all elements expanded. To learn how to change this setting, read [Basic Settings: Navigation](../Basic_Settings#navigation).
