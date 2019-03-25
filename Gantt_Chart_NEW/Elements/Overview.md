@@ -18,7 +18,7 @@ Articles in this section explain how to configure:
 
 Articles in other sections explain how to adjust:
 
-[Timeline: Tooltips](../Timeline/Tooltips) – tooltips shown when the timeline is hovered over.
+* [Timeline: Tooltips](../Timeline/Tooltips) – tooltips shown when the timeline is hovered over
 
 ## Classes
 
