@@ -37,7 +37,7 @@
 * headerHeight()
 * defaultRowHeight() + (?) примеч про индивид таск: поле rowHeight - примера не надо
 
-{sample :height 335}GANTT\_NEW\_Basic\_Settings\_04{sample}
+{sample :height 365}GANTT\_NEW\_Basic\_Settings\_04{sample}
 
 ## Splitter
 
