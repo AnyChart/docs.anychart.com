@@ -19,7 +19,7 @@
 * rowStroke()
 * columnStroke()
 
-{sample :height 220}GANTT\_NEW\_Basic\_Settings\_02{sample}
+{sample :height 230}GANTT\_NEW\_Basic\_Settings\_02{sample}
 
 ### Data Grid
 ### Timeline

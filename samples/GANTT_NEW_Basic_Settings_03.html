@@ -76,6 +76,15 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
+    // enable and configure the chart title
+    var title = chart.title();
+    title.enabled(true);
+    title.text("Gantt Chart: Title");
+    title.fontColor("#64b5f6");
+    title.fontSize(18);
+    title.fontWeight(600);
+    title.padding(5);
+
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-15");
 
