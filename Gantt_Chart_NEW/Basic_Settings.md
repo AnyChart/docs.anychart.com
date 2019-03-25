@@ -30,7 +30,7 @@
 
 * title()
 
-{sample :height 250}GANTT\_NEW\_Basic\_Settings\_03{sample}
+{sample :height 255}GANTT\_NEW\_Basic\_Settings\_03{sample}
 
 ## Header and Row Height
 
