@@ -15,7 +15,10 @@ Articles in this section explain how to configure:
 * [Labels](Labels) – labels of elements
 * [Markers](Markers) – markers
 
-**Note:** See [Timeline: Tooltips](../Timeline/Tooltips) to learn how to adjust tooltips shown when the timeline is hovered over.
+
+Articles in other sections explain how to adjust:
+
+[Timeline: Tooltips](../Timeline/Tooltips) – tooltips shown when the timeline is hovered over.
 
 ## Classes
 
