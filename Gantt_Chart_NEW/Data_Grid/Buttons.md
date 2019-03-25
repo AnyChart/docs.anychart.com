@@ -144,4 +144,4 @@ buttons.selected().content(contentFunction);
 
 ## Enabling / Disabling
 
-To learn how to enable or disable buttons and set the hierarchical indentation for data grid labels, see the [Columns: Buttons](Columns#buttons) section.
+To learn how to enable or disable buttons, see the [Columns: Buttons](Columns#buttons) section.
