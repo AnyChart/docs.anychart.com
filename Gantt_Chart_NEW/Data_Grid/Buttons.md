@@ -142,14 +142,6 @@ buttons.selected().content(contentFunction);
 
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_03{sample}
 
-## Indentation
-
-When you adjust buttons, sometimes it also makes sense to adjust the indentation of nested data grid labels – read [Columns: Indentation](Columns#indentation) to learn more.
-
 ## Enabling / Disabling
 
 To learn how to enable or disable buttons and set the hierarchical indentation for data grid labels, see the [Columns: Buttons](Columns#buttons) section.
-
-## Expanding / Collapsing
-
-By default, the chart is drawn with all elements expanded. To learn how to change this setting, read [Basic Settings: Navigation](../Basic_Settings#navigation).
