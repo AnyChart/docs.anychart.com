@@ -53,7 +53,7 @@
 * [Columns: Buttons](Data_Grid/Columns#buttons)
 * [Buttons](Data_Grid/Buttons) 
 
-### Fit Elements to Width
+### Fit to Width
 
 * fitAll(), fitToTask() – первое у всех, второе только у Project
 
