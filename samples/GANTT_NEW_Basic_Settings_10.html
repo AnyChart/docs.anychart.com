@@ -35,10 +35,10 @@
     </style>
 </head>
 <body>
-<button id = "chartScrollToEndButton" onclick="chartScrollToEnd()">Scroll to End</button>
 <button id = "chartScrollToRowButton" onclick="chartScrollToRow()">Scroll to Row 7</button>
+<button id = "chartScrollToEndButton" onclick="chartScrollToEnd()">Scroll from Row 7 to End</button>
 <button id = "chartScrollToValueButton" onclick="chartScrollToValue()">Scroll to Value</button>
-<label id="valueLabel">value = 200</label>
+<label id="valueLabel">value = 20</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -125,19 +125,19 @@ anychart.onDocumentReady(function () {
     chart.fitAll();
 });
 
-// zoom in
-function chartScrollToEnd() {
-  chart.scrollToEnd(7);
-}
-
-// zooum out
+// scroll to row 7
 function chartScrollToRow() {
   chart.scrollToRow(7);
 }
 
-// zoom to week 2
+// scroll from row 7 to the end
+function chartScrollToEnd() {
+  chart.scrollToEnd(7);
+}
+
+// scroll to 20px
 function chartScrollToValue() {
-  chart.scrollToValue(200);
+  chart.scrollToValue(20);
 }
 </script>
 </body>
