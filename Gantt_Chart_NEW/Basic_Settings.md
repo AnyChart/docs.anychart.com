@@ -60,7 +60,7 @@
 
 {sample :height 320}GANTT\_NEW\_Basic\_Settings\_07{sample}
 
-{sample :height 220}GANTT\_NEW\_Basic\_Settings\_08{sample}
+{sample :height 280}GANTT\_NEW\_Basic\_Settings\_08{sample}
 
 {sample :height 220}GANTT\_NEW\_Basic\_Settings\_09{sample}
 
