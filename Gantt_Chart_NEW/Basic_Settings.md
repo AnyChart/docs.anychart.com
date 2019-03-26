@@ -48,9 +48,9 @@
 
 ## Navigation
 
-* fitAll(), fitToTask()
-* collapseAll(), collapseTask() + (?) примеч про индивид таск: поле collapsed + пример
-* expandAll(), expandTask()
+* fitAll(), fitToTask() – первое у всех, второе только у Project
+* collapseAll(), collapseTask(), expandAll(), expandTask() – на маилстоуны не действует
+* поле collapsed + пример
 * zoomIn(), zoomOut(), zoomTo()
 * scrollTo(), scrollToEnd(), scrollToRow()
 * [Columns: Buttons](Data_Grid/Columns#buttons)
