@@ -56,6 +56,7 @@
 ### Fit to Width
 
 * fitAll(), fitToTask() – первое у всех, второе только у Project
+* что fitToTask() не работает на маилстоунах, никак не комментировать
 
 {sample :height 260}GANTT\_NEW\_Basic\_Settings\_06{sample}
 
