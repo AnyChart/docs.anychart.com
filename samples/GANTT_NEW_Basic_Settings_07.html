@@ -13,15 +13,27 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        button {
+            margin: 10px 0 0 10px;
+            width: 200px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 40px;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
+<button id = "collapseExpandAllButton" onclick="collapseExpandAll()">Collapse All</button>
+<button id = "collapseExpandTaskButton" onclick="collapseExpandTask()">Collapse PR Campaign</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -31,52 +43,69 @@ anychart.onDocumentReady(function () {
       {
         id: "1",
         name: "Development",
-        actualStart: "2018-01-15",
+        actualStart: "2018-01-25",
         actualEnd: "2018-03-10",
         children: [
           {
-            id: "1_1",
-            name: "Analysis",
-            actualStart: "2018-01-15",
-            actualEnd: "2018-01-25"
-          },
-          {
             id: "1_2",
-            name: "Design",
-            actualStart: "2018-01-20",
-            actualEnd: "2018-02-04"
+            name: "Analysis",
+            actualStart: "2018-01-25",
+            actualEnd: "2018-02-08"
           },
           {
             id: "1_3",
-            name: "Meeting",
-            actualStart: "2018-02-05",
-            actualEnd: "2018-02-05"
+            name: "Design",
+            actualStart: "2018-02-04",
+            actualEnd: "2018-02-14"
           },
           {
             id: "1_4",
-            name: "Implementation",
-            actualStart: "2018-02-05",
-            actualEnd: "2018-02-24"
+            name: "Meeting",
+            actualStart: "2018-02-15",
+            actualEnd: "2018-02-15"
           },
           {
             id: "1_5",
+            name: "Implementation",
+            actualStart: "2018-02-15",
+            actualEnd: "2018-02-27"
+          },
+          {
+            id: "1_6",
             name: "Testing",
-            actualStart: "2018-02-25",
+            actualStart: "2018-02-28",
             actualEnd: "2018-03-10"
+          }
+      ]},
+      { 
+        id: "2",
+        name: "PR Campaign",
+        actualStart: "2018-02-15",
+        actualEnd: "2018-03-22",
+        children: [
+          {
+            id: "2_1",
+            name: "Planning",
+            actualStart: "2018-02-15",
+            actualEnd: "2018-03-10"
+          },
+          {
+            id: "2_2",
+            name: "Promoting",
+            actualStart: "2018-03-11",
+            actualEnd: "2018-03-22"
           }
       ]}
     ];
-    
+        
     // create a data tree
     var treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart
-    var chart = anychart.ganttProject();
+    chart = anychart.ganttProject();
     
     // set the data
     chart.data(treeData);
-
-    // ...
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-15");
@@ -90,6 +119,33 @@ anychart.onDocumentReady(function () {
     // fit elements to the width of the timeline
     chart.fitAll();
 });
+
+// collapse / expand all tasks
+function collapseExpandAll() {
+  var button_1 = document.getElementById("collapseExpandAllButton");
+  var button_2 = document.getElementById("collapseExpandTaskButton");
+  if (button_1.innerHTML == "Collapse All") {
+    chart.collapseAll();  
+    button_1.innerHTML = "Expand All";
+    button_2.innerHTML = "Expand PR Campaign";
+  } else {
+    chart.expandAll();
+    button_1.innerHTML = "Collapse All";
+    button_2.innerHTML = "Collapse PR Campaign";
+  }
+}
+
+// collapse / expand the task 2
+function collapseExpandTask() {
+  var button_2 = document.getElementById("collapseExpandTaskButton");
+  if (button_2.innerHTML == "Collapse PR Campaign") {
+    chart.collapseTask("2");  
+    button_2.innerHTML = "Expand PR Campaign";
+  } else {
+    chart.expandTask("2");
+    button_2.innerHTML = "Collapse PR Campaign";
+  }
+}
 </script>
 </body>
 </html>

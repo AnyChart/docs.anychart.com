@@ -35,16 +35,18 @@
     </style>
 </head>
 <body>
-<button id = "chartFitAllButton" onclick="chartFitAll()">Fit All</button>
-<button id = "chartFitToTaskButton" onclick="chartFitToTask()">Fit To Task</button>
+<button id = "fitTasksButton" onclick="fitTasks()">Fit All</button>
+<button id = "fitTaskButton" onclick="fitTask()">Fit To Task</button>
 <label for="taskIdSelect">id = </label>
-<select id="taskIdSelect">
+<select id="taskIdSelect" onchange="updateNameLabel()">
     <option value="1">1</option>  
     <option value="1_1">1_1</option>
-    <option value="1_2" selected="selected">1_2</option>  
+    <option value="1_2" selected="selected">1_2</option> 
+    <option value="1_4">1_3</option> 
     <option value="1_4">1_4</option>
     <option value="1_5">1_5</option>
 </select>
+<label id="nameLabel">(name = Design)</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -91,7 +93,7 @@ anychart.onDocumentReady(function () {
     ];
     
     // create a data tree
-    var treeData = anychart.data.tree(data, "as-tree");
+    treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart
     chart = anychart.ganttProject();
@@ -110,14 +112,23 @@ anychart.onDocumentReady(function () {
 });
 
 // fit elements to the width of the timeline
-function chartFitAll() {
+function fitTasks() {
   chart.fitAll();
 }
 
-// fit the task to the width of the timeline
-function chartFitToTask() {
+// fit the selected task to the width of the timeline
+function fitTask() {
   var select = document.getElementById("taskIdSelect");
   chart.fitToTask(select.value);
+}
+
+// change the text of label
+function updateNameLabel() {
+  var label = document.getElementById("nameLabel");
+  var select = document.getElementById("taskIdSelect");
+  var item = treeData.search("id", select.value);
+  var itemName = item.get("name");
+  label.innerHTML = "(name = " + itemName + ")";
 }
 </script>
 </body>
