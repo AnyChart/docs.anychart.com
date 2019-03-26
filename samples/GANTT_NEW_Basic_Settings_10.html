@@ -37,7 +37,7 @@
 <body>
 <button id = "chartScrollToRowButton" onclick="chartScrollToRow()">Scroll to Row 7</button>
 <button id = "chartScrollToEndButton" onclick="chartScrollToEnd()">Scroll from Row 7 to End</button>
-<button id = "chartScrollToValueButton" onclick="chartScrollToValue()">Scroll to Value</button>
+<button id = "chartScrollToValueButton" onclick="chartScrollToValue()">Scroll by Value</button>
 <label id="valueLabel">value = 20</label>
 <div id="container"></div>
 <script>
@@ -125,17 +125,17 @@ anychart.onDocumentReady(function () {
     chart.fitAll();
 });
 
-// scroll to row 7
+// scroll the chart down to row 7
 function chartScrollToRow() {
   chart.scrollToRow(7);
 }
 
-// scroll from row 7 to the end
+// scroll the chart down from row 7 to the end
 function chartScrollToEnd() {
   chart.scrollToEnd(7);
 }
 
-// scroll to 20px
+// scroll the chart down by 20px
 function chartScrollToValue() {
   chart.scrollToValue(20);
 }
