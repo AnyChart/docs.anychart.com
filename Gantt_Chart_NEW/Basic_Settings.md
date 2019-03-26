@@ -1,6 +1,8 @@
 {:index 8}
 # Basic Settings
 
+## Overview
+
 ## Appearance
 
 * [appearance settings](../Appearance_Settings)
@@ -48,21 +50,33 @@
 
 ## Navigation
 
-* fitAll(), fitToTask() – первое у всех, второе только у Project
-* collapseAll(), collapseTask(), expandAll(), expandTask() – на маилстоуны не действует
-* поле collapsed + пример
-* zoomIn(), zoomOut(), zoomTo()
-* scrollTo(), scrollToEnd(), scrollToRow()
 * [Columns: Buttons](Data_Grid/Columns#buttons)
 * [Buttons](Data_Grid/Buttons) 
 
+### Fit Elements to Width
+
+* fitAll(), fitToTask() – первое у всех, второе только у Project
+
 {sample :height 260}GANTT\_NEW\_Basic\_Settings\_06{sample}
+
+### Expand / Collapse
+
+* collapseAll(), collapseTask(), expandAll(), expandTask() – на маилстоуны не действует
+* `collapsed`
 
 {sample :height 320}GANTT\_NEW\_Basic\_Settings\_07{sample}
 
 {sample :height 280}GANTT\_NEW\_Basic\_Settings\_08{sample}
 
+### Zoom
+
+* zoomIn(), zoomOut(), zoomTo()
+
 {sample :height 220}GANTT\_NEW\_Basic\_Settings\_09{sample}
+
+### Scroll
+
+* scrollTo(), scrollToEnd(), scrollToRow()
 
 {sample :height 220}GANTT\_NEW\_Basic\_Settings\_10{sample}
 
