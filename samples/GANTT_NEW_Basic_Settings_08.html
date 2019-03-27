@@ -35,10 +35,10 @@
     </style>
 </head>
 <body>
-<button id = "fitTasksButton" onclick="fitTasks()">Fit All</button>
-<button id = "fitTaskButton" onclick="fitTask()">Fit Task</button>
-<label for="taskIdSelect">id = </label>
-<select id="taskIdSelect" onchange="updateNameLabel()">
+<button id = "fitAll" onclick="fitAll()">Fit All</button>
+<button id = "fitTask" onclick="fitTask()">Fit Task</button>
+<label for="idSelect">id = </label>
+<select id="idSelect" onchange="updateNameLabel()">
     <option value="1">1</option>  
     <option value="1_1">1_1</option>
     <option value="1_2" selected="selected">1_2</option> 
@@ -112,21 +112,21 @@ anychart.onDocumentReady(function () {
 });
 
 // fit elements to the width of the timeline
-function fitTasks() {
+function fitAll() {
   chart.fitAll();
 }
 
 // fit the selected task to the width of the timeline
 function fitTask() {
-  var select = document.getElementById("taskIdSelect");
+  var select = document.getElementById("idSelect");
   chart.fitToTask(select.value);
 }
 
 // change the text of label
 function updateNameLabel() {
   var label = document.getElementById("nameLabel");
-  var select = document.getElementById("taskIdSelect");
-  var item = treeData.search("id", select.value);
+  var selectValue = document.getElementById("idSelect").value;
+  var item = treeData.search("id", selectValue);
   var itemName = item.get("name");
   label.innerHTML = "(name = " + itemName + ")";
 }

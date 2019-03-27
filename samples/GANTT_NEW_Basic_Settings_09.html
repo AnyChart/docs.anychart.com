@@ -35,9 +35,9 @@
     </style>
 </head>
 <body>
-<button id = "timelineZoomInButton" onclick="timelineZoomIn()">(+) Zoom In</button>
-<button id = "timelineZoomOutButton" onclick="timelineZoomOut()">(–) Zoom Out</button>
-<button id = "timelineZoomToButton" onclick="timelineZoomTo()">Zoom To</button>
+<button id = "zoomInButton" onclick="zoomIn()">(+) Zoom In</button>
+<button id = "zoomOutButton" onclick="zoomOut()">(–) Zoom Out</button>
+<button id = "zoomToButton" onclick="zoomTo()">Zoom To</button>
 <label id="unitLabel">unit = week</label>
 <label id="countLabel">count = 2</label>
 <label id="anchorLabel">anchor = first-date</label>
@@ -109,17 +109,17 @@ anychart.onDocumentReady(function () {
 });
 
 // zoom the timeline in
-function timelineZoomIn() {
+function zoomIn() {
   chart.zoomIn(2);
 }
 
 // zoom the timeline out
-function timelineZoomOut() {
+function zoomOut() {
   chart.zoomOut(2);
 }
 
 // zoom the timeline to week 2
-function timelineZoomTo() {
+function zoomTo() {
   chart.zoomTo("week", 2, "first-date");
 }
 </script>

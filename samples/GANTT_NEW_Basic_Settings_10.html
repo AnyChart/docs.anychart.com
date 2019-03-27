@@ -26,6 +26,9 @@
             display: inline-block;
             margin: 10px 0 0 10px;
         }
+        input {
+            width: 30px;
+        }
         #container {
             position: absolute;
             width: 100%;
@@ -35,9 +38,21 @@
     </style>
 </head>
 <body>
-<button id = "chartScrollToRowButton" onclick="chartScrollToRow()">Scroll to Row 7</button>
-<button id = "chartScrollToValueButton" onclick="chartScrollToValue()">Scroll by Value</button>
-<label id="valueLabel">value = 100</label>
+<button id = "scrollToRowButton" onclick="scrollToRow()">Scroll to Row</button>
+<label for="indexSelect">index = </label>
+<select id="indexSelect">
+    <option value="1">1</option>  
+    <option value="2">2</option>
+    <option value="3">3</option> 
+    <option value="4">4</option> 
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7" selected="selected">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>    
+</select>
+<button id = "scrollToValue" onclick="scrollToValue()">Scroll By</button>
+<label>value = <input id="inputValue" value="100"></label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -124,14 +139,16 @@ anychart.onDocumentReady(function () {
     chart.fitAll();
 });
 
-// scroll the chart down to row 7
-function chartScrollToRow() {
-  chart.scrollToRow(7);
+// scroll the chart to the selected row
+function scrollToRow() {
+  var selectValue = document.getElementById("indexSelect").value;
+  chart.scrollToRow(selectValue);
 }
 
-// scroll the chart down by 100px
-function chartScrollToValue() {
-  chart.scrollTo(100);
+// scroll the chart by the specified value
+function scrollToValue() {
+  var inputValue = document.getElementById("inputValue").value;
+  chart.scrollTo(inputValue);
 }
 </script>
 </body>
