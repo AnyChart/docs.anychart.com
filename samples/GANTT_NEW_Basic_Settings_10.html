@@ -39,18 +39,7 @@
 </head>
 <body>
 <button id = "scrollToRowButton" onclick="scrollToRow()">Scroll to Row</button>
-<label for="indexSelect">index: </label>
-<select id="indexSelect">
-    <option value="1">1</option>  
-    <option value="2">2</option>
-    <option value="3">3</option> 
-    <option value="4">4</option> 
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7" selected="selected">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>    
-</select>
+<label>index: <input id="indexInput" type = "number" min="1" max = "9" value="7"></label>
 <button id = "scrollToValue" onclick="scrollToValue()">Scroll to Value</button>
 <label>value: <input id="valueInput" value="110"></label>
 <div id="container"></div>
@@ -147,7 +136,7 @@ anychart.onDocumentReady(function () {
 
 // scroll the chart to the selected row
 function scrollToRow() {
-  var index = document.getElementById("indexSelect").value;
+  var index = document.getElementById("indexInput").value;
   chart.scrollToRow(index);
 }
 
