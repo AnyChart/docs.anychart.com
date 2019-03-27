@@ -39,11 +39,12 @@
 <button id = "expandAllButton" onclick="expandAll()">Expand All</button>
 <button id = "collapseTaskButton" onclick="collapseTask()">Collapse Task</button>
 <button id = "expandTaskButton" onclick="expandTask()">Expand Task</button>
-<label for="nameSelect">name: </label>
-<select id="nameSelect">
-    <option value="Development">Development</option>  
-    <option value="PR Campaign" selected="selected">PR Campaign</option>
+<label for="idSelect">id: </label>
+<select id="idSelect" onchange="updateNameLabel()">
+    <option value="1">1</option>  
+    <option value="2" selected="selected">2</option>
 </select>
+<label id="nameLabel">(PR Campaign)</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -140,21 +141,25 @@ function expandAll() {
   chart.expandAll();  
 }
 
-// get the id of the selected task
-function getTaskId() {
-  var name = document.getElementById("nameSelect").value;
-  var item = treeData.search("name", name);
-  return item.get("id");
-}
-
 // collapse the specified task
 function collapseTask() {
-  chart.collapseTask(getTaskId());  
+  var id = document.getElementById("idSelect").value;
+  chart.collapseTask(id);  
 }
 
 // collapse the specified task
 function expandTask() {
-  chart.expandTask(getTaskId());  
+  var id = document.getElementById("idSelect").value;
+  chart.expandTask(id);  
+}
+
+// change the text of label
+function updateNameLabel() {
+  var label = document.getElementById("nameLabel");
+  var id = document.getElementById("idSelect").value;
+  var item = treeData.search("id", id);
+  var itemName = item.get("name");
+  label.innerHTML = "(" + itemName + ")";
 }
 </script>
 </body>
