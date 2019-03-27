@@ -55,7 +55,7 @@
     <option value="second">second</option>
     <option value="millisecond">millisecond</option>        
 </select>
-<label>count = <input id="inputValue" value="2"></label>
+<label>count = <input id="countInput" value="2"></label>
 <label for="anchorSelect">unit = </label>
 <select id="anchorSelect">  
     <option value="first-date" selected="selected">first-date</option>
@@ -143,7 +143,7 @@ function zoomOut() {
 // zoom the timeline to week 2
 function zoomTo() {
   var unit = document.getElementById("unitSelect").value;
-  var count = document.getElementById("inputValue").value;
+  var count = document.getElementById("countInput").value;
   var anchor = document.getElementById("anchorSelect").value;
   chart.zoomTo(unit, count, anchor);
 }
