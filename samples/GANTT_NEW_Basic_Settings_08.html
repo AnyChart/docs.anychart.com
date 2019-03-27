@@ -37,7 +37,7 @@
 <body>
 <button id = "fitAll" onclick="fitAll()">Fit All</button>
 <button id = "fitTask" onclick="fitTask()">Fit Task</button>
-<label for="idSelect">id = </label>
+<label for="idSelect">id: </label>
 <select id="idSelect" onchange="updateNameLabel()">
     <option value="1">1</option>  
     <option value="1_1">1_1</option>
@@ -46,7 +46,7 @@
     <option value="1_4">1_4</option>
     <option value="1_5">1_5</option>
 </select>
-<label id="nameLabel">(name = Design)</label>
+<label id="nameLabel">(name: Design)</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -128,7 +128,7 @@ function updateNameLabel() {
   var id = document.getElementById("idSelect").value;
   var item = treeData.search("id", id);
   var itemName = item.get("name");
-  label.innerHTML = "(name = " + itemName + ")";
+  label.innerHTML = "(name: " + itemName + ")";
 }
 </script>
 </body>

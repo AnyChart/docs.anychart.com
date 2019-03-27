@@ -38,10 +38,10 @@
     </style>
 </head>
 <body>
-<button id = "zoomInButton" onclick="zoomIn()">Zoom In</button>
-<button id = "zoomOutButton" onclick="zoomOut()">Zoom Out</button>
+<button id = "zoomInButton" onclick="zoomIn()">+</button>
+<button id = "zoomOutButton" onclick="zoomOut()">-</button>
 <button id = "zoomToButton" onclick="zoomTo()">Zoom To</button>
-<label for="unitSelect">unit = </label>
+<label for="unitSelect">unit: </label>
 <select id="unitSelect">
     <option value="year">year</option>
     <option value="semester">semester</option>
@@ -55,8 +55,8 @@
     <option value="second">second</option>
     <option value="millisecond">millisecond</option>        
 </select>
-<label>count = <input id="countInput" value="2"></label>
-<label for="anchorSelect">unit = </label>
+<label>count: <input id="countInput" value="2"></label>
+<label for="anchorSelect">anchor: </label>
 <select id="anchorSelect">  
     <option value="first-date" selected="selected">first-date</option>
     <option value="first-visible-date">first-visible-date</option> 
