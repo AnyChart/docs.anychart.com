@@ -21,10 +21,7 @@
         }
         button {
             margin: 10px 0 0 10px;
-        }
-        label {
-            display: inline-block;
-            margin: 10px 0 0 10px;
+            width: 200px;
         }
         #container {
             position: absolute;
@@ -35,18 +32,8 @@
     </style>
 </head>
 <body>
-<button id = "fitTasksButton" onclick="fitTasks()">Fit All</button>
-<button id = "fitTaskButton" onclick="fitTask()">Fit Task</button>
-<label for="taskIdSelect">id = </label>
-<select id="taskIdSelect" onchange="updateNameLabel()">
-    <option value="1">1</option>  
-    <option value="1_1">1_1</option>
-    <option value="1_2" selected="selected">1_2</option> 
-    <option value="1_3">1_3</option> 
-    <option value="1_4">1_4</option>
-    <option value="1_5">1_5</option>
-</select>
-<label id="nameLabel">(name = Design)</label>
+<button id = "collapseExpandAllButton" onclick="collapseExpandAll()">Collapse All</button>
+<button id = "collapseExpandTaskButton" onclick="collapseExpandTask()">Collapse PR Campaign</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -56,44 +43,63 @@ anychart.onDocumentReady(function () {
       {
         id: "1",
         name: "Development",
-        actualStart: "2018-01-15",
+        actualStart: "2018-01-25",
         actualEnd: "2018-03-10",
         children: [
           {
-            id: "1_1",
-            name: "Analysis",
-            actualStart: "2018-01-15",
-            actualEnd: "2018-01-25"
-          },
-          {
             id: "1_2",
-            name: "Design",
-            actualStart: "2018-01-20",
-            actualEnd: "2018-02-04"
+            name: "Analysis",
+            actualStart: "2018-01-25",
+            actualEnd: "2018-02-08"
           },
           {
             id: "1_3",
-            name: "Meeting",
-            actualStart: "2018-02-05",
-            actualEnd: "2018-02-05"
+            name: "Design",
+            actualStart: "2018-02-04",
+            actualEnd: "2018-02-14"
           },
           {
             id: "1_4",
-            name: "Implementation",
-            actualStart: "2018-02-05",
-            actualEnd: "2018-02-24"
+            name: "Meeting",
+            actualStart: "2018-02-15",
+            actualEnd: "2018-02-15"
           },
           {
             id: "1_5",
+            name: "Implementation",
+            actualStart: "2018-02-15",
+            actualEnd: "2018-02-27"
+          },
+          {
+            id: "1_6",
             name: "Testing",
-            actualStart: "2018-02-25",
+            actualStart: "2018-02-28",
             actualEnd: "2018-03-10"
+          }
+      ]},
+      { 
+        id: "2",
+        name: "PR Campaign",
+        actualStart: "2018-02-15",
+        actualEnd: "2018-03-22",
+        children: [
+          {
+            id: "2_1",
+            name: "Planning",
+            actualStart: "2018-02-15",
+            actualEnd: "2018-03-10"
+          },
+          {
+            id: "2_2",
+            name: "Promoting",
+            actualStart: "2018-03-11",
+            actualEnd: "2018-03-22"
           }
       ]}
     ];
-    
+        
     // create a data tree
-    treeData = anychart.data.tree(data, "as-tree");
+    var treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart
     chart = anychart.ganttProject();
@@ -102,33 +108,43 @@ anychart.onDocumentReady(function () {
     chart.data(treeData);
 
     // configure the scale
-    chart.getTimeline().scale().maximum("2018-03-15");
+    chart.getTimeline().scale().maximum("2018-03-27");
 
     // set the container id
     chart.container("container");
 
     // initiate drawing the chart
     chart.draw();
+
+    // fit elements to the width of the timeline
+    chart.fitAll();
 });
 
-// fit elements to the width of the timeline
-function fitTasks() {
-  chart.fitAll();
+// collapse / expand all tasks
+function collapseExpandAll() {
+  var button_1 = document.getElementById("collapseExpandAllButton");
+  var button_2 = document.getElementById("collapseExpandTaskButton");
+  if (button_1.innerHTML == "Collapse All") {
+    chart.collapseAll();  
+    button_1.innerHTML = "Expand All";
+    button_2.innerHTML = "Expand PR Campaign";
+  } else {
+    chart.expandAll();
+    button_1.innerHTML = "Collapse All";
+    button_2.innerHTML = "Collapse PR Campaign";
+  }
 }
 
-// fit the selected task to the width of the timeline
-function fitTask() {
-  var select = document.getElementById("taskIdSelect");
-  chart.fitToTask(select.value);
-}
-
-// change the text of label
-function updateNameLabel() {
-  var label = document.getElementById("nameLabel");
-  var select = document.getElementById("taskIdSelect");
-  var item = treeData.search("id", select.value);
-  var itemName = item.get("name");
-  label.innerHTML = "(name = " + itemName + ")";
+// collapse / expand task 2
+function collapseExpandTask() {
+  var button_2 = document.getElementById("collapseExpandTaskButton");
+  if (button_2.innerHTML == "Collapse PR Campaign") {
+    chart.collapseTask("2");  
+    button_2.innerHTML = "Expand PR Campaign";
+  } else {
+    chart.expandTask("2");
+    button_2.innerHTML = "Collapse PR Campaign";
+  }
 }
 </script>
 </body>

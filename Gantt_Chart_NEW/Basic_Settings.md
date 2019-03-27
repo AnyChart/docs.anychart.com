@@ -50,24 +50,25 @@
 
 ## Navigation
 
+* методы в этом разделе работают только после рисования чарта
 * [Columns: Buttons](Data_Grid/Columns#buttons)
 * [Buttons](Data_Grid/Buttons) 
-
-### Fit to Width
-
-* fitAll(), fitToTask() – первое у всех, второе только у Project
-* что fitToTask() не работает на маилстоунах, никак не комментировать
-
-{sample :height 260}GANTT\_NEW\_Basic\_Settings\_06{sample}
 
 ### Expand / Collapse
 
 * collapseAll(), collapseTask(), expandAll(), expandTask() – на маилстоуны не действует
 * `collapsed`
 
-{sample :height 320}GANTT\_NEW\_Basic\_Settings\_07{sample}
+{sample :height 320}GANTT\_NEW\_Basic\_Settings\_06{sample}
 
-{sample :height 280}GANTT\_NEW\_Basic\_Settings\_08{sample}
+{sample :height 280}GANTT\_NEW\_Basic\_Settings\_07{sample}
+
+### Fit to Width
+
+* fitAll(), fitToTask() – первое у всех, второе только у Project
+* что fitToTask() не работает на маилстоунах, никак не комментировать
+
+{sample :height 260}GANTT\_NEW\_Basic\_Settings\_08{sample}
 
 ### Zoom
 
