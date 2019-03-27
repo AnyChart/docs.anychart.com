@@ -26,6 +26,9 @@
             display: inline-block;
             margin: 10px 0 0 10px;
         }
+        input {
+            width: 30px;
+        }
         #container {
             position: absolute;
             width: 100%;
@@ -38,7 +41,20 @@
 <button id = "zoomInButton" onclick="zoomIn()">(+) Zoom In</button>
 <button id = "zoomOutButton" onclick="zoomOut()">(–) Zoom Out</button>
 <button id = "zoomToButton" onclick="zoomTo()">Zoom To</button>
-<label id="unitLabel">unit = week</label>
+<label for="unitSelect">unit = </label>
+<select id="unitSelect">
+    <option value="year">year</option>
+    <option value="semester">semester</option>
+    <option value="quarter">quarter</option> 
+    <option value="month">month</option>
+    <option value="third-of-month">third-of-month</option>  
+    <option value="week" selected="selected">week</option>  
+    <option value="day">day</option>  
+    <option value="hour">hour</option>
+    <option value="minute">minute</option>     
+    <option value="second">second</option>
+    <option value="millisecond">millisecond</option>        
+</select>
 <label id="countLabel">count = 2</label>
 <label id="anchorLabel">anchor = first-date</label>
 <div id="container"></div>
@@ -120,7 +136,8 @@ function zoomOut() {
 
 // zoom the timeline to week 2
 function zoomTo() {
-  chart.zoomTo("week", 2, "first-date");
+  var selectValue = document.getElementById("unitSelect").value;
+  chart.zoomTo(selectValue, 2, "first-date");
 }
 </script>
 </body>
