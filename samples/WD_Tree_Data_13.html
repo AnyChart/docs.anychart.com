@@ -39,7 +39,7 @@
 </head>
 <body>
 <button onclick="filterDuration()">Filter Items</button>
-<label>Duration >=<input id="inputValue" value="20"> day(s)</label>
+<label>duration >=<input id="valueInput" value="20"> day(s)</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -108,9 +108,9 @@ function filterDuration() {
   var treeData = chart.data();
 
   // search for items
-  var inputValue = (document.getElementById("inputValue").value) * 1000 * 3600 * 24;
+  var input = (document.getElementById("valueInput").value) * 1000 * 3600 * 24;
   var items = treeData.filter(function(item) {
-    return item.get("actualEnd") - item.get("actualStart") >= inputValue;
+    return item.get("actualEnd") - item.get("actualStart") >= input;
   });
 
   /* get the names of the found items, add them to a string variable,

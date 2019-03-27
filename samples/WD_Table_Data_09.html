@@ -43,9 +43,9 @@
 </head>
 <body>
 <button onclick="updateRow()">Update First Row</button>
-<label>Low:<input id="inputLow" value="510.69"></label>
-<label>High:<input id="inputHigh" value="516.88"></label>
-<label>Color:<input id="inputColor" value="#dd2c00"></label>
+<label>low:<input id="lowInput" value="510.69"></label>
+<label>high:<input id="highInput" value="516.88"></label>
+<label>color:<input id="colorInput" value="#dd2c00"></label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -89,9 +89,9 @@ anychart.onDocumentReady(function () {
   
 // update the first row
 function updateRow() {
-  var newLow = document.getElementById("inputLow").value;
-  var newHigh = document.getElementById("inputHigh").value;
-  var newColor = document.getElementById("inputColor").value
+  var newLow = document.getElementById("lowInput").value;
+  var newHigh = document.getElementById("highInput").value;
+  var newColor = document.getElementById("colorInput").value
   var newData = [["2015-12-25", newLow, newHigh, newColor]];
   dataTable.addData(newData);
 }

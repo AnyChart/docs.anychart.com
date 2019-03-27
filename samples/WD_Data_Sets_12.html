@@ -38,7 +38,7 @@
 </head>
 <body>
 <button id = "filterButton" onclick="filterValue()">Filter Data</button>
-<label>Value >= <input id="inputValue" value="14000"></label>
+<label>value >= <input id="valueInput" value="14000"></label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -84,9 +84,9 @@ anychart.onDocumentReady(function () {
 
 // remove points with values less than a given one
 function filterValue() {
-  var minValue = document.getElementById("inputValue").value;
+  var input = document.getElementById("valueInput").value;
   var newMapping = mapping.filter("value", function(value) {
-    return value >= minValue;
+    return value >= input;
   });
   series_2.data(newMapping);
 }

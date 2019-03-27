@@ -470,9 +470,9 @@ In this sample a filter function is used to find items with duration greater tha
 
 ```
 // search for items with duration equal or greater than a given one
-var inputValue = (document.getElementById("inputValue").value) * 1000 * 3600 * 24;
+var input = (document.getElementById("valueInput").value) * 1000 * 3600 * 24;
 var items = treeData.filter(function(item) {
-  return item.get("actualEnd") - item.get("actualStart") >= inputValue;
+  return item.get("actualEnd") - item.get("actualStart") >= input;
 });
 ```
 

@@ -383,9 +383,9 @@ Use this method to set advanced search conditions, for example to find all rows 
 ```
 // remove points with values less than a given one
 function filterValue() {
-  var minValue = document.getElementById("inputValue").value;
+  var input = document.getElementById("valueInput").value;
   var newMapping = mapping.filter("value", function(value) {
-    return value >= minValue;
+    return value >= input;
   });
   series.data(newMapping);
 }
@@ -411,9 +411,9 @@ In this sample, iterator is used to select [filtered](#filter\(\)) points, [find
 
 ```
 // search for points with values equal or greater than a given one
-var minValue = document.getElementById("inputValue").value;
+var input = document.getElementById("valueInput").value;
 var newMapping = mapping.filter("value", function(value) {
-  return value >= minValue;
+  return value >= input;
 });
 
 // get the iterator
