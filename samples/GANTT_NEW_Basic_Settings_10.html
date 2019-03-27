@@ -126,6 +126,12 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
+    // set the row height
+    chart.defaultRowHeight(35);
+
+    // set the header height
+    chart.headerHeight(105);
+
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-27");
 

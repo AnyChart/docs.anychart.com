@@ -81,4 +81,4 @@
 * scrollTo(), scrollToEnd(), scrollToRow()
 * scrollTo() упомянуть, но не описывать
 
-{sample :height 175}GANTT\_NEW\_Basic\_Settings\_10{sample}
+{sample :height 220}GANTT\_NEW\_Basic\_Settings\_10{sample}
