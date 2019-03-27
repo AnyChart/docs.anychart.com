@@ -62,17 +62,17 @@ chart.getTimeline().scale().zoomLevels([["month", "quarter"]]);
 
 The available units can be found in {api:anychart.enums.Interval}anychart.scales.GanttDateTime.ZoomLevelsSettings{api}:
 
-* `"day"`
-* `"hour"`
-* `"millisecond"`
-* `"minute"`
-* `"month"`
-* `"quarter"`
-* `"second"`
+* `"year"`
 * `"semester"`
+* `"quarter"`
+* `"month"`
 * `"third-of-month"`
 * `"week"`
-* `"year"`
+* `"day"`
+* `"hour"`
+* `"minute"`
+* `"second"`
+* `"millisecond"`
 
 In this sample, there are two levels, the month and the quarter:
 

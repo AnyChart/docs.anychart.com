@@ -118,15 +118,15 @@ function fitAll() {
 
 // fit the selected task to the width of the timeline
 function fitTask() {
-  var select = document.getElementById("idSelect");
-  chart.fitToTask(select.value);
+  var id = document.getElementById("idSelect").value;
+  chart.fitToTask(id);
 }
 
 // change the text of label
 function updateNameLabel() {
   var label = document.getElementById("nameLabel");
-  var selectValue = document.getElementById("idSelect").value;
-  var item = treeData.search("id", selectValue);
+  var id = document.getElementById("idSelect").value;
+  var item = treeData.search("id", id);
   var itemName = item.get("name");
   label.innerHTML = "(name = " + itemName + ")";
 }

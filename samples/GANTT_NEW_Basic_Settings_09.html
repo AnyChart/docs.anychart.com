@@ -55,8 +55,14 @@
     <option value="second">second</option>
     <option value="millisecond">millisecond</option>        
 </select>
-<label id="countLabel">count = 2</label>
-<label id="anchorLabel">anchor = first-date</label>
+<label>count = <input id="inputValue" value="2"></label>
+<label for="anchorSelect">unit = </label>
+<select id="anchorSelect">  
+    <option value="first-date" selected="selected">first-date</option>
+    <option value="first-visible-date">first-visible-date</option> 
+    <option value="last-date">last-date</option>
+    <option value="last-visible-date">last-visible-date</option>     
+</select>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -136,8 +142,10 @@ function zoomOut() {
 
 // zoom the timeline to week 2
 function zoomTo() {
-  var selectValue = document.getElementById("unitSelect").value;
-  chart.zoomTo(selectValue, 2, "first-date");
+  var unit = document.getElementById("unitSelect").value;
+  var count = document.getElementById("inputValue").value;
+  var anchor = document.getElementById("anchorSelect").value;
+  chart.zoomTo(unit, count, anchor);
 }
 </script>
 </body>

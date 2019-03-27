@@ -147,14 +147,14 @@ anychart.onDocumentReady(function () {
 
 // scroll the chart to the selected row
 function scrollToRow() {
-  var selectValue = document.getElementById("indexSelect").value;
-  chart.scrollToRow(selectValue);
+  var index = document.getElementById("indexSelect").value;
+  chart.scrollToRow(index);
 }
 
 // scroll the chart by the specified value
 function scrollToValue() {
-  var inputValue = document.getElementById("inputValue").value;
-  chart.scrollTo(inputValue);
+  var value = document.getElementById("inputValue").value;
+  chart.scrollTo(value);
 }
 </script>
 </body>

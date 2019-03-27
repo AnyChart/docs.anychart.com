@@ -142,8 +142,8 @@ function expandAll() {
 
 // get the id of the selected task
 function getTaskId() {
-  var selectValue = document.getElementById("nameSelect").value;
-  var item = treeData.search("name", selectValue);
+  var name = document.getElementById("nameSelect").value;
+  var item = treeData.search("name", name);
   return item.get("id");
 }
 
