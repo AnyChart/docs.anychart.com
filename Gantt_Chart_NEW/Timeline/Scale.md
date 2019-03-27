@@ -60,7 +60,7 @@ chart.getTimeline().scale().zoomLevels([["month", "quarter"]]);
 
 **Note:** Levels must be listed in a particular order: from the level with the smallest time unit to the level with the largest one. For example, the millisecond goes before the second, the month goes before the year, and so on.
 
-The available units can be found in {api:anychart.enums.Interval}anychart.scales.GanttDateTime.ZoomLevelsSettings{api}:
+The available units can be found in {api:anychart.enums.Interval}anychart.enums.Interval{api}:
 
 * `"year"`
 * `"semester"`
