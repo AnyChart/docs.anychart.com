@@ -21,7 +21,10 @@
         }
         button {
             margin: 10px 0 0 10px;
-            width: 200px;
+        }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
         }
         #container {
             position: absolute;
@@ -32,8 +35,15 @@
     </style>
 </head>
 <body>
-<button id = "collapseExpandAllButton" onclick="collapseExpandAll()">Collapse All</button>
-<button id = "collapseExpandTaskButton" onclick="collapseExpandTask()">Collapse PR Campaign</button>
+<button id = "collapseAllButton" onclick="collapseAll()">Collapse All</button>
+<button id = "expandAllButton" onclick="expandAll()">Expand All</button>
+<button id = "collapseTaskButton" onclick="collapseTask()">Collapse Task</button>
+<button id = "expandTaskButton" onclick="expandTask()">Expand Task</button>
+<label for="nameSelect">name = </label>
+<select id="nameSelect">
+    <option value="Development">Development</option>  
+    <option value="PR Campaign" selected="selected">PR Campaign</option>
+</select>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -99,7 +109,7 @@ anychart.onDocumentReady(function () {
     ];
         
     // create a data tree
-    var treeData = anychart.data.tree(data, "as-tree");
+    treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart
     chart = anychart.ganttProject();
@@ -120,31 +130,31 @@ anychart.onDocumentReady(function () {
     chart.fitAll();
 });
 
-// collapse / expand all tasks
-function collapseExpandAll() {
-  var button_1 = document.getElementById("collapseExpandAllButton");
-  var button_2 = document.getElementById("collapseExpandTaskButton");
-  if (button_1.innerHTML == "Collapse All") {
-    chart.collapseAll();  
-    button_1.innerHTML = "Expand All";
-    button_2.innerHTML = "Expand PR Campaign";
-  } else {
-    chart.expandAll();
-    button_1.innerHTML = "Collapse All";
-    button_2.innerHTML = "Collapse PR Campaign";
-  }
+// collapse all tasks
+function collapseAll() {
+  chart.collapseAll();  
 }
 
-// collapse / expand task 2
-function collapseExpandTask() {
-  var button_2 = document.getElementById("collapseExpandTaskButton");
-  if (button_2.innerHTML == "Collapse PR Campaign") {
-    chart.collapseTask("2");  
-    button_2.innerHTML = "Expand PR Campaign";
-  } else {
-    chart.expandTask("2");
-    button_2.innerHTML = "Collapse PR Campaign";
-  }
+// expand all tasks
+function expandAll() {
+  chart.expandAll();  
+}
+
+// get the id of the selected task
+function getTaskId() {
+  var selectValue = document.getElementById("nameSelect").value;
+  var item = treeData.search("name", selectValue);
+  return item.get("id");
+}
+
+// collapse the specified task
+function collapseTask() {
+  chart.collapseTask(getTaskId());  
+}
+
+// collapse the specified task
+function expandTask() {
+  chart.expandTask(getTaskId());  
 }
 </script>
 </body>
