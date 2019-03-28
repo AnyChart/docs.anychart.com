@@ -57,6 +57,12 @@
 <button id = "zoomOutButton" onclick="zoomOut()">–</button>
 <label>factor: 2</label>
 <br>
+<button id = "zoomToDatesButton" onclick="zoomToDates()">Zoom To Dates</button>
+<label>start date:</label>
+<label id="dateLabel1">03 February 2018</label>
+<label>end date: </label>
+<label id="dateLabel2">06 February 2018</label>
+<br>
 <button id = "zoomToUnitsButton" onclick="zoomToUnits()">Zoom To Units</button>
 <label for="unitSelect">unit: </label>
 <select id="unitSelect">
@@ -80,12 +86,6 @@
     <option value="last-date">last-date</option>
     <option value="last-visible-date">last-visible-date</option>     
 </select>
-<br>
-<button id = "zoomToDatesButton" onclick="zoomToDates()">Zoom To Dates</button>
-<label>start date:</label>
-<label id="dateLabel1">03 Feb 2018</label>
-<label>end date: </label>
-<label id="dateLabel2">06 Feb 2018</label>
 <br>
 <div id="container"></div>
 <script>
@@ -164,6 +164,11 @@ function zoomOut() {
   chart.zoomOut(2);
 }
 
+// zoom the timeline to the given dates
+function zoomToDates() {
+  chart.zoomTo(Date.UTC(2018, 1, 3), Date.UTC(2018, 1, 6));
+}
+
 // zoom the timeline to the given units
 function zoomToUnits() {
   var unit = document.getElementById("unitSelect").value;
@@ -172,10 +177,6 @@ function zoomToUnits() {
   chart.zoomTo(unit, count, anchor);
 }
 
-// zoom the timeline to the given dates
-function zoomToDates() {
-  chart.zoomTo(Date.UTC(2018, 1, 3), Date.UTC(2018, 1, 6));
-}
 </script>
 </body>
 </html>
