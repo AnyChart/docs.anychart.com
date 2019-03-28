@@ -28,6 +28,7 @@ chart.background("#64b5f6 0.2");
 * {api:anychart.charts.Gantt#rowStroke}rowStroke(){api}
 * {api:anychart.charts.Gantt#columnStroke}columnStroke(){api}
 
+
 ```
 // configure the visual settings of rows and columns
 chart.rowHoverFill("#ffd54f 0.3");
@@ -248,6 +249,7 @@ anchors:
 * `"first-visible-date"`
 * `"last-date"`
 * `"last-visible-date"`
+
 
 ```
 // zoom the timeline in
