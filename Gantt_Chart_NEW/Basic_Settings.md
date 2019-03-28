@@ -10,7 +10,8 @@
 
 ### Background
 
-* background()
+* {api:anychart.charts.Gantt#background}background(){api}
+
 
 
 ```
@@ -22,11 +23,10 @@ chart.background("#64b5f6 0.2");
 
 ### Rows and Columns
 
-* rowHoverFill()
-* rowSelectedFill()
-* rowStroke()
-* columnStroke()
-
+* {api:anychart.charts.Gantt#rowHoverFill}rowHoverFill(){api}
+* {api:anychart.charts.Gantt#rowSelectedFill}rowSelectedFill(){api}
+* {api:anychart.charts.Gantt#rowStroke}rowStroke(){api}
+* {api:anychart.charts.Gantt#columnStroke}columnStroke(){api}
 
 ```
 // configure the visual settings of rows and columns
@@ -45,7 +45,7 @@ chart.columnStroke("0.5 #64b5f6");
 
 ## Title
 
-* title()
+* {api:anychart.charts.Gantt#title}title(){api}
 
 
 ```
@@ -63,8 +63,9 @@ title.padding(5);
 
 ## Header and Row Height
 
-* headerHeight()
-* defaultRowHeight() + (?) примеч про индивид таск: поле rowHeight - примера не надо
+* {api:anychart.charts.Gantt#headerHeight}headerHeight(){api}
+* {api:anychart.charts.Gantt#defaultRowHeight}defaultRowHeight(){api}
+* (?) примеч про индивид таск: поле rowHeight
 
 
 ```
@@ -78,7 +79,7 @@ chart.headerHeight(105);
 
 ## Splitter
 
-* splitterPosition()
+* {api:anychart.charts.Gantt#splitterPosition}splitterPosition(){api}
 * the width of the timeline automatically adjusts to the area outlined by the splitter
 
 
@@ -97,8 +98,10 @@ chart.splitterPosition("50%");
 
 ### Expand / Collapse
 
-* collapseAll(), collapseTask(), expandAll(), expandTask() – на маилстоуны не действует
-* `collapsed`
+* {api:anychart.charts.Gantt#collapseAll}collapseAll(){api}
+* {api:anychart.charts.Gantt#expandAll}expandAll(){api}
+* {api:anychart.charts.Gantt#collapseTask}collapseTask(){api}
+* {api:anychart.charts.Gantt#expandTask}expandTask(){api}
 
 
 ```
@@ -106,12 +109,15 @@ chart.splitterPosition("50%");
 chart.expandAll();  
 ```
 
+{sample :height 320}GANTT\_NEW\_Basic\_Settings\_06{sample}
+
+* `collapsed`
+
+
 ```
 // collapse the given task
 chart.collapseTask("2");  
 ```
-
-{sample :height 320}GANTT\_NEW\_Basic\_Settings\_06{sample}
 
 ```
 // create data
@@ -189,8 +195,10 @@ chart.data(treeData);
 
 ### Fit to Width
 
-* fitAll(), fitToTask() – первое у всех, второе только у Project
+* {api:anychart.charts.Gantt#fitAll}fitAll(){api} – у всех
+* {api:anychart.charts.Gantt#fitToTask}fitToTask(){api}
 * что fitToTask() не работает на маилстоунах, никак не комментировать
+* (?) fitToTask() не работает у Resource
 
 
 ```
@@ -208,9 +216,38 @@ chart.fitToTask("1_2");
 
 ### Zoom
 
-* zoomIn(), zoomOut(), zoomTo()
-* zoomTo – range (?)
+misc:
 
+* {api:anychart.charts.Gantt#zoomIn}zoomIn(){api}
+* {api:anychart.charts.Gantt#zoomOut}zoomOut(){api}
+* {api:anychart.charts.Gantt#zoomTo}zoomTo(){api}
+
+zoomTo():
+* range of dates / range of time units
+* range of units --> three parameters: unit, count, anchor
+
+units:
+
+* {api:anychart.enums.Interval}anychart.enums.Interval{api}
+* `"year"`
+* `"semester"`
+* `"quarter"`
+* `"month"`
+* `"third-of-month"`
+* `"week"`
+* `"day"`
+* `"hour"`
+* `"minute"`
+* `"second"`
+* `"millisecond"`
+
+anchors:
+
+* {api:anychart.enums.GanttRangeAnchor}anychart.enums.GanttRangeAnchor{api}
+* `"first-date"`
+* `"first-visible-date"`
+* `"last-date"`
+* `"last-visible-date"`
 
 ```
 // zoom the timeline in
@@ -231,8 +268,9 @@ chart.zoomTo("week", 2, "first-date");
 
 ### Scroll
 
-* scrollTo(), scrollToEnd(), scrollToRow()
-* scrollToEnd() упомянуть, но не описывать
+* {api:anychart.charts.Gantt#scrollTo}scrollTo(){api}
+* {api:anychart.charts.Gantt#scrollToRow}scrollToRow(){api}
+* {api:anychart.charts.Gantt#scrollToEnd}scrollToEnd(){api} – упомянуть, но не описывать
 
 
 ```
