@@ -134,13 +134,13 @@ anychart.onDocumentReady(function () {
     chart.fitAll();
 });
 
-// scroll the chart to the selected row
+// scroll the chart to the given row
 function scrollToRow() {
   var index = document.getElementById("indexInput").value;
   chart.scrollToRow(index);
 }
 
-// scroll the chart by the specified value
+// scroll the chart by the given value
 function scrollToValue() {
   var value = document.getElementById("valueInput").value;
   chart.scrollTo(value);
