@@ -6,12 +6,11 @@
 ## Appearance
 
 * [appearance settings](../Appearance_Settings)
-* [states](../Common_Settings/Interactivity/States): **normal** and **selected**
 
 ### Background
 
+* [background](../Appearance_Settings/Background)
 * {api:anychart.charts.Gantt#background}background(){api}
-
 
 
 ```
@@ -27,6 +26,8 @@ chart.background("#64b5f6 0.2");
 * {api:anychart.charts.Gantt#rowSelectedFill}rowSelectedFill(){api}
 * {api:anychart.charts.Gantt#rowStroke}rowStroke(){api}
 * {api:anychart.charts.Gantt#columnStroke}columnStroke(){api}
+* [Data Grid: Appearance](Data_Grid/Appearance)
+* [Timeline: Appearance](Timeline/Appearance)
 
 
 ```
@@ -40,12 +41,48 @@ chart.columnStroke("0.5 #64b5f6");
 {sample :height 220}GANTT\_NEW\_Basic\_Settings\_02{sample}
 
 ### Data Grid
+
+The data grid is the part of the Gantt chart where names of its elements are displayed...
+
+* [Data Grid: Appearance](Data_Grid/Appearance)
+
 ### Timeline
+
+(?) The timeline is the part of the Gantt chart where its elements are displayed...
+
+* [Timeline: Appearance](Timeline/Appearance)
+
 ### Elements
+
+(?) Timeline elements are the parts of the Gantt chart that are shown on the timeline.
+
+On the Project Gantt chart and Resource Gantt chart, different types of elements are displayed, and for each element type slightly different settings are available.
+
+You can configure the appearance (along with other settings) of...
+
+misc:
+* [Elements](Elements)
+* [all elements](Elements/All_Elements)
+* [inividual elements](Elements/Individual_Elements)
+
+Project Chart:
+
+* [tasks](Elements/Project_Chart#tasks_\(actual\))
+* [baselines](Elements/Project_Chart#baselines)
+* [progress bars](Elements/Project_Chart#progress_bars)
+* [connectors](Elements/Project_Chart#connectors)
+
+Resource Chart:
+
+* [periods](Elements/Resource_Chart#periods)
+
 ### Custom Drawing
+
+* [Custom Drawing](Custom_Drawing)
 
 ## Title
 
+* [title](../Common_Settings/Title)
 * {api:anychart.charts.Gantt#title}title(){api}
 
 
@@ -66,6 +103,7 @@ title.padding(5);
 
 * {api:anychart.charts.Gantt#headerHeight}headerHeight(){api}
 * {api:anychart.charts.Gantt#defaultRowHeight}defaultRowHeight(){api}
+* [Header: Level Height](Timeline/Header#level_height)
 * (?) примеч про индивид таск: поле rowHeight
 
 
@@ -81,7 +119,9 @@ chart.headerHeight(105);
 ## Splitter
 
 * {api:anychart.charts.Gantt#splitterPosition}splitterPosition(){api}
-* the width of the timeline automatically adjusts to the area outlined by the splitter
+* the width of the [timeline](Timeline) automatically adjusts to the area outlined by the splitter
+* ...allows showing more or less of the [data grid](Data_Grid)
+* Please note that the width of the data grid is defined by the sum of its [columns' widths](Data_Grid/Columns#width).
 
 
 ```
@@ -94,11 +134,23 @@ chart.splitterPosition("50%");
 ## Navigation
 
 * методы в этом разделе работают только после рисования чарта
-* [Columns: Buttons](Data_Grid/Columns#buttons)
-* [Buttons](Data_Grid/Buttons) 
 
 ### Expand / Collapse
 
+If there are hierarchical relationships between data items...
+
+...expand or collapse parent [tasks](Project_Chart#tasks_\(actual\)) or [resources](Resource_Chart#periods_and_resources) as well as their labels on the data grid...
+
+By default, the chart is drawn with all elements expanded...
+
+misc:
+
+* [Columns: Buttons](Data_Grid/Columns#buttons)
+* [Buttons](Data_Grid/Buttons) 
+
+methods:
+
+* By default, the chart is drawn with all elements expanded...
 * {api:anychart.charts.Gantt#collapseAll}collapseAll(){api}
 * {api:anychart.charts.Gantt#expandAll}expandAll(){api}
 * {api:anychart.charts.Gantt#collapseTask}collapseTask(){api}
@@ -196,8 +248,8 @@ chart.data(treeData);
 
 ### Fit to Width
 
-* {api:anychart.charts.Gantt#fitAll}fitAll(){api} – у всех
-* {api:anychart.charts.Gantt#fitToTask}fitToTask(){api}
+* {api:anychart.charts.Gantt#fitAll}fitAll(){api} – all [elements](Elements)
+* {api:anychart.charts.Gantt#fitToTask}fitToTask(){api} – a particular element
 * что fitToTask() не работает на маилстоунах, никак не комментировать
 * (?) fitToTask() не работает у Resource
 

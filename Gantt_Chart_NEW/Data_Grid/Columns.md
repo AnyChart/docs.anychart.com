@@ -325,7 +325,7 @@ chart.dataGrid().column(1).depthPaddingMultiplier(60);
 
 ## Buttons
 
-If there are hierarchical relationships between data items, special buttons are shown in the second data grid column. They allow expanding or collapsing parent [tasks](../Project_Chart#tasks_\(actual\)) or [resources](../Resource_Chart#periods_and_resources) on the [timeline](../Timeline) as well as their labels on the data grid.
+If there are hierarchical relationships between data items, special buttons are shown in the second data grid column. They allow expanding or collapsing parent [tasks](../Project_Chart#tasks_\(actual\)) or [resources](../Resource_Chart#periods_and_resources) on the timeline as well as their labels on the data grid.
 
 With the help of the {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons()}collapseExpandButtons(){api} method, you can enable or disable buttons in any column. As a rule, it also makes sense to set the hierarchical indentation – see the [Indentation](#indentation) section. Other button settings are listed in the [Buttons](Buttons) article.
 

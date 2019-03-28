@@ -307,7 +307,7 @@ The main element of the Project chart is the [task](#tasks_\(actual\)). Other el
 
 A **task** is an element showing the **actual duration** of a task, while the planned duration is represented by the [baseline](#baselines_\(planned\)).
 
-Use the following data fields:
+The following data fields are used to set tasks:
 
 * `name` to set names
 * `id` to set unique identifiers
@@ -408,7 +408,7 @@ chart.data(treeData);
 
 A **baseline** is an element showing the **planned duration** of a regular or parent [task](#tasks_\(actual\)).
 
-Use the following data fields:
+The following data fields are used to set baselines:
 
 * `baselineStart` to set start dates
 * `baselineEnd` to set end dates
@@ -486,7 +486,7 @@ chart.data(treeData);
 
 A **progress bar** is an element showing the progress of a regular or parent [task](#tasks_\(actual\)). Also, the progress is shown in [labels](Elements/Labels) of tasks. 
 
-Use the following data fields:
+The following data fields are used to set progress bars:
 
 * `progressValue` to set the progress value as a percentage
 * `progress` (optional) to configure [individual progress bars](Elements/Individual_Elements#project_chart)
@@ -559,7 +559,7 @@ chart.data(treeData);
 
 A **connector** is an element showing the dependencies between all [task types](#tasks_\(actual\)). 
 
-Use the following data fields:
+The following data fields are used to set connectors:
 
 * `connectTo` to set the target task
 * `connectorType` to set the connector type

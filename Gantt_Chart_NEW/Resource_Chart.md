@@ -247,7 +247,7 @@ If there are [hierarchical relationships](#hierarchy) between data items, parent
 
 Any resource can include a **period** or periods, which are visualized as timeline elements.
 
-For resources, use the following data fields:
+The following data fields are used to set resources:
 
 * `"name"` to set names
 * `"id"` to set unique identifiers
