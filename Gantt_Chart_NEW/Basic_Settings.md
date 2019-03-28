@@ -75,7 +75,7 @@
 * zoomIn(), zoomOut(), zoomTo()
 * zoomTo – range (?)
 
-{sample :height 340}GANTT\_NEW\_Basic\_Settings\_09{sample}
+{sample :height 325}GANTT\_NEW\_Basic\_Settings\_09{sample}
 
 ### Scroll
 
