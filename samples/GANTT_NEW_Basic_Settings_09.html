@@ -30,11 +30,19 @@
         input {
             width: 30px;
         }
-        #zoomInButton{
+        #zoomInButton {
             width: 53px;
         }
-        #zoomOutButton{
+        #zoomOutButton {
             width: 53px;
+        }
+        #dateLabel1 {
+          margin: 0;
+          font-style: italic;
+        }
+        #dateLabel2 {
+          margin: 0;
+          font-style: italic;
         }
         #container {
             position: absolute;
@@ -73,7 +81,10 @@
 </select>
 <br>
 <button id = "zoomToDatesButton" onclick="zoomToDates()">Zoom To Dates</button>
-<label>dates: 03 Feb 18 –  06 Feb 18</label>
+<label>start date:</label>
+<label id="dateLabel1">03 Feb 2018</label>
+<label>end date: </label>
+<label id="dateLabel2">06 Feb 2018</label>
 <br>
 <div id="container"></div>
 <script>
