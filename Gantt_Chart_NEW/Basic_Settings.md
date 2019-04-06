@@ -42,19 +42,19 @@ chart.columnStroke("0.5 #64b5f6");
 
 ### Data Grid
 
-The data grid is the part of the Gantt chart where names of its elements are displayed...
+A data grid is a part of the Gantt chart where names of its elements are displayed...
 
 * [Data Grid: Appearance](Data_Grid/Appearance)
 
 ### Timeline
 
-(?) The timeline is the part of the Gantt chart where its elements are displayed...
+(?) A timeline is a part of the Gantt chart where its elements (time intervals) are displayed...
 
 * [Timeline: Appearance](Timeline/Appearance)
 
 ### Elements
 
-(?) Timeline elements are the parts of the Gantt chart that are shown on the timeline.
+(?) Timeline elements are parts of the Gantt chart that represent time intervals (and information related to them). They are shown on the timeline.
 
 On the Project Gantt chart and Resource Gantt chart, different types of elements are displayed, and for each element type slightly different settings are available.
 
