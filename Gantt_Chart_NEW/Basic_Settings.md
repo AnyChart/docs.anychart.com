@@ -282,17 +282,17 @@ zoomTo():
 units:
 
 * {api:anychart.enums.Interval}anychart.enums.Interval{api}
-* `"year"`
-* `"semester"`
-* `"quarter"`
-* `"month"`
-* `"third-of-month"`
-* `"week"`
-* `"day"`
-* `"hour"`
-* `"minute"`
-* `"second"`
 * `"millisecond"`
+* `"second"`
+* `"minute"`
+* `"hour"`
+* `"day"`
+* `"week"`
+* `"third-of-month"`
+* `"month"`
+* `"quarter"`
+* `"semester"`
+* `"year"`
 
 anchors:
 

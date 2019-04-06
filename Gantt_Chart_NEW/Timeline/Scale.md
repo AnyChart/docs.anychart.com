@@ -62,17 +62,17 @@ chart.getTimeline().scale().zoomLevels([["month", "quarter"]]);
 
 The available units can be found in {api:anychart.enums.Interval}anychart.enums.Interval{api}:
 
-* `"year"`
-* `"semester"`
-* `"quarter"`
-* `"month"`
-* `"third-of-month"`
-* `"week"`
-* `"day"`
-* `"hour"`
-* `"minute"`
-* `"second"`
 * `"millisecond"`
+* `"second"`
+* `"minute"`
+* `"hour"`
+* `"day"`
+* `"week"`
+* `"third-of-month"`
+* `"month"`
+* `"quarter"`
+* `"semester"`
+* `"year"`
 
 In this sample, there are two levels, the month and the quarter:
 
