@@ -16,7 +16,7 @@ Combine {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with the following m
 
 **Note 1:** See also the [Timeline: Appearance](../Timeline/Appearance) to learn how to configure the appearance of the timeline.
 
-**Note 2:** The [Basic Settings: Appearance](../Basic_Settings#rows_and_columns) section explains how to apply some appearance settings simultaneously to the data grid and timeline. Please note that this is the only way to set the **row stroke**.
+**Note 2:** The [Basic Settings: Background](../Basic_Settings#background) and [Basic Settings: Rows and Columns](../Basic_Settings#rows_and_columns) sections explain how to apply some appearance settings simultaneously to the data grid and timeline. Please note that this is the only way to set the **row stroke**.
 
 The sample below shows how to adjust the appearance of the data grid:
 
