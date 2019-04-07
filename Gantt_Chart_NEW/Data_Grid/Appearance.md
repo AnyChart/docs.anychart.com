@@ -14,7 +14,7 @@ Combine {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with the following m
 * {api:anychart.core.ui.DataGrid#rowOddFill}rowOddFill(){api} to set the fill of odd rows
 * {api:anychart.core.ui.DataGrid#columnStroke}columnStroke(){api} to set the stroke of columns
 
-**Note 1:** See also [Timeline: Appearance](../Timeline/Appearance) to learn how to configure the appearance of the timeline.
+**Note 1:** See also [Timeline: Appearance](../Timeline/Appearance) and [Timeline: Header](../Timeline/Header#appearance) to learn how to configure the appearance of the timeline.
 
 **Note 2:** The [Basic Settings: Background](../Basic_Settings#background) and [Basic Settings: Rows and Columns](../Basic_Settings#rows_and_columns) sections explain how to apply some appearance settings simultaneously to the data grid and timeline. Please note that this is the only way to set the **row stroke**.
 
