@@ -48,9 +48,9 @@ A data grid is a part of the Gantt chart where names of its elements are display
 
 ### Elements
 
-(?) Timeline are parts of the Gantt chart that are shown on the timeline and represent time intervals as well information related to them.
+(?) Timeline elements are parts of the Gantt chart that are shown on the timeline and represent time intervals as well information related to them.
 
-The [Elements](Elements) section explains how to configure the appearance (and other settings) of different types of elements.
+Articles in the [Elements](Elements) section explains how to configure different types of elements, including appearance settings.
 
 ### Custom Drawing
 
@@ -79,9 +79,9 @@ To set the height of rows and the header, use {api:anychart.charts.Gantt#default
 
 **Note 1:** The `rowHeight` data field allows setting the height of an indvidual row. Levels of the header can be also adjusted individually – see [Header: Level Height](Timeline/Header#level_height).
 
-**Note 2:** Timeline elements automatically adjust to the row height. The [Elements](Elements) section explains how to set the height elements manually.
+**Note 2:** Timeline elements automatically adjust to the row height. However, you can set their heights manually. To learn more, read articles in the [Elements](Elements) section, which explain how to configure different types of elements.
 
-In the sample below, there is a Gantt chart with the row and header height adjusted:
+In the sample below, there is a Gantt chart with the row and header height configured:
 
 ```
 // set the row height
