@@ -48,27 +48,15 @@ A timeline is a part of the Gantt chart where its elements (time intervals) are 
 
 ### Elements
 
-Timeline elements are parts of the Gantt chart that are shown on the timeline and represent time intervals as well information related to them.
+Timeline [elements](Elements) are parts of the Gantt chart that are shown on the timeline and represent time intervals as well information related to them.
 
-On the Project Gantt chart and Resource Gantt chart, different types of elements are displayed, and for each element type slightly different settings are available.
+On the Project Gantt chart and Resource Gantt chart, different types of elements are displayed, and for each element type slightly different appearance (and other) settings are available.
 
-You can configure the appearance (along with other settings) of...
+See the following articles to learn how to configure elements:
 
-misc:
-* [Elements](Elements)
-* [all elements](Elements/All_Elements)
-* [inividual elements](Elements/Individual_Elements)
-
-Project Chart:
-
-* [tasks](Elements/Project_Chart#tasks_\(actual\))
-* [baselines](Elements/Project_Chart#baselines)
-* [progress bars](Elements/Project_Chart#progress_bars)
-* [connectors](Elements/Project_Chart#connectors)
-
-Resource Chart:
-
-* [periods](Elements/Resource_Chart#periods)
+* [Project Chart](Elements/Project_Chart), [Resource Chart](Elements/Resource_Chart) – all elements of one type
+* [Inividual Elements](Elements/Individual_Elements) – all elements at once
+* [All Elements](Elements/All_Elements) – individual elements
 
 ### Custom Drawing
 
