@@ -163,7 +163,7 @@ header.level(0).format(function() {
 
 You can change the height of an [individual level](#individual_levels) by using the {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#height}height(){api} method.
 
-To learn how to set the height of the entire header, see [Basic Settings: Header and Row Height](../Basic_Settings#header_and_row_height).
+**Note:** To learn how to set the height of the entire header, see [Basic Settings: Header and Row Height](../Basic_Settings#header_and_row_height).
 
 In the following sample, the height of the first level is configured, which makes the height of others automatically adjust:
 
