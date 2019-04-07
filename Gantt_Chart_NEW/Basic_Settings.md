@@ -11,6 +11,10 @@ This section explains how to configure the [appearance settings](../Appearance_S
 
 To configure the [background](../Appearance_Settings/Background) of the chart, call the {api:anychart.charts.Gantt#background}background(){api} method.
 
+**Note:** You can apply different background settings to the data grid and timeline – see [Data Grid: Appearance](Data_Grid/Appearance) and [Timeline: Appearance](Timeline/Appearance).
+
+This is how the background is adjusted:
+
 ```
 // configure the background of the chart
 chart.background("#64b5f6 0.2");
@@ -27,6 +31,9 @@ To configure the appearance of rows and columns, use these methods:
 * {api:anychart.charts.Gantt#rowStroke}rowStroke(){api} – to set the stroke of rows
 * {api:anychart.charts.Gantt#columnStroke}columnStroke(){api} – to set the stroke of columns
 
+**Note:** These settings (except the row stroke) can be applied separately to the data grid and timeline, as shown in the [Data Grid: Appearance](Data_Grid/Appearance) and [Timeline: Appearance](Timeline/Appearance) sections. Also, there you can find some other appearance settings available for rows.
+
+Here is a Gantt chart with the appearance of rows and columns configured:
 
 ```
 // configure the visual settings of rows and columns
