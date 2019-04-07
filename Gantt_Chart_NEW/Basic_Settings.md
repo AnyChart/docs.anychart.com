@@ -98,6 +98,8 @@ To set the default position of the splitter between the [data grid](Data_Grid) a
 
 **Note:** The width of the timeline automatically adjusts to the area outlined by the splitter. The width of the data grid is not affected – it is defined only by the sum of its [columns' widths](Data_Grid/Columns#width).
 
+In the following sample, there is a Gantt chart with the splitter position configured:
+
 ```
 // set the position of the splitter
 chart.splitterPosition("50%");
