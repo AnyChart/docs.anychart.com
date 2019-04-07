@@ -87,7 +87,7 @@ To set the height of rows and the header, use {api:anychart.charts.Gantt#default
 
 **Note 2:** To learn how to set the height of an individual header level, see [Header: Level Height](Timeline/Header#level_height).
 
-In the sample below, the row and header height are adjusted:
+In the sample below, there is a Gantt chart with the row and header height adjusted:
 
 ```
 // set the row height
