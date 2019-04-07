@@ -83,9 +83,9 @@ title.padding(5);
 
 To set the height of rows and the header, use {api:anychart.charts.Gantt#defaultRowHeight}defaultRowHeight(){api} and {api:anychart.charts.Gantt#headerHeight}headerHeight(){api}.
 
-**Note 1:** The `rowHeight` data field allows setting the height of an indvidual row.
+**Note 1:** The `rowHeight` data field allows setting the height of an indvidual row. Levels of the header can be also adjusted individually – see [Header: Level Height](Timeline/Header#level_height).
 
-**Note 2:** To learn how to adjust an individual level of the header, see [Header: Level Height](Timeline/Header#level_height).
+**Note 2:** Timeline elements automatically adjust to the row height. Articles in the [Elements](Elements/Overview) section explain how to set the height of elements manually.
 
 In the sample below, there is a Gantt chart with the row and header height adjusted:
 
