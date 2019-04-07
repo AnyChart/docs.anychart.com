@@ -63,7 +63,7 @@ For different types of elements, different appearance (and other) settings are a
 
 ### Custom Drawing
 
-(?) The [Custom Drawing](Custom_Drawing) section explains how to apply advanced appearance settings.
+(?) The [Custom Drawing](Custom_Drawing) article explains how to apply advanced appearance settings.
 
 ## Title
 
