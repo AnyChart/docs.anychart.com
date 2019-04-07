@@ -100,11 +100,9 @@ chart.headerHeight(105);
 
 ## Splitter
 
-* {api:anychart.charts.Gantt#splitterPosition}splitterPosition(){api}
-* the width of the [timeline](Timeline) automatically adjusts to the area outlined by the splitter
-* ...allows showing more or less of the [data grid](Data_Grid)
-* Please note that the width of the data grid is defined by the sum of its [columns' widths](Data_Grid/Columns#width).
+To set the default position of the splitter between the [data grid](Data_Grid) and the [timeline](Timeline), call the {api:anychart.charts.Gantt#splitterPosition}splitterPosition(){api} method.
 
+**Note:** The width of the timeline automatically adjusts to the area outlined by the splitter. The width of the data grid is not affected – it is defined only by the sum of its [columns' widths](Data_Grid/Columns#width).
 
 ```
 // set the position of the splitter

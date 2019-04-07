@@ -29,9 +29,11 @@ chart.dataGrid().column(0).enabled(false);
 
 ## Width
 
-To set the width of a column, call the {api:anychart.core.ui.DataGrid.Column#width()}width(){api} method.
+The total width of the data grid is defined by the sum of its columns' widths. To set the width of a column, call the {api:anychart.core.ui.DataGrid.Column#width()}width(){api} method. 
 
-**Note:** The width of the data grid is defined by the sum of its columns' widths. Also, you can adjust the position of the splitter between the data grid and timeline to show more or less of the data grid – see [Basic Settings: Splitter](../Basic_Settings#splitter).
+**Note:** Also, you can adjust the position of the splitter between the data grid and timeline to show more or less of the data grid – see [Basic Settings: Splitter](../Basic_Settings#splitter).
+
+In this sample, the width of both default columns is adjusted:
 
 ```
 // set the width of data grid columns
