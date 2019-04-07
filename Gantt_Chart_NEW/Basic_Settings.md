@@ -81,11 +81,11 @@ title.padding(5);
 
 ## Header and Row Height
 
-* {api:anychart.charts.Gantt#headerHeight}headerHeight(){api}
-* {api:anychart.charts.Gantt#defaultRowHeight}defaultRowHeight(){api}
-* [Header: Level Height](Timeline/Header#level_height)
-* (?) примеч про индивид таск: поле rowHeight
+To set the height of the header and rows, use {api:anychart.charts.Gantt#defaultRowHeight}defaultRowHeight(){api} and {api:anychart.charts.Gantt#headerHeight}headerHeight(){api}.
 
+**Note 1:** The `rowHeight` data field allows setting the height of an indvidual row.
+
+**Note 2:** To learn how to set the height of an individual header level, see [Header: Level Height](Timeline/Header#level_height).
 
 ```
 // set the row height
