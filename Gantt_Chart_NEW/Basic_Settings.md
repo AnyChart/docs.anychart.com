@@ -3,6 +3,8 @@
 
 ## Overview
 
+...
+
 ## Appearance
 
 This section explains how to configure the [appearance settings](../Appearance_Settings) of the Gantt chart and its components.
