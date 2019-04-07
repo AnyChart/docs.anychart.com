@@ -40,11 +40,11 @@ chart.columnStroke("0.5 #64b5f6");
 
 ### Data Grid
 
-A data grid is a part of the Gantt chart where names of its elements are displayed. You can configure the background, rows, and columns of the data grid – see [Data Grid: Appearance](Data_Grid/Appearance).
+A data grid is a part of the Gantt chart where names of its elements are displayed. You can configure its background as well as the appearance of rows, columns, and header – see [Data Grid: Appearance](Data_Grid/Appearance).
 
 ### Timeline
 
-(?) A timeline is a part of the Gantt chart where its elements (time intervals) are displayed.  You can configure the background, rows, and columns of the data grid – see [Timeline: Appearance](Timeline/Appearance).
+(?) A timeline is a part of the Gantt chart where its elements (time intervals) are displayed.  You can configure its background as well as the appearance of rows, columns, and header  – see [Timeline: Appearance](Timeline/Appearance) and [Header: Appearance](Timeline/Header#appearance).
 
 ### Elements
 
