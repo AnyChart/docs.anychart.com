@@ -5,13 +5,11 @@
 
 ## Appearance
 
-* [appearance settings](../Appearance_Settings)
+This section explains how to configure the [appearance settings](../Appearance_Settings) of the Gantt chart and its components.
 
 ### Background
 
-* [background](../Appearance_Settings/Background)
-* {api:anychart.charts.Gantt#background}background(){api}
-
+To configure the [background](../Appearance_Settings/Background) of the chart, call the {api:anychart.charts.Gantt#background}background(){api} method.
 
 ```
 // configure the background of the chart
@@ -22,12 +20,12 @@ chart.background("#64b5f6 0.2");
 
 ### Rows and Columns
 
+The following methods allow you to set the fill and stroke of rows and columns:
+
 * {api:anychart.charts.Gantt#rowHoverFill}rowHoverFill(){api}
 * {api:anychart.charts.Gantt#rowSelectedFill}rowSelectedFill(){api}
 * {api:anychart.charts.Gantt#rowStroke}rowStroke(){api}
 * {api:anychart.charts.Gantt#columnStroke}columnStroke(){api}
-* [Data Grid: Appearance](Data_Grid/Appearance)
-* [Timeline: Appearance](Timeline/Appearance)
 
 
 ```
@@ -42,19 +40,15 @@ chart.columnStroke("0.5 #64b5f6");
 
 ### Data Grid
 
-A data grid is a part of the Gantt chart where names of its elements are displayed...
-
-* [Data Grid: Appearance](Data_Grid/Appearance)
+A data grid is a part of the Gantt chart where names of its elements are displayed. You can configure the background, rows, and columns of the data grid – see [Data Grid: Appearance](Data_Grid/Appearance).
 
 ### Timeline
 
-(?) A timeline is a part of the Gantt chart where its elements (time intervals) are displayed...
-
-* [Timeline: Appearance](Timeline/Appearance)
+A timeline is a part of the Gantt chart where its elements (time intervals) are displayed.  You can configure the background, rows, and columns of the data grid – see [Timeline: Appearance](Timeline/Appearance).
 
 ### Elements
 
-(?) Timeline elements are parts of the Gantt chart that represent time intervals (and information related to them). They are shown on the timeline.
+Timeline elements are parts of the Gantt chart that are shown on the timeline and represent time intervals as well information related to them.
 
 On the Project Gantt chart and Resource Gantt chart, different types of elements are displayed, and for each element type slightly different settings are available.
 
