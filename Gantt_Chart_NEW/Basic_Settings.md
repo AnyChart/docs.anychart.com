@@ -44,11 +44,11 @@ A data grid is a part of the Gantt chart where names of its elements are display
 
 ### Timeline
 
-A timeline is a part of the Gantt chart where its elements (time intervals) are displayed.  You can configure the background, rows, and columns of the data grid – see [Timeline: Appearance](Timeline/Appearance).
+(?) A timeline is a part of the Gantt chart where its elements (time intervals) are displayed.  You can configure the background, rows, and columns of the data grid – see [Timeline: Appearance](Timeline/Appearance).
 
 ### Elements
 
-Timeline [elements](Elements) are parts of the Gantt chart that are shown on the timeline and represent time intervals as well information related to them.
+(?) Timeline [elements](Elements) are parts of the Gantt chart that are shown on the timeline and represent time intervals as well information related to them.
 
 On the Project Gantt chart and Resource Gantt chart, different types of elements are displayed, and for each element type slightly different appearance (and other) settings are available.
 
@@ -60,13 +60,11 @@ See the following articles to learn how to configure elements:
 
 ### Custom Drawing
 
-* [Custom Drawing](Custom_Drawing)
+(?) The [Custom Drawing](Custom_Drawing) section explains how to apply advanced appearance settings.
 
 ## Title
 
-* [title](../Common_Settings/Title)
-* {api:anychart.charts.Gantt#title}title(){api}
-
+With the help of the {api:anychart.charts.Gantt#title}title(){api} method, the [title](../Common_Settings/Title) of the Gantt chart is adjusted:
 
 ```
 // enable and configure the chart title
