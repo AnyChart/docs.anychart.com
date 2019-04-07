@@ -20,12 +20,12 @@ chart.background("#64b5f6 0.2");
 
 ### Rows and Columns
 
-The following methods allow you to set the fill and stroke of rows and columns:
+To configure the appearance of rows and columns, use these methods:
 
-* {api:anychart.charts.Gantt#rowHoverFill}rowHoverFill(){api}
-* {api:anychart.charts.Gantt#rowSelectedFill}rowSelectedFill(){api}
-* {api:anychart.charts.Gantt#rowStroke}rowStroke(){api}
-* {api:anychart.charts.Gantt#columnStroke}columnStroke(){api}
+* {api:anychart.charts.Gantt#rowHoverFill}rowHoverFill(){api} – to set the fill of rows when they are being hovered over
+* {api:anychart.charts.Gantt#rowSelectedFill}rowSelectedFill(){api} – to set the fill of rows when they are being selected
+* {api:anychart.charts.Gantt#rowStroke}rowStroke(){api} – to set the stroke of rows
+* {api:anychart.charts.Gantt#columnStroke}columnStroke(){api} – to set the stroke of columns
 
 
 ```
