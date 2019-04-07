@@ -50,9 +50,9 @@ A data grid is a part of the Gantt chart where names of its elements are display
 
 (?) Timeline [elements](Elements) are parts of the Gantt chart that are shown on the timeline and represent time intervals as well information related to them.
 
-On the Project Gantt chart and Resource Gantt chart, different types of elements are displayed, and for each element type slightly different appearance (and other) settings are available.
+On the Project Gantt chart and Resource Gantt chart, different types of elements are displayed, and for each element type slightly different settings are available.
 
-See the following articles to learn how to configure elements:
+See the following articles to learn how to configure the appearance of elements:
 
 * [Project Chart](Elements/Project_Chart), [Resource Chart](Elements/Resource_Chart) – all elements of one type
 * [Inividual Elements](Elements/Individual_Elements) – all elements at once
