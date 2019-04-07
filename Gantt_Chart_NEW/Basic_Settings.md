@@ -118,7 +118,9 @@ chart.splitterPosition("50%");
 
 ## Navigation
 
-* методы в этом разделе работают только после рисования чарта
+This section explains how to draw the chart with certain navigation settings.
+
+**Please note that all the methods listed here work only after the chart is drawn.**
 
 ### Expand / Collapse
 
