@@ -148,7 +148,7 @@ chart.collapseTask("2");
 
 {sample :height 320}GANTT\_NEW\_Basic\_Settings\_06{sample}
 
-In addition to the {api:anychart.charts.Gantt#collapseTask}collapseTask(){api} and {api:anychart.charts.Gantt#expandTask}expandTask(){api} methods, you can collapse or expand an individual element by specifying the `true` / `false` value in the `collapsed` data field:
+In addition to the {api:anychart.charts.Gantt#collapseTask}collapseTask(){api} and {api:anychart.charts.Gantt#expandTask}expandTask(){api} methods, you can collapse or expand an individual element by specifying the `true` / `false` value in the `collapsed` data field.
 
 In the following sample, the second root task (*PR Campaign*) is collapsed by default:
 
