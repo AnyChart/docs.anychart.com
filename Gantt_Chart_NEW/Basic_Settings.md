@@ -153,75 +153,26 @@ In addition to the {api:anychart.charts.Gantt#collapseTask}collapseTask(){api} a
 In the following sample, the second root task (*PR Campaign*) is collapsed by default:
 
 ```
-// create data
-var data = [
-  {
-    id: "1",
-    name: "Development",
-    actualStart: "2018-01-25",
-    actualEnd: "2018-03-10",
-    children: [
-      {
-        id: "1_2",
-        name: "Analysis",
-        actualStart: "2018-01-25",
-        actualEnd: "2018-02-08"
-      },
-      {
-        id: "1_3",
-        name: "Design",
-        actualStart: "2018-02-04",
-        actualEnd: "2018-02-14"
-      },
-      {
-        id: "1_4",
-        name: "Meeting",
-        actualStart: "2018-02-15",
-        actualEnd: "2018-02-15"
-      },
-      {
-        id: "1_5",
-        name: "Implementation",
-        actualStart: "2018-02-15",
-        actualEnd: "2018-02-27"
-      },
-      {
-        id: "1_6",
-        name: "Testing",
-        actualStart: "2018-02-28",
-        actualEnd: "2018-03-10"
-      }
-  ]},
-  { 
-    id: "2",
-    name: "PR Campaign",
-    actualStart: "2018-02-15",
-    actualEnd: "2018-03-22",
-    collapsed: true,
-    children: [
-      {
-        id: "2_1",
-        name: "Planning",
-        actualStart: "2018-02-15",
-        actualEnd: "2018-03-10"
-      },
-      {
-        id: "2_2",
-        name: "Promoting",
-        actualStart: "2018-03-11",
-        actualEnd: "2018-03-22"
-      }
-  ]}
-];
-    
-// create a data tree
-var treeData = anychart.data.tree(data, "as-tree");
-
-// create a chart
-chart = anychart.ganttProject();
-
-// set the data
-chart.data(treeData);
+{ 
+  id: "2",
+  name: "PR Campaign",
+  actualStart: "2018-02-15",
+  actualEnd: "2018-03-22",
+  collapsed: true,
+  children: [
+    {
+      id: "2_1",
+      name: "Planning",
+      actualStart: "2018-02-15",
+      actualEnd: "2018-03-10"
+    },
+    {
+      id: "2_2",
+      name: "Promoting",
+      actualStart: "2018-03-11",
+      actualEnd: "2018-03-22"
+    }
+]}
 ```
 
 {sample :height 280}GANTT\_NEW\_Basic\_Settings\_07{sample}
