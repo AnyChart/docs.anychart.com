@@ -49,7 +49,7 @@ chart.columnStroke("0.5 #64b5f6");
 
 ### Data Grid
 
-A data grid is a part of the Gantt chart where names of its elements are displayed. You can configure its background as well as the appearance of rows, columns, and header – see [Data Grid: Appearance](Data_Grid/Appearance).
+A data grid is a part of the Gantt chart where names of its elements are displayed. You can configure its background as well as the appearance of rows, columns, header, and buttons – see [Data Grid: Appearance](Data_Grid/Appearance) and [Data Grid: Buttons](Data_Grid/Buttons).
 
 ### Timeline
 
