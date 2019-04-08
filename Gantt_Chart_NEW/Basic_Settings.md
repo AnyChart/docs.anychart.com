@@ -195,19 +195,37 @@ chart.fitToTask("1_2");
 
 ### Zooming
 
-misc:
+To zoom the [timeline](Timeline), use the following methods:
 
-* {api:anychart.charts.Gantt#zoomIn}zoomIn(){api}
-* {api:anychart.charts.Gantt#zoomOut}zoomOut(){api}
-* {api:anychart.charts.Gantt#zoomTo}zoomTo(){api}
+* {api:anychart.charts.Gantt#zoomIn}zoomIn(){api} to zoom in
+* {api:anychart.charts.Gantt#zoomOut}zoomOut(){api} to zoom out
+* {api:anychart.charts.Gantt#zoomTo}zoomTo(){api} to zoom to a range of dates / time units
 
-zoomTo():
-* range of dates / range of time units
-* range of units --> three parameters: unit, count, anchor
+The {api:anychart.charts.Gantt#zoomIn}zoomIn(){api} and {api:anychart.charts.Gantt#zoomOut}zoomOut(){api} require specifying the zoom factor as a parameter:
 
-units:
+```
+// zoom the timeline in
+chart.zoomIn(2);
+```
 
-* {api:anychart.enums.Interval}anychart.enums.Interval{api}
+The {api:anychart.charts.Gantt#zoomTo}zoomTo(){api} methods allows zooming either to a range of dates or to a range of units.
+
+(?) To set the **range of dates**, specify two dates as parameters:
+
+```
+// zoom the timeline to the given dates
+chart.zoomTo(Date.UTC(2018, 1, 3), Date.UTC(2018, 1, 6));
+```
+
+To set the **range of time units**, specify three parameters: **unit**, **count** (number of units), and **anchor**:
+
+```
+// zoom the timeline to the given units
+chart.zoomTo("week", 2, "first-date");
+```
+
+The available time units are listed in {api:anychart.enums.Interval}anychart.enums.Interval{api}:
+
 * `"millisecond"`
 * `"second"`
 * `"minute"`
@@ -220,29 +238,14 @@ units:
 * `"semester"`
 * `"year"`
 
-anchors:
+The available anchors are listed in {api:anychart.enums.GanttRangeAnchor}anychart.enums.GanttRangeAnchor{api}:
 
-* {api:anychart.enums.GanttRangeAnchor}anychart.enums.GanttRangeAnchor{api}
 * `"first-date"`
 * `"first-visible-date"`
 * `"last-date"`
 * `"last-visible-date"`
 
-
-```
-// zoom the timeline in
-chart.zoomIn(2);
-```
-
-```
-// zoom the timeline to the given dates
-chart.zoomTo(Date.UTC(2018, 1, 3), Date.UTC(2018, 1, 6));
-```
-
-```
-// zoom the timeline to the given units
-chart.zoomTo("week", 2, "first-date");
-```
+The sample below shows how zooming works:
 
 {sample :height 325}GANTT\_NEW\_Basic\_Settings\_09{sample}
 
