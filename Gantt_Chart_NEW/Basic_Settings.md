@@ -28,10 +28,10 @@ chart.background("#64b5f6 0.2");
 
 To configure the appearance of rows and columns, use these methods:
 
-* {api:anychart.charts.Gantt#rowHoverFill}rowHoverFill(){api} – to set the fill of rows when they are being hovered over
-* {api:anychart.charts.Gantt#rowSelectedFill}rowSelectedFill(){api} – to set the fill of rows when they are being selected
-* {api:anychart.charts.Gantt#rowStroke}rowStroke(){api} – to set the stroke of rows
-* {api:anychart.charts.Gantt#columnStroke}columnStroke(){api} – to set the stroke of columns
+* {api:anychart.charts.Gantt#rowHoverFill}rowHoverFill(){api} to set the fill of rows when they are being hovered over
+* {api:anychart.charts.Gantt#rowSelectedFill}rowSelectedFill(){api} to set the fill of rows when they are being selected
+* {api:anychart.charts.Gantt#rowStroke}rowStroke(){api} to set the stroke of rows
+* {api:anychart.charts.Gantt#columnStroke}columnStroke(){api} to set the stroke of columns
 
 **Note:** These settings (except for the row stroke) can be applied separately to the data grid and timeline, as shown in the [Data Grid: Appearance](Data_Grid/Appearance) and [Timeline: Appearance](Timeline/Appearance) sections. Also, there you can find some other appearance settings available for rows.
 
@@ -124,40 +124,32 @@ This section explains how to draw a Gantt chart with certain navigation settings
 
 ### Expand / Collapse
 
-If there are hierarchical relationships between data items...
+If there are hierarchical relationships between data items, parent [tasks](Project_Chart#tasks_\(actual\)) or [resources](Resource_Chart#periods_and_resources) as well as their labels on the data grid can be expanded or collapsed with the help of data grid buttons or special methods. By default, Gantt charts are drawn with all elements expanded. 
 
-...expand or collapse parent [tasks](Project_Chart#tasks_\(actual\)) or [resources](Resource_Chart#periods_and_resources) as well as their labels on the data grid...
+**Note:** See the [Data Grid: Buttons](Data_Grid/Buttons) section to learn how to configure buttons.
 
-By default, the chart is drawn with all elements expanded...
+Use the following methods to expand or collapse elements:
 
-misc:
-
-* [Columns: Buttons](Data_Grid/Columns#buttons)
-* [Buttons](Data_Grid/Buttons) 
-
-methods:
-
-* By default, the chart is drawn with all elements expanded...
-* {api:anychart.charts.Gantt#collapseAll}collapseAll(){api}
-* {api:anychart.charts.Gantt#expandAll}expandAll(){api}
-* {api:anychart.charts.Gantt#collapseTask}collapseTask(){api}
-* {api:anychart.charts.Gantt#expandTask}expandTask(){api}
-
+* {api:anychart.charts.Gantt#collapseAll}collapseAll(){api} to collapse all tasks
+* {api:anychart.charts.Gantt#expandAll}expandAll(){api} to expand all tasks
+* {api:anychart.charts.Gantt#collapseTask}collapseTask(){api} to collapse a task with a given id
+* {api:anychart.charts.Gantt#expandTask}expandTask(){api} to expand a task with a given id
 
 ```
 // expand all tasks
 chart.expandAll();  
 ```
 
-{sample :height 320}GANTT\_NEW\_Basic\_Settings\_06{sample}
-
-* `collapsed`
-
-
 ```
 // collapse the given task
 chart.collapseTask("2");  
 ```
+
+{sample :height 320}GANTT\_NEW\_Basic\_Settings\_06{sample}
+
+In addition to the {api:anychart.charts.Gantt#collapseTask}collapseTask(){api} and {api:anychart.charts.Gantt#expandTask}expandTask(){api} methods, you can collapse or expand an individual element by specifying the `true` / `false` value in the `collapsed` data field:
+
+In the following sample, the second root task (*PR Campaign*) is collapsed by default:
 
 ```
 // create data
