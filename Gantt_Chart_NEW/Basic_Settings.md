@@ -118,7 +118,7 @@ chart.splitterPosition("50%");
 
 ## Navigation
 
-This section explains how to draw the chart with certain navigation settings.
+This section explains how to draw a Gantt chart with certain navigation settings – with items expanded or collapsed, timeline scrolled, etc.
 
 **Please note that all the methods listed here work only after the chart is drawn.**
 
