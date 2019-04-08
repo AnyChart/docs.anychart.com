@@ -33,7 +33,7 @@ To configure the appearance of rows and columns, use these methods:
 * {api:anychart.charts.Gantt#rowStroke}rowStroke(){api} – to set the stroke of rows
 * {api:anychart.charts.Gantt#columnStroke}columnStroke(){api} – to set the stroke of columns
 
-**Note:** These settings (except the row stroke) can be applied separately to the data grid and timeline, as shown in the [Data Grid: Appearance](Data_Grid/Appearance) and [Timeline: Appearance](Timeline/Appearance) sections. Also, there you can find some other appearance settings available for rows.
+**Note:** These settings (except for the row stroke) can be applied separately to the data grid and timeline, as shown in the [Data Grid: Appearance](Data_Grid/Appearance) and [Timeline: Appearance](Timeline/Appearance) sections. Also, there you can find some other appearance settings available for rows.
 
 Here is a Gantt chart with the appearance of rows and columns configured:
 
