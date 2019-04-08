@@ -135,6 +135,7 @@ Use the following methods to expand or collapse elements:
 * {api:anychart.charts.Gantt#expandTask}expandTask(){api} to expand a task with a given id
 * {api:anychart.charts.Gantt#collapseTask}collapseTask(){api} to collapse a task with a given id
 
+
 ```
 // collapse all tasks
 chart.collapseAll();  

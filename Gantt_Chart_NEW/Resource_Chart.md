@@ -78,7 +78,7 @@ In addition, you can use optional fields:
 
 * `children` / `parent` to set the [hierarchy](#hierarchy)
 * `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
-* `collapsed` to [expand or collapse](Basic_Settings#navigation) a parent resource (?)
+* `collapsed` to [expand or collapse](../Basic_Settings#expanding_/_collapsing) a parent resource
 
 To learn how to rename the default data fields, see [Data: Mapping](Data#mapping).
 
@@ -243,7 +243,7 @@ The main timeline element of the Resource chart is the period, but logically, pe
 
 **Resources** are logical elements that do not have a direct representation on the [timeline](Timeline), but their names are shown in [data grid labels](Data_Grid/Columns#text_\(labels\)).
 
-If there are [hierarchical relationships](#hierarchy) between data items, parent resources are visualized as empty rows on the timeline. See [Basic Settings: Navigation](Basic_Settings#navigation) (?) to learn how to expand or collapse them.
+If there are [hierarchical relationships](#hierarchy) between data items, parent resources are visualized as empty rows on the timeline. See [Basic Settings: Expanding / Collapsing](../Basic_Settings#expanding_/_collapsing) to learn how to expand or collapse them.
 
 Any resource can include a **period** or periods, which are visualized as timeline elements.
 
