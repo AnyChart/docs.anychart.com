@@ -331,7 +331,7 @@ If there are hierarchical relationships between data items, special buttons are 
 
 By passing `true` / `false` to the {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons()}collapseExpandButtons(){api} method, you can enable or disable buttons in any column. As a rule, it also makes sense to set the hierarchical indentation – see the [Indentation](#indentation) section. Other button settings are listed in the [Buttons](Buttons) article.
 
-**Note**: (?) By default, Gantt charts are drawn with all elements expanded. To learn how to change this setting, read [Basic Settings: Navigation](../Basic_Settings#navigation).
+**Note**: (?) By default, Gantt charts are drawn with all elements expanded. To learn how to change this setting, read [Basic Settings: Expanding / Collapsing](../Basic_Settings#expanding_/_collapsing).
 
 The sample below shows how to enable and disable buttons:
 

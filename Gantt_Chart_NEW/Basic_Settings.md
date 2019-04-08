@@ -118,11 +118,11 @@ chart.splitterPosition("50%");
 
 ## Navigation
 
-This section explains how to draw a Gantt chart with certain navigation settings – with items expanded or collapsed, timeline scrolled, etc.
+This section explains how to draw a Gantt chart with certain navigation settings – elements expanded or collapsed, timeline scrolled, etc.
 
 **Please note that all the methods listed here work only after the chart is drawn.**
 
-### Expand / Collapse
+### Expanding / Collapsing
 
 If there are hierarchical relationships between data items, parent [tasks](Project_Chart#tasks_\(actual\)) or [resources](Resource_Chart#periods_and_resources) as well as their labels on the data grid can be expanded or collapsed with the help of data grid buttons or special methods. By default, Gantt charts are drawn with all elements expanded. 
 
@@ -130,15 +130,14 @@ If there are hierarchical relationships between data items, parent [tasks](Proje
 
 Use the following methods to expand or collapse elements:
 
-* {api:anychart.charts.Gantt#collapseAll}collapseAll(){api} to collapse all tasks
 * {api:anychart.charts.Gantt#expandAll}expandAll(){api} to expand all tasks
-* {api:anychart.charts.Gantt#collapseTask}collapseTask(){api} to collapse a task with a given id
+* {api:anychart.charts.Gantt#collapseAll}collapseAll(){api} to collapse all tasks
 * {api:anychart.charts.Gantt#expandTask}expandTask(){api} to expand a task with a given id
-
+* {api:anychart.charts.Gantt#collapseTask}collapseTask(){api} to collapse a task with a given id
 
 ```
-// expand all tasks
-chart.expandAll();  
+// collapse all tasks
+chart.collapseAll();  
 ```
 
 ```
@@ -177,7 +176,7 @@ In the following sample, the second root task (*PR Campaign*) is collapsed by de
 
 {sample :height 280}GANTT\_NEW\_Basic\_Settings\_07{sample}
 
-### Fit to Width
+### Fitting to Width
 
 * {api:anychart.charts.Gantt#fitAll}fitAll(){api} – all [elements](Elements)
 * {api:anychart.charts.Gantt#fitToTask}fitToTask(){api} – a particular element
@@ -198,7 +197,7 @@ chart.fitToTask("1_2");
 
 {sample :height 260}GANTT\_NEW\_Basic\_Settings\_08{sample}
 
-### Zoom
+### Zooming
 
 misc:
 
@@ -251,7 +250,7 @@ chart.zoomTo("week", 2, "first-date");
 
 {sample :height 325}GANTT\_NEW\_Basic\_Settings\_09{sample}
 
-### Scroll
+### Scrolling
 
 * {api:anychart.charts.Gantt#scrollTo}scrollTo(){api}
 * {api:anychart.charts.Gantt#scrollToRow}scrollToRow(){api}
