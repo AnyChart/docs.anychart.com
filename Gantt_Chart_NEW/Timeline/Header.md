@@ -56,6 +56,9 @@ To configure the [appearance](../../Appearance_Settings) of [all levels](#all_le
 * {api:anychart.core.gantt.TimeLineHeader#background}background(){api}, {api:anychart.core.gantt.TimeLineHeader#fill}fill(){api} and {api:anychart.core.gantt.TimeLineHeader#stroke}stroke(){api} to set the background, fill, and stroke
 * {api:anychart.core.gantt.TimeLineHeader#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader#fontWeight}fontWeight(){api}, {api:anychart.core.gantt.TimeLineHeader#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader#fontFamily}fontFamily(){api}, etc. to configure the font
 
+**Note:** You can also set the fill of the data grid header – see [Data Grid: Apperance](../Data_Grid/Appearance).
+
+Here is a Gantt chart with the appearance of the header adjusted:
 
 ```
 // configure the timeline header
