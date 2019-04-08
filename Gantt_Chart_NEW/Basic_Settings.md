@@ -179,15 +179,15 @@ In the following sample, the second root task (*PR Campaign*) is collapsed by de
 
 ### Fitting to Width
 
-(?) The {api:anychart.charts.Gantt#fitAll}fitAll(){api} and {api:anychart.charts.Gantt#fitToTask}fitToTask(){api} methods allow fitting all [elements](Elements) or a particular element to the width of the [timeline](Timeline):
+(?) The {api:anychart.charts.Gantt#fitAll}fitAll(){api} and {api:anychart.charts.Gantt#fitToTask}fitToTask(){api} methods allow fitting all [elements](Elements) or an element with a given id to the width of the [timeline](Timeline):
 
 ```
-// fit elements to the width of the timeline
+// fit all elements to the width of the timeline
 chart.fitAll();
 ```
 
 ```
-// fit the given task to the width of the timeline
+// fit the given element to the width of the timeline
 chart.fitToTask("1_2");
 ```
 

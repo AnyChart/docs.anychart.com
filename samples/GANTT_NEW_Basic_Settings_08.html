@@ -111,12 +111,12 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-// fit elements to the width of the timeline
+// fit all elements to the width of the timeline
 function fitAll() {
   chart.fitAll();
 }
 
-// fit the given task to the width of the timeline
+// fit the given element to the width of the timeline
 function fitTask() {
   var id = document.getElementById("idSelect").value;
   chart.fitToTask(id);
