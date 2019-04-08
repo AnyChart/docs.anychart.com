@@ -189,7 +189,6 @@ chart.fitAll();
 ```
 // fit the given task to the width of the timeline
 chart.fitToTask("1_2");
-}
 ```
 
 {sample :height 260}GANTT\_NEW\_Basic\_Settings\_08{sample}
