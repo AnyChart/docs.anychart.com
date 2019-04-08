@@ -58,7 +58,7 @@ To configure the [appearance](../../Appearance_Settings) of [all levels](#all_le
 
 **Note:** You can also set the fill of the data grid header – see [Data Grid: Apperance](../Data_Grid/Appearance).
 
-Here is a Gantt chart with the appearance of the header adjusted:
+Here is a Gantt chart with the appearance of the timeline header adjusted:
 
 ```
 // configure the timeline header
