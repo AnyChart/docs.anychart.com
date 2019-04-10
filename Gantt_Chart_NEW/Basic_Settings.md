@@ -251,9 +251,11 @@ The sample below shows how zooming works:
 
 ### Scrolling
 
-* {api:anychart.charts.Gantt#scrollTo}scrollTo(){api}
-* {api:anychart.charts.Gantt#scrollToRow}scrollToRow(){api}
-* {api:anychart.charts.Gantt#scrollToEnd}scrollToEnd(){api} – упомянуть, но не описывать
+You can scroll the chart vertically to a certain position. Use these methods:
+
+* {api:anychart.charts.Gantt#scrollToRow}scrollToRow(){api} to scroll to a row with a given id
+* {api:anychart.charts.Gantt#scrollTo}scrollTo(){api} to scroll to a given value (in pixels)
+* {api:anychart.charts.Gantt#scrollToEnd}scrollToEnd(){api}
 
 
 ```
