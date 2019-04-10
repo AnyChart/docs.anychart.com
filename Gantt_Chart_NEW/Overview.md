@@ -13,7 +13,7 @@ Both chart types are defined as instances of the {api:anychart.charts.Gantt}anyc
 
 ## Classes
 
-? :
+(?) :
 
 * project and resource charts – {api:anychart.charts.Gantt}anychart.charts.Gantt{api}
 
