@@ -254,8 +254,7 @@ The sample below shows how zooming works:
 You can scroll the chart vertically to a certain position. Use these methods:
 
 * {api:anychart.charts.Gantt#scrollTo}scrollTo(){api} to scroll to a given value (in pixels)
-* {api:anychart.charts.Gantt#scrollToRow}scrollToRow(){api} to scroll to a row with a given index – if possible, it is shown at the beginning of the visible area
-* {api:anychart.charts.Gantt#scrollToEnd}scrollToEnd(){api} – if possible, it is shown at the end of the visible area
+* {api:anychart.charts.Gantt#scrollToRow}scrollToRow(){api} and {api:anychart.charts.Gantt#scrollToEnd}scrollToEnd(){api} to scroll to a row with a given index
 
 
 ```
@@ -273,6 +272,6 @@ chart.scrollToRow(6);
 chart.scrollToEnd(6);
 ```
 
-**Note:** The numbering of rows starts from 0.
+When you use {api:anychart.charts.Gantt#scrollToRow}scrollToRow(){api}, the given row is shown, if it is possible, at the beginning of the visible area. The {api:anychart.charts.Gantt#scrollToEnd}scrollToEnd(){api} method displays the row at the end of the visible area. Please note numbering of rows starts from 0.
 
 {sample :height 255}GANTT\_NEW\_Basic\_Settings\_10{sample}
