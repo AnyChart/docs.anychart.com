@@ -3,10 +3,12 @@
 
 ## Overview
 
-* Project charts are defined as instances of the {api:anychart.charts.Gantt}anychart.charts.Gantt{api}
- class.
-* The main [element](Elements) of the project chart is the [task](#tasks_\(actual\))...
-* (?)
+The Project Gantt chart, defined as an instance of {api:anychart.charts.Gantt}anychart.charts.Gantt{api}
+ class, is used to...
+
+This article explains how to organize [data](#data) for Project charts and what [elements](#elements) are displayed on them.
+
+To learn about the settings available for the Project chart, see other sections (it shares most of them with the [Resource](Resource) chart).
 
 ## Quick Start
 
@@ -661,5 +663,3 @@ var data = [
 To visualize an event, add a task with zero duration, or **milestone**. See the [Tasks (Actual)](#tasks_\(actual\)) section and [Elements: Project Chart](Elements/Project_Chart#milestones) article to learn more. 
 
 If you need to create multiple milestones in one row, use an alternative way to visualize events – add **markers**. Multiple markers can be shown in one row – on a task or anywhere on the timeline depending on the dates you specify. For more information, see [Elements: Markers](Elements/Markers).
-
-## (?) Other Settings
