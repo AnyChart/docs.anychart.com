@@ -267,7 +267,7 @@ The {api:anychart.charts.Gantt#scrollTo}scrollTo(){api} method requires specifyi
 chart.scrollTo(110);
 ```
 
-The {api:anychart.charts.Gantt#scrollToRow}scrollToRow(){api} and {api:anychart.charts.Gantt#scrollToEnd}scrollToEnd(){api} methods display the given row either at the beginning or at the end of the visible area if it is possible. Please note that numbering of rows starts from 0.
+The {api:anychart.charts.Gantt#scrollToRow}scrollToRow(){api} and {api:anychart.charts.Gantt#scrollToEnd}scrollToEnd(){api} methods display the given row either at the beginning or at the end of the visible area if it is possible. Please note that the numbering of rows starts from 0.
 
 ```
 // scroll the chart to the given row
