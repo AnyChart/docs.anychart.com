@@ -3,7 +3,7 @@
 
 ## Overview
 
-The Gantt chart is defined as an instance of {api:anychart.charts.Gantt}anychart.charts.Gantt{api}.
+The Gantt chart is defined as an instance of the {api:anychart.charts.Gantt}anychart.charts.Gantt{api} class.
 
 (?) This article describes the basic settings of the Gantt chart. Please note that they can be applied both to [Project](Project_Chart) and [Resource](Resource_Chart) charts.
 
