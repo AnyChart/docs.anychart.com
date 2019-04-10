@@ -5,6 +5,8 @@
 
 The class of the timeline is {api:anychart.core.ui.Timeline}anychart.core.ui.Timeline{api} – use {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} to access it.
 
+Also, please note that settings listed in this section be applied both to [Project](../Project_Chart) and [Resource](../Resource_Chart) charts.
+
 ## Articles
 
 Articles in this section explain how to configure:

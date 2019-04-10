@@ -1,7 +1,7 @@
 {:index 1}
 # Overview
 
-(?) Timeline elements are parts of the Gantt chart that are shown on the [timeline](Timeline) and represent time intervals as well information related to them.
+(?) Timeline elements are parts of the Gantt chart that are shown on the [timeline](Timeline) and represent time intervals as well as information related to them.
 
 On the [Project Gantt](../Project_Chart) chart and [Resource Gantt](../Resource_Chart) chart, different types of elements are displayed, and for each element type slightly different settings are available.
 
