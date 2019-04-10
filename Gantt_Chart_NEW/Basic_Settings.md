@@ -260,11 +260,14 @@ You can scroll the chart vertically to a certain position. Use these methods:
 * {api:anychart.charts.Gantt#scrollTo}scrollTo(){api} to scroll to a given value (in pixels)
 * {api:anychart.charts.Gantt#scrollToRow}scrollToRow(){api} and {api:anychart.charts.Gantt#scrollToEnd}scrollToEnd(){api} to scroll to a row with a given index
 
+The {api:anychart.charts.Gantt#scrollTo}scrollTo(){api} method requires specifying the scroll position in pixels:
 
 ```
 // scroll the chart to the given value
 chart.scrollTo(110);
 ```
+
+The {api:anychart.charts.Gantt#scrollToRow}scrollToRow(){api} and {api:anychart.charts.Gantt#scrollToEnd}scrollToEnd(){api} methods display the given row either at the beginning or at the end of the visible area if it is possible. Please note that numbering of rows starts from 0.
 
 ```
 // scroll the chart to the given row
@@ -275,8 +278,6 @@ chart.scrollToRow(6);
 // scroll the chart to the given row
 chart.scrollToEnd(6);
 ```
-
-When you use {api:anychart.charts.Gantt#scrollToRow}scrollToRow(){api}, the row is shown, if it is possible, at the beginning of the visible area. The {api:anychart.charts.Gantt#scrollToEnd}scrollToEnd(){api} method displays the row at the end of the visible area. Please note that numbering of rows starts from 0.
 
 The following sample shows how scrolling methods work:
 
