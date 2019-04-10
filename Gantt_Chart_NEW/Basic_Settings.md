@@ -217,7 +217,7 @@ The {api:anychart.charts.Gantt#zoomTo}zoomTo(){api} method allows zooming either
 chart.zoomTo(Date.UTC(2018, 1, 3), Date.UTC(2018, 1, 6));
 ```
 
-To set a **range of time units**, specify three parameters: **unit**, **count** (number of units), and **anchor**:
+To set a **range of time units**, specify three parameters: **unit**, **count** (the number of units), and **anchor**:
 
 ```
 // zoom the timeline to the given units
