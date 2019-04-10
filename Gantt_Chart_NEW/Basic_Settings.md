@@ -3,11 +3,9 @@
 
 ## Overview
 
-The Gantt chart is defined as an instance of {api:anychart.charts.Gantt}anychart.charts.Gantt{api}. In this article, you can find information about the methods of this class that allow adjusting the basic settings.
+This article describes the basic settings of the Gantt chart, which is defined as an instance of {api:anychart.charts.Gantt}anychart.charts.Gantt{api}.
 
-Most of the settings listed here are applied both to [Project](Project_Chart) and to [Resource](Resource_Chart) charts and affect the whole chart.
-
-To learn about configuring the different parts of the Gantt chart, see other articles, such as [Data Grid](Data_Grid), [Timeline](Timeline), and [Elements](Elements).
+Most of the settings listed here are applicable both to [Project](Project_Chart) and [Resource](Resource_Chart) charts.
 
 ## Appearance
 
