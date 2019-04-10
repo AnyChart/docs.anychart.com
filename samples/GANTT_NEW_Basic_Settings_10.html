@@ -38,10 +38,11 @@
     </style>
 </head>
 <body>
-<button id = "scrollToRowButton" onclick="scrollToRow()">Scroll to Row</button>
-<label>index: <input id="indexInput" type = "number" min="0" max = "8" value="6"></label>
 <button id = "scrollToValue" onclick="scrollToValue()">Scroll to Value</button>
 <label>value: <input id="valueInput" value="110"></label>
+<button id = "scrollToRowButton" onclick="scrollToRow()">Scroll To Row</button>
+<button id = "scrollToRowButton" onclick="scrollToRowEnd()">Scroll to Row (End)</button>
+<label>index: <input id="indexInput" type = "number" min="0" max = "8" value="6"></label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -107,7 +108,7 @@ anychart.onDocumentReady(function () {
     ];
     
     // create a data tree
-    treeData = anychart.data.tree(data, "as-tree");
+    var treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart
     chart = anychart.ganttProject();
@@ -134,16 +135,22 @@ anychart.onDocumentReady(function () {
     chart.fitAll();
 });
 
+// scroll the chart to the given value
+function scrollToValue() {
+  var value = document.getElementById("valueInput").value;
+  chart.scrollTo(value);
+}
+
 // scroll the chart to the given row
 function scrollToRow() {
   var index = document.getElementById("indexInput").value;
   chart.scrollToRow(index);
 }
 
-// scroll the chart to the given value
-function scrollToValue() {
-  var value = document.getElementById("valueInput").value;
-  chart.scrollTo(value);
+// scroll the chart to the given row
+function scrollToRowEnd() {
+  var index = document.getElementById("indexInput").value;
+  chart.scrollToEnd(index);
 }
 </script>
 </body>
