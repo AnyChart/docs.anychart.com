@@ -19,7 +19,7 @@ Other settings can be applied either to [all levels](#all_levels) of the header 
 
 To configure all levels, access the header by combining {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#header}header(){api}.
 
-Then use methods of {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api}, for example {api:anychart.core.gantt.TimeLineHeader#enabled}enabled(){api} to enable or disable the header.
+Then use methods of {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api} – for example, {api:anychart.core.gantt.TimeLineHeader#enabled}enabled(){api}, which allows enabling or disabling the header.
 
 In the sample below, the background stroke is set for all levels (other appearance settings are shown in [Appearance](#appearance)):
 
@@ -37,7 +37,7 @@ To access an individual level, combine {api:anychart.charts.Gantt#getTimeline}ge
 
 **Note:** Levels are numbered automatically from the level with the smallest time unit to the level with the largest one. The default levels are assigned the indexes 0, 1, 2.
 
-Levels are defined as instances of {api:anychart.core.gantt.TimeLineHeader.LevelWrapper}anychart.core.gantt.TimeLineHeader.LevelWrapper{api}. To configure them, use methods of this class, for example {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#enabled}enabled(){api} to enable or disable a level.
+Levels are defined as instances of {api:anychart.core.gantt.TimeLineHeader.LevelWrapper}anychart.core.gantt.TimeLineHeader.LevelWrapper{api}. To configure them, use methods of this class – for example, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#enabled}enabled(){api}, which allows enabling or disabling a level.
 
 In this sample, the background stroke is set only for the first level (other appearance settings are shown in [Appearance](#appearance)):
 

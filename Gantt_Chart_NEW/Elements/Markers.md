@@ -17,7 +17,7 @@ markers: [
 ],
 ```
 
-To configure markers, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#markers}markers(){api} with methods {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api}, for example:
+To configure markers, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#markers}markers(){api} with methods {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api} – for example, the following:
 
 * {api:anychart.core.ui.MarkersFactory#type}type(){api} to set the type
 * {api:anychart.core.ui.MarkersFactory#fill}fill(){api} to set the fill

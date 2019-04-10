@@ -7,8 +7,6 @@ The Project Gantt chart, defined as an instance of {api:anychart.charts.Gantt}an
 
 This article explains how to organize [data](#data) for the Project chart and what [elements](#elements) it displays.
 
-To learn about the settings available for this chart type, see other sections.
-
 ## Quick Start
 
 To create a Project Gantt chart, use the {api:anychart#ganttProject}anychart.ganttProject{api} chart constructor, like in the sample below. To learn more, see the [Quick Start (Project)](Quick_Start_\(Project\)) article.

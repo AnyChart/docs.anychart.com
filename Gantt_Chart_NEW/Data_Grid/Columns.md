@@ -45,7 +45,7 @@ chart.dataGrid().column(1).width(130);
 
 ## Title
 
-To configure [titles](../../Common_Settings/Title) of columns, use the {api:anychart.core.ui.DataGrid.Column#title}title(){api} method with methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class, for example {api:anychart.core.ui.Title#enabled}enabled(){api}, {api:anychart.core.ui.Title#text}text(){api}, {api:anychart.core.ui.Title#fontColor}fontColor(){api}, {api:anychart.core.ui.Title#fontWeight}fontWeight(){api}, etc.:
+To configure [titles](../../Common_Settings/Title) of columns, use the {api:anychart.core.ui.DataGrid.Column#title}title(){api} method with methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class – for example, {api:anychart.core.ui.Title#enabled}enabled(){api}, {api:anychart.core.ui.Title#text}text(){api}, {api:anychart.core.ui.Title#fontColor}fontColor(){api}, {api:anychart.core.ui.Title#fontWeight}fontWeight(){api}, etc.:
 
 ```
 // configure the title of the first data grid column
@@ -63,7 +63,7 @@ column_2.title().fontWeight(600);
 
 ## Text (Labels)
 
-To adjust the text of columns, combine {api:anychart.core.ui.DataGrid.Column#labels}labels(){api} with methods of the {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api} class, for example {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api}, {api:anychart.core.ui.LabelsFactory#fontWeight}fontWeight(){api}, {api:anychart.core.ui.LabelsFactory#fontSize}fontSize(){api}, etc.
+To adjust the text of columns, combine {api:anychart.core.ui.DataGrid.Column#labels}labels(){api} with methods of the {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api} class – for example, {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api}, {api:anychart.core.ui.LabelsFactory#fontWeight}fontWeight(){api}, {api:anychart.core.ui.LabelsFactory#fontSize}fontSize(){api}, etc.
 
 The {api:anychart.core.ui.LabelsFactory#format}format(){api} method, combined with [text formatters](../../Common_Settings/Text_Formatters), allows setting the text format – read the sections below to learn more.
 

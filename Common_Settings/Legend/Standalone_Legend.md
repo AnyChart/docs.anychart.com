@@ -52,7 +52,7 @@ The settings available for individual items are described in the [Individual Leg
 
 **1.** If legend items are added automatically and the chart type allows adding multiple series, you can adjust an individual legend item by calling the {api:?entry=legendItem}legendItem(){api} method of the series represented by this item. Combine it with the methods of the {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api} class. 
 
-**2.** If the legend is automatic, but the chart is single-series, for example Pie, individual items are customized by adding special fields to the data. Learn more: [Individual Items: Single Series](Individual_Legend_Items#single_series).
+**2.** If the legend is automatic, but the chart is single-series (for example, Pie), individual items are customized by adding special fields to the data. Learn more: [Individual Items: Single Series](Individual_Legend_Items#single_series).
 
 **3.** In case items are added manually, individual settings are specified right in the array of items that is passed to {api:anychart.standalones.Legend#items}items(){api} or {api:anychart.standalones.Legend#itemsFormatter}itemsFormatter(){api}. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
 

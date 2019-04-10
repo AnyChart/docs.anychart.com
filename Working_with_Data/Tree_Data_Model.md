@@ -464,7 +464,7 @@ var items = treeData.searchItems("employee", "JohnDoe", comparisonFunction);
 
 The {api:anychart.data.Tree#filter}filter(){api} method returns an array of data items. It is always called with a filter function as a parameter, which accepts a data item and returns `true` or `false`.
 
-Use this method to set advanced search conditions, for example to find all elements greater or less than a given value or to compare two data fields, like in the sample below.
+Use this method to set advanced search conditions – for example, to find all elements greater or less than a given value or to compare two data fields, like in the sample below.
 
 In this sample a filter function is used to find items with duration greater than a given one, duration being calculated from two data fields (the names of these items are displayed in the title of the chart, and their nodes are colored):
 

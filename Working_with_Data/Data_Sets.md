@@ -378,7 +378,7 @@ series.select(index);
 
 The {api:anychart.data.View#filter}filter(){api} methods finds data rows with values meeting a given condition. The first parameter is the name of a data field, and the second one is a filter function, which accepts a value and returns `true` or `false`.
 
-Use this method to set advanced search conditions, for example to find all rows with values greater or less than a given value, like in the following sample:
+Use this method to set advanced search conditions – for example, to find all rows with values greater or less than a given value, like in the following sample:
 
 ```
 // remove points with values less than a given one

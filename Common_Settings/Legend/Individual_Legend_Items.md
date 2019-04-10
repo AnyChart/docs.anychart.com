@@ -107,7 +107,7 @@ Use the following method to configure the icon of an item:
 * {api:anychart.core.utils.LegendItemSettings#iconHatchFill}iconHatchFill(){api} to set the hatch fill
 * {api:anychart.core.utils.LegendItemSettings#iconStroke}iconStroke(){api} to set the stroke
 
-To set the type of the icon, combine the {api:anychart.core.utils.LegendItemSettings#iconType}iconType(){api} method with one of the parameters listed in {api:anychart.enums.LegendItemIconType}anychart.enums.LegendItemIconType{api}. It makes sense to choose the icon type corresponding to the series type, for example `"line"` for an item representing a Line series, `"area"` for an Area series, and so on. The default type is `"square"`.
+To set the type of the icon, combine the {api:anychart.core.utils.LegendItemSettings#iconType}iconType(){api} method with one of the parameters listed in {api:anychart.enums.LegendItemIconType}anychart.enums.LegendItemIconType{api}. It makes sense to choose the icon type corresponding to the series type – for example, `"line"` for an item representing a Line series, `"area"` for an Area series, and so on. The default type is `"square"`.
 
 **Note 1:** If the icon type is set to `"line"`, `"spline"`, or `"step-line"`, you can also enable and adjust icon markers. See the [Icon Markers](#icon_markers) section to learn more.
 
