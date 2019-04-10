@@ -3,7 +3,9 @@
 
 (?) A timeline is a part of the Gantt chart where its [elements](Elements) (time intervals) are displayed.
 
-The class of the timeline is {api:anychart.core.ui.Timeline}anychart.core.ui.Timeline{api} – use {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} to access it. Please note that the settings listed in this section can be applied both to [Project](../Project_Chart) and [Resource](../Resource_Chart) charts.
+The class of the timeline is {api:anychart.core.ui.Timeline}anychart.core.ui.Timeline{api} – use {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} to access it.
+
+Also, please note that the settings listed in this section can be applied both to [Project](../Project_Chart) and [Resource](../Resource_Chart) charts.
 
 ## Articles
 
