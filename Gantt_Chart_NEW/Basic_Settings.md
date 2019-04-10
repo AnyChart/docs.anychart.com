@@ -5,7 +5,7 @@
 
 This article describes the basic settings of the Gantt chart, which is defined as an instance of {api:anychart.charts.Gantt}anychart.charts.Gantt{api}.
 
-Most of the settings listed here are applicable both to [Project](Project_Chart) and [Resource](Resource_Chart) charts.
+(?) The settings listed here can be applied both to [Project](Project_Chart) and [Resource](Resource_Chart) charts.
 
 ## Appearance
 
