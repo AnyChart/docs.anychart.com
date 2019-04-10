@@ -3,9 +3,11 @@
 
 ## Overview
 
-* Resource charts are defined as instances of the {api:anychart.charts.Gantt}anychart.charts.Gantt{api}
- class.
-* The main [element](Elements) of the resource chart is the [period](#periods_and_resources)...
+The Resource Gantt chart, defined as an instance of {api:anychart.charts.Gantt}anychart.charts.Gantt{api} class, is used to show...
+
+This article explains how to organize [data](#data) for the Resource chart and what [elements](#elements) it displays.
+
+To learn about the settings available for this chart type, see other sections.
 
 ## Quick Start
 
@@ -305,5 +307,3 @@ chart.data(treeData);
 ### Markers
 
 You can add a **marker** or multiple markers to a resource. A marker can be shown on a period or anywhere on the timeline, depending on the date you specify. For more information, see [Elements: Markers](Elements/Markers).
-
-## (?) Other Settings
