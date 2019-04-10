@@ -201,23 +201,23 @@ To zoom the [timeline](Timeline), use the following methods:
 * {api:anychart.charts.Gantt#zoomOut}zoomOut(){api} to zoom out
 * {api:anychart.charts.Gantt#zoomTo}zoomTo(){api} to zoom to a range of dates / time units
 
-The {api:anychart.charts.Gantt#zoomIn}zoomIn(){api} and {api:anychart.charts.Gantt#zoomOut}zoomOut(){api} require specifying the zoom factor as a parameter:
+The {api:anychart.charts.Gantt#zoomIn}zoomIn(){api} and {api:anychart.charts.Gantt#zoomOut}zoomOut(){api} methods require specifying the zoom factor as a parameter:
 
 ```
 // zoom the timeline in
 chart.zoomIn(2);
 ```
 
-The {api:anychart.charts.Gantt#zoomTo}zoomTo(){api} methods allows zooming either to a range of dates or to a range of units.
+The {api:anychart.charts.Gantt#zoomTo}zoomTo(){api} method allows zooming either to a range of dates or to a range of units.
 
-(?) To set the **range of dates**, specify two dates as parameters:
+(?) To set a **range of dates**, specify two dates as parameters:
 
 ```
 // zoom the timeline to the given dates
 chart.zoomTo(Date.UTC(2018, 1, 3), Date.UTC(2018, 1, 6));
 ```
 
-To set the **range of time units**, specify three parameters: **unit**, **count** (number of units), and **anchor**:
+To set a **range of time units**, specify three parameters: **unit**, **count** (number of units), and **anchor**:
 
 ```
 // zoom the timeline to the given units
