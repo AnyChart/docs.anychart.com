@@ -249,7 +249,7 @@ The available anchors are listed in {api:anychart.enums.GanttRangeAnchor}anychar
 * `"last-date"`
 * `"last-visible-date"`
 
-The sample below shows how zooming works:
+The sample below shows how zooming methods work:
 
 {sample :height 325}GANTT\_NEW\_Basic\_Settings\_09{sample}
 
@@ -276,6 +276,8 @@ chart.scrollToRow(6);
 chart.scrollToEnd(6);
 ```
 
-When you use {api:anychart.charts.Gantt#scrollToRow}scrollToRow(){api}, the given row is shown, if it is possible, at the beginning of the visible area. The {api:anychart.charts.Gantt#scrollToEnd}scrollToEnd(){api} method displays the row at the end of the visible area. Please note numbering of rows starts from 0.
+When you use {api:anychart.charts.Gantt#scrollToRow}scrollToRow(){api}, the row is shown, if it is possible, at the beginning of the visible area. The {api:anychart.charts.Gantt#scrollToEnd}scrollToEnd(){api} method displays the row at the end of the visible area. Please note numbering of rows starts from 0.
+
+The following sample shows how scrolling methods work:
 
 {sample :height 255}GANTT\_NEW\_Basic\_Settings\_10{sample}
