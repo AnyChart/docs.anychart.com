@@ -276,7 +276,7 @@ chart.scrollToRow(6);
 chart.scrollToEnd(6);
 ```
 
-When you use {api:anychart.charts.Gantt#scrollToRow}scrollToRow(){api}, the row is shown, if it is possible, at the beginning of the visible area. The {api:anychart.charts.Gantt#scrollToEnd}scrollToEnd(){api} method displays the row at the end of the visible area. Please note numbering of rows starts from 0.
+When you use {api:anychart.charts.Gantt#scrollToRow}scrollToRow(){api}, the row is shown, if it is possible, at the beginning of the visible area. The {api:anychart.charts.Gantt#scrollToEnd}scrollToEnd(){api} method displays the row at the end of the visible area. Please note that numbering of rows starts from 0.
 
 The following sample shows how scrolling methods work:
 
