@@ -32,7 +32,7 @@ To learn about data and date & time formats, see these articles:
 * [Data](Data)
 * [Date and Time Formats](Date_and_Time_Formats)
 
-Here the basic settings are listed – appearance, navigation, etc.:
+Here the basic settings are listed – appearance, row height, navigation, etc.:
 * [Basic Settings](Basic_Settings)
 
 The following sections explain how to adjust the main parts of the Gantt chart:
