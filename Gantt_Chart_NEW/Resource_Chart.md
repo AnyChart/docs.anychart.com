@@ -5,7 +5,11 @@
 
 The Resource Gantt chart, defined as an instance of {api:anychart.charts.Gantt}anychart.charts.Gantt{api} class, is used to show resources (e.g., equipment or employees) over periods of time. You can also show hierarchical relationships between resources.
 
-This article explains how to organize [data](#data) for the Resource chart and what [elements](#elements) it displays.
+Here is how this chart type is structured:
+
+<img width="700" src ="https://static.anychart.com/images/resource_timeline.jpg" />
+
+This article explains how to organize [data](#data) for the Resource chart and what [timeline elements](#elements) it displays.
 
 ## Quick Start
 

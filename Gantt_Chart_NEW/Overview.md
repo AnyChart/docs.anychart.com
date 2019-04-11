@@ -9,6 +9,12 @@ There are two types of Gannt charts – [Project](Project_Chart) and [Resource](
 
 Both chart types are defined as instances of the {api:anychart.charts.Gantt}anychart.charts.Gantt{api} class, and both are created with the help of the {api:anychart#ganttResource}anychart.ganttResource{api} constructor. The chart type depends exclusively on how your data is organized.
 
+Here is how the Project and Resource charts are structured:
+
+<img width="700" src ="https://static.anychart.com/images/project_timeline.jpg" />
+
+<img width="700" src ="https://static.anychart.com/images/resource_timeline.jpg" />
+
 ## Articles
 
 ## Classes

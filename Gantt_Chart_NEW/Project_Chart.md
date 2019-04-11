@@ -5,7 +5,11 @@
 
 The Project Gantt chart, defined as an instance of {api:anychart.charts.Gantt}anychart.charts.Gantt{api} class, is used to show the duration and progress of a single task or a group of tasks. You can also show hierarchical relationships and connections between tasks.
 
-This article explains how to organize [data](#data) for the Project chart and what [elements](#elements) it displays.
+Here is how this chart type is structured:
+
+<img width="700" src ="https://static.anychart.com/images/project_timeline.jpg" />
+
+This article explains how to organize [data](#data) for the Project chart and what [timeline elements](#elements) it displays.
 
 ## Quick Start
 
