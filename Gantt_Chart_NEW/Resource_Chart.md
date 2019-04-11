@@ -3,7 +3,9 @@
 
 ## Overview
 
-The Resource Gantt chart, defined as an instance of {api:anychart.charts.Gantt}anychart.charts.Gantt{api} class, is used to schedule resources (e.g., equipment or employees). Each resource is shown over periods of time, which are visualized as horizontal bars – the width of bars represents the duration. It is also possible to show hierarchical relationships between resources.
+The Resource Gantt chart, defined as an instance of {api:anychart.charts.Gantt}anychart.charts.Gantt{api} class, is used to schedule resources (e.g., equipment or employees).
+
+Each resource is shown over periods of time, which are visualized as horizontal bars – the width of bars represents the duration. It is also possible to show hierarchical relationships between resources.
 
 Here is how this chart type is structured:
 
