@@ -28,7 +28,7 @@ Here you can find information about data and date & time formats:
 * [Data](Data)
 * [Date and Time Formats](Date_and_Time_Formats)
 
-This article lists the basic settings (appearance, splitter position, row height, etc.):
+This article lists the basic settings – appearance, navigation, etc.:
 * [Basic Settings](Basic_Settings)
 
 The following sections explain how to adjust the main parts of the Gantt chart:
