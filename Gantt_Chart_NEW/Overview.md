@@ -3,7 +3,7 @@
 
 ## Overview
 
-A Gantt chart is a data visualization that shows a project schedule or resources (e.g., equipment or employees) over periods of time. Tasks or periods are visualized as horizontal bars, their width representing the duration.
+A Gantt chart is a tool used to schedule projects or show resources (e.g., equipment or employees) over periods of time. Project tasks or periods are visualized as horizontal bars, their width representing the duration.
 
 There are two types of Gannt charts – [Project](Project_Chart) and [Resource](Resource_Chart). They display different timeline [elements](Elements), but share most settings.
 

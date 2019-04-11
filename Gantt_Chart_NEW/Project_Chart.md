@@ -3,7 +3,7 @@
 
 ## Overview
 
-The Project Gantt chart, defined as an instance of {api:anychart.charts.Gantt}anychart.charts.Gantt{api} class, is used to visualize project schedules. Tasks are displayed as horizontal bars, their width representing the duration. It is also possible to show the progress of tasks as well as hierarchical relationships and connections between them.
+The Project Gantt chart, defined as an instance of {api:anychart.charts.Gantt}anychart.charts.Gantt{api} class, is used to schedule projects. Project tasks are visualized as horizontal bars, their width representing the duration. It is also possible to show the progress of tasks as well as hierarchical relationships and connections between them.
 
 Here is how this chart type is structured:
 
