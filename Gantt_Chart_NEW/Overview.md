@@ -9,7 +9,7 @@ There are two types of Gannt charts – [Project](Project_Chart) and [Resource](
 
 Both chart types are defined as instances of the {api:anychart.charts.Gantt}anychart.charts.Gantt{api} class, and both are created with the help of the {api:anychart#ganttResource}anychart.ganttResource{api} constructor. The chart type depends exclusively on how your data is organized.
 
-Here is how the Project and Resource charts are structured:
+Here is how the Project chart and Resource chart are structured:
 
 <img width="700" src ="https://static.anychart.com/images/project_timeline.jpg" />
 
@@ -17,20 +17,18 @@ Here is how the Project and Resource charts are structured:
 
 ## Articles
 
-The first two articles explain how to...
+The first four articles explain how to create Project and Resource charts:
 
 * [Quick Start (Project)](Quick_Start_\(Project\))
 * [Quick Start (Resource)](Quick_Start_\(Resource\))
-
-... Project and Resouce ... :
 * [Project Chart](Project_Chart)
 * [Resource Chart](Resource_Chart)
 
-... data and date & time formats:
+Here you can find information about data and date & time formats:
 * [Data](Data)
 * [Date and Time Formats](Date_and_Time_Formats)
 
-... basic settings:
+This article lists the basic settings of Gantt charts (appearance, splitter position, row height, etc.):
 * [Basic Settings](Basic_Settings)
 
 The following sections explain how to adjust the main parts of the Gantt chart:
@@ -39,7 +37,7 @@ The following sections explain how to adjust the main parts of the Gantt chart:
 * [Timeline](Timeline)
 * [Elements](Elements)
 
-... advanced options:
+There are also advanced settings available:
 * [Custom Drawing](Custom_Drawing)
 * [Events](Events)
 * [Live Edit UI](Live_Edit_UI)
