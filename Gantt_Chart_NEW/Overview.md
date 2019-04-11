@@ -17,7 +17,36 @@ Here is how the Project and Resource charts are structured:
 
 ## Articles
 
+The first two articles explain how to...
+
+* [Quick Start (Project)](Quick_Start_\(Project\))
+* [Quick Start (Resource)](Quick_Start_\(Resource\))
+
+... Project and Resouce ... :
+* [Project Chart](Project_Chart)
+* [Resource Chart](Resource_Chart)
+
+... data and date & time formats:
+* [Data](Data)
+* [Date and Time Formats](Date_and_Time_Formats)
+
+... basic settings:
+* [Basic Settings](Basic_Settings)
+
+The following sections explain how to adjust the main parts of the Gantt chart:
+
+* [Data Grid](Data_Grid)
+* [Timeline](Timeline)
+* [Elements](Elements)
+
+... advanced options:
+* [Custom Drawing](Custom_Drawing)
+* [Events](Events)
+* [Live Edit UI](Live_Edit_UI)
+
 ## Classes
+
+...?
 
 Gantt chart:
 
