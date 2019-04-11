@@ -28,11 +28,11 @@ The first four articles explain how to create Project and Resource charts:
 * [Project Chart](Project_Chart)
 * [Resource Chart](Resource_Chart)
 
-Here you can find information about data and date & time formats:
+To learn about data and date & time formats, see these articles:
 * [Data](Data)
 * [Date and Time Formats](Date_and_Time_Formats)
 
-This article lists the basic settings – appearance, navigation, etc.:
+Here the basic settings are listed – appearance, navigation, etc.:
 * [Basic Settings](Basic_Settings)
 
 The following sections explain how to adjust the main parts of the Gantt chart:
