@@ -48,7 +48,7 @@ There are also advanced settings available:
 
 ## Classes
 
-Below you can find the list of main classes used to configure the Gantt chart and its parts.
+Below you can find the list of classes used to configure the Gantt chart and its parts.
 
 Gantt chart:
 
