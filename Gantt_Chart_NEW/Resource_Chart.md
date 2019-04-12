@@ -108,7 +108,7 @@ If the [hierarchy](#hierarchy) between data items is not specified, there is no 
 
 For example, in the [Quick Start](#quick_start) section, there is a sample where the `"as-table"` parameter is used, but it can be replaced with `"as-tree"` without changing the data structure since all data items occupy the same place in the hierarchy.
 
-**2. Creating Chart.** Then create a Resource chart by using the {api:anychart#ganttResource}anychart.ganttResource{api} chart constructor:
+**2. Creating Chart.** Then create a Resource chart by using the {api:anychart#ganttResource}anychart.ganttResource(){api} chart constructor:
 
 ```
 var chart = anychart.ganttResource();

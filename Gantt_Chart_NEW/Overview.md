@@ -7,7 +7,7 @@ A Gantt chart is a tool used to schedule projects or show resources (e.g., equip
 
 AnyGantt allows creating two types of Gannt charts – [Project](Project_Chart) and [Resource](Resource_Chart). They display different timeline [elements](Elements), but share most settings.
 
-Both chart types are defined as instances of the {api:anychart.charts.Gantt}anychart.charts.Gantt{api} class, and both are created with the help of the {api:anychart#ganttResource}anychart.ganttResource{api} constructor. The chart type depends exclusively on how your data is organized.
+Both chart types are defined as instances of the {api:anychart.charts.Gantt}anychart.charts.Gantt{api} class, and both are created with the help of the {api:anychart#ganttResource}anychart.ganttResource(){api} constructor. The chart type depends exclusively on how your data is organized.
 
 This is how the Project chart and Resource chart are structured:
 
