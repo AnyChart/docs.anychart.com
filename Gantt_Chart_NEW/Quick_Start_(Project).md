@@ -30,7 +30,7 @@ Add a block-based HTML element to your page, set the `id`, `width`, and `height`
 
 ## Data
 
-AnyGantt requires using the [tree data model](../Working_with_Data/Tree_Data_Model)). This is how your data should be organized for it:
+AnyGantt requires using the [tree data model](../Working_with_Data/Tree_Data_Model). This is how your data should be organized for it:
 
 ```
 // create data
