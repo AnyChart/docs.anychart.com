@@ -7,7 +7,7 @@ The Resource Gantt chart, defined as an instance of {api:anychart.charts.Gantt}a
 
 Each resource is shown over periods of time, which are visualized as horizontal bars – the width of bars represents the duration. It is also possible to show hierarchical relationships between resources.
 
-Here is how this chart type is structured:
+This is how the Resource chart is structured:
 
 <img width="700" src ="https://static.anychart.com/images/resource_timeline.jpg" />
 

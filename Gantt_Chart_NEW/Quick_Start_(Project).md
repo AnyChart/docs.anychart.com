@@ -1,7 +1,15 @@
 {:index 2}
 # Quick Start: Project Gantt Chart
 
+## Overview
+
+This article demonstrates the steps required to create a basic Project Gantt chart from scratch.
+
 ## Modules
+
+AnyGantt requires adding two [modules](../Quick_Start/Modules): [Core](../Quick_Start/Modules#core) and [Gantt and Gantt Resource](../Quick_Start/Modules#gantt_and_gantt_resource). Reference two JavaScript files in the `<head>` section of your web page.
+
+**Note:** These files can be downloaded from the [AnyChart download page](../Quick_Start/Downloading_AnyChart).
 
 ```
 <head>
@@ -12,6 +20,8 @@
 
 ## Container
 
+Add a block-based HTML element to your page, set the `id`, `width`, and `height` attributes. AnyChart charting library uses 100% of the container if other behavior is not specified. 
+
 ```
 <body>
   <div id="container"></div>
@@ -19,6 +29,8 @@
 ```
 
 ## Data
+
+AnyGantt requires using the [tree data model](../Working_with_Data/Tree_Data_Model)). This is how your data should be organized for it:
 
 ```
 // create data
@@ -64,6 +76,10 @@ var data = [
 ```
 
 ## Chart
+
+To create a chart, add the JavaScript tag `<script>` with the code below.
+
+**Note:** Here JavaScript API is used, but you also can use [JSON](../Working_with_Data/Data_From_JSON), [XML](../Working_with_Data/Data_From_XML), and [CSV](../Working_with_Data/Data_From_CSV). 
 
 ```
 <script>
@@ -126,9 +142,13 @@ var data = [
 
 ## Sample
 
+This sample demonstrates the result of the steps above. Like any other sample, it can be launched and modified in AnyChart Playground.
+
 {sample :height 220}GANTT\_NEW\_Quick\_Start\_Project{sample}
 
 ## Source Code
+
+Here is the full source code of the sample. You can copy the code to a file on your computer and open it with a browser to display the Gantt chart.
 
 ```
 <!DOCTYPE html>

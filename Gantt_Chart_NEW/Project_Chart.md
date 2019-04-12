@@ -7,7 +7,7 @@ The Project Gantt chart, defined as an instance of {api:anychart.charts.Gantt}an
 
 Project tasks are visualized as horizontal bars, their width representing the duration. It is also possible to show the progress of tasks as well as hierarchical relationships and connections between them.
 
-Here is how this chart type is structured:
+This is how the Project chart is structured:
 
 <img width="700" src ="https://static.anychart.com/images/project_timeline.jpg" />
 
