@@ -86,9 +86,9 @@ In addition, you can use optional fields:
 * `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
 * `collapsed` to [expand or collapse](../Basic_Settings#expanding_/_collapsing) a parent resource
 
-To learn how to rename the default data fields, see [Data: Mapping](Data#mapping).
+**Note 1:** To learn how to rename the default data fields, see [Data: Mapping](Data#mapping).
 
-(?) You can also add custom fields to your data and use them to configure [labels of elements](Elements/Labels), [data grid text](Data_Grid/Columns#text_\(labels\)), [data grid tooltips](Data_Grid/Tooltips), and [timeline tooltips](Timeline/Tooltips).
+**Note 2:** You can also add custom fields to your data.
 
 ### Setting Data
 

@@ -12,7 +12,9 @@
 
 ## Data Fields
 
-**Project chart:**
+The Project and Resource charts require different data fields. You can find detailed information about them in the [Project Chart](Project_Chart) and [Resource Chart](Resource_Chart) articles. Here is just a brief overview:
+
+**Project chart**
 
 * `id`, `name`
 * `children` / `parent`
@@ -22,12 +24,16 @@
 * `connectTo`, `connectorType`, `connector` 
 * `markers`, `rowHeight`, `collapsed`
 
-**Resource chart:**
+**Resource chart**
 
 * `id`, `name`
 * `children` / `parent`
 * `periods` + `id`, `start`, `end`
 * `rowHeight`, `collapsed`
+
+**Note 1:** You can rename the default data fields – see the [Mapping](#mapping) section of this article.
+
+**Note 2:** You can also add custom fields to your data.
 
 ## Setting Data
 
