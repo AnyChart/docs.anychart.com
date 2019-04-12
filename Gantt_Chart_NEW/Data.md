@@ -16,20 +16,20 @@ The Project and Resource charts require different data fields. You can find deta
 
 **Project chart**
 
-* `id`, `name`
-* `children` / `parent`
-* `actualStart`, `actualEnd`, `actual`
-* `baselineStart`, `baselineEnd`, `baseline`
-* `progressValue`, `progress`
-* `connectTo`, `connectorType`, `connector` 
-* `markers`, `rowHeight`, `collapsed`
+* `id`, `name` – names and unique identifiers of tasks
+* `children` / `parent` – hierarchical relationships between tasks
+* `actualStart`, `actualEnd`, `actual` – start & end dates and settings of tasks
+* `baselineStart`, `baselineEnd`, `baseline` – start & end dates and settings of baselines
+* `progressValue`, `progress` – values and settings of progress bars
+* `connectTo`, `connectorType`, `connector`  – settings of connectors
+* `markers`, `rowHeight`, `collapsed` – other settings
 
 **Resource chart**
 
-* `id`, `name`
-* `children` / `parent`
-* `periods` + `id`, `start`, `end`
-* `rowHeight`, `collapsed`
+* `id`, `name` – names and unique identifiers of resources
+* `children` / `parent` – hierarchical relationships between resources
+* `periods` + `id`, `start`, `end` – settings of periods
+* `rowHeight`, `collapsed` – other settings
 
 **Note 1:** You can rename the default data fields – see the [Mapping](#mapping) section of this article.
 
