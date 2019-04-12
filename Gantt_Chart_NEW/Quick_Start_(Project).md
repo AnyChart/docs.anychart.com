@@ -148,7 +148,7 @@ This sample demonstrates the result of the steps above. Like any other sample, i
 
 ## Source Code
 
-Here is the full source code of the sample. You can copy the code to a file on your computer and open it with a browser to display the Gantt chart.
+Here is the full source code of the sample. You can copy the code to a file on your computer and open it with a browser to display the Project Gantt chart.
 
 ```
 <!DOCTYPE html>
