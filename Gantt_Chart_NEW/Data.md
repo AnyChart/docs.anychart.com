@@ -25,9 +25,9 @@ The Project and Resource charts work with different data fields:
 
 To create a Gantt chart, you should use the [tree data model](../Working_with_Data/Tree_Data_Model):
 
-<ol><li>Create a data tree by passing your data to {api:anychart.data#tree}anychart.data.tree(){api}.</li>
-<li>Create a chart with the help of the {api:anychart#ganttProject}anychart.ganttProject(){api} construtor.</li>
-<li>Pass the data tree to the {api:anychart.charts.Gantt#data}data(){api} method of the chart.</li></ol>
+**1.** Create a data tree by passing your data to {api:anychart.data#tree}anychart.data.tree(){api}.<br>
+**2.** Create a chart with the help of the {api:anychart#ganttProject}anychart.ganttProject(){api} construtor.<br>
+**3.** Pass the data tree to the {api:anychart.charts.Gantt#data}data(){api} method of the chart.<br>
 
 
 ```
