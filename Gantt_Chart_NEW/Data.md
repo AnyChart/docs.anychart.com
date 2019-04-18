@@ -12,7 +12,7 @@
 
 ## Data Fields
 
-The Project and Resource charts work with different data fields. You can find detailed information about them in these sections:
+The Project and Resource charts work with different data fields, which are listed here:
 
 * [Project Chart: Data Fields](Project_Chart#data_fields)
 * [Resource Chart: Data Fields](Resource_Chart#data_fields)
@@ -31,7 +31,6 @@ To create a chart, you need to perform the following steps:
 <li>Create a chart with the help of the {api:anychart#ganttProject}anychart.ganttProject(){api} construtor.</li>
 <li>Pass the data tree to the {api:anychart.charts.Gantt#data}data(){api} method of the chart.</li></ol>
 
-This is how it looks like:
 
 ```
 var treeData = anychart.data.tree(data, "as-tree");
@@ -39,7 +38,7 @@ var chart = anychart.ganttProject();
 chart.data(treeData);
 ```
 
-To learn more, see:
+To learn more, see these sections:
 
 * [Project Chart: Setting Data](Project_Chart#setting_data)
 * [Resource Chart: Setting Data](Resource_Chart#setting_data)
