@@ -12,24 +12,10 @@
 
 ## Data Fields
 
-The Project and Resource charts work with different data fields. You can find detailed information about them in the [Project Chart](Project_Chart#data_fields) and [Resource Chart](Resource_Chart#data_fields) articles. Here is just a brief overview:
+The Project and Resource charts work with different data fields. You can find detailed information about them in these sections:
 
-**Project chart**
-
-* `id`, `name` – names and unique identifiers of tasks
-* `children` / `parent` – hierarchical relationships between tasks
-* `actualStart`, `actualEnd`, `actual` – start & end dates and settings of tasks
-* `baselineStart`, `baselineEnd`, `baseline` – start & end dates and settings of baselines
-* `progressValue`, `progress` – values and settings of progress bars
-* `connectTo`, `connectorType`, `connector`  – settings of connectors
-* `markers`, `rowHeight`, `collapsed` – other settings
-
-**Resource chart**
-
-* `id`, `name` – names and unique identifiers of resources
-* `children` / `parent` – hierarchical relationships between resources
-* `periods` + `id`, `start`, `end` – settings of periods
-* `rowHeight`, `collapsed` – other settings
+* [Project Chart: Data Fields](Project_Chart#data_fields)
+* [Resource Chart: Data Fields](Resource_Chart#data_fields)
 
 **Note 1:** You can rename the default data fields – see the [Mapping](#mapping) section of this article.
 
@@ -37,11 +23,11 @@ The Project and Resource charts work with different data fields. You can find de
 
 ## Setting Data
 
-AnyGantt requires using the [tree data model](../Working_with_Data/Tree_Data_Model). The [Project Chart](Project_Chart#hierarchy) and [Resource Chart](Resource_Chart#hierarchy) articles explain in detail how to organize your data for it.
+AnyGantt requires using the [tree data model](../Working_with_Data/Tree_Data_Model).
 
 To create a chart, you need to perform the following steps:
 
-<ol><li>Create a data tree by passing your data to {api:anychart.data#tree}anychart.data.tree(){api} with `"as-tree"` / `"as-table"` as the second parameter.</li>
+<ol><li>Create a data tree by passing your data to {api:anychart.data#tree}anychart.data.tree(){api}</li>
 <li>Create a chart with the help of the {api:anychart#ganttProject}anychart.ganttProject(){api} construtor.</li>
 <li>Pass the data tree to the {api:anychart.charts.Gantt#data}data(){api} method of the chart.</li></ol>
 
@@ -53,6 +39,15 @@ var chart = anychart.ganttProject();
 chart.data(treeData);
 ```
 
+To learn more, see:
+
+* [Project Chart: Setting Data](Project_Chart#setting_data)
+* [Resource Chart: Setting Data](Resource_Chart#setting_data)
+
 ## Hierarchy (?)
+
+* [Project Chart: Hierarchy](Project_Chart#hierarchy)
+* [Resource Chart: Hierarchy](Resource_Chart#hierarchy)
+
 
 ## Mapping
