@@ -41,9 +41,9 @@ AnyGantt requires using the [tree data model](../Working_with_Data/Tree_Data_Mod
 
 To create a chart, you need to perform the following steps:
 
-<ol> pass your data to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` or `"as-table"` as the second parameter</ol>
-<ol> create a chart with the help of the {api:anychart#ganttProject}anychart.ganttProject(){api} construtor</ol>
-<ol>pass the data tree to the {api:anychart.charts.Gantt#data}data(){api} method of the chart</ol>
+<ol><li>pass your data to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` or `"as-table"` as the second parameter</li>
+<li>create a chart with the help of the {api:anychart#ganttProject}anychart.ganttProject(){api} construtor</li>
+<li>pass the data tree to the {api:anychart.charts.Gantt#data}data(){api} method of the chart</li></ol>
 
 This is how it looks like:
 
