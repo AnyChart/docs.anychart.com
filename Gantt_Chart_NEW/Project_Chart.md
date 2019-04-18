@@ -135,7 +135,7 @@ You can as well skip the first step and pass your data directly to the {api:anyc
 
 ### Hierarchy
 
-Usually, there are hierarchical relationships between the data items of Project Gantt charts. There are two ways to specify these relationships, depending on how you organize the data: [as a tree](#as_tree) or [as a table](#as_table).
+Usually, there are hierarchical relationships between data items of Project Gantt charts. There are two ways to specify these relationships, depending on how you organize the data: [as a tree](#as_tree) or [as a table](#as_table).
 
 Please note that Project charts can have multiple roots. Also, you can create data without specifying the hierarchy – in this case, technically, all items are roots.
 

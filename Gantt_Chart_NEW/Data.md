@@ -23,7 +23,7 @@ The Project and Resource charts work with different data fields:
 
 ## Setting Data
 
-AnyGantt requires using the [tree data model](../Working_with_Data/Tree_Data_Model). To create a chart based on such data, perform the following steps:
+To create a Gantt chart, you should use the [tree data model](../Working_with_Data/Tree_Data_Model):
 
 <ol><li>Create a data tree by passing your data to {api:anychart.data#tree}anychart.data.tree(){api}.</li>
 <li>Create a chart with the help of the {api:anychart#ganttProject}anychart.ganttProject(){api} construtor.</li>
@@ -41,7 +41,9 @@ To learn more, see these sections:
 * [Project Chart: Setting Data](Project_Chart#setting_data)
 * [Resource Chart: Setting Data](Resource_Chart#setting_data)
 
-## Hierarchy (?)
+## Hierarchy
+
+The following sections explain how to organize data if there are hierarchical relationships between data items:
 
 * [Project Chart: Hierarchy](Project_Chart#hierarchy)
 * [Resource Chart: Hierarchy](Resource_Chart#hierarchy)
