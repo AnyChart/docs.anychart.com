@@ -36,14 +36,14 @@ var chart = anychart.ganttProject();
 chart.data(treeData);
 ```
 
-To learn more, see these sections:
+See the following sections to learn more:
 
 * [Project Chart: Setting Data](Project_Chart#setting_data)
 * [Resource Chart: Setting Data](Resource_Chart#setting_data)
 
 ## Hierarchy
 
-The following sections explain how to organize data if there are hierarchical relationships between data items:
+The sections below explain how to organize your data hierarchically:
 
 * [Project Chart: Hierarchy](Project_Chart#hierarchy)
 * [Resource Chart: Hierarchy](Resource_Chart#hierarchy)
