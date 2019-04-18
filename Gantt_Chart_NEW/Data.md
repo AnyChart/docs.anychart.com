@@ -12,7 +12,7 @@
 
 ## Data Fields
 
-The Project and Resource charts work with different data fields, which are listed here:
+The Project and Resource charts work with different data fields:
 
 * [Project Chart: Data Fields](Project_Chart#data_fields)
 * [Resource Chart: Data Fields](Resource_Chart#data_fields)
