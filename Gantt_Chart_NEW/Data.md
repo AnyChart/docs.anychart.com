@@ -59,7 +59,7 @@ Learn more: [Tree Data Model: Mapping](../Working_with_Data/Tree_Data_Model#mapp
 
 ### Project Chart
 
-The following sample shows how to map data for a Project chart. The {api:anychart.data#tree}anychart.data.tree(){api} constructor is used to map `child_items` as `children`, and the {api:anychart.data.Tree#mapAs}mapAs{api} method maps `start_date` and `end_date` as `actualStart` and `actualEnd`:
+The following sample shows how to map data for a Project chart. Custom fields `child_items`, `start_date`, and `end_date` are mapped as `children`, `start_date`, `end_date`:
 
 ```
 // create data
@@ -117,8 +117,55 @@ var chart = anychart.ganttProject();
 
 ### Resource Chart
 
-```
+The sample below shows how to map data for a Resource chart. Custom fields `child_items` and `intervals` are mapped as `children` and `periods`:
 
+```
+// create data
+var data = [
+  {
+    id: "A",
+    name: "Location A",
+    child_items: [
+      {
+        id: "1",
+        name: "Server 1",
+        intervals: [
+          {id: "1_1", start: "2018-01-02", end: "2018-01-25"},
+          {id: "1_2", start: "2018-01-28", end: "2018-02-22"},
+          {id: "1_3", start: "2018-03-03", end: "2018-03-25"}
+      ]},
+      {
+        id: "2",
+        name: "Server 2",
+        intervals: [
+          {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
+          {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
+      ]}
+  ]},
+  {
+    id: "B",
+    name: "Location B",
+    child_items: [
+      {
+        id: "3",
+        name: "Server 3",
+        intervals: [
+          {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
+      ]}
+  ]}
+];
+
+// create a data tree
+var treeData = anychart.data.tree(data, "as-tree", null, {children: "child_items"});
+
+// map the data
+var mapping = treeData.mapAs({periods: "intervals"});
+
+// create a chart
+var chart = anychart.ganttResource();
+
+// set the data
+chart.data(mapping);
 ```
 
 {sample :height 220}GANTT\_NEW\_Data\_02{sample}

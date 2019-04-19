@@ -29,33 +29,43 @@ anychart.onDocumentReady(function () {
     // create data
     var data = [
       {
-        id: "1",
-        name: "Server 1",
-        periods: [
-          {id:"1_1", start_date: "2018-01-02", end_date: "2018-01-25"},
-          {id:"1_2", start_date: "2018-01-28", end_date: "2018-02-22"},
-          {id:"1_3", start_date: "2018-03-03", end_date: "2018-03-25"}
+        id: "A",
+        name: "Location A",
+        child_items: [
+          {
+            id: "1",
+            name: "Server 1",
+            intervals: [
+              {id: "1_1", start: "2018-01-02", end: "2018-01-25"},
+              {id: "1_2", start: "2018-01-28", end: "2018-02-22"},
+              {id: "1_3", start: "2018-03-03", end: "2018-03-25"}
+          ]},
+          {
+            id: "2",
+            name: "Server 2",
+            intervals: [
+              {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
+              {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
+          ]}
       ]},
       {
-        id: "2",
-        name: "Server 2",
-        periods: [
-          {id: "2_1", start_date: "2018-01-05", end_date: "2018-02-15"},
-          {id: "2_2", start_date: "2018-02-26", end_date: "2018-03-20"}
-      ]},
-      {
-        id: "3",
-        name: "Server 3",
-        periods: [
-          {id: "3_1", start_date: "2018-01-04", end_date: "2018-03-25"}
+        id: "B",
+        name: "Location B",
+        child_items: [
+          {
+            id: "3",
+            name: "Server 3",
+            intervals: [
+              {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
+          ]}
       ]}
     ];
 
     // create a data tree
-    var treeData = anychart.data.tree(data, "as-tree");
+    var treeData = anychart.data.tree(data, "as-tree", null, {children: "child_items"});
 
     // map the data
-    var mapping = treeData.mapAs({start: "start_date", end: "end_date"});
+    var mapping = treeData.mapAs({periods: "intervals"});
 
     // create a chart
     var chart = anychart.ganttResource();
