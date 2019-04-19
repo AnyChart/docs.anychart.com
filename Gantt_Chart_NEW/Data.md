@@ -67,7 +67,7 @@ var chart = anychart.ganttProject();
 chart.data(treeData);
 ```
 
-In case you need to rename other fields, create a mapping by passing a mapping object to the {api:anychart.data.Tree#mapAs}mapAs{api} method. Then pass the mapping to the {api:anychart.charts.Gantt#data}data(){api} method of the chart.
+In case you need to rename other fields, create a mapping by passing a mapping object to the {api:anychart.data.Tree#mapAs}mapAs{api} method of the data tree. Then pass the mapping to the {api:anychart.charts.Gantt#data}data(){api} method of the chart.
 
 ```
 // create a data tree
