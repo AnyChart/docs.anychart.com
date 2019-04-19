@@ -22,7 +22,7 @@ Here is the full list of available fields: {api:anychart.enums.GanttDataFields}a
 
 **Note 1:** You can rename the default data fields – see the [Mapping](#mapping) section of this article.
 
-**Note 2:** You can also add custom fields to your data and use them to configure text – like, for example, in samples from [Timeline: Tooltips](Timeline/Tooltips).
+**Note 2:** You can also add custom fields to your data and use them to configure text – like, for example, in all the samples from [Timeline: Tooltips](Timeline/Tooltips).
 
 ## Setting Data
 

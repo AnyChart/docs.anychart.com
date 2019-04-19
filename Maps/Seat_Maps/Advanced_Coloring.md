@@ -13,7 +13,7 @@ The sample below demonstrates how an SVG image looks like with the default AnyCh
 
 The colors in the sample picture are different from those defined in JavaScript (check out the [source SVG image](https://static.anychart.com/images/docs/seat_map/house.svg) to see the original colors). Setting original colors used in the picture is considered in this section, as well as using these colors as a basis for hovering and selecting colors.
 
-To set the colors of the original SVG image, or to set new custom colors, use the {api:anychart.core.map.series.Choropleth#fill}fill(){api} and {api:anychart.core.map.series.Choropleth#stroke}stroke(){api} methods. Though, it is important to remember that not all of the elements in SVG files have the `fill` attribute. Before setting the value to the `fill` field, it is necessary to check if the element has it, and if it does, you should set the fill color to this element. Setting colors through this methods looks like the following:
+To set the colors of the original SVG image, or to set new custom colors, use the {api:anychart.core.map.series.Choropleth#fill}fill(){api} and {api:anychart.core.map.series.Choropleth#stroke}stroke(){api} methods. Though, it is important to remember that not all the elements in SVG files have the `fill` attribute. Before setting the value to the `fill` field, it is necessary to check if the element has it, and if it does, you should set the fill color to this element. Setting colors through this methods looks like the following:
 
 ```
 // sets series fill 

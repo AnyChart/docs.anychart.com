@@ -3,7 +3,7 @@
 
 ## Milestone
 
-A milestone (known also as a PERT event) is an element of a PERT chart, marking the start or completion of a task or several tasks. It consumes no time and uses no resources. When it marks the completion of one or more activities, it is not "reached" (does not occur) until all of the activities leading to that event have been completed. When task or tasks take the beginning from the milestone, it is called Start milestone (or a predecessor event). Those ones which tasks end in are called Finish milestones (or successor events). Only the Start milestone can become a predecessor event for several tasks, and only the Finish milestone can become a successor event for several tasks.
+A milestone (known also as a PERT event) is an element of a PERT chart, marking the start or completion of a task or several tasks. It consumes no time and uses no resources. When it marks the completion of one or more activities, it is not "reached" (does not occur) until all the activities leading to that event have been completed. When task or tasks take the beginning from the milestone, it is called Start milestone (or a predecessor event). Those ones which tasks end in are called Finish milestones (or successor events). Only the Start milestone can become a predecessor event for several tasks, and only the Finish milestone can become a successor event for several tasks.
 
 See [how to configure the milestones in AnyChart PERT Charts](Pert_Chart#milestones).
 
