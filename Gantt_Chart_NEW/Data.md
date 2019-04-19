@@ -9,7 +9,7 @@ AnyGantt requires using the tree data model, which represents data as a hierarch
 
 Also, please keep in mind that working with data is slightly different for Project and Resource charts – see the [Project Chart: Data](Project_Chart#data) and [Resource Chart: Data](Resource_Chart#data) sections.
 
-**Note:** You can rename default data fields, as explained in the [Mapping](#mapping) section.
+**Note:** You can rename default data fields, as explained in the [Mapping](#mapping) section of this article.
 
 ## Data Fields
 
