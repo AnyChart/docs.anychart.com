@@ -54,7 +54,20 @@ The sections below explain how to organize your data hierarchically:
 
 ## Mapping
 
-In case you need to map your data, call the {api:anychart.data.Tree#mapAs}mapAs{api} method on the data tree. Then create a chart and pass the mapped data to the {api:anychart.charts.Gantt#data}data(){api} method:
+In case you need to rename the `children`, `parent`, and `id` fields, use the {api:anychart.data#tree}anychart.data.tree(){api} constructor. Then pass the data tree to the {api:anychart.charts.Gantt#data}data(){api} method of the chart:
+
+```
+// create a data tree
+var treeData = anychart.data.tree(data, "as-tree", null, {children: "child_items"});
+
+// create a chart
+var chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
+```
+
+To map other fields, use the {api:anychart.data.Tree#mapAs}mapAs{api} method. Then pass the mapped data to the {api:anychart.charts.Gantt#data}data(){api} method of the chart:
 
 ```
 // create a data tree
@@ -70,18 +83,7 @@ var chart = anychart.ganttProject();
 chart.data(mapping);
 ```
 
-To map the `children`, `parent`, and `id` fields, use the {api:anychart.data#tree}anychart.data.tree(){api} constructor:
-
-```
-// create a data tree
-var treeData = anychart.data.tree(data, "as-tree", null, {children: "child_items"});
-
-// create a chart
-var chart = anychart.ganttProject();
-
-// set the data
-chart.data(treeData);
-```
+These two ways of mapping data can be used simultaneously, like in the samples below.
 
 Read more: [Tree Data Model: Mapping](../Working_with_Data/Tree_Data_Model#mapping).
 
