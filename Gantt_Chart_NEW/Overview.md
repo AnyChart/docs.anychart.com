@@ -52,7 +52,7 @@ Below you can find the list of classes used to configure the Gantt chart and its
 
 Gantt chart:
 
-* project and resource charts – {api:anychart.charts.Gantt}anychart.charts.Gantt{api}
+* Project and Resource charts – {api:anychart.charts.Gantt}anychart.charts.Gantt{api}
 
 Data grid:
 

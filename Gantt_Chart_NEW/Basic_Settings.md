@@ -5,7 +5,7 @@
 
 This article describes the basic settings of the Gantt chart, which is defined as an instance of the {api:anychart.charts.Gantt}anychart.charts.Gantt{api} class.
 
-(?) Please note that the settings listed here can be applied both to [Project](Project_Chart) and [Resource](Resource_Chart) charts.
+Please note that the settings listed here can be applied both to [Project](Project_Chart) and [Resource](Resource_Chart) charts.
 
 ## Appearance
 
@@ -55,11 +55,11 @@ A data grid is a part of the Gantt chart where names of its elements are display
 
 ### Timeline
 
-(?) A timeline is a part of the Gantt chart where its elements (time intervals) are displayed.  You can configure its background as well as the appearance of rows, columns, and header  – see [Timeline: Appearance](Timeline/Appearance) and [Timeline: Header](Timeline/Header#appearance).
+A timeline is a part of the Gantt chart where its elements (time intervals) are displayed.  You can configure its background as well as the appearance of rows, columns, and header  – see [Timeline: Appearance](Timeline/Appearance) and [Timeline: Header](Timeline/Header#appearance).
 
 ### Elements
 
-(?) Timeline elements are parts of the Gantt chart that are shown on the timeline and represent time intervals as well information related to them.
+Timeline elements are parts of the Gantt chart that are shown on the timeline and represent time intervals as well information related to them.
 
 For different types of elements, different appearance (and other) settings are available. Read articles in the [Elements](Elements) section to learn more.
 
@@ -216,7 +216,7 @@ chart.zoomIn(3);
 
 The {api:anychart.charts.Gantt#zoomTo}zoomTo(){api} method allows zooming either to a range of dates or to a range of units.
 
-(?) To set a **range of dates**, specify two dates as parameters:
+To set a **range of dates**, specify two timestamps as parameters:
 
 ```
 // zoom the timeline to the given dates

@@ -79,8 +79,6 @@ var data = [
 
 To create a chart, add the JavaScript tag `<script>` with the code below.
 
-**Note:** Here JavaScript API is used, but you also can use [JSON](../Working_with_Data/Data_From_JSON), [XML](../Working_with_Data/Data_From_XML), and [CSV](../Working_with_Data/Data_From_CSV). 
-
 ```
 <script>
   anychart.onDocumentReady(function () {    	
