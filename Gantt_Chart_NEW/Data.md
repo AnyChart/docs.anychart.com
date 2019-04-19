@@ -3,16 +3,20 @@
 
 ## Overview
 
-* разные типы чартов требуют разных полей и разной организации данных
-* примечание про то, как переименовывать поля
-* [Mapping](#mapping)
-* [Project Chart](Project_Chart)
-* [Resource Chart](Resource_Chart)
-* [tree data model](../Working_with_Data/Tree_Data_Model)
+This article explains how to organize, map, and set data for Gantt charts.
+
+**Note:** You can rename default data fields, as explained in the [Mapping](#mapping) section.
+
+AnyGantt requires using the tree data model – see the [Working with Data: Tree Data Model](../Working_with_Data/Tree_Data_Model) article to learn more about it. 
+
+Also, please keep in mind that working with data is slightly different for Project and Resource charts. See the following articles:
+
+* [Project Chart: Data](Project_Chart#data)
+* [Resource Chart: Data](Resource_Chart#data)
 
 ## Data Fields
 
-The Project and Resource charts work with different data fields:
+Project and Resource charts work with different data fields:
 
 * [Project Chart: Data Fields](Project_Chart#data_fields)
 * [Resource Chart: Data Fields](Resource_Chart#data_fields)
@@ -80,7 +84,7 @@ var chart = anychart.ganttProject();
 chart.data(treeData);
 ```
 
-Learn more: [Tree Data Model: Mapping](../Working_with_Data/Tree_Data_Model#mapping).
+Read more: [Tree Data Model: Mapping](../Working_with_Data/Tree_Data_Model#mapping).
 
 ### Project Chart
 
