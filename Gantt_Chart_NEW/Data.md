@@ -89,6 +89,8 @@ Read more: [Tree Data Model: Mapping](../Working_with_Data/Tree_Data_Model#mappi
 
 ### Project Chart
 
+**Note:** You cannot rename the data fields that are used to set [periods](Resource_Chart#periods_and_resources): `id`, `start`, and `end`.
+
 Here custom fields `child_items`, `start_date`, `end_date` are mapped as `children`, `actualStart`, `actualEnd`:
 
 ```
