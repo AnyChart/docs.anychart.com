@@ -18,9 +18,7 @@ Project and Resource charts work with different data fields:
 * [Project Chart: Data Fields](Project_Chart#data_fields)
 * [Resource Chart: Data Fields](Resource_Chart#data_fields)
 
-Here is the full list of available fields:
-
-* {api:anychart.enums.GanttDataFields}anychart.enums.GanttDataFields{api}.
+Here is the full list of available fields: {api:anychart.enums.GanttDataFields}anychart.enums.GanttDataFields{api}.
 
 **Note 1:** You can rename the default data fields – see the [Mapping](#mapping) section of this article.
 
