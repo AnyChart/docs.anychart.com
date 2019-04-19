@@ -84,7 +84,7 @@ Learn more: [Tree Data Model: Mapping](../Working_with_Data/Tree_Data_Model#mapp
 
 ### Project Chart
 
-In this sample custom fields `child_items`, `start_date`, `end_date` are mapped as `children`, `actualStart`, `actualEnd`:
+Here custom fields `child_items`, `start_date`, `end_date` are mapped as `children`, `actualStart`, `actualEnd`:
 
 ```
 // create data
@@ -145,7 +145,7 @@ chart.data(mapping);
 
 ### Resource Chart
 
-In the sample below custom fields `child_items` and `intervals` are mapped as `children` and `periods`:
+In this sample custom fields `child_items` and `intervals` are mapped as `children` and `periods`:
 
 ```
 // create data
