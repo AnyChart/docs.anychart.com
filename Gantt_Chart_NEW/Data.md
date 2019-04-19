@@ -49,18 +49,17 @@ The sections below explain how to organize your data hierarchically:
 * [Project Chart: Hierarchy](Project_Chart#hierarchy)
 * [Resource Chart: Hierarchy](Resource_Chart#hierarchy)
 
-
 ## Mapping
 
 In case you need to map your data, call the {api:anychart.data.Tree#mapAs}mapAs{api} method on the data tree. Then pass the mapped data to the {api:anychart.charts.Gantt#data}data(){api} method.
 
-The {api:anychart.data.Tree#mapAs}mapAs{api} method allows you to remap any default fields except `children`, `parent`, `id`. Instead, you should use the {api:anychart.data#tree}anychart.data.tree(){api} constructor.
+To map the `children`, `parent`, and `id` fields, use the {api:anychart.data#tree}anychart.data.tree(){api} constructor.
 
-To learn more, read [Tree Data Model: Mapping](../Working_with_Data/Tree_Data_Model#mapping).
+Learn more: [Tree Data Model: Mapping](../Working_with_Data/Tree_Data_Model#mapping).
 
 ### Project Chart
 
-In the following sample, there is a Project Gantt chart with some of the default fields remapped. The {api:anychart.data#tree}anychart.data.tree(){api} constructor is used to map `child_items` as `children`. The {api:anychart.data.Tree#mapAs}mapAs{api} method maps `start_date` and `end_date` as `actualStart` and `actualEnd`:
+The following sample shows how to map data for a Project chart. The {api:anychart.data#tree}anychart.data.tree(){api} constructor is used to map `child_items` as `children`, and the {api:anychart.data.Tree#mapAs}mapAs{api} method maps `start_date` and `end_date` as `actualStart` and `actualEnd`:
 
 ```
 // create data
