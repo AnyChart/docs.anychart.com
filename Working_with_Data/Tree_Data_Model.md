@@ -199,7 +199,7 @@ var chart = anychart.treeMap(treeData);
 
 ### Mapping
 
-To rename the fields required by the tree data model – `children`, `parent`, `id` – pass a mapping object to the {api:anychart.data#tree}anychart.data.tree(){api} constructor when you create a data tree.
+**1.** To rename the fields required by the tree data model – `children`, `parent`, `id` – pass a mapping object to the {api:anychart.data#tree}anychart.data.tree(){api} constructor when you create a data tree.
 
 If you set data [as a tree](#as_tree) or [as a table](#as_table), pass your mapping as the fourth parameter. Please note that the third one should be set to `null` – it is used only with [CSV data](#csv_string) to specify CSV settings. A mapping for CSV data should be passed as the second parameter.
 
@@ -216,7 +216,7 @@ chart = anychart.ganttProject();
 chart.data(treeData);
 ```
 
-In case you need to rename other fields, create a mapping by passing a mapping object to the {api:anychart.data.Tree#mapAs}mapAs{api} method of the data tree. Then pass the mapping to a chart constructor or to the **data()** method of the chart.
+**2.** In case you need to rename other fields, create a mapping by passing a mapping object to the {api:anychart.data.Tree#mapAs}mapAs{api} method of the data tree. Then pass the mapping to a chart constructor or to the **data()** method of the chart.
 
 ```
 // create a data tree
