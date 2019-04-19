@@ -24,7 +24,7 @@ Here is the list of classes allowing you to work with tree data in AnyChart:
 
 ## Quick Start
 
-To create a chart with tree-like data, create a data tree by passing your data to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` as the second parameter. Then pass the tree to the chart constructor:
+To create a chart with tree-like data, create a data tree by passing your data to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` as the second parameter. Then pass the tree to a chart constructor:
 
 ```
 // create data
@@ -72,7 +72,7 @@ var treeData = anychart.data.tree(data, "as-table");
 
 If your data is a CSV string, you should pass a CSV mapping object as the second parameter. Read more in the [CSV String](#csv_string) section.
 
-**2. Creating Chart.** Then pass the instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class created by this method to the chart constructor:
+**2. Creating Chart.** Then pass the instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class created by this method to a chart constructor:
 
 ```
 var chart = anychart.treeMap(treeData);
@@ -199,41 +199,70 @@ var chart = anychart.treeMap(treeData);
 
 ### Mapping
 
-In case you need to map your data, call the {api:anychart.data.Tree#mapAs}mapAs{api} method on the instance of {api:anychart.data.Tree}anychart.data.Tree{api}. Then pass the mapped data to the chart constructor or to the **data()** method of the chart.
+To rename the fields required by the tree data model – `children`, `parent`, `id` – pass a mapping object to the {api:anychart.data#tree}anychart.data.tree(){api} constructor when you create a data tree.
 
-The {api:anychart.data.Tree#mapAs}mapAs{api} method allows you to map any field fields except the fields required by the tree data model – `children`, `parent`, `id`. Instead, you should use the {api:anychart.data#tree}anychart.data.tree(){api} constructor.
+If you set data [as a tree](#as_tree) or [as a table](#as_table), pass your mapping as the fourth parameter. Please note that the third one should be set to `null` – it is used only with [CSV data](#csv_string) to specify CSV settings. A mapping for CSV data should be passed as the second parameter.
 
-If you set data [as a tree](#as_tree) or [as a table](#as_table), pass the mapping as the fourth parameter. Please note that the third one should be set to `null` – it is used only with [CSV data](#csv_string) to specify CSV settings. The mapping for CSV data is passed as the second parameter.
+After that, pass the data tree to a chart constructor or to the **data()** method of the chart.
 
-In the following sample, the data is set as a tree. The {api:anychart.data#tree}anychart.data.tree(){api} constructor is used to map a custom field `child_items` as the `children` field required by the tree data model. The {api:anychart.data.Tree#mapAs}mapAs{api} method maps `start` and `end` as `actualStart` and `actualEnd` required by the Gantt chart:
+```
+// create a data tree
+var treeData = anychart.data.tree(data, "as-tree", null, {children: "child_items"});
+
+// create a chart
+chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
+```
+
+In case you need to map other fields, create a mapping by passing a mapping object to the {api:anychart.data.Tree#mapAs}mapAs{api} method on the data tree. Then pass the mapping a chart constructor or to the **data()** method of the chart.
+
+```
+// create a data tree
+var treeData = anychart.data.tree(data, "as-tree");
+
+// map the data
+var mapping = treeData.mapAs({actualStart: "start_date", actualEnd: "end_date"});
+
+// create a chart
+chart = anychart.ganttProject();
+
+// set the data
+chart.data(mapping);
+```
+
+These two ways of mapping data can be used simultaneously, like in the sample below.
+
+Here the data is set as a tree. The {api:anychart.data#tree}anychart.data.tree(){api} constructor maps a custom field `child_items` as the `children` field required by the tree data model. The {api:anychart.data.Tree#mapAs}mapAs{api} method maps `start_date` and `end_date` as `actualStart` and `actualEnd` required by the Gantt chart:
 
 ```
 // create data
 var data = [
   {
     name:   "Root",
-    start: Date.UTC(2018, 0, 25),
-    end: Date.UTC(2018, 2, 14),
+    start_date: Date.UTC(2018, 0, 25),
+    end_date: Date.UTC(2018, 2, 14),
     child_items: [
       {
         name:   "Child 1",
-        start: Date.UTC(2018, 0, 25),
-        end: Date.UTC(2018, 1, 3)
+        start_date: Date.UTC(2018, 0, 25),
+        end_date: Date.UTC(2018, 1, 3)
       },
       {
         name:   "Child 2",
-        start: Date.UTC(2018, 1, 4),
-        end: Date.UTC(2018, 1, 4)
+        start_date: Date.UTC(2018, 1, 4),
+        end_date: Date.UTC(2018, 1, 4)
       },
       {
         name:   "Child 3",
-        start: Date.UTC(2018, 1, 4),
-        end: Date.UTC(2018, 1, 24)
+        start_date: Date.UTC(2018, 1, 4),
+        end_date: Date.UTC(2018, 1, 24)
       },
       {
         name:   "Child 4",
-        start: Date.UTC(2018, 1, 25),
-        end: Date.UTC(2018, 2, 14)
+        start_date: Date.UTC(2018, 1, 25),
+        end_date: Date.UTC(2018, 2, 14)
       }
   ]}
 ];
@@ -242,7 +271,7 @@ var data = [
 var treeData = anychart.data.tree(data, "as-tree", null, {children: "child_items"});
 
 // map the data
-var mapping = treeData.mapAs({actualStart: "start", actualEnd: "end"});
+var mapping = treeData.mapAs({actualStart: "start_date", actualEnd: "end_date"});
 
 // create a chart
 chart = anychart.ganttProject();

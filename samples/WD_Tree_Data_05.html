@@ -30,28 +30,28 @@ anychart.onDocumentReady(function () {
     var data = [
       {
         name: "Root",
-        start: Date.UTC(2018, 0, 25),
-        end: Date.UTC(2018, 2, 14),
+        start_date: Date.UTC(2018, 0, 25),
+        end_date: Date.UTC(2018, 2, 14),
         child_items: [
           {
             name: "Child 1",
-            start: Date.UTC(2018, 0, 25),
-            end: Date.UTC(2018, 1, 3)
+            start_date: Date.UTC(2018, 0, 25),
+            end_date: Date.UTC(2018, 1, 3)
           },
           {
             name: "Child 2",
-            start: Date.UTC(2018, 1, 4),
-            end: Date.UTC(2018, 1, 4)
+            start_date: Date.UTC(2018, 1, 4),
+            end_date: Date.UTC(2018, 1, 4)
           },
           {
             name: "Child 3",
-            start: Date.UTC(2018, 1, 4),
-            end: Date.UTC(2018, 1, 24)
+            start_date: Date.UTC(2018, 1, 4),
+            end_date: Date.UTC(2018, 1, 24)
           },
           {
             name: "Child 4",
-            start: Date.UTC(2018, 1, 25),
-            end: Date.UTC(2018, 2, 14)
+            start_date: Date.UTC(2018, 1, 25),
+            end_date: Date.UTC(2018, 2, 14)
           }
       ]}
     ];
@@ -60,7 +60,7 @@ anychart.onDocumentReady(function () {
     var treeData = anychart.data.tree(data, "as-tree", null, {children: "child_items"});
 
     // map the data
-    var mapping = treeData.mapAs({actualStart: "start", actualEnd: "end"});
+    var mapping = treeData.mapAs({actualStart: "start_date", actualEnd: "end_date"});
 
     // create a chart
     var chart = anychart.ganttProject();
