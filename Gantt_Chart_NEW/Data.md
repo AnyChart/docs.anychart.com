@@ -5,14 +5,14 @@
 
 This article explains how to organize, map, and set data for Gantt charts.
 
-**Note:** You can rename default data fields, as explained in the [Mapping](#mapping) section.
-
-AnyGantt requires using the tree data model – see the [Working with Data: Tree Data Model](../Working_with_Data/Tree_Data_Model) article to learn more about it. 
+AnyGantt requires using the tree data model, which represents data as a hierarchical tree-like structure with data items connected by parent–child relationships. To learn more about it, see the [Working with Data: Tree Data Model](../Working_with_Data/Tree_Data_Model) article.
 
 Also, please keep in mind that working with data is slightly different for Project and Resource charts. See the following articles:
 
 * [Project Chart: Data](Project_Chart#data)
 * [Resource Chart: Data](Resource_Chart#data)
+
+**Note:** You can rename default data fields, as explained in the [Mapping](#mapping) section.
 
 ## Data Fields
 
