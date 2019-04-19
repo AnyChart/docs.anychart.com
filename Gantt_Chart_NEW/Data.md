@@ -51,15 +51,40 @@ The sections below explain how to organize your data hierarchically:
 
 ## Mapping
 
-In case you need to map your data, call the {api:anychart.data.Tree#mapAs}mapAs{api} method on the data tree. Then pass the mapped data to the {api:anychart.charts.Gantt#data}data(){api} method.
+In case you need to map your data, call the {api:anychart.data.Tree#mapAs}mapAs{api} method on the data tree. Then create a chart and pass the mapped data to the {api:anychart.charts.Gantt#data}data(){api} method:
 
-To map the `children`, `parent`, and `id` fields, use the {api:anychart.data#tree}anychart.data.tree(){api} constructor.
+```
+// create a data tree
+var treeData = anychart.data.tree(data, "as-tree");
+
+// map the data
+var mapping = treeData.mapAs({actualStart: "start_date"});
+
+// create a chart
+var chart = anychart.ganttProject();
+
+// set the data
+chart.data(mapping);
+```
+
+To map the `children`, `parent`, and `id` fields, use the {api:anychart.data#tree}anychart.data.tree(){api} constructor:
+
+```
+// create a data tree
+var treeData = anychart.data.tree(data, "as-tree", null, {children: "child_items"});
+
+// create a chart
+var chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
+```
 
 Learn more: [Tree Data Model: Mapping](../Working_with_Data/Tree_Data_Model#mapping).
 
 ### Project Chart
 
-The following sample shows how to map data for a Project chart. Custom fields `child_items`, `start_date`, and `end_date` are mapped as `children`, `start_date`, `end_date`:
+The following sample shows how to map data for a Project chart. Custom fields `child_items`, `start_date`, and `end_date` are mapped as `children`, `actualStart`, and `actualEnd`:
 
 ```
 // create data
@@ -111,6 +136,9 @@ var mapping = treeData.mapAs({actualStart: "start_date", actualEnd: "end_date"})
 
 // create a chart
 var chart = anychart.ganttProject();
+
+// set the data
+chart.data(mapping);
 ```
 
 {sample :height 220}GANTT\_NEW\_Data\_01{sample}
