@@ -84,7 +84,7 @@ Learn more: [Tree Data Model: Mapping](../Working_with_Data/Tree_Data_Model#mapp
 
 ### Project Chart
 
-The following sample shows how to map data for a Project chart. Custom fields `child_items`, `start_date`, and `end_date` are mapped as `children`, `actualStart`, and `actualEnd`:
+In this sample custom fields `child_items`, `start_date`, and `end_date` are mapped as `children`, `actualStart`, and `actualEnd`:
 
 ```
 // create data
@@ -145,7 +145,7 @@ chart.data(mapping);
 
 ### Resource Chart
 
-The sample below shows how to map data for a Resource chart. Custom fields `child_items` and `intervals` are mapped as `children` and `periods`:
+In the sample below custom fields `child_items` and `intervals` are mapped as `children` and `periods`:
 
 ```
 // create data
