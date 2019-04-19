@@ -54,7 +54,7 @@ The sections below explain how to organize your data hierarchically:
 
 ## Mapping
 
-To rename the `children`, `parent`, and `id` fields, use the {api:anychart.data#tree}anychart.data.tree(){api} constructor. Then pass the data tree to the {api:anychart.charts.Gantt#data}data(){api} method of the chart:
+To rename the `children`, `parent`, and `id` fields, pass the mapping to the {api:anychart.data#tree}anychart.data.tree(){api} constructor when you create a data tree. Then pass the data tree to its {api:anychart.charts.Gantt#data}data(){api} method of the chart:
 
 ```
 // create a data tree
@@ -67,7 +67,7 @@ var chart = anychart.ganttProject();
 chart.data(treeData);
 ```
 
-To rename other fields, create a mapping by using the {api:anychart.data.Tree#mapAs}mapAs{api} method. Then pass it to the {api:anychart.charts.Gantt#data}data(){api} method of the chart:
+To rename other fields, create a mapping with the help of the {api:anychart.data.Tree#mapAs}mapAs{api} method. Then pass the mapping to the {api:anychart.charts.Gantt#data}data(){api} method of the chart:
 
 ```
 // create a data tree
