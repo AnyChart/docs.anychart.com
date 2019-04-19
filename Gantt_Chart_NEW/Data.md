@@ -23,9 +23,9 @@ The Project and Resource charts work with different data fields:
 
 ## Setting Data
 
-To create a Gantt chart, you should use the [tree data model](../Working_with_Data/Tree_Data_Model):
+To create a Gantt chart, perform the following steps:
 
-**1.** Create a data tree by passing data to the {api:anychart.data#tree}anychart.data.tree(){api} method.<br>
+**1.** Create a [data tree](../Working_with_Data/Tree_Data_Model) by passing data to the {api:anychart.data#tree}anychart.data.tree(){api} method.<br>
 **2.** Create a chart by using the {api:anychart#ganttProject}anychart.ganttProject(){api} / {api:anychart#ganttResource}anychart.ganttResource(){api} construtor.<br>
 **3.** Pass the data tree to the {api:anychart.charts.Gantt#data}data(){api} method of the chart.
 
@@ -40,6 +40,7 @@ See the following sections to learn more:
 
 * [Project Chart: Setting Data](Project_Chart#setting_data)
 * [Resource Chart: Setting Data](Resource_Chart#setting_data)
+* [Tree Data Model: Setting Data](../Working_with_Data/Tree_Data_Model#setting_data)
 
 ## Hierarchy
 
@@ -51,15 +52,15 @@ The sections below explain how to organize your data hierarchically:
 
 ## Mapping
 
-In case you need to map your data, call the {api:anychart.data.Tree#mapAs}mapAs{api} method on the instance of {api:anychart.data.Tree}anychart.data.Tree{api}. Then pass the mapped data to the chart constructor or to the **data()** method of the chart.
+In case you need to map your data, call the {api:anychart.data.Tree#mapAs}mapAs{api} method on the data tree. Then pass the mapped data to the {api:anychart.charts.Gantt#data}data(){api} method.
 
-The {api:anychart.data.Tree#mapAs}mapAs{api} method allows you to map any field fields except the fields required by the tree data model – `children`, `parent`, `id`. Instead, you should use the {api:anychart.data#tree}anychart.data.tree(){api} constructor.
+The {api:anychart.data.Tree#mapAs}mapAs{api} method allows you to remap any default fields except `children`, `parent`, `id`. Instead, you should use the {api:anychart.data#tree}anychart.data.tree(){api} constructor.
 
-If you set data [as a tree](#as_tree) or [as a table](#as_table), pass the mapping as the fourth parameter. Please note that the third one should be set to `null` – it is used only with [CSV data](#csv_string) to specify CSV settings. The mapping for CSV data is passed as the second parameter.
-
-In the following sample, the data is set as a tree. The {api:anychart.data#tree}anychart.data.tree(){api} constructor is used to map a custom field `child_items` as the `children` field required by the tree data model. The {api:anychart.data.Tree#mapAs}mapAs{api} method maps `start` and `end` as `actualStart` and `actualEnd` required by the Gantt chart:
+To learn more, read [Tree Data Model: Mapping](../Working_with_Data/Tree_Data_Model#mapping).
 
 ### Project Chart
+
+In the following sample, there is a Project Gantt chart with some of the default fields remapped. The {api:anychart.data#tree}anychart.data.tree(){api} constructor is used to map `child_items` as `children`. The {api:anychart.data.Tree#mapAs}mapAs{api} method maps `start_date` and `end_date` as `actualStart` and `actualEnd`:
 
 ```
 // create data
@@ -69,7 +70,7 @@ var data = [
     name: "Development",
     start_date: "2018-01-15",
     end_date: "2018-03-10",
-    children: [
+    child_items: [
       {
         id: "1_1",
         name: "Analysis",
@@ -104,18 +105,13 @@ var data = [
 ];
 
 // create a data tree
-var treeData = anychart.data.tree(data, "as-tree");
+var treeData = anychart.data.tree(data, "as-tree", null, {children: "child_items"});
 
 // map the data
-var mapping = treeData.mapAs({
-  actualStart: "start_date", actualEnd: "end_date"
-});
+var mapping = treeData.mapAs({actualStart: "start_date", actualEnd: "end_date"});
 
 // create a chart
 var chart = anychart.ganttProject();
-
-// set the data
-chart.data(mapping);
 ```
 
 {sample :height 220}GANTT\_NEW\_Data\_01{sample}

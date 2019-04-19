@@ -55,9 +55,7 @@ anychart.onDocumentReady(function () {
     var treeData = anychart.data.tree(data, "as-tree");
 
     // map the data
-    var mapping = treeData.mapAs({
-      start: "start_date", end: "end_date"
-    });
+    var mapping = treeData.mapAs({start: "start_date", end: "end_date"});
 
     // create a chart
     var chart = anychart.ganttResource();
