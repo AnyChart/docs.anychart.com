@@ -31,50 +31,36 @@ var data = [
   {
     id: "1",
     name: "Development",
-    baselineStart: "2018-01-12",
-    baselineEnd: "2018-03-04",
     actualStart: "2018-01-15",
     actualEnd: "2018-03-10",
     children: [
       {
         id: "1_1",
         name: "Analysis",
-        baselineStart: "2018-01-12",
-        baselineEnd: "2018-01-25",
         actualStart: "2018-01-15",
-        actualEnd: "2018-01-25",
-        progressValue: "75%"
+        actualEnd: "2018-01-25"
       },
       {
         id: "1_2",
         name: "Design",
-        baselineStart: "2018-01-20",
-        baselineEnd: "2018-01-31",
         actualStart: "2018-01-20",
-        actualEnd: "2018-02-04",
-        progressValue: "100%"
+        actualEnd: "2018-02-04"
       },
       {
         id: "1_3",
         name: "Meeting",
         actualStart: "2018-02-05",
-        actualEnd: "2018-02-05",
-        custom_field: "(?)"
+        actualEnd: "2018-02-05"
       },
       {
         id: "1_4",
         name: "Implementation",
-        baselineStart: "2018-02-01",
-        baselineEnd: "2018-02-19",
         actualStart: "2018-02-05",
-        actualEnd: "2018-02-24",
-        progressValue: "60%"
+        actualEnd: "2018-02-24"
       },
       {
         id: "1_5",
         name: "Testing",
-        baselineStart: "2018-02-20",
-        baselineEnd: "2018-03-05",
         actualStart: "2018-02-25",
         actualEnd: "2018-03-10"
       }
@@ -90,14 +76,16 @@ var data = [
     // set the data
     chart.data(treeData);
 
-    // access timeline elements
-    var elements = chart.getTimeline().elements();
+    // access tasks
+    var tasks = chart.getTimeline().tasks();
+    var parentTasks = chart.getTimeline().groupingTasks();
 
-    // disable the default stroke of elements
-    elements.stroke(null);
+    // disable the default stroke of tasks
+    tasks.stroke(null);
+    parentTasks.stroke(null);
 
-    // a function for drawing custom elements
-    var elementsFunction = function () {
+    // a function for drawing custom tasks
+    var tasksFunction = function () {
       var shapes = this["shapes"];
       var path = shapes["path"];
       var bounds = this["predictedBounds"];  
@@ -121,11 +109,12 @@ var data = [
       path.close();  
     }
 
-    // draw custom elements
-    elements.rendering().drawer(elementsFunction);
+    // draw custom tasks
+    tasks.rendering().drawer(tasksFunction);
+    parentTasks.rendering().drawer(tasksFunction);
 
     // configure the scale
-    chart.getTimeline().scale().maximum("2018-03-20");
+    chart.getTimeline().scale().maximum("2018-03-15");
 
     // set the container id
     chart.container("container");

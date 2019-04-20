@@ -29,6 +29,8 @@ To configure regular tasks, combine {api:anychart.charts.Gantt#getTimeline}getTi
 chart.getTimeline().tasks().height(15);
 ```
 
+Please note that these settings affect [parent tasks](#parent_tasks) as well, but are overridden by their own settings if they are specified.
+
 ### Parent Tasks
 
 **Parent tasks** are tasks that have child elements. They are defined as instances of the {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api} class. 
@@ -48,6 +50,8 @@ To configure parent tasks, combine {api:anychart.charts.Gantt#getTimeline}getTim
 // configure the height of parent tasks
 chart.getTimeline().groupingTasks().height(15);
 ```
+
+Please note: when you do not specify settings for parent tasks, they are affected by the settings of [regular tasks](#regular_tasks) (if they are specified).
 
 Also, parent tasks can be [expanded or collapsed](../Basic_Settings#expanding_/_collapsing).
 
