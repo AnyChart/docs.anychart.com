@@ -78,11 +78,9 @@ var data = [
 
     // access tasks
     var tasks = chart.getTimeline().tasks();
-    var parentTasks = chart.getTimeline().groupingTasks();
 
     // disable the default stroke of tasks
     tasks.stroke(null);
-    parentTasks.stroke(null);
 
     // a function for drawing custom tasks
     var tasksFunction = function () {
@@ -111,7 +109,6 @@ var data = [
 
     // draw custom tasks
     tasks.rendering().drawer(tasksFunction);
-    parentTasks.rendering().drawer(tasksFunction);
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-15");

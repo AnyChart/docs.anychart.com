@@ -51,7 +51,7 @@ To configure parent tasks, combine {api:anychart.charts.Gantt#getTimeline}getTim
 chart.getTimeline().groupingTasks().height(15);
 ```
 
-Please note: when you do not specify settings for parent tasks, they are affected by the settings of [regular tasks](#regular_tasks) (if they are specified).
+Please note: when you do not configure parent tasks, they are affected by the settings of [regular tasks](#regular_tasks) (if they are specified).
 
 Also, parent tasks can be [expanded or collapsed](../Basic_Settings#expanding_/_collapsing).
 
