@@ -31,18 +31,24 @@ var data = [
   {
     id: "1",
     name: "Development",
+    baselineStart: "2018-01-12",
+    baselineEnd: "2018-03-04",
     actualStart: "2018-01-15",
     actualEnd: "2018-03-10",
     children: [
       {
         id: "1_1",
         name: "Analysis",
+        baselineStart: "2018-01-12",
+        baselineEnd: "2018-01-25",
         actualStart: "2018-01-15",
         actualEnd: "2018-01-25"
       },
       {
         id: "1_2",
         name: "Design",
+        baselineStart: "2018-01-20",
+        baselineEnd: "2018-01-31",
         actualStart: "2018-01-20",
         actualEnd: "2018-02-04"
       },
@@ -55,12 +61,16 @@ var data = [
       {
         id: "1_4",
         name: "Implementation",
+        baselineStart: "2018-02-01",
+        baselineEnd: "2018-02-19",
         actualStart: "2018-02-05",
         actualEnd: "2018-02-24"
       },
       {
         id: "1_5",
         name: "Testing",
+        baselineStart: "2018-02-20",
+        baselineEnd: "2018-03-05",
         actualStart: "2018-02-25",
         actualEnd: "2018-03-10"
       }
@@ -79,8 +89,14 @@ var data = [
     // access tasks
     var tasks = chart.getTimeline().tasks();
 
+    // access baselines
+    var baselines = chart.getTimeline().baselines();
+
     // disable the default stroke of tasks
     tasks.stroke(null);
+
+    // disable the default stroke of baselines
+    baselines.stroke(null);
 
     // a function for drawing custom tasks
     var tasksFunction = function () {
@@ -109,6 +125,9 @@ var data = [
 
     // draw custom tasks
     tasks.rendering().drawer(tasksFunction);
+
+    // draw custom baselines
+    baselines.rendering().drawer(tasksFunction);
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-15");

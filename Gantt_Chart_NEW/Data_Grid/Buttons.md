@@ -17,6 +17,10 @@ Also, you can find button-relating settings in the following sections:
 * [Columns: Indentation](Columns#indentation) – setting the hierarchical indentation for data grid labels
 * [Basic Settings: Navigation](../Basic_Settings#navigation) – expanding / collapsing elements by default
 
+## Enabling / Disabling
+
+To learn how to enable or disable buttons, see the [Columns: Buttons](Columns#buttons) section.
+
 ## Basic Settings
 
 To configure buttons, use these methods:
@@ -93,8 +97,6 @@ buttons.selected().background().fill({
 });   
 ```
 
-
-
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_02{sample}
 
 ### Custom Drawing
@@ -141,7 +143,3 @@ buttons.selected().content(contentFunction);
 ```
 
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_03{sample}
-
-## Enabling / Disabling
-
-To learn how to enable or disable buttons, see the [Columns: Buttons](Columns#buttons) section.
