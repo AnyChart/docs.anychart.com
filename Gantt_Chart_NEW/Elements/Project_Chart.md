@@ -29,7 +29,7 @@ To configure regular tasks, combine {api:anychart.charts.Gantt#getTimeline}getTi
 chart.getTimeline().tasks().height(15);
 ```
 
-Please note that these settings affect [parent tasks](#parent_tasks) as well, but are overridden by their own settings if they are specified.
+Please note that these settings affect [parent tasks](#parent_tasks) as well, but are overridden by their own settings.
 
 ### Parent Tasks
 
@@ -51,7 +51,7 @@ To configure parent tasks, combine {api:anychart.charts.Gantt#getTimeline}getTim
 chart.getTimeline().groupingTasks().height(15);
 ```
 
-Please note: when you do not configure parent tasks, they are affected by the settings of [regular tasks](#regular_tasks) (if they are specified).
+Please note: the settings of [regular tasks](#regular_tasks) affect parent tasks as well, but are overridden by the settings listed here.
 
 Also, parent tasks can be [expanded or collapsed](../Basic_Settings#expanding_/_collapsing).
 
