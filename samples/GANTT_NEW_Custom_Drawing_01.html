@@ -86,6 +86,12 @@ var data = [
     // set the data
     chart.data(treeData);
 
+    // set the row height
+    chart.defaultRowHeight(35);
+
+    // set the height of timeline elements
+    chart.getTimeline().elements().height(20);
+
     // access tasks
     var tasks = chart.getTimeline().tasks();
 
@@ -102,25 +108,38 @@ var data = [
     var tasksFunction = function () {
       var shapes = this["shapes"];
       var path = shapes["path"];
-      var bounds = this["predictedBounds"];  
+      var bounds = this["predictedBounds"];
       var h = bounds.height;
       var t = bounds.top;
       var l = bounds.left;
-      var r = bounds.left + bounds.width;  
-      var h2 = h / 2;  
-      path.moveTo(l, t);
-      path.lineTo(l + 2, t);
-      path.lineTo(l + 2, t + h2 - 1);
-      path.lineTo(r - 2, t + h2 - 1);
-      path.lineTo(r - 2, t);
-      path.lineTo(r, t);
-      path.lineTo(r, t + h);
-      path.lineTo(r - 2, t + h);
-      path.lineTo(r - 2, t + h2 + 2);
-      path.lineTo(l + 2, t + h2 + 2);
-      path.lineTo(l + 2, t + h);
-      path.lineTo(l, t + h);
+      var r = bounds.left + bounds.width;
+      var h1 = bounds.top + bounds.height;    
+      var h14 = h / 4;
+      var h12 = h / 2;
+      path.moveTo(l + h14, h1 - h14)
+      path.arcTo(h14, h14, -270, 180)
+      path.lineTo(r - h14, t + h14)
+      path.arcTo(h14, h14, -90, 180)
+      path.lineTo(l + h12, h1 - h14)
       path.close();  
+      //var h = bounds.height;
+      //var t = bounds.top;
+      //var l = bounds.left;
+      //var r = bounds.left + bounds.width;  
+      //var h2 = h / 2;  
+      //path.moveTo(l, t);
+      //path.lineTo(l + 2, t);
+      //path.lineTo(l + 2, t + h2 - 1);
+      //path.lineTo(r - 2, t + h2 - 1);
+      //path.lineTo(r - 2, t);
+      //path.lineTo(r, t);
+      //path.lineTo(r, t + h);
+      //path.lineTo(r - 2, t + h);
+      //path.lineTo(r - 2, t + h2 + 2);
+      //path.lineTo(l + 2, t + h2 + 2);
+      //path.lineTo(l + 2, t + h);
+      //path.lineTo(l, t + h);
+      //path.close();  
     }
 
     // draw custom tasks
