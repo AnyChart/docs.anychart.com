@@ -13,7 +13,7 @@ To learn more, see:
 
 ## Project Chart
 
-This section explains how to modify the shape of elements on a [Project Chart](Project_Chart)
+This section explains how to modify the shape of elements on a [Project Chart](Project_Chart).
 
 **1.** The first step is accessing elements. You can access a particular element type or all elements at once, as shown in the following articles:
 
