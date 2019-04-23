@@ -85,7 +85,7 @@ misc:
 * [Elements: Resource Chart](Elements/Resource_Chart)
 
 
-{sample :height 220}GANTT\_NEW\_Custom\_Drawing\_02{sample}
+{sample :height 260}GANTT\_NEW\_Custom\_Drawing\_02{sample}
 
 ```
 // set the row and header height
