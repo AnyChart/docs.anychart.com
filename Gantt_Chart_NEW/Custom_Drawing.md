@@ -15,14 +15,11 @@ To learn more, see:
 
 This section explains how to modify the shape of elements on a [Project Chart](Project_Chart).
 
-**1.** The first step is accessing elements. You can access a particular element type or all elements at once, as shown in the following articles:
+You can access a particular element type available for the Project chart or all elements at once, as shown in [Elements: Project Chart](Elements/Project_Chart) and [Elements: All Elements](Elements/All_Elements).
 
-* [Elements: Project Chart](Elements/Project_Chart)
-* [Elements: All Elements](Elements/All_Elements)
+Then call the **rendering()** method of the element type – for example, the {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api} method of [tasks](Elements/Project_Chart#regular_tasks).
 
-**2.** Then call the **rendering()** method of the element type – for example, the {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api} method of [tasks](Elements/Project_Chart#regular_tasks).
-
-**3.** Combine it with methods of the {api:anychart.core.gantt.rendering.Settings}anychart.core.gantt.rendering.Settings{api} class:
+Combine it with methods of the {api:anychart.core.gantt.rendering.Settings}anychart.core.gantt.rendering.Settings{api} class:
 
 * {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api} – to create custom drawings
 * {api:anychart.core.gantt.rendering.Settings#shapes}shapes(){api} – to create custom shapes
