@@ -13,7 +13,7 @@ misc:
 
 misc:
 
-* [Project_Chart](Project_Chart)
+* [Project Chart](Project_Chart)
 
 
 ```
@@ -26,7 +26,7 @@ misc:
 
 misc:
 
-* [Resource_Chart](Resource_Chart)
+* [Resource Chart](Resource_Chart)
 
 
 ```
