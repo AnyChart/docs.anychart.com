@@ -27,6 +27,7 @@ Combine it with methods of the {api:anychart.core.gantt.rendering.Settings}anych
 * {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api} + a drawing function – to create custom drawings
 * {api:anychart.core.gantt.rendering.Settings#shapes}shapes(){api} + an array of settings + to create custom shapes
 
+
 ```
 // access tasks
 var tasks = chart.getTimeline().tasks();
