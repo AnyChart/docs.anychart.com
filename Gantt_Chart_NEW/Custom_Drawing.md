@@ -20,7 +20,7 @@ misc:
 
 ```
 
-{sample :height 220}GANTT\_NEW\_Custom\_Drawing\_01{sample}
+{sample :height 420}GANTT\_NEW\_Custom\_Drawing\_01{sample}
 
 ## Resource Chart
 
