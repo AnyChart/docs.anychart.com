@@ -24,8 +24,8 @@ Then call the **rendering()** method of the element type – for example, the {a
 
 Combine it with methods of the {api:anychart.core.gantt.rendering.Settings}anychart.core.gantt.rendering.Settings{api} class:
 
-* {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api} + a drawing function – to create custom drawings
-* {api:anychart.core.gantt.rendering.Settings#shapes}shapes(){api} + an array of settings – to create custom shapes
+* {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api} to create custom drawings (accepts a function)
+* {api:anychart.core.gantt.rendering.Settings#shapes}shapes(){api} to create custom shapes (accepts an array of settings)
 
 In the sample below, the {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api} method is used to draw custom tasks and baselines:
 
@@ -88,8 +88,8 @@ Then call the {api:anychart.core.gantt.elements.PeriodsElement#rendering}renderi
 
 Combine it with methods of the {api:anychart.core.gantt.rendering.Settings}anychart.core.gantt.rendering.Settings{api} class:
 
-* {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api} to create custom drawings – accepts a function
-* {api:anychart.core.gantt.rendering.Settings#shapes}shapes(){api} to create custom shapes – accepts an array of settings
+* {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api} to create custom drawings (accepts a function)
+* {api:anychart.core.gantt.rendering.Settings#shapes}shapes(){api} to create custom shapes (accepts an array of settings)
 
 In the sample below, custom periods are drawn with the help of the {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api} method:
 
