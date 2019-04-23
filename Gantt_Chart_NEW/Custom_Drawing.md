@@ -14,6 +14,8 @@ misc:
 misc:
 
 * [Project Chart](Project_Chart)
+* [Elements: Project Chart](Elements/Project_Chart)
+* [Elements: All Elements](Elements/All_Elements)
 
 
 ```
@@ -27,6 +29,8 @@ misc:
 misc:
 
 * [Resource Chart](Resource_Chart)
+* [Elements: Resource Chart](Elements/Resource_Chart)
+* [Elements: All Elements](Elements/All_Elements)
 
 
 ```
