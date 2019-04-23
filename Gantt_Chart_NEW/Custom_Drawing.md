@@ -24,9 +24,8 @@ Then call the **rendering()** method of the element type – for example, the {a
 
 Combine it with methods of the {api:anychart.core.gantt.rendering.Settings}anychart.core.gantt.rendering.Settings{api} class:
 
-* {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api} + a drawing function
-* {api:anychart.core.gantt.rendering.Settings#shapes}shapes(){api} + an array of settings listed in {api:anychart.core.gantt.rendering.Settings.ShapeConfig}anychart.core.gantt.rendering.Settings.ShapeConfig{api}
-
+* {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api} + a drawing function – to create custom drawings
+* {api:anychart.core.gantt.rendering.Settings#shapes}shapes(){api} + an array of settings + to create custom shapes
 
 ```
 // access tasks
