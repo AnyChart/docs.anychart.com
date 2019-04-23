@@ -80,16 +80,18 @@ baselines.rendering().drawer(drawingFunction);
 
 ## Resource Chart
 
-* {api:anychart.core.gantt.rendering.Settings}anychart.core.gantt.rendering.Settings{api}
-* periods: {api:anychart.core.gantt.elements.PeriodsElement#rendering}rendering(){api}
-* {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api}
-* {api:anychart.core.gantt.rendering.Settings#shapes}shapes(){api}
+The [Resource Chart](Resource_Chart) supports only one element type – the period. This section explains how to modify its shape.
 
-misc:
+First, access periods – the [Elements: Resource Chart](Elements/Resource_Chart) article shows how to do it.
 
-* [Resource Chart](Resource_Chart)
-* [Elements: Resource Chart](Elements/Resource_Chart)
+Then call the {api:anychart.core.gantt.elements.PeriodsElement#rendering}rendering(){api} method of periods.
 
+Combine it with methods of the {api:anychart.core.gantt.rendering.Settings}anychart.core.gantt.rendering.Settings{api} class:
+
+* {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api} + a drawing function – to create custom drawings
+* {api:anychart.core.gantt.rendering.Settings#shapes}shapes(){api} + an array of settings – to create custom shapes
+
+In the sample below, custom periods are drawn with the help of the {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api} method:
 
 {sample :height 250}GANTT\_NEW\_Custom\_Drawing\_02{sample}
 
