@@ -97,6 +97,7 @@ In the sample below, there is a Gantt chart with the row and header height confi
 ```
 // set the row height
 chart.defaultRowHeight(35);
+
 // set the header height
 chart.headerHeight(105);
 ```
