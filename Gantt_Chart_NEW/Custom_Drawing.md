@@ -3,7 +3,7 @@
 
 ## Overview
 
-With the help of the GraphicsJS library, you can replace the default shapes of timeline [elements](Elements) with custom drawings.
+The GraphicsJS library allows replacing the default shapes of timeline [elements](Elements) with custom drawings.
 
 To learn more, see:
 
