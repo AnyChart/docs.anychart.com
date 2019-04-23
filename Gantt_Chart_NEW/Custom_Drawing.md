@@ -26,10 +26,55 @@ misc:
 
 
 ```
+// set the row and header height
+chart.defaultRowHeight(35);
+chart.headerHeight(105);
 
+// set the height of timeline elements
+chart.getTimeline().elements().height(20);
+
+// access tasks and baselines
+var tasks = chart.getTimeline().tasks();
+var baselines = chart.getTimeline().baselines();
+
+// disable the default stroke of tasks and baselines
+tasks.stroke(null);
+baselines.stroke(null);
+
+// a function for drawing custom tasks
+var tasksFunction = function () {
+
+  // get the shapes of the element
+  var shapes = this["shapes"];
+  // get the shape to be modified
+  var path = shapes["path"];
+  // get the bounds of the element
+  var bounds = this["predictedBounds"];
+
+  var h = bounds.height;
+  var t = bounds.top;
+  var l = bounds.left;
+  var r = bounds.left + bounds.width;
+  var h1 = bounds.top + bounds.height;    
+  var h4 = h / 4;
+  var h2 = h / 2;
+
+  // draw a rounded rectangle
+  path.moveTo(l + h4, h1 - h4)
+  path.arcTo(h4, h4, -270, 180)
+  path.lineTo(r - h4, t + h4)
+  path.arcTo(h4, h4, -90, 180)
+  path.lineTo(l + h2, h1 - h4)
+  path.close(); 
+
+}
+
+// draw custom tasks and baselines
+tasks.rendering().drawer(tasksFunction);
+baselines.rendering().drawer(tasksFunction);
 ```
 
-{sample :height 320}GANTT\_NEW\_Custom\_Drawing\_01{sample}
+{sample :height 360}GANTT\_NEW\_Custom\_Drawing\_01{sample}
 
 ## Resource Chart
 
