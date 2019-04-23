@@ -93,14 +93,6 @@ var data = [
     // set the height of timeline elements
     chart.getTimeline().elements().height(20);
 
-    // access tasks and baselines
-    var tasks = chart.getTimeline().tasks();
-    var baselines = chart.getTimeline().baselines();
-
-    // disable the default stroke of tasks and baselines
-    tasks.stroke(null);
-    baselines.stroke(null);
-
     // a function for drawing custom elements
     var drawingFunction = function () {
 
@@ -128,6 +120,10 @@ var data = [
       path.close(); 
 
     }
+
+    // access tasks and baselines
+    var tasks = chart.getTimeline().tasks();
+    var baselines = chart.getTimeline().baselines();
 
     // draw custom tasks and baselines
     tasks.rendering().drawer(drawingFunction);
