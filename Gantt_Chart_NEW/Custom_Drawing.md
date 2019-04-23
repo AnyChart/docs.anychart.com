@@ -25,6 +25,8 @@ misc:
 * [Elements: All Elements](Elements/All_Elements)
 
 
+{sample :height 360}GANTT\_NEW\_Custom\_Drawing\_01{sample}
+
 ```
 // set the row and header height
 chart.defaultRowHeight(35);
@@ -73,8 +75,6 @@ var tasksFunction = function () {
 tasks.rendering().drawer(tasksFunction);
 baselines.rendering().drawer(tasksFunction);
 ```
-
-{sample :height 360}GANTT\_NEW\_Custom\_Drawing\_01{sample}
 
 ## Resource Chart
 

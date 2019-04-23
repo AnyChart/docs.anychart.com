@@ -105,6 +105,8 @@ You can replace the default content of data grid buttons with a custom drawing b
 
 In the sample below, a function is used to draw different images in different states. The default background fill and stroke are disabled.
 
+{sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_03{sample}
+
 ```
 // access data grid buttons
 var buttons = chart.dataGrid().buttons();
@@ -141,5 +143,3 @@ buttons.hovered().content(contentFunction);
 // set the content of data grid buttons in the selected state
 buttons.selected().content(contentFunction);
 ```
-
-{sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_03{sample}
