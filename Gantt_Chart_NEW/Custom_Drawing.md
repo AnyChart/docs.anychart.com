@@ -27,6 +27,14 @@ Combine it with methods of the {api:anychart.core.gantt.rendering.Settings}anych
 * {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api} – to create custom drawings
 * {api:anychart.core.gantt.rendering.Settings#shapes}shapes(){api} – to create custom shapes
 
+```
+// access tasks
+var tasks = chart.getTimeline().tasks();
+
+// draw custom tasks
+tasks.rendering().drawer(drawingFunction);
+```
+
 In the sample below, the {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api} method is used to draw custom tasks and baselines:
 
 {sample :height 360}GANTT\_NEW\_Custom\_Drawing\_01{sample}
