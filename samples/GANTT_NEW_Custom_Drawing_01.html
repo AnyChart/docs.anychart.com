@@ -86,26 +86,23 @@ var data = [
     // set the data
     chart.data(treeData);
 
-    // set the row height
+    // set the row and header height
     chart.defaultRowHeight(35);
+    chart.headerHeight(105);
 
     // set the height of timeline elements
     chart.getTimeline().elements().height(20);
 
-    // access tasks
+    // access tasks and baselines
     var tasks = chart.getTimeline().tasks();
-
-    // access baselines
     var baselines = chart.getTimeline().baselines();
 
-    // disable the default stroke of tasks
+    // disable the default stroke of tasks and baselines
     tasks.stroke(null);
-
-    // disable the default stroke of baselines
     baselines.stroke(null);
 
-    // a function for drawing custom tasks
-    var tasksFunction = function () {
+    // a function for drawing custom elements
+    var drawingFunction = function () {
 
       // get the shapes of the element
       var shapes = this["shapes"];
@@ -132,11 +129,9 @@ var data = [
 
     }
 
-    // draw custom tasks
-    tasks.rendering().drawer(tasksFunction);
-
-    // draw custom baselines
-    baselines.rendering().drawer(tasksFunction);
+    // draw custom tasks and baselines
+    tasks.rendering().drawer(drawingFunction);
+    baselines.rendering().drawer(drawingFunction);
 
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-15");

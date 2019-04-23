@@ -43,8 +43,8 @@ var baselines = chart.getTimeline().baselines();
 tasks.stroke(null);
 baselines.stroke(null);
 
-// a function for drawing custom tasks
-var tasksFunction = function () {
+// a function for drawing custom elements
+var drawingFunction = function () {
 
   // get the shapes of the element
   var shapes = this["shapes"];
@@ -72,8 +72,8 @@ var tasksFunction = function () {
 }
 
 // draw custom tasks and baselines
-tasks.rendering().drawer(tasksFunction);
-baselines.rendering().drawer(tasksFunction);
+tasks.rendering().drawer(drawingFunction);
+baselines.rendering().drawer(drawingFunction);
 ```
 
 ## Resource Chart

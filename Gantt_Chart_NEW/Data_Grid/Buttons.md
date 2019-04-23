@@ -117,7 +117,7 @@ buttons.background().fill(null);
 buttons.background().stroke(null);
 
 // a function for drawing custom content for buttons
-var contentFunction = function () {
+var drawingFunction = function () {
   var half = this.width / 2;
   switch (this.state) {
     case "normal":
@@ -136,9 +136,9 @@ var contentFunction = function () {
 }
 
 // set the content of data grid buttons in different states
-buttons.normal().content(contentFunction);
-buttons.hovered().content(contentFunction);
-buttons.selected().content(contentFunction);
+buttons.normal().content(drawingFunction);
+buttons.hovered().content(drawingFunction);
+buttons.selected().content(drawingFunction);
 ```
 
 {sample :height 280}GANTT\_NEW\_Data\_Grid\_Buttons\_03{sample}
