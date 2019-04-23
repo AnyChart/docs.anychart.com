@@ -13,7 +13,7 @@ To learn more, see:
 
 ## Project Chart
 
-This section explains how to modify the shape of elements on a [Project Chart](Project_Chart).
+This section explains how to modify the shape of elements on a [Project Gantt Chart](Project_Chart).
 
 You can access a particular element type or all elements at once, as shown in the following articles:
 
@@ -80,7 +80,7 @@ baselines.rendering().drawer(drawingFunction);
 
 ## Resource Chart
 
-The [Resource Chart](Resource_Chart) supports only one element type – the period. This section explains how to modify its shape.
+The [Resource Gantt Chart](Resource_Chart) supports only one element type – the period. This section explains how to modify its shape.
 
 First, access periods – the [Elements: Resource Chart](Elements/Resource_Chart) article shows how to do it.
 
