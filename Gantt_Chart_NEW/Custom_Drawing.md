@@ -17,8 +17,8 @@ This section explains how to modify the shape of elements on a [Project Chart](P
 
 **1.** The first step is accessing elements. You can access a particular element type or all elements at once, as shown in the following articles:
 
-[Elements: Project Chart](Elements/Project_Chart)
-[Elements: All Elements](Elements/All_Elements) aticles
+* [Elements: Project Chart](Elements/Project_Chart)
+* [Elements: All Elements](Elements/All_Elements) aticles
 
 **2.** Then call the **rendering()** method of the element type – for example, the {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api} method of [tasks](Elements/Project_Chart#regular_tasks).
 
