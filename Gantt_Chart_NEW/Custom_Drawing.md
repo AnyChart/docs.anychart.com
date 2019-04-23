@@ -20,7 +20,7 @@ You can access a particular element type or all elements at once, as shown in th
 * [Elements: Project Chart](Elements/Project_Chart)
 * [Elements: All Elements](Elements/All_Elements)
 
-Then call the **rendering()** method of the element type – for example, the {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api} method of tasks.
+Then call the **rendering()** method – for example, the {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api} method of tasks.
 
 Combine it with methods of the {api:anychart.core.gantt.rendering.Settings}anychart.core.gantt.rendering.Settings{api} class:
 
