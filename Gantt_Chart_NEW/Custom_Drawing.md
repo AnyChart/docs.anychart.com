@@ -11,6 +11,13 @@ misc:
 
 ## Project Chart
 
+methods:
+
+* {api:anychart.core.gantt.rendering.Settings}nychart.core.gantt.rendering.Settings{api}
+* **rendering()** – for example, tasks: {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api}
+* {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api}
+* {api:anychart.core.gantt.rendering.Settings#shapes}shapes(){api}
+
 misc:
 
 * [Project Chart](Project_Chart)
@@ -26,11 +33,15 @@ misc:
 
 ## Resource Chart
 
+* {api:anychart.core.gantt.rendering.Settings}nychart.core.gantt.rendering.Settings{api}
+* periods: {api:anychart.core.gantt.elements.PeriodsElement#rendering}rendering(){api}
+* {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api}
+* {api:anychart.core.gantt.rendering.Settings#shapes}shapes(){api}
+
 misc:
 
 * [Resource Chart](Resource_Chart)
 * [Elements: Resource Chart](Elements/Resource_Chart)
-* [Elements: All Elements](Elements/All_Elements)
 
 
 ```
