@@ -78,6 +78,9 @@ The {api:anychart.core.gantt.DataGridButton#background}background(){api} method,
 In the following sample, different background images are used in different states. The default content and background stroke are disabled.
 
 ```
+// access data grid buttons
+var buttons = chart.dataGrid().buttons();
+
 // disable the default settings of data grid buttons
 buttons.normal().content(null);
 buttons.hovered().content(null);
