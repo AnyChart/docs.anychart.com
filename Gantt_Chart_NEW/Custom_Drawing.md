@@ -15,7 +15,7 @@ To learn more, see:
 
 This section explains how to modify the shape of elements on a [Project Chart](Project_Chart).
 
-You can access a particular element type available for the Project chart or all elements at once, as shown in the following articles:
+You can access a particular element type or all elements at once, as shown in the following articles:
 
 * [Elements: Project Chart](Elements/Project_Chart)
 * [Elements: All Elements](Elements/All_Elements)
