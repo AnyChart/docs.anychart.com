@@ -3,27 +3,31 @@
 
 ## Overview
 
-misc:
+With the help of the GraphicsJS library, you can replace the default shapes of timeline [elements](Elements) with custom drawings.
 
-* [Graphics](../Graphics)
-* [Basic Charts: Custom_Drawing](../Basic_Charts/Custom_Drawing) (примеры как это работает)
-* [AnyGantt Gallery: Custom Drawing](https://www.anychart.com/products/anygantt/gallery/Gantt_General_Features/Custom_Drawing.php) (an advanced sample)
+To learn more, see:
+
+* [Graphics](../Graphics) – GraphicsJS documentation
+* [Basic Charts: Custom_Drawing](../Basic_Charts/Custom_Drawing) – basic samples
+* [AnyGantt Gallery: Custom Drawing](https://www.anychart.com/products/anygantt/gallery/Gantt_General_Features/Custom_Drawing.php) – an advanced sample
 
 ## Project Chart
 
-methods:
+This section explains how to modify the shape of elements on a [Project Chart](Project_Chart)
 
-* {api:anychart.core.gantt.rendering.Settings}anychart.core.gantt.rendering.Settings{api}
-* **rendering()** – for example, tasks: {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api}
-* {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api}
-* {api:anychart.core.gantt.rendering.Settings#shapes}shapes(){api}
+**1.** The first step is accessing elements. You can access a particular element type or all elements at once, as shown in the following articles:
 
-misc:
+[Elements: Project Chart](Elements/Project_Chart)
+[Elements: All Elements](Elements/All_Elements) aticles
 
-* [Project Chart](Project_Chart)
-* [Elements: Project Chart](Elements/Project_Chart)
-* [Elements: All Elements](Elements/All_Elements)
+**2.** Then call the **rendering()** method of the element type – for example, the {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api} method of [tasks](Elements/Project_Chart#regular_tasks).
 
+**3.** Finally, use methods of the {api:anychart.core.gantt.rendering.Settings}anychart.core.gantt.rendering.Settings{api} class:
+
+* {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api} – to create custom drawings
+* {api:anychart.core.gantt.rendering.Settings#shapes}shapes(){api} – to create custom shapes
+
+In the sample below, the {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api} method is used to draw custom tasks and baselines:
 
 {sample :height 360}GANTT\_NEW\_Custom\_Drawing\_01{sample}
 
