@@ -203,4 +203,4 @@ var chart = anychart.ganttResource();
 chart.data(mapping);
 ```
 
-{sample :height 220}GANTT\_NEW\_Data\_02{sample}
+{sample :height 200}GANTT\_NEW\_Data\_02{sample}
