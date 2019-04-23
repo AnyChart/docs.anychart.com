@@ -22,7 +22,7 @@ This section explains how to modify the shape of elements on a [Project Chart](P
 
 **2.** Then call the **rendering()** method of the element type – for example, the {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api} method of [tasks](Elements/Project_Chart#regular_tasks).
 
-**3.** Finally, use methods of the {api:anychart.core.gantt.rendering.Settings}anychart.core.gantt.rendering.Settings{api} class:
+**3.** Combine it with methods of the {api:anychart.core.gantt.rendering.Settings}anychart.core.gantt.rendering.Settings{api} class:
 
 * {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api} – to create custom drawings
 * {api:anychart.core.gantt.rendering.Settings#shapes}shapes(){api} – to create custom shapes
