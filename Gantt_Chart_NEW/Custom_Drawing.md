@@ -28,13 +28,6 @@ misc:
 {sample :height 360}GANTT\_NEW\_Custom\_Drawing\_01{sample}
 
 ```
-// set the row and header height
-chart.defaultRowHeight(35);
-chart.headerHeight(105);
-
-// set the height of timeline elements
-chart.getTimeline().elements().height(20);
-
 // a function for drawing custom elements
 var drawingFunction = function () {
 
@@ -62,6 +55,15 @@ var drawingFunction = function () {
   path.close(); 
 
 }
+```
+
+```
+// set the row and header height
+chart.defaultRowHeight(35);
+chart.headerHeight(105);
+
+// set the height of timeline elements
+chart.getTimeline().elements().height(20);
 
 // access tasks and baselines
 var tasks = chart.getTimeline().tasks();
@@ -88,16 +90,6 @@ misc:
 {sample :height 250}GANTT\_NEW\_Custom\_Drawing\_02{sample}
 
 ```
-// set the row and header height
-chart.defaultRowHeight(35);
-chart.headerHeight(105);
-
-// access periods
-var periods = chart.getTimeline().periods();
-
-// set the height of periods
-periods.height(40);
-
 // a function for drawing custom elements
 var drawingFunction = function () {
 
@@ -125,6 +117,18 @@ var drawingFunction = function () {
   path.close(); 
 
 }
+```
+
+```
+// set the row and header height
+chart.defaultRowHeight(35);
+chart.headerHeight(105);
+
+// access periods
+var periods = chart.getTimeline().periods();
+
+// set the height of periods
+periods.height(40);
 
 // draw custom periods
 periods.rendering().drawer(drawingFunction);

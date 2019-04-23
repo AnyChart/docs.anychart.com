@@ -109,13 +109,6 @@ You can replace the default content of data grid buttons with a custom drawing b
 In the sample below, a function is used to draw different images in different states. The default background fill and stroke are disabled.
 
 ```
-// access data grid buttons
-var buttons = chart.dataGrid().buttons();
-
-// disable the default settings of data grid buttons
-buttons.background().fill(null);
-buttons.background().stroke(null);
-
 // a function for drawing custom content for buttons
 var drawingFunction = function () {
   var half = this.width / 2;
@@ -134,6 +127,15 @@ var drawingFunction = function () {
       break;
   }
 }
+```
+
+```
+// access data grid buttons
+var buttons = chart.dataGrid().buttons();
+
+// disable the default settings of data grid buttons
+buttons.background().fill(null);
+buttons.background().stroke(null);
 
 // set the content of data grid buttons in different states
 buttons.normal().content(drawingFunction);
