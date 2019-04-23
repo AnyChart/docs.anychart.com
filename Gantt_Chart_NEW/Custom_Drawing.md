@@ -8,7 +8,7 @@ The GraphicsJS library allows replacing the default shapes of timeline [elements
 To learn more, see:
 
 * [Graphics](../Graphics) – GraphicsJS documentation
-* [Basic Charts: Custom_Drawing](../Basic_Charts/Custom_Drawing) – basic samples
+* [Basic Charts: Custom Drawing](../Basic_Charts/Custom_Drawing) – basic samples
 * [AnyGantt Gallery: Custom Drawing](https://www.anychart.com/products/anygantt/gallery/Gantt_General_Features/Custom_Drawing.php) – an advanced sample
 
 ## Project Chart
@@ -82,7 +82,7 @@ baselines.rendering().drawer(drawingFunction);
 
 The [Resource Gantt Chart](Resource_Chart) supports only one element type – the period. This section explains how to modify its shape.
 
-The first step is accessing periods. See the [Elements: Resource Chart](Elements/Resource_Chart) article shows how to do it.
+The first step is accessing periods. See the [Elements: Resource Chart](Elements/Resource_Chart) article to learn how to do it.
 
 Then call the {api:anychart.core.gantt.elements.PeriodsElement#rendering}rendering(){api} method of periods.
 
