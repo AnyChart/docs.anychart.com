@@ -13,7 +13,7 @@ misc:
 
 methods:
 
-* {api:anychart.core.gantt.rendering.Settings}nychart.core.gantt.rendering.Settings{api}
+* {api:anychart.core.gantt.rendering.Settings}anychart.core.gantt.rendering.Settings{api}
 * **rendering()** – for example, tasks: {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api}
 * {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api}
 * {api:anychart.core.gantt.rendering.Settings#shapes}shapes(){api}
@@ -33,7 +33,7 @@ misc:
 
 ## Resource Chart
 
-* {api:anychart.core.gantt.rendering.Settings}nychart.core.gantt.rendering.Settings{api}
+* {api:anychart.core.gantt.rendering.Settings}anychart.core.gantt.rendering.Settings{api}
 * periods: {api:anychart.core.gantt.elements.PeriodsElement#rendering}rendering(){api}
 * {api:anychart.core.gantt.rendering.Settings#drawer}drawer(){api}
 * {api:anychart.core.gantt.rendering.Settings#shapes}shapes(){api}
