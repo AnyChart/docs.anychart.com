@@ -130,7 +130,7 @@ A module for creating [Circular Gauges](../Gauges/Circular_Gauge):
 
 ### Gantt and Gantt Resource
 
-A module for creating [Gantt and Gantt Resource](../Gantt_Chart/Quick_Start) charts:
+A module for creating [Gantt and Gantt Resource](../Gantt_Chart) charts:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js"></script>

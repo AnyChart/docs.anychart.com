@@ -44,7 +44,7 @@ The following sections explain how to adjust the main parts of the Gantt chart:
 There are also advanced settings available:
 * [Custom Drawing](Custom_Drawing)
 * [Events](Events)
-* [Live Edit UI](Live_Edit_UI)
+* [Live Edit](Live_Edit)
 
 ## Classes
 

@@ -7,7 +7,7 @@ The tree data model represents data as a hierarchical tree-like structure with d
 
 It is used in the following chart types:
 
-* [Gantt](../Gantt_Chart/Quick_Start)
+* [Gantt](../Gantt_Chart)
 * [Treemap](../Basic_Charts/Treemap_Chart)
 * [Sunburst](../Basic_Charts/Sunburst_Chart)
 * [Word Tree](../Basic_Charts/Word_Tree)
@@ -84,7 +84,7 @@ You can as well skip the first step and pass your data to the **data()** method 
 
 **Note 1:** To learn how to rename the default fields of the tree data model (`children`, `parent`, `id`) or map custom fields, see the [Mapping](#mapping) section.
 
-**Note 2:** The `id` field is required for the live edit mode of the Gantt Chart. To learn more, read the the [Live Edit UI and API](../Gantt_Chart/Live_Edit_UI_and_API) article and take a look at the sample in the [Events](#events) section of this article.
+**Note 2:** The `id` field is required for the live edit mode of the Gantt Chart. To learn more, read the the [Gantt Chart: Live Edit](../Gantt_Chart/Live_Edit) article and take a look at the sample in the [Events](#events) section of this article.
 
 ### As Tree
 
@@ -603,7 +603,7 @@ Here is the full list of [events](../Common_Settings/Event_Listeners) that work 
 
 Please note that you can not only [listen to events](../Common_Settings/Event_Listeners), but also stop or start dispatching them by calling the {api:anychart.data.Tree#dispatchEvents}dispatchEvents(){api} method with `true` or `false` as a parameter.
 
-In the sample below, there is a Gantt chart with the [editing mode](../Gantt_Chart/Live_Edit_UI_and_API) enabled: you can use the mouse to update items (change the position, duration, name, etc). Also, there is a button for [adding items](#adding). Even listeners are used to update the chart title whenever an item is updated or added:
+In the sample below, there is a Gantt chart with the [live edit mode](../Gantt_Chart/Live_Edit) enabled: you can use the mouse to update items (change the position, duration, name, etc). Also, there is a button for [adding items](#adding). Even listeners are used to update the chart title whenever an item is updated or added:
 
 ```
 // update the chart title when an item is updated

@@ -20,7 +20,7 @@ To configure regular tasks, combine {api:anychart.charts.Gantt#getTimeline}getTi
 * {api:anychart.core.gantt.elements.TasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.TasksElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
 * {api:anychart.core.gantt.elements.TasksElement#labels}labels(){api} to access [labels](Labels)
 * {api:anychart.core.gantt.elements.TasksElement#progress}progress(){api} to access [progress bars](#progress_bars)
-* {api:anychart.core.gantt.elements.TasksElement#edit}edit(){api} to access the [Live Edit](../Live_Edit_UI) settings
+* {api:anychart.core.gantt.elements.TasksElement#edit}edit(){api} to access the [Live Edit](../Live_Edit) settings
 * {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api} to access the [rendering](../Custom_Drawing) settings
 
 
@@ -42,7 +42,7 @@ To configure parent tasks, combine {api:anychart.charts.Gantt#getTimeline}getTim
 * {api:anychart.core.gantt.elements.GroupingTasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.GroupingTasksElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
 * {api:anychart.core.gantt.elements.GroupingTasksElement#labels}labels(){api} to access [labels](Labels)
 * {api:anychart.core.gantt.elements.GroupingTasksElement#progress}progress(){api} to access [progress bars](#progress_bars)
-* {api:anychart.core.gantt.elements.GroupingTasksElement#edit}edit(){api} to access the [Live Edit](../Live_Edit_UI) settings
+* {api:anychart.core.gantt.elements.GroupingTasksElement#edit}edit(){api} to access the [Live Edit](../Live_Edit) settings
 * {api:anychart.core.gantt.elements.GroupingTasksElement#rendering}rendering(){api} to access the [rendering](../Custom_Drawing) settings
 
 
@@ -65,7 +65,7 @@ To configure milestones, combine {api:anychart.charts.Gantt#getTimeline}getTimel
 * {api:anychart.core.gantt.elements.MilestonesElement#fill}fill(){api}, {api:anychart.core.gantt.elements.MilestonesElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.MilestonesElement#height}height(){api} to set the fill, stroke, and height
 * {api:anychart.core.gantt.elements.MilestonesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.MilestonesElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
 * {api:anychart.core.gantt.elements.MilestonesElement#labels}labels(){api} to access [labels](Labels)
-* {api:anychart.core.gantt.elements.MilestonesElement#edit}edit(){api} to access the [Live Edit](../Live_Edit_UI) settings
+* {api:anychart.core.gantt.elements.MilestonesElement#edit}edit(){api} to access the [Live Edit](../Live_Edit) settings
 * {api:anychart.core.gantt.elements.MilestonesElement#rendering}rendering(){api} to access the [rendering](../Custom_Drawing) settings
 
 
@@ -118,7 +118,7 @@ To configure baselines, combine {api:anychart.charts.Gantt#getTimeline}getTimeli
 * {api:anychart.core.gantt.elements.BaselinesElement#fill}fill(){api}, {api:anychart.core.gantt.elements.BaselinesElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.BaselinesElement#height}height(){api} to set the fill, stroke, and height
 * {api:anychart.core.gantt.elements.BaselinesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.BaselinesElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
 * {api:anychart.core.gantt.elements.BaselinesElement#labels}labels(){api} to access [labels](Labels)
-* {api:anychart.core.gantt.elements.BaselinesElement#edit}edit(){api} to access the [Live Edit](../Live_Edit_UI) settings
+* {api:anychart.core.gantt.elements.BaselinesElement#edit}edit(){api} to access the [Live Edit](../Live_Edit) settings
 * {api:anychart.core.gantt.elements.BaselinesElement#rendering}rendering(){api} to access the [rendering](../Custom_Drawing) settings
 
 Please note: by default, baselines are shown under tasks, but can be placed above them with the help of the {api:anychart.core.gantt.elements.BaselinesElement#above}above(){api} method.
@@ -152,7 +152,7 @@ To access progress bars, first access regular or parent tasks by combining {api:
 * {api:anychart.core.gantt.elements.ProgressElement#fill}fill(){api}, {api:anychart.core.gantt.elements.ProgressElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.ProgressElement#height}height(){api} to set the fill, stroke, and height
 * {api:anychart.core.gantt.elements.ProgressElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ProgressElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
 * {api:anychart.core.gantt.elements.ProgressElement#labels}labels(){api} to access [labels](Labels)
-* {api:anychart.core.gantt.elements.ProgressElement#edit}edit(){api} to access the [Live Edit](../Live_Edit_UI) settings
+* {api:anychart.core.gantt.elements.ProgressElement#edit}edit(){api} to access the [Live Edit](../Live_Edit) settings
 * {api:anychart.core.gantt.elements.ProgressElement#rendering}rendering(){api} to access the [rendering](Custom_Drawing) settings
 
 Please note: by default, progress is shown in [labels](Labels) of tasks. However, progress bars have their own labels. You can enable them and use to show progress or any other information.
@@ -185,7 +185,7 @@ To configure connectors, combine {api:anychart.charts.Gantt#getTimeline}getTimel
 
 * {api:anychart.core.gantt.elements.ConnectorElement#fill}fill(){api} and {api:anychart.core.gantt.elements.ConnectorElement#stroke}stroke(){api} to set the fill and stroke
 * {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
-* {api:anychart.core.gantt.elements.ConnectorElement#previewStroke}previewStroke(){api} to set the preview stroke in the [Live Edit](../Live_Edit_UI) mode
+* {api:anychart.core.gantt.elements.ConnectorElement#previewStroke}previewStroke(){api} to set the preview stroke in the [Live Edit](../Live_Edit) mode
 
 To learn about the available types of connectors and the data fields used to set them, see [Progress Chart: Connectors](../Project_Chart#connectors).
 
