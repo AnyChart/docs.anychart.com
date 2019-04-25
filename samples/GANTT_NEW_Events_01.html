@@ -80,16 +80,48 @@ anychart.onDocumentReady(function () {
     chart.getTimeline().scale().maximum("2018-03-15");
 
     // set the chart title
-    chart.title("Events: \n\n");
+    chart.title("Events: Chart\n\n");
     chart.title().padding(10);
 
     // ...
-    treeData.listen("treeItemUpdate", function (e) {
+    chart.listen("rowMouseOver", function (e) {
       var itemName = e.item.get("name");
       chart.title().useHtml(true);
-      chart.title("Tree Data Model: Events<br><br>< " +
-                  "<span style = 'color:#990000'>" +
-                  itemName + "</span> updated >");
+      chart.title("Events: Chart<br><br>" +
+                  "< <span style = 'color:#990000'>" +
+                  itemName + "</span>: rowMouseOver >");
+    });
+
+    // ...
+    chart.listen("rowCollapseExpand", function (e) {
+      var itemName = e.item.get("name");
+      chart.title().useHtml(true);
+      chart.title("Events: Chart<br><br>" +
+                  "< <span style = 'color:#990000'>" +
+                  itemName + "</span>: rowCollapseExpand >");
+    });
+
+    // ...
+    chart.listen("rowClick", function (e) {
+      var itemName = e.item.get("name");
+      chart.title().useHtml(true);
+      chart.title("Events: Chart<br><br>" +
+                  "< <span style = 'color:#990000'>" +
+                  itemName + "</span>: rowClick >");
+    });
+
+    // ...
+    chart.listen("rowDblClick", function (e) {
+      var itemName = e.item.get("name");
+      chart.title().useHtml(true);
+      chart.title("Events: Chart<br><br>" +
+                  "< <span style = 'color:#990000'>" +
+                  itemName + "</span>: rowDblClick >");
+    });
+
+    // ...
+    chart.listen("rowDblClick", function (e) {
+      e.preventDefault()
     });
 
     // set the container id
