@@ -9,7 +9,7 @@
 
 ```
 
-{sample :height 220}GANTT\_NEW\_Events\_01{sample}
+{sample :height 240}GANTT\_NEW\_Events\_01{sample}
 
 ## Connectors
 
@@ -22,7 +22,7 @@ misc:
 
 ```
 
-{sample :height 220}GANTT\_NEW\_Events\_02{sample}
+{sample :height 240}GANTT\_NEW\_Events\_02{sample}
 
 ## Tree Data
 
@@ -37,4 +37,4 @@ misc:
 
 ```
 
-{sample :height 220}GANTT\_NEW\_Events\_03{sample}
+{sample :height 240}GANTT\_NEW\_Events\_03{sample}
