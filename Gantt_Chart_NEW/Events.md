@@ -28,6 +28,7 @@ misc:
 
 misc:
 
+* события только на move и update
 * сослаться на Live Edit
 * сослаться на Tree Data
 
