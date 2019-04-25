@@ -5,14 +5,35 @@
 
 ## Rows
 
+```
+
+```
+
+{sample :height 220}GANTT\_NEW\_Events\_01{sample}
+
 ## Connectors
 
 misc:
 
 * не забыть beforeCreateConnector
 
+
+```
+
+```
+
+{sample :height 220}GANTT\_NEW\_Events\_02{sample}
+
 ## Tree Data
 
 misc:
 
 * сослаться на Live Edit
+* сослаться на Tree Data
+
+
+```
+
+```
+
+{sample :height 220}GANTT\_NEW\_Events\_03{sample}

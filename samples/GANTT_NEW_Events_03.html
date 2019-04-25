@@ -25,59 +25,51 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-    
+
     // create data
     var data = [
       {
         id: "1",
-        name: "Tasks",
-        actualStart: "2018-02-02",
-        actualEnd: "2018-02-25",
+        name: "Development",
+        actualStart: "2018-01-15",
+        actualEnd: "2018-03-10",
         children: [
           {
             id: "1_1",
-            name: "Task 1",
-            actualStart: "2018-02-02",
-            actualEnd: "2018-02-07",
-            connectTo: "1_2",
-            connectorType: "finish-start"
+            name: "Analysis",
+            actualStart: "2018-01-15",
+            actualEnd: "2018-01-25"
           },
           {
             id: "1_2",
-            name: "Task 2",
-            actualStart: "2018-02-09",
-            actualEnd: "2018-02-09",
-            connectTo: "1_5",
-            connectorType: "start-start"
+            name: "Design",
+            actualStart: "2018-01-20",
+            actualEnd: "2018-02-04"
           },
           {
             id: "1_3",
-            name: "Task 3",
-            actualStart: "2018-02-11",
-            actualEnd: "2018-02-23",
-            connectTo: "1_4",
-            connectorType: "finish-finish"
+            name: "Meeting",
+            actualStart: "2018-02-05",
+            actualEnd: "2018-02-05"
           },
           {
             id: "1_4",
-            name: "Task 4",
-            actualStart: "2018-02-18",
-            actualEnd: "2018-02-25",
-            connectTo: "1_5",
-            connectorType: "start-finish"
+            name: "Implementation",
+            actualStart: "2018-02-05",
+            actualEnd: "2018-02-24"
           },
           {
             id: "1_5",
-            name: "Task 5",
-            actualStart: "2018-02-15",
-            actualEnd: "2018-02-21"
+            name: "Testing",
+            actualStart: "2018-02-25",
+            actualEnd: "2018-03-10"
           }
       ]}
     ];
-
+    
     // create a data tree
     var treeData = anychart.data.tree(data, "as-tree");
-    
+
     // create a chart
     var chart = anychart.ganttProject();
     
@@ -85,17 +77,23 @@ anychart.onDocumentReady(function () {
     chart.data(treeData);
 
     // configure the scale
-    chart.getTimeline().scale().maximum("2018-02-27");
+    chart.getTimeline().scale().maximum("2018-03-15");
 
-    // disable labels of elements
-    chart.getTimeline().elements().labels(false);
+    // allow editing the chart
+    chart.edit(true);
 
-    // configure connectors
-    var connectors = chart.getTimeline().connectors();
-    connectors.normal().fill("#ffa000");
-    connectors.selected().fill("#ef6c00");
-    connectors.normal().stroke("2 #ffa000");
-    connectors.selected().stroke("2 #ef6c00");
+    // set the chart title
+    chart.title("Events: Tree Data\n\n");
+    chart.title().padding(10);
+
+    // update the chart title when an item is updated
+    treeData.listen("treeItemUpdate", function (e) {
+      var itemName = e.item.get("name");
+      chart.title().useHtml(true);
+      chart.title("Tree Data Model: Events<br><br>< " +
+                  "<span style = 'color:#990000'>" +
+                  itemName + "</span> updated >");
+    });
 
     // set the container id
     chart.container("container");

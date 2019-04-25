@@ -87,15 +87,24 @@ anychart.onDocumentReady(function () {
     // configure the scale
     chart.getTimeline().scale().maximum("2018-02-27");
 
-    // disable labels of elements
+   // disable labels of elements
     chart.getTimeline().elements().labels(false);
 
-    // configure connectors
-    var connectors = chart.getTimeline().connectors();
-    connectors.normal().fill("#ffa000");
-    connectors.selected().fill("#ef6c00");
-    connectors.normal().stroke("2 #ffa000");
-    connectors.selected().stroke("2 #ef6c00");
+    // allow editing the chart
+    chart.edit(true);
+
+    // set the chart title
+    chart.title("Events: Connectors\n\n");
+    chart.title().padding(10);
+
+    // ...
+    treeData.listen("treeItemUpdate", function (e) {
+      var itemName = e.item.get("name");
+      chart.title().useHtml(true);
+      chart.title("Tree Data Model: Events<br><br>< " +
+                  "<span style = 'color:#990000'>" +
+                  itemName + "</span> updated >");
+    });
 
     // set the container id
     chart.container("container");

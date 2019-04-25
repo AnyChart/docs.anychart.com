@@ -28,7 +28,7 @@ misc:
 
 ## Events
 
-* отсылочный раздел --> Events
+* отсылочный раздел: Events
 
 ## Settings
 
