@@ -619,10 +619,10 @@ Here is the full list of events that work with the tree data model:
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
-<tr><td>treeItemCreate</td><td> An item has been created.</td></tr>
-<tr><td>treeItemMove</td><td>An item has been moved.</td></tr>
-<tr><td>treeItemRemove</td><td>An item has been removed.</td></tr>
-<tr><td>treeItemUpdate</td><td>An item has been updated.</td></tr>
+<tr><td>treeItemCreate</td><td>A data item has been created.</td></tr>
+<tr><td>treeItemMove</td><td>A data item has been moved.</td></tr>
+<tr><td>treeItemRemove</td><td>A data item has been removed.</td></tr>
+<tr><td>treeItemUpdate</td><td>A data item has been updated.</td></tr>
 </table>
 
 You can [listen to events](../Common_Settings/Event_Listeners) as well as stop or start dispatching them by calling the {api:anychart.data.Tree#dispatchEvents}dispatchEvents(){api} method with `false` or `true` as a parameter.

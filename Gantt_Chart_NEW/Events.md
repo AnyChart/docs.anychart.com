@@ -5,6 +5,20 @@
 
 ## Rows
 
+<table>
+<tr><th>Value</th><th>Description</th></tr>
+<tr><td>rowCollapseExpand</td><td>A row has been collapsed or expanded.</td>
+<tr><td>rowClick</td><td>A row has been clicked on.</td></tr>
+<tr><td>rowDblClick</td><td>A row has been double-clicked on.</td></tr>
+<tr><td>rowMouseDown</td><td>The left mouse button has been pressed on a row.</td></tr>
+<tr><td>rowMouseMove</td><td>The mouse is being moved over a row.</td></tr>
+<tr><td>rowMouseOut</td><td>The mouse has been moved out of a row.</td></tr>
+<tr><td>rowMouseOver</td><td>The mouse has been moved over a row.</td></tr>
+<tr><td>rowMouseUp</td><td>The left mouse button has been released over a row.</td></tr>
+<tr><td>rowSelect</td><td>A row has been selected.</td></tr>
+</tr>
+</table>
+
 {sample :height 240}GANTT\_NEW\_Events\_01{sample}
 
 ```
@@ -49,8 +63,22 @@ chart.listen("rowCollapseExpand", function (e) {
 
 misc:
 
-* не забыть beforeCreateConnector
 * сослаться на Live Edit
+
+
+<table>
+<tr><th>Value</th><th>Description</th></tr>
+<tr><td>beforeCreateConnector</td><td> (?)</td></tr>
+<tr><td>connectorClick</td><td>A connector has been clicked on.</td></tr>
+<tr><td>connectorDblClick</td><td>A connector has been double-clicked on.</td></tr>
+<tr><td>connectorMouseDown</td><td>The left mouse button has been pressed on a connector.</td></tr>
+<tr><td>connectorMouseMove</td><td>The mouse is being moved over a connector.</td></tr>
+<tr><td>connectorMouseOut</td><td>The mouse has been moved out of a connector.</td></tr>
+<tr><td>connectorMouseOver</td><td>The mouse has been moved over a connector.</td></tr>
+<tr><td>connectorMouseUp</td><td>The left mouse button has been released over a connector.</td></tr>
+<tr><td>connectorSelect</td><td>A connector has been selected.</td></tr>
+</tr>
+</table>
 
 {sample :height 240}GANTT\_NEW\_Events\_02{sample}
 
@@ -112,6 +140,13 @@ misc:
 * объяснить что такое move
 * сослаться на Live Edit
 * сослаться на Tree Data
+
+
+<table>
+<tr><th>Value</th><th>Description</th></tr>
+<tr><td>treeItemMove</td><td>A data item has been moved.</td></tr>
+<tr><td>treeItemUpdate</td><td>A data item has been updated.</td></tr>
+</table>
 
 {sample :height 240}GANTT\_NEW\_Events\_03{sample}
 
