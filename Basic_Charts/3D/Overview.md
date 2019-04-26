@@ -9,7 +9,7 @@ This article explains how to create and configure 3D charts.
 
 ## Modules
 
-Most 3D charts require adding the [Core](../../Quick_Start/Modules#core) and [Basic 3D](../../Quick_Start/Modules#basic_cartesian_charts) modules:
+Most 3D charts require adding the [Core](../../Quick_Start/Modules#core) and [Basic 3D](../../Quick_Start/Modules#basic_3d) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>

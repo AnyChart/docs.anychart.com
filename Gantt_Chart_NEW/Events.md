@@ -38,3 +38,11 @@ misc:
 ```
 
 {sample :height 240}GANTT\_NEW\_Events\_03{sample}
+
+### Preventing Default Behavior
+
+```
+
+```
+
+{sample :height 220}GANTT\_NEW\_Events\_04{sample}

@@ -10,7 +10,7 @@ Step line charts are used when it is necessary to highlight the irregularity of 
 The Step Line and Line chart types share almost all the settings, so this article explains just how to create a basic Step Line chart and configure its only special setting - step direction. To learn about other settings, read the [Line Chart](Line_Chart) article. You can also see the table below to get a brief overview of the Step Line chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) / [Base](../Quick_Start/Modules#base)</td></tr>
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) / [Base](../Quick_Start/Modules#base)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.StepLine}anychart.core.cartesian.series.StepLine{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -36,7 +36,7 @@ The Step Line and Line chart types share almost all the settings, so this articl
 
 ## Modules
 
-The Step Line chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) modules:
+The Step Line chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>

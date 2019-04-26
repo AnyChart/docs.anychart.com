@@ -46,6 +46,18 @@ There are also advanced settings available:
 * [Events](Events)
 * [Live Edit](Live_Edit)
 
+## Modules
+
+AnyGantt requires adding two [modules](../Quick_Start/Modules) – [Core](../Quick_Start/Modules#core) and [Gantt](../Quick_Start/Modules#gantt):
+
+```
+<script src="https://cdn.anychart.com/releases/DVF-4143-gantt/js/anychart-core.min.js" type="text/javascript"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/DVF-4143-gantt/js/anychart-gantt.min.js" type="text/javascript"></script>
+```
+
 ## Classes
 
 Below you can find the list of classes used to configure the Gantt chart and its parts.

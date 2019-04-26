@@ -10,7 +10,7 @@ Like the regular line chart, it is commonly used to emphasize trends in data ove
 The Line and Spline chart types share all the settings, so this article explains just how to create a basic Spline chart. To learn about other settings, read the [Line Chart](Line_Chart) article. You can also see the table below to get a brief overview of the Spline chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) / [Base](../Quick_Start/Modules#base)</td></tr>
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) / [Base](../Quick_Start/Modules#base)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Spline}anychart.core.cartesian.series.Spline{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -36,7 +36,7 @@ The Line and Spline chart types share all the settings, so this article explains
 
 ## Modules
 
-The Spline chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) modules:
+The Spline chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>

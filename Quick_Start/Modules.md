@@ -80,7 +80,7 @@ AnyChart Base is a handy module that contains:
 
 - [Core](#core)
 - [Pie and Doughnut](#pie_and_doughnut)
-- [Basic Cartesian Charts](#basic_cartesian_charts)
+- [Basic Cartesian](#basic_cartesian)
 - [Scatter](../Basic_Charts/Scatter_Plot)
 
 
@@ -104,7 +104,7 @@ A module for creating [Bullet](../Basic_Charts/Bullet_Chart) charts:
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bullet.min.js"></script>
 ```
 
-### Basic Cartesian Charts
+### Basic Cartesian
 
 A module for creating basic Cartesian charts: [Area](../Basic_Charts/Area_Chart), [Bar](../Basic_Charts/Bar_Chart), [Box](../Basic_Charts/Box_Chart), [Bubble](../Basic_Charts/Bubble_Chart), [Column](../Basic_Charts/Column_Chart), [Area](../Basic_Charts/Area_Chart), [HiLo](../Basic_Charts/HiLo_Chart), [Candlestick](../Basic_Charts/Japanese_Candlestick_Chart), [Jump Line](../Basic_Charts/Jump_Line_Chart), [Line](../Basic_Charts/Line_Chart), [Marker](../Basic_Charts/Marker_Chart), [OHLC](../Basic_Charts/OHLC_Chart), [Range Area](../Basic_Charts/Range_Area_Chart), [Range Bar](../Basic_Charts/Range_Bar_Chart), [Range Column](../Basic_Charts/Range_Column_Chart), [Range Spline Area](../Basic_Charts/Range_Spline_Area_Chart), [Range Step Area](../Basic_Charts/Range_Step_Area_Chart), [Spline Area](../Basic_Charts/Spline_Area_Chart), [Spline](../Basic_Charts/Spline_Chart), [Step Area](../Basic_Charts/Step_Area_Chart), [Step Line](../Basic_Charts/Step_Line_Chart), [Stick](../Basic_Charts/Stick_Chart). 
 
@@ -114,7 +114,7 @@ A module for creating basic Cartesian charts: [Area](../Basic_Charts/Area_Chart)
 
 ### Basic 3D
 
-A module for creating [Cartesian 3D](../Basic_Charts/3D/Overview) charts (except Pie and Doughnut):
+A module for creating [Cartesian 3D](../Basic_Charts/3D/Overview) charts (except for Pie and Doughnut):
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian-3d.min.js"></script>
@@ -128,9 +128,9 @@ A module for creating [Circular Gauges](../Gauges/Circular_Gauge):
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-circular-gauge.min.js"></script>
 ```
 
-### Gantt and Gantt Resource
+### Gantt
 
-A module for creating [Gantt and Gantt Resource](../Gantt_Chart) charts:
+A module for creating Project and Resource [Gantt](../Gantt_Chart) charts:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js"></script>

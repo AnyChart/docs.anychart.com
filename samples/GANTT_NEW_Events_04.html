@@ -79,44 +79,9 @@ anychart.onDocumentReady(function () {
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-15");
 
-    // set the chart title
-    chart.title("Events: Chart\n\n");
-    chart.title().padding(10);
-
-    // ...
-    chart.listen("rowMouseOver", function (e) {
-      var itemName = e.item.get("name");
-      chart.title().useHtml(true);
-      chart.title("Events: Chart<br><br>" +
-                  "< <span style = 'color:#990000'>" +
-                  itemName + "</span>: rowMouseOver >");
-    });
-
-    // ...
-    chart.listen("rowCollapseExpand", function (e) {
-      var itemName = e.item.get("name");
-      chart.title().useHtml(true);
-      chart.title("Events: Chart<br><br>" +
-                  "< <span style = 'color:#990000'>" +
-                  itemName + "</span>: rowCollapseExpand >");
-    });
-
-    // ...
-    chart.listen("rowClick", function (e) {
-      var itemName = e.item.get("name");
-      chart.title().useHtml(true);
-      chart.title("Events: Chart<br><br>" +
-                  "< <span style = 'color:#990000'>" +
-                  itemName + "</span>: rowClick >");
-    });
-
     // ...
     chart.listen("rowDblClick", function (e) {
-      var itemName = e.item.get("name");
-      chart.title().useHtml(true);
-      chart.title("Events: Chart<br><br>" +
-                  "< <span style = 'color:#990000'>" +
-                  itemName + "</span>: rowDblClick >");
+      e.preventDefault()
     });
 
     // set the container id

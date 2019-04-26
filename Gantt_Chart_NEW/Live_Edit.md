@@ -18,7 +18,7 @@ misc:
 * elements: element edit
 * data grid: structure edit + data grid text
 
-## Default Interactivity
+## Default Behavior
 
 misc:
 

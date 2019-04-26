@@ -7,7 +7,7 @@ This article demonstrates the steps required to create a basic Project Gantt cha
 
 ## Modules
 
-AnyGantt requires adding two [modules](../Quick_Start/Modules) – [Core](../Quick_Start/Modules#core) and [Gantt and Gantt Resource](../Quick_Start/Modules#gantt_and_gantt_resource). Reference two JavaScript files in the `<head>` section of your web page.
+AnyGantt requires adding two [modules](../Quick_Start/Modules) – [Core](../Quick_Start/Modules#core) and [Gantt](../Quick_Start/Modules#gantt). Reference two JavaScript files in the `<head>` section of your web page.
 
 **Note:** These files can be downloaded from the [AnyChart download page](../Quick_Start/Downloading_AnyChart).
 
