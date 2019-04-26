@@ -84,7 +84,7 @@ You can as well skip the first step and pass your data to the **data()** method 
 
 **Note 1:** To learn how to rename the default fields of the tree data model (`children`, `parent`, `id`) or map custom fields, see the [Mapping](#mapping) section.
 
-**Note 2:** The `id` field is required for the live edit mode of the Gantt Chart. To learn more, read the the [Gantt Chart: Live Edit](../Gantt_Chart/Live_Edit) article and take a look at the sample in the [Events](#events) section of this article.
+**Note 2:** The `id` field is always required by [Gantt Charts](../Gantt_Chart).
 
 ### As Tree
 
@@ -240,29 +240,40 @@ Here the data is set as a tree. The {api:anychart.data#tree}anychart.data.tree()
 // create data
 var data = [
   {
-    name:   "Root",
-    start_date: Date.UTC(2018, 0, 25),
-    end_date: Date.UTC(2018, 2, 14),
+    id: "1",
+    name: "Root",
+    start_date: "2018-01-15",
+    end_date: "2018-03-10",
     child_items: [
       {
-        name:   "Child 1",
-        start_date: Date.UTC(2018, 0, 25),
-        end_date: Date.UTC(2018, 1, 3)
+        id: "1_1",
+        name: "Child 1",
+        start_date: "2018-01-15",
+        end_date: "2018-01-25"
       },
       {
-        name:   "Child 2",
-        start_date: Date.UTC(2018, 1, 4),
-        end_date: Date.UTC(2018, 1, 4)
+        id: "1_2",
+        name: "Child 2",
+        start_date: "2018-01-20",
+        end_date: "2018-02-04"
       },
       {
-        name:   "Child 3",
-        start_date: Date.UTC(2018, 1, 4),
-        end_date: Date.UTC(2018, 1, 24)
+        id: "1_3",
+        name: "Child 3",
+        start_date: "2018-02-05",
+        end_date: "2018-02-05"
       },
       {
-        name:   "Child 4",
-        start_date: Date.UTC(2018, 1, 25),
-        end_date: Date.UTC(2018, 2, 14)
+        id: "1_4",
+        name: "Child 4",
+        start_date: "2018-02-05",
+        end_date: "2018-02-24"
+      },
+      {
+        id: "1_5",
+        name: "Child 5",
+        start_date: "2018-02-25",
+        end_date: "2018-03-10"
       }
   ]}
 ];
@@ -280,7 +291,7 @@ chart = anychart.ganttProject();
 chart.data(mapping);
 ```
 
-{sample :height 240}WD\_Tree\_Data\_05{sample}
+{sample :height 260}WD\_Tree\_Data\_05{sample}
 
 ## Accessing Items
 
@@ -433,34 +444,47 @@ The following sample shows how to perform a search with the {api:anychart.data.T
 // create data
 var data = [
   {
-    name:   "Root",
-    actualStart: Date.UTC(2018, 0, 25),
-    actualEnd: Date.UTC(2018, 2, 14),
+    id: "1",
+    name: "Root",
+    actualStart: "2018-01-15",
+    actualEnd: "2018-03-10",
+    actual: {},
     employee: {firstName: null, lastName: null},
     children: [
       {
-        name:   "Child 1",
-        actualStart: Date.UTC(2018, 0, 25),
-        actualEnd: Date.UTC(2018, 1, 3),
+        id: "1_1",
+        name: "Child 1",
+        actualStart: "2018-01-15",
+        actualEnd: "2018-01-25",
         employee: {firstName: "John", lastName: "Doe"}
       },
       {
-        name:   "Child 2",
-        actualStart: Date.UTC(2018, 1, 4),
-        actualEnd: Date.UTC(2018, 1, 4),
+        id: "1_2",
+        name: "Child 2",
+        actualStart: "2018-01-20",
+        actualEnd: "2018-02-04",
         employee: {firstName: "Frank", lastName: "Foe"}
       },
       {
-        name:   "Child 3",
-        actualStart: Date.UTC(2018, 1, 4),
-        actualEnd: Date.UTC(2018, 1, 24),
+        id: "1_3",
+        name: "Child 3",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-05",
+        employee: {firstName: "Marta", lastName: "Moe"}
+      },
+      {
+        id: "1_4",
+        name: "Child 4",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-24",
         employee: {firstName: "John", lastName: "Doe"}
       },
       {
-        name:   "Child 4",
-        actualStart: Date.UTC(2018, 1, 25),
-        actualEnd: Date.UTC(2018, 2, 14),
-        employee: {firstName: "Marta", lastName: "Moe"}
+        id: "1_5",
+        name: "Child 5",
+        actualStart: "2018-02-25",
+        actualEnd: "2018-03-10",
+        employee: {firstName: "Jane", lastName: "Poe"}
       }
   ]}
 ];
@@ -487,7 +511,7 @@ function comparisonFunction(fieldValue, comparisonValue) {
 var items = treeData.searchItems("employee", "JohnDoe", comparisonFunction);
 ```
 
-{sample :height 320}WD\_Tree\_Data\_12{sample}
+{sample :height 305}WD\_Tree\_Data\_12{sample}
 
 #### filter()
 
@@ -591,38 +615,47 @@ function nextItem() {
 
 ## Events
 
-Here is the full list of [events](../Common_Settings/Event_Listeners) that work with the tree data model:
+Here is the full list of events that work with the tree data model:
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
-<tr><td>treeItemCreate</td><td> item created</td></tr>
-<tr><td>treeItemMove</td><td>item moved</td></tr>
-<tr><td>treeItemRemove</td><td>item removed</td></tr>
-<tr><td>treeItemUpdate</td><td>item updated</td></tr>
+<tr><td>treeItemCreate</td><td> An item has been created.</td></tr>
+<tr><td>treeItemMove</td><td>An item has been moved.</td></tr>
+<tr><td>treeItemRemove</td><td>An item has been removed.</td></tr>
+<tr><td>treeItemUpdate</td><td>An item has been updated.</td></tr>
 </table>
 
-Please note that you can not only [listen to events](../Common_Settings/Event_Listeners), but also stop or start dispatching them by calling the {api:anychart.data.Tree#dispatchEvents}dispatchEvents(){api} method with `true` or `false` as a parameter.
+You can [listen to events](../Common_Settings/Event_Listeners) as well as stop or start dispatching them by calling the {api:anychart.data.Tree#dispatchEvents}dispatchEvents(){api} method with `false` or `true` as a parameter.
 
-In the sample below, there is a Gantt chart with the [live edit mode](../Gantt_Chart/Live_Edit) enabled: you can use the mouse to update items (change the position, duration, name, etc). Also, there is a button for [adding items](#adding). Even listeners are used to update the chart title whenever an item is updated or added:
+In the sample below, there is a Gantt chart with the [live edit](../Gantt_Chart/Live_Edit) mode enabled: you can use the mouse to update items (change the position, duration, name, etc). Also, there is a button for [adding items](#adding). Event listeners are used to update the chart title whenever an item is updated, moved, or added:
 
 ```
-// update the chart title when an item is updated
+/* listen to the treeItemUpdate event
+and update the chart title */
 treeData.listen("treeItemUpdate", function (e) {
   var itemName = e.item.get("name");
-  chart.title().useHtml(true);
-  chart.title("Tree Data Model: Events<br><br>" +
+  chart.title("Tree Data Model: Events<br><br>< " +
               "<span style = 'color:#990000'>" +
-              itemName + "</span> updated");
+              itemName + ": </span> treeItemUpdate >");
 });
 
-// update the chart title when an item is added
+/* listen to the treeItemMove event
+and update the chart title */
+treeData.listen("treeItemMove", function (e) {
+  var itemName = e.item.get("name");
+  chart.title("Tree Data Model: Events<br><br>< " +
+              "<span style = 'color:#990000'>" +
+              itemName + ": </span> treeItemMove >");
+});
+
+/* listen to the treeItemCreate event
+and update the chart title */
 treeData.listen("treeItemCreate", function (e) {
   var itemName = e.item.get("name");
-  chart.title().useHtml(true);
-  chart.title("Tree Data Model: Events<br><br>" +
+  chart.title("Tree Data Model: Events<br><br>< " +
               "<span style = 'color:#990000'>" +
-              itemName + "</span> added");
+              itemName + "</span>: treeItemCreate >");
 });
 ```
 
-{sample :height 400}WD\_Tree\_Data\_16{sample}
+{sample :height 420}WD\_Tree\_Data\_16{sample}

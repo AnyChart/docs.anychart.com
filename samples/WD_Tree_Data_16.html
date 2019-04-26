@@ -39,34 +39,40 @@ anychart.onDocumentReady(function () {
     // create data
     var data = [
       {
-        id: 1,
-        name:   "Root",
-        actualStart: Date.UTC(2018, 0, 25),
-        actualEnd: Date.UTC(2018, 2, 14),
+        id: "1",
+        name: "Root",
+        actualStart: "2018-01-15",
+        actualEnd: "2018-03-10",
         children: [
           {
-            id: 2,
-            name:   "Child 1",
-            actualStart: Date.UTC(2018, 0, 25),
-            actualEnd: Date.UTC(2018, 1, 3)
+            id: "1_1",
+            name: "Child 1",
+            actualStart: "2018-01-15",
+            actualEnd: "2018-01-25"
           },
           {
-            id: 3,
-            name:   "Child 2",
-            actualStart: Date.UTC(2018, 1, 4),
-            actualEnd: Date.UTC(2018, 1, 4)
+            id: "1_2",
+            name: "Child 2",
+            actualStart: "2018-01-20",
+            actualEnd: "2018-02-04"
           },
           {
-            id: 4,
-            name:   "Child 3",
-            actualStart: Date.UTC(2018, 1, 4),
-            actualEnd: Date.UTC(2018, 1, 24)
+            id: "1_3",
+            name: "Child 3",
+            actualStart: "2018-02-05",
+            actualEnd: "2018-02-05"
           },
           {
-            id: 5,
-            name:   "Child 4",
-            actualStart: Date.UTC(2018, 1, 25),
-            actualEnd: Date.UTC(2018, 2, 14)
+            id: "1_4",
+            name: "Child 4",
+            actualStart: "2018-02-05",
+            actualEnd: "2018-02-24"
+          },
+          {
+            id: "1_5",
+            name: "Child 5",
+            actualStart: "2018-02-25",
+            actualEnd: "2018-03-10"
           }
       ]}
     ];
@@ -80,29 +86,42 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
+    // configure the scale
+    chart.getTimeline().scale().maximum("2018-03-15");
+
     // allow editing the chart
     chart.edit(true);
 
     // set the chart title
-    chart.title("Tree Data Model: Events\n\n");
+    chart.title().useHtml(true);
+    chart.title("Tree Data Model: Events<br><br>");
     chart.title().padding(10);
 
-    // update the chart title when an item is updated
+    /* listen to the treeItemUpdate event
+    and update the chart title */
     treeData.listen("treeItemUpdate", function (e) {
       var itemName = e.item.get("name");
-      chart.title().useHtml(true);
       chart.title("Tree Data Model: Events<br><br>< " +
                   "<span style = 'color:#990000'>" +
-                  itemName + "</span> updated >");
+                  itemName + ": </span> treeItemUpdate >");
     });
 
-    // update the chart title when an item is added
-    treeData.listen("treeItemCreate", function (e) {
+    /* listen to the treeItemMove event
+    and update the chart title */
+    treeData.listen("treeItemMove", function (e) {
       var itemName = e.item.get("name");
-      chart.title().useHtml(true);
       chart.title("Tree Data Model: Events<br><br>< " +
                   "<span style = 'color:#990000'>" +
-                  itemName + "</span> added >");
+                  itemName + ": </span> treeItemMove >");
+    });
+
+    /* listen to the treeItemCreate event
+    and update the chart title */
+    treeData.listen("treeItemCreate", function (e) {
+      var itemName = e.item.get("name");
+      chart.title("Tree Data Model: Events<br><br>< " +
+                  "<span style = 'color:#990000'>" +
+                  itemName + "</span>: treeItemCreate >");
     });
 
     // set the container id

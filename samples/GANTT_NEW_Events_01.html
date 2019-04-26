@@ -80,43 +80,44 @@ anychart.onDocumentReady(function () {
     chart.getTimeline().scale().maximum("2018-03-15");
 
     // set the chart title
-    chart.title("Events: Chart\n\n");
+    chart.title().useHtml(true);
+    chart.title("Events: Chart<br><br>");
     chart.title().padding(10);
 
-    // ...
+    /* listen to the rowMouseOver event
+    and update the chart title */
     chart.listen("rowMouseOver", function (e) {
       var itemName = e.item.get("name");
-      chart.title().useHtml(true);
       chart.title("Events: Chart<br><br>" +
                   "< <span style = 'color:#990000'>" +
                   itemName + "</span>: rowMouseOver >");
     });
 
-    // ...
-    chart.listen("rowCollapseExpand", function (e) {
-      var itemName = e.item.get("name");
-      chart.title().useHtml(true);
-      chart.title("Events: Chart<br><br>" +
-                  "< <span style = 'color:#990000'>" +
-                  itemName + "</span>: rowCollapseExpand >");
-    });
-
-    // ...
+    /* listen to the rowClick event
+    and update the chart title */
     chart.listen("rowClick", function (e) {
       var itemName = e.item.get("name");
-      chart.title().useHtml(true);
       chart.title("Events: Chart<br><br>" +
                   "< <span style = 'color:#990000'>" +
                   itemName + "</span>: rowClick >");
     });
 
-    // ...
+    /* listen to the rowDblClick event
+    and update the chart title */
     chart.listen("rowDblClick", function (e) {
       var itemName = e.item.get("name");
-      chart.title().useHtml(true);
       chart.title("Events: Chart<br><br>" +
                   "< <span style = 'color:#990000'>" +
                   itemName + "</span>: rowDblClick >");
+    });
+
+    /* listen to the rowCollapseExpand event
+    and update the chart title */
+    chart.listen("rowCollapseExpand", function (e) {
+      var itemName = e.item.get("name");
+      chart.title("Events: Chart<br><br>" +
+                  "< <span style = 'color:#990000'>" +
+                  itemName + "</span>: rowCollapseExpand >");
     });
 
     // set the container id

@@ -39,7 +39,7 @@
 </head>
 <body>
 <button onclick="filterDuration()">Filter Items</button>
-<label>duration >=<input id="valueInput" value="20"> day(s)</label>
+<label>duration >=<input id="valueInput" value="16"> day(s)</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -47,30 +47,41 @@ anychart.onDocumentReady(function () {
     // create data
     data = [
       {
+        id: "1",
         name: "Root",
-        actualStart: Date.UTC(2018, 0, 25),
-        actualEnd: Date.UTC(2018, 2, 14),
+        actualStart: Date.UTC(2018, 0, 15),
+        actualEnd: Date.UTC(2018, 2, 10),
         actual: {},
         children: [
           {
+            id: "1_1",
             name: "Child 1",
-            actualStart: Date.UTC(2018, 0, 25),
-            actualEnd: Date.UTC(2018, 1, 3)
+            actualStart: Date.UTC(2018, 0, 15),
+            actualEnd: Date.UTC(2018, 0, 25)
           },
           {
+            id: "1_2",
             name: "Child 2",
-            actualStart: Date.UTC(2018, 1, 4),
+            actualStart: Date.UTC(2018, 0, 20),
             actualEnd: Date.UTC(2018, 1, 4)
           },
           {
+            id: "1_3",
             name: "Child 3",
-            actualStart: Date.UTC(2018, 1, 4),
+            actualStart: Date.UTC(2018, 1, 5),
+            actualEnd: Date.UTC(2018, 1, 5)
+          },
+          {
+            id: "1_4",
+            name: "Child 4",
+            actualStart: Date.UTC(2018, 1, 5),
             actualEnd: Date.UTC(2018, 1, 24)
           },
           {
-            name: "Child 4",
+            id: "1_5",
+            name: "Child 5",
             actualStart: Date.UTC(2018, 1, 25),
-            actualEnd: Date.UTC(2018, 2, 14)
+            actualEnd: Date.UTC(2018, 2, 10)
           }
       ]}
     ];
@@ -80,6 +91,9 @@ anychart.onDocumentReady(function () {
 
     // set the data
     chart.data(data, "as-tree");
+
+    // configure the scale
+    chart.getTimeline().scale().maximum(Date.UTC(2018, 2, 15));
 
     // set the chart title
     chart.title().useHtml(true);

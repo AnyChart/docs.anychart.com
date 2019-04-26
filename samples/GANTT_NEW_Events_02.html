@@ -87,23 +87,68 @@ anychart.onDocumentReady(function () {
     // configure the scale
     chart.getTimeline().scale().maximum("2018-02-27");
 
-   // disable labels of elements
+    // disable labels of elements
     chart.getTimeline().elements().labels(false);
+
+    // configure connectors
+    var connectors = chart.getTimeline().connectors();
+    connectors.normal().stroke("3 #455a64");
+    connectors.selected().stroke("3 #ffa000");
 
     // allow editing the chart
     chart.edit(true);
 
     // set the chart title
-    chart.title("Events: Connectors\n\n");
+    chart.title().useHtml(true);
+    chart.title("Events: Connectors<br><br>");
     chart.title().padding(10);
 
-    // ...
-    treeData.listen("treeItemUpdate", function (e) {
-      var itemName = e.item.get("name");
-      chart.title().useHtml(true);
-      chart.title("Events: Connectors<br><br>< " +
-                  "<span style = 'color:#990000'>" +
-                  itemName + "</span> updated >");
+    /* listen to the connectorMouseOver event
+    and update the chart title */
+    chart.listen("connectorMouseOver", function (e) {
+      var sourceName = e.fromItem.get("name");
+      var targetName = e.toItem.get("name");
+      var type = e.connType;
+      chart.title("Events: Connectors<br><br>" +
+                  "< <span style = 'color:#990000'>" +
+                  sourceName + " – " + targetName +
+                  " (" + type + ")</span>: connectorMouseOver >");
+    });
+
+    /* listen to the connectorClick event
+    and update the chart title */
+    chart.listen("connectorClick", function (e) {
+      var sourceName = e.fromItem.get("name");
+      var targetName = e.toItem.get("name");
+      var type = e.connType;
+      chart.title("Events: Connectors<br><br>" +
+                  "< <span style = 'color:#990000'>" +
+                  sourceName + " – " + targetName +
+                  " (" + type + ")</span>: connectorClick >");
+    });
+
+    /* listen to the connectorDblClick event
+    and update the chart title */
+    chart.listen("connectorDblClick", function (e) {
+      var sourceName = e.fromItem.get("name");
+      var targetName = e.toItem.get("name");
+      var type = e.connType;
+      chart.title("Events: Connectors<br><br>" +
+                  "< <span style = 'color:#990000'>" +
+                  sourceName + " – " + targetName +
+                  " (" + type + ")</span>: connectorDblClick >");
+    });
+
+    /* listen to the beforeCreateConnector event
+    and update the chart title */
+    chart.listen("beforeCreateConnector", function (e) {
+      var sourceName = e.source.get("name");
+      var targetName = e.target.get("name");
+      var type = e.connectorType;
+      chart.title("Events: Connectors<br><br>" +
+                  "< <span style = 'color:#990000'>" +
+                  sourceName + " – " + targetName +
+                  " (" + type + ")</span>: beforeCreateConnector  >");
     });
 
     // set the container id

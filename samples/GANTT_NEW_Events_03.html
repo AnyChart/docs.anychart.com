@@ -83,16 +83,26 @@ anychart.onDocumentReady(function () {
     chart.edit(true);
 
     // set the chart title
-    chart.title("Events: Tree Data\n\n");
+    chart.title().useHtml(true);
+    chart.title("Events: Tree Data<br><br>");
     chart.title().padding(10);
 
-    // update the chart title when an item is updated
+    /* listen to the treeItemUpdate event
+    and update the chart title */
     treeData.listen("treeItemUpdate", function (e) {
       var itemName = e.item.get("name");
-      chart.title().useHtml(true);
       chart.title("Events: Tree Data<br><br>< " +
                   "<span style = 'color:#990000'>" +
-                  itemName + "</span> updated >");
+                  itemName + ": </span> treeItemUpdate >");
+    });
+
+    /* listen to the treeItemMove event
+    and update the chart title */
+    treeData.listen("treeItemMove", function (e) {
+      var itemName = e.item.get("name");
+      chart.title("Events: Tree Data<br><br>< " +
+                  "<span style = 'color:#990000'>" +
+                  itemName + "</span>: treeItemMove >");
     });
 
     // set the container id

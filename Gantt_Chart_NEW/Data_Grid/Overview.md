@@ -18,7 +18,7 @@ Articles in this section explain how to configure:
 
 ## Enabling / Disabling
 
-The data grid is enabled by default. To disable or enable it, pass `true` / `false` to {api:anychart.charts.Gantt#dataGrid}dataGrid(){api}:
+The data grid is enabled by default. To disable or enable it, pass `false` / `true` to {api:anychart.charts.Gantt#dataGrid}dataGrid(){api}:
 
 ```
 chart.dataGrid(false);

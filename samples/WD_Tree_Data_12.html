@@ -13,17 +13,11 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
     
     <style>
-        html, body {
+        html, body, #container {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
-        }
-        #container {
-            position: absolute;
-            width: 100%;
-            top: 35px;
-            bottom: 0;
         }
     </style>
 </head>
@@ -35,35 +29,47 @@ anychart.onDocumentReady(function () {
     // create data
     var data = [
       {
+        id: "1",
         name: "Root",
-        actualStart: Date.UTC(2018, 0, 25),
-        actualEnd: Date.UTC(2018, 2, 14),
+        actualStart: "2018-01-15",
+        actualEnd: "2018-03-10",
         actual: {},
         employee: {firstName: null, lastName: null},
         children: [
           {
+            id: "1_1",
             name: "Child 1",
-            actualStart: Date.UTC(2018, 0, 25),
-            actualEnd: Date.UTC(2018, 1, 3),
+            actualStart: "2018-01-15",
+            actualEnd: "2018-01-25",
             employee: {firstName: "John", lastName: "Doe"}
           },
           {
+            id: "1_2",
             name: "Child 2",
-            actualStart: Date.UTC(2018, 1, 4),
-            actualEnd: Date.UTC(2018, 1, 4),
+            actualStart: "2018-01-20",
+            actualEnd: "2018-02-04",
             employee: {firstName: "Frank", lastName: "Foe"}
           },
           {
+            id: "1_3",
             name: "Child 3",
-            actualStart: Date.UTC(2018, 1, 4),
-            actualEnd: Date.UTC(2018, 1, 24),
+            actualStart: "2018-02-05",
+            actualEnd: "2018-02-05",
+            employee: {firstName: "Marta", lastName: "Moe"}
+          },
+          {
+            id: "1_4",
+            name: "Child 4",
+            actualStart: "2018-02-05",
+            actualEnd: "2018-02-24",
             employee: {firstName: "John", lastName: "Doe"}
           },
           {
-            name: "Child 4",
-            actualStart: Date.UTC(2018, 1, 25),
-            actualEnd: Date.UTC(2018, 2, 14),
-            employee: {firstName: "Marta", lastName: "Moe"}
+            id: "1_5",
+            name: "Child 5",
+            actualStart: "2018-02-25",
+            actualEnd: "2018-03-10",
+            employee: {firstName: "Jane", lastName: "Poe"}
           }
       ]}
     ];
@@ -77,9 +83,12 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
+    // configure the scale
+    chart.getTimeline().scale().maximum("2018-03-15");
+
     // configure the data grid
 
-    var dataGrid =  chart.dataGrid()
+    var dataGrid =  chart.dataGrid();
 
     dataGrid.column(2).labels().format(function(e) {
         return e.item.get("employee").firstName ? e.item.get("employee").firstName : '';
