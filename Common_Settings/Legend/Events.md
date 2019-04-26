@@ -60,7 +60,7 @@ In the sample below, there is a multiple-series chart with the interactivity of 
 {sample}CS\_Legend\_Events\_02{sample}
 
 ```
-/* disable the default behavior of the legend
+/* prevent the default behavior of the legend
 on the legendItemMouseDown event */
 chart.legend().listen("legendItemMouseDown", function(e) {
   e.preventDefault();

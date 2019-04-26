@@ -61,7 +61,7 @@ anychart.onDocumentReady(function () {
     when it hovers over the legend */
     legend.hoverCursor("default");
 
-    /* disable the default behavior of the legend
+    /* prevent the default behavior of the legend
     on the legendItemMouseDown event
     and prevent the legendItemClick event */
     legend.listen("legendItemMouseDown", function(e) {
@@ -69,7 +69,7 @@ anychart.onDocumentReady(function () {
       e.stopPropagation();
     });
 
-    /* disable the default behavior of the legend
+    /* prevent the default behavior of the legend
     on the legendItemMouseOver event */
     legend.listen("legendItemMouseOver", function(e) {
       e.preventDefault();
