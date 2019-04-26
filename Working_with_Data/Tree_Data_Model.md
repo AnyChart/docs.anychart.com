@@ -629,6 +629,8 @@ You can [listen to events](../Common_Settings/Event_Listeners) as well as stop o
 
 In the sample below, there is a Gantt chart with the [live edit](../Gantt_Chart/Live_Edit) mode enabled: you can use the mouse to update items (change the position, duration, name, etc). Also, there is a button for [adding items](#adding). Event listeners are used to update the chart title whenever an item is updated, moved, or added:
 
+{sample :height 420}WD\_Tree\_Data\_16{sample}
+
 ```
 /* listen to the treeItemUpdate event
 and update the chart title */
@@ -657,5 +659,3 @@ treeData.listen("treeItemCreate", function (e) {
               itemName + "</span>: treeItemCreate >");
 });
 ```
-
-{sample :height 420}WD\_Tree\_Data\_16{sample}
