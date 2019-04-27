@@ -3,6 +3,10 @@
 
 ## Overview
 
+misc:
+
+* [Common Settings: Event Listeners](../Common_Settings/Event_Listeners)
+
 ## Rows
 
 <table>
@@ -63,7 +67,7 @@ chart.listen("rowCollapseExpand", function (e) {
 
 misc:
 
-* сослаться на Live Edit
+* [Live Edit](Live_Edit)
 
 
 <table>
@@ -136,10 +140,9 @@ chart.listen("beforeCreateConnector", function (e) {
 
 misc:
 
-* события только на move и update
 * объяснить что такое move
-* сослаться на Live Edit
-* сослаться на Tree Data
+* [Tree Data Model: Events](../Working_with_Data/Tree_Data_Model#events)
+* [Live Edit](Live_Edit)
 
 
 <table>
