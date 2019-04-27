@@ -147,7 +147,7 @@ chart.listen("beforeCreateConnector", function (e) {
 
 ## Data Tree
 
-When the chart is edited in the [Live Edit](Live_Edit) mode, the following events of data tree fire:
+When the chart is edited in the [Live Edit](Live_Edit) mode, the following events of the data tree fire (?):
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
