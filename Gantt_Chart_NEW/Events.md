@@ -5,7 +5,10 @@
 
 misc:
 
-* [Common Settings: Event Listeners](../Common_Settings/Event_Listeners)
+* [chart](#chart)
+* [data_tree](#data_tree)
+* [Event Listeners](../Common_Settings/Event_Listeners)
+* [Interactivity](../Common_Settings/Interactivity)
 
 ## Chart
 
@@ -138,7 +141,7 @@ chart.listen("beforeCreateConnector", function (e) {
 });
 ```
 
-## Tree Data
+## Data Tree
 
 misc:
 
