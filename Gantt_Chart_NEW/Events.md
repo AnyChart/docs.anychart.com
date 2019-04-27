@@ -3,12 +3,9 @@
 
 ## Overview
 
-misc:
+This article explains how to work with the events of the [chart](#chart) (rows and connector) and [data tree](#data_tree).
 
-* [chart](#chart)
-* [data_tree](#data_tree)
-* [Event Listeners](../Common_Settings/Event_Listeners)
-* [Interactivity](../Common_Settings/Interactivity)
+See [Event Listeners](../Common_Settings/Event_Listeners) and [Interactivity](../Common_Settings/Interactivity) to learn more.
 
 ## Chart
 
