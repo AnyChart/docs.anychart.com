@@ -19,7 +19,7 @@
 </tr>
 </table>
 
-{sample :height 240}GANTT\_NEW\_Events\_01{sample}
+{sample :height 270}GANTT\_NEW\_Events\_01{sample}
 
 ```
 /* listen to the rowMouseOver event
