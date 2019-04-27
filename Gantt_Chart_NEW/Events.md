@@ -7,7 +7,9 @@ misc:
 
 * [Common Settings: Event Listeners](../Common_Settings/Event_Listeners)
 
-## Rows
+## Chart
+
+### Rows
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
@@ -63,7 +65,7 @@ chart.listen("rowCollapseExpand", function (e) {
 });
 ```
 
-## Connectors
+### Connectors
 
 misc:
 
