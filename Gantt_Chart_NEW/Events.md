@@ -170,7 +170,7 @@ treeData.listen("treeItemMove", function (e) {
 });
 ```
 
-### Preventing Default Behavior
+## Preventing Default Behavior
 
 {sample :height 220}GANTT\_NEW\_Events\_04{sample}
 
@@ -180,7 +180,11 @@ on the rowDblClick event */
 chart.listen("rowDblClick", function (e) {
   e.preventDefault();
 });
+```
 
+{sample :height 220}GANTT\_NEW\_Events\_05{sample}
+
+```
 /* prevent the default behavior of the chart
 on the beforeCreateConnector event */
 chart.listen("beforeCreateConnector", function (e) {
