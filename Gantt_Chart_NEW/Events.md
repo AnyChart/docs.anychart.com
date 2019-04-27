@@ -91,7 +91,7 @@ Here are the events of [connectors](Project_Chart#connectors):
 </tr>
 </table>
 
-In the following sample, the [Live Edit](Live_Edit) is enabled. The `connectorMouseOver`, `connectorClick`, `connectorDblClick`, and `beforeCreateConnector` events are used to update the chart title:
+In the following sample, the [Live Edit](Live_Edit) mode is enabled. The `connectorMouseOver`, `connectorClick`, `connectorDblClick`, and `beforeCreateConnector` events are used to update the chart title:
 
 {sample :height 295}GANTT\_NEW\_Events\_02{sample}
 
