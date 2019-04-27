@@ -80,7 +80,7 @@ misc:
 </tr>
 </table>
 
-{sample :height 240}GANTT\_NEW\_Events\_02{sample}
+{sample :height 295}GANTT\_NEW\_Events\_02{sample}
 
 ```
 /* listen to the connectorMouseOver event
@@ -148,7 +148,7 @@ misc:
 <tr><td>treeItemUpdate</td><td>A data item has been updated.</td></tr>
 </table>
 
-{sample :height 240}GANTT\_NEW\_Events\_03{sample}
+{sample :height 295}GANTT\_NEW\_Events\_03{sample}
 
 ```
 /* listen to the treeItemUpdate event
