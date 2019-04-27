@@ -3,7 +3,11 @@
 
 ## Overview
 
-This article explains how to work with the events of the [chart](#chart) (rows and connector) and [data tree](#data_tree).
+This article explains how to work with the events of the Gantt chart.
+
+You can listen to the events of rows and connectors by attaching event listeners to the [chart](#chart). Also, you can listen to the events of the [data tree](#data_tree), which fire when the chart is edited in the [Live Edit](Live_Edit) mode.
+
+The last section explains how to [prevent the default behavior](#preventing_default_behavior) of the chart.
 
 See [Event Listeners](../Common_Settings/Event_Listeners) and [Interactivity](../Common_Settings/Interactivity) to learn more.
 
@@ -69,6 +73,7 @@ chart.listen("rowCollapseExpand", function (e) {
 
 misc:
 
+* [Project Chart: Connectors](Project_Chart#connectors)
 * [Live Edit](Live_Edit)
 
 
