@@ -61,16 +61,16 @@ anychart.onDocumentReady(function () {
     when it hovers over the legend */
     legend.hoverCursor("default");
 
-    /* prevent the default behavior of the legend
-    on the legendItemMouseDown event
-    and prevent the legendItemClick event */
+    /* listen to the legendItemMouseDown event
+    and prevent the default behavior of the legend
+    and the legendItemClick event */
     legend.listen("legendItemMouseDown", function(e) {
       e.preventDefault();
       e.stopPropagation();
     });
 
-    /* prevent the default behavior of the legend
-    on the legendItemMouseOver event */
+    /* listen to the legendItemMouseOver event
+    and prevent the default behavior of the legend */
     legend.listen("legendItemMouseOver", function(e) {
       e.preventDefault();
     });

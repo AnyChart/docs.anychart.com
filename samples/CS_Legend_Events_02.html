@@ -65,8 +65,8 @@ anychart.onDocumentReady(function () {
     var legend = chart.legend();
     legend.enabled(true);
 
-    /* prevent the default behavior of the legend
-    on the legendItemMouseDown event */
+    /* listen to the legendItemMouseDown event
+    and prevent the default behavior of the legend */
     legend.listen("legendItemMouseDown", function(e) {
       e.preventDefault();
     });

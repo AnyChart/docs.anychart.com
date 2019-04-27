@@ -40,16 +40,16 @@ anychart.onDocumentReady(function () {
     when it hovers over the legend */
     chart.legend().hoverCursor("default");
 
-    /* prevent the default behavior of the legend
-    on the legendItemMouseDown event
-    and prevent the legendItemClick event */
+    /* listen to the legendItemMouseDown event
+    and prevent the default behavior of the legend
+    and the legendItemClick event */
     chart.legend().listen("legendItemMouseDown", function(e) {
       e.preventDefault();
       e.stopPropagation();
     });
 
-    /* prevent the default behavior of the legend
-    on the legendItemMouseOver event */
+    /* listen to  the legendItemMouseOver event
+    and prevent the default behavior of the legend */
     chart.legend().listen("legendItemMouseOver", function(e) {
       e.preventDefault();
     });

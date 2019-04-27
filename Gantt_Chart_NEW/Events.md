@@ -147,18 +147,17 @@ chart.listen("beforeCreateConnector", function (e) {
 
 ## Data Tree
 
-misc:
-
-* объяснить что такое move
-* [Tree Data Model: Events](../Working_with_Data/Tree_Data_Model#events)
-* [Live Edit](Live_Edit)
-
+When the chart is edited in the [Live Edit](Live_Edit) mode, the following events of data tree fire:
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
-<tr><td>treeItemMove</td><td>A data item has been moved.</td></tr>
+<tr><td>treeItemMove</td><td>A data item has been moved. (?)</td></tr>
 <tr><td>treeItemUpdate</td><td>A data item has been updated.</td></tr>
 </table>
+
+See also: [Tree Data Model: Events](../Working_with_Data/Tree_Data_Model#events).
+
+In this sample, both events are used to update the chart title:
 
 {sample :height 295}GANTT\_NEW\_Events\_03{sample}
 
@@ -184,17 +183,21 @@ treeData.listen("treeItemMove", function (e) {
 
 ## Preventing Default Behavior
 
+To prevent the default behavior of the chart, use the {api:anychart.graphics.events.BrowserEvent#preventDefault}preventDefault(){api} (?) method.
+
+In the sample below, 
+
 {sample :height 220}GANTT\_NEW\_Events\_04{sample}
 
 ```
-/* prevent the default behavior of the chart
-on the rowClick event */
+/* listen to the rowClick event
+and prevent the default behavior of the chart */
 chart.listen("rowClick", function (e) {
   e.preventDefault();
 });
 
-/* prevent the default behavior of the chart
-on the rowDblClick event */
+/* listen to the rowDblClick event
+and prevent the default behavior of the chart */
 chart.listen("rowDblClick", function (e) {
   e.preventDefault();
 });
@@ -203,8 +206,8 @@ chart.listen("rowDblClick", function (e) {
 {sample :height 220}GANTT\_NEW\_Events\_05{sample}
 
 ```
-/* prevent the default behavior of the chart
-on the beforeCreateConnector event */
+/* listen to the beforeCreateConnector event
+and prevent the default behavior of the chart */
 chart.listen("beforeCreateConnector", function (e) {
   e.preventDefault();
 });
