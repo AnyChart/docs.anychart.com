@@ -176,6 +176,12 @@ treeData.listen("treeItemMove", function (e) {
 
 ```
 /* prevent the default behavior of the chart
+on the rowClick event */
+chart.listen("rowClick", function (e) {
+  e.preventDefault();
+});
+
+/* prevent the default behavior of the chart
 on the rowDblClick event */
 chart.listen("rowDblClick", function (e) {
   e.preventDefault();
