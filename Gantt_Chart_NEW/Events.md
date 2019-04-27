@@ -5,7 +5,7 @@
 
 This article explains how to work with the events of the Gantt chart.
 
-You can listen to the events of rows and connectors by attaching event listeners to the [chart](#chart). Also, you can listen to the events of the [data tree](#data_tree), which fire when the chart is edited in the [Live Edit](Live_Edit) mode.
+You can listen to the events of rows and connectors by attaching event listeners to the [chart](#chart). Also, it is possible to listen to the events of the [data tree](#data_tree), which fire when the chart is edited in the [Live Edit](Live_Edit) mode.
 
 The last section explains how to [prevent the default behavior](#preventing_default_behavior) of the chart.
 
