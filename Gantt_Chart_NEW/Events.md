@@ -5,7 +5,7 @@
 
 This article explains how to work with the events of the Gantt chart.
 
-You can listen to the events of rows and connectors by attaching event listeners to the [chart](#chart). Also, it is possible to listen to the events of the [data tree](#data_tree), which fire when the chart is edited in the [Live Edit](Live_Edit) mode.
+You can listen to the events of rows and connectors by attaching event listeners to the [chart](#chart). Also, it is possible to listen to the events of the [data tree](#data_tree), which fire (?) when the chart is edited in the [Live Edit](Live_Edit) mode.
 
 The last section explains how to [prevent the default behavior](#preventing_default_behavior) of the chart.
 
@@ -14,6 +14,8 @@ See [Event Listeners](../Common_Settings/Event_Listeners) and [Interactivity](..
 ## Chart
 
 ### Rows
+
+You can listen to the following events of rows:
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
@@ -28,6 +30,8 @@ See [Event Listeners](../Common_Settings/Event_Listeners) and [Interactivity](..
 <tr><td>rowSelect</td><td>A row has been selected.</td></tr>
 </tr>
 </table>
+
+In the sample below, event listeners are used to update the chart title when `rowMouseOver`, `rowClick`, `rowDblClick`, and `rowCollapseExpand` fire (?):
 
 {sample :height 295}GANTT\_NEW\_Events\_01{sample}
 
@@ -71,15 +75,11 @@ chart.listen("rowCollapseExpand", function (e) {
 
 ### Connectors
 
-misc:
-
-* [Project Chart: Connectors](Project_Chart#connectors)
-* [Live Edit](Live_Edit)
-
+Here are the events of [connectors](Project_Chart#connectors):
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
-<tr><td>beforeCreateConnector</td><td> (?)</td></tr>
+<tr><td>beforeCreateConnector</td><td> A connector is about to be created in the [Live Edit](Live_Edit) mode.</td></tr>
 <tr><td>connectorClick</td><td>A connector has been clicked on.</td></tr>
 <tr><td>connectorDblClick</td><td>A connector has been double-clicked on.</td></tr>
 <tr><td>connectorMouseDown</td><td>The left mouse button has been pressed on a connector.</td></tr>
@@ -90,6 +90,8 @@ misc:
 <tr><td>connectorSelect</td><td>A connector has been selected.</td></tr>
 </tr>
 </table>
+
+In the following sample, the [Live Edit](Live_Edit) is enabled. The `connectorMouseOver`, `connectorClick`, `connectorDblClick`, and `beforeCreateConnector` events are used to update the chart title:
 
 {sample :height 295}GANTT\_NEW\_Events\_02{sample}
 
