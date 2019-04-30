@@ -5,7 +5,7 @@
 
 This article explains how to work with the events of the Gantt chart.
 
-You can listen to the events of rows and connectors by attaching event listeners to the [chart](#chart). Also, it is possible to listen to the events of the [data tree](#data_tree), which fire (?) when the chart is edited in the [Live Edit](Live_Edit) mode.
+You can listen to the events of rows and connectors by attaching event listeners to the [chart](#chart). Also, it is possible to listen to the events of the [data tree](#data_tree), which fire when the chart is edited in the [Live Edit](Live_Edit) mode.
 
 The last section explains how to [prevent the default behavior](#preventing_default_behavior) of the chart.
 
@@ -31,7 +31,7 @@ You can listen to the following events of rows:
 </tr>
 </table>
 
-In the sample below, event listeners are used to update the chart title when `rowMouseOver`, `rowClick`, `rowDblClick`, and `rowCollapseExpand` fire (?):
+In the sample below, event listeners are used to update the chart title when `rowMouseOver`, `rowClick`, `rowDblClick`, and `rowCollapseExpand` fire:
 
 {sample :height 295}GANTT\_NEW\_Events\_01{sample}
 
@@ -147,7 +147,7 @@ chart.listen("beforeCreateConnector", function (e) {
 
 ## Data Tree
 
-When the chart is edited in the [Live Edit](Live_Edit) mode, the following events of the data tree fire (?):
+When the chart is edited in the [Live Edit](Live_Edit) mode, the following events of the data tree fire:
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
@@ -183,9 +183,9 @@ treeData.listen("treeItemMove", function (e) {
 
 ## Preventing Default Behavior
 
-To prevent the default behavior of the chart, use the {api:anychart.graphics.events.BrowserEvent#preventDefault}preventDefault(){api} (?) method.
+To prevent the default behavior of the chart, use the {api:anychart.graphics.events.BrowserEvent#preventDefault}preventDefault(){api} method.
 
-When you click on a row of Gantt chart, the row is selected (?), and when you double-click on a row with a parent element, this element is expanded or collapsed. In the sample below, the `rowClick` and `rowDblClick` events are used to prevent this behavior:
+When you click on a row of Gantt chart, the row is selected, and when you double-click on a row with a parent element, this element is expanded or collapsed. In the sample below, the `rowClick` and `rowDblClick` events are used to prevent this behavior:
 
 {sample :height 220}GANTT\_NEW\_Events\_04{sample}
 

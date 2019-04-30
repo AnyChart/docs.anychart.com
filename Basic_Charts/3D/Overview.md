@@ -82,7 +82,9 @@ chart.draw();
 
 {sample}BCT\_3D\_01{sample}
 
-## Z-Angle
+## Special Settings
+
+### Z-Angle
 
 3D charts can be shown from different angles of view: to set the angle, use the {api:anychart.charts.Cartesian3d#zAngle}zAngle(){api} method with any 3D chart except the 3D Pie.
 
@@ -97,7 +99,7 @@ chart.zAngle(20);
 
 {sample}BCT\_3D\_02{sample}
 
-## Z-Aspect
+### Z-Aspect
 
 3D charts can vary in depth: to set it, use the {api:anychart.charts.Cartesian3d#zAspect}zAspect(){api} method with any 3D chart except the 3D Pie.
 
@@ -112,7 +114,7 @@ chart.zAspect("100%"");
 
 {sample}BCT\_3D\_03{sample}
 
-## Z-Distribution
+### Z-Distribution
 
 The series of multiple-series 3D charts can be distributed either along the Z-axis or along the X-axis.
 
