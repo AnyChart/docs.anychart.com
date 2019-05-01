@@ -245,7 +245,7 @@ Also, you can use the {api:anychart.core.ui.Legend#items}items(){api} method, wh
 
 The available settings of custom legend items are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
 
-**Note:** The [default interactivity settings](Basic_Settings#default_interactivity) do not apply to custom items. To bind them to elements of the chart, you have to use events – see the [Events](Events) article.
+**Note:** The [default behavior](Basic_Settings#default_behavior) settings do not apply to custom items. To bind them to elements of the chart, you have to use events – see the [Events](Events) article.
 
 In this sample, there is a chart with a default legend. The {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method with a function as a parameter is used to add a custom legend item representing the sum of all the Y-values on the chart:
 

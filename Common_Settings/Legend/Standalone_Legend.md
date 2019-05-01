@@ -58,7 +58,7 @@ The settings available for individual items are described in the [Individual Leg
 
 ### Interactivity
 
-The [default interactivity settings](Basic_Settings#default_interactivity) apply to legend items that are added automatically: they are bound to points or series of the chart or charts. If items are added manually, you have to manually bind them to elements of the chart with the help of events.
+The [default behavior](Basic_Settings#default_behavior) settings apply to legend items that are added automatically: they are bound to points or series of the chart or charts. If items are added manually, you have to manually bind them to elements of the chart with the help of events.
 
 For further information, take a look at samples in the [Item = Multiple Series](#item_=_multiple_series) and [Multiple Legends](#multiple_legends) sections and read the [Events](Events) article.
 

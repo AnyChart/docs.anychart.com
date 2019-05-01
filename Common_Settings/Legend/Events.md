@@ -5,7 +5,7 @@
 
 This article explains how to work with the events of the legend and legend items. Also, it shows how to use the events of chart points to modify the legend or its items.
 
-Please note: the [default interactivity](Basic_Settings#default_interactivity) of multiple-series charts differs from that of single-series charts, so the exact way of working with events depends on whether the chart type allows adding multiple series.
+Please note: the [default behavior](Basic_Settings#default_behavior) of multiple-series charts differs from that of single-series charts, so the exact way of working with events depends on whether the chart type allows adding multiple series.
 
 See [Event Listeners](../Event_Listeners) and [Interactivity](../Interactivity) to learn more.
 
@@ -53,7 +53,7 @@ Here are the events of legend items:
 <tr><td>legendItemMouseUp</td><td>The left mouse button has been released over an item.</td></tr>
 </table>
 
-In the sample below, there is a multiple-series chart with the interactivity of the legend modified: when you click on an icon, its fill color is changed, and its series, instead of being hidden / shown, is selected.
+In the sample below, there is a multiple-series chart with the behavior of the legend modified: when you click on an icon, its fill color is changed, and its series, instead of being hidden / shown, is selected.
 
 **Note:** The methods allowing you to configure legend items individually can be found in the [Individual Legend Items](Individual_Legend_Items) section.
 
@@ -122,7 +122,7 @@ chart.legend().listen("legendItemMouseOut", function(e) {
 
 By default, the events of legend items affect the chart: for example, when a legend item of a multiple-series chart is clicked on, the series it represents is enabled or disabled. Conversely, you can use the [events of chart points](../Event_Listeners#point-related) to modify the legend and its items.
 
-In this sample, selecting a point of a multiple-series chart or moving a mouse over it affects the appearance settings of the legend item representing its series. The `pointsSelect`, `pointMouseOver`, and `pointMouseOut` events are used.
+In this sample, selecting a point of a multiple-series chart or moving a mouse over it affects the appearance settings of the legend item representing its series. The `"pointsSelect"`, `"pointMouseOver"`, and `"pointMouseOut"` events are used.
 
 **Note:** The methods allowing you to configure legend items individually can be found in the [Individual Legend Items](Individual_Legend_Items) section.
 
@@ -161,7 +161,7 @@ chart.listen("pointMouseOut", function(e) {
 });
 ```
 
-In the following sample, when you click on a point of a single-series chart, the appearance of its icon is modified. The `pointClick` event is used.
+In the following sample, when you click on a point of a single-series chart, the appearance of its icon is modified. The `"pointClick"` event is used.
 
 **Note**: an individual legend item of a single-series chart can be customized only by adding special fields to the data – see [Individual Legend Items: Single Series](Individual_Legend_Items#single_series).
 

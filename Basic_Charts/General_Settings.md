@@ -160,7 +160,7 @@ A legend is a part of the chart that lists and explains its elements, making it 
 
 Most chart types require you to enable the legend manually. But there are some exceptions – for example, the following types: [Pie](Pie_Chart), [Doughnut](Doughnut_Chart), [Funnel](Funnel_Chart), [Pyramid](Pyramid_Chart), [Venn](Venn_Diagram), [Waterfall](Waterfall_Chart).
 
-The [source of legend items](../Common_Settings/Legend/Basic_Settings#source) and their [default interactivity](../Common_Settings/Legend/Basic_Settings#default_interactivity) also depend on the chart type. As a rule, when you click on a legend item of a multiple-series chart, the series of the chart it represents is shown / hidden, and when you hover over an item, the hover state of the series is enabled. As for single-series chart types, their legend items represent points, and the behavior of the legend varies with the type.
+The [source of legend items](../Common_Settings/Legend/Basic_Settings#source) and their [default behavior](../Common_Settings/Legend/Basic_Settings#default_behavior) also depend on the chart type. As a rule, when you click on a legend item of a multiple-series chart, the series of the chart it represents is shown / hidden, and when you hover over an item, the hover state of the series is enabled. As for single-series chart types, their legend items represent points, and the behavior of the legend varies with the type.
 
 For more information, read this section: [Legend](../Common_Settings/Legend/Overview).
 
@@ -222,7 +222,8 @@ All charts with points looking like bars (Bar, Column, and related types) allow 
 
 ## Interactivity
 
-You can change the default behavior of a chart or a series in AnyChart. By default, when a user hovers over a point, it is highlighted, and a tooltip is shown; clicking on a legend item usually hides / shows a series it represents, and so on. The [Interactivity](../Common_Settings/Interactivity/Overview) section explains how to change the defaults and create custom interactivity settings.
+By default, when a user hovers over a point, it is highlighted, and a tooltip is shown; clicking on a legend item usually hides / shows a series it represents, and so on.
+You can change the default behavior of a chart or a series in AnyChart – see the [Interactivity](../Common_Settings/Interactivity/Overview) section to learn more.
 
 ## Events
 

@@ -31,7 +31,7 @@ You can listen to the following events of rows:
 </tr>
 </table>
 
-In the sample below, event listeners are used to update the chart title when `rowMouseOver`, `rowClick`, `rowDblClick`, and `rowCollapseExpand` fire:
+In the sample below, event listeners are used to update the chart title when `"rowMouseOver"`, `"rowClick"`, `"rowDblClick"`, and `"rowCollapseExpand"` fire:
 
 {sample :height 295}GANTT\_NEW\_Events\_01{sample}
 
@@ -91,7 +91,7 @@ Here are the events of [connectors](Project_Chart#connectors):
 </tr>
 </table>
 
-In the following sample, the [Live Edit](Live_Edit) mode is enabled. The `connectorMouseOver`, `connectorClick`, `connectorDblClick`, and `beforeCreateConnector` events are used to update the chart title:
+In the following sample, the [Live Edit](Live_Edit) mode is enabled. The `"connectorMouseOver"`, `"connectorClick"`, `"connectorDblClick"`, and `"beforeCreateConnector"` events are used to update the chart title:
 
 {sample :height 295}GANTT\_NEW\_Events\_02{sample}
 
@@ -185,7 +185,7 @@ treeData.listen("treeItemMove", function (e) {
 
 To prevent the default behavior of the chart, use the {api:anychart.graphics.events.BrowserEvent#preventDefault}preventDefault(){api} method.
 
-When you click on a row of Gantt chart, the row is selected, and when you double-click on a row with a parent element, this element is expanded or collapsed. In the sample below, the `rowClick` and `rowDblClick` events are used to prevent this behavior:
+When you click on a row of Gantt chart, the row is selected, and when you double-click on a row with a parent element, this element is expanded or collapsed. In the sample below, the `"rowClick"` and `"rowDblClick"` events are used to prevent this behavior:
 
 {sample :height 220}GANTT\_NEW\_Events\_04{sample}
 
@@ -203,7 +203,7 @@ chart.listen("rowDblClick", function (e) {
 });
 ```
 
-In the following sample, the [Live Edit](Live_Edit) mode is enabled. You can draw a connector preview, but cannot create a connector – this feature is disabled with the help of the `beforeCreateConnector` event:
+In the following sample, the [Live Edit](Live_Edit) mode is enabled. You can draw a connector preview, but cannot create a connector – this feature is disabled with the help of the `"beforeCreateConnector"` event:
 
 {sample :height 220}GANTT\_NEW\_Events\_05{sample}
 
