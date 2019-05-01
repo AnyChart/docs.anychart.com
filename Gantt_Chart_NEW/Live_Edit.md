@@ -25,6 +25,7 @@ misc:
 * пример 1: включение на всем чарте
 * пример 2: боксы с галочками - data grid, timeline, какой-нибудь элемент
 
+
 ```
 
 ```
@@ -70,6 +71,7 @@ misc:
 
 * показать structure edit и element edit, возможно разбить на два примера
 
+
 ```
 
 ```
@@ -87,6 +89,7 @@ misc:
 * ElementEdit:  thumbs(), connectorThumbs()
 * ElementEdit -> start() & end() + thumb() & connectorThumb()
 * метод thumbs(): проверить у каких классов он на самом деле работает
+
 
 ```
 
