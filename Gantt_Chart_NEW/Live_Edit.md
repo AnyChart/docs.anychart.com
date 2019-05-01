@@ -29,13 +29,13 @@ misc:
 
 ```
 
-{sample :height 295}GANTT\_NEW\_Live\_Edit\_01{sample}
+{sample :height 220}GANTT\_NEW\_Live\_Edit\_01{sample}
 
 ```
 
 ```
 
-{sample :height 295}GANTT\_NEW\_Live\_Edit\_02{sample}
+{sample :height 260}GANTT\_NEW\_Live\_Edit\_02{sample}
 
 ## Default Behavior
 
@@ -48,7 +48,7 @@ misc:
 
 ```
 
-{sample :height 295}GANTT\_NEW\_Live\_Edit\_03{sample}
+{sample :height 220}GANTT\_NEW\_Live\_Edit\_03{sample}
 
 ## Events
 
@@ -74,13 +74,13 @@ misc:
 
 ```
 
-{sample :height 295}GANTT\_NEW\_Live\_Edit\_04{sample}
+{sample :height 220}GANTT\_NEW\_Live\_Edit\_04{sample}
 
 ```
 
 ```
 
-{sample :height 295}GANTT\_NEW\_Live\_Edit\_05{sample}
+{sample :height 220}GANTT\_NEW\_Live\_Edit\_05{sample}
 
 ### Controls (Thumbs)
 
@@ -92,4 +92,4 @@ misc:
 
 ```
 
-{sample :height 295}GANTT\_NEW\_Live\_Edit\_06{sample}
+{sample :height 220}GANTT\_NEW\_Live\_Edit\_06{sample}
