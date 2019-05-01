@@ -13,15 +13,35 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
+        #titleLabel {
+            font-weight: 600;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 40px;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
+<label id="titleLabel">Enable Live Edit For:</label>
+<label for="dataGridCheckbox">Data Grid</label>
+<input type="checkbox" id="dataGridCheckbox" onchange="editDataGrid()">
+<label for="timelineCheckbox">Timeline</label>
+<input type="checkbox" id="timelineCheckbox" onchange="editTimeline()">
+<label for="milestonesCheckbox">Milestones</label>
+<input type="checkbox" id="milestonesCheckbox" onchange="editMilestones()">
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -71,7 +91,7 @@ anychart.onDocumentReady(function () {
     var treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart
-    var chart = anychart.ganttProject();
+    chart = anychart.ganttProject();
     
     // set the data
     chart.data(treeData);
@@ -88,6 +108,39 @@ anychart.onDocumentReady(function () {
     // fit elements to the width of the timeline
     chart.fitAll();
 });
+
+// ...
+function editDataGrid() {
+  if (document.getElementById("dataGridCheckbox").checked) { 
+    chart.dataGrid().edit(true);
+  } else {
+    chart.dataGrid().edit(false);
+  }
+}
+
+// ...
+function editTimeline() {
+  if (document.getElementById("timelineCheckbox").checked) { 
+    chart.getTimeline().edit(true);
+    chart.getTimeline().milestones().edit(true);
+    document.getElementById("milestonesCheckbox").checked = true;
+  } else {
+    chart.getTimeline().edit(false);
+    chart.getTimeline().milestones().edit(false);
+    document.getElementById("milestonesCheckbox").checked = false;
+
+  }
+}
+
+// ...
+function editMilestones() {
+  if (document.getElementById("milestonesCheckbox").checked) { 
+    chart.getTimeline().milestones().edit(true);
+  }
+  if (!document.getElementById("milestonesCheckbox").checked) {
+    chart.getTimeline().milestones().edit(false);
+  }
+}
 </script>
 </body>
 </html>
