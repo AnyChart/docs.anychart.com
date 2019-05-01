@@ -109,7 +109,7 @@ anychart.onDocumentReady(function () {
     chart.fitAll();
 });
 
-// ...
+// allow / forbid editing the data grid
 function editDataGrid() {
   if (document.getElementById("dataGridCheckbox").checked) { 
     chart.dataGrid().edit(true);
@@ -118,7 +118,7 @@ function editDataGrid() {
   }
 }
 
-// ...
+// allow / forbid editing the timeline
 function editTimeline() {
   if (document.getElementById("timelineCheckbox").checked) { 
     chart.getTimeline().edit(true);
@@ -132,7 +132,7 @@ function editTimeline() {
   }
 }
 
-// ...
+// allow / forbid editing milestones
 function editMilestones() {
   if (document.getElementById("milestonesCheckbox").checked) { 
     chart.getTimeline().milestones().edit(true);
