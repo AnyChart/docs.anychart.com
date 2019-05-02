@@ -85,6 +85,7 @@ anychart.onDocumentReady(function () {
     chart.data(treeData);
 
     // configure the scale
+    chart.getTimeline().scale().minimum("2018-01-29");
     chart.getTimeline().scale().maximum("2018-02-27");
 
     // disable labels of elements
