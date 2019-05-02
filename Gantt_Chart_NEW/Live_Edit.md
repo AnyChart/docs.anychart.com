@@ -20,11 +20,6 @@ misc:
 * elements: element edit
 * data grid: structure edit + data grid text
 
-примеры:
-
-* пример 1: включение на всем чарте
-* пример 2: боксы с галочками - data grid, timeline, какой-нибудь элемент
-
 
 ```
 
