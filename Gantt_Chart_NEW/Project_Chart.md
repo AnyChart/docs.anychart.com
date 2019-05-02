@@ -529,8 +529,7 @@ var data = [
         id: "1_3",
         name: "Meeting",
         actualStart: "2018-02-05",
-        actualEnd: "2018-02-05",
-        custom_field: "(?)"
+        actualEnd: "2018-02-05"
       },
       {
         id: "1_4",
