@@ -25,13 +25,13 @@ misc:
 
 ```
 
-{sample :height 220}GANTT\_NEW\_Live\_Edit\_01{sample}
+{sample :height 260}GANTT\_NEW\_Live\_Edit\_01{sample}
 
 ```
 
 ```
 
-{sample :height 260}GANTT\_NEW\_Live\_Edit\_02{sample}
+{sample :height 240}GANTT\_NEW\_Live\_Edit\_02{sample}
 
 ## Default Behavior
 

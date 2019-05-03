@@ -40,8 +40,8 @@
 <input type="checkbox" id="dataGridCheckbox" onchange="editDataGrid()">
 <label for="timelineCheckbox">Timeline</label>
 <input type="checkbox" id="timelineCheckbox" onchange="editTimeline()">
-<label for="milestonesCheckbox">Milestones</label>
-<input type="checkbox" id="milestonesCheckbox" onchange="editMilestones()">
+<label for="periodsCheckbox">Periods</label>
+<input type="checkbox" id="periodsCheckbox" onchange="editPeriods()">
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -50,55 +50,35 @@ anychart.onDocumentReady(function () {
     var data = [
       {
         id: "1",
-        name: "Development",
-        actualStart: "2018-01-15",
-        actualEnd: "2018-03-10",
-        children: [
-          {
-            id: "1_1",
-            name: "Analysis",
-            actualStart: "2018-01-15",
-            actualEnd: "2018-01-25"
-          },
-          {
-            id: "1_2",
-            name: "Design",
-            actualStart: "2018-01-20",
-            actualEnd: "2018-02-04"
-          },
-          {
-            id: "1_3",
-            name: "Meeting",
-            actualStart: "2018-02-05",
-            actualEnd: "2018-02-05"
-          },
-          {
-            id: "1_4",
-            name: "Implementation",
-            actualStart: "2018-02-05",
-            actualEnd: "2018-02-24"
-          },
-          {
-            id: "1_5",
-            name: "Testing",
-            actualStart: "2018-02-25",
-            actualEnd: "2018-03-10"
-          }
+        name: "Server 1",
+        periods: [
+          {id:"1_1", start: "2018-01-02", end: "2018-01-25"},
+          {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
+          {id:"1_3", start: "2018-03-03", end: "2018-03-25"}
+      ]},
+      {
+        id: "2",
+        name: "Server 2",
+        periods: [
+          {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
+          {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
+      ]},
+      {
+        id: "3",
+        name: "Server 3",
+        periods: [
+          {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
       ]}
     ];
-    
+
     // create a data tree
     var treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart
-    chart = anychart.ganttProject();
+    chart = anychart.ganttResource(); 
     
     // set the data
-    chart.data(treeData);
-
-    // configure the scale
-    chart.getTimeline().scale().maximum("2018-03-20");
-
+    chart.data(treeData);  
 
     // set the container id
     chart.container("container");
@@ -123,23 +103,22 @@ function editDataGrid() {
 function editTimeline() {
   if (document.getElementById("timelineCheckbox").checked) { 
     chart.getTimeline().edit(true);
-    chart.getTimeline().milestones().edit(true);
-    document.getElementById("milestonesCheckbox").checked = true;
+    chart.getTimeline().periods().edit(true);
+    document.getElementById("periodsCheckbox").checked = true;
   } else {
     chart.getTimeline().edit(false);
-    chart.getTimeline().milestones().edit(false);
-    document.getElementById("milestonesCheckbox").checked = false;
+    chart.getTimeline().periods().edit(false);
+    document.getElementById("periodsCheckbox").checked = false;
 
   }
 }
 
-// allow / forbid editing milestones
-function editMilestones() {
-  if (document.getElementById("milestonesCheckbox").checked) { 
-    chart.getTimeline().milestones().edit(true);
-  }
-  if (!document.getElementById("milestonesCheckbox").checked) {
-    chart.getTimeline().milestones().edit(false);
+// allow / forbid editing periods
+function editPeriods() {
+  if (document.getElementById("periodsCheckbox").checked) { 
+    chart.getTimeline().periods().edit(true);
+  } else {
+    chart.getTimeline().periods().edit(false);
   }
 }
 </script>
