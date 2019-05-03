@@ -42,7 +42,8 @@ anychart.onDocumentReady(function () {
             baselineStart: "2018-01-12",
             baselineEnd: "2018-01-25",
             actualStart: "2018-01-15",
-            actualEnd: "2018-01-25"
+            actualEnd: "2018-01-25",
+            progressValue: "75%"
           },
           {
             id: "1_2",
@@ -50,7 +51,10 @@ anychart.onDocumentReady(function () {
             baselineStart: "2018-01-20",
             baselineEnd: "2018-01-31",
             actualStart: "2018-01-20",
-            actualEnd: "2018-02-04"
+            actualEnd: "2018-02-04",
+            progressValue: "100%",
+            connectTo: "1_4",
+            connectorType: "start-start"
           },
           {
             id: "1_3",
@@ -64,7 +68,8 @@ anychart.onDocumentReady(function () {
             baselineStart: "2018-02-01",
             baselineEnd: "2018-02-19",
             actualStart: "2018-02-05",
-            actualEnd: "2018-02-24"
+            actualEnd: "2018-02-24",
+            progressValue: "60%"
           },
           {
             id: "1_5",
@@ -87,7 +92,13 @@ anychart.onDocumentReady(function () {
     chart.data(treeData);
 
     // configure the scale
-    chart.getTimeline().scale().maximum("2018-03-15");
+    chart.getTimeline().scale().maximum("2018-03-20");
+
+    // allow editing the chart
+    chart.edit(true);
+
+    // disable tooltips
+    chart.tooltip(false);
     
     // set the container id
     chart.container("container");
