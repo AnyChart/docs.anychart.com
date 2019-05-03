@@ -52,20 +52,15 @@ misc:
 
 ## Settings
 
-### Appearance
-
 misc:
 
 * StructureEdit: fill(), stroke(), placementStroke()
 * ElementEdit:  fill(), stroke()
 * ConnectorElement: previewStroke()
-* ссылка на Thumbs & Side Controls
+* ссылка на Controls
 * ползунок прогресс-баров: внешний вид настраивается через edit() --> fill() и stroke()
 
-примеры:
-
-* показать structure edit и element edit, возможно разбить на два примера
-
+### Rows
 
 ```
 
@@ -73,13 +68,15 @@ misc:
 
 {sample :height 220}GANTT\_NEW\_Live\_Edit\_04{sample}
 
+### Elements
+
 ```
 
 ```
 
 {sample :height 220}GANTT\_NEW\_Live\_Edit\_05{sample}
 
-### Thumbs & Side Controls
+### Controls
 
 * {api:anychart.core.gantt.edit.Thumb}anychart.core.gantt.edit.Thumb{api}
 * {api:anychart.core.gantt.edit.SideControl}anychart.core.gantt.edit.SideControl{api}

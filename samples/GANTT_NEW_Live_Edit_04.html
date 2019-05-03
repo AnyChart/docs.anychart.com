@@ -82,8 +82,14 @@ anychart.onDocumentReady(function () {
     // disable tooltips
     chart.tooltip(false);
 
-    // ...
-    // chart.edit().
+    // allow editing the chart
+    chart.edit(true);
+
+    // configure the appearance of rows in the live edit mode
+    chart.edit().fill("#dd2c00", 0.2);
+    chart.edit().placementStroke("#dd2c00", 2, "5 2", "round");
+    chart.dataGrid().edit().stroke("#dd2c00", 2);
+    chart.getTimeline().edit().stroke(null);
 
     // set the container id
     chart.container("container");
