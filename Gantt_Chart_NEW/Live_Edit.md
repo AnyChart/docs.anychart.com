@@ -58,7 +58,7 @@ misc:
 * ElementEdit:  fill(), stroke()
 * ConnectorElement: previewStroke()
 * ссылка на Controls
-* ползунок прогресс-баров: внешний вид настраивается через edit() --> fill() и stroke()
+* ползунок прогресс-баров: настройки наследуются у тасков, также могут задаваться отдельно
 
 ### Rows
 
@@ -83,6 +83,7 @@ misc:
 * ElementEdit:  thumbs(), connectorThumbs()
 * ElementEdit -> start() & end() + thumb() & connectorThumb()
 * метод thumbs(): проверить, у каких классов он на самом деле работает
+* примечание про ползунок прогресс-баров
 
 
 ```

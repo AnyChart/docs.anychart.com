@@ -79,8 +79,8 @@ anychart.onDocumentReady(function () {
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-15");
 
-    // disable tooltips
-    chart.tooltip(false);
+    // disable timeline tooltips
+    chart.getTimeline().tooltip(false);
 
     // allow editing the chart
     chart.edit(true);

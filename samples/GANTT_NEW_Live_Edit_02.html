@@ -80,8 +80,8 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);  
 
-    // disable tooltips
-    chart.tooltip(false);
+    // disable timeline tooltips
+    chart.getTimeline().tooltip(false);
 
     // set the container id
     chart.container("container");

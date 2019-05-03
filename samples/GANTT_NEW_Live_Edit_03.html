@@ -52,9 +52,7 @@ anychart.onDocumentReady(function () {
             baselineEnd: "2018-01-31",
             actualStart: "2018-01-20",
             actualEnd: "2018-02-04",
-            progressValue: "100%",
-            connectTo: "1_4",
-            connectorType: "start-start"
+            progressValue: "100%"
           },
           {
             id: "1_3",
@@ -94,8 +92,8 @@ anychart.onDocumentReady(function () {
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-20");
 
-    // disable tooltips
-    chart.tooltip(false);
+    // disable timeline tooltips
+    chart.getTimeline().tooltip(false);
 
     // allow editing the chart
     chart.edit(true);

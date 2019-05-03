@@ -52,9 +52,7 @@ anychart.onDocumentReady(function () {
             baselineEnd: "2018-01-31",
             actualStart: "2018-01-20",
             actualEnd: "2018-02-04",
-            progressValue: "100%",
-            connectTo: "1_4",
-            connectorType: "start-start"
+            progressValue: "100%"
           },
           {
             id: "1_3",
@@ -94,12 +92,19 @@ anychart.onDocumentReady(function () {
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-20");
 
+    // disable timeline tooltips
+    chart.getTimeline().tooltip(false);
+
     // allow editing the chart
     chart.edit(true);
 
-    // disable tooltips
-    chart.tooltip(false);
-    
+    // configure the appearance of  timeline elements in the live edit mode
+    var timeline = chart.getTimeline();
+    timeline.elements().edit().fill("#dd2c00", 0.2);
+    timeline.elements().edit().stroke("#dd2c00");
+    timeline.tasks().progress().edit().fill("#dd2c00");
+    timeline.baselines().edit().stroke("#dd2c00", 1, "5 2", "round");
+
     // set the container id
     chart.container("container");
 
