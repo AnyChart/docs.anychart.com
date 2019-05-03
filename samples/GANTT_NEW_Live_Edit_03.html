@@ -90,7 +90,7 @@ anychart.onDocumentReady(function () {
     chart.data(treeData);
 
     // configure the scale
-    chart.getTimeline().scale().maximum("2018-03-20");
+    chart.getTimeline().scale().maximum("2018-03-13");
 
     // set the row height
     chart.defaultRowHeight(35);
@@ -100,6 +100,9 @@ anychart.onDocumentReady(function () {
 
     // disable timeline tooltips
     chart.getTimeline().tooltip(false);
+
+    // disable labels of timeline elements
+    chart.getTimeline().elements().labels(false);
 
     // allow editing the chart
     chart.edit(true);

@@ -80,6 +80,7 @@ misc:
 
 * {api:anychart.core.gantt.edit.Thumb}anychart.core.gantt.edit.Thumb{api}
 * {api:anychart.core.gantt.edit.SideControl}anychart.core.gantt.edit.SideControl{api}
+* {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}
 * ElementEdit:  thumbs(), connectorThumbs()
 * ElementEdit -> start() & end() + thumb() & connectorThumb()
 * метод thumbs(): проверить, у каких классов он на самом деле работает
