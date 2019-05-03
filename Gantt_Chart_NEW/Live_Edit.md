@@ -44,7 +44,7 @@ misc:
 
 ```
 
-{sample :height 220}GANTT\_NEW\_Live\_Edit\_03{sample}
+{sample :height 360}GANTT\_NEW\_Live\_Edit\_03{sample}
 
 ## Events
 
@@ -74,7 +74,7 @@ misc:
 
 ```
 
-{sample :height 220}GANTT\_NEW\_Live\_Edit\_05{sample}
+{sample :height 360}GANTT\_NEW\_Live\_Edit\_05{sample}
 
 ### Controls
 
@@ -90,4 +90,4 @@ misc:
 
 ```
 
-{sample :height 220}GANTT\_NEW\_Live\_Edit\_06{sample}
+{sample :height 360}GANTT\_NEW\_Live\_Edit\_06{sample}

@@ -92,6 +92,12 @@ anychart.onDocumentReady(function () {
     // configure the scale
     chart.getTimeline().scale().maximum("2018-03-20");
 
+    // set the row height
+    chart.defaultRowHeight(35);
+
+    // set the header height
+    chart.headerHeight(105);
+
     // disable timeline tooltips
     chart.getTimeline().tooltip(false);
 
@@ -101,9 +107,9 @@ anychart.onDocumentReady(function () {
     // configure the appearance of  timeline elements in the live edit mode
     var timeline = chart.getTimeline();
     timeline.elements().edit().fill("#dd2c00", 0.2);
-    timeline.elements().edit().stroke("#dd2c00");
-    timeline.tasks().progress().edit().fill("#dd2c00");
-    timeline.baselines().edit().stroke("#dd2c00", 1, "5 2", "round");
+    timeline.elements().edit().stroke("#dd2c00", 2);
+    timeline.tasks().progress().edit().fill("#1976d2");
+    timeline.baselines().edit().stroke("#dd2c00", 2, "5 2", "round");
 
     // set the container id
     chart.container("container");
