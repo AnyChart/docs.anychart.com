@@ -52,7 +52,7 @@ anychart.onDocumentReady(function () {
             baselineEnd: "2018-01-31",
             actualStart: "2018-01-20",
             actualEnd: "2018-02-04",
-            progressValue: "100%"
+            progressValue: "90%"
           },
           {
             id: "1_3",
@@ -75,7 +75,8 @@ anychart.onDocumentReady(function () {
             baselineStart: "2018-02-20",
             baselineEnd: "2018-03-05",
             actualStart: "2018-02-25",
-            actualEnd: "2018-03-10"
+            actualEnd: "2018-03-10",
+            progressValue: "10%"
           }
       ]}
     ];
@@ -90,7 +91,7 @@ anychart.onDocumentReady(function () {
     chart.data(treeData);
 
     // configure the scale
-    chart.getTimeline().scale().maximum("2018-03-13");
+    chart.getTimeline().scale().maximum("2018-03-11");
 
     // set the row height
     chart.defaultRowHeight(35);
@@ -119,21 +120,13 @@ anychart.onDocumentReady(function () {
     elements.edit().connectorThumbs().size(15);
 
     elements.edit().start().connectorThumb().type("triangleLeft");
-    elements.edit().connectorThumbs().horizontalOffset(1);
+    elements.edit().start().connectorThumb().horizontalOffset(-1);
 
     elements.edit().end().connectorThumb().type("triangleRight");
-    elements.edit().connectorThumbs().horizontalOffset(-1);
+    elements.edit().end().connectorThumb().horizontalOffset(1);
 
     timeline.tasks().progress().edit().fill("#1976d2");
     timeline.tasks().progress().edit().stroke("#dd2c00", 2);
-
-
-
-
-    // timeline.elements().edit().fill("#dd2c00", 0.2);
-    // timeline.elements().edit().stroke("#dd2c00", 2);
-    // timeline.tasks().progress().edit().fill("#1976d2");
-    // timeline.baselines().edit().stroke("#dd2c00", 2, "5 2", "round");
     
     // set the container id
     chart.container("container");

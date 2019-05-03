@@ -81,8 +81,9 @@ anychart.onDocumentReady(function () {
     chart.data(treeData);  
 
     // configure the scale
-    chart.getTimeline().scale().maximum("2018-03-28");
-
+    chart.getTimeline().scale().maximum("2018-01-01");
+    chart.getTimeline().scale().maximum("2018-03-26");
+    
     // disable timeline tooltips
     chart.getTimeline().tooltip(false);
 
