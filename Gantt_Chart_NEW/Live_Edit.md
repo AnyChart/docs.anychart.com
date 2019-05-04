@@ -3,6 +3,13 @@
 
 ## Overview
 
+In the Live Edit mode, you can use a special user interface to change any part of the Gantt chart without touching the code.
+
+The Live Edit mode allows users to edit any part
+
+
+ without touching the code. All you need to do is to use the mouse to change the duration, position or connections.
+
 misc:
 
 * {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}: chart, timeline, data grid
