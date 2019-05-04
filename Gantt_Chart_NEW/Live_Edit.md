@@ -20,6 +20,7 @@ misc:
 * elements: element edit
 * data grid: structure edit + data grid text
 
+
 ```
 chart.edit(true);
 ```
@@ -71,19 +72,24 @@ chart.edit(true);
 
 ## Events
 
-* отсылочный раздел: Events
+* отсылочный раздел: [Events](Events)
 
 ## Settings
 
 misc:
 
-* StructureEdit: fill(), stroke(), placementStroke()
-* ElementEdit:  fill(), stroke()
-* ConnectorElement: previewStroke()
-* ссылка на Controls
-* ползунок прогресс-баров: настройки наследуются у тасков, также могут задаваться отдельно
+* {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}: chart, timeline, data grid
+* {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}
+* (?) {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api}
 
 ### Rows
+
+StructureEdit:
+
+* {api:anychart.core.gantt.edit.StructureEdit#fill}fill(){api}
+* {api:anychart.core.gantt.edit.StructureEdit#stroke}stroke(){api}
+* {api:anychart.core.gantt.edit.StructureEdit#placementStroke}placementStroke(){api}
+
 
 ```
 // allow editing the chart
@@ -100,6 +106,17 @@ chart.getTimeline().edit().stroke(null);
 
 ### Elements
 
+ElementEdit:
+* {api:anychart.core.gantt.edit.ElementEdit#fill}fill(){api}
+* {api:anychart.core.gantt.edit.ElementEdit#stroke}stroke(){api}
+
+ConnectorElement:
+* {api:anychart.core.gantt.elements.ConnectorElement#previewStroke}previewStroke(){api}
+
+misc:
+* ползунок прогресс-баров: настройки наследуются у тасков, также могут задаваться отдельно
+
+
 ```
 // allow editing the chart
 chart.edit(true);
@@ -109,8 +126,8 @@ var timeline = chart.getTimeline();
 timeline.elements().edit().fill("#dd2c00", 0.2);
 timeline.elements().edit().stroke("#dd2c00", 2);
 timeline.baselines().edit().stroke("#dd2c00", 2, "5 2", "round");
-timeline.connectors().previewStroke("#dd2c00", 2, "5 2", "round");
 timeline.tasks().progress().edit().fill("#00bfa5");
+timeline.connectors().previewStroke("#dd2c00", 2, "5 2", "round");
 ```
 
 {sample :height 360}GANTT\_NEW\_Live\_Edit\_05{sample}
@@ -120,10 +137,10 @@ timeline.tasks().progress().edit().fill("#00bfa5");
 * {api:anychart.core.gantt.edit.Thumb}anychart.core.gantt.edit.Thumb{api}
 * {api:anychart.core.gantt.edit.SideControl}anychart.core.gantt.edit.SideControl{api}
 * {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}
-* ElementEdit:  thumbs(), connectorThumbs()
-* ElementEdit -> start() & end() + thumb() & connectorThumb()
-* метод thumbs(): проверить, у каких классов он на самом деле работает
-* примечание про ползунок прогресс-баров
+* ElementEdit:  {api:anychart.core.gantt.edit.ElementEdit#thumbs}thumbs(){api}, {api:anychart.core.gantt.edit.ElementEdit#connectorThumbs}connectorThumbs(){api}
+* ElementEdit -> {api:anychart.core.gantt.edit.ElementEdit#start}start(){api} & {api:anychart.core.gantt.edit.ElementEdit#end}end(){api} + {api:anychart.core.gantt.edit.SideControl#thumb}thumb(){api} & {api:anychart.core.gantt.edit.SideControl#connectorThumb}connectorThumb(){api}
+* все это работает только у элементов
+* ползунок прогресс-баров: настройки наследуются у тасков, также могут задаваться отдельно
 
 
 ```
