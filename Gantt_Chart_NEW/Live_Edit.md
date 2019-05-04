@@ -130,10 +130,8 @@ timeline.tasks().progress().edit().fill("#00bfa5");
 // allow editing the chart
 chart.edit(true);
 
-// access the timeline
+// access the timeline and timeline elements
 var timeline = chart.getTimeline();
-
-// access timeline elements
 var elements = timeline.elements();
 
 // configure live edit thumbs
