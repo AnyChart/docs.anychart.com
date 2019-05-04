@@ -3,12 +3,7 @@
 
 ## Overview
 
-In the Live Edit mode, you can use a special user interface to change any part of the Gantt chart without touching the code.
-
-The Live Edit mode allows users to edit any part
-
-
- without touching the code. All you need to do is to use the mouse to change the duration, position or connections.
+In the Live Edit mode, a special UI is enabled that allows users to edit Gantt charts on-the-fly. It is possible to move rows, change the duration and position of timeline elements, create and remove connectors, and edit the data grid tex.
 
 misc:
 
