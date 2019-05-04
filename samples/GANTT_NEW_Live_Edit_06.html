@@ -122,7 +122,10 @@ anychart.onDocumentReady(function () {
     elements.edit().connectorThumbs().stroke("#dd2c00", 2);
 
     elements.edit().start().connectorThumb().type("triangleLeft");
+    elements.edit().start().connectorThumb().horizontalOffset(-1);
+
     elements.edit().end().connectorThumb().type("triangleRight");
+    elements.edit().start().connectorThumb().horizontalOffset(1);
 
     timeline.tasks().progress().edit().fill("#1976d2");
     timeline.tasks().progress().edit().stroke("#dd2c00", 2);
