@@ -108,9 +108,10 @@ anychart.onDocumentReady(function () {
     // allow editing the chart
     chart.edit(true);
 
-    // configure live edit controls
-
+    // access the timeline
     var timeline = chart.getTimeline();
+
+    // access timeline elements
     var elements = timeline.elements();
 
     // configure live edit thumbs
@@ -122,12 +123,16 @@ anychart.onDocumentReady(function () {
     elements.edit().connectorThumbs().size(15);
     elements.edit().connectorThumbs().fill("#dd2c00");
     elements.edit().connectorThumbs().stroke("#dd2c00", 2);
-    elements.edit().start().connectorThumb().type("triangleLeft");
-    elements.edit().start().connectorThumb().horizontalOffset(-1);
-    elements.edit().end().connectorThumb().type("triangleRight");
-    elements.edit().end().connectorThumb().horizontalOffset(1);
 
-    // configure sliders of progress bars in the live edit mode
+    // configure live edit connector thumbs on the right
+    elements.edit().end().connectorThumb().type("triangleRight");
+    elements.edit().end().connectorThumb().horizontalOffset(-1);
+
+    // configure live edit connector thumbs on the left
+    elements.edit().start().connectorThumb().type("triangleLeft");
+    elements.edit().start().connectorThumb().horizontalOffset(1);
+
+    // configure live edit sliders of progress bars
     timeline.tasks().progress().edit().fill("#1976d2");
     timeline.tasks().progress().edit().stroke("#dd2c00", 2);
     
