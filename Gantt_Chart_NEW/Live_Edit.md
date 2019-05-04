@@ -5,7 +5,7 @@
 
 In the Live Edit mode, a special UI is enabled that allows users to edit Gantt charts on-the-fly. It is possible to move rows, change the duration and position of timeline elements, create and remove connectors, and edit the data grid text.
 
-This article demonstrates the [default behavior](#default_behavior) of the chart in the Live Edit mode and explains how to [enable / disable](#enabling_/_diabling) it. Also, you can configure the appearance and other [settings](#settings) of rows and elements in the Live Edit mode and of Live Edit controls.
+This article demonstrates the [default behavior](#default_behavior) of the chart in the Live Edit mode and explains how to [enable / disable](#enabling_/_diabling) it and access its [settings](#settings) (mostly appearance).
 
 The Live Edit mode allows editing:
 
