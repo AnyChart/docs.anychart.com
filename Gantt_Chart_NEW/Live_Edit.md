@@ -9,8 +9,8 @@ This article demonstrates the [default behavior](#default_behavior) of the chart
 
 The Live Edit mode allows editing the following:
 
-* **the data grid text** – no settings
-* **the structure of data** (the position of rows) – {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}
+* **data grid text** – no settings
+* **structure of data** (the position of rows) – {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}
 * **timeline elements** (the position, duration, connections) – {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}
 
 misc:
