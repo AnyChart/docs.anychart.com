@@ -112,9 +112,9 @@ anychart.onDocumentReady(function () {
     var timeline = chart.getTimeline();
     timeline.elements().edit().fill("#dd2c00", 0.2);
     timeline.elements().edit().stroke("#dd2c00", 2);
-    timeline.tasks().progress().edit().fill("#1976d2");
     timeline.baselines().edit().stroke("#dd2c00", 2, "5 2", "round");
     timeline.connectors().previewStroke("#dd2c00", 2, "5 2", "round");
+    timeline.tasks().progress().edit().fill("#ffa000");
 
     // set the container id
     chart.container("container");
