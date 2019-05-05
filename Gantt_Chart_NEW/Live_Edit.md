@@ -7,17 +7,19 @@ In the Live Edit mode, a special UI is enabled that allows users to edit Gantt c
 
 This article demonstrates the [default behavior](#default_behavior) of the chart in the Live Edit mode and explains how to [enable / disable](#enabling_/_disabling) it and access its appearance and other [settings](#settings).
 
-The Live Edit mode allows editing:
+Below, the available types of editing are listed as well as classes that allow accessing their settings:
+
+* editing the data grid text
+* editing the data structure (the position of rows)
+* editing timeline elements (the position, duration, and connections)
+
+
+
+The Live Edit mode allows enabling the following types of editing:
 
 * the data grid text
-* the data structure (the position of rows)
-* timeline elements (the position, duration, connections)
-
-The following classes allow accessing Live Edit settings:
-
-* the data structure – {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}
-* timeline elements – {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}
-
+* the data structure (the position of rows) – {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}
+* timeline elements (the position, duration, connections) – {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}
 
 misc:
 
