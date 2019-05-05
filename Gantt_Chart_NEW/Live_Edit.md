@@ -17,6 +17,10 @@ Below, the available types of editing are listed as well as classes that allow a
 
 ## Default Behavior
 
+This section describes the default behavior of the chart in the Live Edit mode and lists the events triggered by users' actions. Please note that in addition to the special events mentioned below, all Live Edit interactions trigger [row events](Events#rows).
+
+**Note:** To learn how change the default behavior of the chart in the Live Edit mode, see the [Events](Events) article.
+
 **1. Editing Data Grid Text**
 
 Double-clicking on [data grid labels](Data_Grid/Columns#text_\(labels\)) (except for the first column) allows altering their text.
@@ -42,9 +46,7 @@ Events triggered:
 * [data tree event](Events#data_tree) `"treeItemUpdate"` – a data item has been updated
 * [connector event](Events#connectors) `"beforeCreateConnector"` – a connector is about to be created
 
-**Note:** To learn how change the default behavior of the chart in the Live Edit mode, see the [Events](Events) article. Please keep in mind that in addition to the special events listed here, all Live Edit interactions trigger [row events](Events#rows).
-
-The sample below shows how the Live Edit mode works. All types of editing are enabled on the whole chart.
+The following sample shows how the Live Edit mode works. All types of editing are enabled on the whole chart.
 
 {sample :height 360}GANTT\_NEW\_Live\_Edit\_01{sample}
 
