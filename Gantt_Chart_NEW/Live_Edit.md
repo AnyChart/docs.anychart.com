@@ -23,7 +23,7 @@ Double-clicking on [data grid labels](Data_Grid/Columns#text_\(labels\)) (except
 
 Events triggered:
 
-* [data tree event](Events#data_tree) `"treeItemUpdate"`.
+* [data tree event](Events#data_tree) `"treeItemUpdate"`
 
 **2. Editing Data Structure**
 
