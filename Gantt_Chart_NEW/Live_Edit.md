@@ -37,7 +37,7 @@ Events triggered:
 
 **3. Editing Timeline Elements**
 
-Drag and drop [timeline elements](Elements) to change their position on the timeline. To alter the duration of an element, drag duration thumbs on its sides – it allows modifying the start and end dates.
+Drag and drop [timeline elements](Elements) to change their position on the timeline. To alter the duration of an element, drag duration thumbs on its sides – it allows modifying the start and end dates. To alter the progress of an element, use sliders on progress bars.
 
 Also, you can draw new connectors with the help of connector thumbs on the sides of elements. To remove a connector, select it and press *Delete* in Windows or *Cmd-Backspace* in Mac.
 
