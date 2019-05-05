@@ -25,7 +25,7 @@ The sample below shows how the Live Edit mode works. All types of editing are en
 
 **3. Editing Timeline Elements.**
 
-**Note:** To learn how change the default behavior of the chart in the Live Edit mode, see the [Events](Events) article. Please keep in mind that when the data structure is edited (rows are moved), the [events of the data tree](Events#data_tree) fire as well as the [events of rows](Events#rows). Also, when a connector is created, the `"beforeCreateConnector"` [connector event](Events#connectors) fire.
+**Note:** To learn how change the default behavior of the chart in the Live Edit mode, see the [Events](Events) article. Please keep in mind that when the data structure is edited (rows are moved), the [events of the data tree](Events#data_tree) fire as well as the [events of rows](Events#rows). Also, before a connector is created, the `"beforeCreateConnector"` [connector event](Events#connectors) fire.
 
 {sample :height 360}GANTT\_NEW\_Live\_Edit\_01{sample}
 
