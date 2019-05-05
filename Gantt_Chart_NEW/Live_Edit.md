@@ -9,17 +9,29 @@ This article demonstrates the [default behavior](#default_behavior) of the chart
 
 Below, the available types of editing are listed as well as classes that allow accessing their settings:
 
-* edititng the data grid text
+* editing the data grid text
 * editing the data structure (the position of rows) – {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}
 * editing timeline elements (the position, duration, connections) – {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}
 
 misc:
 
-* {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}: chart, timeline, data grid
-* {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}: elements (except for connectors)
+* elements: except for connectors
 * data grid text: настроек нет
 * поле `id` необходимо для корректной работы этого режима и ганттов в целом
 * список классов?
+
+## Default Behavior
+
+misc:
+
+* [Events](Events)
+
+
+```
+chart.edit(true);
+```
+
+{sample :height 360}GANTT\_NEW\_Live\_Edit\_01{sample}
 
 ## Enabling / Disabling
 
@@ -51,7 +63,7 @@ chart.getTimeline().edit(true);
 chart.getTimeline().milestones().edit(true);
 ```
 
-{sample :height 260}GANTT\_NEW\_Live\_Edit\_01{sample}
+{sample :height 260}GANTT\_NEW\_Live\_Edit\_02{sample}
 
 ```
 chart.dataGrid().edit(true);
@@ -65,25 +77,7 @@ chart.getTimeline().edit(true);
 chart.getTimeline().periods().edit(true);
 ```
 
-{sample :height 200}GANTT\_NEW\_Live\_Edit\_02{sample}
-
-## Default Behavior
-
-misc:
-
-* упоминать события
-* сослаться на Events
-
-
-```
-chart.edit(true);
-```
-
-{sample :height 360}GANTT\_NEW\_Live\_Edit\_03{sample}
-
-## Events
-
-* отсылочный раздел: [Events](Events)
+{sample :height 200}GANTT\_NEW\_Live\_Edit\_03{sample}
 
 ## Settings
 
@@ -186,3 +180,10 @@ timeline.tasks().progress().edit().stroke("#dd2c00", 2);
 ```
 
 {sample :height 360}GANTT\_NEW\_Live\_Edit\_06{sample}
+
+## Events
+
+misc:
+
+* [Default Behavior](#default_behavior)
+* [Events](Events)

@@ -13,35 +13,15 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
     
     <style>
-        html, body {
+        html, body, #container {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
-        label {
-            display: inline-block;
-            margin: 10px 0 0 10px;
-        }
-        #titleLabel {
-            font-weight: 600;
-        }
-        #container {
-            position: absolute;
-            width: 100%;
-            top: 40px;
-            bottom: 0;
-        }
     </style>
 </head>
 <body>
-<label id="titleLabel">Enable Live Edit For:</label>
-<label for="dataGridCheckbox">Data Grid</label>
-<input type="checkbox" id="dataGridCheckbox" onchange="editDataGrid()">
-<label for="timelineCheckbox">Timeline</label>
-<input type="checkbox" id="timelineCheckbox" onchange="editTimeline()">
-<label for="milestonesCheckbox">Milestones</label>
-<input type="checkbox" id="milestonesCheckbox" onchange="editMilestones()">
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -51,20 +31,28 @@ anychart.onDocumentReady(function () {
       {
         id: "1",
         name: "Development",
+        baselineStart: "2018-01-12",
+        baselineEnd: "2018-03-04",
         actualStart: "2018-01-15",
         actualEnd: "2018-03-10",
         children: [
           {
             id: "1_1",
             name: "Analysis",
+            baselineStart: "2018-01-12",
+            baselineEnd: "2018-01-25",
             actualStart: "2018-01-15",
-            actualEnd: "2018-01-25"
+            actualEnd: "2018-01-25",
+            progressValue: "75%"
           },
           {
             id: "1_2",
             name: "Design",
+            baselineStart: "2018-01-20",
+            baselineEnd: "2018-01-31",
             actualStart: "2018-01-20",
-            actualEnd: "2018-02-04"
+            actualEnd: "2018-02-04",
+            progressValue: "80%"
           },
           {
             id: "1_3",
@@ -75,14 +63,20 @@ anychart.onDocumentReady(function () {
           {
             id: "1_4",
             name: "Implementation",
+            baselineStart: "2018-02-01",
+            baselineEnd: "2018-02-19",
             actualStart: "2018-02-05",
-            actualEnd: "2018-02-24"
+            actualEnd: "2018-02-24",
+            progressValue: "60%"
           },
           {
             id: "1_5",
             name: "Testing",
+            baselineStart: "2018-02-20",
+            baselineEnd: "2018-03-05",
             actualStart: "2018-02-25",
-            actualEnd: "2018-03-10"
+            actualEnd: "2018-03-10",
+            progressValue: "20%"
           }
       ]}
     ];
@@ -91,14 +85,19 @@ anychart.onDocumentReady(function () {
     var treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart
-    chart = anychart.ganttProject();
+    var chart = anychart.ganttProject();
     
     // set the data
     chart.data(treeData);
 
     // configure the scale
-    chart.getTimeline().scale().minimum("2018-01-12");
     chart.getTimeline().scale().maximum("2018-03-13");
+
+    // set the row height
+    chart.defaultRowHeight(35);
+
+    // set the header height
+    chart.headerHeight(105);
 
     // disable timeline tooltips
     chart.getTimeline().tooltip(false);
@@ -106,6 +105,9 @@ anychart.onDocumentReady(function () {
     // disable labels of timeline elements
     chart.getTimeline().elements().labels(false);
 
+    // allow editing the chart
+    chart.edit(true);
+    
     // set the container id
     chart.container("container");
 
@@ -115,38 +117,6 @@ anychart.onDocumentReady(function () {
     // fit elements to the width of the timeline
     chart.fitAll();
 });
-
-// allow / forbid editing the data grid
-function editDataGrid() {
-  if (document.getElementById("dataGridCheckbox").checked) { 
-    chart.dataGrid().edit(true);
-  } else {
-    chart.dataGrid().edit(false);
-  }
-}
-
-// allow / forbid editing the timeline
-function editTimeline() {
-  if (document.getElementById("timelineCheckbox").checked) { 
-    chart.getTimeline().edit(true);
-    chart.getTimeline().milestones().edit(true);
-    document.getElementById("milestonesCheckbox").checked = true;
-  } else {
-    chart.getTimeline().edit(false);
-    chart.getTimeline().milestones().edit(false);
-    document.getElementById("milestonesCheckbox").checked = false;
-
-  }
-}
-
-// allow / forbid editing milestones
-function editMilestones() {
-  if (document.getElementById("milestonesCheckbox").checked) { 
-    chart.getTimeline().milestones().edit(true);
-  } else {
-    chart.getTimeline().milestones().edit(false);
-  }
-}
 </script>
 </body>
 </html>
