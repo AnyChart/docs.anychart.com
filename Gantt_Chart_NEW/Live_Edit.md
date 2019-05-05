@@ -13,14 +13,21 @@ Below, the available types of editing are listed as well as classes that allow a
 * editing the data structure (the position of rows) – {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}
 * editing timeline elements (the position, duration, connections) – {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}
 
-**Note:** For the correct work of the Live Edit mode, as well as of Gantt charts in general, the `id` data field is required.
+**Note:** For the correct work of the Live Edit mode, as well as of Gantt charts in general, the `id` [data field](Data#data_fields) is required.
 
 ## Default Behavior
 
 misc:
 
-* [Events](Events)
+The sample below shows how the Live Edit mode. All types of editing are enabled on the whole chart.
 
+**1. Editing Data Grid Text.**
+
+**2. Editing Data Structure.**
+
+**3. Editing Timeline Elements.**
+
+**Note:** To learn how change the default behavior of the chart in the Live Edit mode, see the [Events](Events) article.
 
 {sample :height 360}GANTT\_NEW\_Live\_Edit\_01{sample}
 
