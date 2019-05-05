@@ -21,7 +21,7 @@ The sample below shows how the Live Edit mode works. All types of editing are en
 
 **1. Editing Data Grid Text.** Double-clicking on [data grid labels](Data_Grid/Columns#text_\(labels\)) (except for the first column) allows altering the text. When it happens, the `"treeItemUpdate"` [event of the data tree](Events#data_tree) fires.
 
-**2. Editing Data Structure.** You can edit the structure of the data by dragging rows up and down and changing their sequence and places in the hierarchy. In addition to [events of rows](Events#rows), these actions trigger the `"treeItemUpdate"` [event of the data tree](Events#data_tree).
+**2. Editing Data Structure.** You can edit the structure of the data by dragging rows up and down and changing their sequence and places in the hierarchy. In addition to [events of rows](Events#rows), these actions trigger the `"treeItemMove"` [event of the data tree](Events#data_tree).
 
 **3. Editing Timeline Elements.**
 
