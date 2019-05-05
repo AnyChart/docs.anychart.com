@@ -21,20 +21,20 @@ Below, the available types of editing are listed as well as classes that allow a
 
 Double-clicking on [data grid labels](Data_Grid/Columns#text_\(labels\)) (except for the first column) allows altering the text.
 
-Events: * the `"treeItemUpdate"` [event of the data tree](Events#data_tree).
+Events triggered: [data tree event](Events#data_tree) `"treeItemUpdate"`.
 
 **2. Editing Data Structure**
 
 You can edit the structure of the data by dragging rows up and down and changing their sequence and places in the hierarchy.
 
-Events: * the `"treeItemMove"` [event of the data tree](Events#data_tree). 
+Events triggered: [data tree event](Events#data_tree) `"treeItemMove"`. 
 
 **3. Editing Timeline Elements**
 
-Events:
+Events triggered:
 
-* [events of the data tree](Events#data_tree): `"treeItemUpdate"`
-* [events of connectors](Events#connectors): `"beforeCreateConnector"`
+* [data tree event](Events#data_tree) `"treeItemUpdate"`
+* [connector event](Events#connectors): `"beforeCreateConnector"`
 
 **Note:** To learn how change the default behavior of the chart in the Live Edit mode, see the [Events](Events) article.
 
