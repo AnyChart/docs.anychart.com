@@ -155,7 +155,7 @@ When the chart is edited in the [Live Edit](Live_Edit) mode, the following event
 <tr><td>treeItemUpdate</td><td>A data item has been updated.</td></tr>
 </table>
 
-See also: [Tree Data Model: Events](../Working_with_Data/Tree_Data_Model#events).
+**Note:** See also the [Tree Data Model: Events](../Working_with_Data/Tree_Data_Model#events) section.
 
 In this sample, both events are used to update the chart title:
 
