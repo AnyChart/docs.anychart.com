@@ -13,12 +13,7 @@ Below, the available types of editing are listed as well as classes that allow a
 * editing the data structure (the position of rows) – {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}
 * editing timeline elements (the position, duration, connections) – {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}
 
-misc:
-
-* elements: except for connectors
-* data grid text: настроек нет
-* поле `id` необходимо для корректной работы этого режима и ганттов в целом
-* список классов?
+**Note:** For the correct work of the Live Edit mode, as well as of Gantt charts in general, the `id` data field is required.
 
 ## Default Behavior
 
@@ -26,10 +21,6 @@ misc:
 
 * [Events](Events)
 
-
-```
-chart.edit(true);
-```
 
 {sample :height 360}GANTT\_NEW\_Live\_Edit\_01{sample}
 
@@ -39,7 +30,7 @@ misc:
 
 * chart: structure edit + element edit + data grid text
 * timeline: structure edit + element edit	
-* elements: element edit
+* elements: element edit (except for connectors)
 * data grid: structure edit + data grid text
 
 
