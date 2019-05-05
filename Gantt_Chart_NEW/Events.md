@@ -11,7 +11,7 @@ The last section explains how to [prevent the default behavior](#preventing_defa
 
 **Note 1:** To learn in detail about Live Edit actions that trigger data tree and other events, read [Live Edit: Default Behavior](Live_Edit#default_behavior).
 
-**Note 2:** See [Event Listeners](../Common_Settings/Event_Listeners) and [Interactivity](../Common_Settings/Interactivity) to learn more about events.
+**Note 2:** See the [Event Listeners](../Common_Settings/Event_Listeners) and [Interactivity](../Common_Settings/Interactivity) articles to learn more about events.
 
 ## Chart
 
