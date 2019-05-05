@@ -15,7 +15,7 @@ The Live Edit mode allows editing:
 
 The following classes allow accessing Live Edit settings:
 
-* the structure of data – {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}
+* the data structure – {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}
 * timeline elements – {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}
 
 
