@@ -19,7 +19,7 @@ Below, the available types of editing are listed as well as classes that allow a
 
 misc:
 
-The sample below shows how the Live Edit mode. All types of editing are enabled on the whole chart.
+The sample below shows how the Live Edit mode works. All types of editing are enabled on the whole chart.
 
 **1. Editing Data Grid Text.**
 
