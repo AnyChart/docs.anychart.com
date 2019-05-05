@@ -17,25 +17,21 @@ Below, the available types of editing are listed as well as classes that allow a
 
 ## Default Behavior
 
-**1. Editing Data Grid Text.**
+**1. Editing Data Grid Text**
 
 Double-clicking on [data grid labels](Data_Grid/Columns#text_\(labels\)) (except for the first column) allows altering the text.
 
-Events:
+Events: editing the text triggers the `"treeItemUpdate"` [event of the data tree](Events#data_tree).
 
-* [events of rows](Events#rows)
-* [events of the data tree](Events#data_tree): `"treeItemUpdate"`
-
-**2. Editing Data Structure.**
+**2. Editing Data Structure**
 
 You can edit the structure of the data by dragging rows up and down and changing their sequence and places in the hierarchy.
 
+Events: these actions trigger the `"treeItemMove"` [event of the data tree](Events#data_tree). 
+
+**3. Editing Timeline Elements**
+
 Events:
-
-* [events of rows](Events#rows)
-* [events of the data tree](Events#data_tree): `"treeItemMove"`
-
-**3. Editing Timeline Elements.**
 
 * [events of the data tree](Events#data_tree): `"treeItemUpdate"`
 * [events of connectors](Events#connectors): `"beforeCreateConnector"`
