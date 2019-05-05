@@ -27,7 +27,7 @@ Events triggered:
 
 **2. Editing Data Structure**
 
-You can edit the structure of the data by dragging rows up and down and changing their sequence and places in the hierarchy.
+You can edit the structure of the data by dragging rows up and down. It is possible to change both the sequence of rows and their hierarchical relationships.
 
 Events triggered:
 
