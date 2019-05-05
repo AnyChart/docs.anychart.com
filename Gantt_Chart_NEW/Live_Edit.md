@@ -29,7 +29,7 @@ Events triggered:
 
 **2. Editing Data Structure**
 
-You can edit the structure of the data by dragging rows up and down. It is possible to change both the sequence of rows and their hierarchical relationships.
+You can edit the structure of the data by dragging and dropping rows up and down. It is possible to change both the sequence of rows and their hierarchical relationships.
 
 Events triggered:
 
@@ -37,7 +37,9 @@ Events triggered:
 
 **3. Editing Timeline Elements**
 
-...
+Drag and drop [timeline elements](Elements) to change their position on the timeline. To alter the duration of an element, drag duration thumbs on its sides – it allows modifying the start and end dates.
+
+Also, you can draw new connectors with the help of connector thumbs on the sides of elements. To remove a connector, select it and press *Delete* in Windows or *Cmd-Backspace* in Mac.
 
 Events triggered:
 
@@ -46,7 +48,7 @@ Events triggered:
 
 **Note:** To learn how change the default behavior of the chart in the Live Edit mode, see the [Events](Events) article.
 
-The following sample shows how the Live Edit mode works. All types of editing are enabled on the whole chart.
+The following sample shows how the Live Edit mode works. All types of editing are enabled on the whole chart:
 
 {sample :height 360}GANTT\_NEW\_Live\_Edit\_01{sample}
 
@@ -173,25 +175,25 @@ chart.edit(true);
 var timeline = chart.getTimeline();
 var elements = timeline.elements();
 
-// configure live edit thumbs
+// configure duration thumbs
 elements.edit().thumbs().size(10);
 elements.edit().thumbs().stroke("#dd2c00", 2);
 elements.edit().thumbs().fill("#00bfa5");
 
-// configure live edit connector thumbs
+// configure connector thumbs
 elements.edit().connectorThumbs().size(15);
 elements.edit().connectorThumbs().fill("#dd2c00");
 elements.edit().connectorThumbs().stroke("#dd2c00", 2);
 
-// configure live edit connector thumbs on the right
+// configure connector thumbs on the right
 elements.edit().end().connectorThumb().type("triangleRight");
 elements.edit().end().connectorThumb().horizontalOffset(-1);
 
-// configure live edit connector thumbs on the left
+// configure connector thumbs on the left
 elements.edit().start().connectorThumb().type("triangleLeft");
 elements.edit().start().connectorThumb().horizontalOffset(1);
 
-// configure live edit sliders of progress bars
+// configure sliders of progress bars
 timeline.tasks().progress().edit().fill("#00bfa5");
 timeline.tasks().progress().edit().stroke("#dd2c00", 2);
 ```
