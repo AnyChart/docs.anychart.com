@@ -19,7 +19,7 @@ Below, the available types of editing are listed as well as classes that allow a
 
 **1. Editing Data Grid Text**
 
-Double-clicking on [data grid labels](Data_Grid/Columns#text_\(labels\)) (except for the first column) allows altering the text.
+Double-clicking on [data grid labels](Data_Grid/Columns#text_\(labels\)) (except for the first column) allows altering their text.
 
 Events triggered:
 
