@@ -9,9 +9,9 @@ This article demonstrates the [default behavior](#default_behavior) of the chart
 
 Below, the available types of editing are listed as well as classes that allow accessing their settings:
 
-* editing the data grid text
-* editing the data structure (the position of rows) – {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}
-* editing timeline elements (the position, duration, connections) – {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}
+* editing data grid text
+* editing data structure (moving rows) – {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}
+* editing timeline elements (position, duration, connections) – {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}
 
 **Note:** For the correct work of the Live Edit mode, as well as of Gantt charts in general, the `id` [data field](Data#data_fields) is required.
 
@@ -19,13 +19,15 @@ Below, the available types of editing are listed as well as classes that allow a
 
 The sample below shows how the Live Edit mode works. All types of editing are enabled on the whole chart.
 
-**1. Editing Data Grid Text.**
+**1. Editing Data Grid Text.** Double-clicking on [data grid labels](Data_Grid/Columns#text_\(labels\)) (except for the first column) allows altering the text. When it happens, the `"treeItemUpdate"` [event of the data tree](Events#data_tree) fires.
 
-**2. Editing Data Structure.**
+**2. Editing Data Structure.** You can edit the structure of the data by dragging rows up and down and changing their sequence and places in the hierarchy. In addition to [events of rows](Events#rows), these actions trigger the `"treeItemUpdate"` [event of the data tree](Events#data_tree).
 
 **3. Editing Timeline Elements.**
 
-**Note:** To learn how change the default behavior of the chart in the Live Edit mode, see the [Events](Events) article. Please keep in mind that when the data structure is edited (rows are moved), the [events of the data tree](Events#data_tree) fire as well as the [events of rows](Events#rows). Also, before a connector is created, the `"beforeCreateConnector"` [connector event](Events#connectors) fire.
+**Note:** To learn how change the default behavior of the chart in the Live Edit mode, see the [Events](Events) article.
+
+Please keep in mind that when the data structure is edited (rows are moved), the [events of the data tree](Events#data_tree) fire as well as the [events of rows](Events#rows). Also, before a connector is created, the `"beforeCreateConnector"` [connector event](Events#connectors) fire.
 
 {sample :height 360}GANTT\_NEW\_Live\_Edit\_01{sample}
 

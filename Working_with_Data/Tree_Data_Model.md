@@ -621,7 +621,7 @@ Here is the full list of events that work with the tree data model:
 <tr><th>Value</th><th>Description</th></tr>
 <tr><td>treeItemCreate</td><td>A data item has been created.</td></tr>
 <tr><td>treeItemMove</td><td>A data item has been moved. (?)</td></tr>
-<tr><td>treeItemRemove</td><td>A data item has been removed.</td></tr>
+<tr><td>treeItemRemove</td><td>A data item has been removed. (?)</td></tr>
 <tr><td>treeItemUpdate</td><td>A data item has been updated.</td></tr>
 </table>
 
