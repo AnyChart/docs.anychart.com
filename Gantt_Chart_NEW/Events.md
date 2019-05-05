@@ -9,7 +9,9 @@ You can listen to the events of rows and connectors by attaching event listeners
 
 The last section explains how to [prevent the default behavior](#preventing_default_behavior) of the chart.
 
-See [Event Listeners](../Common_Settings/Event_Listeners) and [Interactivity](../Common_Settings/Interactivity) to learn more.
+**Note 1:** Read the [Live Edit: Default Behavior](Live_Edit#default_behavior) section to learn in detail about Live Edit actions that trigger data tree and other events.
+
+**Note 2:** See [Event Listeners](../Common_Settings/Event_Listeners) and [Interactivity](../Common_Settings/Interactivity) to learn more about events.
 
 ## Chart
 

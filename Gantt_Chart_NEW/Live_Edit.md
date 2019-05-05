@@ -23,7 +23,7 @@ Double-clicking on [data grid labels](Data_Grid/Columns#text_\(labels\)) (except
 
 Events triggered:
 
-* [data tree event](Events#data_tree) `"treeItemUpdate"`
+* [data tree event](Events#data_tree) `"treeItemUpdate"` (a data item has been updated)
 
 **2. Editing Data Structure**
 
@@ -31,7 +31,7 @@ You can edit the structure of the data by dragging rows up and down. It is possi
 
 Events triggered:
 
-* [data tree event](Events#data_tree) `"treeItemMove"`
+* [data tree event](Events#data_tree) `"treeItemMove"` (a data item has been moved)
 
 **3. Editing Timeline Elements**
 
@@ -39,8 +39,8 @@ Events triggered:
 
 Events triggered:
 
-* [data tree event](Events#data_tree) `"treeItemUpdate"`
-* [connector event](Events#connectors) `"beforeCreateConnector"`
+* [data tree event](Events#data_tree) `"treeItemUpdate"` (a data item has been updated)
+* [connector event](Events#connectors) `"beforeCreateConnector"` (a connector is about to be created)
 
 **Note:** To learn how change the default behavior of the chart in the Live Edit mode, see the [Events](Events) article. Please keep in mind that in addition to the special events listed here, all Live Edit interactions trigger [row events](Events#rows).
 
