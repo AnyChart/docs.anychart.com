@@ -40,7 +40,7 @@ Events triggered:
 Events triggered:
 
 * [data tree event](Events#data_tree) `"treeItemUpdate"`
-* [connector event](Events#connectors): `"beforeCreateConnector"`
+* [connector event](Events#connectors) `"beforeCreateConnector"`
 
 **Note:** To learn how change the default behavior of the chart in the Live Edit mode, see the [Events](Events) article. Please keep in mind that in addition to the special events listed here, all Live Edit interaction trigger [row events](Events#rows).
 
