@@ -17,17 +17,32 @@ Below, the available types of editing are listed as well as classes that allow a
 
 ## Default Behavior
 
-The sample below shows how the Live Edit mode works. All types of editing are enabled on the whole chart.
+**1. Editing Data Grid Text.**
 
-**1. Editing Data Grid Text.** Double-clicking on [data grid labels](Data_Grid/Columns#text_\(labels\)) (except for the first column) allows altering the text. When it happens, the `"treeItemUpdate"` [event of the data tree](Events#data_tree) fires.
+Double-clicking on [data grid labels](Data_Grid/Columns#text_\(labels\)) (except for the first column) allows altering the text.
 
-**2. Editing Data Structure.** You can edit the structure of the data by dragging rows up and down and changing their sequence and places in the hierarchy. In addition to [events of rows](Events#rows), these actions trigger the `"treeItemMove"` [event of the data tree](Events#data_tree).
+Events:
+
+* [events of rows](Events#rows)
+* [events of the data tree](Events#data_tree): `"treeItemUpdate"`
+
+**2. Editing Data Structure.**
+
+You can edit the structure of the data by dragging rows up and down and changing their sequence and places in the hierarchy.
+
+Events:
+
+* [events of rows](Events#rows)
+* [events of the data tree](Events#data_tree): `"treeItemMove"`
 
 **3. Editing Timeline Elements.**
 
+* [events of the data tree](Events#data_tree): `"treeItemUpdate"`
+* [events of connectors](Events#connectors): `"beforeCreateConnector"`
+
 **Note:** To learn how change the default behavior of the chart in the Live Edit mode, see the [Events](Events) article.
 
-Please keep in mind that when the data structure is edited (rows are moved), the [events of the data tree](Events#data_tree) fire as well as the [events of rows](Events#rows). Also, before a connector is created, the `"beforeCreateConnector"` [connector event](Events#connectors) fire.
+The sample below shows how the Live Edit mode works. All types of editing are enabled on the whole chart.
 
 {sample :height 360}GANTT\_NEW\_Live\_Edit\_01{sample}
 
