@@ -9,14 +9,6 @@ This article demonstrates the [default behavior](#default_behavior) of the chart
 
 Below, the available types of editing are listed as well as classes that allow accessing their settings:
 
-* editing the data grid text
-* editing the data structure (the position of rows)
-* editing timeline elements (the position, duration, and connections)
-
-
-
-The Live Edit mode allows enabling the following types of editing:
-
 * edititng the data grid text
 * editing the data structure (the position of rows) – {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}
 * editing timeline elements (the position, duration, connections) – {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}
