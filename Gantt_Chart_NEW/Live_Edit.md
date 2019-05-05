@@ -42,7 +42,7 @@ Events triggered:
 * [data tree event](Events#data_tree) `"treeItemUpdate"`
 * [connector event](Events#connectors) `"beforeCreateConnector"`
 
-**Note:** To learn how change the default behavior of the chart in the Live Edit mode, see the [Events](Events) article. Please keep in mind that in addition to the special events listed here, all Live Edit interaction trigger [row events](Events#rows).
+**Note:** To learn how change the default behavior of the chart in the Live Edit mode, see the [Events](Events) article. Please keep in mind that in addition to the special events listed here, all Live Edit interactions trigger [row events](Events#rows).
 
 The sample below shows how the Live Edit mode works. All types of editing are enabled on the whole chart.
 
