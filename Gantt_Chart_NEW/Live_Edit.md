@@ -107,7 +107,7 @@ chart.getTimeline().milestones().edit(true);
 chart.getTimeline().periods().edit(true);
 ```
 
-Below, there are two samples, one with a [Project](Project_Chart) chart and another with a [Resource](Resource_Chart) chart. They show how the Live Edit mode works when it is enabled only for a part of the chart:
+Below, there are two samples, one with a [Project](Project_Chart) chart and another with a [Resource](Resource_Chart) chart. They show how enabling the Live Edit mode for different parts of the chart looks like:
 
 {sample :height 260}GANTT\_NEW\_Live\_Edit\_02{sample}
 
