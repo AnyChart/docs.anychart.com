@@ -29,7 +29,7 @@ It triggers a [data tree event](Events#data_tree):
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
-<tr><td>treeItemUpdate<br>[data tree event](Events#data_tree)</td><td>A data item has been updated.</td></tr>
+<tr><td>treeItemUpdate<br></td><td>A data item has been updated.</td></tr>
 </table>
 
 **2. Editing Data Structure**
