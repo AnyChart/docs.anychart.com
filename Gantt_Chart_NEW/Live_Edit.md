@@ -29,6 +29,11 @@ Events triggered:
 
 * [data tree event](Events#data_tree) `"treeItemUpdate"` – a data item has been updated
 
+<table>
+<tr><th>Value</th><th>Description</th></tr>
+<tr><td>treeItemUpdate<br>[data tree event](Events#data_tree)</td><td>A data item has been updated.</td></tr>
+</table>
+
 **2. Editing Data Structure**
 
 You can edit the structure of the [data](Data) by dragging and dropping rows up and down. It is possible to change both the sequence of rows and their hierarchical relationships.
