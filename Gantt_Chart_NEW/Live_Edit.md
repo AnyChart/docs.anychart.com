@@ -36,9 +36,12 @@ It triggers a [data tree event](Events#data_tree):
 
 You can edit the structure of the [data](Data) by dragging and dropping rows up and down. It is possible to change both the sequence of rows and their hierarchical relationships.
 
-Events triggered:
+A [data tree event](Events#data_tree) is triggered:
 
-* [data tree event](Events#data_tree) `"treeItemMove"` – a data item has been moved
+<table>
+<tr><th>Value</th><th>Description</th></tr>
+<tr><td>treeItemMove<br></td><td>A data item has been moved.</td></tr>
+</table>
 
 **3. Editing Timeline Elements**
 
@@ -46,10 +49,13 @@ Drag and drop timeline [elements](Elements) to change their positions on the tim
 
 Also, you can draw new connectors with the help of connector thumbs on the sides of tasks. To remove a connector, select it and press Del in Windows or Cmd-Backspace in Mac OS.
 
-Events triggered:
+A [data tree event](Events#data_tree) and a [connector event](Events#connectors) are triggered:
 
-* [data tree event](Events#data_tree) `"treeItemUpdate"` – a data item has been updated
-* [connector event](Events#connectors) `"beforeCreateConnector"` – a connector is about to be created
+<table>
+<tr><th>Value</th><th>Description</th></tr>
+<tr><td>treeItemMove<br></td><td>A data item has been updated.</td></tr>
+<tr><td>beforeCreateConnector<br></td><td>A connector is about to be created.</td></tr>
+</table>
 
 The following sample shows how the Live Edit mode works. All types of editing are enabled on the whole chart:
 
