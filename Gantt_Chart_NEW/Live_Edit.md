@@ -9,7 +9,7 @@ Here are the available types of editing and the classes that allow accessing the
 
 <table>
 <tr><th>Type</th><th>Class</th></tr>
-<tr><td>**Edititng Data Grid Text**<br></td><td>-</td></tr>
+<tr><td>**Edititng Data Grid Text**<br></td><td>–</td></tr>
 <tr><td>**Edititng Data Structure**<br></td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
 <tr><td>**Edititng Timeline Elements**<br></td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
 </table>
