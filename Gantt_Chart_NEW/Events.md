@@ -28,7 +28,6 @@ You can listen to the following events of rows:
 <tr><td>rowMouseOver</td><td>The mouse has been moved over a row.</td></tr>
 <tr><td>rowMouseUp</td><td>The left mouse button has been released over a row.</td></tr>
 <tr><td>rowSelect</td><td>A row has been selected.</td></tr>
-</tr>
 </table>
 
 In the sample below, event listeners are used to update the chart title when `"rowMouseOver"`, `"rowClick"`, `"rowDblClick"`, and `"rowCollapseExpand"` fire:
@@ -90,7 +89,6 @@ Here are the events of connectors:
 <tr><td>connectorMouseOver</td><td>The mouse has been moved over a connector.</td></tr>
 <tr><td>connectorMouseUp</td><td>The left mouse button has been released over a connector.</td></tr>
 <tr><td>connectorSelect</td><td>A connector has been selected.</td></tr>
-</tr>
 </table>
 
 In the following sample, the [Live Edit](Live_Edit) mode is enabled. The `"connectorMouseOver"`, `"connectorClick"`, `"connectorDblClick"`, and `"beforeCreateConnector"` events are used to update the chart title:
