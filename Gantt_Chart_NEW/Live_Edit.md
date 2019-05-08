@@ -25,9 +25,7 @@ Please keep in mind that in addition to the special events mentioned below, all 
 
 Double-clicking on [data grid](Data_Grid) labels, except for the labels of the first column, allows altering their text.
 
-Events triggered:
-
-* [data tree event](Events#data_tree) `"treeItemUpdate"` – a data item has been updated
+It triggers a [data tree event](Events#data_tree):
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
