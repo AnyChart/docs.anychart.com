@@ -75,10 +75,7 @@ chart.listen("rowCollapseExpand", function (e) {
 
 ### Connectors
 
-Connectors are elements showing the dependencies between elements. Learn more:
-
-* [Project Chart: Connectors](Project_Chart#connectors)
-* [Resource Chart: Connectors](Resource_Chart#connectors)
+Connectors are elements showing the dependencies between elements. To Learn more about them, see [Project Chart: Connectors](Project_Chart#connectors) and [Resource Chart: Connectors](Resource_Chart#connectors).
 
 Here are the events of connectors:
 
