@@ -78,6 +78,8 @@ Depending on the part of the chart you allow editing, different types of editing
 <tr><td>Elements</td><td>**Editing Timeline Elements**</td></tr>
 </table>
 
+**Note:** To learn more about the types of editing, see the [Default Behavior](#default_behavior) section.
+
 To allow or forbid editing the whole chart, pass `true` / `false` to the {api:anychart.charts.Gantt#edit}edit(){api} method of the chart:
 
 ```
