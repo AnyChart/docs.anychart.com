@@ -147,15 +147,13 @@ chart.listen("beforeCreateConnector", function (e) {
 
 ## Data Tree
 
-When the chart is edited in the [Live Edit](Live_Edit) mode, the following events of the data tree fire:
+When the chart is edited in the [Live Edit](Live_Edit) mode, the following [events of the data tree](../Working_with_Data/Tree_Data_Model#events) fire:
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
 <tr><td>treeItemMove</td><td>A data item has been moved. (?)</td></tr>
 <tr><td>treeItemUpdate</td><td>A data item has been updated. (?)</td></tr>
 </table>
-
-**Note:** See also the [Tree Data Model: Events](../Working_with_Data/Tree_Data_Model#events) section.
 
 In this sample, both events are used to update the chart title:
 
