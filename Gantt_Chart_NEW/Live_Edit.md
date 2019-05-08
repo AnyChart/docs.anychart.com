@@ -83,7 +83,7 @@ To enable or disable the Live Edit mode for the whole chart, pass `true` / `fals
 chart.edit(true);
 ```
 
-To enable or disable the Live Edit mode for a part of the chart, access this part and pass `true` / `false` to its **edit()** method:
+To enable or disable the Live Edit mode for a part of the chart, access this part and pass `true` / `false` to its {api:?entry=edit}edit(){api} method:
 
 ```
 // allow editing the data grid
