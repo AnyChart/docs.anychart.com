@@ -21,7 +21,7 @@ This section describes the default behavior of the chart in the Live Edit mode a
 
 **1. Editing Data Grid Text**
 
-Double-clicking on [data grid labels](Data_Grid/Columns#text_\(labels\)) (except for the first column) allows altering their text.
+Double-clicking on [data grid labels](Data_Grid/Columns#text_\(labels\)), except for the labels of the first column, allows altering their text.
 
 Events triggered:
 
