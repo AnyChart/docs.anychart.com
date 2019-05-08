@@ -7,7 +7,7 @@ In the Live Edit mode, a special UI is enabled that allows users to edit Gantt c
 
 This article demonstrates the [default behavior](#default_behavior) of the chart in the Live Edit mode and explains how to [enable / disable](#enabling_/_disabling) it and access its appearance and other [settings](#settings).
 
-Below, the available types of editing are listed as well as classes that allow accessing their settings:
+Here are the available types of editing are listed as well as classes that allow accessing their settings:
 
 * editing data grid text
 * editing data structure (moving rows) – {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}
@@ -17,7 +17,7 @@ Below, the available types of editing are listed as well as classes that allow a
 
 ## Default Behavior
 
-This section describes the default behavior of the chart in the Live Edit mode and lists the events triggered by users' actions. Please keep in mind that in addition to the special events mentioned below, all Live Edit interactions trigger [row events](Events#rows).
+This section describes the default behavior of the chart in the Live Edit mode and lists the events triggered by users' actions. Please keep in mind that in addition to the special events mentioned below, all Live Edit interactions (as well as any interactions with Gantt charts) trigger [row events](Events#rows).
 
 **1. Editing Data Grid Text**
 
