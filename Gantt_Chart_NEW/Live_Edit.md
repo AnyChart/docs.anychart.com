@@ -66,7 +66,7 @@ The following sample shows how the Live Edit mode works. All types of editing ar
 
 ## Enabling / Disabling
 
-You can enable the Live Edit mode either on the whole chart or on its part: the [data grid](Data_Grid), the [timeline](Timeline), or a particular [element](Elements) (except for connectors).
+You can enable the Live Edit mode either on the whole chart or on its part: on the [data grid](Data_Grid), on the [timeline](Timeline), or on a particular [element](Elements) (except for connectors).
 
 Depending on the part of the chart you allow editing, different types of editing are enabled:
 
