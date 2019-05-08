@@ -19,7 +19,7 @@ Articles in other sections explain how to adjust:
 
 * [Timeline: Tooltips](../Timeline/Tooltips) – tooltips shown when the timeline is hovered over
 
-To learn more about the difference between the available types of elements and data fields used to set them, see:
+To learn more about the available types of elements and data fields used to set them, see:
 
 * [Project Chart](Project_Chart#elements)
 * [Resource Chart](Resource_Chart#lements)
