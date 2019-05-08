@@ -11,7 +11,7 @@ Here are the available types of editing and the classes that allow accessing the
 <tr><th>Edititng Type</th><th>Class</th></tr>
 <tr><td>**Edititng Data Grid Text**<br></td><td>–</td></tr>
 <tr><td>**Edititng Data Structure**<br></td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
-<tr><td>**Edititng Timeline Elements**<br></td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
+<tr><td>**Edititng Elements**<br></td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
 </table>
 
 To learn more, see the sections below. They demonstrate the [default behavior](#default_behavior) of the chart in the Live Edit mode and explain how to [enable / disable](#enabling_/_disabling) it and adjust its appearance and other [settings](#settings).
@@ -46,7 +46,7 @@ A [data tree event](Events#data_tree) is triggered:
 <tr><td>treeItemMove<br></td><td>A data item has been moved.</td></tr>
 </table>
 
-**3. Editing Timeline Elements**
+**3. Editing Elements**
 
 Drag and drop timeline [elements](Elements) to change their positions on the timeline. To change the duration and progress of an element, use duration thumbs on its sides and the slider on the progress bar.
 
@@ -100,7 +100,7 @@ chart.getTimeline().periods().edit(true);
 Depending on the part of the chart, different types of editing are enabled:
 
 <table>
-<tr><th>Part of Chart</th><th>Editing Data Grid Text</th><th>Editing Data Structure</th><th>Editing Timeline Elements</th></tr>
+<tr><th>Part of Chart</th><th>Editing Data Grid Text</th><th>Editing Data Structure</th><th>Editing Elements</th></tr>
 <tr><td>Chart</td><td>&#10004</td><td>&#10004</td><td>&#10004</td></tr>
 <tr><td>Data Grid</td><td>&#10004</td><td>&#10004</td><td></td></tr>
 <tr><td>Timeline</td><td></td><td>&#10004</td><td>&#10004</td></tr>
