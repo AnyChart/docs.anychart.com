@@ -71,7 +71,7 @@ You can enable the Live Edit mode either on the whole chart or on its part: on t
 Depending on the part of the chart you allow editing, different types of editing are enabled:
 
 <table>
-<tr><th>Part of Chart</th><th>Editing Type</th></tr>
+<tr><th>Part of Chart</th><th>Editing Types</th></tr>
 <tr><td>Chart</td><td>**Editing Data Grid Text** + **Editing Data Structure** + **Editing Timeline Elements**</td></tr>
 <tr><td>Data Grid</td><td>**Editing Data Grid Text** + **Editing Data Structure**</td></tr>
 <tr><td>Timeline</td><td>**Editing Data Structure** + **Editing Timeline Elements**</td></tr>
