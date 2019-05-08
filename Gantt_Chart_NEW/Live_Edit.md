@@ -72,9 +72,9 @@ Depending on the part of the chart you allow editing, different types of editing
 
 <table>
 <tr><th>Part</th><th>Type</th></tr>
-<tr><td>Chart</td><td>Editing Data Grid Text<br>Editing Data Structure<br>Editing Timeline Elements</td></tr>
-<tr><td>Data Grid</td><td>Editing Data Grid Text<br>Editing Data Structure</td></tr>
-<tr><td>Timeline</td><td>Editing Data Structure<br>Editing Timeline Elements</td></tr>
+<tr><td>Chart</td><td>Editing Data Grid Text + Editing Data Structure + Editing Timeline Elements</td></tr>
+<tr><td>Data Grid</td><td>Editing Data Grid Text + Editing Data Structure</td></tr>
+<tr><td>Timeline</td><td>Editing Data Structure + Editing Timeline Elements</td></tr>
 <tr><td>Elements</td><td>Editing Timeline Elements</td></tr>
 </table>
 
