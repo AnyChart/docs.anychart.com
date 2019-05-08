@@ -66,6 +66,12 @@ The following sample shows how the Live Edit mode works. All types of editing ar
 
 ## Enabling / Disabling
 
+To enable or disable all types of editing on the whole chart, pass `true` / `false` to the {api:anychart.charts.Gantt#edit}edit(){api} method of the chart:
+
+```
+chart.edit(true);
+```
+
 misc:
 
 * chart: structure edit + element edit + data grid text
@@ -73,14 +79,6 @@ misc:
 * elements: element edit (except for connectors)
 * data grid: structure edit + data grid text
 
-
-```
-chart.edit(true);
-```
-
-```
-chart.edit().enabled(true);
-```
 
 ```
 chart.dataGrid().edit(true);
