@@ -8,7 +8,7 @@ In the Live Edit mode, a special UI is enabled that allows users to edit Gantt c
 Here are the available types of editing and the classes that allow accessing their settings:
 
 <table>
-<tr><th>Type</th><th>Class</th></tr>
+<tr><th>Edititng Type</th><th>Class</th></tr>
 <tr><td>**Edititng Data Grid Text**<br></td><td>–</td></tr>
 <tr><td>**Edititng Data Structure**<br></td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
 <tr><td>**Edititng Timeline Elements**<br></td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
@@ -71,7 +71,7 @@ You can enable the Live Edit mode either for the whole chart or a part of the ch
 Depending on the part of the chart you allow editing, different types of editing are enabled:
 
 <table>
-<tr><th>Part</th><th>Type</th></tr>
+<tr><th>Chart Part</th><th>Editing Type</th></tr>
 <tr><td>Chart</td><td>Editing Data Grid Text + Editing Data Structure + Editing Timeline Elements</td></tr>
 <tr><td>Data Grid</td><td>Editing Data Grid Text + Editing Data Structure</td></tr>
 <tr><td>Timeline</td><td>Editing Data Structure + Editing Timeline Elements</td></tr>
