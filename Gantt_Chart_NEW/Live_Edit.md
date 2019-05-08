@@ -10,10 +10,10 @@ In the Live Edit mode, a special UI is enabled that allows users to edit Gantt c
 **3.** Editing timeline elements (position, duration, connections) – {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}.<br>
 
 <table>
-<tr><th>Type</th><th>Description</th><th>Class</th></tr>
-<tr><td>**Edititng Data Grid Text**<br></td><td>-</td><td>-</td></tr>
-<tr><td>**Edititng Data Structure**<br></td><td>(moving rows)</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
-<tr><td>**Edititng Timeline Elements**<br></td><td>(position, duration, connections)</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
+<tr><th>Type</th><th>Class</th></tr>
+<tr><td>**Edititng Data Grid Text**<br></td><td>-</td></tr>
+<tr><td>**Edititng Data Structure**<br></td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
+<tr><td>**Edititng Timeline Elements**<br></td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
 </table>
 
 This article demonstrates the [default behavior](#default_behavior) of the chart in the Live Edit mode and explains how to [enable / disable](#enabling_/_disabling) it and access its appearance and other [settings](#settings).
