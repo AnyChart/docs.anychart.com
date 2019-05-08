@@ -76,14 +76,14 @@ misc:
 * elements: element edit
 
 
-To enable or disable the Live Edit mode for the whole chart, pass `true` / `false` to the {api:anychart.charts.Gantt#edit}edit(){api} method of the chart:
+To allow or forbid editing the whole chart, pass `true` / `false` to the {api:anychart.charts.Gantt#edit}edit(){api} method of the chart:
 
 ```
 // allow editing the chart
 chart.edit(true);
 ```
 
-To enable or disable the Live Edit mode for a part of the chart, access this part and pass `true` / `false` to its {api:?entry=edit}edit(){api} method:
+To allow or forbid editing a part of the chart, access this part and pass `true` / `false` to its {api:?entry=edit}edit(){api} method:
 
 ```
 // allow editing the data grid
