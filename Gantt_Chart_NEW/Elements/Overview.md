@@ -21,8 +21,8 @@ Articles in other sections explain how to adjust:
 
 To learn more about the available types of elements and data fields used to set them, see:
 
-* [Project Chart: Elements](Project_Chart#elements)
-* [Resource Chart: Elements](Resource_Chart#lements)
+* [Project Chart: Elements](../Project_Chart#elements)
+* [Resource Chart: Elements](../Resource_Chart#elements)
 
 ## Classes
 
