@@ -97,7 +97,7 @@ chart.getTimeline().milestones().edit(true);
 chart.getTimeline().periods().edit(true);
 ```
 
-Depending on the part of the chart, different types of editing are enabled:
+Depending on the part of the chart, different types of editing are enabled on it:
 
 <table>
 <tr><th>Part of Chart</th><th>Editing Data Grid Text</th><th>Editing Data Structure</th><th>Editing Elements</th></tr>
