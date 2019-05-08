@@ -68,18 +68,6 @@ The following sample shows how the Live Edit mode works. All types of editing ar
 
 You can enable the Live Edit mode either on the whole chart or on its part: on the [data grid](Data_Grid), on the [timeline](Timeline), or on a particular [element](Elements) (except for connectors).
 
-Depending on which part of the chart you allow editing, different types of editing are enabled:
-
-<table>
-<tr><th>Part of Chart</th><th>Editing Types</th></tr>
-<tr><td>Chart</td><td>**Editing Data Grid Text** + **Editing Data Structure** + **Editing Timeline Elements**</td></tr>
-<tr><td>Data Grid</td><td>**Editing Data Grid Text** + **Editing Data Structure**</td></tr>
-<tr><td>Timeline</td><td>**Editing Data Structure** + **Editing Timeline Elements**</td></tr>
-<tr><td>Elements</td><td>**Editing Timeline Elements**</td></tr>
-</table>
-
-**Note:** To learn more about the types of editing, see the [Default Behavior](#default_behavior) section.
-
 To allow or forbid editing the whole chart, pass `true` / `false` to the {api:anychart.charts.Gantt#edit}edit(){api} method of the chart:
 
 ```
@@ -108,6 +96,18 @@ chart.getTimeline().milestones().edit(true);
 // allow editing periods 
 chart.getTimeline().periods().edit(true);
 ```
+
+Depending on the part of the chart, different types of editing are enabled:
+
+<table>
+<tr><th>Part of Chart</th><th>Editing Types</th></tr>
+<tr><td>Chart</td><td>**Editing Data Grid Text** + **Editing Data Structure** + **Editing Timeline Elements**</td></tr>
+<tr><td>Data Grid</td><td>**Editing Data Grid Text** + **Editing Data Structure**</td></tr>
+<tr><td>Timeline</td><td>**Editing Data Structure** + **Editing Timeline Elements**</td></tr>
+<tr><td>Elements</td><td>**Editing Timeline Elements**</td></tr>
+</table>
+
+**Note:** To learn more about the types of editing, see the [Default Behavior](#default_behavior) section.
 
 Below, there are two samples, one with a [Project](Project_Chart) chart and another with a [Resource](Resource_Chart) chart. They show how enabling the Live Edit mode on different parts of the chart looks like:
 
