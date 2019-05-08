@@ -100,11 +100,11 @@ chart.getTimeline().periods().edit(true);
 Depending on the part of the chart, different types of editing are enabled:
 
 <table>
-<tr><th>Part of Chart</th><th>Editing Types</th></tr>
-<tr><td>Chart</td><td>Editing Data Grid Text</td><td>**Editing Data Structure**</td><td>**Editing Timeline Elements**</td></tr>
-<tr><td>Data Grid</td><td>**Editing Data Grid Text**</td><td>**Editing Data Structure**</td></tr>
-<tr><td>Timeline</td><td>**Editing Data Structure**</td><td>**Editing Timeline Elements**</td></tr>
-<tr><td>Elements</td><td>**Editing Timeline Elements**</td></tr>
+<tr><th>Part of Chart</th><th>Editing Data Grid Text</th><th>Editing Data Structure</th><th>Editing Timeline Elements</th></tr>
+<tr><td>Chart</td><td>+</td><td>+</td><td>*</td></tr>
+<tr><td>Data Grid</td><td>+</td><td>+</td><td>–</td></tr>
+<tr><td>Timeline</td><td>–</td><td>+</td><td>+</td></tr>
+<tr><td>Elements</td><td>–</td><td>–</td><td>+</td></tr>
 </table>
 
 **Note:** To learn more about the types of editing, see the [Default Behavior](#default_behavior) section.
