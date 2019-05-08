@@ -23,7 +23,7 @@ Please keep in mind that in addition to the special events mentioned below, all 
 
 **1. Editing Data Grid Text**
 
-Double-clicking on [data grid labels](Data_Grid/Columns#text_\(labels\)), except for the labels of the first column, allows altering their text.
+Double-clicking on [data grid](Data_Grid) labels, except for the labels of the first column, allows altering their text.
 
 Events triggered:
 
