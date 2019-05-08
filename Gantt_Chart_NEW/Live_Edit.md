@@ -13,6 +13,13 @@ Here are the available types of editing and the classes that allow accessing the
 **2.** Editing the data structure (moving rows) – {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}.<br>
 **3.** Editing timeline elements (position, duration, connections) – {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}.<br>
 
+<table>
+<tr><th>Type</th><th>Description</th><th>Class</th></tr>
+<tr><td>**Edititng Data Grid Text**<br></td><td>-</td><td>-</td></tr>
+<tr><td>**Edititng Data Structure**<br></td><td>(moving rows)</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
+<tr><td>**Edititng Timeline Elements**<br></td><td>(position, duration, connections)</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
+</table>
+
 **Note:** For the correct work of the Live Edit mode, as well as of Gantt charts in general, the `id` [data field](Data#data_fields) is required.
 
 ## Default Behavior
