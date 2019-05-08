@@ -115,11 +115,11 @@ chart.getTimeline().milestones().edit(true);
 chart.getTimeline().periods().edit(true);
 ```
 
-xxx
+... [Project Chart](Project_Chart):
 
 {sample :height 260}GANTT\_NEW\_Live\_Edit\_02{sample}
 
-xxx
+... [Resource Chart](Resource_Chart):
 
 {sample :height 200}GANTT\_NEW\_Live\_Edit\_03{sample}
 
