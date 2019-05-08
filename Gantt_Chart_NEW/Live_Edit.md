@@ -7,7 +7,7 @@ In the Live Edit mode, a special UI is enabled that allows users to edit Gantt c
 
 This article demonstrates the [default behavior](#default_behavior) of the chart in the Live Edit mode and explains how to [enable / disable](#enabling_/_disabling) it and access its appearance and other [settings](#settings).
 
-Here are the available types of editing and the classes that allow accessing their settings:
+Here is the list of the available types of editing and of the classes that allow accessing their settings:
 
 **1.** editing data grid text<br>
 **2.** editing data structure (moving rows) – {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}<br>
