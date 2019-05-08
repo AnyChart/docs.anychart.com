@@ -99,9 +99,9 @@ In addition, you can use optional fields:
 * `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
 * `collapsed` to [expand or collapse](../Basic_Settings#expanding_/_collapsing) a parent task
 
-To learn how to rename the default data fields, see [Data: Mapping](Data#mapping).
+**Note 1:** To learn how to rename the default data fields, see [Data: Mapping](Data#mapping).
 
-**Note:** You can also add custom fields to your data and use them to configure text – like, for example, in all the samples from [Timeline: Tooltips](Timeline/Tooltips).
+**Note 2:** You can also add custom fields to your data and use them to configure text – like, for example, in all the samples from [Timeline: Tooltips](Timeline/Tooltips).
 
 ### Setting Data
 
