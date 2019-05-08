@@ -9,9 +9,9 @@ This article demonstrates the [default behavior](#default_behavior) of the chart
 
 Here are the available types of editing and the classes that allow accessing their settings:
 
-**1.** editing the data grid text<br>
-**2.** editing the data structure (moving rows) – {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}<br>
-**3.** editing timeline elements (position, duration, connections) – {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}<br>
+**1.** Editing the data grid text.<br>
+**2.** Editing the data structure (moving rows) – {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}.<br>
+**3.** Editing timeline elements (position, duration, connections) – {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}.<br>
 
 **Note:** For the correct work of the Live Edit mode, as well as of Gantt charts in general, the `id` [data field](Data#data_fields) is required.
 
