@@ -66,45 +66,50 @@ The following sample shows how the Live Edit mode works. All types of editing ar
 
 ## Enabling / Disabling
 
-To enable or disable all types of editing on the whole chart, pass `true` / `false` to the {api:anychart.charts.Gantt#edit}edit(){api} method of the chart:
-
-```
-chart.edit(true);
-```
+You can enable the Live Edit mode either for the whole chart or a part of the chart: the data grid, the timeline, or particular types of timeline elements (except for connectors).
 
 misc:
 
 * chart: structure edit + element edit + data grid text
-* timeline: structure edit + element edit	
-* elements: element edit (except for connectors)
 * data grid: structure edit + data grid text
+* timeline: structure edit + element edit	
+* elements: element edit
 
+
+To enable or disable the Live Edit mode for the whole chart, pass `true` / `false` to the {api:anychart.charts.Gantt#edit}edit(){api} method of the chart:
 
 ```
+// allow editing the chart
+chart.edit(true);
+```
+
+To enable or disable the Live Edit mode for a part of the chart, access this part and pass `true` / `false` to its **edit()** method:
+
+```
+// allow editing the data grid
 chart.dataGrid().edit(true);
 ```
 
 ```
+// allow editing the timeline
 chart.getTimeline().edit(true);
 ```
 
 ```
+// allow editing milestones
 chart.getTimeline().milestones().edit(true);
 ```
 
-{sample :height 260}GANTT\_NEW\_Live\_Edit\_02{sample}
-
 ```
-chart.dataGrid().edit(true);
-```
-
-```
-chart.getTimeline().edit(true);
-```
-
-```
+// allow editing periods 
 chart.getTimeline().periods().edit(true);
 ```
+
+xxx
+
+{sample :height 260}GANTT\_NEW\_Live\_Edit\_02{sample}
+
+xxx
 
 {sample :height 200}GANTT\_NEW\_Live\_Edit\_03{sample}
 
