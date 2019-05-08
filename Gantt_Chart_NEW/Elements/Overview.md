@@ -9,16 +9,20 @@ On the [Project Gantt](../Project_Chart) chart and [Resource Gantt](../Resource_
 
 Articles in this section explain how to configure:
 
-* [Project Chart](Project_Chart), [Resource Chart](#resource_chart) – all elements of one type
+* [Project Chart](Project_Chart), [Resource Chart](Resource_chart) – all elements of one type
 * [All Elements](All_Elements) – all elements at once
 * [Individual Elements](Individual_Elements) – individual elements
 * [Labels](Labels) – labels of elements
 * [Markers](Markers) – markers
 
-
 Articles in other sections explain how to adjust:
 
 * [Timeline: Tooltips](../Timeline/Tooltips) – tooltips shown when the timeline is hovered over
+
+To learn more about the difference between the available types of elements and data fields used to set them, see:
+
+* [Project Chart](Project_Chart#elements)
+* [Resource Chart](Resource_Chart#lements)
 
 ## Classes
 

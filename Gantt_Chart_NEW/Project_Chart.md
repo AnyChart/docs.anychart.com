@@ -304,7 +304,7 @@ chart.data(treeData);
 
 ## Elements
 
-This section briefly explains how to add and configure the elements that are shown on the [timeline](Timeline) of the Project chart. To learn more, see the [Elements](Elements) section.
+This section lists the available types of elements that are shown on the [timeline](Timeline) of the Project chart and explains how to use data fields to set them. To learn how to configure elements, see the [Elements](Elements) section.
 
 The main element of the Project chart is the [task](#tasks_\(actual\)). Other elements, such as [baselines](#baselines_\(planned\)), [progress bars](#progress_bars), [connectors](#connectors), and [markers](Elements/Markers), are set by adding special data fields to tasks.
 
@@ -328,7 +328,6 @@ There are three task types, each of them visualized in a different way:
 * milestones
 
 The difference between **regular tasks** and **parent tasks** lies in their relationships with other tasks: parent tasks have children, and regular ones do not. To set these relationships, use the  `children` or `parent` data field – read the [Hierarchy](#hierarchy) section to learn more.
-
 
 Note that if you do not specify the  `actualStart` and `actualEnd` dates of a parent task, they are calculated automatically from the dates of its children.
 
