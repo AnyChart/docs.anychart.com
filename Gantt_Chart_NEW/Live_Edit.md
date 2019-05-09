@@ -117,7 +117,9 @@ Below, there are two samples, one with a [Project](Project_Chart) chart and anot
 
 ## Settings
 
-It is possible to adjust the appearance and other settings of the chart in the Live Edit mode. The way how the settings are accessed depends on the editing type. Here is a brief overview:
+It is possible to adjust the appearance and other settings of the chart in the Live Edit mode.
+
+The way how the settings are accessed depends on the editing type. Here is a brief overview:
 
 <table>
 <tr><th>Settings</th><th>Edititng Type</th><th>Class</th></tr>
