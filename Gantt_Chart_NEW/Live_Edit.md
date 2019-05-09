@@ -145,9 +145,9 @@ Use the following methods of the {api:anychart.core.gantt.edit.StructureEdit}any
 
 StructureEdit:
 
-* {api:anychart.core.gantt.edit.StructureEdit#fill}fill(){api} to set the fill of the row that is being dragged
-* {api:anychart.core.gantt.edit.StructureEdit#stroke}stroke(){api} to set the stroke of the row that is being dragged
-* {api:anychart.core.gantt.edit.StructureEdit#placementStroke}placementStroke(){api} to set the stroke of the target row
+* {api:anychart.core.gantt.edit.StructureEdit#fill}fill(){api} to set the fill of the row
+* {api:anychart.core.gantt.edit.StructureEdit#stroke}stroke(){api} to set the stroke of the row
+* {api:anychart.core.gantt.edit.StructureEdit#placementStroke}placementStroke(){api} to set the stroke of the line on which the row is about to be placed
 
 ```
 // allow editing the chart
