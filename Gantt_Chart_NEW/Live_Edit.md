@@ -119,9 +119,15 @@ Below, there are two samples, one with a [Project](Project_Chart) chart and anot
 
 It is possible to adjust the appearance and other setting of the chart in the Live Edit mode.
 
-You can change the way how [rows](#rows) and [elements](#elements) are colored when they are being dragged by users. Also, you can configure [controls](#controls) – duration and connector thumbs on elements and sliders on progress bars.
+**1. Editing Data Structure**
 
-These settings are available for two editing modes: **data structure editing** and **element editing**. Here are the classes allowing to access them:
+You can change the way how [rows](#rows) are colored when they are being dragged by users.
+
+**1. Editing Elements**
+
+You can change the way how [elements](#elements) are colored when they are being dragged by users. Also, you can configure [controls](#controls) – duration and connector thumbs on elements and sliders on progress bars.
+
+To access these settings, use the following classes:
 
 <table>
 <tr><th>Settings</th><th>Edititng Type</th><th>Class</th></tr>
@@ -129,11 +135,7 @@ These settings are available for two editing modes: **data structure editing** a
 <tr><td>[Elements](#elements), [Controls](#controls)</td><td>Edititng Elements</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
 </table>
 
-misc:
-
-* {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}: chart, timeline, data grid
-* {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}
-* (?) {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api}
+**Note:** To learn more about the types of editing, see the [Default Behavior](#default_behavior) section.
 
 ### Rows
 
