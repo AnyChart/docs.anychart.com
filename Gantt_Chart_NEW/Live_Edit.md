@@ -141,12 +141,13 @@ To access the settings, use {api:anychart.core.gantt.edit.ElementEdit}anychart.c
 
 ### Rows
 
+Use the following methods of the {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api} class to change the way how rows are colored when they are being dragged by users:
+
 StructureEdit:
 
-* {api:anychart.core.gantt.edit.StructureEdit#fill}fill(){api}
-* {api:anychart.core.gantt.edit.StructureEdit#stroke}stroke(){api}
-* {api:anychart.core.gantt.edit.StructureEdit#placementStroke}placementStroke(){api}
-
+* {api:anychart.core.gantt.edit.StructureEdit#fill}fill(){api} to set the fill of the row that is being dragged
+* {api:anychart.core.gantt.edit.StructureEdit#stroke}stroke(){api} to set the stroke of the row that is being dragged
+* {api:anychart.core.gantt.edit.StructureEdit#placementStroke}placementStroke(){api} to set the stroke of the target row
 
 ```
 // allow editing the chart
