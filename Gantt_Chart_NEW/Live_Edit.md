@@ -117,17 +117,19 @@ Below, there are two samples, one with a [Project](Project_Chart) chart and anot
 
 ## Settings
 
-It is possible to adjust the appearance and other setting of the chart in the Live Edit mode.
+It is possible to adjust the appearance and other settings of the chart in the Live Edit mode. The way how the settings are accessed, depends on the editing type.
 
 **1. Editing Data Structure**
 
 You can change the way how [rows](#rows) are colored when they are being dragged by users.
 
+To access the settings, use {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}.
+
 **1. Editing Elements**
 
 You can change the way how [elements](#elements) are colored when they are being dragged by users. Also, you can configure [controls](#controls) – duration and connector thumbs on elements and sliders on progress bars.
 
-To access these settings, use the following classes:
+To access the settings, use {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}.
 
 <table>
 <tr><th>Settings</th><th>Edititng Type</th><th>Class</th></tr>
