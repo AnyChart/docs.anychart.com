@@ -133,7 +133,9 @@ To access the settings, use the {api:anychart.core.gantt.edit.StructureEdit}anyc
 
 **2. Editing Elements**
 
-You can change the way how [elements](#elements) are colored when they are being dragged by users. Also, you can configure [controls](#controls) – duration and connector thumbs on elements and sliders on progress bars.
+You can change the way how [elements](#elements) are colored when they are being dragged by users.
+
+Also, you can configure [controls](#controls) – duration and connector thumbs on elements and sliders on progress bars.
 
 To access the settings, use {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api} class.
 
