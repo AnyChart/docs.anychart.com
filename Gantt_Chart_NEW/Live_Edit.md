@@ -125,8 +125,8 @@ These settings are available for two editing modes: **data structure editing** a
 
 <table>
 <tr><th>Edititng Type</th><th>Class</th><th>Settings</th></tr>
-<tr><td>**Edititng Data Structure**</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td><td>[rows](#rows)</td></tr>
-<tr><td>**Edititng Elements**</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td><td>[elements](#elements), [controls](#controls)</td></tr>
+<tr><td>**Edititng Data Structure**</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td><td>[Rows](#rows)</td></tr>
+<tr><td>**Edititng Elements**</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td><td>[Elements](#elements), [Controls](#controls)</td></tr>
 </table>
 
 misc:
