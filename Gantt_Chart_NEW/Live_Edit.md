@@ -117,12 +117,12 @@ Below, there are two samples, one with a [Project](Project_Chart) chart and anot
 
 ## Settings
 
-It is possible to adjust the appearance and other settings of the chart in the Live Edit mode. The way how the settings are accessed, depends on the editing type. Here is a brief overview:
+It is possible to adjust the appearance and other settings of the chart in the Live Edit mode. The way how the settings are accessed depends on the editing type. Here is a brief overview:
 
 <table>
 <tr><th>Settings</th><th>Edititng Type</th><th>Class</th></tr>
-<tr><td>[Rows](#rows)</td><td>Edititng Data Structure</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
-<tr><td>[Elements](#elements), [Controls](#controls)</td><td>Edititng Elements</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
+<tr><td>Edititng Data Structure</td><td>[Rows](#rows)</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
+<tr><td>Edititng Elements</td><td>[Elements](#elements), [Controls](#controls)</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
 </table>
 
 **1. Editing Data Structure**
