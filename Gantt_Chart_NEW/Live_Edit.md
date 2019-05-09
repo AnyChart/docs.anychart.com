@@ -131,7 +131,7 @@ You can change the way how [rows](#rows) are colored when they are being dragged
 
 To access the settings, use the {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api} class.
 
-**1. Editing Elements**
+**2. Editing Elements**
 
 You can change the way how [elements](#elements) are colored when they are being dragged by users. Also, you can configure [controls](#controls) – duration and connector thumbs on elements and sliders on progress bars.
 
