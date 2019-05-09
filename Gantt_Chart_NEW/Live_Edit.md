@@ -141,7 +141,9 @@ To access the settings, use {api:anychart.core.gantt.edit.ElementEdit}anychart.c
 
 ### Rows
 
-Use the following methods of the {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api} class to change the way how rows are colored when they are being dragged by users:
+It is possible to change the way how rows are colored when they are being dragged by users.
+
+Use the following methods of the {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api} class:
 
 * {api:anychart.core.gantt.edit.StructureEdit#fill}fill(){api} to set the fill of the row
 * {api:anychart.core.gantt.edit.StructureEdit#stroke}stroke(){api} to set the stroke of the row
