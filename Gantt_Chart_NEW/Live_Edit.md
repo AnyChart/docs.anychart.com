@@ -147,7 +147,7 @@ StructureEdit:
 
 * {api:anychart.core.gantt.edit.StructureEdit#fill}fill(){api} to set the fill of the row
 * {api:anychart.core.gantt.edit.StructureEdit#stroke}stroke(){api} to set the stroke of the row
-* {api:anychart.core.gantt.edit.StructureEdit#placementStroke}placementStroke(){api} to set the stroke of the line on which the row is about to be placed
+* {api:anychart.core.gantt.edit.StructureEdit#placementStroke}placementStroke(){api} to set the stroke of the line marking the target poistion
 
 ```
 // allow editing the chart
