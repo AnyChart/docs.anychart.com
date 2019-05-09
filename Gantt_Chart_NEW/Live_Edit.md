@@ -119,12 +119,6 @@ Below, there are two samples, one with a [Project](Project_Chart) chart and anot
 
 It is possible to adjust the appearance and other settings of the chart in the Live Edit mode. The way how the settings are accessed depends on the editing type. Here is a brief overview:
 
-<table>
-<tr><th>Settings</th><th>Edititng Type</th><th>Class</th></tr>
-<tr><td>Edititng Data Structure</td><td>[Rows](#rows)</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
-<tr><td>Edititng Elements</td><td>[Elements](#elements), [Controls](#controls)</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
-</table>
-
 **1. Editing Data Structure**
 
 You can change the way how [rows](#rows) are colored when they are being dragged by users.
@@ -138,6 +132,12 @@ You can change the way how [elements](#elements) are colored when they are being
 To access the settings, use {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api} class.
 
 **Note:** To learn more about the types of editing, see the [Default Behavior](#default_behavior) section.
+
+<table>
+<tr><th>Settings</th><th>Edititng Type</th><th>Class</th></tr>
+<tr><td>Edititng Data Structure</td><td>[Rows](#rows)</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
+<tr><td>Edititng Elements</td><td>[Elements](#elements), [Controls](#controls)</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
+</table>
 
 <table>
 <tr><th>Part of Chart</th><th>Rows</th><th>Elements + Controls</th></tr>
