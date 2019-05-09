@@ -145,7 +145,9 @@ To access the settings, use {api:anychart.core.gantt.edit.ElementEdit}anychart.c
 
 It is possible to change the way how rows are colored when they are being dragged by users.
 
-Use the following methods of the {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api} class:
+First, access either the whole chart or its part: the [data grid](Data_Grid), the [timeline](Timeline), or a particular [element](Elements) (except for connectors).
+
+Then use the following methods of the {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api} class:
 
 * {api:anychart.core.gantt.edit.StructureEdit#fill}fill(){api} to set the fill of the row
 * {api:anychart.core.gantt.edit.StructureEdit#stroke}stroke(){api} to set the stroke of the row
