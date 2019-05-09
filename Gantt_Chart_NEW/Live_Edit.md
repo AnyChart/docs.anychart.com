@@ -143,7 +143,7 @@ To access the settings, use {api:anychart.core.gantt.edit.ElementEdit}anychart.c
 
 It is possible to change the way how rows are colored when they are being dragged by users.
 
-First, access either the whole chart or its part: the [data grid](Data_Grid), the [timeline](Timeline), or a particular [element](Elements) (except for connectors).
+First, access either the whole chart or its part: the [data grid](Data_Grid) or the [timeline](Timeline).
 
 Then use the following methods of the {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api} class:
 
@@ -151,7 +151,7 @@ Then use the following methods of the {api:anychart.core.gantt.edit.StructureEdi
 * {api:anychart.core.gantt.edit.StructureEdit#stroke}stroke(){api} to set the stroke of the row
 * {api:anychart.core.gantt.edit.StructureEdit#placementStroke}placementStroke(){api} to set the stroke of the line marking the target position
 
-In the following sample, rows in the Live Edit mode have the same fill and target stroke on the whole chart, but their stroke looks differently on the data grid and on the timeline:
+In the following sample, rows in the Live Edit mode have different stroke settings on the data grid and on the timeline. Other settings are applied to the whole chart.
 
 ```
 // allow editing the chart
