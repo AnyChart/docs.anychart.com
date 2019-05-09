@@ -9,9 +9,9 @@ Here are the available types of editing and the classes that allow accessing the
 
 <table>
 <tr><th>Edititng Type</th><th>Class</th></tr>
-<tr><td>**Edititng Data Grid Text**</td><td>–</td></tr>
-<tr><td>**Edititng Data Structure**</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
-<tr><td>**Edititng Elements**</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
+<tr><td>Edititng Data Grid Text</td><td>–</td></tr>
+<tr><td>Edititng Data Structure</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
+<tr><td>Edititng Elements</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
 </table>
 
 To learn more, see the sections below. They demonstrate the [default behavior](#default_behavior) of the chart in the Live Edit mode and explain how to [enable / disable](#enabling_/_disabling) it and adjust its appearance and other [settings](#settings).
