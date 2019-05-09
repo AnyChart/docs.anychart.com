@@ -139,14 +139,6 @@ To access the settings, use {api:anychart.core.gantt.edit.ElementEdit}anychart.c
 
 **Note:** To learn more about the types of editing, see the [Default Behavior](#default_behavior) section.
 
-<table>
-<tr><th>Part of Chart</th><th>Rows</th><th>Elements</th><th>Controls</th></tr>
-<tr><td>Chart</td><td>&#10004</td><td>&#10004</td><td>&#10004</td></tr>
-<tr><td>Data Grid</td><td>&#10004</td><td></td><td></td></tr>
-<tr><td>Timeline</td><td>&#10004</td><td>&#10004</td><td>&#10004</td></tr>
-<tr><td>Elements</td><td></td><td>&#10004</td><td>&#10004</td></tr>
-</table>
-
 ### Rows
 
 It is possible to change the way how rows are colored when they are being dragged by users.
