@@ -9,9 +9,9 @@ Here are the available types of editing and the classes that allow accessing the
 
 <table>
 <tr><th>Edititng Type</th><th>Class</th></tr>
-<tr><td>**Edititng Data Grid Text**<br></td><td>–</td></tr>
-<tr><td>**Edititng Data Structure**<br></td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
-<tr><td>**Edititng Elements**<br></td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
+<tr><td>**Edititng Data Grid Text**</td><td>–</td></tr>
+<tr><td>**Edititng Data Structure**</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
+<tr><td>**Edititng Elements**</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
 </table>
 
 To learn more, see the sections below. They demonstrate the [default behavior](#default_behavior) of the chart in the Live Edit mode and explain how to [enable / disable](#enabling_/_disabling) it and adjust its appearance and other [settings](#settings).
@@ -32,7 +32,7 @@ It triggers a [data tree event](Events#data_tree):
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
-<tr><td>treeItemUpdate<br></td><td>A data item has been updated.</td></tr>
+<tr><td>treeItemUpdate</td><td>A data item has been updated.</td></tr>
 </table>
 
 **2. Editing Data Structure**
@@ -43,7 +43,7 @@ A [data tree event](Events#data_tree) is triggered:
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
-<tr><td>treeItemMove<br></td><td>A data item has been moved.</td></tr>
+<tr><td>treeItemMove</td><td>A data item has been moved.</td></tr>
 </table>
 
 **3. Editing Elements**
@@ -56,8 +56,8 @@ A [data tree event](Events#data_tree) and a [connector event](Events#connectors)
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
-<tr><td>treeItemMove<br></td><td>A data item has been updated.</td></tr>
-<tr><td>beforeCreateConnector<br></td><td>A connector is about to be created.</td></tr>
+<tr><td>treeItemMove</td><td>A data item has been updated.</td></tr>
+<tr><td>beforeCreateConnector</td><td>A connector is about to be created.</td></tr>
 </table>
 
 The following sample shows how the Live Edit mode works. All types of editing are enabled on the whole chart:
@@ -97,7 +97,7 @@ chart.getTimeline().milestones().edit(true);
 chart.getTimeline().periods().edit(true);
 ```
 
-Depending on the part of the chart, different types of editing are enabled on it:
+Depending on the part of the chart, different types of editing are enabled:
 
 <table>
 <tr><th>Part of Chart</th><th>Editing Data Grid Text</th><th>Editing Data Structure</th><th>Editing Elements</th></tr>
@@ -116,6 +116,16 @@ Below, there are two samples, one with a [Project](Project_Chart) chart and anot
 {sample :height 200}GANTT\_NEW\_Live\_Edit\_03{sample}
 
 ## Settings
+
+It is possible to adjust the appearance and other setting of the chart in the Live Edit mode. You can change the way how [rows](#rows) and [elements](#elements) are colored when they are being dragged by users or configure [controls](#controls) – duration and connector thumbs on elements and sliders on progress bars.
+
+These settings are available for two editing modes: **data structure** () and **element editing**. Here are the classes allowing to access them.
+
+<table>
+<tr><th>Edititng Type</th><th>Class</th><th>Settings</th></tr>
+<tr><td>**Edititng Data Structure**</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td><td>[rows](#rows)</td></tr>
+<tr><td>**Edititng Elements**</td><td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td><td>[elements](#elements), [controls](#controls)</td></tr>
+</table>
 
 misc:
 
