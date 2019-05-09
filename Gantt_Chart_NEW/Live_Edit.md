@@ -117,9 +117,11 @@ Below, there are two samples, one with a [Project](Project_Chart) chart and anot
 
 ## Settings
 
-It is possible to adjust the appearance and other setting of the chart in the Live Edit mode. You can change the way how [rows](#rows) and [elements](#elements) are colored when they are being dragged by users or configure [controls](#controls) – duration and connector thumbs on elements and sliders on progress bars.
+It is possible to adjust the appearance and other setting of the chart in the Live Edit mode.
 
-These settings are available for two editing modes: **data structure** () and **element editing**. Here are the classes allowing to access them.
+You can change the way how [rows](#rows) and [elements](#elements) are colored when they are being dragged by users. Also, you can configure [controls](#controls) – duration and connector thumbs on elements and sliders on progress bars.
+
+These settings are available for two editing modes: **data structure editing** and **element editing**. Here are the classes allowing to access them:
 
 <table>
 <tr><th>Edititng Type</th><th>Class</th><th>Settings</th></tr>
