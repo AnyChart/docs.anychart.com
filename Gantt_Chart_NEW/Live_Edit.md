@@ -5,6 +5,14 @@
 
 In the Live Edit mode, a special UI is enabled that allows users to edit Gantt charts on-the-fly. It is possible to edit the [data](Data) structure by moving rows, change the duration and position of timeline [elements](Elements), create and remove connections between them, and edit the [data grid](Data_Grid) text.
 
+To learn more, see the sections below. They demonstrate the [default behavior](#default_behavior) of the chart in the Live Edit mode and explain how to [enable / disable](#enabling_/_disabling) it and adjust its appearance and other [settings](#settings).
+
+...
+
+**Note:** For the correct work of the Live Edit mode, as well as of Gantt charts in general, the `id` [data field](Data#data_fields) is required.
+
+## Classes
+
 Here are the available types of editing and the classes that allow accessing their settings:
 
 <table>
@@ -14,9 +22,15 @@ Here are the available types of editing and the classes that allow accessing the
 <tr><td>Edititng Elements</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
 </table>
 
-To learn more, see the sections below. They demonstrate the [default behavior](#default_behavior) of the chart in the Live Edit mode and explain how to [enable / disable](#enabling_/_disabling) it and adjust its appearance and other [settings](#settings).
+... :
 
-**Note:** For the correct work of the Live Edit mode, as well as of Gantt charts in general, the `id` [data field](Data#data_fields) is required.
+<table>
+<tr><th>Part of Chart</th><th>Rows</th><th>Elements + Controls</th></tr>
+<tr><td>Chart</td><td>&#10004</td><td>&#10004</td></tr>
+<tr><td>Data Grid</td><td>&#10004</td><td></td><td></td></tr>
+<tr><td>Timeline</td><td>&#10004</td><td>&#10004</td></tr>
+<tr><td>Elements</td><td></td><td>&#10004</td></tr>
+</table>
 
 ## Default Behavior
 
@@ -139,16 +153,6 @@ To access the settings, use {api:anychart.core.gantt.edit.ElementEdit}anychart.c
 <tr><th>Settings</th><th>Edititng Type</th><th>Class</th></tr>
 <tr><td>Edititng Data Structure</td><td>[Rows](#rows)</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
 <tr><td>Edititng Elements</td><td>[Elements](#elements), [Controls](#controls)</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
-</table>
-
-And here are the parts of the chart you need to access for configuring the Live Edit settings:
-
-<table>
-<tr><th>Part of Chart</th><th>Rows</th><th>Elements + Controls</th></tr>
-<tr><td>Chart</td><td>&#10004</td><td>&#10004</td></tr>
-<tr><td>Data Grid</td><td>&#10004</td><td></td><td></td></tr>
-<tr><td>Timeline</td><td>&#10004</td><td>&#10004</td></tr>
-<tr><td>Elements</td><td></td><td>&#10004</td></tr>
 </table>
 
 ### Rows
