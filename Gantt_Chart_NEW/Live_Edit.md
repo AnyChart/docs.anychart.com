@@ -155,6 +155,7 @@ Then use the following methods of the {api:anychart.core.gantt.edit.StructureEdi
 * {api:anychart.core.gantt.edit.StructureEdit#stroke}stroke(){api} to set the stroke of the row
 * {api:anychart.core.gantt.edit.StructureEdit#placementStroke}placementStroke(){api} to set the stroke of the line marking the target position
 
+In the following sample, rows in the Live Edit mode have the same fill and target stroke on the whole chart, but their stroke looks differently on the data grid and on the timeline:
 
 ```
 // allow editing the chart
