@@ -141,16 +141,6 @@ To access the settings, use {api:anychart.core.gantt.edit.ElementEdit}anychart.c
 <tr><td>Edititng Elements</td><td>[Elements](#elements), [Controls](#controls)</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
 </table>
 
-And here are the parts of the chart you need to access for configuring the Live Edit settings:
-
-<table>
-<tr><th>Part of Chart</th><th>Rows</th><th>Elements + Controls</th></tr>
-<tr><td>Chart</td><td>&#10004</td><td>&#10004</td></tr>
-<tr><td>Data Grid</td><td>&#10004</td><td></td><td></td></tr>
-<tr><td>Timeline</td><td>&#10004</td><td>&#10004</td></tr>
-<tr><td>Elements</td><td></td><td>&#10004</td></tr>
-</table>
-
 ### Rows
 
 It is possible to change the way how rows are colored when they are being dragged by users.
