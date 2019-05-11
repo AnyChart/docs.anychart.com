@@ -7,9 +7,9 @@ In the Live Edit mode, a special UI is enabled that allows users to edit Gantt c
 
 The available types of editing include:
 
-**1. Editing Data Grid Text**
-**2. Editing Data Structure**
-**3. Editing Elements**
+**1. Editing Data Grid Text**<br>
+**2. Editing Data Structure**<br>
+**3. Editing Elements**<br>
 
 To learn more, see the sections below. They demonstrate the [default behavior](#default_behavior) of the chart in the Live Edit mode and explain how to [enable / disable](#enabling_/_disabling) it and adjust its appearance and other [settings](#settings).
 
