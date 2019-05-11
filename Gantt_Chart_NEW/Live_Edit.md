@@ -151,8 +151,8 @@ The way of accessing settings depends on the type of editing:
 
 <table>
 <tr><th>Settings</th><th>Part of Chart</th><th>Class</th></tr>
-<tr><td>Editing Data Structure<br>[Rows](#rows)</td><td>Chart<br>Data Grid<br>Timeline</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
-<tr><td>Editing Elements<br>[Elements](#elements)<br>[Controls](#controls)</td><td>Elements</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
+<tr><td>**Editing Data Structure**<br>[Rows](#rows)</td><td>Chart<br>Data Grid<br>Timeline</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
+<tr><td>**Editing Elements**<br>[Elements](#elements)<br>[Controls](#controls)</td><td>Elements</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
 </table>
 
 **Note:** To learn more about the types of editing, see the [Default Behavior](#default_behavior) section.
