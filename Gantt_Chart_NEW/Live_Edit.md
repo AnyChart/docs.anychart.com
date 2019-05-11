@@ -127,15 +127,9 @@ Combine the {api:?entry=edit}edit(){api} method of an element type with methods 
  Here is a brief overview of the information above:
 
 <table>
-<tr><th>Edititng Type</th><th>Settings</th><th>Class</th></tr>
-<tr><td>Edititng Data Structure</td><td>[Rows](#rows)</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
-<tr><td>Edititng Elements</td><td>[Elements](#elements), [Controls](#controls)</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
-</table>
-
-<table>
-<tr><th>Editing Type</th><th>Part of Chart</th><th>Settings</th><th>Class</th></tr>
-<tr><td>Editing Data Structure</td><td>Chart<br>[Data Grid](Data_Grid)<br>[Timeline](Timeline)</td><td>[Rows](#rows)</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
-<tr><td>Editing Elements</td><td>[Elements](Elements)</td><td>[Elements](#elements)<br>[Controls](#controls)</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
+<tr><th>Editing Type</th><th>Settings</th><th>Part of Chart</th><th>Class</th></tr>
+<tr><td>Editing Data Structure</td><td>[Rows](#rows)</td><td>Chart<br>[Data Grid](Data_Grid)<br>[Timeline](Timeline)</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
+<tr><td>Editing Elements</td><td>[Elements](#elements)<br>[Controls](#controls)</td><td>[Elements](Elements)</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
 </table>
 
 ### Rows
