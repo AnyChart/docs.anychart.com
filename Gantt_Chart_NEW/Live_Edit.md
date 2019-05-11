@@ -15,7 +15,7 @@ This section describes the default behavior of the chart in the Live Edit mode a
 
 Please keep in mind that in addition to the special events mentioned below, all Live Edit interactions (as well as any interactions with Gantt charts) trigger [row events](Events#rows).
 
-## Editing Data Grid Text
+### Editing Data Grid Text
 
 Double-clicking on [data grid](Data_Grid) labels, except for the labels of the first column, allows altering their text.
 
@@ -26,7 +26,7 @@ It triggers a [data tree event](Events#data_tree):
 <tr><td>treeItemUpdate</td><td>A data item has been updated.</td></tr>
 </table>
 
-## Editing Data Structure
+### Editing Data Structure
 
 You can edit the structure of the [data](Data) by dragging and dropping rows up and down. It is possible to change both the sequence of rows and their hierarchical relationships.
 
@@ -37,7 +37,7 @@ A [data tree event](Events#data_tree) is triggered:
 <tr><td>treeItemMove</td><td>A data item has been moved.</td></tr>
 </table>
 
-## Editing Elements
+### Editing Elements
 
 Drag and drop timeline [elements](Elements) to change their positions on the timeline. To change the duration and progress of an element, use duration thumbs on its sides and the slider on the progress bar.
 
