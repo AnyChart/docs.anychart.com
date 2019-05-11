@@ -129,7 +129,7 @@ Combine the {api:?entry=edit}edit(){api} method of an element type with methods 
 <table>
 <tr><th>Editing Type</th><th>Settings</th><th>Part of Chart</th><th>Class</th></tr>
 <tr><td>Editing Data Structure</td><td>[Rows](#rows)</td><td>Chart<br>[Data Grid](Data_Grid)<br>[Timeline](Timeline)</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
-<tr><td>Editing Elements</td><td>[Elements](#elements)<br>[Controls](#controls)</td><td>[Elements](Elements)</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
+<tr><td>Editing Elements</td><td>[Elements](#elements)<br>[Controls](#controls)</td><td>[Element](Elements)</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
 </table>
 
 ## Settings 2
