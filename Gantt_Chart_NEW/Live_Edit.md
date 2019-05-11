@@ -5,14 +5,11 @@
 
 In the Live Edit mode, a special UI is enabled that allows users to edit Gantt charts on-the-fly. It is possible to edit the [data](Data) structure by moving rows, change the duration and position of timeline [elements](Elements), create and remove connections between them, and edit the [data grid](Data_Grid) text.
 
-Here are the available types of editing and the classes that allow accessing their settings:
+The available types of editing include:
 
-<table>
-<tr><th>Editing Type</th><th>Class</th></tr>
-<tr><td>Editing Data Grid Text</td><td>–</td></tr>
-<tr><td>Editing Data Structure</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
-<tr><td>Editing Elements</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
-</table>
+**1. Editing Data Grid Text**
+**2. Editing Data Structure**
+**3. Editing Elements**
 
 To learn more, see the sections below. They demonstrate the [default behavior](#default_behavior) of the chart in the Live Edit mode and explain how to [enable / disable](#enabling_/_disabling) it and adjust its appearance and other [settings](#settings).
 
