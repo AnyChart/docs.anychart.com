@@ -139,7 +139,7 @@ It is possible to adjust the appearance and other settings of the chart in the L
 Combine the {api:?entry=edit}edit(){api} method of the chart, [data grid](Data_Grid), [timeline](Timeline), or [elements](Elements) with methods of the following classes:
 
 * {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}
-{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}
+* {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}
 
 The choice of the part of the chart and class depends on the type of editing:
 
