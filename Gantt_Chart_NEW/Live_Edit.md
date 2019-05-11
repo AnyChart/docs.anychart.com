@@ -5,12 +5,6 @@
 
 In the Live Edit mode, a special UI is enabled that allows users to edit Gantt charts on-the-fly. It is possible to edit the [data](Data) structure by moving rows, change the duration and position of timeline [elements](Elements), create and remove connections between them, and edit the [data grid](Data_Grid) text.
 
-The available types of editing include:
-
-**1. Editing Data Grid Text**<br>
-**2. Editing Data Structure**<br>
-**3. Editing Elements**<br>
-
 To learn more, see the sections below. They demonstrate the [default behavior](#default_behavior) of the chart in the Live Edit mode and explain how to [enable / disable](#enabling_/_disabling) it and adjust its appearance and other [settings](#settings).
 
 **Note:** For the correct work of the Live Edit mode, as well as of Gantt charts in general, the `id` [data field](Data#data_fields) is required.
@@ -21,7 +15,7 @@ This section describes the default behavior of the chart in the Live Edit mode a
 
 Please keep in mind that in addition to the special events mentioned below, all Live Edit interactions (as well as any interactions with Gantt charts) trigger [row events](Events#rows).
 
-**1. Editing Data Grid Text**
+## Editing Data Grid Text
 
 Double-clicking on [data grid](Data_Grid) labels, except for the labels of the first column, allows altering their text.
 
@@ -32,7 +26,7 @@ It triggers a [data tree event](Events#data_tree):
 <tr><td>treeItemUpdate</td><td>A data item has been updated.</td></tr>
 </table>
 
-**2. Editing Data Structure**
+## Editing Data Structure
 
 You can edit the structure of the [data](Data) by dragging and dropping rows up and down. It is possible to change both the sequence of rows and their hierarchical relationships.
 
@@ -43,7 +37,7 @@ A [data tree event](Events#data_tree) is triggered:
 <tr><td>treeItemMove</td><td>A data item has been moved.</td></tr>
 </table>
 
-**3. Editing Elements**
+## Editing Elements
 
 Drag and drop timeline [elements](Elements) to change their positions on the timeline. To change the duration and progress of an element, use duration thumbs on its sides and the slider on the progress bar.
 
