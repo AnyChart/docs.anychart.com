@@ -132,6 +132,25 @@ Combine the {api:?entry=edit}edit(){api} method of an element type with methods 
 <tr><td>Editing Elements</td><td>[Elements](#elements)<br>[Controls](#controls)</td><td>[Elements](Elements)</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
 </table>
 
+## Settings 2
+
+It is possible to adjust the appearance and other settings of the chart in the Live Edit mode. You can change the way how [rows](#rows) and [elements](#elements) are colored when they are being dragged by users. Also, you can configure [controls](#controls) – duration and connector thumbs on elements and sliders on progress bars.
+
+Combine the {api:?entry=edit}edit(){api} method of the chart, [data grid](Data_Grid), [timeline](Timeline), or [elements](Elements) with methods of the following classes:
+
+* {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}
+{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}
+
+The choice of the part of the chart and class depends on the type of editing:
+
+<table>
+<tr><th>Editing Type</th><th>Settings</th><th>Part of Chart</th><th>Class</th></tr>
+<tr><td>Editing Data Structure</td><td>[Rows](#rows)</td><td>Chart<br>[Data Grid](Data_Grid)<br>[Timeline](Timeline)</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
+<tr><td>Editing Elements</td><td>[Elements](#elements)<br>[Controls](#controls)</td><td>[Elements](Elements)</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
+</table>
+
+**Note:** To learn more about the types of editing, see the [Default Behavior](#default_behavior) section.
+
 ### Rows
 
 It is possible to change the way how rows are colored when they are being dragged by users.
