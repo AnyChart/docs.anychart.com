@@ -11,7 +11,7 @@ Here are the available types of editing and the classes that allow accessing the
 <tr><th>Editing Type</th><th>Class</th></tr>
 <tr><td>Editing Data Grid Text</td><td>–</td></tr>
 <tr><td>Editing Data Structure</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
-<tr><td>Edititng Elements</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
+<tr><td>Editing Elements</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
 </table>
 
 To learn more, see the sections below. They demonstrate the [default behavior](#default_behavior) of the chart in the Live Edit mode and explain how to [enable / disable](#enabling_/_disabling) it and adjust its appearance and other [settings](#settings).
@@ -23,7 +23,7 @@ To learn more, see the sections below. They demonstrate the [default behavior](#
 <table>
 <tr><th>Editing Type</th><th>Part of Chart</th><th>Settings</th><th>Class</th></tr>
 <tr><td>Editing Data Structure</td><td>Chart<br>[Data Grid](Data_Grid)<br>[Timeline](Timeline)</td><td>[Rows](#rows)</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
-<tr><td>Edititng Elements</td><td>[Elements](Elements)</td><td>[Elements](#elements)<br>[Controls](#controls)</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
+<tr><td>Editing Elements</td><td>[Elements](Elements)</td><td>[Elements](#elements)<br>[Controls](#controls)</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
 </table>
 
 ## Default Behavior
