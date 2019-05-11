@@ -141,7 +141,7 @@ Combine the {api:?entry=edit}edit(){api} method of the chart, [data grid](Data_G
 * {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}
 * {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}
 
-The choice of the part of the chart and class depends on the type of editing:
+The way of accessing settings depends on the type of editing:
 
 <table>
 <tr><th>Editing Type</th><th>Settings</th><th>Part of Chart</th><th>Class</th></tr>
