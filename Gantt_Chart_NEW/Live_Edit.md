@@ -21,18 +21,9 @@ To learn more, see the sections below. They demonstrate the [default behavior](#
 ## ???
 
 <table>
-<tr><th>Editing Type</th><th>Part of Chart</th><th>Class</th></tr>
-<tr><td>Editing Data Grid Text</td><td>–</td><td>–</td></tr>
-<tr><td>Editing Data Structure</td><td>Chart / [Data Grid](Data_Grid) / [Timeline](Timeline)</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
-<tr><td>Edititng Elements</td><td>[Elements](Elements)</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
-</table>
-
-<table>
-<tr><th>Part of Chart</th><th>Editing Data Grid Text</th><th>Editing Data Structure</th><th>Editing Elements</th></tr>
-<tr><td>Chart</td><td>&#10004</td><td>&#10004</td><td>&#10004</td></tr>
-<tr><td>Data Grid</td><td>&#10004</td><td>&#10004</td><td></td></tr>
-<tr><td>Timeline</td><td></td><td>&#10004</td><td>&#10004</td></tr>
-<tr><td>Elements</td><td></td><td></td><td>&#10004</td></tr>
+<tr><th>Editing Type</th><th>Part of Chart</th><th>Settings</th></tr>
+<tr><td>Editing Data Structure<br>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td><td>Chart / [Data Grid](Data_Grid) / [Timeline](Timeline)</td><td>[Rows](#rows)</td></tr>
+<tr><td>Edititng Elements<br>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td><td>[Elements](Elements)</td><td>[Elements](#elements), [Controls](#controls)</td></tr>
 </table>
 
 ## Default Behavior
