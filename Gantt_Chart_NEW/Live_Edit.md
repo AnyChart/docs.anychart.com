@@ -18,14 +18,6 @@ To learn more, see the sections below. They demonstrate the [default behavior](#
 
 **Note:** For the correct work of the Live Edit mode, as well as of Gantt charts in general, the `id` [data field](Data#data_fields) is required.
 
-## ???
-
-<table>
-<tr><th>Editing Type</th><th>Part of Chart</th><th>Settings</th><th>Class</th></tr>
-<tr><td>Editing Data Structure</td><td>Chart<br>[Data Grid](Data_Grid)<br>[Timeline](Timeline)</td><td>[Rows](#rows)</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
-<tr><td>Editing Elements</td><td>[Elements](Elements)</td><td>[Elements](#elements)<br>[Controls](#controls)</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
-</table>
-
 ## Default Behavior
 
 This section describes the default behavior of the chart in the Live Edit mode and lists the events triggered by users' actions. By handling events, you can change the default behavior – see the [Events](Events) article to learn more.
@@ -147,6 +139,12 @@ To access the settings, use {api:anychart.core.gantt.edit.ElementEdit}anychart.c
 <tr><th>Edititng Type</th><th>Settings</th><th>Class</th></tr>
 <tr><td>Edititng Data Structure</td><td>[Rows](#rows)</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
 <tr><td>Edititng Elements</td><td>[Elements](#elements), [Controls](#controls)</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
+</table>
+
+<table>
+<tr><th>Editing Type</th><th>Part of Chart</th><th>Settings</th><th>Class</th></tr>
+<tr><td>Editing Data Structure</td><td>Chart<br>[Data Grid](Data_Grid)<br>[Timeline](Timeline)</td><td>[Rows](#rows)</td><td>{api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}</td></tr>
+<tr><td>Editing Elements</td><td>[Elements](Elements)</td><td>[Elements](#elements)<br>[Controls](#controls)</td><td>{api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}</td></tr>
 </table>
 
 ### Rows
