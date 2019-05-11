@@ -144,7 +144,7 @@ It is possible to change the way how rows are colored when they are being dragge
 
 First, access either the whole chart or its part: the [data grid](Data_Grid) or the [timeline](Timeline).
 
-Then combine {api:anychart.charts.Gantt#edit}edit(){api} with methods of the {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api} class:
+Then combine {api:?entry=edit}edit(){api} with methods of the {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api} class:
 
 * {api:anychart.core.gantt.edit.StructureEdit#fill}fill(){api} to set the fill of the row
 * {api:anychart.core.gantt.edit.StructureEdit#stroke}stroke(){api} to set the stroke of the row
