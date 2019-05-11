@@ -120,7 +120,7 @@ Combine the {api:?entry=edit}edit(){api} method of the chart, [data grid](Data_G
 
 You can change the way how [elements](#elements) are colored when they are being dragged by users. Also, you can configure [controls](#controls) – duration and connector thumbs on elements and sliders on progress bars.
 
-To access the settings, use {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api} class.
+Combine the {api:?entry=edit}edit(){api} method of an element type with methods of {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api}.
 
 **Note:** To learn more about the types of editing, see the [Default Behavior](#default_behavior) section.
 
