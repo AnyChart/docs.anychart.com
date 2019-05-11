@@ -114,7 +114,7 @@ It is possible to adjust the appearance and other settings of the chart in the L
 
 You can change the way how [rows](#rows) are colored when they are being dragged by users.
 
-To access the settings, combine the {api:?entry=edit}edit(){api} method of the chart, [data grid](Data_Grid), or [timeline](Timeline) with methods the {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api} class.
+Combine the {api:?entry=edit}edit(){api} method of the chart, [data grid](Data_Grid), or [timeline](Timeline) with methods of {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api}.
 
 **2. Editing Elements**
 
