@@ -190,7 +190,7 @@ Then combine {api:?entry=edit}edit(){api} with methods of the {api:anychart.core
 * {api:anychart.core.gantt.edit.ElementEdit#thumbs}thumbs(){api} to access duration thumbs
 * {api:anychart.core.gantt.edit.ElementEdit#connectorThumbs}connectorThumbs(){api} to access connector thumbs
 * {api:anychart.core.gantt.edit.ElementEdit#start}start(){api} + {api:anychart.core.gantt.edit.SideControl#thumb}thumb(){api} / {api:anychart.core.gantt.edit.SideControl#connectorThumb}connectorThumb(){api} to access thumbs on the left sides of elements
-* {api:anychart.core.gantt.edit.ElementEdit#end}end(){api} + {api:anychart.core.gantt.edit.SideControl#thumb}thumb(){api} + / {api:anychart.core.gantt.edit.SideControl#connectorThumb}connectorThumb(){api} to access thumbs on the right sides of elements
+* {api:anychart.core.gantt.edit.ElementEdit#end}end(){api} + {api:anychart.core.gantt.edit.SideControl#thumb}thumb(){api} / {api:anychart.core.gantt.edit.SideControl#connectorThumb}connectorThumb(){api} to access thumbs on the right sides of elements
 
 You can configure **dutation thumbs** / **connector thumbs** either on both sides of elements or on just one side. Use the following methods of the {api:anychart.core.gantt.edit.Thumb}anychart.core.gantt.edit.Thumb{api} class:
 
