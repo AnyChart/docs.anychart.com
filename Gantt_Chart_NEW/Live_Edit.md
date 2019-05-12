@@ -149,7 +149,7 @@ chart.getTimeline().edit().stroke(null);
 
 ### Elements
 
-It is possible to change the way how elements are colored when they are being dragged by users.
+You can change the way how elements are colored when they are being dragged by users.
 
 First, access an [element](Elements) type (except for connectors) or [all elements](Elements/All_Elements).
 
@@ -180,6 +180,20 @@ timeline.connectors().previewStroke("#dd2c00", 2, "5 2", "round");
 {sample :height 360}GANTT\_NEW\_Live\_Edit\_05{sample}
 
 ### Controls
+
+You can configure controls – duration and connector thumbs on elements and sliders on progress bars.
+
+First, access an [element](Elements) type (except for connectors) or [all elements](Elements/All_Elements).
+
+Then combine {api:?entry=edit}edit(){api} with methods of the {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api} class:
+
+* {api:anychart.core.gantt.edit.ElementEdit#thumbs}thumbs(){api}
+* {api:anychart.core.gantt.edit.ElementEdit#connectorThumbs}connectorThumbs(){api}
+* {api:anychart.core.gantt.edit.ElementEdit#start}start(){api}
+* {api:anychart.core.gantt.edit.ElementEdit#end}end(){api}
+
+
+misc:
 
 * {api:anychart.core.gantt.edit.Thumb}anychart.core.gantt.edit.Thumb{api}
 * {api:anychart.core.gantt.edit.SideControl}anychart.core.gantt.edit.SideControl{api}
