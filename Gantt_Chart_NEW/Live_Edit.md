@@ -160,12 +160,7 @@ Then combine {api:?entry=edit}edit(){api} with methods of the {api:anychart.core
 
 Please note that **sliders on progress bars** inherit the settings of tasks. To override them, use the {api:anychart.core.gantt.elements.ProgressElement#edit}edit(){api} method of [progress bars](Elements/Project_Chart#progress_bars). 
 
-To set the **preview stroke of connectors**, access connectors by combining {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#connectors}connectors(){api}. Then call the {api:anychart.core.gantt.elements.ConnectorElement#previewStroke}previewStroke(){api} method.
-
-**Note:** To Learn more about connectors, see [Project Chart: Connectors](Project_Chart#connectors) and [Resource Chart: Connectors](Resource_Chart#connectors).
-
-misc:
-* ползунок прогресс-баров: настройки наследуются у тасков, также могут задаваться отдельно
+To set the **preview stroke of connectors**, access [connectors](Elements/Project_Chart#connectors) by combining {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#connectors}connectors(){api}. Then call the {api:anychart.core.gantt.elements.ConnectorElement#previewStroke}previewStroke(){api} method.
 
 // In the following sample, rows in the Live Edit mode have different stroke settings on the data grid and on the timeline. Other settings are applied to the whole chart. //
 

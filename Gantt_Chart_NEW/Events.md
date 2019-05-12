@@ -74,9 +74,7 @@ chart.listen("rowCollapseExpand", function (e) {
 
 ### Connectors
 
-Connectors are elements showing the dependencies between elements. To Learn more about them, see [Project Chart: Connectors](Project_Chart#connectors) and [Resource Chart: Connectors](Resource_Chart#connectors).
-
-Here are the events of connectors:
+Here are the events of [connectors](Project_Chart#connectors) you can listen to:
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
