@@ -187,23 +187,17 @@ First, access an [element](Elements) type (except for connectors) or [all elemen
 
 Then combine {api:?entry=edit}edit(){api} with methods of the {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api} class:
 
-* {api:anychart.core.gantt.edit.ElementEdit#thumbs}thumbs(){api} to configure duration thumbs
-* {api:anychart.core.gantt.edit.ElementEdit#connectorThumbs}connectorThumbs(){api} to configure connector thumbs
-* {api:anychart.core.gantt.edit.ElementEdit#start}start(){api} to configure thumbs on the left sides of elements
-* {api:anychart.core.gantt.edit.ElementEdit#end}end(){api} to configure thumbs on the right sides of elements
+* {api:anychart.core.gantt.edit.ElementEdit#thumbs}thumbs(){api} to access duration thumbs
+* {api:anychart.core.gantt.edit.ElementEdit#connectorThumbs}connectorThumbs(){api} to access connector thumbs
+* {api:anychart.core.gantt.edit.ElementEdit#start}start(){api} + {api:anychart.core.gantt.edit.SideControl#thumb}thumb(){api} / {api:anychart.core.gantt.edit.SideControl#connectorThumb} to access thumbs on the left sides of elements
+* {api:anychart.core.gantt.edit.ElementEdit#end}end(){api} + {api:anychart.core.gantt.edit.SideControl#thumb}thumb(){api} + / {api:anychart.core.gantt.edit.SideControl#connectorThumb} to access thumbs on the right sides of elements
 
-To configure **thumbs** / **connector thumbs**, combine {api:anychart.core.gantt.edit.ElementEdit#thumbs}thumbs(){api} or {api:anychart.core.gantt.edit.ElementEdit#connectorThumbs}connectorThumbs(){api} with methods of the {api:anychart.core.gantt.edit.Thumb}anychart.core.gantt.edit.Thumb{api} class:
+You can configure **thumbs** / **connector thumbs** either on both sides of elements or on just one side. Use the following methods of the {api:anychart.core.gantt.edit.Thumb}anychart.core.gantt.edit.Thumb{api} class:
 
 * {api:anychart.core.gantt.edit.Thumb#type}type(){api} + enums from {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api} to set the type
 * {api:anychart.core.gantt.edit.Thumb#fill}fill(){api} and {api:anychart.core.gantt.edit.Thumb#stroke}stroke(){api} to set the fill and stroke
 * {api:anychart.core.gantt.edit.Thumb#size}size(){api} to set the size
 * {api:anychart.core.gantt.edit.Thumb#horizontalOffset}horizontalOffset(){api} and {api:anychart.core.gantt.edit.Thumb#verticalOffset}verticalOffset(){api} to set the horizontal nad vertical offset
-
-To configure **thumbs on the sides of elements**, combine {api:anychart.core.gantt.edit.ElementEdit#start}start(){api} or {api:anychart.core.gantt.edit.ElementEdit#end}end(){api} with methods of the {api:anychart.core.gantt.edit.SideControl}anychart.core.gantt.edit.SideControl{api} class:
-
-* {api:anychart.core.gantt.edit.SideControl#thumb}thumb(){api} to configure thumbs
-* {api:anychart.core.gantt.edit.SideControl#connectorThumb}connectorThumb(){api} to configure connector thumbs
-
 
 misc:
 
