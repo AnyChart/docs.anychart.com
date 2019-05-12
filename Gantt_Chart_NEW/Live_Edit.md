@@ -238,7 +238,6 @@ timeline.tasks().progress().edit().stroke("#dd2c00", 2);
 
 ## Events
 
-misc:
+The events triggered by users' actions in the Live Edit mode are listed in the [Default Behavior](#default_behavior) section of this article.
 
-* [Default Behavior](#default_behavior)
-* [Events](Events)
+By handling events, you can change the default behavior – see the [Events](Events) article to learn more.
