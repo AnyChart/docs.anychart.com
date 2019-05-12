@@ -199,15 +199,9 @@ You can configure **dutation thumbs** / **connector thumbs** either on both side
 * {api:anychart.core.gantt.edit.Thumb#size}size(){api} to set the size
 * {api:anychart.core.gantt.edit.Thumb#horizontalOffset}horizontalOffset(){api} and {api:anychart.core.gantt.edit.Thumb#verticalOffset}verticalOffset(){api} to set the horizontal nad vertical offset
 
-misc:
+To adjust **sliders on progress bars**, use the {api:anychart.core.gantt.elements.ProgressElement#edit}edit(){api} method of [progress bars](Elements/Project_Chart#progress_bars). Also, they inherit the settings of tasks, as shown in the [Elements](#elements) section above.
 
-* {api:anychart.core.gantt.edit.Thumb}anychart.core.gantt.edit.Thumb{api}
-* {api:anychart.core.gantt.edit.SideControl}anychart.core.gantt.edit.SideControl{api}
-* {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}
-* ElementEdit:  {api:anychart.core.gantt.edit.ElementEdit#thumbs}thumbs(){api}, {api:anychart.core.gantt.edit.ElementEdit#connectorThumbs}connectorThumbs(){api}
-* ElementEdit -> {api:anychart.core.gantt.edit.ElementEdit#start}start(){api} & {api:anychart.core.gantt.edit.ElementEdit#end}end(){api} + {api:anychart.core.gantt.edit.SideControl#thumb}thumb(){api} & {api:anychart.core.gantt.edit.SideControl#connectorThumb}connectorThumb(){api}
-* ползунок прогресс-баров: настройки наследуются у тасков, также могут задаваться отдельно
-
+In this sample, ...
 
 ```
 // allow editing the chart
