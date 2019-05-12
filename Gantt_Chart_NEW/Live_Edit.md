@@ -149,9 +149,14 @@ chart.getTimeline().edit().stroke(null);
 
 ### Elements
 
-ElementEdit:
-* {api:anychart.core.gantt.edit.ElementEdit#fill}fill(){api}
-* {api:anychart.core.gantt.edit.ElementEdit#stroke}stroke(){api}
+It is possible to change the way how elements are colored when they are being dragged by users.
+
+First, access an [element](Elements) type (except for connectors) or [all elements](Elements/All_Elements).
+
+Then combine {api:?entry=edit}edit(){api} with methods of the {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api} class:
+
+* {api:anychart.core.gantt.edit.ElementEdit#fill}fill(){api} to set the fill
+* {api:anychart.core.gantt.edit.ElementEdit#stroke}stroke(){api} to set the stroke
 
 ConnectorElement:
 * {api:anychart.core.gantt.elements.ConnectorElement#previewStroke}previewStroke(){api}
@@ -159,6 +164,7 @@ ConnectorElement:
 misc:
 * ползунок прогресс-баров: настройки наследуются у тасков, также могут задаваться отдельно
 
+// In the following sample, rows in the Live Edit mode have different stroke settings on the data grid and on the timeline. Other settings are applied to the whole chart. //
 
 ```
 // allow editing the chart
