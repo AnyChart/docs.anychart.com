@@ -158,7 +158,7 @@ Then combine {api:?entry=edit}edit(){api} with methods of the {api:anychart.core
 * {api:anychart.core.gantt.edit.ElementEdit#fill}fill(){api} to set the fill
 * {api:anychart.core.gantt.edit.ElementEdit#stroke}stroke(){api} to set the stroke
 
-Please note that **sliders on progress bars** inherit the settings of tasks. To override them, use the {api:anychart.core.gantt.elements.ProgressElement#edit}edit(){api} method of progress bars. 
+Please note that **sliders on progress bars** inherit the settings of tasks. To override them, use the {api:anychart.core.gantt.elements.ProgressElement#edit}edit(){api} method of [progress bars](Elements/Project_Chart#progress_bars). 
 
 To set the **preview stroke of connectors**, access connectors by combining {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#connectors}connectors(){api}. Then call the {api:anychart.core.gantt.elements.ConnectorElement#previewStroke}previewStroke(){api} method.
 
