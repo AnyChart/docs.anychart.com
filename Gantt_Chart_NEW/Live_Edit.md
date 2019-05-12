@@ -199,6 +199,11 @@ To configure **thumbs** / **connector thumbs**, combine {api:anychart.core.gantt
 * {api:anychart.core.gantt.edit.Thumb#size}size(){api} to set the size
 * {api:anychart.core.gantt.edit.Thumb#horizontalOffset}horizontalOffset(){api} and {api:anychart.core.gantt.edit.Thumb#verticalOffset}verticalOffset(){api} to set the horizontal nad vertical offset
 
+To configure **thumbs on the sides of elements**, combine {api:anychart.core.gantt.edit.ElementEdit#start}start(){api} or {api:anychart.core.gantt.edit.ElementEdit#end}end(){api} with methods of the {api:anychart.core.gantt.edit.SideControl}anychart.core.gantt.edit.SideControl{api} class:
+
+* {api:anychart.core.gantt.edit.SideControl#thumb}thumb(){api} to configure thumbs
+* {api:anychart.core.gantt.edit.SideControl#connectorThumb}connectorThumb(){api} to configure connector thumbs
+
 
 misc:
 
@@ -207,7 +212,6 @@ misc:
 * {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}
 * ElementEdit:  {api:anychart.core.gantt.edit.ElementEdit#thumbs}thumbs(){api}, {api:anychart.core.gantt.edit.ElementEdit#connectorThumbs}connectorThumbs(){api}
 * ElementEdit -> {api:anychart.core.gantt.edit.ElementEdit#start}start(){api} & {api:anychart.core.gantt.edit.ElementEdit#end}end(){api} + {api:anychart.core.gantt.edit.SideControl#thumb}thumb(){api} & {api:anychart.core.gantt.edit.SideControl#connectorThumb}connectorThumb(){api}
-* все это работает только у элементов
 * ползунок прогресс-баров: настройки наследуются у тасков, также могут задаваться отдельно
 
 
