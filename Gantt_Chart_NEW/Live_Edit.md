@@ -201,7 +201,7 @@ To configure **duration thumbs** and **connector thumbs**, use methods of {api:a
 
 To adjust **sliders on progress bars**, use the {api:anychart.core.gantt.elements.ProgressElement#edit}edit(){api} method of [progress bars](Elements/Project_Chart#progress_bars). Also, they inherit the settings of tasks, as shown in the [Elements](#elements) section above.
 
-In this sample, ...
+The following sample shows how to configure thumbs. Please note that there are connector thumbs of different types on the left and on the right:
 
 ```
 // allow editing the chart
