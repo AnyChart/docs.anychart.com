@@ -162,7 +162,7 @@ Please note that **sliders on progress bars** inherit the settings of tasks. To 
 
 To set the **preview stroke of connectors**, use the {api:anychart.core.gantt.elements.ConnectorElement#previewStroke}previewStroke(){api} method of [connectors](Elements/Project_Chart#connectors).
 
-// In the following sample, rows in the Live Edit mode have different stroke settings on the data grid and on the timeline. Other settings are applied to the whole chart. //
+In the sample below, fill and stroke settings are applied to all elements and overridden for baselines and progress sliders. Also, the preview stroke of connectors is set.
 
 ```
 // allow editing the chart
