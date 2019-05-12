@@ -194,8 +194,9 @@ Then combine {api:?entry=edit}edit(){api} with methods of the {api:anychart.core
 
 To configure **thumbs** / **connector thumbs**, combine {api:anychart.core.gantt.edit.ElementEdit#thumbs}thumbs(){api} or {api:anychart.core.gantt.edit.ElementEdit#connectorThumbs}connectorThumbs(){api} with methods of the {api:anychart.core.gantt.edit.Thumb}anychart.core.gantt.edit.Thumb{api} class:
 
-* {api:anychart.core.gantt.edit.Thumb#size}(){api} and type {api:anychart.core.gantt.edit.Thumb#type}(){api} to set the size and type
+* {api:anychart.core.gantt.edit.Thumb#type}(){api} + enums from {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api} to set the type
 * {api:anychart.core.gantt.edit.Thumb#fill}(){api} and {api:anychart.core.gantt.edit.Thumb#stroke}(){api} to set the fill and stroke
+* {api:anychart.core.gantt.edit.Thumb#size}(){api} to set the size
 * {api:anychart.core.gantt.edit.Thumb#horizontalOffset}(){api} and {api:anychart.core.gantt.edit.Thumb#verticalOffset}(){api} to set the horizontal nad vertical offset
 
 
