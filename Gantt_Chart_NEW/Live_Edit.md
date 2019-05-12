@@ -17,7 +17,7 @@ Please keep in mind that in addition to the special events mentioned below, all 
 
 **1. Editing Data Grid Text**
 
-Double-clicking on [data grid](Data_Grid) labels, except for the labels of the first column, allows altering their text.
+Double-clicking on [data grid](Data_Grid) labels allows altering their text.
 
 It triggers a [data tree event](Events#data_tree):
 

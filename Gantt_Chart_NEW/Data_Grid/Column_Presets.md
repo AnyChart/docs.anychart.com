@@ -72,7 +72,7 @@ The following presets are used to apply different formats to dates:
 * `"date-iso-8601"` – *yyyy-MM-dd*
 * `"date-us-short"` – *d/MM/yyyy*
 
-**Note:** (?) These presets can be applied only to dates that are set as Unix timestamps – see [Date and Time Formats](../Date_and_Time_Formats).
+**Note:** These presets can be applied only to dates represented as Unix timestamps – see [Date and Time Formats](../Date_and_Time_Formats).
 
 In the sample below, there are two columns, both showing the content of the `"actualStart"` data field. The first column displays [values without formatting](#values), and in the second one they are formatted as `"date-common-log"`. You can also try other date formats.
 
