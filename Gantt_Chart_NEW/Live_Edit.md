@@ -192,7 +192,7 @@ Then combine {api:?entry=edit}edit(){api} with methods of the {api:anychart.core
 * {api:anychart.core.gantt.edit.ElementEdit#start}start(){api} + {api:anychart.core.gantt.edit.SideControl#thumb}thumb(){api} / {api:anychart.core.gantt.edit.SideControl#connectorThumb}connectorThumb(){api} to access thumbs on the left sides of elements
 * {api:anychart.core.gantt.edit.ElementEdit#end}end(){api} + {api:anychart.core.gantt.edit.SideControl#thumb}thumb(){api} / {api:anychart.core.gantt.edit.SideControl#connectorThumb}connectorThumb(){api} to access thumbs on the right sides of elements
 
-To configure **duration thumbs** / **connector thumbs** either on both sides of elements or on just one side, use the following methods of the {api:anychart.core.gantt.edit.Thumb}anychart.core.gantt.edit.Thumb{api} class:
+To configure **duration thumbs** and **connector thumbs** either on both sides of elements or on just one side, use the following methods of the {api:anychart.core.gantt.edit.Thumb}anychart.core.gantt.edit.Thumb{api} class:
 
 * {api:anychart.core.gantt.edit.Thumb#type}type(){api} + enums from {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api} to set the type
 * {api:anychart.core.gantt.edit.Thumb#fill}fill(){api} and {api:anychart.core.gantt.edit.Thumb#stroke}stroke(){api} to set the fill and stroke
