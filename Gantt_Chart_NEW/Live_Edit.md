@@ -199,7 +199,7 @@ To configure **duration thumbs** and **connector thumbs**, use methods of {api:a
 * {api:anychart.core.gantt.edit.Thumb#size}size(){api} to set the size
 * {api:anychart.core.gantt.edit.Thumb#horizontalOffset}horizontalOffset(){api} and {api:anychart.core.gantt.edit.Thumb#verticalOffset}verticalOffset(){api} to set the horizontal nad vertical offset
 
-To adjust **sliders on progress bars**, use the {api:anychart.core.gantt.elements.ProgressElement#edit}edit(){api} method of [progress bars](Elements/Project_Chart#progress_bars). Also, they inherit the settings of tasks, as shown in the [Elements](#elements) section above.
+To adjust **sliders on progress bars**, use the {api:anychart.core.gantt.elements.ProgressElement#edit}edit(){api} method of [progress bars](Elements/Project_Chart#progress_bars) or let them inherit the settings of tasks, as shown in the [Elements](#elements) section above.
 
 The following sample shows how to configure thumbs. Please note that there are connector thumbs of different types on the left and on the right:
 
