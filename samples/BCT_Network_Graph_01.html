@@ -47,6 +47,11 @@ anychart.onDocumentReady(function () {
 
     // initiate drawing the chart  
     chart.draw();
+
+    // enable zoom controls
+    var zoomController = anychart.ui.zoom();
+    zoomController.target(chart);
+    zoomController.render();    
 });
 </script>
 </body>
