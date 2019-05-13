@@ -358,6 +358,8 @@ Please note that a period can have several predecessors, but only one successor.
 * 05 Mar (predecessor) &#8594; 01 Mar (successor) – `"finish-finish"`
 * 04 Jan (predecessor) &#8594; 01 Mar (successor) – `"finish-start"`
 
+{sample :height 160}GANTT\_NEW\_Resource\_Chart\_05{sample}
+
 ```
 // create data
 var data = [
@@ -389,8 +391,6 @@ var data = [
   ]}
 ];
 ```
-
-{sample :height 160}GANTT\_NEW\_Resource\_Chart\_05{sample}
 
 ### Markers
 
