@@ -187,7 +187,7 @@ To configure connectors, combine {api:anychart.charts.Gantt#getTimeline}getTimel
 * {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
 * {api:anychart.core.gantt.elements.ConnectorElement#previewStroke}previewStroke(){api} to set the preview stroke in the [Live Edit](../Live_Edit) mode
 
-To learn about the available types of connectors and the data fields used to set them, see [Progress Chart: Connectors](../Project_Chart#connectors).
+To learn about the available types of connectors and the data fields used to set them, see [Project Chart: Connectors](../Project_Chart#connectors).
 
 In the sample below, the {api:anychart.core.ui.Timeline#connectors}connectors(){api} method is used to access connectors. The {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../Appearance_Settings) in two [states](../../Common_Settings/Interactivity/States): **normal** and **selected**.
 
