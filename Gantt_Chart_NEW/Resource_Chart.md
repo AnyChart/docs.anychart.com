@@ -316,7 +316,7 @@ A **connector** is an element showing the dependencies between [periods](#period
 
 The following data fields are used to set connectors:
 
-* `connectTo` to set the target task
+* `connectTo` to set the target period
 * `connectorType` to set the connector type
 * `connector` (optional) to configure [individual connectors](Elements/Individual_Elements#resource_chart)
 
