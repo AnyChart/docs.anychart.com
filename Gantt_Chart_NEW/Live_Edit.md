@@ -3,7 +3,7 @@
 
 ## Overview
 
-In the Live Edit mode, a special UI is enabled that allows users to edit Gantt charts on-the-fly. It is possible to edit the [data](Data) structure by moving rows, change the duration and position of timeline [elements](Elements), create and remove connections between them, and edit the [data grid](Data_Grid) text.
+In the Live Edit mode, a special UI is enabled that allows users to edit Gantt charts on-the-fly. It is possible to edit the data structure by moving rows, change the duration and position of timeline [elements](Elements), create and remove connections between them, and edit the [data grid](Data_Grid) text.
 
 To learn more, see the sections below. They demonstrate the [default behavior](#default_behavior) of the chart in the Live Edit mode and explain how to [enable / disable](#enabling_/_disabling) it and adjust its appearance and other [settings](#settings).
 
@@ -28,7 +28,7 @@ It triggers a [data tree event](Events#data_tree):
 
 **2. Editing Data Structure**
 
-You can edit the structure of the [data](Data) by dragging and dropping rows up and down. It is possible to change both the sequence of rows and their hierarchical relationships.
+You can edit the structure of the data by dragging and dropping rows up and down. It is possible to change both the sequence of rows and their hierarchical relationships.
 
 A [data tree event](Events#data_tree) is triggered:
 
