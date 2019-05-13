@@ -629,7 +629,7 @@ You can [listen to events](../Common_Settings/Event_Listeners) as well as stop o
 
 In the sample below, there is a Gantt chart with the [Live Edit](../Gantt_Chart/Live_Edit) mode enabled.
 
-When you drag and drop rows to change their sequence and hierarchical relationships, data items are moved. When you change the duration and position of [elements](../Gantt_Chart/Elements), create and remove connections between them, and edit the [data grid](Gantt_Chart/Data_Grid) text, items are updated. Also, there is a custom button for [adding items](#adding).
+When you drag and drop rows to change their sequence and hierarchical relationships, the `"treeItemMove"` event is triggered. When you change the duration and position of [elements](../Gantt_Chart/Elements), create and remove connections between them, and edit the [data grid](Gantt_Chart/Data_Grid) text, `"treeItemUpdate"` fires. Also, there is a custom button for [adding items](#adding), which triggers `"treeItemCreate"`.
 
 Event listeners are used to update the chart title whenever an item is updated, moved, or added:
 

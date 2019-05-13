@@ -155,7 +155,7 @@ When the chart is edited in the [Live Edit](Live_Edit) mode, the following [even
 
 In the sample below, there is a chart with the [Live Edit](../Gantt_Chart/Live_Edit) mode enabled.
 
-WWhen you drag and drop rows to change their sequence and hierarchical relationships, the `"treeItemMove"` event is triggered. When you change the duration and position of [elements](../Gantt_Chart/Elements), create and remove connections between them, and edit the [data grid](Gantt_Chart/Data_Grid) text, `"treeItemUpdate"` fires.
+When you drag and drop rows to change their sequence and hierarchical relationships, the `"treeItemMove"` event is triggered. When you change the duration and position of [elements](../Gantt_Chart/Elements), create and remove connections between them, and edit the [data grid](Gantt_Chart/Data_Grid) text, `"treeItemUpdate"` fires.
 
 Both events of the data tree are used to update the chart title:
 
