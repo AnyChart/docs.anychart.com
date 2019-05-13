@@ -153,9 +153,9 @@ When the chart is edited in the [Live Edit](Live_Edit) mode, the following [even
 <tr><td>treeItemUpdate</td><td>A data item has been updated.</td></tr>
 </table>
 
-In the sample below, there is a chart with the [Live Edit](../Gantt_Chart/Live_Edit) mode enabled. When you drag and drop rows, the `"treeItemMove"` event is triggered. When you edit [elements](../Gantt_Chart/Elements) and the [data grid](Gantt_Chart/Data_Grid) text, `"treeItemUpdate"` fires.
+In the sample below, there is a Gantt chart with the Live Edit mode enabled. You can drag and drop rows, which triggers `"treeItemMove"`. When you edit [elements](../Gantt_Chart/Elements) and the [data grid](Gantt_Chart/Data_Grid) text, `"treeItemUpdate"` fires.
 
-Both events of the data tree are used to update the chart title:
+Both events are used to update the chart title:
 
 {sample :height 295}GANTT\_NEW\_Events\_03{sample}
 
