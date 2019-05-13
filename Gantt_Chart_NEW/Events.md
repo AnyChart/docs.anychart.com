@@ -148,12 +148,10 @@ chart.listen("beforeCreateConnector", function (e) {
 When the chart is edited in the [Live Edit](Live_Edit) mode, the following [events of the data tree](../Working_with_Data/Tree_Data_Model#events) fire:
 
 <table>
-<tr><th>Value</th><th>Description</th></tr>
-<tr><td>treeItemMove</td><td>A data item has been moved. (A row has been moved.)</td></tr>
-<tr><td>treeItemUpdate</td><td>A data item has been updated. (An [element](Elements) or [data grid](Data_Grid) label has been edited.)</td></tr>
+<tr><th>Value</th><th>Description</th><th>Live Edit Action</th></tr>
+<tr><td>treeItemMove</td><td>A data item has been moved.</td><td>A row has been moved.</td></tr>
+<tr><td>treeItemUpdate</td><td>A data item has been updated.</td><td>An [element](Elements) or [data grid](Data_Grid) label has been edited.</td></tr>
 </table>
-
-The `"treeItemMove"` event is triggered when data items are moved by dragging and dropping rows. The `"treeItemUpdate"` event is triggered when timeline [elements](Elements) and the [data grid](Data_Grid) text are edited. See [Live Edit: Default Behavior](Live_Edit#default_behavior) to learn more.
 
 In this sample, both events are used to update the chart title:
 
