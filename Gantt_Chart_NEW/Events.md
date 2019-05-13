@@ -148,12 +148,16 @@ chart.listen("beforeCreateConnector", function (e) {
 When the chart is edited in the [Live Edit](Live_Edit) mode, the following [events of the data tree](../Working_with_Data/Tree_Data_Model#events) fire:
 
 <table>
-<tr><th>Value</th><th>Description</th><th>Live Edit Action</th></tr>
-<tr><td>treeItemMove</td><td>A data item has been moved.</td><td>A row has been moved.</td></tr>
-<tr><td>treeItemUpdate</td><td>A data item has been updated.</td><td>An element or a data grid label has been edited.</td></tr>
+<tr><th>Value</th><th>Description</th></tr>
+<tr><td>treeItemMove</td><td>A data item has been moved.</td></tr>
+<tr><td>treeItemUpdate</td><td>A data item has been updated.</td></tr>
 </table>
 
-In this sample, both events are used to update the chart title whenever you drag and drop rows, change the position and duration of [elements](Elements), create or remove connections between them, and edit the [data grid](Data_Grid) text:
+In the sample below, there is a chart with the [Live Edit](../Gantt_Chart/Live_Edit) mode enabled.
+
+When you drag and drop rows to change their sequence and hierarchical relationships, data items are moved. When you change the duration and position of [elements](../Gantt_Chart/Elements), create and remove connections between them, and edit the [data grid](Gantt_Chart/Data_Grid) text, items are updated.
+
+Both events of the data tree are used to update the chart title:
 
 {sample :height 295}GANTT\_NEW\_Events\_03{sample}
 
