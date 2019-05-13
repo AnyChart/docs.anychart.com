@@ -627,7 +627,7 @@ Here is the full list of events that work with the tree data model:
 
 You can [listen to events](../Common_Settings/Event_Listeners) as well as stop or start dispatching them by calling the {api:anychart.data.Tree#dispatchEvents}dispatchEvents(){api} method with `false` or `true` as a parameter.
 
-In the sample below, there is a Gantt chart with the [Live Edit](../Gantt_Chart/Live_Edit) mode enabled. When you can drag and drop rows, `"treeItemMove"` is triggered. When you edit [elements](../Gantt_Chart/Elements) and the [data grid](Gantt_Chart/Data_Grid) text, `"treeItemUpdate"` fires. (See [Live Edit: Default Behavior](../Gantt_Chart/Live_Edit#default_behavior) to learn more.)
+In the sample below, there is a Gantt chart with the [Live Edit](../Gantt_Chart/Live_Edit) mode enabled. When you can drag and drop rows, `"treeItemMove"` is triggered. When you edit [elements](../Gantt_Chart/Elements) and the [data grid](Gantt_Chart/Data_Grid) text, `"treeItemUpdate"` fires. To learn in detail about Live Edit actions that trigger data tree events, see [Live Edit: Default Behavior](../Gantt_Chart/Live_Edit#default_behavior).
 
 Also, there is a custom button for [adding items](#adding), which triggers `"treeItemCreate"`.
 
