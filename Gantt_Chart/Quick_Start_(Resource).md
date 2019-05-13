@@ -13,8 +13,8 @@ AnyGantt requires adding two [modules](../Quick_Start/Modules) – [Core](../Qui
 
 ```
 <head>
-  <script src="https://cdn.anychart.com/releases/DVF-4143-gantt/js/anychart-core.min.js" type="text/javascript"></script>
-  <script src="https://cdn.anychart.com/releases/DVF-4143-gantt/js/anychart-gantt.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js" type="text/javascript"></script>
 </head>
 ```
 
