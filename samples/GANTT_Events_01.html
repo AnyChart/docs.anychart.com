@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="GANTT Events 01"/>
+    <meta name="ac:name" content=""/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4" type="text/javascript"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     
@@ -26,97 +26,109 @@
 <script>
 anychart.onDocumentReady(function () {
 
-  // create data tree on our data
-  var treeData = anychart.data.tree(getData(), "as-table");
+    // create data
+    var data = [
+      {
+        id: "1",
+        name: "Development",
+        actualStart: "2018-01-15",
+        actualEnd: "2018-03-10",
+        children: [
+          {
+            id: "1_1",
+            name: "Analysis",
+            actualStart: "2018-01-15",
+            actualEnd: "2018-01-25"
+          },
+          {
+            id: "1_2",
+            name: "Design",
+            actualStart: "2018-01-20",
+            actualEnd: "2018-02-04"
+          },
+          {
+            id: "1_3",
+            name: "Meeting",
+            actualStart: "2018-02-05",
+            actualEnd: "2018-02-05"
+          },
+          {
+            id: "1_4",
+            name: "Implementation",
+            actualStart: "2018-02-05",
+            actualEnd: "2018-02-24"
+          },
+          {
+            id: "1_5",
+            name: "Testing",
+            actualStart: "2018-02-25",
+            actualEnd: "2018-03-10"
+          }
+      ]}
+    ];
+    
+    // create a data tree
+    var treeData = anychart.data.tree(data, "as-tree");
 
-  // create project gantt chart
-  var chart = anychart.ganttProject();
-  chart.title('Click on the row and change the title');
+    // create a chart
+    var chart = anychart.ganttProject();
+    
+    // set the data
+    chart.data(treeData);
 
-  // set data for the chart
-  chart.data(treeData);
+    // configure the scale
+    chart.getTimeline().scale().maximum("2018-03-15");
 
-  //set container id for the chart
-  chart.container('container');
+    // set the chart title
+    chart.title().useHtml(true);
+    chart.title("Events: Chart<br><br>");
+    chart.title().padding(10);
 
-  //initiate chart drawing
-  chart.draw();
+    /* listen to the rowMouseOver event
+    and update the chart title */
+    chart.listen("rowMouseOver", function (e) {
+      var itemName = e.item.get("name");
+      chart.title("Events: Chart<br><br>" +
+                  "< <span style = 'color:#990000'>" +
+                  itemName + "</span>: rowMouseOver >");
+    });
 
-  // handle row click event
-  chart.listen("rowClick", function(e) {
-    msg = "rowClick" + ': ' + e['item'].get('name'); 
-    chart.title(msg);
-  });
+    /* listen to the rowClick event
+    and update the chart title */
+    chart.listen("rowClick", function (e) {
+      var itemName = e.item.get("name");
+      chart.title("Events: Chart<br><br>" +
+                  "< <span style = 'color:#990000'>" +
+                  itemName + "</span>: rowClick >");
+    });
 
+    /* listen to the rowDblClick event
+    and update the chart title */
+    chart.listen("rowDblClick", function (e) {
+      var itemName = e.item.get("name");
+      chart.title("Events: Chart<br><br>" +
+                  "< <span style = 'color:#990000'>" +
+                  itemName + "</span>: rowDblClick >");
+    });
+
+    /* listen to the rowCollapseExpand event
+    and update the chart title */
+    chart.listen("rowCollapseExpand", function (e) {
+      var itemName = e.item.get("name");
+      chart.title("Events: Chart<br><br>" +
+                  "< <span style = 'color:#990000'>" +
+                  itemName + "</span>: rowCollapseExpand >");
+    });
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+
+    // fit elements to the width of the timeline
+    chart.fitAll();
 });
-
-
-function getData() {
-  return [
-    {
-      'id': '1',
-      'name': 'Project Management',
-      'rowHeight': 22,
-      'collapsed': false,
-      'type': 'main'
-    },
-    {
-      'id': '2',
-      'name': 'Design and engineer',
-      'parent': '1',
-      'type': 'first',
-      'rowHeight': 30,
-      'progressValue': '80%',
-      'actualStart': Date.UTC(2008, 0, 30, 16, 0),
-      'actualEnd': Date.UTC(2008, 1, 4, 14, 18),
-      'connectTo': '3',
-      'connectorType': 'finish-start'
-    },
-    {
-      'id': '3',
-      'name': 'Obtain permits',
-      'parent': '1',
-      'type': 'second',
-      'rowHeight': 30,
-      'progressValue': '20%',
-      'actualStart': Date.UTC(2008, 0, 31, 0, 47),
-      'actualEnd': Date.UTC(2008, 1, 5, 14, 18),
-      'connectTo': '5',
-      'connectorType': 'finish-start'
-    },
-    {
-      'id': '4',
-      'name': 'Structural installation',
-      'rowHeight': 22,
-      'progressValue': '50%',
-      'collapsed': true,
-      'type': 'main'
-    },
-    {
-      'id': '5',
-      'name': 'Install roof attachments',
-      'parent': '4',
-      'type': 'first',
-      'rowHeight': 30,
-      'progressValue': '30%',
-      'actualStart': Date.UTC(2008, 1, 5, 14, 18),
-      'actualEnd': Date.UTC(2008, 1, 7, 14, 18),
-      'connectTo': '6',
-      'connectorType': 'finish-start'
-    },
-    {
-      'id': '6',
-      'name': 'Assemble racking',
-      'parent': '4',
-      'type': 'second',
-      'rowHeight': 30,
-      'progressValue': '10%',
-      'actualStart': Date.UTC(2008, 1, 6, 0, 47),
-      'actualEnd': Date.UTC(2008, 1, 10, 14, 18)
-    }
-
-  ];
-}
 </script>
 </body>
 </html>

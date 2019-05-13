@@ -63,7 +63,7 @@ var data = [
 // create a chart and set the data
 chart = anychart.venn(data);
 
-// configure the labels of intersections
+// configure labels of intersections
 chart.intersections().labels().format("{%x}");
 
 // set the container id
@@ -317,18 +317,18 @@ var data = [
 // create a chart and set the data
 chart = anychart.venn(data);
 
-// configure the labels of circles
+// configure labels of circles
 chart.labels().format("{%name}\n\n{%custom_field}\n{%value}");
 
-// configure the labels of intersections
+// configure labels of intersections
 chart.intersections().labels().format("{%name}\n\n{%value}");
 
-// configure the tooltips of circles
+// configure tooltips of circles
 chart.tooltip().format(
     "Set Info: {%custom_field}\nCardinality: {%value}"
 );
 
-// configure the tooltips of intersections
+// configure tooltips of intersections
 chart.intersections().tooltip().format(
     "Intersection Info: {%custom_field}\nCardinality: {%value}"
 );
@@ -363,13 +363,13 @@ var data = [
 // create a chart and set the data
 chart = anychart.venn(data);
 
-// configure the labels of intersections
+// configure labels of intersections
 chart.intersections().labels().format(function() {
   if (this.x.length > 2)
     return this.x; 
 });
 
-// configure the tooltips of intersections
+// configure tooltips of intersections
 chart.intersections().tooltip().format(function() {
   return "Value: " + this.value + "\n(" +
          this.x.length + " sets intersecting)\n\n" +

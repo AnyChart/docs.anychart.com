@@ -1,67 +1,576 @@
-# Project Chart
+{:index 4}
+# Project Gantt Chart
 
 ## Overview
 
-Project Gantt Chart is intended for showing a progress of completion of a single task or a group of tasks, taking into consideration their planned and actual time periods, along with a progress made, tasks hierarchy and order.
+The Project Gantt chart, defined as an instance of {api:anychart.charts.Gantt}anychart.charts.Gantt{api} class, is used to schedule projects.
 
-## Chart
+Project tasks are visualized as horizontal bars, their width representing the duration. It is also possible to show the progress of tasks as well as hierarchical relationships and connections between them.
 
-To create JavaScript Project Gantt Chart you should use the {api:anychart#ganttProject}ganttProject(){api} method.
+This is how the Project chart is structured:
 
-```
-// chart type
-chart = anychart.ganttProject();
-```
+<img width="700" src ="https://static.anychart.com/images/project_timeline.jpg" />
 
-Here is a simple sample to illustrate how to create a project chart:
+This article explains how to organize [data](#data) for the Project chart and what timeline [elements](#elements) it displays.
 
-{sample :width 690 :height 180}GANTT\_Basic\_Sample{sample}
+## Quick Start
 
-
-## Hierarchy
-
-[Tree data model](../Working_with_Data/Tree_Data_Model) is used in Project Gantt Charts to define a data hierarchy. It can be set in two ways: by table and by structure. In both samples below node "first" is the parent of node "second".
+To create a Project Gantt chart, use the {api:anychart#ganttProject}anychart.ganttProject{api} chart constructor, like in the sample below. To learn more, see the [Quick Start (Project)](Quick_Start_\(Project\)) article.
 
 ```
-// hierarchy 1 by table
-
+// create data
+var data = [
   {
-    'id': 1,
-    'name': 'first',
-    'actualStart': Date.UTC(2010, 0, 17, 8),
-    'actualEnd': Date.UTC(2010, 1, 5, 18),
+    id: "1",
+    name: "Development",
+    actualStart: "2018-01-25",
+    actualEnd: "2018-03-10",
+    children: [
+      {
+        id: "1_1",
+        name: "Analysis",
+        actualStart: "2018-01-25",
+        actualEnd: "2018-02-08"
+      },
+      {
+        id: "1_2",
+        name: "Design",
+        actualStart: "2018-02-04",
+        actualEnd: "2018-02-14"
+      },
+      {
+        id: "1_3",
+        name: "Meeting",
+        actualStart: "2018-02-15",
+        actualEnd: "2018-02-15"
+      },
+      {
+        id: "1_4",
+        name: "Implementation",
+        actualStart: "2018-02-15",
+        actualEnd: "2018-02-27"
+      },
+      {
+        id: "1_5",
+        name: "Testing",
+        actualStart: "2018-02-28",
+        actualEnd: "2018-03-10"
+      }
+  ]}
+];
+
+// create a data tree
+var treeData = anychart.data.tree(data, "as-tree");
+
+// create a chart
+var chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
+```
+
+{sample :height 220}GANTT\_Project\_Chart\_01{sample}
+
+## Data
+
+### Data Fields
+
+The Project chart requires setting [tasks](#tasks_\(actual\)) by using the following data fields:
+
+* `id` to set unique identifiers
+* `name` to set names
+* `actualStart` to set start dates
+* `actualEnd` to set end dates
+
+In addition, you can use optional fields:
+
+* `children` / `parent` to set the [hierarchy](#hierarchy)
+* `baselineStart` and `baselineEnd` to add [baselines](#baselines_\(planned\))
+* `progressValue` to add [progress bars](#progress_bars)
+* `connectTo` and `connectorType` to add [connectors](#connectors)
+* `actual`, `baseline`, `progress`, and `connector` to configure [individual elements](Elements/Individual_Elements#project_chart)
+* `markers` to add [markers](#milestones_and_markers)
+* `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
+* `collapsed` to [expand or collapse](../Basic_Settings#expanding_/_collapsing) a parent task
+
+**Note 1:** To learn how to rename the default data fields, see [Data: Mapping](Data#mapping).
+
+**Note 2:** You can also add custom fields to your data and use them to configure text – like, for example, in all the samples from [Timeline: Tooltips](Timeline/Tooltips).
+
+### Setting Data
+
+To create a Project chart, you should use the [tree data model](../Working_with_Data/Tree_Data_Model) and organize your data either [as a tree](#as_tree) or [as a table](#as_table).
+
+**1. Creating Data Tree.** The first step is creating a data tree by passing your data to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` or `"as-table"` as the second parameter:
+
+```
+var treeData = anychart.data.tree(data, "as-tree");
+```
+
+```
+var treeData = anychart.data.tree(data, "as-table");
+```
+
+If the [hierarchy](#hierarchy) between data items is not specified, there is no difference between the tree and table structures, and both parameters can be used.
+
+**2. Creating Chart.** Then create a Project chart by using the {api:anychart#ganttProject}anychart.ganttProject(){api} chart constructor:
+
+```
+var chart = anychart.ganttProject();
+```
+
+**3. Setting Data.** Finally, pass the data tree to the {api:anychart.charts.Gantt#data}data(){api} method of the chart:
+
+```
+chart.data(treeData);
+```
+
+You can as well skip the first step and pass your data directly to the {api:anychart.charts.Gantt#data}data(){api} method, also with the `"as-tree"` or `"as-table"` parameter. In this case the data tree is created implicitly.
+
+### Hierarchy
+
+Usually, there are hierarchical relationships between data items of Project Gantt charts. There are two ways to specify these relationships, depending on how you organize the data: [as a tree](#as_tree) or [as a table](#as_table).
+
+Please note that Project charts can have multiple roots. Also, you can create data without specifying the hierarchy – in this case, technically, all items are roots.
+
+#### As Tree
+
+If you organize data **as a tree**, each parent item should have a `children` data field where an array of child items is specified.
+
+The following sample shows how to set data with two roots as a tree:
+
+```
+// create data
+var data = [
+  {
+    id: "1",
+    name: "Development",
+    actualStart: "2018-01-25",
+    actualEnd: "2018-03-10",
+    children: [
+      {
+        id: "1_2",
+        name: "Analysis",
+        actualStart: "2018-01-25",
+        actualEnd: "2018-02-08"
+      },
+      {
+        id: "1_3",
+        name: "Design",
+        actualStart: "2018-02-04",
+        actualEnd: "2018-02-14"
+      },
+      {
+        id: "1_4",
+        name: "Meeting",
+        actualStart: "2018-02-15",
+        actualEnd: "2018-02-15"
+      },
+      {
+        id: "1_5",
+        name: "Implementation",
+        actualStart: "2018-02-15",
+        actualEnd: "2018-02-27"
+      },
+      {
+        id: "1_6",
+        name: "Testing",
+        actualStart: "2018-02-28",
+        actualEnd: "2018-03-10"
+      }
+  ]},
+  { 
+    id: "2",
+    name: "PR Campaign",
+    actualStart: "2018-02-15",
+    actualEnd: "2018-03-22",
+    children: [
+      {
+        id: "2_1",
+        name: "Planning",
+        actualStart: "2018-02-15",
+        actualEnd: "2018-03-10"
+      },
+      {
+        id: "2_2",
+        name: "Promoting",
+        actualStart: "2018-03-11",
+        actualEnd: "2018-03-22"
+      }
+  ]}
+];
+
+// create a data tree
+var treeData = anychart.data.tree(data, "as-tree");
+
+// create a chart
+var chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
+```
+
+{sample :height 280}GANTT\_Project\_Chart\_02{sample}
+
+#### As Table
+
+If you organize data **as a table**, in the `parent` field of each item, you should specify the `id` value of its parent. The parent of a root item should be set to `null` or just not specified.
+
+This sample shows how to set data with two roots as a table:
+
+```
+// create data
+var data = [
+  {
+    id: "1",
+    name: "Development",
+    actualStart: "2018-01-25",
+    actualEnd: "2018-03-10"
   },
   {
-    'id': 2,
-    'parent': 1,
-    'name': 'second',
-    'actualStart': Date.UTC(2010, 0, 17, 8),
-    'actualEnd': Date.UTC(2010, 0, 25, 12)
+    id: "1_2",
+    parent: "1",
+    name: "Analysis",
+    actualStart: "2018-01-25",
+    actualEnd: "2018-02-08"
+  },
+  {
+    id: "1_3",
+    parent: "1",
+    name: "Design",
+    actualStart: "2018-02-04",
+    actualEnd: "2018-02-14"
+  },
+  {
+    id: "1_4",
+    parent: "1",
+    name: "Meeting",
+    actualStart: "2018-02-15",
+    actualEnd: "2018-02-15"
+  },
+  {
+    id: "1_5",
+    parent: "1",
+    name: "Implementation",
+    actualStart: "2018-02-15",
+    actualEnd: "2018-02-27"
+  },
+  {
+    id: "1_6",
+    parent: "1",
+    name: "Testing",
+    actualStart: "2018-02-28",
+    actualEnd: "2018-03-10"
+  },
+  {
+    id: "2",
+    name: "PR Campaign",
+    actualStart: "2018-02-28",
+    actualEnd: "2018-03-22"
+  },
+  {
+    id: "2_1",
+    parent: "2",
+    name: "Planning",
+    actualStart: "2018-02-15",
+    actualEnd: "2018-03-10"
+  },
+  {
+    id: "2_2",
+    parent: "2",
+    name: "Promoting",
+    actualStart: "2018-03-11",
+    actualEnd: "2018-03-22"
   }
+];
+    
+// create a data tree
+var treeData = anychart.data.tree(data, "as-table");
+
+// create a chart
+var chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
 ```
 
-```
-// hierarchy 2 by structure
+{sample :height 280}GANTT\_Project\_Chart\_03{sample}
 
- {
-    "name": "first",
-    "actualStart": Date.UTC(2007, 0, 25),
-    "actualEnd": Date.UTC(2007, 2, 14),
-    "children": [
+## Elements
+
+This section lists the available types of elements that are shown on the [timeline](Timeline) of the Project chart and explains how to use data fields to set them. To learn how to configure elements, see the [Elements](Elements) section.
+
+The main element of the Project chart is the [task](#tasks_\(actual\)). Other elements, such as [baselines](#baselines_\(planned\)), [progress bars](#progress_bars), [connectors](#connectors), and [markers](Elements/Markers), are set by adding special data fields to tasks.
+
+### Tasks (Actual)
+
+A **task** is an element showing the **actual duration** of a task, while the planned duration is represented by the [baseline](#baselines_\(planned\)).
+
+The following data fields are used to set tasks:
+
+* `name` to set names
+* `id` to set unique identifiers
+* `actualStart` to set start dates
+* `actualEnd` to set end dates
+* `children` / `parent` (optional) to set the [hierarchy](#hierarchy)
+* `actual` (optional) to configure [individual tasks](Elements/Individual_Elements#project_chart)
+
+There are three task types, each of them visualized in a different way:
+
+* regular tasks
+* parent tasks
+* milestones
+
+The difference between **regular tasks** and **parent tasks** lies in their relationships with other tasks: parent tasks have children, and regular ones do not. To set these relationships, use the  `children` or `parent` data field – read the [Hierarchy](#hierarchy) section to learn more.
+
+Note that if you do not specify the  `actualStart` and `actualEnd` dates of a parent task, they are calculated automatically from the dates of its children.
+
+Also, see [Basic Settings: Expanding / Collapsing](../Basic_Settings#expanding_/_collapsing) to learn how to expand or collapse parent tasks.
+
+**Milestones** are elements representing events. To add a milestone, you should create a task with zero duration: specify the same date in the `actualStart` and `actualEnd` fields.
+
+If you need to create multiple milestones in one row, use an alternative way to visualize events – add **markers**. Multiple markers can be shown in one row – on a task or anywhere on the timeline depending on the dates you specify. For more information, see [Elements: Markers](Elements/Markers).
+
+To learn how to configure tasks, see the [Elements: Project Chart](Elements/Project_Chart#tasks_\(actual\)) article. 
+
+The sample below demonstrates task types. Also, it shows that regular and parent tasks can occupy different places in the hierarchy: a parent task can be a child itself, and a regular task can be a root.
+
+```
+// create data
+var data = [
+  {
+    id: "1",
+    name: "Parent Task",
+    actualStart: "2018-01-25",
+    actualEnd: "2018-03-10",
+    children: [
       {
-        "name": "second",
-        "actualStart": Date.UTC(2007, 0, 25),
-        "actualEnd": Date.UTC(2007, 1, 3)
+        id: "1_1",
+        name: "Task",
+        actualStart: "2018-01-15",
+        actualEnd: "2018-01-25"
+      },
+      {
+        id: "1_2",
+        name: "Task",
+        actualStart: "2018-01-20",
+        actualEnd: "2018-02-04"
+      },
+      {
+        id: "1_3",
+        name: "Milestone",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-05"
+      },
+      {
+        id: "1_4",
+        name: "Parent Task",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-24",
+        children: [
+          {
+            id: "1_4_1",
+            name: "Task",
+            actualStart: "2018-02-05",
+            actualEnd: "2018-02-10"
+          },
+          {
+            id: "1_4_2",
+            name: "Task",
+            actualStart: "2018-02-11",
+            actualEnd: "2018-02-24"
+          }
+      ]},
+      {
+        id: "2",
+        name: "Task",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-03-10",
       }
-    ]
- }
+  ]}
+];
+
+// create a data tree
+var treeData = anychart.data.tree(data, "as-tree");
+
+// create a chart
+var chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
 ```
 
-Read more about handling tree data at: [Tree Data Model](../Working_with_Data/Tree_Data_Model) section.
+{sample :height 260}GANTT\_Project\_Chart\_04{sample}
 
-## Tasks Types
+### Baselines (Planned)
 
-There are following types of tasks in Project Gantt Chart: Normal, Parent and Milestone.
+A **baseline** is an element showing the **planned duration** of a regular or parent [task](#tasks_\(actual\)).
+
+The following data fields are used to set baselines:
+
+* `baselineStart` to set start dates
+* `baselineEnd` to set end dates
+* `baseline` (optional) to configure [individual baselines](Elements/Individual_Elements#project_chart)
+
+By default, baselines are shown under tasks, but can be placed above them – see the [Elements: Project Chart](Elements/Project_Chart#baselines_\(planned\)) article.
+
+In this sample, baselines are added to all regular tasks and the parent one:
+
+```
+// create data
+var data = [
+  {
+    id: "1",
+    name: "Development",
+    baselineStart: "2018-01-12",
+    baselineEnd: "2018-03-04",
+    actualStart: "2018-01-15",
+    actualEnd: "2018-03-10",
+    children: [
+      {
+        id: "1_1",
+        name: "Analysis",
+        baselineStart: "2018-01-12",
+        baselineEnd: "2018-01-25",
+        actualStart: "2018-01-15",
+        actualEnd: "2018-01-25"
+      },
+      {
+        id: "1_2",
+        name: "Design",
+        baselineStart: "2018-01-20",
+        baselineEnd: "2018-01-31",
+        actualStart: "2018-01-20",
+        actualEnd: "2018-02-04"
+      },
+      {
+        id: "1_3",
+        name: "Meeting",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-05"
+      },
+      {
+        id: "1_4",
+        name: "Implementation",
+        baselineStart: "2018-02-01",
+        baselineEnd: "2018-02-19",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-24"
+      },
+      {
+        id: "1_5",
+        name: "Testing",
+        baselineStart: "2018-02-20",
+        baselineEnd: "2018-03-05",
+        actualStart: "2018-02-25",
+        actualEnd: "2018-03-10"
+      }
+  ]}
+];
+
+// create a data tree
+var treeData = anychart.data.tree(data, "as-tree");
+
+// create a chart
+var chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
+```
+
+{sample :height 220}GANTT\_Project\_Chart\_05{sample}
+
+### Progress Bars
+
+A **progress bar** is an element showing the progress of a regular or parent [task](#tasks_\(actual\)). Also, the progress is shown in [labels](Elements/Labels) of tasks. 
+
+The following data fields are used to set progress bars:
+
+* `progressValue` to set the progress value as a percentage
+* `progress` (optional) to configure [individual progress bars](Elements/Individual_Elements#project_chart)
+
+By default, the progress value of all tasks is 0%, so progress bars are not shown. If you do not set the progress value of a parent task, it is calculated automatically from the progress values of its children.
+
+To learn how to configure progress bars, see the [Elements: Project Chart](Elements/Project_Chart#progress_bars) article.
+
+In the following sample, progress values are added to all regular tasks except for the last one. The progress value of the parent task is calculated automatically.
+
+```
+// create data
+var data = [
+  {
+    id: "1",
+    name: "Development",
+    actualStart: "2018-01-15",
+    actualEnd: "2018-03-10",
+    children: [
+      {
+        id: "1_1",
+        name: "Analysis",
+        actualStart: "2018-01-15",
+        actualEnd: "2018-01-25",
+        progressValue: "75%"
+      },
+      {
+        id: "1_2",
+        name: "Design",
+        actualStart: "2018-01-20",
+        actualEnd: "2018-02-04",
+        progressValue: "100%"
+      },
+      {
+        id: "1_3",
+        name: "Meeting",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-05"
+      },
+      {
+        id: "1_4",
+        name: "Implementation",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-24",
+        progressValue: "60%"
+      },
+      {
+        id: "1_5",
+        name: "Testing",
+        actualStart: "2018-02-25",
+        actualEnd: "2018-03-10"
+      }
+  ]}
+];
+
+// create a data tree
+var treeData = anychart.data.tree(data, "as-tree");
+
+// create a chart
+var chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
+```
+
+{sample :height 220}GANTT\_Project\_Chart\_06{sample}
+
+### Connectors
+
+A **connector** is an element showing the dependencies between all [task types](#tasks_\(actual\)). 
+
+The following data fields are used to set connectors:
+
+* `connectTo` to set the target task
+* `connectorType` to set the connector type
+* `connector` (optional) to configure [individual connectors](Elements/Individual_Elements#project_chart)
+
+To add a connector, you should add these fields to a **predecessor task**. In the `connectTo` field, specify the `id` value of the **successor task**. In `connectorType`, specify the type of the connector.
+
+There are four connector types, which are listed in {api:anychart.enums.ConnectorType}anychart.enums.ConnectorType{api}:
 
 <table border="1" class="dtTABLE">
 <tbody>
@@ -70,225 +579,88 @@ There are following types of tasks in Project Gantt Chart: Normal, Parent and Mi
 <th>Description</th>
 </tr>
 <tr>
-<td>Normal</td>
-<td>This is a task that has start time, end time, and doesn't include any other tasks (isn't a parent of any other task).</td>
+<td>`"start-start"`</td>
+<td>The predecessor must start before the successor can start.</td>
 </tr>
 <tr>
-<td>Parent</td>
-<td>This is a task that has both start and end time and also has some tasks inside it (is a "parent" of some tasks)</td>
+<td>`"start-finish"`</td>
+<td>The predecessor must start before the successor can finish. </td>
 </tr>
 <tr>
-<td>Milestone</td>
-<td>It is some sort or waypoint that indicates some major event. Its start time is always equal to its end time.</td>
+<td>`"finish-start"`</td>
+<td>The predecessor must finish before the successor can start. </td>
+</tr>
+<tr>
+<td>`"finish-finish"`</td>
+<td>The predecessor must finish before the successor can finish.</td>
 </tr>
 </tbody>
 </table>
 
-The tasks types are not explicitly defined but task of each type behaves differently.
+To learn how to configure connectors, see the [Elements: Project Chart](Elements/Project_Chart#connectors) article.
+
+Please note that a task can have several predecessors, but only one successor. Also, a task can be at the same time a successor to one task or tasks and a predecessor to another. All these nuances are illustrated by the sample below, which visualizes the following dependencies between tasks:
+
+* Task 1 (predecessor) &#8594; Task 2 (successor) – `"finish-start"`
+* Task 2 (predecessor) &#8594; Task 5 (successor) – `"start-start"`
+* Task 3 (predecessor) &#8594; Task 4 (successor) – `"finish-finish"`
+* Task 4 (predecessor) &#8594; Task 5 (successor) – `"start-finish"`
+
+{sample :height 220}GANTT\_Project\_Chart\_07{sample}
 
 ```
-// how to create the tasks
-data = [
-{
-  "name": "parent",
-  "actualStart": Date.UTC(2007, 0, 25),
-  "actualEnd": Date.UTC(2007, 2, 14),
-  "children": [
-    {
-      "name": "first child",
-      "actualStart": Date.UTC(2007, 0, 25),
-      "actualEnd": Date.UTC(2007, 1, 3)
-    },
-    {
-      "name": "second child",
-      "actualStart": Date.UTC(2007, 1, 4),
-      "actualEnd": Date.UTC(2007, 1, 4)
-    },
-    {
-      "name": "milestone",
-      "actualStart": Date.UTC(2007, 1, 4),
-      "actualEnd": Date.UTC(2007, 1, 24)
-    }
-  ]
-}
+// create data
+var data = [
+  {
+    id: "1",
+    name: "Tasks",
+    actualStart: "2018-02-02",
+    actualEnd: "2018-02-25",
+    children: [
+      {
+        id: "1_1",
+        name: "Task 1",
+        actualStart: "2018-02-02",
+        actualEnd: "2018-02-07",
+        connectTo: "1_2",
+        connectorType: "finish-start"
+      },
+      {
+        id: "1_2",
+        name: "Task 2",
+        actualStart: "2018-02-09",
+        actualEnd: "2018-02-09",
+        connectTo: "1_5",
+        connectorType: "start-start"
+      },
+      {
+        id: "1_3",
+        name: "Task 3",
+        actualStart: "2018-02-11",
+        actualEnd: "2018-02-23",
+        connectTo: "1_4",
+        connectorType: "finish-finish"
+      },
+      {
+        id: "1_4",
+        name: "Task 4",
+        actualStart: "2018-02-18",
+        actualEnd: "2018-02-25",
+        connectTo: "1_5",
+        connectorType: "start-finish"
+      },
+      {
+        id: "1_5",
+        name: "Task 5",
+        actualStart: "2018-02-15",
+        actualEnd: "2018-02-21"
+      }
+  ]}
 ];
 ```
 
-{sample :width 690 :height 170}GANTT\_Chart\_07{sample}
+### Milestones and Markers
 
-## Expand/Collapse control
+To visualize an event, add a task with zero duration, or **milestone**. See the [Tasks (Actual)](#tasks_\(actual\)) section and [Elements: Project Chart](Elements/Project_Chart#milestones) article to learn more. 
 
-You can control if the summary task is expanded or collapsed using these methods:
-
-<table border="1" class="dtTABLE">
-<tbody>
-<tr>
-<th>Method</th>
-<th>Description</th>
-</tr>
-<tr>
-<td>{api:anychart.charts.Gantt#expandAll}expandAll(){api}</td>
-<td>Allows to expand all tasks.</td>
-</tr>
-<tr>
-<td>{api:anychart.charts.Gantt#collapseAll}collapseAll(){api}</td>
-<td>Used to collapse all tasks.</td>
-</tr>
-<tr>
-<td>{api:anychart.charts.Gantt#expandTask}expandTask(taskID){api}</td>
-<td>Expands one task.</td>
-</tr>
-<tr>
-<td>{api:anychart.charts.Gantt#collapseTask}collapseTask(taskID){api}</td>
-<td>Collapses one task.</td>
-</tr>
-</tbody>
-</table>
-
-{sample :width 690 :height 260}GANTT\_Chart\_02{sample}
-
-## Task Progress
-
-Tracking progress can be complicated, but you can show the percent complete using a progress bar. To use it you need to provide the required value of the "progressValue".
-
-```
-// progress in data
-{
-    "name": "research",
-    "actualStart": Date.UTC(2009, 1, 4),
-    "actualEnd": Date.UTC(2009, 2, 4),
-    "progressValue": '13%'
-}
-```
-
-{sample :width 690 :height 200}GANTT\_Chart\_05{sample}
-
-Note that in the sample above we have changed progress bar color for one of the tasks, that's how one can do this:
-
-```
-    {
-      'id': '4',
-      'name': 'Task 4',
-      'actualStart': Date.UTC(2008, 7, 5),
-      'actualEnd': Date.UTC(2008, 7, 14),
-      'progressValue': '25%',
-      'progress':{'fill': 'red'}
-    }
-```
-
-## Actual and Planned
-
-Sometimes a task is taking longer than was planned, in this case it is useful to use additional bars to display planned vs actual. Actual progress is shown as the upper bar and planned - as the lower.
-
-```
-// planned and actual in data
-{
-    'name': "revision",
-    'actualStart': Date.UTC(2010, 5, 1, 8),
-    'actualEnd': Date.UTC(2010, 5, 24, 18),
-    'baselineStart': Date.UTC(2010, 4, 29, 9),
-    'baselineEnd': Date.UTC(2010, 5, 27, 18),
-}
-```
-
-{sample :width 690 :height 180}GANTT\_Chart\_04{sample}
-
-To configure how actual or baseline bar looks like you need to set the "fill" value in appropriate properties.
-
-```
-// planned and actual in data
-{
-    'name': "revision",
-    'actualStart': Date.UTC(2010, 5, 1, 8),
-    'actualEnd': Date.UTC(2010, 5, 24, 18),
-    'actual':
-        {
-            'fill':
-            {
-                'keys': ['orange', 'red'],
-                'angle': 0
-            },
-        },
-    'baselineStart': Date.UTC(2010, 4, 29, 9),
-    'baselineEnd': Date.UTC(2010, 5, 27, 18),
-    'baseline':
-        {
-            'stroke': '3 black',
-            'fill': {'color': 'gray'}
-        }
-}
-```
-
-### Swap Actual and Planned
-
-If you want to display Planned (baseline) bars above the Actual bars, use the *above()* method of the {api:anychart.charts.Gantt#getTimeline}Timeline{api} baselines:
-
-```
-chart.getTimeline().baselines().above(true);
-```
-
-This is how it works:
-
-{sample :width 690 :height 180}GANTT\_Chart\_04\_1{sample}
-
-## Connectors
-
-If there is a need to add an additional connection between tasks, you can define connectors with these settings: {api:anychart.enums.ConnectorType}connectorType{api}. It can belong be one of four types: "start-start", "start-finish", "finish-start", "finish-finish".
-
-(taskID
-{api:anychart.enums.GanttDataFields}connectTo){api} defines another node which will be connected with the first.
-
-Types of task connectors:
-
-<table border="1" class="dtTABLE">
-<tbody>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-<tr>
-<td>start-start</td>
-<td>The second can't start until the first task starts</td>
-</tr>
-<tr>
-<td>start-finish</td>
-<td>The second task can't finish until the first begins. </td>
-</tr>
-<tr>
-<td>finish-start</td>
-<td>The second task can't start until the first is done. </td>
-</tr>
-<tr>
-<td>finish-finish</td>
-<td>The second task can't finish until the first task is done.</td>
-</tr>
-</tbody>
-</table>
-
-```
-// connectors in data
-{
-    "id": "4",
-    "name": "resolution",
-    parent:"2",
-    "actualStart": Date.UTC(2010, 4, 29, 9),
-    "actualEnd": Date.UTC(2010, 5, 12, 11),
-    "connectTo": "5",
-    "connectorType": "finish-start"
-}
-```
-
-{sample :width 690 :height 170}GANTT\_Chart\_06{sample}
-
-AnyChart JavaScript framework give you an opportunity to describe how connector should be displayed. If you want to customize the connector view you should set the `"fill"` and `"stroke"` parameters in `"connector"`, where "stroke" defines a color of connector line and `"fill"` defines the color of connector arrow.
-
-```
-'connector': {
-    'stroke': {color: '#3300CC .2'},
-    'fill': {'color': '6600CC .5'}
-}
-```
-
-In the sample below we have a Gantt Chart with simple data and we'll color each connector to different color. Here is the sample:
-
-{sample :width 690 :height 170}GANTT\_Chart\_16{sample}
+If you need to create multiple milestones in one row, use an alternative way to visualize events – add **markers**. Multiple markers can be shown in one row – on a task or anywhere on the timeline depending on the dates you specify. For more information, see [Elements: Markers](Elements/Markers).

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content=""/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
+        #titleLabel {
+            font-weight: 600;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 40px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<label id="titleLabel">Enable Live Edit For:</label>
+<label for="dataGridCheckbox">Data Grid</label>
+<input type="checkbox" id="dataGridCheckbox" onchange="editDataGrid()">
+<label for="timelineCheckbox">Timeline</label>
+<input type="checkbox" id="timelineCheckbox" onchange="editTimeline()">
+<label for="milestonesCheckbox">Milestones</label>
+<input type="checkbox" id="milestonesCheckbox" onchange="editMilestones()">
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      {
+        id: "1",
+        name: "Development",
+        actualStart: "2018-01-15",
+        actualEnd: "2018-03-10",
+        children: [
+          {
+            id: "1_1",
+            name: "Analysis",
+            actualStart: "2018-01-15",
+            actualEnd: "2018-01-25"
+          },
+          {
+            id: "1_2",
+            name: "Design",
+            actualStart: "2018-01-20",
+            actualEnd: "2018-02-04"
+          },
+          {
+            id: "1_3",
+            name: "Meeting",
+            actualStart: "2018-02-05",
+            actualEnd: "2018-02-05"
+          },
+          {
+            id: "1_4",
+            name: "Implementation",
+            actualStart: "2018-02-05",
+            actualEnd: "2018-02-24"
+          },
+          {
+            id: "1_5",
+            name: "Testing",
+            actualStart: "2018-02-25",
+            actualEnd: "2018-03-10"
+          }
+      ]}
+    ];
+    
+    // create a data tree
+    var treeData = anychart.data.tree(data, "as-tree");
+
+    // create a chart
+    chart = anychart.ganttProject();
+    
+    // set the data
+    chart.data(treeData);
+
+    // configure the scale
+    chart.getTimeline().scale().minimum("2018-01-12");
+    chart.getTimeline().scale().maximum("2018-03-13");
+
+    // disable timeline tooltips
+    chart.getTimeline().tooltip(false);
+
+    // disable labels of timeline elements
+    chart.getTimeline().elements().labels(false);
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+
+    // fit elements to the width of the timeline
+    chart.fitAll();
+});
+
+// allow / forbid editing the data grid
+function editDataGrid() {
+  if (document.getElementById("dataGridCheckbox").checked) { 
+    chart.dataGrid().edit(true);
+  } else {
+    chart.dataGrid().edit(false);
+  }
+}
+
+// allow / forbid editing the timeline
+function editTimeline() {
+  if (document.getElementById("timelineCheckbox").checked) { 
+    chart.getTimeline().edit(true);
+    chart.getTimeline().milestones().edit(true);
+    document.getElementById("milestonesCheckbox").checked = true;
+  } else {
+    chart.getTimeline().edit(false);
+    chart.getTimeline().milestones().edit(false);
+    document.getElementById("milestonesCheckbox").checked = false;
+
+  }
+}
+
+// allow / forbid editing milestones
+function editMilestones() {
+  if (document.getElementById("milestonesCheckbox").checked) { 
+    chart.getTimeline().milestones().edit(true);
+  } else {
+    chart.getTimeline().milestones().edit(false);
+  }
+}
+</script>
+</body>
+</html>
