@@ -150,7 +150,7 @@ When the chart is edited in the [Live Edit](Live_Edit) mode, the following [even
 <table>
 <tr><th>Value</th><th>Description</th><th>Live Edit Action</th></tr>
 <tr><td>treeItemMove</td><td>A data item has been moved.</td><td>A row has been moved.</td></tr>
-<tr><td>treeItemUpdate</td><td>A data item has been updated.</td><td>An [element](Elements) or [data grid](Data_Grid) label has been edited.</td></tr>
+<tr><td>treeItemUpdate</td><td>A data item has been updated.</td><td>An [element](Elements) or a [data grid](Data_Grid) label has been edited.</td></tr>
 </table>
 
 In this sample, both events are used to update the chart title:
