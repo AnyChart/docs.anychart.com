@@ -351,7 +351,7 @@ There are four connector types, which are listed in {api:anychart.enums.Connecto
 
 To learn how to configure connectors, see the [Elements: Project Chart](Elements/Resource_Chart#connectors) article.
 
-Please note that a period can have several predecessors, but only one successor. Also, a period can be at the same time a successor to one task or tasks and a predecessor to another. All these nuances are illustrated by the sample below, which visualizes the following dependencies between periods:
+Please note that a period can have several predecessors, but only one successor. Also, a period can be at the same time a successor to one period or periods and a predecessor to another. All these nuances are illustrated by the sample below, which visualizes the following dependencies between periods:
 
 * 28 Jan (predecessor) &#8594; 07 Jan (successor) – `"start-finish"`
 * 01 Mar (predecessor) &#8594; 05 Mar (successor) – `"start-start"`
