@@ -168,6 +168,14 @@ A module for creating [Mekko](../Basic_Charts/Marimekko_Chart/Mekko_Chart) chart
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-mekko.min.js"></script>
 ```
 
+### Network Graph
+
+A module for creating [Network Graph](../Basic_Charts/Graph_Chart) diagrams:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-graph.min.js"></script>
+```
+
 ### Pareto
 
 A module for creating [Pareto](../Basic_Charts/Pareto_Chart) charts:
@@ -278,6 +286,14 @@ A module for creating [Tag Clouds](../Basic_Charts/Tag_Cloud):
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-tag-cloud.min.js"></script>
+```
+
+### Timeline
+
+A module for creating [Timeline](../Basic_Charts/Timeline_Chart) charts:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-timeline.min.js"></script>
 ```
 
 ### Treemap
