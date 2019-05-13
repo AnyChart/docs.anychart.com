@@ -353,10 +353,10 @@ To learn how to configure connectors, see the [Elements: Resource Chart](Element
 
 Please note that a period can have several predecessors, but only one successor. Also, a period can be at the same time a successor to one period or periods and a predecessor to another. All these nuances are illustrated by the sample below, which visualizes the following dependencies between periods:
 
-* 28 Jan (predecessor) &#8594; 07 Jan (successor) – `"start-finish"`
-* 01 Mar (predecessor) &#8594; 05 Mar (successor) – `"start-start"`
-* 05 Mar (predecessor) &#8594; 01 Mar (successor) – `"finish-finish"`
-* 04 Jan (predecessor) &#8594; 01 Mar (successor) – `"finish-start"`
+* Period 1_2 / 28 Jan (predecessor) &#8594; Period 2_1 / 07 Jan (successor) – `"start-finish"`
+* Period 1_3 / 01 Mar (predecessor) &#8594; Period 2_2 / 05 Mar (successor) – `"start-start"`
+* Period 2_2 / 05 Mar (predecessor) &#8594; Period 3_2 / 01 Mar (successor) – `"finish-finish"`
+* Period 3_1 / 04 Jan (predecessor) &#8594; Period 3_2 / 01 Mar (successor) – `"finish-start"`
 
 {sample :height 160}GANTT\_NEW\_Resource\_Chart\_05{sample}
 
