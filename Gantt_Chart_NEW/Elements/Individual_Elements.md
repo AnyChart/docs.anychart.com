@@ -90,7 +90,9 @@ chart.data(treeData);
 
 ## Resource Chart
 
-To adjust an individual [period](Resource_Chart#periods) of a Resource chart, you need to add extra data fields to the object that defines this period. Use fields corresponding to the methods of periods – for example, `fill` and `stroke`:
+To adjust an individual [period](Resource_Chart#periods) of a Resource chart, you need to add extra data fields to the object that defines this period.
+
+Use the `"connector"` field to configure [connectors](Resource_Chart#connectors) and fields corresponding to the methods of periods – for example, `fill` and `stroke`:
 
 ```
 // create data
