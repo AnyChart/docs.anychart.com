@@ -2,6 +2,8 @@
 
 # Timeline Chart
 
+## Overview
+
 A timeline is a display of a list of events in chronological order. It is typically a graphic design showing a long bar labelled with dates paralleling it, and usually contemporaneous events. A [Gantt chart](../Gantt_Chart) is a form of timeline used in project management.
 
 ## Modules
@@ -66,5 +68,7 @@ chart.container('container');
 // initiate drawing the chart  
 chart.draw();
 ```
+
+Here is a live sample:
 
 {sample}BCT\_Timeline\_Chart\_01{sample}

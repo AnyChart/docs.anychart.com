@@ -170,7 +170,7 @@ A module for creating [Mekko](../Basic_Charts/Marimekko_Chart/Mekko_Chart) chart
 
 ### Network Graph
 
-A module for creating [Network Graph](../Basic_Charts/Graph_Chart) diagrams:
+A module for creating [Network Graph](../Basic_Charts/Network_Graph) diagrams:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-graph.min.js"></script>

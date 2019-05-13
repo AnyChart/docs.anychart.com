@@ -2,6 +2,8 @@
 
 # Network Graph
 
+## Overview
+
 Network graph is a mathematical structure (graph) to show relations between points. The graph visualizes how entities are interconnected with each other. Entities are displayed as nodes (points) and the relationship between them are displayed with lines (edges).
 
 ## Modules
@@ -47,4 +49,6 @@ chart.container('container')
 chart.draw();
 ```
 
-{sample}BCT\_Network\_Graph\_Chart\_01{sample}
+Here is a live sample:
+
+{sample}BCT\_Network\_Graph\_01{sample}
