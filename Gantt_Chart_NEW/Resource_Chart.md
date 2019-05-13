@@ -84,6 +84,8 @@ In addition, you can use optional fields:
 
 * `children` / `parent` to set the [hierarchy](#hierarchy)
 * `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
+* `connectTo` and `connectorType` to add [connectors](#connectors)
+* `markers` to add [markers](#markers)
 * `collapsed` to [expand or collapse](../Basic_Settings#expanding_/_collapsing) a parent resource
 
 **Note 1:** To learn how to rename the default data fields, see [Data: Mapping](Data#mapping).
@@ -243,7 +245,7 @@ chart.data(treeData);
 
 This section lists the available types of elements that are shown on the [timeline](Timeline) of the Resource chart and explains how to use data fields to set them. To learn how to configure elements, see the [Elements](Elements) section.
 
-The main timeline element of the Resource chart is the period, but logically, periods are grouped into resources – see [Periods and Resources](#periods_and_resources). Also, you can set [markers](Elements/Markers) by adding special data fields to resources.
+The main timeline element of the Resource chart is the period, but logically, periods are grouped into resources – see [Periods and Resources](#periods_and_resources). Also, you can add [connectors](#connector) and set [markers](Elements/Markers) by adding special data fields to periods and resources.
 
 ### Periods and Resources
 
@@ -307,6 +309,88 @@ chart.data(treeData);
 ```
 
 {sample :height 160}GANTT\_NEW\_Resource\_Chart\_04{sample}
+
+### Connectors
+
+A **connector** is an element showing the dependencies between [periods](#periods_and_resources). 
+
+The following data fields are used to set connectors:
+
+* `connectTo` to set the target task
+* `connectorType` to set the connector type
+* `connector` (optional) to configure [individual connectors](Elements/Individual_Elements#resource_chart)
+
+To add a connector, you should add these fields to a **predecessor period**. In the `connectTo` field, specify the `id` value of the **successor period**. In `connectorType`, specify the type of the connector.
+
+There are four connector types, which are listed in {api:anychart.enums.ConnectorType}anychart.enums.ConnectorType{api}:
+
+<table border="1" class="dtTABLE">
+<tbody>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>`"start-start"`</td>
+<td>The predecessor must start before the successor can start.</td>
+</tr>
+<tr>
+<td>`"start-finish"`</td>
+<td>The predecessor must start before the successor can finish. </td>
+</tr>
+<tr>
+<td>`"finish-start"`</td>
+<td>The predecessor must finish before the successor can start. </td>
+</tr>
+<tr>
+<td>`"finish-finish"`</td>
+<td>The predecessor must finish before the successor can finish.</td>
+</tr>
+</tbody>
+</table>
+
+To learn how to configure connectors, see the [Elements: Project Chart](Elements/Resource_Chart#connectors) article.
+
+Please note that a period can have several predecessors, but only one successor. Also, a period can be at the same time a successor to one task or tasks and a predecessor to another. All these nuances are illustrated by the sample below, which visualizes the following dependencies between periods:
+
+* 28 Jan (predecessor) &#8594; 07 Jan (successor) – `"start-finish"`
+* 01 Mar (predecessor) &#8594; 05 Mar (successor) – `"start-start"`
+* 05 Mar (predecessor) &#8594; 01 Mar (successor) – `"finish-finish"`
+* 04 Jan (predecessor) &#8594; 01 Mar (successor) – `"finish-start"`
+
+```
+// create data
+var data = [
+  {
+    id: "1",
+    name: "Resource",
+    periods: [
+      {id:"1_1", start: "2018-01-05", end: "2018-01-25"},
+      {id:"1_2", start: "2018-01-28", end: "2018-02-22",
+       connectTo: "2_1", connectorType: "start-finish"},
+      {id:"1_3", start: "2018-03-01", end: "2018-03-25",
+       connectTo: "2_2", connectorType: "start-start"}
+  ]},
+  {
+    id: "2",
+    name: "Resource",
+    periods: [
+      {id: "2_1", start: "2018-01-07", end: "2018-02-15"},
+      {id: "2_2", start: "2018-03-05", end: "2018-03-18",
+       connectTo: "3_2", connectorType: "finish-finish"}
+  ]},
+  {
+    id: "3",
+    name: "Resource",
+    periods: [
+      {id: "3_1", start: "2018-01-04", end: "2018-02-20",
+       connectTo: "3_2", connectorType: "finish-start"},
+      {id: "3_2", start: "2018-03-01", end: "2018-03-20"}
+  ]}
+];
+```
+
+{sample :height 160}GANTT\_NEW\_Resource\_Chart\_05{sample}
 
 ### Markers
 
