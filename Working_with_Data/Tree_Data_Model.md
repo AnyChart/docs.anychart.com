@@ -619,28 +619,25 @@ Here is the full list of events that work with the tree data model:
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
-<tr><td>treeItemUpdate</td><td>A data item has been updated.</td></tr>
 <tr><td>treeItemMove</td><td>A data item has been moved.</td></tr>
+<tr><td>treeItemUpdate</td><td>A data item has been updated.</td></tr>
 <tr><td>treeItemCreate</td><td>A data item has been created.</td></tr>
 <tr><td>treeItemRemove</td><td>A data item has been removed.</td></tr>
 </table>
 
 You can [listen to events](../Common_Settings/Event_Listeners) as well as stop or start dispatching them by calling the {api:anychart.data.Tree#dispatchEvents}dispatchEvents(){api} method with `false` or `true` as a parameter.
 
-In the sample below, there is a Gantt chart with the [Live Edit](../Gantt_Chart/Live_Edit) mode enabled: you can use the mouse to update items (change the position, duration, name, etc) and move rows. Also, there is a button for [adding items](#adding). Event listeners are used to update the chart title whenever an item is updated, moved, or added:
+In the sample below, there is a Gantt chart with the [Live Edit](../Gantt_Chart/Live_Edit) mode enabled.
+
+You can use the mouse to drag and drop rows, which leads to moving data items. When you change the position and duration of [elements](../Gantt_Chart/Elements) and edit the [data grid](Gantt_Chart/Data_Grid) text, items are updated.
+
+Also, there is a custom button for [adding items](#adding).
+
+Event listeners are used to update the chart title whenever an item is updated, moved, or added:
 
 {sample :height 420}WD\_Tree\_Data\_16{sample}
 
 ```
-/* listen to the treeItemUpdate event
-and update the chart title */
-treeData.listen("treeItemUpdate", function (e) {
-  var itemName = e.item.get("name");
-  chart.title("Tree Data Model: Events<br><br>< " +
-              "<span style = 'color:#990000'>" +
-              itemName + ": </span> treeItemUpdate >");
-});
-
 /* listen to the treeItemMove event
 and update the chart title */
 treeData.listen("treeItemMove", function (e) {
@@ -648,6 +645,15 @@ treeData.listen("treeItemMove", function (e) {
   chart.title("Tree Data Model: Events<br><br>< " +
               "<span style = 'color:#990000'>" +
               itemName + ": </span> treeItemMove >");
+});
+
+/* listen to the treeItemUpdate event
+and update the chart title */
+treeData.listen("treeItemUpdate", function (e) {
+  var itemName = e.item.get("name");
+  chart.title("Tree Data Model: Events<br><br>< " +
+              "<span style = 'color:#990000'>" +
+              itemName + ": </span> treeItemUpdate >");
 });
 
 /* listen to the treeItemCreate event

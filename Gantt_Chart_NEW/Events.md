@@ -150,10 +150,10 @@ When the chart is edited in the [Live Edit](Live_Edit) mode, the following [even
 <table>
 <tr><th>Value</th><th>Description</th><th>Live Edit Action</th></tr>
 <tr><td>treeItemMove</td><td>A data item has been moved.</td><td>A row has been moved.</td></tr>
-<tr><td>treeItemUpdate</td><td>A data item has been updated.</td><td>An [element](Elements) or a [data grid](Data_Grid) label has been edited.</td></tr>
+<tr><td>treeItemUpdate</td><td>A data item has been updated.</td><td>An elements or a data grid label has been edited.</td></tr>
 </table>
 
-In this sample, both events are used to update the chart title whenever you drag and drop rows, change the position and duration of elements, create new connectors, and edit the data grid text:
+In this sample, both events are used to update the chart title whenever you drag and drop rows, change the position and duration of [elements](Elements), create or remove connections between them, and edit the [data grid](Data_Grid) text:
 
 {sample :height 295}GANTT\_NEW\_Events\_03{sample}
 

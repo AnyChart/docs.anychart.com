@@ -97,6 +97,15 @@ anychart.onDocumentReady(function () {
     chart.title("Tree Data Model: Events<br><br>");
     chart.title().padding(10);
 
+    /* listen to the treeItemMove event
+    and update the chart title */
+    treeData.listen("treeItemMove", function (e) {
+      var itemName = e.item.get("name");
+      chart.title("Tree Data Model: Events<br><br>< " +
+                  "<span style = 'color:#990000'>" +
+                  itemName + ": </span> treeItemMove >");
+    });
+
     /* listen to the treeItemUpdate event
     and update the chart title */
     treeData.listen("treeItemUpdate", function (e) {
@@ -106,14 +115,6 @@ anychart.onDocumentReady(function () {
                   itemName + ": </span> treeItemUpdate >");
     });
 
-    /* listen to the treeItemMove event
-    and update the chart title */
-    treeData.listen("treeItemMove", function (e) {
-      var itemName = e.item.get("name");
-      chart.title("Tree Data Model: Events<br><br>< " +
-                  "<span style = 'color:#990000'>" +
-                  itemName + ": </span> treeItemMove >");
-    });
 
     /* listen to the treeItemCreate event
     and update the chart title */
