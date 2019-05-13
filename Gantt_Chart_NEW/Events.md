@@ -153,7 +153,7 @@ When the chart is edited in the [Live Edit](Live_Edit) mode, the following [even
 <tr><td>treeItemUpdate</td><td>A data item has been updated.</td><td>An [element](Elements) or a [data grid](Data_Grid) label has been edited.</td></tr>
 </table>
 
-In this sample, both events are used to update the chart title:
+In this sample, both events are used to update the chart title whenever you drag and drop rows, change the position and duration of elements, create new connectors, and edit the data grid text:
 
 {sample :height 295}GANTT\_NEW\_Events\_03{sample}
 
