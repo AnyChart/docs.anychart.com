@@ -181,7 +181,7 @@ treeData.listen("treeItemMove", function (e) {
 
 To prevent the default behavior of the chart, use the {api:anychart.graphics.events.BrowserEvent#preventDefault}preventDefault(){api} method.
 
-When you click on a row of Gantt chart, the row is selected, and when you double-click on a row with a parent element, this element is expanded or collapsed. In the sample below, the `"rowClick"` and `"rowDblClick"` events are used to prevent this behavior:
+When you click on a row of Gantt chart, the row is selected, and when you double-click on a row with a parent element, this element is expanded or collapsed. In the sample below, the `"rowClick"` and `"rowDblClick"` [row events](#rows) are used to prevent this behavior:
 
 {sample :height 220}GANTT\_NEW\_Events\_04{sample}
 
@@ -199,7 +199,7 @@ chart.listen("rowDblClick", function (e) {
 });
 ```
 
-In the following sample, the [Live Edit](Live_Edit) mode is enabled. You can draw a connector preview, but cannot create a connector – this feature is disabled with the help of the `"beforeCreateConnector"` event:
+In the following sample, the [Live Edit](Live_Edit) mode is enabled. You can draw a connector preview, but cannot create a connector – this feature is disabled with the help of the `"beforeCreateConnector"` [connector event](#connectors):
 
 {sample :height 220}GANTT\_NEW\_Events\_05{sample}
 
