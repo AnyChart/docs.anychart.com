@@ -61,9 +61,9 @@ anychart.onDocumentReady(function () {
     chart.data(treeData);  
 
     // configure labels of periods
-    chart.getTimeline().labels().enabled(true);
-    chart.getTimeline().labels().format("period");
-    chart.getTimeline().labels().fontColor("black");
+    chart.getTimeline().periods().labels().enabled(true);
+    chart.getTimeline().periods().labels().format("period");
+    chart.getTimeline().periods().labels().fontColor("black");
     
     // set the container id
     chart.container("container");

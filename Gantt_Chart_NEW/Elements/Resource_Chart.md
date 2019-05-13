@@ -27,4 +27,28 @@ periods.normal().stroke("#455a64");
 periods.selected().stroke("#dd2c00");
 ```
 
-{sample :height 160}GANTT\_NEW\_Elements\_Resource{sample}
+{sample :height 160}GANTT\_NEW\_Elements\_Resource\_01{sample}
+
+## Connectors
+
+**Connectors** are elements showing the dependencies between all [task types](#tasks_\(actual\)). They are defined as instances of the {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api} class. 
+
+To configure connectors, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#connectors}connectors(){api} with the following methods:
+
+* {api:anychart.core.gantt.elements.ConnectorElement#fill}fill(){api} and {api:anychart.core.gantt.elements.ConnectorElement#stroke}stroke(){api} to set the fill and stroke
+* {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.ConnectorElement#previewStroke}previewStroke(){api} to set the preview stroke in the [Live Edit](../Live_Edit) mode
+
+To learn about the available types of connectors and the data fields used to set them, see [Progress Chart: Connectors](../Project_Chart#connectors).
+
+In the sample below, the {api:anychart.core.ui.Timeline#connectors}connectors(){api} method is used to access connectors. The {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../Appearance_Settings) in two [states](../../Common_Settings/Interactivity/States): **normal** and **selected**.
+
+```
+// configure connectors
+var connectors = chart.getTimeline().connectors();
+connectors.normal().fill("#ffa000");
+connectors.selected().fill("#ef6c00");
+connectors.normal().stroke("2 #ffa000");
+connectors.selected().stroke("2 #ef6c00");
+```
+{sample :height 160}GANTT\_NEW\_Elements\_Resource\_01{sample}

@@ -65,11 +65,13 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);  
 
-    // configure labels of periods
-    chart.getTimeline().periods().labels().enabled(true);
-    chart.getTimeline().periods().labels().format("{%start}{dateTimeFormat:MM.dd}");
-    chart.getTimeline().periods().labels().fontColor("black");
-    
+    // configure connectors
+    var connectors = chart.getTimeline().connectors();
+    connectors.normal().fill("#ffa000");
+    connectors.selected().fill("#ef6c00");
+    connectors.normal().stroke("2 #ffa000");
+    connectors.selected().stroke("2 #ef6c00");
+
     // set the container id
     chart.container("container");
 
