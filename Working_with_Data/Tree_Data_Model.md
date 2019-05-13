@@ -627,7 +627,7 @@ Here is the full list of events that work with the tree data model:
 
 You can [listen to events](../Common_Settings/Event_Listeners) as well as stop or start dispatching them by calling the {api:anychart.data.Tree#dispatchEvents}dispatchEvents(){api} method with `false` or `true` as a parameter.
 
-In the sample below, there is a Gantt chart with the [Live Edit](../Gantt_Chart/Live_Edit) mode enabled: you can use the mouse to update items (change the position, duration, name, etc). Also, there is a button for [adding items](#adding). Event listeners are used to update the chart title whenever an item is updated, moved (?), or added:
+In the sample below, there is a Gantt chart with the [Live Edit](../Gantt_Chart/Live_Edit) mode enabled: you can use the mouse to update items (change the position, duration, name, etc) and move rows. Also, there is a button for [adding items](#adding). Event listeners are used to update the chart title whenever an item is updated, moved, or added:
 
 {sample :height 420}WD\_Tree\_Data\_16{sample}
 
