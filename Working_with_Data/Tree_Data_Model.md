@@ -627,11 +627,11 @@ Here is the full list of events that work with the tree data model:
 
 You can [listen to events](../Common_Settings/Event_Listeners) as well as stop or start dispatching them by calling the {api:anychart.data.Tree#dispatchEvents}dispatchEvents(){api} method with `false` or `true` as a parameter.
 
-In the sample below, there is a Gantt chart with the [Live Edit](../Gantt_Chart/Live_Edit) mode enabled.
+In the sample below, there is a Gantt chart with the [Live Edit](../Gantt_Chart/Live_Edit) mode enabled. You can drag and drop rows to change their sequence and hierarchical relationships, which triggers `"treeItemMove"`. When you edit [elements](../Gantt_Chart/Elements) and the [data grid](Gantt_Chart/Data_Grid) text, `"treeItemUpdate"` fires.
 
-When you drag and drop rows to change their sequence and hierarchical relationships, the `"treeItemMove"` event is triggered. When you edit [elements](../Gantt_Chart/Elements) and the [data grid](Gantt_Chart/Data_Grid) text, `"treeItemUpdate"` fires. Also, there is a custom button for [adding items](#adding), which triggers `"treeItemCreate"`.
+Also, there is a custom button for [adding items](#adding), which triggers `"treeItemCreate"`.
 
-Event listeners are used to update the chart title whenever an item is updated, moved, or added:
+Event listeners are used to update the chart title:
 
 {sample :height 420}WD\_Tree\_Data\_16{sample}
 
