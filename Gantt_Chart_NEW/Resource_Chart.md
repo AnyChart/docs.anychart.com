@@ -349,7 +349,7 @@ There are four connector types, which are listed in {api:anychart.enums.Connecto
 </tbody>
 </table>
 
-To learn how to configure connectors, see the [Elements: Project Chart](Elements/Resource_Chart#connectors) article.
+To learn how to configure connectors, see the [Elements: Resource Chart](Elements/Resource_Chart#connectors) article.
 
 Please note that a period can have several predecessors, but only one successor. Also, a period can be at the same time a successor to one period or periods and a predecessor to another. All these nuances are illustrated by the sample below, which visualizes the following dependencies between periods:
 
