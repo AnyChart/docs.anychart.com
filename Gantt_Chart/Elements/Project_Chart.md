@@ -53,7 +53,7 @@ chart.getTimeline().groupingTasks().height(15);
 
 Please note: the settings of [regular tasks](#regular_tasks) affect parent tasks as well, but are overridden by the settings listed here.
 
-Also, parent tasks can be [expanded or collapsed](../Basic_Settings#expanding\_\/\_collapsing).
+Also, parent tasks can be [expanded or collapsed](../Basic_Settings#expanding\_/\_collapsing).
 
 ### Milestones
 

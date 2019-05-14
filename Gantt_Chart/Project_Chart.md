@@ -97,7 +97,7 @@ In addition, you can use optional fields:
 * `actual`, `baseline`, `progress`, and `connector` to configure [individual elements](Elements/Individual_Elements#project_chart)
 * `markers` to add [markers](#milestones_and_markers)
 * `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
-* `collapsed` to [expand or collapse](Basic_Settings#expanding\_\/\_collapsing) a parent task
+* `collapsed` to [expand or collapse](Basic_Settings#expanding\_/\_collapsing) a parent task
 
 **Note 1:** To learn how to rename the default data fields, see [Data: Mapping](Data#mapping).
 
@@ -331,7 +331,7 @@ The difference between **regular tasks** and **parent tasks** lies in their rela
 
 Note that if you do not specify the  `actualStart` and `actualEnd` dates of a parent task, they are calculated automatically from the dates of its children.
 
-Also, see [Basic Settings: Expanding / Collapsing](Basic_Settings#expanding\_\/\_collapsing) to learn how to expand or collapse parent tasks.
+Also, see [Basic Settings: Expanding / Collapsing](Basic_Settings#expanding\_/\_collapsing) to learn how to expand or collapse parent tasks.
 
 **Milestones** are elements representing events. To add a milestone, you should create a task with zero duration: specify the same date in the `actualStart` and `actualEnd` fields.
 
