@@ -86,7 +86,7 @@ In addition, you can use optional fields:
 * `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
 * `connectTo` and `connectorType` to add [connectors](#connectors)
 * `markers` to add [markers](#markers)
-* `collapsed` to [expand or collapse](../Basic_Settings#expanding_/_collapsing) a parent resource
+* `collapsed` to [expand or collapse](../Basic_Settings#expanding\_collapsing) a parent resource
 
 **Note 1:** To learn how to rename the default data fields, see [Data: Mapping](Data#mapping).
 
