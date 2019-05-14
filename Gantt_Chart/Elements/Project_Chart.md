@@ -53,7 +53,7 @@ chart.getTimeline().groupingTasks().height(15);
 
 Please note: the settings of [regular tasks](#regular_tasks) affect parent tasks as well, but are overridden by the settings listed here.
 
-Also, parent tasks can be [expanded or collapsed](../Basic_Settings#expanding\_\/\_collapsing).
+Also, parent tasks can be [expanded or collapsed](../Basic_Settings#expanding\_collapsing).
 
 ### Milestones
 
@@ -153,7 +153,7 @@ To access progress bars, first access regular or parent tasks by combining {api:
 * {api:anychart.core.gantt.elements.ProgressElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ProgressElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
 * {api:anychart.core.gantt.elements.ProgressElement#labels}labels(){api} to access [labels](Labels)
 * {api:anychart.core.gantt.elements.ProgressElement#edit}edit(){api} to access the [Live Edit](../Live_Edit) settings
-* {api:anychart.core.gantt.elements.ProgressElement#rendering}rendering(){api} to access the [rendering](Custom_Drawing) settings
+* {api:anychart.core.gantt.elements.ProgressElement#rendering}rendering(){api} to access the [rendering](../Custom_Drawing) settings
 
 Please note: by default, progress is shown in [labels](Labels) of tasks. However, progress bars have their own labels. You can enable them and use to show progress or any other information.
 
