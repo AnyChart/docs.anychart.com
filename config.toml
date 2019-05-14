@@ -67,10 +67,10 @@ redirects = """
 /7.13.0/Basic_Charts_Types/TreeMap_Chart >> /Basic_Charts/TreeMap_Chart
 /7.13.0/Basic_Charts_Types/3D_Charts >> /Basic_Charts/3D/Overview
 /Gantt_Chart/Quick_Start >> /Gantt_Chart/Quick_Start_(Project)
-Gantt_Chart/DataGrid_Column_Presets >> /Gantt_Chart/Data_Grid/Column_Presets
-Gantt_Chart/DataGrid >> /Gantt_Chart/Data_Grid
-Gantt_Chart/Event_Listeners >> /Gantt_Chart/Events
-Gantt_Chart/Gantt_Interactivity >> /Gantt_Chart/Events
-Gantt_Chart/Live_Edit_UI_and_API >> /Gantt_Chart/Live_Edit
-Gantt_Chart/Markers_(Multiple_Milestones) >> /Gantt_Chart/Elements/Markers
+/Gantt_Chart/DataGrid_Column_Presets >> /Gantt_Chart/Data_Grid/Column_Presets
+/Gantt_Chart/DataGrid >> /Gantt_Chart/Data_Grid
+/Gantt_Chart/Event_Listeners >> /Gantt_Chart/Events
+/Gantt_Chart/Gantt_Interactivity >> /Gantt_Chart/Events
+/Gantt_Chart/Live_Edit_UI_and_API >> /Gantt_Chart/Live_Edit
+/Gantt_Chart/Markers_(Multiple_Milestones) >> /Gantt_Chart/Elements/Markers
 """
