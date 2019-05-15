@@ -40,8 +40,8 @@
 
 http://userguide.icu-project.org/formatparse/datetime
 
-/**
- * Datetime formatting functions following the pattern specification as defined
+Datetime formatting functions following the pattern specification as defined:
+
  * in JDK, ICU and CLDR, with minor modification for typical usage in JS.
  * Pattern specification:
  * {@link http://userguide.icu-project.org/formatparse/datetime}
@@ -91,7 +91,6 @@ http://userguide.icu-project.org/formatparse/datetime
  * '.', ' ', '#' and '@' will appear in the resulting time text even they are
  * not embraced within single quotes.
  * </pre>
- */
 
 ## Display
 
