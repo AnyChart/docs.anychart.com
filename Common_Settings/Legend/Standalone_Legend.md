@@ -52,13 +52,13 @@ The settings available for individual items are described in the [Individual Leg
 
 **1.** If legend items are added automatically and the chart type allows adding multiple series, you can adjust an individual legend item by calling the {api:?entry=legendItem}legendItem(){api} method of the series represented by this item. Combine it with the methods of the {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api} class. 
 
-**2.** If the legend is automatic, but the chart is single-series, for example Pie, individual items are customized by adding special fields to the data. Learn more: [Individual Items: Single Series](Individual_Legend_Items#single_series).
+**2.** If the legend is automatic, but the chart is single-series (for example, Pie), individual items are customized by adding special fields to the data. Learn more: [Individual Items: Single Series](Individual_Legend_Items#single_series).
 
 **3.** In case items are added manually, individual settings are specified right in the array of items that is passed to {api:anychart.standalones.Legend#items}items(){api} or {api:anychart.standalones.Legend#itemsFormatter}itemsFormatter(){api}. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
 
 ### Interactivity
 
-The [default interactivity settings](Basic_Settings#default_interactivity) apply to legend items that are added automatically: they are bound to points or series of the chart or charts. If items are added manually, you have to manually bind them to elements of the chart with the help of events.
+The [default behavior](Basic_Settings#default_behavior) settings apply to legend items that are added automatically: they are bound to points or series of the chart or charts. If items are added manually, you have to manually bind them to elements of the chart with the help of events.
 
 For further information, take a look at samples in the [Item = Multiple Series](#item_=_multiple_series) and [Multiple Legends](#multiple_legends) sections and read the [Events](Events) article.
 

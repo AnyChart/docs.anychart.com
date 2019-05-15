@@ -130,7 +130,7 @@ controller.fibonacciTimezones({
     selected: {stroke: colorLevels}
 });
 
-function colorLevels(){
+function colorLevels() {
   if (this.level!==undefined) {
     switch (this.level) {
         case 1:
@@ -143,7 +143,7 @@ function colorLevels(){
                 return "black";
     }
   }
-};
+}
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Time\_Zones\_04{sample}

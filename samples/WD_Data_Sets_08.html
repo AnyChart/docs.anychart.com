@@ -38,9 +38,9 @@
 </head>
 <body>
 <button id = "updateButton" onclick="updateRow()">Update First Row</button>
-<label>Name: <input id="inputName" value="New Name"></label>
-<label>Value: <input id="inputValue" value="16000"></label>
-<label>Color: <input id="inputColor" value="#ef6c00"></label>
+<label>name: <input id="nameInput" value="New Name"></label>
+<label>value: <input id="valueInput" value="16000"></label>
+<label>color: <input id="colorInput" value="#ef6c00"></label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -78,9 +78,9 @@ anychart.onDocumentReady(function () {
 
 // update a row
 function updateRow() {
-  var newName = document.getElementById("inputName").value;
-  var newValue = document.getElementById("inputValue").value;
-  var newColor = document.getElementById("inputColor").value;
+  var newName = document.getElementById("nameInput").value;
+  var newValue = document.getElementById("valueInput").value;
+  var newColor = document.getElementById("colorInput").value;
   var newData = [newName, newValue, newColor];
   dataSet.row(0, newData);
 }

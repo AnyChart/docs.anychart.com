@@ -11,7 +11,7 @@ This article explains how to create a basic Quadrant chart as well as configure 
 
 ## Modules
 
-The Quadrant chart requires adding the the [Core](../Quick_Start/Modules#core) and [Scatter](../Quick_Start/Modules#basic_cartesian_charts) modules:
+The Quadrant chart requires adding the the [Core](../Quick_Start/Modules#core) and [Scatter](../Quick_Start/Modules#basic_cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>

@@ -5,7 +5,7 @@
 
 This article explains how to adjust legend items. You can set their text font, text format, the size of icons, and so on – combine the {api:?entry=legend}legend(){api} method of the chart with methods of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class that affect items.
 
-Please note that settings listed in this article are applied to all items at once. If you need to configure items individually, see the [Individual Legend Items](Individual_Legend_Items) article.
+Please note that the settings listed in this article are applied to all items at once. If you need to configure items individually, see the [Individual Legend Items](Individual_Legend_Items) article.
 
 ## Text Font
 
@@ -114,7 +114,7 @@ chart.legend().itemsFormat(function() {
 
 ## Icons
 
-Most settings of the legend icons, for example their colors and types, can be configured only individually for each icon – see the [Icons](Individual_Legend_Items#icons) and [Icon Markers](Individual_Legend_Items#icon_markers) sections of the [Individual Legend Items](Individual_Legend_Items) article. Also, you can use [themes](Themes), which is an alternative way to customize the legend, including its icons.
+Most settings of the legend icons (for example, their colors and types), can be configured only individually for each icon – see the [Icons](Individual_Legend_Items#icons) and [Icon Markers](Individual_Legend_Items#icon_markers) sections of the [Individual Legend Items](Individual_Legend_Items) article. Also, you can use [themes](Themes), which is an alternative way to customize the legend, including its icons.
 
 ### Size
 

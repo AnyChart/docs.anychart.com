@@ -16,7 +16,7 @@ This section includes articles about features shared by most of the charts and m
 ## Chart Settings
 
 * [Text Formatters](Text_Formatters)
-* [Statistics](Statistcs)
+* [Statistics](Statistics)
 * [Point Size](Point_Size)
 * [Automatic Coloring](Automatic_Coloring)
 * [Calendar](Calendar)

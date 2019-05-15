@@ -67,18 +67,18 @@ anychart.onDocumentReady(function () {
 });
 
 // drill down to a data item
-function drillToItem(){
+function drillToItem() {
   /* locate an item in the data tree
   and get it as an object */
   var item = chart.data().search("value", "a");
   // drill down to the item
   chart.drillTo(item);
-};
+}
 
 // drill up a level
-function drillUpALevel(){
+function drillUpALevel() {
   chart.drillUp();
-};
+}
 </script>
 </body>
 </html>

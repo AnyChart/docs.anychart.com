@@ -301,7 +301,7 @@ You can access any level (ring) of a Sunburst chart by its index - use the {api:
 
 There is also an alternative way to access the elements of the last level (leaves): you can use the {api:anychart.charts.Sunburst#level}leaves(){api} method.
 
-Here are the available settings of levels and leaves: {api:anychart.core.sunburst.Level}anychart.core.sunburst.Level{api}. For example, you can enable/disable them or set their thickness by calling {api:anychart.core.sunburst.Level#enabled}enabled(){api} or {api:anychart.core.sunburst.Level#thickness}thickness(){api}.To learn how to configure the labels of levels and leaves, see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
+Here are the available settings of levels and leaves: {api:anychart.core.sunburst.Level}anychart.core.sunburst.Level{api}. For example, you can enable/disable them or set their thickness by calling {api:anychart.core.sunburst.Level#enabled}enabled(){api} or {api:anychart.core.sunburst.Level#thickness}thickness(){api}.To learn how to configure labels of levels and leaves, see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
 In this sample, there is a Sunburst chart with the first level hidden and the thickness of leaves modified:
 
@@ -546,7 +546,7 @@ chart.labels().useHtml(true);
 // configure labels
 chart.labels().format("<span style='font-weight:bold'>{%name}</span><br>{%value}");
 
-// configure the labels of leaves
+// configure labels of leaves
 chart.leaves().labels().format("<span style='font-weight:bold'>{%name}</span>");
 
 // configure tooltips
@@ -574,7 +574,7 @@ chart.labels().format(function() {
          "</span><br/>" + sales + " mln";
 });
 
-// configure the labels of leaves
+// configure labels of leaves
 chart.leaves().labels().format(function() {
   var sales = Math.round(this.value/100000)/10;
   return sales + " mln";
@@ -641,7 +641,7 @@ chart.interactivity().selectionMode("none");
 
 #### Drilldown
 
-The Sunburst chart comes with a built-in drilldown feature: if you click on an element that has children, you drill down to it and its children, and if you click on the parent element or press **Esc**/**Backspace**, you drill up a level. This behavior can be modified - use the following methods:
+The Sunburst chart comes with a built-in drilldown feature: if you click on an element that has children, you drill down to it and its children, and if you click on the parent element or press Esc / Backspace, you drill up a level. This behavior can be modified - use the following methods:
 
 * {api:anychart.charts.Sunburst#drillTo}drillTo(){api} to drill to an item
 * {api:anychart.charts.Sunburst#drillUp}drillUp(){api} to drill up

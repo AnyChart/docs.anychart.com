@@ -23,7 +23,7 @@ For scatter charts, combine the [Core](../../Quick_Start/Modules#core) module wi
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-scatter.min.js"></script>
 ```
 
-For Cartesian charts, combine [Core](../../Quick_Start/Modules#core) module with [Basic Cartesian](../../Quick_Start/Modules#basic_cartesian_charts):
+For Cartesian charts, combine [Core](../../Quick_Start/Modules#core) module with [Basic Cartesian](../../Quick_Start/Modules#basic_cartesian):
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>

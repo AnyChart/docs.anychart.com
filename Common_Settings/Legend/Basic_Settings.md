@@ -11,7 +11,7 @@ The legend is defined as an instance of the {api:anychart.core.ui.Legend}anychar
 
 ### Enabling / Disabling
 
-Most chart types require you to enable the legend manually. But there are some exceptions, for example the following types: [Pie](../../Basic_Charts/Pie_Chart), [Doughnut](../../Basic_Charts/Doughnut_Chart), [Funnel](../../Basic_Charts/Funnel_Chart), [Pyramid](../../Basic_Charts/Pyramid_Chart), [Venn](../../Basic_Charts/Venn_Diagram), [Waterfall](../../Basic_Charts/Waterfall_Chart).
+Most chart types require you to enable the legend manually. But there are some exceptions – for example, the following types: [Pie](../../Basic_Charts/Pie_Chart), [Doughnut](../../Basic_Charts/Doughnut_Chart), [Funnel](../../Basic_Charts/Funnel_Chart), [Pyramid](../../Basic_Charts/Pyramid_Chart), [Venn](../../Basic_Charts/Venn_Diagram), [Waterfall](../../Basic_Charts/Waterfall_Chart).
 
 To enable or disable the legend, pass `true` / `false` either to the {api:?entry=legend}legend(){api} method of the chart or to the {api:anychart.core.ui.Legend#enabled}enabled(){api} method of the legend:
 
@@ -35,11 +35,11 @@ This sample shows how to enable the legend of a multiple-series line chart by us
 
 {sample}CS\_Legend\_Basic\_01{sample}
 
-### Default Interactivity
+### Default Behavior
 
 As a rule, when you click on a [legend item](Legend_Items) of a multiple-series chart, the series of the chart it represents is shown / hidden, and when you hover over an item, the hover state of the series is enabled. As for single-series chart types, their legend items represent points, and the behavior of the legend varies with the type.
 
-**Note:** To learn how to change the default interactivity settings of the legend, see the [Events](Events) section.
+**Note:** To learn how to change the default behavior of the legend, see the [Events](Events) section.
 
 In the sample below, the last series of a multiple-series chart is initially disabled, but its icon is shown in the legend, and you can make the series appear by clicking on the icon:
 
@@ -71,7 +71,7 @@ chart.legend().itemsSourceMode("categories");
 ```
 
 **Note:** In this case, the 
-[default interactivity settings](#default_interactivity) do not apply. To bind legend items to elements of the chart, you have to use [events](Events).
+[default behavior](#default_behavior) settings do not apply. To bind legend items to elements of the chart, you have to use [events](Events).
 
 Setting the source to `"categories"` may be reasonable if there is only one series:
 
