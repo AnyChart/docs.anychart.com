@@ -1,7 +1,7 @@
 {:index 7}
 # Date and Time Formats
 
-для статьи datetime formatting примерный рассказ должен быть о следующем:
+## Input
 
 ВХОДНЫЕ ДАННЫЕ
 
@@ -32,6 +32,8 @@ https://api.anychart.com/v8/anychart.format#inputDateTimeFormat
 а теперь подключаем ja-jp локаль из https://cdn.anychart.com/releases/v8/locales/ja-jp.js
 и хотя формат все также 'yyyy MMM d' во входных данных написано '2016 2月 4'
 https://playground.anychart.com/JfjNwZsx
+
+## Format
 
 ФОРМАТИРОАНИЕ ПРОИСХОДИТ ИСПОЛЬЗУЮЯ 
 
@@ -89,6 +91,8 @@ http://userguide.icu-project.org/formatparse/datetime
  * not embraced within single quotes.
  * </pre>
  */
+
+## Display
 
 ПОКАЗЫВАНИЕ ДАТ
 
