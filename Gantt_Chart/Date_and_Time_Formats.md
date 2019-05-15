@@ -3,39 +3,40 @@
 
 ## Input
 
-ВХОДНЫЕ ДАННЫЕ
+для задания дат можно использвоать:
 
-у нас есть входные данные, то есть до как даты задаются в данных, и вы можете использовать
+* **1.** Unix timestamp – `1518663600000`
+* **2.** the Date.UTC() JavaScript method – `Date.UTC(2018,0,15,3)`
+* **3.** объект типа Date  – `new Date('2018-02-15T03:24:00')`
+* **4.** строка с датой / датой-временем – `"2018-01-15"` / `"2018-01-15 00:00:00.000"`
+* **5.** inputDateTimeFormat() / inputLocale() (`"en-us"` by default)
 
-1) unix timestamp прямо числом - 1518663600000
-2) Date.UTC функцию javasctipt - Date.UTC(2018,0,15,3) - что по сути то же что так как она возвразает unix timestamp 
-3) объект типа Date  - new Date('2018-02-15T03:24:00')
-4) строку с датой  "2018-01-15" или датой/временем "2018-01-15 00:00:00.000" 
-при преобразованиии строки в дату используется 
-new Date(dateString);
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+к п. **2.**:
 
-http://playground.anychart.stg/VEb00OQx
+* Date.UTC() возвращает Unix timestamp
 
-5) inputDateTimeFormat и inputLocale (которая по умолчанию en-us)
+к п. **4.**:
 
-то какая строка с датой воспринимается зависит от входной локали (inputLocale)
-и входного формата даты/времени (inputDateTimeFormat)
+* при преобразованиии строки в дату используется `new Date(dateString)`
+* [Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+* [пример date obj](http://playground.anychart.stg/VEb00OQx)
 
-https://docs.anychart.com/Common_Settings/Localization
-https://api.anychart.com/v8/anychart.format#inputLocale
-https://api.anychart.com/v8/anychart.format#inputDateTimeFormat
+* к п. **5.**:
 
-вот например https://playground.anychart.com/api/format/_samples/anychart.format.inputDateTimeFormat
-с en-us умолчанием
+* то, какая строка с датой воспринимается, зависит от входной локали inputLocale() и входного формата даты-времени inputDateTimeFormat()
+* https://docs.anychart.com/Common_Settings/Localization
+* https://api.anychart.com/v8/anychart.format#inputLocale
+* https://api.anychart.com/v8/anychart.format#inputDateTimeFormat
 
-а теперь подключаем ja-jp локаль из https://cdn.anychart.com/releases/v8/locales/ja-jp.js
-и хотя формат все также 'yyyy MMM d' во входных данных написано '2016 2月 4'
-https://playground.anychart.com/JfjNwZsx
+* к п. **5.**, примеры:
+
+* [пример en-us](https://playground.anychart.com/api/format/_samples/anychart.format.inputDateTimeFormat): `"en-us"`, `"yyyy MMM d"`, `"2016 Feb 4"`
+* [пример ja-jp](https://playground.anychart.com/JfjNwZsx): `"ja-jp"`, `"yyyy MMM d"`, `"2016 2月 4"`
+* источник локали: [ja-jp.js](https://cdn.anychart.com/releases/v8/locales/ja-jp.js)
 
 ## Format
 
-ФОРМАТИРОАНИЕ ПРОИСХОДИТ ИСПОЛЬЗУЮЯ 
+ФОРМАТИРОАНИЕ ПРОИСХОДИТ ИСПОЛЬЗУЯ 
 
 http://userguide.icu-project.org/formatparse/datetime
 
