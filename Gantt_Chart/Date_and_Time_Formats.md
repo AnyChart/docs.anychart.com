@@ -9,7 +9,7 @@
 * **2.** the Date.UTC() JavaScript method – `Date.UTC(2018,0,15,3)`
 * **3.** a Date object  – `new Date('2018-02-15T03:24:00')`
 * **4.** a string with a date or date/time – `"2018-01-15"` or `"2018-01-15 00:00:00.000"`
-* **5.** inputDateTimeFormat() or inputLocale() (`"en-us"` by default)
+* **5.** {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api} or {api:anychart.format#inputLocale}inputLocale(){api} (`"en-us"` by default)
 
 к п. **2.**:
 
@@ -21,10 +21,11 @@
 * [Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * [пример date obj](http://playground.anychart.stg/VEb00OQx)
 
-к п. **5.**:
+к п. **5.** – то, какая строка с датой воспринимается, зависит от:
 
-* то, какая строка с датой воспринимается, зависит от входной локали inputLocale() и входного формата даты-времени inputDateTimeFormat()
-* https://docs.anychart.com/Common_Settings/Localization
+* входной локали {api:anychart.format#inputLocale}inputLocale(){api}
+* входного формата даты-времени {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}
+* см.: [Common Settings: Localization](../Common_Settings/Localization)
 * https://api.anychart.com/v8/anychart.format#inputLocale
 * https://api.anychart.com/v8/anychart.format#inputDateTimeFormat
 
