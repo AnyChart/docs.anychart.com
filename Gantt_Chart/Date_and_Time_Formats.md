@@ -23,8 +23,8 @@
 
 к п. **5.** – то, какая строка с датой воспринимается, зависит от:
 
-* входной локали {api:anychart.format#inputLocale}inputLocale(){api}
 * входного формата даты-времени {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}
+* входной локали {api:anychart.format#inputLocale}inputLocale(){api}
 * см.: [Common Settings: Localization](../Common_Settings/Localization)
 * https://api.anychart.com/v8/anychart.format#inputLocale
 * https://api.anychart.com/v8/anychart.format#inputDateTimeFormat
