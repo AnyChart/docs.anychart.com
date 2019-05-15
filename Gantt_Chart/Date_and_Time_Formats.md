@@ -45,9 +45,7 @@ Datetime formatting functions following the pattern specification as defined:
  * in JDK, ICU and CLDR, with minor modification for typical usage in JS.
  * Pattern specification:
  * {@link http://userguide.icu-project.org/formatparse/datetime}
- * <pre>
  * Symbol   Meaning                    Presentation       Example
- * ------   -------                    ------------       -------
  * G        era designator             (Text)             AD
  * y        year                       (Number)           1996
  * Q        quarter                    (Text)             Q3 & 3rd quarter
@@ -90,7 +88,6 @@ Datetime formatting functions following the pattern specification as defined:
  * ['A'..'Z'] will be treated as quoted text. For instance, characters like ':',
  * '.', ' ', '#' and '@' will appear in the resulting time text even they are
  * not embraced within single quotes.
- * </pre>
 
 ## Display
 
