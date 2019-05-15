@@ -7,9 +7,9 @@
 
 * **1.** Unix timestamp – `1518663600000`
 * **2.** the Date.UTC() JavaScript method – `Date.UTC(2018,0,15,3)`
-* **3.** объект типа Date  – `new Date('2018-02-15T03:24:00')`
-* **4.** строка с датой / датой-временем – `"2018-01-15"` / `"2018-01-15 00:00:00.000"`
-* **5.** inputDateTimeFormat() / inputLocale() (`"en-us"` by default)
+* **3.** a Date object  – `new Date('2018-02-15T03:24:00')`
+* **4.** a string with a date or date/time – `"2018-01-15"` or `"2018-01-15 00:00:00.000"`
+* **5.** inputDateTimeFormat() or inputLocale() (`"en-us"` by default)
 
 к п. **2.**:
 
