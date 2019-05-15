@@ -21,14 +21,14 @@
 * [Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * [пример date obj](http://playground.anychart.stg/VEb00OQx)
 
-* к п. **5.**:
+к п. **5.**:
 
 * то, какая строка с датой воспринимается, зависит от входной локали inputLocale() и входного формата даты-времени inputDateTimeFormat()
 * https://docs.anychart.com/Common_Settings/Localization
 * https://api.anychart.com/v8/anychart.format#inputLocale
 * https://api.anychart.com/v8/anychart.format#inputDateTimeFormat
 
-* к п. **5.**, примеры:
+к п. **5.**, примеры:
 
 * [пример en-us](https://playground.anychart.com/api/format/_samples/anychart.format.inputDateTimeFormat): `"en-us"`, `"yyyy MMM d"`, `"2016 Feb 4"`
 * [пример ja-jp](https://playground.anychart.com/JfjNwZsx): `"ja-jp"`, `"yyyy MMM d"`, `"2016 2月 4"`
