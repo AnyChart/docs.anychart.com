@@ -46,7 +46,43 @@
 
 ### inputLocale()
 
-## Format
+## Ouput
+
+the way how dates are displayed depends on:
+
+**1.** outputLocale - по умолчанию en-us
+
+**2.** 
+
+outputDateFormat 
+outputDateTimeFormat
+outputTimeFormat
+
+по умолчанию это 
+
+dateFormat: 'y/MM/dd',
+timeFormat: 'H:mm:ss',
+dateTimeFormat: 'y/MM/dd H:mm:ss', поля из dateTimeLocale поля в локали
+
+**3.** настроек тултипов, лейблов, колонок, хедереов timeline - у них всех есть форматтеры в которых можно писать 
+
+ "{%actualstart}{dateTimeFormat:yyyy MMM d}" в токенах
+и 
+ anychart.format.dateTime(this.actualStart);
+и
+anychart.format.dateTime(this.actualEnd, "E");
+
+в функциях
+
+[пример](https://playground.anychart.com/lxGU2Oem)
+
+### outputLocale()
+
+### outputDateTimeFormat() (?)
+
+### format()
+
+## Formatting
 
 misc:
 
@@ -100,39 +136,3 @@ Datetime formatting functions following the pattern specification as defined:
  * ['A'..'Z'] will be treated as quoted text. For instance, characters like ':',
  * '.', ' ', '#' and '@' will appear in the resulting time text even they are
  * not embraced within single quotes.
-
-## Display
-
-the way how dates are displayed depends on:
-
-**1.** outputLocale - по умолчанию en-us
-
-**2.** 
-
-outputDateFormat 
-outputDateTimeFormat
-outputTimeFormat
-
-по умолчанию это 
-
-dateFormat: 'y/MM/dd',
-timeFormat: 'H:mm:ss',
-dateTimeFormat: 'y/MM/dd H:mm:ss', поля из dateTimeLocale поля в локали
-
-**3.** настроек тултипов, лейблов, колонок, хедереов timeline - у них всех есть форматтеры в которых можно писать 
-
- "{%actualstart}{dateTimeFormat:yyyy MMM d}" в токенах
-и 
- anychart.format.dateTime(this.actualStart);
-и
-anychart.format.dateTime(this.actualEnd, "E");
-
-в функциях
-
-[пример](https://playground.anychart.com/lxGU2Oem)
-
-### outputLocale()
-
-### outputDateTimeFormat() (?)
-
-### format()
