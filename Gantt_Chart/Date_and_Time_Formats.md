@@ -19,7 +19,55 @@
 
 
 ```
+// create data
+var data = [
+  {
+    id: "1",
+    name: "Development",
+    actualStart: 1515974400000,
+    actualEnd: 1520640000000,
+    children: [
+      {
+        id: "1_1",
+        name: "Analysis",
+        actualStart: 1515974400000,
+        actualEnd: 1516838400000
+      },
+      {
+        id: "1_2",
+        name: "Design",
+        actualStart: 1516406400000,
+        actualEnd: 1517702400000
+      },
+      {
+        id: "1_3",
+        name: "Meeting",
+        actualStart: 1517788800000,
+        actualEnd: 1517788800000
+      },
+      {
+        id: "1_4",
+        name: "Implementation",
+        actualStart: 1517788800000,
+        actualEnd: 1519430400000
+      },
+      {
+        id: "1_5",
+        name: "Testing",
+        actualStart: 1519516800000,
+        actualEnd: 1520640000000
+      }
+  ]}
+];
 
+// create a data tree
+var treeData = anychart.data.tree(data, "as-tree");
+
+// create a chart
+var chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
 ```
 
 {sample :height 220}GANTT\_Date\_and\_Time\_01{sample}
@@ -54,7 +102,58 @@ a string with a date or date/time:
 
 
 ```
+// create data
+var data = [
+  {
+    id: "1",
+    name: "Development",
+    actualStart: "2018-01-15",
+    actualEnd: "2018-03-10",
+    children: [
+      {
+        id: "1_1",
+        name: "Analysis",
+        actualStart: "2018-01-15",
+        actualEnd: "2018-01-25"
+      },
+      {
+        id: "1_2",
+        name: "Design",
+        actualStart: "2018-01-20",
+        actualEnd: "2018-02-04"
+      },
+      {
+        id: "1_3",
+        name: "Meeting",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-05"
+      },
+      {
+        id: "1_4",
+        name: "Implementation",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-24"
+      },
+      {
+        id: "1_5",
+        name: "Testing",
+        actualStart: "2018-02-25",
+        actualEnd: "2018-03-10"
+      }
+  ]}
+];
 
+// set the input date/time format
+anychart.format.inputDateTimeFormat("yyyy-MM-dd");
+
+// create a data tree
+var treeData = anychart.data.tree(data, "as-tree");
+
+// create a chart
+var chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
 ```
 
 {sample :height 220}GANTT\_Date\_and\_Time\_01{sample}
@@ -78,7 +177,61 @@ a string with a date or date/time:
 
 
 ```
+// create data
+var data = [
+  {
+    id: "1",
+    name: "Development",
+    actualStart: "15 janvier 2018",
+    actualEnd: "10 mars 2018",
+    children: [
+      {
+        id: "1_1",
+        name: "Analysis",
+        actualStart: "15 janvier 2018",
+        actualEnd: "25 janvier 2018"
+      },
+      {
+        id: "1_2",
+        name: "Design",
+        actualStart: "20 janvier 2018",
+        actualEnd: "4 février 2018"
+      },
+      {
+        id: "1_3",
+        name: "Meeting",
+        actualStart: "5 février 2018",
+        actualEnd: "5 février 2018"
+      },
+      {
+        id: "1_4",
+        name: "Implementation",
+        actualStart: "5 février 2018",
+        actualEnd: "24 février 2018"
+      },
+      {
+        id: "1_5",
+        name: "Testing",
+        actualStart: "25 février 2018",
+        actualEnd: "10 mars 2018"
+      }
+  ]}
+];
 
+// set the input locale
+anychart.format.inputLocale("fr-fr");
+
+// set the input date/time format
+anychart.format.inputDateTimeFormat("d MMMM yyyy");
+
+// create a data tree
+var treeData = anychart.data.tree(data, "as-tree");
+
+// create a chart
+var chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
 ```
 
 {sample :height 220}GANTT\_Date\_and\_Time\_03{sample}
@@ -116,7 +269,61 @@ anychart.format.dateTime(this.actualEnd, "E");
 ### outputDateTimeFormat()
 
 ```
+// create data
+var data = [
+  {
+    id: "1",
+    name: "Development",
+    actualStart: "2018-01-15",
+    actualEnd: "2018-03-10",
+    children: [
+      {
+        id: "1_1",
+        name: "Analysis",
+        actualStart: "2018-01-15",
+        actualEnd: "2018-01-25"
+      },
+      {
+        id: "1_2",
+        name: "Design",
+        actualStart: "2018-01-20",
+        actualEnd: "2018-02-04"
+      },
+      {
+        id: "1_3",
+        name: "Meeting",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-05"
+      },
+      {
+        id: "1_4",
+        name: "Implementation",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-24"
+      },
+      {
+        id: "1_5",
+        name: "Testing",
+        actualStart: "2018-02-25",
+        actualEnd: "2018-03-10"
+      }
+  ]}
+];
 
+// set the input date/time format
+anychart.format.inputDateTimeFormat("yyyy-MM-dd");
+
+// set the output date/time format
+anychart.format.outputDateTimeFormat("d MMMM");
+
+// create a data tree
+var treeData = anychart.data.tree(data, "as-tree");
+
+// create a chart
+var chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
 ```
 
 {sample :height 220}GANTT\_Date\_and\_Time\_04{sample}
@@ -124,7 +331,65 @@ anychart.format.dateTime(this.actualEnd, "E");
 ### outputLocale()
 
 ```
+// create data
+var data = [
+  {
+    id: "1",
+    name: "Development",
+    actualStart: "2018-01-15",
+    actualEnd: "2018-03-10",
+    children: [
+      {
+        id: "1_1",
+        name: "Analysis",
+        actualStart: "2018-01-15",
+        actualEnd: "2018-01-25"
+      },
+      {
+        id: "1_2",
+        name: "Design",
+        actualStart: "2018-01-20",
+        actualEnd: "2018-02-04"
+      },
+      {
+        id: "1_3",
+        name: "Meeting",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-05"
+      },
+      {
+        id: "1_4",
+        name: "Implementation",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-24"
+      },
+      {
+        id: "1_5",
+        name: "Testing",
+        actualStart: "2018-02-25",
+        actualEnd: "2018-03-10"
+      }
+  ]}
+];
 
+
+// set the input date/time format
+anychart.format.inputDateTimeFormat("yyyy-MM-dd");
+
+// set the output locale
+anychart.format.outputLocale("fr-fr");
+
+// set the output date/time format
+anychart.format.outputDateTimeFormat("d MMMM");
+
+// create a data tree
+var treeData = anychart.data.tree(data, "as-tree");
+
+// create a chart
+var chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
 ```
 
 {sample :height 220}GANTT\_Date\_and\_Time\_05{sample}
