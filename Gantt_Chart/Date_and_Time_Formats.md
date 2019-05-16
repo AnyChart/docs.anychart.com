@@ -72,9 +72,7 @@
 
 the way how dates are displayed depends on:
 
-**1.** outputLocale - по умолчанию en-us
-
-**2.** 
+**1.** 
 
 outputDateFormat 
 outputDateTimeFormat
@@ -85,6 +83,8 @@ outputTimeFormat
 dateFormat: 'y/MM/dd',
 timeFormat: 'H:mm:ss',
 dateTimeFormat: 'y/MM/dd H:mm:ss', поля из dateTimeLocale поля в локали
+
+**2.** outputLocale - по умолчанию en-us
 
 **3.** настроек тултипов, лейблов, колонок, хедереов timeline - у них всех есть форматтеры в которых можно писать 
 
@@ -98,9 +98,9 @@ anychart.format.dateTime(this.actualEnd, "E");
 
 [пример](https://playground.anychart.com/lxGU2Oem)
 
-### outputLocale()
-
 ### outputDateTimeFormat()
+
+### outputLocale()
 
 ### format()
 
