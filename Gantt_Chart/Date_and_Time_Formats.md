@@ -100,9 +100,27 @@ anychart.format.dateTime(this.actualEnd, "E");
 
 ### outputDateTimeFormat()
 
+```
+
+```
+
+{sample :height 220}GANTT\_Date\_and\_Time\_04{sample}
+
 ### outputLocale()
 
+```
+
+```
+
+{sample :height 220}GANTT\_Date\_and\_Time\_05{sample}
+
 ### format()
+
+```
+
+```
+
+{sample :height 220}GANTT\_Date\_and\_Time\_06{sample}
 
 ## Formatting
 
