@@ -82,7 +82,7 @@ anychart.format.dateTime(this.actualEnd, "E");
 
 ### outputLocale()
 
-### outputDateTimeFormat() (?)
+### outputDateTimeFormat()
 
 ### format()
 
