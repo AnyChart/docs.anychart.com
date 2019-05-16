@@ -33,6 +33,19 @@
 * [пример ja-jp](https://playground.anychart.com/JfjNwZsx): `"ja-jp"`, `"yyyy MMM d"`, `"2016 2月 4"`
 * источник локали: [ja-jp.js](https://cdn.anychart.com/releases/v8/locales/ja-jp.js)
 
+
+### Unix Timestamp
+
+### Date.UTC()
+
+### Date Object
+
+### String
+
+### inputDateTimeFormat()
+
+### inputLocale()
+
 ## Format
 
 misc:
