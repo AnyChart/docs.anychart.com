@@ -84,7 +84,7 @@ dateFormat: 'y/MM/dd',
 timeFormat: 'H:mm:ss',
 dateTimeFormat: 'y/MM/dd H:mm:ss', поля из dateTimeLocale поля в локали
 
-**2.** outputLocale - по умолчанию en-us
+**2.** outputLocale - по умолчанию "`en-us`"
 
 **3.** настроек тултипов, лейблов, колонок, хедереов timeline - у них всех есть форматтеры в которых можно писать 
 
