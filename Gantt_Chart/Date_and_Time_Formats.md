@@ -7,38 +7,15 @@
 
 * **1.** Unix timestamp – `1518663600000`
 * **2.** the Date.UTC() JavaScript method – `Date.UTC(2018,0,15,3)`
-* **3.** a Date object  – `new Date('2018-02-15T03:24:00')`
+* **3.** a Date object – `new Date('2018-02-15T03:24:00')`
 * **4.** a string with a date or date/time – `"2018-01-15"` or `"2018-01-15 00:00:00.000"`
-* **5.** {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api} or {api:anychart.format#inputLocale}inputLocale(){api} (`"en-us"` by default)
-
-к п. **2.**:
-
-* Date.UTC() возвращает Unix timestamp
-
-к п. **4.**:
-
-* при преобразованиии строки в дату используется `new Date(dateString)`
-* `"2018-01-15"` эквивалентно `new Date("2018-02-15T03:24:00")`
-* если не задан {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}, то, как строка будет интерпертирована, может зависеть от браузера
-* [Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-* [пример date obj](http://playground.anychart.stg/VEb00OQx)
-
-к п. **5.** – то, какая строка с датой воспринимается, зависит от:
-
-* входного формата даты-времени {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}
-* входной локали {api:anychart.format#inputLocale}inputLocale(){api}
-* {api:anychart.format#inputLocale}inputLocale(){api} требует использования {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}
-* входной локали {api:anychart.format#inputLocale}inputLocale(){api}
-* см.: [Common Settings: Localization](../Common_Settings/Localization)
-
-к п. **5.**, примеры:
-
-* [пример en-us](https://playground.anychart.com/api/format/_samples/anychart.format.inputDateTimeFormat): `"en-us"`, `"yyyy MMM d"`, `"2016 Feb 4"`
-* [пример ja-jp](https://playground.anychart.com/JfjNwZsx): `"ja-jp"`, `"yyyy MMM d"`, `"2016 2月 4"`
-* источник локали: [ja-jp.js](https://cdn.anychart.com/releases/v8/locales/ja-jp.js)
-
+* **5.** {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}
+* **6.** {api:anychart.format#inputLocale}inputLocale(){api} (`"en-us"` by default)
 
 ### Unix Timestamp
+
+* Unix timestamp
+* `1518663600000`
 
 ```
 
@@ -48,11 +25,31 @@
 
 ### Date.UTC()
 
+* the Date.UTC() JavaScript method
+* возвращает Unix timestamp
+* `Date.UTC(2018,0,15,3)`
+
 ### Date Object
+
+* a Date object
+* `new Date('2018-02-15T03:24:00')`
+* при преобразованиии строки в дату используется `new Date(dateString)`
+* `"2018-01-15"` эквивалентно `new Date("2018-02-15T03:24:00")`
+* если не задан {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}, то, как строка будет интерпертирована, может зависеть от браузера
+* [Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+* [пример date obj](http://playground.anychart.stg/VEb00OQx)
+
 
 ### String
 
+a string with a date or date/time:
+
+* `"2018-01-15"`
+* `"2018-01-15 00:00:00.000"`
+
 ### inputDateTimeFormat()
+
+* the {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api} method
 
 ```
 
@@ -61,6 +58,21 @@
 {sample :height 220}GANTT\_Date\_and\_Time\_01{sample}
 
 ### inputLocale()
+
+* the {api:anychart.format#inputLocale}inputLocale(){api} method (`"en-us"` by default)
+
+то, какая строка с датой воспринимается, зависит от:
+
+* входного формата даты-времени {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}
+* входной локали {api:anychart.format#inputLocale}inputLocale(){api}
+* {api:anychart.format#inputLocale}inputLocale(){api} требует использования {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}
+* см.: [Common Settings: Localization](../Common_Settings/Localization)
+
+примеры:
+
+* [пример en-us](https://playground.anychart.com/api/format/_samples/anychart.format.inputDateTimeFormat): `"en-us"`, `"yyyy MMM d"`, `"2016 Feb 4"`
+* [пример ja-jp](https://playground.anychart.com/JfjNwZsx): `"ja-jp"`, `"yyyy MMM d"`, `"2016 2月 4"`
+* источник локали: [ja-jp.js](https://cdn.anychart.com/releases/v8/locales/ja-jp.js)
 
 ```
 
