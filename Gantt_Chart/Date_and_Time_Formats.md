@@ -17,6 +17,7 @@
 * Unix timestamp
 * `1518663600000`
 
+
 ```
 
 ```
@@ -51,6 +52,7 @@ a string with a date or date/time:
 
 * the {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api} method
 
+
 ```
 
 ```
@@ -73,6 +75,7 @@ a string with a date or date/time:
 * [пример en-us](https://playground.anychart.com/api/format/_samples/anychart.format.inputDateTimeFormat): `"en-us"`, `"yyyy MMM d"`, `"2016 Feb 4"`
 * [пример ja-jp](https://playground.anychart.com/JfjNwZsx): `"ja-jp"`, `"yyyy MMM d"`, `"2016 2月 4"`
 * источник локали: [ja-jp.js](https://cdn.anychart.com/releases/v8/locales/ja-jp.js)
+
 
 ```
 
