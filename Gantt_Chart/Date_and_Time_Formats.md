@@ -107,7 +107,6 @@ the way how dates are displayed depends on:
 
 **1.** outputLocale - по умолчанию en-us
 
-
 **2.** 
 
 outputDateFormat 
@@ -131,3 +130,9 @@ anychart.format.dateTime(this.actualEnd, "E");
 в функциях
 
 [пример](https://playground.anychart.com/lxGU2Oem)
+
+### outputLocale()
+
+### outputDateTimeFormat() (?)
+
+### format()
