@@ -18,7 +18,7 @@
 к п. **4.**:
 
 * при преобразованиии строки в дату используется `new Date(dateString)`
-* `"2018-01-15"` эквивалентно `new Date('2018-02-15T03:24:00')`
+* `"2018-01-15"` эквивалентно `new Date("2018-02-15T03:24:00")`
 * если не задан {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}, то, как строка будет интерпертирована, может зависеть от браузера
 * [Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 * [пример date obj](http://playground.anychart.stg/VEb00OQx)
@@ -40,6 +40,12 @@
 
 ### Unix Timestamp
 
+```
+
+```
+
+{sample :height 220}GANTT\_Date\_and\_Time\_01{sample}
+
 ### Date.UTC()
 
 ### Date Object
@@ -48,7 +54,19 @@
 
 ### inputDateTimeFormat()
 
+```
+
+```
+
+{sample :height 220}GANTT\_Date\_and\_Time\_01{sample}
+
 ### inputLocale()
+
+```
+
+```
+
+{sample :height 220}GANTT\_Date\_and\_Time\_03{sample}
 
 ## Output
 
