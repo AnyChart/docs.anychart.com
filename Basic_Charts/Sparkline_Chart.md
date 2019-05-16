@@ -12,11 +12,11 @@ Sparkline charts are rather small with neither axes nor grids, amount of additio
 The Sparkline chart requires adding the [Core](../Quick_Start/Modules#core) and [Sparkline](../Quick_Start/Modules#sparkline) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-sparkline.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-sparkline.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).

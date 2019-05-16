@@ -74,7 +74,7 @@ To configure milestones, combine {api:anychart.charts.Gantt#getTimeline}getTimel
 chart.getTimeline().milestones().height(15);
 ```
 
-If you need to create multiple milestones in one row, use an alternative way to visualize events – add [markers](Markers).
+If you need to create multiple milestones in one row, use an alternative way to visualize events - add [markers](Markers).
 
 ### Sample
 

@@ -9,7 +9,7 @@ To access an individual item, call the {api:?entry=legendItem}legendItem(){api} 
 
 Please note that legend items of single-series chart types cannot be customized this way. However, you can use the `legendItem` data field with fields corresponding to methods of the {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api} class. Read the [Single Series](#single_series) section to learn more.
 
-Also, using the {api:?entry=legend}legend(){api} method of the chart with {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} and {api:anychart.core.ui.Legend#items}items(){api} allows adding custom legend items both to single-series and multiple-series charts (as well as editing the existing items) – see the [Custom Items](#custom_items) section of this article.
+Also, using the {api:?entry=legend}legend(){api} method of the chart with {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} and {api:anychart.core.ui.Legend#items}items(){api} allows adding custom legend items both to single-series and multiple-series charts (as well as editing the existing items) - see the [Custom Items](#custom_items) section of this article.
 
 ## Enabling / Disabling
 
@@ -107,7 +107,7 @@ Use the following method to configure the icon of an item:
 * {api:anychart.core.utils.LegendItemSettings#iconHatchFill}iconHatchFill(){api} to set the hatch fill
 * {api:anychart.core.utils.LegendItemSettings#iconStroke}iconStroke(){api} to set the stroke
 
-To set the type of the icon, combine the {api:anychart.core.utils.LegendItemSettings#iconType}iconType(){api} method with one of the parameters listed in {api:anychart.enums.LegendItemIconType}anychart.enums.LegendItemIconType{api}. It makes sense to choose the icon type corresponding to the series type – for example, `"line"` for an item representing a Line series, `"area"` for an Area series, and so on. The default type is `"square"`.
+To set the type of the icon, combine the {api:anychart.core.utils.LegendItemSettings#iconType}iconType(){api} method with one of the parameters listed in {api:anychart.enums.LegendItemIconType}anychart.enums.LegendItemIconType{api}. It makes sense to choose the icon type corresponding to the series type - for example, `"line"` for an item representing a Line series, `"area"` for an Area series, and so on. The default type is `"square"`.
 
 **Note 1:** If the icon type is set to `"line"`, `"spline"`, or `"step-line"`, you can also enable and adjust icon markers. See the [Icon Markers](#icon_markers) section to learn more.
 
@@ -203,7 +203,7 @@ You can set the spacing between the icon and text of a legend item with the help
 
 ## Single Series
 
-If the chart type allows adding only a single series, its legend items represent points, not series. Such items can also be customized individually – combine the `legendItem` data field with fields corresponding to the methods mentioned in the sections above.
+If the chart type allows adding only a single series, its legend items represent points, not series. Such items can also be customized individually - combine the `legendItem` data field with fields corresponding to the methods mentioned in the sections above.
 
 **Note:** The methods described in the [Custom Items](#custom_items) section also work with single-series chart types, so, alternatively, you can just add a custom item or create a fully custom legend.
 
@@ -245,7 +245,7 @@ Also, you can use the {api:anychart.core.ui.Legend#items}items(){api} method, wh
 
 The available settings of custom legend items are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
 
-**Note:** The [default behavior](Basic_Settings#default_behavior) settings do not apply to custom items. To bind them to elements of the chart, you have to use events – see the [Events](Events) article.
+**Note:** The [default behavior](Basic_Settings#default_behavior) settings do not apply to custom items. To bind them to elements of the chart, you have to use events - see the [Events](Events) article.
 
 In this sample, there is a chart with a default legend. The {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method with a function as a parameter is used to add a custom legend item representing the sum of all the Y-values on the chart:
 
@@ -332,7 +332,7 @@ for (var i = 0; i < chart.getSeriesCount(); i++) {
     for (var k = 0; k < series.data().getRowsCount(); k++) {
       legendItems.push({
         text: series.name() + ": " + data.data()[k][0] + 
-              " – $" + data.data()[k][i + 1],
+              " - $" + data.data()[k][i + 1],
         iconType: "square",
         iconFill: series.color()
       });

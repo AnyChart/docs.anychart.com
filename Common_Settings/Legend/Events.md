@@ -94,7 +94,7 @@ chart.legend().listen("legendItemMouseOver", function(e) {
 
 In the following sample, hovering over a legend item of a single-series chart changes its visual style and enables the hover state of the point it represents (which does not occur by default).
 
-**Note**: An individual legend item of a single-series chart can be customized only by adding special fields to the data – see [Individual Legend Items: Single Series](Individual_Legend_Items#single_series).
+**Note**: An individual legend item of a single-series chart can be customized only by adding special fields to the data - see [Individual Legend Items: Single Series](Individual_Legend_Items#single_series).
 
 {sample}CS\_Legend\_Events\_03{sample}
 
@@ -163,7 +163,7 @@ chart.listen("pointMouseOut", function(e) {
 
 In the following sample, when you click on a point of a single-series chart, the appearance of its icon is modified. The `"pointClick"` event is used.
 
-**Note**: an individual legend item of a single-series chart can be customized only by adding special fields to the data – see [Individual Legend Items: Single Series](Individual_Legend_Items#single_series).
+**Note**: an individual legend item of a single-series chart can be customized only by adding special fields to the data - see [Individual Legend Items: Single Series](Individual_Legend_Items#single_series).
 
 {sample}CS\_Legend\_Events\_05{sample}
 

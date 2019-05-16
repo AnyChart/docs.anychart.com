@@ -1,7 +1,7 @@
 {:index 6}
 # Paginator
 
-In some cases – depending on the [Layout](Basic_Settings#layout) and [Size](Basic_Settings#size) settings of the legend – only a part of the items is shown simultaneously, and the legend paginator is automatically enabled, allowing you to flip through them.
+In some cases - depending on the [Layout](Basic_Settings#layout) and [Size](Basic_Settings#size) settings of the legend - only a part of the items is shown simultaneously, and the legend paginator is automatically enabled, allowing you to flip through them.
 
 You can adjust the paginator by combining the {api:?entry=legend}legend(){api} method of the chart with {api:anychart.core.ui.Legend#paginator}paginator(){api} and the following methods:
 

@@ -27,6 +27,10 @@ CURRENT_BRANCH=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* 
 
 # IGNORE files
 declare -a IGNOREFILES=(
+    "./Maps/Map_Projections.md",
+    "./Basic_Charts/Sunburst_Chart.md",
+    "./Quick_Start/Quick_Start.md",
+    "./Working_with_Data/Data_Adapter/Parsing_HTML_Table.md",
     "./samples/AS_Fonts_01.html"
     "./samples/BCT_Sunburst_Chart_04.html"
     "./samples/CS_Labels_10.html"
@@ -109,8 +113,12 @@ do
 done
 
 echo 'Starting check...'
-
-printf "Items to check: \n$FILESLIST\n\nModifier: ${FILE_MODIFYER}\n"
+echo
+echo "Items to check: "
+echo $FILESLIST
+echo "Modifier: ${FILE_MODIFYER}"
+echo "COUNT: ${FILESLIST_COUNT}"
+echo 
 
 nr=0
 # for each files in tree of folders do (like python walk)

@@ -11,11 +11,11 @@ A timeline is a display of a list of events in chronological order. It is typica
 The Timeline chart requires adding the [Core](../Quick_Start/Modules#core) and [Timeline Chart](../Quick_Start/Modules#timeline) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-timeline.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-timeline.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).

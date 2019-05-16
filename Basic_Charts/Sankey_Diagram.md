@@ -36,11 +36,11 @@ This article explains how to create a basic Sankey diagram as well as configure 
 The Sankey diagram requires adding the [Core](../Quick_Start/Modules#core) and [Sankey Diagram](../Quick_Start/Modules#sankey_diagram) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-sankey.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-sankey.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
@@ -134,7 +134,7 @@ var chart = anychart.sankey(data);
 
 ### Nodes
 
-Nodes are elements linked by [flows](#flows). In your [data](#data), you should specify the names of source and target nodes of each flow – use the `from` and `to` fields.
+Nodes are elements linked by [flows](#flows). In your [data](#data), you should specify the names of source and target nodes of each flow - use the `from` and `to` fields.
 
 On the chart, nodes are automatically organized in multiple columns. The height of a node is proportional to the total weight of either incoming or outgoing flows, depending on which weight is greater.
 
@@ -312,10 +312,10 @@ To configure labels and tooltips, you can use [formatting functions](../Common_S
 
 In addition the following fields are available for nodes:
 
-* `isConflict` – a boolean indicating whether the total weight of incoming flows equals to the weight of outgoing flows, including dropoffs
-* `income` – an array with names and weights of incoming nodes
-* `outcome` – an array with names and weights of outgoing nodes
-* `dropoff` – the weight of the dropoff node
+* `isConflict` - a boolean indicating whether the total weight of incoming flows equals to the weight of outgoing flows, including dropoffs
+* `income` - an array with names and weights of incoming nodes
+* `outcome` - an array with names and weights of outgoing nodes
+* `dropoff` - the weight of the dropoff node
 
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 

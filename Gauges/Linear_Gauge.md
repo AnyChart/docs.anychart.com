@@ -9,11 +9,11 @@ A linear gauge is visual representation of a measuring device with a horizontal 
 The Linear Gauge requires adding the [Core](../Quick_Start/Modules#core) and [Linear Gauge](../Quick_Start/Modules#linear_gauge) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-linear-gauge.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-linear-gauge.min.js"></script>
 ```
 
 Learn more: [Modules](../../Quick_Start/Modules).

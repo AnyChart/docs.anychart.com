@@ -37,11 +37,11 @@ This article explains how to create a basic Tag Cloud chart as well as configure
 The Tag Cloud requires adding the [Core](../Quick_Start/Modules#core) and [Tag Cloud](../Quick_Start/Modules#tag_cloud) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-tag-cloud.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-tag-cloud.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
@@ -118,7 +118,7 @@ chart = anychart.tagCloud(data);
 
 {sample}BCT\_Tag\_Cloud\_Chart\_02{sample}
 
-The `category` field is optional: it colors elements of the chart according to the categories they belong to. Also, it affects the ordinal color scale and legend – see the [Color Scale: Categories](#categories) and [Legend](#legend) sections to learn more.
+The `category` field is optional: it colors elements of the chart according to the categories they belong to. Also, it affects the ordinal color scale and legend - see the [Color Scale: Categories](#categories) and [Legend](#legend) sections to learn more.
 
 #### Text
 

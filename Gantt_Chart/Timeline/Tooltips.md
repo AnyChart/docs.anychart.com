@@ -17,7 +17,7 @@ chart.getTimeline().tooltip(false);
 chart.getTimeline().tooltip.enabled(false);
 ```
 
-To configure tooltips, use other methods of {api:anychart.core.ui.Tooltip}anychart.core.ui.Tooltip{api} – for example, {api:anychart.core.ui.Tooltip#fontColor}fontColor(){api}, {api:anychart.core.ui.Tooltip#fontWeight}fontWeight(){api}, {api:anychart.core.ui.Tooltip#fontSize}fontSize(){api}, etc. The {api:anychart.core.ui.Tooltip#format}format(){api} method, combined with [text formatters](../../Common_Settings/Text_Formatters), allows setting the text format – read the sections below to learn more.
+To configure tooltips, use other methods of {api:anychart.core.ui.Tooltip}anychart.core.ui.Tooltip{api} - for example, {api:anychart.core.ui.Tooltip#fontColor}fontColor(){api}, {api:anychart.core.ui.Tooltip#fontWeight}fontWeight(){api}, {api:anychart.core.ui.Tooltip#fontSize}fontSize(){api}, etc. The {api:anychart.core.ui.Tooltip#format}format(){api} method, combined with [text formatters](../../Common_Settings/Text_Formatters), allows setting the text format - read the sections below to learn more.
 
 **Note:** The tooltips that are shown on data grid are configured independently from the timeline tooltips. See [Data Grid: Tooltips](../Data_Grid/Tooltips).
 
@@ -49,7 +49,7 @@ In the sample below, there is a Project chart with tooltips showing the start an
 chart.getTimeline().tooltip().useHtml(true);    
 chart.getTimeline().tooltip().format(
   "<span style='font-weight:600;font-size:12pt'>" +
-  "{%actualStart}{dateTimeFormat:dd MMM} – " +
+  "{%actualStart}{dateTimeFormat:dd MMM} - " +
   "{%actualEnd}{dateTimeFormat:dd MMM}</span><br><br>" +
   "Progress: {%progress}<br>" +
   "Manager: {%manager}"
@@ -75,7 +75,7 @@ In the following sample, tokens, including a custom one (`disc_space`), are used
 chart.getTimeline().tooltip().useHtml(true);    
 chart.getTimeline().tooltip().format(
   "<span style='font-weight:600;font-size:12pt'>" +
-  "{%start}{dateTimeFormat:dd MMM} – " +
+  "{%start}{dateTimeFormat:dd MMM} - " +
   "{%end}{dateTimeFormat:dd MMM}</span><br><br>" +
   "Disc Space: {%disc_space}"
 );
@@ -125,7 +125,7 @@ chart.getTimeline().tooltip().format(function() {
   var manager = this.getData("manager");
 
   var parentText = "<span style='font-weight:600;font-size:12pt'>" + 
-                   startDate + " – " + endDate + "</span><br><br>" +
+                   startDate + " - " + endDate + "</span><br><br>" +
                    "Duration: " + duration + " days<br>" +
                    "Number of Tasks: " + numChildren + "<br><br>" +                       
                    "Manager: " + manager;
@@ -135,7 +135,7 @@ chart.getTimeline().tooltip().format(function() {
                       "Manager: " + manager;
 
   var taskText = "<span style='font-weight:600;font-size:12pt'>" + 
-                 startDate + " – " + endDate + "</span><br><br>" +
+                 startDate + " - " + endDate + "</span><br><br>" +
                  "Duration: " + duration + " days<br>" +
                  "Progress: " + progress + "<br><br>" +
                  "Manager: " + manager;
@@ -186,7 +186,7 @@ chart.getTimeline().tooltip().format(function() {
   var parentText = "Number of Servers: " + numChildren;
 
   var childText = "<span style='font-weight:600;font-size:12pt'>" + 
-                 startDate + " – " + endDate + "</span><br><br>" +
+                 startDate + " - " + endDate + "</span><br><br>" +
                  "Duration: " + duration + " days<br>" +
                  "Disc Space: " + discSpace;
 

@@ -13,8 +13,9 @@ function run(){
     echo
 }
 
-
-run ./checker.sh -a
+./checker.sh -a
+echo
+echo
 
 # filter only files that diff with origin/develop
 FILESLIST=$(find . -type f | grep -e .md -e .html)
@@ -51,7 +52,8 @@ run "parse_config_file < './config.toml'"
 echo "ANYCHART_VERSION : '${ANYCHART_VERSION}'"
 echo "LOCALES_VERSION : '${LOCALES_VERSION}'"
 echo "GEODATA_VERSION : '${GEODATA_VERSION}'"
-echo "THEMES_VERSION : '${THEMES_VERSION}' \r"
+echo "THEMES_VERSION : '${THEMES_VERSION}'"
+echo
 
 # for each files in tree of folders do (like python walk)
 nr=0
@@ -60,10 +62,11 @@ for filename in ${FILESLIST}; do
     # in diff mode file may be marked as deleted
     if [ -f $filename ];then 
         echo -ne "${nr} / ${FILESLIST_COUNT} > ${filename}                                              \r"
-        perl -pi -e "s,(releases)/({{branch-name}})+/,\1/$ANYCHART_VERSION/,g" ${filename}; 
-        perl -pi -e "s,(geodata)/([0-9]+\.[0-9]+\.[0-9]+)/,\1/$GEODATA_VERSION/,g" ${filename}; 
-        perl -pi -e "s,(locale)/([0-9]+\.[0-9]+\.[0-9]+)/,\1/$LOCALES_VERSION/,g" ${filename}; 
-        perl -pi -e "s,(themes)/([0-9]+\.[0-9]+\.[0-9]+)/,\1/$THEMES_VERSION/,g" ${filename}; 
+        perl -pi -e "s,(releases)/({{branch-name}})+/,\1/$ANYCHART_VERSION/,g" ${filename}
+        perl -pi -e "s,(geodata)/([0-9]+\.[0-9]+\.[0-9]+)/,\1/$GEODATA_VERSION/,g" ${filename}
+        perl -pi -e "s,(locale)/([0-9]+\.[0-9]+\.[0-9]+)/,\1/$LOCALES_VERSION/,g" ${filename}
+        perl -pi -e "s,(themes)/([0-9]+\.[0-9]+\.[0-9]+)/,\1/$THEMES_VERSION/,g" ${filename}
+        
     fi
 done
 

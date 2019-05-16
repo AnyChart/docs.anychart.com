@@ -37,17 +37,17 @@ This article explains how to create a basic Marker chart as well as configure se
 The Marker chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-cartesian.min.js"></script>
 ```
 
 Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-base.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
@@ -171,7 +171,7 @@ series2.selected().stroke("#0066cc", 4);
 
 ### Individual Points
 
-If you use object notation to set the data, you can configure each marker individually – use extra data fields corresponding with the methods mentioned in the [Size](#size), [Type](#type), and [Appearance](#appearance) sections of this article.
+If you use object notation to set the data, you can configure each marker individually - use extra data fields corresponding with the methods mentioned in the [Size](#size), [Type](#type), and [Appearance](#appearance) sections of this article.
 
 Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 

@@ -11,9 +11,9 @@ This article explains how to create a data set and perform operations on it.
 
 Here is the list of classes allowing you to work with data sets in AnyChart:
 
-* data set – {api:anychart.data.Set}anychart.data.Set{api}
-* data view – {api:anychart.data.View}anychart.data.View{api}
-* iterator – {api:anychart.data.Iterator}anychart.data.Iterator{api}
+* data set - {api:anychart.data.Set}anychart.data.Set{api}
+* data view - {api:anychart.data.View}anychart.data.View{api}
+* iterator - {api:anychart.data.Iterator}anychart.data.Iterator{api}
 
 ## Setting Data
 
@@ -239,9 +239,9 @@ Rows of a data set do not have their own class, so there is no direct access to 
 
 To read the data, use the following methods:
 
-* {api:anychart.data.Set#getRowsCount}getRowsCount(){api} – returns the number of rows in the data set
-* {api:anychart.data.Set#row}row(){api} – accepts the index of a row, returns the row
-* {api:anychart.data.View#get}get(){api} – accepts the index of a row and the name of a field, returns the value
+* {api:anychart.data.Set#getRowsCount}getRowsCount(){api} - returns the number of rows in the data set
+* {api:anychart.data.Set#row}row(){api} - accepts the index of a row, returns the row
+* {api:anychart.data.View#get}get(){api} - accepts the index of a row and the name of a field, returns the value
 
 In the sample below, {api:anychart.data.Set#getRowsCount}getRowsCount(){api} and {api:anychart.data.View#get}get(){api} are used to get the argument and value of the chart's last point:
 
@@ -256,7 +256,7 @@ var lastPointValue = mapping.get(rowsCount - 1, "value");
 
 ### Adding
 
-You can add or insert rows to your data. New rows can be organized as objects or arrays – the best practice is to use the same format of data as in the original data set.
+You can add or insert rows to your data. New rows can be organized as objects or arrays - the best practice is to use the same format of data as in the original data set.
 
 **To add a row or several rows**, call the {api:anychart.data.Set#append}append(){api} method on the instance of {api:anychart.data.Set}anychart.data.Set{api} and pass rows as parameters. New rows are always added at the end of the data set.
 
@@ -300,7 +300,7 @@ You can update a whole row or just a value in a certain field.
 
 **To update a row**, use the {api:anychart.data.View#row}row(){api} method. Pass the index of the row as the first parameter and a new row as the second one.
 
-A new row can be organized as an object or arrays – the best practice is to use the same format of data as in the original data set.
+A new row can be organized as an object or arrays - the best practice is to use the same format of data as in the original data set.
 
 ```
 dataSet.row(0, ["New Name", 16000]);
@@ -378,7 +378,7 @@ series.select(index);
 
 The {api:anychart.data.View#filter}filter(){api} methods finds data rows with values meeting a given condition. The first parameter is the name of a data field, and the second one is a filter function, which accepts a value and returns `true` or `false`.
 
-Use this method to set advanced search conditions – for example, to find all rows with values greater or less than a given value, like in the following sample:
+Use this method to set advanced search conditions - for example, to find all rows with values greater or less than a given value, like in the following sample:
 
 ```
 // remove points with values less than a given one
@@ -399,13 +399,13 @@ Iterating is a process of going through all the rows. You can access them one by
 
 To iterate over a data set, obtain the {api:anychart.data.Iterator}anychart.data.Iterator{api} object by calling the {api:anychart.data.View#getIterator}getIterator(){api} method. Then us the methods of the iterator:
 
-* {api:anychart.data.Iterator#advance}advance(){api} – advances the iterator to the next row
-* {api:anychart.data.Iterator#get}get(){api} – returns the value of the current row in a given field
-* {api:anychart.data.Iterator#getIndex}getIndex(){api} – returns the index of the current row
-* {api:anychart.data.Iterator#getRowsCount}getRowsCount(){api} – returns the total number of rows
-* {api:anychart.data.Iterator#meta}meta(){api} – sets / gets the meta value of the current row in a given field
-* {api:anychart.data.Iterator#reset}reset(){api} – resets the iterator to its default position before the first row
-* {api:anychart.data.Iterator#select}select(){api} – moves the iterator to a row with a given index
+* {api:anychart.data.Iterator#advance}advance(){api} - advances the iterator to the next row
+* {api:anychart.data.Iterator#get}get(){api} - returns the value of the current row in a given field
+* {api:anychart.data.Iterator#getIndex}getIndex(){api} - returns the index of the current row
+* {api:anychart.data.Iterator#getRowsCount}getRowsCount(){api} - returns the total number of rows
+* {api:anychart.data.Iterator#meta}meta(){api} - sets / gets the meta value of the current row in a given field
+* {api:anychart.data.Iterator#reset}reset(){api} - resets the iterator to its default position before the first row
+* {api:anychart.data.Iterator#select}select(){api} - moves the iterator to a row with a given index
 
 In this sample, iterator is used to select [filtered](#filter\(\)) points, [find](#find\(\)) their arguments, and display them in the chart title:
 

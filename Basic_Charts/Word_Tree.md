@@ -3,7 +3,7 @@
 
 ## Overview
 
-A word tree is a visualization that displays text data in a hierarchical way: as a tree of elements, usually single words, connected by lines. The font size of words represents their weight – the frequency / number of children. This type can be used to show typical contexts a root word appears in or a hierarchy of terms. 
+A word tree is a visualization that displays text data in a hierarchical way: as a tree of elements, usually single words, connected by lines. The font size of words represents their weight - the frequency / number of children. This type can be used to show typical contexts a root word appears in or a hierarchy of terms. 
 
 This article explains how to create a basic Word Tree chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Word Tree's characteristics:
 
@@ -36,11 +36,11 @@ This article explains how to create a basic Word Tree chart as well as configure
 The Word Tree requires adding the [Core](../Quick_Start/Modules#core) and [Word Tree](../Quick_Start/Modules#word_tree) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-bundle.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
@@ -98,7 +98,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-The Word Tree chart requires the [tree data model](../Working_with_Data/Tree_Data_Model), which represents data as a hierarchical tree-like structure with data items connected by parent–child relationships.
+The Word Tree chart requires the [tree data model](../Working_with_Data/Tree_Data_Model), which represents data as a hierarchical tree-like structure with data items connected by parent-child relationships.
 
 You can establish the hierarchy between words **explicitly**, by passing [tree data](#tree) to the chart constructor. Alternatively, the relationship between words can be established **implicitly**: when you pass a [list of phrases](#list) or a [text](#text), AnyChart engine automatically analyzes the data.
 
@@ -116,7 +116,7 @@ With tree-like data, the following data fields are used:
 * `value` to set words / word combinations
 * `weight` to set weight
 
-When you pass the data to the chart constructor, add a second parameter – `"as-tree"` or `"as-table"`. The choice of the parameter and data fields depends on how exactly you data is organized. See [Tree Data Model: Setting Data](../Working_with_Data/Tree_Data_Model#setting_data) to learn more. 
+When you pass the data to the chart constructor, add a second parameter - `"as-tree"` or `"as-table"`. The choice of the parameter and data fields depends on how exactly you data is organized. See [Tree Data Model: Setting Data](../Working_with_Data/Tree_Data_Model#setting_data) to learn more. 
 
 The **weight** (number of children) is calculated automatically. It is shown in [tooltips](#tooltips) and affects the font size. If for some reason you do not include an item's children in the data, you can specify the weight of this item manually.
 
@@ -217,7 +217,7 @@ Please keep in mind that {api:anychart.charts.Wordtree#word}word(){api} is **cas
 
 **Note:** In tree data the root can be both a word and a word combination. Phrases and texts, however, are parsed into words, so the root is also a single word. Even if you set it manually, it still needs to be just one word for the chart to work correctly.
 
-In this sample, there is a chart based on a list of phrases about oxygen. The root word, `"liquid"`, is set explicitly – the default root would be `"oxygen"` since it is the first word in the first string. You can switch to `"oxygen"` or `"pure"` to see how the choice of the root affects the chart.
+In this sample, there is a chart based on a list of phrases about oxygen. The root word, `"liquid"`, is set explicitly - the default root would be `"oxygen"` since it is the first word in the first string. You can switch to `"oxygen"` or `"pure"` to see how the choice of the root affects the chart.
 
 ```
 // create data
@@ -258,10 +258,10 @@ chart.word("liquid")
 You can configure the font of a Word Tree. Use the following methods:
 
 * {api:anychart.charts.Wordtree#fontColor}fontColor(){api} to set the font color
-* {api:anychart.charts.Wordtree#fontDecoration}fontDecoration(){api} to set the font decoration – overline, underline, etc.
-* {api:anychart.charts.Wordtree#fontFamily}fontFamily(){api} to set the font family – Verdana, Helvetica, Arial, etc.
+* {api:anychart.charts.Wordtree#fontDecoration}fontDecoration(){api} to set the font decoration - overline, underline, etc.
+* {api:anychart.charts.Wordtree#fontFamily}fontFamily(){api} to set the font family - Verdana, Helvetica, Arial, etc.
 * {api:anychart.charts.Wordtree#fontOpacity}fontOpacity(){api} to set the font opacity
-* {api:anychart.charts.Wordtree#fontStyle}fontStyle(){api} to set the font style – normal, italic, oblique
+* {api:anychart.charts.Wordtree#fontStyle}fontStyle(){api} to set the font style - normal, italic, oblique
 * {api:anychart.charts.Wordtree#fontWeight}fontWeight(){api} to set the font weight
 
 The size of each element is calculated automatically from its weight (frequency / number of children), but you can establish general limits to the font size. Call these methods:
@@ -282,7 +282,7 @@ chart.maxFontSize(20);
 
 #### Individual Points
 
-In case of [tree data](#tree), you can configure the font of individual items – use extra data fields corresponding with the methods mentioned above.
+In case of [tree data](#tree), you can configure the font of individual items - use extra data fields corresponding with the methods mentioned above.
 
 The maximum and minimum font size cannot be set this way. Also, please note: the individual settings of an element are applied to its children as well unless they have their own settings. This is how it works:
 
@@ -344,7 +344,7 @@ connectors.stroke("0.5 #1976d2");
 
 ### Postfix
 
-If a tree does not fit the height of the chart, children of some or all items are hidden. After each such item, its weight (frequency / the number of children) is shown, followed by a text element – postfix.
+If a tree does not fit the height of the chart, children of some or all items are hidden. After each such item, its weight (frequency / the number of children) is shown, followed by a text element - postfix.
 
 The default postfix is `"more"`, but you can set your own text by passing a custom string to the {api:anychart.charts.Wordtree#postfix}postfix(){api} method. When you pass an empty string, only the weight is displayed.
 
@@ -363,7 +363,7 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 ### Interactivity
 
-The Word Tree chart is interactive by default. It comes with a built-in drilldown feature: if you click on an element that has children, you drill down to it and its children, and if you click on the parent element of the current one, you drill up a level. This behavior can be modified – use the following methods:
+The Word Tree chart is interactive by default. It comes with a built-in drilldown feature: if you click on an element that has children, you drill down to it and its children, and if you click on the parent element of the current one, you drill up a level. This behavior can be modified - use the following methods:
 
 * {api:anychart.charts.Wordtree#drillTo}drillTo(){api} to drill to an item
 * {api:anychart.charts.Wordtree#drillUp}drillUp(){api} to drill up

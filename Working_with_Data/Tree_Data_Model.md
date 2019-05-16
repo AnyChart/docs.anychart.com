@@ -3,7 +3,7 @@
 
 ## Overview
 
-The tree data model represents data as a hierarchical tree-like structure with data items connected by parent–child relationships.
+The tree data model represents data as a hierarchical tree-like structure with data items connected by parent-child relationships.
 
 It is used in the following chart types:
 
@@ -18,9 +18,9 @@ This article explains how to set tree-like data, access data items, and perform 
 
 Here is the list of classes allowing you to work with tree data in AnyChart:
 
-* tree – {api:anychart.data.Tree}anychart.data.Tree{api}
-* item – {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}
-* traverser – {api:anychart.data.Traverser}anychart.data.Traverser{api}
+* tree - {api:anychart.data.Tree}anychart.data.Tree{api}
+* item - {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}
+* traverser - {api:anychart.data.Traverser}anychart.data.Traverser{api}
 
 ## Quick Start
 
@@ -80,7 +80,7 @@ var chart = anychart.treeMap(treeData);
 
 You can as well skip the first step and pass your data to the **data()** method of the chart or directly to the chart constructor, also with the `"as-tree"` or `"as-table"` parameter. In this case the instance of {api:anychart.data#tree}anychart.data.tree(){api} is created implicitly (to get it, use the **data()** method of the chart).
 
-**3. Data Fields.** The choice of data fields depends on the chart type and on the way your data is structured. If the data is organized [as a tree](#as_tree), the `children` field is always required. If it is organized [as a table](#as_table) or a [CSV string](#csv_string), `id` and `parent` are required – they are used to specify the hierarchy of elements.
+**3. Data Fields.** The choice of data fields depends on the chart type and on the way your data is structured. If the data is organized [as a tree](#as_tree), the `children` field is always required. If it is organized [as a table](#as_table) or a [CSV string](#csv_string), `id` and `parent` are required - they are used to specify the hierarchy of elements.
 
 **Note 1:** To learn how to rename the default fields of the tree data model (`children`, `parent`, `id`) or map custom fields, see the [Mapping](#mapping) section.
 
@@ -199,9 +199,9 @@ var chart = anychart.treeMap(treeData);
 
 ### Mapping
 
-**1.** To rename the fields required by the tree data model – `children`, `parent`, `id` – pass a mapping object to the {api:anychart.data#tree}anychart.data.tree(){api} constructor when you create a data tree.
+**1.** To rename the fields required by the tree data model - `children`, `parent`, `id` - pass a mapping object to the {api:anychart.data#tree}anychart.data.tree(){api} constructor when you create a data tree.
 
-If you set data [as a tree](#as_tree) or [as a table](#as_table), pass your mapping as the fourth parameter. Please note that the third one should be set to `null` – it is used only with [CSV data](#csv_string) to specify CSV settings. A mapping for CSV data should be passed as the second parameter.
+If you set data [as a tree](#as_tree) or [as a table](#as_table), pass your mapping as the fourth parameter. Please note that the third one should be set to `null` - it is used only with [CSV data](#csv_string) to specify CSV settings. A mapping for CSV data should be passed as the second parameter.
 
 After that, pass the data tree to a chart constructor or to the **data()** method of the chart.
 
@@ -299,17 +299,17 @@ Data items in AnyChart are defined as instances of the {api:anychart.data.Tree.D
 
 To access items at the root level, use the following methods of {api:anychart.data.Tree}anychart.data.Tree{api}:
 
-* {api:anychart.data.Tree#getChildAt}getChildAt(){api} – returns a root item with a given index
-* {api:anychart.data.Tree#getChildren}getChildren(){api} – returns an array of root items
-* {api:anychart.data.Tree#numChildren}numChildren(){api} – returns the number of roots
-* {api:anychart.data.Tree#indexOfChild}indexOfChild(){api} – returns the index of a given item (or -1 if it is a root)
+* {api:anychart.data.Tree#getChildAt}getChildAt(){api} - returns a root item with a given index
+* {api:anychart.data.Tree#getChildren}getChildren(){api} - returns an array of root items
+* {api:anychart.data.Tree#numChildren}numChildren(){api} - returns the number of roots
+* {api:anychart.data.Tree#indexOfChild}indexOfChild(){api} - returns the index of a given item (or -1 if it is a root)
 
 To go deeper, use methods of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}:
 
-* {api:anychart.data.Tree.DataItem#getChildAt}getChildAt(){api} – returns an item's child with a given index
-* {api:anychart.data.Tree.DataItem#getChildren}getChildren(){api} – returns an array containing all children of an item
-* {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} – returns the number of an item's children
-* {api:anychart.data.Tree.DataItem#getParent}getParent(){api} – returns the parent of an item
+* {api:anychart.data.Tree.DataItem#getChildAt}getChildAt(){api} - returns an item's child with a given index
+* {api:anychart.data.Tree.DataItem#getChildren}getChildren(){api} - returns an array containing all children of an item
+* {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} - returns the number of an item's children
+* {api:anychart.data.Tree.DataItem#getParent}getParent(){api} - returns the parent of an item
 
 For example, this is how you get the sixth child of the third child of the first root item:
 
@@ -393,15 +393,15 @@ treeData.getChildAt(0).getChildAt(0).set("fill", "#00bfa5");
 
 To remove root items from your data, call one of the following methods on the instance of {api:anychart.data.Tree}anychart.data.Tree{api}:
 
-* {api:anychart.data.Tree#removeChild}removeChild(){api} – removes a root
-* {api:anychart.data.Tree#removeChildAt}removeChildAt(){api} – removes a root with a given index
-* {api:anychart.data.Tree#removeChildren}removeChildren(){api} – removes all roots 
+* {api:anychart.data.Tree#removeChild}removeChild(){api} - removes a root
+* {api:anychart.data.Tree#removeChildAt}removeChildAt(){api} - removes a root with a given index
+* {api:anychart.data.Tree#removeChildren}removeChildren(){api} - removes all roots 
 
 To remove a child of a data item, [access](#accessing_items) the instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and call one of these methods:
 
-* {api:anychart.data.Tree.DataItem#removeChild}removeChild(){api} – removes a child
-* {api:anychart.data.Tree.DataItem#removeChildAt}removeChildAt(){api} – removes a child with a given index
-* {api:anychart.data.Tree.DataItem#removeChildren}removeChildren(){api} – removes all children
+* {api:anychart.data.Tree.DataItem#removeChild}removeChild(){api} - removes a child
+* {api:anychart.data.Tree.DataItem#removeChildAt}removeChildAt(){api} - removes a child with a given index
+* {api:anychart.data.Tree.DataItem#removeChildren}removeChildren(){api} - removes all children
 
 In this sample the current last child of the root item is removed each time you press the button:
 
@@ -517,7 +517,7 @@ var items = treeData.searchItems("employee", "JohnDoe", comparisonFunction);
 
 The {api:anychart.data.Tree#filter}filter(){api} method returns an array of data items. It is always called with a filter function as a parameter, which accepts a data item and returns `true` or `false`.
 
-Use this method to set advanced search conditions – for example, to find all elements greater or less than a given value or to compare two data fields, like in the sample below.
+Use this method to set advanced search conditions - for example, to find all elements greater or less than a given value or to compare two data fields, like in the sample below.
 
 In this sample a filter function is used to find items with duration greater than a given one, duration being calculated from two data fields (the names of these items are displayed in the title of the chart, and their nodes are colored):
 
@@ -555,16 +555,16 @@ Traversing is a process of going through all the items of a tree. You can [acces
 
 To perform a traversal, use the {api:anychart.data.Tree#getTraverser}getTraverser(){api} method to obtain the {api:anychart.data.Traverser}anychart.data.Traverser{api} object. Then call its methods:
 
-* {api:anychart.data.Traverser#advance}advance(){api} – advances the traverser to the next item
-* {api:anychart.data.Traverser#current}current(){api} – returns the current item
-* {api:anychart.data.Traverser#get}get(){api} – returns the current item's value in a given field
-* {api:anychart.data.Traverser#getDepth}getDepth(){api} – returns the depth of the current item
-* {api:anychart.data.Traverser#meta}meta(){api} – sets / gets the meta value of the current item in a given field
-* {api:anychart.data.Traverser#nodeYieldCondition}nodeYieldCondition(){api} – sets / gets a function that determines whether an item is returned
-* {api:anychart.data.Traverser#set}set(){api} – sets the value of the current item in a given field
-* {api:anychart.data.Traverser#reset}reset(){api} – resets the traverser to its default position before the first item
-* {api:anychart.data.Traverser#toArray}toArray(){api} – returns the current traverser as an array of items
-* {api:anychart.data.Traverser#traverseChildrenCondition}traverseChildrenCondition(){api} – sets / gets a function that determines whether the traverser goes through the children of an item
+* {api:anychart.data.Traverser#advance}advance(){api} - advances the traverser to the next item
+* {api:anychart.data.Traverser#current}current(){api} - returns the current item
+* {api:anychart.data.Traverser#get}get(){api} - returns the current item's value in a given field
+* {api:anychart.data.Traverser#getDepth}getDepth(){api} - returns the depth of the current item
+* {api:anychart.data.Traverser#meta}meta(){api} - sets / gets the meta value of the current item in a given field
+* {api:anychart.data.Traverser#nodeYieldCondition}nodeYieldCondition(){api} - sets / gets a function that determines whether an item is returned
+* {api:anychart.data.Traverser#set}set(){api} - sets the value of the current item in a given field
+* {api:anychart.data.Traverser#reset}reset(){api} - resets the traverser to its default position before the first item
+* {api:anychart.data.Traverser#toArray}toArray(){api} - returns the current traverser as an array of items
+* {api:anychart.data.Traverser#traverseChildrenCondition}traverseChildrenCondition(){api} - sets / gets a function that determines whether the traverser goes through the children of an item
 
 In the sample below the {api:anychart.data.Traverser#advance}advance(){api} and {api:anychart.data.Traverser#get}get(){api} methods are used to display the names of all the data items:
 
