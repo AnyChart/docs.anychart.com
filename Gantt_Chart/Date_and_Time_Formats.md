@@ -46,7 +46,7 @@
 
 ### inputLocale()
 
-## Ouput
+## Output
 
 the way how dates are displayed depends on:
 
