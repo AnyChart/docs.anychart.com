@@ -107,7 +107,7 @@ dateFormat: 'y/MM/dd',
 timeFormat: 'H:mm:ss',
 dateTimeFormat: 'y/MM/dd H:mm:ss', поля из dateTimeLocale поля в локали
 
-**e.** настроек тултипов, лейблов, колонок, хедереов timeline - у них всех есть форматтеры в которых можно писать 
+**3.** настроек тултипов, лейблов, колонок, хедереов timeline - у них всех есть форматтеры в которых можно писать 
 
  "{%actualstart}{dateTimeFormat:yyyy MMM d}" в токенах
 и 
