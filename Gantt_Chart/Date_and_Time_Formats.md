@@ -27,6 +27,8 @@
 
 * входного формата даты-времени {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}
 * входной локали {api:anychart.format#inputLocale}inputLocale(){api}
+* {api:anychart.format#inputLocale}inputLocale(){api} требует использования {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}
+* входной локали {api:anychart.format#inputLocale}inputLocale(){api}
 * см.: [Common Settings: Localization](../Common_Settings/Localization)
 
 к п. **5.**, примеры:
