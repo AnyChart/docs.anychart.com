@@ -35,9 +35,9 @@
 
 ## Format
 
-ФОРМАТИРОАНИЕ ПРОИСХОДИТ ИСПОЛЬЗУЯ 
+misc:
 
-http://userguide.icu-project.org/formatparse/datetime
+* [guide: formatting](http://userguide.icu-project.org/formatparse/datetime)
 
 Datetime formatting functions following the pattern specification as defined:
 
@@ -90,9 +90,7 @@ Datetime formatting functions following the pattern specification as defined:
 
 ## Display
 
-ПОКАЗЫВАНИЕ ДАТ
-
-то как все выглядит зависит от
+the way how dates are displayed depends on:
 
 1) outputLocale - по умолчанию en-us
 2)
