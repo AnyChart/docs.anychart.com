@@ -92,8 +92,11 @@ Datetime formatting functions following the pattern specification as defined:
 
 the way how dates are displayed depends on:
 
-1) outputLocale - по умолчанию en-us
-2)
+**1.** outputLocale - по умолчанию en-us
+
+
+**2.** 
+
 outputDateFormat 
 outputDateTimeFormat
 outputTimeFormat
@@ -104,7 +107,7 @@ dateFormat: 'y/MM/dd',
 timeFormat: 'H:mm:ss',
 dateTimeFormat: 'y/MM/dd H:mm:ss', поля из dateTimeLocale поля в локали
 
-3) настроек тултипов, лейблов, колонок, хедереов timeline - у них всех есть форматтеры в которых можно писать 
+**e.** настроек тултипов, лейблов, колонок, хедереов timeline - у них всех есть форматтеры в которых можно писать 
 
  "{%actualstart}{dateTimeFormat:yyyy MMM d}" в токенах
 и 
@@ -114,4 +117,4 @@ anychart.format.dateTime(this.actualEnd, "E");
 
 в функциях
 
-https://playground.anychart.com/lxGU2Oem
+[пример](https://playground.anychart.com/lxGU2Oem)
