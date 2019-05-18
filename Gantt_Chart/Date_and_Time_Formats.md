@@ -3,20 +3,9 @@
 
 ## Input
 
-для задания дат можно использвоать:
-
-* **1.** Unix timestamp – `1518663600000`
-* **2.** the Date.UTC() JavaScript method – `Date.UTC(2018,0,15,3)`
-* **3.** a Date object – `new Date('2018-02-15T03:24:00')`
-* **4.** a string with a date or date/time – `"2018-01-15"` or `"2018-01-15 00:00:00.000"`
-* **5.** {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}
-* **6.** {api:anychart.format#inputLocale}inputLocale(){api} (`"en-us"` by default)
+для задания дат можно использовать...
 
 ### Unix Timestamp
-
-* Unix timestamp
-* `1518663600000`
-
 
 ```
 // create data
@@ -74,20 +63,21 @@ chart.data(treeData);
 
 ### Date.UTC()
 
-* the Date.UTC() JavaScript method
-* возвращает Unix timestamp
+* Date.UTC()
 * `Date.UTC(2018,0,15,3)`
+
+misc:
+
+* the Date.UTC() JavaScript method
+* returns the Unix timestamp (of...)
+* [Unix timestamp](#unix_timestamp)
 
 ### Date Object
 
-* a Date object
-* `new Date('2018-02-15T03:24:00')`
-* при преобразованиии строки в дату используется `new Date(dateString)`
-* `"2018-01-15"` эквивалентно `new Date("2018-02-15T03:24:00")`
-* если не задан {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}, то, как строка будет интерпертирована, может зависеть от браузера
-* [Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-* [пример date obj](http://playground.anychart.stg/VEb00OQx)
+misc:
 
+* Date object
+* `new Date('2018-02-15T03:24:00')`
 
 ### String
 
@@ -96,9 +86,18 @@ a string with a date or date/time:
 * `"2018-01-15"`
 * `"2018-01-15 00:00:00.000"`
 
+misc:
+
+* при преобразованиии строки в дату используется `new Date(dateString)`
+* `"2018-01-15"` эквивалентно `new Date("2018-02-15T03:24:00")`
+* если не задан {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}, то, как строка будет интерпертирована, может зависеть от браузера
+* [пример date obj](http://playground.anychart.stg/VEb00OQx)
+* внешняя ссылка: [Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+* [string](#string)
+
 ### inputDateTimeFormat()
 
-* the {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api} method
+* {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}
 
 
 ```
@@ -160,21 +159,22 @@ chart.data(treeData);
 
 ### inputLocale()
 
-* the {api:anychart.format#inputLocale}inputLocale(){api} method (`"en-us"` by default)
+* {api:anychart.format#inputLocale}inputLocale(){api}
 
-то, какая строка с датой воспринимается, зависит от:
+the way how date/time strings are interpreted depends on...
 
-* входного формата даты-времени {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}
-* входной локали {api:anychart.format#inputLocale}inputLocale(){api}
-* {api:anychart.format#inputLocale}inputLocale(){api} требует использования {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}
-* см.: [Common Settings: Localization](../Common_Settings/Localization)
+misc:
 
-примеры:
+* requires using {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}
+* the locale must be set before the format
+* источник локали: [fr-fr.js](https://cdn.anychart.com/releases/v8/locales/ja-jp.js)
+* default: `"en-us"`
+* [inputDateTimeFormat()](#inputDateTimeFormat\(\))
+* [Common Settings: Localization](../Common_Settings/Localization)
 
-* [пример en-us](https://playground.anychart.com/api/format/_samples/anychart.format.inputDateTimeFormat): `"en-us"`, `"yyyy MMM d"`, `"2016 Feb 4"`
-* [пример ja-jp](https://playground.anychart.com/JfjNwZsx): `"ja-jp"`, `"yyyy MMM d"`, `"2016 2月 4"`
-* источник локали: [ja-jp.js](https://cdn.anychart.com/releases/v8/locales/ja-jp.js)
-
+```
+<script src="http://mydomain.com/anychart-locales/fr-fr.js"></script>
+```
 
 ```
 // create data
@@ -238,35 +238,21 @@ chart.data(treeData);
 
 ## Output
 
-the way how dates are displayed depends on:
-
-**1.** 
-
-* outputDateFormat()
-* outputDateTimeFormat()
-* outputTimeFormat()
-
-по умолчанию это 
-
-dateFormat: 'y/MM/dd',
-timeFormat: 'H:mm:ss',
-dateTimeFormat: 'y/MM/dd H:mm:ss', поля из dateTimeLocale поля в локали
-
-**2.** outputLocale - по умолчанию "`en-us`"
-
-**3.** настроек тултипов, лейблов, колонок, хедереов timeline - у них всех есть форматтеры в которых можно писать 
-
- "{%actualstart}{dateTimeFormat:yyyy MMM d}" в токенах
-и 
- anychart.format.dateTime(this.actualStart);
-и
-anychart.format.dateTime(this.actualEnd, "E");
-
-в функциях
-
-[пример](https://playground.anychart.com/lxGU2Oem)
+the way how dates are displayed depends on...
 
 ### outputDateTimeFormat()
+
+* {api:anychart.format#outputDateTimeFormat}outputDateTimeFormat(){api}
+* {api:anychart.format#DateTimeFormat}outputDateFormat(){api}
+* {api:anychart.format#TimeFormat}outputTimeFormat(){api}
+
+defaults:
+
+* dateFormat: `"y/MM/dd`,
+* timeFormat: `"H:mm:ss"`,
+* dateTimeFormat: `"y/MM/dd H:mm:ss"` / (?) поля из dateTimeLocale поля в локали /
+* (?) где применяются дефолты?
+
 
 ```
 // create data
@@ -329,6 +315,10 @@ chart.data(treeData);
 {sample :height 220}GANTT\_Date\_and\_Time\_04{sample}
 
 ### outputLocale()
+
+* {api:anychart.format#outputLocale}outputLocale(){api}
+* default: `"en-us"`
+
 
 ```
 // create data
@@ -393,9 +383,24 @@ chart.data(treeData);
 
 ### format()
 
-* dateTime()
+misc:
+
+* (?) {api:?entry=format}format(){api}
+* (?) tooltips & labels of the [data grid](Data_Grid) and [timeline](Timeline)
+* (?) [data grid columns](Data_Grid/Columns), [timeline header](Timeline/Header)
+* [text formatters](../Common_Settings/Text_Formatters)
+
+???
+
+* (?) [пример](https://playground.anychart.com/lxGU2Oem)
 
 #### Tokens
+
+misc:
+
+* (?) списки токенов, имеющих отношение к датам
+* [tokens](../Common_Settings/Text_Formatters#string_tokens)
+* [formatting parameters](../Common_Settings/Text_Formatters#formatting_parameters)
 
 ```
 // set the text of the second data grid column
@@ -420,7 +425,13 @@ chart.dataGrid().column(1).labels().format(
 
 #### Formatting Functions
 
-* dateTime()
+misc:
+
+* {api:anychart.format#dateTime}dateTime(){api}
+* (?) списки полей, имеющих отношение к датам
+* (?) без параметров - Unix timestamp
+* [formatting functions](../Common_Settings/Text_Formatters#formatting_functions)
+* [formatting parameters](../Common_Settings/Text_Formatters#formatting_parameters)
 
 
 ```
@@ -437,6 +448,8 @@ column_2.labels().format(function() {
 {sample :height 220}GANTT\_Date\_and\_Time\_08{sample}
 
 ### Column Presets
+
+* [column presets](Data_Grid/Column_Presets#dates)
 
 ## Formatting
 
