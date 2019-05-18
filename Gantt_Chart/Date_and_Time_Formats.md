@@ -344,7 +344,9 @@ column_2.labels().format(function() {
 
 * [column presets](Data_Grid/Column_Presets#dates)
 
-## Formatting
+## Date/Time Syntax
+
+The `dateTimeFormat` formatting parameter allows setting date/time patterns. Use the following syntax:
 
 <table><tr><th>Symbol</th><th>Meaning</th><th>Presentation</th><th>Example</th>
 <tr><td>G</td><td>era designator</td><td>AD</td></tr>
