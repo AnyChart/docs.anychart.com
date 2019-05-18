@@ -393,6 +393,8 @@ chart.data(treeData);
 
 ### format()
 
+* dateTime()
+
 #### Tokens
 
 ```
@@ -403,6 +405,18 @@ chart.dataGrid().column(1).labels().format(
 ```
 
 {sample :height 260}GANTT\_Date\_and\_Time\_06{sample}
+
+```
+// set the output locale
+anychart.format.outputLocale("fr-fr");
+
+// set the text of the second data grid column
+chart.dataGrid().column(1).labels().format(
+  "{%actualStart}{dateTimeFormat:dd MMM} – {%actualEnd}{dateTimeFormat:d MMM}"
+);
+```
+
+{sample :height 260}GANTT\_Date\_and\_Time\_07{sample}
 
 #### Formatting Functions
 
@@ -419,7 +433,7 @@ column_2.labels().format(function() {
 });
 ```
 
-{sample :height 260}GANTT\_Date\_and\_Time\_07{sample}
+{sample :height 260}GANTT\_Date\_and\_Time\_08{sample}
 
 ## Formatting
 
