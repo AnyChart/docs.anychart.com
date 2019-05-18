@@ -123,7 +123,7 @@ misc:
 * requires using {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}
 * the locale must be set before the format
 * источник локали: [fr-fr.js](https://cdn.anychart.com/releases/v8/locales/fr-fr.js)
-* [inputDateTimeFormat()](#inputDateTimeFormat())
+* [inputDateTimeFormat()](#inputDateTimeFormat\(\))
 * [Common Settings: Localization](../Common_Settings/Localization)
 
 
