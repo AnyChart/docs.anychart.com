@@ -5,7 +5,7 @@
 
 ## Input
 
-для задания дат можно использовать...
+to set dates, you can use the following...
 
 ### Unix Timestamp
 
@@ -76,10 +76,27 @@ var data = [
 
 ### Date Object
 
-misc:
-
 * Date object
-* `new Date('2018-02-15T03:24:00')`
+* `new Date("2018-01-15")`
+
+```
+// create data
+var data = [
+  {
+    id: "1",
+    name: "Development",
+    actualStart: new Date("2018-01-15"),
+    actualEnd: new Date("2018-03-10"),
+    children: [
+      {
+        id: "1_1",
+        name: "Analysis",
+        actualStart: new Date("2018-01-15"),
+        actualEnd: new Date("2018-01-25")
+      }
+  ]}
+];
+```
 
 ### String
 
