@@ -122,6 +122,26 @@ misc:
 * [Date object](#date_object)
 * [пример date obj](http://playground.anychart.stg/VEb00OQx)
 
+
+```
+// create data
+var data = [
+  {
+    id: "1",
+    name: "Development",
+    actualStart: "2018-01-15",
+    actualEnd: "2018-03-10",
+    children: [
+      {
+        id: "1_1",
+        name: "Analysis",
+        actualStart: "2018-01-15",
+        actualEnd: "2018-01-25"
+      }
+  ]}
+];
+```
+
 ### inputDateTimeFormat()
 
 * {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}
