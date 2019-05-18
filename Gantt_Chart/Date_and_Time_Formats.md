@@ -56,6 +56,7 @@ Here is how it is used:
 * `Date.UTC(2018,0,15)`
 * `Date.UTC(2018,0,15,0,0,0,0)`
 
+
 ```
 // create data
 var data = [
@@ -77,13 +78,10 @@ var data = [
 
 ### Date Object
 
-* Date object
+Another way to set dates is using the [Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date):
+
 * `new Date("2018-01-15")`
 * `new Date("2018-01-15T00:00:00.000Z")`
-
-misc:
-
-* внешняя ссылка: [Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 
 
 ```
