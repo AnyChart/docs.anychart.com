@@ -324,7 +324,7 @@ misc:
 * (?) списки полей, имеющих отношение к датам
 * (?) без параметров - Unix timestamp
 * [formatting functions](../Common_Settings/Text_Formatters#formatting_functions)
-* [date/time syntax](../Common_Settings/Text_Formatters#date\/time_syntax)
+* [date/time syntax](../Common_Settings/Text_Formatters#date/time_syntax)
 
 
 ```
