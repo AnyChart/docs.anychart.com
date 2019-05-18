@@ -9,13 +9,11 @@ to set dates, you can use the following...
 
 ### Unix Timestamp
 
-* Unix timestamp
-* `1515974400000`
+You can set dates as [Unix timestamps](https://en.wikipedia.org/wiki/Unix_time).
 
-misc:
+For example, January 15, 2018 is set as `1515974400000`.
 
-* внешняя ссылка: [Unix timestamp](https://en.wikipedia.org/wiki/Unix_time)
-
+Here is how to create a Gantt chart with data in this format:
 
 ```
 // create data
