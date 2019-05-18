@@ -422,6 +422,7 @@ chart.dataGrid().column(1).labels().format(
 
 * dateTime()
 
+
 ```
 // set the text of the second data grid column
 column_2.labels().useHtml(true);
@@ -434,6 +435,8 @@ column_2.labels().format(function() {
 ```
 
 {sample :height 220}GANTT\_Date\_and\_Time\_08{sample}
+
+### Column Presets
 
 ## Formatting
 
