@@ -77,6 +77,10 @@ misc:
 
 * {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}
 
+misc:
+
+* [date/time syntax](../Common_Settings/Text_Formatters#date/time_syntax)
+
 
 ```
 // create data
@@ -125,6 +129,7 @@ misc:
 * источник локали: [fr-fr.js](https://cdn.anychart.com/releases/v8/locales/fr-fr.js)
 * [inputDateTimeFormat()](#inputDateTimeFormat\(\))
 * [Common Settings: Localization](../Common_Settings/Localization)
+* [date/time syntax](../Common_Settings/Text_Formatters#date/time_syntax)
 
 
 ```
@@ -184,6 +189,10 @@ defaults:
 * dateTimeFormat: `"y/MM/dd H:mm:ss"` / (?) поля из dateTimeLocale поля в локали /
 * (?) где применяются дефолты?
 
+misc:
+
+* [date/time syntax](../Common_Settings/Text_Formatters#date/time_syntax)
+
 
 ```
 // create data
@@ -230,6 +239,7 @@ misc:
 
 * источник локали: [fr-fr.js](https://cdn.anychart.com/releases/v8/locales/fr-fr.js)
 * [Common Settings: Localization](../Common_Settings/Localization)
+* [date/time syntax](../Common_Settings/Text_Formatters#date/time_syntax)
 
 
 ```
@@ -293,6 +303,7 @@ misc:
 * (?) списки токенов, имеющих отношение к датам
 * [tokens](../Common_Settings/Text_Formatters#string_tokens)
 * [formatting parameters](../Common_Settings/Text_Formatters#formatting_parameters)
+* [date/time syntax](../Common_Settings/Text_Formatters#date/time_syntax)
 
 
 ```
