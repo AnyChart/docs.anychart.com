@@ -78,7 +78,7 @@ var data = [
 
 ### Date Object
 
-Another way to set dates is using the [Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date):
+You can set the date or date/time with the help of the [Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date):
 
 * `new Date("2018-01-15")`
 * `new Date("2018-01-15T00:00:00.000Z")`
