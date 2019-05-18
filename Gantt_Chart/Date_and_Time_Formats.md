@@ -117,7 +117,7 @@ a string with a date or date/time:
 misc:
 
 * при преобразованиии строки в дату используется Date object
-* `"2018-01-15"` эквивалентно `new Date("2018-02-15T03:24:00")`
+* `"2018-01-15"` эквивалентно `new Date("2018-01-15")`
 * если не задан {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}, то, как строка будет интерпертирована, может зависеть от браузера
 * [Date object](#date_object)
 * [пример date obj](http://playground.anychart.stg/VEb00OQx)
