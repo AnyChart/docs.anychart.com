@@ -56,7 +56,7 @@ Here is how it is used to set the date or date/time – for example, *January 15
 * `Date.UTC(2018,0,15)`
 * `Date.UTC(2018,0,15,0,0,0,0)`
 
-The following code demonstrates how to use dates in this format when you create a Gantt chart:
+The following code demonstrates how to use dates in this format to create a Gantt chart:
 
 ```
 // create data
@@ -86,7 +86,7 @@ For example, here is how *January 15, 2018* looks like:
 * `new Date("2018-01-15")`
 * `new Date("2018-01-15T00:00:00.000Z")`
 
-Below, there is a sample code showing how to use dates in this format when you create a Gantt chart:
+Below, there is a sample code showing how to use dates in this format to create a Gantt chart:
 
 ```
 // create data
@@ -114,7 +114,7 @@ In you data, you can use strings with dates or date/times – for example, *Janu
 * `"2018-01-15"`
 * `"2018-01-15T00:00:00.000Z"`
 
-Anychart automatically converts this strings to [Date objects](#date_object). In other words, the string `"2018-01-15"` is equivalent to `new Date("2018-01-15")`.
+Anychart automatically converts such strings to [Date objects](#date_object). In other words, the string `"2018-01-15"` is equivalent to `new Date("2018-01-15")`.
 
 **Note:** When you use this format, it is highly recommended to set the [input date/time format](inputdatetimeformat\(\)). Otherwise, the way how strings are interpreted might depend on users' browser settings.
 
