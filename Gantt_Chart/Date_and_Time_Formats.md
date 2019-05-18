@@ -9,7 +9,7 @@ to set dates, you can use the following...
 
 ### Unix Timestamp
 
-You can set dates as [Unix timestamps](https://en.wikipedia.org/wiki/Unix_time).
+One of the ways to set dates is using [Unix timestamps](https://en.wikipedia.org/wiki/Unix_time).
 
 For example, January 15, 2018 is set as:
 
