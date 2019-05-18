@@ -23,30 +23,6 @@ var data = [
         name: "Analysis",
         actualStart: 1515974400000,
         actualEnd: 1516838400000
-      },
-      {
-        id: "1_2",
-        name: "Design",
-        actualStart: 1516406400000,
-        actualEnd: 1517702400000
-      },
-      {
-        id: "1_3",
-        name: "Meeting",
-        actualStart: 1517788800000,
-        actualEnd: 1517788800000
-      },
-      {
-        id: "1_4",
-        name: "Implementation",
-        actualStart: 1517788800000,
-        actualEnd: 1519430400000
-      },
-      {
-        id: "1_5",
-        name: "Testing",
-        actualStart: 1519516800000,
-        actualEnd: 1520640000000
       }
   ]}
 ];
@@ -116,30 +92,6 @@ var data = [
         name: "Analysis",
         actualStart: "2018-01-15",
         actualEnd: "2018-01-25"
-      },
-      {
-        id: "1_2",
-        name: "Design",
-        actualStart: "2018-01-20",
-        actualEnd: "2018-02-04"
-      },
-      {
-        id: "1_3",
-        name: "Meeting",
-        actualStart: "2018-02-05",
-        actualEnd: "2018-02-05"
-      },
-      {
-        id: "1_4",
-        name: "Implementation",
-        actualStart: "2018-02-05",
-        actualEnd: "2018-02-24"
-      },
-      {
-        id: "1_5",
-        name: "Testing",
-        actualStart: "2018-02-25",
-        actualEnd: "2018-03-10"
       }
   ]}
 ];
@@ -193,30 +145,6 @@ var data = [
         name: "Analysis",
         actualStart: "15 janvier 2018",
         actualEnd: "25 janvier 2018"
-      },
-      {
-        id: "1_2",
-        name: "Design",
-        actualStart: "20 janvier 2018",
-        actualEnd: "4 février 2018"
-      },
-      {
-        id: "1_3",
-        name: "Meeting",
-        actualStart: "5 février 2018",
-        actualEnd: "5 février 2018"
-      },
-      {
-        id: "1_4",
-        name: "Implementation",
-        actualStart: "5 février 2018",
-        actualEnd: "24 février 2018"
-      },
-      {
-        id: "1_5",
-        name: "Testing",
-        actualStart: "25 février 2018",
-        actualEnd: "10 mars 2018"
       }
   ]}
 ];
@@ -271,30 +199,6 @@ var data = [
         name: "Analysis",
         actualStart: "2018-01-15",
         actualEnd: "2018-01-25"
-      },
-      {
-        id: "1_2",
-        name: "Design",
-        actualStart: "2018-01-20",
-        actualEnd: "2018-02-04"
-      },
-      {
-        id: "1_3",
-        name: "Meeting",
-        actualStart: "2018-02-05",
-        actualEnd: "2018-02-05"
-      },
-      {
-        id: "1_4",
-        name: "Implementation",
-        actualStart: "2018-02-05",
-        actualEnd: "2018-02-24"
-      },
-      {
-        id: "1_5",
-        name: "Testing",
-        actualStart: "2018-02-25",
-        actualEnd: "2018-03-10"
       }
   ]}
 ];
@@ -346,30 +250,6 @@ var data = [
         name: "Analysis",
         actualStart: "2018-01-15",
         actualEnd: "2018-01-25"
-      },
-      {
-        id: "1_2",
-        name: "Design",
-        actualStart: "2018-01-20",
-        actualEnd: "2018-02-04"
-      },
-      {
-        id: "1_3",
-        name: "Meeting",
-        actualStart: "2018-02-05",
-        actualEnd: "2018-02-05"
-      },
-      {
-        id: "1_4",
-        name: "Implementation",
-        actualStart: "2018-02-05",
-        actualEnd: "2018-02-24"
-      },
-      {
-        id: "1_5",
-        name: "Testing",
-        actualStart: "2018-02-25",
-        actualEnd: "2018-03-10"
       }
   ]}
 ];
@@ -413,6 +293,7 @@ misc:
 * (?) списки токенов, имеющих отношение к датам
 * [tokens](../Common_Settings/Text_Formatters#string_tokens)
 * [formatting parameters](../Common_Settings/Text_Formatters#formatting_parameters)
+
 
 ```
 // set the text of the second data grid column
