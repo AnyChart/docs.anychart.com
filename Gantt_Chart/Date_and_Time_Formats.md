@@ -347,37 +347,26 @@ column_2.labels().format(function() {
 ## Formatting
 
 <table><tr><th>Symbol</th><th>Meaning</th><th>Presentation</th><th>Example</th>
-<tr><td>G</td><td>era designator</td><td>Text)/td><td>AD</td></tr>
-<tr><td>y</td><td>year</td><td>Number</td><td>1996</td></tr>
-<tr><td>Q</td><td>quarter</td><td>Text</td><td>Q3 & 3rd quarter</td></tr>
-<tr><td>M</td><td>month in year</td><td>Text & Number</td><td>July & 07</td></tr>
-<tr><td>L</td><td>month in year (standalone)</td><td>Text & Number</td><td>July & 07</td></tr>
-<tr><td>d</td><td>day in month</td><td>Number</td><td>10</td></tr>
-<tr><td>h</td><td>hour in am/pm (1~12)</td><td>Number</td><td>12</td></tr>
-<tr><td>H</td><td>hour in day (0~23)</td><td>Number</td><td>0</td></tr>
-<tr><td>m</td><td>minute in hour</td><td>Number</td><td>30</td></tr>
-<tr><td>s</td><td>second in minute</td><td>Number</td><td>55</td></tr>
-<tr><td>S</td><td>fractional second</td><td>Number</td><td>978</td></tr>
-<tr><td>E</td><td>day of week</td><td>Text</td><td>Tue & Tuesday</td></tr>
-<tr><td>c</td><td>day of week (standalone)</td><td>Text & Number</td><td>2 & Tues & Tuesday & T</td></tr>
-<tr><td>w</td><td>week in year</td><td>Number</td><td>27</td></tr>
-<tr><td>a</td><td>am/pm marker</td><td>Text</td><td>PM</td></tr>
-<tr><td>k</td><td>hour in day (1~24)</td><td>Number</td><td>24</td></tr>
-<tr><td>K</td><td>hour in am/pm (0~11)</td><td>Number</td><td>0</td></tr>
-<tr><td>z</td><td>time zone</td><td>Text</td><td>Pacific Standard Time</td></tr>
-<tr><td>Z</td><td>time zone (RFC 822)</td><td>Number</td><td>-0800</td></tr>
-<tr><td>v</td><td>time zone (generic)</td><td>Text</td><td>America/Los_Angeles</td></tr>
-<tr><td>V</td><td>time zone</td><td>Text</td><td>Los Angeles Time</td></tr>
-<tr><td>'</td><td>escape for text</td><td>Delimiter</td><td>'Date='</td></tr>
-<tr><td>'</td><td>single quote</td><td>Literal</td><td>'o''clock'</td></tr></table>
-
-
-The count of pattern letters determine the format:
-
-* **Text:** 4 or more, use full form, <4, use short or abbreviated form if it exists. (e.g., "EEEE" produces "Monday", "EEE" produces "Mon")
-
-* **Number:** the minimum number of digits. Shorter numbers are zero-padded to this amount (e.g. if "m" produces "6", "mm" produces "06"). Year is handled specially; that is, if the count of 'y' is 2, the Year will be truncated to 2 digits. (e.g., if "yyyy" produces "1997", "yy" produces "97".) Unlike other  fields, fractional seconds are padded on the right with zero.
-
-* **Text & Number:** 3 or over, use text, otherwise use number. (e.g., "M" produces "1", "MM" produces "01", "MMM" produces "Jan", and "MMMM" produces "January".)
-
-* Any characters in the pattern that are not in the ranges of ['a'..'z'] and ['A'..'Z'] will be treated as quoted text. For instance, characters like ':', '.', ' ', '#', and '@' will appear in the resulting time text even they are not embraced within single quotes.
+<tr><td>G</td><td>era designator</td><td>AD</td></tr>
+<tr><td>y</td><td>year</td><td>1996</td></tr>
+<tr><td>Q</td><td>quarter</td><td>Q3 & 3rd quarter</td></tr>
+<tr><td>M</td><td>month in year</td><td>July & 07</td></tr>
+<tr><td>L</td><td>month in year (standalone)</td><td>July & 07</td></tr>
+<tr><td>d</td><td>day in month</td><td>10</td></tr>
+<tr><td>h</td><td>hour in am/pm (1~12)</td><td>12</td></tr>
+<tr><td>H</td><td>hour in day (0~23)</td><td>0</td></tr>
+<tr><td>m</td><td>minute in hour</td><td>30</td></tr>
+<tr><td>s</td><td>second in minute</td><td>55</td></tr>
+<tr><td>S</td><td>fractional second</td><td>978</td></tr>
+<tr><td>E</td><td>day of week</td><td>Tue & Tuesday</td></tr>
+<tr><td>c</td><td>day of week (standalone)</td><td>2 & Tues & Tuesday & T</td></tr>
+<tr><td>w</td><td>week in year</td><td>27</td></tr>
+<tr><td>a</td><td>am/pm marker</td><td>PM</td></tr>
+<tr><td>k</td><td>hour in day (1~24)</td><td>24</td></tr>
+<tr><td>K</td><td>hour in am/pm (0~11)</td><td>0</td></tr>
+<tr><td>z</td><td>time zone</td><td>Pacific Standard Time</td></tr>
+<tr><td>Z</td><td>time zone (RFC 822)</td><td>-0800</td></tr>
+<tr><td>v</td><td>time zone (generic)</td><td>America/Los_Angeles</td></tr>
+<tr><td>V</td><td>time zone</td><td>Los Angeles Time</td></tr>
+<tr><td>'</td><td>escape for text</td><td>'Date='</td></tr>
+<tr><td>'</td><td>single quote</td><td>'o''clock'</td></tr></table>
