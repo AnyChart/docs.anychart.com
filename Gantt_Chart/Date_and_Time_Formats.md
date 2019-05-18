@@ -15,7 +15,7 @@ For example, January 15, 2018 is set as:
 
 * `1515974400000`
 
-Here is how to create a Gantt chart with data in this format:
+This sample shows how to use dates in this format when you create a Gantt chart:
 
 ```
 // create data
@@ -51,7 +51,7 @@ chart.data(treeData);
 
 The [Date.UTC()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/UTC) JavaScript method is equivalent to the [Unix timstamp](#unix_timestamp) since it returns Unix timestamps.
 
-January 15, 2018 is set as:
+Here is how it is used:
 
 * `Date.UTC(2018,0,15)`
 * `Date.UTC(2018,0,15,0,0,0,0)`
