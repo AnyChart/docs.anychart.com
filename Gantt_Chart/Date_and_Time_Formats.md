@@ -50,8 +50,7 @@ chart.data(treeData);
 ### Date.UTC()
 
 * Date.UTC()
-* `Date.UTC(2018, 0, 15)`
-* `Date.UTC(2018, 0, 15, 0, 0, 0, 0)`
+* `Date.UTC(2018,0,15)`
 
 misc:
 
@@ -67,14 +66,14 @@ var data = [
   {
     id: "1",
     name: "Development",
-    actualStart: Date.UTC(2018, 0, 15),
-    actualEnd: Date.UTC(2018, 2, 10),
+    actualStart: Date.UTC(2018,0,15),
+    actualEnd: Date.UTC(2018,2,10),
     children: [
       {
         id: "1_1",
         name: "Analysis",
-        actualStart:  Date.UTC(2018, 0, 15),
-        actualEnd:  Date.UTC(2018, 0, 25)
+        actualStart:  Date.UTC(2018,0,15),
+        actualEnd:  Date.UTC(2018,0,25)
       }
   ]}
 ];
@@ -114,7 +113,6 @@ var data = [
 a string with a date or date/time:
 
 * `"2018-01-15"`
-* `"2018-01-15 00:00:00.000"`
 
 misc:
 
