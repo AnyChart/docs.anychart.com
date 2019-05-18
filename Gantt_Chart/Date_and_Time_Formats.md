@@ -9,6 +9,10 @@
 
 ### Unix Timestamp
 
+* Unix timestamp
+* `1515974400000`
+
+
 ```
 // create data
 var data = [
@@ -42,13 +46,32 @@ chart.data(treeData);
 ### Date.UTC()
 
 * Date.UTC()
-* `Date.UTC(2018,0,15,3)`
+* `Date.UTC(2018,0,15)`
 
 misc:
 
 * the Date.UTC() JavaScript method
 * returns the Unix timestamp (of...)
 * [Unix timestamp](#unix_timestamp)
+
+```
+// create data
+var data = [
+  {
+    id: "1",
+    name: "Development",
+    actualStart: Date.UTC(2018,0,15),
+    actualEnd: Date.UTC(2018,2,10),
+    children: [
+      {
+        id: "1_1",
+        name: "Analysis",
+        actualStart:  Date.UTC(2018,0,15),
+        actualEnd:  Date.UTC(2018,0,25)
+      }
+  ]}
+];
+```
 
 ### Date Object
 
