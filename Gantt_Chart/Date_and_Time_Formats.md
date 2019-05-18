@@ -12,6 +12,10 @@ to set dates, you can use the following...
 * Unix timestamp
 * `1515974400000`
 
+misc:
+
+* (?) внешняя ссылка
+
 
 ```
 // create data
@@ -79,6 +83,11 @@ var data = [
 * Date object
 * `new Date("2018-01-15")`
 
+misc:
+
+* внешняя ссылка: [Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+
+
 ```
 // create data
 var data = [
@@ -107,12 +116,11 @@ a string with a date or date/time:
 
 misc:
 
-* при преобразованиии строки в дату используется `new Date(dateString)`
+* при преобразованиии строки в дату используется Date object
 * `"2018-01-15"` эквивалентно `new Date("2018-02-15T03:24:00")`
 * если не задан {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}, то, как строка будет интерпертирована, может зависеть от браузера
+* [Date object](#date_object)
 * [пример date obj](http://playground.anychart.stg/VEb00OQx)
-* внешняя ссылка: [Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-* [string](#string)
 
 ### inputDateTimeFormat()
 
@@ -121,6 +129,7 @@ misc:
 misc:
 
 * [date/time syntax](../Common_Settings/Text_Formatters#date/time_syntax)
+* [string](#string)
 
 
 ```
@@ -168,6 +177,7 @@ misc:
 * requires using {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}
 * the locale must be set before the format
 * источник локали: [fr-fr.js](https://cdn.anychart.com/releases/v8/locales/fr-fr.js)
+* [string](#string)
 * [inputDateTimeFormat()](#inputdatetimeformat\(\))
 * [Common Settings: Localization](../Common_Settings/Localization)
 * [date/time syntax](../Common_Settings/Text_Formatters#date/time_syntax)
