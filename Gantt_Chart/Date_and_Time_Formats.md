@@ -14,7 +14,7 @@ to set dates, you can use the following...
 
 misc:
 
-* (?) внешняя ссылка
+* внешняя ссылка: [Unix timestamp](https://en.wikipedia.org/wiki/Unix_time)
 
 
 ```
@@ -50,13 +50,15 @@ chart.data(treeData);
 ### Date.UTC()
 
 * Date.UTC()
-* `Date.UTC(2018,0,15)`
+* `Date.UTC(2018, 0, 15)`
+* `Date.UTC(2018, 0, 15, 0, 0, 0, 0)`
 
 misc:
 
 * the Date.UTC() JavaScript method
 * returns the Unix timestamp (of...)
 * [Unix timestamp](#unix_timestamp)
+* внешняя ссылка: [Date.UTC()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/UTC)
 
 
 ```
@@ -65,14 +67,14 @@ var data = [
   {
     id: "1",
     name: "Development",
-    actualStart: Date.UTC(2018,0,15),
-    actualEnd: Date.UTC(2018,2,10),
+    actualStart: Date.UTC(2018, 0, 15),
+    actualEnd: Date.UTC(2018, 2, 10),
     children: [
       {
         id: "1_1",
         name: "Analysis",
-        actualStart:  Date.UTC(2018,0,15),
-        actualEnd:  Date.UTC(2018,0,25)
+        actualStart:  Date.UTC(2018, 0, 15),
+        actualEnd:  Date.UTC(2018, 0, 25)
       }
   ]}
 ];
