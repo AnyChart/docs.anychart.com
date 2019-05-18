@@ -381,21 +381,12 @@ Datetime formatting functions following the pattern specification as defined:
 <tr><td>'</td><td>single quote</td><td>(Literal)</td><td>'o''clock'</td></tr></table>
 
 
- * The count of pattern letters determine the format.
- * (Text): 4 or more, use full form, <4, use short or abbreviated form if it
- * exists. (e.g., "EEEE" produces "Monday", "EEE" produces "Mon")
- *
- * (Number): the minimum number of digits. Shorter numbers are zero-padded to
- * this amount (e.g. if "m" produces "6", "mm" produces "06"). Year is handled
- * specially; that is, if the count of 'y' is 2, the Year will be truncated to
- * 2 digits. (e.g., if "yyyy" produces "1997", "yy" produces "97".) Unlike other
- * fields, fractional seconds are padded on the right with zero.
- *
- * :(Text & Number) 3 or over, use text, otherwise use number. (e.g., "M"
- * produces "1", "MM" produces "01", "MMM" produces "Jan", and "MMMM" produces
- * "January".)
- *
- * Any characters in the pattern that are not in the ranges of ['a'..'z'] and
- * ['A'..'Z'] will be treated as quoted text. For instance, characters like ':',
- * '.', ' ', '#' and '@' will appear in the resulting time text even they are
- * not embraced within single quotes.
+* The count of pattern letters determine the format:
+
+* (Text): 4 or more, use full form, <4, use short or abbreviated form if it exists. (e.g., "EEEE" produces "Monday", "EEE" produces "Mon")
+
+* (Number): the minimum number of digits. Shorter numbers are zero-padded to this amount (e.g. if "m" produces "6", "mm" produces "06"). Year is handled specially; that is, if the count of 'y' is 2, the Year will be truncated to 2 digits. (e.g., if "yyyy" produces "1997", "yy" produces "97".) Unlike other  fields, fractional seconds are padded on the right with zero.
+
+* (Text & Number) 3 or over, use text, otherwise use number. (e.g., "M" produces "1", "MM" produces "01", "MMM" produces "Jan", and "MMMM" produces "January".)
+
+* Any characters in the pattern that are not in the ranges of ['a'..'z'] and ['A'..'Z'] will be treated as quoted text. For instance, characters like ':', '.', ' ', '#', and '@' will appear in the resulting time text even they are not embraced within single quotes.
