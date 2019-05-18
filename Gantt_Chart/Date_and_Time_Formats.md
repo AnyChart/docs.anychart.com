@@ -51,7 +51,7 @@ chart.data(treeData);
 
 The [Date.UTC()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/UTC) JavaScript method returns the [Unix timestamp](#unix_timestamp), so it is equivalent to it.
 
-Here is how it is used:
+Here is how it is used to set the date or date/time:
 
 * `Date.UTC(2018,0,15)`
 * `Date.UTC(2018,0,15,0,0,0,0)`
