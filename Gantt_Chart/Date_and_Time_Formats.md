@@ -11,7 +11,9 @@ to set dates, you can use the following...
 
 You can set dates as [Unix timestamps](https://en.wikipedia.org/wiki/Unix_time).
 
-For example, January 15, 2018 is set as `1515974400000`.
+For example, January 15, 2018 is set as:
+
+* `1515974400000`
 
 Here is how to create a Gantt chart with data in this format:
 
@@ -47,17 +49,12 @@ chart.data(treeData);
 
 ### Date.UTC()
 
-* Date.UTC()
+The [Date.UTC()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/UTC) JavaScript method is equivalent to the [Unix timstamp](#unix_timestamp) since it returns Unix timestamps.
+
+January 15, 2018 is set as:
+
 * `Date.UTC(2018,0,15)`
 * `Date.UTC(2018,0,15,0,0,0,0)`
-
-misc:
-
-* the Date.UTC() JavaScript method
-* returns the Unix timestamp (of...)
-* [Unix timestamp](#unix_timestamp)
-* внешняя ссылка: [Date.UTC()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/UTC)
-
 
 ```
 // create data
