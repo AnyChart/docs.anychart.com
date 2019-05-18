@@ -51,6 +51,7 @@ chart.data(treeData);
 
 * Date.UTC()
 * `Date.UTC(2018,0,15)`
+* `Date.UTC(2018,0,15,0,0,0,0)`
 
 misc:
 
@@ -83,6 +84,7 @@ var data = [
 
 * Date object
 * `new Date("2018-01-15")`
+* `new Date("2018-01-15T00:00:00.000Z")`
 
 misc:
 
@@ -113,6 +115,7 @@ var data = [
 a string with a date or date/time:
 
 * `"2018-01-15"`
+* `"2018-01-15T00:00:00.000Z"`
 
 misc:
 
