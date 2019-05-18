@@ -113,7 +113,7 @@ var chart = anychart.ganttProject();
 chart.data(treeData);
 ```
 
-{sample :height 220}GANTT\_Date\_and\_Time\_01{sample}
+{sample :height 220}GANTT\_Date\_and\_Time\_02{sample}
 
 ### inputLocale()
 
