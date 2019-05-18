@@ -11,11 +11,11 @@ to set dates, you can use the following...
 
 One of the ways to set dates is using [Unix timestamps](https://en.wikipedia.org/wiki/Unix_time).
 
-For example, January 15, 2018 is set as:
+For example, *January 15, 2018* is set as:
 
 * `1515974400000`
 
-This sample shows how to use dates in this format when you create a Gantt chart:
+This sample code shows how to use dates in this format when you create a Gantt chart:
 
 ```
 // create data
@@ -51,11 +51,12 @@ chart.data(treeData);
 
 The [Date.UTC()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/UTC) JavaScript method returns the [Unix timestamp](#unix_timestamp), so it is equivalent to it.
 
-Here is how it is used to set the date or date/time:
+Here is how it is used to set the date or date/time – for example, *January 15, 2018*:
 
 * `Date.UTC(2018,0,15)`
 * `Date.UTC(2018,0,15,0,0,0,0)`
 
+The following code demonstrates how to use dates in this format when you create a Gantt chart:
 
 ```
 // create data
@@ -78,11 +79,14 @@ var data = [
 
 ### Date Object
 
-You can set the date or date/time with the help of the [Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date):
+You can set the date or date/time with the help of the [Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date).
+
+For example, here is how *January 15, 2018* looks like:
 
 * `new Date("2018-01-15")`
 * `new Date("2018-01-15T00:00:00.000Z")`
 
+Below, there is a sample code showing how to use dates in this format when you create a Gantt chart:
 
 ```
 // create data
@@ -105,19 +109,16 @@ var data = [
 
 ### String
 
-a string with a date or date/time:
+In you data, you can use strings with dates or date/times – for example, *January 15, 2018*:
 
 * `"2018-01-15"`
 * `"2018-01-15T00:00:00.000Z"`
 
-misc:
+Anychart automatically converts this strings to [Date objects](#date_object). In other words, the string `"2018-01-15"` is equivalent to `new Date("2018-01-15")`.
 
-* при преобразованиии строки в дату используется Date object
-* `"2018-01-15"` эквивалентно `new Date("2018-01-15")`
-* если не задан {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}, то, как строка будет интерпертирована, может зависеть от браузера
-* [Date object](#date_object)
-* [пример date obj](http://playground.anychart.stg/VEb00OQx)
+**Note:** When you use this format, it is highly recommended to set the [input date/time format](inputdatetimeformat\(\)). Otherwise, the way how strings are interpreted might depend on users' browser settings.
 
+This sample code shows how to set dates as stings when you create a Gantt chart:
 
 ```
 // create data
