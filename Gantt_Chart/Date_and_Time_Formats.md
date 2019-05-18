@@ -416,7 +416,7 @@ chart.dataGrid().column(1).labels().format(
 );
 ```
 
-{sample :height 260}GANTT\_Date\_and\_Time\_07{sample}
+{sample :height 220}GANTT\_Date\_and\_Time\_07{sample}
 
 #### Formatting Functions
 
@@ -433,7 +433,7 @@ column_2.labels().format(function() {
 });
 ```
 
-{sample :height 260}GANTT\_Date\_and\_Time\_08{sample}
+{sample :height 220}GANTT\_Date\_and\_Time\_08{sample}
 
 ## Formatting
 
