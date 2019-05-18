@@ -76,6 +76,9 @@ anychart.onDocumentReady(function () {
     // create a chart
     var chart = anychart.ganttProject();
 
+    // set the data
+    chart.data(treeData);
+
     // access the second data grid column
     var column_2 = chart.dataGrid().column(1);
 
@@ -86,12 +89,13 @@ anychart.onDocumentReady(function () {
     column_2.depthPaddingMultiplier(20);
 
     // set the text of the second data grid column
-    column_2.labels().format(
-      "{%actualStart}{dateTimeFormat:dd MMM} – {%actualEnd}{dateTimeFormat:d MMM}"
-    );
-
-    // set the data
-    chart.data(treeData);
+    column_2.labels().useHtml(true);
+    column_2.labels().format(function() {
+      var start = anychart.format.dateTime(this.actualStart, "dd MMM");
+      var end = anychart.format.dateTime(this.actualEnd, "dd MMM");
+      return "<span style='color:#64b5f6'>" + start +
+             "</span> – <span style='color:#ffa000'>" + end + "</span>";
+    });
 
     // set the container id
     chart.container("container");

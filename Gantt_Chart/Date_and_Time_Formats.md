@@ -242,9 +242,9 @@ the way how dates are displayed depends on:
 
 **1.** 
 
-outputDateFormat 
-outputDateTimeFormat
-outputTimeFormat
+* outputDateFormat()
+* outputDateTimeFormat()
+* outputTimeFormat()
 
 по умолчанию это 
 
@@ -379,9 +379,6 @@ anychart.format.inputDateTimeFormat("yyyy-MM-dd");
 // set the output locale
 anychart.format.outputLocale("fr-fr");
 
-// set the output date/time format
-anychart.format.outputDateTimeFormat("d MMMM");
-
 // create a data tree
 var treeData = anychart.data.tree(data, "as-tree");
 
@@ -396,8 +393,41 @@ chart.data(treeData);
 
 ### format()
 
+#### Tokens
+
+```
+// set the text of the second data grid column
+chart.dataGrid().column(1).labels().format(
+  "{%actualStart}{dateTimeFormat:dd MMM} – {%actualEnd}{dateTimeFormat:d MMM}"
+);
 ```
 
+{sample :height 220}GANTT\_Date\_and\_Time\_06{sample}
+
+#### Formatting Functions
+
+* dateTime()
+
+```
+// set the text of the second data grid column
+column_2.labels().useHtml(true);
+column_2.labels().format(function() {
+  var start = anychart.format.dateTime(this.actualStart, "dd MMM");
+  var end = anychart.format.dateTime(this.actualEnd, "dd MMM");
+  return "<span style='color:#64b5f6'>" + start +
+         "</span> – <span style='color:#ffa000'>" + end + "</span>";
+});
+```
+
+{sample :height 220}GANTT\_Date\_and\_Time\_07{sample}
+
+#### Locales
+
+```
+// set the text of the second data grid column
+chart.dataGrid().column(1).labels().format(
+  "{%actualStart}{dateTimeFormat:dd MMM} – {%actualEnd}{dateTimeFormat:d MMM}"
+);
 ```
 
 {sample :height 220}GANTT\_Date\_and\_Time\_06{sample}

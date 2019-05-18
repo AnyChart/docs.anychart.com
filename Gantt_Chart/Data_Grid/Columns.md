@@ -176,10 +176,10 @@ var column_1 = chart.dataGrid().column(0);
 column_1.labels().fontWeight(600);
 column_1.labels().useHtml(true);
 
-column_1.labels().format( function() {
+column_1.labels().format(function() {
 
   var children = this.item.numChildren();
-  var duration = (this.actualEnd - this.actualStart);
+  var duration = this.actualEnd - this.actualStart;
   var index = this.linearIndex;
 
   var parentText = "<span style='color:#dd2c00'>" + index + ".</span>";
@@ -265,7 +265,7 @@ var column_1 = chart.dataGrid().column(0);
 column_1.labels().fontWeight(600);
 column_1.labels().useHtml(true);
 
-column_1.labels().format( function() {
+column_1.labels().format(function() {
 
   var children = this.item.numChildren();
   var index = this.linearIndex;
