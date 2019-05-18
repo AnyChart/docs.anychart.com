@@ -463,8 +463,6 @@ column_2.labels().format(function() {
 
 ## Formatting
 
-misc:
-
 * [guide: formatting](http://userguide.icu-project.org/formatparse/datetime)
 
 Datetime formatting functions following the pattern specification as defined:
