@@ -117,17 +117,17 @@ chart.data(treeData);
 
 ### inputLocale()
 
+the way how date/time strings are interpreted depends on...
+
 * {api:anychart.format#inputLocale}inputLocale(){api}
 * default: `"en-us"`
-
-the way how date/time strings are interpreted depends on...
 
 misc:
 
 * requires using {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}
 * the locale must be set before the format
 * источник локали: [fr-fr.js](https://cdn.anychart.com/releases/v8/locales/fr-fr.js)
-* [inputDateTimeFormat()](#inputDateTimeFormat(\))
+* [inputDateTimeFormat()](#inputdatetimeformat(\))
 * [Common Settings: Localization](../Common_Settings/Localization)
 * [date/time syntax](../Common_Settings/Text_Formatters#date/time_syntax)
 
