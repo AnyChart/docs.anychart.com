@@ -9,7 +9,9 @@ to set dates, you can use the following...
 
 ### Unix Timestamp
 
-You can set dates as [Unix timestamps](https://en.wikipedia.org/wiki/Unix_time). For example, January 15, 2018 is set as:
+You can set dates as [Unix timestamps](https://en.wikipedia.org/wiki/Unix_time).
+
+For example, January 15, 2018 is set as:
 
 * `1515974400000`
 
@@ -47,7 +49,7 @@ chart.data(treeData);
 
 ### Date.UTC()
 
-The [Date.UTC()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/UTC) JavaScript method is equivalent to the [Unix timstamp](#unix_timestamp) since it returns Unix timestamps.
+The [Date.UTC()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/UTC) JavaScript method returns the [Unix timestamp](#unix_timestamp), so it is equivalent to it.
 
 Here is how it is used:
 
