@@ -160,6 +160,7 @@ chart.data(treeData);
 ### inputLocale()
 
 * {api:anychart.format#inputLocale}inputLocale(){api}
+* default: `"en-us"`
 
 the way how date/time strings are interpreted depends on...
 
@@ -167,10 +168,10 @@ misc:
 
 * requires using {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}
 * the locale must be set before the format
-* источник локали: [fr-fr.js](https://cdn.anychart.com/releases/v8/locales/ja-jp.js)
-* default: `"en-us"`
+* источник локали: [fr-fr.js](https://cdn.anychart.com/releases/v8/locales/fr-fr.js)
 * [inputDateTimeFormat()](#inputDateTimeFormat\(\))
 * [Common Settings: Localization](../Common_Settings/Localization)
+
 
 ```
 <script src="http://mydomain.com/anychart-locales/fr-fr.js"></script>
@@ -319,6 +320,15 @@ chart.data(treeData);
 * {api:anychart.format#outputLocale}outputLocale(){api}
 * default: `"en-us"`
 
+misc:
+
+* источник локали: [fr-fr.js](https://cdn.anychart.com/releases/v8/locales/fr-fr.js)
+* [Common Settings: Localization](../Common_Settings/Localization)
+
+
+```
+<script src="http://mydomain.com/anychart-locales/fr-fr.js"></script>
+```
 
 ```
 // create data
