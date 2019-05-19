@@ -34,15 +34,6 @@ var data = [
       }
   ]}
 ];
-
-// create a data tree
-var treeData = anychart.data.tree(data, "as-tree");
-
-// create a chart
-var chart = anychart.ganttProject();
-
-// set the data
-chart.data(treeData);
 ```
 
 {sample :height 220}GANTT\_Date\_and\_Time\_01{sample}
@@ -56,7 +47,7 @@ Here is how it is used to set the date or date/time – for example, *January 15
 * `Date.UTC(2018,0,15)`
 * `Date.UTC(2018,0,15,0,0,0,0)`
 
-The following code demonstrates how to use dates in this format to create a Gantt chart:
+The following code demonstrates how to use Date.UTC() to create a Gantt chart:
 
 ```
 // create data
@@ -105,6 +96,7 @@ var data = [
       }
   ]}
 ];
+
 ```
 
 ### String
