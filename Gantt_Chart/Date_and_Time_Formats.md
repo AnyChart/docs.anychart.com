@@ -116,7 +116,7 @@ In you data, you can use strings with dates or date/times – for example, *Janu
 
 Anychart automatically converts such strings to [Date objects](#date_object). In other words, the string `"2018-01-15"` is equivalent to `new Date("2018-01-15")`.
 
-**Note:** When you use this format, it is highly recommended to set the [input date/time format](inputdatetimeformat\(\)). Otherwise, the way how strings are interpreted might depend on users' browser settings.
+**Note:** When you use strings, it is highly recommended to explicitly set the [input date/time format](inputdatetimeformat\(\)). Otherwise, the way how they are interpreted might depend on users' browser settings.
 
 This sample code shows how to set dates as stings when you create a Gantt chart:
 
