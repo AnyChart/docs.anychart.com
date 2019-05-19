@@ -5,11 +5,11 @@
 
 ## Input
 
-to set dates, you can use the following...
+This section lists the ways how you can format input dates.
 
 ### Unix Timestamp
 
-One of the ways to set dates is using [Unix timestamps](https://en.wikipedia.org/wiki/Unix_time).
+One of the available formats is the [Unix timestamp](https://en.wikipedia.org/wiki/Unix_time).
 
 For example, *January 15, 2018* is set as:
 
