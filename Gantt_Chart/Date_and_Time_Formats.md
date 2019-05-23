@@ -101,7 +101,7 @@ var data = [
 
 To set dates, you can use strings with dates or date/times. Anychart automatically converts them to [Date objects](#date_object). For example, the string `"2018-01-15"` is equivalent to `new Date("2018-01-15")`.
 
-As a rule, you should also set:
+As a rule, to make sure that strings are interpreted correctly, you should also set:
 
 * [input date/time format](inputdatetimeformat\(\))
 * [input locale](inputlocale\(\))
@@ -136,7 +136,7 @@ var data = [
 
 ### inputDateTimeFormat()
 
-When you use [strings](#string) to set dates, it is required specify the input date/time format to make sure they are interpreted correctly.
+When you use [strings](#string) to set dates, it is required to specify the input date/time format to make sure that they are interpreted correctly.
 
 Call the {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api} method and specify the date/time pattern used in your data. See the [Date/Time Syntax](../Common_Settings/Text_Formatters#date/time_syntax) section to learn more.
 
