@@ -184,7 +184,7 @@ chart.data(treeData);
 
 When you use [strings](#string) to set dates, sometimes you need to set the input [locale](../Common_Settings/Localization).
 
-First, link the locale from your server or [AnyChart CDN](https://cdn.anychart.com/). Then pass the code of the locale to the {api:anychart.format#inputLocale}inputLocale(){api} method.
+Link the locale from your server or [AnyChart CDN](https://cdn.anychart.com/) and pass the code of the locale to {api:anychart.format#inputLocale}inputLocale(){api}:
 
 ```
 <script src="https://cdn.anychart.com/locale/1.1.0/fr-fr.js"></script>
