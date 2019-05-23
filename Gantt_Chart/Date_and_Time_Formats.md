@@ -45,6 +45,7 @@ Here is how it is used to set the date or date/time – for example, *January 15
 * `Date.UTC(2018,0,15)`
 * `Date.UTC(2018,0,15,0,0,0,0)`
 
+Sample Code
 
 ```
 // create data
