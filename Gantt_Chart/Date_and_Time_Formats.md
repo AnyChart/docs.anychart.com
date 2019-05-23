@@ -13,7 +13,7 @@ One of the available input formats is the [Unix timestamp](https://en.wikipedia.
 
 For example, *January 15, 2018* is set as `1515974400000`.
 
-The sample below shows how to use dates in this format when you create a Gantt chart:
+Sample
 
 ```
 // create data
@@ -38,9 +38,9 @@ var data = [
 
 ### Date.UTC()
 
-The [Date.UTC()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/UTC) JavaScript method returns the [Unix timestamp](#unix_timestamp), so it is equivalent to it.
+The [Date.UTC()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/UTC) JavaScript method allows setting the date or date/time. It returns the [Unix timestamp](#unix_timestamp), so it is equivalent to it.
 
-Here is how it is used to set the date or date/time – for example, *January 15, 2018*:
+Here is how you set *January 15, 2018*:
 
 * `Date.UTC(2018,0,15)`
 * `Date.UTC(2018,0,15,0,0,0,0)`
@@ -75,6 +75,7 @@ For example, here is how *January 15, 2018* is set:
 * `new Date("2018-01-15")`
 * `new Date("2018-01-15T00:00:00.000Z")`
 
+Sample Code
 
 ```
 // create data
@@ -98,7 +99,9 @@ var data = [
 
 ### String
 
-In you data, you can use strings with dates or date/times – for example, *January 15, 2018* can be set as:
+In you data, you can use strings with dates or date/times
+
+*January 15, 2018* can be set as:
 
 * `"2018-01-15"`
 * `"2018-01-15T00:00:00.000Z"`
@@ -107,6 +110,7 @@ Anychart automatically converts such strings to [Date objects](#date_object). In
 
 **Note:** When you use strings, it is highly recommended to explicitly set the [input date/time format](inputdatetimeformat\(\)). Otherwise, the way how they are interpreted may be affected by users' browser settings.
 
+Sample Code
 
 ```
 // create data
