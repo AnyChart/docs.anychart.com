@@ -101,14 +101,14 @@ var data = [
 
 In you data, you can use strings with dates or date/times. They can be organized according to various patterns – see the [Date/Time Syntax](../Common_Settings/Text_Formatters#date/time_syntax) section to learn more.
 
-Anychart automatically converts strings to [Date objects](#date_object). For example, the string `"2018-01-15"` is equivalent to `new Date("2018-01-15")`. To make sure that strings are interpreted correctly, you should also set the [input date/time format](inputdatetimeformat\(\)).
-
 Here is the default string pattern: *January 15, 2018* =
 
 * `"2018-01-15"`
 * `"2018-01-15T00:00:00.000Z"`
 
-When you use this pattern, explicitly setting the input format is not necessary but still highly recommended. Otherwise, the way how dates are interpreted may be affected by users' browser settings.
+Anychart automatically converts strings to [Date objects](#date_object). For example, the string `"2018-01-15"` is equivalent to `new Date("2018-01-15")`.
+
+For strings to be interpreted correctly, it is also required to set the [input date/time format](inputdatetimeformat\(\)). When you use the default pattern, it is not necessary but still highly recommended. Otherwise, the way how dates are interpreted may be affected by users' browser settings.
 
 Sample Code
 
