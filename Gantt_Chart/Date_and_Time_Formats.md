@@ -109,8 +109,8 @@ Various date/time patterns can be used. Here is the default one: *January 15, 20
 
 As a rule, to make sure that strings are interpreted correctly, you should also set:
 
-* [input date/time format](inputdatetimeformat(\))
-* [input locale](inputlocale(\))
+* [input date/time format](#inputdatetimeformat\(\))
+* [input locale](#inputlocale\(\))
 
 Strings with the default pattern do not require any additional settings, though it is still highly recommended to set the input date/time format. Otherwise, the way how dates are interpreted may be affected by users' browser settings.
 
@@ -139,7 +139,7 @@ var data = [
 
 When you use [strings](#string) to set dates, specify the input date/time format to make sure that they are interpreted correctly.
 
-Call the {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api} method and specify the date/time pattern used in your data. See the [Date/Time Syntax](../Common_Settings/Text_Formatters#date/time_syntax) section to learn more.
+Call the {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api} method and pass a string with the date/time pattern used in your data. See the [Date/Time Syntax](../Common_Settings/Text_Formatters#date/time_syntax) section to learn more.
 
 The following sample shows how to set the input date format:
 
