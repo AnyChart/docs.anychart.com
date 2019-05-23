@@ -9,13 +9,11 @@
 
 ### Unix Timestamp
 
-One of the available formats is the [Unix timestamp](https://en.wikipedia.org/wiki/Unix_time).
+One of the available input formats is the [Unix timestamp](https://en.wikipedia.org/wiki/Unix_time).
 
-For example, *January 15, 2018* is set as:
+For example, *January 15, 2018* is set as `1515974400000`.
 
-* `1515974400000`
-
-This sample code shows how to use dates in this format when you create a Gantt chart:
+The sample below shows how to use dates in this format when you create a Gantt chart:
 
 ```
 // create data
@@ -47,7 +45,6 @@ Here is how it is used to set the date or date/time – for example, *January 15
 * `Date.UTC(2018,0,15)`
 * `Date.UTC(2018,0,15,0,0,0,0)`
 
-The following code demonstrates how to use Date.UTC() to create a Gantt chart:
 
 ```
 // create data
@@ -77,7 +74,6 @@ For example, here is how *January 15, 2018* is set:
 * `new Date("2018-01-15")`
 * `new Date("2018-01-15T00:00:00.000Z")`
 
-Below, there is a sample code showing how to use dates in this format to create a Gantt chart:
 
 ```
 // create data
@@ -101,16 +97,15 @@ var data = [
 
 ### String
 
-In you data, you can use strings with dates or date/times – for example, *January 15, 2018*:
+In you data, you can use strings with dates or date/times – for example, *January 15, 2018* can be set as:
 
 * `"2018-01-15"`
 * `"2018-01-15T00:00:00.000Z"`
 
 Anychart automatically converts such strings to [Date objects](#date_object). In other words, the string `"2018-01-15"` is equivalent to `new Date("2018-01-15")`.
 
-**Note:** When you use strings, it is highly recommended to explicitly set the [input date/time format](inputdatetimeformat\(\)). Otherwise, the way how they are interpreted may be affected users' browser settings.
+**Note:** When you use strings, it is highly recommended to explicitly set the [input date/time format](inputdatetimeformat\(\)). Otherwise, the way how they are interpreted may be affected by users' browser settings.
 
-This sample code shows how to set dates as stings when you create a Gantt chart:
 
 ```
 // create data
