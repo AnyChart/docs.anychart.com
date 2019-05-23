@@ -109,8 +109,8 @@ Various date/time patterns can be used. Here is the default one: *January 15, 20
 
 As a rule, to make sure that strings are interpreted correctly, you should also set:
 
-* [input date/time format](inputdatetimeformat\(\))
-* [input locale](inputlocale\(\))
+* [input date/time format](inputdatetimeformat(\))
+* [input locale](inputlocale(\))
 
 Strings with the default pattern do not require any additional settings, though it is still highly recommended to set the input date/time format. Otherwise, the way how dates are interpreted may be affected by users' browser settings.
 
