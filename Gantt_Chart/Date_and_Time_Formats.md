@@ -139,7 +139,11 @@ var data = [
 
 When you use [strings](#string) to set dates, specify the input date/time format to make sure that they are interpreted correctly.
 
-Call the {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api} method and pass a string with the date/time pattern used in your data. See the [Date/Time Syntax](../Common_Settings/Text_Formatters#date/time_syntax) section to learn more.
+Call the {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api} method and pass a string with the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax) used in your data:
+
+```
+anychart.format.inputDateTimeFormat("yyyy-MM-dd");
+```
 
 The following sample shows how to set the input date format:
 
@@ -178,25 +182,23 @@ chart.data(treeData);
 
 ### inputLocale()
 
-the way how date/time strings are interpreted depends on...
+When you use [strings](#string) to set dates, sometimes you need to set the input [locale](../Common_Settings/Localization).
 
-* {api:anychart.format#inputLocale}inputLocale(){api}
-* default: `"en-us"`
-
-misc:
-
-* requires using {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api}
-* the locale must be set before the format
-* источник локали: [fr-fr.js](https://cdn.anychart.com/releases/v8/locales/fr-fr.js)
-* [string](#string)
-* [inputDateTimeFormat()](#inputdatetimeformat\(\))
-* [Common Settings: Localization](../Common_Settings/Localization)
-* [date/time syntax](../Common_Settings/Text_Formatters#date/time_syntax)
-
+First, link the locale from your server or [AnyChart CDN](https://cdn.anychart.com/):
 
 ```
-<script src="http://mydomain.com/anychart-locales/fr-fr.js"></script>
+<script src="https://cdn.anychart.com/locale/1.1.0/fr-fr.js"></script>
 ```
+
+Then pass the code of the locale to the {api:anychart.format#inputLocale}inputLocale(){api} method:
+
+```
+anychart.format.inputLocale("fr-fr");
+```
+
+The default locale is `"en-us"`. Other available codes listed in the CODE column on [AnyChart CDN](https://cdn.anychart.com/).
+
+**Note:** You should also set the [input date/time format()](#inputdatetimeformat\(\)) **after** setting the locale.
 
 ```
 // create data
