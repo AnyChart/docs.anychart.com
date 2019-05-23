@@ -3,9 +3,12 @@
 
 ## Overview
 
-## Input
+misc:
 
-(?) This section lists the ways how you can format input dates.
+* This section lists the ways how you can format input dates...
+* The way how dates are displayed depends on...
+
+## Input
 
 ### Unix Timestamp
 
@@ -198,7 +201,7 @@ anychart.format.inputLocale("fr-fr");
 
 **After** setting the locale, you should also set the [input date/time format()](#inputdatetimeformat\(\)).
 
-The following sample shows how the input locale works:
+The following sample shows how the input locale `"fr-fr"` works:
 
 ```
 // create data
@@ -237,8 +240,6 @@ chart.data(treeData);
 {sample :height 220}GANTT\_Date\_and\_Time\_03{sample}
 
 ## Output
-
-the way how dates are displayed depends on...
 
 ### outputDateTimeFormat()
 
