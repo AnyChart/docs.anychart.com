@@ -182,7 +182,7 @@ chart.data(treeData);
 
 ### inputLocale()
 
-When you use [strings](#string) to set dates, the default input [locale](../Common_Settings/Localization) `"en-us"` is automatically applied. When necessary, you can set any other locale listed in Locales section on [AnyChart CDN](https://cdn.anychart.com/).
+When you use [strings](#string) to set dates, the default input [locale](../Common_Settings/Localization) `"en-us"` is automatically applied. If necessary, you can set any other locale listed in Locales section on [AnyChart CDN](https://cdn.anychart.com/).
 
 In the head section of your web page, place a link to the locale on your server or on [AnyChart CDN](https://cdn.anychart.com/):
 
@@ -190,7 +190,7 @@ In the head section of your web page, place a link to the locale on your server 
 <script src="https://cdn.anychart.com/locale/1.1.0/fr-fr.js"></script>
 ```
 
-Then pass the code of the locale to {api:anychart.format#inputLocale}inputLocale(){api}:
+Then pass the code of the locale to the {api:anychart.format#inputLocale}inputLocale(){api} method:
 
 ```
 anychart.format.inputLocale("fr-fr");
