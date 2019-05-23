@@ -11,7 +11,7 @@
 
 One of the available input formats is the [Unix timestamp](https://en.wikipedia.org/wiki/Unix_time).
 
-For example, *January 15, 2018* is set as `1515974400000`.
+For example, *January 15, 2018* = `1515974400000`.
 
 Sample
 
@@ -40,7 +40,7 @@ var data = [
 
 The [Date.UTC()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/UTC) JavaScript method allows setting the date or date/time. It returns the [Unix timestamp](#unix_timestamp), so it is equivalent to it.
 
-Here is how you set *January 15, 2018*:
+For example, *January 15, 2018* =
 
 * `Date.UTC(2018,0,15)`
 * `Date.UTC(2018,0,15,0,0,0,0)`
@@ -70,7 +70,7 @@ var data = [
 
 You can set the date or date/time with the help of the [Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date).
 
-For example, here is how *January 15, 2018* is set:
+For example, *January 15, 2018* =
 
 * `new Date("2018-01-15")`
 * `new Date("2018-01-15T00:00:00.000Z")`
@@ -101,7 +101,7 @@ var data = [
 
 In you data, you can use strings with dates or date/times
 
-*January 15, 2018* can be set as:
+For example, *January 15, 2018* =
 
 * `"2018-01-15"`
 * `"2018-01-15T00:00:00.000Z"`
