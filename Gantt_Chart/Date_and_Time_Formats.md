@@ -135,14 +135,11 @@ var data = [
 
 ### inputDateTimeFormat()
 
-When you use [strings](#string) to set dates, you should also specify the input date/time format to make sure they are interpreted correctly.
+When you use [strings](#string) to set dates, it is required specify the input date/time format to make sure they are interpreted correctly.
 
-{api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api} 
+Use the {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api} method with ... as the parameter. See the [Date/Time Syntax](../Common_Settings/Text_Formatters#date/time_syntax) section to learn more.
 
-misc:
-
-* [date/time syntax](../Common_Settings/Text_Formatters#date/time_syntax)
-
+The following sample...
 
 ```
 // create data
