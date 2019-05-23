@@ -198,7 +198,7 @@ anychart.format.inputLocale("fr-fr");
 
 The default locale is `"en-us"`. Other available codes listed in the CODE column on [AnyChart CDN](https://cdn.anychart.com/).
 
-**Note:** You should also set the [input date/time format()](#inputdatetimeformat\(\)) **after** setting the locale.
+**After** setting the locale, you should also set the [input date/time format()](#inputdatetimeformat\(\)).
 
 ```
 // create data
