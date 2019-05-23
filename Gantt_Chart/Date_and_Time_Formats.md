@@ -13,7 +13,7 @@ One of the available input formats is the [Unix timestamp](https://en.wikipedia.
 
 For example, *January 15, 2018* = `1515974400000`.
 
-Sample
+In the sample below, this format is used to create a Gantt chart:
 
 ```
 // create data
@@ -139,7 +139,7 @@ When you use [strings](#string) to set dates, it is required specify the input d
 
 Call the {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api} method and specify the date/time pattern used in your data. See the [Date/Time Syntax](../Common_Settings/Text_Formatters#date/time_syntax) section to learn more.
 
-The following sample...
+The following sample shows how to set the input date format:
 
 ```
 // create data
