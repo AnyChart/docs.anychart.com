@@ -51,7 +51,7 @@ anychart.format.inputDateTimeFormat('yyyy-MM-dd');
 anychart.format.outputDateTimeFormat('dd MMM');
 ```
 
-You can also tune any output in tooltips or labels formatters using {api:anychart.format#dateTime}dateTime(){api} and {api:}number(){api} methods:
+You can also tune any output in tooltips or labels formatters using {api:anychart.format#dateTime}dateTime(){api} and {api:anychart.format#number}number(){api} methods:
 
 ```
 chart.xAxis().labels().format(function () {
