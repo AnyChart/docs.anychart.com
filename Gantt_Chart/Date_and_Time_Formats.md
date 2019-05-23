@@ -249,7 +249,7 @@ chart.data(treeData);
 
 defaults:
 
-* dateFormat: `"y/MM/dd`,
+* dateFormat: `"y/MM/dd"`,
 * timeFormat: `"H:mm:ss"`,
 * dateTimeFormat: `"y/MM/dd H:mm:ss"` / (?) поля из dateTimeLocale поля в локали /
 * (?) где применяются дефолты?
