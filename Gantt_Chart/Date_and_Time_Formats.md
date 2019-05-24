@@ -244,9 +244,9 @@ chart.data(treeData);
 
 ### outputDateTimeFormat()
 
-The default output **date/time**, **date**, and **time** formats are determined by the [output locale](#outputlocale\(\)) you use. You can find them in the `dateTimeLocale` field of the locale.
+The default output **date/time**, **date**, and **time** formats affect the how various parts of the chart are [formatted](#format\(\)).
 
-For example, here is how dates are formatted when the default [en-us](https://cdn.anychart.com/locale/1.1.0/en-us.js) locale is applied:
+These formats are determined by the [output locale](#outputlocale\(\)) you use – you can find them in the `dateTimeLocale` field of the locale. For example, here is how dates are formatted when the default [en-us](https://cdn.anychart.com/locale/1.1.0/en-us.js) locale is applied:
 
 * `dateTimeFormat`: `"y/MM/dd H:mm:ss"`
 * `dateFormat`: `"y/MM/dd"`
@@ -262,8 +262,6 @@ To customize a format, pass a string with the [date/time pattern](../Common_Sett
 ```
 anychart.format.outputDateTimeFormat("d MMMM");
 ```
-
-The output date/time formats affect the how various parts of the chart are [formatted](#format\(\)).
 
 The following sample shows the output date/time format of the default locale works – for example, it affects tooltips. Also, please note that the output format is not affected by the input one.
 
@@ -305,6 +303,8 @@ chart.data(treeData);
 
 ### outputLocale()
 
+The output locale determines the [output date/time formats](#outputdatetimeformat\(\)) and affects the way how various parts of the chart are [formatted](format\(\)).
+
 The default output [locale](../Common_Settings/Localization) is [en-us](https://cdn.anychart.com/locale/1.1.0/en-us.js). If necessary, you can set any other locale listed in Locales section on [AnyChart CDN](https://cdn.anychart.com/).
 
 In the head section of your web page, place a link to the locale on your server or on [AnyChart CDN](https://cdn.anychart.com/):
@@ -313,13 +313,11 @@ In the head section of your web page, place a link to the locale on your server 
 <script src="https://cdn.anychart.com/locale/1.1.0/fr-fr.js"></script>
 ```
 
-Then pass the code of the locale to the {api:anychart.format#outputLocale}outputLocale(){api}method:
+Then pass the code of the locale to the {api:anychart.format#outputLocale}outputLocale(){api} method:
 
 ```
 anychart.format.outputLocale("fr-fr");
 ```
-
-The output locale determines the [output date/time formats](#outputdatetimeformat\(\)) and affects the way how various parts of the chart are [formatted](format\(\)).
 
 The sample below shows how the output locale [fr-fr](https://cdn.anychart.com/locale/1.1.0/fr-fr.js) works. For example, it affects tooltips and the timeline header.
 
