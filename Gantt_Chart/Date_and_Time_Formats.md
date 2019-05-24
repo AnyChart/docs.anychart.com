@@ -265,7 +265,7 @@ anychart.format.outputDateTimeFormat("d MMMM");
 
 The output date/time formats affect the how various parts of the chart are [formatted](#format\(\)).
 
-The following sample shows the output date/time format (for the default locale) works. For example, it affects tooltips. Also, please note that the output format is not affected by the input one.
+The following sample shows the output date/time format of the default locale works – for example, it affects tooltips. Also, please note that the output format is not affected by the input one.
 
 ```
 // create data
