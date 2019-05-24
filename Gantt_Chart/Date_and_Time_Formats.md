@@ -381,9 +381,9 @@ You can format dates by combining {api:?entry=format}format(){api} with [tokens]
 
 Here is the list of tokens affecting dates:
 
-* Project chart: `{%actualStart}`, `{%actualEnd}`, `{%baselineStart}` `{%baselineEnd}`
-* Resource chart: `{%start}`, `{%end}`
-* timeline header: `{%tickValue}`, `{%end}`
+* labels & tooltips (Project) – `{%actualStart}`, `{%actualEnd}`, `{%baselineStart}` `{%baselineEnd}`
+* labels & tooltips (Resource) – `{%start}`, `{%end}`
+* timeline header – `{%tickValue}`, `{%end}`
 
 
 misc:
