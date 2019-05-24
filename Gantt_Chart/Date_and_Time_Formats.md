@@ -13,7 +13,7 @@ You can also format [output dates](#output) that are displayed in various parts 
 
 One of the available input formats is the [Unix timestamp](https://en.wikipedia.org/wiki/Unix_time).
 
-For example, *January 15, 2018* = `1515974400000`.
+For example, *January 15, 2018* is represented as `1515974400000`.
 
 In the sample below, this format is used to create a Gantt chart:
 
@@ -42,7 +42,7 @@ var data = [
 
 The [Date.UTC()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/UTC) JavaScript method allows setting the date or date/time. It returns the [Unix timestamp](#unix_timestamp), so it is equivalent to it.
 
-For example, *January 15, 2018* =
+For example, *January 15, 2018* is represented as:
 
 * `Date.UTC(2018,0,15)`
 * `Date.UTC(2018,0,15,0,0,0,0)`
@@ -72,7 +72,7 @@ var data = [
 
 You can set the date or date/time with the help of the [Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date).
 
-For example, *January 15, 2018* =
+For example, *January 15, 2018* is represented as:
 
 * `new Date("2018-01-15")`
 * `new Date("2018-01-15T00:00:00.000Z")`
@@ -108,7 +108,7 @@ As a rule, to make sure that strings are interpreted correctly, you should also 
 * [input date/time format](#inputdatetimeformat\(\))
 * [input locale](#inputlocale\(\))
 
-Various date/time patterns can be used. Here is the default one: *January 15, 2018* =
+Various date/time patterns can be used. Here is the default one: *January 15, 2018* is represented as:
 
 * `"2018-01-15"`
 * `"2018-01-15T00:00:00.000Z"`
