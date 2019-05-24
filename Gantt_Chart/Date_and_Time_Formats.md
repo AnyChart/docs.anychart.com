@@ -383,9 +383,9 @@ You can format dates by combining {api:?entry=format}format(){api} with [tokens]
 * Resource labels & tooltips – `{%start}`, `{%end}`
 * Project & Resource header – `{%tickValue}`, `{%end}`
 
-To format dates, use the `dateTimeFormat` [formatting parameter](../Common_Settings/Text_Formatters#formatting_parameters) to specify the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax).
+To format dates, use the `dateTimeFormat` [formatting parameter](../Common_Settings/Text_Formatters#formatting_parameters) and specify the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax).
 
-In this sample, tokens are used to display and format dates in the second data grid column:
+In this sample, tokens are used to display and format dates in the second data grid column of a Project chart:
 
 ```
 // set the text of the second data grid column
@@ -394,7 +394,7 @@ chart.dataGrid().column(1).labels().format(
 );
 ```
 
-{sample :height 260}GANTT\_Date\_and\_Time\_06{sample}
+{sample :height 220}GANTT\_Date\_and\_Time\_06{sample}
 
 ```
 // set the output locale
