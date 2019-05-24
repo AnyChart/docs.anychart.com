@@ -104,16 +104,15 @@ var data = [
 
 To set dates, you can use strings with dates or date/times. Anychart automatically converts them to [Date objects](#date_object). For example, the string `"2018-01-15"` is equivalent to `new Date("2018-01-15")`.
 
-Various date/time patterns can be used. Here is the default one: *January 15, 2018* =
-
-* `"2018-01-15"`
-* `"2018-01-15T00:00:00.000Z"`
-
-
 As a rule, to make sure that strings are interpreted correctly, you should also set:
 
 * [input date/time format](#inputdatetimeformat\(\))
 * [input locale](#inputlocale\(\))
+
+Various date/time patterns can be used. Here is the default one: *January 15, 2018* =
+
+* `"2018-01-15"`
+* `"2018-01-15T00:00:00.000Z"`
 
 Strings with the default pattern do not require any additional settings, though it is still highly recommended to set the input date/time format. Otherwise, the way how dates are interpreted may be affected by users' browser settings.
 
@@ -245,13 +244,15 @@ chart.data(treeData);
 
 ### outputDateTimeFormat()
 
-The default output **date/time**, **date**, and **time** formats depend on the [output locale](#outputlocale\(\)) you use. You can find them in the `dateTimeLocale` field of the locale. For example, here is how dates are formatted when the default ["en-us"](https://cdn.anychart.com/locale/1.1.0/en-us.js) locale is applied:
+The default output **date/time**, **date**, and **time** formats depend on the [output locale](#outputlocale\(\)) you use. You can find them in the `dateTimeLocale` field of the locale.
+
+For example, here is how dates are formatted when the default ["en-us"](https://cdn.anychart.com/locale/1.1.0/en-us.js) locale is applied:
 
 * `dateTimeFormat`: `"y/MM/dd H:mm:ss"`
-* `dateFormat`: `"y/MM/dd"`,
-* `timeFormat`: `"H:mm:ss"`,
+* `dateFormat`: `"y/MM/dd"`
+* `timeFormat`: `"H:mm:ss"`
 
-To customize any of these formats, pass a string with the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax) you wish to use to one of the following methods:
+To customize a format, pass a string with the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax) you wish to use to one of these methods:
 
 * {api:anychart.format#outputDateTimeFormat}outputDateTimeFormat(){api}
 * {api:anychart.format#DateTimeFormat}outputDateFormat(){api}
