@@ -378,24 +378,24 @@ series.select(index);
 
 The {api:anychart.data.View#filter}filter(){api} methods finds data rows with values meeting a given condition. The first parameter is the name of a data field, and the second one is a filter function, which accepts a value and returns `true` or `false`.
 
-Use this method to set advanced search conditions, for example to find all rows with values greater or less than a given value, like in the following sample:
+Use this method to set advanced search conditions – for example, to find all rows with values greater or less than a given value, like in the following sample:
 
 ```
 // remove points with values less than a given one
 function filterValue() {
-  var minValue = document.getElementById("inputValue").value;
+  var input = document.getElementById("valueInput").value;
   var newMapping = mapping.filter("value", function(value) {
-    return value >= minValue;
+    return value >= input;
   });
   series.data(newMapping);
-};
+}
 ```
 
 {sample}WD\_Data\_Sets\_12{sample}
 
 ### Iterating
 
-Iterating is a process of going through all the rows (?). You can access them one by one by one, but AnyChart offers an easier and faster out-of-the-box solution.
+Iterating is a process of going through all the rows. You can access them one by one by one, but AnyChart offers an easier and faster out-of-the-box solution.
 
 To iterate over a data set, obtain the {api:anychart.data.Iterator}anychart.data.Iterator{api} object by calling the {api:anychart.data.View#getIterator}getIterator(){api} method. Then us the methods of the iterator:
 
@@ -411,9 +411,9 @@ In this sample, iterator is used to select [filtered](#filter\(\)) points, [find
 
 ```
 // search for points with values equal or greater than a given one
-var minValue = document.getElementById("inputValue").value;
+var input = document.getElementById("valueInput").value;
 var newMapping = mapping.filter("value", function(value) {
-  return value >= minValue;
+  return value >= input;
 });
 
 // get the iterator

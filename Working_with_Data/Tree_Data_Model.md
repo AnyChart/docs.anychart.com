@@ -7,7 +7,7 @@ The tree data model represents data as a hierarchical tree-like structure with d
 
 It is used in the following chart types:
 
-* [Gantt](../Gantt_Chart/Quick_Start)
+* [Gantt](../Gantt_Chart)
 * [Treemap](../Basic_Charts/Treemap_Chart)
 * [Sunburst](../Basic_Charts/Sunburst_Chart)
 * [Word Tree](../Basic_Charts/Word_Tree)
@@ -24,7 +24,7 @@ Here is the list of classes allowing you to work with tree data in AnyChart:
 
 ## Quick Start
 
-To create a chart with tree-like data, create a data tree by passing your data to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` as the second parameter. Then pass the tree to the chart constructor:
+To create a chart with tree-like data, create a data tree by passing your data to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` as the second parameter. Then pass the tree to a chart constructor:
 
 ```
 // create data
@@ -72,7 +72,7 @@ var treeData = anychart.data.tree(data, "as-table");
 
 If your data is a CSV string, you should pass a CSV mapping object as the second parameter. Read more in the [CSV String](#csv_string) section.
 
-**2. Creating Chart.** Then pass the instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class created by this method to the chart constructor:
+**2. Creating Chart.** Then pass the instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class created by this method to a chart constructor:
 
 ```
 var chart = anychart.treeMap(treeData);
@@ -84,11 +84,11 @@ You can as well skip the first step and pass your data to the **data()** method 
 
 **Note 1:** To learn how to rename the default fields of the tree data model (`children`, `parent`, `id`) or map custom fields, see the [Mapping](#mapping) section.
 
-**Note 2:** The `id` field is required for the live edit mode of the Gantt Chart. To learn more, read the the [Live Edit UI and API](../Gantt_Chart/Live_Edit_UI_and_API) article and take a look at the sample in the [Events](#events) section of this article.
+**Note 2:** The `id` field is always required by [Gantt Charts](../Gantt_Chart).
 
 ### As Tree
 
-This sample shows how to set data if it data is organized **as a tree**:
+If you organize data **as a tree**, each parent item should have a `children` data field where an array of child items is specified.
 
 ```
 // create data
@@ -122,7 +122,7 @@ var chart = anychart.treeMap(treeData);
 
 ### As Table
 
-In the following sample data is organized **as a table**:
+If you organize data **as a table**, in the `parent` field of each item, you should specify the `id` value of its parent. The parent of a root item should be set to `null` or just not specified.
 
 ```
 // create data
@@ -199,50 +199,31 @@ var chart = anychart.treeMap(treeData);
 
 ### Mapping
 
-In case you need to map your data, call the {api:anychart.data.Tree#mapAs}mapAs{api} method on the instance of {api:anychart.data.Tree}anychart.data.Tree{api}. Then pass the mapped data to the chart constructor or to the **data()** method of the chart.
+**1.** To rename the fields required by the tree data model – `children`, `parent`, `id` – pass a mapping object to the {api:anychart.data#tree}anychart.data.tree(){api} constructor when you create a data tree.
 
-The {api:anychart.data.Tree#mapAs}mapAs{api} method allows you to map any field fields except the fields required by the tree data model – `children`, `parent`, `id`. Instead, you should use the {api:anychart.data#tree}anychart.data.tree(){api} constructor.
+If you set data [as a tree](#as_tree) or [as a table](#as_table), pass your mapping as the fourth parameter. Please note that the third one should be set to `null` – it is used only with [CSV data](#csv_string) to specify CSV settings. A mapping for CSV data should be passed as the second parameter.
 
-If you set data [as a tree](#as_tree) or [as a table](#as_table), pass the mapping as the fourth parameter. Please note that the third one should be set to `null` – it is used only with [CSV data](#csv_string) to specify CSV settings. The mapping for CSV data is passed as the second parameter.
-
-In the following sample, the data is set as a tree. The {api:anychart.data#tree}anychart.data.tree(){api} constructor is used to map a custom field `child_items` as the `children` field required by the tree data model. The {api:anychart.data.Tree#mapAs}mapAs{api} method maps `start` and `end` as `actualStart` and `actualEnd` required by the Gantt chart:
+After that, pass the data tree to a chart constructor or to the **data()** method of the chart.
 
 ```
-// create data
-var data = [
-  {
-    name:   "Root",
-    start: Date.UTC(2018, 0, 25),
-    end: Date.UTC(2018, 2, 14),
-    child_items: [
-      {
-        name:   "Child 1",
-        start: Date.UTC(2018, 0, 25),
-        end: Date.UTC(2018, 1, 3)
-      },
-      {
-        name:   "Child 2",
-        start: Date.UTC(2018, 1, 4),
-        end: Date.UTC(2018, 1, 4)
-      },
-      {
-        name:   "Child 3",
-        start: Date.UTC(2018, 1, 4),
-        end: Date.UTC(2018, 1, 24)
-      },
-      {
-        name:   "Child 4",
-        start: Date.UTC(2018, 1, 24),
-        end: Date.UTC(2018, 2, 14)
-      }
-    ]
-}];
-
 // create a data tree
 var treeData = anychart.data.tree(data, "as-tree", null, {children: "child_items"});
 
+// create a chart
+chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
+```
+
+**2.** In case you need to rename other fields, create a mapping by passing a mapping object to the {api:anychart.data.Tree#mapAs}mapAs{api} method of the data tree. Then pass the mapping to a chart constructor or to the **data()** method of the chart.
+
+```
+// create a data tree
+var treeData = anychart.data.tree(data, "as-tree");
+
 // map the data
-var mapping = treeData.mapAs({actualStart: "start", actualEnd: "end"});
+var mapping = treeData.mapAs({actualStart: "start_date", actualEnd: "end_date"});
 
 // create a chart
 chart = anychart.ganttProject();
@@ -251,7 +232,66 @@ chart = anychart.ganttProject();
 chart.data(mapping);
 ```
 
-{sample :height 250}WD\_Tree\_Data\_05{sample}
+These two ways of mapping data can be used simultaneously, like in the sample below.
+
+Here the data is set as a tree. The {api:anychart.data#tree}anychart.data.tree(){api} constructor maps a custom field `child_items` as the `children` field required by the tree data model. The {api:anychart.data.Tree#mapAs}mapAs{api} method maps `start_date` and `end_date` as `actualStart` and `actualEnd` required by the Gantt chart:
+
+```
+// create data
+var data = [
+  {
+    id: "1",
+    name: "Root",
+    start_date: "2018-01-15",
+    end_date: "2018-03-10",
+    child_items: [
+      {
+        id: "1_1",
+        name: "Child 1",
+        start_date: "2018-01-15",
+        end_date: "2018-01-25"
+      },
+      {
+        id: "1_2",
+        name: "Child 2",
+        start_date: "2018-01-20",
+        end_date: "2018-02-04"
+      },
+      {
+        id: "1_3",
+        name: "Child 3",
+        start_date: "2018-02-05",
+        end_date: "2018-02-05"
+      },
+      {
+        id: "1_4",
+        name: "Child 4",
+        start_date: "2018-02-05",
+        end_date: "2018-02-24"
+      },
+      {
+        id: "1_5",
+        name: "Child 5",
+        start_date: "2018-02-25",
+        end_date: "2018-03-10"
+      }
+  ]}
+];
+
+// create a data tree
+var treeData = anychart.data.tree(data, "as-tree", null, {children: "child_items"});
+
+// map the data
+var mapping = treeData.mapAs({actualStart: "start_date", actualEnd: "end_date"});
+
+// create a chart
+chart = anychart.ganttProject();
+
+// set the data
+chart.data(mapping);
+```
+
+{sample :height 260}WD\_Tree\_Data\_05{sample}
 
 ## Accessing Items
 
@@ -262,7 +302,7 @@ To access items at the root level, use the following methods of {api:anychart.da
 * {api:anychart.data.Tree#getChildAt}getChildAt(){api} – returns a root item with a given index
 * {api:anychart.data.Tree#getChildren}getChildren(){api} – returns an array of root items
 * {api:anychart.data.Tree#numChildren}numChildren(){api} – returns the number of roots
-* {api:anychart.data.Tree#indexOfChild}indexOfChild(){api} – returns the index of a given item if it is a root (or -1 if it is not)
+* {api:anychart.data.Tree#indexOfChild}indexOfChild(){api} – returns the index of a given item (or -1 if it is a root)
 
 To go deeper, use methods of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}:
 
@@ -404,37 +444,50 @@ The following sample shows how to perform a search with the {api:anychart.data.T
 // create data
 var data = [
   {
-    name:   "Root",
-    actualStart: Date.UTC(2018, 0, 25),
-    actualEnd: Date.UTC(2018, 2, 14),
+    id: "1",
+    name: "Root",
+    actualStart: "2018-01-15",
+    actualEnd: "2018-03-10",
+    actual: {},
     employee: {firstName: null, lastName: null},
     children: [
       {
-        name:   "Child 1",
-        actualStart: Date.UTC(2018, 0, 25),
-        actualEnd: Date.UTC(2018, 1, 3),
+        id: "1_1",
+        name: "Child 1",
+        actualStart: "2018-01-15",
+        actualEnd: "2018-01-25",
         employee: {firstName: "John", lastName: "Doe"}
       },
       {
-        name:   "Child 2",
-        actualStart: Date.UTC(2018, 1, 4),
-        actualEnd: Date.UTC(2018, 1, 4),
+        id: "1_2",
+        name: "Child 2",
+        actualStart: "2018-01-20",
+        actualEnd: "2018-02-04",
         employee: {firstName: "Frank", lastName: "Foe"}
       },
       {
-        name:   "Child 3",
-        actualStart: Date.UTC(2018, 1, 4),
-        actualEnd: Date.UTC(2018, 1, 24),
+        id: "1_3",
+        name: "Child 3",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-05",
+        employee: {firstName: "Marta", lastName: "Moe"}
+      },
+      {
+        id: "1_4",
+        name: "Child 4",
+        actualStart: "2018-02-05",
+        actualEnd: "2018-02-24",
         employee: {firstName: "John", lastName: "Doe"}
       },
       {
-        name:   "Child 4",
-        actualStart: Date.UTC(2018, 1, 24),
-        actualEnd: Date.UTC(2018, 2, 14),
-        employee: {firstName: "Marta", lastName: "Moe"}
+        id: "1_5",
+        name: "Child 5",
+        actualStart: "2018-02-25",
+        actualEnd: "2018-03-10",
+        employee: {firstName: "Jane", lastName: "Poe"}
       }
-    ]
-}];
+  ]}
+];
 
 // create a data tree
 treeData = anychart.data.tree(data, "as-tree");
@@ -464,19 +517,19 @@ var items = treeData.searchItems("employee", "JohnDoe", comparisonFunction);
 
 The {api:anychart.data.Tree#filter}filter(){api} method returns an array of data items. It is always called with a filter function as a parameter, which accepts a data item and returns `true` or `false`.
 
-Use this method to set advanced search conditions, for example to find all elements greater or less than a given value or to compare two data fields, like in the sample below.
+Use this method to set advanced search conditions – for example, to find all elements greater or less than a given value or to compare two data fields, like in the sample below.
 
 In this sample a filter function is used to find items with duration greater than a given one, duration being calculated from two data fields (the names of these items are displayed in the title of the chart, and their nodes are colored):
 
 ```
 // search for items with duration equal or greater than a given one
-var inputValue = (document.getElementById("inputValue").value) * 1000 * 3600 * 24;
+var input = (document.getElementById("valueInput").value) * 1000 * 3600 * 24;
 var items = treeData.filter(function(item) {
-  return item.get("actualEnd") - item.get("actualStart") >= inputValue;
+  return item.get("actualEnd") - item.get("actualStart") >= input;
 });
 ```
 
-{sample :height 300}WD\_Tree\_Data\_13{sample}
+{sample :height 335}WD\_Tree\_Data\_13{sample}
 
 #### Indexes
 
@@ -562,38 +615,51 @@ function nextItem() {
 
 ## Events
 
-Here is the full list of [events](../Common_Settings/Event_Listeners) that work with the tree data model:
+Here is the full list of events that work with the tree data model:
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
-<tr><td>treeItemCreate</td><td> item created</td></tr>
-<tr><td>treeItemMove</td><td>item moved</td></tr>
-<tr><td>treeItemRemove</td><td>item removed</td></tr>
-<tr><td>treeItemUpdate</td><td>item updated</td></tr>
+<tr><td>treeItemMove</td><td>A data item has been moved.</td></tr>
+<tr><td>treeItemUpdate</td><td>A data item has been updated.</td></tr>
+<tr><td>treeItemCreate</td><td>A data item has been created.</td></tr>
+<tr><td>treeItemRemove</td><td>A data item has been removed.</td></tr>
 </table>
 
-Please note that you can not only [listen to events](../Common_Settings/Event_Listeners), but also stop or start dispatching them by calling the {api:anychart.data.Tree#dispatchEvents}dispatchEvents(){api} method with `true` or `false` as a parameter.
+You can [listen to events](../Common_Settings/Event_Listeners) as well as stop or start dispatching them by calling the {api:anychart.data.Tree#dispatchEvents}dispatchEvents(){api} method with `false` or `true` as a parameter.
 
-In the sample below, there is a Gantt chart with the [editing mode](../Gantt_Chart/Live_Edit_UI_and_API) enabled: you can use the mouse to update items (change the position, duration, name, etc). Also, there is a button for [adding items](#adding). Even listeners are used to update the chart title whenever an item is updated or added:
+In the sample below, there is a Gantt chart with the [Live Edit](../Gantt_Chart/Live_Edit) mode enabled. When you can drag and drop rows, `"treeItemMove"` is triggered. When you edit [elements](../Gantt_Chart/Elements) and the [data grid](../Gantt_Chart/Data_Grid) text, `"treeItemUpdate"` fires. To learn more, see [Live Edit: Default Behavior](../Gantt_Chart/Live_Edit#default_behavior).
+
+Also, there is a custom button for [adding items](#adding), which triggers `"treeItemCreate"`.
+
+Event listeners are used to update the chart title:
+
+{sample :height 420}WD\_Tree\_Data\_16{sample}
 
 ```
-// update the chart title when an item is updated
+/* listen to the treeItemMove event
+and update the chart title */
+treeData.listen("treeItemMove", function (e) {
+  var itemName = e.item.get("name");
+  chart.title("Tree Data Model: Events<br><br>< " +
+              "<span style = 'color:#990000'>" +
+              itemName + ": </span> treeItemMove >");
+});
+
+/* listen to the treeItemUpdate event
+and update the chart title */
 treeData.listen("treeItemUpdate", function (e) {
   var itemName = e.item.get("name");
-  chart.title().useHtml(true);
-  chart.title("Tree Data Model: Events<br><br>" +
+  chart.title("Tree Data Model: Events<br><br>< " +
               "<span style = 'color:#990000'>" +
-              itemName + "</span> updated");
+              itemName + ": </span> treeItemUpdate >");
 });
 
-// update the chart title when an item is added
+/* listen to the treeItemCreate event
+and update the chart title */
 treeData.listen("treeItemCreate", function (e) {
   var itemName = e.item.get("name");
-  chart.title().useHtml(true);
-  chart.title("Tree Data Model: Events<br><br>" +
+  chart.title("Tree Data Model: Events<br><br>< " +
               "<span style = 'color:#990000'>" +
-              itemName + "</span> added");
+              itemName + "</span>: treeItemCreate >");
 });
 ```
-
-{sample}WD\_Tree\_Data\_16{sample}

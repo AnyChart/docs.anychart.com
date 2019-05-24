@@ -130,7 +130,7 @@ controller.fibonacciRetracement({
     selected: {stroke: colorLevels}
 });
 
-function colorLevels(){
+function colorLevels() {
   if (this.level!==undefined) {
     switch (this.level) {
         case 0.5:
@@ -143,7 +143,7 @@ function colorLevels(){
                 return "black";
     }
   }
-};
+}
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Retracement\_04{sample}

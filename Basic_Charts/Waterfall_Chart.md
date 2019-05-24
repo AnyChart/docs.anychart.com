@@ -334,7 +334,7 @@ The *isTotal* field allows to find out whether a column indicates a total value 
 
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 
-In the sample below all labels show absolute values, and the labels of columns indicating total values are colored. The tooltips of columns indicating total values are modified too, and a custom field is used:
+In the sample below all labels show absolute values, and labels of columns indicating total values are colored. Tooltips of columns indicating total values are modified too, and a custom field is used:
 
 ```
 // create data   

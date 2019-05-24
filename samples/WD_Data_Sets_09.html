@@ -38,8 +38,8 @@
 </head>
 <body>
 <button id = "updateButton" onclick="updateRow()">Update Row</button>
-<label>Index: <input id="inputIndex" type = "number" min="0" max = "4" value="0"></label>
-<label>Color: <input id="inputColor" value="#ef6c00"></label>
+<label>index: <input id="indexInput" type = "number" min="0" max = "4" value="0"></label>
+<label>color: <input id="colorInput" value="#ef6c00"></label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -77,8 +77,8 @@ anychart.onDocumentReady(function () {
 
 // update a row
 function updateRow() {
-  var index = document.getElementById("inputIndex").value;
-  var newColor = document.getElementById("inputColor").value;
+  var index = document.getElementById("indexInput").value;
+  var newColor = document.getElementById("colorInput").value;
   mapping.set(index, "fill", newColor);
   mapping.set(index, "stroke", newColor);
 }

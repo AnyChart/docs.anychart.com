@@ -5,14 +5,14 @@
 
 An open-high-low-close chart (otherwise known as an OHLC or HLOC chart) is a chart type mostly used to illustrate movements in the price of a financial instrument over time. Each vertical line on the chart shows the price range (the highest and lowest prices) over one unit of time, e.g., one day or one hour. Tick marks project from each side of the line indicating the opening price (e.g., for a daily bar chart this would be the starting price for that day) on the left, and the closing price for that time period on the right. The bars may be shown in different hues depending on whether prices rose or fell in that period.
 
-The [Japanese candlestick chart](Japanese_Candlestick_Chart) is another way of displaying market price data, with the opening and closing prices defining a rectangle within the range for each time unit. Both charts show exactly the same data, i.e. the opening, high, low, and closing prices during a particular time frame. Some traders find the Japanese candlestick chart easier to read.
+The [Japanese candlestick chart](Japanese_Candlestick_Chart) is another way of displaying market price data, with the opening and closing prices defining a rectangle within the range for each time unit. Both charts show exactly the same data – i.e. the opening, high, low, and closing prices during a particular time frame. Some traders find the Japanese candlestick chart easier to read.
 
 OHLC is a series type that is predominantly used for demonstrating the stock market data, due to its specifics. So AnyChart OHLC series are also available in AnyStock - see the [OHLC series in AnyStock](../Stock_Charts/Series/OHLC) article to learn more.
 
 This article explains how to create a basic OHLC chart as well as configure settings that are specific to the type. See the table below to get a brief overview of the OHLC chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) / [Base](../Quick_Start/Modules#base)</td></tr>
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) / [Base](../Quick_Start/Modules#base)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.OHLC}anychart.core.cartesian.series.OHLC{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -38,7 +38,7 @@ This article explains how to create a basic OHLC chart as well as configure sett
 
 ## Modules
 
-The OHLC chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) modules:
+The OHLC chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>

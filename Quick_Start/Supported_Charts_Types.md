@@ -21,7 +21,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Donut Chart](../Basic_Charts/Doughnut_Chart)</td></tr>
 <tr><td>[Error Chart](../Basic_Charts/Error_Chart)</td></tr>
 <tr><td>[Funnel Chart](../Basic_Charts/Funnel_Chart)</td></tr>
-<tr><td>[Gantt Chart](../Gantt_Chart/Quick_Start)</td></tr>
+<tr><td>[Gantt Chart](../Gantt_Chart)</td></tr>
 <tr><td>[Gauge Circular](../Gauges/Circular_Gauge)</td></tr>
 <tr><td>[Gauge Linear](../Gauges/Linear_Gauge)</td></tr>
 <tr><td>[Heat Map Chart](../Basic_Charts/Heat_Map_Chart)</td></tr>
