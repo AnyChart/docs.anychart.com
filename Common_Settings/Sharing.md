@@ -204,7 +204,7 @@ Use {api:anychart.exports#twitter}anychart.exports.twitter(){api} to set the fol
 </tr>
 </table>
 
-If it is necessary, it is possible to change the sharing application. If you want to create your own sharing application, visit the [Twitter application creating page](https://apps.twitter.com) and create your own application. Then, copy the URL of your application and set it as default for the "url" parameter of the exporting method.
+If it is necessary, it is possible to change the sharing application. If you want to create your own sharing application, visit the [Twitter application creating page](https://developer.twitter.com/en/apps) and create your own application. Then, copy the URL of your application and set it as default for the "url" parameter of the exporting method.
 
 ### LinkedIn
 

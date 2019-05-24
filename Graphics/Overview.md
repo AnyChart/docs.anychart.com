@@ -48,3 +48,4 @@ If you are done with articles listed above, or you are an experienced user of [A
 * {api:anychart.graphics}GraphicsJS API{api}
 * [GraphicsJS Samples](http://www.graphicsjs.org/)
 * and [Virtual DOM](Virtual_DOM) and [Performance](Performance) articles.
+
