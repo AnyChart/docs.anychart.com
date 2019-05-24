@@ -263,7 +263,7 @@ To customize a format, pass a string with the [date/time pattern](../Common_Sett
 anychart.format.outputDateTimeFormat("d MMMM");
 ```
 
-The output date/time formats affect the [format](#format\(\)) of dates displayed in various parts of the chart.
+The output date/time formats affect the how various parts of the chart are [formatted](#format\(\)).
 
 The following sample shows the output date/time format (for the default locale) works. For example, it affects tooltips. Also, please note that the output format is not affected by the input one.
 
@@ -319,7 +319,7 @@ Then pass the code of the locale to the {api:anychart.format#outputLocale}output
 anychart.format.outputLocale("fr-fr");
 ```
 
-The output locale determines the [output date/time formats](#outputdatetimeformat\(\)) and affects the [format](format\(\)) of dates displayed in various parts of the chart.
+The output locale determines the [output date/time formats](#outputdatetimeformat\(\)) and affects the way how various parts of the chart are [formatted](format\(\)).
 
 The sample below shows how the output locale [fr-fr](https://cdn.anychart.com/locale/1.1.0/fr-fr.js) works. For example, it affects tooltips and the timeline header.
 
