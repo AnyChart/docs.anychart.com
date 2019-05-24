@@ -365,7 +365,7 @@ The following settings determine how dates in various parts of the chart are for
 * [input date/time format](#inputdatetimeformat\(\))
 * [input locale](#inputlocale\(\))
 
-You can override the input date/time format by combining the {api:?entry=format}format(){api} method with [text formatters](../Common_Settings/Text_Formatters).
+You can override the input date/time format with the help of the {api:?entry=format}format(){api} method, combined with [text formatters](../Common_Settings/Text_Formatters).
 
 It is available for the following parts of the chart:
 
@@ -377,13 +377,15 @@ It is available for the following parts of the chart:
 
 #### Tokens
 
-You can format dates by combining {api:?entry=format}format(){api} with [tokens](../Common_Settings/Text_Formatters#string_tokens) affecting dates, such as:
+You can format text by combining {api:?entry=format}format(){api} with [tokens](../Common_Settings/Text_Formatters#string_tokens).
+
+Here is the list of tokens that affect dates:
 
 * Project labels & tooltips– `{%actualStart}`, `{%actualEnd}`, `{%baselineStart}`, `{%baselineEnd}`
 * Resource labels & tooltips – `{%start}`, `{%end}`
 * Project & Resource header – `{%tickValue}`, `{%end}`
 
-To format dates, use the `dateTimeFormat` [formatting parameter](../Common_Settings/Text_Formatters#formatting_parameters) and specify the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax).
+To format dates, add the `dateTimeFormat` [formatting parameter](../Common_Settings/Text_Formatters#formatting_parameters) after these tokens and specify the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax). This parameter is optional: if it is not set, dates are formatted according to the [input date/time format](#inputdatetimeformat\(\)).
 
 In this sample, tokens are used to display and format dates in the second data grid column of a Project chart:
 
@@ -412,7 +414,7 @@ chart.dataGrid().column(1).labels().format(
 
 #### Formatting Functions
 
-You can format dates by combining {api:?entry=format}format(){api} with [formatting functions](../Common_Settings/Text_Formatters#formatting_functions).
+You can format text by combining {api:?entry=format}format(){api} with [formatting functions](../Common_Settings/Text_Formatters#formatting_functions).
 
 In these functions, a number of context fields is available that affect dates, such as:
 
@@ -420,10 +422,7 @@ In these functions, a number of context fields is available that affect dates, s
 * Resource labels & tooltips – `start`, `end`
 * Project & Resource header – `tickValue`, `end`
 
-To format dates, call the {api:anychart.format#dateTime}anychart.format.dateTime(){api} method with two parameters:
-
-* context
-* [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax)
+To format dates, pass the context to the {api:anychart.format#dateTime}anychart.format.dateTime(){api} method and specify the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax) as the second parameter. This parameter is optional: if it is not set, dates are formatted according to the [input date/time format](#inputdatetimeformat\(\)).
 
 In this sample, a formatting function is used to display and format dates in the second data grid column of a Project chart:
 
@@ -442,4 +441,6 @@ column_2.labels().format(function() {
 
 ### Column Presets
 
-* [column presets](Data_Grid/Column_Presets#dates)
+Using column presets is an alternative way to format dates displayed in data grid columns. Please keep in mind that presets can be applied only to dates set as [Unix timestamps](#unix_timestamp).
+
+Learn more: [Column Presets: dates](Data_Grid/Column_Presets#dates) 
