@@ -90,9 +90,7 @@ header.level(0).fontWeight(600);
 
 ## Text Format
 
-The {api:anychart.core.gantt.TimeLineHeader}format(){api} method of the header allows you to format the text of [all levels](#all_levels).
-
-To configure an [individual level](#individual_levels), use the {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#format}format(){api} method of the level.
+The {api:anychart.core.gantt.TimeLineHeader}format(){api} method of the header allows you to format the text of [all levels](#all_levels). To configure an [individual level](#individual_levels), use the {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#format}format(){api} method of the level.
 
 Combine these methods either with [tokens](../../Common_Settings/Text_Formatters#string_tokens) or with [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions).
 
