@@ -47,7 +47,7 @@ plot.eventMarkers({"groups": [
   }
 ]});
 
-// configure the tooltips of event markers
+// configure tooltips of event markers
 plot.eventMarkers().tooltip().titleFormat("{%short_desc} ({%symbol})");
 plot.eventMarkers().tooltip().format("Event: {%description}");
 ```

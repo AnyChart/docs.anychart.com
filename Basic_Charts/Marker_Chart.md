@@ -8,7 +8,7 @@ Marker chart (otherwise known as a point chart) is identical to a line chart wit
 This article explains how to create a basic Marker chart as well as configure settings that are specific to the type. See the table below to get a brief overview of the Marker chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) / [Base](../Quick_Start/Modules#base)</td></tr>
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) / [Base](../Quick_Start/Modules#base)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Marker}anychart.core.cartesian.series.Marker{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -34,7 +34,7 @@ This article explains how to create a basic Marker chart as well as configure se
 
 ## Modules
 
-The Marker chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) modules:
+The Marker chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -112,7 +112,7 @@ series.selected().size(15);
 
 The type (shape) of markers can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Marker#normal}normal(){api}, {api:anychart.core.cartesian.series.Marker#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Marker#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#size}type(){api}:
 
-Here is the list of available marker types: {api:anychart.enums.MarkerType}Marker Types{api}.
+Here is the list of available marker types: {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}.
 
 This sample shows how to set the type of markers:
 

@@ -77,13 +77,13 @@ anychart.onDocumentReady(function () {
     });    
 
 // switch the series type
-function switchType(){
+function switchType() {
   var select = document.getElementById("typeSelect");
   // switch the type of the main series
   series.seriesType(select.value);
   // switch the type of the scroller series
   scrollerSeries.seriesType(select.value);
-};  
+}
 
 // create data
 function data_us_population() {
@@ -134,7 +134,7 @@ function data_us_population() {
     {x:'2005-01-01', value:299.456285},
     {x:'2010-01-01', value:308.745538},
     {x:'2015-01-01', value:318.914629}
-]};
+]}
 </script>
 </body>
 </html>

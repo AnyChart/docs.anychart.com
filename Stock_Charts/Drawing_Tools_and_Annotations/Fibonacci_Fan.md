@@ -135,7 +135,7 @@ controller.fibonacciFan({
     selected: {stroke: colorLevels}
 });
 
-function colorLevels(){
+function colorLevels() {
   if (this.level!==undefined) {
     switch (this.level) {
         case 0.5:
@@ -160,7 +160,7 @@ function colorLevels(){
                 return "black";
     }
   }
-};
+}
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Fan\_04{sample}

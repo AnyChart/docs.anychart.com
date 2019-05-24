@@ -10,7 +10,7 @@ Such charts are used to emphasize the magnitude of difference between high and l
 This article explains how to create a basic Range Area chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Range Area chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) / [Base](../Quick_Start/Modules#base)</td></tr>
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) / [Base](../Quick_Start/Modules#base)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.RangeArea}anychart.core.cartesian.series.RangeArea{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -40,7 +40,7 @@ This article explains how to create a basic Range Area chart as well as configur
 
 ## Modules
 
-The Range Area chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) modules:
+The Range Area chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>

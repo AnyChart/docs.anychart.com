@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content=""/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      {
+        id: "1",
+        name: "Development",
+        actualStart: "2018-01-15",
+        actualEnd: "2018-03-10",
+        children: [
+          {
+            id: "1_1",
+            name: "Analysis",
+            actualStart: "2018-01-15",
+            actualEnd: "2018-01-25"
+          },
+          {
+            id: "1_2",
+            name: "Design",
+            actualStart: "2018-01-20",
+            actualEnd: "2018-02-04"
+          },
+          {
+            id: "1_3",
+            name: "Meeting",
+            actualStart: "2018-02-05",
+            actualEnd: "2018-02-05"
+          },
+          {
+            id: "1_4",
+            name: "Implementation",
+            actualStart: "2018-02-05",
+            actualEnd: "2018-02-24"
+          },
+          {
+            id: "1_5",
+            name: "Testing",
+            actualStart: "2018-02-25",
+            actualEnd: "2018-03-10"
+          }
+      ]}
+    ];
+    
+    // create a data tree
+    var treeData = anychart.data.tree(data, "as-tree");
+
+    // create a chart
+    var chart = anychart.ganttProject();
+    
+    // set the data
+    chart.data(treeData);
+
+    // create two text markers
+    var marker_1 = chart.getTimeline().textMarker(0);
+    var marker_2 = chart.getTimeline().textMarker(1);
+
+    // set values of markers
+    marker_1.value("2018-01-25");
+    marker_2.value("end");
+
+    // set the text of markers
+    marker_1.useHtml(true);
+    marker_1.text("marker <span style='font-size:26'>1</span>");
+    marker_2.text("marker 2");
+
+    // configure the font of markers
+    marker_1.fontColor("#455a64");
+    marker_2.fontColor("#dd2c00");
+    marker_1.fontWeight(600);
+    marker_2.fontWeight(600);
+    
+    // configure the background of the first marker
+    marker_1.background().enabled(true);
+    marker_1.background().fill("#e3e8e8");
+    marker_1.background().stroke("2 #455a64");
+
+        // configure the position of markers
+    marker_1.rotation(0);
+    marker_1.padding(5)
+    marker_1.offsetY(31);
+    marker_2.offsetX(-10);
+
+    // configure the scale
+    chart.getTimeline().scale().maximum("2018-03-15");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+
+    // fit elements to the width of the timeline
+    chart.fitAll();
+});
+</script>
+</body>
+</html>
