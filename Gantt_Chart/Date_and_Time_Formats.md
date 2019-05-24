@@ -378,7 +378,7 @@ It is available for the following parts of the chart:
 
 You can format text by combining {api:?entry=format}format(){api} with [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
-Here are some of the tokens that affect dates:
+Here are some of the tokens that represent dates:
 
 * Project labels & tooltips– `{%actualStart}`, `{%actualEnd}`, `{%baselineStart}`, `{%baselineEnd}`
 * Resource labels & tooltips – `{%start}`, `{%end}`
@@ -415,7 +415,7 @@ chart.dataGrid().column(1).labels().format(
 
 You can format text by combining {api:?entry=format}format(){api} with [formatting functions](../Common_Settings/Text_Formatters#formatting_functions).
 
-In these functions, a number of context fields is available that affect dates, for example:
+In these functions, a number of context fields is available that represent dates, for example:
 
 * Project labels & tooltips– `actualStart`, `actualEnd`, `baselineStart`, `baselineEnd`
 * Resource labels & tooltips – `start`, `end`
