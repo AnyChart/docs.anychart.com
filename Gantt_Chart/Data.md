@@ -52,6 +52,12 @@ The sections below explain how to organize your data hierarchically:
 * [Project Chart: Hierarchy](Project_Chart#hierarchy)
 * [Resource Chart: Hierarchy](Resource_Chart#hierarchy)
 
+## Date/Time Formats
+
+This section explains how you can format and interpret dates you use in your data:
+
+* [Date and Time Formats: Input](../Date_and_Time_Formats#input).
+
 ## Mapping
 
 **1.** To rename the `children`, `parent`, and `id` fields, use the {api:anychart.data#tree}anychart.data.tree(){api} constructor:
