@@ -101,19 +101,19 @@ var data = [
 
 ### String
 
-To set dates, you can use strings with dates or date/times. Anychart automatically converts them to [Date objects](#date_object). For example, the string `"2018-01-15"` is equivalent to `new Date("2018-01-15")`.
+To set dates, you can use strings with dates or date/times. AnyChart automatically converts them to [Date objects](#date_object). For example, the string `"2018-01-15"` is equivalent to `new Date("2018-01-15")`.
 
 As a rule, to make sure that strings are interpreted correctly, you should also set:
 
 * [input date/time format](#inputdatetimeformat\(\))
 * [input locale](#inputlocale\(\))
 
-Various date/time patterns can be used. Here is the default one: *January 15, 2018* is represented as:
+Various date/time patterns can be used. For example: *January 15, 2018* can be represented as:
 
 * `"2018-01-15"`
 * `"2018-01-15T00:00:00.000Z"`
 
-Strings with the default pattern do not require any additional settings, though it is still highly recommended to set the input date/time format. Otherwise, the way how dates are interpreted may be affected by users' browser settings.
+Strings with the pattern above do not require any additional settings, though it is still highly recommended to set the input date/time format. Otherwise, the way how dates are interpreted may be affected by users' browser settings.
 
 Sample Code
 
