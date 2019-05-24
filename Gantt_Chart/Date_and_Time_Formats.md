@@ -244,7 +244,7 @@ chart.data(treeData);
 
 ### outputDateTimeFormat()
 
-The default output **date/time**, **date**, and **time** formats affect the how various parts of the chart are [formatted](#format\(\)).
+The default output **date/time**, **date**, and **time** formats affect how dates displayed in various parts of the chart are [formatted](#format\(\)).
 
 These formats are determined by the [output locale](#outputlocale\(\)) you use – you can find them in the `dateTimeLocale` field of the locale. For example, here is how dates are formatted when the default [en-us](https://cdn.anychart.com/locale/1.1.0/en-us.js) locale is applied:
 
@@ -303,7 +303,7 @@ chart.data(treeData);
 
 ### outputLocale()
 
-The output locale determines the [output date/time formats](#outputdatetimeformat\(\)) and affects the way how various parts of the chart are [formatted](format\(\)).
+The output locale determines the [output date/time formats](#outputdatetimeformat\(\)) and affects the way how dates displayed in various parts of the chart are [formatted](format\(\)).
 
 The default output [locale](../Common_Settings/Localization) is [en-us](https://cdn.anychart.com/locale/1.1.0/en-us.js). If necessary, you can set any other locale listed in Locales section on [AnyChart CDN](https://cdn.anychart.com/).
 
