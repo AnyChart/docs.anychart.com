@@ -258,7 +258,7 @@ To customize a format, pass a string with the [date/time pattern](../Common_Sett
 * {api:anychart.format#DateTimeFormat}outputDateFormat(){api}
 * {api:anychart.format#TimeFormat}outputTimeFormat(){api}
 
-The following sample shows how to set the output date/time format for the default locale. Please note that the output format is not affected by the input one.
+The following sample shows how to set the output date/time format – it affects dates displayed [data grid tooltips](Data_Grid/Tooltips) and [timeline tooltips](Timeline/Tooltips). The default output locale is used. Also, please note that the output format is not affected by the input one.
 
 ```
 // create data
