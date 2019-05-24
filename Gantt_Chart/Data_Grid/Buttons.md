@@ -69,7 +69,7 @@ buttons.selected().fontColor("#64b5f6");
 
 {sample :height 280}GANTT\_Data\_Grid\_Buttons\_01{sample}
 
-## Advanced Settins
+## Advanced Settings
 
 ### Background Images
 

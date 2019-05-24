@@ -24,6 +24,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Gantt Chart](../Gantt_Chart)</td></tr>
 <tr><td>[Gauge Circular](../Gauges/Circular_Gauge)</td></tr>
 <tr><td>[Gauge Linear](../Gauges/Linear_Gauge)</td></tr>
+<tr><td>[Graph Chart](../Basic_Charts/Network_Graph)</td></tr>
 <tr><td>[Heat Map Chart](../Basic_Charts/Heat_Map_Chart)</td></tr>
 <tr><td>[HiLo Chart](../Basic_Charts/HiLo_Chart)</td></tr>
 <tr><td>[Jump Line Chart](../Basic_Charts/Jump_Line_Chart)</td></tr>
@@ -37,6 +38,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Marker Chart](../Basic_Charts/Marker_Chart)</td></tr>
 <tr><td>[Mekko Chart](../Basic_Charts/Marimekko_Chart/Mekko_Chart)</td></tr>
 <tr><td>[Mosaic Chart](../Basic_Charts/Marimekko_Chart/Mosaic_Chart)</td></tr>
+<tr><td>[Network Chart](../Basic_Charts/Network_Graph)</td></tr>
 <tr><td>[OHLC Chart](../Basic_Charts/OHLC_Chart)</td></tr>
 <tr><td>[Pareto Chart](../Basic_Charts/Pareto_Chart)</td></tr>
 <tr><td>[Percent Stacked Area Chart](../Basic_Charts/Stacked/Percent/Area_Chart)</td></tr>
@@ -73,8 +75,8 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Step Line Chart](../Basic_Charts/Step_Line_Chart)</td></tr>
 <tr><td>[Stock Charts](../Stock_Charts/Quick_Start)</td></tr>
 <tr><td>[Sunburst Chart](../Basic_Charts/Sunburst_Chart)</td></tr>
-<tr><td>[Surface Chart](../Basic_Charts/Sunburst_Chart)</td></tr>
-<tr><td>[Tag Cloud](../3D_Plot/Surface_Chart)</td></tr>
+<tr><td>[Surface Chart](../3D_Plot/Surface_Chart)</td></tr>
+<tr><td>[Tag Cloud](../Basic_Charts/Tag_Cloud)</td></tr>
 <tr><td>[Timeline Chart](../Basic_Charts/Timeline_Chart)</td></tr>
 <tr><td>[Treemap Chart](../Basic_Charts/Treemap_Chart)</td></tr>
 <tr><td>[Venn Diagram](../Basic_Charts/Venn_Diagram)</td></tr>

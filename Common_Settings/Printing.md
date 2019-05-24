@@ -6,7 +6,7 @@ Although AnyChart is intended for creation interactive charts for web we provide
 
 ## Chart Printing
 
-You can print any chart at any time using {api:anychart.core.Chart#print}print(){api} method.
+You can print any chart at any time using {api:?entry=print}print(){api} method.
 
 ```
 // this method will print your chart

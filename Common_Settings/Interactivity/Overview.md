@@ -283,8 +283,6 @@ You can add a listener to any chart element, forcing it to react in some way. Fo
 
 You can find more about listeners [here](../Event_Listeners).
 
-**Note**: Points of a pie chart can't be selected. Use {api:anychart.charts.Pie#explode}exploded(){api} method to adjust current state of pie's slice.
-
 #### Navigating by URL
 
 Let's look at the typical situation when we might need the listeners. We add a listener of double clicks to the series, which will navigate us to the pre-defined URL.
