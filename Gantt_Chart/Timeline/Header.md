@@ -96,6 +96,8 @@ To configure an [individual level](#individual_levels), use the {api:anychart.co
 
 Combine these methods either with [tokens](../../Common_Settings/Text_Formatters#string_tokens) or with [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions).
 
+**Note:** To learn more about formatting dates, see [Date and Time Formats: format()](../Date_and_Time_Formats#format\(\)).
+
 ### Tokens
 
 The available [tokens](../../Common_Settings/Text_Formatters#string_tokens) include:

@@ -16,8 +16,6 @@ By default, there are two columns, numbered from left to right. The first column
 
 As explained in the sections below, you can change the [text](#text_\(labels\)) as well as other parameters of default columns or create completely [custom columns](#custom_columns). Also, you can use column presets – see the [Column Presets](Column_Presets) article.
 
-**Note:** To learn more about formatting dates, see [Date and Time Formats: format()](../Date_and_Time_Formats#format\(\)) article.
-
 ## Enabling / Disabling
 
 Passing `true` / `false` to the {api:anychart.core.ui.DataGrid.Column#enabled()}enabled(){api} method allows enabling or disabling a column:
@@ -70,6 +68,8 @@ To adjust the text of columns, combine {api:anychart.core.ui.DataGrid.Column#lab
 The {api:anychart.core.ui.LabelsFactory#format}format(){api} method, combined with [text formatters](../../Common_Settings/Text_Formatters), allows setting the text format – read the sections below to learn more.
 
 Alternatively, you can configure the text (and width) with the help of column presets – see [Column Presets](Column_Presets).
+
+**Note:** To learn more about formatting dates, see [Date and Time Formats: format()](../Date_and_Time_Formats#format\(\)).
 
 ### Tokens
 
