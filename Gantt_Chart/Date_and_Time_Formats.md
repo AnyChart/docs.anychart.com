@@ -377,24 +377,11 @@ It is available for the following parts of the chart:
 
 #### Tokens
 
-You can format dates by combining {api:?entry=format}format(){api} with [tokens](../Common_Settings/Text_Formatters#string_tokens).
+You can format dates by combining {api:?entry=format}format(){api} with [tokens](../Common_Settings/Text_Formatters#string_tokens) affecting dates, such as:
 
-Here are tokens affecting dates displayed in labels and tooltips of the Project chart:
-
-* `{%actualStart}`
-* `{%actualEnd}`
-* `{%baselineStart}`
-* `{%baselineEnd}`
-
-These tokens affect labels and tooltips of the Resource chart:
-
-* `{%start}`
-* `{%end}`
-
-These tokens are used for formatting the timeline header of both chart types:
-
-* `{%tickValue}`
-* `{%end}`
+* Project labels & tooltips– `{%actualStart}`, `{%actualEnd}`, `{%baselineStart}`, `{%baselineEnd}`
+* Resource labels & tooltips – `{%start}`, `{%end}`
+* Project & Resource header – `{%tickValue}`, `{%end}`
 
 To format dates, use the `dateTimeFormat` [formatting parameter](../Common_Settings/Text_Formatters#formatting_parameters) to specify the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax).
 
