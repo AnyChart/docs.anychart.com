@@ -52,7 +52,7 @@ The sections below explain how to organize your data hierarchically:
 * [Project Chart: Hierarchy](Project_Chart#hierarchy)
 * [Resource Chart: Hierarchy](Resource_Chart#hierarchy)
 
-## Date/Time Formats
+## Date and Time Formats
 
 This section explains how you can format and interpret dates you use in your data:
 
