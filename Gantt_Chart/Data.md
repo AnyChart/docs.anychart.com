@@ -56,7 +56,7 @@ The sections below explain how to organize your data hierarchically:
 
 This section explains how you can format and interpret dates you use in your data:
 
-* [Date and Time Formats: Input](../Date_and_Time_Formats#input).
+* [Date and Time Formats: Input](Date_and_Time_Formats#input).
 
 ## Mapping
 
