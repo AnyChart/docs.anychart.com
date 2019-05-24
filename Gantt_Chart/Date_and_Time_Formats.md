@@ -378,7 +378,7 @@ It is available for the following parts of the chart:
 
 You can format text by combining {api:?entry=format}format(){api} with [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
-Here are some tokens that affect dates:
+Here are some of the tokens that affect dates:
 
 * Project labels & tooltips– `{%actualStart}`, `{%actualEnd}`, `{%baselineStart}`, `{%baselineEnd}`
 * Resource labels & tooltips – `{%start}`, `{%end}`
