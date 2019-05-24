@@ -422,7 +422,7 @@ In these functions, a number of context fields is available that affect dates, s
 
 To format dates, call the {api:anychart.format#dateTime}dateTime(){api} method. Pass two parameters:
 
-* the context – for example, `this.actualStart`
+* the context
 * the string with the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax)
 
 In this sample, a formatting function is used to display and format dates in the second data grid column of a Project chart:
