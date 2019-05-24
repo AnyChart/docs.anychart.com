@@ -384,7 +384,7 @@ Here are some of the tokens that represent dates:
 * Resource labels & tooltips – `{%start}`, `{%end}`
 * Project & Resource header – `{%tickValue}`, `{%end}`
 
-To format dates, add the `dateTimeFormat` [formatting parameter](../Common_Settings/Text_Formatters#formatting_parameters) after a tokens and specify the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax). This parameter is optional: if it is not set, dates are formatted according to the [output date/time format](#outputdatetimeformat\(\)).
+To format dates, add the `dateTimeFormat` [formatting parameter](../Common_Settings/Text_Formatters#formatting_parameters) after a token and specify the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax). This parameter is optional: if it is not set, dates are formatted according to the [output date/time format](#outputdatetimeformat\(\)).
 
 In this sample, tokens are used to display and format dates in the second data grid column of a Project chart:
 
@@ -421,7 +421,7 @@ In these functions, a number of context fields is available that represent dates
 * Resource labels & tooltips – `start`, `end`
 * Project & Resource header – `tickValue`, `end`
 
-If your function returns just them, dates are displayed as [Unix timestamps](https://en.wikipedia.org/wiki/Unix_time).
+These fields contain dates represented as [Unix timestamps](https://en.wikipedia.org/wiki/Unix_time).
 
 To format dates, pass a context field to the {api:anychart.format#dateTime}anychart.format.dateTime(){api} method and specify the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax) as the second parameter. This parameter is optional: if it is not set, dates are formatted according to the [output date/time format](#outputdatetimeformat\(\)).
 
