@@ -3,10 +3,7 @@
 
 ## Overview
 
-misc:
-
-* This section lists the ways how you can format input dates...
-* The way how dates are displayed depends on...
+This article explains how you can format [input](#input) and [output](#output) dates.
 
 ## Input
 
@@ -422,6 +419,8 @@ In these functions, a number of context fields is available that affect dates, s
 * Resource labels & tooltips – `start`, `end`
 * Project & Resource header – `tickValue`, `end`
 
+If your function returns just them, dates are displayed as [Unix timestamps](https://en.wikipedia.org/wiki/Unix_time).
+
 To format dates, pass the context to the {api:anychart.format#dateTime}anychart.format.dateTime(){api} method and specify the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax) as the second parameter. This parameter is optional: if it is not set, dates are formatted according to the [output date/time format](#outputdatetimeformat\(\)).
 
 In this sample, a formatting function is used to display and format dates in the second data grid column of a Project chart:
@@ -443,4 +442,4 @@ column_2.labels().format(function() {
 
 Using column presets is an alternative way to format dates displayed in data grid columns. Please keep in mind that presets can be applied only to dates set as [Unix timestamps](#unix_timestamp).
 
-Learn more: [Column Presets: dates](Data_Grid/Column_Presets#dates) 
+Learn more: [Column Presets: Dates](Data_Grid/Column_Presets#dates) 
