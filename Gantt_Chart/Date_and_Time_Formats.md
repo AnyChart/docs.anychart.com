@@ -367,16 +367,25 @@ The way how dates in various parts of the chart are formatted, depends on the fo
 
 You can override the input date/time format by combining the {api:?entry=format}format(){api} method with [text formatters](../Common_Settings/Text_Formatters). It is available for the following parts of the chart:
 
-* [data grid labels](Data_Grid/Columns#text_\(labels\)), [data grid tooltips](Data_Grid/Tooltips)
-* [timeline tooltips](Timeline/Tooltips), [timeline labels](Timeline), [timeline header](Timeline/Header#text_format)
+* [data grid labels](Data_Grid/Columns#text_\(labels\))
+* [data grid tooltips](Data_Grid/Tooltips)
+* [timeline header](Timeline/Header#text_format)
+* [timeline tooltips](Timeline/Tooltips)
 * [labels of elements](Elements/Labels)
 
 #### Tokens
 
+You can format dates by combining {api:?entry=format}format(){api} with [tokens](../Common_Settings/Text_Formatters#string_tokens).
+
+Here is the list of tokens affecting dates:
+
+* Project, labels & tooltips: `{%actualStart}`, `{%actualEnd}`, `{%baselineStart}` `{%baselineEnd}`
+* Resource, labels & tooltips: `{%start}`, `{%end}`
+* Project & Resource, header: `{%tickValue}`, `{%end}`
+
+
 misc:
 
-* (?) списки токенов, имеющих отношение к датам
-* [tokens](../Common_Settings/Text_Formatters#string_tokens)
 * [formatting parameters](../Common_Settings/Text_Formatters#formatting_parameters)
 * [date/time syntax](../Common_Settings/Text_Formatters#date/time_syntax)
 
