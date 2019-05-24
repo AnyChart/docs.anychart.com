@@ -362,8 +362,8 @@ chart.data(treeData);
 
 The following settings determine how dates in various parts of the chart are formatted:
 
-* [input date/time format](#inputdatetimeformat\(\))
-* [input locale](#inputlocale\(\))
+* [output date/time format](#outputdatetimeformat\(\))
+* [output locale](#outputlocale\(\))
 
 You can override the input date/time format with the help of the {api:?entry=format}format(){api} method, combined with [text formatters](../Common_Settings/Text_Formatters).
 
@@ -385,7 +385,7 @@ Here is the list of tokens that affect dates:
 * Resource labels & tooltips – `{%start}`, `{%end}`
 * Project & Resource header – `{%tickValue}`, `{%end}`
 
-To format dates, add the `dateTimeFormat` [formatting parameter](../Common_Settings/Text_Formatters#formatting_parameters) after these tokens and specify the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax). This parameter is optional: if it is not set, dates are formatted according to the [input date/time format](#inputdatetimeformat\(\)).
+To format dates, add the `dateTimeFormat` [formatting parameter](../Common_Settings/Text_Formatters#formatting_parameters) after these tokens and specify the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax). This parameter is optional: if it is not set, dates are formatted according to the [output date/time format](#outputdatetimeformat\(\)).
 
 In this sample, tokens are used to display and format dates in the second data grid column of a Project chart:
 
@@ -396,9 +396,9 @@ chart.dataGrid().column(1).labels().format(
 );
 ```
 
-This following sample demonstrates that the [output locale](#outputlocale\(\)) affects the way how tokens work:
-
 {sample :height 220}GANTT\_Date\_and\_Time\_06{sample}
+
+This following sample demonstrates that the [output locale](#outputlocale\(\)) affects the way how tokens work:
 
 ```
 // set the output locale
@@ -422,7 +422,7 @@ In these functions, a number of context fields is available that affect dates, s
 * Resource labels & tooltips – `start`, `end`
 * Project & Resource header – `tickValue`, `end`
 
-To format dates, pass the context to the {api:anychart.format#dateTime}anychart.format.dateTime(){api} method and specify the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax) as the second parameter. This parameter is optional: if it is not set, dates are formatted according to the [input date/time format](#inputdatetimeformat\(\)).
+To format dates, pass the context to the {api:anychart.format#dateTime}anychart.format.dateTime(){api} method and specify the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax) as the second parameter. This parameter is optional: if it is not set, dates are formatted according to the [output date/time format](#outputdatetimeformat\(\)).
 
 In this sample, a formatting function is used to display and format dates in the second data grid column of a Project chart:
 
