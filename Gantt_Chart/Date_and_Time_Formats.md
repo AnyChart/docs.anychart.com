@@ -360,7 +360,7 @@ chart.data(treeData);
 
 ### format()
 
-The way how dates in various parts of the chart are formatted depends on the following settings:
+The following settings determine how dates in various parts of the chart are formatted:
 
 * [input date/time format](#inputdatetimeformat\(\))
 * [input locale](#inputlocale\(\))
@@ -393,6 +393,8 @@ chart.dataGrid().column(1).labels().format(
   "{%actualStart}{dateTimeFormat:dd MMM} – {%actualEnd}{dateTimeFormat:d MMM}"
 );
 ```
+
+This following sample demonstrates that the [output locale](#outputlocale\(\)) affects the way how tokens work:
 
 {sample :height 220}GANTT\_Date\_and\_Time\_06{sample}
 
