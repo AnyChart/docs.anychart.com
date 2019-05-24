@@ -364,7 +364,7 @@ The following settings determine how dates in various parts of the chart are for
 * [output date/time format](#outputdatetimeformat\(\))
 * [output locale](#outputlocale\(\))
 
-You can override the input date/time format with the help of the {api:?entry=format}format(){api} method, combined with [text formatters](../Common_Settings/Text_Formatters).
+You can override the output date/time format with the help of the {api:?entry=format}format(){api} method, combined with [text formatters](../Common_Settings/Text_Formatters).
 
 It is available for the following parts of the chart:
 
@@ -380,7 +380,7 @@ You can format text by combining {api:?entry=format}format(){api} with [tokens](
 
 Here are some of the tokens that represent dates:
 
-* Project labels & tooltips– `{%actualStart}`, `{%actualEnd}`, `{%baselineStart}`, `{%baselineEnd}`
+* Project labels & tooltips – `{%actualStart}`, `{%actualEnd}`, `{%baselineStart}`, `{%baselineEnd}`
 * Resource labels & tooltips – `{%start}`, `{%end}`
 * Project & Resource header – `{%tickValue}`, `{%end}`
 
