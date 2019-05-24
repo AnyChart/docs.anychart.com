@@ -186,7 +186,7 @@ chart.data(treeData);
 
 ### inputLocale()
 
-When you use [strings](#string) to set dates, the default input [locale](../Common_Settings/Localization) is automatically applied – ["en-us"](https://cdn.anychart.com/locale/1.1.0/en-us.js). If necessary, you can set any other locale listed in Locales section on [AnyChart CDN](https://cdn.anychart.com/).
+When you use [strings](#string) to set dates, the default input [locale](../Common_Settings/Localization) is automatically applied – [en-us](https://cdn.anychart.com/locale/1.1.0/en-us.js). If necessary, you can set any other locale listed in Locales section on [AnyChart CDN](https://cdn.anychart.com/).
 
 In the head section of your web page, place a link to the locale on your server or on [AnyChart CDN](https://cdn.anychart.com/):
 
@@ -202,7 +202,7 @@ anychart.format.inputLocale("fr-fr");
 
 **After** setting the locale, you should also set the [input date/time format()](#inputdatetimeformat\(\)).
 
-The following sample shows how the input locale ["fr-fr"](https://cdn.anychart.com/locale/1.1.0/fr-fr.js) works:
+The following sample shows how the input locale [fr-fr](https://cdn.anychart.com/locale/1.1.0/fr-fr.js) works:
 
 ```
 // create data
@@ -246,7 +246,7 @@ chart.data(treeData);
 
 The default output **date/time**, **date**, and **time** formats depend on the [output locale](#outputlocale\(\)) you use. You can find them in the `dateTimeLocale` field of the locale.
 
-For example, here is how dates are formatted when the default ["en-us"](https://cdn.anychart.com/locale/1.1.0/en-us.js) locale is applied:
+For example, here is how dates are formatted when the default [en-us](https://cdn.anychart.com/locale/1.1.0/en-us.js) locale is applied:
 
 * `dateTimeFormat`: `"y/MM/dd H:mm:ss"`
 * `dateFormat`: `"y/MM/dd"`
@@ -258,7 +258,7 @@ To customize a format, pass a string with the [date/time pattern](../Common_Sett
 * {api:anychart.format#DateTimeFormat}outputDateFormat(){api}
 * {api:anychart.format#TimeFormat}outputTimeFormat(){api}
 
-The following sample shows how to set the output date/time format – it affects dates displayed [data grid tooltips](Data_Grid/Tooltips) and [timeline tooltips](Timeline/Tooltips). The default output locale is used. Also, please note that the output format is not affected by the input one.
+The following sample shows how to set the output date/time format (for the default locale). It affects dates displayed in [data grid tooltips](Data_Grid/Tooltips) and [timeline tooltips](Timeline/Tooltips). Also, please note that the output format is not affected by the input one.
 
 ```
 // create data
