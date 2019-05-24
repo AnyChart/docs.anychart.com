@@ -360,7 +360,7 @@ chart.data(treeData);
 
 ### format()
 
-The way how dates in various parts of the chart are formatted, depends on the following settings:
+The way how dates in various parts of the chart are formatted depends on the following settings:
 
 * [input date/time format](#inputdatetimeformat\(\))
 * [input locale](#inputlocale\(\))
@@ -384,6 +384,23 @@ Here is the list of tokens affecting dates:
 * labels & tooltips (Project) – `{%actualStart}`, `{%actualEnd}`, `{%baselineStart}` `{%baselineEnd}`
 * labels & tooltips (Resource) – `{%start}`, `{%end}`
 * timeline header – `{%tickValue}`, `{%end}`
+
+Here are tokens affecting dates displayed in labels and tooltips of the Project chart:
+
+* `{%actualStart}`
+* `{%actualEnd}`
+* `{%baselineStart}`
+* `{%baselineEnd}`
+
+These tokens affect labels and tooltips of the Resource chart:
+
+* `{%start}`
+* `{%end}`
+
+These tokens are used for formatting the timeline header of both chart types:
+
+* `{%tickValue}`
+* `{%end}`
 
 
 misc:
