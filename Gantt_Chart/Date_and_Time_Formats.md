@@ -244,7 +244,7 @@ chart.data(treeData);
 
 ### outputDateTimeFormat()
 
-The default output **date/time**, **date**, and **time** formats depend on the [output locale](#outputlocale\(\)) you use. You can find them in the `dateTimeLocale` field of the locale.
+The default output **date/time**, **date**, and **time** formats are determined by the [output locale](#outputlocale\(\)) you use. You can find them in the `dateTimeLocale` field of the locale.
 
 For example, here is how dates are formatted when the default [en-us](https://cdn.anychart.com/locale/1.1.0/en-us.js) locale is applied:
 
