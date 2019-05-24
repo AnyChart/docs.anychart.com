@@ -252,12 +252,12 @@ For example, here is how dates are formatted when the default [en-us](https://cd
 * `dateFormat`: `"y/MM/dd"`
 * `timeFormat`: `"H:mm:ss"`
 
-
 To customize a format, pass a string with the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax) you wish to use to one of these methods:
 
 * {api:anychart.format#outputDateTimeFormat}outputDateTimeFormat(){api}
 * {api:anychart.format#DateTimeFormat}outputDateFormat(){api}
 * {api:anychart.format#TimeFormat}outputTimeFormat(){api}
+
 
 ```
 anychart.format.outputDateTimeFormat("d MMMM");
