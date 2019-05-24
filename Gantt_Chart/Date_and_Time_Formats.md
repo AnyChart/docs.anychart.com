@@ -420,7 +420,7 @@ In these functions, a number of context fields is available that affect dates, s
 * Resource labels & tooltips – `start`, `end`
 * Project & Resource header – `tickValue}`, `%end`
 
-To format dates, call the {api:anychart.format#dateTime}dateTime(){api} method. Pass two parameters:
+To format dates, call the {api:anychart.format#dateTime}anychart.format.dateTime(){api} method. Pass two parameters:
 
 * the context
 * the string with the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax)
