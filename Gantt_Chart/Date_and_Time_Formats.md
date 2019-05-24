@@ -200,7 +200,7 @@ Then pass the code of the locale to the {api:anychart.format#inputLocale}inputLo
 anychart.format.inputLocale("fr-fr");
 ```
 
-Please note: **after** setting the locale, you should also set the [input date/time format()](#inputdatetimeformat\(\)).
+Please note: you should also set the [input date/time format()](#inputdatetimeformat\(\)) **after** setting the locale.
 
 This sample shows how the input locale [fr-fr](https://cdn.anychart.com/locale/1.1.0/fr-fr.js) works:
 
@@ -251,6 +251,7 @@ For example, here is how dates are formatted when the default [en-us](https://cd
 * `dateTimeFormat`: `"y/MM/dd H:mm:ss"`
 * `dateFormat`: `"y/MM/dd"`
 * `timeFormat`: `"H:mm:ss"`
+
 
 To customize a format, pass a string with the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax) you wish to use to one of these methods:
 
