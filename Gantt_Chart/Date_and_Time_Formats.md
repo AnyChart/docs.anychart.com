@@ -263,7 +263,9 @@ To customize a format, pass a string with the [date/time pattern](../Common_Sett
 anychart.format.outputDateTimeFormat("d MMMM");
 ```
 
-The following sample shows how to set the output date/time format (for the default locale). It affects dates displayed in [data grid tooltips](Data_Grid/Tooltips) and [timeline tooltips](Timeline/Tooltips). Also, please note that the output format is not affected by the input one.
+The output date/time formats affect the [format](#format\(\)) of dates displayed in various parts of the chart.
+
+The following sample shows the output date/time format (for the default locale) works. For example, it affects tooltips. Also, please note that the output format is not affected by the input one.
 
 ```
 // create data
@@ -303,19 +305,23 @@ chart.data(treeData);
 
 ### outputLocale()
 
-* {api:anychart.format#outputLocale}outputLocale(){api}
-* default: `"en-us"`
+The default output [locale](../Common_Settings/Localization) is [en-us](https://cdn.anychart.com/locale/1.1.0/en-us.js). If necessary, you can set any other locale listed in Locales section on [AnyChart CDN](https://cdn.anychart.com/).
 
-misc:
-
-* источник локали: [fr-fr.js](https://cdn.anychart.com/releases/v8/locales/fr-fr.js)
-* [Common Settings: Localization](../Common_Settings/Localization)
-* [date/time syntax](../Common_Settings/Text_Formatters#date/time_syntax)
-
+In the head section of your web page, place a link to the locale on your server or on [AnyChart CDN](https://cdn.anychart.com/):
 
 ```
-<script src="http://mydomain.com/anychart-locales/fr-fr.js"></script>
+<script src="https://cdn.anychart.com/locale/1.1.0/fr-fr.js"></script>
 ```
+
+Then pass the code of the locale to the {api:anychart.format#outputLocale}outputLocale(){api}method:
+
+```
+anychart.format.outputLocale("fr-fr");
+```
+
+The output locale determines the [output date/time formats](#outputdatetimeformat\(\)) and affects the [format](format\(\)) of dates displayed in various parts of the chart.
+
+The sample below shows how the output locale [fr-fr](https://cdn.anychart.com/locale/1.1.0/fr-fr.js) works. For example, it affects tooltips and the timeline header.
 
 ```
 // create data
