@@ -148,7 +148,9 @@ Call the {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api} met
 anychart.format.inputDateTimeFormat("yyyy-MM-dd");
 ```
 
-The following sample shows how to set the input date format:
+Also, make sure that you use the correct [input locale](#inputlocale\(\)).
+
+The following sample shows how to set the input date format. Please note that it does not affect the output.
 
 ```
 // create data
@@ -185,7 +187,7 @@ chart.data(treeData);
 
 ### inputLocale()
 
-When you use [strings](#string) to set dates, the default input [locale](../Common_Settings/Localization) `"en-us"` is automatically applied. If necessary, you can set any other locale listed in Locales section on [AnyChart CDN](https://cdn.anychart.com/).
+When you use [strings](#string) to set dates, the default input [locale](../Common_Settings/Localization) is automatically applied – ["en-us"](https://cdn.anychart.com/locale/1.1.0/en-us.js). If necessary, you can set any other locale listed in Locales section on [AnyChart CDN](https://cdn.anychart.com/).
 
 In the head section of your web page, place a link to the locale on your server or on [AnyChart CDN](https://cdn.anychart.com/):
 
@@ -201,7 +203,7 @@ anychart.format.inputLocale("fr-fr");
 
 **After** setting the locale, you should also set the [input date/time format()](#inputdatetimeformat\(\)).
 
-The following sample shows how the input locale `"fr-fr"` works:
+The following sample shows how the input locale ["fr-fr"](https://cdn.anychart.com/locale/1.1.0/fr-fr.js) works:
 
 ```
 // create data
@@ -243,21 +245,19 @@ chart.data(treeData);
 
 ### outputDateTimeFormat()
 
+The default output **date/time**, **date**, and **time** formats depend on the [output locale](#outputlocale\(\)) you use. You can find them in the `dateTimeLocale` field of the locale. For example, here is how dates are formatted when the default ["en-us"](https://cdn.anychart.com/locale/1.1.0/en-us.js) locale is applied:
+
+* `dateTimeFormat`: `"y/MM/dd H:mm:ss"`
+* `dateFormat`: `"y/MM/dd"`,
+* `timeFormat`: `"H:mm:ss"`,
+
+To customize any of these formats, pass a string with the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax) you wish to use to one of the following methods:
+
 * {api:anychart.format#outputDateTimeFormat}outputDateTimeFormat(){api}
 * {api:anychart.format#DateTimeFormat}outputDateFormat(){api}
 * {api:anychart.format#TimeFormat}outputTimeFormat(){api}
 
-defaults:
-
-* dateFormat: `"y/MM/dd"`,
-* timeFormat: `"H:mm:ss"`,
-* dateTimeFormat: `"y/MM/dd H:mm:ss"` / (?) поля из dateTimeLocale поля в локали /
-* (?) где применяются дефолты?
-
-misc:
-
-* [date/time syntax](../Common_Settings/Text_Formatters#date/time_syntax)
-
+The following sample shows how to set the output date/time format for the default locale. Please note that the output format is not affected by the input one.
 
 ```
 // create data
