@@ -99,7 +99,7 @@ var data = [
 
 ```
 
-### String
+### String (?)
 
 To set dates, you can use strings with dates or date/times. AnyChart automatically converts them to [Date objects](#date_object). For example, the string `"2018-01-15"` is equivalent to `new Date("2018-01-15")`.
 
@@ -247,9 +247,9 @@ The default output **date/time**, **date**, and **time** formats affect the way 
 
 These formats are determined by the [output locale](#outputlocale\(\)) you use – you can find them in the `dateTimeLocale` field of the locale. For example, here is how dates are formatted when the default [en-us](https://cdn.anychart.com/locale/1.1.0/en-us.js) locale is applied:
 
-* `dateTimeFormat`: `"y/MM/dd H:mm:ss"`
-* `dateFormat`: `"y/MM/dd"`
-* `timeFormat`: `"H:mm:ss"`
+* `dateTimeFormat`: `'y MMM d \'at\' HH:mm:ss'`
+* `dateFormat`: `'y MMM d'`
+* `timeFormat`: `'HH:mm:ss'`
 
 To customize a format, pass a string with the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax) you wish to use to one of these methods:
 
@@ -304,7 +304,7 @@ chart.data(treeData);
 
 The output [locale](../Common_Settings/Localization) determines the [output date/time formats](#outputdatetimeformat\(\)) and affects the way how dates in various parts of the chart are [formatted](#format\(\)).
 
-The default output is [en-us](https://cdn.anychart.com/locale/1.1.0/en-us.js). If necessary, you can set any other locale listed in the Locales section on [AnyChart CDN](https://cdn.anychart.com/).
+The default output locale is [en-us](https://cdn.anychart.com/locale/1.1.0/en-us.js). If necessary, you can set any other locale listed in the Locales section on [AnyChart CDN](https://cdn.anychart.com/).
 
 In the head section of your web page, place a link to the locale on your server or on [AnyChart CDN](https://cdn.anychart.com/):
 
@@ -378,7 +378,7 @@ It is available for the following parts of the chart:
 
 You can format text by combining {api:?entry=format}format(){api} with [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
-Here is the list of tokens that affect dates:
+Here are some tokens that affect dates:
 
 * Project labels & tooltips– `{%actualStart}`, `{%actualEnd}`, `{%baselineStart}`, `{%baselineEnd}`
 * Resource labels & tooltips – `{%start}`, `{%end}`
@@ -415,7 +415,7 @@ chart.dataGrid().column(1).labels().format(
 
 You can format text by combining {api:?entry=format}format(){api} with [formatting functions](../Common_Settings/Text_Formatters#formatting_functions).
 
-In these functions, a number of context fields is available that affect dates, such as:
+In these functions, a number of context fields is available that affect dates, for example:
 
 * Project labels & tooltips– `actualStart`, `actualEnd`, `baselineStart`, `baselineEnd`
 * Resource labels & tooltips – `start`, `end`
