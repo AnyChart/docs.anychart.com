@@ -384,7 +384,7 @@ Here are some of the tokens that represent dates:
 * Resource labels & tooltips – `{%start}`, `{%end}`
 * Project & Resource header – `{%tickValue}`, `{%end}`
 
-To format dates, add the `dateTimeFormat` [formatting parameter](../Common_Settings/Text_Formatters#formatting_parameters) after a token and specify the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax). This parameter is optional: if it is not set, dates are formatted according to the [output date/time format](#outputdatetimeformat\(\)).
+To format a date, add the `dateTimeFormat` [formatting parameter](../Common_Settings/Text_Formatters#formatting_parameters) after a token and specify the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax). This parameter is optional: if it is not set, the date are formatted according to the [output date/time format](#outputdatetimeformat\(\)).
 
 In this sample, tokens are used to display and format dates in the second data grid column of a Project chart:
 
