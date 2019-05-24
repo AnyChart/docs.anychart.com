@@ -418,12 +418,12 @@ In these functions, a number of context fields is available that affect dates, s
 
 * Project labels & tooltips– `actualStart`, `actualEnd`, `baselineStart`, `baselineEnd`
 * Resource labels & tooltips – `start`, `end`
-* Project & Resource header – `tickValue}`, `%end`
+* Project & Resource header – `tickValue`, `end`
 
-To format dates, call the {api:anychart.format#dateTime}anychart.format.dateTime(){api} method. Pass two parameters:
+To format dates, call the {api:anychart.format#dateTime}anychart.format.dateTime(){api} method with two parameters:
 
-* the context
-* the string with the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax)
+* context
+* [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax)
 
 In this sample, a formatting function is used to display and format dates in the second data grid column of a Project chart:
 
