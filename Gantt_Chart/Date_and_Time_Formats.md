@@ -423,7 +423,7 @@ In these functions, a number of context fields is available that represent dates
 
 These fields contain dates represented as [Unix timestamps](https://en.wikipedia.org/wiki/Unix_time).
 
-To format a date, pass it to the {api:anychart.format#dateTime}dateTime(){api} method and specify the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax) as the second parameter. This parameter is optional: if it is not set, dates are formatted according to the [output date/time format](#outputdatetimeformat\(\)).
+To format a date, pass it to the {api:anychart.format#dateTime}dateTime(){api} method and specify the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax) as the second parameter. This parameter is optional: if it is not set, the date is formatted according to the [output date/time format](#outputdatetimeformat\(\)).
 
 In this sample, a formatting function is used to display and format dates in the second data grid column of a Project chart:
 
