@@ -3,7 +3,7 @@
 
 ## Overview
 
-This article explains how you can format [input](#input) and [output](#output) dates.
+This article explains how you can format and interpret [input](#input) dates you use in your data. You can also format [output](#output) dates that are displayed in various parts of the chart.
 
 ## Input
 
