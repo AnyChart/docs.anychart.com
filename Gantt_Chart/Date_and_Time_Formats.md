@@ -3,7 +3,9 @@
 
 ## Overview
 
-This article explains how you can format and interpret [input](#input) dates you use in your data. You can also format [output](#output) dates that are displayed in various parts of the chart.
+This article explains how you can format and interpret [input dates](#input) you use in your data.
+
+You can also format [output dates](#output) that are displayed in various parts of the chart.
 
 ## Input
 
@@ -382,7 +384,7 @@ Here is the list of tokens that affect dates:
 * Resource labels & tooltips – `{%start}`, `{%end}`
 * Project & Resource header – `{%tickValue}`, `{%end}`
 
-To format dates, add the `dateTimeFormat` [formatting parameter](../Common_Settings/Text_Formatters#formatting_parameters) after these tokens and specify the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax). This parameter is optional: if it is not set, dates are formatted according to the [output date/time format](#outputdatetimeformat\(\)).
+To format dates, add the `dateTimeFormat` [formatting parameter](../Common_Settings/Text_Formatters#formatting_parameters) after a tokens and specify the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax). This parameter is optional: if it is not set, dates are formatted according to the [output date/time format](#outputdatetimeformat\(\)).
 
 In this sample, tokens are used to display and format dates in the second data grid column of a Project chart:
 
