@@ -16,7 +16,7 @@ By default, there are two columns, numbered from left to right. The first column
 
 As explained in the sections below, you can change the [text](#text_\(labels\)) as well as other parameters of default columns or create completely [custom columns](#custom_columns). Also, you can use column presets – see the [Column Presets](Column_Presets) article.
 
-**Note:** To learn more about formatting dates, see [Date and Time Formats: format()](../Date_and_Time_Formats#format\(\).
+**Note:** To learn more about formatting dates, see the [Date and Time Formats](../Date_and_Time_Formats#format\(\) article.
 
 ## Enabling / Disabling
 
