@@ -200,9 +200,9 @@ Then pass the code of the locale to the {api:anychart.format#inputLocale}inputLo
 anychart.format.inputLocale("fr-fr");
 ```
 
-**After** setting the locale, you should also set the [input date/time format()](#inputdatetimeformat\(\)).
+Please note: **after** setting the locale, you should also set the [input date/time format()](#inputdatetimeformat\(\)).
 
-The following sample shows how the input locale [fr-fr](https://cdn.anychart.com/locale/1.1.0/fr-fr.js) works:
+This sample shows how the input locale [fr-fr](https://cdn.anychart.com/locale/1.1.0/fr-fr.js) works:
 
 ```
 // create data
@@ -257,6 +257,10 @@ To customize a format, pass a string with the [date/time pattern](../Common_Sett
 * {api:anychart.format#outputDateTimeFormat}outputDateTimeFormat(){api}
 * {api:anychart.format#DateTimeFormat}outputDateFormat(){api}
 * {api:anychart.format#TimeFormat}outputTimeFormat(){api}
+
+```
+anychart.format.outputDateTimeFormat("d MMMM");
+```
 
 The following sample shows how to set the output date/time format (for the default locale). It affects dates displayed in [data grid tooltips](Data_Grid/Tooltips) and [timeline tooltips](Timeline/Tooltips). Also, please note that the output format is not affected by the input one.
 
