@@ -303,9 +303,9 @@ chart.data(treeData);
 
 ### outputLocale()
 
-The output locale determines the [output date/time formats](#outputdatetimeformat\(\)) and affects the way how dates in various parts of the chart are [formatted](#format\(\)).
+The output [locale](../Common_Settings/Localization) determines the [output date/time formats](#outputdatetimeformat\(\)) and affects the way how dates in various parts of the chart are [formatted](#format\(\)).
 
-The default output [locale](../Common_Settings/Localization) is [en-us](https://cdn.anychart.com/locale/1.1.0/en-us.js). If necessary, you can set any other locale listed in the Locales section on [AnyChart CDN](https://cdn.anychart.com/).
+The default output is [en-us](https://cdn.anychart.com/locale/1.1.0/en-us.js). If necessary, you can set any other locale listed in the Locales section on [AnyChart CDN](https://cdn.anychart.com/).
 
 In the head section of your web page, place a link to the locale on your server or on [AnyChart CDN](https://cdn.anychart.com/):
 
