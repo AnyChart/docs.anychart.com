@@ -412,14 +412,20 @@ chart.dataGrid().column(1).labels().format(
 
 #### Formatting Functions
 
-misc:
+You can format dates by combining {api:?entry=format}format(){api} with [formatting functions](../Common_Settings/Text_Formatters#formatting_functions).
 
-* {api:anychart.format#dateTime}dateTime(){api}
-* (?) списки полей, имеющих отношение к датам
-* (?) без параметров - Unix timestamp
-* [formatting functions](../Common_Settings/Text_Formatters#formatting_functions)
-* [date/time syntax](../Common_Settings/Text_Formatters#date/time_syntax)
+In these functions, a number of context fields is available that affect dates, such as:
 
+* Project labels & tooltips– `actualStart`, `actualEnd`, `baselineStart`, `baselineEnd`
+* Resource labels & tooltips – `start`, `end`
+* Project & Resource header – `tickValue}`, `%end`
+
+To format dates, call the {api:anychart.format#dateTime}dateTime(){api} method. Pass two parameters:
+
+* the context – for example, `this.actualStart`
+* the string with the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax)
+
+In this sample, a formatting function is used to display and format dates in the second data grid column of a Project chart:
 
 ```
 // set the text of the second data grid column
