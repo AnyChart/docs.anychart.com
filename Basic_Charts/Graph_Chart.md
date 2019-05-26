@@ -92,6 +92,8 @@ Use the following data fields:
 
 {sample}BCT\_Graph\_Chart\_02{sample}
 
+### Layout
+
 ### Nodes
 
 #### Height & Width
@@ -108,10 +110,15 @@ Use the following data fields:
 
 #### Individual Points
 
-### (?)
-
-### (?) Labels and Tooltips
+### Labels and Tooltips
 
 #### Tokens
 
 #### Formatting Functions
+
+### (?) Navigation
+
+* zooming
+* moving
+* fitting
+* (?) rotating
