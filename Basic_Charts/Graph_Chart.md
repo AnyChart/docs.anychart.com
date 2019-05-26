@@ -87,6 +87,8 @@ Use the following data fields:
 
 #### Shape
 
+#### Groups
+
 ### Edges
 
 ### Appearance
