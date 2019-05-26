@@ -79,7 +79,7 @@ Use the following data fields:
 
 ```
 
-{sample}BCT\_Graph\_Chart\_012{sample}
+{sample}BCT\_Graph\_Chart\_02{sample}
 
 ### (?)
 
