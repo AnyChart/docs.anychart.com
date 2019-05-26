@@ -3,9 +3,9 @@
 
 ## Overview
 
-This article explains how you can format and interpret [input dates](#input) you use in your data.
+AnyChart supports flexible settings of both input and output date/time formats. In addition to a variety of built-in formats, it is possible to use custom formats.
 
-You can also format [output dates](#output) that are displayed in various parts of the chart.
+This article explains how you can format and interpret [input dates](#input) that you use in your data as well as how to format [output dates](#output) that are displayed in various parts of the chart.
 
 ## Input
 
