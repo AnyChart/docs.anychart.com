@@ -81,4 +81,12 @@ Use the following data fields:
 
 {sample}BCT\_Graph\_Chart\_012{sample}
 
-### ?
+### (?)
+
+### Appearance
+
+### Labels and Tooltips (?)
+
+#### Tokens
+
+#### Formatting Functions
