@@ -81,11 +81,19 @@ Use the following data fields:
 
 {sample}BCT\_Graph\_Chart\_02{sample}
 
-### (?)
+### Nodes
+
+### Edges
 
 ### Appearance
 
-### Labels and Tooltips (?)
+#### All Points
+
+#### Individual Points
+
+### (?)
+
+### (?) Labels and Tooltips
 
 #### Tokens
 
