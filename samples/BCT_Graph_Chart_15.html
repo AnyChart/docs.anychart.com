@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Graph Chart 08"/>
+    <meta name="ac:name" content="BCT Graph Chart 15"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -29,14 +29,14 @@ anychart.onDocumentReady(function () {
     // create data
     var data = {
       nodes: [
-        {id: "Richard", group: "family"},
-        {id: "Larry",   group: "family"},
-        {id: "Marta",   group: "family"},
-        {id: "Jane",    group: "friends"},
-        {id: "Norma",   group: "friends"},
-        {id: "Paula",   group: "friends"},
-        {id: "Brett",   group: "friends"},
-        {id: "Tommy",   group: "lone wolf"},
+        {id: "Richard"},
+        {id: "Larry"},
+        {id: "Marta"},
+        {id: "Jane"},
+        {id: "Norma"},
+        {id: "Paula"},
+        {id: "Brett"},
+        {id: "Tommy"},
       ],
       edges: [
         {from: "Richard", to: "Larry"},
@@ -53,18 +53,8 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     var chart = anychart.graph(data);
 
-    // configure the size of nodes in groups
-    chart.group("family").height(40);
-    chart.group("friends").height(20);  
-    chart.group("lone wolf").height(15);   
-
-    // configure the shape of nodes in groups
-    chart.group("family").shape("star5");
-    chart.group("friends").shape("diamond");
-    chart.group("lone wolf").shape("diagonal-cross");
-
     // set the chart title
-    chart.title("Graph Chart: Nodes (Groups)");
+    chart.title("Graph Chart: Navigation");
 
     // set the container id
     chart.container("container");
