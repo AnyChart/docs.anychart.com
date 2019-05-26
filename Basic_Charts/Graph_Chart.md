@@ -12,7 +12,7 @@ This article explains how to create a basic Graph chart as well as configure set
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Graph}anychart.charts.Graph{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>?</td></tr>
+<tr><td>Data Fields</td><td>(?)</td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -66,7 +66,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-Data for a Graph chart can be passed to the chart constructor {api:anychart#graph}anychart.graph(){api} or to the {api:}data(){api} method.
+Data for a Graph chart can be passed to the chart constructor {api:anychart#graph}anychart.graph(){api} or to the {api:anychart.charts.Graph#data}data(){api} method.
 
 Use the following data fields:
 
