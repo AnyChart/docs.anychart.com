@@ -23,6 +23,6 @@ chart.palette(anychart.palettes.defaultPalette);
 // anychart.palettes.sea
 ```
 
-Here is a sample of a pie chart, click slices to change palettes:
+Here is a sample of a Funnel chart. Click slices to change palettes:
 
 {sample}AS\_Palettes\_01{sample}
