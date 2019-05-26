@@ -70,9 +70,20 @@ Data for a Graph chart can be passed to the chart constructor {api:anychart#grap
 
 Use the following data fields:
 
-* `.`
-* `.`
-* `.`
+* `nodes`
+* `edges`
+
+... nodes:
+
+* `id`
+* optional: `x`, `y`
+* optional: `group`
+
+... edges:
+
+* `from`
+* `to`
+* optional: `id`
 
 
 ```
