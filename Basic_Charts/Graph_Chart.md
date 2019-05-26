@@ -94,6 +94,10 @@ Use the following data fields:
 
 ### Layout
 
+#### (?) Type
+
+#### (?) Iteration Count
+
 ### Nodes
 
 #### Height & Width
