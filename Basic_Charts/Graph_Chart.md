@@ -94,15 +94,15 @@ Use the following data fields:
 
 ### Layout
 
-### Rotation
-
 #### Type
 
 #### (?) Iteration Count
 
+### Rotation
+
 ### Nodes
 
-#### Height & Width
+#### Size
 
 #### Shape
 
