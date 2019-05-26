@@ -106,6 +106,12 @@ Use the following data fields:
 
 #### Groups
 
+```
+
+```
+
+{sample}BCT\_Graph\_Chart\_07{sample}
+
 ### Edges
 
 ### Appearance
