@@ -27,15 +27,28 @@
 anychart.onDocumentReady(function () {
 
     // create data
-    var data = [
-      {from: "Canada",  to: "France",  weight: 2230000},
-      {from: "Canada",  to: "Germany", weight: 1990000},
-      {from: "Canada",  to: "Italy",   weight: 1180000},
-      {from: "Canada",  to: "Spain",   weight:  990000},
-      {from: "USA",     to: "France",  weight:  950000},
-      {from: "USA",     to: "Germany", weight: 2020000},
-      {from: "USA",     to: "Spain",   weight: 1110000}
-    ];
+    var data = {
+      nodes: [
+        {id: "Richard"},
+        {id: "Larry"},
+        {id: "Marta"},
+        {id: "Jane"},
+        {id: "Norma"},
+        {id: "Paula"},
+        {id: "Brett"},
+        {id: "Tommy"},
+      ],
+      edges: [
+        {from: "Richard", to: "Larry"},
+        {from: "Richard", to: "Marta"},
+        {from: "Larry",   to: "Marta"},
+        {from: "Marta",   to: "Jane"},
+        {from: "Jane",    to: "Norma"},
+        {from: "Jane",    to: "Paula"},
+        {from: "Jane",    to: "Brett"},
+        {from: "Brett",   to: "Paula"},
+      ]
+    };
 
     // create a chart and set the data
     var chart = anychart.graph(data);
