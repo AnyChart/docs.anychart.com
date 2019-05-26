@@ -56,9 +56,10 @@ anychart.onDocumentReady(function () {
     // configure the size of nodes in groups
     chart.group("family").height(40);
     chart.group("friends").height(15);  
-    chart.group("lone wolf").height(20);   
+    chart.group("lone wolf").height(15);   
 
     // configure the shape of nodes in groups
+    chart.group("family").shape("star5");
     chart.group("lone wolf").shape("diagonal-cross");
 
     // set the chart title
