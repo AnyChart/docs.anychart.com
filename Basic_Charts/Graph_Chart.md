@@ -83,6 +83,10 @@ Use the following data fields:
 
 ### Nodes
 
+#### Height & Width
+
+#### Shape
+
 ### Edges
 
 ### Appearance
