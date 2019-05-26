@@ -53,7 +53,6 @@ To create a Graph chart, use the {api:anychart#graph}anychart.graph(){api} chart
 
 ```
 
-
 {sample}BCT\_Graph\_Chart\_01{sample}
 
 ## General Settings
@@ -85,6 +84,10 @@ Use the following data fields:
 * `to`
 * optional: `id`
 
+misc:
+
+* между парой нод поддерживается только одно ребро
+
 
 ```
 
@@ -96,17 +99,46 @@ Use the following data fields:
 
 #### Type
 
-#### (?) Iteration Count
+```
+
+```
+
+{sample}BCT\_Graph\_Chart\_03{sample}
+
+#### Iteration Step (?)
+
+Когда рисуется чарт, работает алгоритм, который группирует ноды по кластерам. Однако этот алгоритм можно остановить на любом шаге. Вот как выглядит iterationCount = 0...
+
+пример с двумя чартами:
+
+```
+
+```
+
+{sample}BCT\_Graph\_Chart\_04{sample}
+
 
 ### Rotation
+
+пример с двумя чартами:
+
+```
+
+```
+
+{sample}BCT\_Graph\_Chart\_05{sample}
 
 ### Nodes
 
 #### Size
 
-#### Shape
+```
 
-#### Groups
+```
+
+{sample}BCT\_Graph\_Chart\_06{sample}
+
+#### Shape
 
 ```
 
@@ -114,24 +146,85 @@ Use the following data fields:
 
 {sample}BCT\_Graph\_Chart\_07{sample}
 
+#### Groups
+
+```
+
+```
+
+{sample}BCT\_Graph\_Chart\_08{sample}
+
 ### Edges
 
 ### Appearance
 
 #### All Points
 
+(?) пример с группами:
+
+```
+
+```
+
+{sample}BCT\_Graph\_Chart\_09{sample}
+
 #### Individual Points
 
+```
+
+```
+
+{sample}BCT\_Graph\_Chart\_10{sample}
+
 #### Custom Images
+
+
+```
+
+```
+
+{sample}BCT\_Graph\_Chart\_11{sample}
 
 ### Labels and Tooltips
 
 #### Tokens
 
+(?) пример с группами:
+
+```
+
+```
+
+{sample}BCT\_Graph\_Chart\_12{sample}
+
 #### Formatting Functions
+
+(?) пример с группами:
+
+```
+
+```
+
+{sample}BCT\_Graph\_Chart\_13{sample}
 
 ### Navigation
 
 * zooming
 * moving
 * fitting
+
+просто кнопки:
+
+```
+
+```
+
+{sample}BCT\_Graph\_Chart\_14{sample}
+
+кнопки как в картах:
+
+```
+
+```
+
+{sample}BCT\_Graph\_Chart\_15{sample}
