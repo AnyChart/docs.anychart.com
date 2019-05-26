@@ -94,7 +94,9 @@ Use the following data fields:
 
 ### Layout
 
-#### (?) Type
+### Rotation
+
+#### Type
 
 #### (?) Iteration Count
 
@@ -120,15 +122,16 @@ Use the following data fields:
 
 #### Individual Points
 
+#### Custom Images
+
 ### Labels and Tooltips
 
 #### Tokens
 
 #### Formatting Functions
 
-### (?) Navigation
+### Navigation
 
 * zooming
 * moving
 * fitting
-* (?) rotating
