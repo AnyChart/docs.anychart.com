@@ -126,7 +126,7 @@ misc:
 
 ### Nodes
 
-#### Size
+#### Size & Shape
 
 ```
 
@@ -134,7 +134,7 @@ misc:
 
 {sample}BCT\_Graph\_Chart\_06{sample}
 
-#### Size & Shape
+#### Individual Nodes
 
 ```
 
