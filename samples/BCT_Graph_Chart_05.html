@@ -26,6 +26,9 @@
 <script>
 anychart.onDocumentReady(function () {
 
+    // create a stage
+    var stage = anychart.graphics.create("container");
+
     // create data
     var data = {
       nodes: [
@@ -50,17 +53,25 @@ anychart.onDocumentReady(function () {
       ]
     };
 
-    // create a chart and set the data
-    var chart = anychart.graph(data);
-
-    // set the chart title
-    chart.title("Graph Chart: Rotation");
-
-    // set the container id
-    chart.container("container");
-
+    // create and configure the first graph chart
+    var graph1 = anychart.graph(data);
+    graph1.title("Rotation Angle: Default (0\xb0)");
+    graph1.bounds(0, 0, "50%", "100%");
+    // set the chart container
+    graph1.container(stage);
     // initiate drawing the chart
-    chart.draw();
+    graph1.draw();   
+
+    // create and configure the second graph chart
+    var graph2 = anychart.graph(data);
+    graph2.title("Rotation Angle: 90\xb0");
+    graph2.bounds("50%", 0, "50%", "100%");
+    // set the rotation angle
+    graph2.rotation(90);
+    // set the chart container
+    graph2.container(stage);
+    // initiate drawing the chart
+    graph2.draw();   
 });
 </script>
 </body>
