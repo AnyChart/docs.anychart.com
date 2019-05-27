@@ -53,6 +53,9 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     var chart = anychart.graph(data);
 
+    // set the shape of nodes
+    chart.nodes().shape("star5");
+
     // set the chart title
     chart.title("Graph Chart: Nodes (Shape)");
 
