@@ -54,7 +54,9 @@ anychart.onDocumentReady(function () {
     var chart = anychart.graph(data);
 
     // set the size of nodes
-    chart.nodes().height(40);
+    chart.nodes().normal().height(40);
+    chart.nodes().hovered().height(55);
+    chart.nodes().selected().height(55);
 
     // set the shape of nodes
     chart.nodes().shape("star5");
