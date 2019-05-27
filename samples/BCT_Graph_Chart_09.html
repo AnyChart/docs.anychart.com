@@ -29,14 +29,14 @@ anychart.onDocumentReady(function () {
     // create data
     var data = {
       nodes: [
-        {id: "Richard"},
-        {id: "Larry"},
-        {id: "Marta"},
-        {id: "Jane"},
-        {id: "Norma"},
-        {id: "Paula"},
-        {id: "Brett"},
-        {id: "Tommy"},
+        {id: "Richard", group: "family"},
+        {id: "Larry",   group: "family"},
+        {id: "Marta",   group: "family"},
+        {id: "Jane",    group: "friends"},
+        {id: "Norma",   group: "friends"},
+        {id: "Paula",   group: "friends"},
+        {id: "Brett",   group: "friends"},
+        {id: "Tommy",   group: "lone wolf"},
       ],
       edges: [
         {from: "Richard", to: "Larry"},
@@ -52,6 +52,24 @@ anychart.onDocumentReady(function () {
 
     // create a chart and set the data
     var chart = anychart.graph(data);
+
+    // configure the visual settings of edges
+    chart.edges().normal().stroke("#acb9b9", 1, "10 5", "round");
+    chart.edges().hovered().stroke("#758a8a", 2, "10 5", "round");
+    chart.edges().selected().stroke("#758a8a", 2);
+
+    // configure the visual settings of nodes
+    chart.nodes().normal().stroke("#acb9b9", 1);
+    chart.nodes().hovered().stroke("#758a8a", 2);
+    chart.nodes().selected().stroke("#758a8a", 2);
+
+    // configure the visual settings of nodes in groups
+    chart.group("family").normal().fill("#ffdb66");
+    chart.group("family").selected().fill("#ffc400");
+    chart.group("friends").normal().fill("#6eb9f7");
+    chart.group("friends").selected().fill("#0e8bf1");
+    chart.group("lone wolf").normal().fill("#ff8566");
+    chart.group("lone wolf").selected().fill("#ff3300");
 
     // set the chart title
     chart.title("Graph Chart: Appearance");
