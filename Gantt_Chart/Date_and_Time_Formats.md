@@ -99,11 +99,15 @@ var data = [
 
 ```
 
-### String (?)
+### String
 
-To set dates, you can use strings with dates or date/times. AnyChart automatically converts them to [Date objects](#date_object). For example, the string `"2018-01-15"` is equivalent to `new Date("2018-01-15")`.
+To set dates, you can use strings with dates or date/times. You should be very careful using this option, and understand the following section. 
 
-As a rule, to make sure that strings are interpreted correctly, you should also set:
+If you set [input date/time format](#inputdatetimeformat\(\)) and [input locale](#inputlocale\(\)) AnyChart  follows the rules of pattern and locale to create a proper date.
+
+If [input date/time format](#inputdatetimeformat\(\)) and [input locale](#inputlocale\(\)) are not defined explicitly, then AnyChart simply passes the string to [Date objects](#date_object) constructor. It means that setting the string `"2018-01-15"` without specifying [input date/time format](#inputdatetimeformat\(\)) is equivalent to using [Date Object](#date_object) in the following way: `new Date("2018-01-15")`. The way date object interprets the string depends on the browser and user environement settings.
+
+As a rule, to make sure that strings are interpreted correctly, you should always set:
 
 * [input date/time format](#inputdatetimeformat\(\))
 * [input locale](#inputlocale\(\))
@@ -113,7 +117,7 @@ Various date/time patterns can be used. For example: *January 15, 2018* can be r
 * `"2018-01-15"`
 * `"2018-01-15T00:00:00.000Z"`
 
-Strings with the pattern above do not require any additional settings, though it is still highly recommended to set the input date/time format. Otherwise, the way how dates are interpreted may be affected by users' browser settings.
+Strings with the pattern above do not require any additional settings, but it is **highly recommended to set the input date/time format**. Otherwise, the way how dates are interpreted may be affected by users' browser settings.
 
 Sample Code
 
