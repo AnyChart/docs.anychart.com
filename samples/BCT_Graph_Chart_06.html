@@ -54,10 +54,13 @@ anychart.onDocumentReady(function () {
     var chart = anychart.graph(data);
 
     // set the size of nodes
-    chart.nodes().height(20);
+    chart.nodes().height(40);
+
+    // set the shape of nodes
+    chart.nodes().shape("star5");
 
     // set the chart title
-    chart.title("Graph Chart: Nodes (Size)");
+    chart.title("Graph Chart: Nodes (Size & Shape)");
 
     // set the container id
     chart.container("container");

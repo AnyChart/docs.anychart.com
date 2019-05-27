@@ -134,7 +134,7 @@ misc:
 
 {sample}BCT\_Graph\_Chart\_06{sample}
 
-#### Shape
+#### Size & Shape
 
 ```
 
