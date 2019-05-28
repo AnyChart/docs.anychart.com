@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Network Graph Diagram 01"/>
+    <meta name="ac:name" content="BCT Graph Chart 01"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-graph.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />        
     
     <style>
         html, body, #container {
@@ -26,33 +25,42 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+
     // create data
     var data = {
       nodes: [
-        {id: 'n'}, {id: 'n1'}, {id: 'n2'}, {id: 'n3'}, {id: 'n4'}, {id: 'n5'}, {id: 'n6'},
+        {id: "Richard"},
+        {id: "Larry"},
+        {id: "Marta"},
+        {id: "Jane"},
+        {id: "Norma"},
+        {id: "Paula"},
+        {id: "Brett"},
+        {id: "Tommy"},
       ],
       edges: [
-        {from: 'n', to: 'n1'},
-        {from: 'n', to: 'n2'},
-        {from: 'n', to: 'n3'},
-        {from: 'n', to: 'n4'},
-        {from: 'n', to: 'n5'},
-        {from: 'n', to: 'n6'},
+        {from: "Richard", to: "Larry"},
+        {from: "Richard", to: "Marta"},
+        {from: "Larry",   to: "Marta"},
+        {from: "Marta",   to: "Jane"},
+        {from: "Jane",    to: "Norma"},
+        {from: "Jane",    to: "Paula"},
+        {from: "Jane",    to: "Brett"},
+        {from: "Brett",   to: "Paula"},
       ]
     };
+
     // create a chart and set the data
     var chart = anychart.graph(data);
 
+    // set the chart title
+    chart.title("Graph Chart: Basic Sample");
+
     // set the container id
-    chart.container('container')
+    chart.container("container");
 
-    // initiate drawing the chart  
+    // initiate drawing the chart
     chart.draw();
-
-    // enable zoom controls
-    var zoomController = anychart.ui.zoom();
-    zoomController.target(chart);
-    zoomController.render();    
 });
 </script>
 </body>
