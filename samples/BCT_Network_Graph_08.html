@@ -65,9 +65,9 @@ anychart.onDocumentReady(function () {
     chart.group("lone wolf").selected().height(20);      
 
     // configure the shape of nodes in groups
-    chart.group("family").shape("star5");
-    chart.group("friends").shape("diamond");
-    chart.group("lone wolf").shape("diagonal-cross");
+    chart.group("family").normal().shape("star5");
+    chart.group("friends").normal().shape("diamond");
+    chart.group("lone wolf").normal().shape("diagonal-cross");
 
     // set the chart title
     chart.title("Network Graph: Nodes (Groups)");

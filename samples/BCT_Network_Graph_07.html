@@ -31,12 +31,20 @@ anychart.onDocumentReady(function () {
       nodes: [
         {id: "Richard"},
         {id: "Larry"},
-        {id: "Marta", height: 40, shape: "star5"},
+        {id: "Marta",
+         normal: {height: 40, shape: "star5"},
+         hovered: {height: 55},
+         selected: {height: 55},
+        },
         {id: "Jane"},
         {id: "Norma"},
         {id: "Paula"},
         {id: "Brett"},
-        {id: "Tommy", height: 15, shape: "diagonal-cross"},
+        {id: "Tommy",
+         normal: {height: 15, shape: "diagonal-cross"},
+         hovered: {height: 20},
+         selected: {height: 20}
+        },
       ],
       edges: [
         {from: "Richard", to: "Larry"},
