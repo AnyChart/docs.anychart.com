@@ -156,6 +156,8 @@ misc:
 
 ### Edges
 
+* написать про то, что можно одно ребро сделать толще другого
+
 ### Appearance
 
 #### All Points
@@ -228,3 +230,5 @@ misc:
 ```
 
 {sample}BCT\_Network\_Graph\_15{sample}
+
+### (?) Interactivity
