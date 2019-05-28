@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Graph Chart 04"/>
+    <meta name="ac:name" content="BCT Network Graph 04"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -55,7 +55,7 @@ anychart.onDocumentReady(function () {
 
     // create and configure the first graph chart
     var graph1 = anychart.graph(data);
-    graph1.title("Iteration Step: Default (500) (?)");
+    graph1.title("Iteration Step: Default (500)");
     graph1.bounds(0, 0, "50%", "100%");
     // set the chart container
     graph1.container(stage);
@@ -64,7 +64,7 @@ anychart.onDocumentReady(function () {
 
     // create and configure the second graph chart
     var graph2 = anychart.graph(data);
-    graph2.title("Iteration Step: 0 (?)");
+    graph2.title("Iteration Step: 0");
     graph2.bounds("50%", 0, "50%", "100%");
     // set the iteration step (?)
     graph2.layout().iterationCount(0);

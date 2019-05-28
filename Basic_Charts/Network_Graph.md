@@ -1,4 +1,4 @@
-{:index 1.6}
+{:index 1.61}
 # Network Graph
 
 ## Overview
@@ -31,7 +31,7 @@ This article explains how to create a basic Network Graph chart as well as confi
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Sankey Diagram](Sankey_Diagram)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Network Graph](https://www.anychart.com/chartopedia/chart-types/network_graph/) (?)</td></tr>
+<tr><td></td><td>[Chartopedia: Network Graph](https://www.anychart.com/chartopedia/chart-types/network-graph/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
@@ -109,7 +109,7 @@ misc:
 
 {sample}BCT\_Network\_Graph\_03{sample}
 
-#### Iteration Step (?)
+#### Iteration Step
 
 Когда рисуется чарт, работает алгоритм, который группирует ноды по кластерам. Однако этот алгоритм можно остановить на любом шаге. Вот как выглядит iterationCount = 0:
 

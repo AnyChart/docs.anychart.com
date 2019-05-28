@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Graph Chart 03"/>
+    <meta name="ac:name" content="BCT Network Graph 03"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -66,11 +66,11 @@ anychart.onDocumentReady(function () {
     chart = anychart.graph(data);
 
     // set the chart title
-    chart.title("Graph Chart: Layout = fixed");
+    chart.title("Network Graph: Layout = fixed");
 
     // set the chart title
     chart.listen("chartDraw", function () {
-      chart.title("Graph Chart: Layout = " + chart.layout().type());
+      chart.title("Network Graph: Layout = " + chart.layout().type());
     });
 
     // set the container id
