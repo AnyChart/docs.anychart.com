@@ -195,6 +195,7 @@ misc:
 * `{%group}`
 * `{%from}`
 * `{%to}`
+* (?) `{%type}`
 
 
 ```
@@ -205,12 +206,12 @@ misc:
 
 #### Formatting Functions
 
-* `type`
 * `id`
-* (?) `group`
-* (?) `from`
-* (?) `to`
-* (?) `siblings`
+* `type`
+* `siblings`
+* (?) `titleText`
+* (?) `valuePostfix`
+* (?) `valuePrefix `
 
 
 ```
