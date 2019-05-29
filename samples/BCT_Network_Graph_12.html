@@ -29,14 +29,14 @@ anychart.onDocumentReady(function () {
     // create data
     var data = {
       nodes: [
-        {id: "Richard", group: "family"    },
-        {id: "Larry",   group: "family"    },
-        {id: "Marta",   group: "family"    },
-        {id: "Jane",    group: "friends"   },
-        {id: "Norma",   group: "friends"   },
-        {id: "Paula",   group: "friends"   },
-        {id: "Brett",   group: "friends"   },
-        {id: "Tommy",   group: "lone wolf" },
+        {id: "Richard", group: "family",    last_name: "Roe"},
+        {id: "Larry",   group: "family",    last_name: "Loe"},
+        {id: "Marta",   group: "family",    last_name: "Moe"},
+        {id: "Jane",    group: "friends",   last_name: "Poe"},
+        {id: "Norma",   group: "friends",   last_name: "Noe"},
+        {id: "Frank",   group: "friends",   last_name: "Foe"},
+        {id: "Brett",   group: "friends",   last_name: "Boe"},
+        {id: "Tommy",   group: "lone wolf", last_name: "Toe"}
       ],
       edges: [
         {from: "Richard", to: "Larry"},
@@ -44,9 +44,9 @@ anychart.onDocumentReady(function () {
         {from: "Larry",   to: "Marta"},
         {from: "Marta",   to: "Jane"},
         {from: "Jane",    to: "Norma"},
-        {from: "Jane",    to: "Paula"},
+        {from: "Jane",    to: "Frank"},
         {from: "Jane",    to: "Brett"},
-        {from: "Brett",   to: "Paula"},
+        {from: "Brett",   to: "Frank"}
       ]
     };
 
@@ -66,11 +66,14 @@ anychart.onDocumentReady(function () {
     chart.group("lone wolf").labels().fontColor("#dd2c00");
     chart.group("lone wolf").labels().format("{%id}\n({%group})");
 
-    // configure tooltips
-    // chart.tooltips().
-    // chart.nodes().tooltips().
-    // chart.group().tooltips().
-    // chart.edges().tooltips().
+    // configure tooltips of nodes
+    chart.nodes().tooltip().useHtml(true);
+    chart.nodes().tooltip().format(
+      "<span style='font-weight:bold'>{%id} {%last_name}</span><br>group: {%group}"
+    );
+
+    // configure tooltips of edges
+    chart.edges().tooltip().format("{%from} -> {%to}");
 
     // set the chart title
     chart.title("Network Graph: Labels and Tooltips (Tokens)");
