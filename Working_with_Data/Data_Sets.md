@@ -107,7 +107,7 @@ var dataSet = anychart.data.set(data);
 var chart = anychart.column();
 
 // create a series and set the data
-var series = chart.column(mapping);
+var series = chart.column(data);
 ```
 
 {sample}WD\_Data\_Sets\_02{sample}

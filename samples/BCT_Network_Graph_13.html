@@ -29,14 +29,14 @@ anychart.onDocumentReady(function () {
     // create data
     var data = {
       nodes: [
-        {id: "Richard"},
-        {id: "Larry"},
-        {id: "Marta"},
-        {id: "Jane"},
-        {id: "Norma"},
-        {id: "Frank"},
-        {id: "Brett"},
-        {id: "Tommy"}
+        {id: "Richard", group: "family",    last_name: "Roe"},
+        {id: "Larry",   group: "family",    last_name: "Loe"},
+        {id: "Marta",   group: "family",    last_name: "Moe"},
+        {id: "Jane",    group: "friends",   last_name: "Poe"},
+        {id: "Norma",   group: "friends",   last_name: "Noe"},
+        {id: "Frank",   group: "friends",   last_name: "Foe"},
+        {id: "Brett",   group: "friends",   last_name: "Boe"},
+        {id: "Tommy",   group: "lone wolf", last_name: "Toe"}
       ],
       edges: [
         {from: "Richard", to: "Larry"},
@@ -53,6 +53,42 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     var chart = anychart.graph(data);
 
+    // enable labels of nodes
+    chart.nodes().labels().enabled(true);
+
+    // configure labels of nodes
+    chart.nodes().labels().fontSize(12);
+    chart.nodes().labels().fontWeight(600);
+    chart.nodes().labels().format(function() {
+      if (this.siblings.length > 2) {
+        return  this.id.toUpperCase();
+      } else {
+        if (this.siblings.length == 0) {
+          return this.id.toUpperCase() + "\n(" + this.getData("group") + ")";
+        } else {
+          return "";
+        }
+      }
+    });
+
+    // configure labels of nodes in groups
+    chart.group("family").labels().fontColor("#00bfa5");
+    chart.group("friends").labels().fontColor("#ffa000");
+    chart.group("lone wolf").labels().fontColor("#dd2c00");
+
+    // configure tooltips
+    chart.tooltip().useHtml(true);
+    chart.tooltip().format(function() {
+      if (this.type == "node") {
+        return "<span style='font-weight:bold'>" +
+               this.id + " " + this.getData("last_name") +
+               "</span><br><br>siblings: " + this.siblings.length +
+               "<br>group: " + this.getData("group");
+      } else {
+        return this.getData("from") + " -> " + this.getData("to");
+      }
+    });
+
     // set the chart title
     chart.title("Network Graph: Labels and Tooltips (Formatting Functions)");
 
@@ -60,7 +96,7 @@ anychart.onDocumentReady(function () {
     chart.container("container");
 
     // initiate drawing the chart
-    chart.draw();
+    chart.draw();    
 });
 </script>
 </body>

@@ -191,7 +191,11 @@ misc:
 
 #### Tokens
 
-(?) пример с группами:
+* `{%id}`
+* `{%group}`
+* `{%from}`
+* `{%to}`
+
 
 ```
 
@@ -201,7 +205,13 @@ misc:
 
 #### Formatting Functions
 
-(?) пример с группами:
+* `type`
+* `id`
+* (?) `group`
+* (?) `from`
+* (?) `to`
+* (?) `siblings`
+
 
 ```
 
