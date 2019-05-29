@@ -29,14 +29,14 @@ anychart.onDocumentReady(function () {
     // create data
     var data = {
       nodes: [
-        {id: "Richard"},
-        {id: "Larry"},
-        {id: "Marta"},
-        {id: "Jane"},
-        {id: "Norma"},
-        {id: "Paula"},
-        {id: "Brett"},
-        {id: "Tommy"},
+        {id: "Richard", group: "family"    },
+        {id: "Larry",   group: "family"    },
+        {id: "Marta",   group: "family"    },
+        {id: "Jane",    group: "friends"   },
+        {id: "Norma",   group: "friends"   },
+        {id: "Paula",   group: "friends"   },
+        {id: "Brett",   group: "friends"   },
+        {id: "Tommy",   group: "lone wolf" },
       ],
       edges: [
         {from: "Richard", to: "Larry"},
@@ -52,6 +52,25 @@ anychart.onDocumentReady(function () {
 
     // create a chart and set the data
     var chart = anychart.graph(data);
+
+    // enable labels of nodes
+    chart.nodes().labels().enabled(true);
+
+    // configure labels of nodes
+    chart.nodes().labels().fontSize(12);
+    chart.nodes().labels().fontWeight(600);
+
+    // configure labels of nodes in groups
+    chart.group("family").labels().fontColor("#00bfa5");
+    chart.group("friends").labels().fontColor("#ffa000");
+    chart.group("lone wolf").labels().fontColor("#dd2c00");
+    chart.group("lone wolf").labels().format("{%id}\n({%group})");
+
+    // configure tooltips
+    // chart.tooltips().
+    // chart.nodes().tooltips().
+    // chart.group().tooltips().
+    // chart.edges().tooltips().
 
     // set the chart title
     chart.title("Network Graph: Labels and Tooltips (Tokens)");

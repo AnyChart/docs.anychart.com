@@ -53,23 +53,26 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     var chart = anychart.graph(data);
 
-    // configure the visual settings of edges
-    chart.edges().normal().stroke("#acb9b9", 1, "10 5", "round");
-    chart.edges().hovered().stroke("#758a8a", 2, "10 5", "round");
-    chart.edges().selected().stroke("#758a8a", 2);
-
     // configure the visual settings of nodes
-    chart.nodes().normal().stroke("#acb9b9", 1);
-    chart.nodes().hovered().stroke("#758a8a", 2);
-    chart.nodes().selected().stroke("#758a8a", 2);
+    chart.nodes().normal().stroke("#96a6a6", 1);
+    chart.nodes().hovered().stroke("#455a64", 2);
+    chart.nodes().selected().stroke("#455a64", 2);
 
     // configure the visual settings of nodes in groups
-    chart.group("family").normal().fill("#ffdb66");
-    chart.group("family").selected().fill("#ffc400");
-    chart.group("friends").normal().fill("#6eb9f7");
-    chart.group("friends").selected().fill("#0e8bf1");
-    chart.group("lone wolf").normal().fill("#ff8566");
-    chart.group("lone wolf").selected().fill("#ff3300");
+    chart.group("family").normal().fill("#00bfa5");
+    chart.group("family").hovered().fill("#00bfa5");
+    chart.group("family").selected().fill("#455a64");
+    chart.group("friends").normal().fill("#ffa000");
+    chart.group("friends").hovered().fill("#ffa000");
+    chart.group("friends").selected().fill("#455a64");
+    chart.group("lone wolf").normal().fill("#ff3300");
+    chart.group("lone wolf").hovered().fill("#ff3300");
+    chart.group("lone wolf").selected().fill("#455a64");
+
+    // configure the visual settings of edges
+    chart.edges().normal().stroke("#96a6a6", 1, "10 5", "round");
+    chart.edges().hovered().stroke("#455a64", 2, "10 5", "round");
+    chart.edges().selected().stroke("#455a64", 2);
 
     // set the chart title
     chart.title("Network Graph: Appearance");
