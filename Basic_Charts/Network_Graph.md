@@ -254,6 +254,6 @@ siblings: все ноды, которые связаны с данной чер�
 
 * упомянуть: edges()
 
-#### Mouse Wheel
+#### Zooming & Scrolling
 
 * scrollOnMouseWheel() + zoomOnMouseWheel()
