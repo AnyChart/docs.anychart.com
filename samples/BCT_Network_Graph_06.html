@@ -53,6 +53,10 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     var chart = anychart.graph(data);
 
+    // disable scrolling and zooming with the mouse wheel
+    chart.interactivity().scrollOnMouseWheel(false);
+    chart.interactivity().zoomOnMouseWheel(false);
+
     // set the size of nodes
     chart.nodes().normal().height(40);
     chart.nodes().hovered().height(55);

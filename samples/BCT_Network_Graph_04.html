@@ -57,6 +57,9 @@ anychart.onDocumentReady(function () {
     var graph1 = anychart.graph(data);
     graph1.title("Iteration Step: Default (500)");
     graph1.bounds(0, 0, "50%", "100%");
+    // disable scrolling and zooming with the mouse wheel
+    graph1.interactivity().scrollOnMouseWheel(false);
+    graph1.interactivity().zoomOnMouseWheel(false);    
     // set the chart container
     graph1.container(stage);
     // initiate drawing the chart
@@ -66,7 +69,10 @@ anychart.onDocumentReady(function () {
     var graph2 = anychart.graph(data);
     graph2.title("Iteration Step: 0");
     graph2.bounds("50%", 0, "50%", "100%");
-    // set the iteration step (?)
+    // disable scrolling and zooming with the mouse wheel
+    graph2.interactivity().scrollOnMouseWheel(false);
+    graph2.interactivity().zoomOnMouseWheel(false);    
+    // set the iteration step
     graph2.layout().iterationCount(0);
     // set the chart container
     graph2.container(stage);
