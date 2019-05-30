@@ -191,7 +191,7 @@ misc:
 
 #### Tokens
 
-* `{%id}`
+* `{%id}` (ребра и ноды)
 * `{%group}`
 * `{%from}`
 * `{%to}`
@@ -206,7 +206,7 @@ misc:
 
 #### Formatting Functions
 
-* `id`
+* `id` (ребра и ноды)
 * `type`
 * `siblings`
 * (?) `titleText`
