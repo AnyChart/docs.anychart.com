@@ -195,7 +195,7 @@ misc:
 * `{%group}`
 * `{%from}`
 * `{%to}`
-* (?) `{%type}`
+* `{%type}`
 
 
 ```
@@ -209,10 +209,8 @@ misc:
 * `id` (ребра и ноды)
 * `type`
 * `siblings`
-* (?) `titleText`
-* (?) `valuePostfix`
-* (?) `valuePrefix `
 
+siblings: все ноды, которые связаны с данной через одно ребро
 
 ```
 
@@ -225,6 +223,7 @@ misc:
 * zooming
 * moving
 * fitting
+* сослаться на раздел Mouse Wheel
 
 просто кнопки:
 
@@ -242,4 +241,19 @@ misc:
 
 {sample}BCT\_Network\_Graph\_15{sample}
 
-### (?) Interactivity
+### Behaivor
+
+* не писать про enabled()
+
+#### Moving Nodes
+
+* пример: nodes()
+* пример: hoverGap() + magnetize()
+
+#### Drawing Edges
+
+* упомянуть: edges()
+
+#### Mouse Wheel
+
+* scrollOnMouseWheel() + zoomOnMouseWheel()
