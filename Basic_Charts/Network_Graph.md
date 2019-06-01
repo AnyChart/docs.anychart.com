@@ -239,7 +239,7 @@ siblings: все ноды, которые связаны с данной чер�
 
 ```
 
-{sample height:}BCT\_Network\_Graph\_15{sample}
+{sample}BCT\_Network\_Graph\_15{sample}
 
 ### Behaivor
 
