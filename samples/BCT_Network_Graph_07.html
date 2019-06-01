@@ -61,8 +61,7 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     var chart = anychart.graph(data);
 
-    // disable scrolling and zooming with the mouse wheel
-    chart.interactivity().scrollOnMouseWheel(false);
+    // disable zooming with the mouse wheel
     chart.interactivity().zoomOnMouseWheel(false);
 
     // set the chart title
