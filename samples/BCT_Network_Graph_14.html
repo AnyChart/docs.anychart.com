@@ -29,6 +29,10 @@
         input {
             width: 30px;
         }
+        #fitButton {
+            position: absolute;
+            right: 10px;
+        }
         #container {
             position: absolute;
             width: 100%;
@@ -85,6 +89,8 @@ anychart.onDocumentReady(function () {
     // set the chart title
     chart.title("Network Graph: Navigation");
 
+    chart.zoom(2)
+
     // set the container id
     chart.container("container");
 
@@ -92,24 +98,24 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-//
+// zoom the chart in
 function zoomIn() {
   chart.zoomIn();  
 }
 
-//
+// zoom the chart out
 function zoomOut() {
   chart.zoomOut();  
 }
 
-//
+// move the chart by given values
 function move() {
   var x = document.getElementById("xInput").value;
   var y = document.getElementById("yInput").value;
   chart.move(x, y);  
 }
 
-//
+// fit the chart to the page
 function fit() {
   chart.fit();  
 }
