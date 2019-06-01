@@ -245,6 +245,10 @@ siblings: все ноды, которые связаны с данной чер�
 
 * не писать про enabled()
 
+#### Zooming & Scrolling
+
+* scrollOnMouseWheel() + zoomOnMouseWheel()
+
 #### Moving Nodes
 
 * пример: nodes() (перемещение нод относительно друг друга)
@@ -253,7 +257,3 @@ siblings: все ноды, которые связаны с данной чер�
 #### Drawing Edges
 
 * упомянуть: edges()
-
-#### Zooming & Scrolling
-
-* scrollOnMouseWheel() + zoomOnMouseWheel()
