@@ -41,9 +41,9 @@
 <button id = "zoomInButton" onclick="zoomIn()">Zoom In</button>
 <button id = "zoomOutButton" onclick="zoomOut()">Zoom Out</button>
 <button id = "moveButton" onclick="move()">Move</button>
-<label>x: <input id="xInput" value="100"></label>
-<label>y: <input id="yInput" value="100"></label>
-<button id = "fitButton" onclick="fit()">(Fit Page)</button>
+<label>x: <input id="xInput" value="50"></label>
+<label>y: <input id="yInput" value="-50"></label>
+<button id = "fitButton" onclick="fit()">Fit Page</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -78,6 +78,9 @@ anychart.onDocumentReady(function () {
     // disable scrolling and zooming with the mouse wheel
     chart.interactivity().scrollOnMouseWheel(false);
     chart.interactivity().zoomOnMouseWheel(false);
+
+    // disable dragging nodes
+    chart.interactivity().nodes(false);
 
     // set the chart title
     chart.title("Network Graph: Navigation");
