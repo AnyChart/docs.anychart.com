@@ -13,15 +13,37 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        button {
+            margin: 10px 0 0 10px;
+        }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
+        input {
+            width: 30px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
+<button id = "zoomInButton" onclick="zoomIn()">Zoom In</button>
+<button id = "zoomOutButton" onclick="zoomOut()">Zoom Out</button>
+<button id = "moveButton" onclick="move()">Move</button>
+<label>x: <input id="xInput" value="100"></label>
+<label>y: <input id="yInput" value="100"></label>
+<button id = "fitButton" onclick="fit()">(Fit Page)</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -51,7 +73,7 @@ anychart.onDocumentReady(function () {
     };
 
     // create a chart and set the data
-    var chart = anychart.graph(data);
+    chart = anychart.graph(data);
 
     // disable scrolling and zooming with the mouse wheel
     chart.interactivity().scrollOnMouseWheel(false);
@@ -66,6 +88,28 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
+
+//
+function zoomIn() {
+  chart.zoomIn();  
+}
+
+//
+function zoomOut() {
+  chart.zoomOut();  
+}
+
+//
+function move() {
+  var x = document.getElementById("xInput").value;
+  var y = document.getElementById("yInput").value;
+  chart.move(x, y);  
+}
+
+//
+function fit() {
+  chart.fit();  
+}
 </script>
 </body>
 </html>
