@@ -241,7 +241,7 @@ siblings: все ноды, которые связаны с данной чер�
 
 {sample}BCT\_Network\_Graph\_15{sample}
 
-### Behaivor
+### Behavior
 
 * не писать про enabled()
 
