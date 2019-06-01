@@ -79,12 +79,8 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     chart = anychart.graph(data);
 
-    // disable scrolling and zooming with the mouse wheel
-    chart.interactivity().scrollOnMouseWheel(false);
-    chart.interactivity().zoomOnMouseWheel(false);
-
-    // disable dragging nodes
-    chart.interactivity().nodes(false);
+    // prevent the default interactivity of the chart
+    chart.interactivity().enabled(false);
 
     // set the chart title
     chart.title("Network Graph: Navigation");
