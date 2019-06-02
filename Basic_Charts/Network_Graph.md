@@ -253,10 +253,24 @@ siblings: все ноды, которые связаны с данной чер�
 
 * scrollOnMouseWheel() + zoomOnMouseWheel()
 
+
+```
+
+```
+
+{sample}BCT\_Network\_Graph\_16{sample}
+
 #### Moving Nodes
 
 * пример: nodes() (перемещение нод относительно друг друга)
 * пример: hoverGap() + magnetize()
+
+
+```
+
+```
+
+{sample}BCT\_Network\_Graph\_17{sample}
 
 #### Drawing Edges
 
