@@ -10,7 +10,8 @@
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" /> 
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-2987-graph/fonts/css/anychart-font.min.css"/>
     
     <style>
         html, body, #container {
@@ -53,11 +54,16 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     var chart = anychart.graph(data);
 
-    // disable zooming with the mouse wheel
-    chart.interactivity().zoomOnMouseWheel(false);
-
+    // prevent the default behavior of the chart
+    chart.interactivity().enabled(false);
+ 
     // set the chart title
     chart.title("Network Graph: Navigation");
+
+    // add a zoom control panel
+    var zoomController = anychart.ui.zoom();
+    zoomController.target(chart);
+    zoomController.render();
 
     // set the container id
     chart.container("container");
