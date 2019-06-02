@@ -251,7 +251,7 @@ siblings: все ноды, которые связаны с данной чер�
 
 #### Zooming & Scrolling
 
-* scrollOnMouseWheel() + zoomOnMouseWheel()
+* пример: scrollOnMouseWheel() + zoomOnMouseWheel()
 
 
 ```
@@ -260,10 +260,10 @@ siblings: все ноды, которые связаны с данной чер�
 
 {sample}BCT\_Network\_Graph\_16{sample}
 
-#### Moving Nodes
+#### Nodes
 
 * пример: nodes() (перемещение нод относительно друг друга)
-* пример: hoverGap() + magnetize()
+* magnetize()
 
 
 ```
@@ -278,6 +278,14 @@ siblings: все ноды, которые связаны с данной чер�
 
 {sample}BCT\_Network\_Graph\_18{sample}
 
-#### Drawing Edges
+#### Edges
 
 * упомянуть: edges()
+* пример: hoverGap()
+
+
+```
+
+```
+
+{sample}BCT\_Network\_Graph\_19{sample}
