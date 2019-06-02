@@ -272,6 +272,12 @@ siblings: все ноды, которые связаны с данной чер�
 
 {sample}BCT\_Network\_Graph\_17{sample}
 
+```
+
+```
+
+{sample}BCT\_Network\_Graph\_18{sample}
+
 #### Drawing Edges
 
 * упомянуть: edges()

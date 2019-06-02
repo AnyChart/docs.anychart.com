@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Network Graph 17"/>
+    <meta name="ac:name" content="BCT Network Graph 18"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -35,9 +35,9 @@
     </style>
 </head>
 <body>
-<label id="titleLabel">Moving Nodes:</label>
-<label><input onclick="MovingNodesEnabled(true)" type="radio" name="mode" checked>Enabled</label>
-<label><input onclick="MovingNodesEnabled(false)" type="radio" name="mode">Disabled</label>  
+<label id="titleLabel">Magnetizing:</label>
+<label><input onclick="magnetizingEnabled(true)" type="radio" name="mode">Enabled</label>
+<label><input onclick="magnetizingEnabled(false)" type="radio" name="mode" checked>Disabled</label> 
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -79,9 +79,9 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-// enable / disable moving nodes
-function MovingNodesEnabled(enabled) {
-  chart.interactivity().nodes(enabled);
+// enable / disable magnetizing nodes
+function magnetizingEnabled(enabled) {
+  chart.interactivity().magnetize(enabled);
 }
 </script>
 </body>
