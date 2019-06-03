@@ -35,7 +35,7 @@
     </style>
 </head>
 <body>
-<label id="titleLabel">Magnetizing:</label>
+<label id="titleLabel">Aligning Nodes:</label>
 <label><input onclick="magnetizingEnabled(true)" type="radio" name="mode">Enabled</label>
 <label><input onclick="magnetizingEnabled(false)" type="radio" name="mode" checked>Disabled</label> 
 <div id="container"></div>
@@ -70,7 +70,7 @@ anychart.onDocumentReady(function () {
     chart = anychart.graph(data);
 
     // set the chart title
-    chart.title("Network Graph: Behavior (Magnetizing Nodes)");
+    chart.title("Network Graph: Node Behavior");
 
     // set the container id
     chart.container("container");

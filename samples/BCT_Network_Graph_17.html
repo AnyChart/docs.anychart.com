@@ -35,7 +35,7 @@
     </style>
 </head>
 <body>
-<label id="titleLabel">Moving Nodes:</label>
+<label id="titleLabel">Aligning Nodes:</label>
 <label><input onclick="MovingNodesEnabled(true)" type="radio" name="mode" checked>Enabled</label>
 <label><input onclick="MovingNodesEnabled(false)" type="radio" name="mode">Disabled</label>  
 <div id="container"></div>
@@ -70,7 +70,7 @@ anychart.onDocumentReady(function () {
     chart = anychart.graph(data);
 
     // set the chart title
-    chart.title("Network Graph: Behavior (Moving Nodes)");
+    chart.title("Network Graph: Node Behavior");
 
     // set the container id
     chart.container("container");
