@@ -627,12 +627,12 @@ zoomController.render();
 
 
 ```
-// enable zooming with the mouse wheel
+// enable the ability to zoom with the mouse wheel
 chart.interactivity().zoomOnMouseWheel(true);
 ```
 
 ```
-// enable scrolling with the mouse wheel
+// enable the ability to scroll with the mouse wheel
 chart.interactivity().scrollOnMouseWheel(true);
 ```
 
