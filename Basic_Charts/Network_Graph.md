@@ -627,12 +627,12 @@ zoomController.render();
 
 
 ```
-// enable the ability to zoom with the mouse wheel
+// allow zooming with the mouse wheel
 chart.interactivity().zoomOnMouseWheel(true);
 ```
 
 ```
-// enable the ability to scroll with the mouse wheel
+// allow scrolling with the mouse wheel
 chart.interactivity().scrollOnMouseWheel(true);
 ```
 
@@ -645,14 +645,14 @@ chart.interactivity().scrollOnMouseWheel(true);
 
 
 ```
-// disable the ability to move nodes
+// allow moving nodes
 chart.interactivity().nodes(false);
 ```
 
 {sample}BCT\_Network\_Graph\_17{sample}
 
 ```
-// enable the alignment of nodes
+// enable the node alignment
 chart.interactivity().magnetize(true);
 ```
 
