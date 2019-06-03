@@ -35,7 +35,7 @@
     </style>
 </head>
 <body>
-<label id="titleLabel">Aligning Nodes:</label>
+<label id="titleLabel">Node Alignment:</label>
 <label><input onclick="magnetizingEnabled(true)" type="radio" name="mode">Enabled</label>
 <label><input onclick="magnetizingEnabled(false)" type="radio" name="mode" checked>Disabled</label> 
 <div id="container"></div>
@@ -79,7 +79,7 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-// enable / disable magnetizing nodes
+// enable / disable the alignment of nodes
 function magnetizingEnabled(enabled) {
   chart.interactivity().magnetize(enabled);
 }

@@ -54,7 +54,41 @@ Learn more: [Modules](../Quick_Start/Modules).
 To create a Network Graph, use the {api:anychart#graph}anychart.graph(){api} chart constructor, like in the following sample:
 
 ```
+// create data
+var data = {
+  nodes: [
+    {id: "Richard"},
+    {id: "Larry"},
+    {id: "Marta"},
+    {id: "Jane"},
+    {id: "Norma"},
+    {id: "Frank"},
+    {id: "Brett"},
+    {id: "Tommy"}
+  ],
+  edges: [
+    {from: "Richard", to: "Larry"},
+    {from: "Richard", to: "Marta"},
+    {from: "Larry",   to: "Marta"},
+    {from: "Marta",   to: "Jane"},
+    {from: "Jane",    to: "Norma"},
+    {from: "Jane",    to: "Frank"},
+    {from: "Jane",    to: "Brett"},
+    {from: "Brett",   to: "Frank"}
+  ]
+};
 
+// create a chart and set the data
+var chart = anychart.graph(data);
+
+// set the chart title
+chart.title("Network Graph: Basic Sample");
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
 ```
 
 {sample}BCT\_Network\_Graph\_01{sample}
@@ -94,7 +128,32 @@ misc:
 
 
 ```
+// create data
+var data = {
+  nodes: [
+    {id: "Richard"},
+    {id: "Larry"},
+    {id: "Marta"},
+    {id: "Jane"},
+    {id: "Norma"},
+    {id: "Frank"},
+    {id: "Brett"},
+    {id: "Tommy"}
+  ],
+  edges: [
+    {from: "Richard", to: "Larry"},
+    {from: "Richard", to: "Marta"},
+    {from: "Larry",   to: "Marta"},
+    {from: "Marta",   to: "Jane"},
+    {from: "Jane",    to: "Norma"},
+    {from: "Jane",    to: "Frank"},
+    {from: "Jane",    to: "Brett"},
+    {from: "Brett",   to: "Frank"}
+  ]
+};
 
+// create a chart and set the data
+var chart = anychart.graph(data);
 ```
 
 {sample}BCT\_Network\_Graph\_02{sample}
@@ -104,7 +163,8 @@ misc:
 #### Type
 
 ```
-
+// set the layout type
+chart.layout().type("fixed");
 ```
 
 {sample}BCT\_Network\_Graph\_03{sample}
@@ -114,7 +174,8 @@ misc:
 Когда рисуется чарт, работает алгоритм, который группирует ноды по кластерам. Однако этот алгоритм можно остановить на любом шаге. Вот как выглядит iterationCount = 0:
 
 ```
-
+// set the iteration step
+graph2.layout().iterationCount(0);
 ```
 
 {sample}BCT\_Network\_Graph\_04{sample}
@@ -123,7 +184,8 @@ misc:
 ### Rotation
 
 ```
-
+// set the rotation angle
+graph2.rotation(90);
 ```
 
 {sample}BCT\_Network\_Graph\_05{sample}
@@ -133,7 +195,13 @@ misc:
 #### Size & Shape
 
 ```
+// set the size of nodes
+chart.nodes().normal().height(40);
+chart.nodes().hovered().height(55);
+chart.nodes().selected().height(55);
 
+// set the shape of nodes
+chart.nodes().normal().shape("star5");
 ```
 
 {sample}BCT\_Network\_Graph\_06{sample}
@@ -141,7 +209,40 @@ misc:
 #### Individual Nodes
 
 ```
+// create data
+var data = {
+  nodes: [
+    {id: "Richard"},
+    {id: "Larry"},
+    {id: "Marta",
+     normal: {height: 40, shape: "star5"},
+     hovered: {height: 55, shape: "star5"},
+     selected: {height: 55, shape: "star5"},
+    },
+    {id: "Jane"},
+    {id: "Norma"},
+    {id: "Frank"},
+    {id: "Brett"},
+    {id: "Tommy",
+     normal: {height: 15, shape: "diagonal-cross"},
+     hovered: {height: 20, shape: "diagonal-cross"},
+     selected: {height: 20, shape: "diagonal-cross"}
+    }
+  ],
+  edges: [
+    {from: "Richard", to: "Larry"},
+    {from: "Richard", to: "Marta"},
+    {from: "Larry",   to: "Marta"},
+    {from: "Marta",   to: "Jane"},
+    {from: "Jane",    to: "Norma"},
+    {from: "Jane",    to: "Frank"},
+    {from: "Jane",    to: "Brett"},
+    {from: "Brett",   to: "Frank"}
+  ]
+};
 
+// create a chart and set the data
+var chart = anychart.graph(data);
 ```
 
 {sample}BCT\_Network\_Graph\_07{sample}
@@ -149,7 +250,50 @@ misc:
 #### Groups
 
 ```
+// create data
+var data = {
+  nodes: [
+    {id: "Richard", group: "family"},
+    {id: "Larry",   group: "family"},
+    {id: "Marta",   group: "family"},
+    {id: "Jane",    group: "friends"},
+    {id: "Norma",   group: "friends"},
+    {id: "Frank",   group: "friends"},
+    {id: "Brett",   group: "friends"},
+    {id: "Tommy",   group: "lone wolf"}
+  ],
+  edges: [
+    {from: "Richard", to: "Larry"},
+    {from: "Richard", to: "Marta"},
+    {from: "Larry",   to: "Marta"},
+    {from: "Marta",   to: "Jane"},
+    {from: "Jane",    to: "Norma"},
+    {from: "Jane",    to: "Frank"},
+    {from: "Jane",    to: "Brett"},
+    {from: "Brett",   to: "Frank"}
+  ]
+};
 
+// create a chart and set the data
+var chart = anychart.graph(data);
+```
+
+```
+// configure the size of nodes in groups
+chart.group("family").normal().height(40);
+chart.group("family").hovered().height(55);
+chart.group("family").selected().height(55);
+chart.group("friends").normal().height(20); 
+chart.group("friends").hovered().height(27);
+chart.group("friends").selected().height(27); 
+chart.group("lone wolf").normal().height(15);
+chart.group("lone wolf").hovered().height(20);   
+chart.group("lone wolf").selected().height(20);      
+
+// configure the shape of nodes in groups
+chart.group("family").normal().shape("star5");
+chart.group("friends").normal().shape("diamond");
+chart.group("lone wolf").normal().shape("diagonal-cross");
 ```
 
 {sample}BCT\_Network\_Graph\_08{sample}
@@ -162,10 +306,28 @@ misc:
 
 #### All Points
 
-(?) пример с группами:
 
 ```
+// configure the visual settings of nodes
+chart.nodes().normal().stroke("#96a6a6", 1);
+chart.nodes().hovered().stroke("#455a64", 2);
+chart.nodes().selected().stroke("#455a64", 2);
 
+// configure the visual settings of nodes in groups
+chart.group("family").normal().fill("#00bfa5");
+chart.group("family").hovered().fill("#00bfa5");
+chart.group("family").selected().fill("#455a64");
+chart.group("friends").normal().fill("#ffa000");
+chart.group("friends").hovered().fill("#ffa000");
+chart.group("friends").selected().fill("#455a64");
+chart.group("lone wolf").normal().fill("#ff3300");
+chart.group("lone wolf").hovered().fill("#ff3300");
+chart.group("lone wolf").selected().fill("#455a64");
+
+// configure the visual settings of edges
+chart.edges().normal().stroke("#96a6a6", 1, "10 5", "round");
+chart.edges().hovered().stroke("#455a64", 2, "10 5", "round");
+chart.edges().selected().stroke("#455a64", 2);
 ```
 
 {sample}BCT\_Network\_Graph\_09{sample}
@@ -173,7 +335,52 @@ misc:
 #### Individual Points
 
 ```
+// create data
+var data = {
+  nodes: [
+    {id: "Richard"},
+    {id: "Larry"},
+    {id: "Marta"},
+    {id: "Jane",
+     normal: {fill: "#ffa000", stroke: "4 #ffa000"},
+     hovered: {fill: "#ffda99", stroke: "4 #ffda99"},
+     selected: {fill: "#ffa000", stroke: "4 #ffa000"}
+    },
+    {id: "Norma"},
+    {id: "Frank"},
+    {id: "Brett"},
+    {id: "Tommy"}
+  ],
+  edges: [
+    {from: "Richard", to: "Larry"},
+    {from: "Richard", to: "Marta"},
+    {from: "Larry",   to: "Marta"},
+    {from: "Marta",   to: "Jane",
+     normal: {stroke: {
+                        color: "#ffa000",
+                        thickness: "4",
+                        dash: "10 5",
+                        lineJoin: "round"
+                      }
+     },
+     hovered: {stroke: {
+                         color: "#ffda99",
+                         thickness: "4",
+                         dash: "10 5",
+                         lineJoin: "round"
+                       }
+     },
+     selected: {stroke: "4 #ffa000"}
+    },
+    {from: "Jane",    to: "Norma"},
+    {from: "Jane",    to: "Frank"},
+    {from: "Jane",    to: "Brett"},
+    {from: "Brett",   to: "Frank"}
+  ]
+};
 
+// create a chart and set the data
+var chart = anychart.graph(data);
 ```
 
 {sample}BCT\_Network\_Graph\_10{sample}
@@ -182,7 +389,37 @@ misc:
 
 
 ```
+// create data
+var data = {
+  nodes: [
+    {id: "Richard"},
+    {id: "Larry"},
+    {id: "Marta"},
+    {id: "Jane"},
+    {id: "Norma",
+     height: 60,
+     fill: {
+             src: "https://cdn.anychart.com/samples-data/graph/avengers/pepper.jpg"
+           }
+    },
+    {id: "Frank"},
+    {id: "Brett"},
+    {id: "Tommy"}
+  ],
+  edges: [
+    {from: "Richard", to: "Larry"},
+    {from: "Richard", to: "Marta"},
+    {from: "Larry",   to: "Marta"},
+    {from: "Marta",   to: "Jane"},
+    {from: "Jane",    to: "Norma"},
+    {from: "Jane",    to: "Frank"},
+    {from: "Jane",    to: "Brett"},
+    {from: "Brett",   to: "Frank"}
+  ]
+};
 
+// create a chart and set the data
+var chart = anychart.graph(data);
 ```
 
 {sample}BCT\_Network\_Graph\_11{sample}
@@ -199,7 +436,55 @@ misc:
 
 
 ```
+// create data
+var data = {
+  nodes: [
+    {id: "Richard", group: "family",    last_name: "Roe"},
+    {id: "Larry",   group: "family",    last_name: "Loe"},
+    {id: "Marta",   group: "family",    last_name: "Moe"},
+    {id: "Jane",    group: "friends",   last_name: "Poe"},
+    {id: "Norma",   group: "friends",   last_name: "Noe"},
+    {id: "Frank",   group: "friends",   last_name: "Foe"},
+    {id: "Brett",   group: "friends",   last_name: "Boe"},
+    {id: "Tommy",   group: "lone wolf", last_name: "Toe"}
+  ],
+  edges: [
+    {from: "Richard", to: "Larry"},
+    {from: "Richard", to: "Marta"},
+    {from: "Larry",   to: "Marta"},
+    {from: "Marta",   to: "Jane"},
+    {from: "Jane",    to: "Norma"},
+    {from: "Jane",    to: "Frank"},
+    {from: "Jane",    to: "Brett"},
+    {from: "Brett",   to: "Frank"}
+  ]
+};
 
+// create a chart and set the data
+var chart = anychart.graph(data);
+
+// enable labels of nodes
+chart.nodes().labels().enabled(true);
+
+// configure labels of nodes
+chart.nodes().labels().fontSize(12);
+chart.nodes().labels().fontWeight(600);
+chart.nodes().labels().format("{%id}");
+
+// configure labels of nodes in groups
+chart.group("family").labels().fontColor("#00bfa5");
+chart.group("friends").labels().fontColor("#ffa000");
+chart.group("lone wolf").labels().fontColor("#dd2c00");
+chart.group("lone wolf").labels().format("{%id}\n({%group})");
+
+// configure tooltips of nodes
+chart.nodes().tooltip().useHtml(true);
+chart.nodes().tooltip().format(
+  "<span style='font-weight:bold'>{%id} {%last_name}</span><br>group: {%group}"
+);
+
+// configure tooltips of edges
+chart.edges().tooltip().format("{%from} -> {%to}");
 ```
 
 {sample}BCT\_Network\_Graph\_12{sample}
@@ -213,7 +498,70 @@ misc:
 siblings: все ноды, которые связаны с данной через одно ребро
 
 ```
+// create data
+var data = {
+  nodes: [
+    {id: "Richard", group: "family",    last_name: "Roe"},
+    {id: "Larry",   group: "family",    last_name: "Loe"},
+    {id: "Marta",   group: "family",    last_name: "Moe"},
+    {id: "Jane",    group: "friends",   last_name: "Poe"},
+    {id: "Norma",   group: "friends",   last_name: "Noe"},
+    {id: "Frank",   group: "friends",   last_name: "Foe"},
+    {id: "Brett",   group: "friends",   last_name: "Boe"},
+    {id: "Tommy",   group: "lone wolf", last_name: "Toe"}
+  ],
+  edges: [
+    {from: "Richard", to: "Larry"},
+    {from: "Richard", to: "Marta"},
+    {from: "Larry",   to: "Marta"},
+    {from: "Marta",   to: "Jane"},
+    {from: "Jane",    to: "Norma"},
+    {from: "Jane",    to: "Frank"},
+    {from: "Jane",    to: "Brett"},
+    {from: "Brett",   to: "Frank"}
+  ]
+};
 
+// create a chart and set the data
+var chart = anychart.graph(data);
+
+// enable labels of nodes
+chart.nodes().labels().enabled(true);
+
+// configure labels of nodes
+chart.nodes().labels().fontSize(12);
+chart.nodes().labels().fontWeight(600);
+chart.nodes().labels().format(function() {
+  if (this.siblings.length > 2) {
+    return  this.id.toUpperCase();
+  } else {
+    if (this.siblings.length == 0) {
+      return this.id.toUpperCase() + "\n(" + this.getData("group") + ")";
+    } else {
+      return "";
+    }
+  }
+});
+
+// configure labels of nodes in groups
+chart.group("family").labels().fontColor("#00bfa5");
+chart.group("friends").labels().fontColor("#ffa000");
+chart.group("lone wolf").labels().fontColor("#dd2c00");
+```
+
+```
+// configure tooltips
+chart.tooltip().useHtml(true);
+chart.tooltip().format(function() {
+  if (this.type == "node") {
+    return "<span style='font-weight:bold'>" +
+           this.id + " " + this.getData("last_name") +
+           "</span><br><br>siblings: " + this.siblings.length +
+           "<br>group: " + this.getData("group");
+  } else {
+    return this.getData("from") + " -> " + this.getData("to");
+  }
+});
 ```
 
 {sample}BCT\_Network\_Graph\_13{sample}
@@ -228,20 +576,43 @@ siblings: все ноды, которые связаны с данной чер�
 
 #### Methods
 
-просто кнопки:
-
+```
+// zoom the chart in
+chart.zoomIn();  
 ```
 
+```
+// zoom the chart out
+chart.zoomOut();  
+```
+
+```
+// move the chart by given values
+chart.move(50, -50);  
+```
+
+```
+// fit the chart to the page
+chart.fit();  
 ```
 
 {sample}BCT\_Network\_Graph\_14{sample}
 
 #### Zoom Control Panel
 
-кнопки как в картах:
-
+```
+<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4"/> 
 ```
 
+```
+<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-2987-graph/fonts/css/anychart-font.min.css"/>
+```
+
+```
+// add a zoom control panel
+var zoomController = anychart.ui.zoom();
+zoomController.target(chart);
+zoomController.render();
 ```
 
 {sample}BCT\_Network\_Graph\_15{sample}
@@ -256,7 +627,13 @@ siblings: все ноды, которые связаны с данной чер�
 
 
 ```
+// enable zooming with the mouse wheel
+chart.interactivity().zoomOnMouseWheel(true);
+```
 
+```
+// enable scrolling with the mouse wheel
+chart.interactivity().scrollOnMouseWheel(true);
 ```
 
 {sample}BCT\_Network\_Graph\_16{sample}
@@ -268,13 +645,15 @@ siblings: все ноды, которые связаны с данной чер�
 
 
 ```
-
+// disable the ability to move nodes
+chart.interactivity().nodes(false);
 ```
 
 {sample}BCT\_Network\_Graph\_17{sample}
 
 ```
-
+// enable the alignment of nodes
+chart.interactivity().magnetize(true);
 ```
 
 {sample}BCT\_Network\_Graph\_18{sample}
@@ -286,7 +665,8 @@ siblings: все ноды, которые связаны с данной чер�
 
 
 ```
-
+// set the hover gap of edges
+graph2.interactivity().hoverGap(30);    
 ```
 
 {sample}BCT\_Network\_Graph\_19{sample}
