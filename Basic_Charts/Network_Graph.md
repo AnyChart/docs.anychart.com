@@ -246,11 +246,11 @@ siblings: все ноды, которые связаны с данной чер�
 
 {sample}BCT\_Network\_Graph\_15{sample}
 
-### Chart Behavior
+### Behavior
 
 * написать про метод enabled() - единств способ запретить сдвигание чарта мышкой
 
-#### Zooming & Scrolling
+#### Chart behavior
 
 * пример: scrollOnMouseWheel() + zoomOnMouseWheel()
 
