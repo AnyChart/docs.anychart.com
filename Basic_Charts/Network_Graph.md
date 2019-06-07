@@ -277,7 +277,7 @@ var chart = anychart.graph(data);
 
 #### Groups
 
-* {api:anychart.charts.Graph#groups}groups(){api}
+* {api:anychart.charts.Graph#group}group(){api}
 * {api:anychart.core.graph.elements.Group#normal}normal(){api}
 * {api:anychart.core.graph.elements.Group#hovered}hovered(){api}
 * {api:anychart.core.graph.elements.Group#selected}selected(){api}
@@ -347,7 +347,7 @@ chart.group("lone wolf").normal().shape("diagonal-cross");
 
 * [nodes](#nodes), [groups](#groups), [edges](#edges)
 * {api:anychart.charts.Graph#nodes}nodes(){api}
-* {api:anychart.charts.Graph#nodes}groups(){api}
+* {api:anychart.charts.Graph#group}group(){api}
 * {api:anychart.charts.Graph#edges}edges(){api}
 * **normal()**, **hover()**, and **selected()**
 * {api:anychart.core.StateSettings#fill}fill(){api}
@@ -487,7 +487,7 @@ To change the text of labels on the whole chart, combine the {api:anychart.chart
 
 To change the text of tooltips, do the same with the {api:anychart.charts.Graph##tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
-Please note that you can adjust the labels and tooltips of [nodes](#nodes), [groups](#groups), and [edges](#edges). Access them by using the following methods: {api:anychart.charts.Graph#nodes}nodes(){api}, {api:anychart.charts.Graph#groups}groups(){api}, {api:anychart.charts.Graph#edges}edges(){api}.
+Please note that you can adjust the labels and tooltips of [nodes](#nodes), [groups](#groups), and [edges](#edges). Access them by using the following methods: {api:anychart.charts.Graph#nodes}nodes(){api}, {api:anychart.charts.Graph#group}group(){api}, {api:anychart.charts.Graph#edges}edges(){api}.
 
 Here is the list of tokens that work with the Network Graph:
 
