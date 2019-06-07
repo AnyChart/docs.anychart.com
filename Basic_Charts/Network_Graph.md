@@ -122,7 +122,7 @@ Use the following data fields:
 * `to`
 * optional: `id`
 
-**Note 1:** It is possible to add custom fields to your data - see the [Labels and Tooltips](Labels_and_Tooltips) section of this article.
+**Note 1:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
 **Note 2:** между парой нод поддерживается только одно ребро
 
@@ -164,8 +164,7 @@ var chart = anychart.graph(data);
 
 * {api:anychart.charts.Graph#layout}layout(){api}
 * {api:anychart.core.graph.elements.Layout#type}type(){api}
-* {api:anychart.core.graph.elements.Layout#iterationCount}iterationCount(){api}
-* {api:api.anychart.stg/v8/anychart.enums.layoutType}api.anychart.stg/v8/anychart.enums.layoutType{api}
+* {api:anychart.enums.layoutType}anychart.enums.layoutType{api}
 * `forced` (default), `fixed`
 
 
