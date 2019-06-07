@@ -349,13 +349,12 @@ chart.group("lone wolf").normal().shape("diagonal-cross");
 * {api:anychart.charts.Graph#nodes}nodes(){api}
 * {api:anychart.charts.Graph#group}group(){api}
 * {api:anychart.charts.Graph#edges}edges(){api}
-* **normal()**, **hover()**, and **selected()**
 * {api:anychart.core.StateSettings#fill}fill(){api}
 * {api:anychart.core.StateSettings#stroke}stroke(){api}
 * [appearance settings](../Appearance_Settings) 
 * [states](../Common_Settings/Interactivity/States)
+* **normal()**, **hover()**, and **selected()**
 
-**Note:** можно одно ребро сделать толще другого
 
 ```
 // configure the visual settings of nodes
@@ -384,7 +383,7 @@ chart.edges().selected().stroke("#455a64", 2);
 
 #### Individual Points
 
-It is possible to configure the appearance of each point individually – use extra data fields corresponding with the methods mentioned above:
+It is possible to configure the appearance of each node or edge individually – use extra data fields corresponding with the methods mentioned above.
 
 ```
 // create data
@@ -647,7 +646,8 @@ chart.tooltip().format(function() {
 * {api:anychart.charts.Graph#zoom}zoom(){api} = {api:anychart.charts.Graph#zoomIn}zoomIn(){api} + {api:anychart.charts.Graph#zoomOut}zoomOut(){api}
 * {api:anychart.charts.Graph#move}move(){api}
 * {api:anychart.charts.Graph#fit}fit(){api}
-* [Zooming & Scrolling](#chart_behavior)
+* [Chart Behavior](#chart_behavior)
+
 
 ```
 // zoom the chart in
