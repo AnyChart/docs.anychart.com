@@ -110,21 +110,21 @@ Use the following data fields:
 * `nodes`
 * `edges`
 
-... nodes:
+[nodes](#nodes):
 
 * `id`
 * optional: `x`, `y`
 * optional: `group`
 
-... edges:
+[edges](#edges):
 
 * `from`
 * `to`
 * optional: `id`
 
-misc:
+**Note 1:** It is possible to add custom fields to your data - see the [Labels and Tooltips](Labels_and_Tooltips) section of this article.
 
-* между парой нод поддерживается только одно ребро
+**Note 2:** между парой нод поддерживается только одно ребро
 
 
 ```
@@ -162,6 +162,13 @@ var chart = anychart.graph(data);
 
 #### Type
 
+* {api:anychart.charts.Graph#layout}layout(){api}
+* {api:anychart.core.graph.elements.Layout#type}type(){api}
+* {api:anychart.core.graph.elements.Layout#iterationCount}iterationCount(){api}
+* {api:api.anychart.stg/v8/anychart.enums.layoutType}api.anychart.stg/v8/anychart.enums.layoutType{api}
+* `forced` (default), `fixed`
+
+
 ```
 // set the layout type
 chart.layout().type("fixed");
@@ -170,6 +177,11 @@ chart.layout().type("fixed");
 {sample}BCT\_Network\_Graph\_03{sample}
 
 #### Iteration Step
+
+* {api:anychart.charts.Graph#layout}layout(){api}
+* {api:anychart.core.graph.elements.Layout#iterationCount}iterationCount(){api}
+* default: 500
+
 
 Когда рисуется чарт, работает алгоритм, который группирует ноды по кластерам. Однако этот алгоритм можно остановить на любом шаге. Вот как выглядит iterationCount = 0:
 
@@ -183,6 +195,9 @@ graph2.layout().iterationCount(0);
 
 ### Rotation
 
+* {api:anychart.charts.Graph#rotation}rotation(){api}
+* default: 0
+
 ```
 // set the rotation angle
 graph2.rotation(90);
@@ -193,6 +208,18 @@ graph2.rotation(90);
 ### Nodes
 
 #### Size & Shape
+
+* {api:anychart.charts.Graph#nodes}nodes(){api}
+* {api:anychart.core.graph.elements.Node#normal}normal(){api}
+* {api:anychart.core.graph.elements.Node#hovered}hovered(){api}
+* {api:anychart.core.graph.elements.Node#selected}selected(){api}
+* {api:anychart.core.StateSettings#height}height(){api}
+* {api:anychart.core.StateSettings#width}width(){api}
+* {api:anychart.core.StateSettings#shape}shape(){api}
+* {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}
+* [states](../Common_Settings/Interactivity/States)
+* **normal**, **hover**, and **selected**
+
 
 ```
 // set the size of nodes
@@ -207,6 +234,8 @@ chart.nodes().normal().shape("star5");
 {sample}BCT\_Network\_Graph\_06{sample}
 
 #### Individual Nodes
+
+It is possible to configure each node individually – use extra data fields corresponding with the methods mentioned above:
 
 ```
 // create data
@@ -248,6 +277,17 @@ var chart = anychart.graph(data);
 {sample}BCT\_Network\_Graph\_07{sample}
 
 #### Groups
+
+* {api:anychart.charts.Graph#groups}groups(){api}
+* {api:anychart.core.graph.elements.Group#normal}normal(){api}
+* {api:anychart.core.graph.elements.Group#hovered}hovered(){api}
+* {api:anychart.core.graph.elements.Group#selected}selected(){api}
+* {api:anychart.core.StateSettings#height}height(){api}
+* {api:anychart.core.StateSettings#width}width(){api}
+* {api:anychart.core.StateSettings#shape}shape(){api}
+* [states](../Common_Settings/Interactivity/States)
+* **normal**, **hover**, and **selected**
+
 
 ```
 // create data
@@ -300,12 +340,23 @@ chart.group("lone wolf").normal().shape("diagonal-cross");
 
 ### Edges
 
-* написать про то, что можно одно ребро сделать толще другого
+* [Appearance](#apperance)
 
 ### Appearance
 
 #### All Points
 
+* [nodes](#nodes), [groups](#groups), [edges](#edges)
+* {api:anychart.charts.Graph#nodes}nodes(){api}
+* {api:anychart.charts.Graph#nodes}groups(){api}
+* {api:anychart.charts.Graph#edges}edges(){api}
+* **normal()**, **hover()**, and **selected()**
+* {api:anychart.core.StateSettings#fill}fill(){api}
+* {api:anychart.core.StateSettings#stroke}stroke(){api}
+* [appearance settings](../Appearance_Settings) 
+* [states](../Common_Settings/Interactivity/States)
+
+**Note:** можно одно ребро сделать толще другого
 
 ```
 // configure the visual settings of nodes
@@ -333,6 +384,8 @@ chart.edges().selected().stroke("#455a64", 2);
 {sample}BCT\_Network\_Graph\_09{sample}
 
 #### Individual Points
+
+It is possible to configure the appearance of each point individually – use extra data fields corresponding with the methods mentioned above:
 
 ```
 // create data
@@ -387,7 +440,6 @@ var chart = anychart.graph(data);
 
 #### Custom Images
 
-
 ```
 // create data
 var data = {
@@ -426,14 +478,29 @@ var chart = anychart.graph(data);
 
 ### Labels and Tooltips
 
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+
 #### Tokens
 
-* `{%id}` (ребра и ноды)
+To change the text of labels on the whole chart, combine the {api:anychart.charts.Graph#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
+
+To change the text of tooltips, do the same with the {api:anychart.charts.Graph##tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
+
+Please note that you can adjust the labels and tooltips of [nodes](#nodes), [groups](#groups), and [edges](#edges). Access them by using the following methods: {api:anychart.charts.Graph#nodes}nodes(){api}, {api:anychart.charts.Graph#groups}groups(){api}, {api:anychart.charts.Graph#edges}edges(){api}.
+
+Here is the list of tokens that work with the Network Graph:
+
+* `{%id}`
 * `{%group}`
 * `{%from}`
 * `{%to}`
 * `{%type}`
 
+Also, you can always add a custom field to your data and use a custom token corresponding to it.
+
+This sample shows how to work with tokens. Along with regular tokens, a custom token *{%last_name}* is used.
 
 ```
 // create data
@@ -491,11 +558,17 @@ chart.edges().tooltip().format("{%from} -> {%to}");
 
 #### Formatting Functions
 
-* `id` (ребра и ноды)
-* `type`
-* `siblings`
+To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
 
-siblings: все ноды, которые связаны с данной через одно ребро
+* `id`
+* `siblings`
+* `type`
+
+You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
+
+**Note:** siblings: все ноды, которые связаны с данной через одно ребро
+
+The sample below demonstrates how to work with formatting functions. Along with regular fields, a custom field *last_name* is used:
 
 ```
 // create data
@@ -568,13 +641,14 @@ chart.tooltip().format(function() {
 
 ### Navigation
 
-* zooming
-* moving
-* fitting
-* метод zoom() - написать, что эквивалентен zoomIn() + zoomOut()
-* сослаться на раздел Zooming & Scrolling
-
 #### Methods
+
+* {api:anychart.charts.Graph#zoomIn}zoomIn(){api}
+* {api:anychart.charts.Graph#zoomOut}zoomOut(){api}
+* {api:anychart.charts.Graph#zoom}zoom(){api} = {api:anychart.charts.Graph#zoomIn}zoomIn(){api} + {api:anychart.charts.Graph#zoomOut}zoomOut(){api}
+* {api:anychart.charts.Graph#move}move(){api}
+* {api:anychart.charts.Graph#fit}fit(){api}
+* [Zooming & Scrolling](#chart_behavior)
 
 ```
 // zoom the chart in
@@ -600,13 +674,25 @@ chart.fit();
 
 #### Zoom Control Panel
 
+* [Zoom Controls](../Common_Settings/UI_Controls/Zoom_Controls)
+
+The Zoom Control Panel requires adding the [Common UI](../Quick_Start/Modules#common_ui) module:
+
+```
+<script src="https://cdn.anychart.com/releases/DVF-2987-graph/js/anychart-ui.min.js"></script>
+```
+
 ```
 <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4"/> 
 ```
 
+Also, you should reference the `anychart-ui.min.css` and `anychart-font.min.css` files:
+
 ```
 <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-2987-graph/fonts/css/anychart-font.min.css"/>
 ```
+
+Then combine the {api:anychart.ui#zoom}zoom(){api} method with {api:anychart.ui.Zoom#target}target(){api} and {api:anychart.ui.Zoom#render}render(){api} to create the panel:
 
 ```
 // add a zoom control panel
@@ -619,11 +705,13 @@ zoomController.render();
 
 ### Behavior
 
-* написать про метод enabled() - единств способ запретить сдвигание чарта мышкой
+{api:anychart.charts.Graph#enabled}enabled(){api} - единств способ запретить сдвигание чарта мышкой
 
 #### Chart Behavior
 
-* пример: scrollOnMouseWheel() + zoomOnMouseWheel()
+* {api:anychart.charts.Graph#interactivity}interactivity(){api}
+* {api:anychart.core.graph.elements.Interactivity#scrollOnMouseWheel}scrollOnMouseWheel(){api}
+* {api:anychart.core.graph.elements.Interactivity#zoomOnMouseWheel}zoomOnMouseWheel(){api}
 
 
 ```
@@ -640,8 +728,10 @@ chart.interactivity().scrollOnMouseWheel(true);
 
 #### Node Behavior
 
-* пример: nodes() - перемещение нод относительно друг друга
-* пример: magnetize() - aligning nodes
+* [nodes](#nodes)
+* {api:anychart.charts.Graph#interactivity}interactivity(){api}
+* {api:anychart.core.graph.elements.Interactivity#nodes}nodes(){api} - перемещение нод относительно друг друга
+* {api:anychart.core.graph.elements.Interactivity#magnetize}magnetize(){api} - aligning nodes
 
 
 ```
@@ -660,8 +750,10 @@ chart.interactivity().magnetize(true);
 
 #### Edge Behavior
 
-* пример: hoverGap()
-* упомянуть: edges() - это касается рисования ребер
+* [edges](#edges)
+* {api:anychart.charts.Graph#interactivity}interactivity(){api}
+* {api:anychart.core.graph.elements.Interactivity#hoverGap}hoverGap(){api} - перемещение нод относительно друг друга
+* {api:anychart.core.graph.elements.Interactivity#edges}edges(){api} - это касается рисования ребер
 
 
 ```
