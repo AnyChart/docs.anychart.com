@@ -112,15 +112,15 @@ Use the following data fields:
 
 For each node, specify:
 
-* `id` - a unique indentifier
+* `id` - unique indentifier
 * `x`, `y` (optional) - coordinates in the fixed [layout](#layout)
-* `group` (optional) - a [group](#groups)
+* `group` (optional) - [group](#groups)
 
 For each edge, specify:
 
-* `from`  -  a source node
-* `to`  -  a destination node
-* `id` (optional)  -  a unique indentifier
+* `from` - source node
+* `to` - destination node
+* `id` (optional) - unique indentifier
 
 **Note 1:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
