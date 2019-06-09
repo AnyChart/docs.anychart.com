@@ -239,7 +239,14 @@ You can adjust the size and shape of all nodes, of an individual node, or of a g
 
 #### Size & Shape
 
-The size and shape of nodes can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Node#normal}normal(){api}, {api:anychart.core.graph.elements.Node#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Node#selected}selected(){api} methods
+To configure nodes, first access them by using the {api:anychart.charts.Graph#nodes}nodes(){api} method:
+
+```
+// access nodes
+var nodes = chart.nodes();
+```
+
+The size and shape of nodes can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Node#normal}normal(){api}, {api:anychart.core.graph.elements.Node#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Node#selected}selected(){api} methods.
 
 Combine them with:
 
@@ -249,6 +256,8 @@ Combine them with:
 
 Here is the list of available shapes: {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}
 
+...
+
 ```
 // set the size of nodes
 chart.nodes().normal().height(40);
@@ -257,6 +266,20 @@ chart.nodes().selected().height(55);
 
 // set the shape of nodes
 chart.nodes().normal().shape("star5");
+```
+
+...
+
+```
+// set the fill of nodes
+nodes.normal().fill("#ffa000");
+nodes.hovered().fill("#ffa000");
+nodes.selected().fill("#ffa000");
+
+// set the stroke of nodes
+nodes.normal().stroke(null);
+nodes.hovered().stroke(null);
+nodes.selected().stroke("#455a64", 2);
 ```
 
 {sample}BCT\_Network\_Graph\_06{sample}
@@ -272,18 +295,48 @@ var data = {
     {id: "Richard"},
     {id: "Larry"},
     {id: "Marta",
-     normal: {height: 40, shape: "star5"},
-     hovered: {height: 55, shape: "star5"},
-     selected: {height: 55, shape: "star5"},
+     normal:   { 
+                 height: 40,
+                 shape: "star5",
+                 fill: "#ffa000",
+                 stroke: null
+               },
+     hovered:  {
+                 height: 55,
+                 shape: "star5",
+                 fill: "#ffa000",
+                 stroke: null
+               },
+     selected: {
+                 height: 55,
+                 shape: "star5",
+                 fill: "#ffa000",
+                 stroke: "2 #455a64"
+               }
     },
     {id: "Jane"},
     {id: "Norma"},
     {id: "Frank"},
     {id: "Brett"},
     {id: "Tommy",
-     normal: {height: 15, shape: "diagonal-cross"},
-     hovered: {height: 20, shape: "diagonal-cross"},
-     selected: {height: 20, shape: "diagonal-cross"}
+     normal:   {
+                 height: 20,
+                 shape: "diagonal-cross",
+                 fill: "#ff3300",
+                 stroke: null
+               },
+     hovered:  {
+                 height: 27,
+                 shape: "diagonal-cross",
+                 fill: "#ff3300",
+                 stroke: null
+               },
+     selected: {
+                 height: 27,
+                 shape: "diagonal-cross",
+                 fill: "#ff3300",
+                 stroke: "2 #455a64"
+               }
     }
   ],
   edges: [
@@ -309,35 +362,58 @@ var chart = anychart.graph(data);
 You can create a group of nodes - specify the name of the group in the `group` [data](#data) field of each node you are going to include:
 
 ```
-// create data
-var data = {
-  nodes: [
-    {id: "Richard", group: "family"},
-    {id: "Larry",   group: "family"},
-    {id: "Marta",   group: "family"},
-    {id: "Jane",    group: "friends"},
-    {id: "Norma",   group: "friends"},
-    {id: "Frank",   group: "friends"},
-    {id: "Brett",   group: "friends"},
-    {id: "Tommy",   group: "lone wolf"}
-  ],
-  edges: [
-    {from: "Richard", to: "Larry"},
-    {from: "Richard", to: "Marta"},
-    {from: "Larry",   to: "Marta"},
-    {from: "Marta",   to: "Jane"},
-    {from: "Jane",    to: "Norma"},
-    {from: "Jane",    to: "Frank"},
-    {from: "Jane",    to: "Brett"},
-    {from: "Brett",   to: "Frank"}
-  ]
-};
+// access groups of nodes
+var family = chart.group("family");
+var friends = chart.group("friends");
+var loneWolf = chart.group("lone wolf");
 
-// create a chart and set the data
-var chart = anychart.graph(data);
+// set the size of nodes in groups
+family.normal().height(40);
+family.hovered().height(55);
+family.selected().height(55);
+friends.normal().height(20); 
+friends.hovered().height(27);
+friends.selected().height(27); 
+loneWolf.normal().height(20);
+loneWolf.hovered().height(27);   
+loneWolf.selected().height(27);      
+
+// set the shape of nodes in groups
+family.normal().shape("star5");
+friends.normal().shape("diamond");
+loneWolf.normal().shape("diagonal-cross");
+
+// set the fill of nodes in groups
+family.normal().fill("#ffa000");
+family.hovered().fill("#ffa000");
+family.selected().fill("#ffa000");
+friends.normal().fill("#00bfa5");
+friends.hovered().fill("#00bfa5");
+friends.selected().fill("#00bfa5");
+loneWolf.normal().fill("#ff3300");
+loneWolf.hovered().fill("#ff3300");
+loneWolf.selected().fill("#ff3300");
+
+// set the stroke of nodes in groups
+family.normal().stroke(null);
+family.hovered().stroke(null);
+family.selected().stroke("#455a64", 2);
+friends.normal().stroke(null);
+friends.hovered().stroke(null);
+friends.selected().stroke("#455a64", 2);
+loneWolf.normal().stroke(null);
+loneWolf.hovered().stroke(null);
+loneWolf.selected().stroke("#455a64", 2);
 ```
 
-To configure nodes in a group, use the {api:anychart.charts.Graph#group}group(){api} method.
+To configure nodes in a group, first access them by using the {api:anychart.charts.Graph#group}group(){api} method:
+
+```
+// access groups of nodes
+var family = chart.group("family");
+var friends = chart.group("friends");
+var loneWolf = chart.group("lone wolf");
+```
 
 The size and shape of nodes in groups can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Group#normal}normal(){api}, {api:anychart.core.graph.elements.Group#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Group#selected}selected(){api} methods.
 
@@ -349,22 +425,49 @@ Combine them with:
 
 Here is the list of available shapes: {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}
 
-```
-// configure the size of nodes in groups
-chart.group("family").normal().height(40);
-chart.group("family").hovered().height(55);
-chart.group("family").selected().height(55);
-chart.group("friends").normal().height(20); 
-chart.group("friends").hovered().height(27);
-chart.group("friends").selected().height(27); 
-chart.group("lone wolf").normal().height(15);
-chart.group("lone wolf").hovered().height(20);   
-chart.group("lone wolf").selected().height(20);      
+...
 
-// configure the shape of nodes in groups
-chart.group("family").normal().shape("star5");
-chart.group("friends").normal().shape("diamond");
-chart.group("lone wolf").normal().shape("diagonal-cross");
+```
+// set the size of nodes in groups
+family.normal().height(40);
+family.hovered().height(55);
+family.selected().height(55);
+friends.normal().height(20); 
+friends.hovered().height(27);
+friends.selected().height(27); 
+loneWolf.normal().height(20);
+loneWolf.hovered().height(27);   
+loneWolf.selected().height(27);
+
+// set the shape of nodes in groups
+family.normal().shape("star5");
+friends.normal().shape("diamond");
+loneWolf.normal().shape("diagonal-cross");
+```
+...
+
+```
+// set the fill of nodes in groups
+family.normal().fill("#ffa000");
+family.hovered().fill("#ffa000");
+family.selected().fill("#ffa000");
+friends.normal().fill("#00bfa5");
+friends.hovered().fill("#00bfa5");
+friends.selected().fill("#00bfa5");
+loneWolf.normal().fill("#ff3300");
+loneWolf.hovered().fill("#ff3300");
+loneWolf.selected().fill("#ff3300");
+
+// set the stroke of nodes in groups
+family.normal().stroke(null);
+family.hovered().stroke(null);
+family.selected().stroke("#455a64", 2);
+friends.normal().stroke(null);
+friends.hovered().stroke(null);
+friends.selected().stroke("#455a64", 2);
+loneWolf.normal().stroke(null);
+loneWolf.hovered().stroke(null);
+loneWolf.selected().stroke("#455a64", 2);
 ```
 
 {sample}BCT\_Network\_Graph\_08{sample}
