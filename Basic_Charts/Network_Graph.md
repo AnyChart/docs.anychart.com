@@ -239,17 +239,15 @@ You can adjust the size and shape of all nodes, of an individual node, or of a g
 
 #### Size & Shape
 
-* {api:anychart.charts.Graph#nodes}nodes(){api}
-* {api:anychart.core.graph.elements.Node#normal}normal(){api}
-* {api:anychart.core.graph.elements.Node#hovered}hovered(){api}
-* {api:anychart.core.graph.elements.Node#selected}selected(){api}
-* {api:anychart.core.StateSettings#height}height(){api}
-* {api:anychart.core.StateSettings#width}width(){api}
-* {api:anychart.core.StateSettings#shape}shape(){api}
-* {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}
-* [states](../Common_Settings/Interactivity/States)
-* **normal**, **hover**, and **selected**
+The size and shape of nodes can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Node#normal}normal(){api}, {api:anychart.core.graph.elements.Node#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Node#selected}selected(){api} methods
 
+Combine them with:
+
+* {api:anychart.core.StateSettings#height}height(){api} to set the height
+* {api:anychart.core.StateSettings#width}width(){api} to set the width
+* {api:anychart.core.StateSettings#shape}shape(){api} to set the shape
+
+Here is the list of available shapes: {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}
 
 ```
 // set the size of nodes
@@ -265,7 +263,7 @@ chart.nodes().normal().shape("star5");
 
 #### Individual Nodes
 
-It is possible to configure each node individually – use extra data fields corresponding with the methods mentioned above:
+It is possible to configure the size and shape of each node individually – use extra data fields corresponding with the methods mentioned above:
 
 ```
 // create data
@@ -308,18 +306,7 @@ var chart = anychart.graph(data);
 
 #### Groups
 
-* {api:anychart.charts.Graph#group}group(){api}
-* {api:anychart.core.graph.elements.Group#normal}normal(){api}
-* {api:anychart.core.graph.elements.Group#hovered}hovered(){api}
-* {api:anychart.core.graph.elements.Group#selected}selected(){api}
-* {api:anychart.core.StateSettings#height}height(){api}
-* {api:anychart.core.StateSettings#width}width(){api}
-* {api:anychart.core.StateSettings#shape}shape(){api}
-* [states](../Common_Settings/Interactivity/States)
-* **normal**, **hover**, and **selected**
-* [data](#data) fields: `group`
-
-
+You can create a group of nodes - specify the name of the group in the `group` [data](#data) field of each node you are going to include:
 
 ```
 // create data
@@ -349,6 +336,18 @@ var data = {
 // create a chart and set the data
 var chart = anychart.graph(data);
 ```
+
+To configure nodes in a group, use the {api:anychart.charts.Graph#group}group(){api} method.
+
+The size and shape of nodes in groups can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Group#normal}normal(){api}, {api:anychart.core.graph.elements.Group#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Group#selected}selected(){api} methods.
+
+Combine them with:
+
+* {api:anychart.core.StateSettings#height}height(){api} to set the height
+* {api:anychart.core.StateSettings#width}width(){api} to set the width
+* {api:anychart.core.StateSettings#shape}shape(){api} to set the shape
+
+Here is the list of available shapes: {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}
 
 ```
 // configure the size of nodes in groups

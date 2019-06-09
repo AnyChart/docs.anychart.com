@@ -56,13 +56,24 @@ anychart.onDocumentReady(function () {
     // disable zooming with the mouse wheel
     chart.interactivity().zoomOnMouseWheel(false);
 
+    // access nodes
+    var nodes = chart.nodes();
+
     // set the size of nodes
-    chart.nodes().normal().height(40);
-    chart.nodes().hovered().height(55);
-    chart.nodes().selected().height(55);
+    nodes.normal().height(40);
+    nodes.hovered().height(55);
+    nodes.selected().height(55);
 
     // set the shape of nodes
-    chart.nodes().normal().shape("star5");
+    nodes.normal().shape("star5");
+
+    // set the fill and stroke of nodes
+    nodes.normal().fill("#ffa000");
+    nodes.hovered().fill("#ffda99");
+    nodes.selected().fill("#64b5f6");
+    nodes.normal().stroke("#64b5f6");
+    nodes.hovered().stroke("#9fd1f9", 2);
+    nodes.selected().stroke("#455a64", 2);
 
     // set the chart title
     chart.title("Network Graph: Nodes (Size & Shape)");
