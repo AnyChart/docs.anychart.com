@@ -163,13 +163,42 @@ var chart = anychart.graph(data);
 
 #### Type
 
-* {api:anychart.charts.Graph#layout}layout(){api}
-* {api:anychart.core.graph.elements.Layout#type}type(){api}
-* {api:anychart.enums.layoutType}anychart.enums.layoutType{api}
-* `forced` (default), `fixed`
-
+For the Network Graph, two layouts are available: **forced** and **fixed**. To set the layout, combine the {api:anychart.charts.Graph#layout}layout(){api} method with {api:anychart.core.graph.elements.Layout#type}type(){api}. Pass either `forced` or `fixed` as a parameter - see {api:anychart.enums.layoutType}anychart.enums.layoutType{api}:
 
 ```
+chart.layout().type("fixed");
+```
+
+When the layout is forced, nodes are arranged automatically. The fixed layout allows organizing them manually: use the `x` and `y` [data](#data) fields:
+
+```
+// create data
+var data = {
+  nodes: [
+    {id: "Richard", x:   0, y: 100},
+    {id: "Larry",   x:  50, y: 150},
+    {id: "Marta",   x: 100, y: 100},
+    {id: "Jane",    x: 200, y: 100},
+    {id: "Norma",   x: 250, y:  50},
+    {id: "Frank",   x: 250, y: 150},
+    {id: "Brett",   x: 300, y: 100},
+    {id: "Tommy",   x: 400, y: 100}
+  ],
+  edges: [
+    {from: "Richard", to: "Larry"},
+    {from: "Richard", to: "Marta"},
+    {from: "Larry",   to: "Marta"},
+    {from: "Marta",   to: "Jane"},
+    {from: "Jane",    to: "Norma"},
+    {from: "Jane",    to: "Frank"},
+    {from: "Jane",    to: "Brett"},
+    {from: "Brett",   to: "Frank"}
+  ]
+};
+
+// create a chart and set the data
+chart = anychart.graph(data);
+
 // set the layout type
 chart.layout().type("fixed");
 ```
