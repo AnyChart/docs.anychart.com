@@ -235,26 +235,28 @@ graph2.rotation(90);
 
 Nodes, or vertices, are objects that are pairwise connected with [edges](#edges) and represented as points. To set them, use the `node` and `id` fields in your [data](#data).
 
-You can adjust the size and shape of all nodes, of an individual node, or of a group of nodes, as explained in the subsections below. Also, you can configure their appearance - see the [Appearance](#appearance) section.
+You can adjust the size, shape, and appearance of all nodes, of an individual node, or of a group of nodes, as explained in the subsections below. Also, you can configure their labels and tooltips - see the [Labels and Tooltips](#labels_and_tooltips) section.
 
-#### Size & Shape
+#### All Nodes
 
-To configure nodes, first access them by using the {api:anychart.charts.Graph#nodes}nodes(){api} method:
+You can adjust the size, shape, and [appearance](../Appearance_Settings) of all nodes on a graph.
+
+Access them by using the {api:anychart.charts.Graph#nodes}nodes(){api} method:
 
 ```
 // access nodes
 var nodes = chart.nodes();
 ```
 
-The size and shape of nodes can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Node#normal}normal(){api}, {api:anychart.core.graph.elements.Node#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Node#selected}selected(){api} methods.
+Nodes can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Node#normal}normal(){api}, {api:anychart.core.graph.elements.Node#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Node#selected}selected(){api} methods.
 
 Combine them with:
 
 * {api:anychart.core.StateSettings#height}height(){api} to set the height
 * {api:anychart.core.StateSettings#width}width(){api} to set the width
-* {api:anychart.core.StateSettings#shape}shape(){api} to set the shape
-
-Here is the list of available shapes: {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}
+* {api:anychart.core.StateSettings#shape}shape(){api} to set the shape - {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
 ...
 
@@ -286,7 +288,7 @@ nodes.selected().stroke("#455a64", 2);
 
 #### Individual Nodes
 
-It is possible to configure the size and shape of each node individually – use extra data fields corresponding with the methods mentioned above:
+It is possible to configure each node individually – use extra data fields corresponding with the methods mentioned above:
 
 ```
 // create data
@@ -415,15 +417,15 @@ var friends = chart.group("friends");
 var loneWolf = chart.group("lone wolf");
 ```
 
-The size and shape of nodes in groups can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Group#normal}normal(){api}, {api:anychart.core.graph.elements.Group#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Group#selected}selected(){api} methods.
+Nodes in groups can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Group#normal}normal(){api}, {api:anychart.core.graph.elements.Group#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Group#selected}selected(){api} methods.
 
 Combine them with:
 
 * {api:anychart.core.StateSettings#height}height(){api} to set the height
 * {api:anychart.core.StateSettings#width}width(){api} to set the width
-* {api:anychart.core.StateSettings#shape}shape(){api} to set the shape
-
-Here is the list of available shapes: {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}
+* {api:anychart.core.StateSettings#shape}shape(){api} to set the shape - {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
 ...
 
