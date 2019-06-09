@@ -112,15 +112,15 @@ Use the following data fields:
 
 For each node, specify:
 
-* `id` - unique indentifier
+* `id` - the unique indentifier
 * `x`, `y` (optional) - coordinates in the fixed [layout](#layout)
-* `group` (optional) - [group](#groups)
+* `group` (optional) - the [group](#groups) to which it belongs
 
 For each edge, specify:
 
-* `from` - source node
-* `to` - destination node
-* `id` (optional) - unique indentifier
+* `from` - the source node
+* `to` - the destination node
+* `id` (optional) - the unique indentifier
 
 **Note 1:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
@@ -219,6 +219,7 @@ graph2.rotation(90);
 * {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}
 * [states](../Common_Settings/Interactivity/States)
 * **normal**, **hover**, and **selected**
+* [data](#data) fields
 
 
 ```
@@ -287,6 +288,8 @@ var chart = anychart.graph(data);
 * {api:anychart.core.StateSettings#shape}shape(){api}
 * [states](../Common_Settings/Interactivity/States)
 * **normal**, **hover**, and **selected**
+* [data](#data) fields
+
 
 
 ```
@@ -341,6 +344,8 @@ chart.group("lone wolf").normal().shape("diagonal-cross");
 ### Edges
 
 * [Appearance](#apperance)
+* [data](#data) fields
+
 
 ### Appearance
 
