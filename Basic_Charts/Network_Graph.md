@@ -163,7 +163,7 @@ var chart = anychart.graph(data);
 
 #### Type
 
-For the Network Graph, two layouts are available: **forced** and **fixed**. To set the layout, combine the {api:anychart.charts.Graph#layout}layout(){api} method with {api:anychart.core.graph.elements.Layout#type}type(){api}. Pass either `forced` or `fixed` as a parameter - see {api:anychart.enums.layoutType}anychart.enums.layoutType{api}:
+For the Network Graph, two layouts are available: **forced** (default) and **fixed**. To set the layout, combine the {api:anychart.charts.Graph#layout}layout(){api} method with {api:anychart.core.graph.elements.Layout#type}type(){api}. Pass either `forced` or `fixed` as a parameter - see {api:anychart.enums.layoutType}anychart.enums.layoutType{api}:
 
 ```
 chart.layout().type("fixed");
