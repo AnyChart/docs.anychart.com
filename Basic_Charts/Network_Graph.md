@@ -375,9 +375,9 @@ chart.group("lone wolf").normal().shape("diagonal-cross");
 
 ### Edges
 
-* [data](#data) fields: `edge` + `from`, `to`
-* [Appearance](#apperance)
+Edges are links that connect pairs of [nodes](#nodes). To set them, use the `edge`, `from`, and `to` fields in your [data](#data).
 
+You can configure the appearance of edges - see the [Appearance](#apperance) section.
 
 ### Appearance
 
