@@ -207,12 +207,11 @@ chart.layout().type("fixed");
 
 #### Iteration Step
 
-* {api:anychart.charts.Graph#layout}layout(){api}
-* {api:anychart.core.graph.elements.Layout#iterationCount}iterationCount(){api}
-* default: 500
+Network Graphs are drawn with the help of a [force-directed algorithm](https://en.wikipedia.org/wiki/Force-directed_graph_drawing) that groups nodes into clusters.
 
+You can stop the drawing algorithm at any step: combine the {api:anychart.charts.Graph#layout}layout(){api} method with {api:anychart.core.graph.elements.Layout#iterationCount}iterationCount(){api}. The default number of steps is 500.
 
-Когда рисуется чарт, работает алгоритм, который группирует ноды по кластерам. Однако этот алгоритм можно остановить на любом шаге. Вот как выглядит iterationCount = 0:
+In the sample below, the iteration step of the first chart is not configured, and for the second chart it is set to 0:
 
 ```
 // set the iteration step
@@ -225,7 +224,7 @@ graph2.layout().iterationCount(0);
 ### Rotation
 
 * {api:anychart.charts.Graph#rotation}rotation(){api}
-* default: 0
+* default: 0\xb0
 
 
 ```
