@@ -6,10 +6,10 @@
 A Network Graph ...
 
 ```
-Network graph is a mathematical structure (graph) to show relations between points. The graph visualizes how entities are interconnected with each other. Entities are displayed as nodes (points) and the relationship between them (edges) are displayed with lines.
+A network graph is a mathematical structure (graph) to show relations between points. The graph visualizes how entities are interconnected with each other. Entities are displayed as nodes (points) and the relationship between them (edges) are displayed with lines.
 ```
 
-This article explains how to create a basic Network Graph chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Graph chart's characteristics:
+This article explains how to create a basic Network Graph as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Graph chart's characteristics:
 
 <table border="1" class="seriesTABLE">
 <tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Network Graph](../Quick_Start/Modules#network_graph)</td></tr>
@@ -37,7 +37,7 @@ This article explains how to create a basic Network Graph chart as well as confi
 
 ## Modules
 
-The Graph chart requires adding the [Core](../Quick_Start/Modules#core) and [Network Graph](../Quick_Start/Modules#network_graph) modules:
+The Network Graph requires adding the [Core](../Quick_Start/Modules#core) and [Network Graph](../Quick_Start/Modules#network_graph) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -107,25 +107,26 @@ Data for a Network Graph can be passed to the chart constructor {api:anychart#gr
 
 Use the following data fields:
 
-* `nodes`
-* `edges`
+* `nodes` to set [nodes](#nodes)
+* `edges` to set [edges](#edges)
 
-[nodes](#nodes):
+For each node, specify:
 
-* `id`
-* optional: `x`, `y`
-* optional: `group`
+* `id` - a unique indentifier
+* `x`, `y` (optional) - coordinates in the fixed [layout](#layout)
+* `group` (optional) - a [group](#groups)
 
-[edges](#edges):
+For each edge, specify:
 
-* `from`
-* `to`
-* optional: `id`
+* `from`  -  a source node
+* `to`  -  a destination node
+* `id` (optional)  -  a unique indentifier
 
 **Note 1:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
-**Note 2:** между парой нод поддерживается только одно ребро
+**Note 2:** You can link a pair of nodes with only one edge.
 
+This is how working with data fields of the Network Graph looks like:
 
 ```
 // create data
