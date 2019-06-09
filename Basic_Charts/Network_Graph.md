@@ -63,8 +63,7 @@ var data = {
     {id: "Jane"},
     {id: "Norma"},
     {id: "Frank"},
-    {id: "Brett"},
-    {id: "Tommy"}
+    {id: "Brett"}
   ],
   edges: [
     {from: "Richard", to: "Larry"},
@@ -118,15 +117,13 @@ For each node, specify:
 
 For each edge, specify:
 
-* `from` - the source node
+* `from` - the source node 
 * `to` - the destination node
 * `id` (optional) - the unique indentifier
 
-**Note 1:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
+**Note:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
-**Note 2:** You can link a pair of nodes with only one edge.
-
-This is how working with data fields of the Network Graph looks like:
+You can link a node with several nodes, but it is impossible to link a pair of nodes with more than one edge. Also, you can create nodes with no links, like in the sample below:
 
 ```
 // create data
@@ -211,7 +208,7 @@ Network Graphs are drawn with the help of a [force-directed algorithm](https://e
 
 You can stop the drawing algorithm at any step: combine the {api:anychart.charts.Graph#layout}layout(){api} method with {api:anychart.core.graph.elements.Layout#iterationCount}iterationCount(){api}. The default number of steps is 500.
 
-In the sample below, the iteration step of the first chart is not configured, and for the second chart it is set to 0:
+In the following sample, the iteration step of the first chart is not configured, and for the second chart it is set to 0:
 
 ```
 // set the iteration step
@@ -225,7 +222,7 @@ graph2.layout().iterationCount(0);
 
 To set the rotation angle of a Network Graph, use the {api:anychart.charts.Graph#rotation}rotation(){api} method. The angle is 0&deg; by default.
 
-In the following sample, the rotation angle of the first chart is not configured, and for the second chart it is set to 90&deg;:
+In the sample below, the rotation angle of the first chart is not configured, and for the second chart it is set to 90&deg;:
 
 ```
 // set the rotation angle
