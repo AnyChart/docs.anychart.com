@@ -233,9 +233,9 @@ graph2.rotation(90);
 
 ### Nodes
 
-Nodes, or vertices, are objects that are pairwise connected with [edges](#edges). To set them, use the `node` and `id` fields in your [data](#data).
+Nodes, or vertices, are objects that are pairwise connected with [edges](#edges) and represented as points. To set them, use the `node` and `id` fields in your [data](#data).
 
-You can adjust the size and shape of all nodes, of an individual node, or of a group of nodes, as explained in the sections below. Also, you can configure their appearance - see the [Appearance](#appearance) section.
+You can adjust the size and shape of all nodes, of an individual node, or of a group of nodes, as explained in the subsections below. Also, you can configure their appearance - see the [Appearance](#appearance) section.
 
 #### Size & Shape
 
@@ -372,7 +372,7 @@ chart.group("lone wolf").normal().shape("diagonal-cross");
 
 ### Edges
 
-Edges are links that connect pairs of [nodes](#nodes). To set them, use the `edge`, `from`, and `to` fields in your [data](#data).
+Edges are links that connect pairs of [nodes](#nodes) and are represented as lines. To set them, use the `edge`, `from`, and `to` fields in your [data](#data).
 
 You can configure the appearance of edges - see the [Appearance](#apperance) section.
 
