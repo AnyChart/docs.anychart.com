@@ -169,7 +169,7 @@ For the Network Graph, two layouts are available: **forced** (default) and **fix
 chart.layout().type("fixed");
 ```
 
-When the layout is forced, nodes are arranged automatically. The fixed layout allows you to manually set the coordinates of each node - use the `x` and `y` [data](#data) fields:
+When the layout is forced, [nodes](#nodes) are arranged automatically. The fixed layout allows you to manually set the coordinates of each node - use the `x` and `y` [data](#data) fields:
 
 ```
 // create data
@@ -207,7 +207,7 @@ chart.layout().type("fixed");
 
 #### Iteration Step
 
-Network Graphs are drawn with the help of a [force-directed algorithm](https://en.wikipedia.org/wiki/Force-directed_graph_drawing) that groups nodes into clusters.
+Network Graphs are drawn with the help of a [force-directed algorithm](https://en.wikipedia.org/wiki/Force-directed_graph_drawing) that groups [nodes](#nodes) into clusters.
 
 You can stop the drawing algorithm at any step: combine the {api:anychart.charts.Graph#layout}layout(){api} method with {api:anychart.core.graph.elements.Layout#iterationCount}iterationCount(){api}. The default number of steps is 500.
 
@@ -236,7 +236,9 @@ graph2.rotation(90);
 
 ### Nodes
 
-* [data](#data) fields: `node` + `id`
+Nodes, or vertices, are objects connected with [edges](#edges) (pairwise). To set them, use the `node` and `id` fields in your [data](#data).
+
+You can adjust the size and shape of all nodes, an individual node, or a group of nodes as explained in the sections below. Also, you can configure their appearance - see the [Apperance](#apperance) section.
 
 #### Size & Shape
 
