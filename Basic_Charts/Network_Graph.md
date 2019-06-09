@@ -236,9 +236,9 @@ graph2.rotation(90);
 
 ### Nodes
 
-Nodes, or vertices, are objects connected with [edges](#edges) (pairwise). To set them, use the `node` and `id` fields in your [data](#data).
+Nodes, or vertices, are objects that are pairwise connected with [edges](#edges). To set them, use the `node` and `id` fields in your [data](#data).
 
-You can adjust the size and shape of all nodes, an individual node, or a group of nodes as explained in the sections below. Also, you can configure their appearance - see the [Apperance](#apperance) section.
+You can adjust the size and shape of all nodes, of an individual node, or of a group of nodes, as explained in the sections below. Also, you can configure their appearance - see the [Appearance](#appearance) section.
 
 #### Size & Shape
 
