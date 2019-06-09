@@ -169,7 +169,7 @@ For the Network Graph, two layouts are available: **forced** and **fixed**. To s
 chart.layout().type("fixed");
 ```
 
-When the layout is forced, nodes are arranged automatically. The fixed layout allows organizing them manually: use the `x` and `y` [data](#data) fields:
+When the layout is forced, nodes are arranged automatically. The fixed layout allows you to manually set the coordinates of each node - use the `x` and `y` [data](#data) fields:
 
 ```
 // create data
