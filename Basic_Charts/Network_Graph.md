@@ -227,6 +227,7 @@ graph2.layout().iterationCount(0);
 * {api:anychart.charts.Graph#rotation}rotation(){api}
 * default: 0
 
+
 ```
 // set the rotation angle
 graph2.rotation(90);
@@ -473,6 +474,8 @@ var chart = anychart.graph(data);
 {sample}BCT\_Network\_Graph\_10{sample}
 
 #### Custom Images
+
+The fill of a node can be set as a custom image:
 
 ```
 // create data
