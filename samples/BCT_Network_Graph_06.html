@@ -69,13 +69,13 @@ anychart.onDocumentReady(function () {
 
     // set the fill of nodes
     nodes.normal().fill("#ffa000");
-    nodes.hovered().fill("#ffda99");
+    nodes.hovered().fill("white");
     nodes.selected().fill("#ffa000");
 
     // set the stroke of nodes
     nodes.normal().stroke("#ffa000");
-    nodes.hovered().stroke("#ffda99");
-    nodes.selected().stroke("#455a64");
+    nodes.hovered().stroke("#ffa000", 1.5);
+    nodes.selected().stroke("#455a64", 1.5);
 
     // set the chart title
     chart.title("Network Graph: Nodes (Size & Shape)");
