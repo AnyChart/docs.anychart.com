@@ -79,25 +79,25 @@ anychart.onDocumentReady(function () {
 
     // set the fill of nodes in groups
     family.normal().fill("#ffa000");
-    family.hovered().fill("white");
+    family.hovered().fill("#ffa000");
     family.selected().fill("#ffa000");
     friends.normal().fill("#00bfa5");
-    friends.hovered().fill("white");
+    friends.hovered().fill("#00bfa5");
     friends.selected().fill("#00bfa5");
     loneWolf.normal().fill("#ff3300");
-    loneWolf.hovered().fill("white");
+    loneWolf.hovered().fill("#ff3300");
     loneWolf.selected().fill("#ff3300");
 
     // set the stroke of nodes in groups
-    family.normal().stroke("#ffa000");
-    family.hovered().stroke("#ffa000", 1.5);
-    family.selected().stroke("#455a64", 1.5);
-    friends.normal().stroke("#00bfa5");
-    friends.hovered().stroke("#00bfa5", 1.5);
-    friends.selected().stroke("#455a64", 1.5);
-    loneWolf.normal().stroke("#ff3300");
-    loneWolf.hovered().stroke("#ff3300", 1.5);
-    loneWolf.selected().stroke("#455a64", 1.5);
+    family.normal().stroke(null);
+    family.hovered().stroke(null);
+    family.selected().stroke("#455a64", 2);
+    friends.normal().stroke(null);
+    friends.hovered().stroke(null);
+    friends.selected().stroke("#455a64", 2);
+    loneWolf.normal().stroke(null);
+    loneWolf.hovered().stroke(null);
+    loneWolf.selected().stroke("#455a64", 2);
 
 
     // set the chart title
