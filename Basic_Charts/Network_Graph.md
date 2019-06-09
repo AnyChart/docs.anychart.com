@@ -223,9 +223,9 @@ graph2.layout().iterationCount(0);
 
 ### Rotation
 
-* {api:anychart.charts.Graph#rotation}rotation(){api}
-* default: 0\xb0
+To set the rotation angle of a Network Graph, use the {api:anychart.charts.Graph#rotation}rotation(){api} method. The angle is 0&deg; by default.
 
+In the following sample, the rotation angle of the first chart is not configured, and for the second chart it is set to 90&deg;:
 
 ```
 // set the rotation angle
