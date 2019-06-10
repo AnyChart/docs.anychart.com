@@ -162,11 +162,7 @@ var chart = anychart.graph(data);
 
 For the Network Graph, two layouts are available: **forced** (default) and **fixed**.
 
-When the layout is forced, [nodes](#nodes) are arranged automatically. The fixed layout allows you to manually set the coordinates of each node - use the `x` and `y` [data](#data) fields.
-
-To set the layout, combine the {api:anychart.charts.Graph#layout}layout(){api} method with {api:anychart.core.graph.elements.Layout#type}type(){api}. Pass either `forced` or `fixed` as a parameter - see {api:anychart.enums.layoutType}anychart.enums.layoutType{api}.
-
-Here is how layouts work:
+When the layout is forced, [nodes](#nodes) are arranged automatically. The fixed layout allows you to manually set the coordinates of each node - use the `x` and `y` [data](#data) fields:
 
 ```
 // create data
@@ -195,10 +191,16 @@ var data = {
 
 // create a chart and set the data
 chart = anychart.graph(data);
+```
 
+To set the layout, combine the {api:anychart.charts.Graph#layout}layout(){api} method with {api:anychart.core.graph.elements.Layout#type}type(){api}. Pass either `forced` or `fixed` as a parameter - see {api:anychart.enums.layoutType}anychart.enums.layoutType{api}:
+
+```
 // set the layout type
 chart.layout().type("fixed");
 ```
+
+Here is how layouts work:
 
 {sample}BCT\_Network\_Graph\_03{sample}
 
