@@ -809,7 +809,7 @@ It is possible to prevent or modify the behavior of the chart and its parts as w
 
 By default, users have an opportunity to drag and drop the chart and zoom it in and out with the mouse wheel.
 
-To adjust the behavior of the chart, use the {api:anychart.charts.Graph#interactivity}interactivity(){api} method
+To configure the behavior of the chart, use the {api:anychart.charts.Graph#interactivity}interactivity(){api} method
 
 Combine it with the methods below and `true` / `false` as a parameter:
 
@@ -831,7 +831,7 @@ The following sample shows how the mouse wheel can be used:
 
 By default, users have an opportunity to drag and drop [nodes](#nodes).
 
-To adjust the behavior of nodes, use the {api:anychart.charts.Graph#interactivity}interactivity(){api} method.
+To configure the behavior of nodes, use the {api:anychart.charts.Graph#interactivity}interactivity(){api} method.
 
 Combine it with the methods below and `true` / `false` as a parameter:
 
@@ -859,11 +859,12 @@ chart.interactivity().magnetize(true);
 
 #### Edge Behavior
 
-* [edges](#edges)
-* {api:anychart.charts.Graph#interactivity}interactivity(){api}
-* {api:anychart.core.graph.elements.Interactivity#hoverGap}hoverGap(){api} - перемещение нод относительно друг друга
-* {api:anychart.core.graph.elements.Interactivity#edges}edges(){api} - это касается рисования ребер
+To configure the behavior of [edges](#edges), use the {api:anychart.charts.Graph#interactivity}interactivity(){api} method, combined with:
 
+* {api:anychart.core.graph.elements.Interactivity#hoverGap}hoverGap(){api} - to set the hover gap
+* {api:anychart.core.graph.elements.Interactivity#edges}edges(){api} + `true` / `false` - to enable or disable a special drawing mode that allows optimizing the performance (?)
+
+In the following sample, the hover gap of edges on the first chart is not configured, and for the second chart it is set to 30:
 
 ```
 // set the hover gap of edges
