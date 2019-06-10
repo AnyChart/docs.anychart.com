@@ -803,7 +803,7 @@ zoomController.render();
 
 By default, users have an opportunity to drag  and drop the Network Graph and its nodes and zoom it in and out with the mouse wheel.
 
-It is possible to prevent or modify the behavior of the chart and its parts as well as configure some other behavior-related settings. You can enable the alignment of nodes, set the hover gap of edges, and change the way how edges are drawn to optimize the performance. (?)
+It is possible to prevent or modify the behavior of the chart and its parts as well as configure some other behavior-related settings. You can enable the alignment of nodes, set the trigger area of edges, and change the way how edges are drawn to optimize the performance. (?)
 
 #### Chart Behavior
 
@@ -861,7 +861,7 @@ chart.interactivity().magnetize(true);
 
 To configure the behavior of [edges](#edges), use the {api:anychart.charts.Graph#interactivity}interactivity(){api} method, combined with:
 
-* {api:anychart.core.graph.elements.Interactivity#hoverGap}hoverGap(){api} - to set the hover gap
+* {api:anychart.core.graph.elements.Interactivity#hoverGap}hoverGap(){api} - to set the trigger area for interacting with edges
 * {api:anychart.core.graph.elements.Interactivity#edges}edges(){api} + `true` / `false` - to enable or disable a special drawing mode that allows optimizing the performance (?)
 
 In the following sample, the hover gap of edges on the first chart is not configured, and for the second chart it is set to 30:
