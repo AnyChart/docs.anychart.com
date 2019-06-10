@@ -801,24 +801,27 @@ zoomController.render();
 
 ### Behavior
 
-{api:anychart.charts.Graph#enabled}enabled(){api} - единств способ запретить сдвигание чарта мышкой
+By default, users have an opportunity to drag the chart and its nodes and zoom it in and out and with the mouse wheel.
+
+It is possible to prevent or modify the behavior of the chart and its parts as well as configure some other behavior-related settings: enable alignment of nodes, set the hover gap of edges, and change the way how edges are drawn to optimize the performance. (?)
 
 #### Chart Behavior
 
-* {api:anychart.charts.Graph#interactivity}interactivity(){api}
-* {api:anychart.core.graph.elements.Interactivity#scrollOnMouseWheel}scrollOnMouseWheel(){api}
-* {api:anychart.core.graph.elements.Interactivity#zoomOnMouseWheel}zoomOnMouseWheel(){api}
+By default, users have an opportunity to drag the chart and zoom it in and out the chart with the mouse wheel.
+
+To adjust the behavior of the chart, combine the {api:anychart.charts.Graph#interactivity}interactivity(){api} method with the methods listed below and `true` / `false` as a parameter:
+
+* {api:anychart.core.graph.elements.Interactivity#zoomOnMouseWheel}zoomOnMouseWheel(){api} to allow or prevent zooming the chart with the mouse wheel
+* {api:anychart.core.graph.elements.Interactivity#scrollOnMouseWheel}scrollOnMouseWheel(){api} to allow or prevent scrolling the chart with the mouse wheel
+{api:anychart.charts.Graph#enabled}enabled(){api} to allow or prevent dragging the chart
 
 
 ```
-// allow zooming with the mouse wheel
-chart.interactivity().zoomOnMouseWheel(true);
-```
-
-```
-// allow scrolling with the mouse wheel
+// allow scrolling the chart with the mouse wheel
 chart.interactivity().scrollOnMouseWheel(true);
 ```
+
+The following sample shows how mouse wheel can be used:
 
 {sample}BCT\_Network\_Graph\_16{sample}
 
@@ -838,7 +841,7 @@ chart.interactivity().nodes(false);
 {sample}BCT\_Network\_Graph\_17{sample}
 
 ```
-// enable the node alignment
+// enable the alignment of nodes
 chart.interactivity().magnetize(true);
 ```
 
