@@ -281,7 +281,7 @@ nodes.selected().fill("#ffa000");
 // set the stroke of nodes
 nodes.normal().stroke(null);
 nodes.hovered().stroke(null);
-nodes.selected().stroke("#455a64", 2);
+nodes.selected().stroke("#333333", 2);
 ```
 
 {sample}BCT\_Network\_Graph\_06{sample}
@@ -313,7 +313,7 @@ var data = {
                  height: 55,
                  shape: "star5",
                  fill: "#ffa000",
-                 stroke: "2 #455a64"
+                 stroke: "2 #333333"
                }
     },
     {id: "Jane"},
@@ -337,7 +337,7 @@ var data = {
                  height: 27,
                  shape: "diagonal-cross",
                  fill: "#ff3300",
-                 stroke: "2 #455a64"
+                 stroke: "2 #333333"
                }
     }
   ],
@@ -403,51 +403,6 @@ var chart = anychart.graph(data);
 
 You can create a group of nodes - specify the name of the group in the `group` [data](#data) field of each node you are going to include:
 
-```
-// access groups of nodes
-var family = chart.group("family");
-var friends = chart.group("friends");
-var loneWolf = chart.group("lone wolf");
-
-// set the size of nodes in groups
-family.normal().height(40);
-family.hovered().height(55);
-family.selected().height(55);
-friends.normal().height(20); 
-friends.hovered().height(27);
-friends.selected().height(27); 
-loneWolf.normal().height(20);
-loneWolf.hovered().height(27);   
-loneWolf.selected().height(27);      
-
-// set the shape of nodes in groups
-family.normal().shape("star5");
-friends.normal().shape("diamond");
-loneWolf.normal().shape("diagonal-cross");
-
-// set the fill of nodes in groups
-family.normal().fill("#ffa000");
-family.hovered().fill("#ffa000");
-family.selected().fill("#ffa000");
-friends.normal().fill("#00bfa5");
-friends.hovered().fill("#00bfa5");
-friends.selected().fill("#00bfa5");
-loneWolf.normal().fill("#ff3300");
-loneWolf.hovered().fill("#ff3300");
-loneWolf.selected().fill("#ff3300");
-
-// set the stroke of nodes in groups
-family.normal().stroke(null);
-family.hovered().stroke(null);
-family.selected().stroke("#455a64", 2);
-friends.normal().stroke(null);
-friends.hovered().stroke(null);
-friends.selected().stroke("#455a64", 2);
-loneWolf.normal().stroke(null);
-loneWolf.hovered().stroke(null);
-loneWolf.selected().stroke("#455a64", 2);
-```
-
 To configure nodes in a group, first access them by using the {api:anychart.charts.Graph#group}group(){api} method:
 
 ```
@@ -479,7 +434,7 @@ friends.hovered().height(27);
 friends.selected().height(27); 
 loneWolf.normal().height(20);
 loneWolf.hovered().height(27);   
-loneWolf.selected().height(27);
+loneWolf.selected().height(27);      
 
 // set the shape of nodes in groups
 family.normal().shape("star5");
@@ -503,13 +458,13 @@ loneWolf.selected().fill("#ff3300");
 // set the stroke of nodes in groups
 family.normal().stroke(null);
 family.hovered().stroke(null);
-family.selected().stroke("#455a64", 2);
+family.selected().stroke("#333333", 2);
 friends.normal().stroke(null);
 friends.hovered().stroke(null);
-friends.selected().stroke("#455a64", 2);
+friends.selected().stroke("#333333", 2);
 loneWolf.normal().stroke(null);
 loneWolf.hovered().stroke(null);
-loneWolf.selected().stroke("#455a64", 2);
+loneWolf.selected().stroke("#333333", 2);
 ```
 
 {sample}BCT\_Network\_Graph\_09{sample}
@@ -532,9 +487,9 @@ You can adjust the appearance of all edges or of an individual edge, as explaine
 
 ```
 // configure the visual settings of edges
-chart.edges().normal().stroke("#96a6a6", 1, "10 5", "round");
-chart.edges().hovered().stroke("#455a64", 2, "10 5", "round");
-chart.edges().selected().stroke("#455a64", 2);
+chart.edges().normal().stroke("#ffa000", 2, "10 5", "round");
+chart.edges().hovered().stroke("#ffa000", 4, "10 5", "round");
+chart.edges().selected().stroke("#ffa000", 4);
 ```
 
 {sample}BCT\_Network\_Graph\_10{sample}
@@ -563,13 +518,13 @@ var data = {
     {from: "Marta",   to: "Jane",
      normal: {stroke:  {
                          color: "#ffa000",
-                         thickness: "4",
+                         thickness: "2",
                          dash: "10 5",
                          lineJoin: "round"
                        }
      },
      hovered: {stroke: {
-                         color: "#ffda99",
+                         color: "#ffa000",
                          thickness: "4",
                          dash: "10 5",
                          lineJoin: "round"
