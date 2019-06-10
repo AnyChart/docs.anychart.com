@@ -200,7 +200,7 @@ To set the layout, combine the {api:anychart.charts.Graph#layout}layout(){api} m
 chart.layout().type("fixed");
 ```
 
-Here is how layouts work:
+This is how layouts work:
 
 {sample}BCT\_Network\_Graph\_03{sample}
 
@@ -764,7 +764,7 @@ chart.move(50, -50);
 chart.fit();  
 ```
 
-Here is how these methods work:
+This is how these methods work:
 
 {sample}BCT\_Network\_Graph\_14{sample}
 
@@ -815,7 +815,7 @@ Combine it with the methods below and `true` / `false` as a parameter:
 
 * {api:anychart.core.graph.elements.Interactivity#zoomOnMouseWheel}zoomOnMouseWheel(){api} to allow or prevent zooming the chart with the mouse wheel
 * {api:anychart.core.graph.elements.Interactivity#scrollOnMouseWheel}scrollOnMouseWheel(){api} to allow or prevent scrolling the chart with the mouse wheel
-* {api:anychart.charts.Graph#enabled}enabled(){api} to allow or prevent dragging the chart
+* {api:anychart.charts.Graph#enabled}enabled(){api} to allow or prevent moving the chart
 
 
 ```
@@ -835,16 +835,20 @@ To adjust the behavior of nodes, use the {api:anychart.charts.Graph#interactivit
 
 Combine it with the methods below and `true` / `false` as a parameter:
 
-* {api:anychart.core.graph.elements.Interactivity#nodes}nodes(){api} to allow or prevent dragging nodes
-* {api:anychart.core.graph.elements.Interactivity#magnetize}magnetize(){api} to enable or disable the automatic alignment of nodes (after dragging and dropping)
+* {api:anychart.core.graph.elements.Interactivity#nodes}nodes(){api} to allow or prevent moving nodes
+* {api:anychart.core.graph.elements.Interactivity#magnetize}magnetize(){api} to enable or disable the automatic alignment of nodes (after moving)
 
+This sample shows how to prevent moving nodes:
 
 ```
-// allow moving nodes
+// prevent moving nodes
 chart.interactivity().nodes(false);
 ```
 
 {sample}BCT\_Network\_Graph\_17{sample}
+
+This is how the alignment of nodes looks like:
+
 
 ```
 // enable the alignment of nodes
