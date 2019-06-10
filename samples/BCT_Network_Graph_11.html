@@ -33,12 +33,7 @@ anychart.onDocumentReady(function () {
         {id: "Larry"},
         {id: "Marta"},
         {id: "Jane"},
-        {id: "Norma",
-         height: 60,
-         fill: {
-                 src: "https://cdn.anychart.com/samples-data/graph/avengers/pepper.jpg"
-               }
-        },
+        {id: "Norma"},
         {id: "Frank"},
         {id: "Brett"},
         {id: "Tommy"}
@@ -47,7 +42,23 @@ anychart.onDocumentReady(function () {
         {from: "Richard", to: "Larry"},
         {from: "Richard", to: "Marta"},
         {from: "Larry",   to: "Marta"},
-        {from: "Marta",   to: "Jane"},
+        {from: "Marta",   to: "Jane",
+         normal: {stroke:  {
+                             color: "#ffa000",
+                             thickness: "4",
+                             dash: "10 5",
+                             lineJoin: "round"
+                           }
+         },
+         hovered: {stroke: {
+                             color: "#ffda99",
+                             thickness: "4",
+                             dash: "10 5",
+                             lineJoin: "round"
+                           }
+         },
+         selected: {stroke: "4 #ffa000"}
+        },
         {from: "Jane",    to: "Norma"},
         {from: "Jane",    to: "Frank"},
         {from: "Jane",    to: "Brett"},
@@ -60,9 +71,9 @@ anychart.onDocumentReady(function () {
 
     // disable zooming with the mouse wheel
     chart.interactivity().zoomOnMouseWheel(false);
-    
+
     // set the chart title
-    chart.title("Network Graph: Appearance (Custom Images)");
+    chart.title("Network Graph: Appearance Individual Edges");
 
     // set the container id
     chart.container("container");

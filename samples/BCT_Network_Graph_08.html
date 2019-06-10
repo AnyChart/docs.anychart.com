@@ -29,14 +29,19 @@ anychart.onDocumentReady(function () {
     // create data
     var data = {
       nodes: [
-        {id: "Richard", group: "family"},
-        {id: "Larry",   group: "family"},
-        {id: "Marta",   group: "family"},
-        {id: "Jane",    group: "friends"},
-        {id: "Norma",   group: "friends"},
-        {id: "Frank",   group: "friends"},
-        {id: "Brett",   group: "friends"},
-        {id: "Tommy",   group: "lone wolf"}
+        {id: "Richard"},
+        {id: "Larry"},
+        {id: "Marta"},
+        {id: "Jane"},
+        {id: "Norma",
+         height: 60,
+         fill: {
+                 src: "https://cdn.anychart.com/samples-data/graph/avengers/pepper.jpg"
+               }
+        },
+        {id: "Frank"},
+        {id: "Brett"},
+        {id: "Tommy"}
       ],
       edges: [
         {from: "Richard", to: "Larry"},
@@ -52,56 +57,12 @@ anychart.onDocumentReady(function () {
 
     // create a chart and set the data
     var chart = anychart.graph(data);
-    
+
     // disable zooming with the mouse wheel
     chart.interactivity().zoomOnMouseWheel(false);
-
-    // access groups of nodes
-    var family = chart.group("family");
-    var friends = chart.group("friends");
-    var loneWolf = chart.group("lone wolf");
-
-    // set the size of nodes in groups
-    family.normal().height(40);
-    family.hovered().height(55);
-    family.selected().height(55);
-    friends.normal().height(20); 
-    friends.hovered().height(27);
-    friends.selected().height(27); 
-    loneWolf.normal().height(20);
-    loneWolf.hovered().height(27);   
-    loneWolf.selected().height(27);      
-
-    // set the shape of nodes in groups
-    family.normal().shape("star5");
-    friends.normal().shape("diamond");
-    loneWolf.normal().shape("diagonal-cross");
-
-    // set the fill of nodes in groups
-    family.normal().fill("#ffa000");
-    family.hovered().fill("#ffa000");
-    family.selected().fill("#ffa000");
-    friends.normal().fill("#00bfa5");
-    friends.hovered().fill("#00bfa5");
-    friends.selected().fill("#00bfa5");
-    loneWolf.normal().fill("#ff3300");
-    loneWolf.hovered().fill("#ff3300");
-    loneWolf.selected().fill("#ff3300");
-
-    // set the stroke of nodes in groups
-    family.normal().stroke(null);
-    family.hovered().stroke(null);
-    family.selected().stroke("#455a64", 2);
-    friends.normal().stroke(null);
-    friends.hovered().stroke(null);
-    friends.selected().stroke("#455a64", 2);
-    loneWolf.normal().stroke(null);
-    loneWolf.hovered().stroke(null);
-    loneWolf.selected().stroke("#455a64", 2);
-
-
+    
     // set the chart title
-    chart.title("Network Graph: Nodes (Groups)");
+    chart.title("Network Graph: Nodes (Custom Images)");
 
     // set the container id
     chart.container("container");

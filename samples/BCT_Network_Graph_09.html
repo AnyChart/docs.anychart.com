@@ -56,29 +56,52 @@ anychart.onDocumentReady(function () {
     // disable zooming with the mouse wheel
     chart.interactivity().zoomOnMouseWheel(false);
 
-    // configure the visual settings of nodes
-    chart.nodes().normal().stroke("#96a6a6", 1);
-    chart.nodes().hovered().stroke("#455a64", 2);
-    chart.nodes().selected().stroke("#455a64", 2);
+    // access groups of nodes
+    var family = chart.group("family");
+    var friends = chart.group("friends");
+    var loneWolf = chart.group("lone wolf");
 
-    // configure the visual settings of nodes in groups
-    chart.group("family").normal().fill("#00bfa5");
-    chart.group("family").hovered().fill("#00bfa5");
-    chart.group("family").selected().fill("#455a64");
-    chart.group("friends").normal().fill("#ffa000");
-    chart.group("friends").hovered().fill("#ffa000");
-    chart.group("friends").selected().fill("#455a64");
-    chart.group("lone wolf").normal().fill("#ff3300");
-    chart.group("lone wolf").hovered().fill("#ff3300");
-    chart.group("lone wolf").selected().fill("#455a64");
+    // set the size of nodes in groups
+    family.normal().height(40);
+    family.hovered().height(55);
+    family.selected().height(55);
+    friends.normal().height(20); 
+    friends.hovered().height(27);
+    friends.selected().height(27); 
+    loneWolf.normal().height(20);
+    loneWolf.hovered().height(27);   
+    loneWolf.selected().height(27);      
 
-    // configure the visual settings of edges
-    chart.edges().normal().stroke("#96a6a6", 1, "10 5", "round");
-    chart.edges().hovered().stroke("#455a64", 2, "10 5", "round");
-    chart.edges().selected().stroke("#455a64", 2);
+    // set the shape of nodes in groups
+    family.normal().shape("star5");
+    friends.normal().shape("diamond");
+    loneWolf.normal().shape("diagonal-cross");
+
+    // set the fill of nodes in groups
+    family.normal().fill("#ffa000");
+    family.hovered().fill("#ffa000");
+    family.selected().fill("#ffa000");
+    friends.normal().fill("#00bfa5");
+    friends.hovered().fill("#00bfa5");
+    friends.selected().fill("#00bfa5");
+    loneWolf.normal().fill("#ff3300");
+    loneWolf.hovered().fill("#ff3300");
+    loneWolf.selected().fill("#ff3300");
+
+    // set the stroke of nodes in groups
+    family.normal().stroke(null);
+    family.hovered().stroke(null);
+    family.selected().stroke("#455a64", 2);
+    friends.normal().stroke(null);
+    friends.hovered().stroke(null);
+    friends.selected().stroke("#455a64", 2);
+    loneWolf.normal().stroke(null);
+    loneWolf.hovered().stroke(null);
+    loneWolf.selected().stroke("#455a64", 2);
+
 
     // set the chart title
-    chart.title("Network Graph: Appearance");
+    chart.title("Network Graph: Nodes (Groups)");
 
     // set the container id
     chart.container("container");

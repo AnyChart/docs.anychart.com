@@ -359,6 +359,46 @@ var chart = anychart.graph(data);
 
 {sample}BCT\_Network\_Graph\_07{sample}
 
+#### Custom Images
+
+The fill of a node can be set as a custom image:
+
+```
+// create data
+var data = {
+  nodes: [
+    {id: "Richard"},
+    {id: "Larry"},
+    {id: "Marta"},
+    {id: "Jane"},
+    {id: "Norma",
+     height: 60,
+     fill: {
+             src: "https://cdn.anychart.com/samples-data/graph/avengers/pepper.jpg"
+           }
+    },
+    {id: "Frank"},
+    {id: "Brett"},
+    {id: "Tommy"}
+  ],
+  edges: [
+    {from: "Richard", to: "Larry"},
+    {from: "Richard", to: "Marta"},
+    {from: "Larry",   to: "Marta"},
+    {from: "Marta",   to: "Jane"},
+    {from: "Jane",    to: "Norma"},
+    {from: "Jane",    to: "Frank"},
+    {from: "Jane",    to: "Brett"},
+    {from: "Brett",   to: "Frank"}
+  ]
+};
+
+// create a chart and set the data
+var chart = anychart.graph(data);
+```
+
+{sample}BCT\_Network\_Graph\_08{sample}
+
 #### Groups
 
 You can create a group of nodes - specify the name of the group in the `group` [data](#data) field of each node you are going to include:
@@ -472,55 +512,34 @@ loneWolf.hovered().stroke(null);
 loneWolf.selected().stroke("#455a64", 2);
 ```
 
-{sample}BCT\_Network\_Graph\_08{sample}
+{sample}BCT\_Network\_Graph\_09{sample}
 
 ### Edges
 
 Edges are links that connect pairs of [nodes](#nodes) and are represented as lines. To set them, use the `edge`, `from`, and `to` fields in your [data](#data).
 
-You can configure the appearance of edges - see the [Appearance](#apperance) section.
+You can adjust the appearance of all edges or of an individual edge, as explained in the subsections below. Also, you can configure their labels and tooltips - see the [Labels and Tooltips](#labels_and_tooltips) section.
 
-### Appearance
+#### All Edges
 
-#### All Points
-
-* [nodes](#nodes), [groups](#groups), [edges](#edges)
-* {api:anychart.charts.Graph#nodes}nodes(){api}
-* {api:anychart.charts.Graph#group}group(){api}
 * {api:anychart.charts.Graph#edges}edges(){api}
 * {api:anychart.core.StateSettings#fill}fill(){api}
 * {api:anychart.core.StateSettings#stroke}stroke(){api}
-* [appearance settings](../Appearance_Settings) 
+* [appearance](../Appearance_Settings) 
 * [states](../Common_Settings/Interactivity/States)
 * **normal()**, **hover()**, and **selected()**
 
 
 ```
-// configure the visual settings of nodes
-chart.nodes().normal().stroke("#96a6a6", 1);
-chart.nodes().hovered().stroke("#455a64", 2);
-chart.nodes().selected().stroke("#455a64", 2);
-
-// configure the visual settings of nodes in groups
-chart.group("family").normal().fill("#00bfa5");
-chart.group("family").hovered().fill("#00bfa5");
-chart.group("family").selected().fill("#455a64");
-chart.group("friends").normal().fill("#ffa000");
-chart.group("friends").hovered().fill("#ffa000");
-chart.group("friends").selected().fill("#455a64");
-chart.group("lone wolf").normal().fill("#ff3300");
-chart.group("lone wolf").hovered().fill("#ff3300");
-chart.group("lone wolf").selected().fill("#455a64");
-
 // configure the visual settings of edges
 chart.edges().normal().stroke("#96a6a6", 1, "10 5", "round");
 chart.edges().hovered().stroke("#455a64", 2, "10 5", "round");
 chart.edges().selected().stroke("#455a64", 2);
 ```
 
-{sample}BCT\_Network\_Graph\_09{sample}
+{sample}BCT\_Network\_Graph\_10{sample}
 
-#### Individual Points
+#### Individual Edges
 
 It is possible to configure the appearance of each node or edge individually – use extra data fields corresponding with the methods mentioned above.
 
@@ -531,11 +550,7 @@ var data = {
     {id: "Richard"},
     {id: "Larry"},
     {id: "Marta"},
-    {id: "Jane",
-     normal: {fill: "#ffa000", stroke: "4 #ffa000"},
-     hovered: {fill: "#ffda99", stroke: "4 #ffda99"},
-     selected: {fill: "#ffa000", stroke: "4 #ffa000"}
-    },
+    {id: "Jane"},
     {id: "Norma"},
     {id: "Frank"},
     {id: "Brett"},
@@ -546,12 +561,12 @@ var data = {
     {from: "Richard", to: "Marta"},
     {from: "Larry",   to: "Marta"},
     {from: "Marta",   to: "Jane",
-     normal: {stroke: {
-                        color: "#ffa000",
-                        thickness: "4",
-                        dash: "10 5",
-                        lineJoin: "round"
-                      }
+     normal: {stroke:  {
+                         color: "#ffa000",
+                         thickness: "4",
+                         dash: "10 5",
+                         lineJoin: "round"
+                       }
      },
      hovered: {stroke: {
                          color: "#ffda99",
@@ -573,47 +588,8 @@ var data = {
 var chart = anychart.graph(data);
 ```
 
-{sample}BCT\_Network\_Graph\_10{sample}
-
-#### Custom Images
-
-The fill of a node can be set as a custom image:
-
-```
-// create data
-var data = {
-  nodes: [
-    {id: "Richard"},
-    {id: "Larry"},
-    {id: "Marta"},
-    {id: "Jane"},
-    {id: "Norma",
-     height: 60,
-     fill: {
-             src: "https://cdn.anychart.com/samples-data/graph/avengers/pepper.jpg"
-           }
-    },
-    {id: "Frank"},
-    {id: "Brett"},
-    {id: "Tommy"}
-  ],
-  edges: [
-    {from: "Richard", to: "Larry"},
-    {from: "Richard", to: "Marta"},
-    {from: "Larry",   to: "Marta"},
-    {from: "Marta",   to: "Jane"},
-    {from: "Jane",    to: "Norma"},
-    {from: "Jane",    to: "Frank"},
-    {from: "Jane",    to: "Brett"},
-    {from: "Brett",   to: "Frank"}
-  ]
-};
-
-// create a chart and set the data
-var chart = anychart.graph(data);
-```
-
 {sample}BCT\_Network\_Graph\_11{sample}
+
 
 ### Labels and Tooltips
 

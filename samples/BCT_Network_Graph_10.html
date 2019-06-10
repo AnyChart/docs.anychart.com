@@ -29,40 +29,20 @@ anychart.onDocumentReady(function () {
     // create data
     var data = {
       nodes: [
-        {id: "Richard"},
-        {id: "Larry"},
-        {id: "Marta"},
-        {id: "Jane",
-         normal: {fill: "#ffa000", stroke: "4 #ffa000"},
-         hovered: {fill: "#ffda99", stroke: "4 #ffda99"},
-         selected: {fill: "#ffa000", stroke: "4 #ffa000"}
-        },
-        {id: "Norma"},
-        {id: "Frank"},
-        {id: "Brett"},
-        {id: "Tommy"}
+        {id: "Richard", group: "family"},
+        {id: "Larry",   group: "family"},
+        {id: "Marta",   group: "family"},
+        {id: "Jane",    group: "friends"},
+        {id: "Norma",   group: "friends"},
+        {id: "Frank",   group: "friends"},
+        {id: "Brett",   group: "friends"},
+        {id: "Tommy",   group: "lone wolf"}
       ],
       edges: [
         {from: "Richard", to: "Larry"},
         {from: "Richard", to: "Marta"},
         {from: "Larry",   to: "Marta"},
-        {from: "Marta",   to: "Jane",
-         normal: {stroke: {
-                            color: "#ffa000",
-                            thickness: "4",
-                            dash: "10 5",
-                            lineJoin: "round"
-                          }
-         },
-         hovered: {stroke: {
-                             color: "#ffda99",
-                             thickness: "4",
-                             dash: "10 5",
-                             lineJoin: "round"
-                           }
-         },
-         selected: {stroke: "4 #ffa000"}
-        },
+        {from: "Marta",   to: "Jane"},
         {from: "Jane",    to: "Norma"},
         {from: "Jane",    to: "Frank"},
         {from: "Jane",    to: "Brett"},
@@ -72,12 +52,17 @@ anychart.onDocumentReady(function () {
 
     // create a chart and set the data
     var chart = anychart.graph(data);
-
+    
     // disable zooming with the mouse wheel
     chart.interactivity().zoomOnMouseWheel(false);
 
+    // configure the visual settings of edges
+    chart.edges().normal().stroke("#96a6a6", 1, "10 5", "round");
+    chart.edges().hovered().stroke("#455a64", 2, "10 5", "round");
+    chart.edges().selected().stroke("#455a64", 2);
+
     // set the chart title
-    chart.title("Network Graph: Appearance (Individual Points)");
+    chart.title("Network Graph: All Edges");
 
     // set the container id
     chart.container("container");
