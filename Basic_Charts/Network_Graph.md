@@ -580,15 +580,15 @@ To change the text of labels on the whole chart, combine the {api:anychart.chart
 
 To change the text of tooltips, do the same with the {api:anychart.charts.Graph##tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
-Please note that you can adjust the labels and tooltips of [nodes](#nodes), [groups](#groups), and [edges](#edges). Access them by using the following methods: {api:anychart.charts.Graph#nodes}nodes(){api}, {api:anychart.charts.Graph#group}group(){api}, {api:anychart.charts.Graph#edges}edges(){api}.
+Please note that it is possible to adjust labels and tooltips of [nodes](#nodes), [groups](#groups), and [edges](#edges). Access them by using the following methods: {api:anychart.charts.Graph#nodes}nodes(){api}, {api:anychart.charts.Graph#group}group(){api}, {api:anychart.charts.Graph#edges}edges(){api}.
 
 Here is the list of tokens that work with the Network Graph:
 
 * `{%id}`
+* `{%type}`
 * `{%group}`
 * `{%from}`
 * `{%to}`
-* `{%type}`
 
 Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
@@ -653,12 +653,12 @@ chart.edges().tooltip().format("{%from} -> {%to}");
 To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
 
 * `id`
-* `siblings`
 * `type`
+* `siblings`
 
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 
-**Note:** The `siblings` field allowa getting an array of siblings - nodes that are connected with the given node by one edge.
+**Note:** The `siblings` field allows getting an array of siblings - nodes that are connected with the given node by one edge.
 
 The sample below demonstrates how to configure labels and tooltips and work with formatting functions to format ther text. Along with regular fields, a custom field *last_name* is used.
 
@@ -731,14 +731,17 @@ chart.tooltip().format(function() {
 
 ### Navigation
 
+By default, you can navigate Network Graphs with the help of the mouse - see the [Behavior](#behavior) section. Also, you can use special methods or a Zoom Control Panel, as shown in the subsections below.
+
 #### Methods
 
-* {api:anychart.charts.Graph#zoomIn}zoomIn(){api}
-* {api:anychart.charts.Graph#zoomOut}zoomOut(){api}
-* {api:anychart.charts.Graph#zoom}zoom(){api} = {api:anychart.charts.Graph#zoomIn}zoomIn(){api} + {api:anychart.charts.Graph#zoomOut}zoomOut(){api}
-* {api:anychart.charts.Graph#move}move(){api}
-* {api:anychart.charts.Graph#fit}fit(){api}
-* [Chart Behavior](#chart_behavior)
+The following methods allow navigating the chart:
+
+* {api:anychart.charts.Graph#zoomIn}zoomIn(){api} to zoom in
+* {api:anychart.charts.Graph#zoomOut}zoomOut(){api} to zoom out
+* {api:anychart.charts.Graph#zoom}zoom(){api} to zoom in and out 
+* {api:anychart.charts.Graph#move}move(){api} to move the chart by given values
+* {api:anychart.charts.Graph#fit}fit(){api} to fit the chart to the page
 
 
 ```
@@ -761,13 +764,15 @@ chart.move(50, -50);
 chart.fit();  
 ```
 
+Here is how these methods work:
+
 {sample}BCT\_Network\_Graph\_14{sample}
 
 #### Zoom Control Panel
 
-* [Zoom Controls](../Common_Settings/UI_Controls/Zoom_Controls)
+The [Zoom Control Panel](../Common_Settings/UI_Controls/Zoom_Controls) is an HTML object with three buttons that allow zooming in, zooming out, and resetting the chart.
 
-The Zoom Control Panel requires adding the [Common UI](../Quick_Start/Modules#common_ui) module:
+It requires adding the [Common UI](../Quick_Start/Modules#common_ui) module:
 
 ```
 <script src="https://cdn.anychart.com/releases/DVF-2987-graph/js/anychart-ui.min.js"></script>
