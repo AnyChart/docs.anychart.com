@@ -861,7 +861,7 @@ chart.interactivity().magnetize(true);
 To configure the behavior of [edges](#edges), use the {api:anychart.charts.Graph#interactivity}interactivity(){api} method, combined with:
 
 * {api:anychart.core.graph.elements.Interactivity#hoverGap}hoverGap(){api} - to set the trigger area for interacting with edges
-* {api:anychart.core.graph.elements.Interactivity#edges}edges(){api} to enable or disable a special mode of drawing edges (to optimize the performance) (?)
+* {api:anychart.core.graph.elements.Interactivity#edges}edges(){api} to enable or disable a special mode of drawing edges, which optimizes the performance (?)
 
 In the following sample, the trigger area of edges on the first chart is not configured, and for the second chart it is set to 30. Try to hover over and select edges to see the difference.
 
