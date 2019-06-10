@@ -113,7 +113,7 @@ For each node, specify:
 
 * `id` - the unique indentifier
 * `x`, `y` (optional) - the coordinates in the fixed [layout](#layout)
-* `group` (optional) - the [group](#groups) to which it belongs
+* `group` (optional) - the id of the [group](#groups) to which it belongs
 
 For each edge, specify:
 
@@ -160,13 +160,13 @@ var chart = anychart.graph(data);
 
 #### Type
 
-For the Network Graph, two layouts are available: **forced** (default) and **fixed**. To set the layout, combine the {api:anychart.charts.Graph#layout}layout(){api} method with {api:anychart.core.graph.elements.Layout#type}type(){api}. Pass either `forced` or `fixed` as a parameter - see {api:anychart.enums.layoutType}anychart.enums.layoutType{api}:
+For the Network Graph, two layouts are available: **forced** (default) and **fixed**.
 
-```
-chart.layout().type("fixed");
-```
+To set the layout, combine the {api:anychart.charts.Graph#layout}layout(){api} method with {api:anychart.core.graph.elements.Layout#type}type(){api}. Pass either `forced` or `fixed` as a parameter - see {api:anychart.enums.layoutType}anychart.enums.layoutType{api}:
 
-When the layout is forced, [nodes](#nodes) are arranged automatically. The fixed layout allows you to manually set the coordinates of each node - use the `x` and `y` [data](#data) fields:
+When the layout is forced, [nodes](#nodes) are arranged automatically. The fixed layout allows you to manually set the coordinates of each node - use the `x` and `y` [data](#data) fields.
+
+Here is how layouts work:
 
 ```
 // create data
@@ -393,7 +393,7 @@ var chart = anychart.graph(data);
 
 #### Groups
 
-You can group nodes - specify names of groups in the `group` [data](#data) field of nodes:
+You can group nodes - specify ids of groups in the `group` [data](#data) field of nodes:
 
 ```
 // create data
@@ -424,7 +424,14 @@ var data = {
 var chart = anychart.graph(data);
 ```
 
-To configure nodes in a group, first access them by using the {api:anychart.charts.Graph#group}group(){api} method.
+To configure nodes in a group, first access them by using the {api:anychart.charts.Graph#group}group(){api} method with the id of the group as a parameter:
+
+```
+// access groups of nodes
+var family = chart.group("family");
+var friends = chart.group("friends");
+var loneWolf = chart.group("lone wolf");
+```
 
 Groups can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Group#normal}normal(){api}, {api:anychart.core.graph.elements.Group#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Group#selected}selected(){api} methods.
 
@@ -439,11 +446,6 @@ Combine them with:
 In the sample below, there is a Network Graph with three groups of nodes, each with its own settings:
 
 ```
-// access groups of nodes
-var family = chart.group("family");
-var friends = chart.group("friends");
-var loneWolf = chart.group("lone wolf");
-
 // set the size of nodes in groups
 family.normal().height(40);
 family.hovered().height(55);
