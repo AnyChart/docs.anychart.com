@@ -735,7 +735,7 @@ By default, you can navigate Network Graphs with the help of the mouse - see the
 
 #### Methods
 
-The following methods allow navigating the chart:
+Use the following methods to navigate the chart:
 
 * {api:anychart.charts.Graph#zoomIn}zoomIn(){api} to zoom in
 * {api:anychart.charts.Graph#zoomOut}zoomOut(){api} to zoom out
@@ -803,7 +803,7 @@ zoomController.render();
 
 By default, users have an opportunity to drag  and drop the Network Graph and its nodes and zoom it in and out with the mouse wheel.
 
-It is possible to prevent or modify the behavior of the chart and its parts as well as configure some other behavior-related settings. You can enable the alignment of nodes, set the trigger area of edges, and change the way how edges are drawn to optimize the performance. (?)
+It is possible to prevent or modify the behavior of the chart and its parts as well as configure some other behavior-related settings. You can enable the alignment of nodes, set the trigger area of edges, and optimize the performance by changing the way how edges are drawn. (?)
 
 #### Chart Behavior
 
