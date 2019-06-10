@@ -251,11 +251,11 @@ Combine them with:
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
+In the following sample, there is a Network Graph with the size, shape, and appearance of nodes configured:
 
 ```
 // access nodes
 var nodes = chart.nodes();
-
 
 // set the size of nodes
 nodes.normal().height(40);
@@ -436,6 +436,8 @@ Combine them with:
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
+In the sample below, there is a Network Graph with three groups of nodes, each with its own settings:
+
 ```
 // access groups of nodes
 var family = chart.group("family");
@@ -500,6 +502,7 @@ Combine them with:
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
+
 ```
 // configure the visual settings of edges
 chart.edges().normal().stroke("#ffa000", 2, "10 5", "round");
@@ -511,7 +514,7 @@ chart.edges().selected().stroke("#ffa000", 4);
 
 #### Individual Edges
 
-It is possible to configure each edge individually – use extra data fields corresponding with the methods mentioned above.
+It is possible to configure each edge individually – use extra data fields corresponding with the methods mentioned above:
 
 ```
 // create data
@@ -585,7 +588,7 @@ Here is the list of tokens that work with the Network Graph:
 
 Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
-This sample shows how to work with tokens. Along with regular tokens, a custom token *{%last_name}* is used.
+The following sample shows how to configure labels and tooltips and work with tokens to format their text. Along with regular tokens, a custom token *{%last_name}* is used.
 
 ```
 // create data
@@ -651,9 +654,9 @@ To configure labels and tooltips, you can use [formatting functions](../Common_S
 
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 
-**Note:** siblings: все ноды, которые связаны с данной через одно ребро
+**Note:** The `siblings` field allowa getting an array of siblings - nodes that are connected with the given node by one edge.
 
-The sample below demonstrates how to work with formatting functions. Along with regular fields, a custom field *last_name* is used:
+The sample below demonstrates how to configure labels and tooltips and work with formatting functions to format ther text. Along with regular fields, a custom field *last_name* is used.
 
 ```
 // create data
@@ -705,9 +708,7 @@ chart.nodes().labels().format(function() {
 chart.group("family").labels().fontColor("#00bfa5");
 chart.group("friends").labels().fontColor("#ffa000");
 chart.group("lone wolf").labels().fontColor("#dd2c00");
-```
 
-```
 // configure tooltips
 chart.tooltip().useHtml(true);
 chart.tooltip().format(function() {
