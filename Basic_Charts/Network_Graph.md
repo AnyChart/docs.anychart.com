@@ -801,19 +801,21 @@ zoomController.render();
 
 ### Behavior
 
-By default, users have an opportunity to drag the chart and its nodes and zoom it in and out and with the mouse wheel.
+By default, users have an opportunity to drag the Network Graph and its nodes and zoom it in and out with the mouse wheel.
 
-It is possible to prevent or modify the behavior of the chart and its parts as well as configure some other behavior-related settings: enable alignment of nodes, set the hover gap of edges, and change the way how edges are drawn to optimize the performance. (?)
+It is possible to prevent or modify the behavior of the chart and its parts as well as configure some other behavior-related settings. You can enable the alignment of nodes, set the hover gap of edges, and change the way how edges are drawn to optimize the performance. (?)
 
 #### Chart Behavior
 
-By default, users have an opportunity to drag the chart and zoom it in and out the chart with the mouse wheel.
+By default, users have an opportunity to drag the chart and zoom it in and out with the mouse wheel.
 
-To adjust the behavior of the chart, combine the {api:anychart.charts.Graph#interactivity}interactivity(){api} method with the methods listed below and `true` / `false` as a parameter:
+To adjust the behavior of the chart, use the {api:anychart.charts.Graph#interactivity}interactivity(){api} method
+
+Combine it with the methods below and `true` / `false` as a parameter:
 
 * {api:anychart.core.graph.elements.Interactivity#zoomOnMouseWheel}zoomOnMouseWheel(){api} to allow or prevent zooming the chart with the mouse wheel
 * {api:anychart.core.graph.elements.Interactivity#scrollOnMouseWheel}scrollOnMouseWheel(){api} to allow or prevent scrolling the chart with the mouse wheel
-{api:anychart.charts.Graph#enabled}enabled(){api} to allow or prevent dragging the chart
+* {api:anychart.charts.Graph#enabled}enabled(){api} to allow or prevent dragging the chart
 
 
 ```
@@ -821,7 +823,7 @@ To adjust the behavior of the chart, combine the {api:anychart.charts.Graph#inte
 chart.interactivity().scrollOnMouseWheel(true);
 ```
 
-The following sample shows how mouse wheel can be used:
+The following sample shows how the mouse wheel can be used:
 
 {sample}BCT\_Network\_Graph\_16{sample}
 
