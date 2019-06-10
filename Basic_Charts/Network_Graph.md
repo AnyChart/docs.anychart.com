@@ -829,7 +829,7 @@ The following sample shows how the mouse wheel can be used:
 
 #### Node Behavior
 
-By default, users have an opportunity to drag and drop [nodes](#nodes) anywhere on the chart. The automatic alignment of nodes is disabled.
+By default, users have an opportunity to drag and drop [nodes](#nodes) to any position on the chart. The automatic alignment of nodes is disabled.
 
 To configure the behavior of nodes, use the {api:anychart.charts.Graph#interactivity}interactivity(){api} method.
 
