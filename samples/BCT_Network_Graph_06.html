@@ -69,12 +69,12 @@ anychart.onDocumentReady(function () {
 
     // set the fill of nodes
     nodes.normal().fill("#ffa000");
-    nodes.hovered().fill("#ffa000");
+    nodes.hovered().fill("white");
     nodes.selected().fill("#ffa000");
 
     // set the stroke of nodes
     nodes.normal().stroke(null);
-    nodes.hovered().stroke(null);
+    nodes.hovered().stroke("#ffa000", 3);
     nodes.selected().stroke("#333333", 2);
 
     // set the chart title

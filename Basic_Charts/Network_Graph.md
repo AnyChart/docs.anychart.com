@@ -275,13 +275,13 @@ chart.nodes().normal().shape("star5");
 ```
 // set the fill of nodes
 nodes.normal().fill("#ffa000");
-nodes.hovered().fill("#ffa000");
+nodes.hovered().fill("white");
 nodes.selected().fill("#ffa000");
 
 // set the stroke of nodes
 nodes.normal().stroke(null);
-nodes.hovered().stroke(null);
-nodes.selected().stroke("#333333", 2);
+nodes.hovered().stroke("#ffa000", 3);
+nodes.selected().stroke("#333333", 3);
 ```
 
 {sample}BCT\_Network\_Graph\_06{sample}
@@ -306,14 +306,14 @@ var data = {
      hovered:  {
                  height: 55,
                  shape: "star5",
-                 fill: "#ffa000",
-                 stroke: null
+                 fill: "white",
+                 stroke: "3 #ffa000"
                },
      selected: {
                  height: 55,
                  shape: "star5",
                  fill: "#ffa000",
-                 stroke: "2 #333333"
+                 stroke: "3 #333333"
                }
     },
     {id: "Jane"},
@@ -330,14 +330,14 @@ var data = {
      hovered:  {
                  height: 27,
                  shape: "diagonal-cross",
-                 fill: "#ff3300",
-                 stroke: null
+                 fill: "white",
+                 stroke: "3 #ff3300"
                },
      selected: {
                  height: 27,
                  shape: "diagonal-cross",
                  fill: "#ff3300",
-                 stroke: "2 #333333"
+                 stroke: "3 #333333"
                }
     }
   ],
@@ -446,25 +446,25 @@ loneWolf.normal().shape("diagonal-cross");
 ```
 // set the fill of nodes in groups
 family.normal().fill("#ffa000");
-family.hovered().fill("#ffa000");
+family.hovered().fill("white");
 family.selected().fill("#ffa000");
 friends.normal().fill("#00bfa5");
-friends.hovered().fill("#00bfa5");
+friends.hovered().fill("white");
 friends.selected().fill("#00bfa5");
 loneWolf.normal().fill("#ff3300");
-loneWolf.hovered().fill("#ff3300");
+loneWolf.hovered().fill("white");
 loneWolf.selected().fill("#ff3300");
 
 // set the stroke of nodes in groups
 family.normal().stroke(null);
-family.hovered().stroke(null);
-family.selected().stroke("#333333", 2);
+family.hovered().stroke("#ffa000", 3);
+family.selected().stroke("#333333", 3);
 friends.normal().stroke(null);
-friends.hovered().stroke(null);
-friends.selected().stroke("#333333", 2);
+friends.hovered().stroke("#00bfa5", 3);
+friends.selected().stroke("#333333", 3);
 loneWolf.normal().stroke(null);
-loneWolf.hovered().stroke(null);
-loneWolf.selected().stroke("#333333", 2);
+loneWolf.hovered().stroke("#ff3300", 3);
+loneWolf.selected().stroke("#333333", 3);
 ```
 
 {sample}BCT\_Network\_Graph\_09{sample}
@@ -496,7 +496,7 @@ chart.edges().selected().stroke("#ffa000", 4);
 
 #### Individual Edges
 
-It is possible to configure the appearance of each node or edge individually – use extra data fields corresponding with the methods mentioned above.
+It is possible to configure each edge individually – use extra data fields corresponding with the methods mentioned above.
 
 ```
 // create data
