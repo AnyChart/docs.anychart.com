@@ -809,7 +809,7 @@ It is possible to prevent or modify the behavior of the chart and its parts as w
 
 By default, users have an opportunity to drag and drop the chart and zoom it in and out with the mouse wheel.
 
-To configure the behavior of the chart, use the {api:anychart.charts.Graph#interactivity}interactivity(){api} method
+To modify the behavior of the chart, use the {api:anychart.charts.Graph#interactivity}interactivity(){api} method.
 
 Combine it with the methods below and `true` / `false` as a parameter:
 
