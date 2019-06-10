@@ -801,13 +801,13 @@ zoomController.render();
 
 ### Behavior
 
-By default, users have an opportunity to drag the Network Graph and its nodes and zoom it in and out with the mouse wheel.
+By default, users have an opportunity to drag  and drop the Network Graph and its nodes and zoom it in and out with the mouse wheel.
 
 It is possible to prevent or modify the behavior of the chart and its parts as well as configure some other behavior-related settings. You can enable the alignment of nodes, set the hover gap of edges, and change the way how edges are drawn to optimize the performance. (?)
 
 #### Chart Behavior
 
-By default, users have an opportunity to drag the chart and zoom it in and out with the mouse wheel.
+By default, users have an opportunity to drag and drop the chart and zoom it in and out with the mouse wheel.
 
 To adjust the behavior of the chart, use the {api:anychart.charts.Graph#interactivity}interactivity(){api} method
 
@@ -829,10 +829,14 @@ The following sample shows how the mouse wheel can be used:
 
 #### Node Behavior
 
-* [nodes](#nodes)
-* {api:anychart.charts.Graph#interactivity}interactivity(){api}
-* {api:anychart.core.graph.elements.Interactivity#nodes}nodes(){api} - перемещение нод относительно друг друга
-* {api:anychart.core.graph.elements.Interactivity#magnetize}magnetize(){api} - aligning nodes
+By default, users have an opportunity to drag and drop [nodes](#nodes).
+
+To adjust the behavior of nodes, use the {api:anychart.charts.Graph#interactivity}interactivity(){api} method.
+
+Combine it with the methods below and `true` / `false` as a parameter:
+
+* {api:anychart.core.graph.elements.Interactivity#nodes}nodes(){api} to allow or prevent dragging nodes
+* {api:anychart.core.graph.elements.Interactivity#magnetize}magnetize(){api} to enable or disable the automatic alignment of nodes (after dragging and dropping)
 
 
 ```
