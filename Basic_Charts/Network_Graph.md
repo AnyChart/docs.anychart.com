@@ -239,14 +239,7 @@ You can adjust the size, shape, and appearance of all nodes, of an individual no
 
 #### All Nodes
 
-You can adjust the size, shape, and [appearance](../Appearance_Settings) of all nodes on a graph.
-
-Access them by using the {api:anychart.charts.Graph#nodes}nodes(){api} method:
-
-```
-// access nodes
-var nodes = chart.nodes();
-```
+You can adjust the size, shape, and [appearance](../Appearance_Settings) of all nodes on a graph - access them by using the {api:anychart.charts.Graph#nodes}nodes(){api} method.
 
 Nodes can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Node#normal}normal(){api}, {api:anychart.core.graph.elements.Node#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Node#selected}selected(){api} methods.
 
@@ -258,21 +251,20 @@ Combine them with:
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
-...
 
 ```
+// access nodes
+var nodes = chart.nodes();
+
+
 // set the size of nodes
-chart.nodes().normal().height(40);
-chart.nodes().hovered().height(55);
-chart.nodes().selected().height(55);
+nodes.normal().height(40);
+nodes.hovered().height(55);
+nodes.selected().height(55);
 
 // set the shape of nodes
-chart.nodes().normal().shape("star5");
-```
+nodes.normal().shape("star5");
 
-...
-
-```
 // set the fill of nodes
 nodes.normal().fill("#ffa000");
 nodes.hovered().fill("white");
@@ -401,18 +393,40 @@ var chart = anychart.graph(data);
 
 #### Groups
 
-You can create a group of nodes - specify the name of the group in the `group` [data](#data) field of each node you are going to include:
-
-To configure nodes in a group, first access them by using the {api:anychart.charts.Graph#group}group(){api} method:
+You can group nodes - specify names of groups in the `group` [data](#data) field of nodes:
 
 ```
-// access groups of nodes
-var family = chart.group("family");
-var friends = chart.group("friends");
-var loneWolf = chart.group("lone wolf");
+// create data
+var data = {
+  nodes: [
+    {id: "Richard", group: "family"},
+    {id: "Larry",   group: "family"},
+    {id: "Marta",   group: "family"},
+    {id: "Jane",    group: "friends"},
+    {id: "Norma",   group: "friends"},
+    {id: "Frank",   group: "friends"},
+    {id: "Brett",   group: "friends"},
+    {id: "Tommy",   group: "lone wolf"}
+  ],
+  edges: [
+    {from: "Richard", to: "Larry"},
+    {from: "Richard", to: "Marta"},
+    {from: "Larry",   to: "Marta"},
+    {from: "Marta",   to: "Jane"},
+    {from: "Jane",    to: "Norma"},
+    {from: "Jane",    to: "Frank"},
+    {from: "Jane",    to: "Brett"},
+    {from: "Brett",   to: "Frank"}
+  ]
+};
+
+// create a chart and set the data
+var chart = anychart.graph(data);
 ```
 
-Nodes in groups can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Group#normal}normal(){api}, {api:anychart.core.graph.elements.Group#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Group#selected}selected(){api} methods.
+To configure nodes in a group, first access them by using the {api:anychart.charts.Graph#group}group(){api} method.
+
+Groups can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Group#normal}normal(){api}, {api:anychart.core.graph.elements.Group#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Group#selected}selected(){api} methods.
 
 Combine them with:
 
@@ -422,9 +436,12 @@ Combine them with:
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
-...
-
 ```
+// access groups of nodes
+var family = chart.group("family");
+var friends = chart.group("friends");
+var loneWolf = chart.group("lone wolf");
+
 // set the size of nodes in groups
 family.normal().height(40);
 family.hovered().height(55);
@@ -440,10 +457,7 @@ loneWolf.selected().height(27);
 family.normal().shape("star5");
 friends.normal().shape("diamond");
 loneWolf.normal().shape("diagonal-cross");
-```
-...
 
-```
 // set the fill of nodes in groups
 family.normal().fill("#ffa000");
 family.hovered().fill("white");
@@ -477,13 +491,14 @@ You can adjust the appearance of all edges or of an individual edge, as explaine
 
 #### All Edges
 
-* {api:anychart.charts.Graph#edges}edges(){api}
-* {api:anychart.core.StateSettings#fill}fill(){api}
-* {api:anychart.core.StateSettings#stroke}stroke(){api}
-* [appearance](../Appearance_Settings) 
-* [states](../Common_Settings/Interactivity/States)
-* **normal()**, **hover()**, and **selected()**
+You can adjust the [appearance](../Appearance_Settings) of all edges on a graph - access them by using the {api:anychart.charts.Graph#edges}edges(){api} method.
 
+Edges can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Edge#normal}normal(){api}, {api:anychart.core.graph.elements.Edge#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Edge#selected}selected(){api} methods.
+
+Combine them with:
+
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
 ```
 // configure the visual settings of edges
