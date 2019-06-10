@@ -829,14 +829,14 @@ The following sample shows how the mouse wheel can be used:
 
 #### Node Behavior
 
-By default, users have an opportunity to drag and drop [nodes](#nodes).
+By default, users have an opportunity to drag and drop [nodes](#nodes) anywhere on the chart. The automatic alignment of nodes is disabled.
 
 To configure the behavior of nodes, use the {api:anychart.charts.Graph#interactivity}interactivity(){api} method.
 
 Combine it with the methods below and `true` / `false` as a parameter:
 
 * {api:anychart.core.graph.elements.Interactivity#nodes}nodes(){api} to allow or prevent moving nodes
-* {api:anychart.core.graph.elements.Interactivity#magnetize}magnetize(){api} to enable or disable the automatic alignment of nodes (after moving)
+* {api:anychart.core.graph.elements.Interactivity#magnetize}magnetize(){api} to enable or disable the automatic alignment of nodes
 
 This sample shows how to prevent moving nodes:
 
@@ -848,7 +848,6 @@ chart.interactivity().nodes(false);
 {sample}BCT\_Network\_Graph\_17{sample}
 
 This is how the alignment of nodes looks like:
-
 
 ```
 // enable the alignment of nodes
@@ -862,7 +861,7 @@ chart.interactivity().magnetize(true);
 To configure the behavior of [edges](#edges), use the {api:anychart.charts.Graph#interactivity}interactivity(){api} method, combined with:
 
 * {api:anychart.core.graph.elements.Interactivity#hoverGap}hoverGap(){api} - to set the trigger area for interacting with edges
-* {api:anychart.core.graph.elements.Interactivity#edges}edges(){api} to enable or disable a special drawing mode that allows optimizing the performance (?)
+* {api:anychart.core.graph.elements.Interactivity#edges}edges(){api} to enable or disable a special mode of drawing edges (to optimize the performance) (?)
 
 In the following sample, the trigger area of edges on the first chart is not configured, and for the second chart it is set to 30. Try to hover over and select edges to see the difference.
 
