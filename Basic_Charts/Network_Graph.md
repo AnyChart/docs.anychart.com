@@ -241,7 +241,7 @@ You can adjust the size, shape, and [appearance](../Appearance_Settings) of all 
 
 Nodes can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Node#normal}normal(){api}, {api:anychart.core.graph.elements.Node#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Node#selected}selected(){api} methods.
 
-Combine them with:
+Combine them with methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
 * {api:anychart.core.StateSettings#height}height(){api} to set the height
 * {api:anychart.core.StateSettings#width}width(){api} to set the width
@@ -433,7 +433,7 @@ var loneWolf = chart.group("lone wolf");
 
 Groups can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Group#normal}normal(){api}, {api:anychart.core.graph.elements.Group#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Group#selected}selected(){api} methods.
 
-Combine them with:
+Combine them with methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
 * {api:anychart.core.StateSettings#height}height(){api} to set the height
 * {api:anychart.core.StateSettings#width}width(){api} to set the width
@@ -497,7 +497,7 @@ You can adjust the [appearance](../Appearance_Settings) of all edges on a graph 
 
 Edges can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Edge#normal}normal(){api}, {api:anychart.core.graph.elements.Edge#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Edge#selected}selected(){api} methods.
 
-Combine them with:
+Combine them with methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
