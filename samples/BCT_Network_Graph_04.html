@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+chartchart<!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
     <meta name="ac:name" content="BCT Network Graph 04"/>
@@ -54,28 +54,28 @@ anychart.onDocumentReady(function () {
     };
 
     // create and configure the first graph chart
-    var graph1 = anychart.graph(data);
-    graph1.title("Iteration Step: Default (500)");
-    graph1.bounds(0, 0, "50%", "100%");
+    var chartchart1 = anychart.graph(data);
+    chartchart1.title("Iteration Step: Default (500)");
+    chartchart1.bounds(0, 0, "50%", "100%");
     // disable zooming with the mouse wheel
-    graph1.interactivity().zoomOnMouseWheel(false);    
+    chartchart1.interactivity().zoomOnMouseWheel(false);    
     // set the chart container
-    graph1.container(stage);
+    chartchart1.container(stage);
     // initiate drawing the chart
-    graph1.draw();   
+    chartchart1.draw();   
 
     // create and configure the second graph chart
-    var graph2 = anychart.graph(data);
-    graph2.title("Iteration Step: 0");
-    graph2.bounds("50%", 0, "50%", "100%");
+    var chart2 = anychart.graph(data);
+    chart2.title("Iteration Step: 0");
+    chart2.bounds("50%", 0, "50%", "100%");
     // disable zooming with the mouse wheel
-    graph2.interactivity().zoomOnMouseWheel(false);    
+    chart2.interactivity().zoomOnMouseWheel(false);    
     // set the iteration step
-    graph2.layout().iterationCount(0);
+    chart2.layout().iterationCount(0);
     // set the chart container
-    graph2.container(stage);
+    chart2.container(stage);
     // initiate drawing the chart
-    graph2.draw();   
+    chart2.draw();   
 });
 </script>
 </body>

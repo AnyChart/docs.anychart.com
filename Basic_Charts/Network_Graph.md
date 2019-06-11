@@ -564,6 +564,10 @@ var chart = anychart.graph(data);
 {sample}BCT\_Network\_Graph\_11{sample}
 
 
+### Appearance
+
+You can configure the [appearance](../Appearance_Settings) of nodes and edges on the whole chart or of individual nodes, node groups, and edges. See the [Nodes](#nodes) and [Edges](#edges) sections to learn more.
+
 ### Labels and Tooltips
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
@@ -784,7 +788,7 @@ Also, you should reference the `anychart-ui.min.css` and `anychart-font.min.css`
 <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-2987-graph/fonts/css/anychart-font.min.css"/>
 ```
 
-Then combine the {api:anychart.ui#zoom}zoom(){api} method with {api:anychart.ui.Zoom#target}target(){api} and {api:anychart.ui.Zoom#render}render(){api} to create the panel:
+Then combine the {api:anychart.ui#zoom}anychart.ui.zoom(){api} method with {api:anychart.ui.Zoom#target}target(){api} and {api:anychart.ui.Zoom#render}render(){api} to create the panel:
 
 ```
 // add a zoom control panel
@@ -799,7 +803,7 @@ zoomController.render();
 
 By default, users have an opportunity to drag  and drop the Network Graph and its nodes and zoom it in and out with the mouse wheel.
 
-It is possible to prevent or modify the behavior of the chart and its parts as well as configure some other behavior-related settings. You can enable the alignment of nodes, set the trigger area of edges, and optimize the performance by changing the way how edges are drawn. (?)
+It is possible to prevent or modify the behavior of the chart and its parts as well as configure some other behavior-related settings. You can enable the alignment of nodes, set the trigger area of edges, and optimize the performance by changing the way how edges are drawn.
 
 #### Chart Behavior
 
@@ -857,13 +861,13 @@ chart.interactivity().magnetize(true);
 To configure the behavior of [edges](#edges), use the {api:anychart.charts.Graph#interactivity}interactivity(){api} method, combined with:
 
 * {api:anychart.core.graph.elements.Interactivity#hoverGap}hoverGap(){api} - to set the trigger area for interacting with edges
-* {api:anychart.core.graph.elements.Interactivity#edges}edges(){api} to enable or disable a special mode of drawing edges, which optimizes the performance (?)
+* {api:anychart.core.graph.elements.Interactivity#edges}edges(){api} to enable or disable a special mode of drawing edges, which optimizes the performance.
 
 In the following sample, the trigger area of edges on the first chart is not configured, and for the second chart it is set to 30. Try to hover over and select edges to see the difference.
 
 ```
 // set the hover gap of edges
-graph2.interactivity().hoverGap(30);    
+chart.interactivity().hoverGap(30);    
 ```
 
 {sample}BCT\_Network\_Graph\_19{sample}

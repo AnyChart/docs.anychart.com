@@ -62,24 +62,24 @@ anychart.onDocumentReady(function () {
     mapping = dataSet.mapAs({x: 0, value: 1});
 
     // create and configure the first chart
-    var chart_1 = anychart.column();
-    var series_1 = chart_1.column(mapping);
-    chart_1.title("Original Data");
-    chart_1.bounds(0, 0, "50%", "100%");
+    var chart1 = anychart.column();
+    var series1 = chart1.column(mapping);
+    chart1.title("Original Data");
+    chart1.bounds(0, 0, "50%", "100%");
     // set the chart container
-    chart_1.container(stage);
+    chart1.container(stage);
     // initiate drawing the chart
-    chart_1.draw(); 
+    chart1.draw(); 
 
     // create and configure the second chart
-    var chart_2 = anychart.column();
-    series_2 = chart_2.column();
-    chart_2.title("Filtered Data");
-    chart_2.bounds("50%", 0, "50%", "100%");
+    var chart2 = anychart.column();
+    series2 = chart2.column();
+    chart2.title("Filtered Data");
+    chart2.bounds("50%", 0, "50%", "100%");
     // set the chart container
-    chart_2.container(stage);
+    chart2.container(stage);
     // initiate drawing the chart
-    chart_2.draw();  
+    chart2.draw();  
 });
 
 // remove points with values less than a given one
@@ -88,7 +88,7 @@ function filterValue() {
   var newMapping = mapping.filter("value", function(value) {
     return value >= input;
   });
-  series_2.data(newMapping);
+  series2.data(newMapping);
 }
 </script>
 </body>

@@ -54,28 +54,28 @@ anychart.onDocumentReady(function () {
     };
 
     // create and configure the first graph chart
-    var graph1 = anychart.graph(data);
-    graph1.title("Rotation Angle: Default (0\xb0)");
-    graph1.bounds(0, 0, "50%", "100%");
+    var chart1 = anychart.graph(data);
+    chart1.title("Rotation Angle: Default (0\xb0)");
+    chart1.bounds(0, 0, "50%", "100%");
     // disable zooming with the mouse wheel
-    graph1.interactivity().zoomOnMouseWheel(false);
+    chart1.interactivity().zoomOnMouseWheel(false);
     // set the chart container
-    graph1.container(stage);
+    chart1.container(stage);
     // initiate drawing the chart
-    graph1.draw();   
+    chart1.draw();   
 
     // create and configure the second graph chart
-    var graph2 = anychart.graph(data);
-    graph2.title("Rotation Angle: 90\xb0");
-    graph2.bounds("50%", 0, "50%", "100%");
+    var chart2 = anychart.graph(data);
+    chart2.title("Rotation Angle: 90\xb0");
+    chart2.bounds("50%", 0, "50%", "100%");
     // disable zooming with the mouse wheel
-    graph2.interactivity().zoomOnMouseWheel(false);
+    chart2.interactivity().zoomOnMouseWheel(false);
     // set the rotation angle
-    graph2.rotation(90);
+    chart2.rotation(90);
     // set the chart container
-    graph2.container(stage);
+    chart2.container(stage);
     // initiate drawing the chart
-    graph2.draw();   
+    chart2.draw();   
 });
 </script>
 </body>
