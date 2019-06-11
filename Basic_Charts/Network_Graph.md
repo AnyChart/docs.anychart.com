@@ -737,7 +737,7 @@ Use the following methods to navigate the chart:
 * {api:anychart.charts.Graph#zoomOut}zoomOut(){api} to zoom out
 * {api:anychart.charts.Graph#zoom}zoom(){api} to zoom in and out 
 * {api:anychart.charts.Graph#move}move(){api} to move the chart by given values
-* {api:anychart.charts.Graph#fit}fit(){api} to fit the chart to the page
+* {api:anychart.charts.Graph#fit}fit(){api} to fit the chart to the container
 
 
 ```
@@ -756,7 +756,7 @@ chart.move(50, -50);
 ```
 
 ```
-// fit the chart to the page
+// fit the chart to the container
 chart.fit();  
 ```
 

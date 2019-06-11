@@ -47,7 +47,7 @@
 <button id="moveButton" onclick="move()">Move</button>
 <label>x: <input id="xInput" value="50"></label>
 <label>y: <input id="yInput" value="-50"></label>
-<button id="fitButton" onclick="fit()">Fit Page</button>
+<button id="fitButton" onclick="fit()">Fit to Container</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -109,7 +109,7 @@ function move() {
   chart.move(x, y);  
 }
 
-// fit the chart to the page
+// fit the chart to the container
 function fit() {
   chart.fit();  
 }
