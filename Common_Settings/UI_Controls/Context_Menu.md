@@ -254,7 +254,7 @@ This section lists all keys and describes when the elements with such keys can a
 - `'exporting-separator'`
 - `'save-data-as'`
   - `'save-as-text'`
-  - `'save-as-xlsx'`
+  - `'save-data-as-xlsx'`
 - `'share-with'`
   - `'share-with-facebook'`
   - `'share-with-twitter'`
