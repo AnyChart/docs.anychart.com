@@ -3,11 +3,7 @@
 
 ## Overview
 
-A Network Graph ...
-
-```
-A network graph is a mathematical structure (graph) to show relations between points. The graph visualizes how entities are interconnected with each other. Entities are displayed as nodes (points) and the relationship between them (edges) are displayed with lines.
-```
+A network graph is a mathematical visualization that is used to model pairwise relations between points. Points are represented as nodes (vertices) that are linked by lines (edges).
 
 This article explains how to create a basic Network Graph as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Graph chart's characteristics:
 
