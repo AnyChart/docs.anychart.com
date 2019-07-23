@@ -42,7 +42,7 @@ For the [Project Gantt](../Project_Chart) chart, the following tokens are availa
 * `{%progress}`
 * `{%linearIndex}`
 
-In the sample below, there is a Project chart with tooltips showing the start and end dates of elements, the progress, and the content of the custom field *manager*:
+In the sample below, there is a Project chart with tooltips showing the start and end dates of elements, the progress, and the content of a custom field `manager`:
 
 ```
 // configure tooltips of the timeline
@@ -164,7 +164,7 @@ Here are the fields supported by the [Resource Gantt](../Resource_Chart) chart:
 * `end`
 * `linearIndex`
 
-In this sample, a formatting function is used to display different tooltips for parent and child [resources](../Resource_Chart#periods_and_resources). For example, the content of a custom field *disc_space* is shown only for child resources.
+In this sample, a formatting function is used to display different tooltips for parent and child [resources](../Resource_Chart#periods_and_resources). For example, the content of a custom field `disc_space` is shown only for child resources.
 
 {sample :height 200}GANTT\_Timeline\_Tooltips\_04{sample}
 
