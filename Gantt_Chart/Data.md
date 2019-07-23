@@ -89,9 +89,7 @@ Read more: [Tree Data Model: Mapping](../Working_with_Data/Tree_Data_Model#mappi
 
 ### Project Chart
 
-In this sample custom fields *child_items* and *intervals* are mapped as `children` and `periods`:
-
-Here custom fields *child_items*, *start_date*, *end_date* are mapped as `children`, `actualStart`, `actualEnd`:
+Here custom fields *start_date* and *end_date* as well as *child_items* are mapped as `actualStart`, `actualEnd`, `children`:
 
 ```
 // create data
