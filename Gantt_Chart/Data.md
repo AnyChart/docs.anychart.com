@@ -91,6 +91,8 @@ Read more: [Tree Data Model: Mapping](../Working_with_Data/Tree_Data_Model#mappi
 
 Here custom fields *start_date* and *end_date* as well as *child_items* are mapped as `actualStart`, `actualEnd`, `children`:
 
+Here custom fields *child_items*, *start_date*, *end_date* are mapped as `children`, `actualStart`, `actualEnd`:
+
 ```
 // create data
 var data = [
