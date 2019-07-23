@@ -89,9 +89,7 @@ Read more: [Tree Data Model: Mapping](../Working_with_Data/Tree_Data_Model#mappi
 
 ### Project Chart
 
-Here the custom field *child_items* is mapped as `children`. The fields *start_date* are mapped as `actualStart` and `actualEnd`.
-
-Here custom fields *child_items*, *start_date*, *end_date* are mapped as `children`, `actualStart`, `actualEnd`:
+Here the custom field *child_items* is mapped as `children`. The fields *start_date* and *end_date* are mapped as `actualStart` and `actualEnd`.
 
 ```
 // create data
