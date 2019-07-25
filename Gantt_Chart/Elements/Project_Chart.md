@@ -63,6 +63,8 @@ To configure milestones, combine {api:anychart.charts.Gantt#getTimeline}getTimel
 
 * {api:anychart.core.gantt.elements.MilestonesElement#anchor}anchor(){api} to set the anchor
 * {api:anychart.core.gantt.elements.MilestonesElement#fill}fill(){api}, {api:anychart.core.gantt.elements.MilestonesElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.MilestonesElement#height}height(){api} to set the fill, stroke, and height
+* {api:anychart.core.gantt.elements.MilestonesElement#markerType}markerType(){api} + enums from {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api} to set the type
+* {api:anychart.core.gantt.elements.MilestonesElement#preview}preview(){api} to display previews of milestones on their parent task
 * {api:anychart.core.gantt.elements.MilestonesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.MilestonesElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
 * {api:anychart.core.gantt.elements.MilestonesElement#labels}labels(){api} to access [labels](Labels)
 * {api:anychart.core.gantt.elements.MilestonesElement#edit}edit(){api} to access the [Live Edit](../Live_Edit) settings
@@ -73,6 +75,10 @@ To configure milestones, combine {api:anychart.charts.Gantt#getTimeline}getTimel
 // configure the height of milestones
 chart.getTimeline().milestones().height(15);
 ```
+
+Passing `true` or `false` to the {api:anychart.core.gantt.elements.MilestonesElement#preview}preview(){api} method allows you to display or hide **previews of milestones** on their parent task. This method also allows accessing the settings of previews – see the methods of the {api:anychart.core.gantt.elements.MilestonesPreviewElement}anychart.core.gantt.elements.MilestonesPreviewElement{api} class.
+
+By default, previews inherit the settings of milestones they represent, but you can change their fill, stroke, type, etc. Please note that with the help of the {api:anychart.core.gantt.elements.MilestonesPreviewElement#depth}depth(){api} method you can set the depth of previews.
 
 If you need to create multiple milestones in one row, use an alternative way to visualize events – add [markers](Markers).
 
