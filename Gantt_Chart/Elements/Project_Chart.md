@@ -76,7 +76,7 @@ To configure milestones, combine {api:anychart.charts.Gantt#getTimeline}getTimel
 chart.getTimeline().milestones().height(15);
 ```
 
-Passing `true` or `false` to the {api:anychart.core.gantt.elements.MilestonesElement#preview}preview(){api} method allows you to display or hide **previews of milestones** on their parent task. This method also allows accessing the settings of previews – see the methods of the {api:anychart.core.gantt.elements.MilestonesPreviewElement}anychart.core.gantt.elements.MilestonesPreviewElement{api} class.
+Passing `true` or `false` to the {api:anychart.core.gantt.elements.MilestonesElement#preview}preview(){api} method allows you to display or hide **previews of milestones** on their parent tasks. This method also allows accessing the settings of previews – see the methods of the {api:anychart.core.gantt.elements.MilestonesPreviewElement}anychart.core.gantt.elements.MilestonesPreviewElement{api} class.
 
 By default, previews inherit the settings of milestones they represent, but you can change their fill, stroke, type, etc. Please note that with the help of the {api:anychart.core.gantt.elements.MilestonesPreviewElement#depth}depth(){api} method you can set the depth of previews.
 
@@ -88,7 +88,7 @@ In the sample below, the {api:anychart.core.ui.Timeline#tasks}tasks(){api}, {api
 
 The **normal()** and **selected()** methods of each task type are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../Appearance_Settings) in two [states](../../Common_Settings/Interactivity/States): **normal** and **selected**.
 
-Also,  {api:anychart.core.gantt.elements.MilestonesElement#markerType}markerType(){api} {api:anychart.core.gantt.elements.MilestonesElement#preview}preview(){api} are used to set the type of milestones and enable their previews on the parent task.
+Also, {api:anychart.core.gantt.elements.MilestonesElement#markerType}markerType(){api} and {api:anychart.core.gantt.elements.MilestonesElement#preview}preview(){api} are used to set the type of milestones and enable their previews on the parent task.
 
 ```
 // configure tasks
