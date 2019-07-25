@@ -88,6 +88,8 @@ In the sample below, the {api:anychart.core.ui.Timeline#tasks}tasks(){api}, {api
 
 The **normal()** and **selected()** methods of each task type are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../Appearance_Settings) in two [states](../../Common_Settings/Interactivity/States): **normal** and **selected**.
 
+Also,  {api:anychart.core.gantt.elements.MilestonesElement#markerType}markerType(){api} {api:anychart.core.gantt.elements.MilestonesElement#preview}preview(){api} are used to set the type of milestones and enable their previews on the parent task.
+
 ```
 // configure tasks
 var tasks = chart.getTimeline().tasks();
@@ -109,6 +111,8 @@ milestones.normal().fill("#dd2c00 0.5");
 milestones.selected().fill("#dd2c00");
 milestones.normal().stroke("#dd2c00");
 milestones.selected().stroke("#dd2c00");
+milestones.markerType("circle");
+milestones.preview(true);
 ```
 
 {sample :height 260}GANTT\_Elements\_Project\_01{sample}
