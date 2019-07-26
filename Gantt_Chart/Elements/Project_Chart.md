@@ -76,7 +76,7 @@ To configure milestones, combine {api:anychart.charts.Gantt#getTimeline}getTimel
 chart.getTimeline().milestones().height(15);
 ```
 
-**Previews of milestones** are special elements that represent milestones on their [parent tasks](#parent_tasks). To display or hide them, pass `true` or `false` to the {api:anychart.core.gantt.elements.MilestonesElement#preview}preview(){api} method. By default, previews are not shown.
+**Previews of milestones** are special elements that represent milestones on their [parent tasks](#parent_tasks). By default, previews are not shown. To display or hide them, pass `true` or `false` to the {api:anychart.core.gantt.elements.MilestonesElement#preview}preview(){api} method.
 
 Previews inherit the settings of milestones they represent, but you can change their fill, stroke, type, etc. – combine {api:anychart.core.gantt.elements.MilestonesElement#preview}preview(){api} with methods of the {api:anychart.core.gantt.elements.MilestonesPreviewElement}anychart.core.gantt.elements.MilestonesPreviewElement{api} class. Please note that with the help of the {api:anychart.core.gantt.elements.MilestonesPreviewElement#depth}depth(){api} method you can set the depth of previews.
 
