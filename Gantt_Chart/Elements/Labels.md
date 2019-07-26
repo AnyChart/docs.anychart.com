@@ -9,7 +9,7 @@ Labels are supported by the following elements of the **Project chart**:
 
 * [regular tasks](Project_Chart#regular_tasks)
 * [parent tasks](Project_Chart#parent_tasks)
-* [milestones](Project_Chart#milestones)
+* [milestones](Project_Chart#milestones) (and their previews on parent tasks)
 * [progress bars](Project_Chart#progress_bars)
 
 Also, labels are supported by the main element of the **Resource chart** – [period](Resource_Chart#periods).
