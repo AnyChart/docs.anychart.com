@@ -53,7 +53,7 @@ chart.getTimeline().groupingTasks().height(15);
 
 Please note: the settings of [regular tasks](#regular_tasks) affect parent tasks as well, but are overridden by the settings listed here.
 
-Also, parent tasks can be [expanded or collapsed](../Basic_Settings#expanding_/_collapsing).
+Also, you can [expand or collapse](../Basic_Settings#expanding_/_collapsing) parent tasks and display previews of [milestones](#milestones) on them.
 
 ### Milestones
 
@@ -64,8 +64,8 @@ To configure milestones, combine {api:anychart.charts.Gantt#getTimeline}getTimel
 * {api:anychart.core.gantt.elements.MilestonesElement#markerType}markerType(){api} + enums from {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api} to set the type
 * {api:anychart.core.gantt.elements.MilestonesElement#fill}fill(){api}, {api:anychart.core.gantt.elements.MilestonesElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.MilestonesElement#height}height(){api} to set the fill, stroke, and height
 * {api:anychart.core.gantt.elements.MilestonesElement#anchor}anchor(){api} to set the anchor
-* {api:anychart.core.gantt.elements.MilestonesElement#preview}preview(){api} to display previews of milestones on their [parent tasks](#parent_tasks)
 * {api:anychart.core.gantt.elements.MilestonesElement#labels}labels(){api} to access [labels](Labels)
+* {api:anychart.core.gantt.elements.MilestonesElement#preview}preview(){api} to display and configure previews of milestones on [parent tasks](#parent_tasks)
 * {api:anychart.core.gantt.elements.MilestonesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.MilestonesElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
 * {api:anychart.core.gantt.elements.MilestonesElement#edit}edit(){api} to access the [Live Edit](../Live_Edit) settings
 * {api:anychart.core.gantt.elements.MilestonesElement#rendering}rendering(){api} to access the [rendering](../Custom_Drawing) settings
