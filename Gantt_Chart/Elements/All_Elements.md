@@ -11,7 +11,7 @@ To configure elements, combine {api:anychart.charts.Gantt#getTimeline}getTimelin
 * {api:anychart.core.gantt.elements.TimelineElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.TimelineElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.TimelineElement#position}position(){api} to set the anchor, offset, and position
 * {api:anychart.core.gantt.elements.TimelineElement#labels}labels(){api} to access [labels](Labels)
 * {api:anychart.core.gantt.elements.TimelineElement#normal}normal(){api} and {api:anychart.core.gantt.elements.TimelineElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
-* {api:anychart.core.gantt.elements.TimelineElement#edit}edit(){api} to access the [Live Edit](../Live_Edit_UI) settings
+* {api:anychart.core.gantt.elements.TimelineElement#edit}edit(){api} to access the [Live Edit](../Live_Edit) settings
 * {api:anychart.core.gantt.elements.TimelineElement#rendering}rendering(){api} to access the [rendering](../Custom_Drawing) settings
 
 In the sample below, the {api:anychart.core.ui.Timeline#elements}elements(){api} method is used to access elements of a Project chart. The {api:anychart.core.gantt.elements.TimelineElement#normal}normal(){api} and {api:anychart.core.gantt.elements.TimelineElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../vAppearance_Settings) in two [states](../../Common_Settings/Interactivity/States): **normal** and **selected**.
