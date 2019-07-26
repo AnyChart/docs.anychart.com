@@ -45,6 +45,7 @@ The following methods, combined with {api:anychart.charts.Gantt#getTimeline}getT
 * [regular tasks](Project_Chart#regular_tasks) – {api:anychart.core.ui.Timeline#tasks}tasks(){api}
 * [parent tasks](Project_Chart#parent_tasks) – {api:anychart.core.ui.Timeline#groupingTask}groupingTask(){api}
 * [milestones](Project_Chart#milestones) – {api:anychart.core.ui.Timeline#milestones}milestones(){api}
+* [previews of milestones](Project_Chart#milestones) – {api:anychart.core.gantt.elements.MilestonesElement#preview}preview(){api}
 * [baselines](Project_Chart#baselines_\(planned\)) – {api:anychart.core.ui.Timeline#baselines}baselines(){api}
 * [progress bars](Project_Chart#progress_bars) – {api:?entry=progress}progress(){api}
 * [connectors](Project_Chart#connectors) – {api:anychart.core.ui.Timeline#connectors}connectors(){api}
