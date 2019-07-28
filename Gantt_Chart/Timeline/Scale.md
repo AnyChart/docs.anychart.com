@@ -97,6 +97,6 @@ You can set the starting month of the fiscal year – use the {api:anychart.scal
 chart.getTimeline().scale().fiscalYearStartMonth(2);
 ```
 
-This setting affects the way how the `"quarter"`, `"semester"`, and `"year"` time units of the scale are calculated. By default, the second and third [levels](#level) of the scale represent quarters and years. You can see them on the [header](Header):
+This setting affects the way how quarters, semesters, and years are calculated and, consequently, the levels of the [header](Header) representing these units. (By default, the second and third levels represent quarters and years.)
 
 {sample :height 260}GANTT\_Timeline\_Scale\_03{sample}
