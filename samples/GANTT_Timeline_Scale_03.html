@@ -101,7 +101,8 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
-    // set the maximum value of the scale
+    // set the minimun and maximum values of the scale
+    chart.getTimeline().scale().minimum("2018-01-01");
     chart.getTimeline().scale().maximum("2018-12-31");
 
     // set the container id
