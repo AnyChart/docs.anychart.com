@@ -56,13 +56,13 @@ anychart.onDocumentReady(function () {
       {
         id: "1",
         name: "Development",
-        actualStart: "2018-01-01",
+        actualStart: "2018-01-10",
         actualEnd: "2018-12-10",
         children: [
           {
             id: "1_1",
             name: "Analysis",
-            actualStart: "2018-01-01",
+            actualStart: "2018-01-10",
             actualEnd: "2018-04-01"
           },
           {
@@ -102,7 +102,7 @@ anychart.onDocumentReady(function () {
     chart.data(treeData);
 
     // set the minimun and maximum values of the scale
-    chart.getTimeline().scale().minimum("2018-01-01");
+    //chart.getTimeline().scale().minimum("2018-01-01");
     chart.getTimeline().scale().maximum("2018-12-31");
 
     // set the container id

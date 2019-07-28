@@ -97,6 +97,6 @@ You can set the starting month of the fiscal year – pass a number from 1 to 12
 chart.getTimeline().scale().fiscalYearStartMonth(2);
 ```
 
-This setting determines the way how quarters, semesters, and years are calculated. In the following sample, configuring the fiscal year affects the second and third levels of the [header](Header), which display quarters and years:
+This setting determines the way how quarters, semesters, and years are calculated. In the following sample, it affects the second and third levels of the [header](Header), which display quarters and years:
 
 {sample :height 260}GANTT\_Timeline\_Scale\_03{sample}
