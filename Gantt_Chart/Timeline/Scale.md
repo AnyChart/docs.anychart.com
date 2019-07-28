@@ -97,6 +97,6 @@ You can set the starting month of the fiscal year – pass a number from 1 to 12
 chart.getTimeline().scale().fiscalYearStartMonth(2);
 ```
 
-This setting affects the way how quarters, semesters, and years are calculated and, consequently, the way how the levels of the [header](Header) representing these units look like:
+This setting determines the way how quarters, semesters, and years are calculated, which affects the levels of the [header](Header) representing these units:
 
 {sample :height 260}GANTT\_Timeline\_Scale\_03{sample}
