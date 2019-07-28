@@ -87,3 +87,16 @@ chart.getTimeline().scale().zoomLevels([
 ```
 
 {sample :height 220}GANTT\_Timeline\_Scale\_02{sample}
+
+## Fiscal Year
+
+You can set the starting month of the fiscal year – use the {api:anychart.scales.GanttDateTime#fiscalYearStartMonth}fiscalYearStartMonth(){api} method with a number from 1 to 12 as a parameter. The default value is 1 (January).
+
+```
+// set the starting month of the fiscal year
+chart.getTimeline().scale().fiscalYearStartMonth(2);
+```
+
+This setting affects the configuration of the [header](Header):
+
+{sample :height 260}GANTT\_Timeline\_Scale\_03{sample}

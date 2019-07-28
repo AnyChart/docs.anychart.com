@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content=""/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/DVF-4270-fiscal-year/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-4270-fiscal-year/js/anychart-gantt.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-4270-fiscal-year/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-4270-fiscal-year/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-4270-fiscal-year/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 40px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<label for="monthSelect">Beginning of Fiscal Year: </label>
+<select id="monthSelect" onchange="fiscalYear()">
+    <option value="1" selected="selected">1 / January</option>
+    <option value="2">2 / February</option>
+    <option value="3">3 / March</option>  
+    <option value="4">4 / April</option>
+    <option value="5">5 / May</option> 
+    <option value="6">6 / June</option> 
+    <option value="7">7 / July</option> 
+    <option value="8">8 / August</option> 
+    <option value="9">9 / September</option> 
+    <option value="10">10 / October</option> 
+    <option value="11">11 / November</option>
+    <option value="12">12 / December</option>   
+</select>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      {
+        id: "1",
+        name: "Development",
+        actualStart: "2018-01-15",
+        actualEnd: "2018-03-10",
+        children: [
+          {
+            id: "1_1",
+            name: "Analysis",
+            actualStart: "2018-01-15",
+            actualEnd: "2018-01-25"
+          },
+          {
+            id: "1_2",
+            name: "Design",
+            actualStart: "2018-01-20",
+            actualEnd: "2018-02-04"
+          },
+          {
+            id: "1_3",
+            name: "Meeting",
+            actualStart: "2018-02-05",
+            actualEnd: "2018-02-05"
+          },
+          {
+            id: "1_4",
+            name: "Implementation",
+            actualStart: "2018-02-05",
+            actualEnd: "2018-02-24"
+          },
+          {
+            id: "1_5",
+            name: "Testing",
+            actualStart: "2018-02-25",
+            actualEnd: "2018-03-10"
+          }
+      ]}
+    ];
+    
+    // create a data tree
+    var treeData = anychart.data.tree(data, "as-tree");
+
+    // create a chart
+    chart = anychart.ganttProject();
+    
+    // set the data
+    chart.data(treeData);
+
+    // set the minimun and maximum values of the scale
+    chart.getTimeline().scale().minimum("2017-11-01");
+    chart.getTimeline().scale().maximum("2018-05-31");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+
+    // fit elements to the width of the timeline
+    chart.fitAll();
+});
+
+// set the starting month of the fiscal year
+function fiscalYear() {
+  var month = document.getElementById("monthSelect").value;
+  chart.getTimeline().scale().fiscalYearStartMonth(month);
+}
+</script>
+</body>
+</html>
