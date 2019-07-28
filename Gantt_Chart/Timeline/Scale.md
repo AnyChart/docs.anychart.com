@@ -90,7 +90,7 @@ chart.getTimeline().scale().zoomLevels([
 
 ## Fiscal Year
 
-You can set the starting month of the fiscal year – use the {api:anychart.scales.GanttDateTime#fiscalYearStartMonth}fiscalYearStartMonth(){api} method with a number from 1 to 12 as a parameter. The default value is 1 (January).
+You can set the starting month of the fiscal year – pass a number from 1 to 12 to the {api:anychart.scales.GanttDateTime#fiscalYearStartMonth}fiscalYearStartMonth(){api} method. The default value is 1 (January).
 
 ```
 // set the starting month of the fiscal year
