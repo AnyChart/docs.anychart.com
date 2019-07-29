@@ -775,7 +775,7 @@ The [Zoom Control Panel](../Common_Settings/UI_Controls/Zoom_Controls) is an HTM
 It requires adding the [Common UI](../Quick_Start/Modules#common_ui) module:
 
 ```
-<script src="https://cdn.anychart.com/releases/DVF-2987-graph/js/anychart-ui.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
 ```
 
 ```
@@ -785,7 +785,7 @@ It requires adding the [Common UI](../Quick_Start/Modules#common_ui) module:
 Also, you should reference the `anychart-ui.min.css` and `anychart-font.min.css` files:
 
 ```
-<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-2987-graph/fonts/css/anychart-font.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css"/>
 ```
 
 Then combine the {api:anychart.ui#zoom}anychart.ui.zoom(){api} method with {api:anychart.ui.Zoom#target}target(){api} and {api:anychart.ui.Zoom#render}render(){api} to create the panel:
