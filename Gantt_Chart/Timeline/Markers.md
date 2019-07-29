@@ -115,7 +115,7 @@ To configure the marker, use methods of the {api:anychart.core.axisMarkers.Gantt
 
 * {api:anychart.core.axisMarkers.GanttText#value}value(){api} to set the date
 * {api:anychart.core.axisMarkers.GanttText#text}text(){api} to set the text
-* {api:anychart.core.axisMarkers.GanttText#useHtmle}useHtml(){api} to enable HTML
+* {api:anychart.core.axisMarkers.GanttText#useHtml}useHtml(){api} to enable HTML
 * {api:anychart.core.axisMarkers.GanttText#fontColor}fontColor(){api}, {api:anychart.core.axisMarkers.GanttText#fontFamily}fontFamily(){api}, {api:anychart.core.axisMarkers.GanttText#fontSize}fontSize(){api}, {api:anychart.core.axisMarkers.GanttText#fontWeight}fontWeight(){api}, etc. to configure the font
 * {api:anychart.core.axisMarkers.GanttText#background}background(){api} to set the background
 * {api:anychart.core.axisMarkers.GanttText#rotation}rotation(){api}, {api:anychart.core.axisMarkers.GanttText#padding}padding(){api}, {api:anychart.core.axisMarkers.GanttText#offsetX}offsetX(){api}, {api:anychart.core.axisMarkers.GanttText#offsetY}offsetY(){api}, etc. to set the position

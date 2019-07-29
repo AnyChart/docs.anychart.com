@@ -12,7 +12,7 @@ In Bar, Column, and related chart types the width of points is calculated automa
 
 ```
 // set the width of points
-column1.pointWidth(20);
+chart.pointWidth(20);
 ```
 
 {sample}CS\_Point\_Size\_01{sample}
@@ -23,7 +23,7 @@ You can set a limit to the width of points (in pixels or as a percentage) by usi
 
 ```
 // set the maximum width of points
-column1.maxPointWidth("15%");
+chart.maxPointWidth("15%");
 ```
 
 {sample}CS\_Point\_Size\_02{sample}
@@ -34,7 +34,7 @@ When the magnitude of difference between values is too high, some elements with 
 
 ```
 // set the minimum length of points
-column1.minPointLength(10);
+chart.minPointLength(10);
 ```
 
 {sample}CS\_Point\_Size\_03{sample}

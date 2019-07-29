@@ -17,7 +17,7 @@ To configure it, call the following methods:
 * {api:anychart.scales.GanttDateTime#softMaximum}softMaximum(){api} to set the soft maximum
 * {api:anychart.scales.GanttDateTime#minimumGap}minimumGap(){api} to set the minimum offset
 * {api:anychart.scales.GanttDateTime#maximumGap}maximumGap(){api} to set the maximum offset
-* {api:anychart.scales.GanttDateTime#zoomlevels}zoomlevels(){api} to set zoom [levels](#levels)
+* {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api} to set zoom [levels](#levels)
 
 ## Minimum & Maximum
 

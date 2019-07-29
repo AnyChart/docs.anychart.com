@@ -220,7 +220,7 @@ In the sample below, the start angle of the first chart is not configured, and f
 
 ```
 // set the start angle
-pie2.startAngle(90);
+chart.startAngle(90);
 ```
 
 {sample}BCT\_Pie\_Chart\_06{sample}
@@ -237,23 +237,23 @@ To set the sorting mode, call the {api:anychart.charts.Pie#sort}sort(){api} meth
 
 ```
 // set the sorting mode
-pie1.sort("desc");
-pie2.sort("asc");
-pie3.sort("none");
+chart.sort("asc");
 ```
 
 {sample}BCT\_Pie\_Chart\_07{sample}
 
 ### Exploded Slices
 
-By default, there are no spaces between the slices of a Pie chart, and when a user clicks on a slice, it "explodes" moving away from the others. In other words, explosion indicates that a slice is selected.
+By default, there are no spaces between the slices of a Pie chart, and when a user clicks on a slice, it "explodes" moving away from the others. Usually, explosion indicates that a slice is selected.
 
-You can set the range of explosion (in pixels or as a percentage) by using the {api:anychart.charts.Pie#explode}explode(){api} method:
+You can set the range of explosion (in pixels or as a percentage) by using the {api:anychart.core.StateSettings#explode}explode(){api} method in different states:
 
 ```
-// set the explosion range
-chart.explode("3%");
+// set the explosion range in selected state
+chart.selected().explode("3%");
 ```
+
+Be default slices explode by 7% when selected.
 
 To make some slices exploded (selected) by default, call {api:anychart.charts.Pie#select}select(){api} with an array of their indexes as a parameter:
 
@@ -262,7 +262,7 @@ To make some slices exploded (selected) by default, call {api:anychart.charts.Pi
 chart.select([3, 4]);
 ```
 
-Another way to explode a slice is to add a special field to your data, which should be set as an object:
+Another way to select a slice is to add a special field to your data, which should be set as an object:
 
 ```
 var data = [
@@ -274,7 +274,7 @@ var data = [
 ];
 ```
 
-In this sample, there is a Pie chart with three slices exploded by default and the explosion range set to 3%:
+In this sample, there is a Pie chart with three slices selected by default and the explosion range set to 3% in selected state and to 1% when you move the mouse over them:
 
 {sample}BCT\_Pie\_Chart\_08{sample}
 

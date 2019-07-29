@@ -15,11 +15,9 @@ In this article we showcase applications that make use of Chart Editor.
 
 AnyChart Qlick extension for Qlik Sense allows Qlik Sense users to discover their data in Qlik Sense, configure how to present it with the help of [Chart Editor](Overview), and display it as AnyChart charts.
 
-Learn more about AnyChart Qlik Extension and see it in action:
+Learn more about AnyChart Extensions for Qlik and see them in action:
 
-- [AnyChart Qlik extension at AnyChart.Com](https://www.anychart.com/technical-integrations/samples/qlik-charts/overview/)
-- [AnyChart Qlik extension at Qlick Branch](https://branch.qlik.com/#!/project/58cf59cd61d353a813f4a37e)
-- [AnyChart Qlik extension at GitHub](https://github.com/AnyChart/AnyChart-Qlik)
+- [AnyChart Qlik extension at AnyChart.Com](https://qlik.anychart.com/overview/)
 
 ## Chart Editor Demo App
 

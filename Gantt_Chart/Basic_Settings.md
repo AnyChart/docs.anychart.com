@@ -1,6 +1,6 @@
 {:index 8}
 # Basic Settings
-
+ 
 ## Overview
 
 This article describes the basic settings of the Gantt chart, which is defined as an instance of the {api:anychart.charts.Gantt}anychart.charts.Gantt{api} class.

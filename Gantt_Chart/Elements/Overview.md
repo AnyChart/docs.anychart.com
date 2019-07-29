@@ -1,7 +1,7 @@
 {:index 1}
 # Overview
 
-Timeline elements are parts of the Gantt chart that are shown on the [timeline](Timeline) and represent time intervals as well as information related to them.
+Timeline elements are parts of the Gantt chart that are shown on the [timeline](../Timeline) and represent time intervals as well as information related to them.
 
 On the [Project Gantt](../Project_Chart) chart and [Resource Gantt](../Resource_Chart) chart, different types of elements are displayed, and for each element type slightly different settings are available.
 
@@ -9,7 +9,7 @@ On the [Project Gantt](../Project_Chart) chart and [Resource Gantt](../Resource_
 
 Articles in this section explain how to configure:
 
-* [Project Chart](Project_Chart), [Resource Chart](Resource_chart) – all elements of one type
+* [Project Chart](Project_Chart), [Resource Chart](Resource_Chart) – all elements of one type
 * [All Elements](All_Elements) – all elements at once
 * [Individual Elements](Individual_Elements) – individual elements
 * [Labels](Labels) – labels of elements
@@ -42,7 +42,7 @@ Elements are defined as instances of the following classes:
 The following methods, combined with {api:anychart.charts.Gantt#getTimeline}getTimeline(){api}, are used to access elements:
 
 * [regular tasks](Project_Chart#regular_tasks) – {api:anychart.core.ui.Timeline#tasks}tasks(){api}
-* [parent tasks](Project_Chart#parent_tasks) – {api:anychart.core.ui.Timeline#groupingTask}groupingTask(){api}
+* [parent tasks](Project_Chart#parent_tasks) – {api:anychart.core.ui.Timeline#groupingTasks}groupingTasks(){api}
 * [milestones](Project_Chart#milestones) – {api:anychart.core.ui.Timeline#milestones}milestones(){api}
 * [baselines](Project_Chart#baselines_\(planned\)) – {api:anychart.core.ui.Timeline#baselines}baselines(){api}
 * [progress bars](Project_Chart#progress_bars) – {api:?entry=progress}progress(){api}

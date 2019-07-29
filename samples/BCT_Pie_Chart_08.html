@@ -37,8 +37,9 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     var chart = anychart.pie(data);
 
-    // set the explosion range
-    chart.explode("3%");
+    // set the explosion range in different states
+    chart.selected().explode("3%");
+    chart.hovered().explode("3%");
 
     // explode the fourth and fifth slices
     chart.select([3, 4]);
