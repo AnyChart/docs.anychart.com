@@ -69,6 +69,8 @@ The {api:anychart.core.ui.LabelsFactory#format}format(){api} method, combined wi
 
 Alternatively, you can configure the text (and width) with the help of column presets – see [Column Presets](Column_Presets).
 
+**Note:** To learn more about formatting dates, see [Date and Time Formats: format()](../Date_and_Time_Formats#format\(\)).
+
 ### Tokens
 
 To format the text of columns, combine the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [tokens](../../Common_Settings/Text_Formatters#string_tokens).
@@ -176,10 +178,10 @@ var column_1 = chart.dataGrid().column(0);
 column_1.labels().fontWeight(600);
 column_1.labels().useHtml(true);
 
-column_1.labels().format( function() {
+column_1.labels().format(function() {
 
   var children = this.item.numChildren();
-  var duration = (this.actualEnd - this.actualStart);
+  var duration = this.actualEnd - this.actualStart;
   var index = this.linearIndex;
 
   var parentText = "<span style='color:#dd2c00'>" + index + ".</span>";
@@ -265,7 +267,7 @@ var column_1 = chart.dataGrid().column(0);
 column_1.labels().fontWeight(600);
 column_1.labels().useHtml(true);
 
-column_1.labels().format( function() {
+column_1.labels().format(function() {
 
   var children = this.item.numChildren();
   var index = this.linearIndex;
