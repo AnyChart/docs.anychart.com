@@ -42,7 +42,7 @@ Here is a live sample:
 
 There are three parameters the PSY indicator has, one of them is necessary - the mapping.
 
-The second parameter sets the period, and the third one allows you to set the series types.
+The second parameter sets the period, and the third one allows you to set the series type.
 
 The following code sample demonstrates a PSY indicator with parameters set as default:
 
@@ -56,14 +56,14 @@ Vizualization of an indicator depends on the type of a series you display it wit
 
 ```
 // create and adjust a PSY indicator
-var psy_1 = chart.plot(1).psy(mapping, 15, "area").series();
+var psy_1 = plot_1.psy(mapping, 15, "area").series();
 psy_1.stroke("0.5 gray");
 psy_1.fill("#ffd54f");
 
 // create and adjust a PSY indicator
-var psy_2 = chart.plot(2).psy(mapping, 25, "column").series();
+var psy_2 = plot_2.psy(mapping, 25, "column").series();
 psy_2.stroke("0.5 lightGray");
-psy_2.fill("#ff6d00");   
+psy_2.fill("#ff6d00");  
 ```
 
 Live sample:

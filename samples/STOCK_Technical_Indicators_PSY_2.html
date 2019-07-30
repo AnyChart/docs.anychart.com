@@ -39,20 +39,22 @@ var mapping = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close": 4, "valu
 // create a stock chart
 var chart = anychart.stock();
 
-// create the first plot on the chart
+// create plots on the chart
 var plot_0 = chart.plot(0);
+var plot_1 = chart.plot(1);
+var plot_2 = chart.plot(2);
 
 // create an ohlc series
 var ohlcSeries = plot_0.ohlc(mapping);
 ohlcSeries.name('CSCO');
 
 // create and adjust a PSY indicator
-var psy_1 = chart.plot(1).psy(mapping, 15, "area").series();
+var psy_1 = plot_1.psy(mapping, 15, "area").series();
 psy_1.stroke("0.5 gray");
 psy_1.fill("#ffd54f");
 
 // create and adjust a PSY indicator
-var psy_2 = chart.plot(2).psy(mapping, 25, "column").series();
+var psy_2 = plot_2.psy(mapping, 25, "column").series();
 psy_2.stroke("0.5 lightGray");
 psy_2.fill("#ff6d00");
 
