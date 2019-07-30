@@ -68,4 +68,4 @@ psy_2.fill("#ff6d00");
 
 Live sample:
 
-{sample :height 800}STOCK\_Technical\_Indicators\_PSY\_2{sample}
+{sample}STOCK\_Technical\_Indicators\_PSY\_2{sample}
