@@ -40,7 +40,7 @@ Here is a live sample:
 
 ## Indicator parameters
 
-There are four parameters an Awesome Oscillator indicator has, one of them is necessary - the mapping. The second parameter and third parameters set perod, fourth - {api:anychart.enums.MovingAverageType}Moving Average Type{api}. The last parameter sets the series type. The following code sample demonstrates an Awesome Oscillator indicator with parameters set as default:
+There are four parameters an Awesome Oscillator indicator has, one of them is necessary - the mapping. The second parameter and third parameters set period, fourth - {api:anychart.enums.MovingAverageType}Moving Average Type{api}. The last parameter sets the series type. The following code sample demonstrates an Awesome Oscillator indicator with parameters set as default:
 
 ```
 var ao = plot.ao(mapping, 5, 34, "sma", "stick");
