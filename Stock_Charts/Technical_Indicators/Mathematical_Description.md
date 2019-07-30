@@ -296,6 +296,12 @@ The SAR is recursively calculated in this manner for each new period. There are,
 
 <center><img src="https://static.anychart.com/images/technical_indicators/pricechannels.png"></center>
 
+## Psychological Line
+
+[Psychological Line (PSY)](Psychological_Line_\(PSY\)) is calculated according to the following formula:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/psy.png"></center>
+
 ## Rate of Change
 
 [Rate of Change](Rate\_of\_Change\_\(ROC\)) is calculated according to this formula:
