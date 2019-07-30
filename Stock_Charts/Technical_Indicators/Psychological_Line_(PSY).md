@@ -7,7 +7,7 @@ Mathematical description of the indicator: [PSY Mathematical Description](Mathem
 
 ## Adding Indicator
 
-The PSY indicator is added using the {api:anychart.core.stock.Plot#psy}psy(){api} method. It requires a mapping with four fields: "`open`", `"high"`, `"low"`, and `"close"`:
+The PSY indicator is added using the {api:anychart.core.stock.Plot#psy}psy(){api} method. It requires a mapping with four fields: `"open"`, `"high"`, `"low"`, and `"close"`:
 
 ```
 // create data table on loaded data
