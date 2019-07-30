@@ -1,5 +1,4 @@
-# Aroon
-
+# Psychological Line (PSY
 ## Overview
 
 The Psychological Line (PSY) is based on the presumption that people will resist paying more for a share than others, unless of course the share continues to move up. Conversely, people resist selling a share for less than the price others have been getting for it, except if the price continues to decline. Finally, people who purchase the stock at the top of a trading range will tend to wait until the price comes back before they get out.
