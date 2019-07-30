@@ -1,4 +1,4 @@
-# Psychological Line (PSY
+# Psychological Line (PSY)
 ## Overview
 
 The Psychological Line (PSY) is based on the presumption that people will resist paying more for a share than others, unless of course the share continues to move up. Conversely, people resist selling a share for less than the price others have been getting for it, except if the price continues to decline. Finally, people who purchase the stock at the top of a trading range will tend to wait until the price comes back before they get out.
@@ -7,7 +7,7 @@ Mathematical description of the indicator: [PSY Mathematical Description](Mathem
 
 ## Adding Indicator
 
-The PSY indicator is added using {api:anychart.core.stock.Plot#psy}psy(){api} method. It requires a mapping with four fields: "`open`", `"high"`, `"low"`, and `"close"`:
+The PSY indicator is added using the {api:anychart.core.stock.Plot#psy}psy(){api} method. It requires a mapping with four fields: "`open`", `"high"`, `"low"`, and `"close"`:
 
 ```
 // create data table on loaded data
