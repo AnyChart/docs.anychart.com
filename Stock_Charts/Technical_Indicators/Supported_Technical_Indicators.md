@@ -81,6 +81,9 @@ You can also create any kind of custom indicator yourself using our [Custom Indi
 			<td>[Price Channels](Price_Channels)</td>
 		</tr>
 		<tr>
+			<td>[Psychological Line (PSY)](Psychological_Line_\(PSY\))</td>
+		</tr>
+		<tr>
 			<td>[Rate of Change (ROC)](Rate_of_Change_\(ROC\))</td>
 		</tr>
 		<tr>
