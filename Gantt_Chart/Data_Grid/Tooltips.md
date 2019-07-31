@@ -44,7 +44,7 @@ For the [Project Gantt](../Project_Chart) chart, the following tokens are availa
 * `{%progress}`
 * `{%linearIndex}`
 
-In the sample below, there is a Project chart with tooltips showing the start and end dates of elements, the progress, and the content of the custom field `manager`:
+In the sample below, there is a Project chart with tooltips showing the start and end dates of elements, the progress, and the content of a custom field `manager`:
 
 ```
 // configure tooltips of the data grid

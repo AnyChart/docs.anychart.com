@@ -31,6 +31,7 @@ Elements are defined as instances of the following classes:
 * [regular tasks](Project_Chart#regular_tasks) – {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
 * [parent tasks](Project_Chart#parent_tasks) – {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api}
 * [milestones](Project_Chart#milestones) – {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api}
+* [previews of milestones](Project_Chart#milestones) – {api:anychart.core.gantt.elements.MilestonesPreviewElement}anychart.core.gantt.elements.MilestonesPreviewElement{api}
 * [baselines](Project_Chart#baselines_\(planned\)) – {api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api}
 * [progress bars](Project_Chart#progress_bars) – {api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api}
 * [connectors](Project_Chart#connectors) – {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api}
@@ -44,8 +45,9 @@ The following methods, combined with {api:anychart.charts.Gantt#getTimeline}getT
 * [regular tasks](Project_Chart#regular_tasks) – {api:anychart.core.ui.Timeline#tasks}tasks(){api}
 * [parent tasks](Project_Chart#parent_tasks) – {api:anychart.core.ui.Timeline#groupingTasks}groupingTasks(){api}
 * [milestones](Project_Chart#milestones) – {api:anychart.core.ui.Timeline#milestones}milestones(){api}
+* [previews of milestones](Project_Chart#milestones) – {api:anychart.core.ui.Timeline#milestones}milestones(){api} + {api:anychart.core.gantt.elements.MilestonesElement#preview}preview(){api}
 * [baselines](Project_Chart#baselines_\(planned\)) – {api:anychart.core.ui.Timeline#baselines}baselines(){api}
-* [progress bars](Project_Chart#progress_bars) – {api:?entry=progress}progress(){api}
+* [progress bars](Project_Chart#progress_bars) – {api:anychart.core.ui.Timeline#tasks}tasks(){api} / {api:anychart.core.ui.Timeline#groupingTask}groupingTask(){api} / + {api:?entry=progress}progress(){api}
 * [connectors](Project_Chart#connectors) – {api:anychart.core.ui.Timeline#connectors}connectors(){api}
 * [periods](Resource_Chart#periods) – {api:anychart.core.ui.Timeline#periods}periods(){api}
 * [all elements](All_Elements) – {api:anychart.core.ui.Timeline#elements}elements(){api}
