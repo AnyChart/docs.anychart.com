@@ -81,25 +81,7 @@ extraYAxis.scale(extraYScale);
 
 ### Position
 
-We can position plots wherever we want and make them of the size we need. This can be done using {api:anychart.core.stock.Plot#bounds}bounds(){api} or other methods such as {api:anychart.core.stock.Plot#width}width(){api}, {api:anychart.core.stock.Plot#height}height(){api}, {api:anychart.core.stock.Plot#top}top(){api}, etc. The whole list of these methods you can find {api:anychart.core.stock.Plot}here{api}. By default, each new plot will be placed under the existing ones. Let's now create a simple three-plot AnyStock chart and position two of them next to each other.
-
-```
-// set the first plot position through bounds
-var plot_1 = chart.plot(0);
-plot_1.bounds(0,0,"45%","45%");
-
-// set the second plot position through width, height, top
-var plot_2 = chart.plot(1);
-plot_2.width("100%");
-plot_2.height("45%");
-plot_2.top("50%");
-
-// set the third plot bounds
-var plot_3 = chart.plot(2);
-plot_3.bounds("55%", 0, "45%", "45%")
-```
-
-{sample}STOCK\_Plots\_04{sample}
+We can position plots wherever we want and make them of the size we need. This can be done using {api:anychart.core.stock.Plot#bounds}bounds(){api} or other methods such as {api:anychart.core.stock.Plot#width}width(){api}, {api:anychart.core.stock.Plot#height}height(){api}, {api:anychart.core.stock.Plot#top}top(){api}, etc. The whole list of these methods you can find {api:anychart.core.stock.Plot}here{api}. By default, each new plot will be placed under the existing ones.
 
 ### Title
 
