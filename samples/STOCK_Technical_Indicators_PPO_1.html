@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Technical Indicators ENV 2"/>
+    <meta name="ac:name" content="STOCK Technical Indicators PPO 1"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -43,21 +43,14 @@ var chart = anychart.stock();
 var plot_0 = chart.plot(0);
 
 // create an ohlc series
-plot_0.ohlc(mapping).name('CSCO');
+var ohlcSeries = plot_0.ohlc(mapping);
+ohlcSeries.name('CSCO');
 
-// create the second plot on the chart
-var plot_1 = chart.plot(1);
+// create a plot for an indicator
+plot_1 = chart.plot(1);
 
-// create an ohlc series
-plot_1.ohlc(mapping).name('CSCO');
-
-// create and adjust an ENV indicator
-var env_1 = plot_0.env(mapping);
-
-// create and adjust an ENV indicator
-var env_2 = plot_1.env(mapping);
-env_2.upperSeries().stroke("0.5 gray");
-env_2.lowerSeries().stroke("0.5 lightGray");
+// create a PPO indicator
+var ppo = plot_1.ppo(mapping);
 
 // set container id for the chart
 chart.container('container');

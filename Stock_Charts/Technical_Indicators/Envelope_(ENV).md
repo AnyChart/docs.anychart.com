@@ -9,7 +9,7 @@ Mathematical description of the indicator: [ENV Mathematical Description](Mathem
 
 ## Adding Indicator
 
-The ENV indicator is added using the {api:anychart.core.stock.Plot#psy}env(){api} method. It requires a mapping with one field: `"value"` (or `"close"`):
+The ENV indicator is added using the {api:anychart.core.stock.Plot#env}env(){api} method. It requires a mapping with one field: `"value"` (or `"close"`):
 
 ```
 // create data table on loaded data
@@ -46,7 +46,7 @@ There are 6 parameters the ENV indicator has, one of them is necessary - the map
 
 Then you can set the deviation, the period, the smoothing type and series types.
 
-The following code sample demonstrates a PSY indicator with parameters set as default:
+The following code sample demonstrates a ENV indicator with parameters set as default:
 
 ```
 var env = plot.env(mapping, 20, 10, "ema", "line", "line");

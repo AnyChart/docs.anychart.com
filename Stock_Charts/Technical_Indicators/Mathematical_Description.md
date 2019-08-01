@@ -335,13 +335,6 @@ PPO Histogram: PPO - Signal Line
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/rci.png"></center>
 
-## Ratiocator
-
-[Ratiocator (RAT)](Ratiocator_\(RAT\)) is calculated like this:
-
-FirstRatiocator = PriceA / PriceB where priceA, priceB are prices of two stocks on a given BaseDate
-Ratiocator = (PriceA / PriceB) / FirstRatiocator * 100
-
 ## Rate of Change
 
 [Rate of Change](Rate\_of\_Change\_\(ROC\)) is calculated according to this formula:
@@ -350,8 +343,10 @@ Ratiocator = (PriceA / PriceB) / FirstRatiocator * 100
 
 ## Ratiocator
 
-[Ratiocator](Raticator_\(RAT\)) is calculated according to this formula:
+[Ratiocator (RAT)](Ratiocator_\(RAT\)) is calculated like this:
 
+FirstRatiocator = PriceA / PriceB where priceA, priceB are prices of two stocks on a given BaseDate
+Ratiocator = (PriceA / PriceB) / FirstRatiocator * 100
 
 ## Relative Strength Index
 

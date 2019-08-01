@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Technical Indicators ENV 2"/>
+    <meta name="ac:name" content="STOCK Technical Indicators PPO 2"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -48,16 +48,18 @@ plot_0.ohlc(mapping).name('CSCO');
 // create the second plot on the chart
 var plot_1 = chart.plot(1);
 
-// create an ohlc series
-plot_1.ohlc(mapping).name('CSCO');
+// create and adjust a PPO indicator
+var ppo_1 = plot_1.ppo(mapping);
 
-// create and adjust an ENV indicator
-var env_1 = plot_0.env(mapping);
+// create the third plot on the chart
+var plot_2 = chart.plot(2);
 
-// create and adjust an ENV indicator
-var env_2 = plot_1.env(mapping);
-env_2.upperSeries().stroke("0.5 gray");
-env_2.lowerSeries().stroke("0.5 lightGray");
+// create and adjust a PPO indicator
+var ppo_2 = plot_2.ppo(mapping);
+
+ppo_2.ppoSeries().stroke("0.5 red");
+ppo_2.signalSeries().stroke("0.5 red");
+ppo_2.histogramSeries().seriesType("line");
 
 // set container id for the chart
 chart.container('container');
