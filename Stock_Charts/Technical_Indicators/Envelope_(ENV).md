@@ -1,7 +1,7 @@
 # Envelope (ENV)
 ## Overview
 
-Envelopes are technical indicators that are typically plotted over a price chart with upper and lower bounds.Envelopes are commonly used to help traders and investors identify extreme overbought and oversold conditions as well as trading ranges.
+Envelopes are technical indicators that are typically plotted over a price chart with upper and lower bounds. Envelopes are commonly used to help traders and investors identify extreme overbought and oversold conditions as well as trading ranges.
 
 With AnyStock Envelope indicator you can create both SMA and EMA envelopes and choose the colors for lower and upper level.
 

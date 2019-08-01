@@ -60,7 +60,7 @@ var rci_1 = plot_1.rci(mapping);
 
 // create and adjust an RCI indicator
 var rci_2 = plot_2.rci(mapping);
-rci_2.series().stroke("1 red 2 2");
+rci_2.series().stroke("1 red");
 ```
 
 Live sample:
