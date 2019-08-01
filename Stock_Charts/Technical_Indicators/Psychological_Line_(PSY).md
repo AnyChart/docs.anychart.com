@@ -7,7 +7,7 @@ Mathematical description of the indicator: [PSY Mathematical Description](Mathem
 
 ## Adding Indicator
 
-The PSY indicator is added using the {api:anychart.core.stock.Plot#psy}psy(){api} method. It requires a mapping with four fields: `"open"`, `"high"`, `"low"`, and `"close"`:
+The PSY indicator is added using the {api:anychart.core.stock.Plot#psy}psy(){api} method. It requires a mapping with one field: `"value"` (or `"close"`):
 
 ```
 // create data table on loaded data
@@ -15,7 +15,7 @@ var dataTable = anychart.data.table();
 dataTable.addData(get_csco_daily_data());
 
 // map loaded data
-var mapping = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close": 4, "value": 3});
+var mapping = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close": 4});
 
 // create a stock chart
 var chart = anychart.stock();
@@ -52,7 +52,7 @@ var psy = plot.psy(mapping, 20, "line");
 
 ## Visualization
 
-Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where Price Channels indicators with different parameters and settings are added to different plots:
+Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where Psychological Line indicators with different parameters and settings are added to different plots:
 
 ```
 // create and adjust a PSY indicator

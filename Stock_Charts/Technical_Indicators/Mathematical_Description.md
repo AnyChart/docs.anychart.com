@@ -143,6 +143,13 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 <center><img src="https://static.anychart.com/images/technical_indicators/dmi\_pdi.png"></center><br>
 </ol>
 
+## Envelope
+
+[Envelope](Envelope\_\(ENV\)) is calculated according to the following formula:
+
+Upper Envelope = 20 Period SMA + (20 Period SMA * 0.1)
+Lower Envelope = 20 Period SMA - (20 Period SMA * 0.1)
+
 ## Exponential Moving Average
 
 [Exponential Moving Average](Exponential\_Moving\_Average\_\(EMA\)) in each point is calculated according to the following formula:
@@ -174,6 +181,16 @@ the current period's low, the current Heikin-Ashi
 candlestick open or the current Heikin-Ashi candlestick close.
 
 ** HA-Low = Minimum of the Low(0), HA-Open(0) or HA-Close(0)** 
+
+## Ichimoku Cloud
+
+[Ichimoku Cloud (IKH)](Ichimoku_Cloud_\(IKH\)) is calculated as described below. Four of the five plots within the Ichimoku Cloud are based on the average of the high and low over a given period of time. Periods can be adjusted when an indicator is created.
+
+Tenkan-sen (Conversion Line): (9-period high + 9-period low)/2))
+Kijun-sen (Base Line): (26-period high + 26-period low)/2))
+Senkou Span A (Leading Span A): (Conversion Line + Base Line)/2))
+Senkou Span B (Leading Span B): (52-period high + 52-period low)/2))
+Chikou Span (Lagging Span): Close plotted 26 days in the past
 
 ## KDJ
 
@@ -296,17 +313,45 @@ The SAR is recursively calculated in this manner for each new period. There are,
 
 <center><img src="https://static.anychart.com/images/technical_indicators/pricechannels.png"></center>
 
+## Price Oscillator
+
+[Price Oscillator (PPO)](Price_Oscillator_\(PPO\)) is calculated according to the following formula:
+
+PPO Line: ((12-day EMA - 26-day EMA)/26-day EMA) x 100
+
+Signal Line: 9-day EMA of PPO
+
+PPO Histogram: PPO - Signal Line
+
 ## Psychological Line
 
 [Psychological Line (PSY)](Psychological_Line_\(PSY\)) is calculated according to the following formula:
 
-<center><img src="https://static.anychart.com/images/technical_indicators/psy.png"></center>
+<center><img src="https://static.anychart.com/images/technical\_indicators/psy.png"></center>
+
+## Rank Correlation Index
+
+[Rank Correlation Index (RCI)](Rank_Correlation_Index_\(RCI\)) is calculated according to the following formula:
+
+<center><img src="https://static.anychart.com/images/technical\_indicators/rci.png"></center>
+
+## Ratiocator
+
+[Ratiocator (RAT)](Ratiocator_\(RAT\)) is calculated like this:
+
+FirstRatiocator = PriceA / PriceB where priceA, priceB are prices of two stocks on a given BaseDate
+Ratiocator = (PriceA / PriceB) / FirstRatiocator * 100
 
 ## Rate of Change
 
 [Rate of Change](Rate\_of\_Change\_\(ROC\)) is calculated according to this formula:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/roc.png"/></center>
+
+## Ratiocator
+
+[Ratiocator](Raticator_\(RAT\)) is calculated according to this formula:
+
 
 ## Relative Strength Index
 
