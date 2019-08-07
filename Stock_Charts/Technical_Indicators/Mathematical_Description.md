@@ -380,9 +380,9 @@ where **3** is a default period for getting **slow K**:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/slowD.png"></center>
 
-where **3** is a default period for getting **slow D**:
+where **3** is a default period for getting **slow D**.
 
-**3.** The **Full Stochastic Oscillator** is a fully customizable version of the Slow Stochastic Oscillator. Users can set the look-back period, the number of periods to **slow %K** and the number of periods for the **%D** moving average:
+**3.** The **Full Stochastic Oscillator** is a fully customizable version of the Slow Stochastic Oscillator. Users can set the look-back period, the number of periods to **slow %K**, and the number of periods for the **%D** moving average:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/fullK.png"></center>
 
