@@ -26,11 +26,11 @@ Bullet chart always uses only one data series, but a dashboard may contain sever
 The Bullet Chart requires adding the [Core](../Quick_Start/Modules#core) and [Bullet](../Quick_Start/Modules#bullet) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-bullet.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bullet.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).

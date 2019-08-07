@@ -11,8 +11,8 @@ AnyStock requires adding the [Core](../Quick_Start/Modules#core) and [Stock](../
 
 ```
 <head>
-	<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-core.min.js" type="text/javascript"></script>
-	<script src="https://cdn.anychart.com/releases/8.7.0/js/anystock.min.js" type="text/javascript"></script>
+	<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js" type="text/javascript"></script>
+	<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anystock.min.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -163,8 +163,8 @@ You can copy this to a file on your computer and open it in your browser to disp
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-core.min.js" type="text/javascript"></script>
-    <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-stock.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js" type="text/javascript"></script>
     <script>
 	var table, mapping, chart;
 	anychart.onDocumentReady(function () {
