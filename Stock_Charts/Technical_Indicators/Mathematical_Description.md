@@ -292,7 +292,7 @@ At each step within a trend, the SAR is calculated ahead of time. That is, tomor
 
 <center><img src="https://static.anychart.com/images/technical_indicators/psar.png" width="400"></center>
 
-Where SARi and SARi - 1 represent today's and tomorrow's SAR values, respectively.
+where SARi and SARi - 1 represent today's and tomorrow's SAR values, respectively.
 
 The extreme point, EP, is a record kept during each trend that represents the highest value reached by the price during the current up trend - or lowest value during a downtrend. On each period, if a new maximum (or minimum) is observed, the EP is updated with that value.
 
@@ -343,11 +343,10 @@ The SAR is recursively calculated in this manner for each new period. There are,
 
 [Ratiocator (RAT)](Ratiocator_\(RAT\)) is calculated like this:
 
-**FirstRatiocator = PriceA / PriceB**
-
-where priceA and priceB are prices of two stocks on a given BaseDate
-
-** Ratiocator = (PriceA / PriceB) / FirstRatiocator * 100**
+<ol>
+	<li>**FirstRatiocator = PriceA / PriceB**, where priceA and priceB are prices of two stocks on a given BaseDate</li>
+	<li>** Ratiocator = (PriceA / PriceB) / FirstRatiocator * 100**</li>
+</ol>
 
 ## Relative Strength Index
 
