@@ -163,11 +163,11 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 In the following formula, (0) refers to the current period, (-1) to the prior period, and HA to Heikin-Ashi:
 
 <ol>
-	<li>1. The Heikin-Ashi Close is simply an average of the open, high, low, and close for the current period.</li><br>
-**HA-Close = (Open(0) + High(0) + Low(0) + Close(0)) / 4**
-	<li>2. The Heikin-Ashi Open is the average of the prior Heikin-Ashi candlestick open plus the close of the prior Heikin-Ashi candlestick.</li><br>
+	<li>The Heikin-Ashi Close is simply an average of the open, high, low, and close for the current period.<br>
+    **HA-Close = (Open(0) + High(0) + Low(0) + Close(0)) / 4**</li>
+	<li>The Heikin-Ashi Open is the average of the prior Heikin-Ashi candlestick open plus the close of the prior Heikin-Ashi candlestick.</li><br>
 **HA-Open = (HA-Open(-1) + HA-Close(-1)) / 2** 
-	<li>3. The Heikin-Ashi High is the maximum of three data points: the current period's high, the current Heikin-Ashi candlestick open, or the current Heikin-Ashi candlestick close.</li><br>
+	<li>The Heikin-Ashi High is the maximum of three data points: the current period's high, the current Heikin-Ashi candlestick open, or the current Heikin-Ashi candlestick close.</li><br>
 **HA-High = Maximum of the High(0), HA-Open(0) or HA-Close(0)** 
 	<li>The Heikin-Ashi low is the minimum of three data points: the current period's low, the current Heikin-Ashi 
 candlestick open, or the current Heikin-Ashi candlestick close.</li><br>
