@@ -8,7 +8,7 @@ AnyChart Stock allows you to add ROC with desired period to any of your charts.
 
 Mathematical description of the indicator: [Rate of change (ROC) Mathematical Description](Mathematical_Description).
 
-## Adding indicator
+## Adding Indicator
 
 ROC indicator is added using {api:anychart.core.stock.Plot#roc}roc(){api} method, it requires a mapping with the `"value"` field in it:
 
@@ -40,7 +40,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_ROC\_1{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 ROC indicator needs three parameters: mapping with the `"value"` field in it, period and a type of series to be displayed as:
 

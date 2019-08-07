@@ -6,7 +6,7 @@ Developed by J. Welles Wilder, the Average True Range (ATR) is an indicator that
 
 Mathematical description: [Average True Range (ATR) Mathematical Description](Mathematical_Description#average_true_range).
 
-## Adding indicator
+## Adding Indicator
 
 ATR indicator is added using the {api:anychart.core.stock.Plot#atr}atr(){api} method. It requires three data fields: `"high"`, `"low"`, and `"close"`:
 
@@ -39,7 +39,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_ATR\_01{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 Average True Range indicator has three parameters: mapping, period, which has to be an integer value more than 1, and series type:
 

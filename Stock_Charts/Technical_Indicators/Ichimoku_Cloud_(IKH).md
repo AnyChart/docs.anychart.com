@@ -37,7 +37,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_IKH\_1{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 There are eight parameters the IKH indicator has, one of them is necessary - the mapping.
 

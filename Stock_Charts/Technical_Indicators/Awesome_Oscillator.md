@@ -6,7 +6,7 @@ The Awesome Oscillator (AO) was created by Bill Williams. The Awesome Oscillator
 
 Mathematical description: [Awesome Oscillator (AO) Mathematical Description](Mathematical_Description#awesome_oscillator).
 
-## Adding indicator
+## Adding Indicator
 
 Awesome Oscillator indicator is added using {api:anychart.core.stock.Plot#ao}ao(){api} method. It requires a mapping with two fields: `"high"` and `"low"`.
 
@@ -38,7 +38,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_Awesome\_Oscillator\_01{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 There are four parameters an Awesome Oscillator indicator has, one of them is necessary - the mapping. The second parameter and third parameters set period, fourth - {api:anychart.enums.MovingAverageType}Moving Average Type{api}. The last parameter sets the series type. The following code sample demonstrates an Awesome Oscillator indicator with parameters set as default:
 

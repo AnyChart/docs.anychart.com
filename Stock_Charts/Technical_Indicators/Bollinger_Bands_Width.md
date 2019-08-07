@@ -8,7 +8,7 @@ Non-normalized Bollinger Bands Width measures the distance, or difference, betwe
 
 Mathematical description of the indicator: [Mathematical Description of Bollinger Bands Width](Mathematical_Description#bollinger_bands_width).
 
-## Adding indicator
+## Adding Indicator
 
 Bollinger Bands Width indicator is added using the {api:anychart.core.stock.Plot#bbandsWidth}bbandsWidth(){api} method. It requires a mapping with the `"value"` field in it:
 
@@ -32,7 +32,7 @@ var bbandsW = plot.bbandsWidth(mapping);
 {sample}STOCK\_Technical\_Indicators\_BBandsWidth\_01{sample}
 
 
-## Indicator parameters
+## Indicator Parameters
 
 Bollinger Bands Width indicator requires only the "mapping" parameter. Optional parameters are "period", "deviation" and "series type".
 

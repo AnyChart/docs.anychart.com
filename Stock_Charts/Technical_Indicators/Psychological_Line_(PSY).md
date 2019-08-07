@@ -40,11 +40,11 @@ Here is a live sample:
 
 ## Indicator Parameters
 
-The PSY indicator has three parameters:
+The PSY indicator has the following parameters:
 
-* mapping (required)
-* period
-* series type
+* **mapping** (required)
+* **period**
+* **series type**
 
 The following code sample shows how to create a PSY indicator with default parameters:
 

@@ -6,7 +6,7 @@ A Volume + Moving Average indicator is used in charts and technical analysis. It
 
 Mathematical description of the indicator: [Volume + Moving Average Mathematical Description](Mathematical_Description#volume\_+\_moving\_average).
 
-## Adding indicator
+## Adding Indicator
 
 Volume + MA indicator is added using {api:anychart.core.stock.Plot#volumeMa}volumeMa(){api} method. It requires a mapping with two fields: `"volume"` and `"close"` / `"value"`.
 
@@ -38,7 +38,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_Volume\_MA\_1{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 There are five parameters Volume + MA indicator has, one of them is necessary - the mapping.
 

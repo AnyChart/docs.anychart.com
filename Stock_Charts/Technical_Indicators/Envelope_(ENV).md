@@ -40,7 +40,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_ENV\_1{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 There are six parameters the ENV indicator has, one of them is necessary - the mapping.
 

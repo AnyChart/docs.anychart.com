@@ -40,7 +40,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_PPO\_1{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 There are seven parameters the PPO indicator has, one of them is necessary - the mapping.
 

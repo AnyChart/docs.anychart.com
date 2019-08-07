@@ -6,7 +6,7 @@ Developed by Donald Lambert and featured in Commodities magazine in 1980, the Co
 
 Find the mathematical description of the indicator on the [Commodity Channel Index (CCI) Mathematical Description](Mathematical_Description#commodity_channel_index) page.
 
-## Adding indicator
+## Adding Indicator
 
 CCI indicator is added through the {api:anychart.core.stock.Plot#cci}cci(){api} method. It requires a mapping with three fields: `"high"`, `"low"`, and `"close"`. The following sample demonstrates the CCI indicator applied to a spline series which data values are equal to "close" values.
 
@@ -39,7 +39,7 @@ Here is a live sample:
 
 It is possible to change the series type any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Indicator parameters
+## Indicator Parameters
 
 There are three parameters the CCI indicator has. The mapping is necessary, the period and the series type are optional. The following code sample demonstrates a CCI indicator creating with default parameters.
 
