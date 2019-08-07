@@ -343,8 +343,11 @@ The SAR is recursively calculated in this manner for each new period. There are,
 
 [Ratiocator (RAT)](Ratiocator_\(RAT\)) is calculated like this:
 
-FirstRatiocator = PriceA / PriceB where priceA, priceB are prices of two stocks on a given BaseDate
-Ratiocator = (PriceA / PriceB) / FirstRatiocator * 100
+**FirstRatiocator = PriceA / PriceB**
+
+where priceA and priceB are prices of two stocks on a given BaseDate
+
+** Ratiocator = (PriceA / PriceB) / FirstRatiocator * 100**
 
 ## Relative Strength Index
 
