@@ -220,7 +220,7 @@ In the sample below, the start angle of the first chart is not configured, and f
 
 ```
 // set the start angle
-pie2.startAngle(90);
+chart.startAngle(90);
 ```
 
 {sample}BCT\_Pie\_Chart\_06{sample}
@@ -237,9 +237,7 @@ To set the sorting mode, call the {api:anychart.charts.Pie#sort}sort(){api} meth
 
 ```
 // set the sorting mode
-pie1.sort("desc");
-pie2.sort("asc");
-pie3.sort("none");
+chart.sort("asc");
 ```
 
 {sample}BCT\_Pie\_Chart\_07{sample}

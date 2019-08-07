@@ -3,9 +3,9 @@
 
 ## Overview
 
-Like [milestones](Project_Chart#milestones), **markers** represent events. You can display multiple markers in one row - on a task or anywhere on the timeline depending on the dates you set.
+Like [milestones](Project_Chart#milestones), **markers** represent events. You can display multiple markers in one row – on a task or anywhere on the timeline depending on the dates you set.
 
-Use the `markers` data field to add an array of markers to your data. In this array, specify the `value` of each marker - its date:
+Use the `markers` data field to add an array of markers to your data. In this array, specify the `value` of each marker – its date:
 
 ```
 markers: [
@@ -17,9 +17,9 @@ markers: [
 ],
 ```
 
-To configure markers, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#markers}markers(){api} with methods {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api} - for example, the following:
+To configure markers, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#markers}markers(){api} with methods {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api} – for example, the following:
 
-* {api:anychart.core.ui.MarkersFactory#type}type(){api} to set the type
+* {api:anychart.core.ui.MarkersFactory#type}type(){api} + enums from {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api} to set the type
 * {api:anychart.core.ui.MarkersFactory#fill}fill(){api} to set the fill
 * {api:anychart.core.ui.MarkersFactory#stroke}stroke(){api} to set the stroke
 
@@ -43,7 +43,7 @@ markers: [
 
 ## Project Chart
 
-It is possible to add markers to any [task](../Project_Chart#tasks_\(actual\)) of a Project chart - a regular task, a parent task, or a milestone:
+It is possible to add markers to any [task](../Project_Chart#tasks_\(actual\)) of a Project chart – a regular task, a parent task, or a milestone:
 
 {sample :height 220}GANTT\_Elements\_Markers\_01{sample}
 

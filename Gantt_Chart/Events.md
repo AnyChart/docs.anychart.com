@@ -102,7 +102,7 @@ chart.listen("connectorMouseOver", function (e) {
   var type = e.connType;
   chart.title("Events: Connectors<br><br>" +
               "< <span style = 'color:#990000'>" +
-              sourceName + " - " + targetName +
+              sourceName + " – " + targetName +
               " (" + type + ")</span>: connectorMouseOver >");
 });
 
@@ -114,7 +114,7 @@ chart.listen("connectorClick", function (e) {
   var type = e.connType;
   chart.title("Events: Connectors<br><br>" +
               "< <span style = 'color:#990000'>" +
-              sourceName + " - " + targetName +
+              sourceName + " – " + targetName +
               " (" + type + ")</span>: connectorClick >");
 });
 
@@ -126,7 +126,7 @@ chart.listen("connectorDblClick", function (e) {
   var type = e.connType;
   chart.title("Events: Connectors<br><br>" +
               "< <span style = 'color:#990000'>" +
-              sourceName + " - " + targetName +
+              sourceName + " – " + targetName +
               " (" + type + ")</span>: connectorDblClick >");
 });
 
@@ -138,7 +138,7 @@ chart.listen("beforeCreateConnector", function (e) {
   var type = e.connectorType;
   chart.title("Events: Connectors<br><br>" +
               "< <span style = 'color:#990000'>" +
-              sourceName + " - " + targetName +
+              sourceName + " – " + targetName +
               " (" + type + ")</span>: beforeCreateConnector  >");
 });
 ```
@@ -203,7 +203,7 @@ chart.listen("rowDblClick", function (e) {
 });
 ```
 
-In the following sample, the [Live Edit](Live_Edit) mode is enabled. You can draw a connector preview, but cannot create a connector - this feature is disabled with the help of the `"beforeCreateConnector"` [connector event](#connectors):
+In the following sample, the [Live Edit](Live_Edit) mode is enabled. You can draw a connector preview, but cannot create a connector – this feature is disabled with the help of the `"beforeCreateConnector"` [connector event](#connectors):
 
 {sample :height 220}GANTT\_Events\_05{sample}
 

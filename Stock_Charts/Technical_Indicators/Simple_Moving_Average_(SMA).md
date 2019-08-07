@@ -8,7 +8,7 @@ AnyChart Stock allows you to add SMA with desired period to any of your charts.
 
 Mathematical description of the indicator: [Simple moving average (SMA) Mathematical Description](Mathematical_Description).
 
-## Adding indicator
+## Adding Indicator
 
 SMA indicator is added using {api:anychart.core.stock.Plot#sma}sma(){api} method, it requires a mapping with the `"value"` field in it:
 
@@ -37,7 +37,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_SMA\_1{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 SMA indicator needs three parameters: mapping with the `"value"` field in it, period and a type of series to be displayed as:
 

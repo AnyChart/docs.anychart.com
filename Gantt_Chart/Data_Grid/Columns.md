@@ -14,7 +14,7 @@ var column_1 = chart.dataGrid().column(0);
 
 By default, there are two columns, numbered from left to right. The first column displays linear indexes of data items, and the second one displays their names.
 
-As explained in the sections below, you can change the [text](#text_\(labels\)) as well as other parameters of default columns or create completely [custom columns](#custom_columns). Also, you can use column presets - see the [Column Presets](Column_Presets) article.
+As explained in the sections below, you can change the [text](#text_\(labels\)) as well as other parameters of default columns or create completely [custom columns](#custom_columns). Also, you can use column presets – see the [Column Presets](Column_Presets) article.
 
 ## Enabling / Disabling
 
@@ -31,7 +31,7 @@ chart.dataGrid().column(0).enabled(false);
 
 The total width of the data grid is defined by the sum of its columns' widths. To set the width of a column, call the {api:anychart.core.ui.DataGrid.Column#width()}width(){api} method. 
 
-**Note:** Also, you can adjust the position of the splitter between the data grid and timeline to show more or less of the data grid - see [Basic Settings: Splitter](../Basic_Settings#splitter).
+**Note:** Also, you can adjust the position of the splitter between the data grid and timeline to show more or less of the data grid – see [Basic Settings: Splitter](../Basic_Settings#splitter).
 
 In this sample, the width of both default columns is adjusted:
 
@@ -45,7 +45,7 @@ chart.dataGrid().column(1).width(130);
 
 ## Title
 
-To configure [titles](../../Common_Settings/Title) of columns, use the {api:anychart.core.ui.DataGrid.Column#title}title(){api} method with methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class - for example, {api:anychart.core.ui.Title#enabled}enabled(){api}, {api:anychart.core.ui.Title#text}text(){api}, {api:anychart.core.ui.Title#fontColor}fontColor(){api}, {api:anychart.core.ui.Title#fontWeight}fontWeight(){api}, etc.:
+To configure [titles](../../Common_Settings/Title) of columns, use the {api:anychart.core.ui.DataGrid.Column#title}title(){api} method with methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class – for example, {api:anychart.core.ui.Title#enabled}enabled(){api}, {api:anychart.core.ui.Title#text}text(){api}, {api:anychart.core.ui.Title#fontColor}fontColor(){api}, {api:anychart.core.ui.Title#fontWeight}fontWeight(){api}, etc.:
 
 ```
 // configure the title of the first data grid column
@@ -63,11 +63,13 @@ column_2.title().fontWeight(600);
 
 ## Text (Labels)
 
-To adjust the text of columns, combine {api:anychart.core.ui.DataGrid.Column#labels}labels(){api} with methods of the {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api} class - for example, {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api}, {api:anychart.core.ui.LabelsFactory#fontWeight}fontWeight(){api}, {api:anychart.core.ui.LabelsFactory#fontSize}fontSize(){api}, etc.
+To adjust the text of columns, combine {api:anychart.core.ui.DataGrid.Column#labels}labels(){api} with methods of the {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api} class – for example, {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api}, {api:anychart.core.ui.LabelsFactory#fontWeight}fontWeight(){api}, {api:anychart.core.ui.LabelsFactory#fontSize}fontSize(){api}, etc.
 
-The {api:anychart.core.ui.LabelsFactory#format}format(){api} method, combined with [text formatters](../../Common_Settings/Text_Formatters), allows setting the text format - read the sections below to learn more.
+The {api:anychart.core.ui.LabelsFactory#format}format(){api} method, combined with [text formatters](../../Common_Settings/Text_Formatters), allows setting the text format – read the sections below to learn more.
 
-Alternatively, you can configure the text (and width) with the help of column presets - see [Column Presets](Column_Presets).
+Alternatively, you can configure the text (and width) with the help of column presets – see [Column Presets](Column_Presets).
+
+**Note:** To learn more about formatting dates, see [Date and Time Formats: format()](../Date_and_Time_Formats#format\(\)).
 
 ### Tokens
 
@@ -167,7 +169,7 @@ In the sample below, formatting functions are used to display different column l
 
 A special context field `item` and the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../../Working_with_Data/Tree_Data_Model) are used to get the number of the current data item's children and distinguish regular tasks from parent ones. To distinguish regular tasks from milestones, the duration of tasks is calculated.
 
-This is how the first column is configured - please note that both text font and text format are set:
+This is how the first column is configured – please note that both text font and text format are set:
 
 ```
 // set the text of the first data grid column
@@ -176,10 +178,10 @@ var column_1 = chart.dataGrid().column(0);
 column_1.labels().fontWeight(600);
 column_1.labels().useHtml(true);
 
-column_1.labels().format( function() {
+column_1.labels().format(function() {
 
   var children = this.item.numChildren();
-  var duration = (this.actualEnd - this.actualStart);
+  var duration = this.actualEnd - this.actualStart;
   var index = this.linearIndex;
 
   var parentText = "<span style='color:#dd2c00'>" + index + ".</span>";
@@ -256,7 +258,7 @@ In this sample, formatting functions are used to display different column labels
 
 A special context field `item` and the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../../Working_with_Data/Tree_Data_Model) are used to get the number of the current data item's children and distinguish regular resources from parent ones.
 
-This is how the first column is configured - please note that both text font and text format are set:
+This is how the first column is configured – please note that both text font and text format are set:
 
 ```
 // set the text of the first data grid column
@@ -265,7 +267,7 @@ var column_1 = chart.dataGrid().column(0);
 column_1.labels().fontWeight(600);
 column_1.labels().useHtml(true);
 
-column_1.labels().format( function() {
+column_1.labels().format(function() {
 
   var children = this.item.numChildren();
   var index = this.linearIndex;
@@ -329,7 +331,7 @@ chart.dataGrid().column(1).depthPaddingMultiplier(60);
 
 If there are hierarchical relationships between data items, special buttons are shown in the second data grid column. They allow expanding or collapsing parent [tasks](../Project_Chart#tasks_\(actual\)) or [resources](../Resource_Chart#periods_and_resources) on the timeline as well as their labels on the data grid.
 
-By passing `true` / `false` to the {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons()}collapseExpandButtons(){api} method, you can enable or disable buttons in any column. As a rule, it also makes sense to set the hierarchical indentation - see the [Indentation](#indentation) section. Other button settings are listed in the [Buttons](Buttons) article.
+By passing `true` / `false` to the {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons()}collapseExpandButtons(){api} method, you can enable or disable buttons in any column. As a rule, it also makes sense to set the hierarchical indentation – see the [Indentation](#indentation) section. Other button settings are listed in the [Buttons](Buttons) article.
 
 **Note**: By default, Gantt charts are drawn with all elements expanded. To learn how to change this setting, read [Basic Settings: Expanding / Collapsing](../Basic_Settings#expanding_/_collapsing).
 
@@ -361,7 +363,7 @@ To configure a custom column, use methods of the {api:anychart.core.ui.DataGrid.
 
 ### Project Chart
 
-In the following sample, there is a [Project Gantt](../Project_Chart) chart with two default columns and custom one. The text of the custom column is formatted with the help of a token - see the [Project Tokens](#project_tokens) section.
+In the following sample, there is a [Project Gantt](../Project_Chart) chart with two default columns and custom one. The text of the custom column is formatted with the help of a token – see the [Project Tokens](#project_tokens) section.
 
 ```
 // create and configure a custom data grid column
@@ -380,7 +382,7 @@ newColumn.collapseExpandButtons(true);
 
 ### Resource Chart
 
-In the sample below, there is a [Resource Gantt](../Resource_Chart) chart with two default columns and custom one.  The text of the custom column is formatted with the help of a token - see the [Resource Tokens](#resource_tokens) section.
+In the sample below, there is a [Resource Gantt](../Resource_Chart) chart with two default columns and custom one.  The text of the custom column is formatted with the help of a token – see the [Resource Tokens](#resource_tokens) section.
 
 ```
 // create and configure a custom data grid column

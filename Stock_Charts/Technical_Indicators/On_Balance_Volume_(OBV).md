@@ -6,7 +6,7 @@ On Balance Volume (OBV) measures buying and selling pressure as a cumulative ind
 
 Mathematical description of the indicator: [On Balance Volume Mathematical Description](Mathematical_Description#on_balance_volume).
 
-## Adding indicator
+## Adding Indicator
 
 On Balance Volume indicator is added using {api:anychart.core.stock.Plot#obv}obv(){api} method. It requires a mapping with two fields: `"volume"` and `"close"` / `"value"`.
 
@@ -38,7 +38,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_OBV\_1{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 There are two parameters an On Balance Volume indicator has, one of them is necessary - the mapping. The second parameter sets the series type. The following code sample demonstrates an OBV indicator with parameters set as default:
 

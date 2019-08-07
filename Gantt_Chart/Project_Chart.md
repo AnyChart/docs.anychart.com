@@ -101,7 +101,7 @@ In addition, you can use optional fields:
 
 **Note 1:** To learn how to rename the default data fields, see [Data: Mapping](Data#mapping).
 
-**Note 2:** You can also add custom fields to your data and use them to configure text - like, for example, in all the samples from [Timeline: Tooltips](Timeline/Tooltips).
+**Note 2:** You can also add custom fields to your data and use them to configure text – like, for example, in all the samples from [Timeline: Tooltips](Timeline/Tooltips).
 
 ### Setting Data
 
@@ -137,7 +137,7 @@ You can as well skip the first step and pass your data directly to the {api:anyc
 
 Usually, there are hierarchical relationships between data items of Project Gantt charts. There are two ways to specify these relationships, depending on how you organize the data: [as a tree](#as_tree) or [as a table](#as_table).
 
-Please note that Project charts can have multiple roots. Also, you can create data without specifying the hierarchy - in this case, technically, all items are roots.
+Please note that Project charts can have multiple roots. Also, you can create data without specifying the hierarchy – in this case, technically, all items are roots.
 
 #### As Tree
 
@@ -327,7 +327,7 @@ There are three task types, each of them visualized in a different way:
 * parent tasks
 * milestones
 
-The difference between **regular tasks** and **parent tasks** lies in their relationships with other tasks: parent tasks have children, and regular ones do not. To set these relationships, use the  `children` or `parent` data field - read the [Hierarchy](#hierarchy) section to learn more.
+The difference between **regular tasks** and **parent tasks** lies in their relationships with other tasks: parent tasks have children, and regular ones do not. To set these relationships, use the  `children` or `parent` data field – read the [Hierarchy](#hierarchy) section to learn more.
 
 Note that if you do not specify the  `actualStart` and `actualEnd` dates of a parent task, they are calculated automatically from the dates of its children.
 
@@ -335,7 +335,7 @@ Also, see [Basic Settings: Expanding / Collapsing](Basic_Settings#expanding\_/\_
 
 **Milestones** are elements representing events. To add a milestone, you should create a task with zero duration: specify the same date in the `actualStart` and `actualEnd` fields.
 
-If you need to create multiple milestones in one row, use an alternative way to visualize events - add **markers**. Multiple markers can be shown in one row - on a task or anywhere on the timeline depending on the dates you specify. For more information, see [Elements: Markers](Elements/Markers).
+If you need to create multiple milestones in one row, use an alternative way to visualize events – add **markers**. Multiple markers can be shown in one row – on a task or anywhere on the timeline depending on the dates you specify. For more information, see [Elements: Markers](Elements/Markers).
 
 To learn how to configure tasks, see the [Elements: Project Chart](Elements/Project_Chart#tasks_\(actual\)) article. 
 
@@ -418,7 +418,7 @@ The following data fields are used to set baselines:
 * `baselineEnd` to set end dates
 * `baseline` (optional) to configure [individual baselines](Elements/Individual_Elements#project_chart)
 
-By default, baselines are shown under tasks, but can be placed above them - see the [Elements: Project Chart](Elements/Project_Chart#baselines_\(planned\)) article.
+By default, baselines are shown under tasks, but can be placed above them – see the [Elements: Project Chart](Elements/Project_Chart#baselines_\(planned\)) article.
 
 In this sample, baselines are added to all regular tasks and the parent one:
 
@@ -601,10 +601,10 @@ To learn how to configure connectors, see the [Elements: Project Chart](Elements
 
 Please note that a task can have several predecessors, but only one successor. Also, a task can be at the same time a successor to one task or tasks and a predecessor to another. All these nuances are illustrated by the sample below, which visualizes the following dependencies between tasks:
 
-* Task 1 (predecessor) &#8594; Task 2 (successor) - `"finish-start"`
-* Task 2 (predecessor) &#8594; Task 5 (successor) - `"start-start"`
-* Task 3 (predecessor) &#8594; Task 4 (successor) - `"finish-finish"`
-* Task 4 (predecessor) &#8594; Task 5 (successor) - `"start-finish"`
+* Task 1 (predecessor) &#8594; Task 2 (successor) – `"finish-start"`
+* Task 2 (predecessor) &#8594; Task 5 (successor) – `"start-start"`
+* Task 3 (predecessor) &#8594; Task 4 (successor) – `"finish-finish"`
+* Task 4 (predecessor) &#8594; Task 5 (successor) – `"start-finish"`
 
 {sample :height 220}GANTT\_Project\_Chart\_07{sample}
 
@@ -663,4 +663,4 @@ var data = [
 
 To visualize an event, add a task with zero duration, or **milestone**. See the [Tasks (Actual)](#tasks_\(actual\)) section and [Elements: Project Chart](Elements/Project_Chart#milestones) article to learn more. 
 
-If you need to create multiple milestones in one row, use an alternative way to visualize events - add **markers**. Multiple markers can be shown in one row - on a task or anywhere on the timeline depending on the dates you specify. For more information, see [Elements: Markers](Elements/Markers).
+If you need to create multiple milestones in one row, use an alternative way to visualize events – add **markers**. Multiple markers can be shown in one row – on a task or anywhere on the timeline depending on the dates you specify. For more information, see [Elements: Markers](Elements/Markers).

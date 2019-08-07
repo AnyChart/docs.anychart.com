@@ -32,10 +32,10 @@ chart.dataGrid().column(0).setColumnFormat("actualStart", "date-common-log");
 
 You can display values as:
 
-* [values](#values) (without formatting) - `"text"`, `"short-text"`, `"direct-numbering"`
-* [dates](#dates) - `"date-common-log"`, `"date-dmy-dots"`, `"date-iso-8601"`, `"date-us-short"`
-* [percents](#percents) - `"percent"`
-* [financial data](#financial_data): - `"financial"`
+* [values](#values) (without formatting) – `"text"`, `"short-text"`, `"direct-numbering"`
+* [dates](#dates) – `"date-common-log"`, `"date-dmy-dots"`, `"date-iso-8601"`, `"date-us-short"`
+* [percents](#percents) – `"percent"`
+* [financial data](#financial_data): – `"financial"`
 
 ### Values
 
@@ -67,12 +67,12 @@ column_3.setColumnFormat("id", "direct-numbering");
 
 The following presets are used to apply different formats to dates:
 
-* `"date-common-log"` - *dd/MMM/yyyy*
-* `"date-dmy-dots"` - *dd.MM.yy*
-* `"date-iso-8601"` - *yyyy-MM-dd*
-* `"date-us-short"` - *d/MM/yyyy*
+* `"date-common-log"` – *dd/MMM/yyyy*
+* `"date-dmy-dots"` – *dd.MM.yy*
+* `"date-iso-8601"` – *yyyy-MM-dd*
+* `"date-us-short"` – *d/MM/yyyy*
 
-**Note:** These presets can be applied only to dates represented as Unix timestamps - see [Date and Time Formats](../Date_and_Time_Formats).
+**Note:** These presets can be applied only to dates set as [Unix timestamps](../Date_and_Time_Formats#unix_timestamp).
 
 In the sample below, there are two columns, both showing the content of the `"actualStart"` data field. The first column displays [values without formatting](#values), and in the second one they are formatted as `"date-common-log"`. You can also try other date formats.
 
@@ -92,7 +92,7 @@ column_2.setColumnFormat("actualStart", "date-common-log");
 
 The `"percent"` preset allows formatting values as percents.
 
-In this sample, both columns show the content of the `"progressValue"` data field - the first one displays [values without formatting](#values), and in the second one they are formatted as percents:
+In this sample, both columns show the content of the `"progressValue"` data field – the first one displays [values without formatting](#values), and in the second one they are formatted as percents:
 
 ```
 // configure the first data grid column
@@ -111,7 +111,7 @@ column_2.setColumnFormat("progressValue", "percent");
 
 The `"financial"` preset allows formatting values as financial data.
 
-In the following sample, both columns show the content of the custom `"budget"` data field - first one displays [values without formatting](#values), and in the second one they are formatted as financial data:
+In the following sample, both columns show the content of the custom `"budget"` data field – first one displays [values without formatting](#values), and in the second one they are formatted as financial data:
 
 ```
 // configure the first data grid column

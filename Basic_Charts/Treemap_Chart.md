@@ -326,7 +326,7 @@ Please note that values and sizes of parent elements are calculated automaticall
 
 Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
-This sample shows how to work with tokens. Along with regular tokens, a custom token *{%capital}* is used:
+This sample shows how to work with tokens. Along with regular tokens, a custom token `{%capital}` is used:
 
 ```
 // create data
@@ -376,7 +376,7 @@ Values and sizes of parent elements are calculated automatically, so you do not 
 
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 
-The sample below demonstrates how to work with formatting functions. Along with regular fields, a custom field *capital* is used:
+The sample below demonstrates how to work with formatting functions. Along with regular fields, a custom field `capital` is used:
 
 ```
 // create data

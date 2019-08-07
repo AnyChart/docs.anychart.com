@@ -4,7 +4,7 @@
 
 Heikin-Ashi Candlesticks are an offshoot from Japanese candlesticks. Heikin-Ashi Candlesticks use the open-close data from the prior period and the open-high-low-close data from the current period to create a combo candlestick. The resulting candlestick filters out some noise in an effort to better capture the trend. In Japanese, Heikin means "average" and ashi means "pace". Taken together, Heikin-Ashi represents the average pace of prices. Heikin-Ashi Candlesticks are used to identify trending periods, potential reversal points and classic technical analysis patterns.
 
-## Adding indicator
+## Adding Indicator
 
 Heikin-Ashi indicator is added using {api:anychart.core.stock.Plot#ha}ha(){api} method. It requires a mapping with four fields: `"open"`, `"high"`, `"low"`, and `"close"`.
 
@@ -36,7 +36,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_HA\_1{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 There are two parameters a Heikin-Ashi indicator has, one of them is necessary - the mapping. The second parameter sets the series type. The following code sample demonstrates a Heikin-Ashi indicator with parameters set as default:
 

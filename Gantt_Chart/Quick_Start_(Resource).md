@@ -7,7 +7,7 @@ This article demonstrates the steps required to create a basic Resource Gantt ch
 
 ## Modules
 
-AnyGantt requires adding two [modules](../Quick_Start/Modules) - [Core](../Quick_Start/Modules#core) and [Gantt](../Quick_Start/Modules#gantt). Reference two JavaScript files in the `<head>` section of your web page.
+AnyGantt requires adding two [modules](../Quick_Start/Modules) – [Core](../Quick_Start/Modules#core) and [Gantt](../Quick_Start/Modules#gantt). Place a link to two JavaScript files in the `<head>` section of your web page.
 
 **Note:** These files can be downloaded from the [AnyChart download page](../Quick_Start/Downloading_AnyChart).
 

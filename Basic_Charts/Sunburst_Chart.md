@@ -420,7 +420,7 @@ In the sample below, the start angle of the first chart is not configured, and f
 
 ```
 // set the start angle
-sunburst2.startAngle(90);
+chart.startAngle(90);
 ```
 
 {sample :width 500 :height 500}BCT\_Sunburst\_Chart\_11{sample}

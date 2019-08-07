@@ -5,9 +5,9 @@
 
 This article explains how to organize, map, and set data for Gantt charts.
 
-AnyGantt requires using the tree data model, which represents data as a hierarchical tree-like structure with data items connected by parent-child relationships. To learn more about it, read [Working with Data: Tree Data Model](../Working_with_Data/Tree_Data_Model).
+AnyGantt requires using the tree data model, which represents data as a hierarchical tree-like structure with data items connected by parent–child relationships. To learn more about it, read [Working with Data: Tree Data Model](../Working_with_Data/Tree_Data_Model).
 
-Also, please keep in mind that working with data is slightly different for Project and Resource charts - see the [Project Chart: Data](Project_Chart#data) and [Resource Chart: Data](Resource_Chart#data) sections.
+Also, please keep in mind that working with data is slightly different for Project and Resource charts – see the [Project Chart: Data](Project_Chart#data) and [Resource Chart: Data](Resource_Chart#data) sections.
 
 **Note:** You can rename default data fields, as explained in the [Mapping](#mapping) section of this article.
 
@@ -20,9 +20,9 @@ Project and Resource charts work with different data fields:
 
 Here is the full list of available fields: {api:anychart.enums.GanttDataFields}anychart.enums.GanttDataFields{api}.
 
-**Note 1:** You can rename the default data fields - see the [Mapping](#mapping) section of this article.
+**Note 1:** You can rename the default data fields – see the [Mapping](#mapping) section of this article.
 
-**Note 2:** You can also add custom fields to your data and use them to configure text - like, for example, in all the samples from [Timeline: Tooltips](Timeline/Tooltips).
+**Note 2:** You can also add custom fields to your data and use them to configure text – like, for example, in all the samples from [Timeline: Tooltips](Timeline/Tooltips).
 
 ## Setting Data
 
@@ -51,6 +51,12 @@ The sections below explain how to organize your data hierarchically:
 
 * [Project Chart: Hierarchy](Project_Chart#hierarchy)
 * [Resource Chart: Hierarchy](Resource_Chart#hierarchy)
+
+## Date and Time Formats
+
+This section explains how you can format and interpret dates you use in your data:
+
+* [Date and Time Formats: Input](Date_and_Time_Formats#input).
 
 ## Mapping
 
@@ -89,7 +95,7 @@ Read more: [Tree Data Model: Mapping](../Working_with_Data/Tree_Data_Model#mappi
 
 ### Project Chart
 
-Here custom fields `child_items`, `start_date`, `end_date` are mapped as `children`, `actualStart`, `actualEnd`:
+Here custom fields `child_items`, `start_date`, and `end_date` are used. They are mapped as `children`, `actualStart` and `actualEnd`:
 
 ```
 // create data
@@ -152,7 +158,7 @@ chart.data(mapping);
 
 **Note:** You cannot rename the data fields that are used to set [periods](Resource_Chart#periods_and_resources): `id`, `start`, and `end`.
 
-In this sample custom fields `child_items` and `intervals` are mapped as `children` and `periods`:
+In this sample custom fields `child_items` and `intervals` are used. They are mapped as `children` and `periods`:
 
 ```
 // create data

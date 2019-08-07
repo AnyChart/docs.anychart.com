@@ -13,9 +13,9 @@ This article explains how to configure the [basic settings](#basic_settings) of 
 
 Also, you can find button-relating settings in the following sections:
 
-* [Columns: Buttons](Columns#buttons) - enabling / disabling buttons on a column
-* [Columns: Indentation](Columns#indentation) - setting the hierarchical indentation for data grid labels
-* [Basic Settings: Navigation](../Basic_Settings#navigation) - expanding / collapsing elements by default
+* [Columns: Buttons](Columns#buttons) – enabling / disabling buttons on a column
+* [Columns: Indentation](Columns#indentation) – setting the hierarchical indentation for data grid labels
+* [Basic Settings: Navigation](../Basic_Settings#navigation) – expanding / collapsing elements by default
 
 ## Enabling / Disabling
 
@@ -35,9 +35,9 @@ To configure buttons, use these methods:
 
 With the help of the following methods, buttons can be configured in three states:
 
-* {api:anychart.core.gantt.DataGridButton#normal}normal(){api} - collapsed
-* {api:anychart.core.gantt.DataGridButton#hovered}hovered(){api} - collapsed and hovered over 
-* {api:anychart.core.gantt.DataGridButton#selected}selected(){api} - expanded
+* {api:anychart.core.gantt.DataGridButton#normal}normal(){api} – collapsed
+* {api:anychart.core.gantt.DataGridButton#hovered}hovered(){api} – collapsed and hovered over 
+* {api:anychart.core.gantt.DataGridButton#selected}selected(){api} – expanded
 
 The sample below shows how to adjust buttons. Please note that they have different content and color in different states.
 

@@ -35,24 +35,24 @@ anychart.onDocumentReady(function () {
     var stage = anychart.graphics.create("container");
 
     // create and configure the first column chart
-    var column1 = anychart.column(data);
-    column1.title("Point Width = 20");
-    column1.bounds(0, 0, "50%", "100%");
+    var chart1 = anychart.column(data);
+    chart1.title("Point Width = 20");
+    chart1.bounds(0, 0, "50%", "100%");
     // set the width of points
-    column1.pointWidth(20);
+    chart1.pointWidth(20);
     // set the chart container
-    column1.container(stage);
+    chart1.container(stage);
     // initiate drawing the chart
-    column1.draw();   
+    chart1.draw();   
 
     // create and configure the second column chart
-    var column2 = anychart.column(data);
-    column2.title("Default");
-    column2.bounds("50%", 0, "50%", "100%");
+    var chart2 = anychart.column(data);
+    chart2.title("Default");
+    chart2.bounds("50%", 0, "50%", "100%");
     // set the chart container
-    column2.container(stage);
+    chart2.container(stage);
     // initiate drawing the chart
-    column2.draw();     
+    chart2.draw();     
 });
 </script>
 </body>

@@ -8,7 +8,7 @@ The Momentum indicator identifies when the price is moving upwards or downwards,
 
 Find the mathematical description of the indicator on the [Momentum Mathematical Description](Mathematical_Description#momentum) page.
 
-## Adding indicator
+## Adding Indicator
 
 Momentum indicator is added through the {api:anychart.core.stock.Plot#momentum}momentum(){api} method. It requires a mapping with the `"value"` or `"close"` field (please note that if there are both in you data, `"value"` overrides `"close"`).
 
@@ -42,7 +42,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_Momentum\_01{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 There are three parameters a Momentum indicator has, one of them is necessary - the mapping. Two other ones are the period and the series type. The series type can be easily changed any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method. The following code sample demonstrates a Momentum indicator with parameters set as default.
 

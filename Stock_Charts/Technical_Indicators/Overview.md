@@ -10,7 +10,7 @@ AnyChart JavaScript Stock Chart Component supports automatic building of several
 
 This document lists available indicator types and gives directions to the tutorials about each indicator type and general information about technical indicators in AnyChart Stock Component.
 
-## Adding indicators
+## Adding Indicators
 
 To understand how technical indicator gets data and what it depends on please study [Data](../Data) article first, because any indicator is based on a data set and can't exist without it. It doesn't depend on any [Series](../Series/Overview) you've added on the plot directly, but to make any sense indicators need to be based on the data that correlates to series displayed on a chart.
 

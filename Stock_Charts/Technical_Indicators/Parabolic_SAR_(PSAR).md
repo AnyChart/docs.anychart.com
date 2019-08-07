@@ -6,7 +6,7 @@ Parabolic SAR (SAR - stop and reverse) is a method devised by J. Welles Wilder, 
 
 Find the mathematical description of the indicator on the [Parabolic SAR (PSAR) Mathematical Description](Mathematical_Description#parabolic_sar) page.
 
-## Adding indicator
+## Adding Indicator
 
 PSAR indicator is added through the {api:anychart.core.stock.Plot#psar}psar(){api} method. It requires a mapping with two fields: `"high"` and `"low"`. The following sample demonstrates the PSAR indicator applied to an OHLC series:
 
@@ -37,7 +37,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_PSAR\_01{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 There are five parameters a PSAR indicator has, one of them is necessary - the mapping. Three other ones are the acceleration factor start, acceleration factor increment, acceleration factor maximum, and the series type.
 

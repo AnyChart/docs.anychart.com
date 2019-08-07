@@ -15,7 +15,7 @@ This section explains how to configure the [appearance settings](../Appearance_S
 
 To configure the [background](../Appearance_Settings/Background) of the chart, call the {api:anychart.charts.Gantt#background}background(){api} method.
 
-**Note:** You can apply different background settings to the data grid and timeline - see [Data Grid: Appearance](Data_Grid/Appearance) and [Timeline: Appearance](Timeline/Appearance).
+**Note:** You can apply different background settings to the data grid and timeline – see [Data Grid: Appearance](Data_Grid/Appearance) and [Timeline: Appearance](Timeline/Appearance).
 
 This is how the background is adjusted:
 
@@ -51,11 +51,11 @@ chart.columnStroke("0.5 #64b5f6");
 
 ### Data Grid
 
-A data grid is a part of the Gantt chart where names of its elements are displayed. You can configure its background as well as the appearance of rows, columns, header, and buttons - see [Data Grid: Appearance](Data_Grid/Appearance) and [Data Grid: Buttons](Data_Grid/Buttons).
+A data grid is a part of the Gantt chart where names of its elements are displayed. You can configure its background as well as the appearance of rows, columns, header, and buttons – see [Data Grid: Appearance](Data_Grid/Appearance) and [Data Grid: Buttons](Data_Grid/Buttons).
 
 ### Timeline
 
-A timeline is a part of the Gantt chart where its elements (time intervals) are displayed.  You can configure its background as well as the appearance of rows, columns, and header  - see [Timeline: Appearance](Timeline/Appearance) and [Timeline: Header](Timeline/Header#appearance).
+A timeline is a part of the Gantt chart where its elements (time intervals) are displayed.  You can configure its background as well as the appearance of rows, columns, and header  – see [Timeline: Appearance](Timeline/Appearance) and [Timeline: Header](Timeline/Header#appearance).
 
 ### Elements
 
@@ -90,7 +90,7 @@ To set the height of rows and the header, use {api:anychart.charts.Gantt#default
 
 **Note 1:** The `rowHeight` data field allows setting the height of an indvidual row. Levels of the header can be also adjusted individually, as explained in [Header: Level Height](Timeline/Header#level_height).
 
-**Note 2:** Timeline elements automatically adjust to the row height. However, you can set their heights manually - see articles about different types of elements in the [Elements](Elements) section.
+**Note 2:** Timeline elements automatically adjust to the row height. However, you can set their heights manually – see articles about different types of elements in the [Elements](Elements) section.
 
 In the sample below, there is a Gantt chart with the row and header height configured:
 
@@ -108,7 +108,7 @@ chart.headerHeight(105);
 
 To set the default position of the splitter between the [data grid](Data_Grid) and the [timeline](Timeline), call the {api:anychart.charts.Gantt#splitterPosition}splitterPosition(){api} method.
 
-**Note:** The width of the timeline automatically adjusts to the area outlined by the splitter. The width of the data grid is not affected - it is defined only by the sum of its [columns' widths](Data_Grid/Columns#width).
+**Note:** The width of the timeline automatically adjusts to the area outlined by the splitter. The width of the data grid is not affected – it is defined only by the sum of its [columns' widths](Data_Grid/Columns#width).
 
 In the following sample, there is a Gantt chart with the splitter position configured:
 
@@ -121,7 +121,7 @@ chart.splitterPosition("50%");
 
 ## Navigation
 
-This section explains how to draw a Gantt chart with certain navigation settings - elements expanded or collapsed, timeline scrolled, etc.
+This section explains how to draw a Gantt chart with certain navigation settings – elements expanded or collapsed, timeline scrolled, etc.
 
 **Please note that all the methods listed here work only after the chart is drawn.**
 

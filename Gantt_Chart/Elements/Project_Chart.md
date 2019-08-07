@@ -15,14 +15,14 @@ To learn more about the difference between the types and data fields used to set
 
 To configure regular tasks, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#tasks}tasks(){api} with the following methods:
 
-* {api:anychart.core.gantt.elements.TasksElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.TasksElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.TasksElement#position}position(){api} to set the anchor, offset, and position
+
 * {api:anychart.core.gantt.elements.TasksElement#fill}fill(){api}, {api:anychart.core.gantt.elements.TasksElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.TasksElement#height}height(){api} to set the fill, stroke, and height
-* {api:anychart.core.gantt.elements.TasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.TasksElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.TasksElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.TasksElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.TasksElement#position}position(){api} to set the anchor, offset, and position
 * {api:anychart.core.gantt.elements.TasksElement#labels}labels(){api} to access [labels](Labels)
-* {api:anychart.core.gantt.elements.TasksElement#progress}progress(){api} to access [progress bars](#progress_bars)
+* {api:anychart.core.gantt.elements.TasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.TasksElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
 * {api:anychart.core.gantt.elements.TasksElement#edit}edit(){api} to access the [Live Edit](../Live_Edit) settings
 * {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api} to access the [rendering](../Custom_Drawing) settings
-
+* {api:anychart.core.gantt.elements.TasksElement#progress}progress(){api} to access [progress bars](#progress_bars)
 
 ```
 // configure the height of tasks
@@ -37,13 +37,13 @@ Please note that these settings affect [parent tasks](#parent_tasks) as well, bu
 
 To configure parent tasks, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#groupingTasks}groupingTasks(){api} with the following methods:
 
-* {api:anychart.core.gantt.elements.GroupingTasksElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.GroupingTasksElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.GroupingTasksElement#position}position(){api} to set the anchor, offset, and position
 * {api:anychart.core.gantt.elements.GroupingTasksElement#fill}fill(){api}, {api:anychart.core.gantt.elements.GroupingTasksElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.GroupingTasksElement#height}height(){api} to set the fill, stroke, and height
-* {api:anychart.core.gantt.elements.GroupingTasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.GroupingTasksElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.GroupingTasksElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.GroupingTasksElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.GroupingTasksElement#position}position(){api} to set the anchor, offset, and position
 * {api:anychart.core.gantt.elements.GroupingTasksElement#labels}labels(){api} to access [labels](Labels)
-* {api:anychart.core.gantt.elements.GroupingTasksElement#progress}progress(){api} to access [progress bars](#progress_bars)
+* {api:anychart.core.gantt.elements.GroupingTasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.GroupingTasksElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
 * {api:anychart.core.gantt.elements.GroupingTasksElement#edit}edit(){api} to access the [Live Edit](../Live_Edit) settings
 * {api:anychart.core.gantt.elements.GroupingTasksElement#rendering}rendering(){api} to access the [rendering](../Custom_Drawing) settings
+* {api:anychart.core.gantt.elements.GroupingTasksElement#progress}progress(){api} to access [progress bars](#progress_bars)
 
 
 ```
@@ -53,7 +53,7 @@ chart.getTimeline().groupingTasks().height(15);
 
 Please note: the settings of [regular tasks](#regular_tasks) affect parent tasks as well, but are overridden by the settings listed here.
 
-Also, parent tasks can be [expanded or collapsed](../Basic_Settings#expanding\_/\_collapsing).
+Also, you can [expand or collapse](../Basic_Settings#expanding_/_collapsing) parent tasks and display previews of [milestones](#milestones) on them.
 
 ### Milestones
 
@@ -61,12 +61,14 @@ Also, parent tasks can be [expanded or collapsed](../Basic_Settings#expanding\_/
 
 To configure milestones, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#milestones}milestones(){api} with the following methods:
 
-* {api:anychart.core.gantt.elements.MilestonesElement#anchor}anchor(){api} to set the anchor
+* {api:anychart.core.gantt.elements.MilestonesElement#markerType}markerType(){api} + enums from {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api} to set the type
 * {api:anychart.core.gantt.elements.MilestonesElement#fill}fill(){api}, {api:anychart.core.gantt.elements.MilestonesElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.MilestonesElement#height}height(){api} to set the fill, stroke, and height
-* {api:anychart.core.gantt.elements.MilestonesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.MilestonesElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.MilestonesElement#anchor}anchor(){api} to set the anchor
 * {api:anychart.core.gantt.elements.MilestonesElement#labels}labels(){api} to access [labels](Labels)
+* {api:anychart.core.gantt.elements.MilestonesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.MilestonesElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
 * {api:anychart.core.gantt.elements.MilestonesElement#edit}edit(){api} to access the [Live Edit](../Live_Edit) settings
 * {api:anychart.core.gantt.elements.MilestonesElement#rendering}rendering(){api} to access the [rendering](../Custom_Drawing) settings
+* {api:anychart.core.gantt.elements.MilestonesElement#preview}preview(){api} to access previews of milestones on [parent tasks](#parent_tasks)
 
 
 ```
@@ -74,13 +76,19 @@ To configure milestones, combine {api:anychart.charts.Gantt#getTimeline}getTimel
 chart.getTimeline().milestones().height(15);
 ```
 
-If you need to create multiple milestones in one row, use an alternative way to visualize events - add [markers](Markers).
+If you need to create multiple milestones in one row, use an alternative way to visualize events – add [markers](Markers).
+
+**Previews of milestones** are special elements that represent milestones on their [parent tasks](#parent_tasks). By default, previews are not shown. To display or hide them, pass `true` or `false` to the {api:anychart.core.gantt.elements.MilestonesElement#preview}preview(){api} method.
+
+Previews inherit the settings of milestones they represent, but you can change their fill, stroke, type, etc. – combine {api:anychart.core.gantt.elements.MilestonesElement#preview}preview(){api} with methods of the {api:anychart.core.gantt.elements.MilestonesPreviewElement}anychart.core.gantt.elements.MilestonesPreviewElement{api} class. Please note that with the help of the {api:anychart.core.gantt.elements.MilestonesPreviewElement#depth}depth(){api} method you can set the depth of previews.
 
 ### Sample
 
 In the sample below, the {api:anychart.core.ui.Timeline#tasks}tasks(){api}, {api:anychart.core.ui.Timeline#groupingTasks}groupingTasks(){api}, and {api:anychart.core.ui.Timeline#milestones}milestones(){api} methods of the timeline are used to access [regular tasks](#regular_tasks), [parent tasks](#parent_tasks), and [milestones](#milestones).
 
 The **normal()** and **selected()** methods of each task type are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../Appearance_Settings) in two [states](../../Common_Settings/Interactivity/States): **normal** and **selected**.
+
+Also, {api:anychart.core.gantt.elements.MilestonesElement#markerType}markerType(){api} and {api:anychart.core.gantt.elements.MilestonesElement#preview}preview(){api} are used to set the type of milestones and enable their previews on the parent task.
 
 ```
 // configure tasks
@@ -103,6 +111,9 @@ milestones.normal().fill("#dd2c00 0.5");
 milestones.selected().fill("#dd2c00");
 milestones.normal().stroke("#dd2c00");
 milestones.selected().stroke("#dd2c00");
+
+milestones.markerType("circle");
+milestones.preview(true);
 ```
 
 {sample :height 260}GANTT\_Elements\_Project\_01{sample}
@@ -113,11 +124,11 @@ milestones.selected().stroke("#dd2c00");
 
 To configure baselines, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#baselines}baselines(){api} with the following methods:
 
-* {api:anychart.core.gantt.elements.BaselinesElement#above}above(){api} to place baselines above tasks
-* {api:anychart.core.gantt.elements.BaselinesElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.BaselinesElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.BaselinesElement#position}position(){api} to set the anchor, offset, and position
 * {api:anychart.core.gantt.elements.BaselinesElement#fill}fill(){api}, {api:anychart.core.gantt.elements.BaselinesElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.BaselinesElement#height}height(){api} to set the fill, stroke, and height
-* {api:anychart.core.gantt.elements.BaselinesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.BaselinesElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.BaselinesElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.BaselinesElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.BaselinesElement#position}position(){api} to set the anchor, offset, and position
+* {api:anychart.core.gantt.elements.BaselinesElement#above}above(){api} to place baselines above tasks
 * {api:anychart.core.gantt.elements.BaselinesElement#labels}labels(){api} to access [labels](Labels)
+* {api:anychart.core.gantt.elements.BaselinesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.BaselinesElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
 * {api:anychart.core.gantt.elements.BaselinesElement#edit}edit(){api} to access the [Live Edit](../Live_Edit) settings
 * {api:anychart.core.gantt.elements.BaselinesElement#rendering}rendering(){api} to access the [rendering](../Custom_Drawing) settings
 
@@ -148,10 +159,10 @@ To access progress bars, first access regular or parent tasks by combining {api:
 
  To configure progress bars, use the following methods:
 
-* {api:anychart.core.gantt.elements.ProgressElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.ProgressElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.ProgressElement#position}position(){api} to set the anchor, offset, and position
 * {api:anychart.core.gantt.elements.ProgressElement#fill}fill(){api}, {api:anychart.core.gantt.elements.ProgressElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.ProgressElement#height}height(){api} to set the fill, stroke, and height
-* {api:anychart.core.gantt.elements.ProgressElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ProgressElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.ProgressElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.ProgressElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.ProgressElement#position}position(){api} to set the anchor, offset, and position
 * {api:anychart.core.gantt.elements.ProgressElement#labels}labels(){api} to access [labels](Labels)
+* {api:anychart.core.gantt.elements.ProgressElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ProgressElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
 * {api:anychart.core.gantt.elements.ProgressElement#edit}edit(){api} to access the [Live Edit](../Live_Edit) settings
 * {api:anychart.core.gantt.elements.ProgressElement#rendering}rendering(){api} to access the [rendering](../Custom_Drawing) settings
 

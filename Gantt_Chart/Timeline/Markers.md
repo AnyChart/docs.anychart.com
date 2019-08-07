@@ -7,15 +7,15 @@ You can add three types of markers to the timeline: **line**, **range**, and **t
 
 They are defined as instances of the following classes:
 
-* [line](#line) - {api:anychart.core.axisMarkers.GanttLine}anychart.core.axisMarkers.GanttLine{api} 
-* [range](#range) - {api:anychart.core.axisMarkers.GanttRange}anychart.core.axisMarkers.GanttRange{api}
-* [text](#text) - {api:anychart.core.axisMarkers.GanttText}anychart.core.axisMarkers.GanttText{api}
+* [line](#line) – {api:anychart.core.axisMarkers.GanttLine}anychart.core.axisMarkers.GanttLine{api} 
+* [range](#range) – {api:anychart.core.axisMarkers.GanttRange}anychart.core.axisMarkers.GanttRange{api}
+* [text](#text) – {api:anychart.core.axisMarkers.GanttText}anychart.core.axisMarkers.GanttText{api}
 
 To add markers, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with the following methods:
 
-* [line](#line) - {api:anychart.core.ui.Timeline#lineMarker}lineMarker(){api}
-* [range](#range) - {api:anychart.core.ui.Timeline#rangeMarker}rangeMarker(){api}
-* [text](#text) - {api:anychart.core.ui.Timeline#textMarker}textMarker(){api}
+* [line](#line) – {api:anychart.core.ui.Timeline#lineMarker}lineMarker(){api}
+* [range](#range) – {api:anychart.core.ui.Timeline#rangeMarker}rangeMarker(){api}
+* [text](#text) – {api:anychart.core.ui.Timeline#textMarker}textMarker(){api}
 
 The sections below explain in detail how to configure each type.
 
@@ -36,9 +36,9 @@ To configure the marker, use methods of the {api:anychart.core.axisMarkers.Gantt
 
 The {api:anychart.core.axisMarkers.GanttLine#value}value(){api} method is required to set the date on which you want the marker to be displayed. You can either specify an exact date or use one of the enums from {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}:
 
-* `start` - the start date of the first data item
-* `end` - the end date of the last data item
-* `current` - the current date
+* `start` – the start date of the first data item
+* `end` – the end date of the last data item
+* `current` – the current date
 
 In this sample, there are two line markers with the stroke configured:
 
@@ -76,9 +76,9 @@ To configure the marker, use methods of the {api:anychart.core.axisMarkers.Gantt
 
 The {api:anychart.core.axisMarkers.GanttRange#from}from(){api} and {api:anychart.core.axisMarkers.GanttRange#to}to(){api} methods are required to set the range of dates on which you want the marker to be displayed. You can either specify exact dates or use enums from {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}:
 
-* `start` - the start date of the first data item
-* `end` - the end date of the last data item
-* `current` - the current date
+* `start` – the start date of the first data item
+* `end` – the end date of the last data item
+* `current` – the current date
 
 In this sample, there are two range markers with the fill configured:
 
@@ -123,9 +123,9 @@ To configure the marker, use methods of the {api:anychart.core.axisMarkers.Gantt
 
 The {api:anychart.core.axisMarkers.GanttText#value}value(){api} method is required to set the date on which you want the marker to be displayed. You can either specify an exact date or use one of the enums from {api:anychart.enums.GanttDateTimeMarkers}anychart.enums.GanttDateTimeMarkers{api}:
 
-* `start` - the start date of the first data item
-* `end` - the end date of the last data item
-* `current` - the current date
+* `start` – the start date of the first data item
+* `end` – the end date of the last data item
+* `current` – the current date
 
 In the following sample, there are two text markers with the font, background, and position configured. In the text of the first marker, HTML is used.
 

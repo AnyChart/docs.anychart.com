@@ -10,7 +10,7 @@ AnyChart Stock allows you to add MMA with desired period to any of your charts.
 
 Find the mathematical description of the indicator on the [Modified moving average (MMA) Mathematical Description](Mathematical_Description#modified_moving_average) page.
 
-## Adding indicator
+## Adding Indicator
 
 MMA indicator is added using the {api:anychart.core.stock.Plot#mma}mma(){api} method, it requires a mapping with the `"value"` field in it:
 
@@ -39,7 +39,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_MMA\_01{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 MMA indicator needs three parameters, as SMA and EMA: mapping with the `"value"` field in it, period and a type of series to be displayed as:
 

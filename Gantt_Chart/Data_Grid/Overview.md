@@ -1,9 +1,9 @@
 {:index 1}
 # Overview
 
-A data grid is a part of the Gantt chart where names of its [elements](../Elements) are displayed. (Alternatively, you can display any other text - see [Columns: Text](Columns#text_\(labels\))).
+A data grid is a part of the Gantt chart where names of its [elements](../Elements) are displayed. (Alternatively, you can display any other text – see [Columns: Text](Columns#text_\(labels\))).
 
-The class of the data grid is {api:anychart.core.ui.DataGrid}anychart.core.ui.DataGrid{api} - use {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} to access it.
+The class of the data grid is {api:anychart.core.ui.DataGrid}anychart.core.ui.DataGrid{api} – use {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} to access it.
 
 Also, please note that the settings listed in this section can be applied both to [Project](../Project_Chart) and [Resource](../Resource_Chart) charts.
 
@@ -11,10 +11,10 @@ Also, please note that the settings listed in this section can be applied both t
 
 Articles in this section explain how to configure:
 
-* [Appearance](Appearance) - the fill of rows, stroke of columns, etc.
-* [Columns](Columns) - the width, title, text, and other settings of columns
-* [Buttons](Buttons) - the expand / collapse buttons
-* [Tooltips](Tooltips) - the data grid tooltips
+* [Appearance](Appearance) – the fill of rows, stroke of columns, etc.
+* [Columns](Columns) – the width, title, text, and other settings of columns
+* [Buttons](Buttons) – the expand / collapse buttons
+* [Tooltips](Tooltips) – the data grid tooltips
 
 ## Enabling / Disabling
 

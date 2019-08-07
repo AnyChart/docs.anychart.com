@@ -107,7 +107,7 @@ var dataSet = anychart.data.set(data);
 var chart = anychart.column();
 
 // create a series and set the data
-var series = chart.column(mapping);
+var series = chart.column(data);
 ```
 
 {sample}WD\_Data\_Sets\_02{sample}
@@ -181,17 +181,17 @@ var data = [
 var dataSet = anychart.data.set(data);
 
 // map the data
-var mapping_1 = dataSet.mapAs({x: 0, value: 1});
-var mapping_2 = dataSet.mapAs({x: 0, value: 2});
+var mapping1 = dataSet.mapAs({x: 0, value: 1});
+var mapping2 = dataSet.mapAs({x: 0, value: 2});
 
 // create a chart
 var chart = anychart.column();
 
 // create the first series and set the data
-var series1 = chart.column(mapping_1);
+var series1 = chart.column(mapping1);
 
 // create the second series and set the data  
-var series2 = chart.column(mapping_2);
+var series2 = chart.column(mapping2);
 ```
 
 {sample}WD\_Data\_Sets\_04{sample}
@@ -378,7 +378,7 @@ series.select(index);
 
 The {api:anychart.data.View#filter}filter(){api} methods finds data rows with values meeting a given condition. The first parameter is the name of a data field, and the second one is a filter function, which accepts a value and returns `true` or `false`.
 
-Use this method to set advanced search conditions - for example, to find all rows with values greater or less than a given value, like in the following sample:
+Use this method to set advanced search conditions – for example, to find all rows with values greater or less than a given value, like in the following sample:
 
 ```
 // remove points with values less than a given one
