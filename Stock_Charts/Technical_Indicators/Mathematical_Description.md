@@ -160,7 +160,7 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 
 [Heikin-Ashi](Heikin-Ashi) indicator is based on price data from the current open-high-low-close, the current Heikin-Ashi values, and the prior Heikin-Ashi values.
 
-In the following formula, (0) refers to the current period, (-1) to the prior period, and HA to Heikin-Ashi:
+In the following formulas, (0) refers to the current period, (-1) to the prior period, and HA to Heikin-Ashi:<br>
 
 <ol>
 	<li>The Heikin-Ashi Close is simply an average of the open, high, low, and close for the current period.</li><br>
