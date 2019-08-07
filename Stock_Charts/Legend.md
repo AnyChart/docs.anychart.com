@@ -4,7 +4,7 @@
 
 ## Overview
 
-There are general settings that can be applied to legends of all chart types including AnyStock legend – see the [Common Settings: Legend](../Common_Settings/Legend/Overview) section. In this article, only special features of AnyStock legend are described: alternative default settings, extra text formatting options for the title and items, and so on.
+There are general settings that can be applied to legends of all chart types including AnyStock legend - see the [Common Settings: Legend](../Common_Settings/Legend/Overview) section. In this article, only special features of AnyStock legend are described: alternative default settings, extra text formatting options for the title and items, and so on.
 
 Please note that AnyStock legend, unlike any other, is bound to the [plot](Chart_Plots) (not the chart). It is configured with the help of the {api:anychart.core.stock.Plot#legend}legend(){api} method of the plot and defined as an instance of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class.
 
@@ -48,7 +48,7 @@ In the sample below, there is a Stock chart with two plots. The legend of the fi
 
 The title of AnyStock legend is enabled by default: it shows the date (X-value) of the point that is currently hovered over or, if none is hovered over, about the last date shown on the plot.
 
-The title is configured like the legend title of any other chart type – see the [Title and Separator](../Common_Settings/Legend/Title_and_Separator) article to learn more.
+The title is configured like the legend title of any other chart type - see the [Title and Separator](../Common_Settings/Legend/Title_and_Separator) article to learn more.
 
 Also, there is an option available only for Stock charts: you can format the text of the title by using the {api:anychart.core.ui.Legend#titleFormat}titleFormat(){api} method of the legend, combined with either [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions).
 
@@ -108,14 +108,14 @@ To learn how to configure legend items, read the [Legend Items](../Common_Settin
 
 Legend items of Stock charts, like legend items of other multiple-series charts, represent series, but they can also show point-related information, which is updated on-the-fly. In particular, the default item text includes the name of the series and, depending on the series type, the value or values of its point that is currently hovered over. If none is hovered over, the item text displays the value of the last point shown on the plot.
 
-To format the text of items, call the {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api} method with either [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) – please note that both series- and point-related tokens / function fields are available.
+To format the text of items, call the {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api} method with either [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) - please note that both series- and point-related tokens / function fields are available.
 
 **1. Tokens**
 
 The following tokens can be applied to any legend:
 
-* `{%seriesName}` – the name of the series
-* `{%x}` – the date (X-value) of the current point
+* `{%seriesName}` - the name of the series
+* `{%x}` - the date (X-value) of the current point
 
 You can use other tokens supported by the given series type: for example, the [Line](Series/Line) allows displaying the `{%value}` of the current point, and ([OHLC](Series/OHLC)) supports the `{%open}`, `{%high}`, `{%low}`, and `{%close}` tokens.
 
@@ -137,8 +137,8 @@ plot.legend().itemsFormat(
 
 In formatting functions, the following fields are always available:
 
-* `series` – the series object, which allows accessing methods of the series
-* `x` – the date (X-value) of the current point
+* `series` - the series object, which allows accessing methods of the series
+* `x` - the date (X-value) of the current point
 
 There are also series-specific fields: `value` ([Line](Series/Line)), `{%open}`, `high`, `low`, and `close` ([OHLC](Series/OHLC)), and so on.
 
@@ -220,11 +220,11 @@ plot.legend().itemsFormatter(function(legendItems) {
 
 ## Standalone Legend
 
-The [standalone legend](../Common_Settings/Legend/Standalone_Legend) is a [Standalone](../Dashboards/Standalones) – a building block, independent from the chart, that allows creating advanced data visualizations.
+The [standalone legend](../Common_Settings/Legend/Standalone_Legend) is a [Standalone](../Dashboards/Standalones) - a building block, independent from the chart, that allows creating advanced data visualizations.
 
 One of the ways to add items to a standalone legend is calling the {api:anychart.standalones.Legend#itemsSource}itemsSource(){api} method with an array of source items as a parameter. Normally, it takes an array of charts, which allows [binding one legend to multiple charts](../Common_Settings/Legend/Standalone_Legend#item_=_series_/_point).
 
-In AnyStock, this method requires specifying an array of plots – thus, the legend is linked to **multiple plots**. Legend items, created automatically, represent the series on these plots.
+In AnyStock, this method requires specifying an array of plots - thus, the legend is linked to **multiple plots**. Legend items, created automatically, represent the series on these plots.
 
 **Note:** There might be multiple Stock charts in your data visualization. However, if you want to show series from different chart in one legend, you still have to specify their plots (and not the charts) as the source of items.
 

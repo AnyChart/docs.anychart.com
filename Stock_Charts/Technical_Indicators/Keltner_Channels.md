@@ -8,7 +8,7 @@ This indicator is similar to [Bollinger Bands](Bollinger_Bands), which uses the 
 
 Mathematical description of the indicator: [Keltner Channels Mathematical Description](Mathematical_Description#keltner_channels).
 
-## Adding indicator
+## Adding Indicator
 
 Keltner Channels indicator is added using {api:anychart.core.stock.Plot#keltnerChannels}keltnerChannels(){api} method. It requires a mapping with three fields: `"high"`, `"low"`, and `"close"`.
 
@@ -37,7 +37,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_Keltner\_Channels\_1{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 There are eight parameters a Keltner Channel indicator has, one of them is necessary - the mapping.
 

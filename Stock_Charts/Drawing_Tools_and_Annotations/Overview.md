@@ -42,6 +42,12 @@ Here is the full list of annotations available in AnyStock (with links to the ar
 * [Vertical Line](Vertical_Line)
 * [Ray](Ray)
 
+### Trend Ranges
+
+* [Trend Channel](Trend_Channel)
+* [Horizontal Range/Channel](Horizontal_Range)
+* [Vertical Range/Channel](Vertical_Range)
+
 ### Geometric Shapes
 
 * [Ellipse](Ellipse)
@@ -56,4 +62,3 @@ Here is the full list of annotations available in AnyStock (with links to the ar
 ### Other Tools
 
 * [Andrew's Pitchfork](Andrews_Pitchfork)
-* [Trend Channel](Trend_Channel)

@@ -7,7 +7,7 @@ Developed by Marc Chaikin, the Accumulation Distribution Line is a volume-based 
 Find the mathematical description of the indicator on the [Accumulation Distribution Line (ADL) Mathematical Description](Mathematical_Description#accumulation_distribution_line) page.
 
 
-## Adding indicator
+## Adding Indicator
 
 ADL indicator is added through the {api:anychart.core.stock.Plot#adl}adl(){api} method. It requires a mapping with five fields in it: `"open"`, `"high"`, `"low"`, `"close"`, and `"volume"`.
 

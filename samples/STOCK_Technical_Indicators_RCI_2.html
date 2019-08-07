@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="STOCK Technical Indicators RCI 2"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-core.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-stock.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.7.0/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+// The data used in this sample can be obtained from the CDN
+// https://cdn.anychart.com/csv-data/csco-daily.js
+
+// create data table on loaded data
+var dataTable = anychart.data.table();
+dataTable.addData(get_csco_daily_data());
+
+// map loaded data
+var mapping = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close": 4});
+
+// create a stock chart
+var chart = anychart.stock();
+
+// create the first plot on the chart
+var plot_0 = chart.plot(0);
+
+// create an ohlc series
+plot_0.ohlc(mapping).name('CSCO');
+
+// create the second plot on the chart
+var plot_1 = chart.plot(1);
+
+// create and adjust a PPO indicator
+var rci_1 = plot_1.rci(mapping);
+
+// create the third plot on the chart
+var plot_2 = chart.plot(2);
+
+// create and adjust a PPO indicator
+var rci_2 = plot_2.rci(mapping);
+rci_2.series().stroke("1 red");
+
+// set container id for the chart
+chart.container('container');
+
+// initiate chart drawing
+chart.draw();
+});
+</script>
+</body>
+</html>

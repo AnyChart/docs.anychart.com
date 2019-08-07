@@ -34,7 +34,7 @@ Each point of the [Adaptive Moving Average](Adaptive\_Moving\_Average\_\(AMA\)) 
 
 ## Aroon
 
-[Aroon](Aroon) indicator is calculated according to the following formula:
+[Aroon](Aroon) indicator is calculated according to the following formulas:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/aroon.png" width="650"></center>
 
@@ -120,8 +120,6 @@ You can see how the ADL indicator is calculated in the [ADL part](#accumulation_
 
 ## Chaikin Volatility
 
-Coming soon.
-
 Chaikin Volatility indicator in each point is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/chv.png"></center>
@@ -129,6 +127,7 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 ## Directional Movement Indicator
 
 [Directional Movement Indicator](Directional\_Movement\_Index\_\(DMI\)) is calculated in three steps: 
+
 <ol>
 <li>First the True Range (TR), Plus Directional Movement (+DM) and Minus Directional Movement (-DM) are calculated for each period:</li><br>
 
@@ -143,6 +142,15 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 <center><img src="https://static.anychart.com/images/technical_indicators/dmi\_pdi.png"></center><br>
 </ol>
 
+## Envelope
+
+[Envelope](Envelope\_\(ENV\)) is calculated according to the following formulas:
+
+<ol>
+	<li>Upper Envelope: **20 Period SMA + (20 Period SMA * 0.1)**</li>
+	<li>Lower Envelope: **20 Period SMA - (20 Period SMA * 0.1)**</li>
+</ol>
+
 ## Exponential Moving Average
 
 [Exponential Moving Average](Exponential\_Moving\_Average\_\(EMA\)) in each point is calculated according to the following formula:
@@ -151,29 +159,36 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 
 ## Heikin-Ashi
 
-[Heikin-Ashi](Heikin-Ashi) indicator is based on price data from the current open-high-low-close, the current Heikin-Ashi values, and the prior Heikin-Ashi values. In the following formula, a (0) refers to the current period, (-1) to the prior period, and HA  to Heikin-Ashi:
+[Heikin-Ashi](Heikin-Ashi) indicator is based on price data from the current open-high-low-close, the current Heikin-Ashi values, and the prior Heikin-Ashi values.
 
-1. The Heikin-Ashi Close is simply an average of the open, 
-high, low and close for the current period. 
+In the formulas below, (0) refers to the current period, (-1) to the prior period, and HA to Heikin-Ashi:
 
+<ol>
+	<li>The Heikin-Ashi Close is simply an average of the open, high, low, and close for the current period:</li>
 **HA-Close = (Open(0) + High(0) + Low(0) + Close(0)) / 4**
+	<li>The Heikin-Ashi Open is the average of the prior Heikin-Ashi candlestick open plus the close of the prior Heikin-Ashi candlestick:</li>
+**HA-Open = (HA-Open(-1) + HA-Close(-1)) / 2**
+	<li>The Heikin-Ashi High is the maximum of three data points – the current period's high, the current Heikin-Ashi candlestick open, or the current Heikin-Ashi candlestick close:</li>
+**HA-High = Maximum of the High(0), HA-Open(0) or HA-Close(0)**
+	<li>The Heikin-Ashi Low is the minimum of three data points – the current period's low, the current Heikin-Ashi 
+candlestick open, or the current Heikin-Ashi candlestick close:</li>
+** HA-Low = Minimum of the Low(0), HA-Open(0) or HA-Close(0)**
+</ol>
 
-2. The Heikin-Ashi Open is the average of the prior Heikin-Ashi 
-candlestick open plus the close of the prior Heikin-Ashi candlestick. 
+## Ichimoku Cloud
 
-**HA-Open = (HA-Open(-1) + HA-Close(-1)) / 2** 
+[Ichimoku Cloud (IKH)](Ichimoku_Cloud_\(IKH\)) includes five plots. Four of them are based on the average of the high and low over a given period of time. Periods can be adjusted when an indicator is created.
 
-3. The Heikin-Ashi High is the maximum of three data points: 
-the current period's high, the current Heikin-Ashi 
-candlestick open or the current Heikin-Ashi candlestick close. 
 
-**HA-High = Maximum of the High(0), HA-Open(0) or HA-Close(0)** 
+This is how Ichimoku Cloud is calculated:
 
-4. The Heikin-Ashi low is the minimum of three data points: 
-the current period's low, the current Heikin-Ashi 
-candlestick open or the current Heikin-Ashi candlestick close.
-
-** HA-Low = Minimum of the Low(0), HA-Open(0) or HA-Close(0)** 
+<ol>
+	<li>Tenkan-sen (Conversion Line): **(9-period high + 9-period low)/2))**</li>
+	<li>Kijun-sen (Base Line): **(26-period high + 26-period low)/2))**</li>
+	<li>Senkou Span A (Leading Span A): **(Conversion Line + Base Line)/2))**</li>
+	<li>Senkou Span B (Leading Span B): ** (52-period high + 52-period low)/2))**</li>
+	<li>Chikou Span (Lagging Span): ** Close plotted 26 days in the past**</li>
+</ol>
 
 ## KDJ
 
@@ -228,7 +243,7 @@ You can see how [EMA (Exponential Moving Average)](#exponential_moving_average) 
 
 ## Momentum
 
-[Momentum](Momentum) indicator in each point is calculated in accordance to the folowing formula:
+[Momentum](Momentum) indicator in each point is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/momentum.png" width="400"></center>
 
@@ -239,13 +254,13 @@ You can see how [EMA (Exponential Moving Average)](#exponential_moving_average) 
 <ol>
 	<li>EMA\[slow period\]<sub>i</sub> and EMA\[fast period\]<sub>i</sub> is calculated by [EMA formula](#exponential_moving_average)</a>. Slow period 
 	and fast period are set by **slowPeriod** (default 26) and **fastPeriod** (default 12) parameters of {api:anychart.core.stock.indicators.MACD}macd(){api} method.</li>
-	<li>MACD series value is calculated:<br>
+	<li>MACD series value is calculated according to this formula:<br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/macd-macd.png"/></li></center>
 	<li>EMA\[signal period\]<sub>i</sub> of MACD series values is calculated by [EMA formula](#exponential_moving_average), where signal period is set
 	by **signalPeriod** parameter.</li>
-	<li>Signal series value is calculated:<br>
+	<li>Signal series value:<br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/macd-signal.png"/></li></center>
-	<li>Histogram series is calculated:<br>
+	<li>Histogram serie:<br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/macd-histogram.png"/></li></center>
 </ol>
 
@@ -271,13 +286,13 @@ Coming soon.
 
 ## Parabolic SAR
 
-[Parabolic SAR](Parabolic_SAR_\(PSAR\)) is created according to the following algorithm.
+[Parabolic SAR](Parabolic_SAR_\(PSAR\)) is created according to the algorithm described below.
 
 At each step within a trend, the SAR is calculated ahead of time. That is, tomorrow's SAR value is built using data available today. The general formula used for this is:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/psar.png" width="400"></center>
 
-Where SARi and SARi - 1 represent today's and tomorrow's SAR values, respectively.
+where SARi and SARi - 1 represent today's and tomorrow's SAR values, respectively.
 
 The extreme point, EP, is a record kept during each trend that represents the highest value reached by the price during the current up trend - or lowest value during a downtrend. On each period, if a new maximum (or minimum) is observed, the EP is updated with that value.
 
@@ -296,11 +311,42 @@ The SAR is recursively calculated in this manner for each new period. There are,
 
 <center><img src="https://static.anychart.com/images/technical_indicators/pricechannels.png"></center>
 
+## Price Oscillator
+
+[Price Oscillator (PPO)](Price_Oscillator_\(PPO\)) is calculated according to the following formulas:
+
+<ol>
+	<li>PPO Line: **((12-day EMA - 26-day EMA)/26-day EMA) x 100**</li>
+	<li>Signal Line: **9-day EMA of PPO**</li>
+	<li>PPO Histogram: **PPO - Signal Line**</li>
+</ol>
+
+## Psychological Line
+
+[Psychological Line (PSY)](Psychological_Line_\(PSY\)) is calculated according to the following formula:
+
+<center><img src="https://static.anychart.com/images/technical\_indicators/psy.png"></center>
+
+## Rank Correlation Index
+
+[Rank Correlation Index (RCI)](Rank_Correlation_Index_\(RCI\)) is calculated according to the following formula:
+
+<center><img src="https://static.anychart.com/images/technical\_indicators/rci.png"></center>
+
 ## Rate of Change
 
 [Rate of Change](Rate\_of\_Change\_\(ROC\)) is calculated according to this formula:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/roc.png"/></center>
+
+## Ratiocator
+
+[Ratiocator (RAT)](Ratiocator_\(RAT\)) is calculated as follows:
+
+<ol>
+	<li>**FirstRatiocator = PriceA / PriceB**, where priceA and priceB are prices of two stocks on a given BaseDate</li>
+	<li>** Ratiocator = (PriceA / PriceB) / FirstRatiocator * 100**</li>
+</ol>
 
 ## Relative Strength Index
 
@@ -324,46 +370,46 @@ The SAR is recursively calculated in this manner for each new period. There are,
 
 ## Stochastic Oscillator
 
-[Stochastic Oscillator](Stochastic_Oscillator) indicator has two series, both being calculated with the help of other indicators (EMA or SMA). Also it has 3 types: Fast Stochastic Oscillator, Slow Stochastic Oscillator and Full Stochastic Oscillator.
+[Stochastic Oscillator](Stochastic_Oscillator) indicator has two series, both being calculated with the help of other indicators (EMA or SMA). Also it has 3 types: Fast Stochastic Oscillator, Slow Stochastic Oscillator, and Full Stochastic Oscillator.
 
-The defaults create a Fast Stochastic Oscillator indicator.
+**1.** By default, a **Fast Stochastic Oscillator** indicator is created, which is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/fastK.png"></center>
 
-where pK is the first period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the %K value.
+where pK is the first period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the %K value:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/fastD.png"></center>
 
 where p3 is the third period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the %D value.
 
-While Fast Stochastic Oscillator is used for signals, the Slow Stochastic Oscillator is supposed to reflect this emphasis. 
+**2.** While Fast Stochastic Oscillator is used for signals, the **Slow Stochastic Oscillator** is supposed to reflect this emphasis:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/slowK.png"></center>
 
-where 3 is a default period for getting slow K.
+where 3 is a default period for getting slow K:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/slowD.png"></center>
 
 where 3 is a default period for getting slow D.
 
-The Full Stochastic Oscillator is a fully customizable version of the Slow Stochastic Oscillator. Users can set the look-back period, the number of periods to slow %K and the number of periods for the %D moving average. 
+**3.** The **Full Stochastic Oscillator** is a fully customizable version of the Slow Stochastic Oscillator. Users can set the look-back period, the number of periods to slow %K, and the number of periods for the %D moving average:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/fullK.png"></center>
 
-where p2 is the second period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the smoothed %K value.
+where p2 is the second period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the smoothed %K value:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/trix.png"></center>
 
 where p3 is the third period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the %D value.
 
 ## Triple Exponential Moving Average
-[Triple Exponential Moving Average (TRIX)](Triple_Exponential_Moving_Average_\(TRIX\)) and its signal line are calculated in accordance to the following calculation flow:
+[Triple Exponential Moving Average (TRIX)](Triple_Exponential_Moving_Average_\(TRIX\)) and its signal line are calculated according to the following formulas:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/trix.png"></center>
 
 ## Volume + Moving Average
 
-[Volume + Moving Average](Volume_+_Moving_Average) does no calculations with Volume and adds moving average of either [SMA](#simple_moving_average) or [EMA](#exponential_moving_average) type calculated from Volume series.
+[Volume + Moving Average](Volume_+_Moving_Average) does no calculations with Volume and adds moving average of either [SMA](#simple_moving_average) or [EMA](#exponential_moving_average) type calculated from the Volume series.
 
 ## Williams %R
 

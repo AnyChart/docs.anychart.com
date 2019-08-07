@@ -6,7 +6,7 @@ Price Channels are lines set above and below the price of a security. The upper 
 
 Mathematical description of the indicator: [Price Channels Mathematical Description](Mathematical_Description#price_channels).
 
-## Adding indicator
+## Adding Indicator
 
 Price Channels indicator is added using {api:anychart.core.stock.Plot#priceChannels}priceChannels(){api} method. It requires a mapping with two fields: `"high"` and `"low"`.
 
@@ -35,7 +35,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_Price\_Channels\_1{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 There are five parameters a Price Channel indicator has, one of them is necessary - the mapping.
 

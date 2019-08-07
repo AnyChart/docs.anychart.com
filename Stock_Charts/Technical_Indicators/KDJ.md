@@ -8,7 +8,7 @@ KDJ is a derived form of the [Stochastic Oscillator Indicator](Stochastic_Oscill
 
 Mathematical description: [KDJ Mathematical Description](Mathematical_Description#kdj).
 
-## Adding indicator
+## Adding Indicator
 
 KDJ indicator is added using the {api:anychart.core.stock.Plot#kdj}kdj(){api} method. It requires three data fields: `"high"`, `"low"`, and `"close"`:
 
@@ -44,7 +44,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_KDJ\_01{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 KDJ indicator has a lot of optional parameters: 
 - a period for the %K value 

@@ -6,7 +6,7 @@ Developed by Marc Chaikin, the DMI measures the momentum of the Accumulation Dis
 
 Find the mathematical description of the indicator on the [DMI Mathematical Description](Mathematical_Description#directional_movement_indicator) page.
 
-## Adding indicator
+## Adding Indicator
 
 DMI indicator is added through the {api:anychart.core.stock.Plot#dmi}dmi(){api} method. It requires a mapping with four fields: `"high"`, `"low"`, `"close"`, and `"volume"`. The following sample demonstrates the DMI indicator applied to a spline series which data values are equal to "close" values.
 
@@ -37,7 +37,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_DMI\_01{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 DMI indicator needs seven parameters: mapping with the `"value"` field in it (required), two periods: period and a period for ADX, a smoothing mode for whilders ad three series types (for +DI, -DI and ADX series of the indicator). The following code sample demonstrates a DMI indicator with all parameters set as default.
 

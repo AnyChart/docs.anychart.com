@@ -19,7 +19,7 @@ The following sections explain how to adjust various parts of the legend:
 * [Paginator](Paginator)
 * [Hover Cursor](Hover_Cursor)
 
-Legend items are also fully customizable – all at once or individually:
+Legend items are also fully customizable - all at once or individually:
 
 * [Legend Items](Legend_Items)
 * [Individual Legend Items](Individual_Legend_Items)
@@ -37,6 +37,6 @@ The options listed below allow creating advanced data visualizations:
 
 Here is the list of classes used to work with the legend: 
 
-* legend – {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api}
-* legend items – {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api}
-* standalone legend – {api:anychart.standalones.Legend}anychart.standalones.Legend{api}
+* legend - {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api}
+* legend items - {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api}
+* standalone legend - {api:anychart.standalones.Legend}anychart.standalones.Legend{api}

@@ -8,7 +8,7 @@ It was developed in the early 1980's by Jack Hutson, an editor for Technical Ana
 
 Mathematical description of the indicator: [Triple Exponential Moving Average Mathematical Description](Mathematical_Description#triple_exponential_moving_average).
 
-## Adding indicator
+## Adding Indicator
 
 TRIX indicator is added using {api:anychart.core.stock.Plot#trix}trix(){api} method. Tt requires a mapping with one field: `"close"` or `"value"`.
 
@@ -40,7 +40,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_TRIX\_1{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 There are seven parameters a TRIX Channel indicator has, one of them is necessary - the mapping.
 

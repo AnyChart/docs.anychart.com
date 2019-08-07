@@ -5,7 +5,7 @@
 
 To access the legend, use the {api:?entry=legend}legend(){api} method of the chart. For example, with Cartesian charts you should use {api:anychart.charts.Cartesian#legend}legend(){api}.
 
-The legend is defined as an instance of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class – its methods allow adjusting most legend settings. This article includes those settings that affect the legend as a whole: its layout, size, position, and so on.
+The legend is defined as an instance of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class - its methods allow adjusting most legend settings. This article includes those settings that affect the legend as a whole: its layout, size, position, and so on.
 
 ## Default Legend
 
@@ -63,7 +63,7 @@ series4.enabled(false);
 
 By default, legend items of a multiple-series chart represent one of the series of the chart.
 
-You can set the source of the items by using the {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api} method with `"series"` (default) or `"categories"` as a parameter – see {api:anychart.enums.LegendItemsSourceMode}anychart.enums.LegendItemsSourceMode{api}:
+You can set the source of the items by using the {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api} method with `"series"` (default) or `"categories"` as a parameter - see {api:anychart.enums.LegendItemsSourceMode}anychart.enums.LegendItemsSourceMode{api}:
 
 ```
 // set source mode of the legend
@@ -77,7 +77,7 @@ Setting the source to `"categories"` may be reasonable if there is only one seri
 
 {sample}CS\_Legend\_Basic\_03{sample}
 
-Also, you can create [custom legend items](Individual_Legend_Items#custom_items) and bind them to chart elements of your choice – for example, to chart points. To access such advanced options as as linking the legend to several charts at once or showing multiple legends on one chart, use the [standalone legend](Standalone_Legend).
+Also, you can create [custom legend items](Individual_Legend_Items#custom_items) and bind them to chart elements of your choice - for example, to chart points. To access such advanced options as as linking the legend to several charts at once or showing multiple legends on one chart, use the [standalone legend](Standalone_Legend).
 
 ## Layout
 
@@ -106,7 +106,7 @@ When the layout is `"horizontal-expandable"` / `"vertical-expandable"`, the lege
 
 **Note 1:** The paginator can be configured: read the [Paginator](Paginator) article to learn more.
 
-**Note 2:** You can set a limit to the expansion of the legend – see the [Size: Expandable](#expandable) section.
+**Note 2:** You can set a limit to the expansion of the legend - see the [Size: Expandable](#expandable) section.
 
 {sample :width 500 :height 500}CS\_Legend\_Basic\_05{sample}
 

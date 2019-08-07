@@ -37,11 +37,11 @@ This article explains how to create a basic Heat Map chart as well as configure 
 The Heat Map chart requires adding the [Core](../Quick_Start/Modules#core) and [Heat Map](../Quick_Start/Modules#heat_map) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-heatmap.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-heatmap.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
@@ -158,7 +158,7 @@ chart.selected().stroke("gray", 2);
 
 #### Individual Points
 
-It is possible to configure the appearance of each cell individually – use extra data fields corresponding with the methods mentioned above. In this case the `heat` field can be omitted:
+It is possible to configure the appearance of each cell individually - use extra data fields corresponding with the methods mentioned above. In this case the `heat` field can be omitted:
 
 ```
 // create data

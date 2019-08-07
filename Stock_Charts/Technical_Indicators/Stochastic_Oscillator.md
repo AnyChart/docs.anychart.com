@@ -8,7 +8,7 @@ There are three most famous modifications of Stochastic Oscillator: Fast Stochas
 
 Mathematical description: [Stochastic Oscillator Mathematical Description](Mathematical_Description#stochastic_oscillator).
 
-## Adding indicator
+## Adding Indicator
 
 Stochastic Oscillator indicator is added using the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method. It requires three data fields: `"high"`, `"low"`, and `"close"`:
 
@@ -45,7 +45,7 @@ Here is a basic sample of stochastic oscillator indicator:
 
 {sample}STOCK\_Technical\_Indicators\_Stochastic\_Oscillator\_01{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 Stochastic oscillator indicator has a lot of optional parameters:  
 

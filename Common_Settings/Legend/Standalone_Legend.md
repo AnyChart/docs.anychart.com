@@ -3,7 +3,7 @@
 
 ## Overview
 
-The standalone legend is one of [Standalones](../../Dashboards/Standalones) – building blocks, independent from the chart, that allow creating advanced data visualizations. For example, you can bind one legend to [multiple charts](#multiple_charts) or add [multiple legends](#multiple_legends) to a chart. See the sections below to learn more.
+The standalone legend is one of [Standalones](../../Dashboards/Standalones) - building blocks, independent from the chart, that allow creating advanced data visualizations. For example, you can bind one legend to [multiple charts](#multiple_charts) or add [multiple legends](#multiple_legends) to a chart. See the sections below to learn more.
 
 ## Basics
 

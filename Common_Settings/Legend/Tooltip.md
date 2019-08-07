@@ -26,7 +26,7 @@ chart.legend().tooltip().separator(true);
 
 ## Tokens
 
-To change the text of the tooltip and tooltip title, use the {api:anychart.core.ui.Tooltip#format}format(){api} and {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} methods. The only [token](../Text_Formatters#string_tokens) available is `{%value}` – it stands for the names of the series:
+To change the text of the tooltip and tooltip title, use the {api:anychart.core.ui.Tooltip#format}format(){api} and {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} methods. The only [token](../Text_Formatters#string_tokens) available is `{%value}` - it stands for the names of the series:
 
 ```
 // configure the legend tooltip

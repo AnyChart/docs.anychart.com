@@ -8,7 +8,7 @@ The Aroon indicators measure the number of periods since price recorded an x-day
 
 Mathematical description of the indicator: [Aroon Mathematical Description](Mathematical_Description#aroon).
 
-## Adding indicator
+## Adding Indicator
 
 Aroon indicator is added using {api:anychart.core.stock.Plot#aroon}aroon(){api} method, it requires a mapping with the `"high"` and `"low"` fields in it:
 
@@ -39,7 +39,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_Aroon\_1{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 Aroon indicator has only one type specific parameter - period: mapping with the `"value"` field in it, period and types of Up and Down series to be displayed as:
 

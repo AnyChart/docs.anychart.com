@@ -223,6 +223,7 @@ All charts with points looking like bars (Bar, Column, and related types) allow 
 ## Interactivity
 
 By default, when a user hovers over a point, it is highlighted, and a tooltip is shown; clicking on a legend item usually hides / shows a series it represents, and so on.
+
 You can change the default behavior of a chart or a series in AnyChart – see the [Interactivity](../Common_Settings/Interactivity/Overview) section to learn more.
 
 ## Events

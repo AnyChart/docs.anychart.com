@@ -8,7 +8,7 @@ AnyChart Stock allows you to add AMA with desired period to any of your charts.
 
 Find the mathematical description of the indicator on the [Adaptive moving average (AMA) Mathematical Description](Mathematical_Description#adaptive_moving_average) page.
 
-## Adding indicator
+## Adding Indicator
 
 AMA indicator is added through the {api:anychart.core.stock.Plot#ama}ama(){api} method. It requires a mapping with the `"value"` field in it:
 
@@ -37,7 +37,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_AMA\_01{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 AMA indicator needs five parameters: mapping with the `"value"` field in it (required), three periods: period, fast period and slow period; and a type of series to be displayed as.
 

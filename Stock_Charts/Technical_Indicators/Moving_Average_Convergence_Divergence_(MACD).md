@@ -8,7 +8,7 @@ AnyChart Stock allows you to add MACD with desired fast, slow and signal periods
 
 Mathematical description of the indicator: [Moving Average Convergence/Divergence (MACD) Mathematical Description](Mathematical_Description).
 
-## Adding indicator
+## Adding Indicator
 
 MACD indicator is added using {api:anychart.core.stock.Plot#macd}macd(){api} method, it requires a mapping with the `"value"` field in it:
 
@@ -44,7 +44,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_MACD\_1{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 MACD indicator needs three parameters: mapping with the `"value"` field in it, fast period 12, slow period 26 and signal period 9, and a types of series to be displayed as:
 
