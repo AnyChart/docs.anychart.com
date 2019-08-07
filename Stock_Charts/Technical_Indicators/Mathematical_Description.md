@@ -313,13 +313,13 @@ The SAR is recursively calculated in this manner for each new period. There are,
 
 ## Price Oscillator
 
-[Price Oscillator (PPO)](Price_Oscillator_\(PPO\)) is calculated according to the following formula:
+[Price Oscillator (PPO)](Price_Oscillator_\(PPO\)) is calculated according to the following formulas:
 
-PPO Line: ((12-day EMA - 26-day EMA)/26-day EMA) x 100
-
-Signal Line: 9-day EMA of PPO
-
-PPO Histogram: PPO - Signal Line
+<ol>
+	<li>PPO Line: **((12-day EMA - 26-day EMA)/26-day EMA) x 100**</li>
+	<li>Signal Line: **9-day EMA of PPO**</li>
+	<li>PPO Histogram: **PPO - Signal Line**</li>
+</ol>
 
 ## Psychological Line
 
