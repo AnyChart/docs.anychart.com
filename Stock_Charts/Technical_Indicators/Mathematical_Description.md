@@ -145,10 +145,10 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 
 ## Envelope
 
-[Envelope](Envelope\_\(ENV\)) is calculated according to the following formula:
+[Envelope](Envelope\_\(ENV\)) is calculated according to the following formulas:
 
-Upper Envelope = 20 Period SMA + (20 Period SMA * 0.1)
-Lower Envelope = 20 Period SMA - (20 Period SMA * 0.1)
+**Upper Envelope = 20 Period SMA + (20 Period SMA * 0.1)**<br>
+**Lower Envelope = 20 Period SMA - (20 Period SMA * 0.1)**
 
 ## Exponential Moving Average
 
@@ -158,39 +158,38 @@ Lower Envelope = 20 Period SMA - (20 Period SMA * 0.1)
 
 ## Heikin-Ashi
 
-[Heikin-Ashi](Heikin-Ashi) indicator is based on price data from the current open-high-low-close, the current Heikin-Ashi values, and the prior Heikin-Ashi values. In the following formula, a (0) refers to the current period, (-1) to the prior period, and HA  to Heikin-Ashi:
+[Heikin-Ashi](Heikin-Ashi) indicator is based on price data from the current open-high-low-close, the current Heikin-Ashi values, and the prior Heikin-Ashi values.
 
-1. The Heikin-Ashi Close is simply an average of the open, 
-high, low and close for the current period. 
+In the following formula, (0) refers to the current period, (-1) to the prior period, and HA to Heikin-Ashi:
+
+<ol>
+    <li>1. The Heikin-Ashi Close is simply an average of the open, high, low, and close for the current period.</li><br>
 
 **HA-Close = (Open(0) + High(0) + Low(0) + Close(0)) / 4**
 
-2. The Heikin-Ashi Open is the average of the prior Heikin-Ashi 
-candlestick open plus the close of the prior Heikin-Ashi candlestick. 
+    <li>2. The Heikin-Ashi Open is the average of the prior Heikin-Ashi candlestick open plus the close of the prior Heikin-Ashi candlestick.</li><br> 
 
 **HA-Open = (HA-Open(-1) + HA-Close(-1)) / 2** 
 
-3. The Heikin-Ashi High is the maximum of three data points: 
-the current period's high, the current Heikin-Ashi 
-candlestick open or the current Heikin-Ashi candlestick close. 
+    <li>3. The Heikin-Ashi High is the maximum of three data points: the current period's high, the current Heikin-Ashi candlestick open, or the current Heikin-Ashi candlestick close. </li><br>
 
 **HA-High = Maximum of the High(0), HA-Open(0) or HA-Close(0)** 
 
-4. The Heikin-Ashi low is the minimum of three data points: 
-the current period's low, the current Heikin-Ashi 
-candlestick open or the current Heikin-Ashi candlestick close.
+    <li>The Heikin-Ashi low is the minimum of three data points: the current period's low, the current Heikin-Ashi 
+candlestick open, or the current Heikin-Ashi candlestick close.</li><br>
 
-** HA-Low = Minimum of the Low(0), HA-Open(0) or HA-Close(0)** 
+** HA-Low = Minimum of the Low(0), HA-Open(0) or HA-Close(0)**
+</ol>
 
 ## Ichimoku Cloud
 
 [Ichimoku Cloud (IKH)](Ichimoku_Cloud_\(IKH\)) is calculated as described below. Four of the five plots within the Ichimoku Cloud are based on the average of the high and low over a given period of time. Periods can be adjusted when an indicator is created.
 
-Tenkan-sen (Conversion Line): (9-period high + 9-period low)/2))
-Kijun-sen (Base Line): (26-period high + 26-period low)/2))
-Senkou Span A (Leading Span A): (Conversion Line + Base Line)/2))
-Senkou Span B (Leading Span B): (52-period high + 52-period low)/2))
-Chikou Span (Lagging Span): Close plotted 26 days in the past
+**Tenkan-sen (Conversion Line): (9-period high + 9-period low)/2))** <br>
+**Kijun-sen (Base Line): (26-period high + 26-period low)/2))** <br>
+**Senkou Span A (Leading Span A): (Conversion Line + Base Line)/2))** <br>
+**Senkou Span B (Leading Span B): (52-period high + 52-period low)/2))** <br>
+**Chikou Span (Lagging Span): Close plotted 26 days in the past**
 
 ## KDJ
 
