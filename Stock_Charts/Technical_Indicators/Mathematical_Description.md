@@ -176,12 +176,6 @@ candlestick open, or the current Heikin-Ashi candlestick close:</li>
 
 [Ichimoku Cloud (IKH)](Ichimoku_Cloud_\(IKH\)) is calculated as described below. Four of the five plots within the Ichimoku Cloud are based on the average of the high and low over a given period of time. Periods can be adjusted when an indicator is created.
 
-**Tenkan-sen (Conversion Line): (9-period high + 9-period low)/2))** <br>
-**Kijun-sen (Base Line): (26-period high + 26-period low)/2))** <br>
-**Senkou Span A (Leading Span A): (Conversion Line + Base Line)/2))** <br>
-**Senkou Span B (Leading Span B): (52-period high + 52-period low)/2))** <br>
-**Chikou Span (Lagging Span): Close plotted 26 days in the past**
-
 <ol>
 	<li>Tenkan-sen (Conversion Line):</li>
 **(9-period high + 9-period low)/2))**
