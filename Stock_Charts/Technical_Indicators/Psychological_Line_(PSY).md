@@ -46,7 +46,7 @@ The PSY indicator has the following parameters:
 * *period*
 * *series type*
 
-The following code sample shows how to create a PSY indicator with default parameters:
+This code sample shows how to create a PSY indicator with default parameters:
 
 ```
 var psy = plot.psy(mapping, 20, "line");
