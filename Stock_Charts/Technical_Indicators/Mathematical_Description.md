@@ -164,7 +164,7 @@ In the following formula, (0) refers to the current period, (-1) to the prior pe
 
 <ol>
 	<li>The Heikin-Ashi Close is simply an average of the open, high, low, and close for the current period.</li><br>
-**HA-Close = (Open(0) + High(0) + Low(0) + Close(0)) / 4**<br>
+**HA-Close = (Open(0) + High(0) + Low(0) + Close(0)) / 4**<br><br>
 	<li>The Heikin-Ashi Open is the average of the prior Heikin-Ashi candlestick open plus the close of the prior Heikin-Ashi candlestick.</li><br>
 **HA-Open = (HA-Open(-1) + HA-Close(-1)) / 2** <br>
 	<li>The Heikin-Ashi High is the maximum of three data points: the current period's high, the current Heikin-Ashi candlestick open, or the current Heikin-Ashi candlestick close.</li><br>
