@@ -42,11 +42,11 @@ The Marimekko name has been adopted within business and the management consultan
 The Marimekko chart requires adding the [Core](../../Quick_Start/Modules#core) and [Mekko](../../Quick_Start/Modules#mekko) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-mekko.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-mekko.min.js"></script>
 ```
 
 Learn more: [Modules](../../Quick_Start/Modules).

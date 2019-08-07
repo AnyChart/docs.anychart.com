@@ -38,17 +38,17 @@ This article explains how to create a basic Stick chart as well as configure set
 The Stick chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-cartesian.min.js"></script>
 ```
 
 Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-base.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
