@@ -362,7 +362,7 @@ Ratiocator = (PriceA / PriceB) / FirstRatiocator * 100
 
 [Stochastic Oscillator](Stochastic_Oscillator) indicator has two series, both being calculated with the help of other indicators (EMA or SMA). Also it has 3 types: Fast Stochastic Oscillator, Slow Stochastic Oscillator and Full Stochastic Oscillator.
 
-The defaults create a Fast Stochastic Oscillator indicator.
+* By default, a **Fast Stochastic Oscillator** indicator is created.
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/fastK.png"></center>
 
@@ -372,7 +372,7 @@ where pK is the first period that is set through the {api:anychart.core.stock.Pl
 
 where p3 is the third period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the %D value.
 
-While Fast Stochastic Oscillator is used for signals, the Slow Stochastic Oscillator is supposed to reflect this emphasis. 
+* While Fast Stochastic Oscillator is used for signals, the **Slow Stochastic Oscillator** is supposed to reflect this emphasis. 
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/slowK.png"></center>
 
@@ -382,7 +382,7 @@ where 3 is a default period for getting slow K.
 
 where 3 is a default period for getting slow D.
 
-The Full Stochastic Oscillator is a fully customizable version of the Slow Stochastic Oscillator. Users can set the look-back period, the number of periods to slow %K and the number of periods for the %D moving average. 
+* The **Full Stochastic Oscillator** is a fully customizable version of the Slow Stochastic Oscillator. Users can set the look-back period, the number of periods to slow %K and the number of periods for the %D moving average. 
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/fullK.png"></center>
 
