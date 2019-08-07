@@ -182,6 +182,19 @@ candlestick open, or the current Heikin-Ashi candlestick close:</li>
 **Senkou Span B (Leading Span B): (52-period high + 52-period low)/2))** <br>
 **Chikou Span (Lagging Span): Close plotted 26 days in the past**
 
+<ol>
+	<li>Tenkan-sen (Conversion Line):</li>
+**(9-period high + 9-period low)/2))**
+	<li>Kijun-sen (Base Line):</li>
+**(26-period high + 26-period low)/2))**
+	<li>Senkou Span A (Leading Span A):</li>
+**(Conversion Line + Base Line)/2))**
+	<li>Senkou Span B (Leading Span B):</li>
+** (52-period high + 52-period low)/2))**
+	<li>Chikou Span (Lagging Span):</li>
+** Close plotted 26 days in the past**
+</ol>
+
 ## KDJ
 
 [KDJ](KDJ) is calculated quite alike [Stochastic](#stochastic_oscillator) indicator, but the difference is in having a J line, which Stochastic does not have.
