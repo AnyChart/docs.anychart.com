@@ -38,13 +38,15 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_PSY\_1{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
-There are three parameters the PSY indicator has, one of them is necessary - the mapping.
+The PSY indicator has three parameters:
 
-The second parameter sets the period, and the third one allows you to set the series type.
+* mapping (required)
+* period
+* series type
 
-The following code sample demonstrates a PSY indicator with parameters set as default:
+The following code sample shows how to create a PSY indicator with default parameters:
 
 ```
 var psy = plot.psy(mapping, 20, "line");
