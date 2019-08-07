@@ -11,11 +11,11 @@ Network graph is a mathematical structure (graph) to show relations between poin
 The Network Graph diagram requires adding the [Core](../Quick_Start/Modules#core) and [Network Graph](../Quick_Start/Modules#network_graph) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.6.0/js/anychart-graph.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-graph.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
