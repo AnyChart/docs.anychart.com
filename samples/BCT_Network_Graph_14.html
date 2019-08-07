@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Network Graph 14"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-graph.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            margin: 10px 0 0 10px;
+        }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
+        input {
+            width: 30px;
+        }
+        #fitButton {
+            position: absolute;
+            right: 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<button id="zoomInButton" onclick="zoomIn()">Zoom In</button>
+<button id="zoomOutButton" onclick="zoomOut()">Zoom Out</button>
+<button id="moveButton" onclick="move()">Move</button>
+<label>x: <input id="xInput" value="50"></label>
+<label>y: <input id="yInput" value="-50"></label>
+<button id="fitButton" onclick="fit()">Fit to Container</button>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = {
+      nodes: [
+        {id: "Richard"},
+        {id: "Larry"},
+        {id: "Marta"},
+        {id: "Jane"},
+        {id: "Norma"},
+        {id: "Frank"},
+        {id: "Brett"},
+        {id: "Tommy"}
+      ],
+      edges: [
+        {from: "Richard", to: "Larry"},
+        {from: "Richard", to: "Marta"},
+        {from: "Larry",   to: "Marta"},
+        {from: "Marta",   to: "Jane"},
+        {from: "Jane",    to: "Norma"},
+        {from: "Jane",    to: "Frank"},
+        {from: "Jane",    to: "Brett"},
+        {from: "Brett",   to: "Frank"}
+      ]
+    };
+
+    // create a chart and set the data
+    chart = anychart.graph(data);
+
+    // prevent the default behavior of the chart
+    chart.interactivity().enabled(false);
+
+    // set the chart title
+    chart.title("Network Graph: Navigation (Methods)");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+
+// zoom the chart in
+function zoomIn() {
+  chart.zoomIn();  
+}
+
+// zoom the chart out
+function zoomOut() {
+  chart.zoomOut();  
+}
+
+// move the chart by given values
+function move() {
+  var x = document.getElementById("xInput").value;
+  var y = document.getElementById("yInput").value;
+  chart.move(x, y);  
+}
+
+// fit the chart to the container
+function fit() {
+  chart.fit();  
+}
+</script>
+</body>
+</html>

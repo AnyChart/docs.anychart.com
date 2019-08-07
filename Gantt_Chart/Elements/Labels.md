@@ -10,6 +10,7 @@ Labels are supported by the following elements of the **Project chart**:
 * [regular tasks](Project_Chart#regular_tasks)
 * [parent tasks](Project_Chart#parent_tasks)
 * [milestones](Project_Chart#milestones)
+* [previews of milestones](Project_Chart#milestones)
 * [progress bars](Project_Chart#progress_bars)
 
 Also, labels are supported by the main element of the **Resource chart** – [period](Resource_Chart#periods).
@@ -39,6 +40,8 @@ chart.getTimeline().tasks().labels().enabled(false);
 ```
 
 To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api} – for example, {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api}, {api:anychart.core.ui.LabelsFactory#fontWeight}fontWeight(){api}, {api:anychart.core.ui.LabelsFactory#fontSize}fontSize(){api}, etc. The {api:anychart.core.ui.LabelsFactory#format}format(){api} method, combined with [text formatters](../../Common_Settings/Text_Formatters), allows setting the text format – read the sections below to learn more.
+
+**Note:** To learn more about formatting dates, see [Date and Time Formats: format()](../Date_and_Time_Formats#format\(\)).
 
 ## Tokens
 

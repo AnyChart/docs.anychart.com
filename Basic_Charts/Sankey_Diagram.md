@@ -25,7 +25,7 @@ This article explains how to create a basic Sankey diagram as well as configure 
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>N/A</td></tr>
+<tr><td></td><td>[Network Graph](Network_Graph)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Chartopedia: Sankey Diagram](https://www.anychart.com/chartopedia/chart-types/sankey-diagram/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
@@ -134,7 +134,7 @@ var chart = anychart.sankey(data);
 
 ### Nodes
 
-Nodes are elements linked by [flows](#flows). In your [data](#data), you should specify the names of source and target nodes of each flow – use the `from` and `to` fields.
+Nodes are elements linked by [flows](#flows). In your [data](#data), you should specify the names of source and target nodes of each flow - use the `from` and `to` fields.
 
 On the chart, nodes are automatically organized in multiple columns. The height of a node is proportional to the total weight of either incoming or outgoing flows, depending on which weight is greater.
 
@@ -312,10 +312,10 @@ To configure labels and tooltips, you can use [formatting functions](../Common_S
 
 In addition the following fields are available for nodes:
 
-* `isConflict` – a boolean indicating whether the total weight of incoming flows equals to the weight of outgoing flows, including dropoffs
-* `income` – an array with names and weights of incoming nodes
-* `outcome` – an array with names and weights of outgoing nodes
-* `dropoff` – the weight of the dropoff node
+* `isConflict` - a boolean indicating whether the total weight of incoming flows equals to the weight of outgoing flows, including dropoffs
+* `income` - an array with names and weights of incoming nodes
+* `outcome` - an array with names and weights of outgoing nodes
+* `dropoff` - the weight of the dropoff node
 
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 

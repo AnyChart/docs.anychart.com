@@ -48,11 +48,17 @@ You can also create any kind of custom indicator yourself using our [Custom Indi
 			<td>[Directional Movement Indicator](Directional\_Movement\_Index\_\(DMI\))</td>
 		</tr>
 		<tr>
+			<td>[Envelope (ENV)](Envelope_\(ENV\))</td>
+		</tr>
+		<tr>
 			<td>[Exponential Moving Average (EMA)](Exponential_Moving_Average_\(EMA\))</td>
 		</tr>
 		<tr>
 			<td>[Heikin-Ashi](Heikin-Ashi)</td>
 		</tr>
+		<tr>
+			<td>[Ichimoku Cloud (IKH)](Ichimoku_Cloud_\(IKH\))</td>
+		</tr>		
 		<tr>
 			<td>[KDJ](KDJ)</td>
 		</tr>
@@ -81,8 +87,20 @@ You can also create any kind of custom indicator yourself using our [Custom Indi
 			<td>[Price Channels](Price_Channels)</td>
 		</tr>
 		<tr>
+			<td>[Price Oscillator (PPO)](Price_Oscillator_\(PPO\))</td>
+		</tr>		
+		<tr>
+			<td>[Psychological Line (PSY)](Psychological_Line_\(PSY\))</td>
+		</tr>
+		<tr>
+			<td>[Rank Correlation Index (RCI)](Rank_Correlation_Index_\(RCI\))</td>
+		</tr>		
+		<tr>
 			<td>[Rate of Change (ROC)](Rate_of_Change_\(ROC\))</td>
 		</tr>
+		<tr>
+			<td>[Ratiocator (RAT)](Ratiocator_\(RAT\))</td>
+		</tr>		
 		<tr>
 			<td>[Relative Strength Index (RSI)](Relative_Strength_Index_\(RSI\))</td>
 		</tr>

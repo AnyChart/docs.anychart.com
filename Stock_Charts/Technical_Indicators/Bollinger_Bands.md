@@ -8,7 +8,7 @@ AnyChart Stock allows you to add Bollinger Bands with desired period to any of y
 
 Mathematical description of the indicator: [Bollinger Bands](Mathematical_Description#bollinger_bands).
 
-## Adding indicator
+## Adding Indicator
 
 Bollinger Bands indicator is added using {api:anychart.core.stock.Plot#bbands}bbands(){api} method. It requires a mapping with the `"value"` field in it:
 
@@ -31,7 +31,7 @@ var bbands = plot.bbands(mapping);
 
 {sample}STOCK\_Technical\_Indicators\_BBands\_01{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 Bollinger Bands indicator only required parameter is "mapping". Optional parameters are: "period", "deviation", "middle", "upper" and "lower" series types. The following code sample demonstrates a Bollinger Bands indicator with parameters set as default:
 

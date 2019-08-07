@@ -27,6 +27,10 @@ CURRENT_BRANCH=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* 
 
 # IGNORE files
 declare -a IGNOREFILES=(
+    "./Maps/Map_Projections.md",
+    "./Basic_Charts/Sunburst_Chart.md",
+    "./Quick_Start/Quick_Start.md",
+    "./Working_with_Data/Data_Adapter/Parsing_HTML_Table.md",
     "./samples/AS_Fonts_01.html"
     "./samples/BCT_Sunburst_Chart_04.html"
     "./samples/CS_Labels_10.html"
@@ -38,6 +42,7 @@ declare -a IGNOREFILES=(
 
 # filter only files that diff with origin/develop
 FILESLIST=$(git diff --name-only origin/develop | grep -e .html -e .md )
+FILESLIST_COUNT=$(git diff --name-only origin/develop | grep -e .html -e .md | wc -l)
 
 # function for "fix" file.
 function heal_file(){
@@ -82,7 +87,10 @@ for ARGUMENT in "$@"
 do
     case "$ARGUMENT" in
             replace|r|"-r")    FILE_MODIFYER="broke_file" ;;
-            all|a|"-a")        FILESLIST=$(find . -type f -name "*.html") ;;
+            all|a|"-a")        
+                FILESLIST=$(find . -type f | grep -e .md -e .html)
+                FILESLIST_COUNT=$(find . -type f | grep -e .md -e .html | wc -l)
+            ;;
             "-h"|"--help"|help|h|"-help")  printf "parameters: \
                 \n 'replace (-r)' - to rename all {{branch-name}} to current branch\
                 \n 'all (-a)' - modify all files (by default False, modify only diff with origin/develop)\
@@ -105,14 +113,25 @@ do
 done
 
 echo 'Starting check...'
+echo
+echo "Items to check: "
+echo $FILESLIST
+echo "Modifier: ${FILE_MODIFYER}"
+echo "COUNT: ${FILESLIST_COUNT}"
+echo 
 
-printf "Items to check: \n$FILESLIST\n\nModifier: ${FILE_MODIFYER}\n"
-
+nr=0
 # for each files in tree of folders do (like python walk)
 for filename in ${FILESLIST}; do
+    (( ++nr ))
     # in diff mode file may be marked as deleted
-    if [ -f $filename ];then ${FILE_MODIFYER} ${filename} ; fi
+    if [ -f $filename ];then 
+        echo -ne "${nr} / ${FILESLIST_COUNT} > ${filename}                                              \r"
+        ${FILE_MODIFYER} ${filename}
+    fi
 done
+# cause echo -ne previous
+echo
 
 CHANGES=$(git diff --name-only)
 if [ "$CHANGES" ] && [[ "${FILE_MODIFYER}"=~"heal_file" ]]; then

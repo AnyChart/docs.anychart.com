@@ -67,7 +67,7 @@ anychart.onDocumentReady(function () {
         for (var k = 0; k < series.data().getRowsCount(); k++) {
           legendItems.push({
             text: series.name() + ": " + data.data()[k][0] + 
-                  " – $" + data.data()[k][i + 1],
+                  " - $" + data.data()[k][i + 1],
             iconType: "square",
             iconFill: series.color()
           });

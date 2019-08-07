@@ -117,7 +117,7 @@ chart = anychart.tagCloud(data);
 
 {sample}BCT\_Tag\_Cloud\_Chart\_02{sample}
 
-The `category` field is optional: it colors elements of the chart according to the categories they belong to. Also, it affects the ordinal color scale and legend – see the [Color Scale: Categories](#categories) and [Legend](#legend) sections to learn more.
+The `category` field is optional: it colors elements of the chart according to the categories they belong to. Also, it affects the ordinal color scale and legend - see the [Color Scale: Categories](#categories) and [Legend](#legend) sections to learn more.
 
 #### Text
 

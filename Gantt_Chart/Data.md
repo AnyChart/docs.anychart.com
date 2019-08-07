@@ -52,6 +52,12 @@ The sections below explain how to organize your data hierarchically:
 * [Project Chart: Hierarchy](Project_Chart#hierarchy)
 * [Resource Chart: Hierarchy](Resource_Chart#hierarchy)
 
+## Date and Time Formats
+
+This section explains how you can format and interpret dates you use in your data:
+
+* [Date and Time Formats: Input](Date_and_Time_Formats#input).
+
 ## Mapping
 
 **1.** To rename the `children`, `parent`, and `id` fields, use the {api:anychart.data#tree}anychart.data.tree(){api} constructor:
@@ -89,7 +95,7 @@ Read more: [Tree Data Model: Mapping](../Working_with_Data/Tree_Data_Model#mappi
 
 ### Project Chart
 
-Here custom fields `child_items`, `start_date`, `end_date` are mapped as `children`, `actualStart`, `actualEnd`:
+Here custom fields `child_items`, `start_date`, and `end_date` are used. They are mapped as `children`, `actualStart` and `actualEnd`:
 
 ```
 // create data
@@ -152,7 +158,7 @@ chart.data(mapping);
 
 **Note:** You cannot rename the data fields that are used to set [periods](Resource_Chart#periods_and_resources): `id`, `start`, and `end`.
 
-In this sample custom fields `child_items` and `intervals` are mapped as `children` and `periods`:
+In this sample custom fields `child_items` and `intervals` are used. They are mapped as `children` and `periods`:
 
 ```
 // create data

@@ -2,11 +2,11 @@
 
 ## Overview
 
-The Awesome Oscillator (AO) was created by Bill Williams. The Awesome Oscillator is an indicator used to measure market momentum. The Awesome Oscillator indicator is a histogram, it is similar to the [MACD indicator](Moving\_Average\_Convergence\_Divergence\_\(MACD\)) – displaying the market momentum of a recent number of periods compared to the momentum of a larger number of previous periods. AO calculates the difference between a 34 Period and 5 Period Simple Moving Average. The Simple Moving Averages that are used are not calculated using closing price but rather each bar's midpoints. AO is generally used to affirm trends or to anticipate possible reversals. If the AO histogram is crossing above the zero line that’s indicative of bullish momentum, reverse is true as well - when AO crosses below that’s indicative of bearish momentum.
+The Awesome Oscillator (AO) was created by Bill Williams. The Awesome Oscillator is an indicator used to measure market momentum. The Awesome Oscillator indicator is a histogram, it is similar to the [MACD indicator](Moving\_Average\_Convergence\_Divergence\_\(MACD\)) - displaying the market momentum of a recent number of periods compared to the momentum of a larger number of previous periods. AO calculates the difference between a 34 Period and 5 Period Simple Moving Average. The Simple Moving Averages that are used are not calculated using closing price but rather each bar's midpoints. AO is generally used to affirm trends or to anticipate possible reversals. If the AO histogram is crossing above the zero line that's indicative of bullish momentum, reverse is true as well - when AO crosses below that's indicative of bearish momentum.
 
 Mathematical description: [Awesome Oscillator (AO) Mathematical Description](Mathematical_Description#awesome_oscillator).
 
-## Adding indicator
+## Adding Indicator
 
 Awesome Oscillator indicator is added using {api:anychart.core.stock.Plot#ao}ao(){api} method. It requires a mapping with two fields: `"high"` and `"low"`.
 
@@ -38,9 +38,9 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_Awesome\_Oscillator\_01{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
-There are four parameters an Awesome Oscillator indicator has, one of them is necessary - the mapping. The second parameter and third parameters set perod, fourth - {api:anychart.enums.MovingAverageType}Moving Average Type{api}. The last parameter sets the series type. The following code sample demonstrates an Awesome Oscillator indicator with parameters set as default:
+There are four parameters an Awesome Oscillator indicator has, one of them is necessary - the mapping. The second parameter and third parameters set period, fourth - {api:anychart.enums.MovingAverageType}Moving Average Type{api}. The last parameter sets the series type. The following code sample demonstrates an Awesome Oscillator indicator with parameters set as default:
 
 ```
 var ao = plot.ao(mapping, 5, 34, "sma", "stick");

@@ -26,7 +26,7 @@ Reference the GeoData JavaScript file in the `<head>` section of your web page.
 
 ```
 <head>
-  <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js"></script>
+  <script src="https://cdn.anychart.com/geodata/2.0.0/countries/australia/australia.js"></script>
 </head>
 ```
 
@@ -124,7 +124,7 @@ You can copy this code to a file on your computer and open it in your browser to
   <head>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js" type="text/javascript"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-map.min.js" type="text/javascript"></script>
-    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js"></script>
+    <script src="https://cdn.anychart.com/geodata/2.0.0/countries/australia/australia.js"></script>
     <style>
       html, body, #container {
         width: 100%;

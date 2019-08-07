@@ -7,7 +7,7 @@ A Gantt chart is a tool used to schedule projects or show resources (e.g., equip
 
 AnyGantt allows creating two types of Gannt charts – [Project](Project_Chart) and [Resource](Resource_Chart). They display different timeline [elements](Elements), but share most settings.
 
-Both chart types are defined as instances of the {api:anychart.charts.Gantt}anychart.charts.Gantt{api} class, and both are created with the help of the {api:anychart#ganttResource}anychart.ganttResource(){api} constructor. The chart type depends exclusively on how your data is organized.
+Both chart types are defined as instances of the {api:anychart.charts.Gantt}anychart.charts.Gantt{api} class. To create them, use the {api:anychart#ganttProject}anychart.ganttProject{api} and {api:anychart#ganttResource}anychart.ganttResource(){api} constructors.
 
 This is how the Project chart and Resource chart are structured:
 
@@ -85,6 +85,7 @@ Timeline elements:
 * regular tasks – {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
 * parent tasks – {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api}
 * milestones – {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api}
+* previews of milestones – {api:anychart.core.gantt.elements.MilestonesPreviewElement}anychart.core.gantt.elements.MilestonesPreviewElement{api}
 * baselines – {api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api}
 * progress bars – {api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api}
 * connectors – {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api}

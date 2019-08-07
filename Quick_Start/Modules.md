@@ -136,6 +136,38 @@ A module for creating Project and Resource [Gantt](../Gantt_Chart) charts:
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js"></script>
 ```
 
+### Geo Maps
+
+A module for creating [Geo Maps](../Maps/Quick_Start):
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-map.min.js"></script>
+```
+
+### Graph Chart
+
+A module for creating [Graph](../Basic_Charts/Graph_Chart) charts:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-graph.min.js"></script>
+```
+
+### Geo Maps
+
+A module for creating [Geo Maps](../Maps/Quick_Start):
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-map.min.js"></script>
+```
+
+### Graph Chart
+
+A module for creating [Graph](../Basic_Charts/Graph_Chart) charts:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-graph.min.js"></script>
+```
+
 ### Heat Map
 
 A module for creating [Heat Maps](../Basic_Charts/Heat_Map_Chart):
@@ -152,20 +184,20 @@ A module for creating [Linear Gauges](../Gauges/Linear_Gauge):
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-linear-gauge.min.js"></script>
 ```
 
-### Geo Maps
-
-A module for creating [Geo Maps](../Maps/Quick_Start):
-
-```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-map.min.js"></script>
-```
-
 ### Mekko
 
 A module for creating [Mekko](../Basic_Charts/Marimekko_Chart/Mekko_Chart) charts:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-mekko.min.js"></script>
+```
+
+### Network Graph
+
+A module for creating [Network Graph](../Basic_Charts/Network_Graph) diagrams:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-graph.min.js"></script>
 ```
 
 ### Network Graph
@@ -286,6 +318,14 @@ A module for creating [Tag Clouds](../Basic_Charts/Tag_Cloud):
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-tag-cloud.min.js"></script>
+```
+
+### Timeline
+
+A module for creating [Timeline](../Basic_Charts/Timeline_Chart) charts:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-timeline.min.js"></script>
 ```
 
 ### Timeline

@@ -7,7 +7,7 @@ Developed by Marc Chaikin, the Chaikin Oscillator measures the momentum of the A
 Find the mathematical description of the indicator on the [Chaikin Oscillator Mathematical Description](Mathematical_Description#chaikin_oscillator) page.
 
 
-## Adding indicator
+## Adding Indicator
 
 Chaikin Oscillator indicator is added through the {api:anychart.core.stock.Plot#cho}cho(){api} method. It requires a mapping with four fields: `"high"`, `"low"`, `"close"`, and `"volume"`. The following sample demonstrates the Chaikin Oscillator indicator applied to a spline series which data values are equal to "close" values.
 
@@ -25,7 +25,7 @@ Here is a live sample:
 It is possible to change the series type any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
 
-## Indicator parameters
+## Indicator Parameters
 
 The Chaikin Oscillator indicator has 5 parameters. The only necessary one is mapping. Optional parameters are fast period, slow period, moving averagae type and the series type. The following code sample creates an indicator with parameters set as default:
 

@@ -17,8 +17,8 @@ AnyChart provides built-in locales covering most regions and cultures. To use an
 Linking from CDN looks like this:
 
 ```
-<script src="https://cdn.anychart.com/locale/1.1.0/en-gb.js"></script>
-<script src="https://cdn.anychart.com/locale/1.1.0/en-us.js"></script>
+<script src="https://cdn.anychart.com/locale/2.0.0/en-gb.js"></script>
+<script src="https://cdn.anychart.com/locale/2.0.0/en-us.js"></script>
 ```
 
 Linking from your server may look like this:
@@ -51,7 +51,7 @@ anychart.format.inputDateTimeFormat('yyyy-MM-dd');
 anychart.format.outputDateTimeFormat('dd MMM');
 ```
 
-You can also tune any output in tooltips or labels formatters using {api:anychart.format#dateTime}dateTime(){api} and {api:}number(){api} methods:
+You can also tune any output in tooltips or labels formatters using {api:anychart.format#dateTime}dateTime(){api} and {api:anychart.format#number}number(){api} methods:
 
 ```
 chart.xAxis().labels().format(function () {

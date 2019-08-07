@@ -15,7 +15,7 @@ Bollinger Bands %B is an indicator derived from [Bollinger Bands](Bollinger_Band
 
 Mathematical description of the indicator can be found on the following page: [Mathematical Description of Bollinger Bands %B](Mathematical_Description#bollinger_bands_%b)
 
-## Adding indicator
+## Adding Indicator
 
 Bollinger Bands %B indicator is added using the {api:anychart.core.stock.Plot#bbandsB}bbandsB(){api} method. It requires a mapping with the `"value"` field in it:
 
@@ -38,7 +38,7 @@ var bbandsB = plot.bbandsB(mapping);
 
 {sample}STOCK\_Technical\_Indicators\_BBandsB\_01{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 Bollinger Bands %B indicator requires only the "mapping" parameter. Optional parameters are "period", "deviation" and "series type".
 

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Network Graph 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-graph.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<label><input onclick="layoutType('forced')" type="radio" name="type" checked>Forced Layout</label>
+<label><input onclick="layoutType('fixed')" type="radio" name="type">Fixed Layout</label>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = {
+      nodes: [
+        {id: "Richard", x:   0, y: 100},
+        {id: "Larry",   x:  50, y: 150},
+        {id: "Marta",   x: 100, y: 100},
+        {id: "Jane",    x: 200, y: 100},
+        {id: "Norma",   x: 250, y:  50},
+        {id: "Frank",   x: 250, y: 150},
+        {id: "Brett",   x: 300, y: 100},
+        {id: "Tommy",   x: 400, y: 100}
+      ],
+      edges: [
+        {from: "Richard", to: "Larry"},
+        {from: "Richard", to: "Marta"},
+        {from: "Larry",   to: "Marta"},
+        {from: "Marta",   to: "Jane"},
+        {from: "Jane",    to: "Norma"},
+        {from: "Jane",    to: "Frank"},
+        {from: "Jane",    to: "Brett"},
+        {from: "Brett",   to: "Frank"}
+      ]
+    };
+
+    // create a chart and set the data
+    chart = anychart.graph(data);
+
+    // disable zooming with the mouse wheel
+    chart.interactivity().zoomOnMouseWheel(false);
+
+    // set the chart title
+    chart.title("Network Graph: Layout = fixed");
+
+    // set the chart title
+    chart.listen("chartDraw", function () {
+      chart.title("Network Graph: Layout = " + chart.layout().type());
+    });
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+
+// set the layout type
+function layoutType(type) {
+  chart.layout().type(type);
+}
+</script>
+</body>
+</html>

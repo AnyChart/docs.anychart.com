@@ -25,7 +25,7 @@ You can configure the main text or titles of tooltips by combining the {api:anyc
 
 Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
-In the sample below, both the main text and titles of tooltips are configured. In addition to the default tokens, a custom token *{%short_desc}* is used:
+In the sample below, both the main text and titles of tooltips are configured. In addition to the default tokens, a custom token `{%short_desc}` is used:
 
 ```
 // add event markers
@@ -66,7 +66,7 @@ Here are fields that work with formatting functions:
 
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 
-This sample shows how adjust the main text and titles of tooltips. Along with the default fields, a custom data field *"short desc"* is used:
+This sample shows how adjust the main text and titles of tooltips. Along with the default fields, a custom data field `short desc` is used:
 
 ```
 // add event markers
@@ -76,21 +76,23 @@ plot.eventMarkers({"groups": [
     "data": [
       {
         "date": "2006-06-08",
-        "description": "Cisco announced the acquisition of Audium Corporation."
+        "description": "Cisco announced the acquisition of Audium Corporation.",
+        "short_desc": "Audium Corporation Acquisition"
       },
       {
         "date": "2008-04-27",
-        "description": "Cisco announced its intent to acquire PostPath, Inc."
+        "description": "Cisco announced its intent to acquire PostPath, Inc.",
+        "short_desc": "PostPath Acquisition"
       }
     ]
   }
 ]});
 
-plot.eventMarkers().tooltip().titleFormat( function() {
+plot.eventMarkers().tooltip().titleFormat(function() {
   return this.getData("short_desc") + " (" + this.symbol + ")";
 });
 
-plot.eventMarkers().tooltip().format( function() {
+plot.eventMarkers().tooltip().format(function() {
   return "On " + anychart.format.dateTime(this.date, "MMMM dd") +
          ", " + this.description;
 });

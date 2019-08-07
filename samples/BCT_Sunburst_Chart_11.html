@@ -48,24 +48,24 @@ anychart.onDocumentReady(function () {
     ];
 
     // create and configure the first sunburst chart
-    var sunburst1 = anychart.sunburst(data, "as-tree");
-    sunburst1.title("Start Angle: Default (0\xb0)");
-    sunburst1.bounds(0, 0, "50%", "100%");
+    var chart1 = anychart.sunburst(data, "as-tree");
+    chart1.title("Start Angle: Default (0\xb0)");
+    chart1.bounds(0, 0, "50%", "100%");
     // set the chart container
-    sunburst1.container(stage);
+    chart1.container(stage);
     // initiate drawing the chart
-    sunburst1.draw();   
+    chart1.draw();   
 
     // create and configure the second sunburst chart
-    var sunburst2 = anychart.sunburst(data, "as-tree");
-    sunburst2.title("Start Angle: 90\xb0");
-    sunburst2.bounds("50%", 0, "50%", "100%");
+    var chart2 = anychart.sunburst(data, "as-tree");
+    chart2.title("Start Angle: 90\xb0");
+    chart2.bounds("50%", 0, "50%", "100%");
     // set the start angle
-    sunburst2.startAngle(90);
+    chart2.startAngle(90);
     // set the chart container
-    sunburst2.container(stage);
+    chart2.container(stage);
     // initiate drawing the chart
-    sunburst2.draw();
+    chart2.draw();
 });
 </script>
 </body>

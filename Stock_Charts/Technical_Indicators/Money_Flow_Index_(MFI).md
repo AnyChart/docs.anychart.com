@@ -6,7 +6,7 @@ Money flow index (MFI) is an oscillator calculated over an N-day period, ranging
 
 Find the mathematical description of the indicator on the [Money Flow Index (MFI)](Mathematical_Description#money_flow_index) page.
 
-## Adding indicator
+## Adding Indicator
 
 MFI indicator is added through the {api:anychart.core.stock.Plot#mfi}mfi(){api} method. It requires a mapping with four fields: `"high"`, `"low"`, `"close"`, and `"volume"`. The following sample demonstrates the MFI indicator applied to an OHLC series:
 
@@ -38,7 +38,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_MFI\_01{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 There are three parameters an MFI indicator has, one of them is necessary - the mapping. Two other ones are the period and the series type. The series type can be easily changed any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method. The following code sample demonstrates an MFI indicator with parameters set as default.
 

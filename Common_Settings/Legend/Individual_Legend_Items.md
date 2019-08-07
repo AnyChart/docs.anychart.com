@@ -9,7 +9,7 @@ To access an individual item, call the {api:?entry=legendItem}legendItem(){api} 
 
 Please note that legend items of single-series chart types cannot be customized this way. However, you can use the `legendItem` data field with fields corresponding to methods of the {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api} class. Read the [Single Series](#single_series) section to learn more.
 
-Also, using the {api:?entry=legend}legend(){api} method of the chart with {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} and {api:anychart.core.ui.Legend#items}items(){api} allows adding custom legend items both to single-series and multiple-series charts (as well as editing the existing items) – see the [Custom Items](#custom_items) section of this article.
+Also, using the {api:?entry=legend}legend(){api} method of the chart with {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} and {api:anychart.core.ui.Legend#items}items(){api} allows adding custom legend items both to single-series and multiple-series charts (as well as editing the existing items) - see the [Custom Items](#custom_items) section of this article.
 
 ## Enabling / Disabling
 
@@ -203,7 +203,7 @@ You can set the spacing between the icon and text of a legend item with the help
 
 ## Single Series
 
-If the chart type allows adding only a single series, its legend items represent points, not series. Such items can also be customized individually – combine the `legendItem` data field with fields corresponding to the methods mentioned in the sections above.
+If the chart type allows adding only a single series, its legend items represent points, not series. Such items can also be customized individually - combine the `legendItem` data field with fields corresponding to the methods mentioned in the sections above.
 
 **Note:** The methods described in the [Custom Items](#custom_items) section also work with single-series chart types, so, alternatively, you can just add a custom item or create a fully custom legend.
 
@@ -332,7 +332,7 @@ for (var i = 0; i < chart.getSeriesCount(); i++) {
     for (var k = 0; k < series.data().getRowsCount(); k++) {
       legendItems.push({
         text: series.name() + ": " + data.data()[k][0] + 
-              " – $" + data.data()[k][i + 1],
+              " - $" + data.data()[k][i + 1],
         iconType: "square",
         iconFill: series.color()
       });

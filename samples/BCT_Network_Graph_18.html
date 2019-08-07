@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Network Graph 18"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-graph.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
+        #titleLabel {
+            font-weight: 600;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<label id="titleLabel">Node Alignment:</label>
+<label><input onclick="magnetizingEnabled(true)" type="radio" name="mode">Enabled</label>
+<label><input onclick="magnetizingEnabled(false)" type="radio" name="mode" checked>Disabled</label> 
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = {
+      nodes: [
+        {id: "Richard"},
+        {id: "Larry"},
+        {id: "Marta"},
+        {id: "Jane"},
+        {id: "Norma"},
+        {id: "Frank"},
+        {id: "Brett"},
+        {id: "Tommy"}
+      ],
+      edges: [
+        {from: "Richard", to: "Larry"},
+        {from: "Richard", to: "Marta"},
+        {from: "Larry",   to: "Marta"},
+        {from: "Marta",   to: "Jane"},
+        {from: "Jane",    to: "Norma"},
+        {from: "Jane",    to: "Frank"},
+        {from: "Jane",    to: "Brett"},
+        {from: "Brett",   to: "Frank"}
+      ]
+    };
+
+    // create a chart and set the data
+    chart = anychart.graph(data);
+
+    // set the chart title
+    chart.title("Network Graph: Node Behavior");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+
+// enable / disable the alignment of nodes
+function magnetizingEnabled(enabled) {
+  chart.interactivity().magnetize(enabled);
+}
+</script>
+</body>
+</html>

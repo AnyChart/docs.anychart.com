@@ -6,7 +6,7 @@ Williams %R, or just %R, is a momentum indicator showing the current closing pri
 
 Find the mathematical description of the indicator on the [Williams %R Mathematical Description](Mathematical_Description#williams_%r) page.
 
-## Adding indicator
+## Adding Indicator
 
 Williams %R indicator is added through the {api:anychart.core.stock.Plot#williamsR}williamsR(){api} method. It requires a mapping with three fields: `"high"`, `"low"`, and `"close"`.
 
@@ -47,7 +47,7 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_Williams\_R\_01{sample}
 
-## Indicator parameters
+## Indicator Parameters
 
 There are three parameters a Williams %R indicator has, one of them is necessary - the mapping. Two other ones are the period and the series type. The series type can be easily changed any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method. The following code sample demonstrates a Williams %R indicator with parameters set as default.
 
