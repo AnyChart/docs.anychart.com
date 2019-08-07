@@ -3,7 +3,7 @@
 
 Ratiocator Indicator represents the relationship between two prices series. It allows you to examine performance developments between two securities. With the help of a base date, this indicator can be carried out over a defined period of time.
 
-Mathematical description of the indicator: [Ratiocator (RAT)](Ratiocator_\(RAT\)).
+Mathematical description of the indicator: [Ratiocator (RAT) Mathematical Description](Mathematical_Description#ratiocator)).
 
 ## Adding Indicator
 
