@@ -42,9 +42,9 @@ Here is a live sample:
 
 ## Indicator parameters
 
-There are 7 parameters the PPO indicator has, one of them is necessary - the mapping.
+There are seven parameters the PPO indicator has, one of them is necessary - the mapping.
 
-Then you can set the long period, the short period, the smoothing period, and series types for PPO series, signal series and histogram series.
+Then you can set the long period, the short period, the smoothing period, and series types - for the PPO series, signal series, and histogram series.
 
 The following code sample demonstrates a PPO indicator with parameters set as default:
 

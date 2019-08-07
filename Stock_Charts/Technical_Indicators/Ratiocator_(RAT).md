@@ -1,7 +1,7 @@
 # Ratiocator (RAT)
 ## Overview
 
-Ratiocator Indicator represents the relationship between two prices series. It allows you to examine performance developments between two securities. With the help of a base date, this indicator can be carried out over a defined period of time.
+The Ratiocator Indicator (RAT) represents the relationship between two prices series. It allows you to examine performance developments between two securities. With the help of a base date, this indicator can be carried out over a defined period of time.
 
 Mathematical description of the indicator: [Ratiocator (RAT) Mathematical Description](Mathematical_Description#ratiocator).
 
@@ -58,11 +58,11 @@ Here is a live sample:
 
 ## Indicator parameters
 
-There are 3 parameters the RAT indicator has, one of them is necessary - the mapping.
+There are three parameters the RAT indicator has, one of them is necessary - the mapping.
 
 Then you can set the base date and series types.
 
-If base date is ommitted (or zero is passed as the parameter) - the first date in the data set as the base date.
+If base date is omitted (or zero is passed as the parameter) - the first date in the data is set as the base date.
 
 The following code sample demonstrates a RAT indicator with parameters set as default:
 
@@ -72,7 +72,7 @@ var rat = plot.rat(mapping, 0, "line");
 
 ## Visualization
 
-Vizualization of an indicator depends on the type of series you display it with. Here is a sample where Ratiocator indicators with different parameters is added:
+Vizualization of an indicator depends on the type of series you display it with. Here is a sample where a Ratiocator indicator is configured
 
 ```
 // create and adjust a RAT indicator

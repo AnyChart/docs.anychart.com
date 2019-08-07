@@ -40,11 +40,11 @@ Here is a live sample:
 
 ## Indicator parameters
 
-There are 4 parameters the RCI indicator has, one of them is necessary - the mapping.
+There are four parameters the RCI indicator has, one of them is necessary - the mapping.
 
-Then you can set the the perio and the series types.
+Then you can set the the period and the series type.
 
-The following code sample demonstrates a RCI indicator with parameters set as default:
+The following code sample demonstrates an RCI indicator with parameters set as default:
 
 ```
 var rci = plot.rci(mapping, 12, "line");

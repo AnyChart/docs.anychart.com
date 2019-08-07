@@ -1,7 +1,7 @@
 # Ichimoku Cloud (IKH)
 ## Overview
 
-The Ichimoku Cloud is composed of five lines or calculations, two of which compose a cloud where the difference between the two lines is shaded in. It is a collection of technical indicators that show support and resistance levels, as well as momentum and trend direction. IKH does this by taking multiple averages and plotting them on the chart. It also uses these figures to compute a "cloud" which attempts to forecast where the price may find support or resistance in the future.
+The Ichimoku Cloud (IKH) is composed of five lines or calculations, two of which compose a cloud where the difference between the two lines is shaded in. It is a collection of technical indicators that show support and resistance levels, as well as momentum and trend direction. IKH does this by taking multiple averages and plotting them on the chart. It also uses these figures to compute a "cloud" which attempts to forecast where the price may find support or resistance in the future.
 
 The Ichimoku cloud was developed by Goichi Hosoda, a Japanese journalist, and published in the late 1960s. It provides more data points than the standard candlestick chart. While it seems complicated at first glance, those familiar with how to read the charts often find it easy to understand with well-defined trading signals.
 
@@ -9,7 +9,7 @@ Mathematical description of the indicator: [Ichimoku Cloud Mathematical Descript
 
 ## Adding Indicator
 
-The IKH indicator is added using the {api:anychart.core.stock.Plot#ikh}ikh(){api} method. It requires a mapping with 3 fields: `"high"`, `"low"` and `"close"`:
+The IKH indicator is added using the {api:anychart.core.stock.Plot#ikh}ikh(){api} method. It requires a mapping with 3 fields: `"high"`, `"low"`, and `"close"`:
 
 ```
 // create data table on loaded data
@@ -39,7 +39,7 @@ Here is a live sample:
 
 ## Indicator parameters
 
-There are 8 parameters the IKH indicator has, one of them is necessary - the mapping.
+There are eight parameters the IKH indicator has, one of them is necessary - the mapping.
 
 Then you can set the base period, the conversion period, the leading period, and series types.
 

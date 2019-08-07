@@ -1,9 +1,9 @@
 # Envelope (ENV)
 ## Overview
 
-Envelopes are technical indicators that are typically plotted over a price chart with upper and lower bounds. Envelopes are commonly used to help traders and investors identify extreme overbought and oversold conditions as well as trading ranges.
+Envelope (ENV) is a technical indicator that is typically plotted over a price chart with upper and lower bounds. Envelopes are commonly used to help traders and investors identify extreme overbought and oversold conditions as well as trading ranges.
 
-With AnyStock Envelope indicator you can create both SMA and EMA envelopes and choose the colors for lower and upper level.
+With AnyStock Envelope indicator you can create both SMA and EMA envelopes and choose colors for the lower and upper level.
 
 Mathematical description of the indicator: [ENV Mathematical Description](Mathematical_Description#envelope).
 
@@ -42,9 +42,9 @@ Here is a live sample:
 
 ## Indicator parameters
 
-There are 6 parameters the ENV indicator has, one of them is necessary - the mapping.
+There are six parameters the ENV indicator has, one of them is necessary - the mapping.
 
-Then you can set the deviation, the period, the smoothing type and series types.
+Then you can set the deviation, the period, the smoothing type, and series types.
 
 The following code sample demonstrates a ENV indicator with parameters set as default:
 
