@@ -34,7 +34,7 @@ Each point of the [Adaptive Moving Average](Adaptive\_Moving\_Average\_\(AMA\)) 
 
 ## Aroon
 
-[Aroon](Aroon) indicator is calculated according to the following formula:
+[Aroon](Aroon) indicator is calculated according to the following formulas:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/aroon.png" width="650"></center>
 
@@ -120,8 +120,6 @@ You can see how the ADL indicator is calculated in the [ADL part](#accumulation_
 
 ## Chaikin Volatility
 
-Coming soon.
-
 Chaikin Volatility indicator in each point is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/chv.png"></center>
@@ -160,7 +158,7 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 
 [Heikin-Ashi](Heikin-Ashi) indicator is based on price data from the current open-high-low-close, the current Heikin-Ashi values, and the prior Heikin-Ashi values.
 
-In the formaulas below, (0) refers to the current period, (-1) to the prior period, and HA to Heikin-Ashi.
+In the formulas below, (0) refers to the current period, (-1) to the prior period, and HA to Heikin-Ashi.
 
 <ol>
 	<li>The Heikin-Ashi Close is simply an average of the open, high, low, and close for the current period:</li>
@@ -237,7 +235,7 @@ You can see how [EMA (Exponential Moving Average)](#exponential_moving_average) 
 
 ## Momentum
 
-[Momentum](Momentum) indicator in each point is calculated in accordance to the folowing formula:
+[Momentum](Momentum) indicator in each point is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/momentum.png" width="400"></center>
 
@@ -248,13 +246,13 @@ You can see how [EMA (Exponential Moving Average)](#exponential_moving_average) 
 <ol>
 	<li>EMA\[slow period\]<sub>i</sub> and EMA\[fast period\]<sub>i</sub> is calculated by [EMA formula](#exponential_moving_average)</a>. Slow period 
 	and fast period are set by **slowPeriod** (default 26) and **fastPeriod** (default 12) parameters of {api:anychart.core.stock.indicators.MACD}macd(){api} method.</li>
-	<li>MACD series value is calculated:<br>
+	<li>MACD series value is calculated according to this formula:<br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/macd-macd.png"/></li></center>
 	<li>EMA\[signal period\]<sub>i</sub> of MACD series values is calculated by [EMA formula](#exponential_moving_average), where signal period is set
 	by **signalPeriod** parameter.</li>
-	<li>Signal series value is calculated:<br>
+	<li>Signal series value:<br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/macd-signal.png"/></li></center>
-	<li>Histogram series is calculated:<br>
+	<li>Histogram serie:<br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/macd-histogram.png"/></li></center>
 </ol>
 
@@ -280,7 +278,7 @@ Coming soon.
 
 ## Parabolic SAR
 
-[Parabolic SAR](Parabolic_SAR_\(PSAR\)) is created according to the following algorithm.
+[Parabolic SAR](Parabolic_SAR_\(PSAR\)) is created according to the algorithm described below.
 
 At each step within a trend, the SAR is calculated ahead of time. That is, tomorrow's SAR value is built using data available today. The general formula used for this is:
 
@@ -395,13 +393,13 @@ where p2 is the second period that is set through the {api:anychart.core.stock.P
 where p3 is the third period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the %D value.
 
 ## Triple Exponential Moving Average
-[Triple Exponential Moving Average (TRIX)](Triple_Exponential_Moving_Average_\(TRIX\)) and its signal line are calculated in accordance to the following calculation flow:
+[Triple Exponential Moving Average (TRIX)](Triple_Exponential_Moving_Average_\(TRIX\)) and its signal line are calculated according to the following formulas:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/trix.png"></center>
 
 ## Volume + Moving Average
 
-[Volume + Moving Average](Volume_+_Moving_Average) does no calculations with Volume and adds moving average of either [SMA](#simple_moving_average) or [EMA](#exponential_moving_average) type calculated from Volume series.
+[Volume + Moving Average](Volume_+_Moving_Average) does no calculations with Volume and adds moving average of either [SMA](#simple_moving_average) or [EMA](#exponential_moving_average) type calculated from the Volume series.
 
 ## Williams %R
 
