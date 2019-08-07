@@ -127,6 +127,7 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 ## Directional Movement Indicator
 
 [Directional Movement Indicator](Directional\_Movement\_Index\_\(DMI\)) is calculated in three steps: 
+
 <ol>
 <li>First the True Range (TR), Plus Directional Movement (+DM) and Minus Directional Movement (-DM) are calculated for each period:</li><br>
 
@@ -145,8 +146,10 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 
 [Envelope](Envelope\_\(ENV\)) is calculated according to the following formulas:
 
-**Upper Envelope = 20 Period SMA + (20 Period SMA * 0.1)**<br>
-**Lower Envelope = 20 Period SMA - (20 Period SMA * 0.1)**
+<ol>
+	<li>Upper Envelope: **20 Period SMA + (20 Period SMA * 0.1)**</li>
+	<li>Lower Envelope: **20 Period SMA - (20 Period SMA * 0.1)**</li>
+</ol>
 
 ## Exponential Moving Average
 
@@ -158,7 +161,7 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 
 [Heikin-Ashi](Heikin-Ashi) indicator is based on price data from the current open-high-low-close, the current Heikin-Ashi values, and the prior Heikin-Ashi values.
 
-In the formulas below, (0) refers to the current period, (-1) to the prior period, and HA to Heikin-Ashi.
+In the formulas below, (0) refers to the current period, (-1) to the prior period, and HA to Heikin-Ashi:
 
 <ol>
 	<li>The Heikin-Ashi Close is simply an average of the open, high, low, and close for the current period:</li>
@@ -177,7 +180,7 @@ candlestick open, or the current Heikin-Ashi candlestick close:</li>
 [Ichimoku Cloud (IKH)](Ichimoku_Cloud_\(IKH\)) includes five plots. Four of them are based on the average of the high and low over a given period of time. Periods can be adjusted when an indicator is created.
 
 
-This is how it is calculated:
+This is how Ichimoku Cloud is calculated:
 
 <ol>
 	<li>Tenkan-sen (Conversion Line): **(9-period high + 9-period low)/2))**</li>
