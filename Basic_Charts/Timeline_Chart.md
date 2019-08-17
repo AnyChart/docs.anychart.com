@@ -115,7 +115,12 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 {sample}BCT\_Timeline\_Chart\_01{sample}
 
-### (?) Series Types 
+### (?) Series Types
+
+* {api:anychart.charts.Timeline#moment}moment(){api}
+* {api:anychart.charts.Timeline#moment}range(){api}
+* {api:anychart.core.timeline.series.Moment}anychart.core.timeline.series.Moment{api}
+* {api:anychart.core.timeline.series.Range}nychart.core.timeline.series.Range{api}
 
 ### (?) Appearance
 
@@ -155,7 +160,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 {sample}BCT\_Timeline\_Chart\_01{sample}
 
-### Navigateion
+### Navigation
 
 #### Fitting to Width
 
