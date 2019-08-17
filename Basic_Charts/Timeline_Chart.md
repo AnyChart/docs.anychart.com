@@ -115,14 +115,33 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 {sample}BCT\_Timeline\_Chart\_01{sample}
 
-### (?) Series Types
+### Moment Series
 
 * {api:anychart.charts.Timeline#moment}moment(){api}
-* {api:anychart.charts.Timeline#moment}range(){api}
 * {api:anychart.core.timeline.series.Moment}anychart.core.timeline.series.Moment{api}
+
+
+```
+
+```
+
+{sample}BCT\_Timeline\_Chart\_01{sample}
+
+### Range Series
+
+* {api:anychart.charts.Timeline#range}range(){api}
 * {api:anychart.core.timeline.series.Range}nychart.core.timeline.series.Range{api}
 
+
+```
+
+```
+
+{sample}BCT\_Timeline\_Chart\_01{sample}
+
 ### (?) Appearance
+
+отсылочный раздел
 
 ### Markers
 
@@ -160,12 +179,21 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 {sample}BCT\_Timeline\_Chart\_01{sample}
 
+### (?) Labels and Tooltips
+
+#### (?) Tokens
+
+#### (?) Formatting Functions
+
 ### Navigation
 
-#### Fitting to Width
+#### Methods
 
 * {api:anychart.charts.Timeline#fit}fit(){api}
+* {api:anychart.charts.Timeline#scroll}scroll(){api}
+* {api:anychart.charts.Timeline#zoomTo}zoomTo(){api}
 
+пример на {api:anychart.charts.Timeline#fit}fit(){api}:
 
 ```
 
@@ -203,9 +231,3 @@ zoomController.render();
 ```
 
 {sample}BCT\_Timeline\_Chart\_01{sample}
-
-### (?) Labels and Tooltips
-
-#### (?) Tokens
-
-#### (?) Formatting Functions
