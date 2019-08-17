@@ -122,7 +122,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 * {api:anychart.core.timeline.series.Moment#direction}direction(){api}
 * {api:anychart.core.timeline.series.Moment#markers}markers(){api} + {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api}
 * {api:anychart.core.timeline.series.Moment#normal}normal(){api} + {api:anychart.core.timeline.series.Moment#hovered}hovered(){api} + {api:anychart.core.timeline.series.Moment#selected}selected(){api}
-[appearance](../Appearance_Settings)
+* [appearance](../Appearance_Settings)
 
 
 ```
