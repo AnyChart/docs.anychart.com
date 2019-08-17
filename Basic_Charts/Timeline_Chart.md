@@ -117,14 +117,6 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### (?) Series Types 
 
-### Data
-
-```
-
-```
-
-{sample}BCT\_Timeline\_Chart\_01{sample}
-
 ### (?) Appearance
 
 ### Markers
