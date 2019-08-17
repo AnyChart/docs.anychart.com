@@ -28,7 +28,7 @@ This article explains how to create a basic Timeline chart as well as configure 
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[(?)]()</td></tr>
+<tr><td></td><td>(?)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Chartopedia: Timeline Chart](https://www.anychart.com/chartopedia/chart-types/timeline-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
