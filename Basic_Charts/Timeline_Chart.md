@@ -50,7 +50,11 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
-To create a Timeline chart, use the {api:anychart#timeline}anychart.timeline(){api} chart constructor, like in the following sample:
+To create a Timeline chart, use the {api:anychart#timeline}anychart.timeline(){api} chart constructor...
+
+* {api:anychart.charts.Timeline#moment}moment(){api}
+* {api:anychart.charts.Timeline#range}range(){api}
+
 
 ```
 // create data
