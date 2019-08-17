@@ -328,14 +328,6 @@ A module for creating [Timeline](../Basic_Charts/Timeline_Chart) charts:
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-timeline.min.js"></script>
 ```
 
-### Timeline
-
-A module for creating [Timeline](../Basic_Charts/Timeline_Chart) charts:
-
-```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-timeline.min.js"></script>
-```
-
 ### Treemap
 
 A module for creating [Treemap](../Basic_Charts/Treemap_Chart) charts:
