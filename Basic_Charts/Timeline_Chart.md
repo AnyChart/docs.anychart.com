@@ -119,6 +119,10 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 * {api:anychart.charts.Timeline#moment}moment(){api}
 * {api:anychart.core.timeline.series.Moment}anychart.core.timeline.series.Moment{api}
+* {api:anychart.core.timeline.series.Moment#direction}direction(){api}
+* {api:anychart.core.timeline.series.Moment#markers}markers(){api}
+* {api:anychart.core.timeline.series.Moment#normal}normal(){api} + {api:anychart.core.timeline.series.Moment#hovered}hovered(){api} + {api:anychart.core.timeline.series.Moment#selected}selected(){api}
+[appearance](../Appearance_Settings)
 
 
 ```
@@ -131,6 +135,10 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 * {api:anychart.charts.Timeline#range}range(){api}
 * {api:anychart.core.timeline.series.Range}nychart.core.timeline.series.Range{api}
+* {api:anychart.core.timeline.series.Range#direction}direction(){api}
+* {api:anychart.core.timeline.series.Range#height}height(){api}
+* {api:anychart.core.timeline.series.Range#normal}normal(){api} + {api:anychart.core.timeline.series.Range#hovered}hovered(){api} + {api:anychart.core.timeline.series.Range#selected}selected(){api}
+* [appearance](../Appearance_Settings)
 
 
 ```
