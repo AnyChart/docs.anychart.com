@@ -72,7 +72,9 @@ anychart.onDocumentReady(function () {
     var rangeSeries2 = chart.range(rangeData2);
     rangeSeries2.name("Phase 2");
 
-    // configure the first range series
+    // configure the second range series
+    rangeSeries1.height(50);
+    rangeSeries2.direction("down");
     rangeSeries2.normal().fill("#96a6a6", 0.3);
     rangeSeries2.hovered().fill("#96a6a6", 0.1);
     rangeSeries2.selected().fill("#96a6a6", 0.5);
