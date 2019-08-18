@@ -28,19 +28,19 @@
 anychart.onDocumentReady(function () {
 
     // create data
-    var tasksData = [
+    var rangeData = [
       ["Task 1", Date.UTC(2004,0,4),  Date.UTC(2004,7,0)],
       ["Task 2", Date.UTC(2004,7,1),  Date.UTC(2005,8,10)],
       ["Task 3", Date.UTC(2005,10,0), Date.UTC(2006,11,0) ]
     ];
 
-    var meetingsData = [
+    var momentData1 = [
       [Date.UTC(2004,2,21), "Meeting 1"],
       [Date.UTC(2005,3,19), "Meeting 2"],
       [Date.UTC(2006,1,1),  "Meeting 3"]
     ];
 
-    var trainingsData = [
+    var momentData2 = [
       [Date.UTC(2004, 5, 12), "Training 1",],
       [Date.UTC(2005, 5, 1),  "Training 2",],
       [Date.UTC(2006, 1, 26), "Training 3",]
@@ -50,16 +50,52 @@ anychart.onDocumentReady(function () {
     var chart = anychart.timeline();
 
     // create a range series, set the data and name
-    var tasksSeries = chart.range(tasksData);
-    tasksSeries.name("Tasks");
+    var rangeSeries = chart.range(rangeData);
+    rangeSeries.name("Tasks");
 
     // create the first moment series, set the data and name
-    var meetingsSeries = chart.moment(meetingsData);
-    meetingsSeries.name("Meetings");    
+    var momentSeries1 = chart.moment(momentData1);
+    momentSeries1.name("Meetings");  
+
+    // configure the first moment series
+    momentSeries1.direction("down");
+    momentSeries1.normal().stroke("#dd2c00", 1, "5 3", "round");
+    momentSeries1.hovered().stroke("#dd2c00", 2, "5 3", "round");
+    momentSeries1.selected().stroke("#004e72", 2, "5 3", "round"); 
+
+    // configure markers of the first moment series 
+    momentSeries1.normal().markers().size(8);
+    momentSeries1.hovered().markers().size(8);
+    momentSeries1.selected().markers().size(8);
+    momentSeries1.markers().type("circle");
+    momentSeries1.normal().markers().fill("#dd2c00");
+    momentSeries1.hovered().markers().fill("white");
+    momentSeries1.selected().markers().fill("#004e72");
+    momentSeries1.normal().markers().stroke(null);
+    momentSeries1.hovered().markers().stroke("#dd2c00", 2);
+    momentSeries1.selected().markers().stroke("#004e72", 2);
 
     // create the second moment series, set the data and name
-    var trainingsSeries = chart.moment(trainingsData);
-    trainingsSeries.name("Trainings");
+    var momentSeries2 = chart.moment(momentData2);
+    momentSeries2.name("Trainings");
+
+    // configure the second moment series
+    momentSeries2.direction("down");
+    momentSeries2.normal().stroke("#00bfa5", 1, "5 3", "round");
+    momentSeries2.hovered().stroke("#00bfa5", 2, "5 3", "round");
+    momentSeries2.selected().stroke("#004e72", 2, "5 3", "round"); 
+
+    // configure markers of the second moment series
+    momentSeries2.markers().type("diamond"); 
+    momentSeries2.normal().markers().size(8);
+    momentSeries2.hovered().markers().size(8);
+    momentSeries2.selected().markers().size(8);
+    momentSeries2.normal().markers().fill("#00bfa5");
+    momentSeries2.hovered().markers().fill("white");
+    momentSeries2.selected().markers().fill("#004e72");
+    momentSeries2.normal().markers().stroke(null);
+    momentSeries2.hovered().markers().stroke("#00bfa5", 2);
+    momentSeries2.selected().markers().stroke("#004e72", 2);
 
     // set the container id
     chart.container("container");

@@ -78,32 +78,6 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 {sample}BCT\_Timeline\_Chart\_02{sample}
 
-### Moment Series
-
-#### All Moments
-
-* {api:anychart.charts.Timeline#moment}moment(){api}
-* {api:anychart.core.timeline.series.Moment}anychart.core.timeline.series.Moment{api}
-* {api:anychart.core.timeline.series.Moment#direction}direction(){api}
-* {api:anychart.core.timeline.series.Moment#markers}markers(){api} + {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api}
-* {api:anychart.core.timeline.series.Moment#normal}normal(){api} + {api:anychart.core.timeline.series.Moment#hovered}hovered(){api} + {api:anychart.core.timeline.series.Moment#selected}selected(){api}
-* [appearance](../Appearance_Settings)
-
-
-```
-
-```
-
-{sample}BCT\_Timeline\_Chart\_01{sample}
-
-#### Individual Moments
-
-```
-
-```
-
-{sample}BCT\_Timeline\_Chart\_01{sample}
-
 ### Range Series
 
 #### All Ranges
@@ -120,7 +94,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ```
 
-{sample}BCT\_Timeline\_Chart\_01{sample}
+{sample}BCT\_Timeline\_Chart\_03{sample}
 
 #### Individual Ranges
 
@@ -128,8 +102,33 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ```
 
-{sample}BCT\_Timeline\_Chart\_01{sample}
+{sample}BCT\_Timeline\_Chart\_04{sample}
 
+### Moment Series
+
+#### All Moments
+
+* {api:anychart.charts.Timeline#moment}moment(){api}
+* {api:anychart.core.timeline.series.Moment}anychart.core.timeline.series.Moment{api}
+* {api:anychart.core.timeline.series.Moment#direction}direction(){api}
+* {api:anychart.core.timeline.series.Moment#markers}markers(){api} + {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api}
+* {api:anychart.core.timeline.series.Moment#normal}normal(){api} + {api:anychart.core.timeline.series.Moment#hovered}hovered(){api} + {api:anychart.core.timeline.series.Moment#selected}selected(){api}
+* [appearance](../Appearance_Settings)
+
+
+```
+
+```
+
+{sample}BCT\_Timeline\_Chart\_05{sample}
+
+#### Individual Moments
+
+```
+
+```
+
+{sample}BCT\_Timeline\_Chart\_06{sample}
 
 ### Appearance
 
