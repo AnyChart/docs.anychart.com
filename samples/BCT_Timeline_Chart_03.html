@@ -28,10 +28,15 @@
 anychart.onDocumentReady(function () {
 
     // create data
-    var rangeData = [
+    var rangeData1 = [
       ["Task 1", Date.UTC(2004,0,4),  Date.UTC(2004,7,0)],
       ["Task 2", Date.UTC(2004,7,1),  Date.UTC(2005,8,10)],
-      ["Task 3", Date.UTC(2005,10,0), Date.UTC(2006,11,0) ]
+    ];
+
+        // create data
+    var rangeData2 = [
+      ["New Task 1", Date.UTC(2005,10,0), Date.UTC(2006,5,0)],
+      ["New Task 2", Date.UTC(2006,5,15), Date.UTC(2006,11,0)]
     ];
 
     var momentData1 = [
@@ -49,19 +54,31 @@ anychart.onDocumentReady(function () {
     // create a chart
     var chart = anychart.timeline();
 
-    // create a range series, set the data and name
-    var rangeSeries = chart.range(rangeData);
-    rangeSeries.name("Tasks");
+    // create the first range series, set the data and name
+    var rangeSeries1 = chart.range(rangeData1);
+    rangeSeries1.name("Phase 1");
 
-    // configure the range series
-    rangeSeries.height(80);
-    rangeSeries.direction("down");
-    rangeSeries.normal().fill("#96a6a6", 0.3);
-    rangeSeries.hovered().fill("#96a6a6", 0.1);
-    rangeSeries.selected().fill("#96a6a6", 0.5);
-    rangeSeries.normal().stroke("#96a6a6");
-    rangeSeries.hovered().stroke("#96a6a6", 2);
-    rangeSeries.selected().stroke("#96a6a6", 2);
+    // configure the first range series
+    rangeSeries1.height(80);
+    rangeSeries1.direction("down");
+    rangeSeries1.normal().fill("#00bfa5", 0.3);
+    rangeSeries1.hovered().fill("#00bfa5", 0.1);
+    rangeSeries1.selected().fill("#00bfa5", 0.5);
+    rangeSeries1.normal().stroke("#00bfa5");
+    rangeSeries1.hovered().stroke("#00bfa5", 2);
+    rangeSeries1.selected().stroke("#00bfa5", 2);
+
+    // create the second range series, set the data and name
+    var rangeSeries2 = chart.range(rangeData2);
+    rangeSeries2.name("Phase 2");
+
+    // configure the first range series
+    rangeSeries2.normal().fill("#96a6a6", 0.3);
+    rangeSeries2.hovered().fill("#96a6a6", 0.1);
+    rangeSeries2.selected().fill("#96a6a6", 0.5);
+    rangeSeries2.normal().stroke("#96a6a6");
+    rangeSeries2.hovered().stroke("#96a6a6", 2);
+    rangeSeries2.selected().stroke("#96a6a6", 2);
 
     // create the first moment series, set the data and name
     var momentSeries1 = chart.moment(momentData1);
