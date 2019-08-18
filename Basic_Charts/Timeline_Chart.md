@@ -57,48 +57,7 @@ To create a Timeline chart, use the {api:anychart#timeline}anychart.timeline(){a
 
 
 ```
-// create data
-var rangesData = [
-  ['Spirit Mars rover', Date.UTC(2004,0,4), Date.UTC(2010,2,22)],
-  ['Opportunity Mars rover', Date.UTC(2004,0,25), Date.UTC(2018,5,10)],
-  ['Mars Science Laboratory (Curiosity rover)', Date.UTC(2012,7,6)]
-];
 
-var spiritMoments = [
-  [Date.UTC(2004,1,6), 'First intentional grinding of a rock'],
-  [Date.UTC(2005,2,9), 'Dust devil cleaned solar panels'],
-  [Date.UTC(2009,4,1), 'Stuck in the sand trap']
-];
-
-var oppyMoments = [
-  [Date.UTC(2004,1,17), 'Digs hole with his wheel'],
-  [Date.UTC(2005,0,14), 'Found meteorite'],
-  [Date.UTC(2006,8,26), 'Reached Victoria crater'],
-  [Date.UTC(2009,9,10), 'Found vulcanic rock'],
-  [Date.UTC(2014,6,28), 'Drove more than 40 kilometers'],
-  [Date.UTC(2018,5,1), 'Got caught in global sand storm']
-];
-
-var curiosityMoments = [
-  [Date.UTC(2012, 7, 22), 'Started driving'],
-  [Date.UTC(2014, 8, 1), 'Reached Mount Sharp'],
-  [Date.UTC(2018, 10, 26), 'Spotted shiny object']
-];
-
-// create a chart
-var chart = anychart.timeline();  
-
-// create various series to be displayed on timeline
-var rangesSeriesRovers = chart.range(rangesData).name('Mars rovers');
-var spiritMomentsSeries = chart.moment(spiritMoments).name('Spirit rover');
-var oppyMomentsSeries = chart.moment(oppyMoments).name('Opportunity rover');
-var curiosityMomentsSeries = chart.moment(curiosityMoments).name('Curiosity rover');
-
-// set the container id
-chart.container('container');
-
-// initiate drawing the chart  
-chart.draw();
 ```
 
 {sample}BCT\_Timeline\_Chart\_01{sample}
@@ -117,9 +76,11 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ```
 
-{sample}BCT\_Timeline\_Chart\_01{sample}
+{sample}BCT\_Timeline\_Chart\_02{sample}
 
 ### Moment Series
+
+#### All Moments
 
 * {api:anychart.charts.Timeline#moment}moment(){api}
 * {api:anychart.core.timeline.series.Moment}anychart.core.timeline.series.Moment{api}
@@ -135,7 +96,17 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 {sample}BCT\_Timeline\_Chart\_01{sample}
 
+#### Individual Moments
+
+```
+
+```
+
+{sample}BCT\_Timeline\_Chart\_01{sample}
+
 ### Range Series
+
+#### All Ranges
 
 * {api:anychart.charts.Timeline#range}range(){api}
 * {api:anychart.core.timeline.series.Range}anychart.core.timeline.series.Range{api}
@@ -151,9 +122,20 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 {sample}BCT\_Timeline\_Chart\_01{sample}
 
-### (?) Appearance
+#### Individual Ranges
 
-отсылочный раздел
+```
+
+```
+
+{sample}BCT\_Timeline\_Chart\_01{sample}
+
+
+### Appearance
+
+* [Moment Series](#moment_series)
+* [Range Series](#range_series)
+* [appearance](../Appearance_Settings)
 
 ### Markers
 
@@ -191,11 +173,17 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 {sample}BCT\_Timeline\_Chart\_01{sample}
 
-### (?) Labels and Tooltips
+### Labels and Tooltips
 
-#### (?) Tokens
+* date
+* title
+* description
+* даты
+* ?
 
-#### (?) Formatting Functions
+#### Tokens
+
+#### Formatting Functions
 
 ### Navigation
 
