@@ -6,12 +6,12 @@
 
 A timeline chart is...
 
-[a display of a list of events in chronological order. It is typically a graphic design showing a long bar labelled with dates paralleling it, and usually contemporaneous events. A / Gantt chart](../Gantt_Chart) is a form of timeline used in project management. /
+a display of a list of events in chronological order. It is typically a graphic design showing a long bar labelled with dates paralleling it, and usually contemporaneous events. A / [Gantt chart](../Gantt_Chart) is a form of timeline used in project management. /
 
 This article explains how to create a basic Timeline chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Timeline chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Network Graph](../Quick_Start/Modules#timeline)</td></tr>
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Timeline](../Quick_Start/Modules#timeline)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Timeline}anychart.charts.Timeline{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
