@@ -30,20 +30,20 @@ anychart.onDocumentReady(function () {
     // create data
     var tasksData = [
       ["Task 1", Date.UTC(2004,0,4),  Date.UTC(2005,0,4)],
-      ["Task 2", Date.UTC(2004,7,1), Date.UTC(2006,8,10)],
-      ["Task 3", Date.UTC(2005,10,0),  Date.UTC(2006,11,0) ]
+      ["Task 2", Date.UTC(2004,7,1),  Date.UTC(2006,8,10)],
+      ["Task 3", Date.UTC(2005,10,0), Date.UTC(2006,11,0) ]
     ];
 
     var meetingsData = [
       [Date.UTC(2004,2,21), "Meeting 1"],
       [Date.UTC(2005,3,19), "Meeting 2"],
-      [Date.UTC(2006,1,1), "Meeting 3"]
+      [Date.UTC(2006,1,1),  "Meeting 3"]
     ];
 
     var trainingsData = [
       [Date.UTC(2004, 5, 12), "Training 1",],
       [Date.UTC(2005, 5, 1),  "Training 2",],
-      [Date.UTC(2006, 1, 26),"Training 3",]
+      [Date.UTC(2006, 1, 26), "Training 3",]
     ];
 
     // create a chart
@@ -52,7 +52,6 @@ anychart.onDocumentReady(function () {
     // create a range series, set the data and name
     var tasksSeries = chart.range(tasksData);
     tasksSeries.name("Tasks");
-    tasksSeries.height(50)
 
     // create the first moment series, set the data and name
     var meetingsSeries = chart.moment(meetingsData);
@@ -63,8 +62,8 @@ anychart.onDocumentReady(function () {
     trainingsSeries.name("Trainings");
 
     // set the container id
-    chart.container('container');
-
+    chart.container("container");
+    
     // initiate drawing the chart  
     chart.draw();
 });

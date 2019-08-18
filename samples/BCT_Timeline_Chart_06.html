@@ -52,6 +52,7 @@ anychart.onDocumentReady(function () {
     // create a range series, set the data and name
     var tasksSeries = chart.range(tasksData);
     tasksSeries.name("Tasks");
+    tasksSeries.height(50)
 
     // create the first moment series, set the data and name
     var meetingsSeries = chart.moment(meetingsData);
