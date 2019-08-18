@@ -72,6 +72,17 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
+moment:
+
+* `name`
+* `start`
+* `end`
+
+range:
+
+* `x`
+* `y`
+
 ```
 
 ```
@@ -130,10 +141,13 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 {sample}BCT\_Timeline\_Chart\_06{sample}
 
+### Axis
+
 ### Appearance
 
 * [Moment Series](#moment_series)
 * [Range Series](#range_series)
+* [Axis](#axis)
 * [appearance](../Appearance_Settings)
 
 ### Markers
@@ -174,6 +188,14 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Labels and Tooltips
 
+можно настроить у:
+
+* range series
+* moment series
+* axis (labels)
+
+поля:
+
 * date
 * title
 * description
@@ -184,6 +206,11 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 #### Formatting Functions
 
+### Scale
+
+* min
+* max
+
 ### Navigation
 
 #### Methods
@@ -192,13 +219,19 @@ Read the overview of general settings: [General Settings](General_Settings).
 * {api:anychart.charts.Timeline#scroll}scroll(){api}
 * {api:anychart.charts.Timeline#zoomTo}zoomTo(){api}
 
-пример на {api:anychart.charts.Timeline#fit}fit(){api}:
+пример с кнопками, показать все:
 
 ```
 
 ```
 
 {sample}BCT\_Timeline\_Chart\_01{sample}
+
+#### Scroller
+
+* ссылка на статью о скроллере
+* ссылка на класс
+* пример на включение и выключение
 
 #### Zoom Control Panel
 
