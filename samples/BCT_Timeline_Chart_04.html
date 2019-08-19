@@ -29,18 +29,30 @@ anychart.onDocumentReady(function () {
 
     // create data
     var rangeData1 = [
-      {name: "Task 1", start: Date.UTC(2004,0,4), end: Date.UTC(2004,7,0)},
+      {name: "Task 1", start: Date.UTC(2004,0,4), end: Date.UTC(2004,7,0),
+       normal: {fill: "#01b53f", stroke: "null"},
+       hovered: {fill: "#01b53f", stroke: "null"},
+       selected: {fill: "#01b53f", stroke: "null"}
+      },
       {name: "Task 2", start: Date.UTC(2004,7,1), end: Date.UTC(2005,8,10),
-       normal:   {fill: "#dd2c00", stroke: "null"},
-       hovered:  {fill: "#dd2c00", stroke: "null"},
-       selected: {fill: "#dd2c00", stroke: "null"}
+       normal: {fill: "#ff6600", stroke: "null"},
+       hovered: {fill: "#ff6600", stroke: "null"},
+       selected: {fill: "#ff6600", stroke: "null"}
       }
     ];
 
     // create data
     var rangeData2 = [
-      {name: "New Task 1", start: Date.UTC(2005,10,0), end: Date.UTC(2006,5,0)},
-      {name: "New Task 2", start: Date.UTC(2006,5,15), end: Date.UTC(2006,11,0)}
+      {name: "New Task 1", start: Date.UTC(2005,10,0), end: Date.UTC(2006,5,0),
+       normal: {fill: "#00a8e0", stroke: "null"},
+       hovered: {fill: "#00a8e0", stroke: "null"},
+       selected: {fill: "#00a8e0", stroke: "null"}
+      },
+      {name: "New Task 2", start: Date.UTC(2006,5,15), end: Date.UTC(2006,11,0),
+       normal: {fill: "#f6bc16", stroke: "null"},
+       hovered: {fill: "#f6bc16", stroke: "null"},
+       selected: {fill: "#f6bc16", stroke: "null"}
+      }
     ];
 
     var momentData1 = [

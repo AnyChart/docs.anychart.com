@@ -62,28 +62,27 @@ anychart.onDocumentReady(function () {
     rangeSeries1.name("Phase 1");
 
     // configure the first range series
-    rangeSeries1.height(80);
+    rangeSeries1.height(50);
     rangeSeries1.direction("down");
-    rangeSeries1.normal().fill("#00bfa5", 0.3);
-    rangeSeries1.hovered().fill("#00bfa5", 0.1);
-    rangeSeries1.selected().fill("#00bfa5", 0.5);
-    rangeSeries1.normal().stroke("#00bfa5");
-    rangeSeries1.hovered().stroke("#00bfa5", 2);
-    rangeSeries1.selected().stroke("#00bfa5", 2);
+    rangeSeries1.normal().fill("#ff6600");
+    rangeSeries1.hovered().fill("#ff6600", 0.5);
+    rangeSeries1.selected().fill("#004e72", 0.5);
+    rangeSeries1.normal().stroke("#004e72", 2);
+    rangeSeries1.hovered().stroke("#004e72", 2);
+    rangeSeries1.selected().stroke("#004e72", 2);
 
     // create the second range series, set the data and name
     var rangeSeries2 = chart.range(rangeData2);
     rangeSeries2.name("Phase 2");
 
     // configure the second range series
-    rangeSeries1.height(50);
     rangeSeries2.direction("down");
-    rangeSeries2.normal().fill("#96a6a6", 0.3);
-    rangeSeries2.hovered().fill("#96a6a6", 0.1);
-    rangeSeries2.selected().fill("#96a6a6", 0.5);
-    rangeSeries2.normal().stroke("#96a6a6");
-    rangeSeries2.hovered().stroke("#96a6a6", 2);
-    rangeSeries2.selected().stroke("#96a6a6", 2);
+    rangeSeries2.normal().fill("#00a8e0");
+    rangeSeries2.hovered().fill("#00a8e0", 0.5);
+    rangeSeries2.selected().fill("#004e72", 0.5);
+    rangeSeries2.normal().stroke("#004e72", 2);
+    rangeSeries2.hovered().stroke("#004e72", 2);
+    rangeSeries2.selected().stroke("#004e72", 2);
 
     // create the first moment series, set the data and name
     var momentSeries1 = chart.moment(momentData1);
