@@ -80,12 +80,12 @@ anychart.onDocumentReady(function () {
     momentSeries1.normal().markers().size(8);
     momentSeries1.hovered().markers().size(8);
     momentSeries1.selected().markers().size(8);
-    momentSeries1.normal().markers().fill("#dd2c00", 1);
-    momentSeries1.hovered().markers().fill("#dd2c00", 2);
-    momentSeries1.selected().markers().fill("#004e72", 2);
-    momentSeries1.normal().markers().stroke(null);
-    momentSeries1.hovered().markers().stroke(null);
-    momentSeries1.selected().markers().stroke(null);
+    momentSeries1.normal().markers().fill("#dd2c00");
+    momentSeries1.hovered().markers().fill("#dd2c00");
+    momentSeries1.selected().markers().fill("#004e72");
+    momentSeries1.normal().markers().stroke("#dd2c00", 1);
+    momentSeries1.hovered().markers().stroke("#dd2c00", 2);
+    momentSeries1.selected().markers().stroke("#004e72", 1);
 
     // create the second moment series, set the data and name
     var momentSeries2 = chart.moment(momentData2);
