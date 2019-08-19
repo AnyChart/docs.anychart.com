@@ -264,3 +264,9 @@ zoomController.render();
 ```
 
 {sample}BCT\_Timeline\_Chart\_01{sample}
+
+### Behavior
+
+* zoomOnMouseWheel()
+* scrollOnMouseWheel() - по умолчанию включено, но не работает ни горизонатльно, ни вертикально 
+* enabled() - метода не существует

@@ -54,6 +54,9 @@ anychart.onDocumentReady(function () {
     // create a chart
     var chart = anychart.timeline();
 
+    // disable zooming with the mouse wheel
+    chart.interactivity().zoomOnMouseWheel(false);
+
     // create the first range series, set the data and name
     var rangeSeries1 = chart.range(rangeData1);
     rangeSeries1.name("Phase 1");
@@ -89,6 +92,9 @@ anychart.onDocumentReady(function () {
     // create the second moment series, set the data and name
     var momentSeries2 = chart.moment(momentData2);
     momentSeries2.name("Trainings");
+
+    // set the chart title
+    chart.title("Timeline Chart: Range Series");
 
     // set the container id
     chart.container("container");
