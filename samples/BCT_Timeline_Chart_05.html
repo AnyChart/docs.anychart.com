@@ -81,11 +81,11 @@ anychart.onDocumentReady(function () {
     momentSeries1.selected().markers().size(8);
     momentSeries1.markers().type("circle");
     momentSeries1.normal().markers().fill("#dd2c00");
-    momentSeries1.hovered().markers().fill("white");
+    momentSeries1.hovered().markers().fill("#dd2c00");
     momentSeries1.selected().markers().fill("#004e72");
     momentSeries1.normal().markers().stroke(null);
-    momentSeries1.hovered().markers().stroke("#dd2c00", 2);
-    momentSeries1.selected().markers().stroke("#004e72", 2);
+    momentSeries1.hovered().markers().stroke(null);
+    momentSeries1.selected().markers().stroke(null);
 
     // create the second moment series, set the data and name
     var momentSeries2 = chart.moment(momentData2);
@@ -93,9 +93,9 @@ anychart.onDocumentReady(function () {
 
     // configure the second moment series
     momentSeries2.direction("down");
-    momentSeries2.normal().stroke("#00bfa5", 1, "5 3", "round");
-    momentSeries2.hovered().stroke("#00bfa5", 2, "5 3", "round");
-    momentSeries2.selected().stroke("#004e72", 2, "5 3", "round"); 
+    momentSeries2.normal().stroke("#00bfa5", 1);
+    momentSeries2.hovered().stroke("#00bfa5", 2);
+    momentSeries2.selected().stroke("#004e72", 2); 
 
     // configure markers of the second moment series
     momentSeries2.markers().type("diamond"); 
@@ -103,9 +103,9 @@ anychart.onDocumentReady(function () {
     momentSeries2.hovered().markers().size(8);
     momentSeries2.selected().markers().size(8);
     momentSeries2.normal().markers().fill("#00bfa5");
-    momentSeries2.hovered().markers().fill("white");
+    momentSeries2.hovered().markers().fill("#00bfa5");
     momentSeries2.selected().markers().fill("#004e72");
-    momentSeries2.normal().markers().stroke(null);
+    momentSeries2.normal().markers().stroke("#00bfa5", 1);
     momentSeries2.hovered().markers().stroke("#00bfa5", 2);
     momentSeries2.selected().markers().stroke("#004e72", 2);
 
