@@ -76,10 +76,10 @@ anychart.onDocumentReady(function () {
     momentSeries1.selected().stroke("#004e72", 2, "5 3", "round"); 
 
     // configure markers of the first moment series 
+    momentSeries1.markers().type("circle");
     momentSeries1.normal().markers().size(8);
     momentSeries1.hovered().markers().size(8);
     momentSeries1.selected().markers().size(8);
-    momentSeries1.markers().type("circle");
     momentSeries1.normal().markers().fill("#dd2c00");
     momentSeries1.hovered().markers().fill("#dd2c00");
     momentSeries1.selected().markers().fill("#004e72");
