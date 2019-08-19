@@ -28,10 +28,15 @@
 anychart.onDocumentReady(function () {
 
     // create data
-    var rangeData = [
-      ["Task 1", Date.UTC(2004,0,4),  Date.UTC(2005,0,4)],
-      ["Task 2", Date.UTC(2004,7,1),  Date.UTC(2006,8,10)],
-      ["Task 3", Date.UTC(2005,10,0), Date.UTC(2006,11,0) ]
+    var rangeData1 = [
+      ["Task 1", Date.UTC(2004,0,4),  Date.UTC(2004,11,0)],
+      ["Task 2", Date.UTC(2004,7,1),  Date.UTC(2005,8,10)],
+    ];
+
+    // create data
+    var rangeData2 = [
+      ["New Task 1", Date.UTC(2005,10,0), Date.UTC(2006,5,0)],
+      ["New Task 2", Date.UTC(2006,5,15), Date.UTC(2006,11,0)]
     ];
 
     var momentData1 = [
@@ -49,9 +54,13 @@ anychart.onDocumentReady(function () {
     // create a chart
     var chart = anychart.timeline();
 
-    // create a range series, set the data and name
-    var rangeSeries = chart.range(rangeData);
-    rangeSeries.name("Tasks");
+    // create the first range series, set the data and name
+    var rangeSeries1 = chart.range(rangeData1);
+    rangeSeries1.name("Phase 1");
+
+    // create the second range series, set the data and name
+    var rangeSeries2 = chart.range(rangeData2);
+    rangeSeries2.name("Phase 2");
 
     // create the first moment series, set the data and name
     var momentSeries1 = chart.moment(momentData1);

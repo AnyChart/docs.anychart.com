@@ -33,7 +33,7 @@ anychart.onDocumentReady(function () {
       ["Task 2", Date.UTC(2004,7,1),  Date.UTC(2005,8,10)],
     ];
 
-        // create data
+    // create data
     var rangeData2 = [
       ["New Task 1", Date.UTC(2005,10,0), Date.UTC(2006,5,0)],
       ["New Task 2", Date.UTC(2006,5,15), Date.UTC(2006,11,0)]
@@ -54,6 +54,9 @@ anychart.onDocumentReady(function () {
     // create a chart
     var chart = anychart.timeline();
 
+    // disable zooming with the mouse wheel
+    chart.interactivity().zoomOnMouseWheel(false);
+
     // create the first range series, set the data and name
     var rangeSeries1 = chart.range(rangeData1);
     rangeSeries1.name("Phase 1");
@@ -69,6 +72,9 @@ anychart.onDocumentReady(function () {
     // create the second moment series, set the data and name
     var momentSeries2 = chart.moment(momentData2);
     momentSeries2.name("Trainings");
+
+    // set the chart title
+    chart.title("Timeline Chart: Basic Sample");
 
     // set the container id
     chart.container("container");
