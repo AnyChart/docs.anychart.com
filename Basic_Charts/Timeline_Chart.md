@@ -98,7 +98,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 #### All Ranges
 
-To adjust ranges, combine {api:anychart.charts.Timeline#range}range(){api} with:
+To adjust ranges, combine {api:anychart.charts.Timeline#range}range(){api} with the following methods:
 
 * {api:anychart.core.timeline.series.Range#direction}direction(){api} to set the direction
 * {api:anychart.core.timeline.series.Range#height}height(){api} to set the height
@@ -133,13 +133,13 @@ Combine them with methods from {api:anychart.core.StateSettings}anychart.core.St
 
 #### All Moments
 
-To adjust ranges, combine {api:anychart.charts.Timeline#moment}moment(){api} with:
+To adjust moments, combine {api:anychart.charts.Timeline#moment}moment(){api} with:
 
 * {api:anychart.core.timeline.series.Moment#direction}direction(){api} to set the direction
 
-The [appearance](../Appearance_Settings) of moments and their markers as well as the shape and size of markers can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**.
+The [appearance](../Appearance_Settings) of moments and their markers as well as the shape and size of markers can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.timeline.series.Moment#normal}normal(){api}, {api:anychart.core.timeline.series.Moment#hovered}hovered(){api}, and {api:anychart.core.timeline.series.Moment#selected}selected(){api} methods.
 
-Combine {api:anychart.core.timeline.series.Moment#normal}normal(){api}, {api:anychart.core.timeline.series.Moment#hovered}hovered(){api}, and {api:anychart.core.timeline.series.Moment#selected}selected(){api} with methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
+Combine them with methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 * {api:anychart.core.StateSettings#markers}markers(){api} to access markers
