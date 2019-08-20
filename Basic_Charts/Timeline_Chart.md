@@ -52,8 +52,8 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 To create a Timeline chart, use the {api:anychart#timeline}anychart.timeline(){api} chart constructor...
 
-* {api:anychart.charts.Timeline#moment}moment(){api}
-* {api:anychart.charts.Timeline#range}range(){api}
+* {api:anychart.charts.Timeline#range}range(){api} – [range series](#range_series)
+* {api:anychart.charts.Timeline#moment}moment(){api} – [moment series](#moment_series)
 
 
 ```
@@ -72,13 +72,13 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-moment:
+[range series](#range_series):
 
 * `name`
 * `start`
 * `end`
 
-range:
+[moment series](#moment_series):
 
 * `x`
 * `y`
@@ -92,9 +92,14 @@ range:
 
 ### Range Series
 
+* (?) {api:anychart.charts.Timeline#range}range(){api}
+* (?) [Data](#data), [Quick Start](#quick_start)
+* [Labels and Tooltips](#labels_and_tooltips)
+
 #### All Ranges
 
-To adjust ranges, combine {api:anychart.charts.Timeline#range}range(){api} with these methods:
+To adjust ranges, combine {api:anychart.charts.Timeline#range}range(){api} with:
+
 * {api:anychart.core.timeline.series.Range#direction}direction(){api} to set the direction
 * {api:anychart.core.timeline.series.Range#height}height(){api} to set the height
 
@@ -122,13 +127,19 @@ Combine them with methods from {api:anychart.core.StateSettings}anychart.core.St
 
 ### Moment Series
 
+* (?) {api:anychart.charts.Timeline#moment}moment(){api}
+* (?) [Data](#data), [Quick Start](#quick_start)
+* [Labels and Tooltips](#labels_and_tooltips)
+
 #### All Moments
 
-To set the direction of moments, combine {api:anychart.charts.Timeline#moment}moment(){api} with {api:anychart.core.timeline.series.Moment#direction}direction(){api}.
+To adjust ranges, combine {api:anychart.charts.Timeline#moment}moment(){api} with:
 
-The [appearance](../Appearance_Settings) of moments and their markers as well as the shape and size of markers can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.timeline.series.Moment#normal}normal(){api}, {api:anychart.core.timeline.series.Moment#hovered}hovered(){api}, and {api:anychart.core.timeline.series.Moment#selected}selected(){api} methods.
+* {api:anychart.core.timeline.series.Moment#direction}direction(){api} to set the direction
 
-Combine them with methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
+The [appearance](../Appearance_Settings) of moments and their markers as well as the shape and size of markers can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**.
+
+Combine {api:anychart.core.timeline.series.Moment#normal}normal(){api}, {api:anychart.core.timeline.series.Moment#hovered}hovered(){api}, and {api:anychart.core.timeline.series.Moment#selected}selected(){api} with methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 * {api:anychart.core.StateSettings#markers}markers(){api} to access markers
