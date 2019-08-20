@@ -59,11 +59,11 @@ anychart.onDocumentReady(function () {
 
     // create the first range series, set the data and name
     var rangeSeries1 = chart.range(rangeData1);
-    rangeSeries1.name("Phase 1");
+    rangeSeries1.name("Tasks");
 
     // create the second range series, set the data and name
     var rangeSeries2 = chart.range(rangeData2);
-    rangeSeries2.name("Phase 2");
+    rangeSeries2.name("New Tasks");
 
     // create the first moment series, set the data and name
     var momentSeries1 = chart.moment(momentData1);
@@ -85,7 +85,7 @@ anychart.onDocumentReady(function () {
     momentSeries1.selected().markers().fill("#004e72");
     momentSeries1.normal().markers().stroke("#dd2c00", 1);
     momentSeries1.hovered().markers().stroke("#dd2c00", 2);
-    momentSeries1.selected().markers().stroke("#004e72", 1);
+    momentSeries1.selected().markers().stroke("#004e72", 2);
 
     // create the second moment series, set the data and name
     var momentSeries2 = chart.moment(momentData2);
