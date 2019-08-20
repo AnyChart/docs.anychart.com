@@ -94,12 +94,16 @@ range:
 
 #### All Ranges
 
-* {api:anychart.charts.Timeline#range}range(){api}
-* {api:anychart.core.timeline.series.Range}anychart.core.timeline.series.Range{api}
-* {api:anychart.core.timeline.series.Range#direction}direction(){api}
-* {api:anychart.core.timeline.series.Range#height}height(){api}
-* {api:anychart.core.timeline.series.Range#normal}normal(){api} + {api:anychart.core.timeline.series.Range#hovered}hovered(){api} + {api:anychart.core.timeline.series.Range#selected}selected(){api}
-* [appearance](../Appearance_Settings)
+To adjust ranges, combine {api:anychart.charts.Timeline#range}range(){api} with these methods:
+* {api:anychart.core.timeline.series.Range#direction}direction(){api} to set the direction
+* {api:anychart.core.timeline.series.Range#height}height(){api} to set the height
+
+The [appearance](../Appearance_Settings) of ranges can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.timeline.series.Range#normal}normal(){api}, {api:anychart.core.timeline.series.Range#hovered}hovered(){api}, and {api:anychart.core.timeline.series.Range#selected}selected(){api} methods.
+
+Combine them with methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
+
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
 
 ```
@@ -120,12 +124,21 @@ range:
 
 #### All Moments
 
-* {api:anychart.charts.Timeline#moment}moment(){api}
-* {api:anychart.core.timeline.series.Moment}anychart.core.timeline.series.Moment{api}
-* {api:anychart.core.timeline.series.Moment#direction}direction(){api}
-* {api:anychart.core.timeline.series.Moment#markers}markers(){api} + {api:anychart.core.ui.MarkersFactory}anychart.core.ui.MarkersFactory{api}
-* {api:anychart.core.timeline.series.Moment#normal}normal(){api} + {api:anychart.core.timeline.series.Moment#hovered}hovered(){api} + {api:anychart.core.timeline.series.Moment#selected}selected(){api}
-* [appearance](../Appearance_Settings)
+To set the direction of moments, combine {api:anychart.charts.Timeline#moment}moment(){api} with {api:anychart.core.timeline.series.Moment#direction}direction(){api}.
+
+The [appearance](../Appearance_Settings) of moments and their markers as well as the shape and size of markers can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.timeline.series.Moment#normal}normal(){api}, {api:anychart.core.timeline.series.Moment#hovered}hovered(){api}, and {api:anychart.core.timeline.series.Moment#selected}selected(){api} methods.
+
+Combine them with methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
+
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
+* {api:anychart.core.StateSettings#markers}markers(){api} to access markers
+
+To adjust markers, use the following methods:
+
+* {api:anychart.core.ui.MarkersFactory#type}type(){api} to set the type – {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}
+* {api:anychart.core.ui.MarkersFactory#size}size(){api} to set the size
+* {api:anychart.core.ui.MarkersFactory#fill}fill(){api} to set the fill
+* {api:anychart.core.ui.MarkersFactory#stroke}stroke(){api} to set the stroke
 
 
 ```
@@ -143,6 +156,10 @@ range:
 {sample}BCT\_Timeline\_Chart\_06{sample}
 
 ### Axis
+
+* {api:anychart.charts.Timeline#axis}axis(){api}
+* {api:anychart.core.axes.Timeline}anychart.core.axes.Timeline{api}
+*
 
 ### Appearance
 
