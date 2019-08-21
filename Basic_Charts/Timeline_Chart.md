@@ -100,7 +100,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 To access ranges, use the {api:anychart.charts.Timeline#range}range(){api} method.
 
-The {api:anychart.core.timeline.series.Range#height}height(){api} and {api:anychart.core.timeline.series.Range#direction}direction(){api} methods allow setting the **height** and **direction** of ranges. The direction can be set as one of the enums from {api:anychart.enums.Direction}anychart.enums.Direction{api}: `"auto"` (default) / `"up"` / `"down"` / `"odd-even"`.
+The {api:anychart.core.timeline.series.Range#height}height(){api} and {api:anychart.core.timeline.series.Range#direction}direction(){api} methods allow setting the **height** and **direction** of ranges. The available directions are listed in {api:anychart.enums.Direction}anychart.enums.Direction{api}: `"auto"` (default) / `"up"` / `"down"` / `"odd-even"`.
 
 The [appearance](../Appearance_Settings) of ranges can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.timeline.series.Range#normal}normal(){api}, {api:anychart.core.timeline.series.Range#hovered}hovered(){api}, and {api:anychart.core.timeline.series.Range#selected}selected(){api} methods.
 
