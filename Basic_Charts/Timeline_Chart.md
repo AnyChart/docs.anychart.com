@@ -168,8 +168,12 @@ To adjust markers, use the following methods:
 ### Axis
 
 * {api:anychart.charts.Timeline#axis}axis(){api}
-* {api:anychart.core.axes.Timeline}anychart.core.axes.Timeline{api}
-*
+* {api:anychart.core.axes.Timeline#height}height(){api}
+* {api:anychart.core.axes.Timeline#ticks}ticks(){api}
+* {api:anychart.core.axes.Timeline#fill}fill(){api}
+* {api:anychart.core.axes.Timeline#stroke}stroke(){api}
+* [appearance](../Appearance_Settings)
+* [Labels and Tooltips](#labels_and_tooltips)
 
 ### Appearance
 
