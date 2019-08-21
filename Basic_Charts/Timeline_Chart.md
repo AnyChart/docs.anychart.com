@@ -133,9 +133,7 @@ Combine them with methods from {api:anychart.core.StateSettings}anychart.core.St
 
 #### All Moments
 
-To adjust moments, combine {api:anychart.charts.Timeline#moment}moment(){api} with:
-
-* {api:anychart.core.timeline.series.Moment#direction}direction(){api} to set the direction
+To adjust the direciton of moments, combine {api:anychart.charts.Timeline#moment}moment(){api} with the {api:anychart.core.timeline.series.Moment#direction}direction(){api} method.
 
 The [appearance](../Appearance_Settings) of moments and their markers as well as the shape and size of markers can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.timeline.series.Moment#normal}normal(){api}, {api:anychart.core.timeline.series.Moment#hovered}hovered(){api}, and {api:anychart.core.timeline.series.Moment#selected}selected(){api} methods.
 
