@@ -457,7 +457,7 @@ Changing the default text of headers is similar to configuring [labels and toolt
 chart.hovered().headers().format("{%value}");
 ```
 
-To [configure the font](../Appearance_Settings/Text_Settings) of headers, use methods listed on {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}:
+To [configure the font](../Appearance_Settings/Text_Settings) of headers, use methods listed in {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}:
 
 ```
 // configure the font of headers
