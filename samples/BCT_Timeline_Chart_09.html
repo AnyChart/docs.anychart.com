@@ -73,6 +73,18 @@ anychart.onDocumentReady(function () {
     var momentSeries2 = chart.moment(momentData2);
     momentSeries2.name("Trainings");
 
+    // create the first range marker
+    var rangeMarker1 = chart.rangeMarker(0);
+    rangeMarker1.from(Date.UTC(2005, 0, 0));
+    rangeMarker1.to(Date.UTC(2005,3,0));
+    rangeMarker1.fill("#dd2c00", 0.2);
+
+    // create the second range marker
+    var rangeMarker2 = chart.rangeMarker(1);
+    rangeMarker2.from(Date.UTC(2005, 10, 0));
+    rangeMarker2.to(Date.UTC(2006, 0, 0));
+    rangeMarker2.fill("#00bfa5", 0.2);
+
     // set the chart title
     chart.title("Timeline Chart: Basic Sample");
 
