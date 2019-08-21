@@ -73,6 +73,16 @@ anychart.onDocumentReady(function () {
     var momentSeries2 = chart.moment(momentData2);
     momentSeries2.name("Trainings");
 
+    // create the first line marker
+    var lineMarker1 = chart.lineMarker(0);
+    lineMarker1.value(Date.UTC(2004, 11, 0));
+    lineMarker1.stroke("#dd2c00", 3);
+
+    // create the second line marker
+    var lineMarker2 = chart.lineMarker(1);
+    lineMarker2.value(Date.UTC(2005, 10, 0));
+    lineMarker2.stroke("#00bfa5", 3, "10 5", "round");
+
     // set the chart title
     chart.title("Timeline Chart: Basic Sample");
 
