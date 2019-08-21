@@ -176,6 +176,7 @@ To adjust markers, use the following methods:
 * [appearance](../Appearance_Settings)
 * [Labels and Tooltips](#labels_and_tooltips)
 
+
 ```
 
 ```
