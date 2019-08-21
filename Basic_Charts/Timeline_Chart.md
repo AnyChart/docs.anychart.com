@@ -169,11 +169,18 @@ To adjust markers, use the following methods:
 
 * {api:anychart.charts.Timeline#axis}axis(){api}
 * {api:anychart.core.axes.Timeline#height}height(){api}
-* {api:anychart.core.axes.Timeline#ticks}ticks(){api}
 * {api:anychart.core.axes.Timeline#fill}fill(){api}
 * {api:anychart.core.axes.Timeline#stroke}stroke(){api}
+* {api:anychart.core.axes.Timeline#ticks}ticks(){api}
+* {api:anychart.core.axes.TimelineTicks#stroke}stroke(){api}
 * [appearance](../Appearance_Settings)
 * [Labels and Tooltips](#labels_and_tooltips)
+
+```
+
+```
+
+{sample}BCT\_Timeline\_Chart\_07{sample}
 
 ### Appearance
 
@@ -194,7 +201,7 @@ To adjust markers, use the following methods:
 
 ```
 
-{sample}BCT\_Timeline\_Chart\_01{sample}
+{sample}BCT\_Timeline\_Chart\_08{sample}
 
 #### Range
 
@@ -205,7 +212,7 @@ To adjust markers, use the following methods:
 
 ```
 
-{sample}BCT\_Timeline\_Chart\_01{sample}
+{sample}BCT\_Timeline\_Chart\_09{sample}
 
 #### Text
 
@@ -216,7 +223,7 @@ To adjust markers, use the following methods:
 
 ```
 
-{sample}BCT\_Timeline\_Chart\_01{sample}
+{sample}BCT\_Timeline\_Chart\_10{sample}
 
 ### Labels and Tooltips
 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Timeline Chart 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-timeline.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />    
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+
+    var rangeData1 = [
+      ["Task 1", Date.UTC(2004,0,4), Date.UTC(2004,7,0)],
+      ["Task 2", Date.UTC(2004,7,1), Date.UTC(2005,8,10)]
+    ];
+
+    var rangeData2 = [
+      ["New Task 1", Date.UTC(2005,10,0), Date.UTC(2006,5,0)],
+      ["New Task 2", Date.UTC(2006,5,15), Date.UTC(2006,11,0)]
+    ];
+
+    var momentData1 = [
+      [Date.UTC(2004,2,21), "Meeting 1"],
+      [Date.UTC(2005,3,19), "Meeting 2"],
+      [Date.UTC(2006,1,1),  "Meeting 3"]
+    ];
+
+    var momentData2 = [
+      [Date.UTC(2004, 5, 12), "Training 1",],
+      [Date.UTC(2005, 5, 1),  "Training 2",],
+      [Date.UTC(2006, 1, 26), "Training 3",]
+    ];
+
+    // create a chart
+    var chart = anychart.timeline();
+
+    // disable zooming with the mouse wheel
+    chart.interactivity().zoomOnMouseWheel(false);
+
+    // create the first range series, set the data and name
+    var rangeSeries1 = chart.range(rangeData1);
+    rangeSeries1.name("Tasks");
+
+    // create the second range series, set the data and name
+    var rangeSeries2 = chart.range(rangeData2);
+    rangeSeries2.name("New Tasks");
+
+    // create the first moment series, set the data and name
+    var momentSeries1 = chart.moment(momentData1);
+    momentSeries1.name("Meetings");    
+
+    // create the second moment series, set the data and name
+    var momentSeries2 = chart.moment(momentData2);
+    momentSeries2.name("Trainings");
+
+    // configure the axis
+    chart.axis().height(80);
+    chart.axis().fill("#00724e");
+    chart.axis().stroke("#004e72");
+    chart.axis().ticks().stroke("4 #00b37a");
+
+    // set the chart title
+    chart.title("Timeline Chart: Basic Sample");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart  
+    chart.draw();
+});
+</script>
+</body>
+</html>
