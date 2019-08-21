@@ -98,10 +98,9 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 #### All Ranges
 
-To adjust ranges, combine {api:anychart.charts.Timeline#range}range(){api} with the following methods:
+To access ranges, use the {api:anychart.charts.Timeline#range}range(){api} method.
 
-* {api:anychart.core.timeline.series.Range#direction}direction(){api} to set the direction
-* {api:anychart.core.timeline.series.Range#height}height(){api} to set the height
+The {api:anychart.core.timeline.series.Range#height}height(){api} and {api:anychart.core.timeline.series.Range#direction}direction(){api} methods allow setting the height and direction of ranges.
 
 The available direction types, listed in {api:anychart.enums.Direction}anychart.enums.Direction{api}, include:
 
@@ -140,9 +139,9 @@ Combine them with methods from {api:anychart.core.StateSettings}anychart.core.St
 
 #### All Moments
 
-To adjust the direction of moments, combine {api:anychart.charts.Timeline#moment}moment(){api} with the {api:anychart.core.timeline.series.Moment#direction}direction(){api} method.
+To access moments, use the {api:anychart.charts.Timeline#moment}moment(){api} method.
 
-The available direction types, listed in {api:anychart.enums.Direction}anychart.enums.Direction{api}, include:
+The {api:anychart.core.timeline.series.Moment#direction}direction(){api} method allows setting the direction – see {api:anychart.enums.Direction}anychart.enums.Direction{api}:
 
 * `"auto"` (default)
 * `"up"`
