@@ -195,6 +195,13 @@ To adjust markers, use the following methods:
 #### Text
 
 * {api:anychart.charts.Timeline#textMarker}textMarker(){api}
+* {api:anychart.core.axisMarkers.Text#value}value(){api} to set the date
+* {api:anychart.core.axisMarkers.Text#text}text(){api} to set the text
+* {api:anychart.core.axisMarkers.Text#useHtml}useHtml(){api} to enable HTML
+* {api:anychart.core.axisMarkers.Text#fontColor}fontColor(){api}, {api:anychart.core.axisMarkers.Text#fontFamily}fontFamily(){api}, {api:anychart.core.axisMarkers.Text#fontSize}fontSize(){api}, {api:anychart.core.axisMarkers.Text#fontWeight}fontWeight(){api}, etc. to configure the font
+* {api:anychart.core.axisMarkers.Text#background}background(){api} to set the background
+* {api:anychart.core.axisMarkers.Text#rotation}background(){api}, {api:anychart.core.axisMarkers.Text#padding}background(){api}, {api:anychart.core.axisMarkers.Text#offsetX}offsetX(){api},  {api:anychart.core.axisMarkers.Text#offsetY}offsetY(){api}, etc, to set the position
+* {api:anychart.core.axisMarkers.Text#enabled}enabled(){api}, to enable / disable the marker
 
 
 ```
@@ -246,7 +253,6 @@ To adjust markers, use the following methods:
 * date
 * title
 * description
-* даты
 * ?
 
 #### Tokens
