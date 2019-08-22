@@ -28,27 +28,11 @@
 anychart.onDocumentReady(function () {
 
     // create data
-
-    var rangeData1 = [
-      ["Task 1", Date.UTC(2004,0,4), Date.UTC(2004,7,1)],
-      ["Task 2", Date.UTC(2004,7,1), Date.UTC(2005,8,10)]
-    ];
-
-    var rangeData2 = [
-      ["New Task 1", Date.UTC(2005,10,1), Date.UTC(2006,5,1)],
-      ["New Task 2", Date.UTC(2006,5,15), Date.UTC(2006,11,1)]
-    ];
-
-    var momentData1 = [
-      [Date.UTC(2004,2,21), "Meeting 1"],
-      [Date.UTC(2005,3,19), "Meeting 2"],
-      [Date.UTC(2006,1,1),  "Meeting 3"]
-    ];
-
-    var momentData2 = [
-      [Date.UTC(2004,5,12), "Training 1",],
-      [Date.UTC(2005,5,1),  "Training 2",],
-      [Date.UTC(2006,1,26), "Training 3",]
+    var currentDate = new Date();
+    var currentYear = currentDate.getFullYear();
+    var rangeData = [
+      ["Task 1", Date.UTC(currentYear,0,1), Date.UTC(2019,4,1)],
+      ["Task 2", Date.UTC(currentYear,4,1), Date.UTC(2019,11,31)]
     ];
 
     // create a chart
@@ -57,60 +41,24 @@ anychart.onDocumentReady(function () {
     // disable zooming with the mouse wheel
     chart.interactivity().zoomOnMouseWheel(false);
 
-    // create the first range series, set the data and name
-    var rangeSeries1 = chart.range(rangeData1);
-    rangeSeries1.name("Tasks");
+    // create a range series, set the data and name
+    var rangeSeries = chart.range(rangeData);
+    rangeSeries.name("Tasks");
 
-    // create the second range series, set the data and name
-    var rangeSeries2 = chart.range(rangeData2);
-    rangeSeries2.name("New Tasks");
+    // create and configure a line marker on the current date
+    var todayMarker = chart.todayMarker();
+    todayMarker.stroke("#dd2c00", 3);
 
-    // create the first moment series, set the data and name
-    var momentSeries1 = chart.moment(momentData1);
-    momentSeries1.name("Meetings");    
-
-    // create the second moment series, set the data and name
-    var momentSeries2 = chart.moment(momentData2);
-    momentSeries2.name("Trainings");
-
-    // create two line markers
-    var lineMarker1 = chart.lineMarker(0);
-    var lineMarker2 = chart.lineMarker(1);
-
-    // set values of markers
-    lineMarker1.value(Date.UTC(2004,0,1));
-    lineMarker2.value(Date.UTC(2005,0,1));
-
-    // set the stroke of markers
-    lineMarker1.stroke("#dd2c00", 3);
-    lineMarker2.stroke("#00bfa5", 3, "10 5", "round");
-
-    // create two text markers
-    var textMarker1 = chart.textMarker(0);
-    var textMarker2 = chart.textMarker(1);
-
-    // set the values of markers
-    textMarker1.value(lineMarker1.value());
-    textMarker2.value(lineMarker2.value());
-
-    // set the text of markers
-    textMarker1.useHtml(true);
-    textMarker1.text(
-      anychart.format.dateTime(lineMarker1.value(), "y")
+    // create and configure a text marker
+    var textMarker = chart.textMarker(0); 
+    var todayMarkerValue = todayMarker.value();
+    textMarker.value(todayMarkerValue);
+    textMarker.text(
+      anychart.format.dateTime(todayMarkerValue, "dd MMMM")
     );
-    textMarker2.text(
-      anychart.format.dateTime(lineMarker2.value(), "y")
-    );
-
-    // configure the font of markers
-    textMarker1.fontColor("#dd2c00");
-    textMarker2.fontColor("#00bfa5");
-    textMarker1.fontWeight(600);
-    textMarker2.fontWeight(600);
-    
-    // configure the position of markers
-    textMarker1.offsetX(-10);
-    textMarker2.offsetX(-10);
+    textMarker.fontColor("#dd2c00");
+    textMarker.fontWeight(600);
+    textMarker.offsetX(-10);
 
     // set the chart title
     chart.title("Timeline Chart: Line Markers (Current Date + Text)");

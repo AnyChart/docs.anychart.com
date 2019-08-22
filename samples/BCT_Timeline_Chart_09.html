@@ -89,26 +89,30 @@ anychart.onDocumentReady(function () {
     var textMarker1 = chart.textMarker(0);
     var textMarker2 = chart.textMarker(1);
 
-    // set the values of markers
-    textMarker1.value(lineMarker1.value());
-    textMarker2.value(lineMarker2.value());
+    // get the values of line markers
+    var lineMarker1Value = lineMarker1.value()
+    var lineMarker2Value = lineMarker2.value();
+
+    // set the values of text markers
+    textMarker1.value(lineMarker1Value);
+    textMarker2.value(lineMarker2Value);
 
     // set the text of markers
     textMarker1.useHtml(true);
     textMarker1.text(
-      anychart.format.dateTime(lineMarker1.value(), "y")
+      anychart.format.dateTime(lineMarker1Value, "y")
     );
     textMarker2.text(
-      anychart.format.dateTime(lineMarker2.value(), "y")
+      anychart.format.dateTime(lineMarker2Value, "y")
     );
 
-    // configure the font of markers
+    // configure the font of text markers
     textMarker1.fontColor("#dd2c00");
     textMarker2.fontColor("#00bfa5");
     textMarker1.fontWeight(600);
     textMarker2.fontWeight(600);
     
-    // configure the position of markers
+    // configure the position of text markers
     textMarker1.offsetX(-10);
     textMarker2.offsetX(-10);
 

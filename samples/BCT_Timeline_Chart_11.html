@@ -93,17 +93,22 @@ anychart.onDocumentReady(function () {
     var textMarker1 = chart.textMarker(0);
     var textMarker2 = chart.textMarker(1);
 
-    // set the values of markers
-    textMarker1.value(rangeMarker1.from());
-    textMarker2.value(rangeMarker2.from());
+    // get the 'from' values of line markers
+    var rangeMarker1FromValue = rangeMarker1.from()
+    var rangeMarker2FromValue = rangeMarker2.from();
+
+    // set the values of text markers
+    textMarker1.value(rangeMarker1FromValue);
+    textMarker2.value(rangeMarker2FromValue);
+
 
     // set the text of markers
     textMarker1.useHtml(true);
     textMarker1.text(
-      anychart.format.dateTime(rangeMarker1.from(), "y")
+      anychart.format.dateTime(rangeMarker1FromValue, "y")
     );
     textMarker2.text(
-      anychart.format.dateTime(rangeMarker2.from(), "y")
+      anychart.format.dateTime(rangeMarker2FromValue, "y")
     );
 
     // configure the font of markers

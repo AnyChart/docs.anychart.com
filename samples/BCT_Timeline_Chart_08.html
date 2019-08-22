@@ -83,8 +83,14 @@ anychart.onDocumentReady(function () {
 
     // set the text of markers
     textMarker1.useHtml(true);
-    textMarker1.text("marker <span style='font-size:26'>1</span>");
-    textMarker2.text("marker 2");
+    textMarker1.text(
+      "year: <br><span style='font-size:20'>" +
+      anychart.format.dateTime(textMarker2.value(), "y") +
+      "</span>");
+    textMarker2.text(
+      "year: " +
+      anychart.format.dateTime(textMarker2.value(), "y")
+    );
 
     // configure the font of markers
     textMarker1.fontColor("#dd2c00");
@@ -101,8 +107,8 @@ anychart.onDocumentReady(function () {
     textMarker1.rotation(0);
     textMarker1.padding(10);
     textMarker1.offsetX(-95);
-    textMarker1.offsetY(45);
-    textMarker2.offsetY(20);
+    textMarker1.offsetY(40);
+    textMarker2.offsetY(10);
 
     // set the chart title
     chart.title("Timeline Chart: Text Markers");
