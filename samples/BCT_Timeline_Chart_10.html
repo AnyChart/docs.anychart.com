@@ -45,7 +45,7 @@ anychart.onDocumentReady(function () {
     var rangeSeries = chart.range(rangeData);
     rangeSeries.name("Tasks");
 
-    // create and configure a line marker on the current date
+    // create and configure a today marker
     var todayMarker = chart.todayMarker();
     todayMarker.stroke("#dd2c00", 3);
 
@@ -61,7 +61,7 @@ anychart.onDocumentReady(function () {
     textMarker.offsetX(-10);
 
     // set the chart title
-    chart.title("Timeline Chart: Line Markers (Current Date + Text)");
+    chart.title("Timeline Chart: Today Marker (+ Text Marker)");
 
     // set the container id
     chart.container("container");
