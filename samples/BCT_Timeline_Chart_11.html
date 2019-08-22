@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Timeline Chart 07"/>
+    <meta name="ac:name" content="BCT Timeline Chart 11"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -73,14 +73,55 @@ anychart.onDocumentReady(function () {
     var momentSeries2 = chart.moment(momentData2);
     momentSeries2.name("Trainings");
 
-    // configure the axis
-    chart.axis().height(80);
-    chart.axis().fill("#00724e");
-    chart.axis().stroke("#004e72");
-    chart.axis().ticks().stroke("#00b37a", 3);
+    // create two range markers
+    var rangeMarker1 = chart.rangeMarker(0);
+    var rangeMarker2 = chart.rangeMarker(1);
+
+    // set the range of the first marker
+    rangeMarker1.from(Date.UTC(2004,0,1));
+    rangeMarker1.to(Date.UTC(2005,0,1));
+
+    // set the range of the second marker
+    rangeMarker2.from(Date.UTC(2005,0,1));
+    rangeMarker2.to(Date.UTC(2006,0,1));
+
+    // set the fill of markers
+    rangeMarker1.fill("#dd2c00", 0.2);
+    rangeMarker2.fill("#00bfa5", 0.2);
+
+    // create two text markers
+    var textMarker1 = chart.textMarker(0);
+    var textMarker2 = chart.textMarker(1);
+
+    // set the values of markers
+    textMarker1.value(rangeMarker1.from());
+    textMarker2.value(rangeMarker2.from());
+
+    // set the text of markers
+    textMarker1.useHtml(true);
+    textMarker1.text(
+      anychart.format.dateTime(rangeMarker1.from(), "y")
+    );
+    textMarker2.text(
+      anychart.format.dateTime(rangeMarker2.from(), "y")
+    );
+
+    // configure the font of markers
+    textMarker1.fontColor("#dd2c00");
+    textMarker2.fontColor("#00bfa5");
+    textMarker1.fontWeight(600);
+    textMarker2.fontWeight(600);
+    
+    // configure the position of markers
+    textMarker1.rotation(0);
+    textMarker2.rotation(0);
+    textMarker1.offsetX(-40);
+    textMarker2.offsetX(-40);
+    textMarker1.offsetY(20);
+    textMarker2.offsetY(20);
 
     // set the chart title
-    chart.title("Timeline Chart: Axis");
+    chart.title("Timeline Chart: Range Markers (+ Text)");
 
     // set the container id
     chart.container("container");

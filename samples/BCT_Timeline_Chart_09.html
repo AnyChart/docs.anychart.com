@@ -30,13 +30,13 @@ anychart.onDocumentReady(function () {
     // create data
 
     var rangeData1 = [
-      ["Task 1", Date.UTC(2004,0,4), Date.UTC(2004,7,0)],
+      ["Task 1", Date.UTC(2004,0,4), Date.UTC(2004,7,1)],
       ["Task 2", Date.UTC(2004,7,1), Date.UTC(2005,8,10)]
     ];
 
     var rangeData2 = [
-      ["New Task 1", Date.UTC(2005,10,0), Date.UTC(2006,5,0)],
-      ["New Task 2", Date.UTC(2006,5,15), Date.UTC(2006,11,0)]
+      ["New Task 1", Date.UTC(2005,10,1), Date.UTC(2006,5,1)],
+      ["New Task 2", Date.UTC(2006,5,15), Date.UTC(2006,11,1)]
     ];
 
     var momentData1 = [
@@ -46,9 +46,9 @@ anychart.onDocumentReady(function () {
     ];
 
     var momentData2 = [
-      [Date.UTC(2004, 5, 12), "Training 1",],
-      [Date.UTC(2005, 5, 1),  "Training 2",],
-      [Date.UTC(2006, 1, 26), "Training 3",]
+      [Date.UTC(2004,5,12), "Training 1",],
+      [Date.UTC(2005,5,1),  "Training 2",],
+      [Date.UTC(2006,1,26), "Training 3",]
     ];
 
     // create a chart
@@ -73,24 +73,47 @@ anychart.onDocumentReady(function () {
     var momentSeries2 = chart.moment(momentData2);
     momentSeries2.name("Trainings");
 
-    // create two range markers
-    var rangeMarker1 = chart.rangeMarker(0);
-    var rangeMarker2 = chart.rangeMarker(1);
+    // create two line markers
+    var lineMarker1 = chart.lineMarker(0);
+    var lineMarker2 = chart.lineMarker(1);
 
-    // set the range of the first marker
-    rangeMarker1.from(Date.UTC(2004, 0, 0));
-    rangeMarker1.to(Date.UTC(2005,0,0));
+    // set values of markers
+    lineMarker1.value(Date.UTC(2004,0,1));
+    lineMarker2.value(Date.UTC(2005,0,1));
 
-    // set the range of the second marker
-    rangeMarker2.from(Date.UTC(2005, 0, 0));
-    rangeMarker2.to(Date.UTC(2006, 0, 0));
+    // set the stroke of markers
+    lineMarker1.stroke("#dd2c00", 3);
+    lineMarker2.stroke("#00bfa5", 3, "10 5", "round");
 
-    // set the fill of markers
-    rangeMarker1.fill("#dd2c00", 0.2);
-    rangeMarker2.fill("#00bfa5", 0.2);
+    // create two text markers
+    var textMarker1 = chart.textMarker(0);
+    var textMarker2 = chart.textMarker(1);
+
+    // set the values of markers
+    textMarker1.value(lineMarker1.value());
+    textMarker2.value(lineMarker2.value());
+
+    // set the text of markers
+    textMarker1.useHtml(true);
+    textMarker1.text(
+      anychart.format.dateTime(lineMarker1.value(), "y")
+    );
+    textMarker2.text(
+      anychart.format.dateTime(lineMarker2.value(), "y")
+    );
+
+    // configure the font of markers
+    textMarker1.fontColor("#dd2c00");
+    textMarker2.fontColor("#00bfa5");
+    textMarker1.fontWeight(600);
+    textMarker2.fontWeight(600);
+    
+    // configure the position of markers
+    textMarker1.offsetX(-10);
+    textMarker2.offsetX(-10);
 
     // set the chart title
-    chart.title("Timeline Chart: Range Markers");
+    chart.title("Timeline Chart: Line Markers (+ Text)");
 
     // set the container id
     chart.container("container");

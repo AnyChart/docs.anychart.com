@@ -192,6 +192,17 @@ To adjust markers, use the following methods:
 
 ### Markers
 
+#### Text
+
+* {api:anychart.charts.Timeline#textMarker}textMarker(){api}
+
+
+```
+
+```
+
+{sample}BCT\_Timeline\_Chart\_08{sample}
+
 #### Line
 
 * {api:anychart.charts.Timeline#lineMarker}lineMarker(){api}
@@ -202,7 +213,14 @@ To adjust markers, use the following methods:
 
 ```
 
-{sample}BCT\_Timeline\_Chart\_08{sample}
+{sample}BCT\_Timeline\_Chart\_09{sample}
+
+
+```
+
+```
+
+{sample}BCT\_Timeline\_Chart\_10{sample}
 
 #### Range
 
@@ -213,18 +231,7 @@ To adjust markers, use the following methods:
 
 ```
 
-{sample}BCT\_Timeline\_Chart\_09{sample}
-
-#### Text
-
-* {api:anychart.charts.Timeline#textMarker}textMarker(){api}
-
-
-```
-
-```
-
-{sample}BCT\_Timeline\_Chart\_10{sample}
+{sample}BCT\_Timeline\_Chart\_11{sample}
 
 ### Labels and Tooltips
 
