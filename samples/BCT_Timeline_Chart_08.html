@@ -73,14 +73,16 @@ anychart.onDocumentReady(function () {
     var momentSeries2 = chart.moment(momentData2);
     momentSeries2.name("Trainings");
 
-    // create the first line marker
+    // create two line markers
     var lineMarker1 = chart.lineMarker(0);
-    lineMarker1.value(Date.UTC(2004, 0, 0));
-    lineMarker1.stroke("#dd2c00", 3);
-
-    // create the second line marker
     var lineMarker2 = chart.lineMarker(1);
+
+    // set values of markers
+    lineMarker1.value(Date.UTC(2004, 0, 0));
     lineMarker2.value(Date.UTC(2005, 0, 0));
+
+    // set the stroke of markers
+    lineMarker1.stroke("#dd2c00", 3);
     lineMarker2.stroke("#00bfa5", 3, "10 5", "round");
 
     // set the chart title
