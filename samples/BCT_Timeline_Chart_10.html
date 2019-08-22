@@ -73,6 +73,33 @@ anychart.onDocumentReady(function () {
     var momentSeries2 = chart.moment(momentData2);
     momentSeries2.name("Trainings");
 
+    // create the first text marker
+    var textMarker1 = chart.textMarker(0);
+    textMarker1.value(Date.UTC(2004, 0, 0));
+    textMarker1.useHtml(true);
+    textMarker1.text("marker <span style='font-size:26'>1</span>");
+    textMarker1.fontColor("#dd2c00");
+    textMarker1.fontWeight(600);
+    textMarker1.padding(10);
+    textMarker1.background().enabled(true);
+    textMarker1.background().fill("#dd2c00", 0.2);
+    textMarker1.background().stroke("#dd2c00", 2);
+    textMarker1.rotation(0);
+    textMarker1.offsetY(45);
+    textMarker1.offsetX(-95);
+
+    // create the second text marker
+    var textMarker2 = chart.textMarker(1);
+    textMarker2.value(Date.UTC(2005, 0, 0));
+    textMarker2.text("marker 2");
+    textMarker2.fontColor("#00bfa5");
+    textMarker2.fontWeight(600);
+    textMarker2.padding(10);
+    textMarker2.background().enabled(true);
+    textMarker2.background().fill("#00bfa5", 0.2);
+    textMarker2.offsetY(20);
+    textMarker2.offsetX(-20);
+
     // set the chart title
     chart.title("Timeline Chart: Basic Sample");
 
