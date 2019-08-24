@@ -90,7 +90,7 @@ anychart.onDocumentReady(function () {
     momentSeries2.labels().background().stroke("#ffd54f", 2);
 
     //configure labels of axis
-     chart.axis().labels().format("[{%value}]");
+     chart.axis().labels().format("[{%value}{dateTimeFormat:y MMM}]");
 
     // configure tooltips of range series
     //rangeSeries1.labels().format("{%start}{dateTimeFormat:MMM}");
