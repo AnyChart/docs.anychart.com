@@ -40,15 +40,15 @@ anychart.onDocumentReady(function () {
     ];
 
     var momentData1 = [
-      {x: Date.UTC(2004,2,21), y: "Meeting 1", custom_field: "!!!"},
-      {x: Date.UTC(2005,3,19), y: "Meeting 2", custom_field: ""},
-      {x: Date.UTC(2006,1,1),  y: "Meeting 3", custom_field: ""}
+      {x: Date.UTC(2004,2,21), y: "Meeting 1"},
+      {x: Date.UTC(2005,3,19), y: "Meeting 2"},
+      {x: Date.UTC(2006,1,1),  y: "Meeting 3"}
     ];
 
     var momentData2 = [
-      {x: Date.UTC(2004,5,12), y: "Training 1", custom_field: ""},
-      {x: Date.UTC(2005,5,1),  y: "Training 2", custom_field: "!!!"},
-      {x: Date.UTC(2006,1,26), y: "Training 3", custom_field: ""}
+      {x: Date.UTC(2004,5,12), y: "Training 1"},
+      {x: Date.UTC(2005,5,1),  y: "Training 2"},
+      {x: Date.UTC(2006,1,26), y: "Training 3"}
     ];
 
     // create a chart
@@ -80,22 +80,14 @@ anychart.onDocumentReady(function () {
     rangeSeries2.labels().fontColor("#1976d2");
 
     // configure labels of moment series
-    // momentSeries1.labels().useHtml(true);
-    // momentSeries2.labels().useHtml(true);
-    momentSeries1.labels().format("{%x}{dateTimeFormat:dd MMM}");
-    momentSeries2.labels().format("{%x}{dateTimeFormat:dd MMM}");
-    //momentSeries1.labels().format(
-    //    "<span style='color:#dd2c00;font-weight: 600'>" +
-    //    "{%custom_field}</span> {%x}{dateTimeFormat:dd MMM}"
-    //);
-    //momentSeries2.labels().format(
-    //    "<span style='color:#dd2c00;font-weight: 600'>" +
-    //    "{%custom_field}</span> {%x}{dateTimeFormat:dd MMM}"
-    //);
+    momentSeries1.labels().format(" {%x}{dateTimeFormat:dd MMM}");
+    momentSeries2.labels().format(" {%x}{dateTimeFormat:dd MMM}");
     momentSeries1.labels().fontColor("#96a6a6");
     momentSeries2.labels().fontColor("#96a6a6");
-    //momentSeries1.labels().width(70);
-    //momentSeries2.labels().width(70);
+    momentSeries1.labels().width(50);
+    momentSeries2.labels().width(50);
+    momentSeries1.labels().background().stroke("#ffa000", 2);
+    momentSeries2.labels().background().stroke("#ffd54f", 2);
 
     //configure labels of axis
      chart.axis().labels().format("[{%value}]");
