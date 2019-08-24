@@ -80,16 +80,18 @@ anychart.onDocumentReady(function () {
     rangeSeries2.labels().fontColor("#1976d2");
 
     // configure labels of moment series
-    momentSeries1.labels().useHtml(true);
-    momentSeries2.labels().useHtml(true);
-    momentSeries1.labels().format(
-        "<span style='color:#dd2c00;font-weight: 600'>" +
-        "{%custom_field}</span> {%x}{dateTimeFormat:dd MMM}"
-    );
-    momentSeries2.labels().format(
-        "<span style='color:#dd2c00;font-weight: 600'>" +
-        "{%custom_field}</span> {%x}{dateTimeFormat:dd MMM}"
-    );
+    // momentSeries1.labels().useHtml(true);
+    // momentSeries2.labels().useHtml(true);
+    momentSeries1.labels().format("{%x}{dateTimeFormat:dd MMM}");
+    momentSeries2.labels().format("{%x}{dateTimeFormat:dd MMM}");
+    //momentSeries1.labels().format(
+    //    "<span style='color:#dd2c00;font-weight: 600'>" +
+    //    "{%custom_field}</span> {%x}{dateTimeFormat:dd MMM}"
+    //);
+    //momentSeries2.labels().format(
+    //    "<span style='color:#dd2c00;font-weight: 600'>" +
+    //    "{%custom_field}</span> {%x}{dateTimeFormat:dd MMM}"
+    //);
     momentSeries1.labels().fontColor("#96a6a6");
     momentSeries2.labels().fontColor("#96a6a6");
     momentSeries1.labels().width(70);
@@ -99,10 +101,10 @@ anychart.onDocumentReady(function () {
      chart.axis().labels().format("[{%value}]");
 
     // configure tooltips of range series
-    rangeSeries1.labels().format("{%start}{dateTimeFormat:MMM}");
-    rangeSeries2.labels().format("{%start}{dateTimeFormat:MMM}");
-    rangeSeries1.labels().fontColor("#64b5f6");
-    rangeSeries2.labels().fontColor("#1976d2");
+    //rangeSeries1.labels().format("{%start}{dateTimeFormat:MMM}");
+    //rangeSeries2.labels().format("{%start}{dateTimeFormat:MMM}");
+    //rangeSeries1.labels().fontColor("#64b5f6");
+    //rangeSeries2.labels().fontColor("#1976d2");
 
     // set the chart title
     chart.title("Timeline Chart: Labels and Tooltips (Tokens)");
