@@ -30,25 +30,25 @@ anychart.onDocumentReady(function () {
     // create data
 
     var rangeData1 = [
-      {name: "Task 1", start: Date.UTC(2004,0,4), end: Date.UTC(2004,7,1)},
-      {name: "Task 2", start: Date.UTC(2004,7,1), end: Date.UTC(2005,8,10)}
+      ["Task 1", Date.UTC(2004,0,4), Date.UTC(2004,7,1)],
+      ["Task 2", Date.UTC(2004,7,1), Date.UTC(2005,8,10)]
     ];
 
     var rangeData2 = [
-      {name: "New Task 1", start: Date.UTC(2005,10,1), end: Date.UTC(2006,5,1)},
-      {name: "New Task 2", start: Date.UTC(2006,5,15), end: Date.UTC(2006,11,1)}
+      ["New Task 1", Date.UTC(2005,10,1), Date.UTC(2006,5,1)],
+      ["New Task 2", Date.UTC(2006,5,15), Date.UTC(2006,11,1)]
     ];
 
     var momentData1 = [
-      {x: Date.UTC(2004,2,21), y: "Meeting 1"},
-      {x: Date.UTC(2005,3,19), y: "Meeting 2"},
-      {x: Date.UTC(2006,1,1),  y: "Meeting 3"}
+      [Date.UTC(2004,2,21), "Meeting 1"],
+      [Date.UTC(2005,3,19), "Meeting 2"],
+      [Date.UTC(2006,1,1),  "Meeting 3"]
     ];
 
     var momentData2 = [
-      {x: Date.UTC(2004,5,12), y: "Training 1"},
-      {x: Date.UTC(2005,5,1),  y: "Training 2"},
-      {x: Date.UTC(2006,1,26), y: "Training 3"}
+      [Date.UTC(2004,5,12), "Training 1"],
+      [Date.UTC(2005,5,1),  "Training 2"],
+      [Date.UTC(2006,1,26), "Training 3"]
     ];
 
     // create a chart

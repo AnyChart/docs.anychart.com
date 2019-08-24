@@ -244,9 +244,27 @@ To adjust markers, use the following methods:
 
 можно настроить у:
 
-* range series
-* moment series
-* axis (labels)
+* [range series](#range_series)
+* [moment series](#moment_series)
+* [axis](#axis) (labels)
+
+токены для range series:
+
+* `{%name}`
+* `{%start}`
+* `{%end}`
+* (?) `{%id}`
+* (?) `{%}` value (Unix timestamp)
+
+токены для moment series:
+
+* `{%x}`
+* `{%y}`
+* (?) `{%date}`
+
+токены для axis:
+
+* `{%value}`
 
 поля:
 
@@ -257,12 +275,31 @@ To adjust markers, use the following methods:
 
 #### Tokens
 
+```
+
+```
+
+{sample}BCT\_Timeline\_Chart\_12{sample}
+
 #### Formatting Functions
+
+```
+
+```
+
+{sample}BCT\_Timeline\_Chart\_13{sample}
 
 ### Scale
 
 * min
 * max
+
+
+```
+
+```
+
+{sample}BCT\_Timeline\_Chart\_14{sample}
 
 ### Navigation
 
@@ -278,7 +315,7 @@ To adjust markers, use the following methods:
 
 ```
 
-{sample}BCT\_Timeline\_Chart\_01{sample}
+{sample}BCT\_Timeline\_Chart\_15{sample}
 
 #### Scroller
 
@@ -315,10 +352,17 @@ zoomController.target(chart);
 zoomController.render();
 ```
 
-{sample}BCT\_Timeline\_Chart\_01{sample}
+{sample}BCT\_Timeline\_Chart\_16{sample}
 
 ### Behavior
 
 * zoomOnMouseWheel()
 * scrollOnMouseWheel() - по умолчанию включено, но не работает ни горизонатльно, ни вертикально 
 * enabled() - метода не существует
+
+
+```
+
+```
+
+{sample}BCT\_Timeline\_Chart\_17{sample}
