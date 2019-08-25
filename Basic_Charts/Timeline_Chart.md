@@ -254,7 +254,7 @@ To change the text of tooltips, do the same with the {api:anychart.charts.Timeli
 
 It is also possible to separately adjust labels and tooltips of the range and moment series well as labels of the axis. Use the corresponding methods of these elements with the tokens listed below.
 
-Tokens for [ranges](#range_series):
+Tokens for the [range series](#range_series):
 
 * `{%name}`
 * `{%seriesName}`
@@ -262,7 +262,7 @@ Tokens for [ranges](#range_series):
 * `{%end}` (Unix timestamp)
 * (?) `{%index}`
 
-Tokens for the [moments](#moment_series):
+Tokens for the [moment series](#moment_series):
 
 * `{%seriesName}`
 * `{%x}` (Unix timestamp)
@@ -276,6 +276,9 @@ Tokens for the [axis](#axis):
 * `{%value}` (отформатированная дата)
 * `{%tickValue}` (дубликат value, Unix timestamp)
 
+Also, you can always add a custom field to your data and use a custom token corresponding to it.
+
+...
 
 ```
 
@@ -285,14 +288,16 @@ Tokens for the [axis](#axis):
 
 #### Formatting Functions
 
-поля для range series:
+To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the fields listed below.
+
+Function fields for the [range series](#range_series):
 
 * `seriesName`
 * `start` (отформатированная дата)
 * `end` (отформатированная дата)
 * (?) `index`
 
-поля для moment series:
+Function fields for the [moment series](#moment_series):
 
 * `value` (название)
 * `seriesName`
@@ -300,11 +305,14 @@ Tokens for the [axis](#axis):
 * (?) `{%date}` (дубликат x, отформатированная дата)
 * (?) `index`
 
-поля для axis:
+Function fields for the [axis](#axis):
 
 * `value` (отформатированная дата)
 * `tickValue` (дубликат value, Unix timestamp)
 
+You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
+
+...
 
 ```
 
