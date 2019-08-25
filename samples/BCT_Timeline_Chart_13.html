@@ -82,11 +82,11 @@ anychart.onDocumentReady(function () {
     rangeSeries2.labels().fontColor("#1976d2");
     rangeSeries1.labels().format(function(){
       var duration = (this.end - this.start) / 1000 / 3600 / 24;
-      return duration + " days"; 
+      return duration + "d"; 
     });
     rangeSeries2.labels().format(function(){
       var duration = (this.end - this.start) / 1000 / 3600 / 24; 
-      return duration + " days";
+      return duration + "d";
     });
 
     // configure labels of moment series
