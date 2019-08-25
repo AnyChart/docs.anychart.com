@@ -100,12 +100,11 @@ anychart.onDocumentReady(function () {
       return this.value.toUpperCase(); 
     });
     momentSeries2.labels().format(function(){
-      return this.value.toUpperCase();; 
+      return this.value.toUpperCase(); 
     });
 
     // configure labels of the axis
     chart.axis().labels().format(function(){
-      console.log(this);
       return this.value; 
     });
 

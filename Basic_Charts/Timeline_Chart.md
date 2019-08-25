@@ -263,7 +263,7 @@ To adjust markers, use the following methods:
 * `{%seriesName}`
 * `{%x}` (Unix timestamp)
 * `{%y}` (Unix timestamp)
-* (?) `{%name}` (выдает ошибку со стеком, непонятно, чем заменить)
+* (?) `{%name}` (переполняет стек, непонятно, чем заменить)
 * (?) `{%date}` (дубликат x, отформатированная дата)
 * (?) `{%index}`
 
