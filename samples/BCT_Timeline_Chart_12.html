@@ -77,31 +77,33 @@ anychart.onDocumentReady(function () {
     var momentSeries2 = chart.moment(momentData2);
     momentSeries2.name("Trainings");
 
-    // configure labels of range series
-    rangeSeries1.labels().fontColor("#64b5f6");
-    rangeSeries2.labels().fontColor("#1976d2");
+    // format labels of range series
     var rangeLabelFormat =
       "{%start}{dateTimeFormat:MMM} – {%end}{dateTimeFormat:MMM}";
     rangeSeries1.labels().format(rangeLabelFormat);
     rangeSeries2.labels().format(rangeLabelFormat);
+
+    // configure labels of range series
     rangeSeries1.labels().fontColor("#64b5f6");
     rangeSeries2.labels().fontColor("#1976d2");
 
-    // configure labels of moment series
+    // format labels of moment series
     var momentLabelFormat = "{%x}{dateTimeFormat:dd MMM}";
     momentSeries1.labels().format(momentLabelFormat);
     momentSeries2.labels().format(momentLabelFormat);
+
+    // configure labels of moment series
     momentSeries1.labels().width(50);
     momentSeries2.labels().width(50);
-    momentSeries1.labels().background().stroke("#ffa000", 2);
-    momentSeries2.labels().background().stroke("#ffd54f", 2);
     momentSeries1.labels().fontColor("#96a6a6");
     momentSeries2.labels().fontColor("#96a6a6");
+    momentSeries1.labels().background().stroke("#ffa000", 2);
+    momentSeries2.labels().background().stroke("#ffd54f", 2);
 
-    //configure labels of the axis
+    //format labels of the axis
     chart.axis().labels().format("[ {%value} ]");
 
-    // configure tooltips of range series
+    // format tooltips of range series
     var rangeTooltipFormat =
       "<span style='font-weight:600;font-size:12pt'>" +
       "{%name}</span><br><br>Dates: " +
@@ -112,13 +114,14 @@ anychart.onDocumentReady(function () {
     rangeSeries2.tooltip().useHtml(true);   
     rangeSeries1.tooltip().format(rangeTooltipFormat);
     rangeSeries2.tooltip().format(rangeTooltipFormat);
+
+    // configure tooltips of range series
     rangeSeries1.tooltip().title().enabled(false);
     rangeSeries2.tooltip().title().enabled(false);
     rangeSeries1.tooltip().separator().enabled(false);
     rangeSeries2.tooltip().separator().enabled(false);
 
-
-    // configure tooltips of moment series
+    // format tooltips of moment series
     var momentTooltipFormat =
       "<span style='font-weight:600;font-size:12pt'>" +
       "{%y}</span><br><br>Date: {%x}{dateTimeFormat:dd MMM}" +
@@ -127,6 +130,8 @@ anychart.onDocumentReady(function () {
     momentSeries2.tooltip().useHtml(true);   
     momentSeries1.tooltip().format(momentTooltipFormat);
     momentSeries2.tooltip().format(momentTooltipFormat);
+
+    // configure tooltips of moment series
     momentSeries1.tooltip().title().enabled(false);
     momentSeries2.tooltip().title().enabled(false);
     momentSeries1.tooltip().separator().enabled(false);

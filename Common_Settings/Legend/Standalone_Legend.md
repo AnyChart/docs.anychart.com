@@ -95,7 +95,7 @@ In the sample below, there are two Spline charts with multiple series. Each item
 The {api:anychart.standalones.Legend#items}items(){api} method is used to add items to the legend:
 
 ```
-// create a standalone legend
+// a function for creating legends
 var legend = anychart.standalones.legend();
 
 // create an array for storing legend items
@@ -183,7 +183,7 @@ The following sample shows how to add multiple legends to a single chart. Each l
 The {api:anychart.standalones.Legend#items}items(){api} method is used to add items to the legends:
 
 ```
-// a function for creating legends
+// create legends
 function createLegend(dataRow, alignment) {
 
   // create a standalone legend

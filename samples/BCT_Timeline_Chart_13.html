@@ -77,82 +77,82 @@ anychart.onDocumentReady(function () {
     var momentSeries2 = chart.moment(momentData2);
     momentSeries2.name("Trainings");
 
+    // a function for formatting labels of range series
+    function rangeLabelFormat() {
+      return this.getData("name").toUpperCase();  
+    }
+
+    // format labels of range series
+    rangeSeries1.labels().format(rangeLabelFormat);
+    rangeSeries2.labels().format(rangeLabelFormat);
+
     // configure labels of range series
-    rangeSeries1.labels().format(function(){
-      return this.getData("name").toUpperCase(); 
-    });
-    rangeSeries2.labels().format(function(){
-      return this.getData("name").toUpperCase(); 
-    });
     rangeSeries1.labels().fontColor("#64b5f6");
     rangeSeries2.labels().fontColor("#1976d2");
 
+    // a functions for formatting labels of moment series
+    function momentLabelFormat() {
+      return this.value.toUpperCase();  
+    }
+
+    // format labels of moment series
+    momentSeries1.labels().format(momentLabelFormat);
+    momentSeries2.labels().format(momentLabelFormat);
+
     // configure labels of moment series
-    momentSeries1.labels().format(function(){
-      return this.value.toUpperCase(); 
-    });
-    momentSeries2.labels().format(function(){
-      return this.value.toUpperCase(); 
-    });
     momentSeries1.labels().width(80);
     momentSeries2.labels().width(80);
-    momentSeries1.labels().background().stroke("#ffa000", 2);
-    momentSeries2.labels().background().stroke("#ffd54f", 2);
     momentSeries1.labels().fontColor("#96a6a6");
     momentSeries2.labels().fontColor("#96a6a6");
+    momentSeries1.labels().background().stroke("#ffa000", 2);
+    momentSeries2.labels().background().stroke("#ffd54f", 2);
 
-    // configure labels of the axis
+    // format labels of the axis
     chart.axis().labels().format(function(){
       return this.value.substr(2); 
     });
 
-    // configure tooltips of range series
+    // a function for formatting tooltips of range series
+    function rangeTooltipFormat() {
+      var duration = (this.end - this.start) / 1000 / 3600 / 24;
+      var start = anychart.format.dateTime(this.start, "dd MMM");
+      var end = anychart.format.dateTime(this.end, "dd MMM");
+      return "<span style='font-weight:600;font-size:12pt'>" + 
+              this.getData("name").toUpperCase() + "</span>" +
+              "<br><br>Dates: " + start + " – " + end + 
+              "<br>Duration: " + duration + " days" +
+              "<br>Group: " + this.seriesName +
+              "<br><br>Manager: " + this.getData("manager");  
+    }
+
+    // format tooltips of range series
     rangeSeries1.tooltip().useHtml(true);
     rangeSeries2.tooltip().useHtml(true); 
-    rangeSeries1.tooltip().format(function(){
-      var duration = (this.end - this.start) / 1000 / 3600 / 24;
-      var start = anychart.format.dateTime(this.end, "dd MMM");
-      var end = anychart.format.dateTime(this.end, "dd MMM");
-      return "<span style='font-weight:600;font-size:12pt'>" + 
-              this.getData("name").toUpperCase() + "</span>" +
-              "<br><br>Dates: " + start + " – " + end + 
-              "<br>Duration: " + duration + " days" +
-              "<br>Group: " + this.seriesName +
-              "<br><br>Manager: " + this.getData("manager"); 
-    });
-    rangeSeries2.tooltip().format(function(){
-      var duration = (this.end - this.start) / 1000 / 3600 / 24;
-      var start = anychart.format.dateTime(this.end, "dd MMM");
-      var end = anychart.format.dateTime(this.end, "dd MMM");
-      return "<span style='font-weight:600;font-size:12pt'>" + 
-              this.getData("name").toUpperCase() + "</span>" +
-              "<br><br>Dates: " + start + " – " + end + 
-              "<br>Duration: " + duration + " days" +
-              "<br>Group: " + this.seriesName +
-              "<br><br>Manager: " + this.getData("manager"); 
-    });
+    rangeSeries1.tooltip().format(rangeTooltipFormat);
+    rangeSeries2.tooltip().format(rangeTooltipFormat);
+
+    // configure tooltips of range series
     rangeSeries1.tooltip().title().enabled(false);
     rangeSeries2.tooltip().title().enabled(false);
     rangeSeries1.tooltip().separator().enabled(false);
     rangeSeries2.tooltip().separator().enabled(false);
 
-    // configure tooltips of moment series
+    // a function for formatting tooltips of range series
+    function momentTooltipFormat() {
+      var date = anychart.format.dateTime(this.x, "dd MMM");
+      return "<span style='font-weight:600;font-size:12pt'>" + 
+              this.value.toUpperCase() + "</span>" +
+              "<br><br>Date: " + date + 
+              "<br>Group: " + this.seriesName;
+    }
+
+    // format tooltips of moment series
     momentSeries1.tooltip().useHtml(true);
     momentSeries2.tooltip().useHtml(true); 
-    momentSeries1.tooltip().format(function(){
-      var date = anychart.format.dateTime(this.x, "dd MMM");
-      return "<span style='font-weight:600;font-size:12pt'>" + 
-              this.value.toUpperCase() + "</span>" +
-              "<br><br>Date: " + date + 
-              "<br>Group: " + this.seriesName;
-    });
-    momentSeries2.tooltip().format(function(){
-      var date = anychart.format.dateTime(this.x, "dd MMM");
-      return "<span style='font-weight:600;font-size:12pt'>" + 
-              this.value.toUpperCase() + "</span>" +
-              "<br><br>Date: " + date + 
-              "<br>Group: " + this.seriesName;
-    });
+    momentSeries1.tooltip().format(momentTooltipFormat);
+    momentSeries2.tooltip().format(momentTooltipFormat);
+
+    // configure tooltips of moment series
     momentSeries1.tooltip().title().enabled(false);
     momentSeries2.tooltip().title().enabled(false);
     momentSeries1.tooltip().separator().enabled(false);
