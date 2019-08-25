@@ -98,7 +98,7 @@ anychart.onDocumentReady(function () {
     momentSeries2.labels().format("{%x}{dateTimeFormat:dd MMM}");
 
     //configure labels of the axis
-    chart.axis().labels().format("YEAR {%value}");
+    chart.axis().labels().format("[ {%value} ]");
 
     // configure tooltips of range series
     rangeSeries1.tooltip().useHtml(true);

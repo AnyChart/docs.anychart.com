@@ -81,12 +81,10 @@ anychart.onDocumentReady(function () {
     rangeSeries1.labels().fontColor("#64b5f6");
     rangeSeries2.labels().fontColor("#1976d2");
     rangeSeries1.labels().format(function(){
-      var duration = (this.end - this.start) / 1000 / 3600 / 24;
-      return duration + "d"; 
+      return this.getData("name").toUpperCase(); 
     });
     rangeSeries2.labels().format(function(){
-      var duration = (this.end - this.start) / 1000 / 3600 / 24; 
-      return duration + "d";
+      return this.getData("name").toUpperCase(); 
     });
 
     // configure labels of moment series
@@ -105,7 +103,7 @@ anychart.onDocumentReady(function () {
 
     // configure labels of the axis
     chart.axis().labels().format(function(){
-      return "YEAR " + this.value; 
+      return "[ " + this.value + " ]"; 
     });
 
     // configure tooltips of range series
