@@ -251,9 +251,9 @@ To change the text of all elements of the chart, combine the {api:anychart.chart
 
 To change the text of tooltips, do the same with the {api:anychart.charts.Timeline#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
-It is also possible to separately adjust labels and tooltips of [range series](#range_series) and [moment series](#moment_series) as well as labels of the [axis](#axis). Use the corresponding methods of these elements with tokens listed below.
+It is also possible to separately adjust labels and tooltips of range and moment seriesas well as labels of the axis. Use the corresponding methods of these elements with tokens listed below.
 
-**Range Series**:
+Tokens for [range series](#range_series):
 
 * `{%name}`
 * `{%seriesName}`
@@ -261,7 +261,7 @@ It is also possible to separately adjust labels and tooltips of [range series](#
 * `{%end}` (Unix timestamp)
 * (?) `{%index}`
 
-**Moment Series**:
+Tokens for [moment series](#moment_series):
 
 * `{%seriesName}`
 * `{%x}` (Unix timestamp)
@@ -270,7 +270,7 @@ It is also possible to separately adjust labels and tooltips of [range series](#
 * (?) `{%date}` (дубликат x, отформатированная дата)
 * (?) `{%index}`
 
-**Axis**:
+Tokens for [axis](#axis):
 
 * `{%value}` (отформатированная дата)
 * `{%tickValue}` (дубликат value, Unix timestamp)
