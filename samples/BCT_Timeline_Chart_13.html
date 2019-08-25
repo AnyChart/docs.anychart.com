@@ -30,15 +30,19 @@ anychart.onDocumentReady(function () {
     // create data
 
     var rangeData1 = [
-      ["Task 1", Date.UTC(2004,0,4), Date.UTC(2004,7,1)],
-      ["Task 2", Date.UTC(2004,7,1), Date.UTC(2005,8,10)]
+      {name: "Task 1", start: Date.UTC(2004,0,4), end: Date.UTC(2004,7,1),
+       manager: "John Doe"},
+      {name: "Task 2", start: Date.UTC(2004,7,1), end: Date.UTC(2005,8,10),
+       manager: "Richard Roe"}
     ];
 
     var rangeData2 = [
-      ["New Task 1", Date.UTC(2005,10,1), Date.UTC(2006,5,1)],
-      ["New Task 2", Date.UTC(2006,5,15), Date.UTC(2006,11,1)]
+      {name: "New Task 1", start: Date.UTC(2005,10,1), end: Date.UTC(2006,5,1),
+       manager: "Larry Loe"},
+      {name: "New Task 2", start: Date.UTC(2006,5,15), end: Date.UTC(2006,11,1),
+       manager: "Marta Moe"}
     ];
-
+    
     var momentData1 = [
       [Date.UTC(2004,2,21), "Meeting 1"],
       [Date.UTC(2005,3,19), "Meeting 2"],

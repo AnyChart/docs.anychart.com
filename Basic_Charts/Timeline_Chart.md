@@ -98,7 +98,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 #### All Ranges
 
-To access range series, use the {api:anychart.charts.Timeline#range}range(){api} method.
+(?) To access range series, use the {api:anychart.charts.Timeline#range}range(){api} method.
 
 The {api:anychart.core.timeline.series.Range#height}height(){api} and {api:anychart.core.timeline.series.Range#direction}direction(){api} methods allow setting the height and direction of ranges. The available directions are listed in {api:anychart.enums.Direction}anychart.enums.Direction{api}: `"auto"` (default) / `"up"` / `"down"` / `"odd-even"`.
 
@@ -132,7 +132,7 @@ Combine them with methods from {api:anychart.core.StateSettings}anychart.core.St
 
 #### All Moments
 
-To access moment series, use the {api:anychart.charts.Timeline#moment}moment(){api} method.
+(?) To access moment series, use the {api:anychart.charts.Timeline#moment}moment(){api} method.
 
 The {api:anychart.core.timeline.series.Moment#direction}direction(){api} method allows setting the direction as one of the enums from {api:anychart.enums.Direction}anychart.enums.Direction{api}: `"auto"` (default) / `"up"` / `"down"` / `"odd-even"`.
 
@@ -251,6 +251,7 @@ To adjust markers, use the following methods:
 токены для range series:
 
 * `{%name}`
+* `{%seriesName}`
 * `{%start}`
 * `{%end}`
 * (?) `{%id}`
@@ -258,6 +259,8 @@ To adjust markers, use the following methods:
 
 токены для moment series:
 
+* `{%name}`
+* `{%seriesName}`
 * `{%x}`
 * `{%y}`
 * (?) `{%date}`

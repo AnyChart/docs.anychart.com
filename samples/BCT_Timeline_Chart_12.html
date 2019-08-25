@@ -78,8 +78,12 @@ anychart.onDocumentReady(function () {
     momentSeries2.name("Trainings");
 
     // configure labels of range series
-    rangeSeries1.labels().format("{%start}{dateTimeFormat:MMM}");
-    rangeSeries2.labels().format("{%start}{dateTimeFormat:MMM}");
+    rangeSeries1.labels().format(
+      "{%start}{dateTimeFormat:MMM} – {%end}{dateTimeFormat:MMM}"
+     );
+    rangeSeries2.labels().format(
+      "{%start}{dateTimeFormat:MMM} – {%end}{dateTimeFormat:MMM}"
+     );
     rangeSeries1.labels().fontColor("#64b5f6");
     rangeSeries2.labels().fontColor("#1976d2");
 
@@ -94,39 +98,47 @@ anychart.onDocumentReady(function () {
     momentSeries2.labels().background().stroke("#ffd54f", 2);
 
     //configure labels of axis
-     chart.axis().labels().format("[{%value}{dateTimeFormat:y MMM}]");
+    chart.axis().labels().format("{%value}{dateTimeFormat:y}");
 
     // configure tooltips of range series
     rangeSeries1.tooltip().useHtml(true);
     rangeSeries2.tooltip().useHtml(true);   
     rangeSeries1.tooltip().format(
       "<span style='font-weight:600;font-size:12pt'>" +
-      "{%start}{dateTimeFormat:dd MMM} – " +
-      "{%end}{dateTimeFormat:dd MMM}</span><br><br>" +
-      "Manager: {%manager}"
+      "{%name}</span><br><br>" +
+      "Group: {%seriesName}<br>Manager: {%manager}"
     );
     rangeSeries2.tooltip().format(
       "<span style='font-weight:600;font-size:12pt'>" +
-      "{%start}{dateTimeFormat:dd MMM} – " +
-      "{%end}{dateTimeFormat:dd MMM}</span><br><br>" +
-      "Manager: {%manager}"
+      "{%name}</span><br><br>" +
+      "Group: {%seriesName}<br>Manager: {%manager}"
     );
-    rangeSeries1.tooltip().titleFormat("{%name}");
-    rangeSeries2.tooltip().titleFormat("{%name}");
+    rangeSeries1.tooltip().titleFormat(
+      "{%start}{dateTimeFormat:dd MMM} – " +
+      "{%end}{dateTimeFormat:dd MMM}"
+     );
+    rangeSeries2.tooltip().titleFormat(
+      "{%start}{dateTimeFormat:dd MMM} – " +
+      "{%end}{dateTimeFormat:dd MMM}"
+    );
 
     // configure tooltips of moment series
     momentSeries1.tooltip().useHtml(true);
     momentSeries2.tooltip().useHtml(true);   
     momentSeries1.tooltip().format(
       "<span style='font-weight:600;font-size:12pt'>" +
-      "{%y}{dateTimeFormat:dd MMM}</span>"
+      "{%y}</span><br><br>Group: {%seriesName}"
     );
     momentSeries2.tooltip().format(
       "<span style='font-weight:600;font-size:12pt'>" +
-      "{%y}{dateTimeFormat:dd MMM}</span>"
+      "{%y}</span><br><br>Group: {%seriesName}"
     );
-    momentSeries1.tooltip().titleFormat("{%y}");
-    momentSeries2.tooltip().titleFormat("{%y}");
+    momentSeries1.tooltip().titleFormat(
+      "{%x}{dateTimeFormat:dd MMM}"
+     );
+    momentSeries2.tooltip().titleFormat(
+      "{%x}{dateTimeFormat:dd MMM}"
+    );
 
     // set the chart title
     chart.title("Timeline Chart: Labels and Tooltips (Tokens)");
