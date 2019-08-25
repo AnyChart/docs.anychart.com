@@ -105,40 +105,41 @@ anychart.onDocumentReady(function () {
     rangeSeries2.tooltip().useHtml(true);   
     rangeSeries1.tooltip().format(
       "<span style='font-weight:600;font-size:12pt'>" +
-      "{%name}</span><br><br>" +
-      "Group: {%seriesName}<br>Manager: {%manager}"
+      "{%name}</span><br><br>Dates: " +
+      "{%start}{dateTimeFormat:dd MMM} – " +
+      "{%end}{dateTimeFormat:dd MMM}" +
+      "<br>Group: {%seriesName}<br><br>Manager: {%manager}"
     );
     rangeSeries2.tooltip().format(
       "<span style='font-weight:600;font-size:12pt'>" +
-      "{%name}</span><br><br>" +
-      "Group: {%seriesName}<br>Manager: {%manager}"
-    );
-    rangeSeries1.tooltip().titleFormat(
+      "{%name}</span><br><br>Dates: " +
       "{%start}{dateTimeFormat:dd MMM} – " +
-      "{%end}{dateTimeFormat:dd MMM}"
-     );
-    rangeSeries2.tooltip().titleFormat(
-      "{%start}{dateTimeFormat:dd MMM} – " +
-      "{%end}{dateTimeFormat:dd MMM}"
+      "{%end}{dateTimeFormat:dd MMM}" +
+      "<br>Group: {%seriesName}<br><br>Manager: {%manager}"
     );
+    rangeSeries1.tooltip().title().enabled(false);
+    rangeSeries2.tooltip().title().enabled(false);
+    rangeSeries1.tooltip().separator().enabled(false);
+    rangeSeries2.tooltip().separator().enabled(false);
+
 
     // configure tooltips of moment series
     momentSeries1.tooltip().useHtml(true);
     momentSeries2.tooltip().useHtml(true);   
     momentSeries1.tooltip().format(
       "<span style='font-weight:600;font-size:12pt'>" +
-      "{%y}</span><br><br>Group: {%seriesName}"
+      "{%y}</span><br><br>Date: {%x}{dateTimeFormat:dd MMM}" +
+      "<br>Group: {%seriesName}"
     );
     momentSeries2.tooltip().format(
       "<span style='font-weight:600;font-size:12pt'>" +
-      "{%y}</span><br><br>Group: {%seriesName}"
+      "{%y}</span><br><br>Date: {%x}{dateTimeFormat:dd MMM}" +
+      "<br>Group: {%seriesName}"
     );
-    momentSeries1.tooltip().titleFormat(
-      "{%x}{dateTimeFormat:dd MMM}"
-     );
-    momentSeries2.tooltip().titleFormat(
-      "{%x}{dateTimeFormat:dd MMM}"
-    );
+    momentSeries1.tooltip().title().enabled(false);
+    momentSeries2.tooltip().title().enabled(false);
+    momentSeries1.tooltip().separator().enabled(false);
+    momentSeries2.tooltip().separator().enabled(false);
 
     // set the chart title
     chart.title("Timeline Chart: Labels and Tooltips (Tokens)");

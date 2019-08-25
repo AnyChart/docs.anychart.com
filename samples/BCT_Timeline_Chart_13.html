@@ -105,8 +105,60 @@ anychart.onDocumentReady(function () {
 
     // configure labels of the axis
     chart.axis().labels().format(function(){
-      return this.value; 
+      return "YEAR " + this.value; 
     });
+
+    // configure tooltips of range series
+    rangeSeries1.tooltip().useHtml(true);
+    rangeSeries2.tooltip().useHtml(true); 
+    rangeSeries1.tooltip().format(function(){
+      var duration = (this.end - this.start) / 1000 / 3600 / 24;
+      var start = anychart.format.dateTime(this.end, "dd MMM");
+      var end = anychart.format.dateTime(this.end, "dd MMM");
+      return "<span style='font-weight:600;font-size:12pt'>" + 
+              this.getData("name").toUpperCase() + "</span>" +
+              "<br><br>Dates: " + start + " – " + end + 
+              "<br>Duration: " + duration + " days" +
+              "<br>Group: " + this.seriesName +
+              "<br><br>Manager: " + this.getData("manager"); 
+    });
+    rangeSeries2.tooltip().format(function(){
+      var duration = (this.end - this.start) / 1000 / 3600 / 24;
+      var start = anychart.format.dateTime(this.end, "dd MMM");
+      var end = anychart.format.dateTime(this.end, "dd MMM");
+      return "<span style='font-weight:600;font-size:12pt'>" + 
+              this.getData("name").toUpperCase() + "</span>" +
+              "<br><br>Dates: " + start + " – " + end + 
+              "<br>Duration: " + duration + " days" +
+              "<br>Group: " + this.seriesName +
+              "<br><br>Manager: " + this.getData("manager"); 
+    });
+    rangeSeries1.tooltip().title().enabled(false);
+    rangeSeries2.tooltip().title().enabled(false);
+    rangeSeries1.tooltip().separator().enabled(false);
+    rangeSeries2.tooltip().separator().enabled(false);
+
+    // configure tooltips of moment series
+    momentSeries1.tooltip().useHtml(true);
+    momentSeries2.tooltip().useHtml(true); 
+    momentSeries1.tooltip().format(function(){
+      var date = anychart.format.dateTime(this.x, "dd MMM");
+      return "<span style='font-weight:600;font-size:12pt'>" + 
+              this.value.toUpperCase() + "</span>" +
+              "<br><br>Date: " + date + 
+              "<br>Group: " + this.seriesName;
+    });
+    momentSeries2.tooltip().format(function(){
+      var date = anychart.format.dateTime(this.x, "dd MMM");
+      return "<span style='font-weight:600;font-size:12pt'>" + 
+              this.value.toUpperCase() + "</span>" +
+              "<br><br>Date: " + date + 
+              "<br>Group: " + this.seriesName;
+    });
+    momentSeries1.tooltip().title().enabled(false);
+    momentSeries2.tooltip().title().enabled(false);
+    momentSeries1.tooltip().separator().enabled(false);
+    momentSeries2.tooltip().separator().enabled(false);
 
     // set the chart title
     chart.title("Timeline Chart: Labels and Tooltips (Formatting Functions)");
