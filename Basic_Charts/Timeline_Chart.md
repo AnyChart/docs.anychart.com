@@ -254,23 +254,23 @@ To adjust markers, use the following methods:
 
 * `{%name}`
 * `{%seriesName}`
-* `{%start}`
-* `{%end}`
-* (?) `{%id}` (дубль name)
-* (?) `{%value}` (Unix timestamp, дубль одной из дат)
+* `{%start}` (Unix timestamp)
+* `{%end}` (Unix timestamp)
 * (?) `{%index}`
 
 токены для moment series:
 
-* `{%name}`
 * `{%seriesName}`
-* `{%x}`
-* `{%y}`
-* (?) `{%date}` (дубль x)
+* `{%x}` (Unix timestamp)
+* `{%y}` (Unix timestamp)
+* (?) `{%name}` (выдает ошибку со стеком, непонятно, чем заменить)
+* (?) `{%date}` (дубликат x, отформатированная дата)
+* (?) `{%index}`
 
 токены для axis:
 
-* `{%value}`
+* `{%value}` (отформатированная дата)
+* `{%tickValue}` (дубликат value, Unix timestamp)
 
 
 ```
@@ -281,15 +281,8 @@ To adjust markers, use the following methods:
 
 #### Formatting Functions
 
-???
-
-* /date/
-* /title/
-* /description/
-
 поля для range series:
 
-* `?`
 * `seriesName`
 * `start`
 * `end`
@@ -297,15 +290,16 @@ To adjust markers, use the following methods:
 
 поля для moment series:
 
-* `name`
+* `value` (название)
 * `seriesName`
-* `x`
-* `y`
-* (?) `{%date}`
+* `x` (Unix timestamp)
+* (?) `{%date}` (дубликат x, отформатированная дата)
+* (?) `index`
 
 поля для axis:
 
-* `value`
+* `value` (отформатированная дата)
+* `tickValue` (дубликат value, Unix timestamp)
 
 
 ```

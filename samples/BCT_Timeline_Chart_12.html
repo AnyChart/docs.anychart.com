@@ -5,13 +5,13 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-timeline.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{DVF-4816-timeline-chart}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{DVF-4816-timeline-chart}}/js/anychart-timeline.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{DVF-4816-timeline-chart}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{DVF-4816-timeline-chart}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{DVF-4816-timeline-chart}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{DVF-4816-timeline-chart}}/fonts/css/anychart-font.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />    
     
     <style>
         html, body, #container {
@@ -92,12 +92,12 @@ anychart.onDocumentReady(function () {
     momentSeries2.labels().width(50);
     momentSeries1.labels().background().stroke("#ffa000", 2);
     momentSeries2.labels().background().stroke("#ffd54f", 2);
-    momentSeries1.labels().format(" {%x}{dateTimeFormat:dd MMM}");
-    momentSeries2.labels().format(" {%x}{dateTimeFormat:dd MMM}");
     momentSeries1.labels().fontColor("#96a6a6");
     momentSeries2.labels().fontColor("#96a6a6");
+    momentSeries1.labels().format("{%x}{dateTimeFormat:dd MMM}");
+    momentSeries2.labels().format("{%x}{dateTimeFormat:dd MMM}");
 
-    //configure labels of axis
+    //configure labels of the axis
     chart.axis().labels().format("{%value}{dateTimeFormat:y}");
 
     // configure tooltips of range series
