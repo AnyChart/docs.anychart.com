@@ -73,8 +73,20 @@ anychart.onDocumentReady(function () {
     var momentSeries2 = chart.moment(momentData2);
     momentSeries2.name("Trainings");
 
+    // set the minimun and maximum values of the scale
+    chart.scale().minimum(Date.UTC(2003,7,30));
+    chart.scale().maximum(Date.UTC(2007,5,30));
+
+    // set the starting month of the fiscal year
+    chart.scale().fiscalYearStartMonth(7);
+
+    // format labels of the axis
+    chart.axis().labels().format(
+      "{%tickValue}{dateTimeFormat:MMM y}"
+    );
+
     // set the chart title
-    chart.title("Timeline Chart: (?)");
+    chart.title("Timeline Chart: Scale");
 
     // set the container id
     chart.container("container");

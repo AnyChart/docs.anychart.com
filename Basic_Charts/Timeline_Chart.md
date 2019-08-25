@@ -274,7 +274,7 @@ Tokens for the [moment series](#moment_series):
 Tokens for the [axis](#axis):
 
 * `{%value}` (отформатированная дата)
-* `{%tickValue}` (дубликат value, Unix timestamp)
+* `{%tickValue}` (Unix timestamp, учитывает фискальный месяц)
 
 Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
@@ -308,7 +308,7 @@ Function fields for the [moment series](#moment_series):
 Function fields for the [axis](#axis):
 
 * `value` (отформатированная дата)
-* `tickValue` (дубликат value, Unix timestamp)
+* `tickValue` (Unix timestamp, учитывает фискальный месяц)
 
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 
@@ -322,10 +322,12 @@ You can also add a custom field to your data and refer to it by using the {api:a
 
 ### Scale
 
-* min
-* max
-* fiscalYearStartMonth()
+* {api:anychart.charts.Timeline#scale}scale(){api}
+* {api:anychart.scales.GanttDateTime#minimum}minimum(){api} to set the minimum date of the scale
+* {api:anychart.scales.GanttDateTime#maximum}maximum(){api} to set the maximum date of the scale
+* {api:anychart.scales.GanttDateTime#fiscalYearStartMonth}fiscalYearStartMonth(){api}
 
+**Note:** The fiscal year is set as a number from 1 to 12 to the fiscalYearStartMonth() method. The default value is 1 (January).
 
 ```
 

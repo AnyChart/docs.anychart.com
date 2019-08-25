@@ -101,7 +101,9 @@ anychart.onDocumentReady(function () {
     momentSeries2.labels().background().stroke("#ffd54f", 2);
 
     //format labels of the axis
-    chart.axis().labels().format("[ {%value} ]");
+    chart.axis().labels().format(
+      "{%tickValue}{dateTimeFormat:MMM y}"
+    );
 
     // format tooltips of range series
     var rangeTooltipFormat =
