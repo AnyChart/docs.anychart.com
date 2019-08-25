@@ -52,8 +52,8 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 To create a Timeline chart, use the {api:anychart#timeline}anychart.timeline(){api} chart constructor...
 
-* {api:anychart.charts.Timeline#range}range(){api} – [Range series](#range_series)
-* {api:anychart.charts.Timeline#moment}moment(){api} – [Moment series](#moment_series)
+* {api:anychart.charts.Timeline#range}range(){api} – [range series](#range_series)
+* {api:anychart.charts.Timeline#moment}moment(){api} – [moment series](#moment_series)
 
 
 ```
@@ -72,13 +72,13 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-[Range series](#range_series):
+[range series](#range_series):
 
 * `name`
 * `start`
 * `end`
 
-[Moment series](#moment_series):
+[moment series](#moment_series):
 
 * `x`
 * `y`
@@ -99,7 +99,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 #### All Ranges
 
-To configure the Range series, use the following methods:
+To configure the range series, use the following methods:
 
 * {api:anychart.core.timeline.series.Range#height}height(){api} to set the height
 * {api:anychart.core.timeline.series.Range#direction}direction(){api} to set the direction – {api:anychart.enums.Direction}anychart.enums.Direction{api}
@@ -134,7 +134,7 @@ Combine them with methods from {api:anychart.core.StateSettings}anychart.core.St
 
 #### All Moments
 
-The {api:anychart.core.timeline.series.Moment#direction}direction(){api} method allows setting the direction of the Moment series as one of the enums from {api:anychart.enums.Direction}anychart.enums.Direction{api}.
+The {api:anychart.core.timeline.series.Moment#direction}direction(){api} method allows setting the direction of the moment series as one of the enums from {api:anychart.enums.Direction}anychart.enums.Direction{api}.
 
 The [appearance](../Appearance_Settings) of moments and their markers as well as the shape and size of markers can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.timeline.series.Moment#normal}normal(){api}, {api:anychart.core.timeline.series.Moment#hovered}hovered(){api}, and {api:anychart.core.timeline.series.Moment#selected}selected(){api} methods.
 
@@ -185,8 +185,8 @@ To adjust markers, use the following methods:
 
 ### Appearance
 
-* [Moment series](#moment_series)
-* [Range series](#range_series)
+* [moment series](#moment_series)
+* [range series](#range_series)
 * [Axis](#axis)
 * [appearance](../Appearance_Settings)
 
@@ -252,9 +252,9 @@ To change the text of all elements of the chart, combine the {api:anychart.chart
 
 To change the text of tooltips, do the same with the {api:anychart.charts.Timeline#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
-It is also possible to separately adjust labels and tooltips of the Range and Moment seriesas well as labels of the axis. Use the corresponding methods of these elements with tokens listed below.
+It is also possible to separately adjust labels and tooltips of the range and moment series well as labels of the axis. Use the corresponding methods of these elements with the tokens listed below.
 
-Tokens for the [Range series](#range_series):
+Tokens for the [range series](#range_series):
 
 * `{%name}`
 * `{%seriesName}`
@@ -262,7 +262,7 @@ Tokens for the [Range series](#range_series):
 * `{%end}` (Unix timestamp)
 * (?) `{%index}`
 
-Tokens for the [Moment series](#moment_series):
+Tokens for the [moment series](#moment_series):
 
 * `{%seriesName}`
 * `{%x}` (Unix timestamp)
