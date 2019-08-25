@@ -284,8 +284,8 @@ To adjust markers, use the following methods:
 поля для range series:
 
 * `seriesName`
-* `start`
-* `end`
+* `start` (отформатированная дата)
+* `end` (отформатированная дата)
 * (?) `index`
 
 поля для moment series:
