@@ -103,7 +103,7 @@ anychart.onDocumentReady(function () {
 
     // configure labels of the axis
     chart.axis().labels().format(function(){
-      return "[ " + this.value + " ]"; 
+      return this.value.substr(2); 
     });
 
     // configure tooltips of range series
