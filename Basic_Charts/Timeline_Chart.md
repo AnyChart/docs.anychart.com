@@ -98,7 +98,10 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 #### All Ranges
 
-The {api:anychart.core.timeline.series.Range#height}height(){api} and {api:anychart.core.timeline.series.Range#direction}direction(){api} methods allow setting the height and direction of range series. The available directions are listed in {api:anychart.enums.Direction}anychart.enums.Direction{api}: `"auto"` (default) / `"up"` / `"down"` / `"odd-even"`.
+To configure range series, use the following methods:
+
+* {api:anychart.core.timeline.series.Range#height}height(){api} to set the height
+* {api:anychart.core.timeline.series.Range#direction}direction(){api} to set the direction – {api:anychart.enums.Direction}anychart.enums.Direction{api}
 
 The [appearance](../Appearance_Settings) of ranges can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.timeline.series.Range#normal}normal(){api}, {api:anychart.core.timeline.series.Range#hovered}hovered(){api}, and {api:anychart.core.timeline.series.Range#selected}selected(){api} methods.
 
@@ -130,7 +133,7 @@ Combine them with methods from {api:anychart.core.StateSettings}anychart.core.St
 
 #### All Moments
 
-The {api:anychart.core.timeline.series.Moment#direction}direction(){api} method allows setting the direction of moment series as one of the enums from {api:anychart.enums.Direction}anychart.enums.Direction{api}: `"auto"` (default) / `"up"` / `"down"` / `"odd-even"`.
+The {api:anychart.core.timeline.series.Moment#direction}direction(){api} method allows setting the direction of moment series as one of the enums from {api:anychart.enums.Direction}anychart.enums.Direction{api}.
 
 The [appearance](../Appearance_Settings) of moments and their markers as well as the shape and size of markers can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.timeline.series.Moment#normal}normal(){api}, {api:anychart.core.timeline.series.Moment#hovered}hovered(){api}, and {api:anychart.core.timeline.series.Moment#selected}selected(){api} methods.
 
