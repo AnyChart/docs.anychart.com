@@ -241,15 +241,19 @@ To adjust markers, use the following methods:
 
 ### Labels and Tooltips
 
-можно настроить у:
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-* [range series](#range_series)
-* [moment series](#moment_series)
-* [axis](#axis) (labels)
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
 #### Tokens
 
-токены для range series:
+To change the text of all elements of the chart, combine the {api:anychart.charts.Timeline#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
+
+To change the text of tooltips, do the same with the {api:anychart.charts.Timeline#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
+
+It is also possible to separately adjust labels and tooltips of [range series](#range_series) and [moment series](#moment_series) as well as labels of [axis](#axis) (labels) – use the corresponding methods of these elements. Below, you can find the list of tokens working with them.
+
+**Range Series**:
 
 * `{%name}`
 * `{%seriesName}`
@@ -257,7 +261,7 @@ To adjust markers, use the following methods:
 * `{%end}` (Unix timestamp)
 * (?) `{%index}`
 
-токены для moment series:
+**Moment Series**:
 
 * `{%seriesName}`
 * `{%x}` (Unix timestamp)
@@ -266,7 +270,7 @@ To adjust markers, use the following methods:
 * (?) `{%date}` (дубликат x, отформатированная дата)
 * (?) `{%index}`
 
-токены для axis:
+**Axis**:
 
 * `{%value}` (отформатированная дата)
 * `{%tickValue}` (дубликат value, Unix timestamp)
