@@ -52,8 +52,8 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 To create a Timeline chart, use the {api:anychart#timeline}anychart.timeline(){api} chart constructor...
 
-* {api:anychart.charts.Timeline#range}range(){api} – [Range](#range_series) series
-* {api:anychart.charts.Timeline#moment}moment(){api} – [Moment](#moment_series) series
+* {api:anychart.charts.Timeline#range}range(){api} – [Range series](#range_series)
+* {api:anychart.charts.Timeline#moment}moment(){api} – [Moment series](#moment_series)
 
 
 ```
@@ -72,13 +72,13 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-[Range](#range_series) series:
+[Range series](#range_series):
 
 * `name`
 * `start`
 * `end`
 
-[Moment](#moment_series) series:
+[Moment series](#moment_series):
 
 * `x`
 * `y`
@@ -185,8 +185,8 @@ To adjust markers, use the following methods:
 
 ### Appearance
 
-* [Moment](#moment_series) series
-* [Range](#range_series) series
+* [Moment series](#moment_series)
+* [Range series](#range_series)
 * [Axis](#axis)
 * [appearance](../Appearance_Settings)
 
@@ -254,7 +254,7 @@ To change the text of tooltips, do the same with the {api:anychart.charts.Timeli
 
 It is also possible to separately adjust labels and tooltips of the Range and Moment seriesas well as labels of the axis. Use the corresponding methods of these elements with tokens listed below.
 
-Tokens for the [Range](#range_series) series:
+Tokens for the [Range series](#range_series):
 
 * `{%name}`
 * `{%seriesName}`
@@ -262,7 +262,7 @@ Tokens for the [Range](#range_series) series:
 * `{%end}` (Unix timestamp)
 * (?) `{%index}`
 
-Tokens for the [Moment](#moment_series) series:
+Tokens for the [Moment series](#moment_series):
 
 * `{%seriesName}`
 * `{%x}` (Unix timestamp)
