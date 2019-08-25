@@ -42,7 +42,7 @@ anychart.onDocumentReady(function () {
       {name: "New Task 2", start: Date.UTC(2006,5,15), end: Date.UTC(2006,11,1),
        manager: "Marta Moe"}
     ];
-    
+
     var momentData1 = [
       [Date.UTC(2004,2,21), "Meeting 1"],
       [Date.UTC(2005,3,19), "Meeting 2"],
@@ -76,6 +76,18 @@ anychart.onDocumentReady(function () {
     // create the second moment series, set the data and name
     var momentSeries2 = chart.moment(momentData2);
     momentSeries2.name("Trainings");
+
+    // configure labels of range series
+    rangeSeries1.labels().fontColor("#64b5f6");
+    rangeSeries2.labels().fontColor("#1976d2");
+    rangeSeries1.labels().format(function(){
+      var duration = (this.end - this.start) / 1000 / 3600 / 24;
+      return duration + " days"; 
+    });
+    rangeSeries2.labels().format(function(){
+      var duration = (this.end - this.start) / 1000 / 3600 / 24; 
+      return duration + " days";
+    });
 
     // set the chart title
     chart.title("Timeline Chart: Labels and Tooltips (Formatting Functions)");

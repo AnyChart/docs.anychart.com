@@ -78,24 +78,24 @@ anychart.onDocumentReady(function () {
     momentSeries2.name("Trainings");
 
     // configure labels of range series
+    rangeSeries1.labels().fontColor("#64b5f6");
+    rangeSeries2.labels().fontColor("#1976d2");
     rangeSeries1.labels().format(
       "{%start}{dateTimeFormat:MMM} – {%end}{dateTimeFormat:MMM}"
      );
     rangeSeries2.labels().format(
       "{%start}{dateTimeFormat:MMM} – {%end}{dateTimeFormat:MMM}"
      );
-    rangeSeries1.labels().fontColor("#64b5f6");
-    rangeSeries2.labels().fontColor("#1976d2");
 
     // configure labels of moment series
-    momentSeries1.labels().format(" {%x}{dateTimeFormat:dd MMM}");
-    momentSeries2.labels().format(" {%x}{dateTimeFormat:dd MMM}");
-    momentSeries1.labels().fontColor("#96a6a6");
-    momentSeries2.labels().fontColor("#96a6a6");
     momentSeries1.labels().width(50);
     momentSeries2.labels().width(50);
     momentSeries1.labels().background().stroke("#ffa000", 2);
     momentSeries2.labels().background().stroke("#ffd54f", 2);
+    momentSeries1.labels().format(" {%x}{dateTimeFormat:dd MMM}");
+    momentSeries2.labels().format(" {%x}{dateTimeFormat:dd MMM}");
+    momentSeries1.labels().fontColor("#96a6a6");
+    momentSeries2.labels().fontColor("#96a6a6");
 
     //configure labels of axis
     chart.axis().labels().format("{%value}{dateTimeFormat:y}");

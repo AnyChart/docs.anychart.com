@@ -248,14 +248,17 @@ To adjust markers, use the following methods:
 * [moment series](#moment_series)
 * [axis](#axis) (labels)
 
+#### Tokens
+
 токены для range series:
 
 * `{%name}`
 * `{%seriesName}`
 * `{%start}`
 * `{%end}`
-* (?) `{%id}`
-* (?) `{%}` value (Unix timestamp)
+* (?) `{%id}` (дубль name)
+* (?) `{%value}` (Unix timestamp, дубль одной из дат)
+* (?) `{%index}`
 
 токены для moment series:
 
@@ -263,20 +266,12 @@ To adjust markers, use the following methods:
 * `{%seriesName}`
 * `{%x}`
 * `{%y}`
-* (?) `{%date}`
+* (?) `{%date}` (дубль x)
 
 токены для axis:
 
 * `{%value}`
 
-поля:
-
-* date
-* title
-* description
-* ?
-
-#### Tokens
 
 ```
 
@@ -285,6 +280,33 @@ To adjust markers, use the following methods:
 {sample}BCT\_Timeline\_Chart\_12{sample}
 
 #### Formatting Functions
+
+???
+
+* /date/
+* /title/
+* /description/
+
+поля для range series:
+
+* `?`
+* `seriesName`
+* `start`
+* `end`
+* (?) `index`
+
+поля для moment series:
+
+* `name`
+* `seriesName`
+* `x`
+* `y`
+* (?) `{%date}`
+
+поля для axis:
+
+* `value`
+
 
 ```
 
