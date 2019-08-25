@@ -254,7 +254,7 @@ To change the text of tooltips, do the same with the {api:anychart.charts.Timeli
 
 It is also possible to separately adjust labels and tooltips of the range and moment series well as labels of the axis. Use the corresponding methods of these elements with the tokens listed below.
 
-Tokens for the [range series](#range_series):
+Tokens for [ranges](#range_series):
 
 * `{%name}`
 * `{%seriesName}`
@@ -262,7 +262,7 @@ Tokens for the [range series](#range_series):
 * `{%end}` (Unix timestamp)
 * (?) `{%index}`
 
-Tokens for the [moment series](#moment_series):
+Tokens for the [moments](#moment_series):
 
 * `{%seriesName}`
 * `{%x}` (Unix timestamp)
@@ -271,7 +271,7 @@ Tokens for the [moment series](#moment_series):
 * (?) `{%date}` (дубликат x, отформатированная дата)
 * (?) `{%index}`
 
-Tokens for [axis](#axis):
+Tokens for the [axis](#axis):
 
 * `{%value}` (отформатированная дата)
 * `{%tickValue}` (дубликат value, Unix timestamp)
