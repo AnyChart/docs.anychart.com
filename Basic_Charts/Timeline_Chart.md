@@ -260,21 +260,16 @@ Tokens for the [range series](#range_series):
 * `{%seriesName}`
 * `{%start}` (Unix timestamp)
 * `{%end}` (Unix timestamp)
-* (?) `{%index}`
 
 Tokens for the [moment series](#moment_series):
 
 * `{%seriesName}`
 * `{%x}` (Unix timestamp)
-* `{%y}` (Unix timestamp)
-* (?) `{%name}` (переполняет стек, непонятно, чем заменить)
-* (?) `{%date}` (дубликат x, отформатированная дата)
-* (?) `{%index}`
+* `{%y}`
 
 Tokens for the [axis](#axis):
 
-* `{%value}` (отформатированная дата)
-* `{%tickValue}` (Unix timestamp, учитывает фискальный месяц)
+* `{%tickValue}` (Unix timestamp)
 
 Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
@@ -295,20 +290,16 @@ Function fields for the [range series](#range_series):
 * `seriesName`
 * `start` (отформатированная дата)
 * `end` (отформатированная дата)
-* (?) `index`
 
 Function fields for the [moment series](#moment_series):
 
 * `value` (название)
 * `seriesName`
 * `x` (Unix timestamp)
-* (?) `{%date}` (дубликат x, отформатированная дата)
-* (?) `index`
 
 Function fields for the [axis](#axis):
 
-* `value` (отформатированная дата)
-* `tickValue` (Unix timestamp, учитывает фискальный месяц)
+* `tickValue` (Unix timestamp)
 
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 
