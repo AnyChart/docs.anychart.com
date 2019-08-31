@@ -54,6 +54,9 @@ anychart.onDocumentReady(function () {
     // create a chart
     var chart = anychart.timeline();
 
+    // disable zooming with the mouse wheel
+    chart.interactivity().zoomOnMouseWheel(false);
+
     // create the first range series, set the data and name
     var rangeSeries1 = chart.range(rangeData1);
     rangeSeries1.name("Tasks");

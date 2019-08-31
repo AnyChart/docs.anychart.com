@@ -20,8 +20,12 @@
             margin: 0;
             padding: 0;
         }
-        button {
+        label {
+            display: inline-block;
             margin: 10px 0 0 10px;
+        }
+        #titleLabel {
+            font-weight: 600;
         }
         #container {
             position: absolute;
@@ -32,8 +36,9 @@
     </style>
 </head>
 <body>
-<button id="enableButton" onclick="scrollerEnabled(true)">Enable Scroller</button>
-<button id="disableButton" onclick="scrollerEnabled(false)">Disable Scroller</button>
+<label id="titleLabel">Scroller:</label>
+<label><input onclick="scrollerEnabled(true)" type="radio" name="mode">Enabled</label>
+<label><input onclick="scrollerEnabled(false)" type="radio" name="mode" checked>Disabled</label> 
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -65,6 +70,9 @@ anychart.onDocumentReady(function () {
     // create a chart
     chart = anychart.timeline();
 
+    // disable zooming with the mouse wheel
+    chart.interactivity().zoomOnMouseWheel(false);
+
     // create the first range series, set the data and name
     var rangeSeries1 = chart.range(rangeData1);
     rangeSeries1.name("Tasks");
@@ -82,10 +90,7 @@ anychart.onDocumentReady(function () {
     momentSeries2.name("Trainings");
 
     // set the chart title
-    chart.title(
-      "Timeline Chart: Navigation\nScroller: Enabled = " +
-      Boolean(chart.scroller().enabled())
-    );
+    chart.title("Timeline Chart: Navigation (Scroller)");
 
     // set the container id
     chart.container("container");
@@ -100,11 +105,6 @@ anychart.onDocumentReady(function () {
 // enable / disable the scroller
 function scrollerEnabled(enabled) {
   chart.scroller(enabled);
-  // update the chart title
-  chart.title(
-    "Timeline Chart: Navigation\nScroller: Enabled = " +
-    Boolean(chart.scroller().enabled())
-  );
 }
 </script>
 </body>
