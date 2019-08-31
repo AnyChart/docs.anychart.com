@@ -54,9 +54,6 @@ anychart.onDocumentReady(function () {
     // create a chart
     var chart = anychart.timeline();
 
-    // disable zooming with the mouse wheel
-    chart.interactivity().zoomOnMouseWheel(false);
-
     // create the first range series, set the data and name
     var rangeSeries1 = chart.range(rangeData1);
     rangeSeries1.name("Tasks");
@@ -74,7 +71,12 @@ anychart.onDocumentReady(function () {
     momentSeries2.name("Trainings");
 
     // set the chart title
-    chart.title("Timeline Chart: (?)");
+    chart.title("Timeline Chart: Navigation (Zoom Control Panel)");
+
+    // add a zoom control panel
+    var zoomController = anychart.ui.zoom();
+    zoomController.target(chart);
+    zoomController.render();
 
     // set the container id
     chart.container("container");

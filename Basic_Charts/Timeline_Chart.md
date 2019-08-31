@@ -330,11 +330,11 @@ You can also add a custom field to your data and refer to it by using the {api:a
 
 #### Methods
 
-* {api:anychart.charts.Timeline#fit}fit(){api}
-* {api:anychart.charts.Timeline#scroll}scroll(){api}
 * {api:anychart.charts.Timeline#zoomTo}zoomTo(){api}
+* (?) {api:anychart.charts.Timeline#scroll}scroll(){api}
+* {api:anychart.charts.Timeline#fit}fit(){api}
+* Please note that all the methods listed here work only after the chart is drawn.
 
-пример с кнопками, показать все:
 
 ```
 
@@ -347,6 +347,13 @@ You can also add a custom field to your data and refer to it by using the {api:a
 * ссылка на статью о скроллере
 * ссылка на класс
 * пример на включение и выключение
+
+
+```
+
+```
+
+{sample}BCT\_Timeline\_Chart\_16{sample}
 
 #### Zoom Control Panel
 
@@ -377,7 +384,7 @@ zoomController.target(chart);
 zoomController.render();
 ```
 
-{sample}BCT\_Timeline\_Chart\_16{sample}
+{sample}BCT\_Timeline\_Chart\_17{sample}
 
 ### Behavior
 
@@ -390,4 +397,4 @@ zoomController.render();
 
 ```
 
-{sample}BCT\_Timeline\_Chart\_17{sample}
+{sample}BCT\_Timeline\_Chart\_18{sample}

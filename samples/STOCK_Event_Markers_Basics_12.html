@@ -94,9 +94,10 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-// enable/disable sticking to the left point
+// enable / disable sticking to the left point
 function stickToLeftEnabled(enabled) {
   plot.eventMarkers().stickToLeft(enabled);
+  // update the chart title
   chart.title("Event Markers: Sticking to Left (Enabled = "
               + plot.eventMarkers().stickToLeft() + ")");
 }
