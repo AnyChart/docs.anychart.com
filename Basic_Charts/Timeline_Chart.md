@@ -390,8 +390,8 @@ zoomController.render();
 ### Behavior
 
 * zoomOnMouseWheel()
-* scrollOnMouseWheel() - по умолчанию включено, но не работает ни горизонтально, ни вертикально 
-* enabled() - метода не существует
+* (?) scrollOnMouseWheel() 
+* (?) enabled() - метода не существует
 
 
 ```
