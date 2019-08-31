@@ -346,7 +346,6 @@ You can also add a custom field to your data and refer to it by using the {api:a
 
 * ссылка на статью о скроллере
 * ссылка на класс
-* пример на включение и выключение
 
 
 ```
@@ -389,7 +388,7 @@ zoomController.render();
 ### Behavior
 
 * zoomOnMouseWheel()
-* scrollOnMouseWheel() - по умолчанию включено, но не работает ни горизонатльно, ни вертикально 
+* scrollOnMouseWheel() - по умолчанию включено, но не работает ни горизонтально, ни вертикально 
 * enabled() - метода не существует
 
 
