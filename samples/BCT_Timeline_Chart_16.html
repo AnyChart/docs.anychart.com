@@ -83,7 +83,7 @@ anychart.onDocumentReady(function () {
 
     // set the chart title
     chart.title(
-      "Timeline Chart: Navigation\nScroller = " +
+      "Timeline Chart: Navigation\nScroller: Enabled = " +
       Boolean(chart.scroller().enabled())
     );
 
@@ -102,7 +102,7 @@ function scrollerEnabled(enabled) {
   chart.scroller(enabled);
   // update the chart title
   chart.title(
-    "Timeline Chart: Navigation\nScroller: = " +
+    "Timeline Chart: Navigation\nScroller: Enabled = " +
     Boolean(chart.scroller().enabled())
   );
 }

@@ -328,6 +328,8 @@ You can also add a custom field to your data and refer to it by using the {api:a
 
 ### Navigation
 
+By default, you can navigate Timeline charts with the help of the mouse - see the [Behavior](#behavior) section. Also, you can use special methods, Zoom Control Panel, and the scroller, as shown in the subsections below.
+
 #### Methods
 
 * {api:anychart.charts.Timeline#zoomTo}zoomTo(){api}
