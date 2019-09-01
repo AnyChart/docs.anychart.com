@@ -398,6 +398,8 @@ By default, you can navigate Timeline charts with the help of the mouse - see th
 * {api:anychart.charts.Timeline#fit}fit(){api}
 * (?) {api:anychart.charts.Timeline#scroll}scroll(){api}
 
+**Note:** Please note that {api:anychart.charts.Timeline#zoomTo}zoomTo(){api} works only after the chart is drawn.
+
 ```
 
 ```
