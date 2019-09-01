@@ -102,7 +102,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 To configure the range series, use the following methods:
 
 * {api:anychart.core.timeline.series.Range#height}height(){api} to set the height
-* {api:anychart.core.timeline.series.Range#direction}direction(){api} to set the direction – {api:anychart.enums.Direction}anychart.enums.Direction{api}
+* {api:anychart.core.timeline.series.Range#direction}direction(){api} to set the direction as `down` / `up` / `odd-even` / `auto` – {api:anychart.enums.Direction}anychart.enums.Direction{api}
 
 The [appearance](../Appearance_Settings) of ranges can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.timeline.series.Range#normal}normal(){api}, {api:anychart.core.timeline.series.Range#hovered}hovered(){api}, and {api:anychart.core.timeline.series.Range#selected}selected(){api} methods.
 
