@@ -11,101 +11,64 @@
     <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.7.0/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.7.0/fonts/css/anychart-font.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />     
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.7.0/fonts/css/anychart-font.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />    
     
     <style>
-        html, body {
+        html, body, #container {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
-        button {
-            margin: 10px 0 0 10px;
-        }
-        label {
-            display: inline-block;
-            margin: 10px 0 0 10px;
-        }
-        #fitButton {
-           position: absolute;
-           right: 10px;
-        }
-        #dateLabel1 {
-          margin: 0;
-          font-style: italic;
-        }
-        #dateLabel2 {
-          margin: 0;
-          font-style: italic;
-        }
-        #container {
-            position: absolute;
-            width: 100%;
-            top: 35px;
-            bottom: 0;
-        }
     </style>
 </head>
 <body>
-<button id="zoomToButton" onclick="zoomTo()">Zoom To</button>
-<label>start date:</label>
-<label id="dateLabel1">01 April 2005</label>
-<label>end date: </label>
-<label id="dateLabel2">01 April 2006</label>
-<button id="fitButton" onclick="fit()">Fit</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
     // create data
 
-    var rangeData1 = [
+    var rangeData = [
       ["Task 1", Date.UTC(2004,0,4), Date.UTC(2004,7,1)],
       ["Task 2", Date.UTC(2004,7,1), Date.UTC(2005,8,10)]
     ];
 
-    var rangeData2 = [
-      ["New Task 1", Date.UTC(2005,10,1), Date.UTC(2006,5,1)],
-      ["New Task 2", Date.UTC(2006,5,15), Date.UTC(2006,11,1)]
-    ];
-
     var momentData1 = [
       [Date.UTC(2004,2,21), "Meeting 1"],
-      [Date.UTC(2005,3,19), "Meeting 2"],
-      [Date.UTC(2006,1,1),  "Meeting 3"]
+      [Date.UTC(2005,3,19), "Meeting 2"]
     ];
 
     var momentData2 = [
       [Date.UTC(2004,5,12), "Training 1"],
-      [Date.UTC(2005,5,1),  "Training 2"],
-      [Date.UTC(2006,1,26), "Training 3"]
+      [Date.UTC(2005,5,1),  "Training 2"]
     ];
 
     // create a chart
-    chart = anychart.timeline();
+    var chart = anychart.timeline();
 
-    // disable zooming with the mouse wheel
-    chart.interactivity().zoomOnMouseWheel(false);
-
-    // create the first range series, set the data and name
-    var rangeSeries1 = chart.range(rangeData1);
-    rangeSeries1.name("Tasks");
-
-    // create the second range series, set the data and name
-    var rangeSeries2 = chart.range(rangeData2);
-    rangeSeries2.name("New Tasks");
+    // create a range series, set the data and name
+    var rangeSeries = chart.range(rangeData);
+    rangeSeries.name("Tasks");
 
     // create the first moment series, set the data and name
     var momentSeries1 = chart.moment(momentData1);
-    momentSeries1.name("Meetings");    
+    momentSeries1.name("Meetings");
 
     // create the second moment series, set the data and name
     var momentSeries2 = chart.moment(momentData2);
     momentSeries2.name("Trainings");
 
+    chart.scale().zoomLevels([
+      [
+        {"unit": "week", count: 1},
+        {"unit": "month", count: 1},
+        {"unit": "quarter", count: 1}
+      ]
+    ]);
+
     // set the chart title
-    chart.title("Timeline Chart: Navigation (Metods)");
+    chart.title("Timeline Chart: Scale (Zoom Levels)");
 
     // set the container id
     chart.container("container");
@@ -113,16 +76,6 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart  
     chart.draw();
 });
-
-// zoom the chart to the given dates
-function zoomTo() {
-  chart.zoomTo(Date.UTC(2005,3,1), Date.UTC(2006,3,1));  
-}
-
-// fit elements to the width of the chart
-function fit() {
-  chart.fit();  
-}
 </script>
 </body>
 </html>

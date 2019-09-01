@@ -14,15 +14,31 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.7.0/fonts/css/anychart-font.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />     
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
+        #titleLabel {
+            font-weight: 600;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
+<label id="titleLabel">Scroller:</label>
+<label><input onclick="scrollerEnabled(true)" type="radio" name="mode">Enabled</label>
+<label><input onclick="scrollerEnabled(false)" type="radio" name="mode" checked>Disabled</label> 
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -52,7 +68,7 @@ anychart.onDocumentReady(function () {
     ];
 
     // create a chart
-    var chart = anychart.timeline();
+    chart = anychart.timeline();
 
     // disable zooming with the mouse wheel
     chart.interactivity().zoomOnMouseWheel(false);
@@ -74,19 +90,22 @@ anychart.onDocumentReady(function () {
     momentSeries2.name("Trainings");
 
     // set the chart title
-    chart.title("Timeline Chart: Navigation (Zoom Control Panel)");
-
-    // add a zoom control panel
-    var zoomController = anychart.ui.zoom();
-    zoomController.target(chart);
-    zoomController.render();
+    chart.title("Timeline Chart: Navigation (Scroller)");
 
     // set the container id
     chart.container("container");
 
     // initiate drawing the chart  
     chart.draw();
+
+    // zoom the chart to the given dates
+    chart.zoomTo(Date.UTC(2005,3,1), Date.UTC(2006,3,1));  
 });
+
+// enable / disable the scroller
+function scrollerEnabled(enabled) {
+  chart.scroller(enabled);
+}
 </script>
 </body>
 </html>

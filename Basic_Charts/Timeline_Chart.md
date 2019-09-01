@@ -174,6 +174,7 @@ To adjust markers, use the following methods:
 * {api:anychart.core.axes.Timeline#ticks}ticks(){api}
 * {api:anychart.core.axes.TimelineTicks#stroke}stroke(){api}
 * [appearance](../Appearance_Settings)
+* [Scale](#scale)
 * [Labels and Tooltips](#labels_and_tooltips)
 
 
@@ -317,6 +318,7 @@ You can also add a custom field to your data and refer to it by using the {api:a
 * {api:anychart.scales.GanttDateTime#minimum}minimum(){api} to set the minimum date of the scale
 * {api:anychart.scales.GanttDateTime#maximum}maximum(){api} to set the maximum date of the scale
 * {api:anychart.scales.GanttDateTime#fiscalYearStartMonth}fiscalYearStartMonth(){api}
+* [Axis](#axis)
 
 **Note:** The fiscal year is set as a number from 1 to 12 to the fiscalYearStartMonth() method. The default value is 1 (January).
 
@@ -326,9 +328,57 @@ You can also add a custom field to your data and refer to it by using the {api:a
 
 {sample}BCT\_Timeline\_Chart\_14{sample}
 
+* {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api}
+* [Behavior](#behavior)
+* (?) [Navigation](#navigation)
+
+The settings of zoom levels affect...
+
+Each level represents a time unit...
+
+...by passing an array of settings to the {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api} method.
+
+Each entry of the array is an object standing for a level. There you should specify two values, `unit` and `count`: ...
+
+```
+// set zoom levels of the scale
+chart.scale().zoomLevels([
+  [
+    {unit: "year", count: 1},
+    {unit: "month", count: 3}
+  ]
+]);
+```
+
+**Note:** Levels must be listed in a particular order: from the level with the smallest time unit to the level with the largest one. For example, the millisecond goes before the second, the month goes before the year, and so on.
+
+The available units can be found in {api:anychart.enums.Interval}anychart.enums.Interval{api}:
+
+* `"millisecond"`
+* `"second"`
+* `"minute"`
+* `"hour"`
+* `"day"`
+* `"week"`
+* `"third-of-month"`
+* `"month"`
+* `"quarter"`
+* `"semester"`
+* `"year"`
+
+In this sample, there are three levels, the week, the month, and the quarter:
+
+```
+
+```
+
+{sample}BCT\_Timeline\_Chart\_15{sample}
+
 ### Navigation
 
 By default, you can navigate Timeline charts with the help of the mouse - see the [Behavior](#behavior) section. Also, you can use special methods, Zoom Control Panel, and the scroller, as shown in the subsections below.
+
+* (?) [Scale](#scale)
 
 #### Methods
 
@@ -342,19 +392,19 @@ By default, you can navigate Timeline charts with the help of the mouse - see th
 
 ```
 
-{sample}BCT\_Timeline\_Chart\_15{sample}
+{sample}BCT\_Timeline\_Chart\_16{sample}
 
 #### Scroller
 
-* ссылка на статью о скроллере
-* ссылка на класс
+* [Common Settings: Scroller](../Common_Settings/Scroller)
+* {api:anychart.core.ui.ChartScroller}anychart.core.ui.ChartScroller{api}
 
 
 ```
 
 ```
 
-{sample}BCT\_Timeline\_Chart\_16{sample}
+{sample}BCT\_Timeline\_Chart\_17{sample}
 
 #### Zoom Control Panel
 
@@ -385,17 +435,18 @@ zoomController.target(chart);
 zoomController.render();
 ```
 
-{sample}BCT\_Timeline\_Chart\_17{sample}
+{sample}BCT\_Timeline\_Chart\_18{sample}
 
 ### Behavior
 
 * zoomOnMouseWheel()
 * (?) scrollOnMouseWheel() 
 * (?) enabled()
+* (?) [Scale](#scale)
 
 
 ```
 
 ```
 
-{sample}BCT\_Timeline\_Chart\_18{sample}
+{sample}BCT\_Timeline\_Chart\_19{sample}
