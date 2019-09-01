@@ -269,20 +269,20 @@ It is also possible to separately adjust labels and tooltips of the range and mo
 
 Tokens for the [range series](#range_series):
 
-* `{%name}`
-* `{%seriesName}`
-* `{%start}` (Unix timestamp)
-* `{%end}` (Unix timestamp)
+* `{%name}` – the name of the range
+* `{%seriesName}` – the name of the series
+* `{%start}` – the start date (Unix timestamp)
+* `{%end}` – the end date (Unix timestamp)
 
 Tokens for the [moment series](#moment_series):
 
-* `{%seriesName}`
-* `{%x}` (Unix timestamp)
-* `{%y}`
+* `{%seriesName}` – the name of the series
+* `{%y}` – the name of the moment
+* `{%x}` – the date (Unix timestamp)
 
 Tokens for the [axis](#axis):
 
-* `{%tickValue}` (Unix timestamp)
+* `{%tickValue}` – the tick value (Unix timestamp)
 
 Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
@@ -300,19 +300,19 @@ To configure labels and tooltips, you can use [formatting functions](../Common_S
 
 Function fields for the [range series](#range_series):
 
-* `seriesName`
-* `start` (отформатированная дата)
-* `end` (отформатированная дата)
+* `seriesName` – the name of the series
+* `start` – the start date
+* `end` – the end date
 
 Function fields for the [moment series](#moment_series):
 
-* `value` (название)
-* `seriesName`
-* `x` (Unix timestamp)
+* `value` – the name of the moment
+* `seriesName` – the name of the series
+* `x` – the date (Unix timestamp)
 
 Function fields for the [axis](#axis):
 
-* `tickValue` (Unix timestamp)
+* `tickValue` – the tick value (Unix timestamp)
 
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 
@@ -398,7 +398,6 @@ By default, you can navigate Timeline charts with the help of the mouse - see th
 * {api:anychart.charts.Timeline#fit}fit(){api}
 * (?) {api:anychart.charts.Timeline#scroll}scroll(){api}
 
-**Note:** Please note that {api:anychart.charts.Timeline#zoomTo}zoomTo(){api} works only after the chart is drawn.
 
 ```
 
