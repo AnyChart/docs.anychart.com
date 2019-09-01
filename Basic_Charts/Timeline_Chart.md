@@ -106,8 +106,8 @@ To configure the range series, use the following methods:
 
 The available directions are listed in {api:anychart.enums.Direction}anychart.enums.Direction{api}:
 
-* `down`
 * `up`
+* `down`
 * `odd-even`
 * `auto`
 
@@ -141,7 +141,12 @@ Combine them with methods from {api:anychart.core.StateSettings}anychart.core.St
 
 #### All Moments
 
-The {api:anychart.core.timeline.series.Moment#direction}direction(){api} method allows setting the direction of the moment series as one of the enums from {api:anychart.enums.Direction}anychart.enums.Direction{api}.
+The {api:anychart.core.timeline.series.Moment#direction}direction(){api} method allows setting the direction of the moment series as one of the enums from {api:anychart.enums.Direction}anychart.enums.Direction{api}:
+
+* `up`
+* `down`
+* `odd-even`
+* `auto`
 
 The [appearance](../Appearance_Settings) of moments and their markers as well as the shape and size of markers can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.timeline.series.Moment#normal}normal(){api}, {api:anychart.core.timeline.series.Moment#hovered}hovered(){api}, and {api:anychart.core.timeline.series.Moment#selected}selected(){api} methods.
 
