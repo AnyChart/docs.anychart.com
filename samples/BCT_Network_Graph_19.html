@@ -57,7 +57,7 @@ anychart.onDocumentReady(function () {
     var chart1 = anychart.graph(data);
     chart1.title("Hover Gap: Default (7)");
     chart1.bounds(0, 0, "50%", "100%");
-    // disable zooming with the mouse wheel
+    // prevent zooming the chart with the mouse wheel
     chart1.interactivity().zoomOnMouseWheel(false);    
     // set the chart container
     chart1.container(stage);

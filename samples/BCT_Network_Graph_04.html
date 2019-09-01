@@ -54,21 +54,21 @@ anychart.onDocumentReady(function () {
     };
 
     // create and configure the first graph chart
-    var chartchart1 = anychart.graph(data);
-    chartchart1.title("Iteration Step: Default (500)");
-    chartchart1.bounds(0, 0, "50%", "100%");
-    // disable zooming with the mouse wheel
-    chartchart1.interactivity().zoomOnMouseWheel(false);    
+    var chart1 = anychart.graph(data);
+    chart1.title("Iteration Step: Default (500)");
+    chart1.bounds(0, 0, "50%", "100%");
+    // prevent zooming the chart with the mouse wheel
+    chart1.interactivity().zoomOnMouseWheel(false);    
     // set the chart container
-    chartchart1.container(stage);
+    chart1.container(stage);
     // initiate drawing the chart
-    chartchart1.draw();   
+    chart1.draw();   
 
     // create and configure the second graph chart
     var chart2 = anychart.graph(data);
     chart2.title("Iteration Step: 0");
     chart2.bounds("50%", 0, "50%", "100%");
-    // disable zooming with the mouse wheel
+    // prevent zooming the chart with the mouse wheel
     chart2.interactivity().zoomOnMouseWheel(false);    
     // set the iteration step
     chart2.layout().iterationCount(0);

@@ -70,7 +70,7 @@ anychart.onDocumentReady(function () {
     // create a chart
     chart = anychart.timeline();
 
-    // disable zooming with the mouse wheel
+    // prevent zooming the chart with the mouse wheel
     chart.interactivity().zoomOnMouseWheel(false);
 
     // create the first range series, set the data and name
@@ -104,7 +104,7 @@ anychart.onDocumentReady(function () {
 
 // enable / disable the scroller
 function scrollerEnabled(enabled) {
-  chart.scroller(enabled);
+  chart.scroller().enabled(enabled);
 }
 </script>
 </body>

@@ -54,7 +54,7 @@ anychart.onDocumentReady(function () {
     // create a chart
     var chart = anychart.timeline();
 
-    // disable zooming with the mouse wheel
+    // prevent zooming the chart with the mouse wheel
     chart.interactivity().zoomOnMouseWheel(false);
 
     // create the first range series, set the data and name
@@ -85,7 +85,7 @@ anychart.onDocumentReady(function () {
     textMarker1.useHtml(true);
     textMarker1.text(
       "year: <br><span style='font-size:20'>" +
-      anychart.format.dateTime(textMarker2.value(), "y") +
+      anychart.format.dateTime(textMarker1.value(), "y") +
       "</span>");
     textMarker2.text(
       "year: " +

@@ -76,9 +76,6 @@ var data = {
 // create a chart and set the data
 var chart = anychart.graph(data);
 
-// set the chart title
-chart.title("Network Graph: Basic Sample");
-
 // set the container id
 chart.container("container");
 
