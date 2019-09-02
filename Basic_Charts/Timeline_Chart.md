@@ -414,16 +414,18 @@ var momentSeries2 = chart.moment(momentData2);
 
 ### Axis
 
-* {api:anychart.charts.Timeline#axis}axis(){api}
-* {api:anychart.core.axes.Timeline#height}height(){api}
-* {api:anychart.core.axes.Timeline#fill}fill(){api}
-* {api:anychart.core.axes.Timeline#stroke}stroke(){api}
-* {api:anychart.core.axes.Timeline#ticks}ticks(){api}
-* {api:anychart.core.axes.TimelineTicks#stroke}stroke(){api}
-* [appearance](../Appearance_Settings)
-* [Scale](#scale)
-* [Labels and Tooltips](#labels_and_tooltips)
+To configure the [appearance](../Appearance_Settings) and other settings of the axis, combine {api:anychart.charts.Timeline#axis}axis(){api} with the following methods:
 
+* {api:anychart.core.axes.Timeline#height}height(){api} to set the height
+* {api:anychart.core.axes.Timeline#fill}fill(){api} to set the fill
+* {api:anychart.core.axes.Timeline#stroke}stroke(){api} to set the stroke
+* {api:anychart.core.axes.Timeline#ticks}ticks(){api} + {api:anychart.core.axes.TimelineTicks#stroke}stroke(){api} to adjust the stroke of ticks
+
+In addition, you can adjust the labels displayed on the axis – see the [Labels and Tooltips](#labels_and_tooltips) section.
+
+**Note:** The way how axis looks is also affected by settings of the [Scale](#scale).
+
+This sample shows how to configure the axis:
 
 ```
 // configure the axis
@@ -437,16 +439,21 @@ chart.axis().ticks().stroke("#00b37a", 3);
 
 ### Appearance
 
-* [moment series](#moment_series)
-* [range series](#range_series)
-* [Axis](#axis)
-* [appearance](../Appearance_Settings)
+You can configure the [appearance](../Appearance_Settings) of moment and range series and the axis. See the [Moment Series](#moment_series), [Range Series](#range_series), [Axis](#axis) sections to learn more.
 
 ### Markers
 
 #### Text
 
-* {api:anychart.charts.Timeline#textMarker}textMarker(){api}
+To add a text marker, use the {api:anychart.charts.Timeline#textMarker}textMarker(){api} method. Specify the index of the marker:
+
+```
+var textMarker1 = chart.textMarker(0);
+var textMarker2 = chart.textMarker(1);
+```
+
+To configure the marker, use the following methods:
+
 * {api:anychart.core.axisMarkers.Text#value}value(){api} to set the date
 * {api:anychart.core.axisMarkers.Text#text}text(){api} to set the text
 * {api:anychart.core.axisMarkers.Text#useHtml}useHtml(){api} to enable HTML
@@ -455,6 +462,7 @@ chart.axis().ticks().stroke("#00b37a", 3);
 * {api:anychart.core.axisMarkers.Text#rotation}background(){api}, {api:anychart.core.axisMarkers.Text#padding}background(){api}, {api:anychart.core.axisMarkers.Text#offsetX}offsetX(){api},  {api:anychart.core.axisMarkers.Text#offsetY}offsetY(){api}, etc, to set the position
 * {api:anychart.core.axisMarkers.Text#enabled}enabled(){api}, to enable / disable the marker
 
+In the sample below, there are two text markers with the font, background, and position configured. In the text of the first marker, HTML is used.
 
 ```
 // create two text markers
