@@ -661,8 +661,6 @@ Tokens for the [axis](#axis):
 
 Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
-**Note:** Labels of the [axis](#axis) are also affected by settings of the [scale](#scale).
-
 The following sample shows how to configure labels and tooltips and work with tokens to format their text. Along with regular tokens, a custom token `{%manager}` is used.
 
 {sample}BCT\_Timeline\_Chart\_12{sample}
@@ -846,14 +844,15 @@ momentSeries2.tooltip().separator().enabled(false);
 
 ### Scale
 
-* {api:anychart.charts.Timeline#scale}scale(){api}
+Settings of the scale affect the way how the [axis](#axis) looks. To configure it, combine {api:anychart.charts.Timeline#scale}scale(){api} with the following methods:
+
 * {api:anychart.scales.GanttDateTime#minimum}minimum(){api} to set the minimum date of the scale
 * {api:anychart.scales.GanttDateTime#maximum}maximum(){api} to set the maximum date of the scale
-* {api:anychart.scales.GanttDateTime#fiscalYearStartMonth}fiscalYearStartMonth(){api}
-* [Axis](#axis)
-* (?) [Labels and Tooltips](#labels_and_tooltips)
+* {api:anychart.scales.GanttDateTime#fiscalYearStartMonth}fiscalYearStartMonth(){api} to set the starting month of the fiscal year
 
-**Note:** The fiscal year is set as a number from 1 to 12 to the fiscalYearStartMonth() method. The default value is 1 (January).
+The starting month of the fiscal year is set as a number from 1 to 12. The default value is 1 (January).
+
+This sample shows how to adjust the scale. Labels of the axis are configured to display the starting month of the fiscal year.
 
 ```
 // set the minimum and maximum values of the scale
