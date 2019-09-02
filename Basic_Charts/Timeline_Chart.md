@@ -1005,16 +1005,17 @@ zoomController.render();
 
 ### Behavior
 
-* zoomOnMouseWheel()
-* (?) scrollOnMouseWheel() 
-* (?) enabled()
-* (?) [zoom levels](#zoom_levels)
+By default, users have an opportunity to scroll the Timeline chart by dragging and dropping it. Also, it is possible to zoom the chart in and out with the mouse wheel. (Please note that in most samples in this article zooming is disabled.)
 
-**Note:** The way how zooming works depends on settings of the scale. Read [Scale: Zoom Levels](#zoom_levels) to learn more.
+To prevent zooming, combine the {api:anychart.charts.Timeline#interactivity}interactivity{api} and **zoomOnMouseWheel()** methods:
 
 ```
 // prevent zooming the chart with the mouse wheel
 chart.interactivity().zoomOnMouseWheel(false);
 ```
+
+**Note:** The way how zooming works depends on settings of the scale. Read [Scale: Zoom Levels](#zoom_levels) to learn more.
+
+The sample below shows how to disable and enable zooming:
 
 {sample}BCT\_Timeline\_Chart\_19{sample}
