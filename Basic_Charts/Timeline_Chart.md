@@ -844,7 +844,7 @@ momentSeries2.tooltip().separator().enabled(false);
 
 ### Scale
 
-Settings of the scale affect the way how the [axis](#axis) looks. Configuring [zoom levels](#zoom_levels) also affects the way how [navigation](#navigation) and default [behavior](#behavior) work.
+Settings of the scale affect the way how the [axis](#axis) looks. Configuring zoom levels also affects the way how [navigation](#navigation) and default [behavior](#behavior) work.
 
 #### Basic Settings
 
@@ -924,7 +924,7 @@ chart.scale().zoomLevels([
 
 ### Navigation
 
-By default, you can navigate Timeline charts with the help of the mouse - see the [Behavior](#behavior) section. Also, you can use special methods, Zoom Control Panel, and the scroller, as shown in the subsections below.
+By default, you can navigate Timeline charts with the help of the mouse – see the [Behavior](#behavior) section. Also, you can use special methods, Zoom Control Panel, and the scroller, as shown in the subsections below.
 
 **Note:** The way how zooming works depends on settings of the scale. Read [Scale: Zoom Levels](#zoom_levels) to learn more.
 
