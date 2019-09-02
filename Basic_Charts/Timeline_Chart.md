@@ -846,7 +846,7 @@ momentSeries2.tooltip().separator().enabled(false);
 
 Settings of the scale affect the way how the [axis](#axis) looks.
 
-#### Min, Max, Fiscal year
+#### Basic Settings
 
 To configure the scale, combine {api:anychart.charts.Timeline#scale}scale(){api} with the following methods:
 
@@ -926,7 +926,7 @@ chart.scale().zoomLevels([
 
 By default, you can navigate Timeline charts with the help of the mouse - see the [Behavior](#behavior) section. Also, you can use special methods, Zoom Control Panel, and the scroller, as shown in the subsections below.
 
-* (?) [Scale](#scale)
+* (?) [zoom levels](#zoom_levels)
 
 #### Methods
 
@@ -1001,7 +1001,7 @@ zoomController.render();
 * zoomOnMouseWheel()
 * (?) scrollOnMouseWheel() 
 * (?) enabled()
-* (?) [Scale](#scale)
+* (?) [zoom levels](#zoom_levels)
 
 
 ```
