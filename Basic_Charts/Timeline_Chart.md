@@ -871,17 +871,11 @@ chart.axis().labels().format(
 
 {sample}BCT\_Timeline\_Chart\_14{sample}
 
-* {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api}
-* [Behavior](#behavior)
-* (?) [Navigation](#navigation)
+It is possible to zoom Timeline chart in and out – for example, with the help of the mouse wheel. See the [Navigation](#navigation) and [Behavior](#behavior) sections to learn more. (Please note that in all previous samples zooming is disabled.)
 
-The settings of zoom levels affect...
+You can specify time units that are displayed by the axis on each zoom level as well as in the default state by passing an array of settings to the {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api} method.
 
-Each level represents a time unit...
-
-...by passing an array of settings to the {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api} method.
-
-Each entry of the array is an object standing for a level. There you should specify two values, `unit` and `count`: ...
+Each entry of the array is an object standing for a level. There you should specify two values, `unit` and `count`: the time unit of the level and the number of units represented by one tick of the axis.
 
 ```
 // set zoom levels of the scale
@@ -893,7 +887,7 @@ chart.scale().zoomLevels([
 ]);
 ```
 
-**Note:** Levels must be listed in a particular order: from the level with the smallest time unit to the level with the largest one. For example, the millisecond goes before the second, the month goes before the year, and so on.
+**Note:** Levels must be listed in a particular order: from the level with the smallest time unit to the level with the largest one, which is displayed in the default stated. For example, the millisecond goes before the second, the month goes before the year, and so on.
 
 The available units can be found in {api:anychart.enums.Interval}anychart.enums.Interval{api}:
 
@@ -909,7 +903,7 @@ The available units can be found in {api:anychart.enums.Interval}anychart.enums.
 * `"semester"`
 * `"year"`
 
-In this sample, there are three levels, the week, the month, and the quarter:
+In the sample below, you can zoom the chart with the mouse wheel. There are three zoom levels, the week, the month, and the quarter – the latter shown in the default state.
 
 ```
 chart.scale().zoomLevels([
