@@ -439,7 +439,7 @@ chart.axis().ticks().stroke("#00b37a", 3);
 
 ### Appearance
 
-You can configure the [appearance](../Appearance_Settings) of moment and range series and the axis. See the [Moment Series](#moment_series), [Range Series](#range_series), [Axis](#axis) sections to learn more.
+You can configure the [appearance](../Appearance_Settings) of moment and range series and the axis. See the [Moment Series](#moment_series), [Range Series](#range_series), and [Axis](#axis) sections to learn more.
 
 ### Markers
 
@@ -462,8 +462,8 @@ To configure the marker, use the following methods:
 * {api:anychart.core.axisMarkers.Text#useHtml}useHtml(){api} to enable HTML
 * {api:anychart.core.axisMarkers.Text#fontColor}fontColor(){api}, {api:anychart.core.axisMarkers.Text#fontFamily}fontFamily(){api}, {api:anychart.core.axisMarkers.Text#fontSize}fontSize(){api}, {api:anychart.core.axisMarkers.Text#fontWeight}fontWeight(){api}, etc. to configure the font
 * {api:anychart.core.axisMarkers.Text#background}background(){api} to set the background
-* {api:anychart.core.axisMarkers.Text#rotation}rotation(){api}, {api:anychart.core.axisMarkers.Text#padding}padding(){api}, {api:anychart.core.axisMarkers.Text#offsetX}offsetX(){api},  {api:anychart.core.axisMarkers.Text#offsetY}offsetY(){api}, etc, to set the position
-* {api:anychart.core.axisMarkers.Text#enabled}enabled(){api}, to enable / disable the marker
+* {api:anychart.core.axisMarkers.Text#rotation}rotation(){api}, {api:anychart.core.axisMarkers.Text#padding}padding(){api}, {api:anychart.core.axisMarkers.Text#offsetX}offsetX(){api},  {api:anychart.core.axisMarkers.Text#offsetY}offsetY(){api}, etc. to set the position
+* {api:anychart.core.axisMarkers.Text#enabled}enabled(){api} to enable / disable the marker
 
 In the sample below, there are two text markers with the font, background, and position configured. In the text of the first marker, HTML is used.
 
@@ -521,7 +521,7 @@ To configure the marker, use the following methods:
 
 * {api:anychart.core.axisMarkers.Line#value}value(){api} to set the date
 * {api:anychart.core.axisMarkers.Line#stroke}stroke(){api} to set the stroke
-* {api:anychart.core.axisMarkers.Line#enabled}enabled(){api}, to enable / disable the marker
+* {api:anychart.core.axisMarkers.Line#enabled}enabled(){api} to enable / disable the marker
 
 In this sample, there are two line markers with the stroke configured and two [text markers](#text) bound to them:
 
@@ -576,8 +576,6 @@ textMarker.value(todayMarkerValue);
 
 #### Range
 
-* {api:anychart.charts.Timeline#rangeMarker}rangeMarker(){api}
-
 To add a range marker, use the {api:anychart.charts.Timeline#rangeMarker}rangeMarker(){api} method. Specify the index of the marker:
 
 ```
@@ -590,7 +588,7 @@ To configure the marker, use the following methods:
 * {api:anychart.core.axisMarkers.Range#from}from(){api} to set the start date
 * {api:anychart.core.axisMarkers.Range#to}to(){api} to set the end date
 * {api:anychart.core.axisMarkers.Range#fill}fill(){api} to set the fill
-* {api:anychart.core.axisMarkers.Range#enabled}enabled(){api}, to enable / disable the marker
+* {api:anychart.core.axisMarkers.Range#enabled}enabled(){api} to enable / disable the marker
 
 In the sample below, there are two range markers with the fill configured and two [text markers](#text) bound to them:
 
