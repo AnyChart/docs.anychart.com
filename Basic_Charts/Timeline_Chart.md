@@ -844,12 +844,15 @@ momentSeries2.tooltip().separator().enabled(false);
 
 ### Scale
 
-Settings of the scale affect the way how the [axis](#axis) looks. To configure it, combine {api:anychart.charts.Timeline#scale}scale(){api} with the following methods:
+Settings of the scale affect the way how the [axis](#axis) looks.
+
+#### Min, Max, Fiscal year
+
+To configure the scale, combine {api:anychart.charts.Timeline#scale}scale(){api} with the following methods:
 
 * {api:anychart.scales.GanttDateTime#minimum}minimum(){api} to set the minimum date of the scale
 * {api:anychart.scales.GanttDateTime#maximum}maximum(){api} to set the maximum date of the scale
 * {api:anychart.scales.GanttDateTime#fiscalYearStartMonth}fiscalYearStartMonth(){api} to set the starting month of the fiscal year
-* {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api} to set zoom levels
 
 **Note:** The starting month of the fiscal year is set as a number from 1 to 12. The default value is 1 (January).
 
@@ -871,6 +874,8 @@ chart.axis().labels().format(
 
 {sample}BCT\_Timeline\_Chart\_14{sample}
 
+#### Zoom Levels
+
 It is possible to zoom Timeline chart in and out – for example, with the help of the mouse wheel. See the [Navigation](#navigation) and [Behavior](#behavior) sections to learn more. (Please note that in all previous samples zooming is disabled.)
 
 You can specify time units that are displayed by the axis on each zoom level as well as in the default state by passing an array of settings to the {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api} method.
@@ -887,7 +892,7 @@ chart.scale().zoomLevels([
 ]);
 ```
 
-**Note:** Levels must be listed in a particular order: from the level with the smallest time unit to the level with the largest one, which is displayed in the default stated. For example, the millisecond goes before the second, the month goes before the year, and so on.
+**Note:** Levels must be listed in a particular order: from the level with the smallest time unit to the level with the largest one, which is displayed in the default state. For example, the millisecond goes before the second, the month goes before the year, and so on.
 
 The available units can be found in {api:anychart.enums.Interval}anychart.enums.Interval{api}:
 
