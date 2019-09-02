@@ -60,8 +60,6 @@ anychart.onDocumentReady(function () {
     chart.nodes().labels().enabled(true);
 
     // configure labels of nodes
-    chart.nodes().labels().fontSize(12);
-    chart.nodes().labels().fontWeight(600);
     chart.nodes().labels().format(function() {
       if (this.siblings.length > 2) {
         return  this.id.toUpperCase();
@@ -73,6 +71,8 @@ anychart.onDocumentReady(function () {
         }
       }
     });
+    chart.nodes().labels().fontSize(12);
+    chart.nodes().labels().fontWeight(600);
 
     // configure labels of nodes in groups
     chart.group("family").labels().fontColor("#00bfa5");

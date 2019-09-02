@@ -625,15 +625,15 @@ var chart = anychart.graph(data);
 chart.nodes().labels().enabled(true);
 
 // configure labels of nodes
+chart.nodes().labels().format("{%id}");
 chart.nodes().labels().fontSize(12);
 chart.nodes().labels().fontWeight(600);
-chart.nodes().labels().format("{%id}");
 
 // configure labels of nodes in groups
+chart.group("lone wolf").labels().format("{%id}\n({%group})");
 chart.group("family").labels().fontColor("#00bfa5");
 chart.group("friends").labels().fontColor("#ffa000");
 chart.group("lone wolf").labels().fontColor("#dd2c00");
-chart.group("lone wolf").labels().format("{%id}\n({%group})");
 
 // configure tooltips of nodes
 chart.nodes().tooltip().useHtml(true);
@@ -693,8 +693,6 @@ var chart = anychart.graph(data);
 chart.nodes().labels().enabled(true);
 
 // configure labels of nodes
-chart.nodes().labels().fontSize(12);
-chart.nodes().labels().fontWeight(600);
 chart.nodes().labels().format(function() {
   if (this.siblings.length > 2) {
     return  this.id.toUpperCase();
@@ -706,6 +704,8 @@ chart.nodes().labels().format(function() {
     }
   }
 });
+chart.nodes().labels().fontSize(12);
+chart.nodes().labels().fontWeight(600);
 
 // configure labels of nodes in groups
 chart.group("family").labels().fontColor("#00bfa5");
