@@ -181,7 +181,7 @@ var momentSeries2 = chart.moment(momentData2);
 
 Range series are used to show events that have duration.
 
-To create a range series, use the {api:anychart.charts.Timeline#range}range(){api} method. In your [data](#data), specify the `name`, `start`, and `end` fields.
+To create a range series, call the {api:anychart.charts.Timeline#range}range(){api} method. In your [data](#data), add the `name`, `start`, and `end` fields.
 
 You can adjust the height, direction, and appearance of all ranges in a series or of an individual range, as explained in the subsections below. Also, you can configure their labels and tooltips – see the [Labels and Tooltips](#labels_and_tooltips) section.
 
@@ -283,9 +283,9 @@ var rangeSeries2 = chart.range(rangeData2);
 
 ### Moment Series
 
-Moment series are used to show events that have duration.
+Moment series are used to show events with zero.
 
-To create a moment series, use the {api:anychart.charts.Timeline#moment}moment(){api} method. In your [data](#data), specify the `y` and `x` fields.
+To create a moment series, call the {api:anychart.charts.Timeline#moment}moment(){api} method. In your [data](#data), use the `y` and `x` fields.
 
 You can adjust the direction and appearance of all ranges in a series or of an individual range, as explained in the subsections below. Also, you can configure their labels and tooltips – see the [Labels and Tooltips](#labels_and_tooltips) section.
 
