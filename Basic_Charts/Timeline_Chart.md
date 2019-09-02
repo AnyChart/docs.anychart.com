@@ -849,8 +849,9 @@ Settings of the scale affect the way how the [axis](#axis) looks. To configure i
 * {api:anychart.scales.GanttDateTime#minimum}minimum(){api} to set the minimum date of the scale
 * {api:anychart.scales.GanttDateTime#maximum}maximum(){api} to set the maximum date of the scale
 * {api:anychart.scales.GanttDateTime#fiscalYearStartMonth}fiscalYearStartMonth(){api} to set the starting month of the fiscal year
+{api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api} to set zoom levels
 
-The starting month of the fiscal year is set as a number from 1 to 12. The default value is 1 (January).
+**Note:** The starting month of the fiscal year is set as a number from 1 to 12. The default value is 1 (January).
 
 This sample shows how to adjust the scale. Labels of the axis are configured to display the starting month of the fiscal year.
 
