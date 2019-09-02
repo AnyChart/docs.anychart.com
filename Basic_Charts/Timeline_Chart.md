@@ -968,7 +968,7 @@ chart.scroller().enabled(true);
 
 To configure the scroller, use other methods of the {api:anychart.core.ui.ChartScroller}anychart.core.ui.ChartScroller{api} class.
 
-The following sample demonstrates how to enable and disable the scroller:
+The following sample demonstrates how to enable and disable the scroller. By default, the chart is zoomed to a range of dates, but the scroller allows to change it.
 
 {sample}BCT\_Timeline\_Chart\_17{sample}
 
