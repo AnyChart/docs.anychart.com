@@ -115,7 +115,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-There are two types of series: range and moment. Data for them are passed to the {api:anychart.charts.Timeline#range}range(){api} and {api:anychart.charts.Timeline#moment}moment(){api} methods.
+There are two types of series: **range** and **moment**. Data for them are passed to the {api:anychart.charts.Timeline#range}range(){api} and {api:anychart.charts.Timeline#moment}moment(){api} methods.
 
 Below you can find data fields that are required if you use object notation to set the data.
 
@@ -445,7 +445,7 @@ You can configure the [appearance](../Appearance_Settings) of moment and range s
 
 #### Text
 
-To add a text marker, use the {api:anychart.charts.Timeline#textMarker}textMarker(){api} method. Specify the index of the marker:
+To add a **text marker**, use the {api:anychart.charts.Timeline#textMarker}textMarker(){api} method. Specify the index of the marker:
 
 ```
 var textMarker1 = chart.textMarker(0);
@@ -459,7 +459,7 @@ To configure the marker, use the following methods:
 * {api:anychart.core.axisMarkers.Text#useHtml}useHtml(){api} to enable HTML
 * {api:anychart.core.axisMarkers.Text#fontColor}fontColor(){api}, {api:anychart.core.axisMarkers.Text#fontFamily}fontFamily(){api}, {api:anychart.core.axisMarkers.Text#fontSize}fontSize(){api}, {api:anychart.core.axisMarkers.Text#fontWeight}fontWeight(){api}, etc. to configure the font
 * {api:anychart.core.axisMarkers.Text#background}background(){api} to set the background
-* {api:anychart.core.axisMarkers.Text#rotation}background(){api}, {api:anychart.core.axisMarkers.Text#padding}background(){api}, {api:anychart.core.axisMarkers.Text#offsetX}offsetX(){api},  {api:anychart.core.axisMarkers.Text#offsetY}offsetY(){api}, etc, to set the position
+* {api:anychart.core.axisMarkers.Text#rotation}rotation(){api}, {api:anychart.core.axisMarkers.Text#padding}padding(){api}, {api:anychart.core.axisMarkers.Text#offsetX}offsetX(){api},  {api:anychart.core.axisMarkers.Text#offsetY}offsetY(){api}, etc, to set the position
 * {api:anychart.core.axisMarkers.Text#enabled}enabled(){api}, to enable / disable the marker
 
 In the sample below, there are two text markers with the font, background, and position configured. In the text of the first marker, HTML is used.
@@ -507,9 +507,17 @@ textMarker2.offsetY(10);
 
 #### Line
 
-* {api:anychart.charts.Timeline#lineMarker}lineMarker(){api}
-* {api:anychart.charts.Timeline#todayMarker}todayMarker(){api}
+To add a **line marker**, use the {api:anychart.charts.Timeline#lineMarker}lineMarker(){api} method. Specify the index of the marker:
 
+```
+var lineMarker1 = chart.lineMarker(0);
+var lineMarker2 = chart.lineMarker(1);
+```
+* {api:anychart.core.axisMarkers.Line#value}value(){api} to set the date
+* {api:anychart.core.axisMarkers.Line#stroke}stroke(){api} to set the stroke
+* {api:anychart.core.axisMarkers.Line#enabled}enabled(){api}, to enable / disable the marker
+
+In this sample, there are two line markers with the stroke configured and two [text markers](#text_marker) bound to them:
 
 ```
 // create two line markers
@@ -541,6 +549,9 @@ textMarker2.value(lineMarker2Value);
 
 {sample}BCT\_Timeline\_Chart\_09{sample}
 
+To add a **today marker** (a line marker displayed on the current data), use the {api:anychart.charts.Timeline#todayMarker}todayMarker(){api} method. To configure it, use the methods of the line marker listed above.
+
+In the following sample, a today marker is created and configured, and a [text marker](#text_marker) is bound to it:
 
 ```
 // create and configure a today marker
@@ -553,8 +564,6 @@ todayMarker.stroke("#dd2c00", 3);
 var textMarker = chart.textMarker(0); 
 var todayMarkerValue = todayMarker.value();
 textMarker.value(todayMarkerValue);
-textMarker.text(
-  anychart.format.dateTime(todayMarkerValue, "dd MMMM")
 ```
 
 {sample}BCT\_Timeline\_Chart\_10{sample}
