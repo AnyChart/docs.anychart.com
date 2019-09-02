@@ -952,17 +952,23 @@ This is how these methods work:
 
 #### Scroller
 
-* [Common Settings: Scroller](../Common_Settings/Scroller)
-* {api:anychart.charts.Timeline#scroller}scroller(){api}
-* {api:anychart.core.ui.ChartScroller#enabled()}enabled(){api}
-* other methods of the {api:anychart.core.ui.ChartScroller}anychart.core.ui.ChartScroller{api} class
-* `true` / `false`
+Scroller allows scrolling and zooming the chart. In the [Common Settings: Scroller](../Common_Settings/Scroller) section, you can find a detailed guide on this element.
 
+To enable or disable the scroller, pass `true` / `false` either to the {api:anychart.charts.Timeline#scroller}scroller(){api} method of the chart or to the {api:anychart.core.ui.ChartScroller#enabled()}enabled(){api} method of the scroller:
 
 ```
 // enable the scroller
-chart.scroller().enabled(enabled);
+chart.scroller(true);
 ```
+
+```
+// enable the scroller
+chart.scroller().enabled(true);
+```
+
+To configure the scroller, use other methods of the {api:anychart.core.ui.ChartScroller}anychart.core.ui.ChartScroller{api} class.
+
+The following sample demonstrates how to enable and disable the scroller:
 
 {sample}BCT\_Timeline\_Chart\_17{sample}
 
