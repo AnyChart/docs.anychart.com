@@ -513,6 +513,9 @@ To add a **line marker**, use the {api:anychart.charts.Timeline#lineMarker}lineM
 var lineMarker1 = chart.lineMarker(0);
 var lineMarker2 = chart.lineMarker(1);
 ```
+
+To configure the marker, use the following methods:
+
 * {api:anychart.core.axisMarkers.Line#value}value(){api} to set the date
 * {api:anychart.core.axisMarkers.Line#stroke}stroke(){api} to set the stroke
 * {api:anychart.core.axisMarkers.Line#enabled}enabled(){api}, to enable / disable the marker
@@ -572,6 +575,21 @@ textMarker.value(todayMarkerValue);
 
 * {api:anychart.charts.Timeline#rangeMarker}rangeMarker(){api}
 
+To add a **range marker**, use the {api:anychart.charts.Timeline#rangeMarker}rangeMarker(){api} method. Specify the index of the marker:
+
+```
+var rangeMarker1 = chart.rangeMarker(0);
+var rangeMarker2 = chart.rangeMarker(1);
+```
+
+To configure the marker, use the following methods:
+
+* {api:anychart.core.axisMarkers.Range#from}from(){api} to set the start date
+* {api:anychart.core.axisMarkers.Range#to}to(){api} to set the end date
+* {api:anychart.core.axisMarkers.Range#fill}fill(){api} to set the fill
+* {api:anychart.core.axisMarkers.Range#enabled}enabled(){api}, to enable / disable the marker
+
+In the sample below, there are two range markers with the fill configured and two [text markers](#text_marker) bound to them:
 
 ```
 // create two range markers
