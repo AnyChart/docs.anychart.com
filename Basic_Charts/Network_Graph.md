@@ -591,6 +591,8 @@ Also, you can always add a custom field to your data and use a custom token corr
 
 The following sample shows how to configure labels and tooltips and work with tokens to format their text. Along with regular tokens, a custom token `{%last_name}` is used.
 
+{sample}BCT\_Network\_Graph\_12{sample}
+
 ```
 // create data
 var data = {
@@ -643,8 +645,6 @@ chart.nodes().tooltip().format(
 chart.edges().tooltip().format("{%from} -> {%to}");
 ```
 
-{sample}BCT\_Network\_Graph\_12{sample}
-
 #### Formatting Functions
 
 To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
@@ -658,6 +658,8 @@ You can also add a custom field to your data and refer to it by using the {api:a
 **Note:** The `siblings` field allows getting an array of siblings - nodes that are connected with the given node by one edge.
 
 The sample below demonstrates how to configure labels and tooltips and work with formatting functions to format ther text. Along with regular fields, a custom field `last_name` is used.
+
+{sample}BCT\_Network\_Graph\_13{sample}
 
 ```
 // create data
@@ -723,8 +725,6 @@ chart.tooltip().format(function() {
   }
 });
 ```
-
-{sample}BCT\_Network\_Graph\_13{sample}
 
 ### Navigation
 

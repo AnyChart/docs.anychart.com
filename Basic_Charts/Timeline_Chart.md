@@ -665,6 +665,8 @@ Also, you can always add a custom field to your data and use a custom token corr
 
 The following sample shows how to configure labels and tooltips and work with tokens to format their text. Along with regular tokens, a custom token `{%manager}` is used.
 
+{sample}BCT\_Timeline\_Chart\_12{sample}
+
 ```
 // format labels of range series
 var rangeLabelFormat =
@@ -730,8 +732,6 @@ momentSeries2.tooltip().title().enabled(false);
 momentSeries1.tooltip().separator().enabled(false);
 momentSeries2.tooltip().separator().enabled(false);
 ```
-
-{sample}BCT\_Timeline\_Chart\_12{sample}
 
 #### Formatting Functions
 
