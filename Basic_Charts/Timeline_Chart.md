@@ -952,7 +952,7 @@ This is how these methods work:
 
 #### Scroller
 
-Scroller allows scrolling and zooming the chart. In the [Common Settings: Scroller](../Common_Settings/Scroller) section, you can find a detailed guide on this element.
+Scroller allows scrolling and zooming the chart. You can find a detailed guide on this element in the [Common Settings: Scroller](../Common_Settings/Scroller) article.
 
 To enable or disable the scroller, pass `true` / `false` either to the {api:anychart.charts.Timeline#scroller}scroller(){api} method of the chart or to the {api:anychart.core.ui.ChartScroller#enabled()}enabled(){api} method of the scroller:
 
@@ -968,7 +968,7 @@ chart.scroller().enabled(true);
 
 To configure the scroller, use other methods of the {api:anychart.core.ui.ChartScroller}anychart.core.ui.ChartScroller{api} class.
 
-The following sample demonstrates how to enable and disable the scroller. By default, the chart is zoomed to a range of dates, but the scroller allows to change it.
+The following sample demonstrates how to enable and disable the scroller. By default, the chart is zoomed to a range of dates with the help of the {api:anychart.charts.Timeline#zoomTo}zoomTo(){api} [method](#methods). The scroller allows to change the range.
 
 {sample}BCT\_Timeline\_Chart\_17{sample}
 
