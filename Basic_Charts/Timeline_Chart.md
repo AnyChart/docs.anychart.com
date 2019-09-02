@@ -930,9 +930,10 @@ By default, you can navigate Timeline charts with the help of the mouse – see 
 
 #### Methods
 
-* {api:anychart.charts.Timeline#zoomTo}zoomTo(){api}
-* {api:anychart.charts.Timeline#fit}fit(){api}
-* (?) {api:anychart.charts.Timeline#scroll}scroll(){api}
+Use the following methods to navigate the chart:
+
+* {api:anychart.charts.Timeline#zoomTo}zoomTo(){api} to zoom to a range of dates
+* {api:anychart.charts.Timeline#fit}fit(){api} to fit the chart to the container
 
 
 ```
@@ -941,7 +942,7 @@ chart.zoomTo(Date.UTC(2005,3,1), Date.UTC(2006,3,1));
 ```
 
 ```
-// fit elements to the width of the chart
+// fit the chart to the container
 chart.fit();
 ```
 
@@ -1003,6 +1004,7 @@ zoomController.render();
 * (?) enabled()
 * (?) [zoom levels](#zoom_levels)
 
+**Note:** The way how zooming works depends on settings of the scale. Read [Scale: Zoom Levels](#zoom_levels) to learn more.
 
 ```
 // prevent zooming the chart with the mouse wheel

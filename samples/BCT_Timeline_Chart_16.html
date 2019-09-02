@@ -53,7 +53,7 @@
 <label id="dateLabel1">01 April 2005</label>
 <label>end date: </label>
 <label id="dateLabel2">01 April 2006</label>
-<button id="fitButton" onclick="fit()">Fit</button>
+<button id="fitButton" onclick="fit()">Fit to Container</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -119,7 +119,7 @@ function zoomTo() {
   chart.zoomTo(Date.UTC(2005,3,1), Date.UTC(2006,3,1));  
 }
 
-// fit elements to the width of the chart
+// fit the chart to the container
 function fit() {
   chart.fit();  
 }
