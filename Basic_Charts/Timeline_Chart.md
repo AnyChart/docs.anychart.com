@@ -4,7 +4,9 @@
 
 ## Overview
 
-A timeline chart is...
+A timeline chart is a visualization of events in the chronological order. It displays both events occupying periods of time (ranges) and events with zero duration (moments). Events and dates are shown on a long horizontal bar (axis).
+
+A [Gantt chart](../Gantt_Chart) is a special form of timeline used in project management.
 
 / a display of a list of events in chronological order. It is typically a graphic design showing a long bar labelled with dates paralleling it, and usually contemporaneous events. A [Gantt chart](../Gantt_Chart) is a form of timeline used in project management. /
 
@@ -15,7 +17,7 @@ This article explains how to create a basic Timeline chart as well as configure 
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Timeline}anychart.charts.Timeline{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>(?)</td></tr>
+<tr><td>Data Fields</td><td>`name`, `start`, `end`, `y`, `x`,</td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -28,7 +30,7 @@ This article explains how to create a basic Timeline chart as well as configure 
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>(?)</td></tr>
+<tr><td></td><td>[Gantt](../Gantt_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Chartopedia: Timeline Chart](https://www.anychart.com/chartopedia/chart-types/timeline-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
