@@ -844,7 +844,7 @@ momentSeries2.tooltip().separator().enabled(false);
 
 ### Scale
 
-Settings of the scale affect the way how the [axis](#axis) looks. The [Zoom Levels](#zoom_levels) setting also affects the way how [navigation](#navigation) and default [behavior](#behavior) work.
+Settings of the scale affect the way how the [axis](#axis) looks. Configuring [zoom levels](#zoom_levels) also affects the way how [navigation](#navigation) and default [behavior](#behavior) work.
 
 #### Basic Settings
 
@@ -878,7 +878,7 @@ chart.axis().labels().format(
 
 It is possible to zoom the Timeline chart in and out – for example, with the help of the mouse wheel. See the [Navigation](#navigation) and [Behavior](#behavior) sections to learn more. (Please note that in all previous samples zooming is disabled.)
 
-You can specify time units that are displayed by the axis on each zoom level as well as in the default state. Combine {api:anychart.charts.Timeline#scale}scale(){api} with {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api}.
+You can specify time units that are displayed by the [axis](#axis) on each zoom level as well as in the default state. Combine {api:anychart.charts.Timeline#scale}scale(){api} with {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api}.
 
 Zoom levels are set as an array of objects. In each object, you should specify two values, `unit` and `count`: the time unit of the level and the number of units represented by one tick of the axis.
 
