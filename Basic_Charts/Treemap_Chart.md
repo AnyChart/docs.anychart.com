@@ -210,7 +210,7 @@ chart.selected().stroke("gray", 2);
 
 #### Individual Points
 
-It is possible to configure the appearance of each tile individually - use extra data fields corresponding with the methods mentioned above:
+It is possible to configure the appearance of each tile individually - use extra data fields corresponding to the methods mentioned above:
 
 ```
 // create data

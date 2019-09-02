@@ -50,11 +50,11 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
-To create a Timeline chart, use the {api:anychart#timeline}anychart.timeline(){api} chart constructor...
+To create a Timeline chart, use the {api:anychart#timeline}anychart.timeline(){api} chart constructor.
 
-* {api:anychart.charts.Timeline#range}range(){api} – [range series](#range_series)
-* {api:anychart.charts.Timeline#moment}moment(){api} – [moment series](#moment_series)
+Then call the {api:anychart.charts.Timeline#range}range(){api} and {api:anychart.charts.Timeline#moment}moment(){api} methods to create [range series](#range_series) and [moment series](#moment_series).
 
+The following sample demonstrates how a basic Timeline chart is created:
 
 ```
 // create data
@@ -115,18 +115,24 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-[range series](#range_series):
+There are two types of series: range and moment. Data for them are passed to the {api:anychart.charts.Timeline#range}range(){api} and {api:anychart.charts.Timeline#moment}moment(){api} methods.
 
-* `name`
-* `start`
-* `end`
+Below you can find data fields that are required if you use object notation to set the data.
 
-[moment series](#moment_series):
+With [range series](#range_series), use the following fields:
 
-* `x`
-* `y`
+* `name` to set names of ranges
+* `start` to set  start dates
+* `end` to set end dates
+
+With [moment series](#moment_series), use these fields:
+
+* `y` to set names of moments
+* `x` to set dates
 
 **Note:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
+
+If ranges overlap, they are drawn with different heights, like two first ranges in the following sample:
 
 ```
 // create data
@@ -173,9 +179,11 @@ var momentSeries2 = chart.moment(momentData2);
 
 ### Range Series
 
-* {api:anychart.charts.Timeline#range}range(){api}
-* [Data](#data), [Quick Start](#quick_start)
-* [Labels and Tooltips](#labels_and_tooltips)
+Range series are used to show events that have duration.
+
+To create a range series, use the {api:anychart.charts.Timeline#range}range(){api} method. In your [data](#data), specify the `name`, `start`, and `end` fields.
+
+You can adjust the height, direction, and appearance of all ranges in a series or of an individual range, as explained in the subsections below. Also, you can configure their labels and tooltips – see the [Labels and Tooltips](#labels_and_tooltips) section.
 
 #### All Ranges
 
@@ -230,6 +238,8 @@ rangeSeries2.selected().stroke("#004e72", 2);
 
 #### Individual Ranges
 
+If you use object notation to set the data, it is possible to configure each node individually. Use extra data fields corresponding to the methods mentioned above:
+
 ```
 // create data
 
@@ -273,9 +283,11 @@ var rangeSeries2 = chart.range(rangeData2);
 
 ### Moment Series
 
-* {api:anychart.charts.Timeline#moment}moment(){api}
-* [Data](#data), [Quick Start](#quick_start)
-* [Labels and Tooltips](#labels_and_tooltips)
+Moment series are used to show events that have duration.
+
+To create a moment series, use the {api:anychart.charts.Timeline#moment}moment(){api} method. In your [data](#data), specify the `y` and `x` fields.
+
+You can adjust the direction and appearance of all ranges in a series or of an individual range, as explained in the subsections below. Also, you can configure their labels and tooltips – see the [Labels and Tooltips](#labels_and_tooltips) section.
 
 #### All Moments
 
@@ -348,6 +360,8 @@ momentSeries2.selected().markers().stroke("#004e72", 2);
 {sample}BCT\_Timeline\_Chart\_05{sample}
 
 #### Individual Moments
+
+If you use object notation to set the data, it is possible to configure each node individually. Use extra data fields corresponding to the methods mentioned above:
 
 ```
 // create data

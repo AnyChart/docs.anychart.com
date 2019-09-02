@@ -12,7 +12,7 @@ Here is the full list of available settings: {api:anychart.core.StateSettings}an
 
 Some chart types can have only one series. To configure their states, use the **normal()**, **hovered()**, and **selected()** methods of the chart. The next step is to combine them with the methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api} - choose ones that work with your chart type.
 
-**Note 1:** To configure an individual point of a chart, add to your data extra fields corresponding with the methods mentioned above.
+**Note 1:** To configure an individual point of a chart, add to your data extra fields corresponding to the methods mentioned above.
 
 **Note 2:** There is also an alternative way to set the normal state of a chart: see the [Shortcuts](#shortcuts_\(normal\)) section.
 
@@ -145,7 +145,7 @@ series2.selected(selected);
 
 ## Points
 
-You can configure the states of individual points of a series: use special data fields corresponding with the [methods](#methods) of the series.
+You can configure the states of individual points of a series: use special data fields corresponding to the [methods](#methods) of the series.
 
 ### Data Fields
 

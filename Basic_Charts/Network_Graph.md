@@ -275,7 +275,7 @@ nodes.selected().stroke("#333333", 3);
 
 #### Individual Nodes
 
-It is possible to configure each node individually – use extra data fields corresponding with the methods mentioned above:
+It is possible to configure each node individually – use extra data fields corresponding to the methods mentioned above:
 
 ```
 // create data
@@ -511,7 +511,7 @@ chart.edges().selected().stroke("#ffa000", 4);
 
 #### Individual Edges
 
-It is possible to configure each edge individually – use extra data fields corresponding with the methods mentioned above:
+It is possible to configure each edge individually – use extra data fields corresponding to the methods mentioned above:
 
 ```
 // create data

@@ -411,7 +411,7 @@ plot.eventMarkers({"groups": [
 
 ## Individual Markers
 
-Most settings are shared by markers belonging to the same group, but there is a way to make them look different from each other. Use extra data fields corresponding with the methods mentioned in the following sections: [Type](#type), [Appearance](#appearance), [Connectors](#connectors), [Height and Width](#height_and_width).
+Most settings are shared by markers belonging to the same group, but there is a way to make them look different from each other. Use extra data fields corresponding to the methods mentioned in the following sections: [Type](#type), [Appearance](#appearance), [Connectors](#connectors), [Height and Width](#height_and_width).
 
 To set the format (symbol) of each marker individually, specify symbols in a custom data field and call the {api:anychart.core.stock.eventMarkers.Controller#format}format(){api} method with a function as a parameter. In the function, refer to the custom field with the help of {api:anychart.format.Context#getData}getData(){api}.
 

@@ -282,7 +282,7 @@ chart.maxFontSize(20);
 
 #### Individual Points
 
-In case of [tree data](#tree), you can configure the font of individual items - use extra data fields corresponding with the methods mentioned above.
+In case of [tree data](#tree), you can configure the font of individual items - use extra data fields corresponding to the methods mentioned above.
 
 The maximum and minimum font size cannot be set this way. Also, please note: the individual settings of an element are applied to its children as well unless they have their own settings. This is how it works:
 
