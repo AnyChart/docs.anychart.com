@@ -228,7 +228,7 @@ graph2.rotation(90);
 
 ### Nodes
 
-Nodes, or vertices, are objects that are pairwise connected with [edges](#edges) and represented as points. To set them, use the `node` and `id` fields in your [data](#data).
+**Nodes**, or vertices, are objects that are pairwise connected with [edges](#edges) and represented as points. To set them, use the `node` and `id` fields in your [data](#data).
 
 You can adjust the size, shape, and appearance of all nodes, of an individual node, or of a group of nodes, as explained in the subsections below. Also, you can configure their labels and tooltips - see the [Labels and Tooltips](#labels_and_tooltips) section.
 
@@ -484,7 +484,7 @@ loneWolf.selected().stroke("#333333", 3);
 
 ### Edges
 
-Edges are links that connect pairs of [nodes](#nodes) and are represented as lines. To set them, use the `edge`, `from`, and `to` fields in your [data](#data).
+**Edges** are links that connect pairs of [nodes](#nodes) and are represented as lines. To set them, use the `edge`, `from`, and `to` fields in your [data](#data).
 
 You can adjust the appearance of all edges or of an individual edge, as explained in the subsections below. Also, you can configure their labels and tooltips - see the [Labels and Tooltips](#labels_and_tooltips) section.
 
@@ -589,7 +589,7 @@ Here is the list of tokens that work with the Network Graph:
 
 Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
-The following sample shows how to configure labels and tooltips and work with tokens to format their text. Along with regular tokens, a custom token *{%last_name}* is used.
+The following sample shows how to configure labels and tooltips and work with tokens to format their text. Along with regular tokens, a custom token `{%last_name}` is used.
 
 ```
 // create data
@@ -657,7 +657,7 @@ You can also add a custom field to your data and refer to it by using the {api:a
 
 **Note:** The `siblings` field allows getting an array of siblings - nodes that are connected with the given node by one edge.
 
-The sample below demonstrates how to configure labels and tooltips and work with formatting functions to format ther text. Along with regular fields, a custom field *last_name* is used.
+The sample below demonstrates how to configure labels and tooltips and work with formatting functions to format ther text. Along with regular fields, a custom field `last_name` is used.
 
 ```
 // create data

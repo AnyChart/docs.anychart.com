@@ -179,7 +179,7 @@ var momentSeries2 = chart.moment(momentData2);
 
 ### Range Series
 
-Range series are used to show events that have duration.
+**Range series** are used to show events that have duration.
 
 To create a range series, call the {api:anychart.charts.Timeline#range}range(){api} method. In your [data](#data), add the `name`, `start`, and `end` fields.
 
@@ -283,7 +283,7 @@ var rangeSeries2 = chart.range(rangeData2);
 
 ### Moment Series
 
-Moment series are used to show events with zero.
+**Moment series** are used to show events with zero.
 
 To create a moment series, call the {api:anychart.charts.Timeline#moment}moment(){api} method. In your [data](#data), use the `y` and `x` fields.
 
@@ -443,6 +443,8 @@ You can configure the [appearance](../Appearance_Settings) of moment and range s
 
 ### Markers
 
+You can add three types of markers to the timeline: **line**, **range**, and **text**. The sections below explain in detail how to configure each type.
+
 #### Text
 
 To add a **text marker**, use the {api:anychart.charts.Timeline#textMarker}textMarker(){api} method. Specify the index of the marker:
@@ -520,7 +522,7 @@ To configure the marker, use the following methods:
 * {api:anychart.core.axisMarkers.Line#stroke}stroke(){api} to set the stroke
 * {api:anychart.core.axisMarkers.Line#enabled}enabled(){api}, to enable / disable the marker
 
-In this sample, there are two line markers with the stroke configured and two [text markers](#text_marker) bound to them:
+In this sample, there are two line markers with the stroke configured and two [text markers](#text) bound to them:
 
 ```
 // create two line markers
@@ -554,7 +556,7 @@ textMarker2.value(lineMarker2Value);
 
 To add a **today marker** (a line marker displayed on the current data), use the {api:anychart.charts.Timeline#todayMarker}todayMarker(){api} method. To configure it, use the methods of the line marker listed above.
 
-In the following sample, a today marker is created and configured, and a [text marker](#text_marker) is bound to it:
+In the following sample, a today marker is created and configured, and a [text marker](#text) is bound to it:
 
 ```
 // create and configure a today marker
@@ -589,7 +591,7 @@ To configure the marker, use the following methods:
 * {api:anychart.core.axisMarkers.Range#fill}fill(){api} to set the fill
 * {api:anychart.core.axisMarkers.Range#enabled}enabled(){api}, to enable / disable the marker
 
-In the sample below, there are two range markers with the fill configured and two [text markers](#text_marker) bound to them:
+In the sample below, there are two range markers with the fill configured and two [text markers](#text) bound to them:
 
 ```
 // create two range markers
@@ -658,7 +660,7 @@ Tokens for the [axis](#axis):
 
 Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
-...
+The following sample...
 
 ```
 // format labels of range series
