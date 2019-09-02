@@ -755,7 +755,9 @@ Function fields for the [axis](#axis):
 
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 
-...
+The sample below demonstrates how to configure labels and tooltips and work with formatting functions to format their text. Along with regular fields, a custom field `manager` is used.
+
+{sample}BCT\_Timeline\_Chart\_13{sample}
 
 ```
 // a function for formatting labels of range series
@@ -807,16 +809,19 @@ function rangeTooltipFormat() {
           "<br>Group: " + this.seriesName +
           "<br><br>Manager: " + this.getData("manager");  
 }
+
 // format tooltips of range series
 rangeSeries1.tooltip().useHtml(true);
 rangeSeries2.tooltip().useHtml(true); 
 rangeSeries1.tooltip().format(rangeTooltipFormat);
 rangeSeries2.tooltip().format(rangeTooltipFormat);
+
 // configure tooltips of range series
 rangeSeries1.tooltip().title().enabled(false);
 rangeSeries2.tooltip().title().enabled(false);
 rangeSeries1.tooltip().separator().enabled(false);
 rangeSeries2.tooltip().separator().enabled(false);
+
 // a function for formatting tooltips of range series
 function momentTooltipFormat() {
   var date = anychart.format.dateTime(this.x, "dd MMM");
@@ -825,19 +830,19 @@ function momentTooltipFormat() {
           "<br><br>Date: " + date + 
           "<br>Group: " + this.seriesName;
 }
+
 // format tooltips of moment series
 momentSeries1.tooltip().useHtml(true);
 momentSeries2.tooltip().useHtml(true); 
 momentSeries1.tooltip().format(momentTooltipFormat);
 momentSeries2.tooltip().format(momentTooltipFormat);
+
 // configure tooltips of moment series
 momentSeries1.tooltip().title().enabled(false);
 momentSeries2.tooltip().title().enabled(false);
 momentSeries1.tooltip().separator().enabled(false);
 momentSeries2.tooltip().separator().enabled(false);
 ```
-
-{sample}BCT\_Timeline\_Chart\_13{sample}
 
 ### Scale
 

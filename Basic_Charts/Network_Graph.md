@@ -657,7 +657,7 @@ You can also add a custom field to your data and refer to it by using the {api:a
 
 **Note:** The `siblings` field allows getting an array of siblings - nodes that are connected with the given node by one edge.
 
-The sample below demonstrates how to configure labels and tooltips and work with formatting functions to format ther text. Along with regular fields, a custom field `last_name` is used.
+The sample below demonstrates how to configure labels and tooltips and work with formatting functions to format their text. Along with regular fields, a custom field `last_name` is used.
 
 {sample}BCT\_Network\_Graph\_13{sample}
 
