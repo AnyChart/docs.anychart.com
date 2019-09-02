@@ -878,9 +878,9 @@ chart.axis().labels().format(
 
 It is possible to zoom Timeline chart in and out – for example, with the help of the mouse wheel. See the [Navigation](#navigation) and [Behavior](#behavior) sections to learn more. (Please note that in all previous samples zooming is disabled.)
 
-You can specify time units that are displayed by the axis on each zoom level as well as in the default state by passing an array of settings to the {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api} method.
+You can specify time units that are displayed by the axis on each zoom level as well as in the default state. Combine {api:anychart.charts.Timeline#scale}scale(){api} with {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api}.
 
-Each entry of the array is an object standing for a level. There you should specify two values, `unit` and `count`: the time unit of the level and the number of units represented by one tick of the axis.
+Zoom levels are set as an array of objects. In each object, you should specify two values, `unit` and `count`: the time unit of the level and the number of units represented by one tick of the axis.
 
 ```
 // set zoom levels of the scale
