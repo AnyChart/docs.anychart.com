@@ -115,7 +115,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-There are two types of series: **range** and **moment**. Data for them are passed to the {api:anychart.charts.Timeline#range}range(){api} and {api:anychart.charts.Timeline#moment}moment(){api} methods.
+There are two types of series: range and moment. Data for them are passed to the {api:anychart.charts.Timeline#range}range(){api} and {api:anychart.charts.Timeline#moment}moment(){api} methods.
 
 Below you can find data fields that are required if you use object notation to set the data.
 
@@ -179,7 +179,7 @@ var momentSeries2 = chart.moment(momentData2);
 
 ### Range Series
 
-**Range series** are used to show events that have duration.
+Range series are used to show events that have duration.
 
 To create a range series, call the {api:anychart.charts.Timeline#range}range(){api} method. In your [data](#data), add the `name`, `start`, and `end` fields.
 
@@ -283,7 +283,7 @@ var rangeSeries2 = chart.range(rangeData2);
 
 ### Moment Series
 
-**Moment series** are used to show events with zero.
+Moment series are used to show events with zero.
 
 To create a moment series, call the {api:anychart.charts.Timeline#moment}moment(){api} method. In your [data](#data), use the `y` and `x` fields.
 
@@ -423,7 +423,7 @@ To configure the [appearance](../Appearance_Settings) and other settings of the 
 
 In addition, you can adjust the labels displayed on the axis – see the [Labels and Tooltips](#labels_and_tooltips) section.
 
-**Note:** The way how axis looks is also affected by settings of the [Scale](#scale).
+**Note:** The way how axis looks is also affected by settings of the [scale](#scale).
 
 This sample shows how to configure the axis:
 
@@ -443,11 +443,12 @@ You can configure the [appearance](../Appearance_Settings) of moment and range s
 
 ### Markers
 
-You can add three types of markers to the timeline: **line**, **range**, and **text**. The sections below explain in detail how to configure each type.
+You can add three types of markers to the timeline: 
+line, range, and text. The sections below explain in detail how to configure each type.
 
 #### Text
 
-To add a **text marker**, use the {api:anychart.charts.Timeline#textMarker}textMarker(){api} method. Specify the index of the marker:
+To add a text marker, use the {api:anychart.charts.Timeline#textMarker}textMarker(){api} method. Specify the index of the marker:
 
 ```
 var textMarker1 = chart.textMarker(0);
@@ -509,7 +510,7 @@ textMarker2.offsetY(10);
 
 #### Line
 
-To add a **line marker**, use the {api:anychart.charts.Timeline#lineMarker}lineMarker(){api} method. Specify the index of the marker:
+To add a line marker, use the {api:anychart.charts.Timeline#lineMarker}lineMarker(){api} method. Specify the index of the marker:
 
 ```
 var lineMarker1 = chart.lineMarker(0);
@@ -554,7 +555,7 @@ textMarker2.value(lineMarker2Value);
 
 {sample}BCT\_Timeline\_Chart\_09{sample}
 
-To add a **today marker** (a line marker displayed on the current data), use the {api:anychart.charts.Timeline#todayMarker}todayMarker(){api} method. To configure it, use the methods of the line marker listed above.
+To add a today marker (a line marker displayed on the current data), use the {api:anychart.charts.Timeline#todayMarker}todayMarker(){api} method. To configure it, use the methods of the line marker listed above.
 
 In the following sample, a today marker is created and configured, and a [text marker](#text) is bound to it:
 
@@ -577,7 +578,7 @@ textMarker.value(todayMarkerValue);
 
 * {api:anychart.charts.Timeline#rangeMarker}rangeMarker(){api}
 
-To add a **range marker**, use the {api:anychart.charts.Timeline#rangeMarker}rangeMarker(){api} method. Specify the index of the marker:
+To add a range marker, use the {api:anychart.charts.Timeline#rangeMarker}rangeMarker(){api} method. Specify the index of the marker:
 
 ```
 var rangeMarker1 = chart.rangeMarker(0);
@@ -660,7 +661,9 @@ Tokens for the [axis](#axis):
 
 Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
-The following sample...
+**Note:** Labels of the [axis](#axis) are also affected by settings of the [scale](#scale).
+
+The following sample shows how to configure labels and tooltips and work with tokens to format their text. Along with regular tokens, a custom token `{%manager}` is used.
 
 ```
 // format labels of range series
