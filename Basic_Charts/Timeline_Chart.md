@@ -369,15 +369,24 @@ If you use object notation to set the data, it is possible to configure each nod
 var momentData1 = [
   {x: Date.UTC(2004,2,21), y: "Meeting 1",
    normal:   {
-               marker: {type: "star5", size: 8, fill: "#dd2c00", stroke: "2 #dd2c00"},
+               marker: {
+                         type: "star5", size: 8,
+                         fill: "#dd2c00", stroke: "2 #dd2c00"
+                       },
                stroke: "2 #dd2c00"
              },
    hovered:  {
-               marker: {size: 8, fill: "#dd2c00", stroke: "2 #dd2c00", stroke: "2 #dd2c00"},
+               marker: {
+                         size: 8,
+                         fill: "#dd2c00", stroke: "2 #dd2c00"
+                       },
                stroke: "2 #dd2c00"
              },
    selected: {
-                marker: {size: 8, fill: "#dd2c00", stroke: "2 #dd2c00", stroke: "2 #dd2c00"},
+                marker: {
+                          size: 8,
+                          fill: "#dd2c00", stroke: "2 #dd2c00"
+                        },
                 stroke: "2 #dd2c00"
              }
   },
