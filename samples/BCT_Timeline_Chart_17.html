@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Timeline Chart 17"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-timeline.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.7.1/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.7.1/fonts/css/anychart-font.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />     
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
+        #titleLabel {
+            font-weight: 600;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<label id="titleLabel">Scroller:</label>
+<label><input onclick="scrollerEnabled(true)" type="radio" name="mode">Enabled</label>
+<label><input onclick="scrollerEnabled(false)" type="radio" name="mode" checked>Disabled</label> 
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+
+    var rangeData1 = [
+      ["Task 1", Date.UTC(2004,0,4), Date.UTC(2004,7,1)],
+      ["Task 2", Date.UTC(2004,7,1), Date.UTC(2005,8,10)]
+    ];
+
+    var rangeData2 = [
+      ["New Task 1", Date.UTC(2005,10,1), Date.UTC(2006,5,1)],
+      ["New Task 2", Date.UTC(2006,5,15), Date.UTC(2006,11,1)]
+    ];
+
+    var momentData1 = [
+      [Date.UTC(2004,2,21), "Meeting 1"],
+      [Date.UTC(2005,3,19), "Meeting 2"],
+      [Date.UTC(2006,1,1),  "Meeting 3"]
+    ];
+
+    var momentData2 = [
+      [Date.UTC(2004,5,12), "Training 1",],
+      [Date.UTC(2005,5,1),  "Training 2",],
+      [Date.UTC(2006,1,26), "Training 3",]
+    ];
+
+    // create a chart
+    chart = anychart.timeline();
+
+    // prevent zooming the chart with the mouse wheel
+    chart.interactivity().zoomOnMouseWheel(false);
+
+    // create the first range series, set the data and name
+    var rangeSeries1 = chart.range(rangeData1);
+    rangeSeries1.name("Tasks");
+
+    // create the second range series, set the data and name
+    var rangeSeries2 = chart.range(rangeData2);
+    rangeSeries2.name("New Tasks");
+
+    // create the first moment series, set the data and name
+    var momentSeries1 = chart.moment(momentData1);
+    momentSeries1.name("Meetings");    
+
+    // create the second moment series, set the data and name
+    var momentSeries2 = chart.moment(momentData2);
+    momentSeries2.name("Trainings");
+
+    // set the chart title
+    chart.title("Timeline Chart: Navigation (Scroller)");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart  
+    chart.draw();
+
+    // zoom the chart to the given dates
+    chart.zoomTo(Date.UTC(2005,3,1), Date.UTC(2006,3,1));  
+});
+
+// enable / disable the scroller
+function scrollerEnabled(enabled) {
+  chart.scroller().enabled(enabled);
+}
+</script>
+</body>
+</html>

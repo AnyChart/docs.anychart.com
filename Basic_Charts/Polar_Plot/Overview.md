@@ -12,11 +12,11 @@ This article explains how to create and configure polar charts. To find out whic
 Polar charts require adding the [Core](../../Quick_Start/Modules#core) and [Polar](../../Quick_Start/Modules#polar) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-polar.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-polar.min.js"></script>
 ```
 
 Learn more: [Modules](../../Quick_Start/Modules).

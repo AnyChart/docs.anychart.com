@@ -4,13 +4,13 @@
     <meta name="ac:name" content="WD Data from XML 11"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
-    
-    <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.7.0/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
-    
+
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.7.1/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+
     <style>
         html, body, #container {
             width: 100%;
@@ -24,10 +24,10 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  
+
   // xml data                                               // JS equivalent
   var xml = '<?xml version="1.0" encoding="utf-8"?>' +
-    '<anychart xmlns="https://cdn.anychart.com/schemas/{{branch-name}}/xml-schema.xsd">' +
+    '<anychart xmlns="https://cdn.anychart.com/schemas/8.7.1/xml-schema.xsd">' +
       // set chart type
       '<chart type="line" '+                                // var chart = anychart.lineChart();
       'container="container">'+                             // chart.container("container");
@@ -41,8 +41,8 @@ anychart.onDocumentReady(function () {
       'angle="-90" '+                                       //     angle: -90,
       'opacity="0.5">'+                                     //     opacity: 0.5,
         '<keys>'+                                           //     keys: [
-          '<key><![CDATA[.1 green]]></key>'+                //       ".1 green", 
-          '<key><![CDATA[.5 yellow]]></key>'+               //       ".5 yellow", 
+          '<key><![CDATA[.1 green]]></key>'+                //       ".1 green",
+          '<key><![CDATA[.5 yellow]]></key>'+               //       ".5 yellow",
           '<key><![CDATA[.9 red]]></key></keys>'+           //       ".9 red"
       '</fill></range_axes_marker></range_axes_markers>'+   //     ]});
 
@@ -90,10 +90,10 @@ anychart.onDocumentReady(function () {
       '</axis><x_axes>'+                                  //     .enabled(false);
       '<y_axes title="Sales"/></chart>'+                  // chart.yAxis().title().text("Sales");
     '</anychart>';
-  
+
   // get XML data
   var chart = anychart.fromXml(xml);
-  
+
   // draw chart
   chart.draw();
 });

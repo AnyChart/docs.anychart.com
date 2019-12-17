@@ -24,7 +24,7 @@ To configure it, call the following methods:
 The {api:anychart.scales.GanttDateTime#maximum}maximum(){api} and {api:anychart.scales.GanttDateTime#minimum}minimum(){api} methods allow setting the minimum and maximum dates of the scale:
 
 ```
-// set the minimun and maximum values of the scale
+// set the minimum and maximum values of the scale
 chart.getTimeline().scale().minimum("2018-01-01");
 chart.getTimeline().scale().maximum("2018-07-15");
 ```

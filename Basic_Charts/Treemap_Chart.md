@@ -1,4 +1,4 @@
-{:index 6.2}
+{:index 6.3}
 # Treemap Chart
 
 ## Overview
@@ -38,11 +38,11 @@ This article explains how to create a basic Treemap chart in AnyChart as well as
 The Treemap chart requires adding the [Core](../Quick_Start/Modules#core) and [Treemap](../Quick_Start/Modules#treemap) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-treemap.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-treemap.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
@@ -210,7 +210,7 @@ chart.selected().stroke("gray", 2);
 
 #### Individual Points
 
-It is possible to configure the appearance of each tile individually - use extra data fields corresponding with the methods mentioned above:
+It is possible to configure the appearance of each tile individually - use extra data fields corresponding to the methods mentioned above:
 
 ```
 // create data
@@ -457,7 +457,7 @@ Changing the default text of headers is similar to configuring [labels and toolt
 chart.hovered().headers().format("{%value}");
 ```
 
-To [configure the font](../Appearance_Settings/Text_Settings) of headers, use methods listed on {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}:
+To [configure the font](../Appearance_Settings/Text_Settings) of headers, use methods listed in {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}:
 
 ```
 // configure the font of headers

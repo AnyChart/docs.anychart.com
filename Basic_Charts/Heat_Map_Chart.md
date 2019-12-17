@@ -37,11 +37,11 @@ This article explains how to create a basic Heat Map chart as well as configure 
 The Heat Map chart requires adding the [Core](../Quick_Start/Modules#core) and [Heat Map](../Quick_Start/Modules#heat_map) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-heatmap.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-heatmap.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
@@ -91,8 +91,8 @@ Data for a Heat Map chart can be passed to the chart constructor {api:anychart#h
 
 Use the following data fields:
 
-* `x` to set the names of columns
-* `y` to set the names of rows
+* `x` to set names of columns
+* `y` to set names of rows
 * `heat` to set values
 
 By default, items are colored automatically according to their values (heats). However, you can set the color of each item manually by adding extra fields to your data, and in this case the `heat` field can be omitted. See the [Appearance](#individual_points) section to learn more.
@@ -158,7 +158,7 @@ chart.selected().stroke("gray", 2);
 
 #### Individual Points
 
-It is possible to configure the appearance of each cell individually - use extra data fields corresponding with the methods mentioned above. In this case the `heat` field can be omitted:
+It is possible to configure the appearance of each cell individually - use extra data fields corresponding to the methods mentioned above. In this case the `heat` field can be omitted:
 
 ```
 // create data

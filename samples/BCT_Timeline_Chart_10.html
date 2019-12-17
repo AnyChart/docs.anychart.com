@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Timeline Chart 10"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-timeline.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.7.1/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.7.1/fonts/css/anychart-font.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />   
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var currentDate = new Date();
+    var currentYear = currentDate.getFullYear();
+    var rangeData = [
+      ["Task 1", Date.UTC(currentYear,0,1), Date.UTC(2019,4,1)],
+      ["Task 2", Date.UTC(currentYear,4,1), Date.UTC(2019,11,31)]
+    ];
+
+    // create a chart
+    var chart = anychart.timeline();
+
+    // prevent zooming the chart with the mouse wheel
+    chart.interactivity().zoomOnMouseWheel(false);
+
+    // create a range series, set the data and name
+    var rangeSeries = chart.range(rangeData);
+    rangeSeries.name("Tasks");
+
+    // create and configure a today marker
+    var todayMarker = chart.todayMarker();
+    todayMarker.stroke("#dd2c00", 3);
+
+    // create and configure a text marker
+    var textMarker = chart.textMarker(0); 
+    var todayMarkerValue = todayMarker.value();
+    textMarker.value(todayMarkerValue);
+    textMarker.text(
+      anychart.format.dateTime(todayMarkerValue, "dd MMMM")
+    );
+    textMarker.fontColor("#dd2c00");
+    textMarker.fontWeight(600);
+    textMarker.offsetX(-10);
+
+    // set the chart title
+    chart.title("Timeline Chart: Today Marker (+ Text Marker)");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart  
+    chart.draw();
+});
+</script>
+</body>
+</html>

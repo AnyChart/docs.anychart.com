@@ -36,11 +36,11 @@ This article explains how to create a basic Network Graph as well as configure s
 The Network Graph requires adding the [Core](../Quick_Start/Modules#core) and [Network Graph](../Quick_Start/Modules#network_graph) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-graph.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-graph.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
@@ -75,9 +75,6 @@ var data = {
 
 // create a chart and set the data
 var chart = anychart.graph(data);
-
-// set the chart title
-chart.title("Network Graph: Basic Sample");
 
 // set the container id
 chart.container("container");
@@ -278,7 +275,7 @@ nodes.selected().stroke("#333333", 3);
 
 #### Individual Nodes
 
-It is possible to configure each node individually – use extra data fields corresponding with the methods mentioned above:
+It is possible to configure each node individually – use extra data fields corresponding to the methods mentioned above:
 
 ```
 // create data
@@ -514,7 +511,7 @@ chart.edges().selected().stroke("#ffa000", 4);
 
 #### Individual Edges
 
-It is possible to configure each edge individually – use extra data fields corresponding with the methods mentioned above:
+It is possible to configure each edge individually – use extra data fields corresponding to the methods mentioned above:
 
 ```
 // create data
@@ -578,7 +575,7 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 To change the text of labels on the whole chart, combine the {api:anychart.charts.Graph#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
-To change the text of tooltips, do the same with the {api:anychart.charts.Graph##tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
+To change the text of tooltips, do the same with the {api:anychart.charts.Graph#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
 Please note that it is possible to adjust labels and tooltips of [nodes](#nodes), [groups](#groups), and [edges](#edges). Access them by using the following methods: {api:anychart.charts.Graph#nodes}nodes(){api}, {api:anychart.charts.Graph#group}group(){api}, {api:anychart.charts.Graph#edges}edges(){api}.
 
@@ -592,7 +589,9 @@ Here is the list of tokens that work with the Network Graph:
 
 Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
-The following sample shows how to configure labels and tooltips and work with tokens to format their text. Along with regular tokens, a custom token *{%last_name}* is used.
+The following sample shows how to configure labels and tooltips and work with tokens to format their text. Along with regular tokens, a custom token `{%last_name}` is used.
+
+{sample}BCT\_Network\_Graph\_12{sample}
 
 ```
 // create data
@@ -626,15 +625,15 @@ var chart = anychart.graph(data);
 chart.nodes().labels().enabled(true);
 
 // configure labels of nodes
+chart.nodes().labels().format("{%id}");
 chart.nodes().labels().fontSize(12);
 chart.nodes().labels().fontWeight(600);
-chart.nodes().labels().format("{%id}");
 
 // configure labels of nodes in groups
+chart.group("lone wolf").labels().format("{%id}\n({%group})");
 chart.group("family").labels().fontColor("#00bfa5");
 chart.group("friends").labels().fontColor("#ffa000");
 chart.group("lone wolf").labels().fontColor("#dd2c00");
-chart.group("lone wolf").labels().format("{%id}\n({%group})");
 
 // configure tooltips of nodes
 chart.nodes().tooltip().useHtml(true);
@@ -645,8 +644,6 @@ chart.nodes().tooltip().format(
 // configure tooltips of edges
 chart.edges().tooltip().format("{%from} -> {%to}");
 ```
-
-{sample}BCT\_Network\_Graph\_12{sample}
 
 #### Formatting Functions
 
@@ -660,7 +657,9 @@ You can also add a custom field to your data and refer to it by using the {api:a
 
 **Note:** The `siblings` field allows getting an array of siblings - nodes that are connected with the given node by one edge.
 
-The sample below demonstrates how to configure labels and tooltips and work with formatting functions to format ther text. Along with regular fields, a custom field *last_name* is used.
+The sample below demonstrates how to configure labels and tooltips and work with formatting functions to format their text. Along with regular fields, a custom field `last_name` is used.
+
+{sample}BCT\_Network\_Graph\_13{sample}
 
 ```
 // create data
@@ -694,8 +693,6 @@ var chart = anychart.graph(data);
 chart.nodes().labels().enabled(true);
 
 // configure labels of nodes
-chart.nodes().labels().fontSize(12);
-chart.nodes().labels().fontWeight(600);
 chart.nodes().labels().format(function() {
   if (this.siblings.length > 2) {
     return  this.id.toUpperCase();
@@ -707,6 +704,8 @@ chart.nodes().labels().format(function() {
     }
   }
 });
+chart.nodes().labels().fontSize(12);
+chart.nodes().labels().fontWeight(600);
 
 // configure labels of nodes in groups
 chart.group("family").labels().fontColor("#00bfa5");
@@ -726,8 +725,6 @@ chart.tooltip().format(function() {
   }
 });
 ```
-
-{sample}BCT\_Network\_Graph\_13{sample}
 
 ### Navigation
 
@@ -775,17 +772,17 @@ The [Zoom Control Panel](../Common_Settings/UI_Controls/Zoom_Controls) is an HTM
 It requires adding the [Common UI](../Quick_Start/Modules#common_ui) module:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-ui.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-ui.min.js"></script>
 ```
 
 ```
-<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.7.0/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4"/> 
+<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.7.1/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4"/> 
 ```
 
 Also, you should reference the `anychart-ui.min.css` and `anychart-font.min.css` files:
 
 ```
-<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.7.0/fonts/css/anychart-font.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.7.1/fonts/css/anychart-font.min.css"/>
 ```
 
 Then combine the {api:anychart.ui#zoom}anychart.ui.zoom(){api} method with {api:anychart.ui.Zoom#target}target(){api} and {api:anychart.ui.Zoom#render}render(){api} to create the panel:

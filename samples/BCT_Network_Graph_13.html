@@ -5,12 +5,12 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-core.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-graph.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-graph.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.7.0/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.7.1/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
     
     <style>
         html, body, #container {
@@ -53,15 +53,13 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     var chart = anychart.graph(data);
 
-    // disable zooming with the mouse wheel
+    // prevent zooming the chart with the mouse wheel
     chart.interactivity().zoomOnMouseWheel(false);
 
     // enable labels of nodes
     chart.nodes().labels().enabled(true);
 
     // configure labels of nodes
-    chart.nodes().labels().fontSize(12);
-    chart.nodes().labels().fontWeight(600);
     chart.nodes().labels().format(function() {
       if (this.siblings.length > 2) {
         return  this.id.toUpperCase();
@@ -73,6 +71,8 @@ anychart.onDocumentReady(function () {
         }
       }
     });
+    chart.nodes().labels().fontSize(12);
+    chart.nodes().labels().fontWeight(600);
 
     // configure labels of nodes in groups
     chart.group("family").labels().fontColor("#00bfa5");

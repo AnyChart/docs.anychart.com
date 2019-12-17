@@ -38,11 +38,11 @@ This article explains how to create a basic Sunburst chart in AnyChart as well a
 The Sunburst chart requires adding the [Core](../Quick_Start/Modules#core) and [Sunburst](../Quick_Start/Modules#sunburst) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-sunburst.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-sunburst.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
@@ -345,7 +345,7 @@ chart.selected().stroke("#96a6a6", 4);
 
 #### Individual Points
 
-It is possible to configure the appearance of each point individually - use extra data fields corresponding with the methods mentioned above:
+It is possible to configure the appearance of each point individually - use extra data fields corresponding to the methods mentioned above:
 
 ```
 // create data

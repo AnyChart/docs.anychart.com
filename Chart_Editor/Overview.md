@@ -13,11 +13,11 @@ Chart Editor works only if proper AnyChart files are included.
 
 ```
 <!-- anychart -->
-<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-bundle.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-bundle.min.js"></script>
 
 <!-- anychart CSS -->
-<link href="https://cdn.anychart.com/releases/8.7.0/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
-<link href="https://cdn.anychart.com/releases/8.7.0/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
+<link href="https://cdn.anychart.com/releases/8.7.1/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
+<link href="https://cdn.anychart.com/releases/8.7.1/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
 ```
 
 ### Maps
@@ -35,22 +35,22 @@ If you want to use [themes](../Appearance_Settings/Themes), you need to include 
 
 ```
 <!-- themes -->
-<script src="https://cdn.anychart.com/releases/8.7.0/themes/coffee.min.js"></script>
-<script src="https://cdn.anychart.com/releases/8.7.0/themes/dark_blue.min.js"></script>
-<script src="https://cdn.anychart.com/releases/8.7.0/themes/dark_earth.min.js"></script>
-<script src="https://cdn.anychart.com/releases/8.7.0/themes/dark_glamour.min.js"></script>
-<script src="https://cdn.anychart.com/releases/8.7.0/themes/dark_provence.min.js"></script>
-<script src="https://cdn.anychart.com/releases/8.7.0/themes/dark_turquoise.min.js"></script>
-<script src="https://cdn.anychart.com/releases/8.7.0/themes/light_blue.min.js"></script>
-<script src="https://cdn.anychart.com/releases/8.7.0/themes/light_earth.min.js"></script>
-<script src="https://cdn.anychart.com/releases/8.7.0/themes/light_glamour.min.js"></script>
-<script src="https://cdn.anychart.com/releases/8.7.0/themes/light_provence.min.js"></script>
-<script src="https://cdn.anychart.com/releases/8.7.0/themes/light_turquoise.min.js"></script>
-<script src="https://cdn.anychart.com/releases/8.7.0/themes/monochrome.min.js"></script>
-<script src="https://cdn.anychart.com/releases/8.7.0/themes/morning.min.js"></script>
-<script src="https://cdn.anychart.com/releases/8.7.0/themes/pastel.min.js"></script>
-<script src="https://cdn.anychart.com/releases/8.7.0/themes/sea.min.js"></script>
-<script src="https://cdn.anychart.com/releases/8.7.0/themes/wines.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/themes/coffee.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/themes/dark_blue.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/themes/dark_earth.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/themes/dark_glamour.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/themes/dark_provence.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/themes/dark_turquoise.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/themes/light_blue.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/themes/light_earth.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/themes/light_glamour.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/themes/light_provence.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/themes/light_turquoise.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/themes/monochrome.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/themes/morning.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/themes/pastel.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/themes/sea.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/themes/wines.min.js"></script>
 ```
 
 ## Files
@@ -59,9 +59,9 @@ Chart Editor files to be included:
 
 ```
 <!-- chart editor CSS-->
-<link href="https://cdn.anychart.com/releases/8.7.0/css/anychart-editor.min.css" type="text/css" rel="stylesheet"></script>
+<link href="https://cdn.anychart.com/releases/8.7.1/css/anychart-editor.min.css" type="text/css" rel="stylesheet"></script>
 <!-- chart editor JS-->
-<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-editor.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-editor.min.js"></script>
 ```
 
 ## Using

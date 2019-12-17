@@ -36,11 +36,11 @@ This article explains how to create a basic Sankey diagram as well as configure 
 The Sankey diagram requires adding the [Core](../Quick_Start/Modules#core) and [Sankey Diagram](../Quick_Start/Modules#sankey_diagram) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-sankey.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-sankey.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).

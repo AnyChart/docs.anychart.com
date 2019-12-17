@@ -36,11 +36,11 @@ This article explains how to create a basic Word Tree chart as well as configure
 The Word Tree requires adding the [Core](../Quick_Start/Modules#core) and [Word Tree](../Quick_Start/Modules#word_tree) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-bundle.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-bundle.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
@@ -282,7 +282,7 @@ chart.maxFontSize(20);
 
 #### Individual Points
 
-In case of [tree data](#tree), you can configure the font of individual items - use extra data fields corresponding with the methods mentioned above.
+In case of [tree data](#tree), you can configure the font of individual items - use extra data fields corresponding to the methods mentioned above.
 
 The maximum and minimum font size cannot be set this way. Also, please note: the individual settings of an element are applied to its children as well unless they have their own settings. This is how it works:
 

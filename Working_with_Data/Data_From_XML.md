@@ -4,14 +4,14 @@
 ## Overview
 
 AnyChart JavaScript charting framework supports several ways of setting data. This article quickly demonstrates main aspects of using XML format in AnyChart component. Last sample of this article demonstrates cartesian chart with advanced settings. For the information on other ways of setting data see [Data Sets](Data_Sets) and [Supported Data Formats](Supported_Data_Formats) articles.
-  
+
 You can also load XML settings from files using [Data Adapter](./Data_Adapter/Overview) as described in [Data Adapter](./Data_Adapter/Loading_XML_File).
-  
+
 XML or Extensible Markup Language, is a markup language that defines a set of rules for encoding documents in a format which is both human-readable and machine-readable. Originally designed to meet the challenges of large-scale electronic publishing, XML is also playing an increasingly important role in the exchange of a wide variety of data on the Web and elsewhere. More information on XML can be found on [https://en.wikipedia.org/wiki/XML](https://en.wikipedia.org/wiki/XML)
 
 ## Schema
 
-XML Schema specifies a XML-based format to define the structure of XML data (visit [https://en.wikipedia.org/wiki/XML_schema](https://en.wikipedia.org/wiki/XML_schema) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. XML schema for AnyChart version {{branch-name}} is located at [https://cdn.anychart.com/schemas/{{branch-name}}/xml-schema.xsd](https://cdn.anychart.com/schemas/{{branch-name}}/xml-schema.xsd)). This file can be used to validate your own XML structure.
+XML Schema specifies a XML-based format to define the structure of XML data (visit [https://en.wikipedia.org/wiki/XML_schema](https://en.wikipedia.org/wiki/XML_schema) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. XML schema for AnyChart version 8.7.1 is located at [https://cdn.anychart.com/schemas/8.7.1/xml-schema.xsd](https://cdn.anychart.com/schemas/8.7.1/xml-schema.xsd)). This file can be used to validate your own XML structure.
 
 ## XML vs JavaScript
 
@@ -20,7 +20,7 @@ To load chart configuration in XML format you should use {api:anychart#fromXml}f
 ```
 // xml data
 var xml = '<?xml version="1.0" encoding="utf-8"?>' +
-  '<anychart xmlns="https://cdn.anychart.com/schemas/{{branch-name}}/xml-schema.xsd">' +
+  '<anychart xmlns="https://cdn.anychart.com/schemas/8.7.1/xml-schema.xsd">' +
     '<chart type="pie" container="container" title="XML Sample Pie">' +
        '<data>' +
             '<point name="Apples" value="128.14" fill="Green"/>'+
@@ -40,7 +40,7 @@ This configuration creates chart like the one below
 
 {sample}WD\_Data\_from\_XML\_01{sample}
 
-**Note:** Pie chart can have only one series of data and requires no `<series></series>` tag. 
+**Note:** Pie chart can have only one series of data and requires no `<series></series>` tag.
 
 Use {api:anychart}AnyChart API{api} to adjust any parameter of a chart. XML configuration uses the same names as methods and parameters do and it is quite easy to set any required parameter with XML data set. Also, XML uses [snakeCase](https://en.wikipedia.org/wiki/Snake_case) for names of tags and parameters and names of methods and parameters have to be transformed from [camelCase](https://en.wikipedia.org/wiki/CamelCase) to [snakeCase](https://en.wikipedia.org/wiki/Snake_case). It requires to replace every capital letter with small letter and set underscore before this letter (e.g., hatch fill can be set with JavaScript using "hatchFill" parameter and with XML using "hatch_fill" parameter). {api:anychart}AnyChart API{api} describes how every method and parameter are used. The structure is pretty much the same for  XML configuration. For instance, you can find {api:anychart#column}column(){api} method in API to create column chart.
 
@@ -53,14 +53,14 @@ The same chart can be created using XML
 ```
 anychart.fromXml(
 '<?xml version="1.0" encoding="utf-8"?>' +
-  '<anychart xmlns="https://cdn.anychart.com/schemas/{{branch-name}}/xml-schema.xsd">' +
+  '<anychart xmlns="https://cdn.anychart.com/schemas/8.7.1/xml-schema.xsd">' +
     '<chart type="column" container="container">' +
       '<series_list>'+
         '<series type="column">'+
           '<data>'+
-            '<point value="128.14"/>'+ 
-            '<point value="112.61"/>'+ 
-            '<point value="163.21"/>'+ 
+            '<point value="128.14"/>'+
+            '<point value="112.61"/>'+
+            '<point value="163.21"/>'+
             '<point value="229.98"/>'+
           '</data>'+
       '</series_list>'+
@@ -153,7 +153,7 @@ Data from XML can contain all possible settings for controlling chart grid, axis
 <y_scale inverted="true"/>
 ```
 
-Here is a sample of adjusted axes 
+Here is a sample of adjusted axes
 
 {sample}WD\_Data\_from\_XML\_05{sample}
 
@@ -187,7 +187,7 @@ As addition to the presented material, here is a table of main methods and param
 <tbody>
 <tr>
 <th width="200" style="border-top: 0; border-left: 0;"><b>JavaScript Configuration</b></th>
-<th width="200" style="border-top: 0; border-right: 0;"><b>XML Configuration</b></th>	
+<th width="200" style="border-top: 0; border-right: 0;"><b>XML Configuration</b></th>
 </tr>
 <tr>
 <td style="border-bottom: 0; border-left: 0; width: 50%;">
@@ -216,7 +216,7 @@ chart.spline(
 <td style="border-bottom: 0; border-right: 0;">
 ```xml
 <!-- set chart type -->
-<chart type="line" 
+<chart type="line"
 <!-- set chart container -->
 container="container">
 
@@ -258,7 +258,7 @@ container="container">
 <tbody>
 <tr>
 <th width="200" style="border-top: 0; border-left: 0;"><b>JavaScript Configuration</b></th>
-<th width="200" style="border-top: 0; border-right: 0;"><b>XML Configuration</b></th>	
+<th width="200" style="border-top: 0; border-right: 0;"><b>XML Configuration</b></th>
 </tr>
 <tr>
 <td style="border-bottom: 0; border-left: 0; padding: 2px; width: 50%;">
@@ -279,25 +279,25 @@ chart.title()
     .cornerType('round')
     // set corners size
     .corners(10);
-    
+
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0; padding: 2px;">
 ```xml
 <!-- title settings -->
-<title 
+<title
   <!-- set title text -->
   text="Sales Performance">
   <!-- title background -->
-  <background 
+  <background
     <!-- enable background -->
-    enabled="true" 
+    enabled="true"
     <!-- background inner color -->
-    fill="#FFD700" 
+    fill="#FFD700"
     <!-- background border -->
-    stroke="#D8D8D8" 
+    stroke="#D8D8D8"
     <!--background corners -->
-    cornerType="round" 
+    cornerType="round"
     <!-- corners size -->
     corners="10"/>
 </title>
@@ -325,7 +325,7 @@ chart.title()
 <tbody>
 <tr>
 <th width="200" style="border-top: 0; border-left: 0;"><b>JavaScript Configuration</b></th>
-<th width="200" style="border-top: 0; border-right: 0;"><b>XML Configuration</b></th>	
+<th width="200" style="border-top: 0; border-right: 0;"><b>XML Configuration</b></th>
 </tr>
 <tr>
 <td style="border-bottom: 0; border-left: 0; padding: 2px; width: 50%;">
@@ -334,9 +334,9 @@ chart.title()
 var chart = anychart.area();
 chart.container('container');
 
-// type of first series 
+// type of first series
 chart.area(
-  
+
   // data for first series
   [
     ['January', '12000'],
@@ -365,7 +365,7 @@ chart.splineArea(
 <td style="border-bottom: 0; border-right: 0; padding: 2px;">
 ```xml
 <!-- set chart type -->
-<chart type="area" 
+<chart type="area"
 container="container">
 
   <!-- type of the first series -->
@@ -380,7 +380,7 @@ container="container">
         <point x="May" value="14000"/>
       </data>
     </series>
-  
+
     <!-- type of the second series -->
     <series series_type="splineArea">
       <!-- data for the second series -->
@@ -418,7 +418,7 @@ container="container">
 <tbody>
 <tr>
 <th width="200" style="border-top: 0; border-left: 0;"><b>JavaScript Configuration</b></th>
-<th width="200" style="border-top: 0; border-right: 0;"><b>XML Configuration</b></th>	
+<th width="200" style="border-top: 0; border-right: 0;"><b>XML Configuration</b></th>
 </tr>
 <tr>
 <td style="border-bottom: 0; border-left: 0; padding: 2px; width: 50%;">
@@ -458,8 +458,8 @@ chart.yAxis(1).orientation('right')
 
 <!-- custom y scale -->
 <scales>
-  <scale type="linear" 
-    minimum="0" 
+  <scale type="linear"
+    minimum="0"
     maximum="100">
     <ticks interval="10"/>
     <minorTicks interval="2"/>
@@ -469,14 +469,14 @@ chart.yAxis(1).orientation('right')
 <!-- y axes settings -->
 <y_axes>
   <axis title="Basic Y Axis"/>
-  
-  <axis orientation="right" 
+
+  <axis orientation="right"
   scale="0">
     <title text="Extra Y Axis"/>
   </axis>
 </y_axes>
 ```
-</td>	
+</td>
 </tr>
 </tbody>
 </table>
@@ -499,7 +499,7 @@ chart.yAxis(1).orientation('right')
 <tbody>
 <tr>
 <th width="200" style="border-top: 0; border-left: 0;"><b>JavaScript Configuration</b></th>
-<th width="200" style="border-top: 0; border-right: 0;"><b>XML Configuration</b></th>	
+<th width="200" style="border-top: 0; border-right: 0;"><b>XML Configuration</b></th>
 </tr>
 <tr>
 <td style="border-bottom: 0; border-left: 0; padding: 2px; width: 50%;">
@@ -514,8 +514,8 @@ chart.rangeMarker()
     angle: -90,
     opacity: 0.5,
     keys: [
-      '.1 green', 
-      '.5 yellow', 
+      '.1 green',
+      '.5 yellow',
       '.9 red'
     ]}
   );
@@ -555,12 +555,12 @@ chart.textMarker(2)
 ```xml
   <!-- set range marker -->
   <range_axes_markers>
-    <range_axes_marker 
-      scale="1" 
-      from="0" 
+    <range_axes_marker
+      scale="1"
+      from="0"
       to="30000">
-      <fill 
-        angle="-90" 
+      <fill
+        angle="-90"
         opacity="0.5">
           <keys>
             <key><![CDATA[.1 green]]></key>
@@ -570,32 +570,32 @@ chart.textMarker(2)
       </fill>
     </range_axes_marker>
   </range_axes_markers>
-  
+
   <!-- set text marker at the top -->
   <text_axes_markers>
-    <text_axes_marker scale="1" 
-      offset_x="10" 
-      value="25000" 
-      font_size="15" 
-      text="Good" 
+    <text_axes_marker scale="1"
+      offset_x="10"
+      value="25000"
+      font_size="15"
+      text="Good"
       font_weight="600"/>
-  
+
     <!-- set text marker at the center -->
-    <text_axes_marker 
-      scale="1" 
-      offset_x="10" 
-      value="15000" 
-      text="Average" 
-      font_size="15" 
+    <text_axes_marker
+      scale="1"
+      offset_x="10"
+      value="15000"
+      text="Average"
+      font_size="15"
       font_weight="600"/>
-    
+
     <!-- set text marker at the bottom -->
-    <text_axes_marker 
-      scale="1" 
-      offset_x="10" 
-      value="5000" 
-      text="Severe" 
-      font_size="12" 
+    <text_axes_marker
+      scale="1"
+      offset_x="10"
+      value="5000"
+      text="Severe"
+      font_size="12"
       font_weight="600"/>
   </text_axes_markers>
 ```
