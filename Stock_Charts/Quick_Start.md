@@ -12,7 +12,7 @@ AnyStock requires adding the [Core](../Quick_Start/Modules#core) and [Stock](../
 ```
 <head>
 	<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js" type="text/javascript"></script>
-	<script src="https://cdn.anychart.com/releases/8.7.1/js/anystock.min.js" type="text/javascript"></script>
+	<script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-stock.min.js" type="text/javascript"></script>
 </head>
 ```
 
