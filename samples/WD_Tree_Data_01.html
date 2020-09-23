@@ -4,16 +4,16 @@
     <meta name="ac:name" content="WD Tree Data 01"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
-    
+
     <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-treemap.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-sunburst.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-gantt.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4" type="text/javascript"></script>
     <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    
+
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.7.1/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
-    
+
     <style>
         html, body {
             width: 100%;
@@ -25,7 +25,7 @@
             display: inline-block;
             margin: 10px 0 0 10px;
         }
-        .container {
+        #container {
             position: absolute;
             width: 100%;
             top: 35px;
@@ -34,19 +34,20 @@
     </style>
 </head>
 <body>
-<label><input onclick="switchChart('treemap')" type="radio" name="type" checked>Treemap</label>
-<label><input onclick="switchChart('sunburst')" type="radio" name="type">Sunburst</label>
-<label><input onclick="switchChart('gantt')" type="radio" name="type">Gantt</label>
-<div id="gantt" class="container"></div>
-<div id="sunburst" class="container"></div>
-<div id="treemap" class="container"></div>
+<label><input onclick="switchChart(treemap)" type="radio" name="type" checked>Treemap</label>
+<label><input onclick="switchChart(sunburst)" type="radio" name="type">Sunburst</label>
+<label><input onclick="switchChart(gantt)" type="radio" name="type">Gantt</label>
+<div id="container"></div>
 
 <script>
+var charts = [];
+var treemap, sunburst, gantt;
+
 anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      { 
+      {
         name: "Root",
         actualStart: Date.UTC(2018, 0, 25),
         actualEnd: Date.UTC(2018, 2, 14),
@@ -81,19 +82,26 @@ anychart.onDocumentReady(function () {
     // create a data tree
     var treeData = anychart.data.tree(data, "as-tree");
 
+    // create container for all charts
+    var stage = anychart.graphics.create('container');
+
     // create a treemap chart and set the data
     treemap = anychart.treeMap(treeData);
     // set the title
     treemap.title("Tree Data Model: Basic Sample");
     // set the container id and draw
-    treemap.container("treemap").draw();
+    treemap.container(stage).draw();
+    charts.push(treemap);
 
     // create a sunburst chart and set the data
     sunburst = anychart.sunburst(treeData);
     // set the title
     sunburst.title("Tree Data Model: Quick Start");
     // set the container id and draw
-    sunburst.container("sunburst").draw();
+    sunburst.container(stage).draw();
+    sunburst.enabled(false);
+    charts.push(sunburst);
+
 
     // create a gantt chart
     gantt = anychart.ganttProject();
@@ -102,19 +110,19 @@ anychart.onDocumentReady(function () {
     // set the title
     gantt.title("Tree Data Model: Quick Start");
     // set the container id and draw
-    gantt.container("gantt").draw();
+    gantt.container(stage).draw();
     // fit elements to the width of the timeline
     gantt.fitAll();
+    gantt.enabled(false);
+    charts.push(gantt);
 
 });
 
 // switch the chart shown
-function switchChart(container){
-    containers = document.getElementsByClassName("container");
-    for (i = 0; i < containers.length; i++) {
-        containers[i].style.display = 'none';
-    }    
-    document.getElementById(container).style.display  = 'block';
+function switchChart(chart){
+  for (var i = 0; i < charts.length; i++) {
+    charts[i].enabled(charts[i] === chart);
+  }
 }
 </script>
 </body>
