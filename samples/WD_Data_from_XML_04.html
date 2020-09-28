@@ -25,10 +25,10 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  
+
   // xml data
   var xml = '<?xml version="1.0" encoding="utf-8"?>' +
-    '<anychart xmlns="https://cdn.anychart.com/schemas/{{branch-name}}/xml-schema.xsd">' +
+    '<anychart xmlns="https://cdn.anychart.com/schemas/8.7.1/xml-schema.xsd">' +
       // set chart type and chart container
       '<chart type="polar" container="container">' +
         // series for this chart
@@ -56,10 +56,10 @@ anychart.onDocumentReady(function () {
         '<x_scale maximum="100"/>'+
       '</chart>'+
     '</anychart>';
-  
+
   // get XML data
   var chart = anychart.fromXml(xml);
-  
+
   // draw chart
   chart.draw();
 });

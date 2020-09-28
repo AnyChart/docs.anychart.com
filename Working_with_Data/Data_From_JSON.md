@@ -6,12 +6,12 @@
 AnyChart js charting library supports several ways of setting data. This article quickly demonstrates main aspects of using JSON format in AnyChart component. Last sample of this article demonstrates cartesian chart with advanced settings. For the information on other ways of setting data see [UData Sets](Data_Sets) and [Supported Data Formats](Supported_Data_Formats) articles.
 
 You can also load JSON settings from files using [Data Adapter](./Data_Adapter/Overview) as described in [Data Adapter](./Data_Adapter/Loading_JSON_File).
-  
+
 JSON or JavaScript Object Notation, is an open standard format that uses human-readable text to transmit data objects consisting of attribute-value pairs. It is used primarily to transmit data between a server and web application, as an alternative to XML. For more information visit [https://en.wikipedia.org/wiki/JSON](https://en.wikipedia.org/wiki/JSON)
 
 ## Schema
 
-JSON Schema specifies a JSON-based format to define the structure of JSON data (visit [https://en.wikipedia.org/wiki/JSON#Schema\_and\_metadata](https://en.wikipedia.org/wiki/JSON#Schema\_and\_metadata) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. AnyChart JSON schema varies from version to version. For example, JSON Schema for AnyChart version {{branch-name}} is located at [https://cdn.anychart.com/schemas/{{branch-name}}/json-schema.json](https://cdn.anychart.com/schemas/{{branch-name}}/json-schema.json). Whenever you use AnyChart JSON schema - make sure its corresponds to the version of AnyChart. 
+JSON Schema specifies a JSON-based format to define the structure of JSON data (visit [https://en.wikipedia.org/wiki/JSON#Schema\_and\_metadata](https://en.wikipedia.org/wiki/JSON#Schema\_and\_metadata) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. AnyChart JSON schema varies from version to version. For example, JSON Schema for AnyChart version 8.7.1 is located at [https://cdn.anychart.com/schemas/8.7.1/json-schema.json](https://cdn.anychart.com/schemas/8.7.1/json-schema.json). Whenever you use AnyChart JSON schema - make sure its corresponds to the version of AnyChart.
 
 ## JSON vs JavaScript
 
@@ -33,9 +33,9 @@ var json = {
     "container": "container"
   }
 };
-  
+
 var chart = anychart.fromJson(json);
-  
+
 // draw chart
 chart.draw();
 ```
@@ -46,7 +46,7 @@ This configuration creates chart like the one below
 
 **Note:** Pie chart can have only one data series, thus JSON configuration for pie chart requires no **"series"** object.
 
-JSON configuration can contain string, object, array, number, boolean and null. The variety of acceptable data formats makes the AnyChart JSON structure very similar to JavaScript configuration. To find out any required method or parameter use {api:anychart}AnyChart API{api}. API describes how every method and parameter are used. The structure is pretty much the same for JSON configuration. For example, you can find {api:anychart#column}column(){api} method in API to create column chart. 
+JSON configuration can contain string, object, array, number, boolean and null. The variety of acceptable data formats makes the AnyChart JSON structure very similar to JavaScript configuration. To find out any required method or parameter use {api:anychart}AnyChart API{api}. API describes how every method and parameter are used. The structure is pretty much the same for JSON configuration. For example, you can find {api:anychart#column}column(){api} method in API to create column chart.
 
 ```
 var chart = anychart.column([128.14, 112.61, 163.21, 229.98]);
@@ -71,8 +71,8 @@ chart.draw();
 ```
 
 As you can see, JSON format isn't limited only to setting chart type and its data, but can set container for the chart as well.
-  
-  
+
+
 Another example: Y-Scale is configured using {api:anychart.charts.Cartesian#yScale}yScale(){api} method and in JavaScript you use code like this:
 
 ```
@@ -204,7 +204,7 @@ As addition to the presented material, here is a table of main methods and param
 <tbody>
 <tr>
 <th width="200" style="border-top: 0; border-left: 0;"><b>JavaScript Configuration</b></th>
-<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Configuration</b></th>	
+<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Configuration</b></th>
 </tr>
 <tr>
 <td style="border-bottom: 0; border-left: 0;">
@@ -222,7 +222,7 @@ chart.spline(
     ['April', 11000],
     ['May', 9000]
   ]);
-  
+
   // set chart container
   chart.container('container');
 ```
@@ -231,7 +231,7 @@ chart.spline(
 ```
 // set chart type
 {chart: {type: "line",
-  
+
   // set series type
   series:[{seriesType: "spline",
     // set series data
@@ -242,7 +242,7 @@ chart.spline(
       {x: "April", value: 11000},
       {x: "May", value: 9000}
     ]}],
-  
+
   // set chart container
   container: "container"}}
 ```
@@ -269,7 +269,7 @@ chart.spline(
 <tbody>
 <tr>
 <th width="200" style="border-top: 0; border-left: 0;"><b>JavaScript Configuration</b></th>
-<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Configuration</b></th>	
+<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Configuration</b></th>
 </tr>
 <tr>
 <td style="border-bottom: 0; border-left: 0;">
@@ -334,7 +334,7 @@ chart.title()
 <tbody>
 <tr>
 <th width="200" style="border-top: 0; border-left: 0;"><b>JavaScript Configuration</b></th>
-<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Configuration</b></th>	
+<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Configuration</b></th>
 </tr>
 <tr>
 <td style="border-bottom: 0; border-left: 0;">
@@ -342,7 +342,7 @@ chart.title()
 // set chart type
 var chart = anychart.area();
 
-// type of first series 
+// type of first series
 chart.area([
   // data for first series
   ['January', '12000'],
@@ -369,7 +369,7 @@ chart.container('container');
 ```
 // set chart type
 {chart:{type: "area",
-  
+
   // type of the first series
   series:[{ seriesType: "area",
     //data for first series
@@ -389,10 +389,10 @@ chart.container('container');
       {x: "April", value: 11000},
       {x: "May", value: 9000}]
   }],
-  
+
   container: "container"}}
 ```
-</td>	
+</td>
 </tr>
 </tbody>
 </table>
@@ -415,7 +415,7 @@ chart.container('container');
 <tbody>
 <tr>
 <th width="200" style="border-top: 0; border-left: 0;"><b>JavaScript Configuration</b></th>
-<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Configuration</b></th>	
+<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Configuration</b></th>
 </tr>
 <tr>
 <td style="border-bottom: 0; border-left: 0;">
@@ -450,20 +450,20 @@ chart.yAxis(1)
 <td style="border-bottom: 0; border-right: 0;">
 ```
   // set interval of default y scale
-  yScale: {ticks: 
+  yScale: {ticks:
     {interval: 100000}},
-  
+
   // settings for custom y scale
   scales: [ {}, {},
-    {                            
-    type: "linear",              
-    minimum: 0,                  
-    maximum: 100,                
-    ticks: {                     
-      interval: 10},             
+    {
+    type: "linear",
+    minimum: 0,
+    maximum: 100,
+    ticks: {
+      interval: 10},
     minorTicks: {
       interval: 2} }],
-  
+
   // y axes settings
   yAxes: [{
     title: "Basic Y Axis"
@@ -475,7 +475,7 @@ chart.yAxis(1)
       minorTicks: {
         enabled: true} }],
 ```
-</td>	
+</td>
 </tr>
 </tbody>
 </table>
@@ -498,7 +498,7 @@ chart.yAxis(1)
 <tbody>
 <tr>
 <th width="200" style="border-top: 0; border-left: 0;"><b>JavaScript Configuration</b></th>
-<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Configuration</b></th>	
+<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Configuration</b></th>
 </tr>
 <tr>
 <td style="border-bottom: 0; border-left: 0;">
@@ -510,8 +510,8 @@ chart.rangeMarker()
   .to(30000)
   .fill({
     keys: [
-      '.1 green', 
-      '.5 yellow', 
+      '.1 green',
+      '.5 yellow',
       '.9 red'
     ],
     angle: -90,
@@ -554,15 +554,15 @@ chart.textMarker(2)
     from: 0,
     to: 30000,
     fill: {
-      keys: [ 
-        ".1 green", 
-        ".5 yellow", 
+      keys: [
+        ".1 green",
+        ".5 yellow",
         ".9 red"
       ],
       angle: -90,
       opacity: 0.5
     }}],
-  
+
   // set text marker at the top
   "textAxesMarkers": [{
       "scale": 1,
@@ -571,7 +571,7 @@ chart.textMarker(2)
       "fontSize": 15,
       "text": "Good",
       "fontWeight": 600},
-      
+
     // set text marker at the center
     {
       "scale": 1,
@@ -580,7 +580,7 @@ chart.textMarker(2)
       "text": "Average",
       "fontSize": 15,
       "fontWeight": 600},
-      
+
     // set text marker at the bottom
     {
       "scale": 1,
@@ -590,7 +590,7 @@ chart.textMarker(2)
       "fontSize": 12,
       "fontWeight": 600}],
 ```
-</td>	
+</td>
 </tr>
 </tbody>
 </table>

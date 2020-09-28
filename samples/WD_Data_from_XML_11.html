@@ -24,10 +24,10 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  
+
   // xml data                                               // JS equivalent
   var xml = '<?xml version="1.0" encoding="utf-8"?>' +
-    '<anychart xmlns="https://cdn.anychart.com/schemas/{{branch-name}}/xml-schema.xsd">' +
+    '<anychart xmlns="https://cdn.anychart.com/schemas/8.7.1/xml-schema.xsd">' +
       // set chart type
       '<chart type="line" '+                                // var chart = anychart.lineChart();
       'container="container">'+                             // chart.container("container");
@@ -41,8 +41,8 @@ anychart.onDocumentReady(function () {
       'angle="-90" '+                                       //     angle: -90,
       'opacity="0.5">'+                                     //     opacity: 0.5,
         '<keys>'+                                           //     keys: [
-          '<key><![CDATA[.1 green]]></key>'+                //       ".1 green", 
-          '<key><![CDATA[.5 yellow]]></key>'+               //       ".5 yellow", 
+          '<key><![CDATA[.1 green]]></key>'+                //       ".1 green",
+          '<key><![CDATA[.5 yellow]]></key>'+               //       ".5 yellow",
           '<key><![CDATA[.9 red]]></key></keys>'+           //       ".9 red"
       '</fill></range_axes_marker></range_axes_markers>'+   //     ]});
 
@@ -90,10 +90,10 @@ anychart.onDocumentReady(function () {
       '</axis><x_axes>'+                                  //     .enabled(false);
       '<y_axes title="Sales"/></chart>'+                  // chart.yAxis().title().text("Sales");
     '</anychart>';
-  
+
   // get XML data
   var chart = anychart.fromXml(xml);
-  
+
   // draw chart
   chart.draw();
 });

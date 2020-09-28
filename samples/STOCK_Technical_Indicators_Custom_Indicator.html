@@ -4,7 +4,7 @@
     <meta name="ac:name" content="STOCK Technical Indicators Custom Indicator"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
-    
+
     <script src="https://cdn.anychart.com/csv-data/csco-daily.js"></script>
     <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-core.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-stock.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
@@ -53,10 +53,10 @@ var computer = dataTable.createComputer(mapping);
 // set computer output field
 computer.addOutputField('myValue', 'myColumn');
 
-// set calculation function to produce values with random increment
+// set calculation function to produce values with pseudo-random increment
 computer.setCalculationFunction(function(row) {
     var value = row.get('value');
-    var myValue = value + Math.floor((Math.random() * 100) + 1);
+    var myValue = value + Math.floor((Math.abs(Math.sin(value)) * 100) + 1);
     row.set('myValue', myValue);
 });
 
