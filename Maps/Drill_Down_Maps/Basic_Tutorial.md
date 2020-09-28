@@ -7,8 +7,8 @@ First of all, you need the Anymap component, which can be found on the [download
 
 ```
 <head>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js" type="text/javascript"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-map.min.js" type="text/javascript"></script>
+<script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-core.min.js" type="text/javascript"></script>
+<script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-map.min.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -24,9 +24,9 @@ Note that all maps that will be used should be referenced like in this code samp
 
 ```
 <head>
-<script src="https://cdn.anychart.com/geodata/2.0.0/countries/united_states_of_america/united_states_of_america.js" type="text/javascript"></script>
-<script src="https://cdn.anychart.com/geodata/2.0.0/usa_states/florida/florida.js" type="text/javascript"></script>
-<script src="https://cdn.anychart.com/geodata/2.0.0/usa_states/texas/texas.js" type="text/javascript"></script>
+<script src="https://cdn.anychart.com/geodata/2.1.0/countries/united_states_of_america/united_states_of_america.js" type="text/javascript"></script>
+<script src="https://cdn.anychart.com/geodata/2.1.0/usa_states/florida/florida.js" type="text/javascript"></script>
+<script src="https://cdn.anychart.com/geodata/2.1.0/usa_states/texas/texas.js" type="text/javascript"></script>
 </head>
 ```
 

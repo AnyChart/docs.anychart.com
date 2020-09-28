@@ -7,14 +7,14 @@ This article demonstrates the steps required to create a basic Resource Gantt ch
 
 ## Modules
 
-AnyGantt requires adding two [modules](../Quick_Start/Modules) – [Core](../Quick_Start/Modules#core) and [Gantt](../Quick_Start/Modules#gantt). Place a link to two JavaScript files in the `<head>` section of your web page.
+AnyGantt requires adding two [modules](../Quick_Start/Modules) - [Core](../Quick_Start/Modules#core) and [Gantt](../Quick_Start/Modules#gantt). Place a link to two JavaScript files in the `<head>` section of your web page.
 
 **Note:** These files can be downloaded from the [AnyChart download page](../Quick_Start/Downloading_AnyChart).
 
 ```
 <head>
-  <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js" type="text/javascript"></script>
-  <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-core.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-gantt.min.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -120,8 +120,8 @@ Here is the full source code of the sample. You can copy the code to a file on y
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-gantt.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4" type="text/javascript"></script>
   </head>
   <body>
     <div id="container"></div>

@@ -13,13 +13,13 @@ Each level of the header represents a time unit. Levels are shown in a specific 
 
 By default, there are three levels, each of them representing a time unit. The exact set of units depends on your data. To change the number of levels and show other time units, you should adjust the scale of the timeline, as explained in [Scale: Levels](Scale#levels).
 
-Other settings can be applied either to [all levels](#all_levels) of the header or to  an [individual level](#individual_levels) – see the sections below to learn more.
+Other settings can be applied either to [all levels](#all_levels) of the header or to  an [individual level](#individual_levels) - see the sections below to learn more.
 
 ### All Levels
 
 To configure all levels, access the header by combining {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#header}header(){api}.
 
-Then use methods of {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api} – for example, {api:anychart.core.gantt.TimeLineHeader#enabled}enabled(){api}, which allows enabling or disabling the header.
+Then use methods of {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api} - for example, {api:anychart.core.gantt.TimeLineHeader#enabled}enabled(){api}, which allows enabling or disabling the header.
 
 In the sample below, the background stroke is set for all levels (other appearance settings are shown in [Appearance](#appearance)):
 
@@ -37,7 +37,7 @@ To access an individual level, combine {api:anychart.charts.Gantt#getTimeline}ge
 
 **Note:** Levels are numbered automatically from the level with the smallest time unit to the level with the largest one. The default levels are assigned the indexes 0, 1, 2.
 
-Levels are defined as instances of {api:anychart.core.gantt.TimeLineHeader.LevelWrapper}anychart.core.gantt.TimeLineHeader.LevelWrapper{api}. To configure them, use methods of this class – for example, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#enabled}enabled(){api}, which allows enabling or disabling a level.
+Levels are defined as instances of {api:anychart.core.gantt.TimeLineHeader.LevelWrapper}anychart.core.gantt.TimeLineHeader.LevelWrapper{api}. To configure them, use methods of this class - for example, {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#enabled}enabled(){api}, which allows enabling or disabling a level.
 
 In this sample, the background stroke is set only for the first level (other appearance settings are shown in [Appearance](#appearance)):
 
@@ -56,7 +56,7 @@ To configure the [appearance](../../Appearance_Settings) of [all levels](#all_le
 * {api:anychart.core.gantt.TimeLineHeader#background}background(){api}, {api:anychart.core.gantt.TimeLineHeader#fill}fill(){api} and {api:anychart.core.gantt.TimeLineHeader#stroke}stroke(){api} to set the background, fill, and stroke
 * {api:anychart.core.gantt.TimeLineHeader#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader#fontWeight}fontWeight(){api}, {api:anychart.core.gantt.TimeLineHeader#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader#fontFamily}fontFamily(){api}, etc. to configure the font
 
-**Note:** You can also set the fill of the data grid header – see [Data Grid: Apperance](../Data_Grid/Appearance).
+**Note:** You can also set the fill of the data grid header - see [Data Grid: Apperance](../Data_Grid/Appearance).
 
 Here is a Gantt chart with the appearance of the timeline header adjusted:
 
@@ -102,29 +102,29 @@ Combine these methods either with [tokens](../../Common_Settings/Text_Formatters
 
 The available [tokens](../../Common_Settings/Text_Formatters#string_tokens) include:
 
-* `{%value}` – the name of the column
-* `{%endValue}` – the name of the next column
-* `{%tickValue}` – the start timestamp of the column
-* `{%end}` – the start timestamp of the next column
+* `{%value}` - the name of the column
+* `{%endValue}` - the name of the next column
+* `{%tickValue}` - the start timestamp of the column
+* `{%end}` - the start timestamp of the next column
 
 The following sample shows how to format the text of **all levels** simultaneously:
 
 ```
 // configure the timeline header
 var header = chart.getTimeline().header();
-header.format("{%value}–{%endValue}");
+header.format("{%value}-{%endValue}");
 ```
 
 {sample :height 220}GANTT\_Timeline\_Header\_05{sample}
 
-This sample shows how to adjust **individual levels** – each of the three default levels has its own format:
+This sample shows how to adjust **individual levels** - each of the three default levels has its own format:
 
 ```
 // configure the levels of the timeline header
 var header = chart.getTimeline().header();
 header.level(0).format("{%tickValue}{dateTimeFormat:dd MMM}");
 header.level(1).format("{%value}");
-header.level(2).format("{%value}–{%endValue}");
+header.level(2).format("{%value}-{%endValue}");
 ```
 
 {sample :height 220}GANTT\_Timeline\_Header\_06{sample}
@@ -133,10 +133,10 @@ header.level(2).format("{%value}–{%endValue}");
 
 In [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions), the following fields are available:
 
-* `value` – the name of the column
-* `endValue` – the name of the next column
-* `tickValue` – the start timestamp of the column
-* `end` – the start timestamp of the next column
+* `value` - the name of the column
+* `endValue` - the name of the next column
+* `tickValue` - the start timestamp of the column
+* `end` - the start timestamp of the next column
 
 The sample below shows how to format the text of **all levels** at once:
 
@@ -151,7 +151,7 @@ header.format(function() {
 
 {sample :height 220}GANTT\_Timeline\_Header\_07{sample}
 
-In this sample an **individual level** is adjusted – the one representing months:
+In this sample an **individual level** is adjusted - the one representing months:
 
 ```
 // configure the first level of the timeline header

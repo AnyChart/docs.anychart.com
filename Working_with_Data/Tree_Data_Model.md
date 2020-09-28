@@ -199,9 +199,9 @@ var chart = anychart.treeMap(treeData);
 
 ### Mapping
 
-**1.** To rename the fields required by the tree data model – `children`, `parent`, `id` – pass a mapping object to the {api:anychart.data#tree}anychart.data.tree(){api} constructor when you create a data tree.
+**1.** To rename the fields required by the tree data model - `children`, `parent`, `id` - pass a mapping object to the {api:anychart.data#tree}anychart.data.tree(){api} constructor when you create a data tree.
 
-If you set data [as a tree](#as_tree) or [as a table](#as_table), pass your mapping as the fourth parameter. Please note that the third one should be set to `null` – it is used only with [CSV data](#csv_string) to specify CSV settings. A mapping for CSV data should be passed as the second parameter.
+If you set data [as a tree](#as_tree) or [as a table](#as_table), pass your mapping as the fourth parameter. Please note that the third one should be set to `null` - it is used only with [CSV data](#csv_string) to specify CSV settings. A mapping for CSV data should be passed as the second parameter.
 
 After that, pass the data tree to a chart constructor or to the **data()** method of the chart.
 
@@ -299,10 +299,10 @@ Data items in AnyChart are defined as instances of the {api:anychart.data.Tree.D
 
 To access items at the root level, use the following methods of {api:anychart.data.Tree}anychart.data.Tree{api}:
 
-* {api:anychart.data.Tree#getChildAt}getChildAt(){api} – returns a root item with a given index
-* {api:anychart.data.Tree#getChildren}getChildren(){api} – returns an array of root items
-* {api:anychart.data.Tree#numChildren}numChildren(){api} – returns the number of roots
-* {api:anychart.data.Tree#indexOfChild}indexOfChild(){api} – returns the index of a given item (or -1 if it is a root)
+* {api:anychart.data.Tree#getChildAt}getChildAt(){api} - returns a root item with a given index
+* {api:anychart.data.Tree#getChildren}getChildren(){api} - returns an array of root items
+* {api:anychart.data.Tree#numChildren}numChildren(){api} - returns the number of roots
+* {api:anychart.data.Tree#indexOfChild}indexOfChild(){api} - returns the index of a given item (or -1 if it is a root)
 
 To go deeper, use methods of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}:
 
@@ -517,7 +517,7 @@ var items = treeData.searchItems("employee", "JohnDoe", comparisonFunction);
 
 The {api:anychart.data.Tree#filter}filter(){api} method returns an array of data items. It is always called with a filter function as a parameter, which accepts a data item and returns `true` or `false`.
 
-Use this method to set advanced search conditions – for example, to find all elements greater or less than a given value or to compare two data fields, like in the sample below.
+Use this method to set advanced search conditions - for example, to find all elements greater or less than a given value or to compare two data fields, like in the sample below.
 
 In this sample a filter function is used to find items with duration greater than a given one, duration being calculated from two data fields (the names of these items are displayed in the title of the chart, and their nodes are colored):
 

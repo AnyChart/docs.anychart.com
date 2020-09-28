@@ -39,11 +39,11 @@ This article explains how to create a basic Timeline chart as well as configure 
 The Timeline chart requires adding the [Core](../Quick_Start/Modules#core) and [Timeline Chart](../Quick_Start/Modules#timeline) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-timeline.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-timeline.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
@@ -183,7 +183,7 @@ Range series are used to show events that have duration.
 
 To create a range series, call the {api:anychart.charts.Timeline#range}range(){api} method. In your [data](#data), add the `name`, `start`, and `end` fields.
 
-You can adjust the height, direction, and appearance of all ranges in a series or of an individual range, as explained in the subsections below. Also, you can configure their labels and tooltips – see the [Labels and Tooltips](#labels_and_tooltips) section.
+You can adjust the height, direction, and appearance of all ranges in a series or of an individual range, as explained in the subsections below. Also, you can configure their labels and tooltips - see the [Labels and Tooltips](#labels_and_tooltips) section.
 
 #### All Ranges
 
@@ -287,7 +287,7 @@ Moment series are used to show events with zero.
 
 To create a moment series, call the {api:anychart.charts.Timeline#moment}moment(){api} method. In your [data](#data), use the `y` and `x` fields.
 
-You can adjust the direction and appearance of all ranges in a series or of an individual range, as explained in the subsections below. Also, you can configure their labels and tooltips – see the [Labels and Tooltips](#labels_and_tooltips) section.
+You can adjust the direction and appearance of all ranges in a series or of an individual range, as explained in the subsections below. Also, you can configure their labels and tooltips - see the [Labels and Tooltips](#labels_and_tooltips) section.
 
 #### All Moments
 
@@ -307,7 +307,7 @@ Combine them with methods from {api:anychart.core.StateSettings}anychart.core.St
 
 To adjust markers, use the following methods:
 
-* {api:anychart.core.ui.MarkersFactory#type}type(){api} to set the type – {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}
+* {api:anychart.core.ui.MarkersFactory#type}type(){api} to set the type - {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}
 * {api:anychart.core.ui.MarkersFactory#size}size(){api} to set the size
 * {api:anychart.core.ui.MarkersFactory#fill}fill(){api} to set the fill
 * {api:anychart.core.ui.MarkersFactory#stroke}stroke(){api} to set the stroke
@@ -421,7 +421,7 @@ To configure the [appearance](../Appearance_Settings) and other settings of the 
 * {api:anychart.core.axes.Timeline#stroke}stroke(){api} to set the stroke
 * {api:anychart.core.axes.Timeline#ticks}ticks(){api} + {api:anychart.core.axes.TimelineTicks#stroke}stroke(){api} to adjust the stroke of ticks
 
-In addition, you can adjust the labels displayed on the axis – see the [Labels and Tooltips](#labels_and_tooltips) section.
+In addition, you can adjust the labels displayed on the axis - see the [Labels and Tooltips](#labels_and_tooltips) section.
 
 **Note:** The way how axis looks is also affected by settings of the [scale](#scale).
 
@@ -642,20 +642,20 @@ It is also possible to separately adjust labels and tooltips of the range and mo
 
 Tokens for the [range series](#range_series):
 
-* `{%name}` – the name of the range
-* `{%seriesName}` – the name of the series
-* `{%start}` – the start date (Unix timestamp)
-* `{%end}` – the end date (Unix timestamp)
+* `{%name}` - the name of the range
+* `{%seriesName}` - the name of the series
+* `{%start}` - the start date (Unix timestamp)
+* `{%end}` - the end date (Unix timestamp)
 
 Tokens for the [moment series](#moment_series):
 
-* `{%seriesName}` – the name of the series
-* `{%y}` – the name of the moment
-* `{%x}` – the date (Unix timestamp)
+* `{%seriesName}` - the name of the series
+* `{%y}` - the name of the moment
+* `{%x}` - the date (Unix timestamp)
 
 Tokens for the [axis](#axis):
 
-* `{%tickValue}` – the tick value (Unix timestamp)
+* `{%tickValue}` - the tick value (Unix timestamp)
 
 Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
@@ -666,7 +666,7 @@ The following sample shows how to configure labels and tooltips and work with to
 ```
 // format labels of range series
 var rangeLabelFormat =
-  "{%start}{dateTimeFormat:MMM} – {%end}{dateTimeFormat:MMM}";
+  "{%start}{dateTimeFormat:MMM} - {%end}{dateTimeFormat:MMM}";
 rangeSeries1.labels().format(rangeLabelFormat);
 rangeSeries2.labels().format(rangeLabelFormat);
 
@@ -698,7 +698,7 @@ chart.axis().labels().format(
 var rangeTooltipFormat =
   "<span style='font-weight:600;font-size:12pt'>" +
   "{%name}</span><br><br>Dates: " +
-  "{%start}{dateTimeFormat:dd MMM} – " +
+  "{%start}{dateTimeFormat:dd MMM} - " +
   "{%end}{dateTimeFormat:dd MMM}" +
   "<br>Group: {%seriesName}<br><br>Manager: {%manager}";
 rangeSeries1.tooltip().useHtml(true);
@@ -735,19 +735,19 @@ To configure labels and tooltips, you can use [formatting functions](../Common_S
 
 Function fields for the [range series](#range_series):
 
-* `seriesName` – the name of the series
-* `start` – the start date
-* `end` – the end date
+* `seriesName` - the name of the series
+* `start` - the start date
+* `end` - the end date
 
 Function fields for the [moment series](#moment_series):
 
-* `value` – the name of the moment
-* `seriesName` – the name of the series
-* `x` – the date (Unix timestamp)
+* `value` - the name of the moment
+* `seriesName` - the name of the series
+* `x` - the date (Unix timestamp)
 
 Function fields for the [axis](#axis):
 
-* `tickValue` – the tick value (Unix timestamp)
+* `tickValue` - the tick value (Unix timestamp)
 
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 
@@ -800,7 +800,7 @@ function rangeTooltipFormat() {
   var end = anychart.format.dateTime(this.end, "dd MMM");
   return "<span style='font-weight:600;font-size:12pt'>" + 
           this.getData("name").toUpperCase() + "</span>" +
-          "<br><br>Dates: " + start + " – " + end + 
+          "<br><br>Dates: " + start + " - " + end + 
           "<br>Duration: " + duration + " days" +
           "<br>Group: " + this.seriesName +
           "<br><br>Manager: " + this.getData("manager");  
@@ -874,7 +874,7 @@ chart.axis().labels().format(
 
 #### Zoom Levels
 
-It is possible to zoom the Timeline chart in and out – for example, with the help of the mouse wheel. See the [Navigation](#navigation) and [Behavior](#behavior) sections to learn more. (Please note that in all previous samples zooming is disabled.)
+It is possible to zoom the Timeline chart in and out - for example, with the help of the mouse wheel. See the [Navigation](#navigation) and [Behavior](#behavior) sections to learn more. (Please note that in all previous samples zooming is disabled.)
 
 You can specify time units that are displayed by the [axis](#axis) on each zoom level as well as in the default state. Combine {api:anychart.charts.Timeline#scale}scale(){api} with {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api}.
 
@@ -906,7 +906,7 @@ The available units can be found in {api:anychart.enums.Interval}anychart.enums.
 * `"semester"`
 * `"year"`
 
-In the sample below, you can zoom the chart with the mouse wheel. There are three zoom levels, the week, the month, and the quarter – the latter shown in the default state.
+In the sample below, you can zoom the chart with the mouse wheel. There are three zoom levels, the week, the month, and the quarter - the latter shown in the default state.
 
 ```
 chart.scale().zoomLevels([
@@ -922,7 +922,7 @@ chart.scale().zoomLevels([
 
 ### Navigation
 
-By default, you can navigate Timeline charts with the help of the mouse – see the [Behavior](#behavior) section. Also, you can use special methods, Zoom Control Panel, and the scroller, as shown in the subsections below.
+By default, you can navigate Timeline charts with the help of the mouse - see the [Behavior](#behavior) section. Also, you can use special methods, Zoom Control Panel, and the scroller, as shown in the subsections below.
 
 **Note:** The way how zooming works depends on settings of the scale. Read [Scale: Zoom Levels](#zoom_levels) to learn more.
 
@@ -977,17 +977,17 @@ The [Zoom Control Panel](../Common_Settings/UI_Controls/Zoom_Controls) is an HTM
 It requires adding the [Common UI](../Quick_Start/Modules#common_ui) module:
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-ui.min.js"></script>
 ```
 
 ```
-<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4"/> 
+<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.9.0/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4"/> 
 ```
 
 Also, you should reference the `anychart-ui.min.css` and `anychart-font.min.css` files:
 
 ```
-<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.9.0/fonts/css/anychart-font.min.css"/>
 ```
 
 Then combine the {api:anychart.ui#zoom}anychart.ui.zoom(){api} method with {api:anychart.ui.Zoom#target}target(){api} and {api:anychart.ui.Zoom#render}render(){api} to create the panel:

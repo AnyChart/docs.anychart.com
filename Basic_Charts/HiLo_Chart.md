@@ -3,7 +3,7 @@
 
 ## Overview
 
-A high-low (HiLo) chart is a chart type mostly used to illustrate movements in the price of a financial instrument over time. Each vertical line on the chart shows the price range (the highest and lowest prices) over one unit of time – e.g., one day or one hour. So, the HiLo chart looks like the [OHLC chart](OHLC_Chart), but does not have tick marks indicating the opening and closing prices.
+A high-low (HiLo) chart is a chart type mostly used to illustrate movements in the price of a financial instrument over time. Each vertical line on the chart shows the price range (the highest and lowest prices) over one unit of time - e.g., one day or one hour. So, the HiLo chart looks like the [OHLC chart](OHLC_Chart), but does not have tick marks indicating the opening and closing prices.
 
 HiLo is a series type that is predominantly used for demonstrating the stock market data, due to its specifics. So AnyChart HiLo series are also available in AnyStock - see the [HiLo series in AnyStock](../Stock_Charts/Series/HiLo) article to learn more.
 
@@ -45,17 +45,17 @@ This article explains how to create a basic HiLo chart as well as configure sett
 The HiLo chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-cartesian.min.js"></script>
 ```
 
 Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-base.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).

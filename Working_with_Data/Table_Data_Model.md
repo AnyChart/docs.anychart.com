@@ -348,7 +348,7 @@ selectable.select("2002-01-01", "2006-01-01");
 
 Also, sometimes the {api:anychart.data.TableSelectable#selectAll}selectAll(){api} method, allowing you to select all dates, might be helpful. Please note that both methods return instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
 
-You can call {api:anychart.data.TableSelectable#select}select(){api} and {api:anychart.data.TableSelectable#selectAll}selectAll(){api} with two optional parameters for **grouping the selected data**, like in the second sample in the [Iterating](#iterating) section. One of these parameters sets the time interval – for example, a day, a month, a year, etc. (see {api:anychart.enums.Interval}anychart.enums.Interval{api}), and the other sets the number of intervals:
+You can call {api:anychart.data.TableSelectable#select}select(){api} and {api:anychart.data.TableSelectable#selectAll}selectAll(){api} with two optional parameters for **grouping the selected data**, like in the second sample in the [Iterating](#iterating) section. One of these parameters sets the time interval - for example, a day, a month, a year, etc. (see {api:anychart.enums.Interval}anychart.enums.Interval{api}), and the other sets the number of intervals:
 
 ```
 selectable.select("2002-01-01", "2006-01-01", "year", 2);

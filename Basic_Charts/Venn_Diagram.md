@@ -39,11 +39,11 @@ This article explains how to create a basic Venn (or Euler) diagram as well as c
 The Venn diagram requires adding the [Core](../Quick_Start/Modules#core) and [Venn Diagram](../Quick_Start/Modules#venn_diagram) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-venn.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-venn.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).

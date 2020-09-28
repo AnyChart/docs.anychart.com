@@ -189,7 +189,7 @@ chart.data(treeData);
 
 ### inputLocale()
 
-When you use [strings](#string) to set dates, the default input [locale](../Common_Settings/Localization) is automatically applied – [en-us](https://cdn.anychart.com/locale/2.0.0/en-us.js). If necessary, you can set any other locale listed in the Locales section on [AnyChart CDN](https://cdn.anychart.com/).
+When you use [strings](#string) to set dates, the default input [locale](../Common_Settings/Localization) is automatically applied - [en-us](https://cdn.anychart.com/locale/2.0.0/en-us.js). If necessary, you can set any other locale listed in the Locales section on [AnyChart CDN](https://cdn.anychart.com/).
 
 In the head section of your web page, place a link to the locale on your server or on [AnyChart CDN](https://cdn.anychart.com/):
 
@@ -249,7 +249,7 @@ chart.data(treeData);
 
 The default output **date/time**, **date**, and **time** formats affect the way how dates in various parts of the chart are [formatted](#format\(\)).
 
-These formats are determined by the [output locale](#outputlocale\(\)) you use – you can find them in the `dateTimeLocale` field of the locale. For example, here is how dates are formatted when the default [en-us](https://cdn.anychart.com/locale/2.0.0/en-us.js) locale is applied:
+These formats are determined by the [output locale](#outputlocale\(\)) you use - you can find them in the `dateTimeLocale` field of the locale. For example, here is how dates are formatted when the default [en-us](https://cdn.anychart.com/locale/2.0.0/en-us.js) locale is applied:
 
 * `dateTimeFormat`: `'y MMM d \'at\' HH:mm:ss'`
 * `dateFormat`: `'y MMM d'`
@@ -266,7 +266,7 @@ To customize a format, pass a string with the [date/time pattern](../Common_Sett
 anychart.format.outputDateTimeFormat("d MMMM");
 ```
 
-The following sample shows the output date/time format of the default locale works – for example, it affects tooltips. Also, please note that the output format is not affected by the input one.
+The following sample shows the output date/time format of the default locale works - for example, it affects tooltips. Also, please note that the output format is not affected by the input one.
 
 ```
 // create data
@@ -384,9 +384,9 @@ You can format text by combining {api:?entry=format}format(){api} with [tokens](
 
 Here are some of the tokens that represent dates:
 
-* Project labels & tooltips – `{%actualStart}`, `{%actualEnd}`, `{%baselineStart}`, `{%baselineEnd}`
-* Resource labels & tooltips – `{%start}`, `{%end}`
-* Project & Resource header – `{%tickValue}`, `{%end}`
+* Project labels & tooltips - `{%actualStart}`, `{%actualEnd}`, `{%baselineStart}`, `{%baselineEnd}`
+* Resource labels & tooltips - `{%start}`, `{%end}`
+* Project & Resource header - `{%tickValue}`, `{%end}`
 
 To format a date, add the `dateTimeFormat` [formatting parameter](../Common_Settings/Text_Formatters#formatting_parameters) after a token and specify the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax). This parameter is optional: if it is not set, the date are formatted according to the [output date/time format](#outputdatetimeformat\(\)).
 
@@ -395,7 +395,7 @@ In this sample, tokens are used to display and format dates in the second data g
 ```
 // set the text of the second data grid column
 chart.dataGrid().column(1).labels().format(
-  "{%actualStart}{dateTimeFormat:dd MMM} – {%actualEnd}{dateTimeFormat:d MMM}"
+  "{%actualStart}{dateTimeFormat:dd MMM} - {%actualEnd}{dateTimeFormat:d MMM}"
 );
 ```
 
@@ -409,7 +409,7 @@ anychart.format.outputLocale("fr-fr");
 
 // set the text of the second data grid column
 chart.dataGrid().column(1).labels().format(
-  "{%actualStart}{dateTimeFormat:dd MMM} – {%actualEnd}{dateTimeFormat:d MMM}"
+  "{%actualStart}{dateTimeFormat:dd MMM} - {%actualEnd}{dateTimeFormat:d MMM}"
 );
 ```
 
@@ -421,9 +421,9 @@ You can format text by combining {api:?entry=format}format(){api} with [formatti
 
 In these functions, a number of context fields is available that represent dates, for example:
 
-* Project labels & tooltips– `actualStart`, `actualEnd`, `baselineStart`, `baselineEnd`
-* Resource labels & tooltips – `start`, `end`
-* Project & Resource header – `tickValue`, `end`
+* Project labels & tooltips- `actualStart`, `actualEnd`, `baselineStart`, `baselineEnd`
+* Resource labels & tooltips - `start`, `end`
+* Project & Resource header - `tickValue`, `end`
 
 These fields contain dates represented as [Unix timestamps](https://en.wikipedia.org/wiki/Unix_time).
 
@@ -438,7 +438,7 @@ column_2.labels().format(function() {
   var start = anychart.format.dateTime(this.actualStart, "dd MMM");
   var end = anychart.format.dateTime(this.actualEnd, "dd MMM");
   return "<span style='color:#64b5f6'>" + start +
-         "</span> – <span style='color:#ffa000'>" + end + "</span>";
+         "</span> - <span style='color:#ffa000'>" + end + "</span>";
 });
 ```
 

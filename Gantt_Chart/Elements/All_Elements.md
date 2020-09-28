@@ -3,7 +3,7 @@
 
 You can access almost all elements of a **Project chart** at once: [tasks](Project_Chart#tasks_\(actual\)) of all types, [baselines](Project_Chart#baselines_\(planned\)), and [progress bars](Project_Chart#progress_bars) (but not [connectors](Project_Chart#connectors) and [markers](Markers)). They are defined as instances of the {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api} class.
 
-The same is true for the **Resource chart**, but it makes little difference since only two types of elements are supported – [periods](Resource_Chart#periods) and [connectors](Resource_Chart#connectors).
+The same is true for the **Resource chart**, but it makes little difference since only two types of elements are supported - [periods](Resource_Chart#periods) and [connectors](Resource_Chart#connectors).
 
 To configure elements, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#elements}elements(){api} with the following methods:
 

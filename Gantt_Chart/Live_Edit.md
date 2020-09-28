@@ -11,7 +11,7 @@ To learn more, see the sections below. They demonstrate the [default behavior](#
 
 ## Default Behavior
 
-This section describes the default behavior of the chart in the Live Edit mode and lists the events triggered by users' actions. By handling events, you can change the default behavior – see the [Events](Events) article to learn more.
+This section describes the default behavior of the chart in the Live Edit mode and lists the events triggered by users' actions. By handling events, you can change the default behavior - see the [Events](Events) article to learn more.
 
 Please keep in mind that in addition to the special events mentioned below, all Live Edit interactions (as well as any interactions with Gantt charts) trigger [row events](Events#rows).
 
@@ -108,7 +108,7 @@ Below, there are two samples, one with a [Project](Project_Chart) chart and anot
 
 ## Settings
 
-It is possible to adjust the appearance and other settings of the chart in the Live Edit mode. You can change the way how [rows](#rows) and [elements](#elements) are colored when they are being dragged by users. Also, you can configure [controls](#controls) – duration and connector thumbs on elements and sliders on progress bars.
+It is possible to adjust the appearance and other settings of the chart in the Live Edit mode. You can change the way how [rows](#rows) and [elements](#elements) are colored when they are being dragged by users. Also, you can configure [controls](#controls) - duration and connector thumbs on elements and sliders on progress bars.
 
 To access these settings, combine the {api:?entry=edit}edit(){api} method of the chart / [data grid](Data_Grid) / [timeline](Timeline) / [element](Elements) with methods of the classes listed below:
 
@@ -181,7 +181,7 @@ timeline.connectors().previewStroke("#dd2c00", 2, "5 2", "round");
 
 ### Controls
 
-You can configure controls – duration and connector thumbs on elements and sliders on progress bars.
+You can configure controls - duration and connector thumbs on elements and sliders on progress bars.
 
 First, access an [element](Elements) type (except for connectors) or [all elements](Elements/All_Elements).
 

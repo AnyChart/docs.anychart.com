@@ -5,7 +5,7 @@
 
 The Resource Gantt chart, defined as an instance of {api:anychart.charts.Gantt}anychart.charts.Gantt{api} class, is used to schedule resources (e.g., equipment or employees).
 
-Each resource is shown over periods of time, which are visualized as horizontal bars – the width of bars represents the duration. It is also possible to show hierarchical relationships between resources.
+Each resource is shown over periods of time, which are visualized as horizontal bars - the width of bars represents the duration. It is also possible to show hierarchical relationships between resources.
 
 This is how the Resource chart is structured:
 
@@ -90,7 +90,7 @@ In addition, you can use optional fields:
 
 **Note 1:** To learn how to rename the default data fields, see [Data: Mapping](Data#mapping).
 
-**Note 2:** You can also add custom fields to your data and use them to configure text – like, for example, in all the samples from [Timeline: Tooltips](Timeline/Tooltips).
+**Note 2:** You can also add custom fields to your data and use them to configure text - like, for example, in all the samples from [Timeline: Tooltips](Timeline/Tooltips).
 
 ### Setting Data
 
@@ -245,7 +245,7 @@ chart.data(treeData);
 
 This section lists the available types of elements that are shown on the [timeline](Timeline) of the Resource chart and explains how to use data fields to set them. To learn how to configure elements, see the [Elements](Elements) section.
 
-The main timeline element of the Resource chart is the period, but logically, periods are grouped into resources – see [Periods and Resources](#periods_and_resources). Also, you can add [connectors](#connectors) and set [markers](Elements/Markers) by adding special data fields to periods and resources.
+The main timeline element of the Resource chart is the period, but logically, periods are grouped into resources - see [Periods and Resources](#periods_and_resources). Also, you can add [connectors](#connectors) and set [markers](Elements/Markers) by adding special data fields to periods and resources.
 
 ### Periods and Resources
 
@@ -353,10 +353,10 @@ To learn how to configure connectors, see the [Elements: Resource Chart](Element
 
 Please note that a period can have several predecessors, but only one successor. Also, a period can be at the same time a successor to one period or periods and a predecessor to another. All these nuances are illustrated by the sample below, which visualizes the following dependencies between periods:
 
-* Period 01.28 (predecessor) &#8594; Period 01.07 (successor) – `"start-finish"`
-* Period 03.01 (predecessor) &#8594; Period 03.05 (successor) – `"start-start"`
-* Period 03.05 (predecessor) &#8594; Period 03.01 (successor) – `"finish-finish"`
-* Period 01.04 (predecessor) &#8594; Period 03.01 (successor) – `"finish-start"`
+* Period 01.28 (predecessor) &#8594; Period 01.07 (successor) - `"start-finish"`
+* Period 03.01 (predecessor) &#8594; Period 03.05 (successor) - `"start-start"`
+* Period 03.05 (predecessor) &#8594; Period 03.01 (successor) - `"finish-finish"`
+* Period 01.04 (predecessor) &#8594; Period 03.01 (successor) - `"finish-start"`
 
 {sample :height 160}GANTT\_Resource\_Chart\_05{sample}
 

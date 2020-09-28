@@ -3,7 +3,7 @@
 
 ## Overview
 
-You can configure the timeline scale – for example, you can set its [minimum & maximum](#minimum_&_maximum) values and specify zoom [levels](#levels). These settings affect the position and relative size of timeline [elements](../Elements), the number of timeline columns, and the configuration of the [header](Header).
+You can configure the timeline scale - for example, you can set its [minimum & maximum](#minimum_&_maximum) values and specify zoom [levels](#levels). These settings affect the position and relative size of timeline [elements](../Elements), the number of timeline columns, and the configuration of the [header](Header).
 
 The scale is defined as an instance of the {api:anychart.scales.GanttDateTime}anychart.scales.GanttDateTime{api} class.
 
@@ -90,7 +90,7 @@ chart.getTimeline().scale().zoomLevels([
 
 ## Fiscal Year
 
-You can set the starting month of the fiscal year – pass a number from 1 to 12 to the {api:anychart.scales.GanttDateTime#fiscalYearStartMonth}fiscalYearStartMonth(){api} method. The default value is 1 (January).
+You can set the starting month of the fiscal year - pass a number from 1 to 12 to the {api:anychart.scales.GanttDateTime#fiscalYearStartMonth}fiscalYearStartMonth(){api} method. The default value is 1 (January).
 
 ```
 // set the starting month of the fiscal year
