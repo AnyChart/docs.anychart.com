@@ -54,10 +54,10 @@ var computer = dataTable.createComputer(mapping);
 // set computer output field
 computer.addOutputField('myValue', 'myColumn');
 
-// set calculation function to produce values with random increment
+// set calculation function to produce values with pseudo-random increment
 computer.setCalculationFunction(function(row) {
     var value = row.get('value');
-    var myValue = value + Math.floor((Math.random() * 100) + 1);
+    var myValue = value + Math.floor((Math.abs(Math.sin(value)) * 100) + 1);
     row.set('myValue', myValue);
 });
 ```

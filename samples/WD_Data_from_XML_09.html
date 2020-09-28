@@ -24,10 +24,10 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  
+
   // xml data                                         // JS equivalent
   var xml = '<?xml version="1.0" encoding="utf-8"?>' +
-    '<anychart xmlns="https://cdn.anychart.com/schemas/{{branch-name}}/xml-schema.xsd">' +
+    '<anychart xmlns="https://cdn.anychart.com/schemas/8.7.1/xml-schema.xsd">' +
       // set chart type, title and chart container
       '<chart type="area" '+                          // var chart = anychart.area();
       'container="container">'+                       // chart.container("container");
@@ -51,10 +51,10 @@ anychart.onDocumentReady(function () {
           '<point x="May" value="9000"/></data>'+   //   ["May", "9000"]
       '</series></series_list></chart>'+            // ]);
     '</anychart>';
-  
+
   // get XML data
   var chart = anychart.fromXml(xml);
-  
+
   // draw chart
   chart.draw();
 });

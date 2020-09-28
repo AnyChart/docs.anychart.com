@@ -3,11 +3,11 @@
 ## Overview
 
 To simplify visual adjustment of JS charts AnyChart provides "AnyChart Themes" technique. Chart theme is a named preset for chart settings. The themes' usage is described in this article.
-  
+
 ### Themes Explained
-  
+
 The main idea of themes is to segregate chart settings and data section for easy changing and/or reusing settings in another charts that should look the same way.
-    
+
 If some chart type is used widely on your site, you can store settings in a js file and then use theme when needed to reduce the necessity of - no need to configure chart again and copy-paste settings from one place to another.
 
 AnyChart comes with a number of Out of the box themes that can be used to change look and feel of every chart in the package, learn about them in the next section.
@@ -19,8 +19,8 @@ Out of the box Themes can be located either at [Themes Section at AnyChart CDN](
 ```
 <head>
   <!--Link to the files with out of the box themes -->
-  <script src="https://cdn.anychart.com/themes/{{branch-name}}/coffee.min.js"></script>
-  <script src="https://cdn.anychart.com/themes/{{branch-name}}/dark_blue.min.js"></script>
+  <script src="https://cdn.anychart.com/themes/2.0.0/coffee.min.js"></script>
+  <script src="https://cdn.anychart.com/themes/2.0.0/dark_blue.min.js"></script>
   <script>
     anychart.onDocumentReady(function () {
       // data
@@ -48,7 +48,7 @@ Out of the box Themes can be located either at [Themes Section at AnyChart CDN](
 </head>
 ```
 
-You can find minified and uncompressed themes at CDN, it is recommended to use minifed themes in production, uncompressed themes can be used to create new themes, you can compress them with the JavaScript compression tool of your choice or use uncompressed. 
+You can find minified and uncompressed themes at CDN, it is recommended to use minifed themes in production, uncompressed themes can be used to create new themes, you can compress them with the JavaScript compression tool of your choice or use uncompressed.
 
 There are 16 themes in AnyChart at the moment: *Coffee*, *Dark Blue*, *Dark Earth*, *Dark Glamour*, *Dark Provence*, *Default Theme*, *Light Blue*, *Light Earth*, *Light Glamour*, *Light Provence*, *Monochrome*, *Morning*, *Pastel*, *Sea*, *6.x Version*, *Wines*.
 
@@ -170,7 +170,7 @@ var data = [
 
 // apply theme
 anychart.theme(customTheme);
-  
+
 var chart = anychart.bar();
 chart.bar(data);
 chart.container("container");
@@ -198,7 +198,7 @@ Next, you can create a file with several themes or several files with themes and
         ["Men's/Women's Specialty Stores", 148662],
         ["All other outlets", 90000]
       ];
-      
+
       // apply custom theme
       anychart.theme(customTheme);
 
@@ -252,10 +252,10 @@ Explore the chart in the playground to understand how it works. It is possible t
 
 ## Append Theme
 
-In some situations, it might be necessary to add some settings to all charts simultaneously over an existing theme. In this case AnyChart provides an {api:anychart#appendTheme}appendtheme(){api} method allowing to add a theme over another one. Settings defined through this method have higher priority than those set through the {api:anychart#theme}theme(){api} method. The next sample demonstrates this. 
+In some situations, it might be necessary to add some settings to all charts simultaneously over an existing theme. In this case AnyChart provides an {api:anychart#appendTheme}appendtheme(){api} method allowing to add a theme over another one. Settings defined through this method have higher priority than those set through the {api:anychart#theme}theme(){api} method. The next sample demonstrates this.
 
 ```
-// append a theme 
+// append a theme
 anychart.appendTheme(additional_theme);
 ```
 
@@ -267,7 +267,7 @@ Note that both themes contain title text settings but those in the additional th
 
 ## Multiple Chart Types
 
-The main purpose of AnyChart Themes is to simplify the process of chart creation, so one theme can store settings for the different chart types. 
+The main purpose of AnyChart Themes is to simplify the process of chart creation, so one theme can store settings for the different chart types.
 
 ```
 var customTheme = {
@@ -312,9 +312,9 @@ anychart.theme(null);
 As you may have noticed, theme is basically chart settings done in JSON and its structure is almost identical to chart JSON settings, and can be described by JSON Scheme, you can read more about this at [JSON article](../Working_with_Data/Data_From_JSON#schema).
 
 But there are some very important characteristics and features in a theme: you can set defaults and global settings for some elements, and you can set default settings for a chart type.
-  
+
 **Note**: AnyChart themes can contain much more settings than this table presents. File with default theme contains all possible chart settings with default values and this file can be used as a reference of all theme settings. Read more about default theme in [Default Theme section](#default_theme).
-  
+
 Here is the list of global settings and defaults that can be defined in a theme:
 
 <table class="dtTABLE" width="700">

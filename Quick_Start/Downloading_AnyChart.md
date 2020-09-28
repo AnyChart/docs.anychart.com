@@ -24,7 +24,7 @@ To download one of our predefined themes, proceed to [https://cdn.anychart.com/#
 ## AnyChart CDN
 
 [AnyChart CDN](https://cdn.anychart.com/) hosts AnyChart library on servers spread across the world.
-  
+
 To use AnyChart CDN simply reference any of the required [modules](Modules) using script tag:
 
 For example, this is how you reference the bundle package:
@@ -41,7 +41,7 @@ And this is how you link basic chart and add UI module to access context menu fe
 <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-ui.min.js"></script>
 <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.9.0/css/anychart-ui.min.css" />
 ```
-  
+
 ## Custom Build
 
 AnyChart offers a way to create custom JavaScript binaries containing only the part you need and leaving out the parts you are not going to use. Choose and check modules you want to include in the build, and press a green "Build" button at the bottom to building a custom JavaScript binary.
