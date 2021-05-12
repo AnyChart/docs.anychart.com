@@ -51,7 +51,7 @@ anychart.onDocumentReady(function () {
     var series = chart.waterfall(data);
 
     // configure connectors
-    chart.connectorStroke("#ff6666", 2, "2 2", "round");
+    chart.connectors().stroke("#ff6666", 2, "2 2", "round");
   
     // set the chart title
     chart.title("Waterfall Chart: Connectors");
