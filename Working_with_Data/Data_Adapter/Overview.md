@@ -12,7 +12,7 @@ Data Adapter is an additional script that can do even more: load [CSV](#csv_file
 Data Adapter requires adding the [Data Adapter](../../Quick_Start/Modules#data_adapter) module:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-data-adapter.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-data-adapter.min.js"></script>
 ```
 
 Learn more: [Modules](../../Quick_Start/Modules).
