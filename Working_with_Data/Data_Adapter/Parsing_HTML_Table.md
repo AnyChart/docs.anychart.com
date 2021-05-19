@@ -7,7 +7,7 @@ Parsing HTML tables feature allows you to load data from HTML table into AnyChar
 
 ```
 <!-- Include the data adapter -->
-<script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-data-adapter.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-data-adapter.min.js"></script>
 ```
 
 Data Adapter allows to parse both tables created with `<table>` tag and with a help of CSS. Please see samples and description below.

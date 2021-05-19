@@ -39,11 +39,11 @@ This article explains how to create a basic Funnel Chart as well as configure se
 The Funnel chart requires adding the [Core](../Quick_Start/Modules#core) and [Pyramid and Funnel](../Quick_Start/Modules#pyramid_and_funnel) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-pyramid-funnel.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-pyramid-funnel.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).

@@ -30,11 +30,11 @@ This article explains how to create a basic Surface chart as well as configure s
 The Surface chart requires adding the [Core](../Quick_Start/Modules#core) and [Surface Chart](../Quick_Start/Modules#surface) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-surface.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-surface.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
