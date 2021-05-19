@@ -10,7 +10,7 @@ In this article, you can learn about the main general settings of annotations, a
 Annotations require adding the [Annotations](../../Quick_Start/Modules#annotations) module:
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-annotations.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-annotations.min.js"></script>
 ```
 
 Learn more: [Modules](../../Quick_Start/Modules).
