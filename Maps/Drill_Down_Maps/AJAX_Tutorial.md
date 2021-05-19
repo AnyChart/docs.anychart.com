@@ -17,7 +17,7 @@ Any other AnyChart components can be included separately the same way as AnyMap,
 It is better to add the root map the same way:
 
 ```
-<script src="https://cdn.anychart.com/geodata/2.1.0/countries/united_states_of_america/united_states_of_america.js"></script>
+<script src="https://cdn.anychart.com/geodata/2.1.1/countries/united_states_of_america/united_states_of_america.js"></script>
 ```
 
 ## Data Adapter
@@ -95,7 +95,7 @@ To drill to a map use the {api:anychart.charts.Map#drillTo}drillTo(){api} method
 So, when the Data Adapter request is successfully performed, create a map, pass the data into the new map's geoData, then create a series and use the  {api:anychart.charts.Map#drillTo}drillTo{api} method to load the map of the selected region and perform the drill down. So the code of the function which are to be performed after the request looks like the following:
 
 ```
-anychart.data.loadJsonFile("https://cdn.anychart.com/geodata/2.1.0/usa_states/texas/texas.json", function (data){
+anychart.data.loadJsonFile("https://cdn.anychart.com/geodata/2.1.1/usa_states/texas/texas.json", function (data){
   var txMap = anychart.map();
   txMap.geoData(data);
   txSeries = txMap.choropleth(dataSetTX); 
@@ -118,8 +118,8 @@ It is necessary to add a field with URL to both states in the dataset of the USA
 ```
 // set the data for the USA map
 var usaDataSet = [
-    {"id": "US.TX", "value": 26956958, "url": "https://cdn.anychart.com/geodata/2.1.0/usa_states/texas/texas.json"},
-    {"id": "US.FL", "value": 19552860, "url": "https://cdn.anychart.com/geodata/2.1.0/usa_states/florida/florida.json"}
+    {"id": "US.TX", "value": 26956958, "url": "https://cdn.anychart.com/geodata/2.1.1/usa_states/texas/texas.json"},
+    {"id": "US.FL", "value": 19552860, "url": "https://cdn.anychart.com/geodata/2.1.1/usa_states/florida/florida.json"}
 ];
 
 // load the map using AJAX
