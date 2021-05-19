@@ -103,7 +103,7 @@ labels.format(function () {
 
 {sample}Maps\_Labels\_03{sample}
 
-You can find the map of Australia in GeoJSON map on [AnyChart CDN](https://cdn.anychart.com/geodata/2.1.0/countries/australia/australia.json).
+You can find the map of Australia in GeoJSON map on [AnyChart CDN](https://cdn.anychart.com/geodata/2.1.1/countries/australia/australia.json).
 
 ## Overlap
 

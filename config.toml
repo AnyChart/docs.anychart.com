@@ -1,8 +1,8 @@
 [vars]
 anychart-version = "8.9.0"
-locales-version = "2.0.0"
+locales-version = "2.0.1"
 themes-version = "2.0.0"
-geodata-version = "2.1.0"
+geodata-version = "2.1.1"
 
 [report]
 http-ignore = ["http://support.anychart.com", "http://phantomjs.org", "http://www.graphicsjs.org", "http://6.anychart.com", "http://mandate376.standards.eu/"]

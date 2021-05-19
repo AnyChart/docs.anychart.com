@@ -24,9 +24,9 @@ Note that all maps that will be used should be referenced like in this code samp
 
 ```
 <head>
-<script src="https://cdn.anychart.com/geodata/2.1.0/countries/united_states_of_america/united_states_of_america.js" type="text/javascript"></script>
-<script src="https://cdn.anychart.com/geodata/2.1.0/usa_states/florida/florida.js" type="text/javascript"></script>
-<script src="https://cdn.anychart.com/geodata/2.1.0/usa_states/texas/texas.js" type="text/javascript"></script>
+<script src="https://cdn.anychart.com/geodata/2.1.1/countries/united_states_of_america/united_states_of_america.js" type="text/javascript"></script>
+<script src="https://cdn.anychart.com/geodata/2.1.1/usa_states/florida/florida.js" type="text/javascript"></script>
+<script src="https://cdn.anychart.com/geodata/2.1.1/usa_states/texas/texas.js" type="text/javascript"></script>
 </head>
 ```
 
