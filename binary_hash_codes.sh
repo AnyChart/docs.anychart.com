@@ -12,16 +12,16 @@ UUID_HCODE=$(uuidgen | tr "[:upper:]" "[:lower:]" | sed -e "s/-//g")
 
 # function for "fix" file.
 function heal_file(){
-    perl -pi -e 's,(releases/{{branch-name}}/js/){1}([A-z0-9.-]+.min.js)(\?hcode=[^"]*)?",\1\2",g' $1
-    perl -pi -e 's,(releases/{{branch-name}}/[A-z0-9./-]+.css)(\?hcode=[^"]*)?",\1",g' $1
+    perl -pi -e 's,(releases/8.10.0/js/){1}([A-z0-9.-]+.min.js)(\?hcode=[^"]*)?",\1\2",g' $1
+    perl -pi -e 's,(releases/8.10.0/[A-z0-9./-]+.css)(\?hcode=[^"]*)?",\1",g' $1
 }
 # default mode
 FILE_MODIFYER="heal_file"
 
 # sugar function
 function broke_file(){
-    perl -pi -e 's,(releases/{{branch-name}}/js/){1}([A-z0-9.-]+.min.js)(\?hcode=[^"]+)?",\1\2?hcode='${UUID_HCODE}'",g' $1
-    perl -pi -e 's,(releases/{{branch-name}}/[A-z0-9./-]+.css)(\?hcode=[^"]+)?",\1?hcode='${UUID_HCODE}'",g' $1
+    perl -pi -e 's,(releases/8.10.0/js/){1}([A-z0-9.-]+.min.js)(\?hcode=[^"]+)?",\1\2?hcode='${UUID_HCODE}'",g' $1
+    perl -pi -e 's,(releases/8.10.0/[A-z0-9./-]+.css)(\?hcode=[^"]+)?",\1?hcode='${UUID_HCODE}'",g' $1
 }
 
 FILESLIST=$(find . -type f -name "*.html")
@@ -35,7 +35,7 @@ do
     case "$ARGUMENT" in
             replace|r|"-r")    FILE_MODIFYER="broke_file" ;;
             "-h"|"--help"|help|h|"-help")  printf "parameters: \
-                \n 'replace (-r)' - to rename all {{branch-name}} to current branch\
+                \n 'replace (-r)' - to rename all 8.10.0 to current branch\
                 \n" && exit 1 ;;
             *)
     esac

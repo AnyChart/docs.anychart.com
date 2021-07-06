@@ -14,11 +14,11 @@ This article explains how to create and configure radar charts. To find out whic
 Radar charts require adding the [Core](../../Quick_Start/Modules#core) and [Radar](../../Quick_Start/Modules#radar) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-radar.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-radar.min.js"></script>
 ```
 
 Learn more: [Modules](../../Quick_Start/Modules).

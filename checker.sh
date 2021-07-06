@@ -47,10 +47,10 @@ FILESLIST_COUNT=$(git diff --name-only origin/develop | grep -e .html -e .md | w
 # function for "fix" file.
 function heal_file(){
     filename=$1
-    # replace all STG urls to COM and non-{{branch-name}}
+    # replace all STG urls to COM and non-8.10.0
     perl -pi -e 's,src="../anychart,src="https://cdn.anychart.com/releases/d/js/anychart,g' ${filename}
     perl -pi -e 's/\.stg/\.com/g' ${filename}
-    perl -pi -e 's,(releases)/([^/])+/,\1/{{branch-name}}/,g' ${filename}
+    perl -pi -e 's,(releases)/([^/])+/,\1/8.10.0/,g' ${filename}
 
     if [[ ! " ${IGNOREFILES[*]} " == *"$filename"* ]]; then
         # match all non-ascii symbols
@@ -75,7 +75,7 @@ FILE_MODIFYER="heal_file"
 
 # sugar function
 function broke_file(){
-    perl -pi -e "s,(releases)/({{branch-name}})+/,\1/$CURRENT_BRANCH/,g" $1
+    perl -pi -e "s,(releases)/(8.10.0)+/,\1/$CURRENT_BRANCH/,g" $1
 }
 
 ########################################################################################################################
@@ -92,7 +92,7 @@ do
                 FILESLIST_COUNT=$(find . -type f | grep -e .md -e .html | wc -l)
             ;;
             "-h"|"--help"|help|h|"-help")  printf "parameters: \
-                \n 'replace (-r)' - to rename all {{branch-name}} to current branch\
+                \n 'replace (-r)' - to rename all 8.10.0 to current branch\
                 \n 'all (-a)' - modify all files (by default False, modify only diff with origin/develop)\
                 \n 'links (-l)' - get links to pg and github.com for changed samples\
                 \n" && exit 1 ;;
