@@ -1,4 +1,4 @@
-{:index ...}
+{:index 1}
 # Circle Packing Chart
 
 ## Overview

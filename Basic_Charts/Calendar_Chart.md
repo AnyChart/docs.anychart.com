@@ -1,4 +1,4 @@
-{:index ...}
+{:index 1}
 # Calendar Chart
 
 ## Overview
