@@ -223,8 +223,9 @@ customColorScale.colors(["#ffcc00", "#00ccff"]);
 // set the color scale as the color scale of the chart
 chart.colorScale(customColorScale);
 
-// add a color range
+// add and configure a color range
 chart.colorRange().enabled(true);
+chart.colorRange().length("100%");
 ```
 
 {sample}BCT\_Tag\_Cloud\_Chart\_05{sample}
@@ -252,8 +253,9 @@ customColorScale.colors(["lightgray", "#ffcc00", "#00ccff"]);
 // set the color scale as the color scale of the chart
 chart.colorScale(customColorScale);
 
-// add a color range
+// add and configure a color range
 chart.colorRange().enabled(true);
+chart.colorRange().length("100%");
 ```
 
 {sample}BCT\_Tag\_Cloud\_Chart\_06{sample}
