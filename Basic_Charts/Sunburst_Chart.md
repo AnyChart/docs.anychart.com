@@ -404,9 +404,9 @@ The following sample demonstrates a simple fill function:
 ```
 // configure the visual settings of the chart
 chart.fill(function () {
-  return this.parent ?
-   anychart.color.lighten(this.parentColor, 0.5) : 
-   this.mainColor;
+  if (this.parent)
+    return anychart.color.lighten(this.parentColor, 0.5);
+  return this.mainColor;
 });
 ```
 

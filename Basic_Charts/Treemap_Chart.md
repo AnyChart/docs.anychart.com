@@ -284,7 +284,7 @@ To create a **linear color scale**, use the {api:anychart.scales#linearColor}lin
 
 Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors, the first one indicating 0, and the second one indicating the maximum heat. Tiles are colored automatically in different mixtures of these two colors, and if you do not specify them, the default colors of the linear color scale are used.
 
-Finally, call {api:anychart.charts.TreeMap#colorScale}colorScale(){api} to set your scale as the color scale of the chart, and {api:anychart.charts.TreeMap#colorRange}colorRange(){api} to add a **color range**. With the linear color scale, it looks like a gradient from the first to the second color.
+Finally, call {api:anychart.charts.TreeMap#colorScale}colorScale(){api} to set your scale as the color scale of the chart and {api:anychart.charts.TreeMap#colorRange}colorRange(){api} to add a **color range**. With the linear color scale, it looks like a gradient from the first to the second color.
 
 In the following sample, there is a Treemap with a linear color scale and a color range:
 
@@ -405,7 +405,7 @@ chart.labels().useHtml(true);
 chart.labels().format(function() {
   var population = Math.round(this.value/100000)/10;
   return "<span style='font-weight:bold'>" + this.name + 
-         "</span><br/>" + population + " mln";
+         "</span><br>" + population + " mln";
 });
 
 // configure tooltips

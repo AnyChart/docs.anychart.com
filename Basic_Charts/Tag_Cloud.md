@@ -3,7 +3,7 @@
 
 ## Overview
 
-A tag cloud, otherwise known as a word cloud or weighted list,  is a visual representation of text data. This chart is typically used to show keyword metadata (tags) on websites, or to visualize free form text. Tags are usually single words, and the importance of each tag, which is often based on its frequency, is shown with font size or color.
+A tag cloud, otherwise known as a word cloud or weighted list,  is a visual representation of text data. This chart is typically used to show keyword metadata (tags) on websites or to visualize free-form text. Tags are usually single words, and the importance of each tag, which is often based on its frequency, is shown with font size or color.
 
 This article explains how to create a basic Tag Cloud chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Tag Cloud's characteristics:
 
@@ -235,7 +235,7 @@ To create an **ordinal color scale**, you should use the {api:anychart.scales#or
 
 Combine it with {api:anychart.scales.OrdinalColor#ranges}ranges(){api} to set frequency ranges (two or more) you want to be marked by different colors. Then you can set a color for each of these ranges by using the {api:anychart.scales.OrdinalColor#colors}colors(){api} method. Please note that if you do not specify colors and ranges, the default settings of the ordinal color scale are used.
 
-Finally, call {api:anychart.charts.TagCloud#colorScale}colorScale(){api} to set your scale as the color scale of the chart, and {api:anychart.charts.TagCloud#colorRange}colorRange(){api} to add a **color range**. With the ordinal color scale, the color range shows the ranges and their colors.
+Finally, call {api:anychart.charts.TagCloud#colorScale}colorScale(){api} to set your scale as the color scale of the chart and {api:anychart.charts.TagCloud#colorRange}colorRange(){api} to add a **color range**. With the ordinal color scale, the color range shows the ranges and their colors.
 
 In this sample, there is a Tag Cloud with an ordinal color scale and a color range:
 
