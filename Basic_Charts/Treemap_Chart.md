@@ -259,10 +259,10 @@ This sample shows a Treemap with an ordinal color scale and a color range:
 // create and configure a color scale.
 var customColorScale = anychart.scales.ordinalColor();
 customColorScale.ranges([
-    {less: 20000000},
-    {from: 20000000, to: 50000000},
-    {from: 50000000, to: 70000000},
-    {greater: 70000000}
+  {less: 20000000},
+  {from: 20000000, to: 50000000},
+  {from: 50000000, to: 70000000},
+  {greater: 70000000}
 ]);
 customColorScale.colors(["lightgray", "#9ed1de", "#00ccff", "#ffcc00"]);
 
@@ -271,7 +271,7 @@ chart.colorScale(customColorScale);
 
 // add a color range
 chart.colorRange().enabled(true);
-chart.colorRange().length("100%");
+chart.colorRange().length("90%");
 ```
 
 {sample}BCT\_Treemap\_Chart\_07{sample}
@@ -296,7 +296,7 @@ chart.colorScale(customColorScale);
 
 // add a color range
 chart.colorRange().enabled(true);
-chart.colorRange().length("100%");
+chart.colorRange().length("90%");
 ```
 
 {sample}BCT\_Treemap\_Chart\_08{sample}
