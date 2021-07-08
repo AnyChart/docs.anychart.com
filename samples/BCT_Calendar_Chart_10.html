@@ -62,6 +62,9 @@ anychart.onDocumentReady(function () {
                     this.getData("custom_field");
     });
 
+    // configure years
+    years.title().fontSize(30);
+
     // set the chart title
     chart.title().useHtml(true);
     chart.title("Calendar Chart: Tooltips (Formatting Function)<br><br>" +

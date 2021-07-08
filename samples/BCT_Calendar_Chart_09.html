@@ -53,6 +53,9 @@ anychart.onDocumentReady(function () {
       "contributions: {%value}\n\n{%custom_field}"
     );
 
+    // configure years
+    years.title().fontSize(30);
+
     // set the chart title
     chart.title().useHtml(true);
     chart.title("Calendar Chart: Tooltips (Tokens)<br><br>" +

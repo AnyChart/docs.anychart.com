@@ -63,6 +63,9 @@ anychart.onDocumentReady(function () {
     // configure the color range
     chart.colorRange().length("90%");
 
+    // configure years
+    years.title().fontSize(30);
+
     // set the chart title
     chart.title().useHtml(true);
     chart.title("Calendar Chart: Color Scale (Ordinal)<br><br>" +

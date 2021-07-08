@@ -57,6 +57,9 @@ anychart.onDocumentReady(function () {
     months.labels().fontStyle('italic');
     months.underSpace(20);
 
+    // configure years
+    years.title().fontSize(30);
+
     // set the chart title
     chart.title().useHtml(true);
     chart.title("Calendar Chart: Months<br><br>" +

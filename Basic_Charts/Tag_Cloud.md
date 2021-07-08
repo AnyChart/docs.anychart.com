@@ -227,7 +227,7 @@ chart.colorScale(customColorScale);
 
 // add and configure a color range
 chart.colorRange().enabled(true);
-chart.colorRange().length("100%");
+chart.colorRange().length("90%");
 ```
 
 {sample}BCT\_Tag\_Cloud\_Chart\_05{sample}

@@ -67,6 +67,9 @@ anychart.onDocumentReady(function () {
     weeks.labels().fontStyle('italic');
     weeks.rightSpace(10);
 
+    // configure years
+    years.title().fontSize(30);
+
     // set the chart title
     chart.title().useHtml(true);
     chart.title("Calendar Chart: Weeks<br><br>" +
