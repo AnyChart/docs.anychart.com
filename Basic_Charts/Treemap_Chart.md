@@ -253,7 +253,7 @@ To set your scale as the color scale of the chart, use the {api:anychart.charts.
 
 Optionally, you can use {api:anychart.charts.TreeMap#colorRange}colorRange(){api} to enable a **color range** - a special interactive element representing the color scale. With the ordinal color scale, the color range shows the ranges and their colors.
 
-The {api:anychart.core.ui.ColorRange#colorLineSize}colorLineSize(){api} allows you to customize the size of the color scale (20 by default). See other settings: {api:anychart.core.ui.ColorRange}anychart.core.ui.ColorRange{api}.
+You can find the available settings of the color range here: {api:anychart.core.ui.ColorRange}anychart.core.ui.ColorRange{api}.
 
 This sample shows a Treemap with an ordinal color scale and a color range:
 
@@ -285,6 +285,8 @@ To create a **linear color scale**, use the {api:anychart.scales#linearColor}lin
 Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors, the first one indicating 0, and the second one indicating the maximum heat. Tiles are colored automatically in different mixtures of these two colors, and if you do not specify them, the default colors of the linear color scale are used.
 
 Finally, call {api:anychart.charts.TreeMap#colorScale}colorScale(){api} to set your scale as the color scale of the chart and {api:anychart.charts.TreeMap#colorRange}colorRange(){api} to add a **color range**. With the linear color scale, it looks like a gradient from the first to the second color.
+
+You can find the available settings of the color range here: {api:anychart.core.ui.ColorRange}anychart.core.ui.ColorRange{api}.
 
 In the following sample, there is a Treemap with a linear color scale and a color range:
 
