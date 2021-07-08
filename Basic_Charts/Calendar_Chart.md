@@ -241,9 +241,7 @@ Combine it with {api:anychart.scales.LinearColor#colors}colors(){api} to set two
 
 To set your color scale as the color scale of the chart, use the {api:anychart.charts.Calendar#colorScale}colorScale(){api} method.
 
-Optionally, you can use {api:anychart.charts.Calendar#colorRange}colorRange(){api} to configure the **color range** - a special element representing the color scale. With the linear color scale, the color range looks like a gradient from the first to the second color.
-
-You can find the available settings of the color range here: {api:anychart.core.ui.ColorRange}anychart.core.ui.ColorRange{api}.
+Optionally, you can use {api:anychart.charts.Calendar#colorRange}colorRange(){api} to configure the **color range** - a special element representing the color scale. With the linear color scale, the color range looks like a gradient from the first to the second color. You can find the available settings here: {api:anychart.core.ui.ColorRange}anychart.core.ui.ColorRange{api}.
 
 The following sample shows a Calendar chart with a linear color scale and a color range:
 
@@ -267,9 +265,7 @@ To create an **ordinal color scale**, use the {api:anychart.scales#ordinalColor}
 
 Then call {api:anychart.scales.OrdinalColor#ranges}ranges(){api} to set value ranges (two or more) you want to be marked by different colors. You can set a color for each of these ranges by using the {api:anychart.scales.OrdinalColor#colors}colors(){api} method. Please note that if you do not specify colors and ranges, the default settings of the ordinal color scale are used.
 
-Finally, call {api:anychart.charts.Calendar#colorScale}colorScale(){api} to set your scale as the color scale of the chart and {api:anychart.charts.Calendar#colorRange}colorRange(){api} to configure the **color range**. With the ordinal color scale, it shows the ranges and their colors.
-
-You can find the available settings of the color range here: {api:anychart.core.ui.ColorRange}anychart.core.ui.ColorRange{api}.
+Finally, call {api:anychart.charts.Calendar#colorScale}colorScale(){api} to set your scale as the color scale of the chart and {api:anychart.charts.Calendar#colorRange}colorRange(){api} to configure the **color range**. With the ordinal color scale, it shows the ranges and their colors. You can find the available settings here: {api:anychart.core.ui.ColorRange}anychart.core.ui.ColorRange{api}.
 
 In this sample, there is a Calendar chart with an ordinal color scale and a color range:
 
