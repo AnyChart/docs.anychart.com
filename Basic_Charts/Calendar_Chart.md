@@ -222,6 +222,7 @@ years = chart.years();
 years.inverted(true);
 years.background("#e7f3fd");
 years.title().fontColor("#dd2c00");
+years.title().fontSize(30);
 years.title().fontWeight(600);
 years.underSpace(4);
 ```
@@ -242,7 +243,7 @@ To set your color scale as the color scale of the chart, use the {api:anychart.c
 
 Optionally, you can use {api:anychart.charts.Calendar#colorRange}colorRange(){api} to configure the **color range** - a special element representing the color scale. With the linear color scale, the color range looks like a gradient from the first to the second color.
 
-The {api:anychart.core.ui.ColorRange#colorLineSize}colorLineSize(){api} allows you to customize the size of the color scale (10 by default). See other settings: {api:anychart.core.ui.ColorRange}anychart.core.ui.ColorRange{api}.
+You can find the available settings of the color range here: {api:anychart.core.ui.ColorRange}anychart.core.ui.ColorRange{api}.
 
 The following sample shows a Calendar chart with a linear color scale and a color range:
 
@@ -255,7 +256,7 @@ customColorScale.colors(["#ffcc00", "#00ccff"]);
 chart.colorScale(customColorScale);
 
 // configure the color range
-chart.colorRange().colorLineSize(30);
+chart.colorRange().length("90%");
 ```
 
 {sample}BCT\_Calendar\_Chart\_07{sample}
@@ -267,6 +268,8 @@ To create an **ordinal color scale**, use the {api:anychart.scales#ordinalColor}
 Then call {api:anychart.scales.OrdinalColor#ranges}ranges(){api} to set value ranges (two or more) you want to be marked by different colors. You can set a color for each of these ranges by using the {api:anychart.scales.OrdinalColor#colors}colors(){api} method. Please note that if you do not specify colors and ranges, the default settings of the ordinal color scale are used.
 
 Finally, call {api:anychart.charts.Calendar#colorScale}colorScale(){api} to set your scale as the color scale of the chart and {api:anychart.charts.Calendar#colorRange}colorRange(){api} to configure the **color range**. With the ordinal color scale, it shows the ranges and their colors.
+
+You can find the available settings of the color range here: {api:anychart.core.ui.ColorRange}anychart.core.ui.ColorRange{api}.
 
 In this sample, there is a Calendar chart with an ordinal color scale and a color range:
 
@@ -284,7 +287,7 @@ customColorScale.colors(["lightgray", "#ffcc00", "#00ccff"]);
 chart.colorScale(customColorScale);
 
 // configure the color range
-chart.colorRange().colorLineSize(30);
+chart.colorRange().length("90%");
 ```
 
 {sample}BCT\_Calendar\_Chart\_08{sample}
