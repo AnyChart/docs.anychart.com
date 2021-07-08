@@ -165,6 +165,8 @@ To configure weeks, use the following methods:
 * {api:anychart.core.calendar.settings.Weeks#labels}labels(){api} to set the font of week [labels](../Common_Settings/Labels)
 * {api:anychart.core.calendar.settings.Weeks#rightSpace}rightSpace(){api} to set the gap between week labels and the main part of the chart
 
+This is how they work:
+
 ```
 // configure weeks
 var weeks = chart.weeks();
@@ -183,10 +185,12 @@ The Calendar chart displays all the [days](#days) and months of the year (or yea
 
 To configure months, use these methods:
 
-* {api:anychart.core.calendar.settings.Months#stroke}(){api} to set the stroke of months containing days with values
+* {api:anychart.core.calendar.settings.Months#stroke}stroke(){api} to set the stroke of months containing days with values
 * {api:anychart.core.calendar.settings.Months#noDataStroke}noDataStroke(){api} to set the stroke of months containing only days with no values
 * {api:anychart.core.calendar.settings.Months#labels}labels(){api} to set the font of month [labels](../Common_Settings/Labels)
 * {api:anychart.core.calendar.settings.Months#underSpace}underSpace(){api} to set the gap between month labels and the main part of the chart
+
+Here is a Calendar chart with months configured:
 
 ```
 // configure months
@@ -209,6 +213,8 @@ To configure years, use the following methods:
 * {api:anychart.core.calendar.settings.Years#background}background(){api} to set the [background](../Common_Settings/Background)
 * {api:anychart.core.calendar.settings.Years#title}title(){api} to set the [title](../Common_Settings/Title)
 * {api:anychart.core.calendar.settings.Years#underSpace}underSpace(){api} to set the gap between years
+
+The sample below shows how the work:
 
 ```
 // configure years
