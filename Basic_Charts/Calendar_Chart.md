@@ -336,7 +336,7 @@ chart.tooltip().format(
 );
 ```
 
-{sample}BCT\_Calendar\_Chart\_08{sample}
+{sample}BCT\_Calendar\_Chart\_09{sample}
 
 #### Formatting Functions
 
@@ -387,4 +387,4 @@ chart.tooltip().format(function() {
 });
 ```
 
-{sample}BCT\_Calendar\_Chart\_09{sample}
+{sample}BCT\_Calendar\_Chart\_10{sample}

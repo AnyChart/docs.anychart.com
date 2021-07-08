@@ -240,7 +240,7 @@ Then call {api:anychart.scales.OrdinalColor#ranges}ranges(){api} to set frequenc
 
 Finally, call {api:anychart.charts.TagCloud#colorScale}colorScale(){api} to set your scale as the color scale of the chart.
 
-Optionally, you can use {api:anychart.charts.TagCloud#colorRange}colorRange(){api} to add a **color range** - a special interactive element representing the color scale. . With the ordinal color scale, the color range shows the ranges and their colors. You can find the available settings here: {api:anychart.core.ui.ColorRange}anychart.core.ui.ColorRange{api}.
+Optionally, you can use {api:anychart.charts.TagCloud#colorRange}colorRange(){api} to add a **color range** - a special interactive element representing the color scale. With the ordinal color scale, the color range shows the ranges and their colors. You can find the available settings here: {api:anychart.core.ui.ColorRange}anychart.core.ui.ColorRange{api}.
 
 In this sample, there is a Tag Cloud with an ordinal color scale and a color range:
 
@@ -259,7 +259,7 @@ chart.colorScale(customColorScale);
 
 // add and configure a color range
 chart.colorRange().enabled(true);
-chart.colorRange().length("100%");
+chart.colorRange().length("90%");
 ```
 
 {sample}BCT\_Tag\_Cloud\_Chart\_06{sample}
