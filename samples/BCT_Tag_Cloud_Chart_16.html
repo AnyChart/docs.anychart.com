@@ -28,16 +28,16 @@ anychart.onDocumentReady(function () {
 
     // create data   
     var data = [
-{x: "learning", value: 80},
-{x: "includes", value: 56},
-{x: "lists", value: 44},
-{x: "meaning", value: 40},
-{x: "useful", value: 36},
-{x: "different", value: 32},
-{x: "grammar", value: 28},
-{x: "teaching", value: 24},
-{x: "example", value: 20},
-{x: "thing", value: 12}
+      {x: "learning", value: 80},
+      {x: "includes", value: 56},
+      {x: "lists", value: 44},
+      {x: "meaning", value: 40},
+      {x: "useful", value: 36},
+      {x: "different", value: 32},
+      {x: "grammar", value: 28},
+      {x: "teaching", value: 24},
+      {x: "example", value: 20},
+      {x: "thing", value: 12}
     ];
 
     // create a chart and set the data
@@ -54,8 +54,8 @@ anychart.onDocumentReady(function () {
 
     // add an event listener to open a url on click
     chart.listen("pointClick", function(e){
-var url = "//en.wiktionary.org/wiki/" + e.point.get("x");
-window.open(url, "_blank");
+      var url = "//en.wiktionary.org/wiki/" + e.point.get("x");
+      window.open(url, "_blank");
     });
 
 });

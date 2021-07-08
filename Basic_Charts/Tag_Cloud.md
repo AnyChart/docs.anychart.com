@@ -52,12 +52,12 @@ To create a Tag Cloud, use the {api:anychart#tagCloud}anychart.tagCloud(){api} c
 
 ```
 var data = [
-    {x: "learning", value: 80},
-    {x: "includes", value: 56},
-    {x: "lists", value: 44},
-    {x: "meaning", value: 40},
-    {x: "useful", value: 36},
-    {x: "different", value: 32}
+  {x: "learning", value: 80},
+  {x: "includes", value: 56},
+  {x: "lists", value: 44},
+  {x: "meaning", value: 40},
+  {x: "useful", value: 36},
+  {x: "different", value: 32}
 ];
 
 // create a chart and set the data
@@ -99,16 +99,16 @@ This is how working with `x` and `value` looks like:
 ```
 // create data
 var data = [
-    {"x": "learning", value: 80},
-    {"x": "includes", value: 56},
-    {"x": "lists", value: 44},
-    {"x": "meaning", value: 40},
-    {"x": "useful", value: 36},
-    {"x": "different", value: 32},
-    {"x": "grammar", value: 28},
-    {"x": "teaching", value: 24},
-    {"x": "example", value: 20},
-    {"x": "thing", value: 12},
+  {"x": "learning", value: 80},
+  {"x": "includes", value: 56},
+  {"x": "lists", value: 44},
+  {"x": "meaning", value: 40},
+  {"x": "useful", value: 36},
+  {"x": "different", value: 32},
+  {"x": "grammar", value: 28},
+  {"x": "teaching", value: 24},
+  {"x": "example", value: 20},
+  {"x": "thing", value: 12},
 ];
 
 // create a chart and set the data
@@ -176,6 +176,7 @@ The [appearance settings](../Appearance_Settings) of a Tag Cloud can be configur
 Combine them with the following methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 * {api:anychart.core.StateSettings#fontFamily}fontFamily(){api} to set the font family - Verdana, Helvetica, Arial, etc.
 * {api:anychart.core.StateSettings#fontSize}fontSize(){api} to set the font size
 * {api:anychart.core.StateSettings#fontStyle}fontStyle(){api} to set the font style - normal, italic, oblique
@@ -192,6 +193,9 @@ In this sample, there is a Tag Cloud with appearance settings configured:
 chart.normal().fill("#1fadad");
 chart.hovered().fill("#93bfec");
 chart.selected().fill("#1f66ad");
+chart.normal().stroke("#0f5757");
+chart.hovered().stroke("#0f3357");
+chart.selected().stroke("#0f3357");
 chart.normal().fontWeight(600);
 ```
 
@@ -205,7 +209,7 @@ By default, elements are colored in the colors of the default [palette](../Appea
 
 To create a **linear color scale**, use the {api:anychart.scales#linearColor}linearColor(){api} constructor.
 
-Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors: the second one is applied to the most frequent element, and the first one indicates 0. Elements of frequencies that lie within this range are colored automatically in different mixtures of these two colors, and if you do not specify them, the default colors of the linear color scale are used.
+Combine it with {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors: the second one is applied to the most frequent element, and the first one indicates 0. Elements of frequencies that lie within this range are colored automatically in different mixtures of these two colors, and if you do not specify them, the default colors of the linear color scale are used.
 
 To set your scale as the color scale of the chart, use the {api:anychart.charts.TagCloud#colorScale}colorScale(){api} method.
 
@@ -232,9 +236,9 @@ chart.colorRange().length("100%");
 
 #### Ordinal
 
-To create an **ordinal color scale**, you should use the {api:anychart.scales#ordinalColor}ordinalColor(){api} constructor.
+To create an **ordinal color scale**, use the {api:anychart.scales#ordinalColor}ordinalColor(){api} constructor.
 
-Combine it with {api:anychart.scales.OrdinalColor#ranges}ranges(){api} to set frequency ranges (two or more) you want to be marked by different colors. Then you can set a color for each of these ranges by using the {api:anychart.scales.OrdinalColor#colors}colors(){api} method. Please note that if you do not specify colors and ranges, the default settings of the ordinal color scale are used.
+Then call {api:anychart.scales.OrdinalColor#ranges}ranges(){api} to set frequency ranges (two or more) you want to be marked by different colors. You can set a color for each of these ranges by using the {api:anychart.scales.OrdinalColor#colors}colors(){api} method. Please note that if you do not specify colors and ranges, the default settings of the ordinal color scale are used.
 
 Finally, call {api:anychart.charts.TagCloud#colorScale}colorScale(){api} to set your scale as the color scale of the chart and {api:anychart.charts.TagCloud#colorRange}colorRange(){api} to add a **color range**. With the ordinal color scale, the color range shows the ranges and their colors.
 
@@ -244,9 +248,9 @@ In this sample, there is a Tag Cloud with an ordinal color scale and a color ran
 // create and configure a color scale.
 var customColorScale = anychart.scales.ordinalColor();
 customColorScale.ranges([
-    {less: 50},
-    {from: 50, to: 60},
-    {greater: 60}
+  {less: 50},
+  {from: 50, to: 60},
+  {greater: 60}
 ]);
 customColorScale.colors(["lightgray", "#ffcc00", "#00ccff"]);
 
@@ -267,16 +271,16 @@ Instead of frequency ranges, the ordinal color scale and the color range can ind
 ```
 // create data   
 var data = [
-    {x: "learning", value: 80, category: "noun"},
-    {x: "includes", value: 56, category: "verb"},
-    {x: "lists", value: 44, category: "noun"},
-    {x: "meaning", value: 40, category: "noun"},
-    {x: "useful", value: 36, category: "adjective"},
-    {x: "different", value: 32, category: "adjective"},
-    {x: "grammar", value: 28, category: "noun"},
-    {x: "teaching", value: 24, category: "noun"},
-    {x: "example", value: 20, category: "noun"},
-    {x: "thing", value: 12, category: "noun"}
+  {x: "learning", value: 80, category: "noun"},
+  {x: "includes", value: 56, category: "verb"},
+  {x: "lists", value: 44, category: "noun"},
+  {x: "meaning", value: 40, category: "noun"},
+  {x: "useful", value: 36, category: "adjective"},
+  {x: "different", value: 32, category: "adjective"},
+  {x: "grammar", value: 28, category: "noun"},
+  {x: "teaching", value: 24, category: "noun"},
+  {x: "example", value: 20, category: "noun"},
+  {x: "thing", value: 12, category: "noun"}
 ];
 
 // create and configure a color scale.
@@ -457,16 +461,16 @@ Adding the `"category"` field to the data colors elements of the chart according
 ```
 // create data   
 var data = [
-    {x: "learning", value: 80, category: "noun"},
-    {x: "includes", value: 56, category: "verb"},
-    {x: "lists", value: 44, category: "noun"},
-    {x: "meaning", value: 40, category: "noun"},
-    {x: "useful", value: 36, category: "adjective"},
-    {x: "different", value: 32, category: "adjective"},
-    {x: "grammar", value: 28, category: "noun"},
-    {x: "teaching", value: 24, category: "noun"},
-    {x: "example", value: 20, category: "noun"},
-    {x: "thing", value: 12, category: "noun"}
+  {x: "learning", value: 80, category: "noun"},
+  {x: "includes", value: 56, category: "verb"},
+  {x: "lists", value: 44, category: "noun"},
+  {x: "meaning", value: 40, category: "noun"},
+  {x: "useful", value: 36, category: "adjective"},
+  {x: "different", value: 32, category: "adjective"},
+  {x: "grammar", value: 28, category: "noun"},
+  {x: "teaching", value: 24, category: "noun"},
+  {x: "example", value: 20, category: "noun"},
+  {x: "thing", value: 12, category: "noun"}
 ];
 
 // create a chart and set the data
