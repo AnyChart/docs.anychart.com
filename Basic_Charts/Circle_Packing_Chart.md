@@ -42,7 +42,7 @@ The Circle Packing chart requires adding the [Core](../Quick_Start/Modules#core)
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-circle-packing.min.js"
+<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-circle-packing.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
