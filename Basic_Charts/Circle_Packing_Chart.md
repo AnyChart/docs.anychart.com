@@ -55,17 +55,17 @@ To create a Circle Packing chart, use the {api:anychart#circlePacking}anychart.c
 // create data
 var data = [
   {name:     "Slavic Languages", children: [
-    {name:   "East Slavic", header: null, children: [
+    {name:   "East Slavic", children: [
       {name: "Russian",        value: 150000000},
       {name: "Ukrainian",      value:  45000000},
       {name: "Belarusian",     value:   3200000}
     ]},
-    {name:   "West Slavic", header: null, children: [
+    {name:   "West Slavic", children: [
       {name: "Polish",         value:  55000000},
       {name: "Czech",          value:  10600000},
       {name: "Slovak",         value:   5200000}
     ]},
-    {name:   "South Slavic", header: null, children: [
+    {name:   "South Slavic", children: [
       {name: "Serbo-Croatian", value:  21000000},
       {name: "Bulgarian",      value:   9000000},
       {name: "Slovene",        value:   2500000},
@@ -113,17 +113,17 @@ Unlike other chart types based on the tree data structure (e.g., the [Treemap](T
 ```
 // create data
 var data = [
-  {name:   "East Slavic", header: null, children: [
+  {name:   "East Slavic", children: [
     {name: "Russian",        value: 150000000},
     {name: "Ukrainian",      value:  45000000},
     {name: "Belarusian",     value:   3200000}
   ]},
-  {name:   "West Slavic", header: null, children: [
+  {name:   "West Slavic", children: [
     {name: "Polish",         value:  55000000},
     {name: "Czech",          value:  10600000},
     {name: "Slovak",         value:   5200000}
   ]},
-  {name:   "South Slavic", header: null, children: [
+  {name:   "South Slavic", children: [
     {name: "Serbo-Croatian", value:  21000000},
     {name: "Bulgarian",      value:   9000000},
     {name: "Slovene",        value:   2500000},
@@ -231,17 +231,17 @@ This sample shows how to work with tokens. Along with regular tokens, a custom t
 ```
 // create data
 var data = [
-  {name:   "East Slavic", header: null, children: [
+  {name:   "East Slavic", children: [
     {name: "Russian",        value: 150000000, country: "Russia"         },
     {name: "Ukrainian",      value:  45000000, country: "Ukraine"        },
     {name: "Belarusian",     value:   3200000, country: "Belarus"        }
   ]},
-  {name:   "West Slavic", header: null, children: [
+  {name:   "West Slavic", children: [
     {name: "Polish",         value:  55000000, country: "Poland"         },
     {name: "Czech",          value:  10600000, country: "Czech Republic" },
     {name: "Slovak",         value:   5200000, country: "Slovakia"       }
   ]},
-  {name:   "South Slavic", header: null, children: [
+  {name:   "South Slavic", children: [
     {name: "Serbo-Croatian", value:  21000000, country: "Serbia, Croatia"},
     {name: "Bulgarian",      value:   9000000, country: "Bulgaria"       },
     {name: "Slovene",        value:   2500000, country: "Slovenia"       },
@@ -284,17 +284,17 @@ The sample below demonstrates how to work with formatting functions. Along with 
 ```
 // create data
 var data = [
-  {name:   "East Slavic", header: null, children: [
+  {name:   "East Slavic", children: [
     {name: "Russian",        value: 150000000, country: "Russia"         },
     {name: "Ukrainian",      value:  45000000, country: "Ukraine"        },
     {name: "Belarusian",     value:   3200000, country: "Belarus"        }
   ]},
-  {name:   "West Slavic", header: null, children: [
+  {name:   "West Slavic", children: [
     {name: "Polish",         value:  55000000, country: "Poland"         },
     {name: "Czech",          value:  10600000, country: "Czech Republic" },
     {name: "Slovak",         value:   5200000, country: "Slovakia"       }
   ]},
-  {name:   "South Slavic", header: null, children: [
+  {name:   "South Slavic", children: [
     {name: "Serbo-Croatian", value:  21000000, country: "Serbia, Croatia"},
     {name: "Bulgarian",      value:   9000000, country: "Bulgaria"       },
     {name: "Slovene",        value:   2500000, country: "Slovenia"       },
