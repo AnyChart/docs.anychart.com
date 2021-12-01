@@ -41,7 +41,7 @@ The Calendar chart requires adding the [Core](../Quick_Start/Modules#core) and [
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-calendar.min.js"
+<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-calendar.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
