@@ -13,7 +13,7 @@ Table Layout helps to manage several elements within the limits of one chart con
 The table layout requires adding the [Table UI](../Quick_Start/Modules#table_ui) module:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-table.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-table.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).

@@ -135,8 +135,8 @@ The following controls are available:
 *NOTE:* all these controls work properly ONLY if AnyChart CSS and AnyChart Font are linked to the page:
 
 ```
-<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.10.0/css/anychart-ui.min.css" />
-<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.10.0/fonts/css/anychart-font.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.11.0/css/anychart-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.11.0/fonts/css/anychart-font.min.css" />
 ```
 
 You can change the look of the splitter control using the {api:anychart.charts.Stock#splitters}splitters(){api}:

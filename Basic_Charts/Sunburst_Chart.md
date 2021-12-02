@@ -38,11 +38,11 @@ This article explains how to create a basic Sunburst chart in AnyChart as well a
 The Sunburst chart requires adding the [Core](../Quick_Start/Modules#core) and [Sunburst](../Quick_Start/Modules#sunburst) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-sunburst.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-sunburst.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
@@ -404,9 +404,9 @@ The following sample demonstrates a simple fill function:
 ```
 // configure the visual settings of the chart
 chart.fill(function () {
-  return this.parent ?
-   anychart.color.lighten(this.parentColor, 0.5) : 
-   this.mainColor;
+  if (this.parent)
+    return anychart.color.lighten(this.parentColor, 0.5);
+  return this.mainColor;
 });
 ```
 

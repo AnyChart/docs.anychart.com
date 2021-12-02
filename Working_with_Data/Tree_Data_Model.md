@@ -423,7 +423,7 @@ To search for an item, use the following methods of the {api:anychart.data.Tree}
 
 The {api:anychart.data.Tree#search}search(){api} method returns either an array of data items or one item, while {api:anychart.data.Tree#searchItems}searchItems(){api} always returns an array. Both methods are called with three parameters: the name of a data field, a value, and a comparison function.
 
-In the next sample {api:anychart.data.Tree#search}search(){api}, combined with the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method of the Treemap, is used to find an item with a certain name and drill down to it:
+In the next sample {api:anychart.data.Tree#search}search(){api}, combined with the {api:anychart.charts.TreeMap#drillTo}drillTo(){api} method of the Treemap, is used to find an item with a certain name and drill down to it:
 
 ```
 /* locate an item in the data tree

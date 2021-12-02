@@ -38,11 +38,11 @@ This article explains how to create a basic Pyramid Chart as well as configure s
 The Pyramid chart requires adding the [Core](../Quick_Start/Modules#core) and [Pyramid and Funnel](../Quick_Start/Modules#pyramid_and_funnel) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-pyramid-funnel.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-pyramid-funnel.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).

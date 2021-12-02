@@ -13,11 +13,11 @@ Let's start with adding or configuring gauge elements step by step, so in the en
 The Circular Gauge requires adding the [Core](../Quick_Start/Modules#core) and [Circular Gauge](../Quick_Start/Modules#circular_gauge) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-circular-gauge.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-circular-gauge.min.js"></script>
 ```
 
 Learn more: [Modules](../../Quick_Start/Modules).

@@ -39,11 +39,11 @@ This article explains how to create a basic Venn (or Euler) diagram as well as c
 The Venn diagram requires adding the [Core](../Quick_Start/Modules#core) and [Venn Diagram](../Quick_Start/Modules#venn_diagram) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-venn.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-venn.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
@@ -55,9 +55,9 @@ To create a Venn diagram, use the {api:anychart#venn}anychart.venn(){api} chart 
 ```
 //create data
 var data = [
-    {x: "A", value: 100},
-    {x: "B", value: 100},
-    {x: ["A", "B"], value: 25}
+  {x: "A", value: 100},
+  {x: "B", value: 100},
+  {x: ["A", "B"], value: 25}
 ];
 
 // create a chart and set the data
@@ -102,16 +102,16 @@ The sample below shows two circles with their names set:
 ```
 //create data
 var data = [
-    {
-    	x: "A",
-    	name: "Set A",
-    	value: 400
-    },
-    {
-    	x: "B",
-    	name: "Set B",
-    	value: 200
-    }
+  {
+  	x: "A",
+  	name: "Set A",
+  	value: 400
+  },
+  {
+  	x: "B",
+  	name: "Set B",
+  	value: 200
+  }
 ];
 
 // create a chart and set the data
@@ -125,12 +125,12 @@ To set the identifier of an intersection (in its `x` field), combine the identif
 ```
 // create data
 var data = [
-    {x: "A", value: 100},
-    {x: "B", value: 100},
-    {x: "C", value: 100},
-    {x: ["A", "B"],	value: 20},
-    {x: ["B", "C"], value: 20},
-    {x: ["A", "B", "C"], value: 20}
+  {x: "A", value: 100},
+  {x: "B", value: 100},
+  {x: "C", value: 100},
+  {x: ["A", "B"],	value: 20},
+  {x: ["B", "C"], value: 20},
+  {x: ["A", "B", "C"], value: 20}
 ];
 ```
 
@@ -141,13 +141,13 @@ With the help of data separators, the identifiers of circles can be also set as 
 ```
 // create data
 var data = [
-    {x: "A", value: 100},
-    {x: "B", value: 100},
-    {x: "C", value: 100},
-    {x: "A&B", value: 20},
-    {x: "A&C", value: 20},
-    {x: "B&C", value: 20},
-    {x: "A&B&C", value: 20}
+  {x: "A", value: 100},
+  {x: "B", value: 100},
+  {x: "C", value: 100},
+  {x: "A&B", value: 20},
+  {x: "A&C", value: 20},
+  {x: "B&C", value: 20},
+  {x: "A&B&C", value: 20}
 ];
 ```
 
@@ -156,13 +156,13 @@ The {api:anychart.charts.Venn#dataSeparator}dataSeparator{api} method allows you
 ```
 // create data
 var data = [
-    {x: "A", value: 100},
-    {x: "B", value: 100},
-    {x: "C", value: 100},
-    {x: "A+B", value: 20},
-    {x: "A+C", value: 20},
-    {x: "B+C", value: 20},
-    {x: "A+B+C", value: 20}
+  {x: "A", value: 100},
+  {x: "B", value: 100},
+  {x: "C", value: 100},
+  {x: "A+B", value: 20},
+  {x: "A+C", value: 20},
+  {x: "B+C", value: 20},
+  {x: "A+B+C", value: 20}
 ];
 
 // set the data separator
@@ -239,27 +239,27 @@ You can change the appearance of individual points, both sets and intersections,
 ```
 //create data
 var data = [
-    {x: "A", value: 100,
-     normal:   {fill: "#455a64 0.5"},
-     hovered:  {fill: "#455a64 0.5"},
-     selected: {fill: "#455a64 0.5"}
-    },
-    {x: "B", value: 100,
-     normal:   {fill: "#00bfa5 0.5"},
-     hovered:  {fill: "#00bfa5 0.5"},
-     selected: {fill: "#00bfa5 0.5"}
-    },
-    {x: "C", value: 200,
-     normal:   {fill: "#1976d2 0.5"},
-     hovered:  {fill: "#1976d2 0.5"},
-     selected: {fill: "#1976d2 0.5"}
-    },
-    {x: ["A", "B"], value: 10},
-    {x: ["B", "C"], value: 10,
-     normal:   {stroke: "2 white"},
-     hovered:  {stroke: "2 white"},
-     selected: {stroke: "4 white"}
-    }
+  {x: "A", value: 100,
+   normal:   {fill: "#455a64 0.5"},
+   hovered:  {fill: "#455a64 0.5"},
+   selected: {fill: "#455a64 0.5"}
+  },
+  {x: "B", value: 100,
+   normal:   {fill: "#00bfa5 0.5"},
+   hovered:  {fill: "#00bfa5 0.5"},
+   selected: {fill: "#00bfa5 0.5"}
+  },
+  {x: "C", value: 200,
+   normal:   {fill: "#1976d2 0.5"},
+   hovered:  {fill: "#1976d2 0.5"},
+   selected: {fill: "#1976d2 0.5"}
+  },
+  {x: ["A", "B"], value: 10},
+  {x: ["B", "C"], value: 10,
+   normal:   {stroke: "2 white"},
+   hovered:  {stroke: "2 white"},
+   selected: {stroke: "4 white"}
+  }
 ];
 
 // create a chart and set the data
@@ -295,23 +295,23 @@ This sample shows how to work with tokens:
 ```
 //create data
 var data = [
-    {
-        x: "A",
-        name: "Set A",
-        custom_field: "info 1",
-        value: 100
-    },
-    {
-        x: "B",
-        name: "Set A",
-        custom_field: "info 2",
-        value: 100
-    },
-    {
-        x: ["A", "B"],
-        name: "Set A + Set B",
-        value: 25
-    }
+  {
+     x: "A",
+     name: "Set A",
+     custom_field: "info 1",
+     value: 100
+  },
+  {
+     x: "B",
+     name: "Set A",
+     custom_field: "info 2",
+     value: 100
+  },
+  {
+     x: ["A", "B"],
+     name: "Set A + Set B",
+     value: 25
+  }
 ];
 
 // create a chart and set the data
@@ -325,12 +325,12 @@ chart.intersections().labels().format("{%name}\n\n{%value}");
 
 // configure tooltips of circles
 chart.tooltip().format(
-    "Set Info: {%custom_field}\nCardinality: {%value}"
+  "Set Info: {%custom_field}\nCardinality: {%value}"
 );
 
 // configure tooltips of intersections
 chart.intersections().tooltip().format(
-    "Intersection Info: {%custom_field}\nCardinality: {%value}"
+  "Intersection Info: {%custom_field}\nCardinality: {%value}"
 );
 ```
 
@@ -351,13 +351,13 @@ In the following sample, formatting function are used to show labels only on the
 ```
 //create data
 var data = [
-    {x: "A", value: 100},
-    {x: "B", value: 100},
-    {x: "C", value: 100},
-    {x: ["A", "B"], value: 20, custom_field: "info 1"},
-    {x: ["A", "C"], value: 20, custom_field: "info 2"},
-    {x: ["B", "C"], value: 20, custom_field: "info 3"},
-    {x: ["A", "B", "C"], value: 20, "custom_field": "info 4"}
+  {x: "A", value: 100},
+  {x: "B", value: 100},
+  {x: "C", value: 100},
+  {x: ["A", "B"], value: 20, custom_field: "info 1"},
+  {x: ["A", "C"], value: 20, custom_field: "info 2"},
+  {x: ["B", "C"], value: 20, custom_field: "info 3"},
+  {x: ["A", "B", "C"], value: 20, "custom_field": "info 4"}
 ];
 
 // create a chart and set the data

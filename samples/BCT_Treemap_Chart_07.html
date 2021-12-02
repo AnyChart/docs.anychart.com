@@ -5,12 +5,12 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-treemap.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-treemap.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.10.0/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.11.0/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
     
     <style>
         html, body, #container {
@@ -48,10 +48,10 @@ anychart.onDocumentReady(function () {
     // create and configure a color scale.
     var customColorScale = anychart.scales.ordinalColor();
     customColorScale.ranges([
-{less: 20000000},
-{from: 20000000, to: 50000000},
-{from: 50000000, to: 70000000},
-{greater: 70000000}
+      {less: 20000000},
+      {from: 20000000, to: 50000000},
+      {from: 50000000, to: 70000000},
+      {greater: 70000000}
     ]);
     customColorScale.colors(["lightgray", "#9ed1de", "#00ccff", "#ffcc00"]);
 
@@ -60,7 +60,7 @@ anychart.onDocumentReady(function () {
 
     // add a color range
     chart.colorRange().enabled(true);
-    chart.colorRange().length("100%");
+    chart.colorRange().length("90%");
 
     // set the chart title
     chart.title().useHtml(true);
