@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Treemap Chart 07"/>
+    <meta name="ac:name" content="BCT Calendar Chart 08"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-treemap.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-calendar.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     
@@ -28,46 +28,50 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {name:   "European Union", children: [
-        {name: "Belgium",        value: 11443830},
-        {name: "France",         value: 64938716},
-        {name: "Germany",        value: 80636124},
-        {name: "Greece",         value: 10892931},
-        {name: "Italy",          value: 59797978},
-        {name: "Netherlands",    value: 17032845},
-        {name: "Poland",         value: 38563573},
-        {name: "Romania",        value: 19237513}, 
-        {name: "Spain",          value: 46070146},
-        {name: "United Kingdom", value: 65511098}  
-      ]} 
+      {x: "2020-01-12", value: "6"},
+      {x: "2020-01-15", value: "2"},
+      {x: "2020-01-18", value: "2"},
+      {x: "2020-01-19", value: "5"},
+      {x: "2020-02-03", value: "1"},
+      {x: "2020-02-19", value: "9"},
+      {x: "2020-03-19", value: "2"},
+      {x: "2020-04-13", value: "3"},
+      {x: "2020-04-15", value: "3"},
+      {x: "2020-04-20", value: "4"},
+      {x: "2020-04-21", value: "1"},
+      {x: "2020-05-10", value: "3"},
+      {x: "2020-05-11", value: "1"},
+      {x: "2020-05-14", value: "1"},
+      {x: "2021-01-12", value: "2"}
     ];
 
     // create a chart and set the data
-    var chart = anychart.treeMap(data, "as-tree");
+    var chart = anychart.calendar(data);
 
     // create and configure a color scale.
     var customColorScale = anychart.scales.ordinalColor();
     customColorScale.ranges([
-      {less: 20000000},
-      {from: 20000000, to: 50000000},
-      {from: 50000000, to: 70000000},
-      {greater: 70000000}
+        {less: 3},
+        {from: 4, to: 6},
+        {greater: 7},
     ]);
-    customColorScale.colors(["lightgray", "#9ed1de", "#00ccff", "#ffcc00"]);
-
+    customColorScale.colors(["lightgray", "#ffcc00", "#00ccff"]);
+    
     // set the color scale as the color scale of the chart
     chart.colorScale(customColorScale);
 
-    // add a color range
-    chart.colorRange().enabled(true);
+    // configure the color range
     chart.colorRange().length("90%");
+
+    // configure years
+    chart.years().title().fontSize(30);
 
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Treemap: Color Scale (Ordinal)<br><br>" +
+    chart.title("Calendar Chart: Color Scale (Ordinal)<br><br>" +
                 "<span style='font-size:12; font-style:italic'>" +
-                "Top 10 European Union Countries by Population</span>");
-
+                "GitHub Contributions</span>");
+ 
     // set the container id
     chart.container("container");
 

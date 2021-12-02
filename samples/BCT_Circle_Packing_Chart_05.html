@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Circle Packing Chart 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-circle-packing.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      {name:   "East Slavic", children: [
+        {name: "Russian",        value: 150000000, country: "Russia"         },
+        {name: "Ukrainian",      value:  45000000, country: "Ukraine"        },
+        {name: "Belarusian",     value:   3200000, country: "Belarus"        }
+      ]},
+      {name:   "West Slavic", children: [
+        {name: "Polish",         value:  55000000, country: "Poland"         },
+        {name: "Czech",          value:  10600000, country: "Czech Republic" },
+        {name: "Slovak",         value:   5200000, country: "Slovakia"       }
+      ]},
+      {name:   "South Slavic", children: [
+        {name: "Serbo-Croatian", value:  21000000, country: "Serbia, Croatia"},
+        {name: "Bulgarian",      value:   9000000, country: "Bulgaria"       },
+        {name: "Slovene",        value:   2500000, country: "Slovenia"       },
+        {name: "Macedonian",     value:   1400000, country: "Macedonia"      }
+      ]}  
+    ];
+
+    // create a chart and set the data
+    var chart = anychart.circlePacking(data, "as-tree");
+
+    // enable HTML for labels
+    chart.labels().useHtml(true);
+    
+    // configure labels
+    chart.labels().format(function() {
+      var numberOfSpeakers = Math.round(this.value/100000)/10;
+      return this.name + "<span style='font-weight:bold'><br>" +
+             numberOfSpeakers + " mln";
+    });
+
+    // enable HTML for labels
+    chart.labels().useHtml(true);
+
+    // configure labels
+    chart.labels().format(
+      "{%name}<br><span style='font-weight:bold'>{%value}</span>"
+    );
+    
+    // configure tooltips
+    chart.tooltip().format(
+      "number of speakers: {%value}\ncountry: {%country}"
+    );
+
+
+    // set the chart title
+    chart.title().useHtml(true);
+    chart.title("Circle Packing: Labels and Tooltips (Tokens)<br><br>" +
+                "<span style='font-size:12; font-style:italic'>" +
+                "Slavic Languages by Number of Speakers</span>");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

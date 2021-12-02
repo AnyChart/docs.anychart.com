@@ -15,7 +15,9 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Box Chart](../Basic_Charts/Box_Chart)</td></tr>
 <tr><td>[Bubble Chart](../Basic_Charts/Bubble_Chart)</td></tr>
 <tr><td>[Bullet Chart](../Basic_Charts/Bullet_Chart)</td></tr>
+<tr><td>[Calendar Chart](../Basic_Charts/Calendar_Chart)</td></tr>    
 <tr><td>[Candlestick Chart](../Basic_Charts/Japanese_Candlestick_Chart)</td></tr>
+<tr><td>[Circle Packing Chart](../Basic_Charts/Circle_Packing_Chart)</td></tr>    
 <tr><td>[Circular Gauge](../Gauges/Circular_Gauge)</td></tr>
 <tr><td>[Column Chart](../Basic_Charts/Column_Chart)</td></tr>
 <tr><td>[Donut Chart](../Basic_Charts/Doughnut_Chart)</td></tr>

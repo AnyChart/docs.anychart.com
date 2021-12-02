@@ -52,7 +52,7 @@ anychart.onDocumentReady(function () {
     chart.labels().format(function() {
       var population = Math.round(this.value/100000)/10;
       return "<span style='font-weight:bold'>" + this.name + 
-             "</span><br/>" + population + " mln";
+             "</span><br>" + population + " mln";
     });
 
     // configure tooltips

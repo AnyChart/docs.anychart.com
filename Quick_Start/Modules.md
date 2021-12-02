@@ -120,6 +120,22 @@ A module for creating [Cartesian 3D](../Basic_Charts/3D/Overview) charts (except
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian-3d.min.js"></script>
 ```
 
+### Calendar
+
+A module for creating [Calendar](../Basic_Charts/Calendar_Chart) charts:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-calendar.min.js"></script>
+```
+
+### Circle Packing
+
+A module for creating [Circle Packing](../Basic_Charts/Circle_Packing_Chart) charts:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-circle-packing.min.js"></script>
+```
+
 ### Circular Gauge
 
 A module for creating [Circular Gauges](../Gauges/Circular_Gauge):

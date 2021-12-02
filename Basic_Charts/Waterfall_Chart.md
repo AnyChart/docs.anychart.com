@@ -61,20 +61,20 @@ The following sample demonstrates how a basic Waterfall chart is created:
 ```
 // create data   
 var data = [
-    {x: "Start", value:  23},
-    {x: "Jan",   value:  22},
-    {x: "Feb",   value: -46},
-    {x: "Mar",   value: -91},
-    {x: "Apr",   value:  37},
-    {x: "May",   value: -21},
-    {x: "Jun",   value:  53},
-    {x: "Jul",   value:  31},
-    {x: "Aug",   value: -15},
-    {x: "Sep",   value:  42},
-    {x: "Oct",   value:  53},
-    {x: "Nov",   value: -15},
-    {x: "Dec",   value:  51},
-    {x: "End", isTotal: true}
+  {x: "Start", value:  23},
+  {x: "Jan",   value:  22},
+  {x: "Feb",   value: -46},
+  {x: "Mar",   value: -91},
+  {x: "Apr",   value:  37},
+  {x: "May",   value: -21},
+  {x: "Jun",   value:  53},
+  {x: "Jul",   value:  31},
+  {x: "Aug",   value: -15},
+  {x: "Sep",   value:  42},
+  {x: "Oct",   value:  53},
+  {x: "Nov",   value: -15},
+  {x: "Dec",   value:  51},
+  {x: "End", isTotal: true}
 ];
 
 // create a waterfall chart
@@ -125,20 +125,20 @@ The sample below shows how to set the data mode:
 ```
 // create data   
 var data = [
-    {x: "Start", value:  23},
-    {x: "Jan",   value:  22},
-    {x: "Feb",   value: -46},
-    {x: "Mar",   value: -91},
-    {x: "Apr",   value:  37},
-    {x: "May",   value: -21},
-    {x: "Jun",   value:  53},
-    {x: "Jul",   value:  31},
-    {x: "Aug",   value: -15},
-    {x: "Sep",   value:  42},
-    {x: "Oct",   value:  53},
-    {x: "Nov",   value: -15},
-    {x: "Dec",   value:  51},
-    {x: "End", isTotal: true}
+  {x: "Start", value:  23},
+  {x: "Jan",   value:  22},
+  {x: "Feb",   value: -46},
+  {x: "Mar",   value: -91},
+  {x: "Apr",   value:  37},
+  {x: "May",   value: -21},
+  {x: "Jun",   value:  53},
+  {x: "Jul",   value:  31},
+  {x: "Aug",   value: -15},
+  {x: "Sep",   value:  42},
+  {x: "Oct",   value:  53},
+  {x: "Nov",   value: -15},
+  {x: "Dec",   value:  51},
+  {x: "End", isTotal: true}
 ];
 
 // create and configure the first waterfall chart
@@ -161,20 +161,20 @@ The Waterfall chart supports multiple series, and this sample shows how they are
 ```
 // create a data set
 var data = anychart.data.set([
-    ["Start", 23,  30,  21],
-    ["Jan",   22,  22,  54],
-    ["Feb",  -46,  45, -32],
-    ["Mar",  -91, -30,  -28],
-    ["Apr",   37, -27,  36],
-    ["May",  -24,  62, -48],
-    ["Jun",   55,  40, -29],
-    ["Jul",   31,  33,  41],
-    ["Aug",  -25, -46,  36],
-    ["Sep",   42,  23,  22],
-    ["Oct",   67, -44, -40],
-    ["Nov",  -24, -31,  37],
-    ["Dec",   51,  28,  25],
-    ["End", {isTotal: true}, {isTotal: true}, {isTotal: true}],
+  ["Start", 23,  30,  21],
+  ["Jan",   22,  22,  54],
+  ["Feb",  -46,  45, -32],
+  ["Mar",  -91, -30,  -28],
+  ["Apr",   37, -27,  36],
+  ["May",  -24,  62, -48],
+  ["Jun",   55,  40, -29],
+  ["Jul",   31,  33,  41],
+  ["Aug",  -25, -46,  36],
+  ["Sep",   42,  23,  22],
+  ["Oct",   67, -44, -40],
+  ["Nov",  -24, -31,  37],
+  ["Dec",   51,  28,  25],
+  ["End", {isTotal: true}, {isTotal: true}, {isTotal: true}],
 ]);
 
 // map the data
@@ -290,20 +290,20 @@ By default, labels show the difference, and in the following sample the `{%absol
 ```
 // create data   
 var data = [
-    {x: "Start", value:  23, custom_field: "info 1"},
-    {x: "Jan",   value:  22, custom_field: "info 2"},
-    {x: "Feb",   value: -46, custom_field: "info 3"},
-    {x: "Mar",   value: -91, custom_field: "info 4"},
-    {x: "Apr",   value:  37, custom_field: "info 5"},
-    {x: "May",   value: -21, custom_field: "info 6"},
-    {x: "Jun",   value:  53, custom_field: "info 7"},
-    {x: "Jul",   value:  31, custom_field: "info 8"},
-    {x: "Aug",   value: -15, custom_field: "info 9"},
-    {x: "Sep",   value:  42, custom_field: "info 10"},
-    {x: "Oct",   value:  53, custom_field: "info 11"},
-    {x: "Nov",   value: -15, custom_field: "info 12"},
-    {x: "Dec",   value:  51, custom_field: "info 13"},
-    {x: "End", isTotal: true, custom_field: "info 14"}
+  {x: "Start", value:  23, custom_field: "info 1"},
+  {x: "Jan",   value:  22, custom_field: "info 2"},
+  {x: "Feb",   value: -46, custom_field: "info 3"},
+  {x: "Mar",   value: -91, custom_field: "info 4"},
+  {x: "Apr",   value:  37, custom_field: "info 5"},
+  {x: "May",   value: -21, custom_field: "info 6"},
+  {x: "Jun",   value:  53, custom_field: "info 7"},
+  {x: "Jul",   value:  31, custom_field: "info 8"},
+  {x: "Aug",   value: -15, custom_field: "info 9"},
+  {x: "Sep",   value:  42, custom_field: "info 10"},
+  {x: "Oct",   value:  53, custom_field: "info 11"},
+  {x: "Nov",   value: -15, custom_field: "info 12"},
+  {x: "Dec",   value:  51, custom_field: "info 13"},
+  {x: "End", isTotal: true, custom_field: "info 14"}
 ];
 
 // create a waterfall chart
@@ -339,20 +339,20 @@ In the sample below all labels show absolute values, and labels of columns indic
 ```
 // create data   
 var data = [
-    {x: "Start", value:  23, custom_field: "info 1"},
-    {x: "Jan",   value:  22, custom_field: "info 2"},
-    {x: "Feb",   value: -46, custom_field: "info 3"},
-    {x: "Mar",   value: -91, custom_field: "info 4"},
-    {x: "Apr",   value:  37, custom_field: "info 5"},
-    {x: "May",   value: -21, custom_field: "info 6"},
-    {x: "Jun",   value:  53, custom_field: "info 7"},
-    {x: "Jul",   value:  31, custom_field: "info 8"},
-    {x: "Aug",   value: -15, custom_field: "info 9"},
-    {x: "Sep",   value:  42, custom_field: "info 10"},
-    {x: "Oct",   value:  53, custom_field: "info 11"},
-    {x: "Nov",   value: -15, custom_field: "info 12"},
-    {x: "Dec",   value:  51, custom_field: "info 13"},
-    {x: "End", isTotal: true, custom_field: "info 14"}
+  {x: "Start", value:  23, custom_field: "info 1"},
+  {x: "Jan",   value:  22, custom_field: "info 2"},
+  {x: "Feb",   value: -46, custom_field: "info 3"},
+  {x: "Mar",   value: -91, custom_field: "info 4"},
+  {x: "Apr",   value:  37, custom_field: "info 5"},
+  {x: "May",   value: -21, custom_field: "info 6"},
+  {x: "Jun",   value:  53, custom_field: "info 7"},
+  {x: "Jul",   value:  31, custom_field: "info 8"},
+  {x: "Aug",   value: -15, custom_field: "info 9"},
+  {x: "Sep",   value:  42, custom_field: "info 10"},
+  {x: "Oct",   value:  53, custom_field: "info 11"},
+  {x: "Nov",   value: -15, custom_field: "info 12"},
+  {x: "Dec",   value:  51, custom_field: "info 13"},
+  {x: "End", isTotal: true, custom_field: "info 14"}
 ];
 
 // create a waterfall chart
