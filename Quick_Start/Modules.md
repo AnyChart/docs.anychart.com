@@ -19,15 +19,15 @@ You should always add one of the following modules:
 Reference them the `<head>` section of your page **before any other modules**:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-bundle.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-bundle.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-base.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-base.min.js"></script>
 ```
 
 The main module, required by all chart types, is [Core](#core), the core of the engine. It is included, among other things, in the [Base](#base) and [Bundle](#bundle) modules, so you can also use them instead.
@@ -42,9 +42,9 @@ For example, to create an exportable Pie chart, combine Core with the [Pie and D
 
 ```
 <head>
-  <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-pie.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-exports.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-pie.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-exports.min.js"></script>
 </head>
 ```
 
@@ -67,7 +67,7 @@ You can also build a file that contains your license key. See the [Credits](Cred
 The AnyChart Bundle build contains all [chart modules](#chart_modules) and [features](#features). It is the biggest file, use it cautiously.
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-bundle.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-bundle.min.js"></script>
 ```
 
 ## Chart Modules
@@ -85,7 +85,7 @@ AnyChart Base is a handy module that contains:
 
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-base.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-base.min.js"></script>
 ```
 
 ### Core
@@ -93,7 +93,7 @@ AnyChart Base is a handy module that contains:
 AnyChart Core is the core of the engine. It is needed whenever you use any module (except [Bundle](#bundle) and [Base](#base)).
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js"></script>
 ```
 
 ### Bullet
@@ -101,7 +101,7 @@ AnyChart Core is the core of the engine. It is needed whenever you use any modul
 A module for creating [Bullet](../Basic_Charts/Bullet_Chart) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-bullet.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-bullet.min.js"></script>
 ```
 
 ### Basic Cartesian
@@ -109,7 +109,7 @@ A module for creating [Bullet](../Basic_Charts/Bullet_Chart) charts:
 A module for creating basic Cartesian charts: [Area](../Basic_Charts/Area_Chart), [Bar](../Basic_Charts/Bar_Chart), [Box](../Basic_Charts/Box_Chart), [Bubble](../Basic_Charts/Bubble_Chart), [Column](../Basic_Charts/Column_Chart), [Area](../Basic_Charts/Area_Chart), [HiLo](../Basic_Charts/HiLo_Chart), [Candlestick](../Basic_Charts/Japanese_Candlestick_Chart), [Jump Line](../Basic_Charts/Jump_Line_Chart), [Line](../Basic_Charts/Line_Chart), [Marker](../Basic_Charts/Marker_Chart), [OHLC](../Basic_Charts/OHLC_Chart), [Range Area](../Basic_Charts/Range_Area_Chart), [Range Bar](../Basic_Charts/Range_Bar_Chart), [Range Column](../Basic_Charts/Range_Column_Chart), [Range Spline Area](../Basic_Charts/Range_Spline_Area_Chart), [Range Step Area](../Basic_Charts/Range_Step_Area_Chart), [Spline Area](../Basic_Charts/Spline_Area_Chart), [Spline](../Basic_Charts/Spline_Chart), [Step Area](../Basic_Charts/Step_Area_Chart), [Step Line](../Basic_Charts/Step_Line_Chart), [Stick](../Basic_Charts/Stick_Chart). 
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-cartesian.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-cartesian.min.js"></script>
 ```
 
 ### Basic 3D
@@ -117,7 +117,7 @@ A module for creating basic Cartesian charts: [Area](../Basic_Charts/Area_Chart)
 A module for creating [Cartesian 3D](../Basic_Charts/3D/Overview) charts (except for Pie and Doughnut):
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-cartesian-3d.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-cartesian-3d.min.js"></script>
 ```
 
 ### Calendar
@@ -125,7 +125,7 @@ A module for creating [Cartesian 3D](../Basic_Charts/3D/Overview) charts (except
 A module for creating [Calendar](../Basic_Charts/Calendar_Chart) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-calendar.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-calendar.min.js"></script>
 ```
 
 ### Circle Packing
@@ -133,7 +133,7 @@ A module for creating [Calendar](../Basic_Charts/Calendar_Chart) charts:
 A module for creating [Circle Packing](../Basic_Charts/Circle_Packing_Chart) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-circle-packing.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-circle-packing.min.js"></script>
 ```
 
 ### Circular Gauge
@@ -141,7 +141,7 @@ A module for creating [Circle Packing](../Basic_Charts/Circle_Packing_Chart) cha
 A module for creating [Circular Gauges](../Gauges/Circular_Gauge):
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-circular-gauge.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-circular-gauge.min.js"></script>
 ```
 
 ### Gantt
@@ -149,7 +149,7 @@ A module for creating [Circular Gauges](../Gauges/Circular_Gauge):
 A module for creating Project and Resource [Gantt](../Gantt_Chart) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-gantt.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-gantt.min.js"></script>
 ```
 
 ### Geo Maps
@@ -157,7 +157,7 @@ A module for creating Project and Resource [Gantt](../Gantt_Chart) charts:
 A module for creating [Geo Maps](../Maps/Quick_Start):
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-map.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-map.min.js"></script>
 ```
 
 ### Graph Chart
@@ -165,7 +165,7 @@ A module for creating [Geo Maps](../Maps/Quick_Start):
 A module for creating [Graph](../Basic_Charts/Graph_Chart) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-graph.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-graph.min.js"></script>
 ```
 
 ### Geo Maps
@@ -173,7 +173,7 @@ A module for creating [Graph](../Basic_Charts/Graph_Chart) charts:
 A module for creating [Geo Maps](../Maps/Quick_Start):
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-map.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-map.min.js"></script>
 ```
 
 ### Graph Chart
@@ -181,7 +181,7 @@ A module for creating [Geo Maps](../Maps/Quick_Start):
 A module for creating [Graph](../Basic_Charts/Graph_Chart) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-graph.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-graph.min.js"></script>
 ```
 
 ### Heat Map
@@ -189,7 +189,7 @@ A module for creating [Graph](../Basic_Charts/Graph_Chart) charts:
 A module for creating [Heat Maps](../Basic_Charts/Heat_Map_Chart):
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-heatmap.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-heatmap.min.js"></script>
 ```
 
 ### Linear Gauge
@@ -197,7 +197,7 @@ A module for creating [Heat Maps](../Basic_Charts/Heat_Map_Chart):
 A module for creating [Linear Gauges](../Gauges/Linear_Gauge):
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-linear-gauge.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-linear-gauge.min.js"></script>
 ```
 
 ### Mekko
@@ -205,7 +205,7 @@ A module for creating [Linear Gauges](../Gauges/Linear_Gauge):
 A module for creating [Mekko](../Basic_Charts/Marimekko_Chart/Mekko_Chart) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-mekko.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-mekko.min.js"></script>
 ```
 
 ### Network Graph
@@ -213,7 +213,7 @@ A module for creating [Mekko](../Basic_Charts/Marimekko_Chart/Mekko_Chart) chart
 A module for creating [Network Graph](../Basic_Charts/Network_Graph) diagrams:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-graph.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-graph.min.js"></script>
 ```
 
 ### Network Graph
@@ -221,7 +221,7 @@ A module for creating [Network Graph](../Basic_Charts/Network_Graph) diagrams:
 A module for creating [Network Graph](../Basic_Charts/Network_Graph) diagrams:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-graph.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-graph.min.js"></script>
 ```
 
 ### Pareto
@@ -229,7 +229,7 @@ A module for creating [Network Graph](../Basic_Charts/Network_Graph) diagrams:
 A module for creating [Pareto](../Basic_Charts/Pareto_Chart) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-pareto.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-pareto.min.js"></script>
 ```
 
 ### PERT
@@ -237,7 +237,7 @@ A module for creating [Pareto](../Basic_Charts/Pareto_Chart) charts:
 A module for creating [PERT](../PERT_Chart/Overview) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-pert.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-pert.min.js"></script>
 ```
 
 ### Pie and Doughnut
@@ -245,7 +245,7 @@ A module for creating [PERT](../PERT_Chart/Overview) charts:
 A module for creating [Pie](../Basic_Charts/Pie_Chart) and [Doughnut](../Basic_Charts/Doughnut_Chart) charts (including the 3D versions):
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-pie.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-pie.min.js"></script>
 ```
 
 ### Polar
@@ -253,7 +253,7 @@ A module for creating [Pie](../Basic_Charts/Pie_Chart) and [Doughnut](../Basic_C
 A module for creating [Polar](../Basic_Charts/Polar_Plot/Overview) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-polar.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-polar.min.js"></script>
 ```
 
 ### Pyramid and Funnel
@@ -261,7 +261,7 @@ A module for creating [Polar](../Basic_Charts/Polar_Plot/Overview) charts:
 A module for creating [Pyramid](../Basic_Charts/Pyramid_Chart) and [Funnel](../Basic_Charts/Funnel_Chart) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-pyramid-funnel.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-pyramid-funnel.min.js"></script>
 ```
 
 ### Radar
@@ -269,7 +269,7 @@ A module for creating [Pyramid](../Basic_Charts/Pyramid_Chart) and [Funnel](../B
 A module for creating [Radar](../Basic_Charts/Radar_Plot/Overview) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-radar.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-radar.min.js"></script>
 ```
 
 ### Resource
@@ -277,7 +277,7 @@ A module for creating [Radar](../Basic_Charts/Radar_Plot/Overview) charts:
 A beta module for creating [Resource](../beta/Resource_Chart) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-resource.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-resource.min.js"></script>
 ```
 
 ### Sankey Diagram
@@ -285,7 +285,7 @@ A beta module for creating [Resource](../beta/Resource_Chart) charts:
 A module for creating [Sankey Diagrams](../Basic_Charts/Sankey_Diagram):
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-sankey.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-sankey.min.js"></script>
 ```
 
 ### Scatter
@@ -293,7 +293,7 @@ A module for creating [Sankey Diagrams](../Basic_Charts/Sankey_Diagram):
 A module for creating [Scatter](../Basic_Charts/Scatter_Plot/Overview) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-scatter.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-scatter.min.js"></script>
 ```
 
 ### Sparkline
@@ -301,7 +301,7 @@ A module for creating [Scatter](../Basic_Charts/Scatter_Plot/Overview) charts:
 A module for creating [Sparkline](../Basic_Charts/Sparkline_Chart) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-sparkline.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-sparkline.min.js"></script>
 ```
 
 ### Stock
@@ -309,7 +309,7 @@ A module for creating [Sparkline](../Basic_Charts/Sparkline_Chart) charts:
 A module for creating [Stock](../Stock_Charts/Overview) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-stock.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-stock.min.js"></script>
 ```
 
 ### Sunburst
@@ -317,7 +317,7 @@ A module for creating [Stock](../Stock_Charts/Overview) charts:
 A module for creating [Sunburst](../Basic_Charts/Sunburst_Chart) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-sunburst.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-sunburst.min.js"></script>
 ```
 
 ### Surface
@@ -325,7 +325,7 @@ A module for creating [Sunburst](../Basic_Charts/Sunburst_Chart) charts:
 A module for creating [Surface](../3D_Plot/Surface_Chart) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-surface.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-surface.min.js"></script>
 ```
 
 ### Tag Cloud
@@ -333,7 +333,7 @@ A module for creating [Surface](../3D_Plot/Surface_Chart) charts:
 A module for creating [Tag Clouds](../Basic_Charts/Tag_Cloud):
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-tag-cloud.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-tag-cloud.min.js"></script>
 ```
 
 ### Timeline
@@ -341,7 +341,7 @@ A module for creating [Tag Clouds](../Basic_Charts/Tag_Cloud):
 A module for creating [Timeline](../Basic_Charts/Timeline_Chart) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-timeline.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-timeline.min.js"></script>
 ```
 
 ### Treemap
@@ -349,7 +349,7 @@ A module for creating [Timeline](../Basic_Charts/Timeline_Chart) charts:
 A module for creating [Treemap](../Basic_Charts/Treemap_Chart) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-treemap.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-treemap.min.js"></script>
 ```
 
 ### Venn Diagram
@@ -357,7 +357,7 @@ A module for creating [Treemap](../Basic_Charts/Treemap_Chart) charts:
 A module for creating [Venn Diagrams](../Basic_Charts/Venn_Diagram):
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-venn.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-venn.min.js"></script>
 ```
 
 ### Waterfall
@@ -365,7 +365,7 @@ A module for creating [Venn Diagrams](../Basic_Charts/Venn_Diagram):
 A module for creating [Waterfall](../Basic_Charts/Waterfall_Chart) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-waterfall.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-waterfall.min.js"></script>
 ```
 
 ### Word Tree
@@ -373,7 +373,7 @@ A module for creating [Waterfall](../Basic_Charts/Waterfall_Chart) charts:
 A module for creating [Word Tree](../Basic_Charts/Word_Tree) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-bundle.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-bundle.min.js"></script>
 ```
 
 ## Features
@@ -385,7 +385,7 @@ Additional modules that are responsible for various features of the library.
 A module for working with [Annotations](../Stock_Charts/Drawing_Tools_and_Annotations/Overview):
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-annotations.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-annotations.min.js"></script>
 ```
 
 ### Data Adapter
@@ -393,7 +393,7 @@ A module for working with [Annotations](../Stock_Charts/Drawing_Tools_and_Annota
 A module for working with [Data Adapter](../Working_with_Data/Data_Adapter/Overview):
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-data-adapter.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-data-adapter.min.js"></script>
 ```
 
 ### Exports
@@ -401,7 +401,7 @@ A module for working with [Data Adapter](../Working_with_Data/Data_Adapter/Overv
 A module that enables [Exports](../Common_Settings/Exports) and [Sharing](../Common_Settings/Sharing):
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-exports.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-exports.min.js"></script>
 ```
 
 ### Table UI
@@ -409,7 +409,7 @@ A module that enables [Exports](../Common_Settings/Exports) and [Sharing](../Com
 A module that enables [Table Layout](../Dashboards/Table_Layout):
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-table.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-table.min.js"></script>
 ```
 
 ### Common UI
@@ -417,7 +417,7 @@ A module that enables [Table Layout](../Dashboards/Table_Layout):
 A module that enables UI features, such as [Context Menu](../Common_Settings/UI_Controls/Context_Menu), [Preloader](../Common_Settings/UI_Controls/Preloader), [Zoom Controls](../Common_Settings/UI_Controls/Zoom_Controls), [Range Picker & Range Selector](../Stock_Charts/Range_Selection):
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-ui.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-ui.min.js"></script>
 ```
 
 ### UI Binding
@@ -425,7 +425,7 @@ A module that enables UI features, such as [Context Menu](../Common_Settings/UI_
 The UI Binding module is a set of utilities for binding HTML5 UI elements to chart settings.
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-ui-binding.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-ui-binding.min.js"></script>
 ```
 
 ### VML Renderer 
@@ -433,7 +433,7 @@ The UI Binding module is a set of utilities for binding HTML5 UI elements to cha
 A module that enables VML support for old browsers.
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-vml.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-vml.min.js"></script>
 ```
 
 ## Extensions
@@ -445,5 +445,5 @@ Extension modules provide additional functionality. Extensions **CANNOT** be a p
 Chart Editor is an extension that provides a UI for configuring charts and chart data. Read more in the [AnyChart Chart Editor](../Chart_Editor/Overview) section.
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-editor.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-editor.min.js"></script>
 ```

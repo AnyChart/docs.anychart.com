@@ -16,17 +16,17 @@ This article explains how to create and configure scatter charts.
 Scatter charts require adding the [Core](../../Quick_Start/Modules#core) and [Scatter](../../Quick_Start/Modules#scatter) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-scatter.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-scatter.min.js"></script>
 ```
 
 Alternatively, you can use the [Base](../../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-base.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-base.min.js"></script>
 ```
 
 Learn more: [Modules](../../Quick_Start/Modules).

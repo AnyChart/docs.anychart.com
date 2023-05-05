@@ -37,11 +37,11 @@ This article explains how to create a basic Heat Map chart as well as configure 
 The Heat Map chart requires adding the [Core](../Quick_Start/Modules#core) and [Heat Map](../Quick_Start/Modules#heat_map) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-heatmap.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-heatmap.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).

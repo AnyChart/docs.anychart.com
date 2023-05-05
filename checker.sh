@@ -50,7 +50,7 @@ function heal_file(){
     # replace all STG urls to COM and non-{{branch-name}}
     perl -pi -e 's,src="../anychart,src="https://cdn.anychart.com/releases/d/js/anychart,g' ${filename}
     perl -pi -e 's/\.stg/\.com/g' ${filename}
-    perl -pi -e 's,(releases)/([^/])+/,\1/{{branch-name}}/,g' ${filename}
+    perl -pi -e 's,(releases)/([^/])+/,\1/\{\{branch-name\}\}/,g' ${filename}
 
     if [[ ! " ${IGNOREFILES[*]} " == *"$filename"* ]]; then
         # match all non-ascii symbols
@@ -75,7 +75,7 @@ FILE_MODIFYER="heal_file"
 
 # sugar function
 function broke_file(){
-    perl -pi -e "s,(releases)/({{branch-name}})+/,\1/$CURRENT_BRANCH/,g" $1
+    perl -pi -e "s,(releases)/(\{\{branch-name\}\})+/,\1/$CURRENT_BRANCH/,g" $1
 }
 
 ########################################################################################################################
@@ -87,7 +87,7 @@ for ARGUMENT in "$@"
 do
     case "$ARGUMENT" in
             replace|r|"-r")    FILE_MODIFYER="broke_file" ;;
-            all|a|"-a")        
+            all|a|"-a")
                 FILESLIST=$(find . -type f | grep -e .md -e .html)
                 FILESLIST_COUNT=$(find . -type f | grep -e .md -e .html | wc -l)
             ;;
@@ -118,14 +118,14 @@ echo "Items to check: "
 echo $FILESLIST
 echo "Modifier: ${FILE_MODIFYER}"
 echo "COUNT: ${FILESLIST_COUNT}"
-echo 
+echo
 
 nr=0
 # for each files in tree of folders do (like python walk)
 for filename in ${FILESLIST}; do
     (( ++nr ))
     # in diff mode file may be marked as deleted
-    if [ -f $filename ];then 
+    if [ -f $filename ];then
         echo -ne "${nr} / ${FILESLIST_COUNT} > ${filename}                                              \r"
         ${FILE_MODIFYER} ${filename}
     fi
