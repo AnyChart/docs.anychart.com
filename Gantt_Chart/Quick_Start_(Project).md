@@ -13,8 +13,8 @@ AnyGantt requires adding two [modules](../Quick_Start/Modules) - [Core](../Quick
 
 ```
 <head>
-  <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-core.min.js" type="text/javascript"></script>
-  <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-gantt.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -152,8 +152,8 @@ Here is the full source code of the sample. You can copy the code to a file on y
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-gantt.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4" type="text/javascript"></script>
   </head>
   <body>
     <div id="container"></div>

@@ -41,11 +41,11 @@ This article explains how to create a basic Waterfall chart as well as configure
 The Waterfall chart requires adding the [Core](../Quick_Start/Modules#core) and [Waterfall](../Quick_Start/Modules#waterfall) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-waterfall.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-waterfall.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules)

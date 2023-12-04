@@ -38,11 +38,11 @@ This article explains how to create a basic Treemap chart in AnyChart as well as
 The Treemap chart requires adding the [Core](../Quick_Start/Modules#core) and [Treemap](../Quick_Start/Modules#treemap) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-treemap.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-treemap.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
