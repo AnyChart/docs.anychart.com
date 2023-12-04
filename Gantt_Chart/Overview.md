@@ -51,11 +51,11 @@ There are also advanced settings available:
 AnyGantt requires adding two [modules](../Quick_Start/Modules) - [Core](../Quick_Start/Modules#core) and [Gantt](../Quick_Start/Modules#gantt):
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js" type="text/javascript"></script>
+<script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-core.min.js" type="text/javascript"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-gantt.min.js" type="text/javascript"></script>
+<script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-gantt.min.js" type="text/javascript"></script>
 ```
 
 ## Classes

@@ -16,27 +16,27 @@ Error bars do not require any modules except the modules required by the chart o
 For scatter charts, combine the [Core](../../Quick_Start/Modules#core) module with the [Scatter](../../Quick_Start/Modules#scatter) module:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-scatter.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-scatter.min.js"></script>
 ```
 
 For Cartesian charts, combine [Core](../../Quick_Start/Modules#core) module with [Basic Cartesian](../../Quick_Start/Modules#basic_cartesian):
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-cartesian.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-cartesian.min.js"></script>
 ```
 
 You can also use the [Base](../../Quick_Start/Modules#base) module, which includes, among other things, all the modules mentioned above:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-base.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-base.min.js"></script>
 ```
 
 Learn more: [Modules](../../Quick_Start/Modules).

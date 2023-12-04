@@ -36,11 +36,11 @@ This article explains how to create a basic Tag Cloud chart as well as configure
 The Tag Cloud requires adding the [Core](../Quick_Start/Modules#core) and [Tag Cloud](../Quick_Start/Modules#tag_cloud) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-tag-cloud.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-tag-cloud.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).

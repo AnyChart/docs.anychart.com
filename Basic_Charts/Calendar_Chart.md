@@ -37,11 +37,11 @@ This article explains how to create a basic Calendar chart in AnyChart as well a
 The Calendar chart requires adding the [Core](../Quick_Start/Modules#core) and [Calendar](../Quick_Start/Modules#calendar) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-calendar.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-calendar.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).

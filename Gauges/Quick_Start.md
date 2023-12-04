@@ -7,8 +7,8 @@ The [Circular Gauge](Circular_Gauge) requires adding the [Core](../Quick_Start/M
 
 ```
 <head>
-  <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js" type="text/javascript"></script>
-  <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-circular-gauge.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-core.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-circular-gauge.min.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -16,8 +16,8 @@ To create a [Linear Gauge](Linear_Gauge), add the [Core](../Quick_Start/Modules#
 
 ```
 <head>
-  <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js" type="text/javascript"></script>
-  <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-linear-gauge.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-core.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-linear-gauge.min.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -111,8 +111,8 @@ The sample above can be launched and explored in AnyChart PlayGround. You can al
 <!doctype html>
 <html>
 <head>
-  <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js" type="text/javascript"></script>
-  <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-circular-gauge.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-core.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-circular-gauge.min.js" type="text/javascript"></script>
   <style>
     html, body, #container {
       width: 100%;

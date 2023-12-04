@@ -11,8 +11,8 @@ PERT chart requires adding the [Core](../Quick_Start/Modules#core) and [PERT](..
 
 ```
 <head>
-    <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js" type="text/javascript"></script>
-    <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-pert.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-core.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-pert.min.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -99,8 +99,8 @@ You can copy this to a file on your computer and open it in your browser to disp
 <!doctype html>
 <html>
   <head>
-    <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js" type="text/javascript"></script>
-    <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-pert.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-core.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-pert.min.js" type="text/javascript"></script>
     <style>
       html, body, #container {
         width: 100%;

@@ -11,8 +11,8 @@ AnyMap requires adding the [Core](../Quick_Start/Modules#core) and [Geo Maps](..
 
 ```
 <head>
-  <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js" type="text/javascript"></script>
-  <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-map.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-core.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-map.min.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -26,7 +26,7 @@ Reference the GeoData JavaScript file in the `<head>` section of your web page.
 
 ```
 <head>
-  <script src="https://cdn.anychart.com/geodata/2.1.1/countries/australia/australia.js"></script>
+  <script src="https://cdn.anychart.com/geodata/2.2.0/countries/australia/australia.js"></script>
 </head>
 ```
 
@@ -122,9 +122,9 @@ You can copy this code to a file on your computer and open it in your browser to
 <!doctype html>
 <html>
   <head>
-    <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js" type="text/javascript"></script>
-    <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-map.min.js" type="text/javascript"></script>
-    <script src="https://cdn.anychart.com/geodata/2.1.1/countries/australia/australia.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-core.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-map.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/geodata/2.2.0/countries/australia/australia.js"></script>
     <style>
       html, body, #container {
         width: 100%;

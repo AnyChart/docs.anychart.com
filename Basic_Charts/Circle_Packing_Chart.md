@@ -38,11 +38,11 @@ This article explains how to create a basic Circle Packing chart in AnyChart as 
 The Circle Packing chart requires adding the [Core](../Quick_Start/Modules#core) and [Circle Packing](../Quick_Start/Modules#circle_packing) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-circle-packing.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-circle-packing.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).

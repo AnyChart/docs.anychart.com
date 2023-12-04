@@ -9,7 +9,7 @@ AnyChart provides you with ability to export charts to images (SVG, PNG, JPG), P
 To enable export, add the [Exports](../Quick_Start/Modules#exports) module:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-exports.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.12.0/js/anychart-exports.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
