@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Circle Packing Chart 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-circle-packing.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<button onclick="switchMode()">Switch labels display mode</button>    
+<div id="container"></div>
+<script>
+var chart;
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      {name:   "Root 1", children: [
+        {name: "Leaf 1",        value: 150000000},
+        {name: "Leaf 2",      value:  150000000},
+        {name: "Leaf 3",     value:   150000000}
+      ]},
+    {name:   "Root 2", children: [
+        {name: "Leaf 1",        value: 150000000},
+        {name: "Leaf 2",      value:  150000000},
+        {name: "Leaf 3",     value:   150000000}
+      ]}      
+    ];
+
+    // create a chart and set the data
+    chart = anychart.circlePacking(data, "as-tree");
+
+    // set the chart title
+    chart.title().useHtml(true);
+    chart.title("Circle Packing: Labels and Tooltips (Labels mode)");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+
+// circle packing chart labels switching function
+function switchMode(){
+  if (chart.labelsMode()=='leaves') {
+    chart.labelsMode('roots');
+  } else {
+    chart.labelsMode('leaves');
+  }
+}
+</script>
+</body>
+</html>

@@ -324,3 +324,25 @@ return "number of speakers: " + numberOfSpeakers +
 ```
 
 {sample}BCT\_Circle\_Packing\_Chart\_06{sample}
+
+#### Labels mode
+
+The {api:anychart.charts.CirclePacking#labelsMode}labelsMode(){api} method allows to change which labels are shown on the chart. Sets whether it should be root labels or leaves labels.  
+
+Mode for leaves is set like this:
+
+```
+// enable circle packing labels mode that shows them on leaves
+chart.labelsMode('leaves');
+```
+
+Mode for roots (which is a defailt) is set like this:
+
+```
+// enable circle packing labels mode that shows them on roots
+chart.labelsMode('roots');
+```
+
+This is a sample of circle packing chart where you can switch the modes and see how it affects the chart:
+
+{sample}BCT\_Circle\_Packing\_Chart\_07{sample}
