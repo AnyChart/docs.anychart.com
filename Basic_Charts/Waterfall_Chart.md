@@ -207,7 +207,18 @@ Totals are calculated automatically depending on the mode, if you want to force 
 chart.drawTotalsAsAbsolute(true);
 ```
 
-In the sample below you can see that calculated total should be 150 but the value provided in the data is 100 and {api:anychart.charts.Waterfall#drawTotalsAsAbsolute}drawTotalsAsAbsolute(){api} forced the last total to be displayed as 100:
+In the sample below you can see that the data is the following:
+
+```
+chart = anychart.waterfall([
+  {x: 'Net Sales', value: 100 },
+  {x: 'Cost of Sales', value: -50 },
+  {x: 'Extraordinary Gain', value: 100},
+  {x: 'Planed total', value: 100, isTotal: true },
+]);
+```
+
+So the calculated total should be 150 but the value provided in the data is 100 and {api:anychart.charts.Waterfall#drawTotalsAsAbsolute}drawTotalsAsAbsolute(){api} forced the last total to be displayed as 100:
 
 {sample}BCT\_Waterfall\_Chart\_10{sample}
 
