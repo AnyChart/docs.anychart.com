@@ -109,7 +109,7 @@ Use the following data fields:
 * `x` to set categories
 * `value` to set values
 * `isTotal` to show a total value
-* 
+* `drawConnector` to force chart to hide the connector
 
 **Note:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
@@ -209,7 +209,7 @@ chart.drawTotalsAsAbsolute(true);
 
 In the sample below you can see that calculated total should be 150 but the value provided in the data is 100 and {api:anychart.charts.Waterfall#drawTotalsAsAbsolute}drawTotalsAsAbsolute(){api} forced the last total to be displayed as 100:
 
-{sample}BCT\_Waterfall\_Chart\_10sample}
+{sample}BCT\_Waterfall\_Chart\_10{sample}
 
 ### Appearance
 
