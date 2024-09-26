@@ -25,35 +25,19 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+    chart = anychart.waterfall([
+      { x: 'Net Sales', value: 100 },
+      { x: 'Cost of Sales', value: -50 },
+      { x: 'Extraordinary Gain', value: 100},
+      // here we set value for total point
+      { x: 'Planed total', value: 100, isTotal: true },
+    ]);
 
-    // create data   
-    // drawConnector: false in the '2023' point force chart not to draw a connector from it to the next point
-    var data = [
-      {x: "2022", value:  23},
-      {x: "Q1",   value:  -12},
-      {x: "Q2",   value: 16},
-      {x: "Q3",   value:  9},
-      {x: "Q4",   value:  7},
-      {x: "2023", isTotal: true, drawConnector: false},
-      {x: "Total", isTotal: true},
-    ];
+    // Set totals drawing mode.
+    chart.drawTotalsAsAbsolute(true);
 
-    // create a waterfall chart
-    var chart = anychart.waterfall();
-
-    // create a series and set the data
-    var series = chart.waterfall(data);
-  
-    // set the chart title
-    chart.title("Waterfall Chart: Omit Connector");
-    
-    // set the data mode
-    chart.dataMode("diff");
-
-    // set the container id
-    chart.container("container");
-
-    // initiate drawing the chart
+    chart.title('Set totals drawing mode');
+    chart.container('container');
     chart.draw();
 });
 </script>
