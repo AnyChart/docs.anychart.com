@@ -41,11 +41,11 @@ This article explains how to create a basic Waterfall chart as well as configure
 The Waterfall chart requires adding the [Core](../Quick_Start/Modules#core) and [Waterfall](../Quick_Start/Modules#waterfall) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.12.1/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.13.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.12.1/js/anychart-waterfall.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.13.0/js/anychart-waterfall.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules)
@@ -109,6 +109,7 @@ Use the following data fields:
 * `x` to set categories
 * `value` to set values
 * `isTotal` to show a total value
+* `drawConnector` to force chart to hide the connector
 
 **Note:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
@@ -197,6 +198,30 @@ var series3 = chart.waterfall(seriesData_3);
 
 {sample}BCT\_Waterfall\_Chart\_03{sample}
 
+### Totals as Absolute
+
+Totals are calculated automatically depending on the mode, if you want to force chart to draw another value you can use the {api:anychart.charts.Waterfall#drawTotalsAsAbsolute}drawTotalsAsAbsolute(){api} method like that:
+
+```
+// Set totals drawing mode.
+chart.drawTotalsAsAbsolute(true);
+```
+
+In the sample below you can see that the data is the following:
+
+```
+chart = anychart.waterfall([
+  {x: 'Net Sales', value: 100 },
+  {x: 'Cost of Sales', value: -50 },
+  {x: 'Extraordinary Gain', value: 100},
+  {x: 'Planed total', value: 100, isTotal: true },
+]);
+```
+
+So the calculated total should be 150 but the value provided in the data is 100 and {api:anychart.charts.Waterfall#drawTotalsAsAbsolute}drawTotalsAsAbsolute(){api} forced the last total to be displayed as 100:
+
+{sample}BCT\_Waterfall\_Chart\_10{sample}
+
 ### Appearance
 
 #### Columns
@@ -264,6 +289,26 @@ chart.connectorStroke("#ff6666", 2, "2 2", "round");
 ```
 
 {sample}BCT\_Waterfall\_Chart\_05{sample}
+
+#### Dropped Connectors
+
+In some cases you may want to omit drawing a connector from a point to the next point, to do so you need to use `drawConnector` field in the data set like this:
+
+```
+var data = [
+  {x: "2022", value:  23},
+  {x: "Q1",   value:  -12},
+  {x: "Q2",   value: 16},
+  {x: "Q3",   value:  9},
+  {x: "Q4",   value:  7},
+  {x: "2023", isTotal: true, drawConnector: false},
+  {x: "Total", isTotal: true},
+];
+```
+
+Here is a sample, notice there is no connector between two last bars: **2023** and **Total**:
+
+{sample}BCT\_Waterfall\_Chart\_09{sample}
 
 ### Point Size
 

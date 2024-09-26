@@ -38,11 +38,11 @@ This article explains how to create a basic Circle Packing chart in AnyChart as 
 The Circle Packing chart requires adding the [Core](../Quick_Start/Modules#core) and [Circle Packing](../Quick_Start/Modules#circle_packing) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.12.1/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.13.0/js/anychart-core.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/8.12.1/js/anychart-circle-packing.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.13.0/js/anychart-circle-packing.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
@@ -324,3 +324,25 @@ return "number of speakers: " + numberOfSpeakers +
 ```
 
 {sample}BCT\_Circle\_Packing\_Chart\_06{sample}
+
+#### Labels mode
+
+The {api:anychart.charts.CirclePacking#labelsMode}labelsMode(){api} method allows to change which labels are shown on the chart. Sets whether it should be root labels or leaves labels.  
+
+Mode for leaves is set like this:
+
+```
+// enable circle packing labels mode that shows them on leaves
+chart.labelsMode('leaves');
+```
+
+Mode for roots (which is a defailt) is set like this:
+
+```
+// enable circle packing labels mode that shows them on roots
+chart.labelsMode('roots');
+```
+
+This is a sample of circle packing chart where you can switch the modes and see how it affects the chart:
+
+{sample}BCT\_Circle\_Packing\_Chart\_07{sample}
