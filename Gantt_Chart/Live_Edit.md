@@ -37,6 +37,15 @@ A [data tree event](Events#data_tree) is triggered:
 <tr><td>treeItemMove</td><td>A data item has been moved.</td></tr>
 </table>
 
+On a gantt resource chart, you can edit the structure of the data not only by dragging and dropping rows up and down, but also by dragging and dropping periods between rows.
+
+A [before update period](Events#rows) is triggered as well as [data tree event](Events#data_tree):
+
+<table>
+<tr><th>Value</th><th>Description</th></tr>
+<tr><td>beforeUpdatePeriod</td><td>A period is about to be updated on a gantt resource chart.</td></tr>
+</table>
+
 **3. Editing Elements**
 
 Drag and drop timeline [elements](Elements) to change their positions on the timeline. To change the duration and progress of an element, use duration thumbs on its sides and the slider on the progress bar.
