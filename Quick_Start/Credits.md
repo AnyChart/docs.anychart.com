@@ -48,27 +48,6 @@ credits.logoSrc("https://static.anychart.com/images/github.png");
 
 {sample}Credits\_04{sample}
 
-### Position
-
-Credits position can be adjusted only through CSS. There are three classes you can set properties to: **anychart-credits** to change credits position, **anychart-credits-logo** to change logo position and **anychart-credits-text** to change credits text position. 
-
-CSS code:
-
-```
-.anychart-credits{
-  left: 10px !important;
-  width: 200px !important;
-}
-.anychart-credits-logo{
-  right: 10px;
-  left: auto !important;
-}
-.anychart-credits-text{
-  right: 25px;
-  left: auto !important;
-}
-```
-
 ### Disabling
 
 To disable credits just put this in your code, but remember: it will work only if you have a [license key](#license).
