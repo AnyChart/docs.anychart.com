@@ -28,6 +28,7 @@ You can listen to the following events of rows:
 <tr><td>rowMouseOver</td><td>The mouse has been moved over a row.</td></tr>
 <tr><td>rowMouseUp</td><td>The left mouse button has been released over a row.</td></tr>
 <tr><td>rowSelect</td><td>A row has been selected.</td></tr>
+<tr><td>beforeUpdatePeriod</td><td>A period is about to be updated on a gantt resource chart.</td></tr>
 </table>
 
 In the sample below, event listeners are used to update the chart title when `"rowMouseOver"`, `"rowClick"`, `"rowDblClick"`, and `"rowCollapseExpand"` fire:
