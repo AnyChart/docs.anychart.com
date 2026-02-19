@@ -1,0 +1,294 @@
+/**
+ * AnyChart Documentation Theme
+ * Based on the docs.anychart.com design system
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* ===== Light Mode (AnyChart brand) ===== */
+:root {
+  /* Primary brand — AnyChart Blue */
+  --ifm-color-primary: #2485d0;
+  --ifm-color-primary-dark: #1f77bc;
+  --ifm-color-primary-darker: #1d70b2;
+  --ifm-color-primary-darkest: #185c92;
+  --ifm-color-primary-light: #3a93d6;
+  --ifm-color-primary-lighter: #43a0e6;
+  --ifm-color-primary-lightest: #6db5e5;
+
+  /* Typography */
+  --ifm-font-family-base: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ifm-font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
+  --ifm-font-size-base: 15px;
+  --ifm-line-height-base: 1.5;
+  --ifm-heading-font-weight: 500;
+
+  /* Layout */
+  --ifm-global-radius: 4px;
+  --ifm-global-shadow-lw: none;
+  --ifm-global-shadow-md: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+
+  /* Navbar */
+  --ifm-navbar-background-color: #2485d0;
+  --ifm-navbar-link-color: #ffffff;
+  --ifm-navbar-link-hover-color: #d5edff;
+  --ifm-navbar-height: 57px;
+  --ifm-navbar-shadow: none;
+
+  /* Sidebar */
+  --ifm-menu-color: #76797b;
+  --ifm-menu-color-active: #2485d0;
+  --ifm-menu-color-background-active: transparent;
+  --ifm-menu-color-background-hover: transparent;
+
+  /* Links */
+  --ifm-link-color: #428bca;
+  --ifm-link-hover-color: #2a6496;
+  --ifm-link-hover-decoration: none;
+
+  /* Code */
+  --ifm-code-font-size: 13px;
+  --ifm-code-background: #f5f5f5;
+  --ifm-code-border-radius: 4px;
+  --ifm-pre-padding: 11px 15px;
+  --ifm-pre-border-radius: 0;
+
+  /* Table */
+  --ifm-table-head-background: #f3f3f3;
+  --ifm-table-head-color: #76797b;
+  --ifm-table-stripe-background: transparent;
+  --ifm-table-border-color: #ebebeb;
+
+  /* Footer */
+  --ifm-footer-background-color: #ffffff;
+  --ifm-footer-color: #76797b;
+
+  /* TOC (right sidebar) */
+  --ifm-toc-link-color: #76797b;
+  --ifm-toc-border-color: #ebebeb;
+
+  /* Code highlighting */
+  --docusaurus-highlighted-code-line-bg: rgba(36, 133, 208, 0.1);
+
+  /* AnyChart brand identity colors */
+  --anychart-green: #26a957;
+  --anychart-orange: #ff8207;
+  --anychart-red: #f0402e;
+  --anychart-blue: #2485d0;
+  --anychart-blue-hover: #43a0e6;
+  --anychart-blue-light: #85caff;
+  --anychart-blue-text: #c9e8ff;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  border-bottom: none;
+}
+
+.navbar__title {
+  color: #c9e8ff;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.navbar__link {
+  color: #ffffff !important;
+  font-weight: 400;
+}
+
+.navbar__link:hover {
+  color: #d5edff !important;
+}
+
+.navbar__link--active {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+/* Navbar logo */
+.navbar__logo {
+  height: 32px;
+}
+
+/* ===== Sidebar ===== */
+.menu__link {
+  font-size: 13px;
+  line-height: 1.6;
+  border-radius: 2px;
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  border-left: 2px solid var(--ifm-color-primary);
+  padding-left: calc(var(--ifm-menu-link-padding-horizontal) - 2px);
+  font-weight: 600;
+}
+
+.menu__list-item-collapsible .menu__link {
+  font-weight: 600;
+}
+
+.theme-doc-sidebar-menu > .menu__list-item > .menu__link {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* ===== Content ===== */
+.markdown h1:first-child {
+  font-size: 22px;
+  font-weight: 500;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ebebeb;
+  margin-bottom: 20px;
+}
+
+.markdown h2 {
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-top: 13px;
+  border-bottom: none;
+}
+
+.markdown h3 {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.markdown h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.markdown h5 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Inline code */
+.markdown code {
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border: none;
+  padding: 2px 4px;
+  font-size: 13px;
+}
+
+/* Code blocks — override inline code style */
+.markdown pre code {
+  color: inherit;
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Tables */
+.markdown table {
+  display: table;
+  width: 100%;
+  border: none;
+}
+
+.markdown table thead tr {
+  border-bottom: none;
+}
+
+.markdown table thead th {
+  background-color: #f3f3f3;
+  color: #76797b;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 6px 8px;
+  border: none;
+}
+
+.markdown table tbody td {
+  padding: 9px 8px;
+  border-bottom: 1px solid #ebebeb;
+  font-size: 14px;
+}
+
+.markdown table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===== Chart Sample Container ===== */
+.chart-sample-container {
+  margin: 20px 0 30px;
+  border: 1px solid #d2d2d2;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.chart-sample-container iframe {
+  display: block;
+  width: 100%;
+  border: none;
+}
+
+.chart-sample-actions {
+  background: #f8f8f8;
+  border-top: 1px solid #ebebeb;
+  padding: 6px 12px;
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.chart-sample-actions a {
+  color: #76797b;
+  text-decoration: none;
+}
+
+.chart-sample-actions a:hover {
+  color: var(--anychart-blue);
+}
+
+/* ===== API Link styling ===== */
+.api-link {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 13px;
+  color: var(--ifm-link-color);
+  text-decoration: none;
+}
+
+.api-link:hover {
+  color: var(--ifm-link-hover-color);
+  text-decoration: underline;
+}
+
+/* ===== Footer ===== */
+.footer {
+  border-top: 1px solid #ebebeb;
+}
+
+.footer__title {
+  color: #222;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.footer__link-item {
+  color: #76797b;
+  font-size: 13px;
+}
+
+.footer__copyright {
+  color: #999;
+  font-size: 12px;
+}
+
+/* ===== TOC (right sidebar) ===== */
+.table-of-contents__link {
+  font-size: 13px;
+}
+
+/* ===== Breadcrumbs ===== */
+.breadcrumbs__link {
+  font-size: 13px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 996px) {
+  .navbar__title {
+    font-size: 16px;
+  }
+}

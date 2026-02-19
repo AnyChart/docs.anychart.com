@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="32" viewBox="0 0 180 32">
+  <!-- Bar chart icon -->
+  <g transform="translate(2, 2)">
+    <rect x="0" y="16" width="6" height="12" rx="1" fill="#26a957"/>
+    <rect x="8" y="8" width="6" height="20" rx="1" fill="#ff8207"/>
+    <rect x="16" y="2" width="6" height="26" rx="1" fill="#f0402e"/>
+  </g>
+  <!-- AnyChart text -->
+  <text x="30" y="22" font-family="'Open Sans', sans-serif" font-size="18" font-weight="400" fill="#c9e8ff">
+    AnyChart
+  </text>
+  <!-- Documentation label -->
+  <text x="116" y="22" font-family="'Open Sans', sans-serif" font-size="18" font-weight="600" fill="#ffffff">
+    Docs
+  </text>
+</svg>

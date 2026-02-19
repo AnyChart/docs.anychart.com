@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(ls:*)",
+      "Bash(git ls-tree:*)",
+      "mcp__context7__query-docs",
+      "Bash(find:*)",
+      "WebFetch(domain:www.anychart.com)",
+      "WebFetch(domain:docusaurus.io)",
+      "WebFetch(domain:docs.anychart.com)",
+      "WebFetch(domain:cdn.anychart.com)",
+      "Bash(powershell -Command \"\\(Invoke-WebRequest -Uri ''https://docs.anychart.com/main.css?v=31b57d7'' -UseBasicParsing\\).Content.Substring\\(90000, 10000\\)\")",
+      "Bash(powershell -Command \"\\(Invoke-WebRequest -Uri ''https://www.anychart.com/_core/build/assets/home-360ad9480a.css'' -UseBasicParsing\\).Content.Substring\\(0, 10000\\)\")",
+      "Bash(grep:*)",
+      "Bash(wc:*)",
+      "Bash(git -C:*)"
+    ]
+  }
+}

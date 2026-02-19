@@ -1,0 +1,215 @@
+---
+sidebar_position: 6
+---
+# Labels
+
+## Overview
+
+Some elements have [labels](../../common-settings/labels) - text or image components, which are defined as instances of the {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api} class.
+
+Labels are supported by the following elements of the **Project chart**:
+
+* [regular tasks](project-chart#regular-tasks)
+* [parent tasks](project-chart#parent-tasks)
+* [milestones](project-chart#milestones)
+* [previews of milestones](project-chart#milestones)
+* [progress bars](project-chart#progress-bars)
+
+Also, labels are supported by the main element of the **Resource chart** - [period](resource-chart#periods).
+
+To access labels, call the **labels()** method of a particular element type or of [all elements](all-elements) (of course, only the elements that support labels are affected):
+
+```
+// access labels of tasks
+var labels = chart.getTimeline().tasks().labels();
+```
+
+```
+// access labels of elements
+var labels = chart.getTimeline().elements().labels();
+```
+
+By default, labels are enabled on Project charts and disabled on Resource charts. To enable or disable labels, pass `true` / `false` either directly to **labels()** or to the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method of labels:
+
+```
+// disable labels of tasks
+var chart.getTimeline().tasks().labels(false);
+```
+
+```
+// disable labels of tasks
+chart.getTimeline().tasks().labels().enabled(false);
+```
+
+To configure labels, use other methods of {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api} - for example, {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api}, {api:anychart.core.ui.LabelsFactory#fontWeight}fontWeight(){api}, {api:anychart.core.ui.LabelsFactory#fontSize}fontSize(){api}, etc. The {api:anychart.core.ui.LabelsFactory#format}format(){api} method, combined with [text formatters](../../common-settings/text-formatters), allows setting the text format - read the sections below to learn more.
+
+**Note:** To learn more about formatting dates, see [Date and Time Formats: format()](../date-and-time-formats#format)).
+
+## Tokens
+
+To format the text of labels, combine the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [tokens](../../common-settings/text-formatters#string-tokens).
+
+Please keep in mind that in addition to default tokens you can always use a custom token corresponding to a custom field in your data.
+
+Also, if you need to enable HTML in tokens, pass `true` to {api:anychart.core.ui.LabelsFactory#useHtml()}useHtml(){api}.
+
+### Project Tokens
+
+For the Project chart, the following tokens are available:
+
+* `{%id}`
+* `{%name}`
+* `{%actualStart}`
+* `{%actualEnd}`
+* `{%baselineStart}`
+* `{%baselineEnd}`
+* `{%progress}`
+* `{%linearIndex}`
+
+In the sample below, labels of different elements have the same font weight but different text format, which is configured with the help of tokens, including a custom one:
+
+```
+// access the timeline
+var timeline = chart.getTimeline();
+
+// configure labels of tasks
+timeline.tasks().labels().useHtml(true);
+timeline.tasks().labels().format(
+  "- <span style='color:#64b5f6'>{%progress}</span>"
+);
+
+// configure labels of parent tasks
+timeline.groupingTasks().labels().useHtml(true);
+timeline.groupingTasks().labels().format(
+    "- <span style='color:#dd2c00'>{%progress}</span>"
+);
+
+// configure labels of milestones
+timeline.milestones().labels().useHtml(true);
+timeline.milestones().labels().format(
+    "<span style='color:#ffa000'> " +
+    "{%actualStart}{dateTimeFormat:dd MMM}</span> {%custom_field}"
+);
+```
+
+{sample :height 220}GANTT\_Elements\_Labels\_01{sample}
+
+### Resource Tokens
+
+The Resource chart supports these tokens:
+
+* `{%id}`
+* `{%name}`
+* `{%start}`
+* `{%end}`
+* `{%linearIndex}`
+
+In the following sample, tokens, including a custom one, are used to format the text of period labels. Also, the text font is adjusted.
+
+```
+// configure labels of periods
+var periodLabels = chart.getTimeline().periods().labels();
+periodLabels.enabled(true);
+periodLabels.useHtml(true);
+periodLabels.fontColor("#104d89");
+periodLabels.fontWeight(600);
+periodLabels.format(
+  "<span style='color:#991f00'>{%custom_field}</span> " +
+  "start: {%start}{dateTimeFormat:dd MMM}"
+);
+```
+
+{sample :height 160}GANTT\_Elements\_Labels\_02{sample}
+
+## Formatting Functions
+
+You can configure the text of labels by combining the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [formatting functions](../../common-settings/text-formatters#formatting-functions).
+
+In these functions, a number of default context fields is available. Also, you can use {api:anychart.format.Context#getData}getData(){api} to refer to a custom field in your data and methods of the [tree data model](../../working-with-data/tree-data-model) to perform operations on data.
+
+If you need to enable HTML in formatting functions, pass `true` to {api:anychart.core.ui.LabelsFactory#useHtml()}useHtml(){api}.
+
+### Project Fields
+
+For the Project chart, the following fields are available in formatting functions:
+
+* `id`
+* `name`
+* `actualStart`
+* `actualEnd`
+* `baselineStart`
+* `baselineEnd`
+* `progress`
+* `linearIndex`
+
+In the sample below, labels of different elements have the same font weight but different text format, which is configured with the help of formatting functions.
+
+The label of the milestone refers to another task - its id is linked in a custom data field. The  {api:anychart.format.Context#getData}getData(){api} method is used to get the id, and the {api:anychart.data.Tree#search}search(){api} and {api:anychart.data.Tree.DataItem#get}get(){api} methods of the [Tree Data Model](../../working-with-data/tree-data-model) are used to find the task and get its name.
+
+```
+// access the timeline
+var timeline = chart.getTimeline();
+
+// configure labels of tasks
+timeline.tasks().labels().useHtml(true);
+timeline.tasks().labels().format(function() {
+  if (this.progress == 1) {
+    return "<span style='color:#64b5f6'>COMPLETE</span>";
+  } else {
+    return "<span style='color:#64b5f6'>" +
+           this.progress * 100 + "</span>%";
+  }
+});
+
+// configure labels of parent tasks
+timeline.groupingTasks().labels().useHtml(true);
+timeline.groupingTasks().labels().format(function() {
+  var duration = (this.actualEnd - this.actualStart) / 1000 / 3600 / 24;
+  return "<span style='color:#dd2c00'>" + 
+         duration + "</span>d";
+});
+
+// configure labels of milestones
+timeline.milestones().labels().useHtml(true);
+timeline.milestones().labels().format(function() {
+  var relatedTaskId = this.getData("custom_field");
+  var relatedTaskItem = treeData.search("id", relatedTaskId);
+  var relatedTaskName = relatedTaskItem.get("name");
+  return "<span style='color:#ffa000'>Review:</span> " +
+         relatedTaskName;
+});
+```
+
+{sample :height 220}GANTT\_Elements\_Labels\_03{sample}
+
+### Resource Fields
+
+Here are the fields supported by the Resource chart:
+
+* `id`
+* `name`
+* `start`
+* `end`
+* `linearIndex`
+
+In this sample, a formatting function is used to display the duration of each period as well as the value of a custom field:
+
+```
+// configure labels of periods
+var periodLabels = chart.getTimeline().periods().labels();
+periodLabels.enabled(true);
+periodLabels.useHtml(true);
+periodLabels.fontColor("#104d89");
+periodLabels.fontWeight(600);
+periodLabels.format(function() {
+  var duration = (this.end - this.start) / 1000 / 3600 / 24;
+  if (duration > 30) {
+    return "<span style='color:#991f00'>" + this.getData("custom_field") +
+           " " + duration + " days</span>"
+  } else {  
+    return this.getData("custom_field") + " " + duration + " days";
+  }
+});
+```
+
+{sample :height 160}GANTT\_Elements\_Labels\_04{sample}

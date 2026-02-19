@@ -1,0 +1,8 @@
+{
+  "label": "PERT Chart",
+  "position": 5,
+  "link": {
+    "type": "doc",
+    "id": "pert-chart/pert-chart"
+  }
+}

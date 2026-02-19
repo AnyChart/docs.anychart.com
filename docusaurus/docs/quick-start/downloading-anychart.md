@@ -1,0 +1,57 @@
+---
+sidebar_position: 2
+---
+# Downloading AnyChart
+
+## Installation Package
+
+Downloadable Installation Package contains everything you need to start evaluating AnyChart. It is a zip archive that contains the following:
+
+- All Binary JavaScript files
+- CSS files used in UI elements
+- Themes
+- XML/JSON Schemas
+- AnyChart Font
+- Typescript definition file
+- 196 localization files
+- Geo Map Collection
+- Offline documentation
+
+Download the latest installation package at [https://www.anychart.com/download/](https://www.anychart.com/download/)
+
+### Themes
+
+To download one of our predefined themes, proceed to [https://cdn.anychart.com/#themes](https://cdn.anychart.com/#themes) or get them from the downloadable [Installation Package](#installation-package)
+
+## AnyChart CDN
+
+[AnyChart CDN](https://cdn.anychart.com/) hosts AnyChart library on servers spread across the world.
+
+To use AnyChart CDN simply reference any of the required [modules](modules) using script tag:
+
+For example, this is how you reference the bundle package:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
+```
+
+And this is how you link basic chart and add UI module to access context menu feature and exports:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+<link rel="stylesheet" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+```
+
+## Custom Build
+
+AnyChart offers a way to create custom JavaScript binaries containing only the part you need and leaving out the parts you are not going to use. Choose and check modules you want to include in the build, and press a green "Build" button at the bottom to building a custom JavaScript binary.
+
+Proceed to [Custom Builder](https://www.anychart.com/download/products/#custom-build) and choose the [modules](modules) you need and build a custom JavaScript file of your choice.
+
+You can also hardcode [licence key](credits) into the file.
+
+## Old Releases
+
+Previous versions of AnyChart can be found and downloaded from [AnyChart CDN](https://cdn.anychart.com) or in your [AnyChart Customer Area](https://www.anychart.com/customer_area/) if you have a subscription contract.

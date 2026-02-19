@@ -1,0 +1,23 @@
+---
+sidebar_position: 10
+---
+# Themes
+
+Sometimes it makes sense to configure the legend by using the [Themes](../../appearance-settings/themes) feature, which allows you to access all the available legend settings. For example, legend icons can be configured only [individually](individual-legend-items#icons), and themes allow adjusting several icons at once.
+
+In the sample below, a theme is used to set the default types of legend icons depending on the series type:
+
+```
+// set the default types of legend icons
+anychart.theme({
+  chart: {
+    defaultSeriesSettings: {
+      line: {legendItem: {iconType: "line"}},
+      spline: {legendItem: {iconType: "spline"}},
+      area: {legendItem: {iconType: "area"}}
+    }
+  }
+});
+```
+
+{sample}CS\_Legend\_Themes{sample}

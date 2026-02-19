@@ -1,0 +1,32 @@
+---
+sidebar_position: 9
+---
+# Vertical Percent Stacked Stick Chart
+
+## Overview
+
+A Vertical Percent Stacked Stick Chart is a multiple-series Stick Chart that displays the trend of the percentage each value contributes over time or categories. The categories of this chart are spread among the vertical axis.
+
+The concept of stacking in AnyChart is described in this article: [Stacked (Overview)](../overview).
+
+## Quick Start
+
+To build a Vertical Percent Stacked Stick Chart, create a multiple-series [Vertical Stick Chart](../../vertical/stick-chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **percent**:
+
+```
+// create a chart
+chart = chart.vertical();
+
+// enable the value stacking mode
+chart.yScale().stackMode("percent");
+
+// create stick series
+var series1 = chart.stick(seriesData_1);
+var series2 = chart.stick(seriesData_2);
+```
+
+{sample}BCT\_Vertical\_Percent\_Stacked\_Stick\_Chart{sample}
+
+## Adjusting
+
+The Vertical Percent Stacked Stick series' settings are mostly the same as other series' ones. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../general-settings).

@@ -1,0 +1,8 @@
+{
+  "label": "Seat Maps",
+  "position": 9.5,
+  "link": {
+    "type": "generated-index",
+    "slug": "/maps/seat-maps"
+  }
+}
