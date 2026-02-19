@@ -242,6 +242,19 @@
   color: var(--anychart-blue);
 }
 
+.chart-sample-playground {
+  background: var(--anychart-blue);
+  color: #fff !important;
+  padding: 2px 10px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.chart-sample-playground:hover {
+  background: var(--anychart-blue-hover);
+  color: #fff !important;
+}
+
 /* ===== API Link styling ===== */
 .api-link {
   font-family: var(--ifm-font-family-monospace);

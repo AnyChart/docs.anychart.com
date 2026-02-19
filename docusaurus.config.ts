@@ -30,11 +30,13 @@ function anychartPreprocessor({fileContent}: {filePath: string; fileContent: str
       const width = params.match(/:width\s+(\d+)/)?.[1] || '100%';
       const height = params.match(/:height\s+(\d+)/)?.[1] || '400';
       const src = `/samples/${cleanName}.html`;
+      const playgroundUrl = `https://playground.anychart.com/docs/v8/samples/${cleanName}`;
       return [
         '',
         '<div class="chart-sample-container">',
         `  <iframe src="${src}" width="${width}" height="${height}" loading="lazy" title="AnyChart Sample: ${cleanName}"></iframe>`,
         '  <div class="chart-sample-actions">',
+        `    <a class="chart-sample-playground" href="${playgroundUrl}" target="_blank" rel="noopener noreferrer">&#x25B6; Playground</a>`,
         `    <a href="${src}" target="_blank" rel="noopener noreferrer">Open Sample &#x2197;</a>`,
         '  </div>',
         '</div>',
