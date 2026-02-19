@@ -1,3 +1,0 @@
-# Gantt Toolbar
-
-*Coming soon*
