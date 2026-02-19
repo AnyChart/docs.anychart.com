@@ -9,3 +9,4 @@
 | 3 | 2026-02-19 | Implement plan: Flatten repository — commit docusaurus/, remove old content dirs, git mv docusaurus/* to root, update path references, verify build |
 | 4 | 2026-02-19 | Fix broken image URLs — remove escaped underscores in static.anychart.com image references |
 | 5 | 2026-02-19 | Add Playground button to chart samples — preserve original interlinking with playground.anychart.com demos |
+| 6 | 2026-02-19 | Fix navbar CSS on smaller screens — grey text on blue background barely visible |
