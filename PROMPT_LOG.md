@@ -12,3 +12,4 @@
 | 6 | 2026-02-19 | Fix navbar CSS on smaller screens — grey text on blue background barely visible |
 | 7 | 2026-02-19 | Fix links in supported-charts-types page and all other pages with markdown links inside HTML tables |
 | 8 | 2026-02-19 | Introduce night/dark mode — stage 1: dark theme CSS, toggle button; stage 2: adjust chart samples if needed |
+| 9 | 2026-02-19 | Make code blocks syntax-highlighted — add language auto-detection since migrated docs use bare ``` without language identifiers |

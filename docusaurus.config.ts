@@ -69,6 +69,23 @@ function anychartPreprocessor({fileContent}: {filePath: string; fileContent: str
     (_match, alt, url) => `![${alt}](https://${url})`,
   );
 
+  // 6. Auto-detect language for bare code fences (``` without a language tag).
+  //    Most AnyChart docs use bare fences — this enables Prism syntax highlighting.
+  content = content.replace(
+    /^```(\s*)\n([\s\S]*?)^```/gm,
+    (_match, trailing, code) => {
+      const trimmed = code.trimStart();
+      // HTML: starts with a tag or DOCTYPE
+      const isHtml = /^<[a-zA-Z!]/.test(trimmed);
+      // CSS: starts with a selector or property-like pattern
+      const isCss = /^[.#@a-z[\*].*\{/m.test(trimmed);
+      // JSON: starts with { or [ and looks like data (no // comments, no var/let/const)
+      const isJson = /^[\[{]/.test(trimmed) && !/(\/\/|var |let |const |function )/.test(trimmed.slice(0, 200));
+      const lang = isHtml ? 'html' : isCss ? 'css' : isJson ? 'json' : 'javascript';
+      return '```' + lang + trailing + '\n' + code + '```';
+    },
+  );
+
   return content;
 }
 

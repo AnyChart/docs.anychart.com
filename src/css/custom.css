@@ -384,10 +384,10 @@
   --ifm-font-color-secondary: #a0a0a0;
   --ifm-heading-color: #e3e3e3;
 
-  /* Navbar — deep navy */
-  --ifm-navbar-background-color: #1a1f36;
-  --ifm-navbar-link-color: #e3e3e3;
-  --ifm-navbar-link-hover-color: #ffffff;
+  /* Navbar — same brand blue as light mode */
+  --ifm-navbar-background-color: #2485d0;
+  --ifm-navbar-link-color: #ffffff;
+  --ifm-navbar-link-hover-color: #d5edff;
   --ifm-navbar-shadow: none;
 
   /* Sidebar */
@@ -438,11 +438,11 @@
 
 @media (min-width: 997px) {
   [data-theme='dark'] .navbar__link {
-    color: #e3e3e3 !important;
+    color: #ffffff !important;
   }
 
   [data-theme='dark'] .navbar__link:hover {
-    color: #ffffff !important;
+    color: #d5edff !important;
   }
 
   [data-theme='dark'] .navbar__link--active {
