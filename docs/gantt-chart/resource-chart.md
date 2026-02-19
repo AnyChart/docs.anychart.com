@@ -1,7 +1,9 @@
+***
+
+sidebar\_position: 5
 ---
-sidebar_position: 5
----
-# Resource Gantt Chart
+
+# TEST TEST Resource Gantt Chart
 
 ## Overview
 
@@ -11,7 +13,7 @@ Each resource is shown over periods of time, which are visualized as horizontal 
 
 This is how the Resource chart is structured:
 
-<img width="700" src ="https://static.anychart.com/images/resource_timeline.jpg" />
+<img src="https://static.anychart.com/images/resource_timeline.jpg">
 
 This article explains how to organize [data](#data) for the Resource chart and what timeline [elements](#elements) it displays.
 
@@ -98,7 +100,7 @@ In addition, you can use optional fields:
 
 To create a Resource chart, you should use the [tree data model](../working-with-data/tree-data-model) and organize your data either [as a tree](#as-tree) or [as a table](#as-table).
 
-**1. Creating Data Tree.** The first step is creating a data tree by passing your data to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` or `"as-table"` as the second parameter:
+**1\. Creating Data Tree\.** The first step is creating a data tree by passing your data to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` or `"as-table"` as the second parameter:
 
 ```
 var treeData = anychart.data.tree(data, "as-tree");
@@ -112,13 +114,13 @@ If the [hierarchy](#hierarchy) between data items is not specified, there is no 
 
 For example, in the [Quick Start](#quick-start) section, there is a sample where the `"as-table"` parameter is used, but it can be replaced with `"as-tree"` without changing the data structure since all data items occupy the same place in the hierarchy.
 
-**2. Creating Chart.** Then create a Resource chart by using the {api:anychart#ganttResource}anychart.ganttResource(){api} chart constructor:
+**2\. Creating Chart\.** Then create a Resource chart by using the {api:anychart#ganttResource}anychart.ganttResource(){api} chart constructor:
 
 ```
 var chart = anychart.ganttResource();
 ```
 
-**3. Setting Data.** Finally, pass the data tree to the {api:anychart.charts.Gantt#data}data(){api} method of the chart:
+**3\. Setting Data\.** Finally, pass the data tree to the {api:anychart.charts.Gantt#data}data(){api} method of the chart:
 
 ```
 chart.data(treeData);
@@ -270,7 +272,7 @@ For periods, use:
 * `start` to set start dates
 * `end` to set end dates
 
-To learn how to configure periods, see the [Elements: Resource Chart](elements/resource-chart#periods) article. 
+To learn how to configure periods, see the [Elements: Resource Chart](elements/resource-chart#periods) article.
 
 The sample below demonstrates how to set periods and resources and how they look like:
 
@@ -314,7 +316,7 @@ chart.data(treeData);
 
 ### Connectors
 
-A **connector** is an element showing the dependencies between [periods](#periods-and-resources). 
+A **connector** is an element showing the dependencies between [periods](#periods-and-resources).
 
 The following data fields are used to set connectors:
 
@@ -324,41 +326,17 @@ The following data fields are used to set connectors:
 
 To add a connector, you should add these fields to a **predecessor period**. In the `connectTo` field, specify the `id` value of the **successor period**. In `connectorType`, specify the type of the connector.
 
-There are four connector types, which are listed in {api:anychart.enums.ConnectorType}anychart.enums.ConnectorType{api}:
-
-<table border="1" class="dtTABLE">
-<tbody>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-<tr>
-<td>`"start-start"`</td>
-<td>The predecessor must start before the successor can start.</td>
-</tr>
-<tr>
-<td>`"start-finish"`</td>
-<td>The predecessor must start before the successor can finish. </td>
-</tr>
-<tr>
-<td>`"finish-start"`</td>
-<td>The predecessor must finish before the successor can start. </td>
-</tr>
-<tr>
-<td>`"finish-finish"`</td>
-<td>The predecessor must finish before the successor can finish.</td>
-</tr>
-</tbody>
-</table>
+There are four connector types, which are listed in {api:anychart.enums.ConnectorType}anychart.enums.ConnectorType{api}:<table><tr><th>Type</th><th>Description</th></tr>| ---- | ----------- |
+<tr><td>\`"start-start"\`</td><td>The predecessor must start before the successor can start.</td></tr><tr><td>\`"start-finish"\`</td><td>The predecessor must start before the successor can finish.</td></tr><tr><td>\`"finish-start"\`</td><td>The predecessor must finish before the successor can start.</td></tr><tr><td>\`"finish-finish"\`</td><td>The predecessor must finish before the successor can finish.</td></tr></table>
 
 To learn how to configure connectors, see the [Elements: Resource Chart](elements/resource-chart#connectors) article.
 
 Please note that a period can have several predecessors, but only one successor. Also, a period can be at the same time a successor to one period or periods and a predecessor to another. All these nuances are illustrated by the sample below, which visualizes the following dependencies between periods:
 
-* Period 01.28 (predecessor) &#8594; Period 01.07 (successor) - `"start-finish"`
-* Period 03.01 (predecessor) &#8594; Period 03.05 (successor) - `"start-start"`
-* Period 03.05 (predecessor) &#8594; Period 03.01 (successor) - `"finish-finish"`
-* Period 01.04 (predecessor) &#8594; Period 03.01 (successor) - `"finish-start"`
+* Period 01.28 (predecessor) → Period 01.07 (successor) - `"start-finish"`
+* Period 03.01 (predecessor) → Period 03.05 (successor) - `"start-start"`
+* Period 03.05 (predecessor) → Period 03.01 (successor) - `"finish-finish"`
+* Period 01.04 (predecessor) → Period 03.01 (successor) - `"finish-start"`
 
 {sample :height 160}GANTT\_Resource\_Chart\_05{sample}
 
