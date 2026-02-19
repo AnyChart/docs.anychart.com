@@ -114,8 +114,20 @@
   }
 }
 
-/* Mobile: dark links in the dropdown sidebar */
+/* Mobile sidebar: white background with readable text */
 @media (max-width: 996px) {
+  .navbar-sidebar {
+    background: #ffffff;
+  }
+
+  .navbar-sidebar__brand {
+    background: var(--ifm-navbar-background-color);
+  }
+
+  .navbar-sidebar__back {
+    color: var(--ifm-font-color-base);
+  }
+
   .navbar-sidebar .navbar__link {
     color: var(--ifm-font-color-base) !important;
   }
@@ -126,6 +138,23 @@
 
   .navbar-sidebar .navbar__link--active {
     color: var(--ifm-color-primary) !important;
+  }
+
+  .navbar-sidebar .menu__link {
+    color: var(--ifm-font-color-base);
+  }
+
+  .navbar-sidebar .menu__link:hover {
+    color: var(--ifm-color-primary);
+  }
+
+  .navbar-sidebar .menu__link--active {
+    color: var(--ifm-color-primary);
+  }
+
+  .navbar-sidebar .menu__caret::before,
+  .navbar-sidebar .menu__link--sublist-caret::after {
+    filter: none;
   }
 }
 
