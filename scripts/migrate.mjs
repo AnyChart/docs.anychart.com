@@ -20,18 +20,17 @@ import {join, dirname, basename, extname, relative} from 'path';
 import {fileURLToPath} from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const projectDir = dirname(__dirname);        // docusaurus/
-const repoRoot = dirname(projectDir);         // docs.anychart.com/
+const projectDir = dirname(__dirname);        // docs.anychart.com/
 const targetDocsDir = join(projectDir, 'docs');
 
 const DRY_RUN = process.argv.includes('--dry-run');
 
 // ─── Configuration ──────────────────────────────────────────────
 
-/** Directories to skip at the repo root */
+/** Directories to skip at the project root */
 const SKIP_ROOT_DIRS = new Set([
-  'docusaurus', 'node_modules', '.git', 'prompts', 'samples',
-  'static', '.github', '.idea', '.vscode', '.claude',
+  'node_modules', '.git', 'prompts', 'samples', 'docs', 'src',
+  'scripts', 'static', '.github', '.idea', '.vscode', '.claude',
 ]);
 
 /** Files to skip at repo root */
@@ -354,12 +353,12 @@ function processMarkdownFile(sourcePath, targetPath) {
 
     stats.files++;
     stats.fileMap.push({
-      source: relative(repoRoot, sourcePath),
+      source: relative(projectDir, sourcePath),
       target: relative(projectDir, targetPath),
     });
 
   } catch (err) {
-    stats.errors.push(`Error processing ${relative(repoRoot, sourcePath)}: ${err.message}`);
+    stats.errors.push(`Error processing ${relative(projectDir, sourcePath)}: ${err.message}`);
   }
 }
 
@@ -404,7 +403,7 @@ function processGroupCfg(sourcePath, targetDir, originalDirName, slug, indexDocI
     stats.categories++;
 
   } catch (err) {
-    stats.errors.push(`Error converting group.cfg at ${relative(repoRoot, sourcePath)}: ${err.message}`);
+    stats.errors.push(`Error converting group.cfg at ${relative(projectDir, sourcePath)}: ${err.message}`);
   }
 }
 
@@ -437,7 +436,7 @@ function processDirectory(sourceDir, targetDir, originalDirName) {
   try {
     entries = readdirSync(sourceDir);
   } catch (err) {
-    stats.errors.push(`Cannot read directory ${relative(repoRoot, sourceDir)}: ${err.message}`);
+    stats.errors.push(`Cannot read directory ${relative(projectDir, sourceDir)}: ${err.message}`);
     return;
   }
 
@@ -553,7 +552,7 @@ console.log('║     Phase 2 Migration Script                ║');
 console.log('╚══════════════════════════════════════════════╝');
 console.log('');
 if (DRY_RUN) console.log('  *** DRY RUN — no files will be written ***\n');
-console.log(`  Source: ${repoRoot}`);
+console.log(`  Source: ${projectDir}`);
 console.log(`  Target: ${targetDocsDir}`);
 console.log('');
 
@@ -567,12 +566,12 @@ if (!DRY_RUN) {
 }
 
 // Find content directories at repo root
-const rootEntries = readdirSync(repoRoot);
+const rootEntries = readdirSync(projectDir);
 const sourceDirs = rootEntries.filter(entry => {
   if (SKIP_ROOT_DIRS.has(entry)) return false;
   if (entry.startsWith('.')) return false;
   try {
-    return statSync(join(repoRoot, entry)).isDirectory();
+    return statSync(join(projectDir, entry)).isDirectory();
   } catch {
     return false;
   }
@@ -586,7 +585,7 @@ console.log('');
 
 // Process each directory
 for (const dir of sourceDirs) {
-  const sourceDir = join(repoRoot, dir);
+  const sourceDir = join(projectDir, dir);
   const kebabName = toKebabCase(dir);
   const targetDir = join(targetDocsDir, kebabName);
 
@@ -660,7 +659,7 @@ if (!DRY_RUN) {
     reportLines.join('\n'),
     'utf-8'
   );
-  console.log('\n  Full report written to: docusaurus/migration-report.md');
+  console.log('\n  Full report written to: migration-report.md');
 }
 
 console.log('\n  Done!\n');

@@ -8,8 +8,7 @@ import {fileURLToPath} from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectDir = dirname(__dirname);
-const repoRoot = dirname(projectDir);
-const sourceDir = join(repoRoot, 'samples');
+const sourceDir = join(projectDir, 'samples');
 const targetDir = join(projectDir, 'static', 'samples');
 
 // Read version from config.toml
@@ -18,7 +17,7 @@ function getVersion() {
   if (process.env.ANYCHART_VERSION) return process.env.ANYCHART_VERSION;
 
   try {
-    const config = readFileSync(join(repoRoot, 'config.toml'), 'utf-8');
+    const config = readFileSync(join(projectDir, 'config.toml'), 'utf-8');
     const match = config.match(/anychart-version\s*=\s*"([^"]+)"/);
     if (match) return match[1];
   } catch (e) {

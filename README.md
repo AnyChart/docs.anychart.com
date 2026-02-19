@@ -1,41 +1,42 @@
-# Website
+# docs.anychart.com
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Documentation site for the [AnyChart](https://www.anychart.com/) JavaScript charting library, built with [Docusaurus 3](https://docusaurus.io/).
 
-## Installation
+## Prerequisites
 
-```bash
-yarn
-```
+- Node.js 18+
+- npm
 
-## Local Development
-
-```bash
-yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-## Build
+## Setup
 
 ```bash
-yarn build
+npm install
+npm run prepare-samples   # copies sample HTML files into static/samples/
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-Using SSH:
+## Development
 
 ```bash
-USE_SSH=true yarn deploy
+npm start
 ```
 
-Not using SSH:
+Opens a local dev server at `http://localhost:3000` with hot reload.
+
+## Production Build
 
 ```bash
-GIT_USER=<Your GitHub username> yarn deploy
+npm run build
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Generates static output into `build/`.
+
+## Project Structure
+
+```
+docs/        421 migrated markdown pages
+src/         components, theme overrides, CSS
+scripts/     migration & sample preparation scripts
+static/      images, generated samples
+samples/     1607 source HTML sample files
+config.toml  AnyChart version config (used by prepare-samples)
+```
