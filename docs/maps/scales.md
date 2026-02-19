@@ -20,7 +20,7 @@ This type of ColorScale looks like a number of boxes with different colors. Colo
 series.colorScale(anychart.scales.ordinalColor([{less:200,color:'#EC6E07'},{from:200, to:250, color:'#A1958A'},{greater:250, color:'#64B5F6'}]));
 ```
 
-{sample}Maps\_Scales\_01{sample}
+{sample}Maps_Scales_01{sample}
 
 No parameters are necessary here, but it's possible to use this method to define the ranges and its colors. However, it can be done later. In case no colors are defined, the default first-series color will be applied. If you haven't set the ranges, the map will show only the borders (both inner and outer) of the chosen territory.
 Although, if you decide to set the colors or ranges later, you may use the {api:anychart.scales.OrdinalColor#colors}colors(){api} and {api:anychart.scales.OrdinalColor#ranges}ranges(){api} accordingly.
@@ -47,7 +47,7 @@ Using the Linear type of coloring, there are three ways of coloring the map:
 series.colorScale(anychart.scales.linearColor('#EC6E07', '#64B5F6'));
 ```
 
-{sample}Maps\_Scales\_02{sample}
+{sample}Maps_Scales_02{sample}
 
 ## Palette
  
@@ -68,10 +68,10 @@ This palette type is usually used to show the difference in values of something 
 </tr>
 <tr>
 <td>
-<img src = "https://static.anychart.com/images/single\_hue\_ord.png">
+<img src = "https://static.anychart.com/images/single_hue_ord.png">
 </td>
 <td>
-<img src = "https://static.anychart.com/images/single\_hue\_quant.png">
+<img src = "https://static.anychart.com/images/single_hue_quant.png">
 </td>
 </tr>
 </tbody>
@@ -79,7 +79,7 @@ This palette type is usually used to show the difference in values of something 
 
 To make a single-hue progression use the {api:anychart.color#singleHueProgression}anychart.color.singleHueProgression(){api} function. You may not define the colors - in this case the shades will be generated for the default color. 
 
-{sample}Maps\_Scales\_03{sample}
+{sample}Maps_Scales_03{sample}
 
 ### Value progression
 
@@ -96,10 +96,10 @@ Technically this progression is a simple single-hue progression for a shade of g
 </tr>
 <tr>
 <td>
-<img src = "https://static.anychart.com/images/value\_progr\_ord.png">
+<img src = "https://static.anychart.com/images/value_progr_ord.png">
 </td>
 <td>
-<img src = "https://static.anychart.com/images/value\_progr\_quant.png">
+<img src = "https://static.anychart.com/images/value_progr_quant.png">
 </td>
 </tr>
 </tbody>
@@ -107,7 +107,7 @@ Technically this progression is a simple single-hue progression for a shade of g
 
 This progression is more likely as single hue one, but the colors all are monochromatic. Just set the monochromatic shades (or even white and black) as colors for the single hue progression. In this sample the linear scale is enabled.
 
-{sample}Maps\_Scales\_04{sample}
+{sample}Maps_Scales_04{sample}
  
 ### Bi-polar 
  
@@ -124,10 +124,10 @@ of the darker end point hues into a gray shade representing the middle. An examp
 </tr>
 <tr>
 <td>
-<img src = "https://static.anychart.com/images/bi\_polar\_ord.png">
+<img src = "https://static.anychart.com/images/bi_polar_ord.png">
 </td>
 <td>
-<img src = "https://static.anychart.com/images/bi\_polar\_quant.png">
+<img src = "https://static.anychart.com/images/bi_polar_quant.png">
 </td>
 </tr>
 </tbody>
@@ -136,11 +136,11 @@ of the darker end point hues into a gray shade representing the middle. An examp
 To make a bi-hue progression use the {api:anychart.color#bipolarHueProgression}anychart.color.bipolarHueProgression(){api}
 function. You may not define the colors - in this case the shades will be generated for the default color. 
 
-{sample}Maps\_Scales\_05{sample}
+{sample}Maps_Scales_05{sample}
 
 That's how the same map would look like with an ordinal Scale.
 
-{sample}Maps\_Scales\_06{sample}
+{sample}Maps_Scales_06{sample}
  
 ### Blended color progression
 
@@ -156,10 +156,10 @@ For example, from yellow through orange to brown or from light-green to deep-eme
 </tr>
 <tr>
 <td>
-<img src = "https://static.anychart.com/images/blended\_c\_progr\_ord.png">
+<img src = "https://static.anychart.com/images/blended_c_progr_ord.png">
 </td>
 <td>
-<img src = "https://static.anychart.com/images/blended\_c\_progr\_quant.png">
+<img src = "https://static.anychart.com/images/blended_c_progr_quant.png">
 </td>
 </tr>
 </tbody>
@@ -169,8 +169,8 @@ Use the {api:anychart.color#bipolarHueProgression}anychart.color.bipolarHueProgr
 
 In case you haven't defined any of the colors, they will be generated automatically (of the default color). 
 
-{sample}Maps\_Scales\_07{sample}
+{sample}Maps_Scales_07{sample}
 
 That's how the same map would look like with an ordinal scale.
 
-{sample}Maps\_Scales\_08{sample}
+{sample}Maps_Scales_08{sample}

@@ -19,7 +19,7 @@ For all formulas and indicators below:
 
 [Accumulation Distribution Line](accumulation-distribution-line-adl)) is calculated according to these formulas:
 
-<center><img src="https://static.anychart.com/images/technical\_indicators/adl.png" width="550"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/adl.png" width="550"></center>
 
 ## Adaptive Moving Average
 
@@ -27,24 +27,24 @@ Each point of the [Adaptive Moving Average](adaptive-moving-average-ama)) indica
 
 <ol>
 <li>Calculate the ER:</li><br>
-<center><img src="https://static.anychart.com/images/technical\_indicators/ama\_er.png" width="343"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/ama_er.png" width="343"></center>
 <li>Then, use the following formula to calculate the SSC value:</li><br>
-<center><img src="https://static.anychart.com/images/technical\_indicators/ama\_ssc.png" width="650"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/ama_ssc.png" width="650"></center>
 <li>Now, use the results from the actions made before and calculate the indicator:</li><br>
-<center><img src="https://static.anychart.com/images/technical\_indicators/ama\_ama.png" width="391"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/ama_ama.png" width="391"></center>
 </ol>
 
 ## Aroon
 
 [Aroon](aroon) indicator is calculated according to the following formulas:
 
-<center><img src="https://static.anychart.com/images/technical\_indicators/aroon.png" width="650"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/aroon.png" width="650"></center>
 
 ## Average True Range
 
 [Average True Range](average-true-range-atr)) in each point is calculated according to the following formula:
 
-<center><img src="https://static.anychart.com/images/technical\_indicators/atr.png" width="550"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/atr.png" width="550"></center>
 
 This formula is based on the True Range definition. ATR is defined as the greatest of the following:
 
@@ -104,9 +104,9 @@ And SMA is calculated as stated in [SMA part](#simple-moving-average) of this ar
 
 <ol>
 	<li>First a MFM(i) is calculated for all points according to this formula:</li><br>
-<center><img src="https://static.anychart.com/images/technical_indicators/cmf\_mfm.png"></center><br>
+<center><img src="https://static.anychart.com/images/technical_indicators/cmf_mfm.png"></center><br>
 	<li>Next an MFV(i) value is calculated for all points like this:</li><br>
-<center><img src="https://static.anychart.com/images/technical_indicators/cmf\_mfv.png"></center><br>
+<center><img src="https://static.anychart.com/images/technical_indicators/cmf_mfv.png"></center><br>
 	<li>And finally the CMF(i) value is calculated according to this formula:</li><br>
 <center><img src="https://static.anychart.com/images/technical_indicators/cmf.png"></center><br>
 </ol>
@@ -133,15 +133,15 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 <ol>
 <li>First the True Range (TR), Plus Directional Movement (+DM) and Minus Directional Movement (-DM) are calculated for each period:</li><br>
 
-<center><img src="https://static.anychart.com/images/technical_indicators/dmi\_tr.png"></center> <br>
+<center><img src="https://static.anychart.com/images/technical_indicators/dmi_tr.png"></center> <br>
 
 <li>Next they are smoothed using [EMA](#exponential-moving-average) or Wilder's method, calculated as:</li><br>
 
-<center><img src="https://static.anychart.com/images/technical_indicators/dmi\_smoothing.png"></center><br>
+<center><img src="https://static.anychart.com/images/technical_indicators/dmi_smoothing.png"></center><br>
 
 <li>And finally the +DI and -DI values are calculated according to these formulas:</li><br>
 
-<center><img src="https://static.anychart.com/images/technical_indicators/dmi\_pdi.png"></center><br>
+<center><img src="https://static.anychart.com/images/technical_indicators/dmi_pdi.png"></center><br>
 </ol>
 
 ## Envelope
@@ -157,7 +157,7 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 
 [Exponential Moving Average](exponential-moving-average-ema)) in each point is calculated according to the following formula:
 
-<center><img src="https://static.anychart.com/images/technical\_indicators/ema.png" width="500"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/ema.png" width="500"></center>
 
 ## Heikin-Ashi
 
@@ -198,11 +198,11 @@ This is how Ichimoku Cloud is calculated:
 
 <ol>
 	<li>The %K line is calculated the following way:</li><br>
-<center><img src="https://static.anychart.com/images/technical\_indicators/kdj1.png"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/kdj1.png"></center>
 	<li>To create the %D line, use the next formula:</li><br>
-<center><img src="https://static.anychart.com/images/technical\_indicators/kdj2.png"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/kdj2.png"></center>
 	<li>This is how the %J line is calculated:</li><br>
-<center><img src="https://static.anychart.com/images/technical\_indicators/kdj3.png"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/kdj3.png"></center>
 </ol>
 
 ## Keltner Channels
@@ -217,7 +217,7 @@ You can see how [EMA (Exponential Moving Average)](#exponential-moving-average) 
 
 [Modified Moving Average](modified-moving-average-mma)) indicator points are calculated by the following formula:
 
-<center><img src="https://static.anychart.com/images/technical\_indicators/mma.png" width="400"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/mma.png" width="400"></center>
 
 ## Money Flow Index
 
@@ -257,13 +257,13 @@ You can see how [EMA (Exponential Moving Average)](#exponential-moving-average) 
 	<li>EMA\[slow period\]<sub>i</sub> and EMA\[fast period\]<sub>i</sub> is calculated by [EMA formula](#exponential-moving-average)</a>. Slow period 
 	and fast period are set by **slowPeriod** (default 26) and **fastPeriod** (default 12) parameters of {api:anychart.core.stock.indicators.MACD}macd(){api} method.</li>
 	<li>MACD series value is calculated according to this formula:<br>
-<center><img src="https://static.anychart.com/images/technical\_indicators/macd-macd.png"/></li></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/macd-macd.png"/></li></center>
 	<li>EMA\[signal period\]<sub>i</sub> of MACD series values is calculated by [EMA formula](#exponential-moving-average), where signal period is set
 	by **signalPeriod** parameter.</li>
 	<li>Signal series value:<br>
-<center><img src="https://static.anychart.com/images/technical\_indicators/macd-signal.png"/></li></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/macd-signal.png"/></li></center>
 	<li>Histogram serie:<br>
-<center><img src="https://static.anychart.com/images/technical\_indicators/macd-histogram.png"/></li></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/macd-histogram.png"/></li></center>
 </ol>
 
 ## Moving Average Envelopes
@@ -327,19 +327,19 @@ The SAR is recursively calculated in this manner for each new period. There are,
 
 [Psychological Line (PSY)](psychological-line-psy)) is calculated according to the following formula:
 
-<center><img src="https://static.anychart.com/images/technical\_indicators/psy.png"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/psy.png"></center>
 
 ## Rank Correlation Index
 
 [Rank Correlation Index (RCI)](rank-correlation-index-rci)) is calculated according to the following formula:
 
-<center><img src="https://static.anychart.com/images/technical\_indicators/rci.png"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/rci.png"></center>
 
 ## Rate of Change
 
 [Rate of Change](rate-of-change-roc)) is calculated according to this formula:
 
-<center><img src="https://static.anychart.com/images/technical\_indicators/roc.png"/></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/roc.png"/></center>
 
 ## Ratiocator
 
@@ -356,19 +356,19 @@ The SAR is recursively calculated in this manner for each new period. There are,
 
 <ol>
 	<li>Upward change (U) or downward change (D) sequences are calculated:<br>
-<center><img src="https://static.anychart.com/images/technical\_indicators/rsi-u-d.png"/></li></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/rsi-u-d.png"/></li></center>
 	<li>Then two averages are calculated:<br>
-<center><img src="https://static.anychart.com/images/technical\_indicators/rsi-mau.png"/><br></center>
-<center><img src="https://static.anychart.com/images/technical\_indicators/rsi-mad.png"/></li></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/rsi-mau.png"/><br></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/rsi-mad.png"/></li></center>
 	<li>And final RSI formula is :<br>
-<center><img src="https://static.anychart.com/images/technical\_indicators/rsi-rsi.png"></li></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/rsi-rsi.png"></li></center>
 </ol>
 
 ## Simple Moving Average
 
 [Simple Moving Average](simple-moving-average-sma)) in each point is calculated according to the following formula:
 
-<center><img src="https://static.anychart.com/images/technical\_indicators/sma.png"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/sma.png"></center>
 
 ## Stochastic Oscillator
 
@@ -376,31 +376,31 @@ The SAR is recursively calculated in this manner for each new period. There are,
 
 **1.** By default, a **Fast Stochastic Oscillator** indicator is created, which is calculated according to the following formula:
 
-<center><img src="https://static.anychart.com/images/technical\_indicators/fastK.png"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/fastK.png"></center>
 
 where pK is the first period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the %K value:
 
-<center><img src="https://static.anychart.com/images/technical\_indicators/fastD.png"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/fastD.png"></center>
 
 where p3 is the third period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the %D value.
 
 **2.** While Fast Stochastic Oscillator is used for signals, the **Slow Stochastic Oscillator** is supposed to reflect this emphasis:
 
-<center><img src="https://static.anychart.com/images/technical\_indicators/slowK.png"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/slowK.png"></center>
 
 where 3 is a default period for getting slow K:
 
-<center><img src="https://static.anychart.com/images/technical\_indicators/slowD.png"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/slowD.png"></center>
 
 where 3 is a default period for getting slow D.
 
 **3.** The **Full Stochastic Oscillator** is a fully customizable version of the Slow Stochastic Oscillator. Users can set the look-back period, the number of periods to slow %K, and the number of periods for the %D moving average:
 
-<center><img src="https://static.anychart.com/images/technical\_indicators/fullK.png"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/fullK.png"></center>
 
 where p2 is the second period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the smoothed %K value:
 
-<center><img src="https://static.anychart.com/images/technical\_indicators/trix.png"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/trix.png"></center>
 
 where p3 is the third period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the %D value.
 
