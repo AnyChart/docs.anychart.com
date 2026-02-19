@@ -352,6 +352,58 @@
   font-size: 13px;
 }
 
+/* ===== Search Bar ===== */
+
+/* Navbar search input — bigger, more prominent */
+.navbar__search-input {
+  width: 260px;
+  height: 38px;
+  font-size: 14px;
+  padding: 0 12px 0 36px;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  transition: width 0.2s ease, background-color 0.2s ease;
+}
+
+.navbar__search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar__search-input:focus {
+  width: 320px;
+  background-color: #ffffff;
+  color: #222;
+}
+
+.navbar__search-input:focus::placeholder {
+  color: #999;
+}
+
+/* Search dropdown — wider, centered on page */
+:root {
+  --search-local-modal-width: 680px;
+  --search-local-modal-width-sm: 94vw;
+  --search-local-hit-height: 60px;
+  --search-local-spacing: 14px;
+}
+
+/* Let dropdown escape the navbar's positioning context */
+.navbar__search {
+  position: static;
+}
+
+/* Center the dropdown on the page */
+div[class*='dropdownMenu'] {
+  position: fixed !important;
+  top: 80px !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%);
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 996px) {
   .navbar__title {
@@ -361,6 +413,20 @@
   /* Hamburger icon and close button: white on blue navbar */
   .navbar__toggle {
     color: #ffffff;
+  }
+
+  /* Search: full-width dropdown on mobile */
+  .navbar__search-input {
+    width: 180px;
+  }
+
+  .navbar__search-input:focus {
+    width: 220px;
+  }
+
+  div[class*='dropdownMenu'] {
+    top: 65px !important;
+    width: 94vw !important;
   }
 }
 

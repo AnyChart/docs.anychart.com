@@ -13,3 +13,7 @@
 | 7 | 2026-02-19 | Fix links in supported-charts-types page and all other pages with markdown links inside HTML tables |
 | 8 | 2026-02-19 | Introduce night/dark mode — stage 1: dark theme CSS, toggle button; stage 2: adjust chart samples if needed |
 | 9 | 2026-02-19 | Make code blocks syntax-highlighted — add language auto-detection since migrated docs use bare ``` without language identifiers |
+| 10 | 2026-02-19 | Research community-driven documentation editing approaches for Docusaurus 3.x: Decap CMS, TinaCMS, GitHub API custom solution, Prose.io, lightweight custom editor, Docusaurus plugins. Comprehensive comparison with pros/cons and recommendation. |
+| 11 | 2026-02-19 | Research ALL available search solutions for Docusaurus 3.x: built-in/official, Algolia DocSearch, local/client-side plugins, Typesense, Meilisearch, Orama, Pagefind, FlexSearch. Comprehensive comparison with architecture, compatibility, cost, performance, and recommendation for VPS-hosted ~421 page site. |
+| 12 | 2026-02-19 | Install and set up @easyops-cn/docusaurus-search-local |
+| 13 | 2026-02-19 | Tweak search bar UX — make it more centered on page and bigger |
