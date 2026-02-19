@@ -124,8 +124,8 @@ const config: Config = {
     image: 'img/anychart-social-card.png',
     colorMode: {
       defaultMode: 'light',
-      disableSwitch: true,
-      respectPrefersColorScheme: false,
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
     },
     navbar: {
       title: '',
@@ -196,6 +196,7 @@ const config: Config = {
     },
     prism: {
       theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
       additionalLanguages: ['bash', 'json'],
     },
     tableOfContents: {
