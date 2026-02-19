@@ -12,28 +12,28 @@ Step line charts are used when it is necessary to highlight the irregularity of 
 The Step Line and Line chart types share almost all the settings, so this article explains just how to create a basic Step Line chart and configure its only special setting - step direction. To learn about other settings, read the [Line Chart](line-chart) article. You can also see the table below to get a brief overview of the Step Line chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../quick-start/modules#core) + [Basic Cartesian](../quick-start/modules#basic-cartesian) / [Base](../quick-start/modules#base)</td></tr>
+<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.StepLine}anychart.core.cartesian.series.StepLine{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, value](../working-with-data/overview)</td></tr>
-<tr><td>Multiple Series</td><td>[YES](../working-with-data/overview)</td></tr>
+<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td>[Vertical Step Line](vertical/step-line-chart)</td></tr>
+<tr><td>Vertical</td><td><a href="vertical/step-line-chart">Vertical Step Line</a></td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Step Line Chart with Error Bars](error-chart/step-line-chart)</td></tr>
+<tr><td>Error Bars</td><td><a href="error-chart/step-line-chart">Step Line Chart with Error Bars</a></td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
-<tr><td>Stock</td><td>[Stock Step Line](../stock-charts/series/step-line)</td></tr>
+<tr><td>Stock</td><td><a href="../stock-charts/series/step-line">Stock Step Line</a></td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Line](line-chart)</td></tr>
-<tr><td></td><td>[Spline](spline-chart)</td></tr>
+<tr><td></td><td><a href="line-chart">Line</a></td></tr>
+<tr><td></td><td><a href="spline-chart">Spline</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Step Line Chart](https://www.anychart.com/chartopedia/chart-types/stepline-chart/)</td></tr>
-<tr><td></td><td>[General Settings](general-settings)</td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/stepline-chart/">Chartopedia: Step Line Chart</a></td></tr>
+<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
 </table>
 
 ## Modules

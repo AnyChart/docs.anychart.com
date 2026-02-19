@@ -380,7 +380,7 @@ Here is the list of formatting parameters that allow organizing your data presen
 <td>dateTimeFormat</td><td>Datetime format string</td><td>Sets datetime format.</td>
 </tr>
 <tr>
-<td>type</td><td>`datetime`, `time`, `date`, `number`, `string`, `percent`</td><td>Sets value type, see [Type](#type) section below.</td>
+<td>type</td><td>`datetime`, `time`, `date`, `number`, `string`, `percent`</td><td>Sets value type, see <a href="#type">Type</a> section below.</td>
 </tr></table>
 
 ### Date/Time Syntax

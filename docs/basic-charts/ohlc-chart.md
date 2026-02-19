@@ -14,28 +14,28 @@ OHLC is a series type that is predominantly used for demonstrating the stock mar
 This article explains how to create a basic OHLC chart as well as configure settings that are specific to the type. See the table below to get a brief overview of the OHLC chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../quick-start/modules#core) + [Basic Cartesian](../quick-start/modules#basic-cartesian) / [Base](../quick-start/modules#base)</td></tr>
+<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.OHLC}anychart.core.cartesian.series.OHLC{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, open, high, low, close](../working-with-data/overview)</td></tr>
-<tr><td>Multiple Series</td><td>[YES](../working-with-data/overview)</td></tr>
+<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, open, high, low, close</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td>[Vertical OHLC](vertical/ohlc-chart)</td></tr>
+<tr><td>Vertical</td><td><a href="vertical/ohlc-chart">Vertical OHLC</a></td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
-<tr><td>Stock</td><td>[Stock OHLC](../stock-charts/series/ohlc)</td></tr>
+<tr><td>Stock</td><td><a href="../stock-charts/series/ohlc">Stock OHLC</a></td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Japanese Candlestick](japanese-candlestick-chart)</td></tr>
-<tr><td></td><td>[HiLo](hilo-chart)</td></tr>
+<tr><td></td><td><a href="japanese-candlestick-chart">Japanese Candlestick</a></td></tr>
+<tr><td></td><td><a href="hilo-chart">HiLo</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: OHLC Chart](https://www.anychart.com/chartopedia/chart-types/ohlc-chart/)</td></tr>
-<tr><td></td><td>[General Settings](general-settings)</td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/ohlc-chart/">Chartopedia: OHLC Chart</a></td></tr>
+<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
 </table> 
 
 ## Modules

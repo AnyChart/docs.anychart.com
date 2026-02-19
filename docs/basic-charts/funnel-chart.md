@@ -11,12 +11,12 @@ Funnel Charts are so-called Accumulation Charts and they show percentage ratio. 
 This article explains how to create a basic Funnel Chart as well as configure settings that are specific to the type. The table below gives a brief overview of the Funnel Chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../quick-start/modules#core) + [Pyramid and Funnel](../quick-start/modules#pyramid-and-funnel)</td></tr>
+<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#pyramid-and-funnel">Pyramid and Funnel</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Funnel}anychart.charts.Funnel{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[name, value](../working-with-data/overview)</td></tr>
-<tr><td>Multiple Series</td><td>[NO](../working-with-data/overview)</td></tr>
+<tr><td>Data Fields</td><td><a href="../working-with-data/overview">name, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">NO</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
 <tr><td>Vertical</td><td>N/A</td></tr>
@@ -28,12 +28,12 @@ This article explains how to create a basic Funnel Chart as well as configure se
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Pie](pie-chart)</td></tr>
-<tr><td></td><td>[Pyramid](pyramid-chart)</td></tr>
-<tr><td></td><td>[Stacked](stacked/overview)</td></tr>
+<tr><td></td><td><a href="pie-chart">Pie</a></td></tr>
+<tr><td></td><td><a href="pyramid-chart">Pyramid</a></td></tr>
+<tr><td></td><td><a href="stacked/overview">Stacked</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Funnel Chart](https://www.anychart.com/chartopedia/chart-types/funnel-chart/)</td></tr>
-<tr><td></td><td>[General Settings](general-settings)</td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/funnel-chart/">Chartopedia: Funnel Chart</a></td></tr>
+<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
 </table>
 
 ## Modules

@@ -12,31 +12,31 @@ Step area charts are used when it is necessary to highlight the irregularity of 
 The Step Area and Area chart types share almost all the settings, so this article explains just how to create a basic Step Area chart and configure its only special setting - step direction. To learn about other settings, read the [Area Chart](area-chart) article. You can also see the table below to get a brief overview of the Step Area chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../quick-start/modules#core) + [Basic Cartesian](../quick-start/modules#basic-cartesian) / [Base](../quick-start/modules#base)</td></tr>
+<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.StepArea}anychart.core.cartesian.series.StepArea{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, value](../working-with-data/overview)</td></tr>
-<tr><td>Multiple Series</td><td>[YES](../working-with-data/overview)</td></tr>
+<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td>[Stacked Step Area](stacked/value/step-area-chart), [Percent Stacked Step Area](stacked/percent/step-area-chart)</td></tr>
-<tr><td>Vertical</td><td>[Vertical Step Area](vertical/step-area-chart)</td></tr>
+<tr><td>Stacked</td><td><a href="stacked/value/step-area-chart">Stacked Step Area</a>, <a href="stacked/percent/step-area-chart">Percent Stacked Step Area</a></td></tr>
+<tr><td>Vertical</td><td><a href="vertical/step-area-chart">Vertical Step Area</a></td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Step Area Chart with Error Bars](error-chart/step-area-chart)</td></tr>
+<tr><td>Error Bars</td><td><a href="error-chart/step-area-chart">Step Area Chart with Error Bars</a></td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
-<tr><td>Stock</td><td>[Stock Step Area](../stock-charts/series/step-area)</td></tr>
+<tr><td>Stock</td><td><a href="../stock-charts/series/step-area">Stock Step Area</a></td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Area](area-chart)</td></tr>
-<tr><td></td><td>[Spline Area](spline-area-chart)</td></tr>
-<tr><td></td><td>[Range Area](range-area-chart)</td></tr>
-<tr><td></td><td>[Range Spline Area](range-spline-area-chart)</td></tr>
-<tr><td></td><td>[Range Step Area](range-step-area-chart)</td></tr>
+<tr><td></td><td><a href="area-chart">Area</a></td></tr>
+<tr><td></td><td><a href="spline-area-chart">Spline Area</a></td></tr>
+<tr><td></td><td><a href="range-area-chart">Range Area</a></td></tr>
+<tr><td></td><td><a href="range-spline-area-chart">Range Spline Area</a></td></tr>
+<tr><td></td><td><a href="range-step-area-chart">Range Step Area</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Step Area Chart](https://www.anychart.com/chartopedia/chart-types/stepline-area-chart/)</td></tr>
-<tr><td></td><td>[General Settings](general-settings)</td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/stepline-area-chart/">Chartopedia: Step Area Chart</a></td></tr>
+<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
 </table>
 
 ## Modules

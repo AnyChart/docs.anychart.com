@@ -16,28 +16,28 @@ Because they allow visual comparisons of well-understood measures, bubble charts
 This article explains how to create a basic Bubble chart as well as configure settings that are specific to the type. See the table below to get a brief overview of the Bubble chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../quick-start/modules#core) + [Basic Cartesian](../quick-start/modules#basic-cartesian) / [Base](../quick-start/modules#base)</td></tr>
+<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Bubble}anychart.core.cartesian.series.Bubble{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, value, size](../working-with-data/overview)</td></tr>
-<tr><td>Multiple Series</td><td>[YES](../working-with-data/overview)</td></tr>
+<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value, size</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td>[Vertical Bubble](vertical/bubble-chart)</td></tr>
+<tr><td>Vertical</td><td><a href="vertical/bubble-chart">Vertical Bubble</a></td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Error Bubble](error-chart)</td></tr>
+<tr><td>Error Bars</td><td><a href="error-chart">Error Bubble</a></td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
-<tr><td>Scatter</td><td>[Scatter Bubble](scatter-plot/bubble-chart)</td></tr>
+<tr><td>Scatter</td><td><a href="scatter-plot/bubble-chart">Scatter Bubble</a></td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Marker](marker-chart)</td></tr>
-<tr><td></td><td>[Dot (Point) Maps](../maps/dot-point)_Map)</td></tr>
+<tr><td></td><td><a href="marker-chart">Marker</a></td></tr>
+<tr><td></td><td><a href="../maps/dot-point">Dot (Point) Maps</a>_Map)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Bubble Chart](https://www.anychart.com/chartopedia/chart-types/bubble-chart/)</td></tr>
-<tr><td></td><td>[General Settings](general-settings)</td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/bubble-chart/">Chartopedia: Bubble Chart</a></td></tr>
+<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
 </table>
 
 ## Modules

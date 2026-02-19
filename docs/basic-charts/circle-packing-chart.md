@@ -10,11 +10,11 @@ A circle packing chart, or a circular treemap, is a visualization that displays 
 This article explains how to create a basic Circle Packing chart in AnyChart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Circle Packing chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../quick-start/modules#core) + [Circle Packing](../quick-start/modules#circle-packing)</td></tr>
+<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#circle-packing">Circle Packing</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.CirclePacking}anychart.charts.CirclePacking{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[id, parent, children, name, value](../working-with-data/overview)</td></tr>
+<tr><td>Data Fields</td><td><a href="../working-with-data/overview">id, parent, children, name, value</a></td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -27,12 +27,12 @@ This article explains how to create a basic Circle Packing chart in AnyChart as 
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Heat Map](heat-map-chart)</td></tr>
-<tr><td></td><td>[Treemap](treemap-chart)</td></tr>
-<tr><td></td><td>[Venn](venn-diagram)</td></tr>
+<tr><td></td><td><a href="heat-map-chart">Heat Map</a></td></tr>
+<tr><td></td><td><a href="treemap-chart">Treemap</a></td></tr>
+<tr><td></td><td><a href="venn-diagram">Venn</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Circle Packing Chart](https://www.anychart.com/products/anychart/gallery/Circle_Packing/)</td></tr>
-<tr><td></td><td>[General Settings](general-settings)</td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/products/anychart/gallery/Circle_Packing/">Chartopedia: Circle Packing Chart</a></td></tr>
+<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
 </table>
 
 ## Modules

@@ -10,28 +10,28 @@ Marker chart (otherwise known as a point chart) is identical to a line chart wit
 This article explains how to create a basic Marker chart as well as configure settings that are specific to the type. See the table below to get a brief overview of the Marker chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../quick-start/modules#core) + [Basic Cartesian](../quick-start/modules#basic-cartesian) / [Base](../quick-start/modules#base)</td></tr>
+<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Marker}anychart.core.cartesian.series.Marker{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, value](../working-with-data/overview)</td></tr>
-<tr><td>Multiple Series</td><td>[YES](../working-with-data/overview)</td></tr>
+<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td>[Vertical Marker](vertical/overview)</td></tr>
+<tr><td>Vertical</td><td><a href="vertical/overview">Vertical Marker</a></td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Marker Chart with Error Bars](error-chart/marker-chart)</td></tr>
+<tr><td>Error Bars</td><td><a href="error-chart/marker-chart">Marker Chart with Error Bars</a></td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td>[Polar Marker](polar-plot/marker-chart)</td></tr>
-<tr><td>Radar</td><td>[Radar Marker](radar-plot/marker-chart)</td></tr>
-<tr><td>Scatter</td><td>[Scatter Marker](scatter-plot/marker-chart)</td></tr>
-<tr><td>Stock</td><td>[Stock Marker](../stock-charts/series/marker)</td></tr>
+<tr><td>Polar</td><td><a href="polar-plot/marker-chart">Polar Marker</a></td></tr>
+<tr><td>Radar</td><td><a href="radar-plot/marker-chart">Radar Marker</a></td></tr>
+<tr><td>Scatter</td><td><a href="scatter-plot/marker-chart">Scatter Marker</a></td></tr>
+<tr><td>Stock</td><td><a href="../stock-charts/series/marker">Stock Marker</a></td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Bubble](bubble-chart)</td></tr>
-<tr><td></td><td>[Dot (Point) Maps](../maps/dot-point)\_Map)</td></tr>
+<tr><td></td><td><a href="bubble-chart">Bubble</a></td></tr>
+<tr><td></td><td><a href="../maps/dot-point">Dot (Point) Maps</a>\_Map)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Marker Chart](https://www.anychart.com/chartopedia/chart-types/dot-chart/)</td></tr>
-<tr><td></td><td>[General Settings](general-settings)</td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/dot-chart/">Chartopedia: Marker Chart</a></td></tr>
+<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
 </table>
 
 ## Modules

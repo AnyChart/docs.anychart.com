@@ -10,7 +10,7 @@ A network graph is a mathematical visualization that is used to model pairwise r
 This article explains how to create a basic Network Graph as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Network Graph's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../quick-start/modules#core) + [Network Graph](../quick-start/modules#network-graph)</td></tr>
+<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#network-graph">Network Graph</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Graph}anychart.charts.Graph{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -27,10 +27,10 @@ This article explains how to create a basic Network Graph as well as configure s
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Sankey Diagram](sankey-diagram)</td></tr>
+<tr><td></td><td><a href="sankey-diagram">Sankey Diagram</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Network Graph](https://www.anychart.com/chartopedia/chart-types/network-graph/)</td></tr>
-<tr><td></td><td>[General Settings](general-settings)</td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/network-graph/">Chartopedia: Network Graph</a></td></tr>
+<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
 </table>
 
 ## Modules

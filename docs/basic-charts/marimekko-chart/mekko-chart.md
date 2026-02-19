@@ -10,15 +10,15 @@ sidebar_position: 0
 The Marimekko name has been adopted within business and the management consultancy industry to refer to a specific type of **bar chart known as a variable-width chart** or **Mosaic plot** in which all the bars are of equal height, there are no spaces between the bars, and the bars are in turn each divided into segments of different width. The design of the mosaic plot resembles a [Marimekko print](https://www.google.ru/search?q=Marimekko+print&tbm=isch). The chart's design encodes two variables (such as the percentage of sales and market share).
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../../quick-start/modules#core) + [Mekko](../../quick-start/modules#mekko)</td></tr>
+<tr><td>Modules</td><td><a href="../../quick-start/modules#core">Core</a> + <a href="../../quick-start/modules#mekko">Mekko</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.mekko.series.Mekko}anychart.core.mekko.series.Mekko{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, value](../../working-with-data/overview)</td></tr>
+<tr><td>Data Fields</td><td><a href="../../working-with-data/overview">x, value</a></td></tr>
 <tr><td>Multiple Series</td><td>YES</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td>[YES](#stacked-mode)</td></tr>
-<tr><td>Vertical</td><td>[YES](#vertical-marimekko-chart)</td></tr>
+<tr><td>Stacked</td><td><a href="#stacked-mode">YES</a></td></tr>
+<tr><td>Vertical</td><td><a href="#vertical-marimekko-chart">YES</a></td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
@@ -27,16 +27,16 @@ The Marimekko name has been adopted within business and the management consultan
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Bar Mekko](bar-mekko-chart)</td></tr>
-<tr><td></td><td>[Mosaic Chart](mosaic-chart)</td></tr>
-<tr><td></td><td>[Column Chart](../column-chart)</td></tr>
-<tr><td></td><td>[Bar Chart](../bar-chart)</td></tr>
-<tr><td></td><td>[Stacked Charts](../stacked/overview)</td></tr>
+<tr><td></td><td><a href="bar-mekko-chart">Bar Mekko</a></td></tr>
+<tr><td></td><td><a href="mosaic-chart">Mosaic Chart</a></td></tr>
+<tr><td></td><td><a href="../column-chart">Column Chart</a></td></tr>
+<tr><td></td><td><a href="../bar-chart">Bar Chart</a></td></tr>
+<tr><td></td><td><a href="../stacked/overview">Stacked Charts</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Marimekko Mekko Chart](https://www.anychart.com/chartopedia/chart-types/mekko-chart/)</td></tr>
-<tr><td></td><td>[Chartopedia: Marimekko Bar Mekko Chart](https://www.anychart.com/chartopedia/chart-types/barmekko-chart/)</td></tr>
-<tr><td></td><td>[Chartopedia: Marimekko Mosaic Chart](https://www.anychart.com/chartopedia/chart-types/mosaic-chart/)</td></tr>
-<tr><td></td><td>[General Settings](../general-settings)</td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/mekko-chart/">Chartopedia: Marimekko Mekko Chart</a></td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/barmekko-chart/">Chartopedia: Marimekko Bar Mekko Chart</a></td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/mosaic-chart/">Chartopedia: Marimekko Mosaic Chart</a></td></tr>
+<tr><td></td><td><a href="../general-settings">General Settings</a></td></tr>
 </table>
 
 ## Modules

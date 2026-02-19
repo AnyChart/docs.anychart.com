@@ -12,34 +12,34 @@ HiLo is a series type that is predominantly used for demonstrating the stock mar
 This article explains how to create a basic HiLo chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the HiLo chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../quick-start/modules#core) + [Basic Cartesian](../quick-start/modules#basic-cartesian) / [Base](../quick-start/modules#base)</td></tr>
+<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Hilo}anychart.core.cartesian.series.HiLo{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, high, low](../working-with-data/overview)</td></tr>
-<tr><td>Multiple Series</td><td>[YES](../working-with-data/overview)</td></tr>
+<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, high, low</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td>[Vertical HiLo](vertical/hilo-chart)</td></tr>
+<tr><td>Vertical</td><td><a href="vertical/hilo-chart">Vertical HiLo</a></td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
-<tr><td>Stock</td><td>[Stock HiLo](../stock-charts/series/hilo)</td></tr>
+<tr><td>Stock</td><td><a href="../stock-charts/series/hilo">Stock HiLo</a></td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[OHLC](ohlc-chart)</td></tr>
-<tr><td></td><td>[Japanese Candlestick](japanese-candlestick-chart)</td></tr>
-<tr><td></td><td>[Stick](stick-chart)</td></tr>
-<tr><td></td><td>[Range Area](range-area-chart)</td></tr>
-<tr><td></td><td>[Range Bar](range-bar-chart)</td></tr>
-<tr><td></td><td>[Range Column](range-column-chart)</td></tr>
-<tr><td></td><td>[Range Spline Area](range-spline-area-chart)</td></tr>
-<tr><td></td><td>[Range Step Area](range-step-area-chart)</td></tr>
+<tr><td></td><td><a href="ohlc-chart">OHLC</a></td></tr>
+<tr><td></td><td><a href="japanese-candlestick-chart">Japanese Candlestick</a></td></tr>
+<tr><td></td><td><a href="stick-chart">Stick</a></td></tr>
+<tr><td></td><td><a href="range-area-chart">Range Area</a></td></tr>
+<tr><td></td><td><a href="range-bar-chart">Range Bar</a></td></tr>
+<tr><td></td><td><a href="range-column-chart">Range Column</a></td></tr>
+<tr><td></td><td><a href="range-spline-area-chart">Range Spline Area</a></td></tr>
+<tr><td></td><td><a href="range-step-area-chart">Range Step Area</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: HiLo Chart](https://www.anychart.com/chartopedia/chart-types/hilo-chart/)</td></tr>
-<tr><td></td><td>[General Settings](general-settings)</td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/hilo-chart/">Chartopedia: HiLo Chart</a></td></tr>
+<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
 </table>
 
 ## Modules

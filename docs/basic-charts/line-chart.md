@@ -12,32 +12,32 @@ The line chart is very common in many fields. As a rule, it is used to emphasize
 This article explains how to create a basic Line chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Line chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../quick-start/modules#core) + [Basic Cartesian](../quick-start/modules#basic-cartesian) / [Base](../quick-start/modules#base)</td></tr>
+<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Line}anychart.core.cartesian.series.Line{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, value](../working-with-data/overview)</td></tr>
-<tr><td>Multiple Series</td><td>[YES](../working-with-data/overview)</td></tr>
+<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td>[Vertical Line](vertical/line-chart)</td></tr>
+<tr><td>Vertical</td><td><a href="vertical/line-chart">Vertical Line</a></td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Line Chart with Error Bars](error-chart/line-chart)</td></tr>
+<tr><td>Error Bars</td><td><a href="error-chart/line-chart">Line Chart with Error Bars</a></td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td>[Polar Line](polar-plot/line-chart), [Polyline](polar-plot/polyline-chart)</td></tr>
-<tr><td>Radar</td><td>[Radar Line](radar-plot/line-chart)</td></tr>
-<tr><td>Scatter</td><td>[Scatter Line](scatter-plot/line-chart)</td></tr>
-<tr><td>Stock</td><td>[Stock Line](../stock-charts/series/line)</td></tr>
+<tr><td>Polar</td><td><a href="polar-plot/line-chart">Polar Line</a>, <a href="polar-plot/polyline-chart">Polyline</a></td></tr>
+<tr><td>Radar</td><td><a href="radar-plot/line-chart">Radar Line</a></td></tr>
+<tr><td>Scatter</td><td><a href="scatter-plot/line-chart">Scatter Line</a></td></tr>
+<tr><td>Stock</td><td><a href="../stock-charts/series/line">Stock Line</a></td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Spline](spline-chart)</td></tr>
-<tr><td></td><td>[Step Line](step-line-chart)</td></tr>
-<tr><td></td><td>[Jump Line](jump-line-chart)</td></tr>
-<tr><td></td><td>[Line Sparkline](sparkline-chart#line-sparkline-chart)</td></tr>
-<tr><td></td><td>[Polyline](polyline-chart)</td></tr>
+<tr><td></td><td><a href="spline-chart">Spline</a></td></tr>
+<tr><td></td><td><a href="step-line-chart">Step Line</a></td></tr>
+<tr><td></td><td><a href="jump-line-chart">Jump Line</a></td></tr>
+<tr><td></td><td><a href="sparkline-chart#line-sparkline-chart">Line Sparkline</a></td></tr>
+<tr><td></td><td><a href="polyline-chart">Polyline</a></td></tr>
 
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Line Chart](https://www.anychart.com/chartopedia/chart-types/line-chart/)</td></tr>
-<tr><td></td><td>[General Settings](general-settings)</td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/line-chart/">Chartopedia: Line Chart</a></td></tr>
+<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
 </table>
 
 ## Modules

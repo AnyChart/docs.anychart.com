@@ -15,71 +15,71 @@ AnyStock supports a lot of different series types. For the general information o
 <th width="350"><b>Fields</b></th>
 </tr>
 <tr>
-<td>[Area series in AnyStock](area)</td>
+<td><a href="area">Area series in AnyStock</a></td>
 <td>x, value</td>
 </tr>
 <tr>
-<td>[Column series in AnyStock](column)</td>
+<td><a href="column">Column series in AnyStock</a></td>
 <td>x, value</td>
 </tr>
 <tr>
-<td>[HiLo series in AnyStock](hilo)</td>
+<td><a href="hilo">HiLo series in AnyStock</a></td>
 <td>x, high, low</td>
 </tr>
 <tr>
-<td>[Japanese Candlestick series in AnyStock](japanese-candlestick)</td>
+<td><a href="japanese-candlestick">Japanese Candlestick series in AnyStock</a></td>
 <td>x, open, high, low, close</td>
 </tr>
 <tr>
-<td>[Jump Line series in AnyStock](jump-line)</td>
+<td><a href="jump-line">Jump Line series in AnyStock</a></td>
 <td>x, value</td>
 </tr>
 <tr>
-<td>[Line series in AnyStock](line)</td>
+<td><a href="line">Line series in AnyStock</a></td>
 <td>x, value</td>
 </tr>
 <tr>
-<td>[Marker series in AnyStock](marker)</td>
+<td><a href="marker">Marker series in AnyStock</a></td>
 <td>x, value</td>
 </tr>
 <tr>
-<td>[OHLC series in AnyStock](ohlc)</td>
+<td><a href="ohlc">OHLC series in AnyStock</a></td>
 <td>x, open, high, low, close</td>
 </tr> 
 <tr>
-<td>[Range Area series in AnyStock](range-area)</td>
+<td><a href="range-area">Range Area series in AnyStock</a></td>
 <td>x, high, low</td>
 </tr>
 <tr>
-<td>[Range Column series in AnyStock](range-column)</td>
+<td><a href="range-column">Range Column series in AnyStock</a></td>
 <td>x, high, low</td>
 </tr>
 <tr>
-<td>[Range Spline Area series in AnyStock](range-spline-area)</td>
+<td><a href="range-spline-area">Range Spline Area series in AnyStock</a></td>
 <td>x, high, low</td>
 </tr>
 <tr>
-<td>[Range Step Area series in AnyStock](range-step-area)</td>
+<td><a href="range-step-area">Range Step Area series in AnyStock</a></td>
 <td>x, high, low</td>
 </tr>
 <tr>
-<td>[Spline series in AnyStock](spline)</td>
+<td><a href="spline">Spline series in AnyStock</a></td>
 <td>x, value</td>
 </tr>
 <tr>
-<td>[Spline Area series in AnyStock](spline-area)</td>
+<td><a href="spline-area">Spline Area series in AnyStock</a></td>
 <td>x, value</td>
 </tr>
 <tr>
-<td>[Step Area series in AnyStock](step-area)</td>
+<td><a href="step-area">Step Area series in AnyStock</a></td>
 <td>x, value</td>
 </tr>
 <tr>
-<td>[Step Line series in AnyStock](step-line)</td>
+<td><a href="step-line">Step Line series in AnyStock</a></td>
 <td>x, value</td>
 </tr>
 <tr>
-<td>[Stick series in AnyStock](stick)</td>
+<td><a href="stick">Stick series in AnyStock</a></td>
 <td>x, value</td>
 </tr>
 </tbody></table>

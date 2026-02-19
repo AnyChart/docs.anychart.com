@@ -11,10 +11,10 @@ This article explains how to create a basic Word Tree chart as well as configure
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
-<tr><td>Modules</td><td>[Core](../quick-start/modules#core) + [Word Tree](../quick-start/modules#word-tree)</td></tr>
+<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#word-tree">Word Tree</a></td></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Wordtree}anychart.charts.Wordtree{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[id, parent, children, value, weight](../working-with-data/overview)</td></tr>
+<tr><td>Data Fields</td><td><a href="../working-with-data/overview">id, parent, children, value, weight</a></td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -27,10 +27,10 @@ This article explains how to create a basic Word Tree chart as well as configure
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Tag Cloud](tag-cloud)</td></tr>
+<tr><td></td><td><a href="tag-cloud">Tag Cloud</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Word Tree](https://www.anychart.com/chartopedia/chart-types/word-tree/)</td></tr>
-<tr><td></td><td>[General Settings](general-settings)</td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/word-tree/">Chartopedia: Word Tree</a></td></tr>
+<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
 </table>
 
 ## Modules

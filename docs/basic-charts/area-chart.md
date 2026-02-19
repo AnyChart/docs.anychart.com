@@ -13,32 +13,32 @@ This article explains how to create a basic Area chart as well as configure sett
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
-<tr><td>Modules</td><td>[Core](../quick-start/modules#core) + [Basic Cartesian](../quick-start/modules#basic-cartesian) / [Base](../quick-start/modules#base)</td></tr>
+<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Area}anychart.core.cartesian.series.Area{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, value](../working-with-data/overview)</td></tr>
-<tr><td>Multiple Series</td><td>[YES](../working-with-data/overview)</td></tr>
+<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td>[Stacked Area](stacked/value/area-chart), [Percent Stacked Area](stacked/percent/area-chart)</td></tr>
-<tr><td>Vertical</td><td>[Vertical Area](vertical/area-chart)</td></tr>
-<tr><td>3D</td><td>[3D Area](3d/area-chart)</td></tr>
-<tr><td>Error Bars</td><td>[Area Chart with Error Bars](error-chart/area-chart)</td></tr>
+<tr><td>Stacked</td><td><a href="stacked/value/area-chart">Stacked Area</a>, <a href="stacked/percent/area-chart">Percent Stacked Area</a></td></tr>
+<tr><td>Vertical</td><td><a href="vertical/area-chart">Vertical Area</a></td></tr>
+<tr><td>3D</td><td><a href="3d/area-chart">3D Area</a></td></tr>
+<tr><td>Error Bars</td><td><a href="error-chart/area-chart">Area Chart with Error Bars</a></td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td>[Polar Area](polar-plot/area-chart), [Polygon](polar-plot/polygon-chart)</td></tr>
-<tr><td>Radar</td><td>[Radar Area](radar-plot/area-chart)</td></tr>
+<tr><td>Polar</td><td><a href="polar-plot/area-chart">Polar Area</a>, <a href="polar-plot/polygon-chart">Polygon</a></td></tr>
+<tr><td>Radar</td><td><a href="radar-plot/area-chart">Radar Area</a></td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
-<tr><td>Stock</td><td>[Stock Area](../stock-charts/series/area)</td></tr>
+<tr><td>Stock</td><td><a href="../stock-charts/series/area">Stock Area</a></td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Spline Area](spline-area-chart)</td></tr>
-<tr><td></td><td>[Step Area](step-area-chart)</td></tr>
-<tr><td></td><td>[Range Area](range-area-chart)</td></tr>
-<tr><td></td><td>[Range Spline Area](range-spline-area-chart)</td></tr>
-<tr><td></td><td>[Range Step Area](range-step-area-chart)</td></tr>
-<tr><td></td><td>[Area Sparkline](sparkline-chart#area-sparkline-chart)</td></tr>
-<tr><td></td><td>[Polygon](polygon-chart)</td></tr>
+<tr><td></td><td><a href="spline-area-chart">Spline Area</a></td></tr>
+<tr><td></td><td><a href="step-area-chart">Step Area</a></td></tr>
+<tr><td></td><td><a href="range-area-chart">Range Area</a></td></tr>
+<tr><td></td><td><a href="range-spline-area-chart">Range Spline Area</a></td></tr>
+<tr><td></td><td><a href="range-step-area-chart">Range Step Area</a></td></tr>
+<tr><td></td><td><a href="sparkline-chart#area-sparkline-chart">Area Sparkline</a></td></tr>
+<tr><td></td><td><a href="polygon-chart">Polygon</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Area Chart](https://www.anychart.com/chartopedia/chart-types/area-chart/)</td></tr>
-<tr><td></td><td>[General Settings](general-settings)</td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/area-chart/">Chartopedia: Area Chart</a></td></tr>
+<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
 </table>
 
 ## Modules

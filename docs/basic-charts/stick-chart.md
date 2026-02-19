@@ -10,29 +10,29 @@ Stick Charts look like Column Charts with no width. Sticks are good at demonstra
 This article explains how to create a basic Stick chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of Stick Chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../quick-start/modules#core) + [Basic Cartesian](../quick-start/modules#basic-cartesian) / [Base](../quick-start/modules#base)</td></tr>
+<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Stick}anychart.core.cartesian.series.Stick{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, value](../working-with-data/overview)</td></tr>
-<tr><td>Multiple Series</td><td>[YES](../working-with-data/overview)</td></tr>
+<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td>[Stacked Stick](stacked/value/stick-chart), [Percent Stacked Stick](stacked/percent/stick-chart)</td></tr>
-<tr><td>Vertical</td><td>[Vertical Stick](vertical/stick-chart)</td></tr>
+<tr><td>Stacked</td><td><a href="stacked/value/stick-chart">Stacked Stick</a>, <a href="stacked/percent/stick-chart">Percent Stacked Stick</a></td></tr>
+<tr><td>Vertical</td><td><a href="vertical/stick-chart">Vertical Stick</a></td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Stick Chart with Error Bars](error-chart/stick-chart)</td></tr>
+<tr><td>Error Bars</td><td><a href="error-chart/stick-chart">Stick Chart with Error Bars</a></td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
-<tr><td>Stock</td><td>[Stock Stick](../stock-charts/series/stick)</td></tr>
+<tr><td>Stock</td><td><a href="../stock-charts/series/stick">Stock Stick</a></td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Column](column-chart)</td></tr>
-<tr><td></td><td>[Line](line-chart)</td></tr>
-<tr><td></td><td>[HiLo](hilo-chart)</td></tr>
+<tr><td></td><td><a href="column-chart">Column</a></td></tr>
+<tr><td></td><td><a href="line-chart">Line</a></td></tr>
+<tr><td></td><td><a href="hilo-chart">HiLo</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Stick Chart](https://www.anychart.com/chartopedia/chart-types/stick-chart/)</td></tr>
-<tr><td></td><td>[General Settings](general-settings)</td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/stick-chart/">Chartopedia: Stick Chart</a></td></tr>
+<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
 </table>
 
 ## Modules

@@ -12,15 +12,15 @@ As a rule, intermediate values are visualized as floating columns, while the ini
 This article explains how to create a basic Waterfall chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Waterfall chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../quick-start/modules#core) + [Waterfall](../quick-start/modules#waterfall)</td></tr>
+<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#waterfall">Waterfall</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Waterfall}anychart.charts.Waterfall{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, value, isTotal](../working-with-data/overview)</td></tr>
-<tr><td>Multiple Series</td><td>[YES](#multiple-series)</td></tr>
+<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value, isTotal</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="#multiple-series">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td>[Multiple Series](#multiple-series)</td></tr>
+<tr><td>Stacked</td><td><a href="#multiple-series">Multiple Series</a></td></tr>
 <tr><td>Vertical</td><td>N/A</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
@@ -30,12 +30,12 @@ This article explains how to create a basic Waterfall chart as well as configure
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Column](column-chart)</td></tr>
-<tr><td></td><td>[Range Column](range-column-chart)</td></tr>
-<tr><td></td><td>[Stacked](stacked/overview)</td></tr>
+<tr><td></td><td><a href="column-chart">Column</a></td></tr>
+<tr><td></td><td><a href="range-column-chart">Range Column</a></td></tr>
+<tr><td></td><td><a href="stacked/overview">Stacked</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Waterfall Chart](https://www.anychart.com/chartopedia/chart-types/waterfall-chart/)</td></tr>
-<tr><td></td><td>[General Settings](general-settings)</td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/waterfall-chart/">Chartopedia: Waterfall Chart</a></td></tr>
+<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
 </table>
 
 ## Modules

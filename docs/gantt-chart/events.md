@@ -81,7 +81,7 @@ Here are the events of [connectors](project-chart#connectors) you can listen to:
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
-<tr><td>beforeCreateConnector</td><td> A connector is about to be created in the [Live Edit](live-edit) mode.</td></tr>
+<tr><td>beforeCreateConnector</td><td> A connector is about to be created in the <a href="live-edit">Live Edit</a> mode.</td></tr>
 <tr><td>connectorClick</td><td>A connector has been clicked on.</td></tr>
 <tr><td>connectorDblClick</td><td>A connector has been double-clicked on.</td></tr>
 <tr><td>connectorMouseDown</td><td>The left mouse button has been pressed on a connector.</td></tr>

@@ -12,29 +12,29 @@ The column chart is used very widely to show comparison among categories and som
 This article explains how to create a basic Column chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Column chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../quick-start/modules#core) + [Basic Cartesian](../quick-start/modules#basic-cartesian) / [Base](../quick-start/modules#base)</td></tr>
+<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Column}anychart.core.cartesian.series.Column{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, value](../working-with-data/overview)</td></tr>
-<tr><td>Multiple Series</td><td>[YES](../working-with-data/overview)</td></tr>
+<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td>[Stacked Column](stacked/value/column-chart), [Percent Stacked Column](stacked/percent/column-chart)</td></tr>
-<tr><td>Vertical</td><td>[Bar](bar-chart)</td></tr>
-<tr><td>3D</td><td>[3D Column](3d/column-chart)</td></tr>
-<tr><td>Error Bars</td><td>[Column Chart with Error Bars](error-chart/column-chart)</td></tr>
+<tr><td>Stacked</td><td><a href="stacked/value/column-chart">Stacked Column</a>, <a href="stacked/percent/column-chart">Percent Stacked Column</a></td></tr>
+<tr><td>Vertical</td><td><a href="bar-chart">Bar</a></td></tr>
+<tr><td>3D</td><td><a href="3d/column-chart">3D Column</a></td></tr>
+<tr><td>Error Bars</td><td><a href="error-chart/column-chart">Column Chart with Error Bars</a></td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td>[Polar Column](polar-plot/column-chart)</td></tr>
+<tr><td>Polar</td><td><a href="polar-plot/column-chart">Polar Column</a></td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
-<tr><td>Stock</td><td>[Stock Column](../stock-charts/series/column)</td></tr>
+<tr><td>Stock</td><td><a href="../stock-charts/series/column">Stock Column</a></td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Bar](bar-chart)</td></tr>
-<tr><td></td><td>[Column Sparkline](sparkline-chart#column-sparkline-chart)</td></tr>
-<tr><td></td><td>[WinLoss Sparkline](sparkline-chart#winloss-sparkline-chart)</td></tr>
+<tr><td></td><td><a href="bar-chart">Bar</a></td></tr>
+<tr><td></td><td><a href="sparkline-chart#column-sparkline-chart">Column Sparkline</a></td></tr>
+<tr><td></td><td><a href="sparkline-chart#winloss-sparkline-chart">WinLoss Sparkline</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Column Chart](https://www.anychart.com/chartopedia/chart-types/column-chart/)</td></tr>
-<tr><td></td><td>[General Settings](general-settings)</td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/column-chart/">Chartopedia: Column Chart</a></td></tr>
+<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
 </table>
 
 ## Modules

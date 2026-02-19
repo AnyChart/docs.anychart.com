@@ -10,3 +10,4 @@
 | 4 | 2026-02-19 | Fix broken image URLs — remove escaped underscores in static.anychart.com image references |
 | 5 | 2026-02-19 | Add Playground button to chart samples — preserve original interlinking with playground.anychart.com demos |
 | 6 | 2026-02-19 | Fix navbar CSS on smaller screens — grey text on blue background barely visible |
+| 7 | 2026-02-19 | Fix links in supported-charts-types page and all other pages with markdown links inside HTML tables |

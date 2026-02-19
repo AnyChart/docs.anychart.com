@@ -10,11 +10,11 @@ A sunburst chart, otherwise known as a radial treemap or multi-level pie chart, 
 This article explains how to create a basic Sunburst chart in AnyChart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Sunburst chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../quick-start/modules#core) + [Sunburst](../quick-start/modules#sunburst)</td></tr>
+<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#sunburst">Sunburst</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Sunburst}anychart.charts.Sunburst{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[id, parent, children, name, value](../working-with-data/overview)</td></tr>
+<tr><td>Data Fields</td><td><a href="../working-with-data/overview">id, parent, children, name, value</a></td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -27,12 +27,12 @@ This article explains how to create a basic Sunburst chart in AnyChart as well a
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Treemap](treemap-chart)</td></tr>
-<tr><td></td><td>[Pie](pie-chart)</td></tr>
-<tr><td></td><td>[Doughnut](doughnut-chart)</td></tr>
+<tr><td></td><td><a href="treemap-chart">Treemap</a></td></tr>
+<tr><td></td><td><a href="pie-chart">Pie</a></td></tr>
+<tr><td></td><td><a href="doughnut-chart">Doughnut</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Sunburst Chart](https://www.anychart.com/chartopedia/chart-types/sunburst-chart/)</td></tr>
-<tr><td></td><td>[General Settings](general-settings)</td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/sunburst-chart/">Chartopedia: Sunburst Chart</a></td></tr>
+<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
 </table>
 
 ## Modules

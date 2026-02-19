@@ -39,58 +39,58 @@ The table below lists all available projection types, samples can be found after
 <th >Description</th>
 </tr>
 <tr>
-<td>[Aitoff](#aitoff)</td>
+<td><a href="#aitoff">Aitoff</a></td>
 <td>The Aitoff projection is a modified azimuthal map projection proposed by David A. Aitoff in 1889. Based on the equatorial form of the azimuthal equidistant projection, Aitoff first halves longitudes, then projects according to the azimuthal equidistant, and then stretches the result horizontally into a 2:1 ellipse to compensate for having halved the longitudes.</td>
 </tr>
 <tr>
-<td>[August](#august)</td>
+<td><a href="#august">August</a></td>
 <td>The projection designed by Friedrich August and co-developed by Bellermann was published in 1874 as an alternative to Eisenlohr's design: the range of scale distortion is wider (1 : 8) and not constant at the boundary meridians, but its construction is somewhat simpler. A world map is bounded by an epicycloid, the shape defined by a point on a circle rolling without sliding around another, fixed, circle.</td>
 </tr>
 <tr>
-<td>[Bonne](#bonne)</td>
+<td><a href="#bonne">Bonne</a></td>
 <td>A Bonne projection is a pseudoconical equal-area map projection, sometimes called a dépôt de la guerre or a Sylvanus projection. It is named after Rigobert Bonne (1727-1795), who used this projection considerably.</td>
 </tr>
 <tr>
-<td>[Eckert1](#eckert1)</td>
+<td><a href="#eckert1">Eckert1</a></td>
 <td>Pseudocylindrical, 
 neither conformal or equal-area, devoloped by Max Eckert (-Greifendorff); in 1906.</td>
 </tr>
 <tr>
-<td>[Eckert3](#eckert3)</td>
+<td><a href="#eckert3">Eckert3</a></td>
 <td>Pseudocylindrical, neither conformal or equal-area, developed by 
 Max Eckert (-Greifendorff) in 1906.</td>
 </tr>
 <tr>
-<td>[Equirectangular](#equirectangular)</td>
+<td><a href="#equirectangular">Equirectangular</a></td>
 <td>The equirectangular projection (also called the equidistant cylindrical projection, geographic projection, or carte parallelogrammatique projection or CPP) is a very simple map projection attributed to Marinus of Tyre, who Ptolemy claims invented the projection about 100 AD. The projection maps meridians to equally spaced vertical straight lines, and parallels to equally spaced horizontal straight lines.</td>
 </tr>
 <tr>
-<td>[Fahey](#fahey)</td>
+<td><a href="#fahey">Fahey</a></td>
 <td>Fahey Modified Gall, pseudocylindrical, neither conformal or equal-area, developed by Lawrence Fahey in 1975.</td>
 </tr>
 <tr>
-<td>[Hammer](#hammer)</td>
+<td><a href="#hammer">Hammer</a></td>
 <td>The Hammer projection (otherwise known as the Hammer-Aitoff projection) produces an equal area map of the entire globe, it is useful for visual representations of geographically related statistical data and distributions. Astronomers use this projection to show the entire celestial sphere on one map in a way that accurately depicts the relative distribution of the stars in different regions of the sky.</td>
 </tr>
 <tr>
-<td>[Mercator](#mercator)</td>
+<td><a href="#mercator">Mercator</a></td>
 <td>The Mercator projection is a cylindrical map projection presented by the Flemish geographer and cartographer Gerardus Mercator, in 1569. It became the standard map projection for nautical purposes because of its ability to represent lines of constant true bearing or true course, known as rhumb lines, as straight line segments. While the direction and shapes are accurate on a Mercator projection, it distorts the size.</td>
 </tr>
 <tr>
-<td>[Orthographic](#orthographic)</td>
+<td><a href="#orthographic">Orthographic</a></td>
 <td>Orthographic projection is a map projection of cartography. Like the Stereographic projection and Gnomonic projection, Orthographic projection is a perspective (or azimuthal) projection, in which the sphere is projected onto a tangent plane or secant plane. The point of perspective for the Orthographic projection is at infinite distance. It depicts a hemisphere of the globe as it appears from outer space. The shapes and areas are distorted, particularly near the edges, but distances are preserved along parallels.</td>
 </tr>
 <tr>
-<td>[Robinson](#robinson)</td>
+<td><a href="#robinson">Robinson</a></td>
 <td>A pseudo-cylindrical projection by reason of its straight parallels, along each of which the meridians are spaced evenly. The central meridian is also a straight line; other meridians are curved. Developed by Dr. Arthur H. Robinson in 1963.</td>
 </tr>
 <tr>
-<td>[Wagner6](#wagner6)</td>
+<td><a href="#wagner6">Wagner6</a></td>
 <td>A pseudocylindrical projection, neither conformal or equal-area, developed by 
 K. H. Wagner in 1932.</td>
 </tr>
 <tr>
-<td>[WSG84](#wsg84)</td>
+<td><a href="#wsg84">WSG84</a></td>
 <td>The World Geodetic System (WGS) is a standard for use in cartography, geodesy, and navigation including by GPS. It comprises a standard coordinate system for the Earth, a standard spheroidal reference surface (the datum or reference ellipsoid) for raw altitude data, and a gravitational equipotential surface (the geoid) that defines the nominal sea level.</td>
 </tr>
 </tbody></table>

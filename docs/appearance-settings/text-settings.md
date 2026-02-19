@@ -152,7 +152,7 @@ Here is a table with all possible methods for controlling the text view.
 </tr>
 <tr>
 <td>{api:anychart.core.Text#wordWrap}wordWrap(){api}</td>
-<td>sets the word-wrap mode. Defines the rules for breaking lines. Find more information in the [Text Wrapping](../graphics/text-and-fonts#wrap) article.</td>
+<td>sets the word-wrap mode. Defines the rules for breaking lines. Find more information in the <a href="../graphics/text-and-fonts#wrap">Text Wrapping</a> article.</td>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#wordBreak}wordBreak(){api}</td>

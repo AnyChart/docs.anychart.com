@@ -12,32 +12,32 @@ Like the regular range area chart, it looks like two lines representing low and 
 The Range Spline Area and Range Area chart types share all the settings, so this article explains just how to create a basic Range Area chart. To learn about other settings, read the [Range Area Chart](range-area-chart) article. You can also see the table below to get a brief overview of the Range Spline Area chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../quick-start/modules#core) + [Basic Cartesian](../quick-start/modules#basic-cartesian) / [Base](../quick-start/modules#base)</td></tr>
+<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.RangeSplineArea}anychart.core.cartesian.series.RangeSplineArea{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, value](../working-with-data/overview)</td></tr>
-<tr><td>Multiple Series</td><td>[YES](../working-with-data/overview)</td></tr>
+<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td>[Vertical Range Spline Area](vertical/range-spline-area-chart)</td></tr>
+<tr><td>Vertical</td><td><a href="vertical/range-spline-area-chart">Vertical Range Spline Area</a></td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
-<tr><td>Stock</td><td>[Stock Range Spline Area](../stock-charts/series/range-spline-area)</td></tr>
+<tr><td>Stock</td><td><a href="../stock-charts/series/range-spline-area">Stock Range Spline Area</a></td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Area](area-chart)</td></tr>
-<tr><td></td><td>[Spline Area](spline-area-chart)</td></tr>
-<tr><td></td><td>[Step Area](step-area-chart)</td></tr>
-<tr><td></td><td>[Range Area](range-area-chart)</td></tr>
-<tr><td></td><td>[Range Step Area](range-step-area-chart)</td></tr>
-<tr><td></td><td>[HiLo](hilo-chart)</td></tr>
+<tr><td></td><td><a href="area-chart">Area</a></td></tr>
+<tr><td></td><td><a href="spline-area-chart">Spline Area</a></td></tr>
+<tr><td></td><td><a href="step-area-chart">Step Area</a></td></tr>
+<tr><td></td><td><a href="range-area-chart">Range Area</a></td></tr>
+<tr><td></td><td><a href="range-step-area-chart">Range Step Area</a></td></tr>
+<tr><td></td><td><a href="hilo-chart">HiLo</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Range Spline Area Chart](https://www.anychart.com/chartopedia/chart-types/range-splinearea-chart/)</td></tr>
-<tr><td></td><td>[General Settings](general-settings)</td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/range-splinearea-chart/">Chartopedia: Range Spline Area Chart</a></td></tr>
+<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
 </table>
 
 ## Modules

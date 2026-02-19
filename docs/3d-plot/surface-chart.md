@@ -10,21 +10,21 @@ A Surface chart (or 3D Surface plot) is a chart type used for finding the optimu
 This article explains how to create a basic Surface chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Word Tree's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../quick-start/modules#core) + [Surface](../quick-start/modules#surface)</td></tr>
+<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#surface">Surface</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Surface}anychart.charts.Surface{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, y, z](../working-with-data/overview)</td></tr>
+<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, y, z</a></td></tr>
 <tr><td>Multiple Series</td><td>No</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[3D Area Chart](../basic-charts/3d/area-chart)</td></tr>
-<tr><td></td><td>[3D Bar Chart](../basic-charts/3d/area-chart)</td></tr>
-<tr><td></td><td>[3D Column Chart](../basic-charts/3d/column-chart)</td></tr>
-<tr><td></td><td>[3D Doughnut Chart](../basic-charts/3d/doughnut-chart)</td></tr>
-<tr><td></td><td>[3D Line Chart](../basic-charts/3d/line-chart)</td></tr>
-<tr><td></td><td>[3D Pie Chart](../basic-charts/3d/pie-chart)</td></tr>
+<tr><td></td><td><a href="../basic-charts/3d/area-chart">3D Area Chart</a></td></tr>
+<tr><td></td><td><a href="../basic-charts/3d/area-chart">3D Bar Chart</a></td></tr>
+<tr><td></td><td><a href="../basic-charts/3d/column-chart">3D Column Chart</a></td></tr>
+<tr><td></td><td><a href="../basic-charts/3d/doughnut-chart">3D Doughnut Chart</a></td></tr>
+<tr><td></td><td><a href="../basic-charts/3d/line-chart">3D Line Chart</a></td></tr>
+<tr><td></td><td><a href="../basic-charts/3d/pie-chart">3D Pie Chart</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Surface Chart](https://www.anychart.com/chartopedia/chart-types/surface-chart/)</td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/surface-chart/">Chartopedia: Surface Chart</a></td></tr>
 </table>
 
 ## Modules

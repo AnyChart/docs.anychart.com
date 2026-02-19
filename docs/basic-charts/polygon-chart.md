@@ -13,25 +13,25 @@ This article explains how to create a basic Polygon chart as well as configure s
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.polar.series.Polygon}anychart.core.polar.series.Polygon{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, value](../working-with-data/overview)</td></tr>
-<tr><td>Multiple Series</td><td>[YES](../working-with-data/overview)</td></tr>
+<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td>[Stacked Polygon](stacked/value/polygon-chart), [Percent Stacked Polygon](stacked/percent/polygon-chart)</td></tr>
+<tr><td>Stacked</td><td><a href="stacked/value/polygon-chart">Stacked Polygon</a>, <a href="stacked/percent/polygon-chart">Percent Stacked Polygon</a></td></tr>
 <tr><td>Vertical</td><td>N/A</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td>[Polygon](polar-plot/polygon-chart)</td></tr>
+<tr><td>Polar</td><td><a href="polar-plot/polygon-chart">Polygon</a></td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Area](area-chart)</td></tr>
-<tr><td></td><td>[Polar Area](polar-plot/area-chart)</td></tr>
-<tr><td></td><td>[Radar Area](radar-plot/area-chart)</td></tr>
+<tr><td></td><td><a href="area-chart">Area</a></td></tr>
+<tr><td></td><td><a href="polar-plot/area-chart">Polar Area</a></td></tr>
+<tr><td></td><td><a href="radar-plot/area-chart">Radar Area</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Radar Chart](https://www.anychart.com/chartopedia/chart-types/radar-chart/)</td></tr>
-<tr><td></td><td>[General Settings](general-settings)</td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/radar-chart/">Chartopedia: Radar Chart</a></td></tr>
+<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
 </table>
 
 ## Quick Start
