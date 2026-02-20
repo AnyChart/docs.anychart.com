@@ -17,3 +17,10 @@
 | 11 | 2026-02-19 | Research ALL available search solutions for Docusaurus 3.x: built-in/official, Algolia DocSearch, local/client-side plugins, Typesense, Meilisearch, Orama, Pagefind, FlexSearch. Comprehensive comparison with architecture, compatibility, cost, performance, and recommendation for VPS-hosted ~421 page site. |
 | 12 | 2026-02-19 | Install and set up @easyops-cn/docusaurus-search-local |
 | 13 | 2026-02-19 | Tweak search bar UX — make it more centered on page and bigger |
+| 14 | 2026-02-19 | Implement edit flow MVP: editor page, backend API, "Suggest Changes" button |
+| 15 | 2026-02-20 | Explore project state, review current architecture (server, edit flow, auth), discuss next steps — GitHub OAuth login, user-authenticated PRs instead of bot token |
+| 16 | 2026-02-20 | Decisions: no anonymous edits (GitHub login required), GitHub OAuth App (not GitHub App), public repo so fork-based PRs fine, want documentation on the plan, verify .env token not exposed in git |
+| 17 | 2026-02-20 | UX must be fully automatic — user just edits and clicks submit, fork/branch/commit/PR all invisible. Conflicts: go with Option A (PRs direct to develop), may revisit later |
+| 18 | 2026-02-20 | Server should serve both Docusaurus static build AND API (one process). Keep single repo, clean internal separation. Write the planning document. |
+| 19 | 2026-02-20 | Research GitHub OAuth App integration in Node.js/Express: OAuth App vs GitHub App, exact OAuth flow, required scopes, token types/expiration, session management, security (PKCE/state), Octokit usage with user tokens, GitHub API for fork/branch/commit/PR workflow. |
+| 20 | 2026-02-20 | Proceed with implementing the GitHub OAuth plan (all 5 phases), use subagents as needed |

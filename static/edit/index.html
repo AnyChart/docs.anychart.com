@@ -45,6 +45,25 @@
       flex: 1;
     }
 
+    .header-user {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .header-user img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .header-user a {
+      color: #c9e8ff;
+      font-size: 13px;
+    }
+
     /* Main layout */
     .container {
       max-width: 960px;
@@ -121,13 +140,6 @@
       box-shadow: 0 0 0 2px rgba(36, 133, 208, 0.15);
     }
 
-    .form-row {
-      display: flex;
-      gap: 12px;
-    }
-
-    .form-row .form-group { flex: 1; }
-
     .form-hint {
       font-size: 12px;
       color: #999;
@@ -147,6 +159,7 @@
       font-weight: 600;
       cursor: pointer;
       transition: background 0.15s ease;
+      text-decoration: none;
     }
 
     .btn-primary {
@@ -164,6 +177,21 @@
     }
 
     .btn-secondary:hover { background: #e8e8e8; }
+
+    .btn-github {
+      background: #24292e;
+      color: #fff;
+      padding: 12px 32px;
+      font-size: 16px;
+    }
+
+    .btn-github:hover { background: #2f363d; }
+
+    .btn-github svg {
+      width: 20px;
+      height: 20px;
+      fill: #fff;
+    }
 
     .actions {
       display: flex;
@@ -221,6 +249,29 @@
 
     @keyframes spin { to { transform: rotate(360deg); } }
 
+    /* Login prompt */
+    .login-prompt {
+      text-align: center;
+      padding: 60px 20px;
+      background: #fff;
+      border: 1px solid #d2d2d2;
+      border-radius: 4px;
+    }
+
+    .login-prompt h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #222;
+    }
+
+    .login-prompt p {
+      color: #76797b;
+      margin-bottom: 24px;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
     /* Error page */
     .error-page {
       text-align: center;
@@ -240,13 +291,16 @@
       .form-group textarea { background: #1b1b1d; border-color: #3a3a3c; color: #e3e3e3; }
       .form-group label { color: #a0a0a0; }
       .btn-secondary { background: #2d2d2d; border-color: #3a3a3c; color: #a0a0a0; }
+      .login-prompt { background: #242526; border-color: #3a3a3c; }
+      .login-prompt h2 { color: #e3e3e3; }
+      .login-prompt p { color: #a0a0a0; }
     }
 
     /* Responsive */
     @media (max-width: 640px) {
-      .form-row { flex-direction: column; gap: 0; }
       .container { padding: 0 10px; margin: 12px auto; }
       .actions { flex-direction: column; gap: 10px; }
+      .header-user span { display: none; }
     }
   </style>
 </head>
@@ -256,6 +310,7 @@
   <div class="header">
     <a href="/">&#8592; Back to Docs</a>
     <h1>Suggest Changes</h1>
+    <div id="header-user" class="header-user" style="display:none"></div>
   </div>
 
   <!-- Main content -->
@@ -263,7 +318,22 @@
     <!-- Loading state -->
     <div id="loading" class="loading">
       <div class="spinner"></div>
-      <div>Loading document...</div>
+      <div>Loading...</div>
+    </div>
+
+    <!-- Login prompt (shown when not authenticated) -->
+    <div id="login-section" style="display:none">
+      <div class="login-prompt">
+        <h2>Log in to suggest changes</h2>
+        <p>
+          To suggest edits to this documentation page, please log in with your GitHub account.<br>
+          Your changes will be submitted as a pull request for review.
+        </p>
+        <a id="login-btn" href="#" class="btn btn-github">
+          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          Log in with GitHub
+        </a>
+      </div>
     </div>
 
     <!-- Error state -->
@@ -285,17 +355,6 @@
           <label for="description">What did you change? *</label>
           <input type="text" id="description" placeholder="e.g., Fixed a typo in the chart configuration example" maxlength="200" required>
           <div class="form-hint">Brief description of your changes (5-200 characters)</div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="author-name">Your name (optional)</label>
-            <input type="text" id="author-name" placeholder="Jane Doe" maxlength="100">
-          </div>
-          <div class="form-group">
-            <label for="author-email">Your email (optional)</label>
-            <input type="email" id="author-email" placeholder="jane@example.com" maxlength="200">
-          </div>
         </div>
 
         <div class="actions">
@@ -330,12 +389,69 @@
     if (!filePath) {
       showError('No file path specified. Please use a "Suggest Changes" link from a documentation page.');
     } else {
-      loadContent();
+      checkAuth();
     }
 
-    async function loadContent() {
+    /**
+     * Check if user is logged in. If yes, load the editor. If not, show login prompt.
+     */
+    async function checkAuth() {
       try {
-        const res = await fetch(`${API_BASE}/api/content?path=${encodeURIComponent(filePath)}`);
+        const res = await fetch(`${API_BASE}/auth/user`, { credentials: 'include' });
+        const data = await res.json();
+
+        document.getElementById('loading').style.display = 'none';
+
+        if (data.authenticated) {
+          showUser(data.user);
+          loadContent();
+        } else {
+          showLoginPrompt();
+        }
+      } catch (err) {
+        showError('Unable to connect to the server. Please try again later.');
+      }
+    }
+
+    /**
+     * Show the GitHub login prompt.
+     */
+    function showLoginPrompt() {
+      const returnTo = `/edit?path=${encodeURIComponent(filePath)}`;
+      document.getElementById('login-btn').href = `${API_BASE}/auth/github?returnTo=${encodeURIComponent(returnTo)}`;
+      document.getElementById('login-section').style.display = 'block';
+    }
+
+    /**
+     * Show the logged-in user in the header.
+     */
+    function showUser(user) {
+      const el = document.getElementById('header-user');
+      el.innerHTML = `
+        <img src="${user.avatar_url}" alt="${user.login}">
+        <span>${user.name || user.login}</span>
+        <a href="${API_BASE}/auth/logout">Logout</a>
+      `;
+      el.style.display = 'flex';
+    }
+
+    /**
+     * Load the document content from the API.
+     */
+    async function loadContent() {
+      document.getElementById('loading').style.display = 'block';
+      document.getElementById('loading').querySelector('div:last-child').textContent = 'Loading document...';
+
+      try {
+        const res = await fetch(`${API_BASE}/api/content?path=${encodeURIComponent(filePath)}`, {
+          credentials: 'include',
+        });
+
+        if (res.status === 401) {
+          showLoginPrompt();
+          return;
+        }
+
         if (!res.ok) {
           const data = await res.json().catch(() => ({}));
           throw new Error(data.error || `HTTP ${res.status}`);
@@ -371,12 +487,12 @@
       }
     }
 
+    /**
+     * Submit the edited content — creates a PR as the logged-in user.
+     */
     async function submitChanges() {
       const description = document.getElementById('description').value.trim();
-      const authorName = document.getElementById('author-name').value.trim();
-      const authorEmail = document.getElementById('author-email').value.trim();
       const content = editor.getMarkdown();
-      const statusEl = document.getElementById('status');
       const submitBtn = document.getElementById('submit-btn');
 
       // Validate
@@ -390,27 +506,25 @@
         return;
       }
 
-      // Build author string
-      let author = '';
-      if (authorName && authorEmail) {
-        author = `${authorName} <${authorEmail}>`;
-      } else if (authorName) {
-        author = authorName;
-      } else if (authorEmail) {
-        author = authorEmail;
-      }
-
       // Submit
       submitBtn.disabled = true;
       submitBtn.textContent = 'Submitting...';
-      statusEl.style.display = 'none';
+      document.getElementById('status').style.display = 'none';
 
       try {
         const res = await fetch(`${API_BASE}/api/suggest`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ path: filePath, content, description, author }),
+          credentials: 'include',
+          body: JSON.stringify({ path: filePath, content, description }),
         });
+
+        if (res.status === 401) {
+          showStatus('error', 'Your session has expired. Please <a href="#" onclick="location.reload()">reload the page</a> to log in again.');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Submit for Review';
+          return;
+        }
 
         const data = await res.json();
 
@@ -441,6 +555,7 @@
 
     function showError(message) {
       document.getElementById('loading').style.display = 'none';
+      document.getElementById('login-section').style.display = 'none';
       const el = document.getElementById('error-page');
       el.style.display = 'block';
       el.innerHTML = `<h2>Error</h2><p>${message}</p><p><a href="/">Return to Documentation</a></p>`;
