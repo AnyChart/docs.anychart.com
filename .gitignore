@@ -34,3 +34,4 @@ server/.env
 screenshots/
 scripts/screenshot-*.mjs
 scripts/inspect-*.mjs
+TODO_NEXT_STEPS.md
