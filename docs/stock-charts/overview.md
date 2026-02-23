@@ -1,4 +1,5 @@
 ---
+slug: "/Stock_Charts/Overview"
 sidebar_position: 1
 ---
 
@@ -26,18 +27,18 @@ AnyStock allows to stream data efficiently, you can see this on our [AnyStock Sp
 
 ## Useful links
 
-* [Quick Start: How it works](quick-start) - description of AnyChart Stock Chart Component.
+* [Quick Start: How it works](Quick_Start) - description of AnyChart Stock Chart Component.
 * [Playground Gallery](https://www.anychart.com/products/anystock/gallery/) - find, explore chart samples.
-* [Supported Series](series/supported-series) - here you can find information about available series types.
-* [Chart Plots](chart-plots) - learn what are plots, what for are they needed, and how to use them properly.
+* [Supported Series](Series/Supported_Series) - here you can find information about available series types.
+* [Chart Plots](Chart_Plots) - learn what are plots, what for are they needed, and how to use them properly.
 * [Benchmarking](https://www.anychart.com/solutions/big-data-speed-test/) - you can see how fast and robust AnyStock is on this [AnyStock Benchmark Test Page](https://www.anychart.com/solutions/big-data-speed-test/).
 
 ## Technical Indicators
 
 A technical indicator is a type of analysis chart that indicates market direction. Indicators are mathematical calculation based on historic price, volume, or (in the case of futures contracts) open interest, used to indicate where the price is going, or whether the price is in an "overbought" condition or an "oversold" condition.
 
-AnyChart Stock Chart Component supports automatic building of several types of technical indicators as well allows you to add custom indicators of your choice. Read more about technical indicators feature in [Technical Indicators](technical-indicators/overview) article.
+AnyChart Stock Chart Component supports automatic building of several types of technical indicators as well allows you to add custom indicators of your choice. Read more about technical indicators feature in [Technical Indicators](Technical_Indicators/Overview) article.
 
 ## Working with Data in AnyStock
 
-When we start working with AnyStocks, firstly we should set the data as with any other chart type. Working with data in Stocks is slightly different from working with other basic charts. We can set the data for Stocks in all formats available for our basic charts, but we should consider that the data set must be a table, and this table later has to be mapped correctly. You can find more information and some samples in the [Working with Data in AnyStock](data) article.
+When we start working with AnyStocks, firstly we should set the data as with any other chart type. Working with data in Stocks is slightly different from working with other basic charts. We can set the data for Stocks in all formats available for our basic charts, but we should consider that the data set must be a table, and this table later has to be mapped correctly. You can find more information and some samples in the [Working with Data in AnyStock](Data) article.

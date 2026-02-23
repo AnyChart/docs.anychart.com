@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/3D/2D_Line_Chart"
 sidebar_position: 2.2
 ---
 # 3D 2D Line Chart
@@ -7,9 +8,9 @@ sidebar_position: 2.2
 
 This article explains how to create a 3D 2D Line chart in AnyChart.
 
-To learn more about 3D charts in general and how to customize them, see [3D Charts (Overview)](overview). In addition, you can read the [Line Chart](../line-chart) article.
+To learn more about 3D charts in general and how to customize them, see [3D Charts (Overview)](Overview). In addition, you can read the [Line Chart](../Line_Chart) article.
 
-Please note that there is also the [3D Line](line-chart) chart type.
+Please note that there is also the [3D Line](Line_Chart) chart type.
 
 ## Quick Start
 
@@ -36,6 +37,6 @@ chart.zDistribution(false);
 
 ## Special Settings
 
-**Note 1:** When you use the {api:anychart#line3d}anychart.line3d(){api} chart constructor, the [Z-distribution](overview#z-distribution) is enabled by default, which means that the series of multiple-series charts are distributed along the Z-axis.
+**Note 1:** When you use the {api:anychart#line3d}anychart.line3d(){api} chart constructor, the [Z-distribution](Overview#z-distribution) is enabled by default, which means that the series of multiple-series charts are distributed along the Z-axis.
 
 **Note 2:** 2D Line series are always shown in the foreground if they are combined with series of other types.

@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Vertical/Marker_Chart"
 sidebar_position: 2
 ---
 # Vertical Marker Chart
@@ -7,7 +8,7 @@ sidebar_position: 2
 
 This article explains how to create a Vertical Marker chart in AnyChart.
 
-To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](overview). You can also read the [Marker Chart](../marker-chart) article to learn about other available settings.
+To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](Overview). You can also read the [Marker Chart](../Marker_Chart) article to learn about other available settings.
 
 ## Quick Start
 

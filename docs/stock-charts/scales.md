@@ -1,11 +1,12 @@
 ---
+slug: "/Stock_Charts/Scales"
 sidebar_position: 4
 ---
 # Scales
 
 ## Overview
 
-In AnyChart scales control calculations and modes while Axes control axes labels, lines and tick marks. Learn more about basis Axes options available (like tickmarks, axis line and so on) see [Axes](axes tutorial), to learn more about basic scale options (like maximum, minimum, scale modes and so on) see [Scale tutorial](../axes-and-grids/scales).
+In AnyChart scales control calculations and modes while Axes control axes labels, lines and tick marks. Learn more about basis Axes options available (like tickmarks, axis line and so on) see [Axes](axes tutorial), to learn more about basic scale options (like maximum, minimum, scale modes and so on) see [Scale tutorial](../Axes_and_Grids/Scales).
 
 In this section we will demonstrate only the differences of AnyStock scales from basic charts' ones.
 
@@ -27,7 +28,7 @@ var logScale = anychart.scales.log();
 chart.plot(1).yScale(logScale);
 ```
 
-The result of the configuration shown above, along with some [axes](axes) tuning can be seen on a sample below:
+The result of the configuration shown above, along with some [axes](Axes) tuning can be seen on a sample below:
 
 {sample}STOCK\_Scales\_01{sample}
 

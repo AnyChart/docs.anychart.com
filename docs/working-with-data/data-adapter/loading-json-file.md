@@ -1,11 +1,12 @@
 ---
+slug: "/Working_with_Data/Data_Adapter/Loading_JSON_File"
 sidebar_position: 3
 ---
 # Loading JSON File
 
 ## Overview
 
-Ability to [load JSON files](#loading-file-with-loadjsonfile-method) and [deserialize directly from JSON files](#deserializing-from-json-file) are the features [Data Adapter](overview) provides.
+Ability to [load JSON files](#loading-file-with-loadjsonfile-method) and [deserialize directly from JSON files](#deserializing-from-json-file) are the features [Data Adapter](Overview) provides.
 
 To work with the features Data Adapter provides you need to plug it in along with AnyChart Library:
 
@@ -14,11 +15,11 @@ To work with the features Data Adapter provides you need to plug it in along wit
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-data-adapter.min.js"></script>
 ```
 
-You can load [Data from JSON](../data-from-json) into AnyChart without the help of Data Adapter but **if you want to load a file** you can do it using the data adapter and the {api:anychart.data#loadJsonFile}loadJsonFile(){api} and create charts from files with {api:anychart#fromJsonFile}fromJsonFile(){api} method.
+You can load [Data from JSON](../Data_From_JSON) into AnyChart without the help of Data Adapter but **if you want to load a file** you can do it using the data adapter and the {api:anychart.data#loadJsonFile}loadJsonFile(){api} and create charts from files with {api:anychart#fromJsonFile}fromJsonFile(){api} method.
 
 ## Loading File with loadJsonFile method
 
-Using {api:anychart.data#loadJsonFile}loadJsonFile(){api} method is as easy as this, you can put data in any of [supported formats](../supported-data-formats) into JSON file:
+Using {api:anychart.data#loadJsonFile}loadJsonFile(){api} method is as easy as this, you can put data in any of [supported formats](../Supported_Data_Formats) into JSON file:
 
 ```
 [
@@ -58,7 +59,7 @@ You can use this method to load anything else too.
 
 ## Deserializing from JSON File
 
-With {api:anychart#fromJsonFile}fromJsonFile(){api} method you can deserialize a chart directly from a file with chart settings and data in [AnyChart JSON format](../data-from-json):
+With {api:anychart#fromJsonFile}fromJsonFile(){api} method you can deserialize a chart directly from a file with chart settings and data in [AnyChart JSON format](../Data_From_JSON):
 
 ```
 // Create a chart from JSON file

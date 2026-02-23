@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Column_Chart"
 sidebar_position: 1
 ---
 # Column Chart
@@ -12,34 +13,34 @@ The column chart is used very widely to show comparison among categories and som
 This article explains how to create a basic Column chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Column chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#basic-cartesian">Basic Cartesian</a> / <a href="../Quick_Start/Modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Column}anychart.core.cartesian.series.Column{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
-<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">x, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../Working_with_Data/Overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td><a href="stacked/value/column-chart">Stacked Column</a>, <a href="stacked/percent/column-chart">Percent Stacked Column</a></td></tr>
-<tr><td>Vertical</td><td><a href="bar-chart">Bar</a></td></tr>
-<tr><td>3D</td><td><a href="3d/column-chart">3D Column</a></td></tr>
-<tr><td>Error Bars</td><td><a href="error-chart/column-chart">Column Chart with Error Bars</a></td></tr>
+<tr><td>Stacked</td><td><a href="Stacked/Value/Column_Chart">Stacked Column</a>, <a href="Stacked/Percent/Column_Chart">Percent Stacked Column</a></td></tr>
+<tr><td>Vertical</td><td><a href="Bar_Chart">Bar</a></td></tr>
+<tr><td>3D</td><td><a href="3D/Column_Chart">3D Column</a></td></tr>
+<tr><td>Error Bars</td><td><a href="Error_Chart/Column_Chart">Column Chart with Error Bars</a></td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td><a href="polar-plot/column-chart">Polar Column</a></td></tr>
+<tr><td>Polar</td><td><a href="Polar_Plot/Column_Chart">Polar Column</a></td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
-<tr><td>Stock</td><td><a href="../stock-charts/series/column">Stock Column</a></td></tr>
+<tr><td>Stock</td><td><a href="../Stock_Charts/Series/Column">Stock Column</a></td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="bar-chart">Bar</a></td></tr>
-<tr><td></td><td><a href="sparkline-chart#column-sparkline-chart">Column Sparkline</a></td></tr>
-<tr><td></td><td><a href="sparkline-chart#winloss-sparkline-chart">WinLoss Sparkline</a></td></tr>
+<tr><td></td><td><a href="Bar_Chart">Bar</a></td></tr>
+<tr><td></td><td><a href="Sparkline_Chart#column-sparkline-chart">Column Sparkline</a></td></tr>
+<tr><td></td><td><a href="Sparkline_Chart#winloss-sparkline-chart">WinLoss Sparkline</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/column-chart/">Chartopedia: Column Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Column chart requires adding the [Core](../quick-start/modules#core) and [Basic Cartesian](../quick-start/modules#basic-cartesian) modules:
+The Column chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic-cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -49,13 +50,13 @@ The Column chart requires adding the [Core](../quick-start/modules#core) and [Ba
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../quick-start/modules#base) module, which includes, among other things, the two modules mentioned above: 
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -94,7 +95,7 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Column chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
@@ -102,7 +103,7 @@ Read the overview of general settings: [General Settings](general-settings).
 
 #### All Points
 
-The [appearance settings](../appearance-settings) of a Column chart can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Column#normal}normal(){api}, {api:anychart.core.cartesian.series.Column#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Column#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Column chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Column#normal}normal(){api}, {api:anychart.core.cartesian.series.Column#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Column#selected}selected(){api} methods.
 
 Combine them with the following methods:
 
@@ -255,38 +256,38 @@ chart.barGroupsPadding(2);
 
 ### Point Size
 
-This chart type allows you to set the size of its points. Read more in the [Point Size](../common-settings/point-size) article.
+This chart type allows you to set the size of its points. Read more in the [Point Size](../Common_Settings/Point_Size) article.
 
 ### Labels
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 ### Tooltips
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../common-settings/text-formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 ### Stacked Column
 
 Stacked and percent stacked charts are multiple-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
 
-In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts](stacked/overview).
+In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts](Stacked/Overview).
 
 To learn about the stacked versions of the Column chart, see:
 
-* [Stacked Column](stacked/value/column-chart)
-* [Percent Stacked Column](stacked/percent/column-chart)
+* [Stacked Column](Stacked/Value/Column_Chart)
+* [Percent Stacked Column](Stacked/Percent/Column_Chart)
 
 <a name='vertical_column'></a>
 ### Vertical Column (Bar)
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](vertical/overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](Vertical/Overview).
 
-The vertical column chart is called the bar chart: it shows categories on the vertical axis instead of the horizontal axis and represents values as bars instead of columns. Read more: [Bar Chart](bar-chart).
+The vertical column chart is called the bar chart: it shows categories on the vertical axis instead of the horizontal axis and represents values as bars instead of columns. Read more: [Bar Chart](Bar_Chart).
 
 ### 3D Column
 
 Using AnyChart, you can create 3D versions of some chart types, including the Column chart.
 
-To learn about 3D charts in general, see [3D Charts](3d/overview).
+To learn about 3D charts in general, see [3D Charts](3D/Overview).
 
-The 3D Column chart is described in the following article: [3D Column Chart](3d/column-chart).
+The 3D Column chart is described in the following article: [3D Column Chart](3D/Column_Chart).

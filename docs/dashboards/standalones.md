@@ -1,4 +1,5 @@
 ---
+slug: "/Dashboards/Standalones"
 sidebar_position: 3
 ---
 
@@ -77,7 +78,7 @@ Coming soon.
 
 ### Legend
 
-You can find information about the standalone legend in the following article: [Standalone Legend](../common-settings/legend/standalone-legend).
+You can find information about the standalone legend in the following article: [Standalone Legend](../Common_Settings/Legend/Standalone_Legend).
 
 ### Axes
 

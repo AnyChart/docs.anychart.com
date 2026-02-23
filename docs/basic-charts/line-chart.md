@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Line_Chart"
 sidebar_position: 1.5
 ---
 # Line Chart
@@ -12,37 +13,37 @@ The line chart is very common in many fields. As a rule, it is used to emphasize
 This article explains how to create a basic Line chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Line chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#basic-cartesian">Basic Cartesian</a> / <a href="../Quick_Start/Modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Line}anychart.core.cartesian.series.Line{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
-<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">x, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../Working_with_Data/Overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td><a href="vertical/line-chart">Vertical Line</a></td></tr>
+<tr><td>Vertical</td><td><a href="Vertical/Line_Chart">Vertical Line</a></td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td><a href="error-chart/line-chart">Line Chart with Error Bars</a></td></tr>
+<tr><td>Error Bars</td><td><a href="Error_Chart/Line_Chart">Line Chart with Error Bars</a></td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td><a href="polar-plot/line-chart">Polar Line</a>, <a href="polar-plot/polyline-chart">Polyline</a></td></tr>
-<tr><td>Radar</td><td><a href="radar-plot/line-chart">Radar Line</a></td></tr>
-<tr><td>Scatter</td><td><a href="scatter-plot/line-chart">Scatter Line</a></td></tr>
-<tr><td>Stock</td><td><a href="../stock-charts/series/line">Stock Line</a></td></tr>
+<tr><td>Polar</td><td><a href="Polar_Plot/Line_Chart">Polar Line</a>, <a href="Polar_Plot/Polyline_Chart">Polyline</a></td></tr>
+<tr><td>Radar</td><td><a href="Radar_Plot/Line_Chart">Radar Line</a></td></tr>
+<tr><td>Scatter</td><td><a href="Scatter_Plot/Line_Chart">Scatter Line</a></td></tr>
+<tr><td>Stock</td><td><a href="../Stock_Charts/Series/Line">Stock Line</a></td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="spline-chart">Spline</a></td></tr>
-<tr><td></td><td><a href="step-line-chart">Step Line</a></td></tr>
-<tr><td></td><td><a href="jump-line-chart">Jump Line</a></td></tr>
-<tr><td></td><td><a href="sparkline-chart#line-sparkline-chart">Line Sparkline</a></td></tr>
-<tr><td></td><td><a href="polyline-chart">Polyline</a></td></tr>
+<tr><td></td><td><a href="Spline_Chart">Spline</a></td></tr>
+<tr><td></td><td><a href="Step_Line_Chart">Step Line</a></td></tr>
+<tr><td></td><td><a href="Jump_Line_Chart">Jump Line</a></td></tr>
+<tr><td></td><td><a href="Sparkline_Chart#line-sparkline-chart">Line Sparkline</a></td></tr>
+<tr><td></td><td><a href="Polyline_Chart">Polyline</a></td></tr>
 
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/line-chart/">Chartopedia: Line Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Line chart requires adding the [Core](../quick-start/modules#core) and [Basic Cartesian](../quick-start/modules#basic-cartesian) modules:
+The Line chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic-cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -52,13 +53,13 @@ The Line chart requires adding the [Core](../quick-start/modules#core) and [Basi
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../quick-start/modules#base) module, which includes, among other things, the two modules mentioned above: 
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -97,13 +98,13 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Line chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
 ### Appearance
 
-The [appearance settings](../appearance-settings) of a Line chart can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Line#normal}normal(){api}, {api:anychart.core.cartesian.series.Line#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Line#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Line chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Line#normal}normal(){api}, {api:anychart.core.cartesian.series.Line#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Line#selected}selected(){api} methods.
 
 Combine them with the {api:anychart.core.StateSettings#stroke}stroke(){api} method. Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
@@ -131,15 +132,15 @@ series2.selected().stroke("#0066cc", 4);
 
 ### Labels
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 ### Tooltips
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../common-settings/text-formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 ### Scales
 
-When Line chart is used with the ordinal scale and you wish to remove the gaps to the right and left of the line you need to change the [ordinal scale mode](../axes-and-grids/scales#ordinal) to `'continuous'`:
+When Line chart is used with the ordinal scale and you wish to remove the gaps to the right and left of the line you need to change the [ordinal scale mode](../Axes_and_Grids/Scales#ordinal) to `'continuous'`:
 
 ```
 chart.xScale().mode('continuous');
@@ -149,10 +150,10 @@ chart.xScale().mode('continuous');
 
 ### Vertical Line
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](vertical/overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](Vertical/Overview).
 
 Here is information about creating Vertical Line series:
 
-* [Vertical Line](vertical/line-chart)
-* [Vertical Spline](vertical/spline-chart)
-* [Vertical Step Line](vertical/step-line-chart)
+* [Vertical Line](Vertical/Line_Chart)
+* [Vertical Spline](Vertical/Spline_Chart)
+* [Vertical Step Line](Vertical/Step_Line_Chart)

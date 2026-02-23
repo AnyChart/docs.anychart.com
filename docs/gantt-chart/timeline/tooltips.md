@@ -1,11 +1,12 @@
 ---
+slug: "/Gantt_Chart/Timeline/Tooltips"
 sidebar_position: 6
 ---
 # Tooltips
 
 ## Overview
 
-[Tooltips](../../common-settings/tooltip) are text boxes displayed when timeline or [data grid](../data-grid) rows are hovered over. They are defined as instances of the {api:anychart.core.ui.Tooltip}anychart.core.ui.Tooltip{api} class.
+[Tooltips](../../Common_Settings/Tooltip) are text boxes displayed when timeline or [data grid](../Data_Grid) rows are hovered over. They are defined as instances of the {api:anychart.core.ui.Tooltip}anychart.core.ui.Tooltip{api} class.
 
 To access tooltips of the timeline, combine the {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} method with {api:anychart.core.ui.Timeline#tooltip}tooltip(){api}.
 
@@ -19,15 +20,15 @@ chart.getTimeline().tooltip(false);
 chart.getTimeline().tooltip.enabled(false);
 ```
 
-To configure tooltips, use other methods of {api:anychart.core.ui.Tooltip}anychart.core.ui.Tooltip{api} - for example, {api:anychart.core.ui.Tooltip#fontColor}fontColor(){api}, {api:anychart.core.ui.Tooltip#fontWeight}fontWeight(){api}, {api:anychart.core.ui.Tooltip#fontSize}fontSize(){api}, etc. The {api:anychart.core.ui.Tooltip#format}format(){api} method, combined with [text formatters](../../common-settings/text-formatters), allows setting the text format - read the sections below to learn more.
+To configure tooltips, use other methods of {api:anychart.core.ui.Tooltip}anychart.core.ui.Tooltip{api} - for example, {api:anychart.core.ui.Tooltip#fontColor}fontColor(){api}, {api:anychart.core.ui.Tooltip#fontWeight}fontWeight(){api}, {api:anychart.core.ui.Tooltip#fontSize}fontSize(){api}, etc. The {api:anychart.core.ui.Tooltip#format}format(){api} method, combined with [text formatters](../../Common_Settings/Text_Formatters), allows setting the text format - read the sections below to learn more.
 
-**Note 1:** To learn more about formatting dates, see [Date and Time Formats: format()](../date-and-time-formats#format)).
+**Note 1:** To learn more about formatting dates, see [Date and Time Formats: format()](../Date_and_Time_Formats#format)).
 
-**Note 2:** The tooltips that are shown on data grid are configured independently from the timeline tooltips. See [Data Grid: Tooltips](../data-grid/tooltips).
+**Note 2:** The tooltips that are shown on data grid are configured independently from the timeline tooltips. See [Data Grid: Tooltips](../Data_Grid/Tooltips).
 
 ## Tokens
 
-To format the text of tooltips, combine the {api:anychart.core.ui.Tooltip#format}format(){api} method with [tokens](../../common-settings/text-formatters#string-tokens).
+To format the text of tooltips, combine the {api:anychart.core.ui.Tooltip#format}format(){api} method with [tokens](../../Common_Settings/Text_Formatters#string-tokens).
 
 Please keep in mind that in addition to default tokens you can always use a custom token corresponding to a custom field in your data.
 
@@ -35,7 +36,7 @@ Also, if you need to enable HTML in tokens, pass `true` to {api:anychart.core.ui
 
 ### Project Tokens
 
-For the [Project Gantt](../project-chart) chart, the following tokens are available:
+For the [Project Gantt](../Project_Chart) chart, the following tokens are available:
 
 * `{%id}`
 * `{%name}`
@@ -64,7 +65,7 @@ chart.getTimeline().tooltip().format(
 
 ### Resource Tokens
 
-The following tokens are available for the [Resource Gantt](../resource-chart) chart:
+The following tokens are available for the [Resource Gantt](../Resource_Chart) chart:
 
 * `{%id}`
 * `{%name}`
@@ -89,15 +90,15 @@ chart.getTimeline().tooltip().format(
 
 ## Formatting Functions
 
-You can configure the text of tooltips by combining the {api:anychart.core.ui.Tooltip#format}format(){api} method with [formatting functions](../../common-settings/text-formatters#formatting-functions).
+You can configure the text of tooltips by combining the {api:anychart.core.ui.Tooltip#format}format(){api} method with [formatting functions](../../Common_Settings/Text_Formatters#formatting-functions).
 
-In these functions, a number of default context fields is available. Also, you can use {api:anychart.format.Context#getData}getData(){api} to refer to a custom field in your data and methods of the [tree data model](../../working-with-data/tree-data-model) to perform operations on data.
+In these functions, a number of default context fields is available. Also, you can use {api:anychart.format.Context#getData}getData(){api} to refer to a custom field in your data and methods of the [tree data model](../../Working_with_Data/Tree_Data_Model) to perform operations on data.
 
 If you need to enable HTML in formatting functions, pass `true` to {api:anychart.core.ui.Tooltip#useHtml()}useHtml(){api}.
 
 ### Project Fields
 
-For the [Project Gantt](../project-chart) chart, the following fields are available in formatting functions:
+For the [Project Gantt](../Project_Chart) chart, the following fields are available in formatting functions:
 
 * `id`
 * `name`
@@ -108,11 +109,11 @@ For the [Project Gantt](../project-chart) chart, the following fields are availa
 * `progress`
 * `linearIndex`
 
-In the sample below, a formatting functiond is used to display different tooltips for different types of [tasks](../project-chart#tasks-actual)). Also, in all tooltips the content of a custom data field `manager` is shown.
+In the sample below, a formatting functiond is used to display different tooltips for different types of [tasks](../Project_Chart#tasks-actual)). Also, in all tooltips the content of a custom data field `manager` is shown.
 
 {sample :height 220}GANTT\_Timeline\_Tooltips\_03{sample}
 
-A special context field `item` and the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../../working-with-data/tree-data-model) are used to get the number of the current data item's children and distinguish regular tasks from parent ones. To distinguish regular tasks from milestones, the duration of tasks is calculated.
+A special context field `item` and the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../../Working_with_Data/Tree_Data_Model) are used to get the number of the current data item's children and distinguish regular tasks from parent ones. To distinguish regular tasks from milestones, the duration of tasks is calculated.
 
 ```
 // configure tooltips of the timeline
@@ -160,7 +161,7 @@ chart.getTimeline().tooltip().format(function() {
 
 ### Resource Fields
 
-Here are the fields supported by the [Resource Gantt](../resource-chart) chart:
+Here are the fields supported by the [Resource Gantt](../Resource_Chart) chart:
 
 * `id`
 * `name`
@@ -168,11 +169,11 @@ Here are the fields supported by the [Resource Gantt](../resource-chart) chart:
 * `end`
 * `linearIndex`
 
-In this sample, a formatting function is used to display different tooltips for parent and child [resources](../resource-chart#periods-and-resources). For example, the content of a custom field `disc_space` is shown only for child resources.
+In this sample, a formatting function is used to display different tooltips for parent and child [resources](../Resource_Chart#periods-and-resources). For example, the content of a custom field `disc_space` is shown only for child resources.
 
 {sample :height 200}GANTT\_Timeline\_Tooltips\_04{sample}
 
-A special context field `item` and the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../../working-with-data/tree-data-model) are used to get the number of the current data item's children and distinguish regular resources from parent ones:
+A special context field `item` and the {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} method of the [Tree Data Model](../../Working_with_Data/Tree_Data_Model) are used to get the number of the current data item's children and distinguish regular resources from parent ones:
 
 ```
 // configure tooltips of the timeline

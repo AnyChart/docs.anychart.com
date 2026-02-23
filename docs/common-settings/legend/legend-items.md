@@ -1,4 +1,5 @@
 ---
+slug: "/Common_Settings/Legend/Legend_Items"
 sidebar_position: 8
 ---
 # Legend Items
@@ -7,7 +8,7 @@ sidebar_position: 8
 
 This article explains how to adjust legend items. You can set their text font, text format, the size of icons, and so on - combine the {api:?entry=legend}legend(){api} method of the chart with methods of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class that affect items.
 
-Please note that the settings listed in this article are applied to all items at once. If you need to configure items individually, see the [Individual Legend Items](individual-legend-items) article.
+Please note that the settings listed in this article are applied to all items at once. If you need to configure items individually, see the [Individual Legend Items](Individual_Legend_Items) article.
 
 ## Text Font
 
@@ -33,7 +34,7 @@ chart.legend().fontWeight(600);
 
 ## Text Format
 
-To set the text format of legend items, use the {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api} method with either [tokens](../text-formatters#string-tokens) or [formatting functions](../text-formatters#formatting-functions). Which settings are available depends on the series type and whether the chart type is single-series or multiple-series.
+To set the text format of legend items, use the {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api} method with either [tokens](../Text_Formatters#string-tokens) or [formatting functions](../Text_Formatters#formatting-functions). Which settings are available depends on the series type and whether the chart type is single-series or multiple-series.
 
 You can also call the {api:anychart.core.ui.Legend#useHtml}useHtml(){api} method to enable HTML for the legend text.
 
@@ -116,7 +117,7 @@ chart.legend().itemsFormat(function() {
 
 ## Icons
 
-Most settings of the legend icons (for example, their colors and types), can be configured only individually for each icon - see the [Icons](individual-legend-items#icons) and [Icon Markers](individual-legend-items#icon-markers) sections of the [Individual Legend Items](individual-legend-items) article. Also, you can use [themes](themes), which is an alternative way to customize the legend, including its icons.
+Most settings of the legend icons (for example, their colors and types), can be configured only individually for each icon - see the [Icons](Individual_Legend_Items#icons) and [Icon Markers](Individual_Legend_Items#icon-markers) sections of the [Individual Legend Items](Individual_Legend_Items) article. Also, you can use [themes](Themes), which is an alternative way to customize the legend, including its icons.
 
 ### Size
 

@@ -1,4 +1,5 @@
 ---
+slug: "/Gantt_Chart/Date_and_Time_Formats"
 sidebar_position: 7
 ---
 # Date and Time Formats
@@ -146,7 +147,7 @@ var data = [
 
 When you use [strings](#string) to set dates, specify the input date/time format to make sure that they are interpreted correctly.
 
-Call the {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api} method and pass a string with the [date/time pattern](../common-settings/text-formatters#datetime-syntax) used in your data:
+Call the {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api} method and pass a string with the [date/time pattern](../Common_Settings/Text_Formatters#datetime-syntax) used in your data:
 
 ```
 anychart.format.inputDateTimeFormat("yyyy-MM-dd");
@@ -191,7 +192,7 @@ chart.data(treeData);
 
 ### inputLocale()
 
-When you use [strings](#string) to set dates, the default input [locale](../common-settings/localization) is automatically applied - [en-us](https://cdn.anychart.com/locale/2.0.1/en-us.js). If necessary, you can set any other locale listed in the Locales section on [AnyChart CDN](https://cdn.anychart.com/).
+When you use [strings](#string) to set dates, the default input [locale](../Common_Settings/Localization) is automatically applied - [en-us](https://cdn.anychart.com/locale/2.0.1/en-us.js). If necessary, you can set any other locale listed in the Locales section on [AnyChart CDN](https://cdn.anychart.com/).
 
 In the head section of your web page, place a link to the locale on your server or on [AnyChart CDN](https://cdn.anychart.com/):
 
@@ -257,7 +258,7 @@ These formats are determined by the [output locale](#outputlocale)) you use - yo
 * `dateFormat`: `'y MMM d'`
 * `timeFormat`: `'HH:mm:ss'`
 
-To customize a format, pass a string with the [date/time pattern](../common-settings/text-formatters#datetime-syntax) you wish to use to one of these methods:
+To customize a format, pass a string with the [date/time pattern](../Common_Settings/Text_Formatters#datetime-syntax) you wish to use to one of these methods:
 
 * {api:anychart.format#outputDateTimeFormat}outputDateTimeFormat(){api}
 * {api:anychart.format#DateTimeFormat}outputDateFormat(){api}
@@ -308,7 +309,7 @@ chart.data(treeData);
 
 ### outputLocale()
 
-The output [locale](../common-settings/localization) determines the [output date/time formats](#outputdatetimeformat)) and affects the way how dates in various parts of the chart are [formatted](#format)).
+The output [locale](../Common_Settings/Localization) determines the [output date/time formats](#outputdatetimeformat)) and affects the way how dates in various parts of the chart are [formatted](#format)).
 
 The default output locale is [en-us](https://cdn.anychart.com/locale/2.0.1/en-us.js). If necessary, you can set any other locale listed in the Locales section on [AnyChart CDN](https://cdn.anychart.com/).
 
@@ -370,19 +371,19 @@ The following settings determine how dates in various parts of the chart are for
 * [output date/time format](#outputdatetimeformat))
 * [output locale](#outputlocale))
 
-You can override the output date/time format with the help of the {api:?entry=format}format(){api} method, combined with [text formatters](../common-settings/text-formatters).
+You can override the output date/time format with the help of the {api:?entry=format}format(){api} method, combined with [text formatters](../Common_Settings/Text_Formatters).
 
 It is available for the following parts of the chart:
 
-* [data grid labels](data-grid/columns#text-labels))
-* [data grid tooltips](data-grid/tooltips)
-* [timeline header](timeline/header#text-format)
-* [timeline tooltips](timeline/tooltips)
-* [labels of elements](elements/labels)
+* [data grid labels](Data_Grid/Columns#text-labels))
+* [data grid tooltips](Data_Grid/Tooltips)
+* [timeline header](Timeline/Header#text-format)
+* [timeline tooltips](Timeline/Tooltips)
+* [labels of elements](Elements/Labels)
 
 #### Tokens
 
-You can format text by combining {api:?entry=format}format(){api} with [tokens](../common-settings/text-formatters#string-tokens).
+You can format text by combining {api:?entry=format}format(){api} with [tokens](../Common_Settings/Text_Formatters#string-tokens).
 
 Here are some of the tokens that represent dates:
 
@@ -390,7 +391,7 @@ Here are some of the tokens that represent dates:
 * Resource labels & tooltips - `{%start}`, `{%end}`
 * Project & Resource header - `{%tickValue}`, `{%end}`
 
-To format a date, add the `dateTimeFormat` [formatting parameter](../common-settings/text-formatters#formatting-parameters) after a token and specify the [date/time pattern](../common-settings/text-formatters#datetime-syntax). This parameter is optional: if it is not set, the date are formatted according to the [output date/time format](#outputdatetimeformat)).
+To format a date, add the `dateTimeFormat` [formatting parameter](../Common_Settings/Text_Formatters#formatting-parameters) after a token and specify the [date/time pattern](../Common_Settings/Text_Formatters#datetime-syntax). This parameter is optional: if it is not set, the date are formatted according to the [output date/time format](#outputdatetimeformat)).
 
 In this sample, tokens are used to display and format dates in the second data grid column of a Project chart:
 
@@ -419,7 +420,7 @@ chart.dataGrid().column(1).labels().format(
 
 #### Formatting Functions
 
-You can format text by combining {api:?entry=format}format(){api} with [formatting functions](../common-settings/text-formatters#formatting-functions).
+You can format text by combining {api:?entry=format}format(){api} with [formatting functions](../Common_Settings/Text_Formatters#formatting-functions).
 
 In these functions, a number of context fields is available that represent dates, for example:
 
@@ -429,7 +430,7 @@ In these functions, a number of context fields is available that represent dates
 
 These fields contain dates represented as [Unix timestamps](https://en.wikipedia.org/wiki/Unix_time).
 
-To format a date, pass it to the {api:anychart.format#dateTime}dateTime(){api} method and specify the [date/time pattern](../common-settings/text-formatters#datetime-syntax) as the second parameter. This parameter is optional: if it is not set, the date is formatted according to the [output date/time format](#outputdatetimeformat)).
+To format a date, pass it to the {api:anychart.format#dateTime}dateTime(){api} method and specify the [date/time pattern](../Common_Settings/Text_Formatters#datetime-syntax) as the second parameter. This parameter is optional: if it is not set, the date is formatted according to the [output date/time format](#outputdatetimeformat)).
 
 In this sample, a formatting function is used to display and format dates in the second data grid column of a Project chart:
 
@@ -450,4 +451,4 @@ column_2.labels().format(function() {
 
 Using column presets is an alternative way to format dates displayed in data grid columns. Please keep in mind that presets can be applied only to dates set as [Unix timestamps](#unix-timestamp).
 
-Learn more: [Column Presets: Dates](data-grid/column-presets#dates) 
+Learn more: [Column Presets: Dates](Data_Grid/Column_Presets#dates) 

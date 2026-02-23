@@ -1,4 +1,5 @@
 ---
+slug: "/Stock_Charts/Quick_Start"
 sidebar_position: 2
 ---
 # AnyStock Quick Start
@@ -9,7 +10,7 @@ To get started with AnyStock follow these simple steps and you will get your fir
 
 ## Modules
 
-AnyStock requires adding the [Core](../quick-start/modules#core) and [Stock](../quick-start/modules#stock) modules. Reference two JavaScript files in the `<head>` section of your web page: 
+AnyStock requires adding the [Core](../Quick_Start/Modules#core) and [Stock](../Quick_Start/Modules#stock) modules. Reference two JavaScript files in the `<head>` section of your web page: 
 
 ```
 <head>
@@ -18,9 +19,9 @@ AnyStock requires adding the [Core](../quick-start/modules#core) and [Stock](../
 </head>
 ```
 
-**Note:** These files can be downloaded from the [AnyChart download page](../quick-start/downloading-anychart). 
+**Note:** These files can be downloaded from the [AnyChart download page](../Quick_Start/Downloading_AnyChart). 
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Create a Container
 
@@ -36,7 +37,7 @@ Add a block-based HTML element into your page, set the `id`, `width` and `height
 
 When you work with AnyStock, you need to use {api:anychart.data#table}anychart.data.table(){api} and {api:anychart.data.Table#addData}addData(){api} before you load data into a chart.
 
-Putting data into an instance of {api:anychart.data.Table}anychart.data.Table{api} object allows to index that data and perform a lot of manipulations. Please see [Table Data Model](../working-with-data/table-data-model) to learn more.
+Putting data into an instance of {api:anychart.data.Table}anychart.data.Table{api} object allows to index that data and perform a lot of manipulations. Please see [Table Data Model](../Working_with_Data/Table_Data_Model) to learn more.
 
 ```
 table = anychart.data.table();
@@ -97,7 +98,7 @@ No matter how many plots with or without series you create, all of them are scro
 ## Create the Chart
 
 Add the JavaScript tag `<script>` with the following code anywhere in the page. 
-This code example uses JavaScript API to create a chart, but you also can use [JSON, XML and CSV](../working-with-data/supported-data-formats). 
+This code example uses JavaScript API to create a chart, but you also can use [JSON, XML and CSV](../Working_with_Data/Supported_Data_Formats). 
 
 ```
 <script>

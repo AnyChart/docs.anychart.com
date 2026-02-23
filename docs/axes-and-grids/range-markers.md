@@ -1,11 +1,12 @@
 ---
+slug: "/Axes_and_Grids/Range_Markers"
 sidebar_position: 8
 ---
 # Range Markers
 
 ## Overview
 
-Range Markers (sometimes referred as areas or zones) are colored areas bound to a chart axis. These areas are useful when you need to highlight some value(s) on axis. You can add Range Markers on any axis: the X- and Y-axes as well as additional axes. You can add text markers to any place of a chart. You can also place [Text Markers](../axes-and-grids/text-markers) to show Text and [Line Markers](../axes-and-grids/line-markers) to show Lines.
+Range Markers (sometimes referred as areas or zones) are colored areas bound to a chart axis. These areas are useful when you need to highlight some value(s) on axis. You can add Range Markers on any axis: the X- and Y-axes as well as additional axes. You can add text markers to any place of a chart. You can also place [Text Markers](../Axes_and_Grids/Text_Markers) to show Text and [Line Markers](../Axes_and_Grids/Line_Markers) to show Lines.
 
 ## Declare
 
@@ -95,4 +96,4 @@ Sample below shows semitransparent filled range.
 
 {sample}AGST\_Range\_Marker\_03{sample}
 
-**Note**: more information on advanced color settings can be found in [Fill Settings tutorial](../graphics/fill-settings)
+**Note**: more information on advanced color settings can be found in [Fill Settings tutorial](../Graphics/Fill_Settings)

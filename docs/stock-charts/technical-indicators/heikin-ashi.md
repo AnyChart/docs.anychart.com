@@ -1,3 +1,6 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Heikin-Ashi"
+---
 # Heikin-Ashi
 
 ## Overview

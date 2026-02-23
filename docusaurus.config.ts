@@ -9,6 +9,20 @@ import type * as Preset from '@docusaurus/preset-classic';
 const ANYCHART_VERSION = process.env.ANYCHART_VERSION || '8.14.1';
 
 /**
+ * Convert a PascalCase_With_Underscores path to kebab-case.
+ * Used by plugin-client-redirects to create redirects from kebab-case to original URLs.
+ */
+function toKebabCase(str: string): string {
+  return str
+    .replace(/[()%]/g, '')
+    .replace(/\+/g, '')
+    .replace(/_/g, '-')
+    .replace(/--+/g, '-')
+    .replace(/^-|-$/g, '')
+    .toLowerCase();
+}
+
+/**
  * Markdown preprocessor: transforms AnyChart custom directives to valid MDX
  * BEFORE the MDX parser runs. This is critical because {sample}, {api:}, {pg:},
  * and {{branch-name}} would otherwise be interpreted as JSX expressions.
@@ -94,11 +108,19 @@ const config: Config = {
   tagline: 'Interactive JavaScript/HTML5 Charts',
   favicon: 'img/favicon.ico',
 
+  headTags: [
+    { tagName: 'link', attributes: { rel: 'preconnect', href: 'https://fonts.googleapis.com' } },
+    { tagName: 'link', attributes: { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' } },
+    { tagName: 'link', attributes: { rel: 'preconnect', href: 'https://cdn.anychart.com' } },
+  ],
+
   future: {
     v4: {
       removeLegacyPostBuildHeadAttribute: true,
     },
   },
+
+  trailingSlash: false,
 
   url: 'https://docs.anychart.com',
   baseUrl: '/',
@@ -132,6 +154,27 @@ const config: Config = {
         language: ['en'],
         searchResultLimits: 8,
         highlightSearchTermsOnTargetPage: true,
+      },
+    ],
+  ],
+
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        createRedirects(existingPath: string) {
+          // Create a redirect from the kebab-case version of each original URL.
+          // e.g. /Gantt_Chart/Elements/Resource_Chart → redirect from /gantt-chart/elements/resource-chart
+          const kebab = '/' + existingPath
+            .split('/')
+            .filter(Boolean)
+            .map(seg => toKebabCase(seg))
+            .join('/');
+          if (kebab !== existingPath && kebab !== '/') {
+            return [kebab];
+          }
+          return [];
+        },
       },
     ],
   ],
@@ -202,10 +245,10 @@ const config: Config = {
         {
           title: 'Documentation',
           items: [
-            {label: 'Quick Start', to: '/quick-start'},
-            {label: 'Basic Charts', to: '/basic-charts'},
-            {label: 'Stock Charts', to: '/stock-charts'},
-            {label: 'Maps', to: '/maps'},
+            {label: 'Quick Start', to: '/Quick_Start'},
+            {label: 'Basic Charts', to: '/Basic_Charts'},
+            {label: 'Stock Charts', to: '/Stock_Charts'},
+            {label: 'Maps', to: '/Maps'},
           ],
         },
         {

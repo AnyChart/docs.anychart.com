@@ -1,4 +1,5 @@
 ---
+slug: "/Maps/Proportional_Symbol_Map"
 sidebar_position: 9
 ---
 # Proportional Symbol Map
@@ -11,7 +12,7 @@ An example of proportional circles is shown below.
 
 {sample}Maps\_Proportional\_Symbol\_01{sample}
 
-The Bubble series in AnyChart JavaScript Maps is quite similar to the Basic JavaScript Bubble series. You can read about Bubble Charts in the [Bubble Chart tutorial](../basic-charts/bubble-chart), and in this article we will consider significant issues of Bubble charts used with maps.
+The Bubble series in AnyChart JavaScript Maps is quite similar to the Basic JavaScript Bubble series. You can read about Bubble Charts in the [Bubble Chart tutorial](../Basic_Charts/Bubble_Chart), and in this article we will consider significant issues of Bubble charts used with maps.
 
 ## Creating Bubbles
 
@@ -85,7 +86,7 @@ var series = map.bubble(data);
 
 {sample}Maps\_Proportional\_Symbol\_02{sample}
 
-Note: this sample uses third party proj4.js library, to learn how, why and figure out if you need it please see the [Map Projections](map-projections) article.
+Note: this sample uses third party proj4.js library, to learn how, why and figure out if you need it please see the [Map Projections](Map_Projections) article.
 
 ### Size
 
@@ -115,11 +116,11 @@ map.minBubbleSize('1%');
 
 ## Altering Bubble Series
 
-Altering the series looks pretty much the same as in [basic Bubble Charts](../basic-charts/bubble-chart#appearance). We can easily do it here. Let's look through a couple of samples.
+Altering the series looks pretty much the same as in [basic Bubble Charts](../Basic_Charts/Bubble_Chart#appearance). We can easily do it here. Let's look through a couple of samples.
 
 ### Series colors
 
-The colors of bubbles can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.map.series.Bubble#normal}normal(){api}, {api:anychart.core.map.series.Bubble#hovered}hovered(){api}, and {api:anychart.core.map.series.Bubble#selected}selected(){api} methods.
+The colors of bubbles can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.map.series.Bubble#normal}normal(){api}, {api:anychart.core.map.series.Bubble#hovered}hovered(){api}, and {api:anychart.core.map.series.Bubble#selected}selected(){api} methods.
 
 Combine them with the following methods:
 
@@ -189,7 +190,7 @@ var data = [
 
 ### Labels and Tooltips
 
-You can also alter the labels' and tooltips' appearance. Use standard methods such as {api:anychart.core.ui.Label#fontColor}fontColor(){api} for labels, format tooltips using {api:anychart.core.ui.Tooltip#format}format(){api} function. You can find everything about this in the [Labels](../common-settings/labels) and [Tooltips](../common-settings/tooltip) tutorial.
+You can also alter the labels' and tooltips' appearance. Use standard methods such as {api:anychart.core.ui.Label#fontColor}fontColor(){api} for labels, format tooltips using {api:anychart.core.ui.Tooltip#format}format(){api} function. You can find everything about this in the [Labels](../Common_Settings/Labels) and [Tooltips](../Common_Settings/Tooltip) tutorial.
 
 Let's now take a look at the couple of samples with labels and/or tooltips. First, let's change the font color with {api:anychart.core.ui.Label#fontColor}fontColor(){api}, change their size and format them a bit using {api:anychart.core.ui.LabelsFactory#format}format(){api} function.
 
@@ -204,7 +205,7 @@ series.labels().format("{%name}\n{%size}");
 
 {sample}Maps\_Proportional\_Symbol\_10{sample}
 
-Find out more about Text Formatters [here](../common-settings/text-formatters).
+Find out more about Text Formatters [here](../Common_Settings/Text_Formatters).
 
 Labels are enabled by default, they can be turned on and off using the {api:anychart.core.ui.Label#enabled}enabled(){api} method as usual.
 
@@ -214,7 +215,7 @@ Labels are enabled by default, they can be turned on and off using the {api:anyc
 
 You can add several series to a map, no matter which type. We can create a multiple-series Bubble Map or have different kinds of series on a map. Let's first create an Australia Map with choropleth and bubble series. 
 
-For this we'd better set the data as array as we should map it properly. Don't forget that bubble and choropleth series have different necessary data fields and the choropleth series has its own coloring settings. Read more about this [here](choropleth-map).
+For this we'd better set the data as array as we should map it properly. Don't forget that bubble and choropleth series have different necessary data fields and the choropleth series has its own coloring settings. Read more about this [here](Choropleth_Map).
 
 ```
 var dataSet = anychart.data.set([
@@ -238,4 +239,4 @@ We can create a map with several bubble series as well:
 
 {sample}Maps\_Proportional\_Symbol\_13{sample}
 
-As you can see, we can operate the series on a map quite easy and similar to working with basic charts. Find more about Choropleth series in the [Choropleth tutorial](choropleth-map) and some other features of Bubble series in the [Bubble tutorial](../basic-charts/bubble-chart).
+As you can see, we can operate the series on a map quite easy and similar to working with basic charts. Find more about Choropleth series in the [Choropleth tutorial](Choropleth_Map) and some other features of Bubble series in the [Bubble tutorial](../Basic_Charts/Bubble_Chart).

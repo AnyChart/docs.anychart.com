@@ -1,11 +1,12 @@
 ---
+slug: "/Common_Settings/Legend/Standalone_Legend"
 sidebar_position: 12
 ---
 # Standalone Legend
 
 ## Overview
 
-The standalone legend is one of [Standalones](../../dashboards/standalones) - building blocks, independent from the chart, that allow creating advanced data visualizations. For example, you can bind one legend to [multiple charts](#multiple-charts) or add [multiple legends](#multiple-legends) to a chart. See the sections below to learn more.
+The standalone legend is one of [Standalones](../../Dashboards/Standalones) - building blocks, independent from the chart, that allow creating advanced data visualizations. For example, you can bind one legend to [multiple charts](#multiple-charts) or add [multiple legends](#multiple-legends) to a chart. See the sections below to learn more.
 
 ## Basics
 
@@ -30,7 +31,7 @@ legend.container(stage);
 legend.draw();
 ```
 
-To adjust a standalone legend, use methods of the {api:anychart.standalones.Legend}anychart.standalones.Legend{api} class. The available settings generally correspond to the settings of the default legend and its elements, which can be found in [Basic Settings](basic-settings) and other articles in the [Legend](overview) folder.
+To adjust a standalone legend, use methods of the {api:anychart.standalones.Legend}anychart.standalones.Legend{api} class. The available settings generally correspond to the settings of the default legend and its elements, which can be found in [Basic Settings](Basic_Settings) and other articles in the [Legend](Overview) folder.
 
 ### Legend Items
 
@@ -48,21 +49,21 @@ legend.itemsSource([chart1, chart2]);
 legend.items([item1, item2, item3]);
 ```
 
-**To adjust legend items**, use methods of the {api:anychart.standalones.Legend}anychart.standalones.Legend{api} class that affect items. The items of the default legend have similar settings, which are listed in [Legend Items](legend-items).
+**To adjust legend items**, use methods of the {api:anychart.standalones.Legend}anychart.standalones.Legend{api} class that affect items. The items of the default legend have similar settings, which are listed in [Legend Items](Legend_Items).
 
-The settings available for individual items are described in the [Individual Legend Items](individual-legend-items) article. You should keep in mind that the way of adjusting an individual item depends on the way how items are added:
+The settings available for individual items are described in the [Individual Legend Items](Individual_Legend_Items) article. You should keep in mind that the way of adjusting an individual item depends on the way how items are added:
 
 **1.** If legend items are added automatically and the chart type allows adding multiple series, you can adjust an individual legend item by calling the {api:?entry=legendItem}legendItem(){api} method of the series represented by this item. Combine it with the methods of the {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api} class. 
 
-**2.** If the legend is automatic, but the chart is single-series (for example, Pie), individual items are customized by adding special fields to the data. Learn more: [Individual Items: Single Series](individual-legend-items#single-series).
+**2.** If the legend is automatic, but the chart is single-series (for example, Pie), individual items are customized by adding special fields to the data. Learn more: [Individual Items: Single Series](Individual_Legend_Items#single-series).
 
 **3.** In case items are added manually, individual settings are specified right in the array of items that is passed to {api:anychart.standalones.Legend#items}items(){api} or {api:anychart.standalones.Legend#itemsFormatter}itemsFormatter(){api}. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
 
 ### Interactivity
 
-The [default behavior](basic-settings#default-behavior) settings apply to legend items that are added automatically: they are bound to points or series of the chart or charts. If items are added manually, you have to manually bind them to elements of the chart with the help of events.
+The [default behavior](Basic_Settings#default-behavior) settings apply to legend items that are added automatically: they are bound to points or series of the chart or charts. If items are added manually, you have to manually bind them to elements of the chart with the help of events.
 
-For further information, take a look at samples in the [Item = Multiple Series](#item--multiple-series) and [Multiple Legends](#multiple-legends) sections and read the [Events](events) article.
+For further information, take a look at samples in the [Item = Multiple Series](#item--multiple-series) and [Multiple Legends](#multiple-legends) sections and read the [Events](Events) article.
 
 ## Multiple Charts
 
@@ -123,7 +124,7 @@ legend.container(stage);
 legend.draw();
 ```
 
-The legend is custom, so the [events of legend items](events#legend-items) are used to bind items to series.
+The legend is custom, so the [events of legend items](Events#legend-items) are used to bind items to series.
 
 On the `legendItemClick` event, both series represented by the item are enabled or disabled, and the appearance to the item is adjusted:
 
@@ -230,7 +231,7 @@ var legend2 = createLegend(1, "center");
 var legend3 = createLegend(2, "bottom");
 ```
 
-Since the legends are custom, the [events of legend items](events#legend-items) are used to bind items to chart points.
+Since the legends are custom, the [events of legend items](Events#legend-items) are used to bind items to chart points.
 
 When the `legendItemClick` event fires, the point is selected or deselected, and the appearance of the legend item is adjusted:
 

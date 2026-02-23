@@ -1,4 +1,5 @@
 ---
+slug: "/Graphics/Hatch_Fill_Settings"
 sidebar_position: 8.4
 ---
 
@@ -65,7 +66,7 @@ If you are not satisfied with presets, you can create your own pattern.
 
 ### Shapes
 
-Here an example of [Shapes](shapes) based pattern: 
+Here an example of [Shapes](Shapes) based pattern: 
 
 ```
 stage = anychart.graphics.create("container");

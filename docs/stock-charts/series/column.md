@@ -1,8 +1,11 @@
+---
+slug: "/Stock_Charts/Series/Column"
+---
 # AnyStock Column Series
 
 ## Overview
 
-Column series is a standard series that uses columns to show the values of a parameter changing through time or to show the difference between values of similar subjects in some area. You can find all information about creating a standard column chart in the [Column Chart article](../../basic-charts/column-chart).
+Column series is a standard series that uses columns to show the values of a parameter changing through time or to show the difference between values of similar subjects in some area. You can find all information about creating a standard column chart in the [Column Chart article](../../Basic_Charts/Column_Chart).
 
 ## AnyStock Column Adjustment
 
@@ -51,7 +54,7 @@ mapping = table.mapAs({x:'x', value:'value'});
 
 {sample}STOCK\_Column\_02{sample}
 
-More about data settings in stocks can be found in the [Stock Data tutorial](../data).
+More about data settings in stocks can be found in the [Stock Data tutorial](../Data).
 
 ### Multi series
 
@@ -69,13 +72,13 @@ series_sydney.name("Sydney");
 
 {sample}STOCK\_Column\_03{sample}
 
-See the [Chart Plots article](../chart-plots) to know how to manage the plots.
+See the [Chart Plots article](../Chart_Plots) to know how to manage the plots.
 
-As stocks are intended to show large amounts of data, this data needs to be compressed at some point to be displayed correctly. All information about them can be found in the [Data Grouping](../data-grouping) article.
+As stocks are intended to show large amounts of data, this data needs to be compressed at some point to be displayed correctly. All information about them can be found in the [Data Grouping](../Data_Grouping) article.
 
 ### Switching series type
 
-You can change the type of the series to another compatible type. See the [Series Type](series-type) and [series types table](supported-series#list-of-supported-series).
+You can change the type of the series to another compatible type. See the [Series Type](Series_Type) and [series types table](Supported_Series#list-of-supported-series).
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 

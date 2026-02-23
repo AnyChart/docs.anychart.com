@@ -1,10 +1,13 @@
+---
+slug: "/Stock_Charts/Series/OHLC"
+---
 # AnyStock OHLC Series
 
 ## Overview
 
-OHLC Charts, or Open-High-Low-Close, are the most poplular in finances, economics and trades, as this series use four parameters to watch the prices changing: open - the opening price of some goods or shares; high - the highest price that was reached during the day; low - the lowest price that was reached during the day; close - closing price, i.e. the price of the goods or shares at the moment of the period finishes. Read more about Basic OHLC Charts in the [OHLC Chart article](../../basic-charts/ohlc-chart).
+OHLC Charts, or Open-High-Low-Close, are the most poplular in finances, economics and trades, as this series use four parameters to watch the prices changing: open - the opening price of some goods or shares; high - the highest price that was reached during the day; low - the lowest price that was reached during the day; close - closing price, i.e. the price of the goods or shares at the moment of the period finishes. Read more about Basic OHLC Charts in the [OHLC Chart article](../../Basic_Charts/OHLC_Chart).
 
-See also: [Japanese Candlestick](japanese-candlestick).
+See also: [Japanese Candlestick](Japanese_Candlestick).
 
 ## AnyStock OHLC Series Adjustment
 
@@ -78,13 +81,13 @@ var series_globex = chart.plot(1).ohlc(mapping_globex);
 series_globex.name("Globex Corp. stock prices");
 ```
 
-You can find all information about the plots in stocks in the [Chart Plot](../chart-plots) article.
+You can find all information about the plots in stocks in the [Chart Plot](../Chart_Plots) article.
 
 {sample}STOCK\_OHLC\_03{sample}
 
 ### Switching series type
 
-You can change the type of the series to another compatible type. See the [Series Type](series-type) and [series types table](supported-series#list-of-supported-series).
+You can change the type of the series to another compatible type. See the [Series Type](Series_Type) and [series types table](Supported_Series#list-of-supported-series).
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 

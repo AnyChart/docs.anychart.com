@@ -1,3 +1,6 @@
+---
+slug: "/Common_Settings/Categorized_By_Series"
+---
 # Categorized By Series
 
 ## Overview

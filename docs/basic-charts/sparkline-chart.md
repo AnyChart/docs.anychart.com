@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Sparkline_Chart"
 sidebar_position: 4.1
 ---
 # Sparkline Chart
@@ -11,7 +12,7 @@ Sparkline charts are rather small with neither axes nor grids, amount of additio
 
 ## Modules
 
-The Sparkline chart requires adding the [Core](../quick-start/modules#core) and [Sparkline](../quick-start/modules#sparkline) modules:
+The Sparkline chart requires adding the [Core](../Quick_Start/Modules#core) and [Sparkline](../Quick_Start/Modules#sparkline) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -21,7 +22,7 @@ The Sparkline chart requires adding the [Core](../quick-start/modules#core) and 
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-sparkline.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Chart
 
@@ -159,7 +160,7 @@ Note that there's no difference for a WinLoss chart how big the value is - only 
 
 ## Axes
 
-Axes in Sparklines are invisible, but still you can control the scales as you can do it with other chart types. You can invert any scale, change its orientation, change the scale type or define the minimum and the maximum values on a scale. For more information about scales look up the [Scales tutorial](../axes-and-grids/scales). 
+Axes in Sparklines are invisible, but still you can control the scales as you can do it with other chart types. You can invert any scale, change its orientation, change the scale type or define the minimum and the maximum values on a scale. For more information about scales look up the [Scales tutorial](../Axes_and_Grids/Scales). 
 
 Let's change the Y-scale type to logarithmic and define the min and the max values for one chart and show the sparkline with the default scale below to make the  difference between the plain and the tuned charts clear:
 
@@ -209,7 +210,7 @@ This feature can be applied to Column and WinLoss Sparklines. Let's adjust colum
 
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_09{sample}
 
-See also: [Point Size](../common-settings/point-size).
+See also: [Point Size](../Common_Settings/Point_Size).
 
 ## Labels
 
@@ -407,7 +408,7 @@ chart2.data([20, 30, -10, 20, {value:'-25', fill:'green'}, -5, -30, 50]);
 
 ### HatchFill
 
-AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch Fill tutorial](../graphics/hatch-fill-settings).
+AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch Fill tutorial](../Graphics/Hatch_Fill_Settings).
 Downwards you can see a couple of WinLoss Sparklines which we've colored with hatchFills using  special parameters such as {api:anychart.charts.Sparkline#negativeFill}negativeFill(){api}, {api:anychart.charts.Sparkline#negativeHatchFill}negativeHatchFill{api} parameter opposite to {api:anychart.graphics.vector.Fill}fill(){api} parameter used to colorize the series and set all series in light grey color.
 
 ```
@@ -430,7 +431,7 @@ chart2.data([{value: 20, hatchFill: {type: 'checkerboard'}}, 30, -10, {value: 20
 
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_18{sample}
 
-To learn more about hatch fills visit the [Hatch Tutorial](../graphics/hatch-fill-settings) page.
+To learn more about hatch fills visit the [Hatch Tutorial](../Graphics/Hatch_Fill_Settings) page.
 
 ## Layout
 
@@ -446,7 +447,7 @@ chart1.bounds(0, 0, 90, 20); //parameters: left padding, top padding, width, hei
 chart2.bounds(0, 25, 90, 20);
 ```
 
-Another way to place a lot of sparklines is to use the [AnyChart table](../dashboards/table-layout):
+Another way to place a lot of sparklines is to use the [AnyChart table](../Dashboards/Table_Layout):
 
 ```
 // create table

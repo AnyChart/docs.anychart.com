@@ -1,11 +1,12 @@
 ---
+slug: "/Stock_Charts/Data_Grouping"
 sidebar_position: 3
 ---
 # Data Grouping
  
 ## Overview
 
-AnyStock Charts processes table-formatted data using [table data model](../working-with-data/table-data-model). Working with data in AnyStock is described in [AnyStock Data](data) article.
+AnyStock Charts processes table-formatted data using [table data model](../Working_with_Data/Table_Data_Model). Working with data in AnyStock is described in [AnyStock Data](Data) article.
 
 To work with large data sets and represent them successfully on the screen AnyStock is able to group data points using {api:anychart.core.stock.Grouping}Grouping{api} methods. 
 
@@ -77,7 +78,7 @@ In this sample we've got 46 points, each point represents a period of 5 years, w
 
 #### Set Maximum Points Number
 
-If it is necessary to change the maximum default number of the points that can be shown on the chart simultaneously, use the {api:anychart.core.stock.Grouping#maxVisiblePoints}maxVisiblePoints(){api} method. Choose the maximum number of points depending on your needs. Let's take an Area Stock Chart as an example (check the [Stock Chart Manual](quick-start) to know how to create a Stock Chart).
+If it is necessary to change the maximum default number of the points that can be shown on the chart simultaneously, use the {api:anychart.core.stock.Grouping#maxVisiblePoints}maxVisiblePoints(){api} method. Choose the maximum number of points depending on your needs. Let's take an Area Stock Chart as an example (check the [Stock Chart Manual](Quick_Start) to know how to create a Stock Chart).
 
 ```
 // set the maximal number of points

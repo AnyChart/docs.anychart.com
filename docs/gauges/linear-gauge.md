@@ -1,3 +1,6 @@
+---
+slug: "/Gauges/Linear_Gauge"
+---
 # Linear Gauge
 
 ## Overview
@@ -6,7 +9,7 @@ A linear gauge is visual representation of a measuring device with a horizontal 
 
 ## Modules
 
-The Linear Gauge requires adding the [Core](../quick-start/modules#core) and [Linear Gauge](../quick-start/modules#linear-gauge) modules:
+The Linear Gauge requires adding the [Core](../Quick_Start/Modules#core) and [Linear Gauge](../Quick_Start/Modules#linear-gauge) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -16,7 +19,7 @@ The Linear Gauge requires adding the [Core](../quick-start/modules#core) and [Li
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-linear-gauge.min.js"></script>
 ```
 
-Learn more: [Modules](../../quick-start/modules).
+Learn more: [Modules](../../Quick_Start/Modules).
 
 ## Basics
 
@@ -65,7 +68,7 @@ Here are the four gauges from the previous sample, now oriented horizontally:
 
 ## Scales and Axes
 
-Like all other charts, gauges can have multiple scales and axes, though by default, only a primary scale is created and calculated, and a primary axis is bound to it. Configuring scales and axes is very similar to configuring the same elements of basic chart types: see [Scales](../axes-and-grids/scales) and [Axis Basics](../axes-and-grids/axis-basics).
+Like all other charts, gauges can have multiple scales and axes, though by default, only a primary scale is created and calculated, and a primary axis is bound to it. Configuring scales and axes is very similar to configuring the same elements of basic chart types: see [Scales](../Axes_and_Grids/Scales) and [Axis Basics](../Axes_and_Grids/Axis_Basics).
 
 In this sample, there is a thermometer gauge with two scales and two axes that show temperature in Celsius and Fahrenheit:
 
@@ -196,4 +199,4 @@ var bar_1 = gauge.bar(2);
 var bar_2 = gauge.bar(3);
 ```
 
-To learn more, read the [Pointers and Data](pointers-and-data) article.
+To learn more, read the [Pointers and Data](Pointers_and_Data) article.

@@ -1,4 +1,5 @@
 ---
+slug: "/Maps/Seat_Maps/Seat_Map"
 sidebar_position: 0
 ---
 # Seat Maps
@@ -11,9 +12,9 @@ A seat map is a diagram of a seat layout inside a passenger aircraft, theater, s
 
 ## Preparing an SVG Image
 
-To create a seat map with AnyMap, you need an SVG image formatted in a specific way. Read the [Custom SVG Maps](../custom-svg-maps) article to learn how an existing SVG image can be loaded, and how it should be formatted.
+To create a seat map with AnyMap, you need an SVG image formatted in a specific way. Read the [Custom SVG Maps](../Custom_SVG_Maps) article to learn how an existing SVG image can be loaded, and how it should be formatted.
 
-If you need to create your own SVG picture in a graphic editor, study the [Preparing SVG Image](preparing-svg-image) article.
+If you need to create your own SVG picture in a graphic editor, study the [Preparing SVG Image](Preparing_SVG_Image) article.
 
 ## SVG Data
 
@@ -111,7 +112,7 @@ chart = anychart.seatMap([
 
 {sample}Maps\_Seat\_03{sample}
 
-Colors can be also defined through the SVG code and in several other ways. See the [Advanced Coloring](advanced-coloring) article to learn more.
+Colors can be also defined through the SVG code and in several other ways. See the [Advanced Coloring](Advanced_Coloring) article to learn more.
 
 ## Unbound Regions
 
@@ -137,7 +138,7 @@ chart.unboundRegions("hide");
 
 ### Labels and Tooltips
 
-To configure labels and tooltips, use the {api:anychart.charts.Map#label}label(){api} and {api:anychart.charts.Map#tooltip}tooltip(){api} methods. Working with labels and tooltips in Seat Maps is absolutely identical to working with labels and tooltips in Maps, so you can learn more from the [Map Tooltips](../tooltips) and [Map Labels](../labels) articles.
+To configure labels and tooltips, use the {api:anychart.charts.Map#label}label(){api} and {api:anychart.charts.Map#tooltip}tooltip(){api} methods. Working with labels and tooltips in Seat Maps is absolutely identical to working with labels and tooltips in Maps, so you can learn more from the [Map Tooltips](../Tooltips) and [Map Labels](../Labels) articles.
 
 ```
 // data set
@@ -157,7 +158,7 @@ labels.format("{%id} \n{%info} \n{%sq}");
 
 {sample}Maps\_Seat\_06{sample}
 
-To change the information shown in tooltips, use the {api:anychart.charts.Map#tooltip}tooltip(){api} method. Text in the tooltip title and text in the tooltip body are formatted using the {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods. Find more information about tooltips in our [Tooltips](../../common-settings/tooltip) and [Map Tooltips](../tooltips) articles.
+To change the information shown in tooltips, use the {api:anychart.charts.Map#tooltip}tooltip(){api} method. Text in the tooltip title and text in the tooltip body are formatted using the {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods. Find more information about tooltips in our [Tooltips](../../Common_Settings/Tooltip) and [Map Tooltips](../Tooltips) articles.
 
 ```
 // set the tooltips

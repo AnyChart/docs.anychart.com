@@ -1,10 +1,13 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Parabolic_SAR_(PSAR)"
+---
 # Parabolic SAR (PSAR)	
 
 ## Overview
 
 Parabolic SAR (SAR - stop and reverse) is a method devised by J. Welles Wilder, Jr, to find trends in market prices or securities. It may be used as a trailing stop loss based on prices tending to stay within a parabolic curve during a strong trend.
 
-Find the mathematical description of the indicator on the [Parabolic SAR (PSAR) Mathematical Description](mathematical-description#parabolic-sar) page.
+Find the mathematical description of the indicator on the [Parabolic SAR (PSAR) Mathematical Description](Mathematical_Description#parabolic-sar) page.
 
 ## Adding Indicator
 

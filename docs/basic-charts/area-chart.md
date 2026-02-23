@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Area_Chart"
 sidebar_position: 1
 ---
 # Area Chart
@@ -13,37 +14,37 @@ This article explains how to create a basic Area chart as well as configure sett
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#basic-cartesian">Basic Cartesian</a> / <a href="../Quick_Start/Modules#base">Base</a></td></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Area}anychart.core.cartesian.series.Area{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
-<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">x, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../Working_with_Data/Overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td><a href="stacked/value/area-chart">Stacked Area</a>, <a href="stacked/percent/area-chart">Percent Stacked Area</a></td></tr>
-<tr><td>Vertical</td><td><a href="vertical/area-chart">Vertical Area</a></td></tr>
-<tr><td>3D</td><td><a href="3d/area-chart">3D Area</a></td></tr>
-<tr><td>Error Bars</td><td><a href="error-chart/area-chart">Area Chart with Error Bars</a></td></tr>
+<tr><td>Stacked</td><td><a href="Stacked/Value/Area_Chart">Stacked Area</a>, <a href="Stacked/Percent/Area_Chart">Percent Stacked Area</a></td></tr>
+<tr><td>Vertical</td><td><a href="Vertical/Area_Chart">Vertical Area</a></td></tr>
+<tr><td>3D</td><td><a href="3D/Area_Chart">3D Area</a></td></tr>
+<tr><td>Error Bars</td><td><a href="Error_Chart/Area_Chart">Area Chart with Error Bars</a></td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td><a href="polar-plot/area-chart">Polar Area</a>, <a href="polar-plot/polygon-chart">Polygon</a></td></tr>
-<tr><td>Radar</td><td><a href="radar-plot/area-chart">Radar Area</a></td></tr>
+<tr><td>Polar</td><td><a href="Polar_Plot/Area_Chart">Polar Area</a>, <a href="Polar_Plot/Polygon_Chart">Polygon</a></td></tr>
+<tr><td>Radar</td><td><a href="Radar_Plot/Area_Chart">Radar Area</a></td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
-<tr><td>Stock</td><td><a href="../stock-charts/series/area">Stock Area</a></td></tr>
+<tr><td>Stock</td><td><a href="../Stock_Charts/Series/Area">Stock Area</a></td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="spline-area-chart">Spline Area</a></td></tr>
-<tr><td></td><td><a href="step-area-chart">Step Area</a></td></tr>
-<tr><td></td><td><a href="range-area-chart">Range Area</a></td></tr>
-<tr><td></td><td><a href="range-spline-area-chart">Range Spline Area</a></td></tr>
-<tr><td></td><td><a href="range-step-area-chart">Range Step Area</a></td></tr>
-<tr><td></td><td><a href="sparkline-chart#area-sparkline-chart">Area Sparkline</a></td></tr>
-<tr><td></td><td><a href="polygon-chart">Polygon</a></td></tr>
+<tr><td></td><td><a href="Spline_Area_Chart">Spline Area</a></td></tr>
+<tr><td></td><td><a href="Step_Area_Chart">Step Area</a></td></tr>
+<tr><td></td><td><a href="Range_Area_Chart">Range Area</a></td></tr>
+<tr><td></td><td><a href="Range_Spline_Area_Chart">Range Spline Area</a></td></tr>
+<tr><td></td><td><a href="Range_Step_Area_Chart">Range Step Area</a></td></tr>
+<tr><td></td><td><a href="Sparkline_Chart#area-sparkline-chart">Area Sparkline</a></td></tr>
+<tr><td></td><td><a href="Polygon_Chart">Polygon</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/area-chart/">Chartopedia: Area Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Area chart requires adding the [Core](../quick-start/modules#core) and [Basic Cartesian](../quick-start/modules#basic-cartesian) modules:
+The Area chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic-cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -53,13 +54,13 @@ The Area chart requires adding the [Core](../quick-start/modules#core) and [Basi
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../quick-start/modules#base) module, which includes, among other things, the two modules mentioned above: 
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -98,13 +99,13 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Area chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
 ### Appearance
 
-The [appearance settings](../appearance-settings) of an Area chart can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Area#normal}normal(){api}, {api:anychart.core.cartesian.series.Area#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Area#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of an Area chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Area#normal}normal(){api}, {api:anychart.core.cartesian.series.Area#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Area#selected}selected(){api} methods.
 
 Combine them with the following methods:
 
@@ -147,15 +148,15 @@ series2.selected().stroke("#0066cc", 4);
 
 ### Labels
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 ### Tooltips
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../common-settings/text-formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 ### Scales
 
-When Area chart is used with the ordinal scale and you wish to remove the gaps to the right and left of the area you need to change the [ordinal scale mode](../axes-and-grids/scales#ordinal) to `'continuous'`:
+When Area chart is used with the ordinal scale and you wish to remove the gaps to the right and left of the area you need to change the [ordinal scale mode](../Axes_and_Grids/Scales#ordinal) to `'continuous'`:
 
 ```
 chart.xScale().mode('continuous');
@@ -167,31 +168,31 @@ chart.xScale().mode('continuous');
 
 Stacked and percent stacked charts are multiple-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
 
-In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts](stacked/overview).
+In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts](Stacked/Overview).
 
 To learn about the stacked versions of the Area chart and its modifications, see:
 
-* [Stacked Area](stacked/value/area-chart)
-* [Percent Stacked Area](stacked/percent/area-chart)
-* [Stacked Spline Area](stacked/value/spline-area-chart)
-* [Percent Stacked Spline Area](stacked/percent/spline-area-chart)
-* [Stacked Step Area](stacked/value/step-area-chart)
-* [Percent Stacked Step Area](stacked/percent/area-chart)
+* [Stacked Area](Stacked/Value/Area_Chart)
+* [Percent Stacked Area](Stacked/Percent/Area_Chart)
+* [Stacked Spline Area](Stacked/Value/Spline_Area_Chart)
+* [Percent Stacked Spline Area](Stacked/Percent/Spline_Area_Chart)
+* [Stacked Step Area](Stacked/Value/Step_Area_Chart)
+* [Percent Stacked Step Area](Stacked/Percent/Area_Chart)
 
 ### Vertical Area
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](vertical/overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](Vertical/Overview).
 
 Here is information about creating Vertical Area series:
 
-* [Vertical Area](vertical/area-chart)
-* [Vertical Spline Area](vertical/spline-area-chart)
-* [Vertical Step Area](vertical/step-area-chart)
+* [Vertical Area](Vertical/Area_Chart)
+* [Vertical Spline Area](Vertical/Spline_Area_Chart)
+* [Vertical Step Area](Vertical/Step_Area_Chart)
 
 ### 3D Area
 
 Using AnyChart, you can create 3D versions of some chart types, including the Area chart.
 
-To learn about 3D charts in general, see [3D Charts](3d/overview).
+To learn about 3D charts in general, see [3D Charts](3D/Overview).
 
-The 3D Area chart is described in the following article: [3D Area Chart](3d/area-chart)
+The 3D Area chart is described in the following article: [3D Area Chart](3D/Area_Chart)

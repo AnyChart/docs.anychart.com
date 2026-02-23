@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Tag_Cloud"
 sidebar_position: 6.1
 ---
 # Tag Cloud
@@ -10,11 +11,11 @@ A tag cloud, otherwise known as a word cloud or weighted list,  is a visual repr
 This article explains how to create a basic Tag Cloud chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Tag Cloud's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#tag-cloud">Tag Cloud</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#tag-cloud">Tag Cloud</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.TagCloud}anychart.charts.TagCloud{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value, category</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">x, value, category</a></td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -27,15 +28,15 @@ This article explains how to create a basic Tag Cloud chart as well as configure
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="word-tree">Word Tree</a></td></tr>
+<tr><td></td><td><a href="Word_Tree">Word Tree</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/tag-cloud-chart/">Chartopedia: Tag Cloud</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Tag Cloud requires adding the [Core](../quick-start/modules#core) and [Tag Cloud](../quick-start/modules#tag-cloud) modules:
+The Tag Cloud requires adding the [Core](../Quick_Start/Modules#core) and [Tag Cloud](../Quick_Start/Modules#tag-cloud) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -45,7 +46,7 @@ The Tag Cloud requires adding the [Core](../quick-start/modules#core) and [Tag C
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-tag-cloud.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 
 ## Quick Start
@@ -78,7 +79,7 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Tag Cloud chart (for example, legend settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
@@ -173,7 +174,7 @@ chart.data(data, {
 
 ### Appearance
 
-The [appearance settings](../appearance-settings) of a Tag Cloud can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.TagCloud#normal}normal(){api}, {api:anychart.charts.TagCloud#hovered}hovered(){api}, and {api:anychart.charts.TagCloud#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Tag Cloud can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.TagCloud#normal}normal(){api}, {api:anychart.charts.TagCloud#hovered}hovered(){api}, and {api:anychart.charts.TagCloud#selected}selected(){api} methods.
 
 Combine them with the following methods:
 
@@ -205,7 +206,7 @@ chart.normal().fontWeight(600);
 
 ### Color Scale
 
-By default, elements are colored in the colors of the default [palette](../appearance-settings/palettes). You can also create a color scale, linear or ordinal, and add a color range.
+By default, elements are colored in the colors of the default [palette](../Appearance_Settings/Palettes). You can also create a color scale, linear or ordinal, and add a color range.
 
 #### Linear
 
@@ -355,9 +356,9 @@ chart.mode("rect");
 
 ### Scales
 
-To learn about scales in general, see the [Scales](../axes-and-grids/scales) section.
+To learn about scales in general, see the [Scales](../Axes_and_Grids/Scales) section.
 
-If frequencies of elements cover a large range, the font size of the least frequent elements tends to be too small. You can prevent this situation with the help of the [logarithmic scale](../axes-and-grids/scales#logarithmic). 
+If frequencies of elements cover a large range, the font size of the least frequent elements tends to be too small. You can prevent this situation with the help of the [logarithmic scale](../Axes_and_Grids/Scales#logarithmic). 
 
 Use the {api:anychart.scales#log}log(){api} method to create a logarithmic scale and {api:anychart.charts.TagCloud#scale}scale(){api} to set it as the value scale of your chart:
 
@@ -371,11 +372,11 @@ tagCloud2.scale(anychart.scales.log());
 
 ### Tooltips
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../common-settings/text-formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 #### Tokens
 
-To change the text of tooltips, use [tokens](../common-settings/text-formatters#string-tokens) with the {api:anychart.core.ui.Tooltip#format}format(){api} method combined with {api:anychart.charts.TagCloud#tooltip}tooltip(){api}.
+To change the text of tooltips, use [tokens](../Common_Settings/Text_Formatters#string-tokens) with the {api:anychart.core.ui.Tooltip#format}format(){api} method combined with {api:anychart.charts.TagCloud#tooltip}tooltip(){api}.
 
 The `{%value}` token returns the frequency of an element, and `{%yPercentOfTotal}` returns the percentage frequency. By default, both are shown.
 
@@ -409,7 +410,7 @@ chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n\n{%custom_field}");
 
 #### Formatting Functions
 
-To configure tooltips, you can use [formatting functions](../common-settings/text-formatters#formatting-functions) instead of tokens.
+To configure tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting-functions) instead of tokens.
 
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 
@@ -458,7 +459,7 @@ chart.tooltip().format(function() {
 
 ### Legend
 
-Adding the `"category"` field to the data colors elements of the chart according to the categories they belong to. In this case, the [source of legend items](../common-settings/legend/basic-settings#source) is automatically set to `"categories"`, causing them to represent categories:
+Adding the `"category"` field to the data colors elements of the chart according to the categories they belong to. In this case, the [source of legend items](../Common_Settings/Legend/Basic_Settings#source) is automatically set to `"categories"`, causing them to represent categories:
 
 ```
 // create data   
@@ -485,7 +486,7 @@ chart.legend(true);
 
 ### Interactivity
 
-You might want to link elements of a Tag Cloud to web pages. In this case, use the {api:anychart.core.Base#listen}listen(){api} method to add an [event listener](../common-settings/event-listeners) to your chart. Specify the event type you want to trigger the action and the action itself (opening a web page).
+You might want to link elements of a Tag Cloud to web pages. In this case, use the {api:anychart.core.Base#listen}listen(){api} method to add an [event listener](../Common_Settings/Event_Listeners) to your chart. Specify the event type you want to trigger the action and the action itself (opening a web page).
 
 For example, here clicking on a word leads to its page opening in Wiktionary:
 

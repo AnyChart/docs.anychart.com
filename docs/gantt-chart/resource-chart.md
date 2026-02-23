@@ -1,4 +1,5 @@
 ---
+slug: "/Gantt_Chart/Resource_Chart"
 sidebar_position: 5
 ---
 # Resource Gantt Chart
@@ -17,7 +18,7 @@ This article explains how to organize [data](#data) for the Resource chart and w
 
 ## Quick Start
 
-To create a Resource Gantt chart, use the {api:anychart#ganttResource}anychart.ganttResource{api} chart constructor, like in the sample below. To learn more, see the [Quick Start (Resource)](quick-start-resource)) article.
+To create a Resource Gantt chart, use the {api:anychart#ganttResource}anychart.ganttResource{api} chart constructor, like in the sample below. To learn more, see the [Quick Start (Resource)](Quick_Start_(Resource))) article.
 
 ```
 // create data
@@ -85,18 +86,18 @@ A resource can include a [period](#periods-and-resources) or periods. Use these 
 In addition, you can use optional fields:
 
 * `children` / `parent` to set the [hierarchy](#hierarchy)
-* `rowHeight` to set the [row height](basic-settings#header-and-row-height)
+* `rowHeight` to set the [row height](Basic_Settings#header-and-row-height)
 * `connectTo` and `connectorType` to add [connectors](#connectors)
 * `markers` to add [markers](#markers)
-* `collapsed` to [expand or collapse](basic-settings#expanding--collapsing) a parent resource
+* `collapsed` to [expand or collapse](Basic_Settings#expanding--collapsing) a parent resource
 
-**Note 1:** To learn how to rename the default data fields, see [Data: Mapping](data#mapping).
+**Note 1:** To learn how to rename the default data fields, see [Data: Mapping](Data#mapping).
 
-**Note 2:** You can also add custom fields to your data and use them to configure text - like, for example, in all the samples from [Timeline: Tooltips](timeline/tooltips).
+**Note 2:** You can also add custom fields to your data and use them to configure text - like, for example, in all the samples from [Timeline: Tooltips](Timeline/Tooltips).
 
 ### Setting Data
 
-To create a Resource chart, you should use the [tree data model](../working-with-data/tree-data-model) and organize your data either [as a tree](#as-tree) or [as a table](#as-table).
+To create a Resource chart, you should use the [tree data model](../Working_with_Data/Tree_Data_Model) and organize your data either [as a tree](#as-tree) or [as a table](#as-table).
 
 **1. Creating Data Tree.** The first step is creating a data tree by passing your data to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` or `"as-table"` as the second parameter:
 
@@ -245,15 +246,15 @@ chart.data(treeData);
 
 ## Elements
 
-This section lists the available types of elements that are shown on the [timeline](timeline) of the Resource chart and explains how to use data fields to set them. To learn how to configure elements, see the [Elements](elements) section.
+This section lists the available types of elements that are shown on the [timeline](Timeline) of the Resource chart and explains how to use data fields to set them. To learn how to configure elements, see the [Elements](Elements) section.
 
-The main timeline element of the Resource chart is the period, but logically, periods are grouped into resources - see [Periods and Resources](#periods-and-resources). Also, you can add [connectors](#connectors) and set [markers](elements/markers) by adding special data fields to periods and resources.
+The main timeline element of the Resource chart is the period, but logically, periods are grouped into resources - see [Periods and Resources](#periods-and-resources). Also, you can add [connectors](#connectors) and set [markers](Elements/Markers) by adding special data fields to periods and resources.
 
 ### Periods and Resources
 
-**Resources** are logical elements that do not have a direct representation on the [timeline](timeline), but their names are shown in [data grid labels](data-grid/columns#text-labels)).
+**Resources** are logical elements that do not have a direct representation on the [timeline](Timeline), but their names are shown in [data grid labels](Data_Grid/Columns#text-labels)).
 
-If there are [hierarchical relationships](#hierarchy) between data items, parent resources are visualized as empty rows on the timeline. See [Basic Settings: Expanding / Collapsing](basic-settings#expanding--collapsing) to learn how to expand or collapse them.
+If there are [hierarchical relationships](#hierarchy) between data items, parent resources are visualized as empty rows on the timeline. See [Basic Settings: Expanding / Collapsing](Basic_Settings#expanding--collapsing) to learn how to expand or collapse them.
 
 Any resource can include a **period** or periods, which are visualized as timeline elements.
 
@@ -270,7 +271,7 @@ For periods, use:
 * `start` to set start dates
 * `end` to set end dates
 
-To learn how to configure periods, see the [Elements: Resource Chart](elements/resource-chart#periods) article. 
+To learn how to configure periods, see the [Elements: Resource Chart](Elements/Resource_Chart#periods) article. 
 
 The sample below demonstrates how to set periods and resources and how they look like:
 
@@ -320,7 +321,7 @@ The following data fields are used to set connectors:
 
 * `connectTo` to set the target period
 * `connectorType` to set the connector type
-* `connector` (optional) to configure [individual connectors](elements/individual-elements#resource-chart)
+* `connector` (optional) to configure [individual connectors](Elements/Individual_Elements#resource-chart)
 
 To add a connector, you should add these fields to a **predecessor period**. In the `connectTo` field, specify the `id` value of the **successor period**. In `connectorType`, specify the type of the connector.
 
@@ -351,7 +352,7 @@ There are four connector types, which are listed in {api:anychart.enums.Connecto
 </tbody>
 </table>
 
-To learn how to configure connectors, see the [Elements: Resource Chart](elements/resource-chart#connectors) article.
+To learn how to configure connectors, see the [Elements: Resource Chart](Elements/Resource_Chart#connectors) article.
 
 Please note that a period can have several predecessors, but only one successor. Also, a period can be at the same time a successor to one period or periods and a predecessor to another. All these nuances are illustrated by the sample below, which visualizes the following dependencies between periods:
 
@@ -396,4 +397,4 @@ var data = [
 
 ### Markers
 
-You can add a **marker** or multiple markers to a resource. A marker can be shown on a period or anywhere on the timeline, depending on the date you specify. For more information, see [Elements: Markers](elements/markers).
+You can add a **marker** or multiple markers to a resource. A marker can be shown on a period or anywhere on the timeline, depending on the date you specify. For more information, see [Elements: Markers](Elements/Markers).

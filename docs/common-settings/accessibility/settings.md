@@ -1,4 +1,5 @@
 ---
+slug: "/Common_Settings/Accessibility/Settings"
 sidebar_position: 4
 ---
 

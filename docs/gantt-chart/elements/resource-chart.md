@@ -1,4 +1,5 @@
 ---
+slug: "/Gantt_Chart/Elements/Resource_Chart"
 sidebar_position: 3
 ---
 # Resource Chart
@@ -11,14 +12,14 @@ To configure periods, combine {api:anychart.charts.Gantt#getTimeline}getTimeline
 
 * {api:anychart.core.gantt.elements.PeriodsElement#fill}fill(){api}, {api:anychart.core.gantt.elements.PeriodsElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.PeriodsElement#height}height(){api} to set the fill, stroke, and height
 * {api:anychart.core.gantt.elements.PeriodsElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.PeriodsElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.PeriodsElement#position}position(){api} to set the anchor, offset, and position
-* {api:anychart.core.gantt.elements.PeriodsElement#labels}labels(){api} to access [labels](labels)
-* {api:anychart.core.gantt.elements.PeriodsElement#normal}normal(){api} and {api:anychart.core.gantt.elements.PeriodsElement#selected}selected(){api} to access [states](../../common-settings/interactivity/states)
-* {api:anychart.core.gantt.elements.PeriodsElement#edit}edit(){api} to access the [Live Edit](../live-edit) settings
-* {api:anychart.core.gantt.elements.PeriodsElement#rendering}rendering(){api} to access the [rendering](../custom-drawing) settings
+* {api:anychart.core.gantt.elements.PeriodsElement#labels}labels(){api} to access [labels](Labels)
+* {api:anychart.core.gantt.elements.PeriodsElement#normal}normal(){api} and {api:anychart.core.gantt.elements.PeriodsElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.PeriodsElement#edit}edit(){api} to access the [Live Edit](../Live_Edit) settings
+* {api:anychart.core.gantt.elements.PeriodsElement#rendering}rendering(){api} to access the [rendering](../Custom_Drawing) settings
 
-To learn about data fields used to set periods, see [Resource Chart: Periods and Resources](../resource-chart#periods-and-resources).
+To learn about data fields used to set periods, see [Resource Chart: Periods and Resources](../Resource_Chart#periods-and-resources).
 
-In the sample below, the {api:anychart.core.ui.Timeline#periods}periods(){api} method is used to access periods. The {api:anychart.core.gantt.elements.PeriodsElement#normal}normal(){api} and {api:anychart.core.gantt.elements.PeriodsElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../appearance-settings) in two [states](../../common-settings/interactivity/states): **normal** and **selected**.
+In the sample below, the {api:anychart.core.ui.Timeline#periods}periods(){api} method is used to access periods. The {api:anychart.core.gantt.elements.PeriodsElement#normal}normal(){api} and {api:anychart.core.gantt.elements.PeriodsElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../Appearance_Settings) in two [states](../../Common_Settings/Interactivity/States): **normal** and **selected**.
 
 ```
 // configure periods
@@ -38,12 +39,12 @@ periods.selected().stroke("#dd2c00");
 To configure connectors, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#connectors}connectors(){api} with the following methods:
 
 * {api:anychart.core.gantt.elements.ConnectorElement#fill}fill(){api} and {api:anychart.core.gantt.elements.ConnectorElement#stroke}stroke(){api} to set the fill and stroke
-* {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} to access [states](../../common-settings/interactivity/states)
-* {api:anychart.core.gantt.elements.ConnectorElement#previewStroke}previewStroke(){api} to set the preview stroke in the [Live Edit](../live-edit) mode
+* {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.ConnectorElement#previewStroke}previewStroke(){api} to set the preview stroke in the [Live Edit](../Live_Edit) mode
 
-To learn about the available types of connectors and the data fields used to set them, see [Resource Chart: Connectors](../resource-chart#connectors).
+To learn about the available types of connectors and the data fields used to set them, see [Resource Chart: Connectors](../Resource_Chart#connectors).
 
-In the sample below, the {api:anychart.core.ui.Timeline#connectors}connectors(){api} method is used to access connectors. The {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../appearance-settings) in two [states](../../common-settings/interactivity/states): **normal** and **selected**.
+In the sample below, the {api:anychart.core.ui.Timeline#connectors}connectors(){api} method is used to access connectors. The {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../Appearance_Settings) in two [states](../../Common_Settings/Interactivity/States): **normal** and **selected**.
 
 ```
 // configure connectors

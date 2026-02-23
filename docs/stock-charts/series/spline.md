@@ -1,10 +1,13 @@
+---
+slug: "/Stock_Charts/Series/Spline"
+---
 # AnyStock Spline Series
 
 ## Overview
 
-Spline Series is rather similar to Basic [Line series](line) in its appearance, behavior and use: it is intended to show how a value of some object changes in time. The only difference is that Spline series uses splines of some curvature instead of straight segments, so the spline looks more smooth.
+Spline Series is rather similar to Basic [Line series](Line) in its appearance, behavior and use: it is intended to show how a value of some object changes in time. The only difference is that Spline series uses splines of some curvature instead of straight segments, so the spline looks more smooth.
 
-Read more about Basic Spline in the [Spline Chart article](../../basic-charts/spline-chart).
+Read more about Basic Spline in the [Spline Chart article](../../Basic_Charts/Spline_Chart).
 
 ## AnyStock Spline Series Adjustment
 
@@ -51,7 +54,7 @@ mapping.addField('value', 1);
 
 {sample}STOCK\_Spline\_02{sample}
 
-You are free to choose how you will arrange your data. You can read more about mananging Data in Stocks in the [Stock Data tutorial](../data).
+You are free to choose how you will arrange your data. You can read more about mananging Data in Stocks in the [Stock Data tutorial](../Data).
 
 ### Multi series
 
@@ -81,11 +84,11 @@ series_rub.name("Euro to Dollar Rate");
 
 Note that the only thing you need to do to put a series in a new plot is to set the new plot ID as a parameter of the {api:anychart.charts.Stock#plot}plot(){api} method.
 
-More about plots can be found in the [Plots tutorial](../chart-plots).
+More about plots can be found in the [Plots tutorial](../Chart_Plots).
 
 ### Switching series type
 
-You can change the type of the series to another compatible type. See the [Series Type](series-type) and [series types table](supported-series#list-of-supported-series).
+You can change the type of the series to another compatible type. See the [Series Type](Series_Type) and [series types table](Supported_Series#list-of-supported-series).
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 

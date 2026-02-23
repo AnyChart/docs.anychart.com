@@ -1,4 +1,5 @@
 ---
+slug: "/Axes_and_Grids/Axes_Labels_Formatting"
 sidebar_position: 3
 ---
 # Axes Labels Formatting
@@ -27,7 +28,7 @@ In order to make a chart readable and understandable it is very important to for
   
 You have a full control over the axis labels in {api:anychart.core.ui.LabelsFactory#format}format(){api} parameter of {api:anychart.core.axes.Linear#labels}labels(){api} method.
   
-It's possible to make text formatting easier by using tokens - special substrings that represent each a label parameter. A token looks like *{%keywordName}*, for example `{%value}` or `{%axisName}`. Before displaying each token is being replaced by a corresponding value. In the [Text Formatters article](../common-settings/text-formatters#tokens-list) you can find the list of available tokens.
+It's possible to make text formatting easier by using tokens - special substrings that represent each a label parameter. A token looks like *{%keywordName}*, for example `{%value}` or `{%axisName}`. Before displaying each token is being replaced by a corresponding value. In the [Text Formatters article](../Common_Settings/Text_Formatters#tokens-list) you can find the list of available tokens.
 
 format works with function or with a string with or without tokens. A default axis label shows the axis value and the default label's format looks like the following:
 
@@ -87,7 +88,7 @@ yLabels1.format("\u20ac{%value}{scale:(113e-2)|()}");
 
 {sample}AGST\_Labels\_Formatting\_03{sample}
 
-Find more about text formatting parameters in the [Text Formatters article](../common-settings/text-formatters#formatting-parameters).
+Find more about text formatting parameters in the [Text Formatters article](../Common_Settings/Text_Formatters#formatting-parameters).
 
 ### Label Length
 
@@ -116,13 +117,13 @@ chart.xAxis().labels().textOverflow(anychart.graphics.vector.Text.TextOverflow.E
 
 {sample}AGST\_Labels\_Formatting\_05{sample}
 
-To limit the number of decimal characters or edit the separator use [formatting parameters](../common-settings/text-formatters#formatting-parameters).
+To limit the number of decimal characters or edit the separator use [formatting parameters](../Common_Settings/Text_Formatters#formatting-parameters).
 
 ## Visual Appearance
 
 Visual appearance of axes labels can be customized according to the chart design. Label visual settings consist of background settings (which include margins, inner color and border) and font settings.  
   
-Learn more about these settings in: [Background tutorial](../appearance-settings/background), [Text Settings tutorial](../appearance-settings/text-settings).
+Learn more about these settings in: [Background tutorial](../Appearance_Settings/Background), [Text Settings tutorial](../Appearance_Settings/Text_Settings).
 
 The basic settings that allow to tune labels appearance and some special features (Multi-line labels) are considered below.
 
@@ -154,7 +155,7 @@ xLabelsBackground.corners(5);
 
 {sample}AGST\_Labels\_Formatting\_06{sample}
 
-Find more about background settings in [Background tutorial](../appearance-settings/background).
+Find more about background settings in [Background tutorial](../Appearance_Settings/Background).
 
 ## Positioning
 
@@ -280,7 +281,7 @@ xLabels.wordBreak("break-all");
 
 {sample}AGST\_Labels\_Formatting\_15{sample}
 
-Find more about wrapping in the [Text Wrapping](../graphics/text-and-fonts#wrap) article.
+Find more about wrapping in the [Text Wrapping](../Graphics/Text_and_Fonts#wrap) article.
 
 This works as well for other plot types. The following example demonstrates the same data displayed on a bar chart. In order to align multiline text to the right side {api:anychart.graphics.vector.Text#hAlign}hAlign(){api} attribute is set to right:
 
@@ -305,7 +306,7 @@ xAxis.overlapMode("allowOverlap");
 
 In some cases when there is a need in deep customization you can use {api:anychart.core.ui.LabelsFactory#getLabel}getLabel{api} and {api:anychart.core.ui.LabelsFactory#getLabelsCount}getLabelsCount{api} methods to access individual labels and solve different tasks.
 
-**Note:** these methods work properly only after the full chart display. Use [Event listeners](../common-settings/event-listeners) or be sure you execute the code with these methods in proper tim.
+**Note:** these methods work properly only after the full chart display. Use [Event listeners](../Common_Settings/Event_Listeners) or be sure you execute the code with these methods in proper tim.
 
 Here is how you can change the look of selected labels, in this sample the labels with values greater than data series average:
 

@@ -1,11 +1,12 @@
 ---
+slug: "/Stock_Charts/Drawing_Tools_and_Annotations/Overview"
 sidebar_position: 1
 ---
 # Drawing Tools and Annotations
 
 ## Overview
 
-[AnyStock](../overview) offers a large set of features for creating online financial charts, and one of the most exciting features are drawing tools: they provide you with the ability to draw/display custom objects on a chart. In our documentation they are usually called annotations.
+[AnyStock](../Overview) offers a large set of features for creating online financial charts, and one of the most exciting features are drawing tools: they provide you with the ability to draw/display custom objects on a chart. In our documentation they are usually called annotations.
 
 In this section you can find all important information about working with annotations in general and with certain types of them.
 
@@ -21,9 +22,9 @@ You can also download its source or simply fork it here: [GitHub: AnyStock - Dra
 
 A number of settings can be applied to any annotation regardless its type. For example, all annotation types share some visual settings as well as methods used for binding to axes, forbidding editing, and so on. General settings also include managing the drawing process and serializing/deserializing drawings. See the following articles:
 
-* [General Settings](general-settings)
-* [Drawing](drawing)
-* [Serializing and Deserializing](serializing-deserializing)
+* [General Settings](General_Settings)
+* [Drawing](Drawing)
+* [Serializing and Deserializing](Serializing_Deserializing)
 
 ## Annotation Types
 
@@ -31,36 +32,36 @@ Here is the full list of annotations available in AnyStock (with links to the ar
 
 ### Fibonacci Tools
 
-* [Fibonacci Arc](fibonacci-arc)
-* [Fibonacci Fan](fibonacci-fan)
-* [Fibonacci Retracement](fibonacci-retracement)
-* [Fibonacci Time Zones](fibonacci-time-zones)
+* [Fibonacci Arc](Fibonacci_Arc)
+* [Fibonacci Fan](Fibonacci_Fan)
+* [Fibonacci Retracement](Fibonacci_Retracement)
+* [Fibonacci Time Zones](Fibonacci_Time_Zones)
 
 ### Trend Lines
 
-* [Line Segment](line-segment)
-* [Infinite Line](infinite-line)
-* [Horizontal Line](horizontal-line)
-* [Vertical Line](vertical-line)
-* [Ray](ray)
+* [Line Segment](Line_Segment)
+* [Infinite Line](Infinite_Line)
+* [Horizontal Line](Horizontal_Line)
+* [Vertical Line](Vertical_Line)
+* [Ray](Ray)
 
 ### Trend Ranges
 
-* [Trend Channel](trend-channel)
-* [Horizontal Range/Channel](horizontal-range)
-* [Vertical Range/Channel](vertical-range)
+* [Trend Channel](Trend_Channel)
+* [Horizontal Range/Channel](Horizontal_Range)
+* [Vertical Range/Channel](Vertical_Range)
 
 ### Geometric Shapes
 
-* [Ellipse](ellipse)
-* [Rectangle](rectangle)
-* [Triangle](triangle)
+* [Ellipse](Ellipse)
+* [Rectangle](Rectangle)
+* [Triangle](Triangle)
 
 ### Labels, Markers, Buy/Sell Signals
 
-* [Markers, Buy/Sell Signals](marker)
-* [Labels](label)
+* [Markers, Buy/Sell Signals](Marker)
+* [Labels](Label)
 
 ### Other Tools
 
-* [Andrew's Pitchfork](andrews-pitchfork)
+* [Andrew's Pitchfork](Andrews_Pitchfork)

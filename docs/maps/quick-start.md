@@ -1,4 +1,5 @@
 ---
+slug: "/Maps/Quick_Start"
 sidebar_position: 1
 ---
 # Quick Start
@@ -9,7 +10,7 @@ To get started with AnyMap follow these simple steps and you will get your first
 
 ## Modules
 
-AnyMap requires adding the [Core](../quick-start/modules#core) and [Geo Maps](../quick-start/modules#geo-maps) modules. Reference two JavaScript files in the `<head>` section of your web page: 
+AnyMap requires adding the [Core](../Quick_Start/Modules#core) and [Geo Maps](../Quick_Start/Modules#geo-maps) modules. Reference two JavaScript files in the `<head>` section of your web page: 
 
 ```
 <head>
@@ -18,9 +19,9 @@ AnyMap requires adding the [Core](../quick-start/modules#core) and [Geo Maps](..
 </head>
 ```
 
-**Note:** These files can be downloaded from the [AnyChart download page](../quick-start/downloading-anychart). 
+**Note:** These files can be downloaded from the [AnyChart download page](../Quick_Start/Downloading_AnyChart). 
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Include the GeoData
 
@@ -32,9 +33,9 @@ Reference the GeoData JavaScript file in the `<head>` section of your web page.
 </head>
 ```
 
-You also can use **GeoJSON**, **TopoJSON** or **SVG** formats. See [AnyChart Map List](./maps-list) and [Supported Formats](architecture#supported-formats) to learn more about supported formats and ways of creating maps.
+You also can use **GeoJSON**, **TopoJSON** or **SVG** formats. See [AnyChart Map List](./Maps_List) and [Supported Formats](Architecture#supported-formats) to learn more about supported formats and ways of creating maps.
 
-You can use the link as shown above or download file from the [Map Collection](./maps-list), put it into any folder of your site (you'll have to use your own link in such case).
+You can use the link as shown above or download file from the [Map Collection](./Maps_List), put it into any folder of your site (you'll have to use your own link in such case).
 
 If you are going to use geographic cooridnates, it is necessary to reference to proj4.js library file:
 
@@ -108,7 +109,7 @@ anychart.onDocumentReady(function () {
 </script>
 ```
 
-Several map series types are available, see [AnyChart Map Series Types](architecture#map-series-types) to learn more.
+Several map series types are available, see [AnyChart Map Series Types](Architecture#map-series-types) to learn more.
   
 ## See the Map
 

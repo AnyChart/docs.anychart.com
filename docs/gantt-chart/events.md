@@ -1,4 +1,5 @@
 ---
+slug: "/Gantt_Chart/Events"
 sidebar_position: 13
 ---
 # Events
@@ -7,11 +8,11 @@ sidebar_position: 13
 
 This article explains how to work with the events of the Gantt chart.
 
-You can listen to the events of rows and connectors by attaching event listeners to the [chart](#chart). Also, it is possible to listen to the events of the [data tree](#data-tree), which fire when the chart is edited in the [Live Edit](live-edit) mode. The last section explains how to [prevent the default behavior](#preventing-default-behavior) of the chart.
+You can listen to the events of rows and connectors by attaching event listeners to the [chart](#chart). Also, it is possible to listen to the events of the [data tree](#data-tree), which fire when the chart is edited in the [Live Edit](Live_Edit) mode. The last section explains how to [prevent the default behavior](#preventing-default-behavior) of the chart.
 
-See the [Event Listeners](../common-settings/event-listeners) and [Interactivity](../common-settings/interactivity/overview) articles to learn more about events.
+See the [Event Listeners](../Common_Settings/Event_Listeners) and [Interactivity](../Common_Settings/Interactivity/Overview) articles to learn more about events.
 
-**Note:** To learn in detail about Live Edit actions that trigger data tree and other events, read [Live Edit: Default Behavior](live-edit#default-behavior).
+**Note:** To learn in detail about Live Edit actions that trigger data tree and other events, read [Live Edit: Default Behavior](Live_Edit#default-behavior).
 
 ## Chart
 
@@ -77,11 +78,11 @@ chart.listen("rowCollapseExpand", function (e) {
 
 ### Connectors
 
-Here are the events of [connectors](project-chart#connectors) you can listen to:
+Here are the events of [connectors](Project_Chart#connectors) you can listen to:
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
-<tr><td>beforeCreateConnector</td><td> A connector is about to be created in the <a href="live-edit">Live Edit</a> mode.</td></tr>
+<tr><td>beforeCreateConnector</td><td> A connector is about to be created in the <a href="Live_Edit">Live Edit</a> mode.</td></tr>
 <tr><td>connectorClick</td><td>A connector has been clicked on.</td></tr>
 <tr><td>connectorDblClick</td><td>A connector has been double-clicked on.</td></tr>
 <tr><td>connectorMouseDown</td><td>The left mouse button has been pressed on a connector.</td></tr>
@@ -92,7 +93,7 @@ Here are the events of [connectors](project-chart#connectors) you can listen to:
 <tr><td>connectorSelect</td><td>A connector has been selected.</td></tr>
 </table>
 
-In the following sample, the [Live Edit](live-edit) mode is enabled. The `"connectorMouseOver"`, `"connectorClick"`, `"connectorDblClick"`, and `"beforeCreateConnector"` events are used to update the chart title:
+In the following sample, the [Live Edit](Live_Edit) mode is enabled. The `"connectorMouseOver"`, `"connectorClick"`, `"connectorDblClick"`, and `"beforeCreateConnector"` events are used to update the chart title:
 
 {sample :height 295}GANTT\_Events\_02{sample}
 
@@ -148,7 +149,7 @@ chart.listen("beforeCreateConnector", function (e) {
 
 ## Data Tree
 
-When the chart is edited in the [Live Edit](live-edit) mode, the following [events of the data tree](../working-with-data/tree-data-model#events) fire:
+When the chart is edited in the [Live Edit](Live_Edit) mode, the following [events of the data tree](../Working_with_Data/Tree_Data_Model#events) fire:
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
@@ -156,9 +157,9 @@ When the chart is edited in the [Live Edit](live-edit) mode, the following [even
 <tr><td>treeItemUpdate</td><td>A data item has been updated.</td></tr>
 </table>
 
-**Note:** To learn in detail about Live Edit actions that trigger data tree and other events, read [Live Edit: Default Behavior](live-edit#default-behavior).
+**Note:** To learn in detail about Live Edit actions that trigger data tree and other events, read [Live Edit: Default Behavior](Live_Edit#default-behavior).
 
-In the sample below, there is a Gantt chart with the Live Edit mode enabled. When you drag and drop rows, `"treeItemMove"` is triggered. When you edit [elements](elements) and the [data grid](data-grid) text, `"treeItemUpdate"` fires.
+In the sample below, there is a Gantt chart with the Live Edit mode enabled. When you drag and drop rows, `"treeItemMove"` is triggered. When you edit [elements](Elements) and the [data grid](Data_Grid) text, `"treeItemUpdate"` fires.
 
 Both events are used to update the chart title:
 
@@ -206,7 +207,7 @@ chart.listen("rowDblClick", function (e) {
 });
 ```
 
-In the following sample, the [Live Edit](live-edit) mode is enabled. You can draw a connector preview, but cannot create a connector - this feature is disabled with the help of the `"beforeCreateConnector"` [connector event](#connectors):
+In the following sample, the [Live Edit](Live_Edit) mode is enabled. You can draw a connector preview, but cannot create a connector - this feature is disabled with the help of the `"beforeCreateConnector"` [connector event](#connectors):
 
 {sample :height 220}GANTT\_Events\_05{sample}
 

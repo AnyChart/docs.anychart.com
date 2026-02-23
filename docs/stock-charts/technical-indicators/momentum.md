@@ -1,12 +1,15 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Momentum"
+---
 # Momentum
 
 ## Overview
 
-The Momentum indicator is a speed of movement indicator, that is designed to identify the speed (or strength) of a price movement. The momentum indicator compares the most recent closing price to a previous closing price and may be used as a trend-following oscillator (similar to the [Moving Average Convergence Divergence (MACD)](moving-average-convergence-divergence-macd))).
+The Momentum indicator is a speed of movement indicator, that is designed to identify the speed (or strength) of a price movement. The momentum indicator compares the most recent closing price to a previous closing price and may be used as a trend-following oscillator (similar to the [Moving Average Convergence Divergence (MACD)](Moving_Average_Convergence_Divergence_(MACD)))).
 
 The Momentum indicator identifies when the price is moving upwards or downwards, and also by how much the price is moving upwards or downwards. When the momentum indicator is above zero, the price has upwards momentum, and when the momentum indicator is below zero the price has downwards momentum.
 
-Find the mathematical description of the indicator on the [Momentum Mathematical Description](mathematical-description#momentum) page.
+Find the mathematical description of the indicator on the [Momentum Mathematical Description](Mathematical_Description#momentum) page.
 
 ## Adding Indicator
 

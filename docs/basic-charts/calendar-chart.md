@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Calendar_Chart"
 sidebar_position: 1
 ---
 # Calendar Chart
@@ -10,11 +11,11 @@ A calendar chart is a visualization that shows activity over the course of a lon
 This article explains how to create a basic Calendar chart in AnyChart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Calendar chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#calendar">Calendar</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#calendar">Calendar</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Calendar}anychart.charts.Calendar{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">x, value</a></td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -27,16 +28,16 @@ This article explains how to create a basic Calendar chart in AnyChart as well a
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="heat-map-chart">Heat Map</a></td></tr>
-<tr><td></td><td><a href="treemap-chart">Treemap</a></td></tr>
+<tr><td></td><td><a href="Heat_Map_Chart">Heat Map</a></td></tr>
+<tr><td></td><td><a href="Treemap_Chart">Treemap</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/products/anychart/gallery/Calendar_Chart/">Chartopedia: Calendar Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Calendar chart requires adding the [Core](../quick-start/modules#core) and [Calendar](../quick-start/modules#calendar) modules:
+The Calendar chart requires adding the [Core](../Quick_Start/Modules#core) and [Calendar](../Quick_Start/Modules#calendar) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -46,7 +47,7 @@ The Calendar chart requires adding the [Core](../quick-start/modules#core) and [
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-calendar.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -80,7 +81,7 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Calendar chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
   
@@ -125,9 +126,9 @@ var chart = anychart.calendar(data);
 
 ### Days
 
-The Calendar chart displays all the days of the year (or years). While some of them are specified in data with values assigned to them, others may be not. These two type of days are colored different colors and have different [appearance settings](../appearance-settings).
+The Calendar chart displays all the days of the year (or years). While some of them are specified in data with values assigned to them, others may be not. These two type of days are colored different colors and have different [appearance settings](../Appearance_Settings).
 
-The appearance settings of days with values can be configured in two [states](../common-settings/interactivity/states): **normal** and **hover**. Use the {api:anychart.charts.CirclePacking#normal}normal(){api} and {api:anychart.charts.CirclePacking#hovered}hovered(){api} methods.
+The appearance settings of days with values can be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **hover**. Use the {api:anychart.charts.CirclePacking#normal}normal(){api} and {api:anychart.charts.CirclePacking#hovered}hovered(){api} methods.
 
 Combine them with the following methods:
 
@@ -164,7 +165,7 @@ days.spacing(4);
 To configure weeks, use the following methods:
 
 * {api:anychart.core.calendar.settings.Weeks#showWeekends}showWeekends(){api} to hide or show weekends
-* {api:anychart.core.calendar.settings.Weeks#labels}labels(){api} to set the font of week [labels](../common-settings/labels)
+* {api:anychart.core.calendar.settings.Weeks#labels}labels(){api} to set the font of week [labels](../Common_Settings/Labels)
 * {api:anychart.core.calendar.settings.Weeks#rightSpace}rightSpace(){api} to set the gap between week labels and the main part of the chart
 
 This is how they work:
@@ -189,7 +190,7 @@ To configure months, use these methods:
 
 * {api:anychart.core.calendar.settings.Months#stroke}stroke(){api} to set the stroke of months containing days with values
 * {api:anychart.core.calendar.settings.Months#noDataStroke}noDataStroke(){api} to set the stroke of months containing only days with no values
-* {api:anychart.core.calendar.settings.Months#labels}labels(){api} to set the font of month [labels](../common-settings/labels)
+* {api:anychart.core.calendar.settings.Months#labels}labels(){api} to set the font of month [labels](../Common_Settings/Labels)
 * {api:anychart.core.calendar.settings.Months#underSpace}underSpace(){api} to set the gap between month labels and the main part of the chart
 
 Here is a Calendar chart with months configured:
@@ -212,8 +213,8 @@ months.underSpace(20);
 To configure years, use the following methods:
 
 * {api:anychart.core.calendar.settings.Years#inverted}inverted(){api} to invert the order of years
-* {api:anychart.core.calendar.settings.Years#background}background(){api} to set the [background](../appearance-settings/background)
-* {api:anychart.core.calendar.settings.Years#title}title(){api} to set the [title](../common-settings/title)
+* {api:anychart.core.calendar.settings.Years#background}background(){api} to set the [background](../Appearance_Settings/Background)
+* {api:anychart.core.calendar.settings.Years#title}title(){api} to set the [title](../Common_Settings/Title)
 * {api:anychart.core.calendar.settings.Years#underSpace}underSpace(){api} to set the gap between years
 
 The sample below shows how the work:
@@ -294,11 +295,11 @@ chart.colorRange().length("90%");
 
 ### Tooltips
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
 #### Tokens
 
-To change the text of tooltips, combine the {api:anychart.charts.Calendar#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods with [tokens](../common-settings/text-formatters#string-tokens).
+To change the text of tooltips, combine the {api:anychart.charts.Calendar#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string-tokens).
 
 Here is the list of tokens that work with the Calendar chart:
 
@@ -342,7 +343,7 @@ chart.tooltip().format(
 
 #### Formatting Functions
 
-To configure tooltips, you can use [formatting functions](../common-settings/text-formatters#formatting-functions) and the following fields:
+To configure tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting-functions) and the following fields:
 
 * `x`
 * `value`

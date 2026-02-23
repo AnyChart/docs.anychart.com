@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Vertical/Step_Line_Chart"
 sidebar_position: 2
 ---
 # Vertical Step Line Chart
@@ -7,7 +8,7 @@ sidebar_position: 2
 
 This article explains how to create a Vertical Step Line chart in AnyChart.
 
-To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](overview).  You can also read the [Step Line Chart](../step-line-chart) article to learn about other available settings.
+To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](Overview).  You can also read the [Step Line Chart](../Step_Line_Chart) article to learn about other available settings.
 
 ## Quick Start
 

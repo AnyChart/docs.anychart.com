@@ -1,3 +1,6 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Modified_Moving_Average_(MMA)"
+---
 # Modified Moving Average
 
 ## Overview
@@ -8,7 +11,7 @@ MMA is partly calculated like SMA: the first point of the MMA is calculated the 
 
 AnyChart Stock allows you to add MMA with desired period to any of your charts.
 
-Find the mathematical description of the indicator on the [Modified moving average (MMA) Mathematical Description](mathematical-description#modified-moving-average) page.
+Find the mathematical description of the indicator on the [Modified moving average (MMA) Mathematical Description](Mathematical_Description#modified-moving-average) page.
 
 ## Adding Indicator
 

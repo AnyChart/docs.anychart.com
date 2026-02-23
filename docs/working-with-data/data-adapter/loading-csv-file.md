@@ -1,11 +1,12 @@
 ---
+slug: "/Working_with_Data/Data_Adapter/Loading_CSV_File"
 sidebar_position: 2
 ---
 # Loading CSV File
 
 ## Overview
 
-Ability to load CSV files is one of the things [Data Adapter](overview) provides.
+Ability to load CSV files is one of the things [Data Adapter](Overview) provides.
 
 To work with the features Data Adapter provides you need to plug it in along with AnyChart Library:
 
@@ -14,7 +15,7 @@ To work with the features Data Adapter provides you need to plug it in along wit
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-data-adapter.min.js"></script>
 ```
 
-You can load [Data from CSV](../data-from-csv) into AnyChart without the help of Data Adapter but **if you want to load a file** you can do it using the data adapter and the {api:anychart.data#loadCsvFile}loadCsvFile(){api} method as described below.
+You can load [Data from CSV](../Data_From_CSV) into AnyChart without the help of Data Adapter but **if you want to load a file** you can do it using the data adapter and the {api:anychart.data#loadCsvFile}loadCsvFile(){api} method as described below.
 
 ## loadCsvFile() method
 
@@ -39,4 +40,4 @@ This method also allows to handle loading errors, changing sending method, addin
 
 ## CSV Settings
 
-To learn about availale CSV Data settings please refer to the [Data from CSV](../data-from-csv) article.
+To learn about availale CSV Data settings please refer to the [Data from CSV](../Data_From_CSV) article.

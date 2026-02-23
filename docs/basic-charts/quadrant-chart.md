@@ -1,19 +1,20 @@
 ---
+slug: "/Basic_Charts/Quadrant_Chart"
 sidebar_position: 2
 ---
 # Quadrant Chart
 
 ## Overview
 
-Technically, a quadrant chart is a [scatter chart](scatter-plot/overview) divided into four quarters (quadrants) to make the visualization more readable. This chart type is used when data can be categorized into quadrants - for example, in [SWOT-analysis](https://en.wikipedia.org/wiki/SWOT%5Fanalysis). 
+Technically, a quadrant chart is a [scatter chart](Scatter_Plot/Overview) divided into four quarters (quadrants) to make the visualization more readable. This chart type is used when data can be categorized into quadrants - for example, in [SWOT-analysis](https://en.wikipedia.org/wiki/SWOT%5Fanalysis). 
 
-In AnyChart, Quadrant charts are combined with [Marker](marker-chart), [Bubble](bubble-chart), and [Line](line-chart) series.
+In AnyChart, Quadrant charts are combined with [Marker](Marker_Chart), [Bubble](Bubble_Chart), and [Line](Line_Chart) series.
 
 This article explains how to create a basic Quadrant chart as well as configure settings that are specific to the type.
 
 ## Modules
 
-The Quadrant chart requires adding the the [Core](../quick-start/modules#core) and [Scatter](../quick-start/modules#basic-cartesian) modules:
+The Quadrant chart requires adding the the [Core](../Quick_Start/Modules#core) and [Scatter](../Quick_Start/Modules#basic-cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -23,19 +24,19 @@ The Quadrant chart requires adding the the [Core](../quick-start/modules#core) a
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-scatter.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../quick-start/modules#base) module, which includes, among other things, the two modules mentioned above: 
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
 To create a Quadrant chart, use the {api:anychart#quadrant}anychart.quadrant(){api} chart constructor.
 
-This constructor creates a [Scatter chart](scatter-plot/overview) with some predefined settings:
+This constructor creates a [Scatter chart](Scatter_Plot/Overview) with some predefined settings:
 * The chart is framed with two X- and Y-axes.
 * Ticks and labels on the axes are disabled.
 * There are no grids.
@@ -82,7 +83,7 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Quadrant chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
@@ -90,11 +91,11 @@ Read the overview of general settings: [General Settings](general-settings).
 
 Each of the supported series types has its own visual settings - see the following articles:
 
-* [Marker Chart](marker-chart#appearance)
-* [Bubble Chart](bubble-chart#appearance)
-* [Line Chart](line-chart#appearance)
+* [Marker Chart](Marker_Chart#appearance)
+* [Bubble Chart](Bubble_Chart#appearance)
+* [Line Chart](Line_Chart#appearance)
 
-Also, you can learn more from the [Appearance Settings](../appearance-settings) and [States](../common-settings/interactivity/states) sections.
+Also, you can learn more from the [Appearance Settings](../Appearance_Settings) and [States](../Common_Settings/Interactivity/States) sections.
 
 In this sample there are three series (Marker, Line, and Bubble) with appearance settings configured:
 
@@ -223,7 +224,7 @@ chart.crossing().stroke("gray", 3, "7 3", "round");
 
 In Quadrant charts data do not affect scales: the data falling outside scales just are not displayed.
 
-By default, the minimum and maximum values of the X- and Y-scales are 0 and 100, but you can change these settings (read more in the [Scales](../axes-and-grids/scales) article):
+By default, the minimum and maximum values of the X- and Y-scales are 0 and 100, but you can change these settings (read more in the [Scales](../Axes_and_Grids/Scales) article):
 
 ```
 // configure scales
@@ -237,7 +238,7 @@ Please note that quarters always divide scales into two parts, no matter what th
 
 ### Axes
 
-The Quadrant chart is framed by two X- and Y-axes, which can be referred to by indexes (0 and 1). By default, ticks, labels, and titles are disabled, but you can enable them - read more in the [Axes and Grids](../axes-and-grids) article:
+The Quadrant chart is framed by two X- and Y-axes, which can be referred to by indexes (0 and 1). By default, ticks, labels, and titles are disabled, but you can enable them - read more in the [Axes and Grids](../Axes_and_Grids) article:
 
 ```
 // configure axes
@@ -250,9 +251,9 @@ chart.yAxis(1, {ticks: true, labels: true});
 
 ### Labels
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-Labels of series are configured according to the rules of the series type - for example, see the [Marker Chart](marker-chart#labels) article. You can also configure labels of quarters by using the {api:anychart.core.utils.Quarter#label}label(){api} method. Please note that a quarter can have more than one label.
+Labels of series are configured according to the rules of the series type - for example, see the [Marker Chart](Marker_Chart#labels) article. You can also configure labels of quarters by using the {api:anychart.core.utils.Quarter#label}label(){api} method. Please note that a quarter can have more than one label.
 
 The sample below shows how to create quarter labels:
 
@@ -281,6 +282,6 @@ labelLBottom2.rotation(-90);
 
 ### Tooltips
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../common-settings/text-formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
-Labels of series are configured according to the rules of the series type - for example, see the [Marker Chart](marker-chart#labels) article.
+Labels of series are configured according to the rules of the series type - for example, see the [Marker Chart](Marker_Chart#labels) article.

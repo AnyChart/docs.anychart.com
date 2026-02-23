@@ -1,3 +1,6 @@
+---
+slug: "/Common_Settings/Tooltip"
+---
 # Tooltip
 
 ## Overview
@@ -170,7 +173,7 @@ tooltip1.titleFormat("Manager: {%x}");
 
 {sample}CS\_Tooltip\_14{sample}
 
-In case you need more complex content formatting there is the {api:anychart.core.ui.Tooltip#format}format(){api} method that uses a function or a string token as a parameter. More information on adjusting text can be found in the [Text Formatters article](../common-settings/text-formatters).
+In case you need more complex content formatting there is the {api:anychart.core.ui.Tooltip#format}format(){api} method that uses a function or a string token as a parameter. More information on adjusting text can be found in the [Text Formatters article](../Common_Settings/Text_Formatters).
 
 ```
 var tooltip = chart.tooltip();
@@ -211,7 +214,7 @@ seriesSpline.tooltip().format(function(e){
 
 {sample}CS\_Tooltip\_16{sample}
 
-**Note**: You can find information on custom tooltips and an example of using a chart as a tooltip in the [Interactivity article](../common-settings/interactivity/overview#creating-custom-tooltip)
+**Note**: You can find information on custom tooltips and an example of using a chart as a tooltip in the [Interactivity article](../Common_Settings/Interactivity/Overview#creating-custom-tooltip)
 
 #### Prefix and Postfix
 
@@ -313,7 +316,7 @@ The sample below shows how to change the default settings:
 
 ### Events
 
-The HTML tooltip has its own events and special methods allowing you to listen to them. These methods can be combined with other [event listeners](event-listeners).
+The HTML tooltip has its own events and special methods allowing you to listen to them. These methods can be combined with other [event listeners](Event_Listeners).
 
 Here is the full list of methods:
 
@@ -382,7 +385,7 @@ columnChart.tooltip().height(80);
 
 ## Background
 
-Tooltip background appearance can be controlled using {api:anychart.core.ui.Tooltip#background}background(){api} method. More information about adjusting background can be found in [Background tutorial](../appearance-settings/background).
+Tooltip background appearance can be controlled using {api:anychart.core.ui.Tooltip#background}background(){api} method. More information about adjusting background can be found in [Background tutorial](../Appearance_Settings/Background).
 
 ```
 var background = chart.tooltip().background();
@@ -417,11 +420,11 @@ series2.tooltip().allowLeaveChart(false);
 
 Note that series' individual tooltip settings override the chart's tooltip settings, so the chart's tooltips settings are inherited by the third series with no settings adjusted.
 
-Also note that this method allows or forbids the tooltips to overflow not only the chart, but the element they belong to. For example, if a tooltip of a great size belongs to a [Legend](legend) or a [Data Grid](../gantt-chart/data-grid), setting `true` to the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} method will lead to this tooltip allowing to overflow that element.
+Also note that this method allows or forbids the tooltips to overflow not only the chart, but the element they belong to. For example, if a tooltip of a great size belongs to a [Legend](Legend) or a [Data Grid](../Gantt_Chart/Data_Grid), setting `true` to the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} method will lead to this tooltip allowing to overflow that element.
 
 ## Out of stage
 
-A chart may not be the same size as its [stage](../graphics/basics). Stage can be smaller or greater, so if it is necessary to allow or forbid the tooltip to be shown outside of the stage, use the {api:anychart.core.ui.Tooltip#allowLeaveStage}allowLeaveStage(){api} method. This method can also be applied for the chart so it will affect all series simultaneously, or to series separately:
+A chart may not be the same size as its [stage](../Graphics/Basics). Stage can be smaller or greater, so if it is necessary to allow or forbid the tooltip to be shown outside of the stage, use the {api:anychart.core.ui.Tooltip#allowLeaveStage}allowLeaveStage(){api} method. This method can also be applied for the chart so it will affect all series simultaneously, or to series separately:
 
 ```
 // applies to all series
@@ -516,7 +519,7 @@ tooltip.hideDelay(1000);
 
 ## Themes
 
-Tooltips can be adjusted using [AnyChart Themes](../appearance-settings/themes). Themes make it possible to set the same settings for several charts. Here is a sample of adjusting tooltips using themes:
+Tooltips can be adjusted using [AnyChart Themes](../Appearance_Settings/Themes). Themes make it possible to set the same settings for several charts. Here is a sample of adjusting tooltips using themes:
 
 ```
 var themeSettings = {

@@ -1,11 +1,12 @@
 ---
+slug: "/Gauges/Quick_Start"
 sidebar_position: 1
 ---
 # Quick Start
 
 ## Modules
 
-The [Circular Gauge](circular-gauge) requires adding the [Core](../quick-start/modules#core) and [Circular Gauge](../quick-start/modules#circular-gauge) modules. Reference two JavaScript files in the `<head>` section of your web page: 
+The [Circular Gauge](Circular_Gauge) requires adding the [Core](../Quick_Start/Modules#core) and [Circular Gauge](../Quick_Start/Modules#circular-gauge) modules. Reference two JavaScript files in the `<head>` section of your web page: 
 
 ```
 <head>
@@ -14,7 +15,7 @@ The [Circular Gauge](circular-gauge) requires adding the [Core](../quick-start/m
 </head>
 ```
 
-To create a [Linear Gauge](linear-gauge), add the [Core](../quick-start/modules#core) and [Linear Gauge](../quick-start/modules#linear-gauge) modules:
+To create a [Linear Gauge](Linear_Gauge), add the [Core](../Quick_Start/Modules#core) and [Linear Gauge](../Quick_Start/Modules#linear-gauge) modules:
 
 ```
 <head>
@@ -23,9 +24,9 @@ To create a [Linear Gauge](linear-gauge), add the [Core](../quick-start/modules#
 </head>
 ```
 
-**Note:** These files can be downloaded from the [AnyChart download page](../quick-start/downloading-anychart). 
+**Note:** These files can be downloaded from the [AnyChart download page](../Quick_Start/Downloading_AnyChart). 
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Create a Container
 

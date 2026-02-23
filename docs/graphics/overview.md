@@ -1,4 +1,5 @@
 ---
+slug: "/Graphics/Overview"
 sidebar_position: 1
 ---
 # GraphicsJS JavaScript Drawing Library
@@ -13,19 +14,19 @@ You can find some specific samples at [http://www.graphicsjs.org/](http://www.gr
 
 GraphicsJS allows to visualize complicated mathematical algorithms very conveniently and easily, e.g., the [ {pg:gallery/Graphics/Galaxy-plain}galaxy{pg} demo is based on [Archimedean spiral](https://en.wikipedia.org/wiki/Archimedean_spiral).
 
-GraphicsJS has one the most powerful [line drawing features](paths) among SVG/VML based graphics libraries that provide only Bezier curves out of the box. But GraphicsJS is great at working with mathematical functions. As a result, GraphicsJS allows you to draw not only Bezier curves out of the box, but literally anything; for example, you can draw some arc very quickly, whereas other graphics libraries will make you arrange it through numerous different curves. And surely there are [basic shapes available](shapes)
+GraphicsJS has one the most powerful [line drawing features](Paths) among SVG/VML based graphics libraries that provide only Bezier curves out of the box. But GraphicsJS is great at working with mathematical functions. As a result, GraphicsJS allows you to draw not only Bezier curves out of the box, but literally anything; for example, you can draw some arc very quickly, whereas other graphics libraries will make you arrange it through numerous different curves. And surely there are [basic shapes available](Shapes)
 
-GraphicsJS has the richest [text features](text-and-fonts), for example, SVG/VML technologies do not provide this out of the box, as well as most of other JavaScript drawing libraries. GraphicsJS supports multiline texts and also offers text measurement, including width, height, as well as wrap, overflow, indent, spacing, align, etc.
+GraphicsJS has the richest [text features](Text_and_Fonts), for example, SVG/VML technologies do not provide this out of the box, as well as most of other JavaScript drawing libraries. GraphicsJS supports multiline texts and also offers text measurement, including width, height, as well as wrap, overflow, indent, spacing, align, etc.
 
-GraphicsJS has implements the [Virtual DOM](virtual-dom) which makes drawing more robust and manageable.
+GraphicsJS has implements the [Virtual DOM](Virtual_DOM) which makes drawing more robust and manageable.
 
-GraphicsJS uses smart layering system for elements and [layers](layers).
+GraphicsJS uses smart layering system for elements and [layers](Layers).
 
 GraphicsJS supports z-index. Typically, if you ever decided to change the overlapping order, you would have to erase everything and draw the whole picture again, from scratch. With GraphicsJS, you are given the power to arrange this dynamically, which is extremely helpful when you are creating some big graphical thing and it is important for you to specify which elements must be seen at one moment or another.
 
-GraphicsJS provides a convenient [Transformations](transformations) API that allows to move, scale, rotate and shear both elements and groups of elements. Transformations, in good hands, when used along with [flexible Event Model](events) and [Virtual DOM](virtual-dom), is a very powerfull tool.
+GraphicsJS provides a convenient [Transformations](Transformations) API that allows to move, scale, rotate and shear both elements and groups of elements. Transformations, in good hands, when used along with [flexible Event Model](Events) and [Virtual DOM](Virtual_DOM), is a very powerfull tool.
 
-GraphicsJS [supports legacy browsers including IE6+](browser-support). 
+GraphicsJS [supports legacy browsers including IE6+](Browser_Support). 
 
 GraphicsJS API is very convenient to use. {api:anychart.graphics}GraphicsJS API{api} is very neat and provides chaining support, which makes it possible to use a dozen lines of code where other libraries require a hundred.
 
@@ -35,19 +36,19 @@ GraphicsJS is built on a very reliable technology, Google Closure, just like Goo
 
 We recommend everyone to start with:
 
-* [GraphicsJS Quick Start](quick-start)
+* [GraphicsJS Quick Start](Quick_Start)
 
 If you it is your first experience with JavaScript drawing libraries, we suggest the following reading order:
 
-* [Basics](basics) article lays out a general idea of the library and explains how things work.
-* [Paths](paths), [Shapes](shapes), [Text and Fonts](text-and-fonts) are the articles on drawing primitives, of which everything consists of.
-* [Layers](layers) article explains how the basic elements may be grouped and arranged.
-* [Transformations](transformations) article explains how you can change elements and groups.
-* [Events](events) article describes GraphicsJS event model.
+* [Basics](Basics) article lays out a general idea of the library and explains how things work.
+* [Paths](Paths), [Shapes](Shapes), [Text and Fonts](Text_and_Fonts) are the articles on drawing primitives, of which everything consists of.
+* [Layers](Layers) article explains how the basic elements may be grouped and arranged.
+* [Transformations](Transformations) article explains how you can change elements and groups.
+* [Events](Events) article describes GraphicsJS event model.
 
 If you are done with articles listed above, or you are an experienced user of [AnyChart 7](https://www.anychart.com/), or  a person with the rich JavaScript-coding background, you may jump right into:
 
 * {api:anychart.graphics}GraphicsJS API{api}
 * [GraphicsJS Samples](http://www.graphicsjs.org/)
-* and [Virtual DOM](virtual-dom) and [Performance](performance) articles.
+* and [Virtual DOM](Virtual_DOM) and [Performance](Performance) articles.
 

@@ -39,3 +39,39 @@
 .toggleButton svg {
   display: block;
 }
+
+/* Mobile sidebar context: light background needs dark icons */
+:global(.navbar-sidebar__brand) .toggle {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+:global(.navbar-sidebar__brand) .toggleButton {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+:global(.navbar-sidebar__brand) .toggleButton:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+:global(.navbar-sidebar__brand) .toggleButton.active {
+  background: rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.85);
+}
+
+/* Dark mode mobile sidebar */
+:global([data-theme='dark'] .navbar-sidebar__brand) .toggle {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+:global([data-theme='dark'] .navbar-sidebar__brand) .toggleButton {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+:global([data-theme='dark'] .navbar-sidebar__brand) .toggleButton:hover {
+  color: #fff;
+}
+
+:global([data-theme='dark'] .navbar-sidebar__brand) .toggleButton.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}

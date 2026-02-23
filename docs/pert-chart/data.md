@@ -1,11 +1,12 @@
 ---
+slug: "/PERT_Chart/Data"
 sidebar_position: 3
 ---
 # PERT Chart Data
 
 ## Overview
 
-PERT charts use a special type of data, which cannot be set the same way as data for other chart types: one needs not only to create a set of items (nodes), but also to specify how they are connected. There are two ways to set data for PERT charts, both based on [Anychart Tree Data Model](../working-with-data/tree-data-model).
+PERT charts use a special type of data, which cannot be set the same way as data for other chart types: one needs not only to create a set of items (nodes), but also to specify how they are connected. There are two ways to set data for PERT charts, both based on [Anychart Tree Data Model](../Working_with_Data/Tree_Data_Model).
 
 ## Data Formats
 
@@ -87,7 +88,7 @@ var data = [
 
 ### Time Estimates
 
-It is also possible to set three time estimates: optimistic, pessimistic and most likely time periods. Find more about them in the [Terminology article](terminology). 
+It is also possible to set three time estimates: optimistic, pessimistic and most likely time periods. Find more about them in the [Terminology article](Terminology). 
 
 In case when these parameters are set, the estimated time and the standard deviation are calculated.
 

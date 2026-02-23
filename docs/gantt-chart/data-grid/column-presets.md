@@ -1,13 +1,14 @@
 ---
+slug: "/Gantt_Chart/Data_Grid/Column_Presets"
 sidebar_position: 4
 ---
 # Column Presets
 
 ## Overview
 
-Using column presets is an alternative way of adjusting the [text](columns#text-labels)) and [width](columns#width) of data grid columns.
+Using column presets is an alternative way of adjusting the [text](Columns#text-labels)) and [width](Columns#width) of data grid columns.
 
-To apply a preset, you should first access a default column or create a [new one](columns#custom-columns): combine {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with {api:anychart.core.ui.DataGrid#column}column(){api} and specify its index:
+To apply a preset, you should first access a default column or create a [new one](Columns#custom-columns): combine {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with {api:anychart.core.ui.DataGrid#column}column(){api} and specify its index:
 
 ```
 // access the first data grid column
@@ -16,7 +17,7 @@ var column_1 = chart.dataGrid().column(0);
 
 Then call the {api:anychart.core.ui.DataGrid.Column#setColumnFormat}setColumnFormat(){api} with two parameters: a data field you want to use in the column text and either a [default preset](#default-presets) or a [custom preset](#custom-presets).
 
-**Note:** Both default and custom data fields can be formatted. Default fields are listed in the [Project Chart](../project-chart#data-fields) and [Resource Chart](../resource-chart#data-fields) articles.
+**Note:** Both default and custom data fields can be formatted. Default fields are listed in the [Project Chart](../Project_Chart#data-fields) and [Resource Chart](../Resource_Chart#data-fields) articles.
 
 ## Default Presets
 
@@ -74,7 +75,7 @@ The following presets are used to apply different formats to dates:
 * `"date-iso-8601"` - *yyyy-MM-dd*
 * `"date-us-short"` - *d/MM/yyyy*
 
-**Note:** These presets can be applied only to dates set as [Unix timestamps](../date-and-time-formats#unix-timestamp).
+**Note:** These presets can be applied only to dates set as [Unix timestamps](../Date_and_Time_Formats#unix-timestamp).
 
 In the sample below, there are two columns, both showing the content of the `"actualStart"` data field. The first column displays [values without formatting](#values), and in the second one they are formatted as `"date-common-log"`. You can also try other date formats.
 

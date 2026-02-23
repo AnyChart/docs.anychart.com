@@ -1,4 +1,5 @@
 ---
+slug: "/Axes_and_Grids/Axis_Orientation"
 sidebar_position: 2
 ---
 # Axes Orientation
@@ -229,7 +230,7 @@ chart.yScale().inverted(true);
 
 ## Vertical Mode
 
-Here are some samples of [Vertical charts](../basic-charts/vertical/overview) axes orientation:
+Here are some samples of [Vertical charts](../Basic_Charts/Vertical/Overview) axes orientation:
 
 <table>
 <tbody><tr>

@@ -1,4 +1,5 @@
 ---
+slug: "/Dashboards/Stage-Based_Layout"
 sidebar_position: 1
 ---
 # Stage-based Layout
@@ -33,7 +34,7 @@ var stage = anychart.graphics.create("container", 800, 600);
 ### Placing charts
 
 On a stage, you can position a lot of charts and other elements. Dashboard means it, and there are several ways of positioning elements on a stage. 
-One of them is [Table Layout](table-layout). The second option is to use stage as a dashboard basis.
+One of them is [Table Layout](Table_Layout). The second option is to use stage as a dashboard basis.
 Let's place a Column Chart sample on a stage. The only difference in this case is that we should set the stage and later define it as a container for drawing.
 
 ```
@@ -123,7 +124,7 @@ Note that the center of the stage coordinate system is in the left top corner of
 
 ## Custom elements
 
-Besides the advantage of using layers, there's one more thing that you can do with the stage - add some custom elements, e.g., lines, curves, circles and other shapes, like in the following example where the biocenosis of a fir-tree is shown. We have put the pics of animals, drawn the fir-tree and the lines leading to the charts using the stage graphics, - you can find more about graphics in our [Graphics](../graphics/basics) tutorial.
+Besides the advantage of using layers, there's one more thing that you can do with the stage - add some custom elements, e.g., lines, curves, circles and other shapes, like in the following example where the biocenosis of a fir-tree is shown. We have put the pics of animals, drawn the fir-tree and the lines leading to the charts using the stage graphics, - you can find more about graphics in our [Graphics](../Graphics/Basics) tutorial.
 
 {sample :width 688 :height 700 }DB\_Stage\_06{sample}
 
@@ -131,4 +132,4 @@ Besides the advantage of using layers, there's one more thing that you can do wi
 
 Every browser has a printing function. We can print any page using this function, but sometimes it can't guarantee that you get what you want or you may want to add "Print dashboard" or "Print chart" option to your application.
 
-If you have created a dashboard using AnyChart Stage, you can easily print it, learn more in [Printing tutorial](../common-settings/printing#stage-printing).
+If you have created a dashboard using AnyChart Stage, you can easily print it, learn more in [Printing tutorial](../Common_Settings/Printing#stage-printing).

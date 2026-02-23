@@ -1,4 +1,5 @@
 ---
+slug: "/Stock_Charts/Event_Markers/Tooltips"
 sidebar_position: 4
 ---
 
@@ -11,7 +12,7 @@ A tooltip is a text box displayed when a point on a chart is hovered over, which
 
 ## Built-In Tooltips
 
-The built-in tooltips of event markers work the same way as any other tooltips - see the [Tooltip](../../common-settings/tooltip) article. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+The built-in tooltips of event markers work the same way as any other tooltips - see the [Tooltip](../../Common_Settings/Tooltip) article. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
 When you create data for event markers, you can add an optional data field - `description`. By default, it is shown in tooltips, and if there is no description, the symbol of a group is shown instead.
 
@@ -19,7 +20,7 @@ The built-in tooltips are adjusted with the help of either tokens or formatting 
 
 ### Tokens
 
-You can configure the main text or titles of tooltips by combining the {api:anychart.core.stock.eventMarkers.Controller#tooltip}tooltip(){api} method with {api:anychart.core.ui.Tooltip#format}format(){api} or {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and the following [tokens](../../common-settings/text-formatters#string-tokens):
+You can configure the main text or titles of tooltips by combining the {api:anychart.core.stock.eventMarkers.Controller#tooltip}tooltip(){api} method with {api:anychart.core.ui.Tooltip#format}format(){api} or {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and the following [tokens](../../Common_Settings/Text_Formatters#string-tokens):
 
 * `{%date}`
 * `{%symbol}`
@@ -58,7 +59,7 @@ plot.eventMarkers().tooltip().format("Event: {%description}");
 
 ### Formatting Functions
 
-To adjust tooltips, you can combine the {api:anychart.core.stock.eventMarkers.Controller#tooltip}tooltip(){api} method with {api:anychart.core.ui.Tooltip#format}format(){api} or {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and [formatting functions](../../common-settings/text-formatters#formatting-functions).
+To adjust tooltips, you can combine the {api:anychart.core.stock.eventMarkers.Controller#tooltip}tooltip(){api} method with {api:anychart.core.ui.Tooltip#format}format(){api} or {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and [formatting functions](../../Common_Settings/Text_Formatters#formatting-functions).
 
 Here are fields that work with formatting functions: 
 
@@ -104,6 +105,6 @@ plot.eventMarkers().tooltip().format(function() {
 
 ## Custom HTML Tooltips
 
-The built-in tooltips can be turned off and replaced with custom HTML tooltips. Use HTML/CSS and [events](events):
+The built-in tooltips can be turned off and replaced with custom HTML tooltips. Use HTML/CSS and [events](Events):
 
 {sample}STOCK\_Event\_Markers\_Tooltips\_03{sample}

@@ -1,3 +1,6 @@
+---
+slug: "/Appearance_Settings/Themes"
+---
 # Themes
 
 ## Overview
@@ -52,7 +55,7 @@ You can find minified and uncompressed themes at CDN, it is recommended to use m
 
 There are 16 themes in AnyChart at the moment: *Coffee*, *Dark Blue*, *Dark Earth*, *Dark Glamour*, *Dark Provence*, *Default Theme*, *Light Blue*, *Light Earth*, *Light Glamour*, *Light Provence*, *Monochrome*, *Morning*, *Pastel*, *Sea*, *6.x Version*, *Wines*.
 
-And there are 11 accompanying [Color palettes](palettes) which are used by these themes, but their use can be combined if needed.
+And there are 11 accompanying [Color palettes](Palettes) which are used by these themes, but their use can be combined if needed.
 
 Here is a simple demo where you can choose a theme and a palette and change them on-the-fly:
 
@@ -309,7 +312,7 @@ anychart.theme(null);
 
 ## Global Settings, Defaults and Theme Reference
 
-As you may have noticed, theme is basically chart settings done in JSON and its structure is almost identical to chart JSON settings, and can be described by JSON Scheme, you can read more about this at [JSON article](../working-with-data/data-from-json#schema).
+As you may have noticed, theme is basically chart settings done in JSON and its structure is almost identical to chart JSON settings, and can be described by JSON Scheme, you can read more about this at [JSON article](../Working_with_Data/Data_From_JSON#schema).
 
 But there are some very important characteristics and features in a theme: you can set defaults and global settings for some elements, and you can set default settings for a chart type.
 

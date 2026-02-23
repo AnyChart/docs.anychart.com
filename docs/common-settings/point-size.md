@@ -1,3 +1,6 @@
+---
+slug: "/Common_Settings/Point_Size"
+---
 # Point Size
 
 ## Overview

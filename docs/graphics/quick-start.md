@@ -1,4 +1,5 @@
 ---
+slug: "/Graphics/Quick_Start"
 sidebar_position: 2
 ---
 # GraphicsJS Quick Start
@@ -110,7 +111,7 @@ Also, you can copy and paste this code to a file on your computer and run it in 
 
 * Explore {api:anychart.graphics}JavaScript API Reference{api}
 * See [GraphicsJS Site](http://www.graphicsjs.org/)
-* Go on with [GraphicsJS Docs](overview)
+* Go on with [GraphicsJS Docs](Overview)
 * Read Harry Potter book series to learn more about the Deathly Hallows
 
 ### Subscribe

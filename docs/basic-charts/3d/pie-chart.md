@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/3D/Pie_Chart"
 sidebar_position: 2
 ---
 # 3D Pie Chart
@@ -7,7 +8,7 @@ sidebar_position: 2
 
 This article explains how to create a 3D Pie chart in AnyChart.
 
-To learn more about 3D charts in general and how to customize them, see [3D Charts (Overview)](overview). You can also read the [Pie Chart](../pie-chart) article.
+To learn more about 3D charts in general and how to customize them, see [3D Charts (Overview)](Overview). You can also read the [Pie Chart](../Pie_Chart) article.
 
 ## Quick Start
 

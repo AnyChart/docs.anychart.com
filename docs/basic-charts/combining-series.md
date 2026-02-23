@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Combining_Series"
 sidebar_position: 0.55
 ---
 # Combining series
@@ -18,13 +19,13 @@ You don't have to do anything special to combine series in AnyChart: if series a
 Checking compatibility is very easy with [AnyChart API](https://api.anychart.com/):
 
 - {api:anychart.enums.CartesianSeriesType}anychart.enums.CartesianSeriesType{api} lists all series compatible within basic cartesian charts.
-- {api:anychart.enums.Cartesian3dSeriesType}anychart.enums.Cartesian3dSeriesType{api} lists all series compatible within pseudo [3D charts](3d/overview).
-- {api:anychart.enums.ScatterSeriesType}anychart.enums.ScatterSeriesType{api} lists all series compatible within [Scatter Plot](scatter-plot/overview).
-- {api:anychart.enums.PolarSeriesType}anychart.enums.PolarSeriesType{api} lists all series compatible within [Polar Plot](polar-plot/overview).
-- {api:anychart.enums.RadarSeriesType}anychart.enums.RadarSeriesType{api} lists all series compatible within [Radar Plot](radar-plot/overview).
-- {api:anychart.enums.SparklineSeriesType}anychart.enums.SparklineSeriesType{api} lists all series compatible within [Sparkline Chart](sparkline-chart).
-- {api:anychart.enums.MapSeriesType}anychart.enums.MapSeriesType{api} lists all series compatible within [Geo Maps](../maps/quick-start)
-- {api:anychart.enums.StockSeriesType}anychart.enums.StockSeriesType{api} lists all series compatible within [Stock Charts](../stock-charts/overview)
+- {api:anychart.enums.Cartesian3dSeriesType}anychart.enums.Cartesian3dSeriesType{api} lists all series compatible within pseudo [3D charts](3D/Overview).
+- {api:anychart.enums.ScatterSeriesType}anychart.enums.ScatterSeriesType{api} lists all series compatible within [Scatter Plot](Scatter_Plot/Overview).
+- {api:anychart.enums.PolarSeriesType}anychart.enums.PolarSeriesType{api} lists all series compatible within [Polar Plot](Polar_Plot/Overview).
+- {api:anychart.enums.RadarSeriesType}anychart.enums.RadarSeriesType{api} lists all series compatible within [Radar Plot](Radar_Plot/Overview).
+- {api:anychart.enums.SparklineSeriesType}anychart.enums.SparklineSeriesType{api} lists all series compatible within [Sparkline Chart](Sparkline_Chart).
+- {api:anychart.enums.MapSeriesType}anychart.enums.MapSeriesType{api} lists all series compatible within [Geo Maps](../Maps/Quick_Start)
+- {api:anychart.enums.StockSeriesType}anychart.enums.StockSeriesType{api} lists all series compatible within [Stock Charts](../Stock_Charts/Overview)
 
 ## Wrong argument order
 

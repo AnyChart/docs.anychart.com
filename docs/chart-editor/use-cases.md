@@ -1,13 +1,14 @@
 ---
+slug: "/Chart_Editor/Use_Cases"
 sidebar_position: 3
 ---
 # Use Cases
 
 ## Overview
 
-Chart Editor is an [AnyChart Extension](../quick-start/modules#extensions) that provides a UI allowing you to create and set up various chart types.
+Chart Editor is an [AnyChart Extension](../Quick_Start/Modules#extensions) that provides a UI allowing you to create and set up various chart types.
 
-To learn more, read the [Chart Editor](overview) and [Chart Editor Configuration API](configuration) articles.
+To learn more, read the [Chart Editor](Overview) and [Chart Editor Configuration API](Configuration) articles.
 
 In this article we showcase applications that make use of Chart Editor.
 
@@ -15,7 +16,7 @@ In this article we showcase applications that make use of Chart Editor.
 
 [Qlik Sense](https://www.qlik.com/us/products/qlik-sense) is a self-service data visualization and discovery application designed for all business users, whether individuals, groups, or organizations. With Qlik Sense one can analyze data and make data discoveries.
 
-AnyChart Qlick extension for Qlik Sense allows Qlik Sense users to discover their data in Qlik Sense, configure how to present it with the help of [Chart Editor](overview), and display it as AnyChart charts.
+AnyChart Qlick extension for Qlik Sense allows Qlik Sense users to discover their data in Qlik Sense, configure how to present it with the help of [Chart Editor](Overview), and display it as AnyChart charts.
 
 Learn more about AnyChart Extensions for Qlik and see them in action:
 

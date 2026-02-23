@@ -1,4 +1,5 @@
 ---
+slug: "/Working_with_Data/Data_From_CSV"
 sidebar_position: 8.5
 ---
 # Getting Data from CSV
@@ -9,7 +10,7 @@ AnyChart js charting library supports several ways of setting data. This article
 
 CSV is the best solution when you need to minimize the size of data input or when you are connecting to a data source that is already in CSV format. 
 
-For the information on other ways of setting data see [Data Sets](data-sets) and [Supported Data Formats](supported-data-formats) articles.
+For the information on other ways of setting data see [Data Sets](Data_Sets) and [Supported Data Formats](Supported_Data_Formats) articles.
 
 Almost all charts and data methods in AnyChart can get data in CSV format without any problems, like this:
 
@@ -80,5 +81,5 @@ See it live:
 
 ## Loading CSV Files
 
-You can also load CSV data from files using [Data Adapter](./data-adapter/overview) as described in [Data Adapter](./data-adapter/loading-csv-file).
+You can also load CSV data from files using [Data Adapter](./Data_Adapter/Overview) as described in [Data Adapter](./Data_Adapter/Loading_CSV_File).
 

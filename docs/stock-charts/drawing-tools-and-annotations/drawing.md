@@ -1,4 +1,5 @@
 ---
+slug: "/Stock_Charts/Drawing_Tools_and_Annotations/Drawing"
 sidebar_position: 2.2
 ---
 # Drawing
@@ -11,7 +12,7 @@ Please note: when working with annotations, you can use methods of either the pl
 
 ## Sample Application
 
-To make the integration process easier, there is a sample web application with open source, demonstrating how [AnyStock Stock Drawing Tools](overview) can be implemented.
+To make the integration process easier, there is a sample web application with open source, demonstrating how [AnyStock Stock Drawing Tools](Overview) can be implemented.
 
 You can see the application live at [https://www.anychart.com/solutions/drawing-tools/](https://www.anychart.com/solutions/drawing-tools/).
 
@@ -70,7 +71,7 @@ In this sample, annotations can be drawn only on the first (OHLC) plot:
 
 ## Forbidding Editing
 
-To forbid or allow editing an annotation, use the {api:anychart.core.annotations.Base#allowEdit}allowEdit(){api} method. You can find more information in this article: [General Settings](general-settings#forbidding-editing)
+To forbid or allow editing an annotation, use the {api:anychart.core.annotations.Base#allowEdit}allowEdit(){api} method. You can find more information in this article: [General Settings](General_Settings#forbidding-editing)
 
 ## Handling Events
 

@@ -1,4 +1,5 @@
 ---
+slug: "/Graphics/Stroke_Settings"
 sidebar_position: 8.5
 ---
 
@@ -6,7 +7,7 @@ sidebar_position: 8.5
 
 ## Overview
 
-Stroke settings define how a path (line), or a border of a shape is drawn. All [Shapes](shapes) and [Paths](paths) have a stroke method.
+Stroke settings define how a path (line), or a border of a shape is drawn. All [Shapes](Shapes) and [Paths](Paths) have a stroke method.
 
 ## Color
 
@@ -24,7 +25,7 @@ Stroke color can be set in several ways:
  }
 ```
 
-Stroke color is set similar to [fill](fill-settings). The setting supports {api:anychart.graphics.vector.Fill}fill{api} with:
+Stroke color is set similar to [fill](Fill_Settings). The setting supports {api:anychart.graphics.vector.Fill}fill{api} with:
 
 * {api:anychart.graphics.vector.SolidFill}Solid color{api},
 * {api:anychart.graphics.vector.LinearGradientFill}Linear gradient{api},

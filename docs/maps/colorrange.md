@@ -1,4 +1,5 @@
 ---
+slug: "/Maps/ColorRange"
 sidebar_position: 12
 ---
 # ColorRange
@@ -11,7 +12,7 @@ or like a number of colored boxes, each presenting a range of values.
 To create a colorrange, use the {api:anychart.charts.Map#colorRange}colorRange(){api} function. There are a lot of parameters might be adjusted, such as orientation 
 (to change it use the {api:anychart.core.axes.Linear#orientation}orientation(){api} function), size of the color box (use {api:anychart.core.ui.ColorRange#colorLineSize}colorLineSize(){api}) or alignment ({api:anychart.graphics.vector.Image#align}align(){api} in this case). You can find more about visual settings in the end of this article.
 
-However, first of all we need to adjust the map colors and its ColorScale, because the ColorRange type and appearance depend on those settings. Read the article about [ColorScale](scales) to know, how to set and adjust it according to your needs.
+However, first of all we need to adjust the map colors and its ColorScale, because the ColorRange type and appearance depend on those settings. Read the article about [ColorScale](Scales) to know, how to set and adjust it according to your needs.
 
 The first step of adjusting the colors is to set the series and data correctly. Let's make an example with a Choropleth Series Map. Look at the code below.
 

@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Stick_Chart"
 sidebar_position: 6
 ---
 # Stick Chart
@@ -10,34 +11,34 @@ Stick Charts look like Column Charts with no width. Sticks are good at demonstra
 This article explains how to create a basic Stick chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of Stick Chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#basic-cartesian">Basic Cartesian</a> / <a href="../Quick_Start/Modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Stick}anychart.core.cartesian.series.Stick{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
-<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">x, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../Working_with_Data/Overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td><a href="stacked/value/stick-chart">Stacked Stick</a>, <a href="stacked/percent/stick-chart">Percent Stacked Stick</a></td></tr>
-<tr><td>Vertical</td><td><a href="vertical/stick-chart">Vertical Stick</a></td></tr>
+<tr><td>Stacked</td><td><a href="Stacked/Value/Stick_Chart">Stacked Stick</a>, <a href="Stacked/Percent/Stick_Chart">Percent Stacked Stick</a></td></tr>
+<tr><td>Vertical</td><td><a href="Vertical/Stick_Chart">Vertical Stick</a></td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td><a href="error-chart/stick-chart">Stick Chart with Error Bars</a></td></tr>
+<tr><td>Error Bars</td><td><a href="Error_Chart/Stick_Chart">Stick Chart with Error Bars</a></td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
-<tr><td>Stock</td><td><a href="../stock-charts/series/stick">Stock Stick</a></td></tr>
+<tr><td>Stock</td><td><a href="../Stock_Charts/Series/Stick">Stock Stick</a></td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="column-chart">Column</a></td></tr>
-<tr><td></td><td><a href="line-chart">Line</a></td></tr>
-<tr><td></td><td><a href="hilo-chart">HiLo</a></td></tr>
+<tr><td></td><td><a href="Column_Chart">Column</a></td></tr>
+<tr><td></td><td><a href="Line_Chart">Line</a></td></tr>
+<tr><td></td><td><a href="HiLo_Chart">HiLo</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/stick-chart/">Chartopedia: Stick Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Stick chart requires adding the [Core](../quick-start/modules#core) and [Basic Cartesian](../quick-start/modules#basic-cartesian) modules:
+The Stick chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic-cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -47,17 +48,17 @@ The Stick chart requires adding the [Core](../quick-start/modules#core) and [Bas
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../quick-start/modules#base) module, which includes, among other things, the two modules mentioned above: 
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
-Stick Chart is a variation of a [Column](column-chart), so when a Stick Chart is created it is necessary to create a Column Chart first and set the series of a Stick type.
+Stick Chart is a variation of a [Column](Column_Chart), so when a Stick Chart is created it is necessary to create a Column Chart first and set the series of a Stick type.
 
 To create a Stick chart, use the {api:anychart#stick}anychart.stick(){api} chart constructor. 
 
@@ -86,13 +87,13 @@ var series = chart.stick(data);
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Stick chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
 ### Appearance
 
-The [appearance settings](../appearance-settings) of a Stick chart can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Stick#normal}normal(){api}, {api:anychart.core.cartesian.series.Stick#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Stick#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Stick chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Stick#normal}normal(){api}, {api:anychart.core.cartesian.series.Stick#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Stick#selected}selected(){api} methods.
 
 Combine them with the {api:anychart.core.StateSettings#stroke}stroke(){api} method. Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
@@ -147,31 +148,31 @@ var series = chart.stick(data);
 
 ### Point Size
 
-This chart type allows you to set the size of its points. Read more in the [Point Size](../common-settings/point-size) article.
+This chart type allows you to set the size of its points. Read more in the [Point Size](../Common_Settings/Point_Size) article.
 
 ### Labels
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 ### Tooltips
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../common-settings/text-formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 ### Stacked Stick
 
 Stacked and percent stacked charts are multiple-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
 
-In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts](stacked/overview).
+In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts](Stacked/Overview).
 
 To learn about the stacked versions of the Stick chart and its modifications, see:
 
-* [Stacked Stick](stacked/value/stick-chart)
-* [Percent Stacked Stick](stacked/percent/stick-chart)
+* [Stacked Stick](Stacked/Value/Stick_Chart)
+* [Percent Stacked Stick](Stacked/Percent/Stick_Chart)
 
 ### Vertical Stick
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](vertical/overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical/Overview).
 
 Here is information about creating Vertical Stick series:
 
-* [Vertical Stick](vertical/stick-chart)
+* [Vertical Stick](Vertical/Stick_Chart)

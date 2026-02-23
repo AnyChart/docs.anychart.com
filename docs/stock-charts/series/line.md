@@ -1,8 +1,11 @@
+---
+slug: "/Stock_Charts/Series/Line"
+---
 # AnyStock Line Series
 
 ## Overview
 
-Line Series is usually used to show some parameter changing in time or in dependency of some other changing parameter or categories, which values are used as values on X-axis. Read more about Line Series in the [Line Series tutorial](../../basic-charts/line-chart).
+Line Series is usually used to show some parameter changing in time or in dependency of some other changing parameter or categories, which values are used as values on X-axis. Read more about Line Series in the [Line Series tutorial](../../Basic_Charts/Line_Chart).
 
 ## AnyStock Line Series Adjustment
  
@@ -51,7 +54,7 @@ mapping = table.mapAs({x: 'x', value: 'value'});
 
 {sample}STOCK\_Line\_02{sample}
 
-Find more about setting and arranging data in Stocks in the [Stocks Data tutorial](../data).
+Find more about setting and arranging data in Stocks in the [Stocks Data tutorial](../Data).
 
 ### Multi series
 
@@ -80,11 +83,11 @@ series_rub.name("Rub to Dollar Rate");
 
 {sample}STOCK\_Line\_04{sample}
 
-Read more about plots in the [Plots tutorial](../chart-plots).
+Read more about plots in the [Plots tutorial](../Chart_Plots).
 
 ### Switching series type
 
-You can change the type of the series to another compatible type. See the [Series Type](series-type) and [series types table](supported-series#list-of-supported-series).
+You can change the type of the series to another compatible type. See the [Series Type](Series_Type) and [series types table](Supported_Series#list-of-supported-series).
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 

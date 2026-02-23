@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Vertical/Range_Area_Chart"
 sidebar_position: 2
 ---
 # Vertical Range Area Chart
@@ -7,7 +8,7 @@ sidebar_position: 2
 
 This article explains how to create a Vertical Range Area chart in AnyChart.
 
-To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](overview). You can also read the [Range Area Chart](../range-area-chart) article to learn about other available settings.
+To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](Overview). You can also read the [Range Area Chart](../Range_Area_Chart) article to learn about other available settings.
 
 ## Quick Start
 

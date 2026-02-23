@@ -1,9 +1,10 @@
 ---
+slug: "/Stock_Charts/Series/Series_Type"
 sidebar_position: 3
 ---
 # Switching the Series Type
 
-You can change the series type on the fly if the current type and the new one have the same or similar fields. See the [list of supported series](supported-series#list-of-supported-series) to find out what series types can be converted to each other.
+You can change the series type on the fly if the current type and the new one have the same or similar fields. See the [list of supported series](Supported_Series#list-of-supported-series) to find out what series types can be converted to each other.
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method of a series and set the series name as a string parameter. The name of the series type used as a parameter is identical to the method creating series of this type.
 

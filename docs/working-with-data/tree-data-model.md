@@ -1,4 +1,5 @@
 ---
+slug: "/Working_with_Data/Tree_Data_Model"
 sidebar_position: 5
 ---
 # Tree Data Model
@@ -9,10 +10,10 @@ The tree data model represents data as a hierarchical tree-like structure with d
 
 It is used in the following chart types:
 
-* [Gantt](../gantt-chart)
-* [Treemap](../basic-charts/treemap-chart)
-* [Sunburst](../basic-charts/sunburst-chart)
-* [Word Tree](../basic-charts/word-tree)
+* [Gantt](../Gantt_Chart)
+* [Treemap](../Basic_Charts/Treemap_Chart)
+* [Sunburst](../Basic_Charts/Sunburst_Chart)
+* [Word Tree](../Basic_Charts/Word_Tree)
 
 This article explains how to set tree-like data, access data items, and perform operations on data.
 
@@ -60,7 +61,7 @@ The following sample shows how to create different chart types with the same tre
 
 Tree data structures in Anychart are defined as instances of the {api:anychart.data.Tree}anychart.data.Tree{api} class, and data items are defined as instances of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
 
-To create a chart based on tree-like data, you should organize your data either [as a tree](#as-tree) or [as a table](#as-table). Also, you can use a [CSV string](#csv-string) (see also: [Data from CSV](data-from-csv)). Then the data is processed by the component, and an instance of {api:anychart.data.Tree}anychart.data.Tree{api} is created.
+To create a chart based on tree-like data, you should organize your data either [as a tree](#as-tree) or [as a table](#as-table). Also, you can use a [CSV string](#csv-string) (see also: [Data from CSV](Data_From_CSV)). Then the data is processed by the component, and an instance of {api:anychart.data.Tree}anychart.data.Tree{api} is created.
 
 **1. Creating Data Tree.** The first step is passing your data to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` or `"as-table"` as the second parameter:
 
@@ -86,7 +87,7 @@ You can as well skip the first step and pass your data to the **data()** method 
 
 **Note 1:** To learn how to rename the default fields of the tree data model (`children`, `parent`, `id`) or map custom fields, see the [Mapping](#mapping) section.
 
-**Note 2:** The `id` field is always required by [Gantt Charts](../gantt-chart).
+**Note 2:** The `id` field is always required by [Gantt Charts](../Gantt_Chart).
 
 ### As Tree
 
@@ -154,7 +155,7 @@ var chart = anychart.treeMap(treeData);
 
 ### CSV String
 
-To set data as a **CSV string** (see also: [Data from CSV](data-from-csv)), call the {api:anychart.data#tree}anychart.data.tree(){api} method with the following parameters:
+To set data as a **CSV string** (see also: [Data from CSV](Data_From_CSV)), call the {api:anychart.data#tree}anychart.data.tree(){api} method with the following parameters:
 
 * a CSV string
 * an object with CSV mapping
@@ -627,9 +628,9 @@ Here is the full list of events that work with the tree data model:
 <tr><td>treeItemRemove</td><td>A data item has been removed.</td></tr>
 </table>
 
-You can [listen to events](../common-settings/event-listeners) as well as stop or start dispatching them by calling the {api:anychart.data.Tree#dispatchEvents}dispatchEvents(){api} method with `false` or `true` as a parameter.
+You can [listen to events](../Common_Settings/Event_Listeners) as well as stop or start dispatching them by calling the {api:anychart.data.Tree#dispatchEvents}dispatchEvents(){api} method with `false` or `true` as a parameter.
 
-In the sample below, there is a Gantt chart with the [Live Edit](../gantt-chart/live-edit) mode enabled. When you can drag and drop rows, `"treeItemMove"` is triggered. When you edit [elements](../gantt-chart/elements) and the [data grid](../gantt-chart/data-grid) text, `"treeItemUpdate"` fires. To learn more, see [Live Edit: Default Behavior](../gantt-chart/live-edit#default-behavior).
+In the sample below, there is a Gantt chart with the [Live Edit](../Gantt_Chart/Live_Edit) mode enabled. When you can drag and drop rows, `"treeItemMove"` is triggered. When you edit [elements](../Gantt_Chart/Elements) and the [data grid](../Gantt_Chart/Data_Grid) text, `"treeItemUpdate"` fires. To learn more, see [Live Edit: Default Behavior](../Gantt_Chart/Live_Edit#default-behavior).
 
 Also, there is a custom button for [adding items](#adding), which triggers `"treeItemCreate"`.
 

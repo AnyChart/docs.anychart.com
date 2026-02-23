@@ -1,9 +1,10 @@
 ---
+slug: "/Chart_Editor/Configuration"
 sidebar_position: 2
 ---
 # Configuration API
 
-All methods and classes [AnyChart Chart Editor](overview) works with can be found in the {api:anychart.editor}anychart.editor{api} namespace.
+All methods and classes [AnyChart Chart Editor](Overview) works with can be found in the {api:anychart.editor}anychart.editor{api} namespace.
 
 ## Create
 

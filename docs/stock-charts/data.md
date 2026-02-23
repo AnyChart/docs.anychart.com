@@ -1,4 +1,5 @@
 ---
+slug: "/Stock_Charts/Data"
 sidebar_position: 3
 ---
 
@@ -6,7 +7,7 @@ sidebar_position: 3
 
 ## Overview
 
-AnyStock Charts can process table-formatted data. The most appropriate way of doing this is using {api:anychart.data#table}table(){api} method. You can find more about table data model in [AnyChart Table Data Model](../working-with-data/table-data-model) article.
+AnyStock Charts can process table-formatted data. The most appropriate way of doing this is using {api:anychart.data#table}table(){api} method. You can find more about table data model in [AnyChart Table Data Model](../Working_with_Data/Table_Data_Model) article.
 
 First of all, we need to create a table for our data. It looks like this:
 
@@ -79,7 +80,7 @@ var mapping = table.mapAs();
 
 This object now will be responsible for the data mapping. Here we should add fields using {api:anychart.data.TableMapping#addField}addField(){api} method. Each field has to get at least two parameters: the name of the field to add and the index of the column where the field should get values from. These will map the data correctly.
 
-The third parameter is a [grouping/approximation mode](data-grouping): when you've got too many data points and they are grouped to be shown on a small plot, the grouping type is chosen according to the field name (so, `"first"` will be for `"open"`, `"last"` for close, `"average"` for `"value"`, etc.). If you want to change it, add the aggregation type you want to use as the third parameter to the {api:anychart.data.TableMapping#addField}addField(){api} method.
+The third parameter is a [grouping/approximation mode](Data_Grouping): when you've got too many data points and they are grouped to be shown on a small plot, the grouping type is chosen according to the field name (so, `"first"` will be for `"open"`, `"last"` for close, `"average"` for `"value"`, etc.). If you want to change it, add the aggregation type you want to use as the third parameter to the {api:anychart.data.TableMapping#addField}addField(){api} method.
 
 That's how it should look like:
 
@@ -103,7 +104,7 @@ In case of defining the data as array of objects, we need to set the field names
 var mapping = table.mapAs({'open':'open', 'high': 'high', 'low': 'low', 'close': 'close'});
 ```
 
-That's how we map the data for AnyStock. For more information see the [Using Table Data Model](../working-with-data/table-data-model) article.
+That's how we map the data for AnyStock. For more information see the [Using Table Data Model](../Working_with_Data/Table_Data_Model) article.
 
 ## Remove
 

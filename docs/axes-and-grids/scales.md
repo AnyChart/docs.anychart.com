@@ -1,11 +1,12 @@
 ---
+slug: "/Axes_and_Grids/Scales"
 sidebar_position: 5
 ---
 # Scales
 
 ## Overview
 
-Scales allow you to control such features as minimum and maximum scale values, scale inversion, intervals, scale type and so on for a single axis. To create additional axes - please read [Additional axis](additional-axes) first. To adjust axes display see: [Axis Basics tutorial](axis-basics).
+Scales allow you to control such features as minimum and maximum scale values, scale inversion, intervals, scale type and so on for a single axis. To create additional axes - please read [Additional axis](Additional_Axes) first. To adjust axes display see: [Axis Basics tutorial](Axis_Basics).
   
 In this section main scales options are explained.
   
@@ -22,7 +23,7 @@ var newScale = anychart.scales.ordinal();
 chart.yScale(newScale);
 ```
 
-Note: working with extra axes is explained in details in [Additional Axes Tutorial](additional-axes) article.
+Note: working with extra axes is explained in details in [Additional Axes Tutorial](Additional_Axes) article.
 
 ### Linear
 
@@ -68,7 +69,7 @@ chart.xScale().mode('continuous');
 
 ### Date Time
 
-A dateTime scale is a scale of measurement that is based on the **UTC Date** format, but accepts variety of data formats. Presentation of data on a dateTime scale can be helpful for displaying time lines and time intervals. More information about data formats and usage is in [Date/Time tutorial](date-time-axes).
+A dateTime scale is a scale of measurement that is based on the **UTC Date** format, but accepts variety of data formats. Presentation of data on a dateTime scale can be helpful for displaying time lines and time intervals. More information about data formats and usage is in [Date/Time tutorial](Date_Time_Axes).
 
 ```
 chart.yScale(anychart.scales.dateTime());
@@ -78,7 +79,7 @@ chart.yScale(anychart.scales.dateTime());
 
 ## Stack Mode
 
-Scales control series stacking. Full description of stacking options can be found in [Stacked Charts](../basic-charts/stacked/overview).
+Scales control series stacking. Full description of stacking options can be found in [Stacked Charts](../Basic_Charts/Stacked/Overview).
 
 To change scale mode you need to use {api:anychart.scales.Linear#stackMode}stackMode(){api} method. Possible values come from {api:anychart.enums.ScaleStackMode}anychart.enums.ScaleStackMode{api}:
 
@@ -260,7 +261,7 @@ Scale calculates values and in many cases it is very useful to adjust settings o
 Sometimes you may encounter situations when you need to sync minimums and/or maximums of several scales and you don't want to set exact values [minimum and maximum](#minimum-and-maximum). In such cases you need to use several special methods: {api:anychart.charts.Cartesian#getYScales}getYScales{api} and {api:anychart.charts.Cartesian#getYScales}getXScales{api} - the allow you to get a collection of all scales from the chart, and the
 {api:anychart.core.Chart#getStat}getStat(){api} method that can obtain maximums and minimums of all scales.
 
-Let's see it in a sample: say you have created a [value stacked column chart with two stacked clusters](../basic-charts/stacked/overview#clustered) and you need scales to be in sync, then you need to do the following:
+Let's see it in a sample: say you have created a [value stacked column chart with two stacked clusters](../Basic_Charts/Stacked/Overview#clustered) and you need scales to be in sync, then you need to do the following:
 
 ```
 // sync minimums and maximums of the scales

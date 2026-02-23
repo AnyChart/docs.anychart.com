@@ -1,4 +1,5 @@
 ---
+slug: "/Stock_Charts/Event_Markers/Events"
 sidebar_position: 5
 ---
 
@@ -6,7 +7,7 @@ sidebar_position: 5
 
 ## Overview
 
-This section explains how handling [AnyChart Events](../../common-settings/event-listeners) helps to embed event markers into your application.
+This section explains how handling [AnyChart Events](../../Common_Settings/Event_Listeners) helps to embed event markers into your application.
 
 ## Events
 
@@ -59,4 +60,4 @@ In this sample, events are used to create an interactive list showing additional
 
 ## HTML Tooltips
 
-You can also use events to add custom HTML tooltips to your chart - see the [Tooltips](tooltips) article.
+You can also use events to add custom HTML tooltips to your chart - see the [Tooltips](Tooltips) article.

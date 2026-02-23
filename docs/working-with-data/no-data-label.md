@@ -1,4 +1,5 @@
 ---
+slug: "/Working_with_Data/No_Data_Label"
 sidebar_position: 10
 ---
 # No Data Label
@@ -19,7 +20,7 @@ chart.noData().label().enabled(true);
 
 ## Appearance
 
-{api:anychart.core.NoDataSettings}anychart.core.NoDataSettings{api} object had a label which is an instance of {api:anychart.core.ui.Label}anychart.core.ui.Label{api} class. This label can be tuned as any other label in AnyChart (like [Chart Labels](../common-settings/chart-labels)).
+{api:anychart.core.NoDataSettings}anychart.core.NoDataSettings{api} object had a label which is an instance of {api:anychart.core.ui.Label}anychart.core.ui.Label{api} class. This label can be tuned as any other label in AnyChart (like [Chart Labels](../Common_Settings/Chart_Labels)).
 
 ```
 noDataLabel = chart.noData().label();
@@ -34,7 +35,7 @@ noDataLabel.padding(40);
 
 ## Events
 
-Events in general are described in [Event Listeners](../common-settings/event-listeners) article. Particular events applicable to "No data" feature are described below:
+Events in general are described in [Event Listeners](../Common_Settings/Event_Listeners) article. Particular events applicable to "No data" feature are described below:
 
 ### Data Change
 

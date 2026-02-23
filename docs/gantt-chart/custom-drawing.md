@@ -1,26 +1,27 @@
 ---
+slug: "/Gantt_Chart/Custom_Drawing"
 sidebar_position: 12
 ---
 # Custom Drawing
 
 ## Overview
 
-The GraphicsJS library allows replacing the default shapes of timeline [elements](elements) with custom drawings.
+The GraphicsJS library allows replacing the default shapes of timeline [elements](Elements) with custom drawings.
 
 To learn more, see:
 
-* [Graphics](../graphics) - GraphicsJS documentation
-* [Basic Charts: Custom Drawing](../basic-charts/custom-drawing) - basic samples
+* [Graphics](../Graphics) - GraphicsJS documentation
+* [Basic Charts: Custom Drawing](../Basic_Charts/Custom_Drawing) - basic samples
 * [AnyGantt Gallery: Custom Drawing](https://www.anychart.com/products/anygantt/gallery/Gantt_General_Features/Custom_Drawing.php) - an advanced sample
 
 ## Project Chart
 
-This section explains how to modify the shape of elements on a [Project Gantt Chart](project-chart).
+This section explains how to modify the shape of elements on a [Project Gantt Chart](Project_Chart).
 
 You can access a particular element type or all elements at once, as shown in the following articles:
 
-* [Elements: Project Chart](elements/project-chart)
-* [Elements: All Elements](elements/all-elements)
+* [Elements: Project Chart](Elements/Project_Chart)
+* [Elements: All Elements](Elements/All_Elements)
 
 Then call the **rendering()** method - for example, the {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api} method of tasks.
 
@@ -82,9 +83,9 @@ baselines.rendering().drawer(drawingFunction);
 
 ## Resource Chart
 
-The [Resource Gantt Chart](resource-chart) supports only one element type - the period. This section explains how to modify its shape.
+The [Resource Gantt Chart](Resource_Chart) supports only one element type - the period. This section explains how to modify its shape.
 
-The first step is accessing periods - see the [Elements: Resource Chart](elements/resource-chart) article to learn how to do it.
+The first step is accessing periods - see the [Elements: Resource Chart](Elements/Resource_Chart) article to learn how to do it.
 
 Then call the {api:anychart.core.gantt.elements.PeriodsElement#rendering}rendering(){api} method of periods.
 

@@ -1,4 +1,5 @@
 ---
+slug: "/Stock_Charts/Event_Markers/Overview"
 sidebar_position: 1
 ---
 
@@ -18,9 +19,9 @@ Here is a basic sample of a chart with event markers:
 
 This section explains how to adjust the basic settings of event markers, configure tooltips, and handle events to embed event markers into your application. See the following articles:
 
-* [Event Markers Basics](basics)
-* [Tooltips](tooltips) 
-* [Events](events)
+* [Event Markers Basics](Basics)
+* [Tooltips](Tooltips) 
+* [Events](Events)
 
 Also, we highly recommend you to study a special section of our Chart Gallery demonstrating the features of event markers:
 

@@ -1,4 +1,5 @@
 ---
+slug: "/Stock_Charts/Drawing_Tools_and_Annotations/Serializing_Deserializing"
 sidebar_position: 2.3
 ---
 # Serializing and Deserializing
@@ -15,7 +16,7 @@ To create a list of annotations in JSON format, use the {api:anychart.core.annot
 
 To load the list of annotations, call the {api:anychart.core.annotations.PlotController#fromJson}fromJson(){api} method.
 
-In the following sample, these two methods are used to serialize annotations drawn (as well as [hardcoded](general-settings#hardcoding)) on the first plot and then deserialize them to the second plot:
+In the following sample, these two methods are used to serialize annotations drawn (as well as [hardcoded](General_Settings#hardcoding)) on the first plot and then deserialize them to the second plot:
 
 ```
 // serialize annotations from the first plot
@@ -33,7 +34,7 @@ To create a list of annotations in XML format, use the {api:anychart.core.annota
 
 To load the list of annotations, call the {api:anychart.core.annotations.PlotController#fromXml}fromXml(){api} method.
 
-In the sample below, these two methods are used to serialize annotations drawn (as well as [hardcoded](general-settings#hardcoding)) on the first plot and then deserialize them to the second plot:
+In the sample below, these two methods are used to serialize annotations drawn (as well as [hardcoded](General_Settings#hardcoding)) on the first plot and then deserialize them to the second plot:
 
 ```
 // serialize annotations from the first plot

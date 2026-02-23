@@ -1,11 +1,12 @@
 ---
+slug: "/Working_with_Data/Data_Adapter/Loading_XML_File"
 sidebar_position: 4
 ---
 # Loading XML File
 
 ## Overview
 
-Ability to [load XML files](#loading-file-with-loadxmlfile-method) and [deserialize directly from XML files](#deserializing-from-xml-file) are the features [Data Adapter](overview) provides.
+Ability to [load XML files](#loading-file-with-loadxmlfile-method) and [deserialize directly from XML files](#deserializing-from-xml-file) are the features [Data Adapter](Overview) provides.
 
 To work with the features Data Adapter provides you need to plug it in along with AnyChart Library:
 
@@ -14,11 +15,11 @@ To work with the features Data Adapter provides you need to plug it in along wit
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-data-adapter.min.js"></script>
 ```
 
-You can load [Data from XML](../data-from-xml) into AnyChart without the help of Data Adapter but **if you want to load a file** you can do it using the data adapter and the {api:anychart.data#loadXmlFile}loadXmlFile(){api} and create charts from files with {api:anychart#fromXmlFile}fromXmlFile(){api} method.
+You can load [Data from XML](../Data_From_XML) into AnyChart without the help of Data Adapter but **if you want to load a file** you can do it using the data adapter and the {api:anychart.data#loadXmlFile}loadXmlFile(){api} and create charts from files with {api:anychart#fromXmlFile}fromXmlFile(){api} method.
 
 ## Loading File with loadXmlFile method
 
-Using {api:anychart.data#loadXmlFile}loadXmlFile(){api} method is as easy as this, you can put data in [AnyChart XML data format](../data-from-xml) into XML file:
+Using {api:anychart.data#loadXmlFile}loadXmlFile(){api} method is as easy as this, you can put data in [AnyChart XML data format](../Data_From_XML) into XML file:
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -61,7 +62,7 @@ You can use this method to load anything else too.
 
 ## Deserializing from XML File
 
-With {api:anychart#fromXmlFile}fromXmlFile(){api} method you can deserialize a chart directly from a file with chart settings and data in [AnyChart XML format](../data-from-xml):
+With {api:anychart#fromXmlFile}fromXmlFile(){api} method you can deserialize a chart directly from a file with chart settings and data in [AnyChart XML format](../Data_From_XML):
 
 ```
 // Create a chart from XML file

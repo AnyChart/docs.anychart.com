@@ -1,4 +1,5 @@
 ---
+slug: "/Stock_Charts/Technical_Indicators/Custom_Indicators"
 sidebar_position: 4
 ---
 
@@ -6,7 +7,7 @@ sidebar_position: 4
 
 ## Overview
 
-A technical indicator is a type of analysis chart that indicates market direction. AnyChart JavaScript Stock Charting Library supports automatic adding of [several types of technical indicators](supported-technical-indicators), but it also allows you to create your own.
+A technical indicator is a type of analysis chart that indicates market direction. AnyChart JavaScript Stock Charting Library supports automatic adding of [several types of technical indicators](Supported_Technical_Indicators), but it also allows you to create your own.
 
 ## Creating a custom technical indicator
 
@@ -64,7 +65,7 @@ computer.setCalculationFunction(function(row) {
 });
 ```
 
-When computer is set up - the indicator is already calculated, but we need to show it somehow: for this we simply map a column and create a series, just as we do with [all other series](../data), set the name, stroke and any other series properties:
+When computer is set up - the indicator is already calculated, but we need to show it somehow: for this we simply map a column and create a series, just as we do with [all other series](../Data), set the name, stroke and any other series properties:
 
 ```
 // map computed column 'myColumn' as value

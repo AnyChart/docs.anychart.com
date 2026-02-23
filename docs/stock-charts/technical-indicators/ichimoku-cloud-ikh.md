@@ -1,3 +1,6 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Ichimoku_Cloud_(IKH)"
+---
 # Ichimoku Cloud (IKH)
 ## Overview
 
@@ -5,7 +8,7 @@ The Ichimoku Cloud (IKH) is composed of five lines or calculations, two of which
 
 The Ichimoku cloud was developed by Goichi Hosoda, a Japanese journalist, and published in the late 1960s. It provides more data points than the standard candlestick chart. While it seems complicated at first glance, those familiar with how to read the charts often find it easy to understand with well-defined trading signals.
 
-Mathematical description of the indicator: [Ichimoku Cloud Mathematical Description](mathematical-description#ichimoku-cloud).
+Mathematical description of the indicator: [Ichimoku Cloud Mathematical Description](Mathematical_Description#ichimoku-cloud).
 
 ## Adding Indicator
 

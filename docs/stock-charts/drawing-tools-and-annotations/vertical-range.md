@@ -1,4 +1,5 @@
 ---
+slug: "/Stock_Charts/Drawing_Tools_and_Annotations/Vertical_Range"
 sidebar_position: 3
 ---
 # Vertical Range
@@ -9,9 +10,9 @@ The Vertical Range annotation allows you to add a vertical channel to a chart.
 
 This article explains how to add a Vertical Range/Channel and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 
-* [Drawing Tools and Annotations: General Settings](general-settings)
-* [Drawing Tools and Annotations: Drawing](drawing)
-* [Drawing Tools and Annotations: Serializing and Deserializing](serializing-deserializing)
+* [Drawing Tools and Annotations: General Settings](General_Settings)
+* [Drawing Tools and Annotations: Drawing](Drawing)
+* [Drawing Tools and Annotations: Serializing and Deserializing](Serializing_Deserializing)
 
 ## Basic Settings
 
@@ -42,7 +43,7 @@ This is how it looks like:
 
 ## Appearance
 
-The [appearance settings](../../../appearance-settings) of a Vertical Channel annotation can be configured in three [states](../../../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the following methods:
+The [appearance settings](../../../Appearance_Settings) of a Vertical Channel annotation can be configured in three [states](../../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the following methods:
 
 * {api:anychart.core.annotations.Base#normal}normal(){api} 
 * {api:anychart.core.annotations.Base#selected}selected(){api} 

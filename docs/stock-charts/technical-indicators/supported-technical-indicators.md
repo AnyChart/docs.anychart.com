@@ -1,4 +1,5 @@
 ---
+slug: "/Stock_Charts/Technical_Indicators/Supported_Technical_Indicators"
 sidebar_position: 2
 ---
 # Supported Technical Indicators
@@ -7,7 +8,7 @@ sidebar_position: 2
 
 This is the full list of technical indicators AnyStock JavaScript Stock Chart provides out of the box. We are constantly working on improvements and if you are interested how this list will be expanded - see our [Roadmap](https://www.anychart.com/products/anystock/roadmap/), if indicators you are interested in are not there - please [contact us](https://www.anychart.com/support/) and we will try to figure something out.
 
-You can also create any kind of custom indicator yourself using our [Custom Indicator](custom-indicators) option.
+You can also create any kind of custom indicator yourself using our [Custom Indicator](Custom_Indicators) option.
 
 ## List
 
@@ -17,115 +18,115 @@ You can also create any kind of custom indicator yourself using our [Custom Indi
 			<th>Technical Indicator</th>
 		</tr>
 		<tr>
-			<td><a href="accumulation-distribution-line-adl">Accumulation Distribution Line</a>)</td>
+			<td><a href="Accumulation_Distribution_Line_(ADL)">Accumulation Distribution Line</a>)</td>
 		</tr>
 		<tr>
-			<td><a href="adaptive-moving-average-ama">Adaptive Moving Average</a>)</td>
+			<td><a href="Adaptive_Moving_Average_(AMA)">Adaptive Moving Average</a>)</td>
 		</tr>
 		<tr>
-			<td><a href="aroon">Aroon</a></td>
+			<td><a href="Aroon">Aroon</a></td>
 		</tr>
 		<tr>
-			<td><a href="average-true-range-atr">Average True Range (ATR)</a>)
+			<td><a href="Average_True_Range_(ATR)">Average True Range (ATR)</a>)
 		</tr>
 		<tr>
-			<td><a href="bollinger-bands">Bollinger Bands</a></td>
+			<td><a href="Bollinger_Bands">Bollinger Bands</a></td>
 		</tr>
 		<tr>
-			<td><a href="bollinger-bands-b">Bollinger Bands %B</a></td>
+			<td><a href="Bollinger_Bands_%25B">Bollinger Bands %B</a></td>
 		</tr>
 		<tr>
-			<td><a href="bollinger-bands-width">Bollinger Bands Width</a></td>
+			<td><a href="Bollinger_Bands_Width">Bollinger Bands Width</a></td>
 		</tr>
 		<tr>
-			<td><a href="chaikin-money-flow-cmf">Chaikin Money Flow</a>)</td>
+			<td><a href="Chaikin_Money_Flow_(CMF)">Chaikin Money Flow</a>)</td>
 		</tr>
 		<tr>
-			<td><a href="chaikin-oscillator-cho">Chaikin Oscillator</a>)</td>
+			<td><a href="Chaikin_Oscillator_(CHO)">Chaikin Oscillator</a>)</td>
 		</tr>
 		<tr>
-			<td><a href="commodity-channel-index-cci">Commodity Channel Index</a>)</td>
+			<td><a href="Commodity_Channel_Index_(CCI)">Commodity Channel Index</a>)</td>
 		</tr>
 		<tr>
-			<td><a href="directional-movement-index-dmi">Directional Movement Indicator</a>)</td>
+			<td><a href="Directional_Movement_Index_(DMI)">Directional Movement Indicator</a>)</td>
 		</tr>
 		<tr>
-			<td><a href="envelope-env">Envelope (ENV)</a>)</td>
+			<td><a href="Envelope_(ENV)">Envelope (ENV)</a>)</td>
 		</tr>
 		<tr>
-			<td><a href="exponential-moving-average-ema">Exponential Moving Average (EMA)</a>)</td>
+			<td><a href="Exponential_Moving_Average_(EMA)">Exponential Moving Average (EMA)</a>)</td>
 		</tr>
 		<tr>
-			<td><a href="heikin-ashi">Heikin-Ashi</a></td>
+			<td><a href="Heikin-Ashi">Heikin-Ashi</a></td>
 		</tr>
 		<tr>
-			<td><a href="ichimoku-cloud-ikh">Ichimoku Cloud (IKH)</a>)</td>
+			<td><a href="Ichimoku_Cloud_(IKH)">Ichimoku Cloud (IKH)</a>)</td>
 		</tr>		
 		<tr>
-			<td><a href="kdj">KDJ</a></td>
+			<td><a href="KDJ">KDJ</a></td>
 		</tr>
 		<tr>
-			<td><a href="keltner-channels">Keltner Channels</a></td>
+			<td><a href="Keltner_Channels">Keltner Channels</a></td>
 		</tr>
 		<tr>
-			<td><a href="modified-moving-average-mma">Modified (Smoothed) Moving Average</a>)</td>
+			<td><a href="Modified_Moving_Average_(MMA)">Modified (Smoothed) Moving Average</a>)</td>
 		</tr>
 		<tr>
-			<td><a href="momentum">Momentum</a></td>
+			<td><a href="Momentum">Momentum</a></td>
 		</tr>
 		<tr>
-			<td><a href="money-flow-index-mfi">Money Flow Index (MFI)</a>)</td>
+			<td><a href="Money_Flow_Index_(MFI)">Money Flow Index (MFI)</a>)</td>
 		</tr>
 		<tr>
-			<td><a href="moving-average-convergence-divergence-macd">Moving Average Convergence Divergence (MACD)</a>)</td>
+			<td><a href="Moving_Average_Convergence_Divergence_(MACD)">Moving Average Convergence Divergence (MACD)</a>)</td>
 		</tr>		
 		<tr>
-			<td><a href="on-balance-volume-obv">On Balance Volume (OBV)</a>)</td>
+			<td><a href="On_Balance_Volume_(OBV)">On Balance Volume (OBV)</a>)</td>
 		</tr>
 		<tr>
-			<td><a href="parabolic-sar-psar">Parabolic SAR (PSAR)</a>)</td>
+			<td><a href="Parabolic_SAR_(PSAR)">Parabolic SAR (PSAR)</a>)</td>
 		</tr>
 		<tr>
-			<td><a href="price-channels">Price Channels</a></td>
+			<td><a href="Price_Channels">Price Channels</a></td>
 		</tr>
 		<tr>
-			<td><a href="price-oscillator-ppo">Price Oscillator (PPO)</a>)</td>
+			<td><a href="Price_Oscillator_(PPO)">Price Oscillator (PPO)</a>)</td>
 		</tr>		
 		<tr>
-			<td><a href="psychological-line-psy">Psychological Line (PSY)</a>)</td>
+			<td><a href="Psychological_Line_(PSY)">Psychological Line (PSY)</a>)</td>
 		</tr>
 		<tr>
-			<td><a href="rank-correlation-index-rci">Rank Correlation Index (RCI)</a>)</td>
+			<td><a href="Rank_Correlation_Index_(RCI)">Rank Correlation Index (RCI)</a>)</td>
 		</tr>		
 		<tr>
-			<td><a href="rate-of-change-roc">Rate of Change (ROC)</a>)</td>
+			<td><a href="Rate_of_Change_(ROC)">Rate of Change (ROC)</a>)</td>
 		</tr>
 		<tr>
-			<td><a href="ratiocator-rat">Ratiocator (RAT)</a>)</td>
+			<td><a href="Ratiocator_(RAT)">Ratiocator (RAT)</a>)</td>
 		</tr>		
 		<tr>
-			<td><a href="relative-strength-index-rsi">Relative Strength Index (RSI)</a>)</td>
+			<td><a href="Relative_Strength_Index_(RSI)">Relative Strength Index (RSI)</a>)</td>
 		</tr>
 		<tr>
-			<td><a href="modified-moving-average-mma">Running Moving Average (RMA)</a>)</td>
+			<td><a href="Modified_Moving_Average_(MMA)">Running Moving Average (RMA)</a>)</td>
 		</tr>		
 		<tr>
-			<td><a href="simple-moving-average-sma">Simple Moving Average (SMA)</a>)</td>
+			<td><a href="Simple_Moving_Average_(SMA)">Simple Moving Average (SMA)</a>)</td>
 		</tr>	
 		<tr>
-			<td><a href="modified-moving-average-mma">SMoothed Moving Average (SMMA)</a>)</td>
+			<td><a href="Modified_Moving_Average_(MMA)">SMoothed Moving Average (SMMA)</a>)</td>
 		</tr>
 		<tr>
-			<td><a href="stochastic-oscillator">Stochastic Oscillator</a></td>
+			<td><a href="Stochastic_Oscillator">Stochastic Oscillator</a></td>
 		</tr>
 		<tr>
-			<td><a href="triple-exponential-moving-average-trix">Triple Exponential Moving Average (TRIX)</a>)</td>
+			<td><a href="Triple_Exponential_Moving_Average_(TRIX)">Triple Exponential Moving Average (TRIX)</a>)</td>
 		</tr>
 		<tr>
-			<td><a href="volume-moving-average">Volume + Moving Average</a></td>
+			<td><a href="Volume_%2B_Moving_Average">Volume + Moving Average</a></td>
 		</tr>
 		<tr>
-			<td><a href="williams-r">Williams %R</a></td>
+			<td><a href="Williams_%25R">Williams %R</a></td>
 		</tr>
 	</tbody>
 </table>

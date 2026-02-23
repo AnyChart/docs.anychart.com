@@ -1,4 +1,5 @@
 ---
+slug: "/Stock_Charts/Price_Indicator"
 sidebar_position: 6.6
 ---
 
@@ -6,7 +7,7 @@ sidebar_position: 6.6
 
 ## Overview
 
-Price Indicator is an addition to [Crosshair](crosshair) that allows to create a label on any axis to show price from a certain date, it may last price, current price or any other value.
+Price Indicator is an addition to [Crosshair](Crosshair) that allows to create a label on any axis to show price from a certain date, it may last price, current price or any other value.
 
 ## Enabling
 

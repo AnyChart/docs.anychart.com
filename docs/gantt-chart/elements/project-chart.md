@@ -1,4 +1,5 @@
 ---
+slug: "/Gantt_Chart/Elements/Project_Chart"
 sidebar_position: 2
 ---
 # Project Chart
@@ -9,7 +10,7 @@ A **task** is the main element of the Project chart. It shows the **actual durat
 
 The sections below explain how to adjust the three task types available: [regular tasks](#regular-tasks), [parent tasks](#parent-tasks), and [milestones](#milestones). In the last section, there is a [sample](#sample) showing how their settings look like.
 
-To learn more about the difference between the types and data fields used to set them, see [Project Chart: Tasks](../project-chart#tasks-actual)).
+To learn more about the difference between the types and data fields used to set them, see [Project Chart: Tasks](../Project_Chart#tasks-actual)).
 
 ### Regular Tasks
 
@@ -20,10 +21,10 @@ To configure regular tasks, combine {api:anychart.charts.Gantt#getTimeline}getTi
 
 * {api:anychart.core.gantt.elements.TasksElement#fill}fill(){api}, {api:anychart.core.gantt.elements.TasksElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.TasksElement#height}height(){api} to set the fill, stroke, and height
 * {api:anychart.core.gantt.elements.TasksElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.TasksElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.TasksElement#position}position(){api} to set the anchor, offset, and position
-* {api:anychart.core.gantt.elements.TasksElement#labels}labels(){api} to access [labels](labels)
-* {api:anychart.core.gantt.elements.TasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.TasksElement#selected}selected(){api} to access [states](../../common-settings/interactivity/states)
-* {api:anychart.core.gantt.elements.TasksElement#edit}edit(){api} to access the [Live Edit](../live-edit) settings
-* {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api} to access the [rendering](../custom-drawing) settings
+* {api:anychart.core.gantt.elements.TasksElement#labels}labels(){api} to access [labels](Labels)
+* {api:anychart.core.gantt.elements.TasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.TasksElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.TasksElement#edit}edit(){api} to access the [Live Edit](../Live_Edit) settings
+* {api:anychart.core.gantt.elements.TasksElement#rendering}rendering(){api} to access the [rendering](../Custom_Drawing) settings
 * {api:anychart.core.gantt.elements.TasksElement#progress}progress(){api} to access [progress bars](#progress-bars)
 
 ```
@@ -41,10 +42,10 @@ To configure parent tasks, combine {api:anychart.charts.Gantt#getTimeline}getTim
 
 * {api:anychart.core.gantt.elements.GroupingTasksElement#fill}fill(){api}, {api:anychart.core.gantt.elements.GroupingTasksElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.GroupingTasksElement#height}height(){api} to set the fill, stroke, and height
 * {api:anychart.core.gantt.elements.GroupingTasksElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.GroupingTasksElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.GroupingTasksElement#position}position(){api} to set the anchor, offset, and position
-* {api:anychart.core.gantt.elements.GroupingTasksElement#labels}labels(){api} to access [labels](labels)
-* {api:anychart.core.gantt.elements.GroupingTasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.GroupingTasksElement#selected}selected(){api} to access [states](../../common-settings/interactivity/states)
-* {api:anychart.core.gantt.elements.GroupingTasksElement#edit}edit(){api} to access the [Live Edit](../live-edit) settings
-* {api:anychart.core.gantt.elements.GroupingTasksElement#rendering}rendering(){api} to access the [rendering](../custom-drawing) settings
+* {api:anychart.core.gantt.elements.GroupingTasksElement#labels}labels(){api} to access [labels](Labels)
+* {api:anychart.core.gantt.elements.GroupingTasksElement#normal}normal(){api} and {api:anychart.core.gantt.elements.GroupingTasksElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.GroupingTasksElement#edit}edit(){api} to access the [Live Edit](../Live_Edit) settings
+* {api:anychart.core.gantt.elements.GroupingTasksElement#rendering}rendering(){api} to access the [rendering](../Custom_Drawing) settings
 * {api:anychart.core.gantt.elements.GroupingTasksElement#progress}progress(){api} to access [progress bars](#progress-bars)
 
 
@@ -55,7 +56,7 @@ chart.getTimeline().groupingTasks().height(15);
 
 Please note: the settings of [regular tasks](#regular-tasks) affect parent tasks as well, but are overridden by the settings listed here.
 
-Also, you can [expand or collapse](../basic-settings#expanding--collapsing) parent tasks and display previews of [milestones](#milestones) on them.
+Also, you can [expand or collapse](../Basic_Settings#expanding--collapsing) parent tasks and display previews of [milestones](#milestones) on them.
 
 ### Milestones
 
@@ -66,10 +67,10 @@ To configure milestones, combine {api:anychart.charts.Gantt#getTimeline}getTimel
 * {api:anychart.core.gantt.elements.MilestonesElement#markerType}markerType(){api} + enums from {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api} to set the type
 * {api:anychart.core.gantt.elements.MilestonesElement#fill}fill(){api}, {api:anychart.core.gantt.elements.MilestonesElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.MilestonesElement#height}height(){api} to set the fill, stroke, and height
 * {api:anychart.core.gantt.elements.MilestonesElement#anchor}anchor(){api} to set the anchor
-* {api:anychart.core.gantt.elements.MilestonesElement#labels}labels(){api} to access [labels](labels)
-* {api:anychart.core.gantt.elements.MilestonesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.MilestonesElement#selected}selected(){api} to access [states](../../common-settings/interactivity/states)
-* {api:anychart.core.gantt.elements.MilestonesElement#edit}edit(){api} to access the [Live Edit](../live-edit) settings
-* {api:anychart.core.gantt.elements.MilestonesElement#rendering}rendering(){api} to access the [rendering](../custom-drawing) settings
+* {api:anychart.core.gantt.elements.MilestonesElement#labels}labels(){api} to access [labels](Labels)
+* {api:anychart.core.gantt.elements.MilestonesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.MilestonesElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.MilestonesElement#edit}edit(){api} to access the [Live Edit](../Live_Edit) settings
+* {api:anychart.core.gantt.elements.MilestonesElement#rendering}rendering(){api} to access the [rendering](../Custom_Drawing) settings
 * {api:anychart.core.gantt.elements.MilestonesElement#preview}preview(){api} to access previews of milestones on [parent tasks](#parent-tasks)
 
 
@@ -78,7 +79,7 @@ To configure milestones, combine {api:anychart.charts.Gantt#getTimeline}getTimel
 chart.getTimeline().milestones().height(15);
 ```
 
-If you need to create multiple milestones in one row, use an alternative way to visualize events - add [markers](markers).
+If you need to create multiple milestones in one row, use an alternative way to visualize events - add [markers](Markers).
 
 **Previews of milestones** are special elements that represent milestones on their [parent tasks](#parent-tasks). By default, previews are not shown. To display or hide them, pass `true` or `false` to the {api:anychart.core.gantt.elements.MilestonesElement#preview}preview(){api} method.
 
@@ -88,7 +89,7 @@ Previews inherit the settings of milestones they represent, but you can change t
 
 In the sample below, the {api:anychart.core.ui.Timeline#tasks}tasks(){api}, {api:anychart.core.ui.Timeline#groupingTasks}groupingTasks(){api}, and {api:anychart.core.ui.Timeline#milestones}milestones(){api} methods of the timeline are used to access [regular tasks](#regular-tasks), [parent tasks](#parent-tasks), and [milestones](#milestones).
 
-The **normal()** and **selected()** methods of each task type are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../appearance-settings) in two [states](../../common-settings/interactivity/states): **normal** and **selected**.
+The **normal()** and **selected()** methods of each task type are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../Appearance_Settings) in two [states](../../Common_Settings/Interactivity/States): **normal** and **selected**.
 
 Also, {api:anychart.core.gantt.elements.MilestonesElement#markerType}markerType(){api} and {api:anychart.core.gantt.elements.MilestonesElement#preview}preview(){api} are used to set the type of milestones and enable their previews on the parent task.
 
@@ -129,16 +130,16 @@ To configure baselines, combine {api:anychart.charts.Gantt#getTimeline}getTimeli
 * {api:anychart.core.gantt.elements.BaselinesElement#fill}fill(){api}, {api:anychart.core.gantt.elements.BaselinesElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.BaselinesElement#height}height(){api} to set the fill, stroke, and height
 * {api:anychart.core.gantt.elements.BaselinesElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.BaselinesElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.BaselinesElement#position}position(){api} to set the anchor, offset, and position
 * {api:anychart.core.gantt.elements.BaselinesElement#above}above(){api} to place baselines above tasks
-* {api:anychart.core.gantt.elements.BaselinesElement#labels}labels(){api} to access [labels](labels)
-* {api:anychart.core.gantt.elements.BaselinesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.BaselinesElement#selected}selected(){api} to access [states](../../common-settings/interactivity/states)
-* {api:anychart.core.gantt.elements.BaselinesElement#edit}edit(){api} to access the [Live Edit](../live-edit) settings
-* {api:anychart.core.gantt.elements.BaselinesElement#rendering}rendering(){api} to access the [rendering](../custom-drawing) settings
+* {api:anychart.core.gantt.elements.BaselinesElement#labels}labels(){api} to access [labels](Labels)
+* {api:anychart.core.gantt.elements.BaselinesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.BaselinesElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.BaselinesElement#edit}edit(){api} to access the [Live Edit](../Live_Edit) settings
+* {api:anychart.core.gantt.elements.BaselinesElement#rendering}rendering(){api} to access the [rendering](../Custom_Drawing) settings
 
 Please note: by default, baselines are shown under tasks, but can be placed above them with the help of the {api:anychart.core.gantt.elements.BaselinesElement#above}above(){api} method.
 
-To learn about data fields used to set baselines, see [Progress Chart: Baselines](../project-chart#baselines-planned)).
+To learn about data fields used to set baselines, see [Progress Chart: Baselines](../Project_Chart#baselines-planned)).
 
-In the sample below, the {api:anychart.core.ui.Timeline#baselines}baselines(){api} method is used to access baselines. The {api:anychart.core.gantt.elements.BaselinesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.BaselinesElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../appearance-settings) in two [states](../../common-settings/interactivity/states): **normal** and **selected**. Finally, the {api:anychart.core.gantt.elements.BaselinesElement#above}above(){api} method places baselines above tasks.
+In the sample below, the {api:anychart.core.ui.Timeline#baselines}baselines(){api} method is used to access baselines. The {api:anychart.core.gantt.elements.BaselinesElement#normal}normal(){api} and {api:anychart.core.gantt.elements.BaselinesElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../Appearance_Settings) in two [states](../../Common_Settings/Interactivity/States): **normal** and **selected**. Finally, the {api:anychart.core.gantt.elements.BaselinesElement#above}above(){api} method places baselines above tasks.
 
 
 ```
@@ -163,16 +164,16 @@ To access progress bars, first access regular or parent tasks by combining {api:
 
 * {api:anychart.core.gantt.elements.ProgressElement#fill}fill(){api}, {api:anychart.core.gantt.elements.ProgressElement#stroke}stroke(){api}, and {api:anychart.core.gantt.elements.ProgressElement#height}height(){api} to set the fill, stroke, and height
 * {api:anychart.core.gantt.elements.ProgressElement#anchor}anchor(){api}, {api:anychart.core.gantt.elements.ProgressElement#offset}offset(){api}, and {api:anychart.core.gantt.elements.ProgressElement#position}position(){api} to set the anchor, offset, and position
-* {api:anychart.core.gantt.elements.ProgressElement#labels}labels(){api} to access [labels](labels)
-* {api:anychart.core.gantt.elements.ProgressElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ProgressElement#selected}selected(){api} to access [states](../../common-settings/interactivity/states)
-* {api:anychart.core.gantt.elements.ProgressElement#edit}edit(){api} to access the [Live Edit](../live-edit) settings
-* {api:anychart.core.gantt.elements.ProgressElement#rendering}rendering(){api} to access the [rendering](../custom-drawing) settings
+* {api:anychart.core.gantt.elements.ProgressElement#labels}labels(){api} to access [labels](Labels)
+* {api:anychart.core.gantt.elements.ProgressElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ProgressElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.ProgressElement#edit}edit(){api} to access the [Live Edit](../Live_Edit) settings
+* {api:anychart.core.gantt.elements.ProgressElement#rendering}rendering(){api} to access the [rendering](../Custom_Drawing) settings
 
-Please note: by default, progress is shown in [labels](labels) of tasks. However, progress bars have their own labels. You can enable them and use to show progress or any other information.
+Please note: by default, progress is shown in [labels](Labels) of tasks. However, progress bars have their own labels. You can enable them and use to show progress or any other information.
 
-To learn about data fields used to set progress bars, see [Project Chart: Progress Bars](../project-chart#progress-bars).
+To learn about data fields used to set progress bars, see [Project Chart: Progress Bars](../Project_Chart#progress-bars).
 
-In the sample below, the {api:?entry=progress}progress(){api} method is used to access progress bars of both regular and parent tasks. The {api:anychart.core.gantt.elements.ProgressElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ProgressElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../appearance-settings) in two [states](../../common-settings/interactivity/states): **normal** and **selected**.
+In the sample below, the {api:?entry=progress}progress(){api} method is used to access progress bars of both regular and parent tasks. The {api:anychart.core.gantt.elements.ProgressElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ProgressElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../Appearance_Settings) in two [states](../../Common_Settings/Interactivity/States): **normal** and **selected**.
 
 ```
 // configure progress bars of regular tasks
@@ -197,12 +198,12 @@ parentTasks.progress().selected().stroke(null);
 To configure connectors, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} and {api:anychart.core.ui.Timeline#connectors}connectors(){api} with the following methods:
 
 * {api:anychart.core.gantt.elements.ConnectorElement#fill}fill(){api} and {api:anychart.core.gantt.elements.ConnectorElement#stroke}stroke(){api} to set the fill and stroke
-* {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} to access [states](../../common-settings/interactivity/states)
-* {api:anychart.core.gantt.elements.ConnectorElement#previewStroke}previewStroke(){api} to set the preview stroke in the [Live Edit](../live-edit) mode
+* {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} to access [states](../../Common_Settings/Interactivity/States)
+* {api:anychart.core.gantt.elements.ConnectorElement#previewStroke}previewStroke(){api} to set the preview stroke in the [Live Edit](../Live_Edit) mode
 
-To learn about the available types of connectors and the data fields used to set them, see [Project Chart: Connectors](../project-chart#connectors).
+To learn about the available types of connectors and the data fields used to set them, see [Project Chart: Connectors](../Project_Chart#connectors).
 
-In the sample below, the {api:anychart.core.ui.Timeline#connectors}connectors(){api} method is used to access connectors. The {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../appearance-settings) in two [states](../../common-settings/interactivity/states): **normal** and **selected**.
+In the sample below, the {api:anychart.core.ui.Timeline#connectors}connectors(){api} method is used to access connectors. The {api:anychart.core.gantt.elements.ConnectorElement#normal}normal(){api} and {api:anychart.core.gantt.elements.ConnectorElement#selected}selected(){api} methods are combined with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} to configure the  [appearance settings](../../Appearance_Settings) in two [states](../../Common_Settings/Interactivity/States): **normal** and **selected**.
 
 ```
 // configure connectors

@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Stacked/Overview"
 sidebar_position: 1
 ---
 # Stacked Charts
@@ -7,7 +8,7 @@ sidebar_position: 1
 
 The stacked charts are a popular visual aid used for categorizing and comparing the parts of a whole. Each element in the chart represents a whole, and the segments represent parts of that whole. Different colors used for the segments distinguish the categories. Stacked charts are otherwise known as stacked graphs. 
 
-In AnyChart stacking is a [special mode of a Scale](../../axes-and-grids/scales#stack-mode) set by {api:?entry=stackMode}stackMode(){api} method, and [several types of series](#supported-types) are compatible with this mode. If a series can not be stacked it simply [ignores the mode](#with-unstackable-series).
+In AnyChart stacking is a [special mode of a Scale](../../Axes_and_Grids/Scales#stack-mode) set by {api:?entry=stackMode}stackMode(){api} method, and [several types of series](#supported-types) are compatible with this mode. If a series can not be stacked it simply [ignores the mode](#with-unstackable-series).
 
 There are two modes of stacking: **value** and **percent**. These article explains everything there is to know about stacking settings and options.
 
@@ -45,7 +46,7 @@ Percent stacked charts usually need some fine tuning to get going:
 
 ### Scale Interval
 
-Setting scale to percent stacked mode will force it's [minimum and maximum](../../axes-and-grids/scales#minimum-and-maximum) to 0 and 100 but tick interval will remain auto-calculated. If you want to change interval use ticks interval settings:
+Setting scale to percent stacked mode will force it's [minimum and maximum](../../Axes_and_Grids/Scales#minimum-and-maximum) to 0 and 100 but tick interval will remain auto-calculated. If you want to change interval use ticks interval settings:
 
 ```
 /* enable the value stacking mode
@@ -58,7 +59,7 @@ chart.yScale().ticks().interval(20);
 
 ### Axis Percent Labels
 
-To add the percent symbol to axis labels, use [Axes Labels](../../axes-and-grids/axes-labels-formatting) formatting:
+To add the percent symbol to axis labels, use [Axes Labels](../../Axes_and_Grids/Axes_Labels_Formatting) formatting:
 
 ```
 // configure labels on the y-axis
@@ -67,7 +68,7 @@ chart.yAxis().labels().format("{%value}%");
 
 ### Labels and Tooltips
 
-To add the percent symbol to labels and tooltips, use [Text Formatters](../../common-settings/text-formatters):
+To add the percent symbol to labels and tooltips, use [Text Formatters](../../Common_Settings/Text_Formatters):
 
 ```
 // configure tooltips
@@ -126,7 +127,7 @@ yScale2.maximum(20);
 yScale2.minimum(0);
 ```
 
-But you can also [sync scales](../../axes-and-grids/scales#synchronization) after they auto-calculate their minimums and maximums, it can be done like that:
+But you can also [sync scales](../../Axes_and_Grids/Scales#synchronization) after they auto-calculate their minimums and maximums, it can be done like that:
 
 ```
 // sync minimums and maximums of the scales
@@ -141,7 +142,7 @@ for (var i = 0; i < yScales.length; i++) {
 }  
 ```
 
-Here is a sample of clustered value stacked column chart with [synced scales](../../axes-and-grids/scales#synchronization):
+Here is a sample of clustered value stacked column chart with [synced scales](../../Axes_and_Grids/Scales#synchronization):
 
 {sample}BCT\_Stacking\_04{sample}
 
@@ -207,50 +208,50 @@ Here is a sample that shows both stacking order directions"
 
 Here is the list of supported stacked charts:
 
-* [Stacked Area](./value/area-chart)
-* [Stacked Bar](./value/bar-chart)
-* [Stacked Column](./value/column-chart)
-* [Stacked Spline Area](./value/spline-area-chart)
-* [Stacked Step Area](./value/step-area-chart)
-* [Stacked Stick](./value/stick-chart)
-* [Percent Stacked Area](./percent/area-chart)
-* [Percent Stacked Bar](./percent/bar-chart)
-* [Percent Stacked Column](./percent/column-chart)
-* [Percent Stacked Spline Area](./percent/spline-area-chart)
-* [Percent Stacked Step Area](./percent/step-area-chart)
-* [Percent Stacked Stick](./percent/stick-chart)
+* [Stacked Area](./Value/Area_Chart)
+* [Stacked Bar](./Value/Bar_Chart)
+* [Stacked Column](./Value/Column_Chart)
+* [Stacked Spline Area](./Value/Spline_Area_Chart)
+* [Stacked Step Area](./Value/Step_Area_Chart)
+* [Stacked Stick](./Value/Stick_Chart)
+* [Percent Stacked Area](./Percent/Area_Chart)
+* [Percent Stacked Bar](./Percent/Bar_Chart)
+* [Percent Stacked Column](./Percent/Column_Chart)
+* [Percent Stacked Spline Area](./Percent/Spline_Area_Chart)
+* [Percent Stacked Step Area](./Percent/Step_Area_Chart)
+* [Percent Stacked Stick](./Percent/Stick_Chart)
 
 Here are vertical and 3D stacked charts:
 
-* [Vertical Stacked Area](./value/vertical-area-chart)
-* [Vertical Stacked Spline Area](./value/vertical-spline-area-chart)
-* [Vertical Stacked Step Area](./value/vertical-step-area-chart)
-* [Vertical Stacked Stick](./value/vertical-stick-chart)
-* [3D Stacked Area](./value/3d-area-chart)
-* [3D Stacked Bar](./value/3d-bar-chart)
-* [3D Stacked Column](./value/3d-column-chart)
-* [Vertical Percent Stacked Area](./percent/vertical-area-chart)
-* [Vertical Percent Stacked Spline Area](./percent/vertical-spline-area-chart)
-* [Vertical Percent Stacked Step Area](./percent/vertical-step-area-chart)
-* [Vertical Percent Stacked Stick](./percent/vertical-stick-chart)
-* [3D Percent Stacked Area](./percent/3d-area-chart)
-* [3D Percent Stacked Bar](./percent/3d-bar-chart)
-* [3D Percent Stacked Column](./percent/3d-column-chart)
+* [Vertical Stacked Area](./Value/Vertical_Area_Chart)
+* [Vertical Stacked Spline Area](./Value/Vertical_Spline_Area_Chart)
+* [Vertical Stacked Step Area](./Value/Vertical_Step_Area_Chart)
+* [Vertical Stacked Stick](./Value/Vertical_Stick_Chart)
+* [3D Stacked Area](./Value/3D_Area_Chart)
+* [3D Stacked Bar](./Value/3D_Bar_Chart)
+* [3D Stacked Column](./Value/3D_Column_Chart)
+* [Vertical Percent Stacked Area](./Percent/Vertical_Area_Chart)
+* [Vertical Percent Stacked Spline Area](./Percent/Vertical_Spline_Area_Chart)
+* [Vertical Percent Stacked Step Area](./Percent/Vertical_Step_Area_Chart)
+* [Vertical Percent Stacked Stick](./Percent/Vertical_Stick_Chart)
+* [3D Percent Stacked Area](./Percent/3D_Area_Chart)
+* [3D Percent Stacked Bar](./Percent/3D_Bar_Chart)
+* [3D Percent Stacked Column](./Percent/3D_Column_Chart)
 
 See also polar and radar stacked charts:
 
-* [Stacked Polygon](./value/polygon-chart)
-* [Polar Stacked Column](./value/polar-column-chart)
-* [Radar Stacked Area](./value/radar-area-chart)
-* [Percent Stacked Polygon](./percent/polygon-chart)
-* [Polar Percent Stacked Column](./percent/polar-column-chart)
-* [Radar Percent Stacked Area](./percent/radar-area-chart)
+* [Stacked Polygon](./Value/Polygon_Chart)
+* [Polar Stacked Column](./Value/Polar_Column_Chart)
+* [Radar Stacked Area](./Value/Radar_Area_Chart)
+* [Percent Stacked Polygon](./Percent/Polygon_Chart)
+* [Polar Percent Stacked Column](./Percent/Polar_Column_Chart)
+* [Radar Percent Stacked Area](./Percent/Radar_Area_Chart)
 
 ## Marimekko Charts
 
-Marimekko charts are a special type of stacked charts and though very similar, still are different. Please refer to [Marimekko Chart](../marimekko-chart) articles to learn how to build them with AnyChart.
+Marimekko charts are a special type of stacked charts and though very similar, still are different. Please refer to [Marimekko Chart](../Marimekko_Chart) articles to learn how to build them with AnyChart.
 
-* [Mekko Chart](../marimekko-chart)
-* [Bar Mekko Chart](../marimekko-chart/bar-mekko-chart)
-* [Mosaic Chart](../marimekko-chart/mosaic-chart)
+* [Mekko Chart](../Marimekko_Chart)
+* [Bar Mekko Chart](../Marimekko_Chart/Bar_Mekko_Chart)
+* [Mosaic Chart](../Marimekko_Chart/Mosaic_Chart)
 

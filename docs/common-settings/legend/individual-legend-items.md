@@ -1,4 +1,5 @@
 ---
+slug: "/Common_Settings/Legend/Individual_Legend_Items"
 sidebar_position: 9
 ---
 # Individual Legend Items
@@ -49,13 +50,13 @@ series4.legendItem().fontSize(16);
 series4.legendItem().fontWeight(600);
 ```
 
-Here is a vertically [oriented](basic-settings#layout) legend with the font of the last item configured:
+Here is a vertically [oriented](Basic_Settings#layout) legend with the font of the last item configured:
 
 {sample}CS\_Legend\_Individual\_Items\_02{sample}
 
 ## Text Format
 
-To set the text format of a legend item, use the {api:anychart.core.utils.LegendItemSettings#format}format(){api} method with either [tokens](../text-formatters#string-tokens) or [formatting functions](../text-formatters#formatting-functions).
+To set the text format of a legend item, use the {api:anychart.core.utils.LegendItemSettings#format}format(){api} method with either [tokens](../Text_Formatters#string-tokens) or [formatting functions](../Text_Formatters#formatting-functions).
 
 You can also call the {api:anychart.core.utils.LegendItemSettings#useHtml}useHtml(){api} method to enable HTML for the item.
 
@@ -113,9 +114,9 @@ To set the type of the icon, combine the {api:anychart.core.utils.LegendItemSett
 
 **Note 1:** If the icon type is set to `"line"`, `"spline"`, or `"step-line"`, you can also enable and adjust icon markers. See the [Icon Markers](#icon-markers) section to learn more.
 
-**Note 2:** Instead of adjusting each icon individually, you can use [themes](themes).
+**Note 2:** Instead of adjusting each icon individually, you can use [themes](Themes).
 
-In the sample below, there is a vertically [oriented](basic-settings#layout) legend with all the icons configured individually:
+In the sample below, there is a vertically [oriented](Basic_Settings#layout) legend with all the icons configured individually:
 
 ```
  var legendItem1 = series1.legendItem();
@@ -209,7 +210,7 @@ If the chart type allows adding only a single series, its legend items represent
 
 **Note:** The methods described in the [Custom Items](#custom-items) section also work with single-series chart types, so, alternatively, you can just add a custom item or create a fully custom legend.
 
-In the sample below, there is a Pie chart with a vertically [oriented](basic-settings#layout) legend and one of the legend items adjusted. Special data fields are used to configure its [text font](#text-font) and [icon](#icons):
+In the sample below, there is a Pie chart with a vertically [oriented](Basic_Settings#layout) legend and one of the legend items adjusted. Special data fields are used to configure its [text font](#text-font) and [icon](#icons):
 
 ```
 // create data
@@ -247,7 +248,7 @@ Also, you can use the {api:anychart.core.ui.Legend#items}items(){api} method, wh
 
 The available settings of custom legend items are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
 
-**Note:** The [default behavior](basic-settings#default-behavior) settings do not apply to custom items. To bind them to elements of the chart, you have to use events - see the [Events](events) article.
+**Note:** The [default behavior](Basic_Settings#default-behavior) settings do not apply to custom items. To bind them to elements of the chart, you have to use events - see the [Events](Events) article.
 
 In this sample, there is a chart with a default legend. The {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method with a function as a parameter is used to add a custom legend item representing the sum of all the Y-values on the chart:
 

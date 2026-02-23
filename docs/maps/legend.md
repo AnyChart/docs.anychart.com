@@ -1,4 +1,5 @@
 ---
+slug: "/Maps/Legend"
 sidebar_position: 13
 ---
 # Map Legend
@@ -7,7 +8,7 @@ sidebar_position: 13
 
 Legend is used predominantly to show names of the regions on a map and some side values that describes this series at some point (like sales amount, divorce rate, etc.). 
 
-AnyMap legend works the same way it works in all other chart types. Look through the [Legend](../common-settings/legend/overview) section for more information about legends.
+AnyMap legend works the same way it works in all other chart types. Look through the [Legend](../Common_Settings/Legend/Overview) section for more information about legends.
 
 This articles shows several samples how legend is used with AnyChart JavaScript maps.
 
@@ -24,7 +25,7 @@ map.legend(true);
 
 ## Thresholds in Legend
 
-You can use Legend with thresholds; with thresholds, the legend looks similar to a [Color Range](colorrange) with an ordinal [Color Scale](scales). 
+You can use Legend with thresholds; with thresholds, the legend looks similar to a [Color Range](ColorRange) with an ordinal [Color Scale](Scales). 
 
 First you need to create a threshold scale:
 

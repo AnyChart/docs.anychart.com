@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Range_Area_Chart"
 sidebar_position: 3.1
 ---
 # Range Area Chart
@@ -12,37 +13,37 @@ Such charts are used to emphasize the magnitude of difference between high and l
 This article explains how to create a basic Range Area chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Range Area chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#basic-cartesian">Basic Cartesian</a> / <a href="../Quick_Start/Modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.RangeArea}anychart.core.cartesian.series.RangeArea{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
-<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">x, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../Working_with_Data/Overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td><a href="vertical/range-area-chart">Vertical Range Area</a></td></tr>
+<tr><td>Vertical</td><td><a href="Vertical/Range_Area_Chart">Vertical Range Area</a></td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
-<tr><td>Stock</td><td><a href="../stock-charts/series/range-area">Stock Range Area</a></td></tr>
+<tr><td>Stock</td><td><a href="../Stock_Charts/Series/Range_Area">Stock Range Area</a></td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="area-chart">Area</a></td></tr>
-<tr><td></td><td><a href="spline-area-chart">Spline Area</a></td></tr>
-<tr><td></td><td><a href="step-area-chart">Step Area</a></td></tr>
-<tr><td></td><td><a href="range-spline-area-chart">Range Spline Area</a></td></tr>
-<tr><td></td><td><a href="range-step-area-chart">Range Step Area</a></td></tr>
-<tr><td></td><td><a href="hilo-chart">HiLo</a></td></tr>
+<tr><td></td><td><a href="Area_Chart">Area</a></td></tr>
+<tr><td></td><td><a href="Spline_Area_Chart">Spline Area</a></td></tr>
+<tr><td></td><td><a href="Step_Area_Chart">Step Area</a></td></tr>
+<tr><td></td><td><a href="Range_Spline_Area_Chart">Range Spline Area</a></td></tr>
+<tr><td></td><td><a href="Range_Step_Area_Chart">Range Step Area</a></td></tr>
+<tr><td></td><td><a href="HiLo_Chart">HiLo</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/range-area-chart/">Chartopedia: Range Area Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Range Area chart requires adding the [Core](../quick-start/modules#core) and [Basic Cartesian](../quick-start/modules#basic-cartesian) modules:
+The Range Area chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic-cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -52,13 +53,13 @@ The Range Area chart requires adding the [Core](../quick-start/modules#core) and
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../quick-start/modules#base) module, which includes, among other things, the two modules mentioned above: 
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -107,13 +108,13 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Range Area chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
 ### Appearance
 
-The [appearance settings](../appearance-settings) of a Range Area chart can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.RangeArea#normal}normal(){api}, {api:anychart.core.cartesian.series.RangeArea#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.RangeArea#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Range Area chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.RangeArea#normal}normal(){api}, {api:anychart.core.cartesian.series.RangeArea#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.RangeArea#selected}selected(){api} methods.
 
 Combine them with the following methods:
 
@@ -162,15 +163,15 @@ series2.selected().highStroke("#ff6666", 4);
 
 ### Labels
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 ### Tooltips
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../common-settings/text-formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 ### Scales
 
-When Range Area chart is used with the ordinal scale and you wish to remove the gaps to the right and left of the area you need to change the [ordinal scale mode](../axes-and-grids/scales#ordinal) to `'continuous'`:
+When Range Area chart is used with the ordinal scale and you wish to remove the gaps to the right and left of the area you need to change the [ordinal scale mode](../Axes_and_Grids/Scales#ordinal) to `'continuous'`:
 
 ```
 chart.xScale().mode('continuous');
@@ -180,10 +181,10 @@ chart.xScale().mode('continuous');
 
 ### Vertical Range Area
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](vertical/overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](Vertical/Overview).
 
 Here is information about creating Vertical Range Area series:
 
-* [Vertical Range Area](vertical/range-area-chart)
-* [Vertical Range Spline Area](vertical/range-spline-area-chart)
-* [Vertical Range Step Area](vertical/range-step-area-chart)
+* [Vertical Range Area](Vertical/Range_Area_Chart)
+* [Vertical Range Spline Area](Vertical/Range_Spline_Area_Chart)
+* [Vertical Range Step Area](Vertical/Range_Step_Area_Chart)

@@ -1,11 +1,12 @@
 ---
+slug: "/Basic_Charts/Polygon_Chart"
 sidebar_position: 1.61
 ---
 # Polygon Chart
 
 ## Overview
 
-In AnyChart, Polygon is a special name for an Area series displayed on a polar plot with a [categorized X-scale](polar-plot/overview#scales).
+In AnyChart, Polygon is a special name for an Area series displayed on a polar plot with a [categorized X-scale](Polar_Plot/Overview#scales).
 
 This article explains how to create a basic Polygon chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Polygon chart's characteristics:
 
@@ -13,25 +14,25 @@ This article explains how to create a basic Polygon chart as well as configure s
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.polar.series.Polygon}anychart.core.polar.series.Polygon{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
-<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">x, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../Working_with_Data/Overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td><a href="stacked/value/polygon-chart">Stacked Polygon</a>, <a href="stacked/percent/polygon-chart">Percent Stacked Polygon</a></td></tr>
+<tr><td>Stacked</td><td><a href="Stacked/Value/Polygon_Chart">Stacked Polygon</a>, <a href="Stacked/Percent/Polygon_Chart">Percent Stacked Polygon</a></td></tr>
 <tr><td>Vertical</td><td>N/A</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td><a href="polar-plot/polygon-chart">Polygon</a></td></tr>
+<tr><td>Polar</td><td><a href="Polar_Plot/Polygon_Chart">Polygon</a></td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="area-chart">Area</a></td></tr>
-<tr><td></td><td><a href="polar-plot/area-chart">Polar Area</a></td></tr>
-<tr><td></td><td><a href="radar-plot/area-chart">Radar Area</a></td></tr>
+<tr><td></td><td><a href="Area_Chart">Area</a></td></tr>
+<tr><td></td><td><a href="Polar_Plot/Area_Chart">Polar Area</a></td></tr>
+<tr><td></td><td><a href="Radar_Plot/Area_Chart">Radar Area</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/radar-chart/">Chartopedia: Radar Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Quick Start
@@ -69,13 +70,13 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Area chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
 ### Appearance
 
-The [appearance settings](../appearance-settings) of a Polygon chart can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Area#normal}normal(){api}, {api:anychart.core.cartesian.series.Area#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Area#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Polygon chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Area#normal}normal(){api}, {api:anychart.core.cartesian.series.Area#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Area#selected}selected(){api} methods.
 
 Combine them with the following methods:
 
@@ -118,19 +119,19 @@ series2.selected().stroke("#0066cc", 4);
 
 ### Labels
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 ### Tooltips
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../common-settings/text-formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 ### Stacked Polygon
 
 Stacked and percent stacked charts are multiple-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
 
-In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts](stacked/overview).
+In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts](Stacked/Overview).
 
 To learn about the stacked versions of the Polygon chart, see:
 
-* [Stacked Polygon](stacked/value/polygon-chart)
-* [Percent Stacked Polygon](stacked/percent/polygon-chart)
+* [Stacked Polygon](Stacked/Value/Polygon_Chart)
+* [Percent Stacked Polygon](Stacked/Percent/Polygon_Chart)

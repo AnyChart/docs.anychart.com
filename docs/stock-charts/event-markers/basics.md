@@ -1,4 +1,5 @@
 ---
+slug: "/Stock_Charts/Event_Markers/Basics"
 sidebar_position: 2
 ---
 
@@ -10,7 +11,7 @@ An event marker is an element of the chart indicating an event that took place a
 
 This article explains how to add and configure event markers.
 
-To learn more, see the [Tooltips](tooltips) and [Events](events) articles.
+To learn more, see the [Tooltips](Tooltips) and [Events](Events) articles.
 
 ## Quick Start
 
@@ -57,7 +58,7 @@ There are two data fields working with all methods:
 
 The `date` is the only field that is always required. The `description` field is optional, but it is shown in tooltips by default (if there is no description, the symbol of a group is shown instead).
 
-**Note:** Sometimes it makes sense to add custom fields to your data. See [Individual Markers](#individual-markers) and [Tooltips](tooltips).
+**Note:** Sometimes it makes sense to add custom fields to your data. See [Individual Markers](#individual-markers) and [Tooltips](Tooltips).
 
 ### eventMarkers()
 
@@ -219,7 +220,7 @@ Finally, the [Appearance](#appearance) section explains how to adjust the font o
 
 ## Appearance
 
-The [appearance settings](../../appearance-settings) of event markers can be configured in three [states](../../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.stock.eventMarkers.Controller#normal}normal(){api}, {api:anychart.core.stock.eventMarkers.Controller#hovered}hovered(){api}, and {api:anychart.core.stock.eventMarkers.Controller#selected}selected(){api} methods.
+The [appearance settings](../../Appearance_Settings) of event markers can be configured in three [states](../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.stock.eventMarkers.Controller#normal}normal(){api}, {api:anychart.core.stock.eventMarkers.Controller#hovered}hovered(){api}, and {api:anychart.core.stock.eventMarkers.Controller#selected}selected(){api} methods.
 
 Combine them with the following methods:
 
@@ -269,7 +270,7 @@ To set the length of connectors, use the {api:anychart.core.stock.eventMarkers.C
 eventMarkers.connector().length("20");
 ```
 
-The stroke of connectors can be configured in three [states](../../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.stock.eventMarkers.Controller#normal}normal(){api}, {api:anychart.core.stock.eventMarkers.Controller#hovered}hovered(){api}, and {api:anychart.core.stock.eventMarkers.Controller#selected}selected(){api} methods, combined with {api:anychart.core.StateSettings#connector}connector(){api} and  {api:anychart.core.utils.Connector#stroke}stroke(){api}:
+The stroke of connectors can be configured in three [states](../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.stock.eventMarkers.Controller#normal}normal(){api}, {api:anychart.core.stock.eventMarkers.Controller#hovered}hovered(){api}, and {api:anychart.core.stock.eventMarkers.Controller#selected}selected(){api} methods, combined with {api:anychart.core.StateSettings#connector}connector(){api} and  {api:anychart.core.utils.Connector#stroke}stroke(){api}:
 
 ```
 eventMarkers.normal().connector().stroke("#dd2c00");
@@ -285,7 +286,7 @@ This sample shows how to configure both the length and stroke of connectors:
 
 ## Height and Width
 
-The height and width of event markers can be set in three [states](../../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.stock.eventMarkers.Controller#normal}normal(){api}, {api:anychart.core.stock.eventMarkers.Controller#hovered}hovered(){api}, and {api:anychart.core.stock.eventMarkers.Controller#selected}selected(){api} methods.
+The height and width of event markers can be set in three [states](../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.stock.eventMarkers.Controller#normal}normal(){api}, {api:anychart.core.stock.eventMarkers.Controller#hovered}hovered(){api}, and {api:anychart.core.stock.eventMarkers.Controller#selected}selected(){api} methods.
 
 Combine them with these methods:
 

@@ -1,4 +1,5 @@
 ---
+slug: "/3D_Plot/Surface_Chart"
 sidebar_position: 1
 ---
 # Surface Chart
@@ -10,26 +11,26 @@ A Surface chart (or 3D Surface plot) is a chart type used for finding the optimu
 This article explains how to create a basic Surface chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Word Tree's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#surface">Surface</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#surface">Surface</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Surface}anychart.charts.Surface{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, y, z</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">x, y, z</a></td></tr>
 <tr><td>Multiple Series</td><td>No</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="../basic-charts/3d/area-chart">3D Area Chart</a></td></tr>
-<tr><td></td><td><a href="../basic-charts/3d/area-chart">3D Bar Chart</a></td></tr>
-<tr><td></td><td><a href="../basic-charts/3d/column-chart">3D Column Chart</a></td></tr>
-<tr><td></td><td><a href="../basic-charts/3d/doughnut-chart">3D Doughnut Chart</a></td></tr>
-<tr><td></td><td><a href="../basic-charts/3d/line-chart">3D Line Chart</a></td></tr>
-<tr><td></td><td><a href="../basic-charts/3d/pie-chart">3D Pie Chart</a></td></tr>
+<tr><td></td><td><a href="../Basic_Charts/3D/Area_Chart">3D Area Chart</a></td></tr>
+<tr><td></td><td><a href="../Basic_Charts/3D/Area_Chart">3D Bar Chart</a></td></tr>
+<tr><td></td><td><a href="../Basic_Charts/3D/Column_Chart">3D Column Chart</a></td></tr>
+<tr><td></td><td><a href="../Basic_Charts/3D/Doughnut_Chart">3D Doughnut Chart</a></td></tr>
+<tr><td></td><td><a href="../Basic_Charts/3D/Line_Chart">3D Line Chart</a></td></tr>
+<tr><td></td><td><a href="../Basic_Charts/3D/Pie_Chart">3D Pie Chart</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/surface-chart/">Chartopedia: Surface Chart</a></td></tr>
 </table>
 
 ## Modules
 
-The Surface chart requires adding the [Core](../quick-start/modules#core) and [Surface Chart](../quick-start/modules#surface) modules:
+The Surface chart requires adding the [Core](../Quick_Start/Modules#core) and [Surface Chart](../Quick_Start/Modules#surface) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -39,7 +40,7 @@ The Surface chart requires adding the [Core](../quick-start/modules#core) and [S
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-surface.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 

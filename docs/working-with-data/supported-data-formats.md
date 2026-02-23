@@ -1,4 +1,5 @@
 ---
+slug: "/Working_with_Data/Supported_Data_Formats"
 sidebar_position: 1
 ---
 # Supported Data Formats
@@ -18,9 +19,9 @@ Each way has some strengths and weaknesses. We recommend JavaScript API - this o
 
 ## JavaScript API
 
-JavaScript API helps you the best when you need to [Create, Read, Update, and Delete](./data-manipulation) data points dynamically.
+JavaScript API helps you the best when you need to [Create, Read, Update, and Delete](./Data_Manipulation) data points dynamically.
 
-We recommend to use [Data Sets](./data-sets) when you work with data in JavaScipt but you can also pass data directly to a chart:
+We recommend to use [Data Sets](./Data_Sets) when you work with data in JavaScipt but you can also pass data directly to a chart:
 
 ```
 // create a pie chart
@@ -39,7 +40,7 @@ chart.container('container');
 chart.draw();
 ```
 
-See details on [Data Sets](./data-sets) article.
+See details on [Data Sets](./Data_Sets) article.
 
 ## XML
 
@@ -71,8 +72,8 @@ chart.draw();
 ```
 
 See detailed description in:
-- [Data From XML](./data-from-xml) article
-- [Loading XML Files](./data-adapter/loading-xml-file) article
+- [Data From XML](./Data_From_XML) article
+- [Loading XML Files](./Data_Adapter/Loading_XML_File) article
 
 ## JSON
 
@@ -102,8 +103,8 @@ chart.container('container').draw();
 ```
 
 See detailed description in:
-- [Data From XML](./data-from-json) article
-- [Loading XML Files](./data-adapter/loading-json-file) article
+- [Data From XML](./Data_From_JSON) article
+- [Loading XML Files](./Data_Adapter/Loading_JSON_File) article
 
 ## CSV  
 
@@ -132,16 +133,16 @@ chart.container('container').draw();
 ```
 
 See detailed description in:
-- [Data From CSV](./data-from-csv) article
-- [Loading CSV Files](./data-adapter/loading-csv-file) article
+- [Data From CSV](./Data_From_CSV) article
+- [Loading CSV Files](./Data_Adapter/Loading_CSV_File) article
 
 ## Google Spreadsheet
 
-You have an option to use Google Spreadsheet as the data source using [Data Adapter](./data-adapter/overview), see:
-- [Loading Google Spreadsheet Files](./data-adapter/loading-google-spreadsheet) article.
+You have an option to use Google Spreadsheet as the data source using [Data Adapter](./Data_Adapter/Overview), see:
+- [Loading Google Spreadsheet Files](./Data_Adapter/Loading_Google_Spreadsheet) article.
 
 ## HTML Table
 
-You have an option to load data from HTML table on a page using [Data Adapter](./data-adapter/overview), see:
-- [Loading Google Spreadsheet Files](./data-adapter/parsing-html-table) article.
+You have an option to load data from HTML table on a page using [Data Adapter](./Data_Adapter/Overview), see:
+- [Loading Google Spreadsheet Files](./Data_Adapter/Parsing_HTML_Table) article.
 

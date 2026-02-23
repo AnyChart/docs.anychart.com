@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Scatter_Plot/Line_Chart"
 sidebar_position: 2
 ---
 # Scatter Line Chart
@@ -7,9 +8,9 @@ sidebar_position: 2
 
 This article explains how to create a Scatter Line chart in AnyChart.
 
-To learn more about scatter charts in general and how to customize them, see [Scatter Charts (Overview)](overview). In addition, you can read the [Line Chart](../line-chart) article to learn about other available settings.
+To learn more about scatter charts in general and how to customize them, see [Scatter Charts (Overview)](Overview). In addition, you can read the [Line Chart](../Line_Chart) article to learn about other available settings.
 
-Please note that there are also [Cartesian Line](../line-chart) charts.
+Please note that there are also [Cartesian Line](../Line_Chart) charts.
 
 ## Quick Start
 

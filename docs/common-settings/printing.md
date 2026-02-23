@@ -1,3 +1,6 @@
+---
+slug: "/Common_Settings/Printing"
+---
 # Printing
 
 ## Overview

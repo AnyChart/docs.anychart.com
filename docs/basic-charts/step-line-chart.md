@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Step_Line_Chart"
 sidebar_position: 6
 ---
 # Step Line Chart
@@ -9,36 +10,36 @@ A step line chart is a line chart in which points are connected by horizontal an
 
 Step line charts are used when it is necessary to highlight the irregularity of changes: for example, when changes in tax rates or interest rates are visualized. While the line chart emphasizes the trend in data over time, the step line chart draws attention from the trend to show periods with no change and emphasize the exact time of each change as well as its magnitude.
 
-The Step Line and Line chart types share almost all the settings, so this article explains just how to create a basic Step Line chart and configure its only special setting - step direction. To learn about other settings, read the [Line Chart](line-chart) article. You can also see the table below to get a brief overview of the Step Line chart's characteristics:
+The Step Line and Line chart types share almost all the settings, so this article explains just how to create a basic Step Line chart and configure its only special setting - step direction. To learn about other settings, read the [Line Chart](Line_Chart) article. You can also see the table below to get a brief overview of the Step Line chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#basic-cartesian">Basic Cartesian</a> / <a href="../Quick_Start/Modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.StepLine}anychart.core.cartesian.series.StepLine{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
-<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">x, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../Working_with_Data/Overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td><a href="vertical/step-line-chart">Vertical Step Line</a></td></tr>
+<tr><td>Vertical</td><td><a href="Vertical/Step_Line_Chart">Vertical Step Line</a></td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td><a href="error-chart/step-line-chart">Step Line Chart with Error Bars</a></td></tr>
+<tr><td>Error Bars</td><td><a href="Error_Chart/Step_Line_Chart">Step Line Chart with Error Bars</a></td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
-<tr><td>Stock</td><td><a href="../stock-charts/series/step-line">Stock Step Line</a></td></tr>
+<tr><td>Stock</td><td><a href="../Stock_Charts/Series/Step_Line">Stock Step Line</a></td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="line-chart">Line</a></td></tr>
-<tr><td></td><td><a href="spline-chart">Spline</a></td></tr>
+<tr><td></td><td><a href="Line_Chart">Line</a></td></tr>
+<tr><td></td><td><a href="Spline_Chart">Spline</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/stepline-chart/">Chartopedia: Step Line Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Step Line chart requires adding the [Core](../quick-start/modules#core) and [Basic Cartesian](../quick-start/modules#basic-cartesian) modules:
+The Step Line chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic-cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -48,13 +49,13 @@ The Step Line chart requires adding the [Core](../quick-start/modules#core) and 
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../quick-start/modules#base) module, which includes, among other things, the two modules mentioned above: 
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -94,9 +95,9 @@ chart.draw();
 
 ## Settings
 
-The Step Line chart is a modification of the Line chart, so these two types share almost all the settings. You can find more settings in this article: [Line Chart](line-chart).
+The Step Line chart is a modification of the Line chart, so these two types share almost all the settings. You can find more settings in this article: [Line Chart](Line_Chart).
 
-Also, in AnyChart there are many settings that are configured in the same way for all chart types, including the Step Line chart (for example, legend and interactivity settings): [General Settings](general-settings).
+Also, in AnyChart there are many settings that are configured in the same way for all chart types, including the Step Line chart (for example, legend and interactivity settings): [General Settings](General_Settings).
 
 In addition, see the full list of methods available for the Step Line series: {api:anychart.core.cartesian.series.StepLine}anychart.core.cartesian.series.StepLine{api}.
 

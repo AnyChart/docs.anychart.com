@@ -1,4 +1,5 @@
 ---
+slug: "/Gantt_Chart/Overview"
 sidebar_position: 1
 ---
 # Overview
@@ -7,7 +8,7 @@ sidebar_position: 1
 
 A Gantt chart is a tool used to schedule projects or show resources (e.g., equipment or employees) over periods of time. Project tasks or periods are visualized as horizontal bars, their width representing the duration.
 
-AnyGantt allows creating two types of Gannt charts - [Project](project-chart) and [Resource](resource-chart). They display different timeline [elements](elements), but share most settings.
+AnyGantt allows creating two types of Gannt charts - [Project](Project_Chart) and [Resource](Resource_Chart). They display different timeline [elements](Elements), but share most settings.
 
 Both chart types are defined as instances of the {api:anychart.charts.Gantt}anychart.charts.Gantt{api} class. To create them, use the {api:anychart#ganttProject}anychart.ganttProject{api} and {api:anychart#ganttResource}anychart.ganttResource(){api} constructors.
 
@@ -25,32 +26,32 @@ This is how the Project chart and Resource chart are structured:
 
 The first four articles explain how to create Project and Resource charts:
 
-* [Quick Start (Project)](quick-start-project))
-* [Quick Start (Resource)](quick-start-resource))
-* [Project Chart](project-chart)
-* [Resource Chart](resource-chart)
+* [Quick Start (Project)](Quick_Start_(Project)))
+* [Quick Start (Resource)](Quick_Start_(Resource)))
+* [Project Chart](Project_Chart)
+* [Resource Chart](Resource_Chart)
 
 To learn about data and date & time formats, see these articles:
-* [Data](data)
-* [Date and Time Formats](date-and-time-formats)
+* [Data](Data)
+* [Date and Time Formats](Date_and_Time_Formats)
 
 Here the basic settings are listed - appearance, row height, navigation, etc.:
-* [Basic Settings](basic-settings)
+* [Basic Settings](Basic_Settings)
 
 The following sections explain how to adjust the main parts of the Gantt chart:
 
-* [Data Grid](data-grid)
-* [Timeline](timeline)
-* [Elements](elements)
+* [Data Grid](Data_Grid)
+* [Timeline](Timeline)
+* [Elements](Elements)
 
 There are also advanced settings available:
-* [Custom Drawing](custom-drawing)
-* [Events](events)
-* [Live Edit](live-edit)
+* [Custom Drawing](Custom_Drawing)
+* [Events](Events)
+* [Live Edit](Live_Edit)
 
 ## Modules
 
-AnyGantt requires adding two [modules](../quick-start/modules) - [Core](../quick-start/modules#core) and [Gantt](../quick-start/modules#gantt):
+AnyGantt requires adding two [modules](../Quick_Start/Modules) - [Core](../Quick_Start/Modules#core) and [Gantt](../Quick_Start/Modules#gantt):
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js" type="text/javascript"></script>

@@ -1,11 +1,12 @@
 ---
+slug: "/Common_Settings/Legend/Tooltip"
 sidebar_position: 5
 ---
 # Tooltip
 
 ## Overview
 
-A [Tooltip](../tooltip) is a text box displayed when an element of a chart is being hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Tooltip) is a text box displayed when an element of a chart is being hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
 To access the settings of the legend tooltip, combine the {api:?entry=legend}legend(){api} method of the chart with {api:anychart.core.ui.Legend#tooltip}tooltip(){api} and methods of the tooltip, which are listed in {api:anychart.core.ui.Tooltip}anychart.core.ui.Tooltip{api}.
 
@@ -28,7 +29,7 @@ chart.legend().tooltip().separator(true);
 
 ## Tokens
 
-To change the text of the tooltip and tooltip title, use the {api:anychart.core.ui.Tooltip#format}format(){api} and {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} methods. The only [token](../text-formatters#string-tokens) available is `{%value}` - it stands for the names of the series:
+To change the text of the tooltip and tooltip title, use the {api:anychart.core.ui.Tooltip#format}format(){api} and {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} methods. The only [token](../Text_Formatters#string-tokens) available is `{%value}` - it stands for the names of the series:
 
 ```
 // configure the legend tooltip
@@ -40,7 +41,7 @@ chart.legend().tooltip().format("Year: {%value}");
 
 ## Formatting Functions
 
-You can set the text of the tooltip and tooltip title by combining the {api:anychart.core.ui.Tooltip#format}format(){api} and {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} methods with [formatting functions](../text-formatters#formatting-functions). The available fields include `value` and `meta`.
+You can set the text of the tooltip and tooltip title by combining the {api:anychart.core.ui.Tooltip#format}format(){api} and {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} methods with [formatting functions](../Text_Formatters#formatting-functions). The available fields include `value` and `meta`.
 
 The `value` field stands for the names of the series, and `meta` allows accessing custom information about the series. To add such information, pass an object with metadata to the {api:?entry=meta}meta(){api} method of each series:
 

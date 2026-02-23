@@ -1,3 +1,6 @@
+---
+slug: "/Common_Settings/UI_Controls/Preloader"
+---
 # Preloader
 
 ## Overview
@@ -6,7 +9,7 @@ Chart Preloader is a small animated object used when you want to show that some 
 
 ## Modules
 
-The preloader requires the [Common UI](../../quick-start/modules#common-ui) module:
+The preloader requires the [Common UI](../../Quick_Start/Modules#common-ui) module:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>  
@@ -18,7 +21,7 @@ Also, you should reference the `anychart-ui.min.css` file:
 <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css"/>
 ```
 
-Learn more: [Modules](../../quick-start/modules).
+Learn more: [Modules](../../Quick_Start/Modules).
 
 ## Sample
 

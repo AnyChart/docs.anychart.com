@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Circle_Packing_Chart"
 sidebar_position: 1
 ---
 # Circle Packing Chart
@@ -10,11 +11,11 @@ A circle packing chart, or a circular treemap, is a visualization that displays 
 This article explains how to create a basic Circle Packing chart in AnyChart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Circle Packing chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#circle-packing">Circle Packing</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#circle-packing">Circle Packing</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.CirclePacking}anychart.charts.CirclePacking{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">id, parent, children, name, value</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">id, parent, children, name, value</a></td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -27,17 +28,17 @@ This article explains how to create a basic Circle Packing chart in AnyChart as 
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="heat-map-chart">Heat Map</a></td></tr>
-<tr><td></td><td><a href="treemap-chart">Treemap</a></td></tr>
-<tr><td></td><td><a href="venn-diagram">Venn</a></td></tr>
+<tr><td></td><td><a href="Heat_Map_Chart">Heat Map</a></td></tr>
+<tr><td></td><td><a href="Treemap_Chart">Treemap</a></td></tr>
+<tr><td></td><td><a href="Venn_Diagram">Venn</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/products/anychart/gallery/Circle_Packing/">Chartopedia: Circle Packing Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Circle Packing chart requires adding the [Core](../quick-start/modules#core) and [Circle Packing](../quick-start/modules#circle-packing) modules:
+The Circle Packing chart requires adding the [Core](../Quick_Start/Modules#core) and [Circle Packing](../Quick_Start/Modules#circle-packing) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -47,7 +48,7 @@ The Circle Packing chart requires adding the [Core](../quick-start/modules#core)
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-circle-packing.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -92,13 +93,13 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Circle Packing chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
   
 ### Data
 
-The Circle Packing chart requires the [tree data model](../working-with-data/tree-data-model). Use the following fields:
+The Circle Packing chart requires the [tree data model](../Working_with_Data/Tree_Data_Model). Use the following fields:
 
 * `id` to set unique identifiers
 * `parent` to set parents
@@ -110,7 +111,7 @@ The sizes of circles represent the `value` field. You do not need to specify the
 
 **Note:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels-and-tooltips) section of this article.
 
-Unlike other chart types based on the tree data structure (e.g., the [Treemap](treemap-chart) chart), this chart allows adding more than one root node:
+Unlike other chart types based on the tree data structure (e.g., the [Treemap](Treemap_Chart) chart), this chart allows adding more than one root node:
 
 ```
 // create data
@@ -143,7 +144,7 @@ var chart = anychart.circlePacking(data, "as-tree");
 
 #### States
 
-The [appearance settings](../appearance-settings) of a Circle Packing chart can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.CirclePacking#normal}normal(){api}, {api:anychart.charts.CirclePacking#hovered}hovered(){api}, and {api:anychart.charts.CirclePacking#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Circle Packing chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.CirclePacking#normal}normal(){api}, {api:anychart.charts.CirclePacking#hovered}hovered(){api}, and {api:anychart.charts.CirclePacking#selected}selected(){api} methods.
 
 Combine them with the following methods:
 
@@ -208,13 +209,13 @@ chart.hovered().fill(function () {
 
 ### Labels and Tooltips
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
 #### Tokens
 
-To change the text of labels, combine the {api:anychart.charts.CirclePacking#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../common-settings/text-formatters#string-tokens).
+To change the text of labels, combine the {api:anychart.charts.CirclePacking#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string-tokens).
 
 To configure tooltips, do the same with the {api:anychart.charts.CirclePacking#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
@@ -272,7 +273,7 @@ chart.tooltip().format(
 
 #### Formatting Functions
 
-To configure labels and tooltips, you can use [formatting functions](../common-settings/text-formatters#formatting-functions) and the following fields:
+To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting-functions) and the following fields:
 
 * `name`
 * `value`

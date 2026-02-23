@@ -1,3 +1,6 @@
+---
+slug: "/Common_Settings/Sharing"
+---
 # Sharing
 
 ## Overview
@@ -20,13 +23,13 @@ When sharing is done using the context menu, the sharing function uses default s
 
 ## Modules
 
-To enable sharing, add the [Exports](../quick-start/modules#exports) module:
+To enable sharing, add the [Exports](../Quick_Start/Modules#exports) module:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Facebook
 

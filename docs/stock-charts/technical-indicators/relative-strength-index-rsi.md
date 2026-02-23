@@ -1,3 +1,6 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Relative_Strength_Index_(RSI)"
+---
 # Relative Strength Index
 
 ## Overview
@@ -6,7 +9,7 @@ The Relative Strength Index (RSI) is a financial technical analysis momentum osc
 
 AnyChart Stock allows you to add RSI with desired period to any of your charts.
 
-Mathematical description of the indicator: [The Relative Strength Index (RSI) Mathematical Description](mathematical-description).
+Mathematical description of the indicator: [The Relative Strength Index (RSI) Mathematical Description](Mathematical_Description).
 
 ## Adding Indicator
 

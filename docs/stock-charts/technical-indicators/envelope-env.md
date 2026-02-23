@@ -1,3 +1,6 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Envelope_(ENV)"
+---
 # Envelope (ENV)
 ## Overview
 
@@ -5,7 +8,7 @@ Envelope (ENV) is a technical indicator that is typically plotted over a price c
 
 With AnyStock Envelope indicator you can create both SMA and EMA envelopes and choose colors for the lower and upper level.
 
-Mathematical description of the indicator: [ENV Mathematical Description](mathematical-description#envelope).
+Mathematical description of the indicator: [ENV Mathematical Description](Mathematical_Description#envelope).
 
 ## Adding Indicator
 

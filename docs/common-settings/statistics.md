@@ -1,3 +1,6 @@
+---
+slug: "/Common_Settings/Statistics"
+---
 # Statistics
 
 ## Overview 
@@ -56,7 +59,7 @@ femaleAverage = chart.getSeriesAt(1).getStat("seriesYAverage");
 
 ## Point
 
-As a rule, to call {api:anychart.core.Point#getStat}getStat(){api} on a point, one needs to use the so-called [event listeners](../common-settings/event-listeners) and [text formatters](../common-settings/text-formatters). However, in some cases you can use the {api:anychart.core.cartesian.series.Line#getPoint}getPoint(){api} method to get a link to a Point object, and invoke the {api:anychart.core.Point#getStat}getStat(){api} method on it. We will demonstrate the both ways.
+As a rule, to call {api:anychart.core.Point#getStat}getStat(){api} on a point, one needs to use the so-called [event listeners](../Common_Settings/Event_Listeners) and [text formatters](../Common_Settings/Text_Formatters). However, in some cases you can use the {api:anychart.core.cartesian.series.Line#getPoint}getPoint(){api} method to get a link to a Point object, and invoke the {api:anychart.core.Point#getStat}getStat(){api} method on it. We will demonstrate the both ways.
 
 In the sample below, the title of the chart shows values of the latest points in both series. In addition, when a user selects a pair of points, a subtitle with information about these points appears:
 

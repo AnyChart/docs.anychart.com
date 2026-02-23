@@ -1,8 +1,11 @@
+---
+slug: "/Stock_Charts/Series/Range_Column"
+---
 # AnyStock Range Column Series
 
 ## Overview
 
-Range Column series is quite similar to Basic [Column Chart](column). You can find all information about creating a standard column chart in the [Range Column Chart article](../../basic-charts/range-column-chart).
+Range Column series is quite similar to Basic [Column Chart](Column). You can find all information about creating a standard column chart in the [Range Column Chart article](../../Basic_Charts/Range_Column_Chart).
 
 ## AnyStock Column Adjustment
 
@@ -48,7 +51,7 @@ mapping = table.mapAs({low: 'low', high: 'high'});
 
 {sample}STOCK\_Range\_Column\_02{sample}
 
-More about data settings in stocks can be found in the [Stock Data tutorial](../data). Now, let's look at some stock settings.
+More about data settings in stocks can be found in the [Stock Data tutorial](../Data). Now, let's look at some stock settings.
 
 ### Multi series
 
@@ -66,13 +69,13 @@ series_edb.name("Water temperature in Edinburgh in 2010-2012");
 
 {sample}STOCK\_Range\_Column\_03{sample}
 
-See the [Chart Plots article](../chart-plots) to know how to manage the plots.
+See the [Chart Plots article](../Chart_Plots) to know how to manage the plots.
 
-As stocks are intended to show large amounts of data, this data needs to be compressed at some point to be displayed correctly. All information about them can be found in the [Data Grouping](../data-grouping) article.
+As stocks are intended to show large amounts of data, this data needs to be compressed at some point to be displayed correctly. All information about them can be found in the [Data Grouping](../Data_Grouping) article.
 
 ### Switching series type
 
-You can change the type of the series to another compatible type. See the [Series Type](series-type) and [series types table](supported-series#list-of-supported-series).
+You can change the type of the series to another compatible type. See the [Series Type](Series_Type) and [series types table](Supported_Series#list-of-supported-series).
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 

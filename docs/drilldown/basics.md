@@ -1,8 +1,11 @@
+---
+slug: "/Drilldown/Basics"
+---
 # Drilldown Chart
 
 ## Overview
 
-Creating a chart with drilldown in AnyChart is very easy and can be implemented using so-called [event listeners](../common-settings/event-listeners) and amazingly {api:anychart}flexible API{api} and [data model](../working-with-data/overview). The very minimum you need is to create a chart, feed it proper data and then tell chart what to do when the point is clicked on.
+Creating a chart with drilldown in AnyChart is very easy and can be implemented using so-called [event listeners](../Common_Settings/Event_Listeners) and amazingly {api:anychart}flexible API{api} and [data model](../Working_with_Data/Overview). The very minimum you need is to create a chart, feed it proper data and then tell chart what to do when the point is clicked on.
 
 ## Step by Step Guide
 
@@ -14,7 +17,7 @@ For those who never worked with AnyChart and those who want to dig deeper, let's
 
 ### Prepare Data
 
-The first thing we need to have for a chart with drill-down is the data. There [a lot of ways to load, organize and use data in AnyChart](../working-with-data/overview) we will use one of the simpliest one for this basic sample.
+The first thing we need to have for a chart with drill-down is the data. There [a lot of ways to load, organize and use data in AnyChart](../Working_with_Data/Overview) we will use one of the simpliest one for this basic sample.
 
 The data for the drilldown chart can be organized in a tree-like structure, each row has `x` and `value`, and a field where the drilldown data set is stored which can have any name, in our sample it is `drillDown`: 
 
@@ -41,11 +44,11 @@ var data = [
 ];
 ```
 
-Note: `x` and `value` are reserved names for AnyChart and it is the easiest way to go but you can use any names or even simple arrays using our data set mapping option, see more at [Data Set Article](../working-with-data/data-sets).
+Note: `x` and `value` are reserved names for AnyChart and it is the easiest way to go but you can use any names or even simple arrays using our data set mapping option, see more at [Data Set Article](../Working_with_Data/Data_Sets).
 
 ### Create a Chart
 
-Now we have our data, now we simply feed this data set to a constructor that creates a chart and displays a chart on the page in some block-based element. You may be familiar with the basics, if not - please see [AnyChart Quick Start](../quick-start).
+Now we have our data, now we simply feed this data set to a constructor that creates a chart and displays a chart on the page in some block-based element. You may be familiar with the basics, if not - please see [AnyChart Quick Start](../Quick_Start).
 
 Here is how you create a chart, set data and display it:
 
@@ -86,9 +89,9 @@ Basically the work is done, this foundation provides us with all we need and we 
 ## Tune the Chart
 
 The basic chart is nice but we obviously need to tune it so it looks nice in this particular case. We will add three easy settings:
-- Format [Axis Labels](../axes-and-grids/axes-labels-formatting) so they show 'k' or 'm' for thousands and millions;
-- Tune [tooltips](../common-settings/tooltip) to show '$' sign;
-- Change [interactivity](../common-settings/interactivity/overview) settings so the elements can't be selected.
+- Format [Axis Labels](../Axes_and_Grids/Axes_Labels_Formatting) so they show 'k' or 'm' for thousands and millions;
+- Tune [tooltips](../Common_Settings/Tooltip) to show '$' sign;
+- Change [interactivity](../Common_Settings/Interactivity/Overview) settings so the elements can't be selected.
 
 We can do all this using this simple code:
 

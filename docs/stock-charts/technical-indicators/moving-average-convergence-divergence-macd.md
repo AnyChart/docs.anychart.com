@@ -1,3 +1,6 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Moving_Average_Convergence_Divergence_(MACD)"
+---
 # Moving Average Convergence/Divergence
 
 ## Overview
@@ -6,7 +9,7 @@ MACD, which stands for Moving Average Convergence / Divergence, is a technical a
 
 AnyChart Stock allows you to add MACD with desired fast, slow and signal periods settings to any of your charts.
 
-Mathematical description of the indicator: [Moving Average Convergence/Divergence (MACD) Mathematical Description](mathematical-description).
+Mathematical description of the indicator: [Moving Average Convergence/Divergence (MACD) Mathematical Description](Mathematical_Description).
 
 ## Adding Indicator
 

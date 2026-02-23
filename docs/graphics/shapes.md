@@ -1,4 +1,5 @@
 ---
+slug: "/Graphics/Shapes"
 sidebar_position: 7
 ---
 # GraphicsJS Shapes and Primitives
@@ -7,7 +8,7 @@ sidebar_position: 7
 
 GraphicsJS is a lightweight JavaScript graphics library which allows to create graphic elements for all purposes, from very simple to very complex. This article describes how to draw simple shapes using GraphicsJS and use them to create more complex shapes.
 
-When you work with GraphicsJS, you need to set stage as a container. On the [Quick Start page](quick-start) and [Basics](basics) you can find how to use stage as a container.
+When you work with GraphicsJS, you need to set stage as a container. On the [Quick Start page](Quick_Start) and [Basics](Basics) you can find how to use stage as a container.
 
 ## Basic Shapes
 
@@ -187,9 +188,9 @@ blueCircle.clip(clipArea);
 ## Coloring
 
 There are several methods that can be used for coloring the shapes. You can find more information about colors in the following articles: 
- - [Fill Settings](fill-settings)
- - [Hatch Fill Settings](hatch-fill-settings)
- - [Stroke Settings](stroke-settings)
+ - [Fill Settings](Fill_Settings)
+ - [Hatch Fill Settings](Hatch_Fill_Settings)
+ - [Stroke Settings](Stroke_Settings)
 
 Coloring methods accept values in HEX notation ("#00033A"), as web color ("black"), in RGB format ("rgb(0,0,255)") and more. Color can be set as rgb, rgba, hex, hsl, hsla or web constant, just as you do in [CSS Color](https://www.w3schools.com/cssref/css_colors_legal.asp).
 
@@ -206,7 +207,7 @@ star.fill("gold")";
 
 ### Stroke
 
-Use the {api:anychart.graphics.vector.Shape#stroke}stroke(){api} method to stroke the shape. You can also set the thickness of a stroking line and some other settings you can find more about in the [Stroke Settings](stroke-settings) article.
+Use the {api:anychart.graphics.vector.Shape#stroke}stroke(){api} method to stroke the shape. You can also set the thickness of a stroking line and some other settings you can find more about in the [Stroke Settings](Stroke_Settings) article.
 
 ```
 // set the stroke color to the star

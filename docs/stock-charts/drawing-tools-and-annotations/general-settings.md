@@ -1,4 +1,5 @@
 ---
+slug: "/Stock_Charts/Drawing_Tools_and_Annotations/General_Settings"
 sidebar_position: 2.1
 ---
 # General Settings
@@ -9,19 +10,19 @@ In this article, you can learn about the main general settings of annotations, a
 
 ## Modules
 
-Annotations require adding the [Annotations](../../quick-start/modules#annotations) module:
+Annotations require adding the [Annotations](../../Quick_Start/Modules#annotations) module:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-annotations.min.js"></script>
 ```
 
-Learn more: [Modules](../../quick-start/modules).
+Learn more: [Modules](../../Quick_Start/Modules).
 
 ## Hardcoding
 
-To add an annotation to a chart, refer to the {api:anychart.core.annotations.PlotController}annotations(){api} object and call one of the methods used for creating annotations: {api:anychart.core.annotations.Ellipse}ellipse(){api}, {api:anychart.core.annotations.Rectangle}rectangle(){api}, {api:anychart.core.annotations.Triangle}triangle(){api}, and so on. You can find the full list of the available types of annotations in the [Overview](overview#annotation-types) section.
+To add an annotation to a chart, refer to the {api:anychart.core.annotations.PlotController}annotations(){api} object and call one of the methods used for creating annotations: {api:anychart.core.annotations.Ellipse}ellipse(){api}, {api:anychart.core.annotations.Rectangle}rectangle(){api}, {api:anychart.core.annotations.Triangle}triangle(){api}, and so on. You can find the full list of the available types of annotations in the [Overview](Overview#annotation-types) section.
 
-You can configure annotations, like most other entities in AnyChart, in two ways: using either JavaScript API methods or object notation. As a rule, object notation is the most convenient way to set the properties of an annotation (see the [Serializing and Deserializing](serializing-deserializing) article).
+You can configure annotations, like most other entities in AnyChart, in two ways: using either JavaScript API methods or object notation. As a rule, object notation is the most convenient way to set the properties of an annotation (see the [Serializing and Deserializing](Serializing_Deserializing) article).
 
 The following sample shows how to create an Ellipse annotation and use object notation to configure it:
 
@@ -52,13 +53,13 @@ controller.ellipse({
 
 ## Appearance
 
-The [appearance settings](../../../appearance-settings) of annotations can be configured in three [states](../../../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the following methods:
+The [appearance settings](../../../Appearance_Settings) of annotations can be configured in three [states](../../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the following methods:
 
 * {api:anychart.core.annotations.Base#normal}normal(){api} 
 * {api:anychart.core.annotations.Base#selected}selected(){api} 
 * {api:anychart.core.annotations.Base#hovered}hovered(){api} 
 
-Combine them with these methods: {api:anychart.core.StateSettings}anychart.core.StateSettings{api}. Please note that the list of the available settings may vary depending on the [annotation type](overview#annotation-types).
+Combine them with these methods: {api:anychart.core.StateSettings}anychart.core.StateSettings{api}. Please note that the list of the available settings may vary depending on the [annotation type](Overview#annotation-types).
 
 In the sample below, there are two annotations, an Ellipse and an Infinite Line, with appearance configured. Like in the previous sample, object notation is used:
 
@@ -208,7 +209,7 @@ ellipse.yScale(extraYScale);
 
 ## Drawing
 
-To provide users with the opportunity to draw annotations, use the {api:anychart.core.annotations.PlotController#startDrawing}startDrawing(){api} method and specify the annotation type by using one from the {api:anychart.enums.AnnotationTypes}Annotation Types{api} enum. To learn more, see this article: [Drawing](drawing).
+To provide users with the opportunity to draw annotations, use the {api:anychart.core.annotations.PlotController#startDrawing}startDrawing(){api} method and specify the annotation type by using one from the {api:anychart.enums.AnnotationTypes}Annotation Types{api} enum. To learn more, see this article: [Drawing](Drawing).
 
 ```
 // an auxiliary variable for working with annotations

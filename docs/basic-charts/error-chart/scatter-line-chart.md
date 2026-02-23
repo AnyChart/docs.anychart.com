@@ -1,15 +1,16 @@
 ---
+slug: "/Basic_Charts/Error_Chart/Scatter_Line_Chart"
 sidebar_position: 2
 ---
 # Scatter Line Chart with Error Bars
 
 ## Overview
 
-This article explains how to create a [Scatter Line chart](../scatter-plot/line-chart) with error bars.
+This article explains how to create a [Scatter Line chart](../Scatter_Plot/Line_Chart) with error bars.
 
-To learn more about error charts in general and how to customize them, see [Error Chart (Overview)](overview). In addition, you can read the [Line Chart](../line-chart) article to learn about other available settings.
+To learn more about error charts in general and how to customize them, see [Error Chart (Overview)](Overview). In addition, you can read the [Line Chart](../Line_Chart) article to learn about other available settings.
 
-Please note that error bars are also supported by Cartesian Line charts - see [Line Chart with Error Bars](line-chart).
+Please note that error bars are also supported by Cartesian Line charts - see [Line Chart with Error Bars](Line_Chart).
 
 ## Quick Start
 

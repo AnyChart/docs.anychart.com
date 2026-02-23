@@ -1,3 +1,6 @@
+---
+slug: "/Common_Settings/Labels"
+---
 # Labels
 
 ## Overview
@@ -34,7 +37,7 @@ series.hoverLabels(true);
 
 ### Format Text 
 
-You can specify the text displayed in labels using [Text Formatters](text-formatters) mechanism. Here is how you can show a name of point instead of a value:
+You can specify the text displayed in labels using [Text Formatters](Text_Formatters) mechanism. Here is how you can show a name of point instead of a value:
 
 ```
 series.labels().format("{%x}");
@@ -60,7 +63,7 @@ series.selected().labels().fontColor("Green");
 
 ### Background
 
-Labels background can be set using {api:anychart.core.ui.LabelsFactory#background}background(){api} method. More information about adjusting background can be found in [Background tutorial](../appearance-settings/background).
+Labels background can be set using {api:anychart.core.ui.LabelsFactory#background}background(){api} method. More information about adjusting background can be found in [Background tutorial](../Appearance_Settings/Background).
 
 ```
 // background settings
@@ -78,7 +81,7 @@ This is how labels background with the settings from above looks like:
 
 ### Font
 
-Font settings are set as for any other [Text](../appearance-settings/text-settings):
+Font settings are set as for any other [Text](../Appearance_Settings/Text_Settings):
 
 ```
 // font labels font settings
@@ -137,7 +140,7 @@ In the sample below we have also used {api:anychart.standalones.LabelsFactory#vA
 
 ## Themes
 
-Labels can be adjusted using [AnyChart Themes](../appearance-settings/themes). Themes make it possible to set the same settings for several charts. Here is a sample of adjusting labels using themes:
+Labels can be adjusted using [AnyChart Themes](../Appearance_Settings/Themes). Themes make it possible to set the same settings for several charts. Here is a sample of adjusting labels using themes:
 
 ```
 var themeSettings = {
@@ -171,7 +174,7 @@ If you want to highlight points that have minimal or maximal values you can eith
 
 Here are a couple of samples that show how these methods can be applied.
 
-To show labels only for maximal and minimal points on a [stock chart](../stock-charts/overview) use code like this:
+To show labels only for maximal and minimal points on a [stock chart](../Stock_Charts/Overview) use code like this:
 
 ```
 // create a series

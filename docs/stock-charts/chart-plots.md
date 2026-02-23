@@ -1,4 +1,5 @@
 ---
+slug: "/Stock_Charts/Chart_Plots"
 sidebar_position: 5
 ---
 
@@ -46,7 +47,7 @@ We can change a lot in plots appearance: series, their number, axes, colors, etc
 
 ### Adding Series
 
-[Series](series/overview) are added to the plot using appropriate methods. See the [supported series list](series/supported-series) to learn what series can be added.
+[Series](Series/Overview) are added to the plot using appropriate methods. See the [supported series list](Series/Supported_Series) to learn what series can be added.
 
 Here is a sample of a chart with several plots and series:
 
@@ -70,7 +71,7 @@ var secondSeries = plot_2.ohlc(ohlcMapping);
 
 ### Axes 
 
-See the [Stock Axes Tutorial](axes) and [Stock Scales](scales) to know more about configuring axes and scales.
+See the [Stock Axes Tutorial](Axes) and [Stock Scales](Scales) to know more about configuring axes and scales.
 
 In AnyStock axes are attached to plots. While the X scale is the only one for all plots, each plot can have different Y axes and Y scales. 
 
@@ -108,11 +109,11 @@ Here is a sample of a chart with three plots. Titles of the first two plots are 
 
 ### Legend
 
-Each plot can have a legend, see [Legend](legend) article to learn more about the legend configuration.
+Each plot can have a legend, see [Legend](Legend) article to learn more about the legend configuration.
 
 ### No Data Message
 
-Each plot can have {api:anychart.core.stock.Plot#noData}noData{api} label configured, see [No Data Label](../working-with-data/no-data-label) to learn more.
+Each plot can have {api:anychart.core.stock.Plot#noData}noData{api} label configured, see [No Data Label](../Working_with_Data/No_Data_Label) to learn more.
 
 ## Disabling and Removing
 

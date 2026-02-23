@@ -1,4 +1,5 @@
 ---
+slug: "/Common_Settings/Accessibility/Section_508"
 sidebar_position: 1
 ---
 

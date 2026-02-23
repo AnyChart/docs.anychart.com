@@ -1,27 +1,28 @@
 ---
+slug: "/Gantt_Chart/Live_Edit"
 sidebar_position: 14
 ---
 # Live Edit
 
 ## Overview
 
-In the Live Edit mode, a special UI is enabled that allows users to edit Gantt charts on-the-fly. It is possible to edit the data structure by moving rows, change the duration and position of timeline [elements](elements), create and remove connections between them, and edit the [data grid](data-grid) text.
+In the Live Edit mode, a special UI is enabled that allows users to edit Gantt charts on-the-fly. It is possible to edit the data structure by moving rows, change the duration and position of timeline [elements](Elements), create and remove connections between them, and edit the [data grid](Data_Grid) text.
 
 To learn more, see the sections below. They demonstrate the [default behavior](#default-behavior) of the chart in the Live Edit mode and explain how to [enable / disable](#enabling--disabling) it and adjust its appearance and other [settings](#settings).
 
-**Note:** For the correct work of the Live Edit mode, as well as of Gantt charts in general, the `id` [data field](data#data-fields) is required.
+**Note:** For the correct work of the Live Edit mode, as well as of Gantt charts in general, the `id` [data field](Data#data-fields) is required.
 
 ## Default Behavior
 
-This section describes the default behavior of the chart in the Live Edit mode and lists the events triggered by users' actions. By handling events, you can change the default behavior - see the [Events](events) article to learn more.
+This section describes the default behavior of the chart in the Live Edit mode and lists the events triggered by users' actions. By handling events, you can change the default behavior - see the [Events](Events) article to learn more.
 
-Please keep in mind that in addition to the special events mentioned below, all Live Edit interactions (as well as any interactions with Gantt charts) trigger [row events](events#rows).
+Please keep in mind that in addition to the special events mentioned below, all Live Edit interactions (as well as any interactions with Gantt charts) trigger [row events](Events#rows).
 
 **1. Editing Data Grid Text**
 
-Double-clicking on [data grid](data-grid) labels allows altering their text.
+Double-clicking on [data grid](Data_Grid) labels allows altering their text.
 
-It triggers a [data tree event](events#data-tree):
+It triggers a [data tree event](Events#data-tree):
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
@@ -32,7 +33,7 @@ It triggers a [data tree event](events#data-tree):
 
 You can edit the structure of the data by dragging and dropping rows up and down. It is possible to change both the sequence of rows and their hierarchical relationships.
 
-A [data tree event](events#data-tree) is triggered:
+A [data tree event](Events#data-tree) is triggered:
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
@@ -41,7 +42,7 @@ A [data tree event](events#data-tree) is triggered:
 
 On a gantt resource chart, you can edit the structure of the data not only by dragging and dropping rows up and down, but also by dragging and dropping periods between rows.
 
-A [before update period](events#rows) is triggered as well as [data tree event](events#data-tree):
+A [before update period](Events#rows) is triggered as well as [data tree event](Events#data-tree):
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
@@ -50,11 +51,11 @@ A [before update period](events#rows) is triggered as well as [data tree event](
 
 **3. Editing Elements**
 
-Drag and drop timeline [elements](elements) to change their positions on the timeline. To change the duration and progress of an element, use duration thumbs on its sides and the slider on the progress bar.
+Drag and drop timeline [elements](Elements) to change their positions on the timeline. To change the duration and progress of an element, use duration thumbs on its sides and the slider on the progress bar.
 
 Also, you can draw new connectors with the help of connector thumbs on the sides of tasks. To remove a connector, select it and press Del in Windows or Cmd-Backspace in Mac OS.
 
-A [data tree event](events#data-tree) and a [connector event](events#connectors) are triggered:
+A [data tree event](Events#data-tree) and a [connector event](Events#connectors) are triggered:
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
@@ -68,7 +69,7 @@ The following sample shows how the Live Edit mode works. All types of editing ar
 
 ## Enabling / Disabling
 
-You can enable the Live Edit mode either on the whole chart or on its part: on the [data grid](data-grid), on the [timeline](timeline), or on a particular [element](elements) (except for connectors).
+You can enable the Live Edit mode either on the whole chart or on its part: on the [data grid](Data_Grid), on the [timeline](Timeline), or on a particular [element](Elements) (except for connectors).
 
 Depending on the part of the chart, different types of editing are enabled:
 
@@ -111,7 +112,7 @@ chart.getTimeline().milestones().edit(true);
 chart.getTimeline().periods().edit(true);
 ```
 
-Below, there are two samples, one with a [Project](project-chart) chart and another with a [Resource](resource-chart) chart. They show how enabling the Live Edit mode on different parts of the chart looks like:
+Below, there are two samples, one with a [Project](Project_Chart) chart and another with a [Resource](Resource_Chart) chart. They show how enabling the Live Edit mode on different parts of the chart looks like:
 
 {sample :height 260}GANTT\_Live\_Edit\_02{sample}
 
@@ -121,7 +122,7 @@ Below, there are two samples, one with a [Project](project-chart) chart and anot
 
 It is possible to adjust the appearance and other settings of the chart in the Live Edit mode. You can change the way how [rows](#rows) and [elements](#elements) are colored when they are being dragged by users. Also, you can configure [controls](#controls) - duration and connector thumbs on elements and sliders on progress bars.
 
-To access these settings, combine the {api:?entry=edit}edit(){api} method of the chart / [data grid](data-grid) / [timeline](timeline) / [element](elements) with methods of the classes listed below:
+To access these settings, combine the {api:?entry=edit}edit(){api} method of the chart / [data grid](Data_Grid) / [timeline](Timeline) / [element](Elements) with methods of the classes listed below:
 
 <table>
 <tr><th>Settings</th><th>Class</th><th>Part of Chart</th></tr>
@@ -135,7 +136,7 @@ To access these settings, combine the {api:?entry=edit}edit(){api} method of the
 
 It is possible to change the way how rows are colored when they are being dragged by users.
 
-First, access either the whole chart or its part: the [data grid](data-grid) or the [timeline](timeline).
+First, access either the whole chart or its part: the [data grid](Data_Grid) or the [timeline](Timeline).
 
 Then combine {api:?entry=edit}edit(){api} with methods of the {api:anychart.core.gantt.edit.StructureEdit}anychart.core.gantt.edit.StructureEdit{api} class:
 
@@ -162,16 +163,16 @@ chart.getTimeline().edit().stroke(null);
 
 You can change the way how elements are colored when they are being dragged by users.
 
-First, access an [element](elements) type (except for connectors) or [all elements](elements/all-elements).
+First, access an [element](Elements) type (except for connectors) or [all elements](Elements/All_Elements).
 
 Then combine {api:?entry=edit}edit(){api} with methods of the {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api} class:
 
 * {api:anychart.core.gantt.edit.ElementEdit#fill}fill(){api} to set the fill
 * {api:anychart.core.gantt.edit.ElementEdit#stroke}stroke(){api} to set the stroke
 
-Please note that **sliders on progress bars** inherit the settings of tasks. To override them, use the {api:anychart.core.gantt.elements.ProgressElement#edit}edit(){api} method of [progress bars](elements/project-chart#progress-bars). 
+Please note that **sliders on progress bars** inherit the settings of tasks. To override them, use the {api:anychart.core.gantt.elements.ProgressElement#edit}edit(){api} method of [progress bars](Elements/Project_Chart#progress-bars). 
 
-To set the **preview stroke of connectors**, use the {api:anychart.core.gantt.elements.ConnectorElement#previewStroke}previewStroke(){api} method of [connectors](elements/project-chart#connectors).
+To set the **preview stroke of connectors**, use the {api:anychart.core.gantt.elements.ConnectorElement#previewStroke}previewStroke(){api} method of [connectors](Elements/Project_Chart#connectors).
 
 In the sample below, fill and stroke settings are applied to all elements and overridden for baselines and progress sliders. Also, the preview stroke of connectors is set.
 
@@ -194,7 +195,7 @@ timeline.connectors().previewStroke("#dd2c00", 2, "5 2", "round");
 
 You can configure controls - duration and connector thumbs on elements and sliders on progress bars.
 
-First, access an [element](elements) type (except for connectors) or [all elements](elements/all-elements).
+First, access an [element](Elements) type (except for connectors) or [all elements](Elements/All_Elements).
 
 Then combine {api:?entry=edit}edit(){api} with methods of the {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api} class:
 
@@ -210,7 +211,7 @@ To configure **duration thumbs** and **connector thumbs**, use methods of {api:a
 * {api:anychart.core.gantt.edit.Thumb#size}size(){api} to set the size
 * {api:anychart.core.gantt.edit.Thumb#horizontalOffset}horizontalOffset(){api} and {api:anychart.core.gantt.edit.Thumb#verticalOffset}verticalOffset(){api} to set the horizontal and vertical offset
 
-To adjust **sliders on progress bars**, use the {api:anychart.core.gantt.elements.ProgressElement#edit}edit(){api} method of [progress bars](elements/project-chart#progress-bars) or let them inherit the settings of tasks, as shown in the [Elements](#elements) section above.
+To adjust **sliders on progress bars**, use the {api:anychart.core.gantt.elements.ProgressElement#edit}edit(){api} method of [progress bars](Elements/Project_Chart#progress-bars) or let them inherit the settings of tasks, as shown in the [Elements](#elements) section above.
 
 The following sample shows how to configure thumbs. Please note that there are connector thumbs of different types on the left and on the right sides of elements:
 
@@ -249,4 +250,4 @@ timeline.tasks().progress().edit().stroke("#dd2c00", 2);
 
 ## Events
 
-The events triggered by users' actions in the Live Edit mode are listed in the [Default Behavior](#default-behavior) section of this article. The [Events](events) article explains how to handle them and change the default behavior.
+The events triggered by users' actions in the Live Edit mode are listed in the [Default Behavior](#default-behavior) section of this article. The [Events](Events) article explains how to handle them and change the default behavior.

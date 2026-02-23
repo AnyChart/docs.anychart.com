@@ -1,4 +1,5 @@
 ---
+slug: "/Maps/Labels"
 sidebar_position: 14
 ---
 # Map Labels
@@ -7,15 +8,15 @@ sidebar_position: 14
 
 Labels in Maps are somewhat similar to the usual labels you can find and configure for any other chart type, with the common differences of keywords and the fact that some data is provided by the map source itself.
 
-To learn about Labels editing and formatting in general please visit [Text Settings](../appearance-settings/text-settings) and [Text Formatters](../common-settings/text-formatters).
+To learn about Labels editing and formatting in general please visit [Text Settings](../Appearance_Settings/Text_Settings) and [Text Formatters](../Common_Settings/Text_Formatters).
 
-To learn about creating maps visit [Quick Start](quick-start) article.
+To learn about creating maps visit [Quick Start](Quick_Start) article.
 
 ## Common Settings
 
 In AnyMaps, labels are being used the same as in the charts: you can add and format them, create text labels related to series or not, attach actions, use images as labels and so on. All these abilities are demonstrated below.
 
-To make points show labels, use {api:anychart.core.map.series.Choropleth#labels}labels(){api}. There are a lot of different methods which are to customize your chart, like {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api} to set the color of the label text, {api:anychart.core.ui.LabelsFactory#fontSize}fontSize(){api} to define the text size, {api:anychart.core.ui.LabelsFactory#offsetX}offsetX(){api} and {api:anychart.core.ui.LabelsFactory#offsetY}offsetY(){api} to move the label and else. You can find more in the [Common Labels](../common-settings/labels) article.
+To make points show labels, use {api:anychart.core.map.series.Choropleth#labels}labels(){api}. There are a lot of different methods which are to customize your chart, like {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api} to set the color of the label text, {api:anychart.core.ui.LabelsFactory#fontSize}fontSize(){api} to define the text size, {api:anychart.core.ui.LabelsFactory#offsetX}offsetX(){api} and {api:anychart.core.ui.LabelsFactory#offsetY}offsetY(){api} to move the label and else. You can find more in the [Common Labels](../Common_Settings/Labels) article.
 
 A simple choropleth map of Australia is used as a basis for the following samples.
 
@@ -61,7 +62,7 @@ image.zIndex(map.zIndex()+1);
 
 {sample}Maps\_Labels\_02{sample}
 
-In the sample above there are many settings for custom graphic elements and a listener used, which monitors resizing of a stage and recalculates the coordinates of the image. Visit the [Common Labels](../common-settings/labels) and [Text Settings](../appearance-settings/text-settings) articles to know more about those appearance settings. The [Event Listener](../common-settings/event-listeners) article will help you to understand the listeners.
+In the sample above there are many settings for custom graphic elements and a listener used, which monitors resizing of a stage and recalculates the coordinates of the image. Visit the [Common Labels](../Common_Settings/Labels) and [Text Settings](../Appearance_Settings/Text_Settings) articles to know more about those appearance settings. The [Event Listener](../Common_Settings/Event_Listeners) article will help you to understand the listeners.
 
 ## Source Data Access
 

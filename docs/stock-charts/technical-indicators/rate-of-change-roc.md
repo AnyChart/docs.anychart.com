@@ -1,3 +1,6 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Rate_of_Change_(ROC)"
+---
 # Rate of change
 
 ## Overview
@@ -6,7 +9,7 @@ Rate of change (ROC) is a simple technical analysis indicator showing the differ
 
 AnyChart Stock allows you to add ROC with desired period to any of your charts.
 
-Mathematical description of the indicator: [Rate of change (ROC) Mathematical Description](mathematical-description).
+Mathematical description of the indicator: [Rate of change (ROC) Mathematical Description](Mathematical_Description).
 
 ## Adding Indicator
 

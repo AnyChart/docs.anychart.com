@@ -1,3 +1,6 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Adaptive_Moving_Average_(AMA)"
+---
 # Adaptive Moving Average
 
 ## Overview
@@ -6,7 +9,7 @@ An Adaptive Moving Average (AMA) is another indicator like SMA, MMA and EMA, but
 
 AnyChart Stock allows you to add AMA with desired period to any of your charts.
 
-Find the mathematical description of the indicator on the [Adaptive moving average (AMA) Mathematical Description](mathematical-description#adaptive-moving-average) page.
+Find the mathematical description of the indicator on the [Adaptive moving average (AMA) Mathematical Description](Mathematical_Description#adaptive-moving-average) page.
 
 ## Adding Indicator
 

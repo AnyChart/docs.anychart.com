@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Timeline_Chart"
 sidebar_position: 6.1
 ---
 
@@ -8,12 +9,12 @@ sidebar_position: 6.1
 
 A timeline chart is a visualization of events in the chronological order. It displays both events occupying periods of time (ranges) and events with zero duration (moments). Events and dates are shown on a long horizontal bar (axis).
 
-A [Gantt chart](../gantt-chart) is a special form of timeline used in project management.
+A [Gantt chart](../Gantt_Chart) is a special form of timeline used in project management.
 
 This article explains how to create a basic Timeline chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Timeline chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#timeline">Timeline</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#timeline">Timeline</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Timeline}anychart.charts.Timeline{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -30,15 +31,15 @@ This article explains how to create a basic Timeline chart as well as configure 
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="../gantt-chart">Gantt</a></td></tr>
+<tr><td></td><td><a href="../Gantt_Chart">Gantt</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/timeline-chart/">Chartopedia: Timeline Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Timeline chart requires adding the [Core](../quick-start/modules#core) and [Timeline Chart](../quick-start/modules#timeline) modules:
+The Timeline chart requires adding the [Core](../Quick_Start/Modules#core) and [Timeline Chart](../Quick_Start/Modules#timeline) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -48,7 +49,7 @@ The Timeline chart requires adding the [Core](../quick-start/modules#core) and [
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-timeline.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -111,7 +112,7 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Timeline chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
@@ -201,7 +202,7 @@ The available directions are listed in {api:anychart.enums.Direction}anychart.en
 * `odd-even`
 * `auto`
 
-The [appearance](../appearance-settings) of ranges can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.timeline.series.Range#normal}normal(){api}, {api:anychart.core.timeline.series.Range#hovered}hovered(){api}, and {api:anychart.core.timeline.series.Range#selected}selected(){api} methods.
+The [appearance](../Appearance_Settings) of ranges can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.timeline.series.Range#normal}normal(){api}, {api:anychart.core.timeline.series.Range#hovered}hovered(){api}, and {api:anychart.core.timeline.series.Range#selected}selected(){api} methods.
 
 Combine them with methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
@@ -300,7 +301,7 @@ The {api:anychart.core.timeline.series.Moment#direction}direction(){api} method 
 * `odd-even`
 * `auto`
 
-The [appearance](../appearance-settings) of moments and their markers as well as the shape and size of markers can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.timeline.series.Moment#normal}normal(){api}, {api:anychart.core.timeline.series.Moment#hovered}hovered(){api}, and {api:anychart.core.timeline.series.Moment#selected}selected(){api} methods.
+The [appearance](../Appearance_Settings) of moments and their markers as well as the shape and size of markers can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.timeline.series.Moment#normal}normal(){api}, {api:anychart.core.timeline.series.Moment#hovered}hovered(){api}, and {api:anychart.core.timeline.series.Moment#selected}selected(){api} methods.
 
 Combine them with methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
@@ -416,7 +417,7 @@ var momentSeries2 = chart.moment(momentData2);
 
 ### Axis
 
-To configure the [appearance](../appearance-settings) and other settings of the axis, combine {api:anychart.charts.Timeline#axis}axis(){api} with the following methods:
+To configure the [appearance](../Appearance_Settings) and other settings of the axis, combine {api:anychart.charts.Timeline#axis}axis(){api} with the following methods:
 
 * {api:anychart.core.axes.Timeline#height}height(){api} to set the height
 * {api:anychart.core.axes.Timeline#fill}fill(){api} to set the fill
@@ -441,7 +442,7 @@ chart.axis().ticks().stroke("#00b37a", 3);
 
 ### Appearance
 
-You can configure the [appearance](../appearance-settings) of moment and range series and the axis. See the [Moment Series](#moment-series), [Range Series](#range-series), and [Axis](#axis) sections to learn more.
+You can configure the [appearance](../Appearance_Settings) of moment and range series and the axis. See the [Moment Series](#moment-series), [Range Series](#range-series), and [Axis](#axis) sections to learn more.
 
 ### Markers
 
@@ -630,13 +631,13 @@ textMarker2.value(rangeMarker2FromValue);
 
 ### Labels and Tooltips
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
 #### Tokens
 
-To change the text of all elements of the chart, combine the {api:anychart.charts.Timeline#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../common-settings/text-formatters#string-tokens).
+To change the text of all elements of the chart, combine the {api:anychart.charts.Timeline#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string-tokens).
 
 To change the text of tooltips, do the same with the {api:anychart.charts.Timeline#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
@@ -733,7 +734,7 @@ momentSeries2.tooltip().separator().enabled(false);
 
 #### Formatting Functions
 
-To configure labels and tooltips, you can use [formatting functions](../common-settings/text-formatters#formatting-functions) and the fields listed below.
+To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting-functions) and the fields listed below.
 
 Function fields for the [range series](#range-series):
 
@@ -952,7 +953,7 @@ This is how these methods work:
 
 #### Scroller
 
-Scroller allows scrolling and zooming the chart. You can find a detailed guide on this element in the [Common Settings: Scroller](../common-settings/scroller) article.
+Scroller allows scrolling and zooming the chart. You can find a detailed guide on this element in the [Common Settings: Scroller](../Common_Settings/Scroller) article.
 
 To enable or disable the scroller, pass `true` / `false` either to the {api:anychart.charts.Timeline#scroller}scroller(){api} method of the chart or to the {api:anychart.core.ui.ChartScroller#enabled()}enabled(){api} method of the scroller:
 
@@ -974,9 +975,9 @@ The following sample demonstrates how to enable and disable the scroller. By def
 
 #### Zoom Control Panel
 
-The [Zoom Control Panel](../common-settings/ui-controls/zoom-controls) is an HTML object with three buttons that allow zooming in, zooming out, and resetting the chart.
+The [Zoom Control Panel](../Common_Settings/UI_Controls/Zoom_Controls) is an HTML object with three buttons that allow zooming in, zooming out, and resetting the chart.
 
-It requires adding the [Common UI](../quick-start/modules#common-ui) module:
+It requires adding the [Common UI](../Quick_Start/Modules#common-ui) module:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>

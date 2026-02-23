@@ -1,11 +1,12 @@
 ---
+slug: "/Maps/Geo_Scale"
 sidebar_position: 13.5
 ---
 # Map Geo Scale
 
 ## Overview
 
-Geo Scale controls parameters that define numerical parameters that primarily affect how [Map Grid](map-grid) and [Map_Axes](map-axes) are displayed. Map scale is represented by {api:anychart.scales.Geo}anychart.scales.Geo{api} class.
+Geo Scale controls parameters that define numerical parameters that primarily affect how [Map Grid](Map_Grid) and [Map_Axes](Map_Axes) are displayed. Map scale is represented by {api:anychart.scales.Geo}anychart.scales.Geo{api} class.
 
 ## Tick intervals
 

@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Error_Chart/Bar_Chart"
 sidebar_position: 2
 ---
 # Bar Chart with Error Bars
@@ -7,7 +8,7 @@ sidebar_position: 2
 
 This article explains how to create a Bar chart with error bars.
 
-To learn more about error charts in general and how to customize them, see [Error Chart (Overview)](overview). In addition, you can read the [Bar Chart](../bar-chart) article to learn about other available settings.
+To learn more about error charts in general and how to customize them, see [Error Chart (Overview)](Overview). In addition, you can read the [Bar Chart](../Bar_Chart) article to learn about other available settings.
 
 ## Quick Start
 

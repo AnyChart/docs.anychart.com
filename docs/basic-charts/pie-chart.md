@@ -1,27 +1,28 @@
 ---
+slug: "/Basic_Charts/Pie_Chart"
 sidebar_position: 1.61
 ---
 # Pie Chart
 
 ## Overview
 
-A pie chart is a circular chart looking like a pie divided into slices (sectors). Slices show the percentage each value contributes to a total, the area of each slice being proportional to the quantity it represents, and the circle representing 100%. A pie chart with a blank circular area in the center is called a [doughnut chart](doughnut-chart).
+A pie chart is a circular chart looking like a pie divided into slices (sectors). Slices show the percentage each value contributes to a total, the area of each slice being proportional to the quantity it represents, and the circle representing 100%. A pie chart with a blank circular area in the center is called a [doughnut chart](Doughnut_Chart).
 
 Pie charts are used very widely with small sets of data to compare categories. They cannot be multiple-series and should not be used when there are more than just a few categories.
 
 This article explains how to create a basic Pie chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Pie chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#pie-and-doughnut">Pie and Doughnut</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#pie-and-doughnut">Pie and Doughnut</a> / <a href="../Quick_Start/Modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Pie}anychart.charts.Pie{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">x, value</a></td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
 <tr><td>Vertical</td><td>N/A</td></tr>
-<tr><td>3D</td><td><a href="3d/pie-chart">3D Pie</a></td></tr>
+<tr><td>3D</td><td><a href="3D/Pie_Chart">3D Pie</a></td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
@@ -29,15 +30,15 @@ This article explains how to create a basic Pie chart as well as configure setti
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="doughnut-chart">Doughnut</a></td></tr>
+<tr><td></td><td><a href="Doughnut_Chart">Doughnut</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/pie-chart/">Chartopedia: Pie Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Pie chart requires adding the [Core](../quick-start/modules#core) and [Pie and Doughnut](../quick-start/modules#pie-and-doughnut) modules:
+The Pie chart requires adding the [Core](../Quick_Start/Modules#core) and [Pie and Doughnut](../Quick_Start/Modules#pie-and-doughnut) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -47,13 +48,13 @@ The Pie chart requires adding the [Core](../quick-start/modules#core) and [Pie a
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pie.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../quick-start/modules#base) module, which includes, among other things, the two modules mentioned above: 
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -85,7 +86,7 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Pie chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
@@ -93,7 +94,7 @@ Read the overview of general settings: [General Settings](general-settings).
 
 #### Slices
 
-The [appearance settings](../appearance-settings) of slices can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Pie#normal}normal(){api}, {api:anychart.charts.Pie#hovered}hovered(){api}, and {api:anychart.charts.Pie#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of slices can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Pie#normal}normal(){api}, {api:anychart.charts.Pie#hovered}hovered(){api}, and {api:anychart.charts.Pie#selected}selected(){api} methods.
 
 Combine them with the following methods:
 
@@ -123,7 +124,7 @@ chart.hovered().stroke("#669999", 2);
 
 Outlines are special elements for highlighting slices, looking like arcs around them.
 
-By default, outlines are enabled only in the **hover** and **selected** [states](../common-settings/interactivity/states), but they can be enabled and configured in the **normal** state as well. To adjust them, use the {api:anychart.charts.Pie#normal}normal(){api}, {api:anychart.charts.Pie#hovered}hovered(){api}, and {api:anychart.charts.Pie#selected}selected(){api} methods. Alternatively, you can use {api:anychart.charts.Pie#outline}outline(){api}, which affects all states at once. 
+By default, outlines are enabled only in the **hover** and **selected** [states](../Common_Settings/Interactivity/States), but they can be enabled and configured in the **normal** state as well. To adjust them, use the {api:anychart.charts.Pie#normal}normal(){api}, {api:anychart.charts.Pie#hovered}hovered(){api}, and {api:anychart.charts.Pie#selected}selected(){api} methods. Alternatively, you can use {api:anychart.charts.Pie#outline}outline(){api}, which affects all states at once. 
 
 Combine these methods with the following ones:
 
@@ -293,11 +294,11 @@ pie2.radius("30%")
 
 {sample}BCT\_Pie\_Chart\_09{sample}
 
-The {api:anychart.charts.Pie#innerRadius}innerRadius(){api} method allows you to set the inner radius of a Pie chart (which is 0 by default), thus turning it into a Doughnut chart. Read more in the [Doughnut Chart](doughnut-chart) article.
+The {api:anychart.charts.Pie#innerRadius}innerRadius(){api} method allows you to set the inner radius of a Pie chart (which is 0 by default), thus turning it into a Doughnut chart. Read more in the [Doughnut Chart](Doughnut_Chart) article.
 
 ### Labels
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 #### Outer Labels
 
@@ -323,4 +324,4 @@ In this sample, there are outside labels with customized connectors:
 
 ### Tooltips
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../common-settings/text-formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.

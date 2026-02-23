@@ -1,4 +1,5 @@
 ---
+slug: "/Stock_Charts/Series/Overview"
 sidebar_position: 1
 ---
 
@@ -6,9 +7,9 @@ sidebar_position: 1
 
 ## Overview
 
-AnyStock supports a lot of different [series types](supported-series). Some of them share some or all data fields and can be [switched during the run time](series-type).
+AnyStock supports a lot of different [series types](Supported_Series). Some of them share some or all data fields and can be [switched during the run time](Series_Type).
 
-Series are created within [chart plots](../chart-plots) by using either the {api:anychart.core.stock.Plot#addSeries}addSeries(){api} method or by series constructors, such as {api:anychart.core.stock.Plot#line}line(){api}, {api:anychart.core.stock.Plot#column}column(){api}, and so on. Except for a few minor differences, settings of AnyStock series are similar to that of basic charts - see [Basic Charts: General Settings](../../basic-charts/general-settings).
+Series are created within [chart plots](../Chart_Plots) by using either the {api:anychart.core.stock.Plot#addSeries}addSeries(){api} method or by series constructors, such as {api:anychart.core.stock.Plot#line}line(){api}, {api:anychart.core.stock.Plot#column}column(){api}, and so on. Except for a few minor differences, settings of AnyStock series are similar to that of basic charts - see [Basic Charts: General Settings](../../Basic_Charts/General_Settings).
 
 ## Basic Sample
 
@@ -79,11 +80,11 @@ series1.hovered().markers().type("star5");
 
 ## Individual Settings
 
-By default stock series do not allow settings to be applied to individual points - all points have the same settings for the sake of performance. You can allow configuring individual points for all series as described in the [Data](../data#individual-point-settings) tutorial. Also, you can use the {api:?entry=allowPointSettings}allowPointSettings(){api} method to enable this option for a particular series.
+By default stock series do not allow settings to be applied to individual points - all points have the same settings for the sake of performance. You can allow configuring individual points for all series as described in the [Data](../Data#individual-point-settings) tutorial. Also, you can use the {api:?entry=allowPointSettings}allowPointSettings(){api} method to enable this option for a particular series.
 
 ## Scroller Series
 
-You can add a background series of any type to the [scroller](../scroller) and adjust its colors in the selected state:
+You can add a background series of any type to the [scroller](../Scroller) and adjust its colors in the selected state:
 
 ```
 // create a thumbnail series in the scroller
@@ -97,4 +98,4 @@ scrollerSeries.selected().fill("#00796B");
 
 ## Supported Series
 
-AnyStock supports series of different types, such as Line, OHLC, Marker, and many others. You can find them all in the [Supported Series](supported-series) list. Series types that share some or all data fields can be [switched during the run time](series-type).
+AnyStock supports series of different types, such as Line, OHLC, Marker, and many others. You can find them all in the [Supported Series](Supported_Series) list. Series types that share some or all data fields can be [switched during the run time](Series_Type).

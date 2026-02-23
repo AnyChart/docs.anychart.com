@@ -1,13 +1,14 @@
 ---
+slug: "/Maps/Map_Axes"
 sidebar_position: 13.5
 ---
 # Map Axes
 
 ## Overview
 
-Drawing Parallels and Meridians Axes, Labels and Ticks is controlled using Map Axes object described in this Article, [Grid](map-grid) controls Parallels and Meridians grid and [Geo Scale](geo-scale) to control axes and grid parameters.
+Drawing Parallels and Meridians Axes, Labels and Ticks is controlled using Map Axes object described in this Article, [Grid](Map_Grid) controls Parallels and Meridians grid and [Geo Scale](Geo_Scale) to control axes and grid parameters.
 
-Axes are objects used to control how bounding lines, labels and tickmarks look. Placement of tickmarks is controlled by [Geo Scale](geo-scale).
+Axes are objects used to control how bounding lines, labels and tickmarks look. Placement of tickmarks is controlled by [Geo Scale](Geo_Scale).
 
 Configuring axes is done using {api:anychart.charts.Map#axes}axes(){api} object represented by an instance of {api:anychart.core.axes.MapSettings}axes.MapSettings{api} class.
 

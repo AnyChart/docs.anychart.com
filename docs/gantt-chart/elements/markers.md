@@ -1,11 +1,12 @@
 ---
+slug: "/Gantt_Chart/Elements/Markers"
 sidebar_position: 7
 ---
 # Markers
 
 ## Overview
 
-Like [milestones](project-chart#milestones), **markers** represent events. You can display multiple markers in one row - on a task or anywhere on the timeline depending on the dates you set.
+Like [milestones](Project_Chart#milestones), **markers** represent events. You can display multiple markers in one row - on a task or anywhere on the timeline depending on the dates you set.
 
 Use the `markers` data field to add an array of markers to your data. In this array, specify the `value` of each marker - its date:
 
@@ -45,7 +46,7 @@ markers: [
 
 ## Project Chart
 
-It is possible to add markers to any [task](../project-chart#tasks-actual)) of a Project chart - a regular task, a parent task, or a milestone:
+It is possible to add markers to any [task](../Project_Chart#tasks-actual)) of a Project chart - a regular task, a parent task, or a milestone:
 
 {sample :height 220}GANTT\_Elements\_Markers\_01{sample}
 
@@ -121,7 +122,7 @@ chart.getTimeline().markers().stroke("black");
 
 ## Resource Chart
 
-In the case of the Resource chart, markers are added to [resources](../resource-chart#periods-and-resources):
+In the case of the Resource chart, markers are added to [resources](../Resource_Chart#periods-and-resources):
 
 {sample :height 200}GANTT\_Elements\_Markers\_02{sample}
 

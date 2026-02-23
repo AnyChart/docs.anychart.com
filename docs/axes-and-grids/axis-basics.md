@@ -1,16 +1,17 @@
 ---
+slug: "/Axes_and_Grids/Axis_Basics"
 sidebar_position: 1
 ---
 # Axis Basics
 
 ## Overview
 
-In AnyChart axes are used to control grids, axes labels, lines and tick marks, axes themselves depend on [scales](scales).
+In AnyChart axes are used to control grids, axes labels, lines and tick marks, axes themselves depend on [scales](Scales).
   
-* To know what scale options are available - please see: [Scale tutorial](scales)
-* To learn how to create additional axes - [Additional axes](additional-axes)
-* To learn how to configure axes labels - [Axes Labels](axes-labels-formatting)
-* To learn more about Date/Time Scale - [Date/Time Axes](date-time-axes)
+* To know what scale options are available - please see: [Scale tutorial](Scales)
+* To learn how to create additional axes - [Additional axes](Additional_Axes)
+* To learn how to configure axes labels - [Axes Labels](Axes_Labels_Formatting)
+* To learn more about Date/Time Scale - [Date/Time Axes](Date_Time_Axes)
 
 In this section we will demonstrate most of the axes visualization options, which are the same for the Y- and X-axes.
 
@@ -41,7 +42,7 @@ As you can see, we've set titles both to the X- and Y-axes.
 
 ## Orientation
 
-With AnyChart web charts you can place axes to any side of the chart, all you need to do is to adjust {api:anychart.core.axes.Linear#orientation}orientation(){api} parameter of {api:anychart.charts.Cartesian#yAxis}yAxis(){api} or {api:anychart.charts.Cartesian#xAxis}xAxis(){api} methods. Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Positioning and Inverting Templates](axis-orientation).
+With AnyChart web charts you can place axes to any side of the chart, all you need to do is to adjust {api:anychart.core.axes.Linear#orientation}orientation(){api} parameter of {api:anychart.charts.Cartesian#yAxis}yAxis(){api} or {api:anychart.charts.Cartesian#xAxis}xAxis(){api} methods. Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Positioning and Inverting Templates](Axis_Orientation).
 
 ```
 chart.yAxis().orientation("right");
@@ -56,7 +57,7 @@ And here is the demonstration of this feature on the Single series column chart:
 
 To enable or disable axis labels you need to specify {api:anychart.core.ui.LabelsFactory#enabled}labels().enabled(){api} parameter of an axis. You can specify how labels should look like, padding between labels and an axis line, should labels be rotated or staggered, etc.
 
-Learn more about axes labels formatting in [Axes Labels Tutorial](axes-labels-formatting)
+Learn more about axes labels formatting in [Axes Labels Tutorial](Axes_Labels_Formatting)
 
 Normal labels look like this:    
 
@@ -105,7 +106,7 @@ line.value(0);
 line.stroke("2 red");
 ```
 
-As in any line, you can make it gradient, change opacity and thickness using {api:anychart.core.axes.Linear#stroke}stroke(){api} method. Read more about lines in [Strokes and Lines tutorial](../appearance-settings/lines-settings)
+As in any line, you can make it gradient, change opacity and thickness using {api:anychart.core.axes.Linear#stroke}stroke(){api} method. Read more about lines in [Strokes and Lines tutorial](../Appearance_Settings/Lines_Settings)
 
 {sample}AGST\_Axes\_Basic\_06{sample}
 
@@ -133,7 +134,7 @@ The dashboard below shows how these settings work:
 
 There are two types of grid in AnyChart charting framework - major grids that can be controlled using {api:anychart.charts.Cartesian#xGrid}xGrid(){api} and {api:anychart.charts.Cartesian#yGrid}yGrid(){api} methods and minor grids that is controlled with {api:anychart.charts.Cartesian#xMinorGrid}xMinorGrid(){api} and {api:anychart.charts.Cartesian#yMinorGrid}yMinorGrid(){api} method. 
 
-**Note**: Grid lines correlate with [ticks of the chart scale](./scales#ticks). To manage the number of ticks use {api:anychart.scales.ScatterTicks#interval}interval(){api} parameter of the corresponding scale.
+**Note**: Grid lines correlate with [ticks of the chart scale](./Scales#ticks). To manage the number of ticks use {api:anychart.scales.ScatterTicks#interval}interval(){api} parameter of the corresponding scale.
 
 To enable grids use {api:anychart.core.grids.Linear#enabled}enabled(true){api} method.
 
@@ -154,7 +155,7 @@ Here is how default major and and minor grids of a columne chart look like:
 
 #### Lines
 
-You can control visual appearance of grid lines using {api:anychart.core.grids.Linear#stroke}stroke(){api} method. Full information on lines settings can be found in [lines tutorial](../appearance-settings/lines-settings).
+You can control visual appearance of grid lines using {api:anychart.core.grids.Linear#stroke}stroke(){api} method. Full information on lines settings can be found in [lines tutorial](../Appearance_Settings/Lines_Settings).
 
 ```
 chart.xGrid().stroke({
@@ -180,10 +181,10 @@ chart.yGrid().palette(["#FFF 0.25", "#000 0.25"]);
 
 {sample}AGST\_Axes\_Basic\_10{sample}
 
-You can use either a simple array of colors, containing any number of elements, or {api:anychart.palettes.RangeColors}anychart.palettes.RangeColors{api} or {api:anychart.palettes.DistinctColors}anychart.palettes.DistinctColors{api} described in [Palettes](../appearance-settings/palettes).
+You can use either a simple array of colors, containing any number of elements, or {api:anychart.palettes.RangeColors}anychart.palettes.RangeColors{api} or {api:anychart.palettes.DistinctColors}anychart.palettes.DistinctColors{api} described in [Palettes](../Appearance_Settings/Palettes).
 
 Here is a sample where grid coloring is used to highlight value zones:
 
 {sample}AGST\_Axes\_Basic\_11{sample}
 
-**Note:** To fill the background of the data area (the area limited by the axes) with one color, you do not need to use data grids - see the [Data Area](../appearance-settings/background#data-area) section.
+**Note:** To fill the background of the data area (the area limited by the axes) with one color, you do not need to use data grids - see the [Data Area](../Appearance_Settings/Background#data-area) section.

@@ -1,4 +1,5 @@
 ---
+slug: "/Graphics/Paths"
 sidebar_position: 6
 ---
 # GraphicsJS Path
@@ -7,7 +8,7 @@ sidebar_position: 6
 
 {api:anychart.graphics.vector.Path}Path{api} is sequence of segments of different type, it can be opened or closed. To define the how to fill the shape created by a path the [EVEN-ODD](https://www.w3.org/TR/SVG/painting.html#FillProperties) rule is used. Path always starts with {api:anychart.graphics.vector.Path#moveTo}moveTo(){api} command.
 
-GraphicsJS has one the most powerful line drawing features among SVG/VML based graphics libraries that provide only Bezier curves out of the box. GraphicsJS is great at working with mathematical functions. As a result, GraphicsJS allows you to draw not only Bezier curves out of the box, but literally anything; for example, you can draw some arc very quickly, whereas other graphics libraries will make you arrange it through numerous different curves. There are also [basic shapes available](shapes).
+GraphicsJS has one the most powerful line drawing features among SVG/VML based graphics libraries that provide only Bezier curves out of the box. GraphicsJS is great at working with mathematical functions. As a result, GraphicsJS allows you to draw not only Bezier curves out of the box, but literally anything; for example, you can draw some arc very quickly, whereas other graphics libraries will make you arrange it through numerous different curves. There are also [basic shapes available](Shapes).
 
 ## Creating 
 
@@ -30,7 +31,7 @@ Do not invoke class constructor directly. Use {api:anychart.graphics.vector.Stag
 <tr><td>{api:anychart.graphics.vector.Path#quadraticCurveTo}quadraticCurveTo(){api}</td><td>Adds specified points to the path, drawing sequentially a quadratic Bezier curve from the current point to the next.</td></tr>
 </table>
 
-Here is a sample code that shows how to create a closed shape using a path, and fill it with a [hatch fill](hatch-fill-settings):
+Here is a sample code that shows how to create a closed shape using a path, and fill it with a [hatch fill](Hatch_Fill_Settings):
 
 ```
 stage = anychart.graphics.create("container");
@@ -50,7 +51,7 @@ linePath.fill(stage.hatchFill("backwardDiagonal", "#2196F3 0.9", 1));
 
 {sample :height 150}GFX\_path\_1{sample}
 
-Here is a sample code that shows how to create an open line using a path, and make its [stroke dashed](stroke-settings#dash):
+Here is a sample code that shows how to create an open line using a path, and make its [stroke dashed](Stroke_Settings#dash):
 
 ```
 stage = anychart.graphics.create("container");

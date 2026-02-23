@@ -1,8 +1,11 @@
+---
+slug: "/Stock_Charts/Series/Step_Line"
+---
 # AnyStock Step Line Series
 
 ## Overview
 
-Step Line Series is rather similar to [Line Series](line). Find all information about using Step Lines in the [Step Line Chart tutorial](../../basic-charts/step-line-chart).
+Step Line Series is rather similar to [Line Series](Line). Find all information about using Step Lines in the [Step Line Chart tutorial](../../Basic_Charts/Step_Line_Chart).
 
 ## AnyStock Step Line Series Adjustment
 
@@ -53,7 +56,7 @@ mapping = table.mapAs({x: 'x', value: 'value'});
 
 {sample}STOCK\_Step\_Line\_02{sample}
 
-You can read more about managing Data in Stocks in the [Stock Data tutorial](../data).
+You can read more about managing Data in Stocks in the [Stock Data tutorial](../Data).
 
 ### Multi series
 
@@ -83,11 +86,11 @@ series_region.name("Region Request Number");
 
 Note that the only thing you need to do to put a series in a new plot is to set the new plot ID as a parameter of the {api:anychart.charts.Stock#plot}plot(){api} method.
 
-More about plots can be found in the [Plots tutorial](../chart-plots).
+More about plots can be found in the [Plots tutorial](../Chart_Plots).
 
 ### Switching series type
 
-You can change the type of series to another compatible type. See the [Series Type](series-type) and [series types table](supported-series#list-of-supported-series).
+You can change the type of series to another compatible type. See the [Series Type](Series_Type) and [series types table](Supported_Series#list-of-supported-series).
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 

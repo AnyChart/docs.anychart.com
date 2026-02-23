@@ -1,4 +1,5 @@
 ---
+slug: "/Working_with_Data/Data_Manipulation"
 sidebar_position: 3
 ---
 # Data Manipulation
@@ -18,7 +19,7 @@ You can solve the following tasks using some easy-in-use Java Script methods:
 
 This article shows how to solve each of these tasks.
 
-**Note**: this article contains information on data mapping and series data managing. Information about managing chart's series and series visual appearance can be found in [Series Manipulation article](../working-with-data/series-manipulation).
+**Note**: this article contains information on data mapping and series data managing. Information about managing chart's series and series visual appearance can be found in [Series Manipulation article](../Working_with_Data/Series_Manipulation).
 
 ### Add
 

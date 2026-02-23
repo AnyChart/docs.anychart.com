@@ -1,9 +1,10 @@
 ---
+slug: "/Gantt_Chart/Data_Grid/Appearance"
 sidebar_position: 2
 ---
 # Appearance
 
-You can configure the [appearance](../../appearance-settings) of the data grid: set the background and header fill, the stroke of columns, etc. It is possible to apply the same color to all rows or different colors to odd and even rows.
+You can configure the [appearance](../../Appearance_Settings) of the data grid: set the background and header fill, the stroke of columns, etc. It is possible to apply the same color to all rows or different colors to odd and even rows.
 
 Combine {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with the following methods:
 
@@ -16,9 +17,9 @@ Combine {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with the following m
 * {api:anychart.core.ui.DataGrid#rowOddFill}rowOddFill(){api} to set the fill of odd rows
 * {api:anychart.core.ui.DataGrid#columnStroke}columnStroke(){api} to set the stroke of columns
 
-**Note 1:** See also [Timeline: Appearance](../timeline/appearance) to learn how to configure the appearance of the timeline.
+**Note 1:** See also [Timeline: Appearance](../Timeline/Appearance) to learn how to configure the appearance of the timeline.
 
-**Note 2:** The [Basic Settings: Background](../basic-settings#background) and [Basic Settings: Rows and Columns](../basic-settings#rows-and-columns) sections explain how to apply some appearance settings simultaneously to the data grid and timeline. Please note that this is the only way to set the **row stroke**.
+**Note 2:** The [Basic Settings: Background](../Basic_Settings#background) and [Basic Settings: Rows and Columns](../Basic_Settings#rows-and-columns) sections explain how to apply some appearance settings simultaneously to the data grid and timeline. Please note that this is the only way to set the **row stroke**.
 
 The sample below shows how to adjust the appearance of the data grid:
 

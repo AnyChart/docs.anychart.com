@@ -1,9 +1,10 @@
 ---
+slug: "/Common_Settings/Legend/Title_and_Separator"
 sidebar_position: 4
 ---
 # Title and Separator
 
-The legend [title](../title) is disabled by default. To enable and configure it, combine the {api:?entry=legend}legend(){api} method of the chart with {api:anychart.core.ui.Legend#title}title(){api} and methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class. You can set the text, font, padding, and so on:
+The legend [title](../Title) is disabled by default. To enable and configure it, combine the {api:?entry=legend}legend(){api} method of the chart with {api:anychart.core.ui.Legend#title}title(){api} and methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class. You can set the text, font, padding, and so on:
 
 ```
 // enable and configure the legend title
@@ -47,6 +48,6 @@ chart.legend().title().orientation("left");
 chart.legend().titleSeparator().orientation("left");
 ```
 
-In the sample below, there is a legend with a vertical [layout](basic-settings#layout), and the title and separator are placed to the left of it:
+In the sample below, there is a legend with a vertical [layout](Basic_Settings#layout), and the title and separator are placed to the left of it:
 
 {sample}CS\_Legend\_Title\_02{sample}

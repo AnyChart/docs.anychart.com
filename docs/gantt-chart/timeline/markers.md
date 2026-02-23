@@ -1,4 +1,5 @@
 ---
+slug: "/Gantt_Chart/Timeline/Markers"
 sidebar_position: 5
 ---
 # Markers

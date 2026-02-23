@@ -1,3 +1,6 @@
+---
+slug: "/Common_Settings/Scroller"
+---
 # Scroller
 
 ## Overview
@@ -43,7 +46,7 @@ chart.xZoom().setTo(0, 0.3);
 
 Another option is to define the particular values which exist on the scale. In this case you have to set the scale as the third parameter, the default xScale is used when no scale is specified. If you like to zoom the chart to the area from "Part 1" to "Part 4" on the heatmap we should use the {api:anychart.core.utils.OrdinalZoom#setToValues}setToValues(){api} method:
 
-**Note:** only [Heat maps](../basic-charts/heat-map-chart) support scroll or zoom by Y in this version.
+**Note:** only [Heat maps](../Basic_Charts/Heat_Map_Chart) support scroll or zoom by Y in this version.
 
 ```
 // set zoom limits by values
@@ -190,7 +193,7 @@ In this sample a dataSet has 20 points, zoom settings allow to show only 15. You
 
 ## Events
 
-Basic information about event listeners can be found in the [Event Listeners tutorial](event-listeners).
+Basic information about event listeners can be found in the [Event Listeners tutorial](Event_Listeners).
 
 There are three events which scroller can dispatch: 
 - **scrollerchange**

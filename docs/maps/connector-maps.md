@@ -1,4 +1,5 @@
 ---
+slug: "/Maps/Connector_Maps"
 sidebar_position: 8
 ---
 # Connector Maps
@@ -93,7 +94,7 @@ var data = [
 
 There are several connectors created that consist of a number of segments. To create a multi-segmental connector add a pair of values (representing longitude and latitude) to the data of this connector. Watch the number of values: it should stay even in each point (connector) data.
 
-Note: this sample uses third party proj4.js library, to learn how, why and figure out if you need it please see [Map Projections](map-projections) article.
+Note: this sample uses third party proj4.js library, to learn how, why and figure out if you need it please see [Map Projections](Map_Projections) article.
 
 ## Altering Connectors
 
@@ -146,7 +147,7 @@ series.endSize(0);
 
 ### Series colors
 
-The colors of connectors can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.map.series.Connector#normal}normal(){api}, {api:anychart.core.map.series.Connector#hovered}hovered(){api}, and {api:anychart.core.map.series.Connector#selected}selected(){api} methods.
+The colors of connectors can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.map.series.Connector#normal}normal(){api}, {api:anychart.core.map.series.Connector#hovered}hovered(){api}, and {api:anychart.core.map.series.Connector#selected}selected(){api} methods.
 
 Combine them with the following methods:
 
@@ -201,7 +202,7 @@ markers.anchor("left-center");
 
 The size of markers were changed as well using the {api:anychart.core.ui.MarkersFactory.Marker#size}size(){api} method.
 
-Another way to emphasize the start and/or end points is to create a Marker series. You can find the instructions in the [Map Marker series tutorial](dot-point-map)_Map).
+Another way to emphasize the start and/or end points is to create a Marker series. You can find the instructions in the [Map Marker series tutorial](Dot_(Point)_Map)_Map).
 
 ### Labels and Tooltips
 
@@ -211,9 +212,9 @@ Adjusting the position of labels is similar to adjusting it for the markers. Set
 
 The anchor of the label depends on its position and its connector's curvature, but can be adjusted as well by using the {api:anychart.core.ui.LabelsFactory.Label#anchor}anchor(){api} method.
 
-To change the content of labels use {api:anychart.core.ui.LabelsFactory#format}format(){api} method. To know more about labels and methods of adjusting then look up the [Labels tutorial](../common-settings/labels).
+To change the content of labels use {api:anychart.core.ui.LabelsFactory#format}format(){api} method. To know more about labels and methods of adjusting then look up the [Labels tutorial](../Common_Settings/Labels).
 
-Tooltips have similar methods of adjusting. Use {api:anychart.core.ui.Tooltip#format}format(){api} to change the content of the tooltip body and {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} to change the content of the tooltip title content. Its position and anchor are being set using the {api:anychart.core.ui.LabelsFactory.Label#position}position(){api} and {api:anychart.core.ui.LabelsFactory.Label#anchor}anchor(){api} methods as well. There are a lot of different tooltip features that can be adjusted. Find more about tooltips in the [Tooltip adjusting tutorial](../common-settings/tooltip).
+Tooltips have similar methods of adjusting. Use {api:anychart.core.ui.Tooltip#format}format(){api} to change the content of the tooltip body and {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} to change the content of the tooltip title content. Its position and anchor are being set using the {api:anychart.core.ui.LabelsFactory.Label#position}position(){api} and {api:anychart.core.ui.LabelsFactory.Label#anchor}anchor(){api} methods as well. There are a lot of different tooltip features that can be adjusted. Find more about tooltips in the [Tooltip adjusting tutorial](../Common_Settings/Tooltip).
 
 All label settings can be also defined through the dataSet as well.
 

@@ -1,4 +1,5 @@
 ---
+slug: "/Graphics/Events"
 sidebar_position: 4
 ---
 # GraphicsJS Events

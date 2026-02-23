@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/3D/Area_Chart"
 sidebar_position: 2
 ---
 # 3D Area Chart
@@ -7,7 +8,7 @@ sidebar_position: 2
 
 This article explains how to create a 3D Area chart in AnyChart.
 
-To learn more about 3D charts in general and how to customize them, see [3D Charts (Overview)](overview). You can also read the [Area Chart](../area-chart) article.
+To learn more about 3D charts in general and how to customize them, see [3D Charts (Overview)](Overview). You can also read the [Area Chart](../Area_Chart) article.
 
 ## Quick Start
 
@@ -25,4 +26,4 @@ var series = chart.area(data);
 
 ## Special Settings
 
-**Note:** When you use the {api:anychart#area3d}anychart.line3d(){api} chart constructor, the [Z-distribution](overview#z-distribution) is enabled by default, which means that the series of multiple-series charts are distributed along the Z-axis.
+**Note:** When you use the {api:anychart#area3d}anychart.line3d(){api} chart constructor, the [Z-distribution](Overview#z-distribution) is enabled by default, which means that the series of multiple-series charts are distributed along the Z-axis.

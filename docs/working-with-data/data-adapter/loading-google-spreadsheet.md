@@ -1,11 +1,12 @@
 ---
+slug: "/Working_with_Data/Data_Adapter/Loading_Google_Spreadsheet"
 sidebar_position: 5
 ---
 # Loading Google Spreadsheet
 
 ## Overview
 
-Ability to [load data from Google Spreadsheet](#loading-spreadsheet) is one of the features [Data Adapter](overview) provides.
+Ability to [load data from Google Spreadsheet](#loading-spreadsheet) is one of the features [Data Adapter](Overview) provides.
 
 To work with the features Data Adapter provides you need to plug it in along with AnyChart Library:
 
@@ -89,13 +90,13 @@ anychart.data.loadGoogleSpreadsheet({key: 1vLGbBZoBDXVT3IaykMb4HhvfXgoAOzEM3Rrk1
 
 ## Setting Data
 
-The {api:anychart.data#loadGoogleSpreadsheet}loadGoogleSpreadsheet(){api} method just loads the data into a variable, the data is stored in {api:anychart.data.DataSettings}anychart.data.DataSettings{api} format, which is also used when data is loaded from [HTML Tables](parsing-html-table).
+The {api:anychart.data#loadGoogleSpreadsheet}loadGoogleSpreadsheet(){api} method just loads the data into a variable, the data is stored in {api:anychart.data.DataSettings}anychart.data.DataSettings{api} format, which is also used when data is loaded from [HTML Tables](Parsing_HTML_Table).
 
 You have to create a chart yourself and then pass data to a chart. Please see a set of samples below.
 
 ### From the default sheet
 
-Create a multiple-series [Column chart](../../basic-charts/column-chart) from a default sheet:
+Create a multiple-series [Column chart](../../Basic_Charts/Column_Chart) from a default sheet:
 
 ```
 anychart.data.loadGoogleSpreadsheet('1vLGbBZoBDXVT3IaykMb4HhvfXgoAOzEM3Rrk1xLN5aU', function(data) {
@@ -116,7 +117,7 @@ Here is a live sample:
 
 ### From a sheet by index
 
-Create a multiple-series [Line chart](../../basic-charts/line-chart) from the second sheet:
+Create a multiple-series [Line chart](../../Basic_Charts/Line_Chart) from the second sheet:
 
 ```
 anychart.data.loadGoogleSpreadsheet({key: '1vLGbBZoBDXVT3IaykMb4HhvfXgoAOzEM3Rrk1xLN5aU', sheet: '2'}, function(data) {
@@ -137,7 +138,7 @@ Here is a live sample:
 
 ### From a sheet by id
 
-Create a single-series [Pie chart](../../basic-charts/pie-chart) from the second sheet by id:
+Create a single-series [Pie chart](../../Basic_Charts/Pie_Chart) from the second sheet by id:
 
 ```
 anychart.data.loadGoogleSpreadsheet({key: '1vLGbBZoBDXVT3IaykMb4HhvfXgoAOzEM3Rrk1xLN5aU', sheet: 'obqmz8q'}, function(data) {

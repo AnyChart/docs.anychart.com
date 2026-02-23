@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Bullet_Chart"
 sidebar_position: 1
 ---
 # Bullet Chart
@@ -19,13 +20,13 @@ sidebar_position: 1
 
 ## Overview
 
-A Bullet Chart is a variation of [Bar Chart](bar-chart) designed to compare a single, primary measure (for example, current year-to-date revenue) to one or more other measures to enrich its meaning (for example, compared to a target), and displays it in the context of qualitative ranges of performance, such as poor, satisfactory, and good. The qualitative ranges are displayed as blocks of one hue but with varying intensity, making them discernible by those who are color blind and to restrict the use of colors on the dashboard to a minimum.
+A Bullet Chart is a variation of [Bar Chart](Bar_Chart) designed to compare a single, primary measure (for example, current year-to-date revenue) to one or more other measures to enrich its meaning (for example, compared to a target), and displays it in the context of qualitative ranges of performance, such as poor, satisfactory, and good. The qualitative ranges are displayed as blocks of one hue but with varying intensity, making them discernible by those who are color blind and to restrict the use of colors on the dashboard to a minimum.
 
 Bullet chart always uses only one data series, but a dashboard may contain several bullet charts at the same time. This kind of charts can be of great help in some cases as far as it provides the clearest presentation of the data using less space.
 
 ## Modules
 
-The Bullet Chart requires adding the [Core](../quick-start/modules#core) and [Bullet](../quick-start/modules#bullet) modules:
+The Bullet Chart requires adding the [Core](../Quick_Start/Modules#core) and [Bullet](../Quick_Start/Modules#bullet) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -35,7 +36,7 @@ The Bullet Chart requires adding the [Core](../quick-start/modules#core) and [Bu
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bullet.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Chart
 
@@ -91,7 +92,7 @@ Here is the sample with both horizontal and vertical layouts.
 
 ## Axis
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings. You can find more information about axis in [Axes Basics](../axes-and-grids/axis-basics) tutorial. 
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings. You can find more information about axis in [Axes Basics](../Axes_and_Grids/Axis_Basics) tutorial. 
 
 In this section we will quickly demonstrate how we can adjust axis orientation, invert axis scale and control minimum and maximum values.
 

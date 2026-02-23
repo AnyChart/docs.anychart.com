@@ -1,4 +1,5 @@
 ---
+slug: "/Maps/Amap_to_GeoJson"
 sidebar_position: 6
 ---
 
@@ -14,7 +15,7 @@ AnyChart 7.x maps collection can be found in [AnyChart CDN Maps Collection](http
   
 Converter generates AnyMap 7.x GeoJSON based JavaScript (.js), pure GeoJSON (.json) and SHP (.shp, .shx and .dbf) formats in the specified output folder.  
   
-After you converted .amap file you can [use .js or .json files directly in the new HTML5 AnyMap](quick-start) or tune .json or .shp files further as described in [AnyMap Custom GeoJSON Maps Tutorial](custom-geojson-maps).
+After you converted .amap file you can [use .js or .json files directly in the new HTML5 AnyMap](Quick_Start) or tune .json or .shp files further as described in [AnyMap Custom GeoJSON Maps Tutorial](Custom_GeoJson_Maps).
 
 ## Installation
 

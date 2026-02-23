@@ -1,9 +1,12 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Ratiocator_(RAT)"
+---
 # Ratiocator (RAT)
 ## Overview
 
 The Ratiocator Indicator (RAT) represents the relationship between two prices series. It allows you to examine performance developments between two securities. With the help of a base date, this indicator can be carried out over a defined period of time.
 
-Mathematical description of the indicator: [Ratiocator (RAT) Mathematical Description](mathematical-description#ratiocator).
+Mathematical description of the indicator: [Ratiocator (RAT) Mathematical Description](Mathematical_Description#ratiocator).
 
 ## Adding Indicator
 

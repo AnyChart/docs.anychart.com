@@ -1,50 +1,51 @@
 ---
+slug: "/Basic_Charts/HiLo_Chart"
 sidebar_position: 1.5
 ---
 # High-Low (HiLo) Chart
 
 ## Overview
 
-A high-low (HiLo) chart is a chart type mostly used to illustrate movements in the price of a financial instrument over time. Each vertical line on the chart shows the price range (the highest and lowest prices) over one unit of time - e.g., one day or one hour. So, the HiLo chart looks like the [OHLC chart](ohlc-chart), but does not have tick marks indicating the opening and closing prices.
+A high-low (HiLo) chart is a chart type mostly used to illustrate movements in the price of a financial instrument over time. Each vertical line on the chart shows the price range (the highest and lowest prices) over one unit of time - e.g., one day or one hour. So, the HiLo chart looks like the [OHLC chart](OHLC_Chart), but does not have tick marks indicating the opening and closing prices.
 
-HiLo is a series type that is predominantly used for demonstrating the stock market data, due to its specifics. So AnyChart HiLo series are also available in AnyStock - see the [HiLo series in AnyStock](../stock-charts/series/hilo) article to learn more.
+HiLo is a series type that is predominantly used for demonstrating the stock market data, due to its specifics. So AnyChart HiLo series are also available in AnyStock - see the [HiLo series in AnyStock](../Stock_Charts/Series/HiLo) article to learn more.
 
 This article explains how to create a basic HiLo chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the HiLo chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#basic-cartesian">Basic Cartesian</a> / <a href="../Quick_Start/Modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Hilo}anychart.core.cartesian.series.HiLo{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, high, low</a></td></tr>
-<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">x, high, low</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../Working_with_Data/Overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td><a href="vertical/hilo-chart">Vertical HiLo</a></td></tr>
+<tr><td>Vertical</td><td><a href="Vertical/HiLo_Chart">Vertical HiLo</a></td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
-<tr><td>Stock</td><td><a href="../stock-charts/series/hilo">Stock HiLo</a></td></tr>
+<tr><td>Stock</td><td><a href="../Stock_Charts/Series/HiLo">Stock HiLo</a></td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="ohlc-chart">OHLC</a></td></tr>
-<tr><td></td><td><a href="japanese-candlestick-chart">Japanese Candlestick</a></td></tr>
-<tr><td></td><td><a href="stick-chart">Stick</a></td></tr>
-<tr><td></td><td><a href="range-area-chart">Range Area</a></td></tr>
-<tr><td></td><td><a href="range-bar-chart">Range Bar</a></td></tr>
-<tr><td></td><td><a href="range-column-chart">Range Column</a></td></tr>
-<tr><td></td><td><a href="range-spline-area-chart">Range Spline Area</a></td></tr>
-<tr><td></td><td><a href="range-step-area-chart">Range Step Area</a></td></tr>
+<tr><td></td><td><a href="OHLC_Chart">OHLC</a></td></tr>
+<tr><td></td><td><a href="Japanese_Candlestick_Chart">Japanese Candlestick</a></td></tr>
+<tr><td></td><td><a href="Stick_Chart">Stick</a></td></tr>
+<tr><td></td><td><a href="Range_Area_Chart">Range Area</a></td></tr>
+<tr><td></td><td><a href="Range_Bar_Chart">Range Bar</a></td></tr>
+<tr><td></td><td><a href="Range_Column_Chart">Range Column</a></td></tr>
+<tr><td></td><td><a href="Range_Spline_Area_Chart">Range Spline Area</a></td></tr>
+<tr><td></td><td><a href="Range_Step_Area_Chart">Range Step Area</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/hilo-chart/">Chartopedia: HiLo Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The HiLo chart requires adding the [Core](../quick-start/modules#core) and [Basic Cartesian](../quick-start/modules#basic-cartesian) modules:
+The HiLo chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic-cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -54,13 +55,13 @@ The HiLo chart requires adding the [Core](../quick-start/modules#core) and [Basi
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../quick-start/modules#base) module, which includes, among other things, the two modules mentioned above: 
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -102,13 +103,13 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the HiLo chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
 ### Appearance
 
-The [appearance settings](../appearance-settings) of an Area chart can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Hilo#normal}normal(){api}, {api:anychart.core.cartesian.series.Hilo#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Hilo#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of an Area chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Hilo#normal}normal(){api}, {api:anychart.core.cartesian.series.Hilo#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Hilo#selected}selected(){api} methods.
 
 Combine them with the {api:anychart.core.StateSettings#stroke}stroke(){api} method. Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
@@ -136,16 +137,16 @@ series2.selected().stroke("#0066cc", 4);
 
 ### Labels
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 ### Tooltips
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../common-settings/text-formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 ### Vertical HiLo
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](vertical/overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](Vertical/Overview).
 
 Here is information about creating Vertical HiLo series:
 
-* [Vertical HiLo](vertical/hilo-chart)
+* [Vertical HiLo](Vertical/HiLo_Chart)

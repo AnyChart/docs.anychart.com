@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Network_Graph"
 sidebar_position: 1.61
 ---
 # Network Graph
@@ -10,7 +11,7 @@ A network graph is a mathematical visualization that is used to model pairwise r
 This article explains how to create a basic Network Graph as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Network Graph's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#network-graph">Network Graph</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#network-graph">Network Graph</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Graph}anychart.charts.Graph{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -27,15 +28,15 @@ This article explains how to create a basic Network Graph as well as configure s
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="sankey-diagram">Sankey Diagram</a></td></tr>
+<tr><td></td><td><a href="Sankey_Diagram">Sankey Diagram</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/network-graph/">Chartopedia: Network Graph</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Network Graph requires adding the [Core](../quick-start/modules#core) and [Network Graph](../quick-start/modules#network-graph) modules:
+The Network Graph requires adding the [Core](../Quick_Start/Modules#core) and [Network Graph](../Quick_Start/Modules#network-graph) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -45,7 +46,7 @@ The Network Graph requires adding the [Core](../quick-start/modules#core) and [N
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-graph.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -91,7 +92,7 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Network Graph (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
@@ -236,9 +237,9 @@ You can adjust the size, shape, and appearance of all nodes, of an individual no
 
 #### All Nodes
 
-You can adjust the size, shape, and [appearance](../appearance-settings) of all nodes on a graph - access them by using the {api:anychart.charts.Graph#nodes}nodes(){api} method.
+You can adjust the size, shape, and [appearance](../Appearance_Settings) of all nodes on a graph - access them by using the {api:anychart.charts.Graph#nodes}nodes(){api} method.
 
-Nodes can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Node#normal}normal(){api}, {api:anychart.core.graph.elements.Node#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Node#selected}selected(){api} methods.
+Nodes can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Node#normal}normal(){api}, {api:anychart.core.graph.elements.Node#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Node#selected}selected(){api} methods.
 
 Combine them with methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
@@ -430,7 +431,7 @@ var friends = chart.group("friends");
 var loneWolf = chart.group("lone wolf");
 ```
 
-Groups can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Group#normal}normal(){api}, {api:anychart.core.graph.elements.Group#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Group#selected}selected(){api} methods.
+Groups can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Group#normal}normal(){api}, {api:anychart.core.graph.elements.Group#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Group#selected}selected(){api} methods.
 
 Combine them with methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
@@ -492,9 +493,9 @@ You can adjust the appearance of all edges or of an individual edge, as explaine
 
 #### All Edges
 
-You can adjust the [appearance](../appearance-settings) of all edges on a graph - access them by using the {api:anychart.charts.Graph#edges}edges(){api} method.
+You can adjust the [appearance](../Appearance_Settings) of all edges on a graph - access them by using the {api:anychart.charts.Graph#edges}edges(){api} method.
 
-Edges can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Edge#normal}normal(){api}, {api:anychart.core.graph.elements.Edge#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Edge#selected}selected(){api} methods.
+Edges can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.graph.elements.Edge#normal}normal(){api}, {api:anychart.core.graph.elements.Edge#hovered}hovered(){api}, and {api:anychart.core.graph.elements.Edge#selected}selected(){api} methods.
 
 Combine them with methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
@@ -565,17 +566,17 @@ var chart = anychart.graph(data);
 
 ### Appearance
 
-You can configure the [appearance](../appearance-settings) of nodes and edges on the whole chart or of individual nodes, node groups, and edges. See the [Nodes](#nodes) and [Edges](#edges) sections to learn more.
+You can configure the [appearance](../Appearance_Settings) of nodes and edges on the whole chart or of individual nodes, node groups, and edges. See the [Nodes](#nodes) and [Edges](#edges) sections to learn more.
 
 ### Labels and Tooltips
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
 #### Tokens
 
-To change the text of labels on the whole chart, combine the {api:anychart.charts.Graph#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../common-settings/text-formatters#string-tokens).
+To change the text of labels on the whole chart, combine the {api:anychart.charts.Graph#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string-tokens).
 
 To change the text of tooltips, do the same with the {api:anychart.charts.Graph#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
@@ -649,7 +650,7 @@ chart.edges().tooltip().format("{%from} -> {%to}");
 
 #### Formatting Functions
 
-To configure labels and tooltips, you can use [formatting functions](../common-settings/text-formatters#formatting-functions) and the following fields:
+To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting-functions) and the following fields:
 
 * `id`
 * `type`
@@ -769,9 +770,9 @@ This is how these methods work:
 
 #### Zoom Control Panel
 
-The [Zoom Control Panel](../common-settings/ui-controls/zoom-controls) is an HTML object with three buttons that allow zooming in, zooming out, and resetting the chart.
+The [Zoom Control Panel](../Common_Settings/UI_Controls/Zoom_Controls) is an HTML object with three buttons that allow zooming in, zooming out, and resetting the chart.
 
-It requires adding the [Common UI](../quick-start/modules#common-ui) module:
+It requires adding the [Common UI](../Quick_Start/Modules#common-ui) module:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>

@@ -1,3 +1,6 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Stochastic_Oscillator"
+---
 # Stochastic
 
 ## Overview
@@ -6,7 +9,7 @@ Stochastic oscillator is a momentum indicator introduced by George Lane in the 1
 
 There are three most famous modifications of Stochastic Oscillator: Fast Stochastic, Slow Stochastic and Full Stochastic. AnyChart Stock allows adding all these types using the same method with different parameters.
 
-Mathematical description: [Stochastic Oscillator Mathematical Description](mathematical-description#stochastic-oscillator).
+Mathematical description: [Stochastic Oscillator Mathematical Description](Mathematical_Description#stochastic-oscillator).
 
 ## Adding Indicator
 

@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Stacked/Percent/Vertical_Spline_Area_Chart"
 sidebar_position: 7
 ---
 # Vertical Percent Stacked Spline Area Chart
@@ -7,11 +8,11 @@ sidebar_position: 7
 
 A Vertical Percent Stacked Spline Area Chart is a multiple-series Spline Area Chart that displays the trend of the percentage each value contributes over time or categories. The categories of this chart are spread among the vertical axis. The difference between simple Area Chart and Spline Area is that points and angles are replaced with a single spline.
 
-The concept of stacking in AnyChart is described in this article: [Stacked (Overview)](../overview).
+The concept of stacking in AnyChart is described in this article: [Stacked (Overview)](../Overview).
 
 ## Quick Start
 
-To build a Vertical Percent Stacked Spline Area Chart, create a multiple-series [Vertical Spline Area Chart](../../vertical/spline-area-chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **percent**:
+To build a Vertical Percent Stacked Spline Area Chart, create a multiple-series [Vertical Spline Area Chart](../../Vertical/Spline_Area_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **percent**:
 
 ```
 // create a vertical area chart
@@ -29,4 +30,4 @@ var series2 = chart.splineArea(seriesData_2);
 
 ## Adjusting
 
-The Vertical Percent Stacked Spline Area series' settings are mostly the same as other series' ones. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../general-settings).
+The Vertical Percent Stacked Spline Area series' settings are mostly the same as other series' ones. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../General_Settings).

@@ -1,4 +1,5 @@
 ---
+slug: "/Maps/Custom_SVG_Maps"
 sidebar_position: 5
 ---
 
@@ -6,7 +7,7 @@ sidebar_position: 5
 
 ## Overview
 
-AnyChart supports Geo Data in [GeoJSON](custom-geojson-maps) and [TopoJSON](custom-topojson) and SVG formats.
+AnyChart supports Geo Data in [GeoJSON](Custom_GeoJson_Maps) and [TopoJSON](Custom_TopoJSON) and SVG formats.
 
 All maps in [AnyChart Map Collection](https://cdn.anychart.com/) have GeoJSON, TopoJSON and versions, you can use whichever you like most.
 
@@ -121,15 +122,15 @@ If you want to assign any other text data to an element, like you do in GeoJSON 
 
 ## Sample SVG String
 
-Here is a very basic sample of SVG image loaded into AnyMap and used with [Choropleth Map Series](choropleth-map):
+Here is a very basic sample of SVG image loaded into AnyMap and used with [Choropleth Map Series](Choropleth_Map):
 
 {sample}Maps\_SVG\_01{sample}
 
 ## Sample SVG Map
 
-Here is a sample of SVG map from [AnyMap Map Collection](maps-list) and used with [Choropleth Map Series](choropleth-map):
+Here is a sample of SVG map from [AnyMap Map Collection](Maps_List) and used with [Choropleth Map Series](Choropleth_Map):
 
 {sample}Maps\_SVG\_02{sample}
 
-You can find more samples of using SVG images to create [Seat Maps](seat-maps) in [AnyMap: Seat Maps Gallery](https://www.anychart.com/products/anymap/gallery/Seat_Maps/).
+You can find more samples of using SVG images to create [Seat Maps](Seat_Maps) in [AnyMap: Seat Maps Gallery](https://www.anychart.com/products/anymap/gallery/Seat_Maps/).
 

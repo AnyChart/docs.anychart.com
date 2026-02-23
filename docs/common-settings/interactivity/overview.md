@@ -1,3 +1,6 @@
+---
+slug: "/Common_Settings/Interactivity/Overview"
+---
 # Interactivity
 
 ## Overview 
@@ -28,7 +31,7 @@ The following sample shows a scatter chart with marker series, you can hover and
 
 ### Include and Exclude Points
 
-AnyChart provides out of the box data exploration option: ability to temporary exclude and then, if needed, include point on the any chart. To do so just move a mouse over the point and right click it, so the [context menu](../ui-controls/context-menu) appears, you will see "Exclude" or "Include" point items in the menu. The points you exclude or include affect only the look of the chart, your data stays safe, unharmed and unaffected by these actions.
+AnyChart provides out of the box data exploration option: ability to temporary exclude and then, if needed, include point on the any chart. To do so just move a mouse over the point and right click it, so the [context menu](../UI_Controls/Context_Menu) appears, you will see "Exclude" or "Include" point items in the menu. The points you exclude or include affect only the look of the chart, your data stays safe, unharmed and unaffected by these actions.
 
 If you want to create custom controls or change functionality in context menu you need to use {api:anychart.core.cartesian.series.ContinuousBase#getExcludedPoints}getExcludedPoints(){api}, {api:anychart.core.cartesian.series.ContinuousBase#excludePoint}excludePoint(){api} and {api:anychart.core.cartesian.series.ContinuousBase#includePoint}includePoint(){api} methods. Moreover, the {api:anychart.core.cartesian.series.ContinuousBase#includeAllPoints}includeAllPoints(){api} method includes all points of the series and requires no parameters.
 
@@ -231,7 +234,7 @@ Next sample uses chart's legend to trigger changes of a point. When we hover an 
 
 {sample}CS\_Interactivity\_20{sample}
 
-**Note**: The sample above uses several event listeners. More information on AnyChart events can be found in [Event Listeners article](../event-listeners). Information about legend is contained in the [Legend article](../../common-settings/legend/overview).
+**Note**: The sample above uses several event listeners. More information on AnyChart events can be found in [Event Listeners article](../Event_Listeners). Information about legend is contained in the [Legend article](../../Common_Settings/Legend/Overview).
 
 ## Rectangle Marquee Select
 
@@ -271,7 +274,7 @@ var point = chart.getPoint(5);
 point.set("fill", "red");
 ```
 
-Below there is a sample of a funnel chart. This chart shows sales proccess and each point corresponds to a certain stage. Using {api:anychart.core.SeriesBase#getPoint}getPoint(){api} method we have colored each point separately according to the value of the point before it. Hover over a point to see the tooltip that contains information on the difference. Information on getting value from custom points' field can be found in [Text Formatters article](../../common-settings/text-formatters).
+Below there is a sample of a funnel chart. This chart shows sales proccess and each point corresponds to a certain stage. Using {api:anychart.core.SeriesBase#getPoint}getPoint(){api} method we have colored each point separately according to the value of the point before it. Hover over a point to see the tooltip that contains information on the difference. Information on getting value from custom points' field can be found in [Text Formatters article](../../Common_Settings/Text_Formatters).
 
 {sample}CS\_Interactivity\_22{sample}
 
@@ -281,7 +284,7 @@ In some cases you might need a custom chart reaction on some user's actions whic
 
 You can add a listener to any chart element, forcing it to react in some way. For example, you can make the chart body to listen to clicks and add a random point on each click; or you can tell the chart to listen to selects and uncolor all other elements when one is selected and color them back when the item gets deselected. It's possible to set some other custom interactivity using event listeners. 
 
-You can find more about listeners [here](../event-listeners).
+You can find more about listeners [here](../Event_Listeners).
 
 #### Navigating by URL
 
@@ -315,7 +318,7 @@ Check out some other drilldown samples in the gallery:
 
 There is one more thing you can do with the interactivity of our charts: you can create some elements from "outside" of the main chart code using JavaScript. 
 
-Please check out [AnyChart Native HTML Tooltips](../tooltip#html) before choosing to go this way. AnyChart Native HTML tooltips are pretty powerfull and allow to solve most of the common tasks.
+Please check out [AnyChart Native HTML Tooltips](../Tooltip#html) before choosing to go this way. AnyChart Native HTML tooltips are pretty powerfull and allow to solve most of the common tasks.
 
 In the next sample a custom tooltip with no usage of AnyChart tooltips is created:
 

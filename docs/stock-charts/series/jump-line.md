@@ -1,8 +1,11 @@
+---
+slug: "/Stock_Charts/Series/Jump_Line"
+---
 # AnyStock JumpLine Series
 
 ## Overview
 
-JumpLine Series are quite alike [Column](column) or [Step Line](step-line) Series but the JumpLine Series uses line segments like stepline with no vertical lines. Read more about Jump Line Series in the [Jump Line Series tutorial](../../basic-charts/jump-line-chart).
+JumpLine Series are quite alike [Column](Column) or [Step Line](Step_Line) Series but the JumpLine Series uses line segments like stepline with no vertical lines. Read more about Jump Line Series in the [Jump Line Series tutorial](../../Basic_Charts/Jump_Line_Chart).
 
 ## AnyStock Jump Line Series Adjustment
  
@@ -47,7 +50,7 @@ mapping = table.mapAs({'x': 'x', 'value': 'value'});
 
 {sample}STOCK\_Jump\_Line\_02{sample}
 
-Find more about setting and arranging data in Stocks in the [Stocks Data tutorial](../data).
+Find more about setting and arranging data in Stocks in the [Stocks Data tutorial](../Data).
 
 ### Multi series
 
@@ -77,11 +80,11 @@ series_region.name("Region Request Number");
 
 Note that the only difference here with the previous sample is in setting another plot ID.
 
-Read more about plots in the [Plots tutorial](../chart-plots).
+Read more about plots in the [Plots tutorial](../Chart_Plots).
 
 ### Switching series type
 
-You can change the type of series to another compatible type. See the [Series Type](series-type) and [series types table](supported-series#list-of-supported-series) to be sure series are compatible.
+You can change the type of series to another compatible type. See the [Series Type](Series_Type) and [series types table](Supported_Series#list-of-supported-series) to be sure series are compatible.
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 

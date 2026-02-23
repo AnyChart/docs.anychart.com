@@ -1,4 +1,5 @@
 ---
+slug: "/Graphics/Fill_Settings"
 sidebar_position: 8.3
 ---
 
@@ -6,7 +7,7 @@ sidebar_position: 8.3
 
 ## Overview
 
-Fill settings define how a shape inner area is drawn. All [Shapes](shapes) and closed [Paths](paths) have the **fill()** method.
+Fill settings define how a shape inner area is drawn. All [Shapes](Shapes) and closed [Paths](Paths) have the **fill()** method.
 
 ## Solid color
 

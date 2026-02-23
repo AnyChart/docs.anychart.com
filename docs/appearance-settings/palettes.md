@@ -1,3 +1,6 @@
+---
+slug: "/Appearance_Settings/Palettes"
+---
 # Palettes
 
 AnyChart uses palettes for auto coloring. There are 4 types of palettes: Color palettes, Hatch palettes and Marker palettes, each palette is a  list of predefined items: colors, hatch fills or markers.

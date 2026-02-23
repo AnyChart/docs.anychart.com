@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Heat_Map_Chart"
 sidebar_position: 1.5
 ---
 # Heat Map Chart
@@ -10,11 +11,11 @@ A heat map is a visualization of a data matrix where values are represented as c
 This article explains how to create a basic Heat Map chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Heat Map chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#heat-map">Heat Map</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#heat-map">Heat Map</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.HeatMap}anychart.charts.HeatMap{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value, heat</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">x, value, heat</a></td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -27,16 +28,16 @@ This article explains how to create a basic Heat Map chart as well as configure 
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="treemap-chart">Treemap</a></td></tr>
-<tr><td></td><td><a href="../maps/choropleth-map">Choropleth Map</a></td></tr>
+<tr><td></td><td><a href="Treemap_Chart">Treemap</a></td></tr>
+<tr><td></td><td><a href="../Maps/Choropleth_Map">Choropleth Map</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/heatmap/">Chartopedia: Heat Map Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Heat Map chart requires adding the [Core](../quick-start/modules#core) and [Heat Map](../quick-start/modules#heat-map) modules:
+The Heat Map chart requires adding the [Core](../Quick_Start/Modules#core) and [Heat Map](../Quick_Start/Modules#heat-map) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -46,7 +47,7 @@ The Heat Map chart requires adding the [Core](../quick-start/modules#core) and [
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-heatmap.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 
 ## Quick Start
@@ -83,7 +84,7 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Heat Map chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
@@ -134,7 +135,7 @@ chart = anychart.heatMap(data);
 
 #### All Points
 
-The [appearance settings](../appearance-settings) of a Heat Map chart can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.HeatMap#normal}normal(){api}, {api:anychart.charts.HeatMap#hovered}hovered(){api}, and {api:anychart.charts.HeatMap#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Heat Map chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.HeatMap#normal}normal(){api}, {api:anychart.charts.HeatMap#hovered}hovered(){api}, and {api:anychart.charts.HeatMap#selected}selected(){api} methods.
 
 Combine them with the following methods:
 
@@ -204,7 +205,7 @@ chart = anychart.heatMap(data);
 
 ### Color Scale
 
-By default, the color scale of a Heat Map chart is ordinal, and cells are colored in the colors of the default [palette](../appearance-settings/palettes). Color ranges are set automatically.
+By default, the color scale of a Heat Map chart is ordinal, and cells are colored in the colors of the default [palette](../Appearance_Settings/Palettes). Color ranges are set automatically.
 
 #### Ordinal
 
@@ -255,13 +256,13 @@ chart.colorScale(customColorScale);
 
 ### Labels and Tooltips
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
 #### Tokens
 
-To change the text of labels, combine the {api:anychart.charts.HeatMap#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../common-settings/text-formatters#string-tokens).
+To change the text of labels, combine the {api:anychart.charts.HeatMap#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string-tokens).
 
 To change the text of tooltips, do the same with the {api:anychart.charts.HeatMap#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
@@ -306,7 +307,7 @@ chart.tooltip().format("{%y}: {%heat}%\n\n{%custom_field}");
 
 #### Formatting Functions
 
-To configure labels and tooltips, you can use [formatting functions](../common-settings/text-formatters#formatting-functions) and the `heat` field (as well as the default ones).
+To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting-functions) and the `heat` field (as well as the default ones).
 
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 
@@ -389,7 +390,7 @@ chart.labelsDisplayMode("alwaysShow");
 
 Sometimes, when working with large data sets, you might need your chart to be scrollable. The Heat Map chart supports both X- and Y-scrollers - to enable them, call the {api:anychart.charts.HeatMap#xScroller}xScroller(){api} and {api:anychart.charts.HeatMap#yScroller}yScroller(){api} methods.
 
-You can as well set the area of a chart that is initially shown: use the {api:anychart.charts.HeatMap#xZoom}xZoom(){api} and {api:anychart.charts.HeatMap#yZoom}yZoom(){api} methods. For example, when they are combined with {api:anychart.core.utils.OrdinalZoom#setToPointsCount}setToPointsCount(){api}, a certain number of points is displayed. See the [Scroller](../common-settings/scroller) article to learn about other options.
+You can as well set the area of a chart that is initially shown: use the {api:anychart.charts.HeatMap#xZoom}xZoom(){api} and {api:anychart.charts.HeatMap#yZoom}yZoom(){api} methods. For example, when they are combined with {api:anychart.core.utils.OrdinalZoom#setToPointsCount}setToPointsCount(){api}, a certain number of points is displayed. See the [Scroller](../Common_Settings/Scroller) article to learn about other options.
 
 The sample below shows how to configure scrollers on a Heat Map chart. Initially, 4 rows and 8 columns are shown:
 

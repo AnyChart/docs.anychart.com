@@ -1,4 +1,5 @@
 ---
+slug: "/Axes_and_Grids/Date_Time_Axes"
 sidebar_position: 6
 ---
 # Date/Time Axes

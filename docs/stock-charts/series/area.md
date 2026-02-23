@@ -1,8 +1,11 @@
+---
+slug: "/Stock_Charts/Series/Area"
+---
 # AnyStock Area Series
 
 ## Overview
 
-Area series is a kind of basic chart series that can be used in stocks. To know how to manage Area series in see the [Area Chart article](../../basic-charts/area-chart).
+Area series is a kind of basic chart series that can be used in stocks. To know how to manage Area series in see the [Area Chart article](../../Basic_Charts/Area_Chart).
 
 ## AnyStock Area Series Adjustment
 
@@ -51,7 +54,7 @@ mapping = table.mapAs({x:'x', value:'value'});
 
 {sample}STOCK\_Area\_02{sample}
 
-To know more about the data setting in stocks, visit [Stock Data tutorial](../data). 
+To know more about the data setting in stocks, visit [Stock Data tutorial](../Data). 
 
 ### Multi series
 
@@ -89,13 +92,13 @@ series_uk.name("UK");
 
 {sample}STOCK\_Area\_04{sample}
 
-See the [Chart Plots article](../chart-plots) to know how to manage the plots.
+See the [Chart Plots article](../Chart_Plots) to know how to manage the plots.
 
-As stocks are intended to show large amounts of data, this data needs to be compressed at some point to be displayed correctly. All information about them can be found in the [Data Grouping](../data-grouping) article.
+As stocks are intended to show large amounts of data, this data needs to be compressed at some point to be displayed correctly. All information about them can be found in the [Data Grouping](../Data_Grouping) article.
 
 ### Switching series type
 
-You can change the type of the series to another compatible type. See the [Series Type](series-type) and [series types table](supported-series#list-of-supported-series).
+You can change the type of the series to another compatible type. See the [Series Type](Series_Type) and [series types table](Supported_Series#list-of-supported-series).
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 

@@ -1,11 +1,12 @@
 ---
+slug: "/Maps/Drill_Down_Maps/AJAX_Tutorial"
 sidebar_position: 4
 ---
 # AJAX Tutorial
 
 ## Include AnyMap component
 
-First of all, add the AnyMap component, which can be found on the [download page](../../quick-start/downloading-anychart). Reference the AnyMap JavaScript file in the <head> section of your web page. 
+First of all, add the AnyMap component, which can be found on the [download page](../../Quick_Start/Downloading_AnyChart). Reference the AnyMap JavaScript file in the <head> section of your web page. 
 
 ```
 <head>
@@ -14,7 +15,7 @@ First of all, add the AnyMap component, which can be found on the [download page
 </head>
 ```
 
-Any other AnyChart components can be included separately the same way as AnyMap, but it's better to include anychart-bundle.min.js, which can be found on the [same download page](../../quick-start/downloading-anychart).
+Any other AnyChart components can be included separately the same way as AnyMap, but it's better to include anychart-bundle.min.js, which can be found on the [same download page](../../Quick_Start/Downloading_AnyChart).
 
 It is better to add the root map the same way:
 
@@ -67,7 +68,7 @@ When the data is defined, it's time to create series.
 
 AnyMap provides several types of series, so at the first step make up your mind about which series (map) type (or types) is going to be used in the Drill Down Map.
 
-The [Choropleth Map](../choropleth-map) is used in this sample, as it is one of the most popular series type.
+The [Choropleth Map](../Choropleth_Map) is used in this sample, as it is one of the most popular series type.
 
 ```
 // create series for the USA map
@@ -105,7 +106,7 @@ anychart.data.loadJsonFile("https://cdn.anychart.com/geodata/2.2.0/usa_states/te
 });   
 ```
 
-To load the map of the higher level, or simply to drill up, press "Esc" button. Find more about special methods of drill down in the [Methods](methods) article.
+To load the map of the higher level, or simply to drill up, press "Esc" button. Find more about special methods of drill down in the [Methods](Methods) article.
 
 {sample}Maps\_Drill\_Down\_AJAX\_01{sample}
 
@@ -150,4 +151,4 @@ Explore the sample to see the full source code.
 
 ## Adjust settings
 
-The sample demonstrated in this article uses the Data Adapter request to load maps. If you prefer to reference the maps directly, check out the [Basic Tutorial](basic-tutorial) article. For other drill down methods look into the [Methods](methods) article.
+The sample demonstrated in this article uses the Data Adapter request to load maps. If you prefer to reference the maps directly, check out the [Basic Tutorial](Basic_Tutorial) article. For other drill down methods look into the [Methods](Methods) article.

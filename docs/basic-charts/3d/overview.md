@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/3D/Overview"
 sidebar_position: 1
 ---
 # 3D Charts
@@ -11,7 +12,7 @@ This article explains how to create and configure 3D charts.
 
 ## Modules
 
-Most 3D charts require adding the [Core](../../quick-start/modules#core) and [Basic 3D](../../quick-start/modules#basic-3d) modules:
+Most 3D charts require adding the [Core](../../Quick_Start/Modules#core) and [Basic 3D](../../Quick_Start/Modules#basic-3d) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -21,7 +22,7 @@ Most 3D charts require adding the [Core](../../quick-start/modules#core) and [Ba
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian-3d.min.js"></script>
 ```
 
-The 3D Pie and Doughnut charts require combining the [Core](../../quick-start/modules#core) module with [Pie and Doughnut](../../quick-start/modules#pie-and-doughnut):
+The 3D Pie and Doughnut charts require combining the [Core](../../Quick_Start/Modules#core) module with [Pie and Doughnut](../../Quick_Start/Modules#pie-and-doughnut):
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -31,13 +32,13 @@ The 3D Pie and Doughnut charts require combining the [Core](../../quick-start/mo
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pie.min.js"></script>
 ```
 
-These two modules are included in the [Base](../../quick-start/modules#base) module, so it can also be used to create the 3D Pie and Doughnut charts:
+These two modules are included in the [Base](../../Quick_Start/Modules#base) module, so it can also be used to create the 3D Pie and Doughnut charts:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
-Learn more: [Modules](../../quick-start/modules).
+Learn more: [Modules](../../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -145,19 +146,19 @@ var series3 = chart.column(seriesData_3);
 
 Here is the list of supported 3D charts:
 
-* [3D Area](area-chart)
-* [3D Bar](bar-chart)
-* [3D Column](column-chart)
-* [3D Doughnut](doughnut-chart)
-* [3D Pie](pie-chart)
-* [3D Line](line-chart)
-* [3D 2D Line](2d-line-chart)
+* [3D Area](Area_Chart)
+* [3D Bar](Bar_Chart)
+* [3D Column](Column_Chart)
+* [3D Doughnut](Doughnut_Chart)
+* [3D Pie](Pie_Chart)
+* [3D Line](Line_Chart)
+* [3D 2D Line](2D_Line_Chart)
 
 See also stacked charts:
 
-* [3D Percent Stacked Area](../stacked/percent/3d-area-chart)
-* [3D Percent Stacked Bar](../stacked/percent/3d-bar-chart)
-* [3D Percent Stacked Column](../stacked/percent/3d-column-chart)
-* [3D Value Stacked Area](../stacked/value/3d-area-chart)
-* [3D Value Stacked Bar](../stacked/value/3d-bar-chart)
-* [3D Value Stacked Column](../stacked/value/3d-column-chart)
+* [3D Percent Stacked Area](../Stacked/Percent/3D_Area_Chart)
+* [3D Percent Stacked Bar](../Stacked/Percent/3D_Bar_Chart)
+* [3D Percent Stacked Column](../Stacked/Percent/3D_Column_Chart)
+* [3D Value Stacked Area](../Stacked/Value/3D_Area_Chart)
+* [3D Value Stacked Bar](../Stacked/Value/3D_Bar_Chart)
+* [3D Value Stacked Column](../Stacked/Value/3D_Column_Chart)

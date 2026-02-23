@@ -1,3 +1,6 @@
+---
+slug: "/beta/Resource_Chart"
+---
 # Resource Chart
 
 ## Overview

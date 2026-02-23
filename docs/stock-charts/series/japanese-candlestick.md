@@ -1,8 +1,11 @@
+---
+slug: "/Stock_Charts/Series/Japanese_Candlestick"
+---
 # AnyStock Candlestick Series
 
 ## Overview
 
-Candlestick Charts are to representing changes of stock prices. This series has four data fields (as [OHLC charts](../../basic-charts/ohlc-chart)): Open, High, Low and Close. Those parameters describe the price at the moment of the period starts ("open"), the highest value the prices reached during the period ("high"), the lowest value the price came to during the period ("low") and the price at the moment of the period ends ("close"). Read more about Basic Candlestick Charts in the [Japanese Candlestick Chart article](../../basic-charts/japanese-candlestick-chart)
+Candlestick Charts are to representing changes of stock prices. This series has four data fields (as [OHLC charts](../../Basic_Charts/OHLC_Chart)): Open, High, Low and Close. Those parameters describe the price at the moment of the period starts ("open"), the highest value the prices reached during the period ("high"), the lowest value the price came to during the period ("low") and the price at the moment of the period ends ("close"). Read more about Basic Candlestick Charts in the [Japanese Candlestick Chart article](../../Basic_Charts/Japanese_Candlestick_Chart)
 
 ## AnyStock Candlestick Series Adjustment
 
@@ -96,11 +99,11 @@ series_globex.name("Globex Corp.");
 
 {sample}STOCK\_Candlestick\_04{sample}
 
-Find more information about using plots in stocks in the [Chart Plots](../chart-plots) article.
+Find more information about using plots in stocks in the [Chart Plots](../Chart_Plots) article.
 
 ### Switching series type
 
-You can change the type of the series to another compatible type. See the [Series Type](series-type) and [series types table](supported-series#list-of-supported-series).
+You can change the type of the series to another compatible type. See the [Series Type](Series_Type) and [series types table](Supported_Series#list-of-supported-series).
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 

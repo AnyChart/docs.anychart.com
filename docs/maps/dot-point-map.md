@@ -1,13 +1,14 @@
 ---
+slug: "/Maps/Dot_(Point)_Map"
 sidebar_position: 8
 ---
 # Dot (Point) Maps
 
 ## Overview
 
-Dot Maps use dots (points, markers) to demonstrate the existence of a subject or a feature. It's a lot like Bubble Maps ([Proportional Symbol Maps](proportional-symbol-map)), but the dots' sizes don't depend on their values, as there's no size setting. Usually the tooltips are formatted to show some information about points - so these maps are very useful and popular in census, tourism, health service and any other researches.
+Dot Maps use dots (points, markers) to demonstrate the existence of a subject or a feature. It's a lot like Bubble Maps ([Proportional Symbol Maps](Proportional_Symbol_Map)), but the dots' sizes don't depend on their values, as there's no size setting. Usually the tooltips are formatted to show some information about points - so these maps are very useful and popular in census, tourism, health service and any other researches.
 
-Spreading points (or dots) across a Map is rather alike scatter (or marker) series. So, in AnyChart, this series in maps is of [Marker type](../basic-charts/marker-chart).
+Spreading points (or dots) across a Map is rather alike scatter (or marker) series. So, in AnyChart, this series in maps is of [Marker type](../Basic_Charts/Marker_Chart).
 
 Note that when you use this type to draw density maps they must be drawn on an equal area map projection. This is critical - using a map projection which does not preserve the size of areas will distort the perceived density of the dots.
 
@@ -58,7 +59,7 @@ Now look at the example below. Here we can see a Dot Map where each point contai
 
 {sample}Maps\_Marker\_02{sample}
 
-Note: this sample uses third party proj4.js library, to learn how, why and figure out if you need it please see [Map Projections](map-projections) article.
+Note: this sample uses third party proj4.js library, to learn how, why and figure out if you need it please see [Map Projections](Map_Projections) article.
 
 #### Region ID
 
@@ -127,11 +128,11 @@ series_acme.selected().labels().fontColor("#660000");
 
 {sample}Maps\_Marker\_06{sample}
 
-You can find more information about formatting labels and tooltips in the [Labels](../common-settings/labels), [Tooltips](../common-settings/tooltip) and [Text Formatters](../common-settings/text-formatters) tutorials.
+You can find more information about formatting labels and tooltips in the [Labels](../Common_Settings/Labels), [Tooltips](../Common_Settings/Tooltip) and [Text Formatters](../Common_Settings/Text_Formatters) tutorials.
 
 ### Series colors
 
-The colors of series can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.map.series.Marker#normal}normal(){api}, {api:anychart.core.map.series.Marker#hovered}hovered(){api}, and {api:anychart.core.map.series.Marker#selected}selected(){api} methods.
+The colors of series can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.map.series.Marker#normal}normal(){api}, {api:anychart.core.map.series.Marker#hovered}hovered(){api}, and {api:anychart.core.map.series.Marker#selected}selected(){api} methods.
 
 Combine them with the following methods:
 

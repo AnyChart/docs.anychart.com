@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Marimekko_Chart/Mekko_Chart"
 sidebar_position: 0
 ---
 # Marimekko Charts
@@ -10,11 +11,11 @@ sidebar_position: 0
 The Marimekko name has been adopted within business and the management consultancy industry to refer to a specific type of **bar chart known as a variable-width chart** or **Mosaic plot** in which all the bars are of equal height, there are no spaces between the bars, and the bars are in turn each divided into segments of different width. The design of the mosaic plot resembles a [Marimekko print](https://www.google.ru/search?q=Marimekko+print&tbm=isch). The chart's design encodes two variables (such as the percentage of sales and market share).
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../../quick-start/modules#core">Core</a> + <a href="../../quick-start/modules#mekko">Mekko</a></td></tr>
+<tr><td>Modules</td><td><a href="../../Quick_Start/Modules#core">Core</a> + <a href="../../Quick_Start/Modules#mekko">Mekko</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.mekko.series.Mekko}anychart.core.mekko.series.Mekko{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../../working-with-data/overview">x, value</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../../Working_with_Data/Overview">x, value</a></td></tr>
 <tr><td>Multiple Series</td><td>YES</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td><a href="#stacked-mode">YES</a></td></tr>
@@ -27,21 +28,21 @@ The Marimekko name has been adopted within business and the management consultan
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="bar-mekko-chart">Bar Mekko</a></td></tr>
-<tr><td></td><td><a href="mosaic-chart">Mosaic Chart</a></td></tr>
-<tr><td></td><td><a href="../column-chart">Column Chart</a></td></tr>
-<tr><td></td><td><a href="../bar-chart">Bar Chart</a></td></tr>
-<tr><td></td><td><a href="../stacked/overview">Stacked Charts</a></td></tr>
+<tr><td></td><td><a href="Bar_Mekko_Chart">Bar Mekko</a></td></tr>
+<tr><td></td><td><a href="Mosaic_Chart">Mosaic Chart</a></td></tr>
+<tr><td></td><td><a href="../Column_Chart">Column Chart</a></td></tr>
+<tr><td></td><td><a href="../Bar_Chart">Bar Chart</a></td></tr>
+<tr><td></td><td><a href="../Stacked/Overview">Stacked Charts</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/mekko-chart/">Chartopedia: Marimekko Mekko Chart</a></td></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/barmekko-chart/">Chartopedia: Marimekko Bar Mekko Chart</a></td></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/mosaic-chart/">Chartopedia: Marimekko Mosaic Chart</a></td></tr>
-<tr><td></td><td><a href="../general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="../General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Marimekko chart requires adding the [Core](../../quick-start/modules#core) and [Mekko](../../quick-start/modules#mekko) modules:
+The Marimekko chart requires adding the [Core](../../Quick_Start/Modules#core) and [Mekko](../../Quick_Start/Modules#mekko) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -51,7 +52,7 @@ The Marimekko chart requires adding the [Core](../../quick-start/modules#core) a
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-mekko.min.js"></script>
 ```
 
-Learn more: [Modules](../../quick-start/modules).
+Learn more: [Modules](../../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -59,7 +60,7 @@ Marimekko is built on top of column chart with some specific settings, in AnyCha
 
 ## Mekko
 
-A Mekko chart with %-axis (often called *marimekko chart* or *100% cost curve*) is a two-dimensional [100% chart](../stacked/overview). As in the 100% chart, the value axis is based on percentages and column heights are shown relative to 100%. In the regular 100% chart, since the columns are scaled to relative heights, there is no visual representation of absolute column totals.
+A Mekko chart with %-axis (often called *marimekko chart* or *100% cost curve*) is a two-dimensional [100% chart](../Stacked/Overview). As in the 100% chart, the value axis is based on percentages and column heights are shown relative to 100%. In the regular 100% chart, since the columns are scaled to relative heights, there is no visual representation of absolute column totals.
 
 This type of marimekko chart is created with {api:anychart#mekko}mekko(){api} constructor:
 
@@ -73,7 +74,7 @@ See the basic sample and read more in [later in this article](#special-settings)
 
 ## Bar Mekko
 
-A Mekko chart with units (sometimes also called *submarine chart* or *olympic chart*) is a two-dimensional stacked chart. As in the [regular stacked chart](../stacked/overview), the value axis and the datasheet of this chart are based on absolute values.
+A Mekko chart with units (sometimes also called *submarine chart* or *olympic chart*) is a two-dimensional stacked chart. As in the [regular stacked chart](../Stacked/Overview), the value axis and the datasheet of this chart are based on absolute values.
 
 This type of marimekko chart is created with {api:anychart#barmekko}barmekko(){api} constructor:
 
@@ -81,7 +82,7 @@ This type of marimekko chart is created with {api:anychart#barmekko}barmekko(){a
 chart = anychart.barmekko();
 ```
 
-See the basic sample and read more in [Bar Mekko Chart](bar-mekko-chart) article.
+See the basic sample and read more in [Bar Mekko Chart](Bar_Mekko_Chart) article.
 
 {sample}BCT\_Bar\_Mekko\_Chart\_01{sample}
 
@@ -95,7 +96,7 @@ This type of marimekko chart is created with {api:anychart#mosaic}mosaic(){api} 
 chart = anychart.mosaic();
 ```
 
-See the basic sample and read more in [Mosaic Chart](mosaic-chart) article.
+See the basic sample and read more in [Mosaic Chart](Mosaic_Chart) article.
 
 {sample}BCT\_Mosaic\_Chart\_01{sample}
 
@@ -103,27 +104,27 @@ See the basic sample and read more in [Mosaic Chart](mosaic-chart) article.
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Mekko chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](../general-settings).
+Read the overview of general settings: [General Settings](../General_Settings).
 
 ## Special Settings
 
 ### Stacked Mode
 
-When Mekko chart is created, both its scales are put into stacked mode: the Y-scale to [percent stacked mode](../stacked/overview#percent-stacking) and X-scale to value stacking mode.
+When Mekko chart is created, both its scales are put into stacked mode: the Y-scale to [percent stacked mode](../Stacked/Overview#percent-stacking) and X-scale to value stacking mode.
 
-Changing the Y-scale to [value stacked mode](../stacked/overview#value-stacking) but consider using the[Bar Mekko Chart](bar-mekko-chart) in such cases.
+Changing the Y-scale to [value stacked mode](../Stacked/Overview#value-stacking) but consider using the[Bar Mekko Chart](Bar_Mekko_Chart) in such cases.
 
-Changing the X-scale will convert Mekko chart into usual [percent stacked column chart](../stacked/percent/column-chart).
+Changing the X-scale will convert Mekko chart into usual [percent stacked column chart](../Stacked/Percent/Column_Chart).
 
 ### Padding
 
-Padding between points is a special setting in Mekko charts, it is controlled with {api:anychart.charts.Mekko#pointsPadding}pointsPadding(){api} method and sets the distance between elements (tiles), it serves only aesthetic purpose and it is set to different default values in [Mekko](#mekko), [Bar Mekko](bar-mekko-chart), and [Mosaic](mosaic-chart) constructors.
+Padding between points is a special setting in Mekko charts, it is controlled with {api:anychart.charts.Mekko#pointsPadding}pointsPadding(){api} method and sets the distance between elements (tiles), it serves only aesthetic purpose and it is set to different default values in [Mekko](#mekko), [Bar Mekko](Bar_Mekko_Chart), and [Mosaic](Mosaic_Chart) constructors.
 
 ### Appearance
 
 #### All Points
 
-The [appearance settings](../../appearance-settings) of a Mekko chart can be configured in three [states](../../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.mekko.series.Mekko#normal}normal(){api}, {api:anychart.core.mekko.series.Mekko#hovered}hovered(){api}, and {api:anychart.core.mekko.series.Mekko#selected}selected(){api} methods.
+The [appearance settings](../../Appearance_Settings) of a Mekko chart can be configured in three [states](../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.mekko.series.Mekko#normal}normal(){api}, {api:anychart.core.mekko.series.Mekko#hovered}hovered(){api}, and {api:anychart.core.mekko.series.Mekko#selected}selected(){api} methods.
 
 Combine them with the following methods:
 
@@ -193,18 +194,18 @@ var series2 = chart.mekko(seriesData_2);
 
 ### Labels
 
-[Labels](../../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../../common-settings/text-formatters) are available.
+[Labels](../../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../../Common_Settings/Text_Formatters) are available.
 
 ### Tooltips
 
-A [Tooltip](../../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../../common-settings/text-formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 ### Vertical Marimekko Chart
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](../vertical/overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](../Vertical/Overview).
 
 Here is information about creating Vertical Mekko Charts:
 
-* [Vertical Mekko](../vertical/mekko-chart)
-* [Vertical Mosaic](../vertical/mosaic-chart)
-* [Vertical Bar Mekko](../vertical/bar-mekko-chart)
+* [Vertical Mekko](../Vertical/Mekko_Chart)
+* [Vertical Mosaic](../Vertical/Mosaic_Chart)
+* [Vertical Bar Mekko](../Vertical/Bar_Mekko_Chart)

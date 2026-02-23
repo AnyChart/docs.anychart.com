@@ -1,11 +1,12 @@
 ---
+slug: "/Gantt_Chart/Data_Grid/Buttons"
 sidebar_position: 5
 ---
 # Buttons
 
 ## Overview
 
-If there are hierarchical relationships between data items, special buttons are shown in the second [data grid column](columns). They allow expanding or collapsing parent [tasks](../project-chart#tasks-actual)) or [resources](../resource-chart#periods-and-resources) on the timeline as well as their labels on the data grid.
+If there are hierarchical relationships between data items, special buttons are shown in the second [data grid column](Columns). They allow expanding or collapsing parent [tasks](../Project_Chart#tasks-actual)) or [resources](../Resource_Chart#periods-and-resources) on the timeline as well as their labels on the data grid.
 
 Buttons are defined as instances of the {api:anychart.core.gantt.DataGridButton}anychart.core.gantt.DataGridButton{api} class.
 
@@ -15,13 +16,13 @@ This article explains how to configure the [basic settings](#basic-settings) of 
 
 Also, you can find button-relating settings in the following sections:
 
-* [Columns: Buttons](columns#buttons) - enabling / disabling buttons on a column
-* [Columns: Indentation](columns#indentation) - setting the hierarchical indentation for data grid labels
-* [Basic Settings: Navigation](../basic-settings#navigation) - expanding / collapsing elements by default
+* [Columns: Buttons](Columns#buttons) - enabling / disabling buttons on a column
+* [Columns: Indentation](Columns#indentation) - setting the hierarchical indentation for data grid labels
+* [Basic Settings: Navigation](../Basic_Settings#navigation) - expanding / collapsing elements by default
 
 ## Enabling / Disabling
 
-To learn how to enable or disable buttons, see the [Columns: Buttons](columns#buttons) section.
+To learn how to enable or disable buttons, see the [Columns: Buttons](Columns#buttons) section.
 
 ## Basic Settings
 
@@ -30,7 +31,7 @@ To configure buttons, use these methods:
 * {api:anychart.core.gantt.DataGridButton#content}content(){api} to set the content
 * {api:anychart.core.gantt.DataGridButton#useHtml}useHtml(){api} to enable HTML
 * {api:anychart.core.gantt.DataGridButton#fontColor}fontColor(){api}, {api:anychart.core.gantt.DataGridButton#fontWeight}fontWeight(){api}, {api:anychart.core.gantt.DataGridButton#fontSize}fontSize(){api}, {api:anychart.core.gantt.DataGridButton#fontFamily}fontFamily(){api}, etc. to configure the font
-* {api:anychart.core.gantt.DataGridButton#background}background(){api} to set the [background](../../appearance-settings/background)
+* {api:anychart.core.gantt.DataGridButton#background}background(){api} to set the [background](../../Appearance_Settings/Background)
 * {api:anychart.core.gantt.DataGridButton#height}height(){api} and {api:anychart.core.gantt.DataGridButton#width}width(){api} to set the height and width
 * {api:anychart.core.gantt.DataGridButton#cursor}cursor(){api} + enums from {api:anychart.enums.Cursor}anychart.enums.Cursor{api}
  to adjust the cursor
@@ -106,7 +107,7 @@ buttons.selected().background().fill({
 
 ### Custom Drawing
 
-You can replace the default content of data grid buttons with a custom drawing by passing a function to the {api:anychart.core.gantt.DataGridButton#content}content(){api} method. To learn more, read [Graphics](../../graphics).
+You can replace the default content of data grid buttons with a custom drawing by passing a function to the {api:anychart.core.gantt.DataGridButton#content}content(){api} method. To learn more, read [Graphics](../../Graphics).
 
 In the sample below, a function is used to draw different images in different states. The default background fill and stroke are disabled.
 

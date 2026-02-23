@@ -1,13 +1,14 @@
 ---
+slug: "/Maps/Seat_Maps/Advanced_Coloring"
 sidebar_position: 2
 ---
 # Advanced Coloring
 
 ## Overview
 
-There are several ways to color a seat map. The first way is to set colors [through the data set](seat-map#coloring). The second way is to set original or custom colors [through the coloring methods](#using-svg-image-colors) like {api:anychart.core.map.series.Choropleth#fill}fill(){api} and {api:anychart.core.map.series.Choropleth#stroke}stroke(){api}: in this case it is possible to color all elements of a group differently, depending on the class set in the SVG code. You can also [use AnyChart palette](#palette) or [use Color Scale and Color Range](#color-scale-and-color-range).
+There are several ways to color a seat map. The first way is to set colors [through the data set](Seat_Map#coloring). The second way is to set original or custom colors [through the coloring methods](#using-svg-image-colors) like {api:anychart.core.map.series.Choropleth#fill}fill(){api} and {api:anychart.core.map.series.Choropleth#stroke}stroke(){api}: in this case it is possible to color all elements of a group differently, depending on the class set in the SVG code. You can also [use AnyChart palette](#palette) or [use Color Scale and Color Range](#color-scale-and-color-range).
 
-The sample below demonstrates how an SVG image looks like with the default AnyChart color palette (the SVG image used there is also used in some samples from the [Seat Map](seat-map) and [Preparing SVG Image](preparing-svg-image) articles):
+The sample below demonstrates how an SVG image looks like with the default AnyChart color palette (the SVG image used there is also used in some samples from the [Seat Map](Seat_Map) and [Preparing SVG Image](Preparing_SVG_Image) articles):
 
 {sample}Maps\_Seat\_Advanced\_Coloring\_00{sample}
 
@@ -34,7 +35,7 @@ series.stroke(function () {
 
 {sample}Maps\_Seat\_Advanced\_Coloring\_01{sample}
 
-You can also configure colors in three [states](../../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.map.series.Choropleth#normal}normal(){api}, {api:anychart.core.map.series.Choropleth#hovered}hovered(){api}, and {api:anychart.core.map.series.Choropleth#selected}selected(){api} methods.
+You can also configure colors in three [states](../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.map.series.Choropleth#normal}normal(){api}, {api:anychart.core.map.series.Choropleth#hovered}hovered(){api}, and {api:anychart.core.map.series.Choropleth#selected}selected(){api} methods.
 
 Combine them with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}:
 
@@ -134,7 +135,7 @@ chart.palette(palette);
 
 It is possible to add Color Range and use Color Scale in AnyChart Seat Maps. Color Range looks like a range bar, colored as a gradient or like a number of colored boxes, each presenting a range of values. It is rather useful in identifying the value that each point on a map represents.
 
-To make it work properly, set the colors and the type of the Color Scale. You can find information about adjusting Color Scale in the [Color Scale](../scales) & [Color Range](../colorrange) articles.
+To make it work properly, set the colors and the type of the Color Scale. You can find information about adjusting Color Scale in the [Color Scale](../Scales) & [Color Range](../ColorRange) articles.
 
 In the next sample, the ranges are set as an array. Each range has its own color defined in the data set. 
 
@@ -167,7 +168,7 @@ chart.colorRange(true);
 
 {sample}Maps\_Seat\_Advanced\_Coloring\_05{sample}
 
-There are some other ways to set colors for a Color Scale: for example, it is possible to set the gradient mode (to learn more, see the [Color Range](../colorrange) article). 
+There are some other ways to set colors for a Color Scale: for example, it is possible to set the gradient mode (to learn more, see the [Color Range](../ColorRange) article). 
 
 Using a color gradient can make the chart more illustrative, and in this case there is no need to set a color for each value range.
 

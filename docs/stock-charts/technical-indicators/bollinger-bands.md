@@ -1,3 +1,6 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Bollinger_Bands"
+---
 # Bollinger Bands
 
 ## Overview
@@ -6,7 +9,7 @@ Bollinger Bands are a technical analysis tool invented by John Bollinger in the 
 
 AnyChart Stock allows you to add Bollinger Bands with desired period to any of your charts.
 
-Mathematical description of the indicator: [Bollinger Bands](mathematical-description#bollinger-bands).
+Mathematical description of the indicator: [Bollinger Bands](Mathematical_Description#bollinger-bands).
 
 ## Adding Indicator
 

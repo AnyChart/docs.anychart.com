@@ -1,3 +1,6 @@
+---
+slug: "/Appearance_Settings/Lines_Settings"
+---
 # Line Settings
 
 ## Overview
@@ -6,7 +9,7 @@ Knowledge about line configuration parameters is very important, because AnyChar
   
 The name of the method is almost always {api:anychart.graphics.vector.Stroke}stroke(){api}. All line parameters and features are described in this tutorial.
 
-You can also refer to the detailed [Stroke API description](../graphics/stroke-settings).
+You can also refer to the detailed [Stroke API description](../Graphics/Stroke_Settings).
 
 ## Basics
 
@@ -28,7 +31,7 @@ There are two types of line coloring: "Solid" and "Gradient".
 
 ### Solid Color
 
-Solid color type is default for any object of Anychart html5 charting library and you don't need to use any special settings to apply Solid color. For more information see [Color Management](color-management) article.
+Solid color type is default for any object of Anychart html5 charting library and you don't need to use any special settings to apply Solid color. For more information see [Color Management](Color_Management) article.
 
 ```
 series.stroke('red');

@@ -1,9 +1,12 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Psychological_Line_(PSY)"
+---
 # Psychological Line (PSY)
 ## Overview
 
 The Psychological Line (PSY) is based on the presumption that people will resist paying more for a share than others, unless of course the share continues to move up. Conversely, people resist selling a share for less than the price others have been getting for it, except if the price continues to decline. Finally, people who purchase the stock at the top of a trading range will tend to wait until the price comes back before they get out.
 
-Mathematical description of the indicator: [PSY Mathematical Description](mathematical-description#psychological-line).
+Mathematical description of the indicator: [PSY Mathematical Description](Mathematical_Description#psychological-line).
 
 ## Adding Indicator
 

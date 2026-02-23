@@ -1,3 +1,6 @@
+---
+slug: "/Quick_Start/Credits"
+---
 # Credits
 
 ## Overview
@@ -59,7 +62,7 @@ credits.enabled(false);
 
 ### Dashboards
 
-If you are creating dashboards using [Stage-based Dashboard Layout](../dashboards/stage-based-layout) you can configure credits for the stage instead of a chart using the same {api:anychart.graphics.vector.Stage#credits}credits(){api} method:
+If you are creating dashboards using [Stage-based Dashboard Layout](../Dashboards/Stage-Based_Layout) you can configure credits for the stage instead of a chart using the same {api:anychart.graphics.vector.Stage#credits}credits(){api} method:
 
 ```
 // create a stage 
@@ -77,6 +80,6 @@ When you purchase a license to AnyChart you receive an access to your customer a
 anychart.licenseKey("YOUR-LICENSE-KEY");
 ```
 
-You can also use [Online Builder](modules#builder) located at [AnyChart Download Page](https://www.anychart.com/download/products/#custom-build) to create custom AnyChart binary files with the license key built-in.
+You can also use [Online Builder](Modules#builder) located at [AnyChart Download Page](https://www.anychart.com/download/products/#custom-build) to create custom AnyChart binary files with the license key built-in.
 
 To purchase a license proceed to [Buy AnyChart](https://www.anychart.com/buy/) page.

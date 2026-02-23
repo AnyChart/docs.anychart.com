@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Stacked/Percent/Bar_Chart"
 sidebar_position: 1
 ---
 # Percent Stacked Bar Chart
@@ -7,11 +8,11 @@ sidebar_position: 1
 
 A Percent Stacked Bar Chart (otherwise known as a 100% Stacked Bar Chart) is a multiple-series Bar Chart that displays the trend of the percentage each value contributes over time or categories.
 
-The concept of stacking in AnyChart is explained in this article: [Stacked Charts (Overview)](../overview).
+The concept of stacking in AnyChart is explained in this article: [Stacked Charts (Overview)](../Overview).
 
 ## Quick Start
 
-To build a Percent Stacked Bar Chart, you should create a multiple-series [Bar Chart](../../bar-chart) and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to **percent**:
+To build a Percent Stacked Bar Chart, you should create a multiple-series [Bar Chart](../../Bar_Chart) and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to **percent**:
 
 ```
 // create a chart
@@ -29,4 +30,4 @@ var series2 = chart.bar(seriesData_2);
 
 ## Adjusting
 
-The Bar series' settings are mostly the same as other series'. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../general-settings).
+The Bar series' settings are mostly the same as other series'. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../General_Settings).

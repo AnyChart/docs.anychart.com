@@ -1,4 +1,7 @@
 ---
+slug: "/Stock_Charts/Technical_Indicators/Mathematical_Description"
+---
+---
 sidebar_position: 3
 ---
 
@@ -17,13 +20,13 @@ For all formulas and indicators below:
 
 ## Accumulation Distribution Line
 
-[Accumulation Distribution Line](accumulation-distribution-line-adl)) is calculated according to these formulas:
+[Accumulation Distribution Line](Accumulation_Distribution_Line_(ADL))) is calculated according to these formulas:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/adl.png" width="550"></center>
 
 ## Adaptive Moving Average
 
-Each point of the [Adaptive Moving Average](adaptive-moving-average-ama)) indicator is calculated by the following steps:
+Each point of the [Adaptive Moving Average](Adaptive_Moving_Average_(AMA))) indicator is calculated by the following steps:
 
 <ol>
 <li>Calculate the ER:</li><br>
@@ -36,13 +39,13 @@ Each point of the [Adaptive Moving Average](adaptive-moving-average-ama)) indica
 
 ## Aroon
 
-[Aroon](aroon) indicator is calculated according to the following formulas:
+[Aroon](Aroon) indicator is calculated according to the following formulas:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/aroon.png" width="650"></center>
 
 ## Average True Range
 
-[Average True Range](average-true-range-atr)) in each point is calculated according to the following formula:
+[Average True Range](Average_True_Range_(ATR))) in each point is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/atr.png" width="550"></center>
 
@@ -54,14 +57,14 @@ This formula is based on the True Range definition. ATR is defined as the greate
 
 ## Awesome Oscillator
 
-[Awesome Oscillator](awesome-oscillator) is calculated according to the following formula:
+[Awesome Oscillator](Awesome_Oscillator) is calculated according to the following formula:
 
 **Median Price = (High + Low) / 2**
 **AO = SMA (Median Price, 5) - SMA (Median Price, 34)**
 
 ## Bollinger Bands
 
-[Bollinger Bands](bollinger-bands) indicator is calculated in three steps:
+[Bollinger Bands](Bollinger_Bands) indicator is calculated in three steps:
 
 <ol>
 <li>Calculate the SMA according to the SMA formula.</li><br>
@@ -73,13 +76,13 @@ This formula is based on the True Range definition. ATR is defined as the greate
 
 ## Bollinger Bands %B
 
-The [Bollinger Bands %B](bollinger-bands-b) indicator is calculated according to the following formula:
+The [Bollinger Bands %B](Bollinger_Bands_%25B) indicator is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/bbandsb.png" width="650"></center>
 
 ## Bollinger Bands Width
 
-The [Bollinger Bands Width article](bollinger-bands-width) indicator is calculated according to the following formula:
+The [Bollinger Bands Width article](Bollinger_Bands_Width) indicator is calculated according to the following formula:
 
 ```
 bandwidth = (upperBB - lowerBB) / middleBB
@@ -87,7 +90,7 @@ bandwidth = (upperBB - lowerBB) / middleBB
 
 ## Commodity Channel Index
 
-[Commodity Channel Index](commodity-channel-index-cci)) is calculated according to this formula:
+[Commodity Channel Index](Commodity_Channel_Index_(CCI))) is calculated according to this formula:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/cci.png"></center>
 
@@ -100,7 +103,7 @@ And SMA is calculated as stated in [SMA part](#simple-moving-average) of this ar
 
 ## Chaikin Money Flow
 
-[Chaikin Money Flow](chaikin-money-flow-cmf)) is calculated in three steps.
+[Chaikin Money Flow](Chaikin_Money_Flow_(CMF))) is calculated in three steps.
 
 <ol>
 	<li>First a MFM(i) is calculated for all points according to this formula:</li><br>
@@ -114,7 +117,7 @@ And SMA is calculated as stated in [SMA part](#simple-moving-average) of this ar
 
 ## Chaikin Oscillator
 
-[Chaikin Oscillator](chaikin-oscillator-cho)) is calculated according to this formula:
+[Chaikin Oscillator](Chaikin_Oscillator_(CHO))) is calculated according to this formula:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/cho.png"></center>
 
@@ -128,7 +131,7 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 
 ## Directional Movement Indicator
 
-[Directional Movement Indicator](directional-movement-index-dmi)) is calculated in three steps: 
+[Directional Movement Indicator](Directional_Movement_Index_(DMI))) is calculated in three steps: 
 
 <ol>
 <li>First the True Range (TR), Plus Directional Movement (+DM) and Minus Directional Movement (-DM) are calculated for each period:</li><br>
@@ -146,7 +149,7 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 
 ## Envelope
 
-[Envelope](envelope-env)) is calculated according to the following formulas:
+[Envelope](Envelope_(ENV))) is calculated according to the following formulas:
 
 <ol>
 	<li>Upper Envelope: **20 Period SMA + (20 Period SMA * 0.1)**</li>
@@ -155,13 +158,13 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 
 ## Exponential Moving Average
 
-[Exponential Moving Average](exponential-moving-average-ema)) in each point is calculated according to the following formula:
+[Exponential Moving Average](Exponential_Moving_Average_(EMA))) in each point is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/ema.png" width="500"></center>
 
 ## Heikin-Ashi
 
-[Heikin-Ashi](heikin-ashi) indicator is based on price data from the current open-high-low-close, the current Heikin-Ashi values, and the prior Heikin-Ashi values.
+[Heikin-Ashi](Heikin-Ashi) indicator is based on price data from the current open-high-low-close, the current Heikin-Ashi values, and the prior Heikin-Ashi values.
 
 In the formulas below, (0) refers to the current period, (-1) to the prior period, and HA to Heikin-Ashi:
 
@@ -179,7 +182,7 @@ candlestick open, or the current Heikin-Ashi candlestick close:</li>
 
 ## Ichimoku Cloud
 
-[Ichimoku Cloud (IKH)](ichimoku-cloud-ikh)) includes five plots. Four of them are based on the average of the high and low over a given period of time. Periods can be adjusted when an indicator is created.
+[Ichimoku Cloud (IKH)](Ichimoku_Cloud_(IKH))) includes five plots. Four of them are based on the average of the high and low over a given period of time. Periods can be adjusted when an indicator is created.
 
 
 This is how Ichimoku Cloud is calculated:
@@ -194,7 +197,7 @@ This is how Ichimoku Cloud is calculated:
 
 ## KDJ
 
-[KDJ](kdj) is calculated quite alike [Stochastic](#stochastic-oscillator) indicator, but the difference is in having a J line, which Stochastic does not have.
+[KDJ](KDJ) is calculated quite alike [Stochastic](#stochastic-oscillator) indicator, but the difference is in having a J line, which Stochastic does not have.
 
 <ol>
 	<li>The %K line is calculated the following way:</li><br>
@@ -207,7 +210,7 @@ This is how Ichimoku Cloud is calculated:
 
 ## Keltner Channels
 
-[Keltner Channels](keltner-channels) bands in each point are calculated according to the following formulas:
+[Keltner Channels](Keltner_Channels) bands in each point are calculated according to the following formulas:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/keltnerchannels.png"></center>
 
@@ -215,13 +218,13 @@ You can see how [EMA (Exponential Moving Average)](#exponential-moving-average) 
 
 ## Modified Moving Average
 
-[Modified Moving Average](modified-moving-average-mma)) indicator points are calculated by the following formula:
+[Modified Moving Average](Modified_Moving_Average_(MMA))) indicator points are calculated by the following formula:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/mma.png" width="400"></center>
 
 ## Money Flow Index
 
-[Money Flow Index](money-flow-index-mfi))  is calculated as follows:
+[Money Flow Index](Money_Flow_Index_(MFI)))  is calculated as follows:
 
 <ol>
 <li>The typical price for each day is the average of high, low and close:</li><br>
@@ -245,13 +248,13 @@ You can see how [EMA (Exponential Moving Average)](#exponential-moving-average) 
 
 ## Momentum
 
-[Momentum](momentum) indicator in each point is calculated according to the following formula:
+[Momentum](Momentum) indicator in each point is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/momentum.png" width="400"></center>
 
 ## Moving Average Convergence Divergence
 
-[Moving Average Convergence Divergence](moving-average-convergence-divergence-macd)) indicator is calculated as follows:
+[Moving Average Convergence Divergence](Moving_Average_Convergence_Divergence_(MACD))) indicator is calculated as follows:
 
 <ol>
 	<li>EMA\[slow period\]<sub>i</sub> and EMA\[fast period\]<sub>i</sub> is calculated by [EMA formula](#exponential-moving-average)</a>. Slow period 
@@ -272,7 +275,7 @@ Coming soon.
 
 ## On Balance Volume
 
-[On Balance Volume](on-balance-volume-obv)) indicator is calculated according to the following rules:
+[On Balance Volume](On_Balance_Volume_(OBV))) indicator is calculated according to the following rules:
 
 * If the closing price is above the prior close price, then:
 
@@ -288,7 +291,7 @@ Coming soon.
 
 ## Parabolic SAR
 
-[Parabolic SAR](parabolic-sar-psar)) is created according to the algorithm described below.
+[Parabolic SAR](Parabolic_SAR_(PSAR))) is created according to the algorithm described below.
 
 At each step within a trend, the SAR is calculated ahead of time. That is, tomorrow's SAR value is built using data available today. The general formula used for this is:
 
@@ -309,13 +312,13 @@ The SAR is recursively calculated in this manner for each new period. There are,
 
 ## Price Channels
 
-[Price Channels](price-channels) bands are calculated according to the following formulas:
+[Price Channels](Price_Channels) bands are calculated according to the following formulas:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/pricechannels.png"></center>
 
 ## Price Oscillator
 
-[Price Oscillator (PPO)](price-oscillator-ppo)) is calculated according to the following formulas:
+[Price Oscillator (PPO)](Price_Oscillator_(PPO))) is calculated according to the following formulas:
 
 <ol>
 	<li>PPO Line: **((12-day EMA - 26-day EMA)/26-day EMA) x 100**</li>
@@ -325,25 +328,25 @@ The SAR is recursively calculated in this manner for each new period. There are,
 
 ## Psychological Line
 
-[Psychological Line (PSY)](psychological-line-psy)) is calculated according to the following formula:
+[Psychological Line (PSY)](Psychological_Line_(PSY))) is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/psy.png"></center>
 
 ## Rank Correlation Index
 
-[Rank Correlation Index (RCI)](rank-correlation-index-rci)) is calculated according to the following formula:
+[Rank Correlation Index (RCI)](Rank_Correlation_Index_(RCI))) is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/rci.png"></center>
 
 ## Rate of Change
 
-[Rate of Change](rate-of-change-roc)) is calculated according to this formula:
+[Rate of Change](Rate_of_Change_(ROC))) is calculated according to this formula:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/roc.png"/></center>
 
 ## Ratiocator
 
-[Ratiocator (RAT)](ratiocator-rat)) is calculated as follows:
+[Ratiocator (RAT)](Ratiocator_(RAT))) is calculated as follows:
 
 <ol>
 	<li>**FirstRatiocator = PriceA / PriceB**, where priceA and priceB are prices of two stocks on a given BaseDate</li>
@@ -352,7 +355,7 @@ The SAR is recursively calculated in this manner for each new period. There are,
 
 ## Relative Strength Index
 
-[Relative Strength Index](relative-strength-index-rsi)) is calculated as follows:
+[Relative Strength Index](Relative_Strength_Index_(RSI))) is calculated as follows:
 
 <ol>
 	<li>Upward change (U) or downward change (D) sequences are calculated:<br>
@@ -366,13 +369,13 @@ The SAR is recursively calculated in this manner for each new period. There are,
 
 ## Simple Moving Average
 
-[Simple Moving Average](simple-moving-average-sma)) in each point is calculated according to the following formula:
+[Simple Moving Average](Simple_Moving_Average_(SMA))) in each point is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/sma.png"></center>
 
 ## Stochastic Oscillator
 
-[Stochastic Oscillator](stochastic-oscillator) indicator has two series, both being calculated with the help of other indicators (EMA or SMA). Also it has 3 types: Fast Stochastic Oscillator, Slow Stochastic Oscillator, and Full Stochastic Oscillator.
+[Stochastic Oscillator](Stochastic_Oscillator) indicator has two series, both being calculated with the help of other indicators (EMA or SMA). Also it has 3 types: Fast Stochastic Oscillator, Slow Stochastic Oscillator, and Full Stochastic Oscillator.
 
 **1.** By default, a **Fast Stochastic Oscillator** indicator is created, which is calculated according to the following formula:
 
@@ -405,16 +408,16 @@ where p2 is the second period that is set through the {api:anychart.core.stock.P
 where p3 is the third period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the %D value.
 
 ## Triple Exponential Moving Average
-[Triple Exponential Moving Average (TRIX)](triple-exponential-moving-average-trix)) and its signal line are calculated according to the following formulas:
+[Triple Exponential Moving Average (TRIX)](Triple_Exponential_Moving_Average_(TRIX))) and its signal line are calculated according to the following formulas:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/trix.png"></center>
 
 ## Volume + Moving Average
 
-[Volume + Moving Average](volume-moving-average) does no calculations with Volume and adds moving average of either [SMA](#simple-moving-average) or [EMA](#exponential-moving-average) type calculated from the Volume series.
+[Volume + Moving Average](Volume_%2B_Moving_Average) does no calculations with Volume and adds moving average of either [SMA](#simple-moving-average) or [EMA](#exponential-moving-average) type calculated from the Volume series.
 
 ## Williams %R
 
-[Williams %R](williams-r) is calculated according to this formula:
+[Williams %R](Williams_%25R) is calculated according to this formula:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/williams-r.png"></center>

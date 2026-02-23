@@ -1,4 +1,5 @@
 ---
+slug: "/Stock_Charts/Range_Selection"
 sidebar_position: 7.1
 ---
 
@@ -6,7 +7,7 @@ sidebar_position: 7.1
 
 ## Overview
 
-Range Selection UI is on of the great chart navigation features AnyStock provides to a chart viewer to make the data mining process comfortable and easily navigate these time based charts. The core navigation tool is Scroller, which is described in [Scroller](scroller) article. 
+Range Selection UI is on of the great chart navigation features AnyStock provides to a chart viewer to make the data mining process comfortable and easily navigate these time based charts. The core navigation tool is Scroller, which is described in [Scroller](Scroller) article. 
 
 **Range Selector** helps to use scroller by providing a set of buttons to select certain periods of time.
 
@@ -14,7 +15,7 @@ Range Selection UI is on of the great chart navigation features AnyStock provide
 
 ## Modules
 
-Both the range selector and range picker require the [Common UI](../quick-start/modules#common-ui) module:
+Both the range selector and range picker require the [Common UI](../Quick_Start/Modules#common-ui) module:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>  
@@ -26,7 +27,7 @@ Also, you should reference the `anychart-ui.min.css` file:
 <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css"/>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 
 ## Add to a chart

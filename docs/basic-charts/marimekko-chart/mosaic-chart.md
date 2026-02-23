@@ -1,11 +1,12 @@
 ---
+slug: "/Basic_Charts/Marimekko_Chart/Mosaic_Chart"
 sidebar_position: 2
 ---
 # Mosaic Chart
 
 ## Overview
 
-Mosaic chart is similar to the [basic Mekko chart](mekko-chart), with the following differences:
+Mosaic chart is similar to the [basic Mekko chart](Mekko_Chart), with the following differences:
 - The Y-scale is ordinal, and axes labels contain series names instead of numbers.
 - [Points padding](#padding) is increased.
 
@@ -50,20 +51,20 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Mosaic chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](../general-settings).
+Read the overview of general settings: [General Settings](../General_Settings).
 
 ## Special Settings
 
 ### Appearance
 
-Configuring the appearance of the Mosaic chart is similar to configuring the basic [Mekko chart](mekko-chart#appearance) or [Column chart](../column-chart).
+Configuring the appearance of the Mosaic chart is similar to configuring the basic [Mekko chart](Mekko_Chart#appearance) or [Column chart](../Column_Chart).
 
 ### Padding
 
-Padding between points  is a special setting in Mekko charts, it is controlled with {api:anychart.charts.Mekko#pointsPadding}pointsPadding(){api} method and sets the distance between elements (tiles), it serves only aesthetic purpose and it is set to different default values in [Mekko](mekko-chart) and [Bar Mekko](bar-mekko-chart) constructors.
+Padding between points  is a special setting in Mekko charts, it is controlled with {api:anychart.charts.Mekko#pointsPadding}pointsPadding(){api} method and sets the distance between elements (tiles), it serves only aesthetic purpose and it is set to different default values in [Mekko](Mekko_Chart) and [Bar Mekko](Bar_Mekko_Chart) constructors.
 
 ### Vertical Mosaic
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](../vertical/overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](../Vertical/Overview).
 
-Here is information about creating the Vertical Mosaic Chart: [Vertical Mosaic](../vertical/mosaic-chart).
+Here is information about creating the Vertical Mosaic Chart: [Vertical Mosaic](../Vertical/Mosaic_Chart).

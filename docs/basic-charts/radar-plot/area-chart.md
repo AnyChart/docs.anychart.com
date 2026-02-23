@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Radar_Plot/Area_Chart"
 sidebar_position: 2
 ---
 # Radar Area Chart
@@ -7,7 +8,7 @@ sidebar_position: 2
 
 This article explains how to create a Radar Area chart in AnyChart.
 
-To learn more about radar charts in general and how to customize them, see [Radar Charts (Overview)](overview). In addition, you can read the [Area Chart](../area-chart) article to learn about other available settings.
+To learn more about radar charts in general and how to customize them, see [Radar Charts (Overview)](Overview). In addition, you can read the [Area Chart](../Area_Chart) article to learn about other available settings.
 
 ## Quick Start
 

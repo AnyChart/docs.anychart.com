@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Doughnut_Chart"
 sidebar_position: 1
 ---
 
@@ -10,11 +11,11 @@ A doughnut (or donut) chart is a pie chart with a "hole" - a blank circular area
 
 Like the regular pie chart, the doughnut chart is used with small sets of data to compare categories. It drives attention from the area taken by each part to emphasize the length of arcs. The blank space also allows displaying some additional information in the center: for example, labels, the name of a selected category, or the chart title.
 
-The Doughnut chart is a modification of the Pie chart and shares almost all the settings with it, so this article explains just how to create a basic Doughnut chart and configure its labels. To learn about other settings, read the [Pie Chart](pie-chart) article. See also [Chartopedia: Doughnut Chart](https://www.anychart.com/chartopedia/chart-types/donut-chart/).
+The Doughnut chart is a modification of the Pie chart and shares almost all the settings with it, so this article explains just how to create a basic Doughnut chart and configure its labels. To learn about other settings, read the [Pie Chart](Pie_Chart) article. See also [Chartopedia: Doughnut Chart](https://www.anychart.com/chartopedia/chart-types/donut-chart/).
 
 ## Modules
 
-The Doughnut chart requires adding the [Core](../quick-start/modules#core) and [Pie and Doughnut](../quick-start/modules#pie-and-doughnut) modules:
+The Doughnut chart requires adding the [Core](../Quick_Start/Modules#core) and [Pie and Doughnut](../Quick_Start/Modules#pie-and-doughnut) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -24,13 +25,13 @@ The Doughnut chart requires adding the [Core](../quick-start/modules#core) and [
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pie.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../quick-start/modules#base) module, which includes, among other things, the two modules mentioned above: 
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -66,9 +67,9 @@ chart.draw();
 
 ## Settings
 
-The Doughnut chart is a modification of the Pie chart, so these two types share almost all the settings. You can find more settings in this article: [Pie Chart](pie-chart).
+The Doughnut chart is a modification of the Pie chart, so these two types share almost all the settings. You can find more settings in this article: [Pie Chart](Pie_Chart).
 
-Also, in AnyChart there are many settings that are configured in the same way for all chart types, including the Doughnut chart (for example, legend and interactivity settings): [General Settings](general-settings).
+Also, in AnyChart there are many settings that are configured in the same way for all chart types, including the Doughnut chart (for example, legend and interactivity settings): [General Settings](General_Settings).
 
 In addition, see the full list of methods available for the Pie chart: {api:anychart.charts.Pie}anychart.charts.Pie{api}
 
@@ -177,7 +178,7 @@ pie.center().content(map);
 
 #### Custom Drawing
 
-Another thing you can place in the center is a custom drawing created with the [Graphics](../graphics/overview) engine. Here a basic sample with several simple shapes:
+Another thing you can place in the center is a custom drawing created with the [Graphics](../Graphics/Overview) engine. Here a basic sample with several simple shapes:
 
 ```
 // create pie chart and configure it

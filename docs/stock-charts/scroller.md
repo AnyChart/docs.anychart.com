@@ -1,4 +1,5 @@
 ---
+slug: "/Stock_Charts/Scroller"
 sidebar_position: 7
 ---
 
@@ -10,7 +11,7 @@ Scroller is a main navigational control AnyStock provides to a chart viewer to m
 
 Scroller is a complex component that consists of the several configurable parts: Scroller itself, optional thumbnail series in its background and thumbs.
 
-Note: this is a Scroller for Stock charts, basic charts have their own [basic scroller](../common-settings/scroller) with slightly different settings.
+Note: this is a Scroller for Stock charts, basic charts have their own [basic scroller](../Common_Settings/Scroller) with slightly different settings.
 
 The scroller is enabled by default, it is possible to enable/disable the scroller by passing the "true" or "false" value to the {api:anychart.charts.Stock#scroller}scroller(){api} method or {api:anychart.core.stock.Scroller#enabled}enabled(){api} method:
 
@@ -46,7 +47,7 @@ chart.scroller().allowRangeChange(false);
 
 ### Background Series
 
-Scroller can display one of the [supported series](series/supported-series) in the background. It is done pretty much like creating a series in a plot:
+Scroller can display one of the [supported series](Series/Supported_Series) in the background. It is done pretty much like creating a series in a plot:
 
 ```
 // create scroller series with mapped data
@@ -55,7 +56,7 @@ chart.scroller().column(mapping);
 
 {sample}STOCK\_Scroller\_03{sample}
 
-Visit [Supported series](series/supported-series) article to know more about series supported by AnyStock Charts.
+Visit [Supported series](Series/Supported_Series) article to know more about series supported by AnyStock Charts.
 
 ### Scroller Axis
 
@@ -68,7 +69,7 @@ chart.scroller().xAxis(false);
 
 {sample}STOCK\_Scroller\_04{sample}
 
-To adjust the labels of the scroller axis work with it like with [any other axis in Stock Charts](axes).
+To adjust the labels of the scroller axis work with it like with [any other axis in Stock Charts](Axes).
 
 ```
 // access labels
@@ -96,7 +97,7 @@ minorLabels.fontSize(9);
 
 ## Events
 
-You can handle scroller events using event listeners (find out more about them in [Event Listeners](../common-settings/event-listeners) article).
+You can handle scroller events using event listeners (find out more about them in [Event Listeners](../Common_Settings/Event_Listeners) article).
 
 There are 4 events that can be handled when the selected time range changes. These events can be used to handle user actions, e.g., to display a chosen time interval as text or to update any extra UI elements. 
 

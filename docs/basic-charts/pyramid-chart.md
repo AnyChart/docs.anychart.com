@@ -1,21 +1,22 @@
 ---
+slug: "/Basic_Charts/Pyramid_Chart"
 sidebar_position: 2
 ---
 # Pyramid Chart
 
 ## Overview
 
-Pyramid chart is a kind of [Funnel chart](funnel-chart) that presents data in the similar way the funnel does. The main different of the pyramid chart from the funnel is an absence of the neck part. 
+Pyramid chart is a kind of [Funnel chart](Funnel_Chart) that presents data in the similar way the funnel does. The main different of the pyramid chart from the funnel is an absence of the neck part. 
 
 This article explains how to create a basic Pyramid Chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Pyramid chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#pyramid-and-funnel">Pyramid and Funnel</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#pyramid-and-funnel">Pyramid and Funnel</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Pyramid}anychart.charts.Pyramid{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">name, value</a></td></tr>
-<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">NO</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">name, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../Working_with_Data/Overview">NO</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
 <tr><td>Vertical</td><td>N/A</td></tr>
@@ -27,17 +28,17 @@ This article explains how to create a basic Pyramid Chart as well as configure s
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="funnel-chart">Funnel</a></td></tr>
-<tr><td></td><td><a href="pie-chart">Pie</a></td></tr>
-<tr><td></td><td><a href="stacked/overview">Stacked</a></td></tr>
+<tr><td></td><td><a href="Funnel_Chart">Funnel</a></td></tr>
+<tr><td></td><td><a href="Pie_Chart">Pie</a></td></tr>
+<tr><td></td><td><a href="Stacked/Overview">Stacked</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/pyramid-chart/">Chartopedia: Pyramid Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Pyramid chart requires adding the [Core](../quick-start/modules#core) and [Pyramid and Funnel](../quick-start/modules#pyramid-and-funnel) modules:
+The Pyramid chart requires adding the [Core](../Quick_Start/Modules#core) and [Pyramid and Funnel](../Quick_Start/Modules#pyramid-and-funnel) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -47,7 +48,7 @@ The Pyramid chart requires adding the [Core](../quick-start/modules#core) and [P
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pyramid-funnel.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -75,7 +76,7 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Pyramid Chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
@@ -83,7 +84,7 @@ Read the overview of general settings: [General Settings](general-settings).
 
 #### All Points
 
-The [appearance settings](../appearance-settings) of a Pyramid chart can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Pyramid#normal}normal(){api}, {api:anychart.charts.Pyramid#hovered}hovered(){api}, and {api:anychart.charts.Pyramid#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Pyramid chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Pyramid#normal}normal(){api}, {api:anychart.charts.Pyramid#hovered}hovered(){api}, and {api:anychart.charts.Pyramid#selected}selected(){api} methods.
 
 Combine them with the following methods:
 
@@ -190,7 +191,7 @@ Here is how the pyramid chart with a significant spacing looks like.
 
 ### Labels
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart. This section explains how to adjust the connectors and position of labels and to allow or forbid overlapping. To learn how to modify the text of labels, see the [Labels and Tooltips (Text)](#labels-and-tooltips-text)) section of this article.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart. This section explains how to adjust the connectors and position of labels and to allow or forbid overlapping. To learn how to modify the text of labels, see the [Labels and Tooltips (Text)](#labels-and-tooltips-text)) section of this article.
 
 #### Connectors
 
@@ -209,7 +210,7 @@ chart.connectorStroke({
 
 {sample}BCT\_Pyramid\_Chart\_07{sample}
 
-Find more information about lines in [Line Settings tutorial](../appearance-settings/lines-settings).
+Find more information about lines in [Line Settings tutorial](../Appearance_Settings/Lines_Settings).
 
 *Note:* if you want to hide connectors set the **null** value for {api:anychart.charts.Pyramid#connectorStroke}connectorsStroke(){api} method.
 
@@ -246,11 +247,11 @@ chart.overlapMode("allowOverlap");
 
 ### Labels and Tooltips (Text)
 
-For text [labels](../common-settings/labels), font settings and [text formatters](../common-settings/text-formatters) are available. The same settings can be applied to [tooltips](../common-settings/tooltip) - text boxes displayed when chart points are hovered over.
+For text [labels](../Common_Settings/Labels), font settings and [text formatters](../Common_Settings/Text_Formatters) are available. The same settings can be applied to [tooltips](../Common_Settings/Tooltip) - text boxes displayed when chart points are hovered over.
 
 #### Tokens
 
-To change the text of labels, combine the {api:anychart.charts.Pyramid#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../common-settings/text-formatters#string-tokens).
+To change the text of labels, combine the {api:anychart.charts.Pyramid#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string-tokens).
 
 To configure tooltips, do the same with the {api:anychart.charts.Pyramid#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
@@ -281,7 +282,7 @@ chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n\n{%custom_field}");
 
 #### Formatting Functions
 
-To configure labels and tooltips, you can use [formatting functions](../common-settings/text-formatters#formatting-functions) instead of tokens.
+To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting-functions) instead of tokens.
 
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 

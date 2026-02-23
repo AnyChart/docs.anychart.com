@@ -1,17 +1,18 @@
 ---
+slug: "/Basic_Charts/Marimekko_Chart/Bar_Mekko_Chart"
 sidebar_position: 1
 ---
 # Bar Mekko Chart
 
 ## Overview
 
-A [Mekko chart](mekko-chart) with a single series and units is called Bar Mekko in AnyChart. It is often used with one series only. 
+A [Mekko chart](Mekko_Chart) with a single series and units is called Bar Mekko in AnyChart. It is often used with one series only. 
 
 The difference between this constructor and other variations are:
-- [Palette](../../appearance-settings/palettes) applies to elements of a single series if there is only one series, similar to [Pie Chart](../pie-chart) or [Donut Chart](../doughnut-chart).
-- [Scale](../../axes-and-grids/scales) stacked mode is set to [values stacking](../stacked/overview#value-stacking).
-- When only one series is present, the [source of legend items](../../common-settings/legend/basic-settings#source) is set to `"categories"` to show names from the X-scale instead of series names.
-- [Points padding](mekko-chart#padding) is set to 0.
+- [Palette](../../Appearance_Settings/Palettes) applies to elements of a single series if there is only one series, similar to [Pie Chart](../Pie_Chart) or [Donut Chart](../Doughnut_Chart).
+- [Scale](../../Axes_and_Grids/Scales) stacked mode is set to [values stacking](../Stacked/Overview#value-stacking).
+- When only one series is present, the [source of legend items](../../Common_Settings/Legend/Basic_Settings#source) is set to `"categories"` to show names from the X-scale instead of series names.
+- [Points padding](Mekko_Chart#padding) is set to 0.
 
 ## Quick Start
 
@@ -49,13 +50,13 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Bar Mekko chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](../general-settings).
+Read the overview of general settings: [General Settings](../General_Settings).
 
 ## Special Settings
 
 ### Multiple Series
 
-A Mekko chart with units (sometimes also called submarine chart or olympic chart) is a two-dimensional stacked chart. It is often used with one series only. As in the [regular stacked chart](../stacked/overview#value-stacking), the value axis and the datasheet of this chart are based on absolute values.
+A Mekko chart with units (sometimes also called submarine chart or olympic chart) is a two-dimensional stacked chart. It is often used with one series only. As in the [regular stacked chart](../Stacked/Overview#value-stacking), the value axis and the datasheet of this chart are based on absolute values.
 
 You can create a multiseries Bar Mekko chart in the same way you always do:
 
@@ -63,10 +64,10 @@ You can create a multiseries Bar Mekko chart in the same way you always do:
 
 ### Apperance
 
-Configuring the appearance of the Bar Mekko chart is similar to configuring the basic [Mekko chart](mekko-chart#appearance) or [Column chart](../column-chart).
+Configuring the appearance of the Bar Mekko chart is similar to configuring the basic [Mekko chart](Mekko_Chart#appearance) or [Column chart](../Column_Chart).
 
 ### Vertical Bar Mekko
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](../vertical/overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](../Vertical/Overview).
 
-Here is information about creating the Vertical Bar Mekko Chart: [Vertical Bar Mekko](../vertical/bar-mekko-chart).
+Here is information about creating the Vertical Bar Mekko Chart: [Vertical Bar Mekko](../Vertical/Bar_Mekko_Chart).

@@ -1,10 +1,13 @@
+---
+slug: "/Common_Settings/Chart_Labels"
+---
 # Chart Labels 
 
 ## Overview
 
 Custom labels are text or image elements that can be placed anywhere on your chart or map to add descriptions or comments. Labels also can have actions attached.
 
-Do not confuse Chart Labels with [Series Labels](../common-settings/labels).
+Do not confuse Chart Labels with [Series Labels](../Common_Settings/Labels).
 
 ## Basics
 
@@ -21,7 +24,7 @@ label.text("The chart shows different\nice cream cones (with a\ndelicious crispy
 
 You can attach actions to labels and turn them into controls that can change an appearance of a chart or invoke any function.
 
-To attach an action to the image you have to use `listen()` method. Read more about event listeners in [Event Listeners article](event-listeners) and [Graphics JS Events](../graphics/events).
+To attach an action to the image you have to use `listen()` method. Read more about event listeners in [Event Listeners article](Event_Listeners) and [Graphics JS Events](../Graphics/Events).
 
 ```
 label = chart.label();

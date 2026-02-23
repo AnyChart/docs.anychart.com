@@ -1,11 +1,12 @@
 ---
+slug: "/Gantt_Chart/Timeline/Header"
 sidebar_position: 4
 ---
 # Header
 
 ## Overview
 
-The header is a component on the top of the timeline, representing its [scale](scale) and defined as an instance of the {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api} class. To access it, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#header}header(){api}.
+The header is a component on the top of the timeline, representing its [scale](Scale) and defined as an instance of the {api:anychart.core.gantt.TimeLineHeader}anychart.core.gantt.TimeLineHeader{api} class. To access it, combine {api:anychart.charts.Gantt#getTimeline}getTimeline(){api} with {api:anychart.core.ui.Timeline#header}header(){api}.
 
 You can configure either [all levels](#all-levels) of the header at once or an [individual level](#individual-levels). In particular, the [appearance](#appearance), [text format](#text-format), and [level height](#level-height) settings are available.
 
@@ -13,7 +14,7 @@ You can configure either [all levels](#all-levels) of the header at once or an [
 
 Each level of the header represents a time unit. Levels are shown in a specific order: from the level with the smallest unit at the bottom to the level with the largest one at the top.
 
-By default, there are three levels, each of them representing a time unit. The exact set of units depends on your data. To change the number of levels and show other time units, you should adjust the scale of the timeline, as explained in [Scale: Levels](scale#levels).
+By default, there are three levels, each of them representing a time unit. The exact set of units depends on your data. To change the number of levels and show other time units, you should adjust the scale of the timeline, as explained in [Scale: Levels](Scale#levels).
 
 Other settings can be applied either to [all levels](#all-levels) of the header or to  an [individual level](#individual-levels) - see the sections below to learn more.
 
@@ -53,12 +54,12 @@ header.level(0).background().stroke("3 #455a64");
 
 ## Appearance
 
-To configure the [appearance](../../appearance-settings) of [all levels](#all-levels), use these methods:
+To configure the [appearance](../../Appearance_Settings) of [all levels](#all-levels), use these methods:
 
 * {api:anychart.core.gantt.TimeLineHeader#background}background(){api}, {api:anychart.core.gantt.TimeLineHeader#fill}fill(){api} and {api:anychart.core.gantt.TimeLineHeader#stroke}stroke(){api} to set the background, fill, and stroke
 * {api:anychart.core.gantt.TimeLineHeader#fontColor}fontColor(){api}, {api:anychart.core.gantt.TimeLineHeader#fontWeight}fontWeight(){api}, {api:anychart.core.gantt.TimeLineHeader#fontSize}fontSize(){api}, {api:anychart.core.gantt.TimeLineHeader#fontFamily}fontFamily(){api}, etc. to configure the font
 
-**Note:** You can also set the fill of the data grid header - see [Data Grid: Apperance](../data-grid/appearance).
+**Note:** You can also set the fill of the data grid header - see [Data Grid: Apperance](../Data_Grid/Appearance).
 
 Here is a Gantt chart with the appearance of the timeline header adjusted:
 
@@ -96,13 +97,13 @@ The {api:anychart.core.gantt.TimeLineHeader}format(){api} method of the header a
 
 To configure an [individual level](#individual-levels), use the {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#format}format(){api} method of the level.
 
-Combine these methods either with [tokens](../../common-settings/text-formatters#string-tokens) or with [formatting functions](../../common-settings/text-formatters#formatting-functions).
+Combine these methods either with [tokens](../../Common_Settings/Text_Formatters#string-tokens) or with [formatting functions](../../Common_Settings/Text_Formatters#formatting-functions).
 
-**Note:** To learn more about formatting dates, see [Date and Time Formats: format()](../date-and-time-formats#format)).
+**Note:** To learn more about formatting dates, see [Date and Time Formats: format()](../Date_and_Time_Formats#format)).
 
 ### Tokens
 
-The available [tokens](../../common-settings/text-formatters#string-tokens) include:
+The available [tokens](../../Common_Settings/Text_Formatters#string-tokens) include:
 
 * `{%value}` - the name of the column
 * `{%endValue}` - the name of the next column
@@ -133,7 +134,7 @@ header.level(2).format("{%value}-{%endValue}");
 
 ### Formatting Functions
 
-In [formatting functions](../../common-settings/text-formatters#formatting-functions), the following fields are available:
+In [formatting functions](../../Common_Settings/Text_Formatters#formatting-functions), the following fields are available:
 
 * `value` - the name of the column
 * `endValue` - the name of the next column
@@ -170,7 +171,7 @@ header.level(0).format(function() {
 
 You can change the height of an [individual level](#individual-levels) by using the {api:anychart.core.gantt.TimeLineHeader.LevelWrapper#height}height(){api} method.
 
-**Note:** To learn how to set the height of the entire header, see [Basic Settings: Header and Row Height](../basic-settings#header-and-row-height).
+**Note:** To learn how to set the height of the entire header, see [Basic Settings: Header and Row Height](../Basic_Settings#header-and-row-height).
 
 In the following sample, the height of the first level is configured, which makes the height of others automatically adjust:
 

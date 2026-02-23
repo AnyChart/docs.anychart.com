@@ -1,4 +1,5 @@
 ---
+slug: "/Working_with_Data/Table_Data_Model"
 sidebar_position: 6
 ---
 # Table Data Model
@@ -7,7 +8,7 @@ sidebar_position: 6
 
 The table data model represents data as a collection of rows and columns, which allows storing large ordered data sets.
 
-It is required by [AnyChart Stock](../stock-charts/quick-start) charts. See also: [Stock Charts: Data](../stock-charts/data).
+It is required by [AnyChart Stock](../Stock_Charts/Quick_Start) charts. See also: [Stock Charts: Data](../Stock_Charts/Data).
 
 This article explains how to set table data, access rows, and perform operations on data.
 
@@ -27,12 +28,12 @@ You can learn how to use these classes in the sections below.
 
 ## Setting Data
 
-Table data structures in Anychart are defined as instances of the {api:anychart.data.Table}anychart.data.Table{api} class. Table data can be organized as an [array of arrays](#array-of-arrays), [array of objects](#array-of-objects), or [CSV string](#csv-string) (see also: [Data from CSV](data-from-csv)).
+Table data structures in Anychart are defined as instances of the {api:anychart.data.Table}anychart.data.Table{api} class. Table data can be organized as an [array of arrays](#array-of-arrays), [array of objects](#array-of-objects), or [CSV string](#csv-string) (see also: [Data from CSV](Data_From_CSV)).
 To create a chart based on this type of data, you should create a data table, add data, and map the table. 
 
 **1. Creating Data Table.** The first step is using the {api:anychart.data#table}anychart.data.table(){api} method to create a data table - an instance of {api:anychart.data.Table}anychart.data.Table{api}.
 
-If you set data as an array of arrays or a CSV string, specify the **index of the column** containing table keys (dates) as a parameter (0 by default). If you data is organized as an array of objects, specify the **name of the field** containing table keys. You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../common-settings/localization).
+If you set data as an array of arrays or a CSV string, specify the **index of the column** containing table keys (dates) as a parameter (0 by default). If you data is organized as an array of objects, specify the **name of the field** containing table keys. You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
 
 ```
 var dataTable = anychart.data.table(0);
@@ -133,7 +134,7 @@ var ohlcSeries = chart.plot(0).ohlc(mapping);
 
 ### CSV String
 
-The sample below shows how to set data if it is organized as a **CSV string**. See also: [Data from CSV](data-from-csv).
+The sample below shows how to set data if it is organized as a **CSV string**. See also: [Data from CSV](Data_From_CSV).
 
 By default, AnyChart considers commas in CSV data to be column separators and line breaks to be row separators, but {api:anychart.data.Table#addData}addData(){api} can accept an object with alternative settings as the third parameter.
 
@@ -190,7 +191,7 @@ dataTable.mapAs({open: "open", high: "high", low: "low", close: "close"});
 
 **Note:** The column with keys (dates) is specified when the table is created with the {api:anychart.data#table}anychart.data.table(){api} method. You cannot remap the key column with {api:anychart.data.Table#mapAs}mapAs(){api}.
 
-You can also set the **approximation mode** for [grouping data](../stock-charts/data-grouping) - the available options are listed in {api:anychart.enums.AggregationType}anychart.enums.AggregationType{api}. For example, this is how you set the approximation mode of the first column to `"open"`:
+You can also set the **approximation mode** for [grouping data](../Stock_Charts/Data_Grouping) - the available options are listed in {api:anychart.enums.AggregationType}anychart.enums.AggregationType{api}. For example, this is how you set the approximation mode of the first column to `"open"`:
 
 ```
 dataTable.mapAs({open: {column: 1, type: "open"}, high: 2, low: 3, close: 4});
@@ -245,7 +246,7 @@ var ohlc_2 = chart.plot(1).ohlc(mapping_2);
 
 {sample}WD\_Table\_Data\_04{sample}
 
-This sample show how to map the data for multiple series and [technical indicators](../stock-charts/technical-indicators):
+This sample show how to map the data for multiple series and [technical indicators](../Stock_Charts/Technical_Indicators):
 
 ```
 // create a data table
@@ -485,7 +486,7 @@ var ohlcSeries = chart.plot(0).rangeColumn(mapping);
 dataTable.addData([["2015-12-25", 510.69, 516.88," #dd2c00"]]);
 ```
 
-In the following sample, the first row of the table is updated on-the-fly after you enter custom parameters. To learn more about coloring individual points in Stock charts, see [Stock Charts: Data](../stock-charts/data#individual-point-settings).
+In the following sample, the first row of the table is updated on-the-fly after you enter custom parameters. To learn more about coloring individual points in Stock charts, see [Stock Charts: Data](../Stock_Charts/Data#individual-point-settings).
 
 {sample}WD\_Table\_Data\_09{sample}
 

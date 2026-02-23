@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Marker_Chart"
 sidebar_position: 1.61
 ---
 # Marker Chart
@@ -10,33 +11,33 @@ Marker chart (otherwise known as a point chart) is identical to a line chart wit
 This article explains how to create a basic Marker chart as well as configure settings that are specific to the type. See the table below to get a brief overview of the Marker chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#basic-cartesian">Basic Cartesian</a> / <a href="../Quick_Start/Modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Marker}anychart.core.cartesian.series.Marker{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
-<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">x, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../Working_with_Data/Overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td><a href="vertical/overview">Vertical Marker</a></td></tr>
+<tr><td>Vertical</td><td><a href="Vertical/Overview">Vertical Marker</a></td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td><a href="error-chart/marker-chart">Marker Chart with Error Bars</a></td></tr>
+<tr><td>Error Bars</td><td><a href="Error_Chart/Marker_Chart">Marker Chart with Error Bars</a></td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td><a href="polar-plot/marker-chart">Polar Marker</a></td></tr>
-<tr><td>Radar</td><td><a href="radar-plot/marker-chart">Radar Marker</a></td></tr>
-<tr><td>Scatter</td><td><a href="scatter-plot/marker-chart">Scatter Marker</a></td></tr>
-<tr><td>Stock</td><td><a href="../stock-charts/series/marker">Stock Marker</a></td></tr>
+<tr><td>Polar</td><td><a href="Polar_Plot/Marker_Chart">Polar Marker</a></td></tr>
+<tr><td>Radar</td><td><a href="Radar_Plot/Marker_Chart">Radar Marker</a></td></tr>
+<tr><td>Scatter</td><td><a href="Scatter_Plot/Marker_Chart">Scatter Marker</a></td></tr>
+<tr><td>Stock</td><td><a href="../Stock_Charts/Series/Marker">Stock Marker</a></td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="bubble-chart">Bubble</a></td></tr>
-<tr><td></td><td><a href="../maps/dot-point">Dot (Point) Maps</a>\_Map)</td></tr>
+<tr><td></td><td><a href="Bubble_Chart">Bubble</a></td></tr>
+<tr><td></td><td><a href="../Maps/Dot_(Point)_Map">Dot (Point) Maps</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/dot-chart/">Chartopedia: Marker Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Marker chart requires adding the [Core](../quick-start/modules#core) and [Basic Cartesian](../quick-start/modules#basic-cartesian) modules:
+The Marker chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic-cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -46,21 +47,21 @@ The Marker chart requires adding the [Core](../quick-start/modules#core) and [Ba
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../quick-start/modules#base) module, which includes, among other things, the two modules mentioned above: 
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
-To create a Marker chart, use the {api:anychart#marker}anychart.marker(){api} chart constructor. If you pass the data to this chart constructor, it creates a Marker series. Note that this constructor creates a chart of a Scatter type. Find more about Scatter Charts in the [Scatter Plot article](scatter-plot/overview) article.
+To create a Marker chart, use the {api:anychart#marker}anychart.marker(){api} chart constructor. If you pass the data to this chart constructor, it creates a Marker series. Note that this constructor creates a chart of a Scatter type. Find more about Scatter Charts in the [Scatter Plot article](Scatter_Plot/Overview) article.
 
 To create a Marker series explicitly, call the {api:anychart.charts.Cartesian#marker}marker(){api} method.
 
-In the following sample, we DO NOT create a [Scatter Marker Chart](scatter-plot/marker-chart), we create a basic categorized Marker chart:
+In the following sample, we DO NOT create a [Scatter Marker Chart](Scatter_Plot/Marker_Chart), we create a basic categorized Marker chart:
 
 ```
 // create data
@@ -93,13 +94,13 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Marker chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
 ### Size
 
-The size of markers can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Marker#normal}normal(){api}, {api:anychart.core.cartesian.series.Marker#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Marker#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#size}size(){api}:
+The size of markers can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Marker#normal}normal(){api}, {api:anychart.core.cartesian.series.Marker#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Marker#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#size}size(){api}:
 
 ```
 // set the size of markers
@@ -112,7 +113,7 @@ series.selected().size(15);
 
 ### Type
 
-The type (shape) of markers can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Marker#normal}normal(){api}, {api:anychart.core.cartesian.series.Marker#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Marker#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#size}type(){api}:
+The type (shape) of markers can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Marker#normal}normal(){api}, {api:anychart.core.cartesian.series.Marker#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Marker#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#size}type(){api}:
 
 Here is the list of available marker types: {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}.
 
@@ -132,7 +133,7 @@ series2.selected().type("star6");
 
 ### Appearance
 
-The [appearance settings](../appearance-settings) of a Marker chart can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Marker#normal}normal(){api}, {api:anychart.core.cartesian.series.Marker#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Marker#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Marker chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Marker#normal}normal(){api}, {api:anychart.core.cartesian.series.Marker#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Marker#selected}selected(){api} methods.
 
 Combine them with the following methods:
 
@@ -219,8 +220,8 @@ series = chart.marker(data);
 
 ### Labels
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 ### Tooltips
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../common-settings/text-formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.

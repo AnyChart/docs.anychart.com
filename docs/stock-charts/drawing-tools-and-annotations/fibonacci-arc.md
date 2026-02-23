@@ -1,4 +1,5 @@
 ---
+slug: "/Stock_Charts/Drawing_Tools_and_Annotations/Fibonacci_Arc"
 sidebar_position: 3
 ---
 # Fibonacci Arc
@@ -9,9 +10,9 @@ The Fibonacci Arc annotation allows you to add a Fibonacci arc to a chart.
 
 This article explains how to add a Fibonacci Arc and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 
-* [Drawing Tools and Annotations: General Settings](general-settings)
-* [Drawing Tools and Annotations: Drawing](drawing)
-* [Drawing Tools and Annotations: Serializing and Deserializing](serializing-deserializing)
+* [Drawing Tools and Annotations: General Settings](General_Settings)
+* [Drawing Tools and Annotations: Drawing](Drawing)
+* [Drawing Tools and Annotations: Serializing and Deserializing](Serializing_Deserializing)
 
 ## Basic Settings
 
@@ -61,7 +62,7 @@ controller.fibonacciArc({
 
 ## Appearance
 
-The [appearance settings](../../appearance-settings) of a Fibonacci Arc annotation can be configured in three [states](../../../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the following methods:
+The [appearance settings](../../Appearance_Settings) of a Fibonacci Arc annotation can be configured in three [states](../../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the following methods:
 
 * {api:anychart.core.annotations.Base#normal}normal(){api} 
 * {api:anychart.core.annotations.Base#selected}selected(){api} 
@@ -152,9 +153,9 @@ function colorLevels(){
 
 ## Labels
 
-You can change the text of Fibonacci Arc [labels](../../common-settings/labels) with the help of [text formatters](../../common-settings/text-formatters).
+You can change the text of Fibonacci Arc [labels](../../Common_Settings/Labels) with the help of [text formatters](../../Common_Settings/Text_Formatters).
 
-Combine the {api:anychart.core.annotations.FibonacciArc#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with the following [tokens](../../common-settings/text-formatters#string-tokens):
+Combine the {api:anychart.core.annotations.FibonacciArc#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with the following [tokens](../../Common_Settings/Text_Formatters#string-tokens):
 
 * `{%level}` (shown by default)
 * `{%levelValue}`
@@ -174,7 +175,7 @@ fibonacciArc.labels().format("{%level} ({%levelValue})");
 
 {sample}STOCK\_Drawing\_Fibonacci\_Arc\_05{sample}
 
-Instead of tokens, you can also use [formatting functions](../../common-settings/text-formatters#formatting-functions) and the following fields:
+Instead of tokens, you can also use [formatting functions](../../Common_Settings/Text_Formatters#formatting-functions) and the following fields:
 
 * `level` (shown by default)
 * `levelValue`

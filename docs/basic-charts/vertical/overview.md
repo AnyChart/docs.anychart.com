@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Vertical/Overview"
 sidebar_position: 0
 ---
 # Vertical Charts
@@ -98,42 +99,42 @@ chart.isVertical(true);
 
 {sample}BCT\_Vertical\_03{sample}
 
-**Note**: To rotate charts like [Mekko](mekko-chart) or [Mosaic](mosaic-chart) you should rotate series one by one and  and [axes](../../axes-and-grids/axis-orientation). So, use the {api:?entry=isVertical}isVertical(){api} method and {api:anychart.core.axes.Linear#orientation}orientation(){api} methods.
+**Note**: To rotate charts like [Mekko](Mekko_Chart) or [Mosaic](Mosaic_Chart) you should rotate series one by one and  and [axes](../../Axes_and_Grids/Axis_Orientation). So, use the {api:?entry=isVertical}isVertical(){api} method and {api:anychart.core.axes.Linear#orientation}orientation(){api} methods.
 
 ## Supported Types
 
 Here is the list of supported vertical charts:
 
-* [Bar (Vertical Column)](../bar-chart)
-* [Range Bar (Vertical Column)](../range-bar-chart)
-* [Vertical Area](area-chart)
-* [Vertical Bar Mekko](bar-mekko-chart)
-* [Vertical Box](box-chart)
-* [Vertical Bubble](bubble-chart)
-* [Vertical Japanese Candlestick](japanese-candlestick-chart)
-* [Vertical Jump Line](jump-line-chart)
-* [Vertical HiLo](hilo-chart)
-* [Vertical Line](line-chart)
-* [Vertical Marker](marker-chart)
-* [Vertical Mekko](mekko-chart)
-* [Vertical Mosaic](mosaic-chart)
-* [Vertical OHLC](ohlc-chart)
-* [Vertical Range Area](range-area-chart) 
-* [Vertical Range Spline Area](range-spline-area-chart)
-* [Vertical Range Step Area](range-step-area-chart)  
-* [Vertical Spline](spline-chart)
-* [Vertical Spline Area](spline-area-chart)
-* [Vertical Step Area](step-area-chart)
-* [Vertical Step Line](step-line-chart)
-* [Vertical Stick](stick-chart)
+* [Bar (Vertical Column)](../Bar_Chart)
+* [Range Bar (Vertical Column)](../Range_Bar_Chart)
+* [Vertical Area](Area_Chart)
+* [Vertical Bar Mekko](Bar_Mekko_Chart)
+* [Vertical Box](Box_Chart)
+* [Vertical Bubble](Bubble_Chart)
+* [Vertical Japanese Candlestick](Japanese_Candlestick_Chart)
+* [Vertical Jump Line](Jump_Line_Chart)
+* [Vertical HiLo](HiLo_Chart)
+* [Vertical Line](Line_Chart)
+* [Vertical Marker](Marker_Chart)
+* [Vertical Mekko](Mekko_Chart)
+* [Vertical Mosaic](Mosaic_Chart)
+* [Vertical OHLC](OHLC_Chart)
+* [Vertical Range Area](Range_Area_Chart) 
+* [Vertical Range Spline Area](Range_Spline_Area_Chart)
+* [Vertical Range Step Area](Range_Step_Area_Chart)  
+* [Vertical Spline](Spline_Chart)
+* [Vertical Spline Area](Spline_Area_Chart)
+* [Vertical Step Area](Step_Area_Chart)
+* [Vertical Step Line](Step_Line_Chart)
+* [Vertical Stick](Stick_Chart)
 
 See also stacked charts:
 
-* [Percent Stacked Bar (Vertical Column)](../stacked/percent/bar-chart)
-* [Percent Stacked Vertical Area](../stacked/percent/vertical-area-chart)
-* [Percent Stacked Vertical Spline Area](../stacked/percent/vertical-spline-area-chart)
-* [Percent Stacked Vertical Step Area](../stacked/percent/vertical-step-area-chart)
-* [Value Stacked Bar (Vertical Column)](../stacked/value/bar-chart)
-* [Value Stacked Vertical Area](../stacked/value/vertical-area-chart)
-* [Value Stacked Vertical Spline Area](../stacked/value/vertical-spline-area-chart)
-* [Value Stacked Vertical Step Area](../stacked/value/vertical-step-area-chart)
+* [Percent Stacked Bar (Vertical Column)](../Stacked/Percent/Bar_Chart)
+* [Percent Stacked Vertical Area](../Stacked/Percent/Vertical_Area_Chart)
+* [Percent Stacked Vertical Spline Area](../Stacked/Percent/Vertical_Spline_Area_Chart)
+* [Percent Stacked Vertical Step Area](../Stacked/Percent/Vertical_Step_Area_Chart)
+* [Value Stacked Bar (Vertical Column)](../Stacked/Value/Bar_Chart)
+* [Value Stacked Vertical Area](../Stacked/Value/Vertical_Area_Chart)
+* [Value Stacked Vertical Spline Area](../Stacked/Value/Vertical_Spline_Area_Chart)
+* [Value Stacked Vertical Step Area](../Stacked/Value/Vertical_Step_Area_Chart)

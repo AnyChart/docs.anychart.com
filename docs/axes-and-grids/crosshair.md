@@ -1,4 +1,5 @@
 ---
+slug: "/Axes_and_Grids/Crosshair"
 sidebar_position: 5
 ---
 # Crosshair
@@ -53,7 +54,7 @@ You can disable or enable a label or both labels by using the `false` or `true` 
 chart.crosshair().xLabel(false);
 ```
 
-The text of the labels can be changed with the help of the {api:anychart.core.ui.CrosshairLabel#format}format(){api} method and [formatting functions](../common-settings/text-formatters#formatting-functions):
+The text of the labels can be changed with the help of the {api:anychart.core.ui.CrosshairLabel#format}format(){api} method and [formatting functions](../Common_Settings/Text_Formatters#formatting-functions):
 
 ```
 // set the text of the x-label using text formatter

@@ -1,3 +1,6 @@
+---
+slug: "/Common_Settings/Text_Formatters"
+---
 # Text Formatters
 
 ## Overview
@@ -48,7 +51,7 @@ A live sample of chart tooltip, labels and axes labels formatted using string to
 
 ### Tokens List
 
-Here is the list of the tokens you can use in formatting strings. Note that some tokens don't work universally: you can't use {%bubbleSize} outside of [Bubble series](../basic-charts/bubble-chart) or {%close} outside of [Candlestick](../basic-charts/japanese-candlestick-chart) or [OHLC](../basic-charts/ohlc-chart) and so on. 
+Here is the list of the tokens you can use in formatting strings. Note that some tokens don't work universally: you can't use {%bubbleSize} outside of [Bubble series](../Basic_Charts/Bubble_Chart) or {%close} outside of [Candlestick](../Basic_Charts/Japanese_Candlestick_Chart) or [OHLC](../Basic_Charts/OHLC_Chart) and so on. 
 
 The full list of tokens is available in API: {api:anychart.enums.Statistics}anychart.enums.Statistics{api}
 
@@ -619,7 +622,7 @@ tooltip.format(function() {
 });
 ```
 
-Here is a sample with additional information in the chart tooltip. Full information on tooltip settings can be found in [Tooltip article](tooltip).
+Here is a sample with additional information in the chart tooltip. Full information on tooltip settings can be found in [Tooltip article](Tooltip).
 
 {sample}CS\_format\_08{sample}
 
@@ -665,7 +668,7 @@ labels_2.format(function() {
 
 #### getStat
 
-This method is to be used when you want to obtain various statistical information from a chart. Read more about this in [Statistics](statistics) article.
+This method is to be used when you want to obtain various statistical information from a chart. Read more about this in [Statistics](Statistics) article.
 
 Here is a sample of the {api:anychart.format.Context#getStat}getStat(){api} method used in a Pie chart.
 

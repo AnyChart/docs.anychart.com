@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Vertical/Bubble_Chart"
 sidebar_position: 2
 ---
 # Vertical Bubble Chart
@@ -7,7 +8,7 @@ sidebar_position: 2
 
 This article explains how to create a Vertical Bubble chart in AnyChart.
 
-To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](overview). You can also read the [Bubble Chart](../bubble-chart) article to learn about other available settings.
+To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](Overview). You can also read the [Bubble Chart](../Bubble_Chart) article to learn about other available settings.
 
 ## Quick Start
 

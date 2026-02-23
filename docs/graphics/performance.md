@@ -1,4 +1,5 @@
 ---
+slug: "/Graphics/Performance"
 sidebar_position: 9.1
 ---
 # GraphicsJS Performance Tips
@@ -9,7 +10,7 @@ This section is supposed to give our users some additional information about Any
 
 ## Suspend and Resume
 
-There are two special methods of our stage that allow to use [virtual DOM](virtual-dom) instead of redrawing any time a new object appears. The stage method {api:anychart.graphics.vector.Stage#suspend}suspend(){api} stops the stage from redrawing and rerendering. However, all changes are being written down in the virtual DOM instead of real DOM. Without {api:anychart.graphics.vector.Stage#suspend}suspend(){api}, it takes far much longer time to demonstrate all changes on stage than in case when we first suspend the stage from drawing and then put all DOM-elements on it at once. 
+There are two special methods of our stage that allow to use [virtual DOM](Virtual_DOM) instead of redrawing any time a new object appears. The stage method {api:anychart.graphics.vector.Stage#suspend}suspend(){api} stops the stage from redrawing and rerendering. However, all changes are being written down in the virtual DOM instead of real DOM. Without {api:anychart.graphics.vector.Stage#suspend}suspend(){api}, it takes far much longer time to demonstrate all changes on stage than in case when we first suspend the stage from drawing and then put all DOM-elements on it at once. 
 
 The {api:anychart.graphics.vector.Stage#resume}resume(){api} method is necessary to finally put all DOM-elements on a stage.
 

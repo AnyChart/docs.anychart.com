@@ -1,10 +1,13 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Commodity_Channel_Index_(CCI)"
+---
 # Commodity Channel Index (CCI)
 
 ## Overview
 
 Developed by Donald Lambert and featured in Commodities magazine in 1980, the Commodity Channel Index (CCI) is a versatile indicator that can be used to identify a new trend or warn of extreme conditions. Lambert originally developed CCI to identify cyclical turns in commodities, but the indicator can successfully applied to indices, ETFs, stocks and other securities. In general, CCI measures the current price level relative to an average price level over a given period of time. CCI is relatively high when prices are far above their average. CCI is relatively low when prices are far below their average. In this manner, CCI can be used to identify overbought and oversold levels.
 
-Find the mathematical description of the indicator on the [Commodity Channel Index (CCI) Mathematical Description](mathematical-description#commodity-channel-index) page.
+Find the mathematical description of the indicator on the [Commodity Channel Index (CCI) Mathematical Description](Mathematical_Description#commodity-channel-index) page.
 
 ## Adding Indicator
 

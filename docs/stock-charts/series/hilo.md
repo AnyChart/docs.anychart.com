@@ -1,8 +1,11 @@
+---
+slug: "/Stock_Charts/Series/HiLo"
+---
 # AnyStock HiLo Series
 
 ## Overview
 
-HiLo series is a kind of basic chart series that can be used in stocks. To know how to manage HiLo series, see the [HiLo Chart article](../../basic-charts/hilo-chart).
+HiLo series is a kind of basic chart series that can be used in stocks. To know how to manage HiLo series, see the [HiLo Chart article](../../Basic_Charts/HiLo_Chart).
 
 ## AnyStock HiLo Series Adjustment
 
@@ -52,7 +55,7 @@ mapping = table.mapAs({high:'h', low:'l'});
 
 {sample}STOCK\_HiLo\_02{sample}
 
-To know more about the data setting in stocks, visit [Stock Data tutorial](../data). 
+To know more about the data setting in stocks, visit [Stock Data tutorial](../Data). 
 
 ### Multi series
 
@@ -93,13 +96,13 @@ series_globex.name("Globex Corp. stock prices");
 
 {sample}STOCK\_HiLo\_04{sample}
 
-See the [Chart Plots article](../chart-plots) to know how to manage the plots.
+See the [Chart Plots article](../Chart_Plots) to know how to manage the plots.
 
-As stocks are intended to show large amounts of data, this data needs to be compressed at some point to be displayed correctly. All information about them can be found in the [Data Grouping](../data-grouping) article.
+As stocks are intended to show large amounts of data, this data needs to be compressed at some point to be displayed correctly. All information about them can be found in the [Data Grouping](../Data_Grouping) article.
 
 ### Switching series type
 
-You can change the type of the series to another compatible type. See the [Series Type](series-type) and [series types table](supported-series#list-of-supported-series).
+You can change the type of the series to another compatible type. See the [Series Type](Series_Type) and [series types table](Supported_Series#list-of-supported-series).
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 

@@ -1,10 +1,13 @@
+---
+slug: "/Stock_Charts/Series/Range_Area"
+---
 # AnyStock Range Area Series
 
 ## Overview
 
-Range Area demonstrates how a range of some object's volume changes in time or during some process. There are two values to be set for this series: low and high. Find more about this series type in [Range Area Chart](../../basic-charts/range-area-chart).
+Range Area demonstrates how a range of some object's volume changes in time or during some process. There are two values to be set for this series: low and high. Find more about this series type in [Range Area Chart](../../Basic_Charts/Range_Area_Chart).
 
-See also: [Range Spline Area](range-spline-area).
+See also: [Range Spline Area](Range_Spline_Area).
 
 ## AnyStock Range Area Series Adjustment
 
@@ -131,11 +134,11 @@ series_ny.name("Temperature Range (New York 2000-2004)");
 
 {sample}STOCK\_Range\_Area\_04{sample}
 
-You can find all information about plots in the [Plot tutorial](../chart-plots).
+You can find all information about plots in the [Plot tutorial](../Chart_Plots).
 
 ### Switching series type
 
-You can change the type of the series to another compatible type. See the [Series Type](series-type) and [series types table](supported-series#list-of-supported-series).
+You can change the type of the series to another compatible type. See the [Series Type](Series_Type) and [series types table](Supported_Series#list-of-supported-series).
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 

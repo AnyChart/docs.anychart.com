@@ -1,8 +1,11 @@
+---
+slug: "/Stock_Charts/Series/Stick"
+---
 # AnyStock Stick Series
 
 ## Overview
 
-Stick Series is very similar to [Column](column) but with no width. Read more about Stick Series in the [Stick Series tutorial](../../basic-charts/stick-chart).
+Stick Series is very similar to [Column](Column) but with no width. Read more about Stick Series in the [Stick Series tutorial](../../Basic_Charts/Stick_Chart).
 
 ## AnyStock Stick Series Adjustment
  
@@ -47,7 +50,7 @@ mapping = table.mapAs({x: 'x', value: 'value'});
 
 {sample}STOCK\_Stick\_02{sample}
 
-Find out more about setting and arranging data in Stocks in the [Stocks Data tutorial](../data).
+Find out more about setting and arranging data in Stocks in the [Stocks Data tutorial](../Data).
 
 ### Multi series
 
@@ -75,11 +78,11 @@ series_region.name('Region Request Number');
 
 {sample}STOCK\_Stick\_04{sample}
 
-Read more about plots in the [Plots tutorial](../chart-plots).
+Read more about plots in the [Plots tutorial](../Chart_Plots).
 
 ### Switching series type
 
-You can change the type of series to another compatible type. See the [Series Type](series-type) and [series types table](supported-series#list-of-supported-series).
+You can change the type of series to another compatible type. See the [Series Type](Series_Type) and [series types table](Supported_Series#list-of-supported-series).
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 

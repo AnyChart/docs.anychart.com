@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Pareto_Chart"
 sidebar_position: 1.61
 ---
 # Pareto Chart
@@ -13,7 +14,7 @@ The purpose of the Pareto chart is to highlight the most important among a (typi
 
 ## Modules
 
-The Pareto chart requires adding the [Core](../quick-start/modules#core) and [Pareto](../quick-start/modules#pareto) modules:
+The Pareto chart requires adding the [Core](../Quick_Start/Modules#core) and [Pareto](../Quick_Start/Modules#pareto) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -23,7 +24,7 @@ The Pareto chart requires adding the [Core](../quick-start/modules#core) and [Pa
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pareto.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -51,7 +52,7 @@ Here is a basic Pareto chart, you can see that AnyChart automatically creates tw
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Pareto chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
@@ -117,7 +118,7 @@ chart.data(extra_data);
 
 ### Series
 
-The Pareto chart in AnyChart [sorts data, calculates cumulative and relative frequency](#data), and automatically creates two series: a [Line](line-chart) and a [Column](column-chart) - instances of the {api:anychart.core.cartesian.series.Column}Column{api} and {api:anychart.core.cartesian.series.Line}Line{api} classes.
+The Pareto chart in AnyChart [sorts data, calculates cumulative and relative frequency](#data), and automatically creates two series: a [Line](Line_Chart) and a [Column](Column_Chart) - instances of the {api:anychart.core.cartesian.series.Column}Column{api} and {api:anychart.core.cartesian.series.Line}Line{api} classes.
 
 To access these series, call the {api:anychart.charts.Cartesian#getSeries}getSeries(){api} or {api:anychart.charts.Cartesian#getSeriesAt}getSeriesAt(){api} methods. In the sections below there are some samples showing how to use them for configuring the chart.
 
@@ -135,10 +136,10 @@ See below to learn more about using these values in chart's configuration.
 
 ### Appearance
 
-- [Line Chart](line-chart)
-- [Column Chart](column-chart)
+- [Line Chart](Line_Chart)
+- [Column Chart](Column_Chart)
 
-The Line and Column series have their own visual settings - see the [Line Chart](line-chart) and [Column Chart](column-chart) articles.
+The Line and Column series have their own visual settings - see the [Line Chart](Line_Chart) and [Column Chart](Column_Chart) articles.
 
 In this sample there is a Pareto chart with the appearance settings of its series configured:
 
@@ -192,11 +193,11 @@ Here is a live sample of such chart:
 
 ### Point Size
 
-This chart type allows you to set the size of its points. Read more in the [Point Size](../common-settings/point-size) article.
+This chart type allows you to set the size of its points. Read more in the [Point Size](../Common_Settings/Point_Size) article.
 
 ### Labels
 
-To configure Pareto series labels settings please study general [Labels Tutorial](../common-settings/labels) first. Configuring labels for series in a Pareto chart is just the same, you can do whatever you want with any of them:
+To configure Pareto series labels settings please study general [Labels Tutorial](../Common_Settings/Labels) first. Configuring labels for series in a Pareto chart is just the same, you can do whatever you want with any of them:
 
 ```
 // line series enable labels
@@ -219,7 +220,7 @@ Here is a sample of a Pareto chart with a custom labels configuration:
 
 ### Tooltips
 
-To configure Pareto series tooltip settings please study general [Tooltips Tutorial](../common-settings/tooltip) first. Configuring tooltips for series in a Pareto chart is just the same, you can do whatever you want with any of them:
+To configure Pareto series tooltip settings please study general [Tooltips Tutorial](../Common_Settings/Tooltip) first. Configuring tooltips for series in a Pareto chart is just the same, you can do whatever you want with any of them:
 
 ```
 // get the column series and format tooltip
@@ -235,7 +236,7 @@ chart.getSeriesAt(1).tooltip().format("Cumulative Frequency: {%CF}% \n Relative 
 
 When a Pareto chart is created AnyChart engine automatically creates two scales and two axes, and a column and a line series are automatically bound to proper scales.
 
-Please see [Axes Basics](../axes-and-grids/axis-basics) and [Scales](../axes-and-grids/scales) articles to learn the basics.
+Please see [Axes Basics](../Axes_and_Grids/Axis_Basics) and [Scales](../Axes_and_Grids/Scales) articles to learn the basics.
 
 To access scales and axis use the following code:
 
@@ -257,7 +258,7 @@ Using these variables you can change scale intervals, axes colors and so on:
 
 ### Pareto Analysis Axes Markers
 
-To display lines that are usually used to do 80/20 rule analysis and alike, you need to combine knowledge from the previous section about [Axes and Scales](#axes-and-scales) with the knowledge about [Line](../axes-and-grids/line-markers), [Text](../axes-and-grids/text-markers), and [Range](../axes-and-grids/range-markers).
+To display lines that are usually used to do 80/20 rule analysis and alike, you need to combine knowledge from the previous section about [Axes and Scales](#axes-and-scales) with the knowledge about [Line](../Axes_and_Grids/Line_Markers), [Text](../Axes_and_Grids/Text_Markers), and [Range](../Axes_and_Grids/Range_Markers).
 
 Here is a sample of a Pareto chart with 80% line and label displayed:
 
@@ -266,8 +267,8 @@ Here is a sample of a Pareto chart with 80% line and label displayed:
 ## Events
 
 There are no special events in Pareto charts, you can use everything you can use in other similar chart types. See:
-- [Event Listeners](../common-settings/event-listeners)
-- [Interactivity](../common-settings/interactivity/overview)
+- [Event Listeners](../Common_Settings/Event_Listeners)
+- [Interactivity](../Common_Settings/Interactivity/Overview)
 
 ## Samples
 

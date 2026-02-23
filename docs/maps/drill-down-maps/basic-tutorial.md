@@ -1,11 +1,12 @@
 ---
+slug: "/Maps/Drill_Down_Maps/Basic_Tutorial"
 sidebar_position: 3
 ---
 # Basic tutorial
 
 ## Include AnyMap component
 
-First of all, you need the Anymap component, which can be found on the [download page](../../quick-start/downloading-anychart). Reference the AnyMap JavaScript file in the <head> section of your web page. 
+First of all, you need the Anymap component, which can be found on the [download page](../../Quick_Start/Downloading_AnyChart). Reference the AnyMap JavaScript file in the <head> section of your web page. 
 
 ```
 <head>
@@ -18,7 +19,7 @@ If you need any other AnyChart components, it's better to include anychart-bundl
 
 ## Add maps
 
-There are several ways how to include maps in your Drill Down Map: through scripts or using AJAX. The first way is described in this article; if you need the tutorial for AJAX, visit the [AJAX](ajax-tutorial) page.
+There are several ways how to include maps in your Drill Down Map: through scripts or using AJAX. The first way is described in this article; if you need the tutorial for AJAX, visit the [AJAX](AJAX_Tutorial) page.
 
 To include a map as script, reference the JavaScript file with this map in the <head> section of your web page.
 You can use the link as shown below or download all necessary maps from the [download page](https://cdn.anychart.com/) and then reference them locally.
@@ -77,7 +78,7 @@ After we have defined the data, it's time to pass it to series.
 
 AnyMap provide a wide range of series, so at the first step you should make up your mind about which series (map) type (or types) you're going to use in your Drill Down Map
 
-In this sample we've decided to use [Choropleth Map](../choropleth-map), as it's one of the most popular series type.
+In this sample we've decided to use [Choropleth Map](../Choropleth_Map), as it's one of the most popular series type.
 
 ```
 // Set the series for all maps
@@ -110,4 +111,4 @@ By default, the {api:anychart.charts.Map#drillUp}drillUp(){api} method is perfor
 
 ## Adjust settings
 
-The sample demonstrated in this article is a simple one, but it can be improved and adjusted as you need. Check the [Methods](methods) and [AJAX Tutorial](ajax-tutorial) articles to know all about special drill down methods and to understand how to use them.
+The sample demonstrated in this article is a simple one, but it can be improved and adjusted as you need. Check the [Methods](Methods) and [AJAX Tutorial](AJAX_Tutorial) articles to know all about special drill down methods and to understand how to use them.

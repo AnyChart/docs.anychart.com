@@ -1,4 +1,7 @@
 ---
+slug: "/Maps/Seat_Maps/Preparing_SVG_Image"
+---
+---
 sidebar_position: 1
 ---
 # Preparing SVG Image
@@ -117,6 +120,6 @@ Inline groups might have their own ID's due to some reasons. Elements inside of 
 
 If there are lines demonstrating some extra elements not necessary anymore, find these lines in the code of the SVG image and simply delete them. This will simplify your work with the file.
 
-Now, the SVG image is ready for the further work and transformations. For more info & tutorial, open the [Seat Map](seat-map) article.
+Now, the SVG image is ready for the further work and transformations. For more info & tutorial, open the [Seat Map](Seat_Map) article.
 
 You can <a href="https://static.anychart.com/images/docs/seat_map/house.svg">download the SVG file</a> used in this article.

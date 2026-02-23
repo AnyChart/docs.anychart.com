@@ -1,3 +1,6 @@
+---
+slug: "/Appearance_Settings/Colors_Table"
+---
 # Color Table
 
 Here is the list of all web colors supported by AnyChart charting framework and their Hexadecimal and RGB equivalent.

@@ -1,4 +1,5 @@
 ---
+slug: "/Common_Settings/Overview"
 sidebar_position: 1
 ---
 # Common Settings
@@ -7,42 +8,42 @@ This section includes articles about features shared by most of the charts and m
 
 ## Chart Elements
 
-* [Legend](legend)
-* [Title](title)
-* [Chart Labels](chart-labels)
-* [Labels](labels) + [Text Formatters](text-formatters)
-* [Tooltip](tooltip) + [Text Formatters](text-formatters)
-* [Scroller](scroller)
-* [UI Controls](ui-controls)
+* [Legend](Legend)
+* [Title](Title)
+* [Chart Labels](Chart_Labels)
+* [Labels](Labels) + [Text Formatters](Text_Formatters)
+* [Tooltip](Tooltip) + [Text Formatters](Text_Formatters)
+* [Scroller](Scroller)
+* [UI Controls](UI_Controls)
 
 ## Chart Settings
 
-* [Text Formatters](text-formatters)
-* [Statistics](statistics)
-* [Point Size](point-size)
-* [Automatic Coloring](automatic-coloring)
-* [Calendar](calendar)
+* [Text Formatters](Text_Formatters)
+* [Statistics](Statistics)
+* [Point Size](Point_Size)
+* [Automatic Coloring](Automatic_Coloring)
+* [Calendar](Calendar)
 
 ## Interactivity
 
-* [Interactivity](interactivity)
-* [Event Listeners](event-listeners)
+* [Interactivity](Interactivity)
+* [Event Listeners](Event_Listeners)
 
 ## Rendering
 
-* [ASYNC Rendering](async-rendering)
-* [Server-Side Rendering](server-side-rendering)
+* [ASYNC Rendering](ASYNC_Rendering)
+* [Server-Side Rendering](Server-Side_Rendering)
 
 ## Export
 
-* [Exports](exports)
-* [Sharing](sharing)
-* [Printing](printing)
+* [Exports](Exports)
+* [Sharing](Sharing)
+* [Printing](Printing)
 
 ## Localization
 
-* [Localization](localization)
+* [Localization](Localization)
 
 ## Accessibility
 
-* [Accessibility](accessibility)
+* [Accessibility](Accessibility)

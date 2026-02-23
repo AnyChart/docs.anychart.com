@@ -1,4 +1,5 @@
 ---
+slug: "/Maps/Visualisation"
 sidebar_position: 15
 ---
 # Map Visualisation
@@ -10,11 +11,11 @@ This article will help you to understand how to work with colors and palettes wh
 
 ## Themes
 
-Maps support themes and you can simply swap themes and palettes. Please see [Themes](../appearance-settings/themes) article to learn about themes.
+Maps support themes and you can simply swap themes and palettes. Please see [Themes](../Appearance_Settings/Themes) article to learn about themes.
 
 ## Coloring the Map regions
 
-You can color regions using [Color Scale](scales) or by directlu setting color. This article shows how to set color directly. 
+You can color regions using [Color Scale](Scales) or by directlu setting color. This article shows how to set color directly. 
 
 ### Normal
 
@@ -32,7 +33,7 @@ secondSeries.fill('#8CE3B0');
 
 In this sample we've got the map of Australia, where its regions are defined in two different series which are then colored separately, independent from its values. 
 
-You can also change the [color of labels](labels) and the title color.
+You can also change the [color of labels](Labels) and the title color.
 
 {sample}Maps\_Visualisation\_02{sample}
 
@@ -149,7 +150,7 @@ This way of coloring is not possible using other palette types.
 
 ## Linear Color Scale
 
-Besides those mentioned options, you may use scale to color the Map with multiple series. The usage of LinearColorScale is almost the same in this case as with [ColorRange](colorrange). However, put your attention at the fact that here is a Map with multiple series apart from Map with one range-colored series that you can find in the ColorRange article. So the way of using the {api:anychart.scales.LinearColor}LinearColor{api} method is a bit different.
+Besides those mentioned options, you may use scale to color the Map with multiple series. The usage of LinearColorScale is almost the same in this case as with [ColorRange](ColorRange). However, put your attention at the fact that here is a Map with multiple series apart from Map with one range-colored series that you can find in the ColorRange article. So the way of using the {api:anychart.scales.LinearColor}LinearColor{api} method is a bit different.
 
 ```
 // create the color scale

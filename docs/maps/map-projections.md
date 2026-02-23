@@ -1,4 +1,5 @@
 ---
+slug: "/Maps/Map_Projections"
 sidebar_position: 13
 ---
 # Map Projections

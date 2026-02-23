@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Stacked/Value/Polar_Column_Chart"
 sidebar_position: 2.1
 ---
 # Polar Stacked Column Chart
@@ -7,11 +8,11 @@ sidebar_position: 2.1
 
 A Polar Stacked Column Chart is a multiple-series Polar Column Chart that displays the trend of the value each series contributes over time or categories.
 
-The concept of stacking in AnyChart is described in this article: [Stacked (Overview)](../overview).
+The concept of stacking in AnyChart is described in this article: [Stacked (Overview)](../Overview).
 
 ## Quick Start
 
-To build a Polar Stacked Column Chart, create a multiple-series [Polar Column Chart](../../polar-plot/column-chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **value**:
+To build a Polar Stacked Column Chart, create a multiple-series [Polar Column Chart](../../Polar_Plot/Column_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **value**:
 
 ```
 // create a chart
@@ -29,4 +30,4 @@ var series2 = chart.column(seriesData_2);
 
 ## Adjusting
 
-The Polar Column series' settings are mostly the same as other series'. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../general-settings).
+The Polar Column series' settings are mostly the same as other series'. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../General_Settings).

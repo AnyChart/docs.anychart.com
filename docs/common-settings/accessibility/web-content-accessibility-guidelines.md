@@ -1,4 +1,5 @@
 ---
+slug: "/Common_Settings/Accessibility/Web_Content_Accessibility_Guidelines"
 sidebar_position: 3
 ---
 

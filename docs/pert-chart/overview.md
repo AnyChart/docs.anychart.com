@@ -1,4 +1,5 @@
 ---
+slug: "/PERT_Chart/Overview"
 sidebar_position: 0
 ---
 # PERT Chart Overview
@@ -9,10 +10,10 @@ PERT is an abbreviation for "Program (Project) Evaluation and Review Technique".
 
 To learn more about PERT in general, see [Program evaluation and review technique the article at Wikipedia](https://en.wikipedia.org/wiki/Program_evaluation_and_review_technique), and to learn how to create PERT charts in AnyChart, read the following sections in our documentation:
 
-* [PERT Chart Quick Start](quick-start)
-* [PERT Chart Terminology](terminology)
-* [PERT Chart Data](data)
-* [PERT Chart Settings](../pert-chart)
+* [PERT Chart Quick Start](Quick_Start)
+* [PERT Chart Terminology](Terminology)
+* [PERT Chart Data](Data)
+* [PERT Chart Settings](../PERT_Chart)
 
 ## Use cases
 
@@ -26,11 +27,11 @@ In the following sample, the critical path is highlighted with red color, and it
 
 {sample}Pert\_UseCase\_01{sample}
 
-Find how to get the critical paths duration in the [AnyChart PERT statistics section](../pert-chart#statistics).
+Find how to get the critical paths duration in the [AnyChart PERT statistics section](../PERT_Chart#statistics).
 
 ### The Project Duration Deviation
 
-The Standard Deviation is an estimated statistic value of the critical path duration deviation, which can be quite important in the project planning. Find how to manage the PERT statistics in the [AnyChart PERT statistics section](../pert-chart#statistics) article.
+The Standard Deviation is an estimated statistic value of the critical path duration deviation, which can be quite important in the project planning. Find how to manage the PERT statistics in the [AnyChart PERT statistics section](../PERT_Chart#statistics) article.
 
 In the following sample, the project duration with the standard deviation of the critical path value is shown in the chart title.
 
@@ -44,7 +45,7 @@ The following sample demonstrates all slack values for all tasks, making it evid
 
 {sample}Pert\_UseCase\_03{sample}
 
-Find how to get the slacks duration shown in the [AnyChart PERT slacks section](../pert-chart#slacks).
+Find how to get the slacks duration shown in the [AnyChart PERT slacks section](../PERT_Chart#slacks).
 
 ### Middle tasks control
 
@@ -52,7 +53,7 @@ Sometimes it is necessary to control the time bounds for some separated tasks. I
 
 {sample}Pert\_UseCase\_04{sample}
 
-Look through the [tasks part of the PERT article](../pert-chart#earliest-and-latest) to know more about those parameters.
+Look through the [tasks part of the PERT article](../PERT_Chart#earliest-and-latest) to know more about those parameters.
 
 ### Duration calculation
 
@@ -62,4 +63,4 @@ The duration in the following sample with the same data as above is calculated a
 
 {sample}Pert\_UseCase\_05{sample}
 
-Find more about using PERT statistics in the [AnyChart PERT statistics section](../pert-chart#statistics).
+Find more about using PERT statistics in the [AnyChart PERT statistics section](../PERT_Chart#statistics).

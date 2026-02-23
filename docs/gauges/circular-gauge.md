@@ -1,3 +1,6 @@
+---
+slug: "/Gauges/Circular_Gauge"
+---
 # Circular Gauge Chart
 
 ## Overview
@@ -10,7 +13,7 @@ Let's start with adding or configuring gauge elements step by step, so in the en
 
 ## Modules
 
-The Circular Gauge requires adding the [Core](../quick-start/modules#core) and [Circular Gauge](../quick-start/modules#circular-gauge) modules:
+The Circular Gauge requires adding the [Core](../Quick_Start/Modules#core) and [Circular Gauge](../Quick_Start/Modules#circular-gauge) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -20,7 +23,7 @@ The Circular Gauge requires adding the [Core](../quick-start/modules#core) and [
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-circular-gauge.min.js"></script>
 ```
 
-Learn more: [Modules](../../quick-start/modules).
+Learn more: [Modules](../../Quick_Start/Modules).
 
 ## Chart
 
@@ -91,7 +94,7 @@ Now let's adjust our axis.
 
 ## Scales 
 
-In general, gauge scale settings is the same as the standard scale. You can find more information about scales in the [Scales tutorial](../axes-and-grids/scales).
+In general, gauge scale settings is the same as the standard scale. You can find more information about scales in the [Scales tutorial](../Axes_and_Grids/Scales).
 
 ### Axis
 
@@ -205,7 +208,7 @@ gauge.bar(0)
 
 To bind the pointers to the axis and data we want them to show, we use {api:anychart.core.gauge.pointers.Bar#axisIndex}axisIndex(){api} and {api:anychart.core.gauge.pointers.Bar#dataIndex}dataIndex(){api} methods. The value transmitted to the method is the number of axis or data accordingly.
 
-For more information look up the [Pointers and Data](../gauges/pointers-and-data) tutorial.
+For more information look up the [Pointers and Data](../Gauges/Pointers_and_Data) tutorial.
 
 ### Cap
 
@@ -267,4 +270,4 @@ As you see, our speedometer does not look attractive at the moment. Let's color 
 
 **Important Note:**
 
-AnyChart takes care of visualization and users convenience seriously: that is why we have a number of ways to set colors. For example, instead of "RGB(240,248,255)" you can set "HSB(208,100,97)" or "AliceBlue" or "#F0F8FF". Depending on your system/site/application design you may need and use any of this color setting methods. Read more about setting colors below and in the following help sections: [different ways of setting colors in AnyChart](../appearance-settings/color-management).
+AnyChart takes care of visualization and users convenience seriously: that is why we have a number of ways to set colors. For example, instead of "RGB(240,248,255)" you can set "HSB(208,100,97)" or "AliceBlue" or "#F0F8FF". Depending on your system/site/application design you may need and use any of this color setting methods. Read more about setting colors below and in the following help sections: [different ways of setting colors in AnyChart](../Appearance_Settings/Color_Management).

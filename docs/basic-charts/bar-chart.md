@@ -1,43 +1,44 @@
 ---
+slug: "/Basic_Charts/Bar_Chart"
 sidebar_position: 1
 ---
 # Bar Chart
 
 ## Overview
 
-A bar chart is a chart that visualizes data as a set of rectangular bars, their lengths being proportional to the values they represent. The horizontal axis shows the values, and the vertical axis shows the categories they belong to. So, the bar chart is a [vertical](vertical/overview) version of the [column chart](column-chart). In multiple-series bar charts, values are grouped by categories.
+A bar chart is a chart that visualizes data as a set of rectangular bars, their lengths being proportional to the values they represent. The horizontal axis shows the values, and the vertical axis shows the categories they belong to. So, the bar chart is a [vertical](Vertical/Overview) version of the [column chart](Column_Chart). In multiple-series bar charts, values are grouped by categories.
 
 The bar chart is used very widely to show comparison among categories and sometimes to visualize time-based data. Also, categories with long names may be a reason to prefer the bar chart to the column chart.
 
 This article explains how to create a basic Bar chart as well as configure  settings that are specific to the type. In addition, you see the table below to get a brief overview of the Bar chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#basic-cartesian">Basic Cartesian</a> / <a href="../Quick_Start/Modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Bar}anychart.core.cartesian.series.Bar{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
-<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">x, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../Working_with_Data/Overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td><a href="stacked/value/bar-chart">Stacked Bar</a>, <a href="stacked/percent/bar-chart">Percent Stacked Bar</a></td></tr>
-<tr><td>Vertical</td><td><a href="bar-chart">Bar</a></td></tr>
-<tr><td>3D</td><td><a href="3d/bar-chart">3D Bar</a></td></tr>
-<tr><td>Error Bars</td><td><a href="error-chart/bar-chart">Bar Chart with Error Bars</a></td></tr>
+<tr><td>Stacked</td><td><a href="Stacked/Value/Bar_Chart">Stacked Bar</a>, <a href="Stacked/Percent/Bar_Chart">Percent Stacked Bar</a></td></tr>
+<tr><td>Vertical</td><td><a href="Bar_Chart">Bar</a></td></tr>
+<tr><td>3D</td><td><a href="3D/Bar_Chart">3D Bar</a></td></tr>
+<tr><td>Error Bars</td><td><a href="Error_Chart/Bar_Chart">Bar Chart with Error Bars</a></td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="column-chart">Column</a></td></tr>
+<tr><td></td><td><a href="Column_Chart">Column</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/bar-chart/">Chartopedia: Bar Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Bar chart requires adding the [Core](../quick-start/modules#core) and [Basic Cartesian](../quick-start/modules#basic-cartesian) modules:
+The Bar chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic-cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -47,13 +48,13 @@ The Bar chart requires adding the [Core](../quick-start/modules#core) and [Basic
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../quick-start/modules#base) module, which includes, among other things, the two modules mentioned above: 
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -92,7 +93,7 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Bar chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
@@ -100,7 +101,7 @@ Read the overview of general settings: [General Settings](general-settings).
 
 #### All Points
 
-The [appearance settings](../appearance-settings) of a Bar chart can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Bar#normal}normal(){api}, {api:anychart.core.cartesian.series.Bar#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Bar#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Bar chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Bar#normal}normal(){api}, {api:anychart.core.cartesian.series.Bar#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Bar#selected}selected(){api} methods.
 
 Combine them with the following methods:
 
@@ -253,31 +254,31 @@ chart.barGroupsPadding(2);
 
 ### Point Size
 
-This chart type allows you to set the size of its points. Read more in the [Point Size](../common-settings/point-size) article.
+This chart type allows you to set the size of its points. Read more in the [Point Size](../Common_Settings/Point_Size) article.
 
 ### Labels
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 ### Tooltips
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../common-settings/text-formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 ### Stacked Bar
 
 Stacked and percent stacked charts are multiple-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
 
-In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts](stacked/overview).
+In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts](Stacked/Overview).
 
 To learn about the stacked versions of the Bar chart, see:
 
-* [Stacked Bar](stacked/value/bar-chart)
-* [Percent Stacked Bar](stacked/percent/bar-chart)
+* [Stacked Bar](Stacked/Value/Bar_Chart)
+* [Percent Stacked Bar](Stacked/Percent/Bar_Chart)
 
 ### 3D Bar
 
 Using AnyChart, you can create 3D versions of some chart types, including the Bar chart.
 
-To learn about 3D charts in general, see [3D Charts (Overview)](3d/overview).
+To learn about 3D charts in general, see [3D Charts (Overview)](3D/Overview).
 
-The 3D Bar chart is described in the following article: [3D Bar Chart](3d/bar-chart).
+The 3D Bar chart is described in the following article: [3D Bar Chart](3D/Bar_Chart).

@@ -1,11 +1,12 @@
 ---
+slug: "/Gantt_Chart/Timeline/Scale"
 sidebar_position: 3
 ---
 # Scale
 
 ## Overview
 
-You can configure the timeline scale - for example, you can set its [minimum & maximum](#minimum--maximum) values and specify zoom [levels](#levels). These settings affect the position and relative size of timeline [elements](../elements), the number of timeline columns, and the configuration of the [header](header).
+You can configure the timeline scale - for example, you can set its [minimum & maximum](#minimum--maximum) values and specify zoom [levels](#levels). These settings affect the position and relative size of timeline [elements](../Elements), the number of timeline columns, and the configuration of the [header](Header).
 
 The scale is defined as an instance of the {api:anychart.scales.GanttDateTime}anychart.scales.GanttDateTime{api} class.
 
@@ -31,13 +32,13 @@ chart.getTimeline().scale().minimum("2018-01-01");
 chart.getTimeline().scale().maximum("2018-07-15");
 ```
 
-As you can see, the minimum and maximum affect the position and relative size of timeline [elements](../elements):
+As you can see, the minimum and maximum affect the position and relative size of timeline [elements](../Elements):
 
 {sample :height 220}GANTT\_Timeline\_Scale\_01{sample}
 
 ## Levels
 
-The settings of zoom levels affect the number of timeline columns and the configuration of the [header](header).
+The settings of zoom levels affect the number of timeline columns and the configuration of the [header](Header).
 
 By default, there are three levels, each of them representing a time unit. The exact set of units depends on your data. You can change this preset by passing an array of settings to the {api:anychart.scales.GanttDateTime#zoomLevels}zoomLevels(){api} method.
 
@@ -99,6 +100,6 @@ You can set the starting month of the fiscal year - pass a number from 1 to 12 t
 chart.getTimeline().scale().fiscalYearStartMonth(2);
 ```
 
-This setting determines the way how quarters, semesters, and years are calculated. For example, here it affects the second and third levels of the [header](header), which display quarters and years:
+This setting determines the way how quarters, semesters, and years are calculated. For example, here it affects the second and third levels of the [header](Header), which display quarters and years:
 
 {sample :height 260}GANTT\_Timeline\_Scale\_03{sample}

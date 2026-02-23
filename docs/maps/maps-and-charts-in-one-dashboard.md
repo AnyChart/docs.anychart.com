@@ -1,11 +1,12 @@
 ---
+slug: "/Maps/Maps_and_Charts_in_one_Dashboard"
 sidebar_position: 16
 ---
 # Maps and Charts in one Dashboard
 
 ## Overview
 
-If you need to show some statistics with the maps, then create a dashboard. AnyChart can make dashboards of two types: [table](../../dashboards/table-layout) and [stage-based](../../dashboards/stage-based-layout). We recommend to create the second one in case of using maps and charts together.
+If you need to show some statistics with the maps, then create a dashboard. AnyChart can make dashboards of two types: [table](../../Dashboards/Table_Layout) and [stage-based](../../Dashboards/Stage-Based_Layout). We recommend to create the second one in case of using maps and charts together.
 
 You may create such maps that will show some statistics for regions on click or display different maps for each chart in reverse.
 
@@ -30,7 +31,7 @@ var data = [
 ]);
 ```
 
-At first we create a container which is stage now. Read more about stage-based dashboards [here](../../dashboards/stage-based-layout).
+At first we create a container which is stage now. Read more about stage-based dashboards [here](../../Dashboards/Stage-Based_Layout).
 
 Then we should not forget about the bounds to define where charts are displayed.
 

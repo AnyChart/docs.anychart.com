@@ -1,4 +1,5 @@
 ---
+slug: "/Common_Settings/UI_Controls/AnyChart_UI"
 sidebar_position: 0
 ---
 
@@ -8,12 +9,12 @@ AnyChart UI is a set of utility components that may help you with integration an
 
 The following UI components are available and supported:
 
-* [Context Menu](context-menu)
-* [Preloader](preloader)
+* [Context Menu](Context_Menu)
+* [Preloader](Preloader)
 
 The following UI components are present in the Framework, but are in beta:
 
-* [Gantt Toolbar](gantt-toolbar)
+* [Gantt Toolbar](Gantt_Toolbar)
 
 In the upcoming releases we plan to add:
 
@@ -23,4 +24,4 @@ In the upcoming releases we plan to add:
 * Export Data/Image Toolbar
 * Breadcrumbs for Drill Down Control
 
-**NOTE:** In previous versions [Chart Editor](../../chart-editor/overview) was a part of AnyChart UI, and now it is an [AnyChart Extension](../../quick-start/modules#extensions).
+**NOTE:** In previous versions [Chart Editor](../../Chart_Editor/Overview) was a part of AnyChart UI, and now it is an [AnyChart Extension](../../Quick_Start/Modules#extensions).

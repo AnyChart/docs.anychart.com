@@ -1,3 +1,6 @@
+---
+slug: "/Axes_and_Grids/Additional_Axes"
+---
 # Additional Axes
 
 ## Overview
@@ -45,7 +48,7 @@ Another example of multiple axes use is multiple Y-axes along with multiple X-ax
 
 ## Tuning
 
-If you want to change any settings of additional axes you can do that just the same way as basic X- and Y-axes are configured, see [Axes basics](axis-basics) and [Scales](scales) articles for the details:
+If you want to change any settings of additional axes you can do that just the same way as basic X- and Y-axes are configured, see [Axes basics](Axis_Basics) and [Scales](Scales) articles for the details:
 
 ```
 var yScale = chart.yScale();

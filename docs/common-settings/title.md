@@ -1,3 +1,6 @@
+---
+slug: "/Common_Settings/Title"
+---
 # Title
 
 ## Overview
@@ -57,7 +60,7 @@ title.align("left");
 
 ### Background 
 
-You can tune background of a title. Use {api:anychart.standalones.Title#background}background(){api} method to configure visual appearance of a background. Full information on adjusting background can be found in [Background](../appearance-settings/background) article.
+You can tune background of a title. Use {api:anychart.standalones.Title#background}background(){api} method to configure visual appearance of a background. Full information on adjusting background can be found in [Background](../Appearance_Settings/Background) article.
 
 {sample}CS\_Titles\_04{sample}
 
@@ -97,7 +100,7 @@ title.text(
 
 {sample}CS\_Titles\_06{sample}
 
-**Note:** the list of all supported tags for HTML text formatting can be found in [Text Settings article](../appearance-settings/text-settings#supported-tags)
+**Note:** the list of all supported tags for HTML text formatting can be found in [Text Settings article](../Appearance_Settings/Text_Settings#supported-tags)
 
 ## Adding Events
 

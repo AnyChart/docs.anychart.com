@@ -1,3 +1,6 @@
+---
+slug: "/Appearance_Settings/Text_Settings"
+---
 # Text Settings
 
 ## Overview
@@ -86,7 +89,7 @@ The sample Pie chart below demonstrates all available tags on slice labels:
 
 ### HTML Tooltips
 
-**Note:** In the case of tooltips, passing `true` to the {api:anychart.core.ui.Tooltip#useHtml}useHtml(){api} method turns them into fully functional HTML tooltips, making all possible HTML setting available (not only the tags listed above). See the [Tooltip: HTML](../common-settings/tooltip#html) section.
+**Note:** In the case of tooltips, passing `true` to the {api:anychart.core.ui.Tooltip#useHtml}useHtml(){api} method turns them into fully functional HTML tooltips, making all possible HTML setting available (not only the tags listed above). See the [Tooltip: HTML](../Common_Settings/Tooltip#html) section.
 
 ## Text Formatting
 
@@ -152,7 +155,7 @@ Here is a table with all possible methods for controlling the text view.
 </tr>
 <tr>
 <td>{api:anychart.core.Text#wordWrap}wordWrap(){api}</td>
-<td>sets the word-wrap mode. Defines the rules for breaking lines. Find more information in the <a href="../graphics/text-and-fonts#wrap">Text Wrapping</a> article.</td>
+<td>sets the word-wrap mode. Defines the rules for breaking lines. Find more information in the <a href="../Graphics/Text_and_Fonts#wrap">Text Wrapping</a> article.</td>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#wordBreak}wordBreak(){api}</td>

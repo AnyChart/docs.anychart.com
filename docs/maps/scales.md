@@ -1,4 +1,7 @@
 ---
+slug: "/Maps/Scales"
+---
+---
 sidebar_position: 11
 ---
 # Map Scales

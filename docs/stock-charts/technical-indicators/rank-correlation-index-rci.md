@@ -1,9 +1,12 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Rank_Correlation_Index_(RCI)"
+---
 # Rank Correlation Index (RCI)
 ## Overview
 
 The Rank Correlation Index (RCI) uses a combination of price change data and time change data to identify potential changes in market sentiment, thereby exposing turning points. 
 
-Mathematical description of the indicator: [RCI Mathematical Description](mathematical-description#rank-correlation-index).
+Mathematical description of the indicator: [RCI Mathematical Description](Mathematical_Description#rank-correlation-index).
 
 ## Adding Indicator
 

@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Range_Column_Chart"
 sidebar_position: 3.1
 ---
 # Range Column Chart
@@ -12,35 +13,35 @@ This type is sometimes referred to as the floating column chart since it looks l
 This article explains how to create a basic Range Column chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Range Column chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#basic-cartesian">Basic Cartesian</a> / <a href="../Quick_Start/Modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.RangeColumn}anychart.core.cartesian.series.RangeColumn{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
-<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">x, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../Working_with_Data/Overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td><a href="range-bar-chart">Range Bar</a></td></tr>
+<tr><td>Vertical</td><td><a href="Range_Bar_Chart">Range Bar</a></td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td><a href="polar-plot/range-column-chart">Polar Range Column</a></td></tr>
+<tr><td>Polar</td><td><a href="Polar_Plot/Range_Column_Chart">Polar Range Column</a></td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
-<tr><td>Stock</td><td><a href="../stock-charts/series/range-column">Stock Range Column</a></td></tr>
+<tr><td>Stock</td><td><a href="../Stock_Charts/Series/Range_Column">Stock Range Column</a></td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="column-chart">Column</a></td></tr>
-<tr><td></td><td><a href="bar-chart">Bar</a></td></tr>
-<tr><td></td><td><a href="range-bar-chart">Range Bar</a></td></tr>
-<tr><td></td><td><a href="hilo-chart">HiLo</a></td></tr>
+<tr><td></td><td><a href="Column_Chart">Column</a></td></tr>
+<tr><td></td><td><a href="Bar_Chart">Bar</a></td></tr>
+<tr><td></td><td><a href="Range_Bar_Chart">Range Bar</a></td></tr>
+<tr><td></td><td><a href="HiLo_Chart">HiLo</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/range-column-chart/">Chartopedia: Range Column Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Range Column chart requires adding the [Core](../quick-start/modules#core) and [Basic Cartesian](../quick-start/modules#basic-cartesian) modules:
+The Range Column chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic-cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -50,13 +51,13 @@ The Range Column chart requires adding the [Core](../quick-start/modules#core) a
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../quick-start/modules#base) module, which includes, among other things, the two modules mentioned above: 
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -105,7 +106,7 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Range Column chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
@@ -113,7 +114,7 @@ Read the overview of general settings: [General Settings](general-settings).
 
 #### All Points
 
-The [appearance settings](../appearance-settings) of a Range Column can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.RangeColumn#normal}normal(){api}, {api:anychart.core.cartesian.series.RangeColumn#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.RangeColumn#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Range Column can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.RangeColumn#normal}normal(){api}, {api:anychart.core.cartesian.series.RangeColumn#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.RangeColumn#selected}selected(){api} methods.
 
 Combine them with the following methods:
 
@@ -246,7 +247,7 @@ chart.barGroupsPadding(0);
 
 The {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} method works only with multiple-series charts: it sets the padding between columns within a group. The space between groups is set via {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api}.
 
-If you set {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} to -1, you can create an imitation of a [stacked chart](stacked/overview), which is not bound to zero. See the sample below (there is a multiple-series Range Column chart with the padding between columns and between column groups set to -1 and 2):
+If you set {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} to -1, you can create an imitation of a [stacked chart](Stacked/Overview), which is not bound to zero. See the sample below (there is a multiple-series Range Column chart with the padding between columns and between column groups set to -1 and 2):
 
 ```
 // create the first series
@@ -266,18 +267,18 @@ chart.barGroupsPadding(2);
 
 ### Point Size
 
-This chart type allows you to set the size of its points. Read more in the [Point Size](../common-settings/point-size) article.
+This chart type allows you to set the size of its points. Read more in the [Point Size](../Common_Settings/Point_Size) article.
 
 ### Labels
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 ### Tooltips
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../common-settings/text-formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 ### Vertical Range Column
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](vertical/overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](Vertical/Overview).
 
-The vertical range column chart is called the range bar chart: it shows categories on the vertical axis instead of the horizontal axis and represents values as bars instead of columns. Read more: [Range Bar Chart](range-bar-chart).
+The vertical range column chart is called the range bar chart: it shows categories on the vertical axis instead of the horizontal axis and represents values as bars instead of columns. Read more: [Range Bar Chart](Range_Bar_Chart).

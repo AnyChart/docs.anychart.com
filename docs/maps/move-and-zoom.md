@@ -1,4 +1,5 @@
 ---
+slug: "/Maps/Move_and_Zoom"
 sidebar_position: 17
 ---
 # Move and Zoom API
@@ -112,7 +113,7 @@ map.listen('pointClick', function(e) {
 
 {sample}Maps\_Move\_and\_Zoom\_06{sample}
 
-Note that event listener is used to handle region click event. Read more about event listeners in the [Map Event Listener article](event-listeners).
+Note that event listener is used to handle region click event. Read more about event listeners in the [Map Event Listener article](Event_Listeners).
 
 ### Zoom Controls
 
@@ -120,7 +121,7 @@ There is one more option how to manage your map zooming. Instead of using listen
 
 {sample}CS\_ZoomControls\_01{sample}
 
-Read more about this feature in the [Zoom Control Panel](../common-settings/ui-controls/zoom-controls)
+Read more about this feature in the [Zoom Control Panel](../Common_Settings/UI_Controls/Zoom_Controls)
 
 ### Move
 

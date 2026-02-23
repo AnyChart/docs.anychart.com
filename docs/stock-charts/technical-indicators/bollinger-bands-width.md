@@ -1,12 +1,15 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Bollinger_Bands_Width"
+---
 # Bollinger Bands Width
 
 ## Overview
 
-Bollinger Bands Width is an indicator derived from [Bollinger Bands](bollinger-bands). 
+Bollinger Bands Width is an indicator derived from [Bollinger Bands](Bollinger_Bands). 
 
 Non-normalized Bollinger Bands Width measures the distance, or difference, between the upper band and the lower band. Bollinger Bands Width decreases as Bollinger Bands narrow and increases as Bollinger Bands widen because Bollinger Bands are based on the standard deviation.
 
-Mathematical description of the indicator: [Mathematical Description of Bollinger Bands Width](mathematical-description#bollinger-bands-width).
+Mathematical description of the indicator: [Mathematical Description of Bollinger Bands Width](Mathematical_Description#bollinger-bands-width).
 
 ## Adding Indicator
 

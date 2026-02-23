@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Vertical/Mosaic_Chart"
 sidebar_position: 2
 ---
 # Vertical Mosaic Chart
@@ -7,7 +8,7 @@ sidebar_position: 2
 
 This article explains how to create a Vertical Mosaic chart in AnyChart.
 
-To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](overview). You can also read the [Mosaic Chart](../marimekko-chart/mosaic-chart) article to learn about other available settings.
+To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](Overview). You can also read the [Mosaic Chart](../Marimekko_Chart/Mosaic_Chart) article to learn about other available settings.
 
 ## Quick Start
 

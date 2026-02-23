@@ -1,3 +1,6 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Triple_Exponential_Moving_Average_(TRIX)"
+---
 # Triple Exponential Moving Average (TRIX)
 
 ## Overview
@@ -6,7 +9,7 @@ TRIX is a momentum oscillator that displays the percent rate of change of a trip
 
 It was developed in the early 1980's by Jack Hutson, an editor for Technical Analysis of Stocks and Commodities magazine. With its triple smoothing, TRIX is designed to filter insignificant price movements. Chartists can use TRIX to generate signals similar to MACD. A signal line can be applied to look for signal line crossovers. A directional bias can be determined with the absolute level. Bullish and bearish divergences can be used to anticipate reversals.
 
-Mathematical description of the indicator: [Triple Exponential Moving Average Mathematical Description](mathematical-description#triple-exponential-moving-average).
+Mathematical description of the indicator: [Triple Exponential Moving Average Mathematical Description](Mathematical_Description#triple-exponential-moving-average).
 
 ## Adding Indicator
 

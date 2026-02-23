@@ -1,16 +1,19 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Williams_%25R"
+---
 # Williams %R
 
 ## Overview
 
 Williams %R, or just %R, is a momentum indicator showing the current closing price in relation to the high and low of the past N days (for a given N). It was developed by trader and author Larry Williams and is used in the stock and commodities markets.
 
-Find the mathematical description of the indicator on the [Williams %R Mathematical Description](mathematical-description#williams-r) page.
+Find the mathematical description of the indicator on the [Williams %R Mathematical Description](Mathematical_Description#williams-r) page.
 
 ## Adding Indicator
 
 Williams %R indicator is added through the {api:anychart.core.stock.Plot#williamsR}williamsR(){api} method. It requires a mapping with three fields: `"high"`, `"low"`, and `"close"`.
 
-Williams %R is measured on a -100 - 0 scale, so to show it properly, you need to configure the Y-scale of its plot (see [Scales](../scales) to learn more):
+Williams %R is measured on a -100 - 0 scale, so to show it properly, you need to configure the Y-scale of its plot (see [Scales](../Scales) to learn more):
 
 ```
 plot_1.yScale().minimum(-100);

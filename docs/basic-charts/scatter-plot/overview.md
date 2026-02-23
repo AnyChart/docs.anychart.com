@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Scatter_Plot/Overview"
 sidebar_position: 1
 ---
 # Scatter Plot
@@ -15,7 +16,7 @@ This article explains how to create and configure scatter charts.
 
 ## Modules
 
-Scatter charts require adding the [Core](../../quick-start/modules#core) and [Scatter](../../quick-start/modules#scatter) modules:
+Scatter charts require adding the [Core](../../Quick_Start/Modules#core) and [Scatter](../../Quick_Start/Modules#scatter) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -25,13 +26,13 @@ Scatter charts require adding the [Core](../../quick-start/modules#core) and [Sc
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-scatter.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../../quick-start/modules#base) module, which includes, among other things, the two modules mentioned above:
+Alternatively, you can use the [Base](../../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
-Learn more: [Modules](../../quick-start/modules).
+Learn more: [Modules](../../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -83,7 +84,7 @@ As a rule, scatter charts look better with grids. Use the {api:anychart.charts.S
 
 The appearance of grids is configured with the {api:anychart.core.grids.Linear#stroke}stroke(){api} and {api:anychart.core.grids.Linear#palette}palette(){api} methods. 
 
-For more information, see [Axis Basics: Grids](../../axes-and-grids/axis-basics#grids).
+For more information, see [Axis Basics: Grids](../../Axes_and_Grids/Axis_Basics#grids).
 
 The sample below shows how to create minor and major grids and configure their strokes:
 
@@ -109,7 +110,7 @@ chart.yMinorGrid().stroke({color: "#85adad", thickness: 0.3, dash: 5});
 
 ## Date/Time Scale
 
-Scatter charts are typically used with date/time scales - to create such a scale, use the {api:anychart.scales#dateTime}dateTime(){api} method. You can learn more from this article: [Date/Time Axes](../../axes-and-grids/date-time-axes).
+Scatter charts are typically used with date/time scales - to create such a scale, use the {api:anychart.scales#dateTime}dateTime(){api} method. You can learn more from this article: [Date/Time Axes](../../Axes_and_Grids/Date_Time_Axes).
 
 In the following sample a data/time scale is set as the X-scale of a scatter chart (with the {api:anychart.charts.Scatter#xScale}xScale(){api} method):
 
@@ -129,7 +130,7 @@ chart.xScale(dateScale);
 
 ## Error Bars
 
-In AnyChart, you can create charts with error bars (see [Error Chart](../error-chart)). This feature is often used with scatter charts, especially when they show results of some calculations or measurements.
+In AnyChart, you can create charts with error bars (see [Error Chart](../Error_Chart)). This feature is often used with scatter charts, especially when they show results of some calculations or measurements.
 
 Error bars are created with the {api:anychart.core.scatter.series.Base#error}error(){api} method.
 
@@ -164,9 +165,9 @@ error.xUpperError(0.2);
 
 ## Drawing Tools and Annotations
 
-Drawing tools provide you with the ability to draw/display custom objects on a chart - in our documentation these objects are usually called annotations. Typically, annotations are used in [stock charts](../../stock-charts/overview). However, sometimes you may need to use hardcoded annotations with a scatter chart to visualize some basic shapes.
+Drawing tools provide you with the ability to draw/display custom objects on a chart - in our documentation these objects are usually called annotations. Typically, annotations are used in [stock charts](../../Stock_Charts/Overview). However, sometimes you may need to use hardcoded annotations with a scatter chart to visualize some basic shapes.
 
-To add an annotation to a chart, refer to the {api:anychart.charts.Scatter#annotations}annotations(){api} object and call one of the methods used for creating annotations: {api:anychart.core.annotations.Ellipse}ellipse(){api}, {api:anychart.core.annotations.Rectangle}rectangle(){api}, {api:anychart.core.annotations.Triangle}triangle(){api}, and so on. To learn more, read about [annotations](../../stock-charts/drawing-tools-and-annotations/overview) in AnyStock.
+To add an annotation to a chart, refer to the {api:anychart.charts.Scatter#annotations}annotations(){api} object and call one of the methods used for creating annotations: {api:anychart.core.annotations.Ellipse}ellipse(){api}, {api:anychart.core.annotations.Rectangle}rectangle(){api}, {api:anychart.core.annotations.Triangle}triangle(){api}, and so on. To learn more, read about [annotations](../../Stock_Charts/Drawing_Tools_and_Annotations/Overview) in AnyStock.
 
 Here is a sample scatter chart with two annotations, Ellipse and Rectangle. Some of their visual settings are configured:
 
@@ -207,11 +208,11 @@ rectangle.allowEdit(false);
 
 Here is the list of supported scatter charts:
 
-* [Scatter Bubble](bubble-chart)
-* [Scatter Line](line-chart)
-* [Scatter Marker](marker-chart)
+* [Scatter Bubble](Bubble_Chart)
+* [Scatter Line](Line_Chart)
+* [Scatter Marker](Marker_Chart)
 
 See also error charts:
 
-* [Scatter Line with Error Bars](../error-chart/line-chart)
-* [Scatter Marker with Error Bars](../error-chart/marker-chart)
+* [Scatter Line with Error Bars](../Error_Chart/Line_Chart)
+* [Scatter Marker with Error Bars](../Error_Chart/Marker_Chart)

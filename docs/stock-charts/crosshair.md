@@ -1,4 +1,5 @@
 ---
+slug: "/Stock_Charts/Crosshair"
 sidebar_position: 6.5
 ---
 
@@ -8,7 +9,7 @@ sidebar_position: 6.5
 
 A crosshair is a pair of perpendicular lines (horizontal and vertical) that moves when the mouse is moved. As a rule, there are also two labels displayed on the X- and Y-axes in the points where the axes are crossed by the crosshair lines. The crosshair allows the user to "hit" a particular data point and see some extra information about it.
 
-The crosshair in AnyStock is similar to the [crosshair in basic charts](../axes-and-grids/crosshair#labels).
+The crosshair in AnyStock is similar to the [crosshair in basic charts](../Axes_and_Grids/Crosshair#labels).
 
 ## Enabling / Disabling
 
@@ -79,7 +80,7 @@ plot_1.crosshair().xLabel(true);
 
 **Note:** By default, if a chart has multiple plots, only the last plot has the X-label.
 
-The text of the labels can be changed with the help of the {api:anychart.core.ui.CrosshairLabel#format}format(){api} method and [formatting functions](../common-settings/text-formatters#formatting-functions):
+The text of the labels can be changed with the help of the {api:anychart.core.ui.CrosshairLabel#format}format(){api} method and [formatting functions](../Common_Settings/Text_Formatters#formatting-functions):
 
 ```
 // set the text of the y-label

@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Box_Chart"
 sidebar_position: 1
 ---
 # Box Chart
@@ -12,33 +13,33 @@ Box charts allow showing the minimum and maximum with a median (a numerical valu
 This article explains how to create a basic Box chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Box chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#basic-cartesian">Basic Cartesian</a> / <a href="../Quick_Start/Modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Box}anychart.core.cartesian.series.Box{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, low, q1, median, q3, high, value, outliers</a></td></tr>
-<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">x, low, q1, median, q3, high, value, outliers</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../Working_with_Data/Overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td><a href="vertical/box-chart">Vertical Box</a></td></tr>
+<tr><td>Vertical</td><td><a href="Vertical/Box_Chart">Vertical Box</a></td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td><a href="error-chart">Box Chart with Error Bars</a></td></tr>
+<tr><td>Error Bars</td><td><a href="Error_Chart">Box Chart with Error Bars</a></td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="error-chart">Error</a></td></tr>
-<tr><td></td><td><a href="pareto-chart">Pareto</a></td></tr>
+<tr><td></td><td><a href="Error_Chart">Error</a></td></tr>
+<tr><td></td><td><a href="Pareto_Chart">Pareto</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/box-chart/">Chartopedia: Box Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Box chart requires adding the [Core](../quick-start/modules#core) and [Basic Cartesian](../quick-start/modules#basic-cartesian) modules:
+The Box chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic-cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -48,13 +49,13 @@ The Box chart requires adding the [Core](../quick-start/modules#core) and [Basic
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../quick-start/modules#base) module, which includes, among other things, the two modules mentioned above: 
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -94,14 +95,14 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Area chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 
 ## Special Settings
 
 ### Appearance
 
-All [appearance settings](../appearance-settings) of a Box chart can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Box#normal}normal(){api}, {api:anychart.core.cartesian.series.Box#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Box#selected}selected(){api} methods.
+All [appearance settings](../Appearance_Settings) of a Box chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Box#normal}normal(){api}, {api:anychart.core.cartesian.series.Box#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Box#selected}selected(){api} methods.
 
 These methods should be combined with the methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api} that are listed in the sections below. They allow you to adjust boxes, medians, outliers, stems, and whiskers.
 
@@ -184,7 +185,7 @@ series.selected().outlierMarkers(
   type: "star5"});
 ```
 
-**Note:** These settings are configured in JSON format. Learn more about using JSON with AnyChart: [Getting Data from JSON](../working-with-data/data-from-json).
+**Note:** These settings are configured in JSON format. Learn more about using JSON with AnyChart: [Getting Data from JSON](../Working_with_Data/Data_From_JSON).
 
 {sample}BCT\_Box\_Chart\_04{sample}
 
@@ -268,18 +269,18 @@ series = chart.box(data);
 
 ### Point Size
 
-This chart type allows you to set the size of its points. Read more in the [Point Size](../common-settings/point-size) article.
+This chart type allows you to set the size of its points. Read more in the [Point Size](../Common_Settings/Point_Size) article.
 
 ### Labels
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 ### Tooltips
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../common-settings/text-formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 ### Vertical Box
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](vertical/overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](Vertical/Overview).
 
-Here is information about creating Vertical Box series: [Vertical Box](vertical/box-chart).
+Here is information about creating Vertical Box series: [Vertical Box](Vertical/Box_Chart).

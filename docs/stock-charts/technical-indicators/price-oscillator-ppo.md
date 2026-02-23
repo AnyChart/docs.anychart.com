@@ -1,11 +1,14 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Price_Oscillator_(PPO)"
+---
 # Price Oscillator indicator (PPO)
 ## Overview
 
-The Price Oscillator indicator (PPO) is a technical analysis tool, used for measuring momentum that is very similar to the MACD. The [MACD](moving-average-convergence-divergence-macd)) employs two Moving Averages of varying lengths (which are lagging indicators) to identify trend direction and duration. Then, MACD takes the difference in values between those two Moving Averages (MACD Line) and an [EMA](exponential-moving-average-ema)) of those Moving Averages (Signal Line) and plots that difference between the two lines as a histogram which oscillates above and below a center Zero Line.
+The Price Oscillator indicator (PPO) is a technical analysis tool, used for measuring momentum that is very similar to the MACD. The [MACD](Moving_Average_Convergence_Divergence_(MACD))) employs two Moving Averages of varying lengths (which are lagging indicators) to identify trend direction and duration. Then, MACD takes the difference in values between those two Moving Averages (MACD Line) and an [EMA](Exponential_Moving_Average_(EMA))) of those Moving Averages (Signal Line) and plots that difference between the two lines as a histogram which oscillates above and below a center Zero Line.
 
 PPO is exactly the same, however it then takes the same values at the MACD and calculates them as a percentage. The purpose of this, is that it makes value comparisons much more simple and straightforward over longer durations of time.
 
-Mathematical description of the indicator: [Price Oscillator Mathematical Description](mathematical-description#price-oscillator).
+Mathematical description of the indicator: [Price Oscillator Mathematical Description](Mathematical_Description#price-oscillator).
 
 ## Adding Indicator
 

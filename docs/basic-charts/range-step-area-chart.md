@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Range_Step_Area_Chart"
 sidebar_position: 3.1
 ---
 # Range Step Area Chart
@@ -9,40 +10,40 @@ A range step area chart is a range area chart in which points are connected by h
 
 Step charts are used when it is necessary to highlight the irregularity of changes: for example, when changes in tax rates or interest rates are visualized. They show periods with no change and emphasize the exact time of each change (the range version also emphasizing the difference between high and low values).
 
-The Range Step Area and Range Area chart types share almost all the settings, so this article explains just how to create a basic Range Step Area chart and configure its only special setting - step direction. To learn about other settings, read the [Range Area Chart](range-area-chart) article. You can also see the table below to get a brief overview of the Range Step Area chart's characteristics:
+The Range Step Area and Range Area chart types share almost all the settings, so this article explains just how to create a basic Range Step Area chart and configure its only special setting - step direction. To learn about other settings, read the [Range Area Chart](Range_Area_Chart) article. You can also see the table below to get a brief overview of the Range Step Area chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#basic-cartesian">Basic Cartesian</a> / <a href="../Quick_Start/Modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.RangeStepArea}anychart.core.cartesian.series.RangeStepArea{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
-<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">x, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../Working_with_Data/Overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td><a href="vertical/range-step-area-chart">Vertical Range Step Area</a></td></tr>
+<tr><td>Vertical</td><td><a href="Vertical/Range_Step_Area_Chart">Vertical Range Step Area</a></td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
-<tr><td>Stock</td><td><a href="../stock-charts/series/range-step-area">Stock Range Step Area</a></td></tr>
+<tr><td>Stock</td><td><a href="../Stock_Charts/Series/Range_Step_Area">Stock Range Step Area</a></td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="area-chart">Area</a></td></tr>
-<tr><td></td><td><a href="spline-area-chart">Spline Area</a></td></tr>
-<tr><td></td><td><a href="step-area-chart">Step Area</a></td></tr>
-<tr><td></td><td><a href="range-area-chart">Range Area</a></td></tr>
-<tr><td></td><td><a href="range-spline-area-chart">Range Spline Area</a></td></tr>
-<tr><td></td><td><a href="hilo-chart">HiLo</a></td></tr>
+<tr><td></td><td><a href="Area_Chart">Area</a></td></tr>
+<tr><td></td><td><a href="Spline_Area_Chart">Spline Area</a></td></tr>
+<tr><td></td><td><a href="Step_Area_Chart">Step Area</a></td></tr>
+<tr><td></td><td><a href="Range_Area_Chart">Range Area</a></td></tr>
+<tr><td></td><td><a href="Range_Spline_Area_Chart">Range Spline Area</a></td></tr>
+<tr><td></td><td><a href="HiLo_Chart">HiLo</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/range-steplinearea-chart/">Chartopedia: Range Step Area Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Range Step Area chart requires adding the [Core](../quick-start/modules#core) and [Basic Cartesian](../quick-start/modules#basic-cartesian) modules:
+The Range Step Area chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic-cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -52,13 +53,13 @@ The Range Step Area chart requires adding the [Core](../quick-start/modules#core
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../quick-start/modules#base) module, which includes, among other things, the two modules mentioned above: 
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -100,9 +101,9 @@ chart.draw();
 
 ## Settings
 
-The Range Step Area chart is a modification of the Range Area chart, so these two types share almost all the settings. You can find more settings in this article: [Range Area Chart](range-area-chart).
+The Range Step Area chart is a modification of the Range Area chart, so these two types share almost all the settings. You can find more settings in this article: [Range Area Chart](Range_Area_Chart).
 
-Also, in AnyChart there are many settings that are configured in the same way for all chart types, including the Range Step Area chart (for example, legend and interactivity settings): [General Settings](general-settings).
+Also, in AnyChart there are many settings that are configured in the same way for all chart types, including the Range Step Area chart (for example, legend and interactivity settings): [General Settings](General_Settings).
 
 In addition, see the full list of methods available for the Range Step Area series: {api:anychart.core.cartesian.series.RangeStepArea}anychart.core.cartesian.series.RangeStepArea{api}.
 

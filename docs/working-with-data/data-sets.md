@@ -1,4 +1,5 @@
 ---
+slug: "/Working_with_Data/Data_Sets"
 sidebar_position: 2
 ---
 # Data Sets
@@ -21,7 +22,7 @@ Here is the list of classes allowing you to work with data sets in AnyChart:
 
 Data sets in AnyChart are defined as instances of the {api:anychart.data.Set}anychart.data.Set{api} class.
 
-Data can be organized as an [array of arrays](#array-of-arrays), [array of objects](#array-of-objects), or [CSV string](#csv-string) (see also: [Data from CSV](data-from-csv)). The choice of data fields depends on the chart type.
+Data can be organized as an [array of arrays](#array-of-arrays), [array of objects](#array-of-objects), or [CSV string](#csv-string) (see also: [Data from CSV](Data_From_CSV)). The choice of data fields depends on the chart type.
 
 **1. Creating Data Set.** To create a data set, pass the data to the {api:anychart.data#set}anychart.data.set(){api} method:
 
@@ -116,7 +117,7 @@ var series = chart.column(data);
 
 ### CSV String
 
-The sample below shows how to set data if it is organized as a **CSV string**. See also: [Data from CSV](data-from-csv).
+The sample below shows how to set data if it is organized as a **CSV string**. See also: [Data from CSV](Data_From_CSV).
 
 By default, AnyChart considers commas in CSV data to be column separators and line breaks to be row separators, but {api:anychart.data#set}anychart.data.set(){api} can accept an object with alternative settings as the second parameter.
 

@@ -1,8 +1,11 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Bollinger_Bands_%25B"
+---
 # Bollinger Bands %B
 
 ## Overview
 
-Bollinger Bands %B is an indicator derived from [Bollinger Bands](bollinger-bands).
+Bollinger Bands %B is an indicator derived from [Bollinger Bands](Bollinger_Bands).
 
 %B quantifies a security's price relative to the upper and lower Bollinger Band. There are six basic relationship levels:
 
@@ -13,7 +16,7 @@ Bollinger Bands %B is an indicator derived from [Bollinger Bands](bollinger-band
 - %B is above .50 when price is above the middle band (SMA)
 - %B is below .50 when price is below the middle band (SMA)
 
-Mathematical description of the indicator can be found on the following page: [Mathematical Description of Bollinger Bands %B](mathematical-description#bollinger-bands-b)
+Mathematical description of the indicator can be found on the following page: [Mathematical Description of Bollinger Bands %B](Mathematical_Description#bollinger-bands-b)
 
 ## Adding Indicator
 

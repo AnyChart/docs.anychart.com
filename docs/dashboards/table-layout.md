@@ -1,4 +1,5 @@
 ---
+slug: "/Dashboards/Table_Layout"
 sidebar_position: 2
 ---
 
@@ -12,13 +13,13 @@ Table Layout helps to manage several elements within the limits of one chart con
 
 ## Modules
 
-The table layout requires adding the [Table UI](../quick-start/modules#table-ui) module:
+The table layout requires adding the [Table UI](../Quick_Start/Modules#table-ui) module:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-table.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 
 ## Acceptable Content
@@ -40,7 +41,7 @@ Visual settings control:
 
 With AnyChart html5 charting framework it is possible to color background of any cell with a solid color, with a gradient transition or fill it with an image. It can be achieved with {api:anychart.standalones.Table#cellFill}cellFill(){api} method.
  
-This section contains information on colorizing the whole table and each of the cells separately. To find out all possible ways of controlling background color, please see [Fill tutorial](../graphics/fill-settings).
+This section contains information on colorizing the whole table and each of the cells separately. To find out all possible ways of controlling background color, please see [Fill tutorial](../Graphics/Fill_Settings).
 
 #### Table fill
 
@@ -115,7 +116,7 @@ Default width of the table is the width of the container. Fixed width of the tab
 
 ### Border
 
-The border is a part of a table. It visually divides a table into separate cells as well as wraps these cells. As any part of a chart, it can be configured and all settings can be adjusted. Full information on borders and lines settings can be found in [Strokes and Lines](../graphics/stroke-settings) tutorial.
+The border is a part of a table. It visually divides a table into separate cells as well as wraps these cells. As any part of a chart, it can be configured and all settings can be adjusted. Full information on borders and lines settings can be found in [Strokes and Lines](../Graphics/Stroke_Settings) tutorial.
 
 In this section revealed all methods of controlling borders in a table. 
 Parameter {api:anychart.core.ui.Table#cellBorder}cellBorder(){api} provides an opportunity to set desirably configured border for all cells in a table. As far as content for each cell can be absolutely different, style for each of the cells can be set individually as well.

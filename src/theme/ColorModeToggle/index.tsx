@@ -41,11 +41,11 @@ const MODES: Array<{ mode: ColorMode | null; title: string; icon: ReactNode }> =
   },
 ];
 
-function ColorModeToggle({ value, onChange }: Props): ReactNode {
+function ColorModeToggle({ className, value, onChange }: Props): ReactNode {
   const isBrowser = useIsBrowser();
 
   return (
-    <div className={styles.toggle}>
+    <div className={`${styles.toggle}${className ? ` ${className}` : ''}`}>
       {MODES.map(({ mode, title, icon }) => (
         <button
           key={title}

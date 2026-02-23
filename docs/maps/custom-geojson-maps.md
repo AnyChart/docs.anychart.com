@@ -1,4 +1,7 @@
 ---
+slug: "/Maps/Custom_GeoJson_Maps"
+---
+---
 sidebar_position: 4
 ---
 
@@ -6,9 +9,9 @@ sidebar_position: 4
 
 ## Overview
 
-AnyChart is doing its best to create a [collection of maps](./maps-list) to help you with most of the cases, but it is always possible that you need a custom map. In this article we will tell you how to create a custom map from data in the most popular mapping formats.
+AnyChart is doing its best to create a [collection of maps](./Maps_List) to help you with most of the cases, but it is always possible that you need a custom map. In this article we will tell you how to create a custom map from data in the most popular mapping formats.
 
-GeoJSON, [TopoJSON](custom-topojson), [SVG](custom-svg-maps) formats are formats of Geo Data AnyChart directly supports.
+GeoJSON, [TopoJSON](Custom_TopoJSON), [SVG](Custom_SVG_Maps) formats are formats of Geo Data AnyChart directly supports.
 
 \*.SHP is a de facto standart for geo data and although you can't load SHP map directly into AnyChart, any SHP map can be easily used for AnyChart Maps through GeoJSON format.
 
@@ -50,7 +53,7 @@ Don't forget to match the box with "Save only selected features" - unless you do
 
 Projection is just a type of view that shows how we look at the map. There are loads of projections, made by different geographers in different times for different purposes, not all of them suite the world map. 
 
-**Note:** you can [change projection later when you use the map in AnyMap](map-projections).
+**Note:** you can [change projection later when you use the map in AnyMap](Map_Projections).
 
 As can be seen in the right-down corner, the default projection type is EPSG 4326. If you click on it, you'll open the "Project Properties" window.
 

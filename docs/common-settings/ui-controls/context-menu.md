@@ -1,3 +1,6 @@
+---
+slug: "/Common_Settings/UI_Controls/Context_Menu"
+---
 # Context Menu
 
 ## Overview 
@@ -6,7 +9,7 @@ A context menu (also called contextual, shortcut, and popup or pop-up menu) is a
 
 ## Modules
 
-The context menu requires the [Common UI](../../quick-start/modules#common-ui) module:
+The context menu requires the [Common UI](../../Quick_Start/Modules#common-ui) module:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>  
@@ -22,7 +25,7 @@ Also, you should reference the `anychart-ui.min.css` and `anychart-font.min.css`
 <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css"/>
 ```
 
-Learn more: [Modules](../../quick-start/modules).
+Learn more: [Modules](../../Quick_Start/Modules).
 
 ## Basic Sample
 
@@ -55,14 +58,14 @@ document.addEventListener('contextmenu', event => event.preventDefault());
 
 The default context menu in all charts consists of at least the following elements:
 
-* [Save chart as](../exports#image)
-* [Save data as](../exports#data)
-* [Share with](../sharing)
-* [Print](../printing)
-* [Enter full screen](../printing)
+* [Save chart as](../Exports#image)
+* [Save data as](../Exports#data)
+* [Share with](../Sharing)
+* [Print](../Printing)
+* [Enter full screen](../Printing)
 * AnyChart vX.XX.X
 
-The exact list of the elements above varies in different types of charts and the state chart is on. For instance the Context Menu of a categorized chart contains "Include/Exclude" functionality, [Treemap charts](../../basic-charts/treemap-chart) provide "Drill up" option when available. See the [Menu items keys](#menu-items-keys) list to learn more.
+The exact list of the elements above varies in different types of charts and the state chart is on. For instance the Context Menu of a categorized chart contains "Include/Exclude" functionality, [Treemap charts](../../Basic_Charts/Treemap_Chart) provide "Drill up" option when available. See the [Menu items keys](#menu-items-keys) list to learn more.
   
 You can change any item in the context menu using {api:anychart.ui.ContextMenu#itemsFormatter}itemsFormatter(){api} method. This method uses function as a parameter:
 
@@ -287,6 +290,6 @@ This section lists all keys and describes when the elements with such keys can a
 
 ## Localize the context menu
 
-You can change the text of context menu items using [Localization](../localization) option.
+You can change the text of context menu items using [Localization](../Localization) option.
 
 If you want to do this yourself you can either do this from the code or by adding the messages with the keys listed in [Menu items keys](#menu-items-keys)

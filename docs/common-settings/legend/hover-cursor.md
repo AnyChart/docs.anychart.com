@@ -1,4 +1,5 @@
 ---
+slug: "/Common_Settings/Legend/Hover_Cursor"
 sidebar_position: 7
 ---
 # Hover Cursor

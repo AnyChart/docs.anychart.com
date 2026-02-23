@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Stacked/Percent/3D_Bar_Chart"
 sidebar_position: 11
 ---
 # 3D Percent Stacked Bar Chart
@@ -7,11 +8,11 @@ sidebar_position: 11
 
 A 3D Percent Stacked Bar Chart is a multiple-series 3D Bar Chart that displays the trend of the percentage each value contributes over time or categories.
 
-The concept of stacking in AnyChart is described in this article: [Stacked (Overview)](../overview).
+The concept of stacking in AnyChart is described in this article: [Stacked (Overview)](../Overview).
 
 ## Quick Start
 
-To build a 3D Percent Stacked Bar Chart, create a multiple-series [3D Bar Chart](../../3d/bar-chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **percent**:
+To build a 3D Percent Stacked Bar Chart, create a multiple-series [3D Bar Chart](../../3D/Bar_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **percent**:
 
 ```
 // create a chart
@@ -29,4 +30,4 @@ var series2 = chart.bar3d(seriesData_2);
 
 ## Adjusting
 
-The 3D Percent Stacked Bar series' settings are mostly the same as other series' ones. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../general-settings).
+The 3D Percent Stacked Bar series' settings are mostly the same as other series' ones. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../General_Settings).

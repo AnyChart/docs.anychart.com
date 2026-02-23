@@ -1,11 +1,12 @@
 ---
+slug: "/Basic_Charts/Bubble_Chart"
 sidebar_position: 1
 ---
 # Bubble Chart
 
 ## Overview
 
-A Bubble chart is a variation of a [Scatter chart](scatter-plot/overview) where the data points are replaced with bubbles.  
+A Bubble chart is a variation of a [Scatter chart](Scatter_Plot/Overview) where the data points are replaced with bubbles.  
   
 HTML5 Bubble charts are often used to present financial data. Use a Bubble chart if you want to put more attention to the specific values in your chart by different bubble sizes.  
 
@@ -16,33 +17,33 @@ Because they allow visual comparisons of well-understood measures, bubble charts
 This article explains how to create a basic Bubble chart as well as configure settings that are specific to the type. See the table below to get a brief overview of the Bubble chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#basic-cartesian">Basic Cartesian</a> / <a href="../Quick_Start/Modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Bubble}anychart.core.cartesian.series.Bubble{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value, size</a></td></tr>
-<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">x, value, size</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../Working_with_Data/Overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td><a href="vertical/bubble-chart">Vertical Bubble</a></td></tr>
+<tr><td>Vertical</td><td><a href="Vertical/Bubble_Chart">Vertical Bubble</a></td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td><a href="error-chart">Error Bubble</a></td></tr>
+<tr><td>Error Bars</td><td><a href="Error_Chart">Error Bubble</a></td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
-<tr><td>Scatter</td><td><a href="scatter-plot/bubble-chart">Scatter Bubble</a></td></tr>
+<tr><td>Scatter</td><td><a href="Scatter_Plot/Bubble_Chart">Scatter Bubble</a></td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="marker-chart">Marker</a></td></tr>
-<tr><td></td><td><a href="../maps/dot-point">Dot (Point) Maps</a>_Map)</td></tr>
+<tr><td></td><td><a href="Marker_Chart">Marker</a></td></tr>
+<tr><td></td><td><a href="../Maps/Dot_(Point)_Map">Dot (Point) Maps</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/bubble-chart/">Chartopedia: Bubble Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Bubble chart requires adding the [Core](../quick-start/modules#core) and [Basic Cartesian](../quick-start/modules#basic-cartesian) modules:
+The Bubble chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic-cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -52,21 +53,21 @@ The Bubble chart requires adding the [Core](../quick-start/modules#core) and [Ba
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../quick-start/modules#base) module, which includes, among other things, the two modules mentioned above: 
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
-To create a Bubble chart, use the {api:anychart#bubble}anychart.bubble(){api} chart constructor. If you pass the data to this chart constructor, it will create a Bubble series. Note that this constructor creates a chart of a Scatter type. Find more about Scatter Charts in the [Scatter Plot article](scatter-plot/overview).
+To create a Bubble chart, use the {api:anychart#bubble}anychart.bubble(){api} chart constructor. If you pass the data to this chart constructor, it will create a Bubble series. Note that this constructor creates a chart of a Scatter type. Find more about Scatter Charts in the [Scatter Plot article](Scatter_Plot/Overview).
 
 To create a Bubble series explicitly, call the {api:anychart.charts.Cartesian#bubble}bubble(){api} method.
 
-In the following sample, we DO NOT create a [Scatter Bubble Chart](scatter-plot/bubble-chart), we create a basic categorized Bubble chart:
+In the following sample, we DO NOT create a [Scatter Bubble Chart](Scatter_Plot/Bubble_Chart), we create a basic categorized Bubble chart:
 
 ```
 // create a categorized chart
@@ -104,7 +105,7 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Bubble Chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
@@ -112,7 +113,7 @@ Read the overview of general settings: [General Settings](general-settings).
 
 #### All Points
 
-The [appearance settings](../appearance-settings) of a Bubble chart can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Bubble#normal}normal(){api}, {api:anychart.core.cartesian.series.Bubble#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Bubble#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Bubble chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Bubble#normal}normal(){api}, {api:anychart.core.cartesian.series.Bubble#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Bubble#selected}selected(){api} methods.
 
 Combine them with the following methods:
 
@@ -218,8 +219,8 @@ Note: this size setting type (in pixels) may lead to the nasty results when char
 
 ### Labels
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 ### Tooltips
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../common-settings/text-formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.

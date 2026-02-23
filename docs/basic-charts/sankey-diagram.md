@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Sankey_Diagram"
 sidebar_position: 4.1
 ---
 # Sankey Diagram
@@ -10,11 +11,11 @@ A Sankey diagram, or chart, named after Captain Matthew Sankey, is a flow diagra
 This article explains how to create a basic Sankey diagram as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Sankey diagram's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#sankey-diagram">Sankey Diagram</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#sankey-diagram">Sankey Diagram</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Sankey}anychart.charts.Sankey{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">from, to, weight</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">from, to, weight</a></td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -27,15 +28,15 @@ This article explains how to create a basic Sankey diagram as well as configure 
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="network-graph">Network Graph</a></td></tr>
+<tr><td></td><td><a href="Network_Graph">Network Graph</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/sankey-diagram/">Chartopedia: Sankey Diagram</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Sankey diagram requires adding the [Core](../quick-start/modules#core) and [Sankey Diagram](../quick-start/modules#sankey-diagram) modules:
+The Sankey diagram requires adding the [Core](../Quick_Start/Modules#core) and [Sankey Diagram](../Quick_Start/Modules#sankey-diagram) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -45,7 +46,7 @@ The Sankey diagram requires adding the [Core](../quick-start/modules#core) and [
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-sankey.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -82,7 +83,7 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Sankey diagram (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
@@ -219,7 +220,7 @@ var chart = anychart.sankey(data);
 
 ### Appearance
 
-The [appearance settings](../appearance-settings) of a Sankey diagram can be configured in two [states](../common-settings/interactivity/states): **normal** and **hover**.
+The [appearance settings](../Appearance_Settings) of a Sankey diagram can be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **hover**.
 
 Combine the **normal()** and **hovered()** methods of [nodes](#nodes) / [flows](#flows) / [dropoffs](#dropoffs) with the following methods:
 
@@ -252,13 +253,13 @@ chart.dropoff().hovered().stroke("#455a64");
 
 ### Labels and Tooltips
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
 #### Tokens
 
-To change the text of labels, combine the **labels()** method of [nodes](#nodes) / [flows](#flows) / [dropoffs](#dropoffs) with the {api:anychart.core.ui.LabelsFactory#format}format(){api} method and [tokens](../common-settings/text-formatters#string-tokens).
+To change the text of labels, combine the **labels()** method of [nodes](#nodes) / [flows](#flows) / [dropoffs](#dropoffs) with the {api:anychart.core.ui.LabelsFactory#format}format(){api} method and [tokens](../Common_Settings/Text_Formatters#string-tokens).
 
 To configure tooltips or tooltip titles, do the same with **tooltip()** and the {api:anychart.core.ui.Tooltip#format}format(){api} or {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} method.
 
@@ -270,7 +271,7 @@ Here is the list of tokens that work with the Sankey diagram:
 
 Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
-**Note:** You can combine the **normal()** and **hovered()** methods with {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} to enable or disable labels in a given [state](../common-settings/interactivity/states). By default, labels of nodes are shown both in the normal and hover states, while labels of flows and dropoffs are shown only in the hover state.
+**Note:** You can combine the **normal()** and **hovered()** methods with {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} to enable or disable labels in a given [state](../Common_Settings/Interactivity/States). By default, labels of nodes are shown both in the normal and hover states, while labels of flows and dropoffs are shown only in the hover state.
 
 This sample shows how to work with tokens:
 
@@ -306,7 +307,7 @@ chart.dropoff().tooltip().format("value: {%value}\n\n{%custom_field}");
 
 #### Formatting Functions
 
-To configure labels and tooltips, you can use [formatting functions](../common-settings/text-formatters#formatting-functions) and the following fields:
+To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting-functions) and the following fields:
 
 * `name`
 * `value`

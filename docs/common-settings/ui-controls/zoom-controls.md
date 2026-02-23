@@ -1,4 +1,5 @@
 ---
+slug: "/Common_Settings/UI_Controls/Zoom_Controls"
 sidebar_position: 5
 ---
 # Zoom Controls
@@ -9,7 +10,7 @@ Zoom Control Panel is an HTML object with three buttons: Zoom All (100%, or 1x Z
 
 ## Modules
 
-Zoom controls require the [Common UI](../../quick-start/modules#common-ui) module:
+Zoom controls require the [Common UI](../../Quick_Start/Modules#common-ui) module:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>  
@@ -25,7 +26,7 @@ Also, you should reference the `anychart-ui.min.css` and `anychart-font.min.css`
 <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css"/>
 ```
 
-Learn more: [Modules](../../quick-start/modules).
+Learn more: [Modules](../../Quick_Start/Modules).
 
 ## Enabling
 

@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/3D/Line_Chart"
 sidebar_position: 2.1
 ---
 # 3D Line Chart
@@ -7,9 +8,9 @@ sidebar_position: 2.1
 
 This article explains how to create a 3D Line chart in AnyChart.
 
-To learn more about 3D charts in general and how to customize them, see [3D Charts (Overview)](overview). In addition, you can read the [Line Chart](../line-chart) article.
+To learn more about 3D charts in general and how to customize them, see [3D Charts (Overview)](Overview). In addition, you can read the [Line Chart](../Line_Chart) article.
 
-Please note that there is also the [3D 2D Line](2d-line-chart) chart type.
+Please note that there is also the [3D 2D Line](2D_Line_Chart) chart type.
 
 ## Quick Start
 
@@ -33,4 +34,4 @@ var series3 = chart.line(seriesData_3);
 
 **Note 1**: Unlike the ordinary Line series, the 3D Line series is colored with the {api:anychart.core.StateSettings#fill}fill(){api} method. The stroke cannot be configured.
 
-**Note 2:** When you use the {api:anychart#line3d}anychart.line3d(){api} chart constructor, the [Z-distribution](overview#z-distribution) is enabled by default, which means that the series of multiple-series charts are distributed along the Z-axis.
+**Note 2:** When you use the {api:anychart#line3d}anychart.line3d(){api} chart constructor, the [Z-distribution](Overview#z-distribution) is enabled by default, which means that the series of multiple-series charts are distributed along the Z-axis.

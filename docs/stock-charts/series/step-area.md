@@ -1,8 +1,11 @@
+---
+slug: "/Stock_Charts/Series/Step_Area"
+---
 # AnyStock Step Area Series
 
 ## Overview
 
-Step Area Series is quite similar to [Area series](area), both in visualization and purpose. It uses one value for a point, but the points look like steps instead of vertexes of a polygon. Find more information about using Step Area in Basic Charts in the [Step Area Chart tutorial](../../basic-charts/step-area-chart).
+Step Area Series is quite similar to [Area series](Area), both in visualization and purpose. It uses one value for a point, but the points look like steps instead of vertexes of a polygon. Find more information about using Step Area in Basic Charts in the [Step Area Chart tutorial](../../Basic_Charts/Step_Area_Chart).
 
 ## AnyStock Step Area Series Adjustment
 
@@ -54,7 +57,7 @@ mapping = table.mapAs({x: 'x', value: 'value'});
 
 {sample}STOCK\_Step\_Area\_02{sample}
 
-You can read more about mananging Data in Stocks in the [Stock Data tutorial](../data).
+You can read more about mananging Data in Stocks in the [Stock Data tutorial](../Data).
 
 ### Multi series
 
@@ -82,11 +85,11 @@ series_region.name("Region Request Number");
 
 {sample}STOCK\_Step\_Area\_04{sample}
 
-More about plots can be found in the [Plots tutorial](../chart-plots).
+More about plots can be found in the [Plots tutorial](../Chart_Plots).
 
 ### Switching series type
 
-You can change the type of the series to another compatible type. See the [Series Type](series-type) and [series types table](supported-series#list-of-supported-series).
+You can change the type of the series to another compatible type. See the [Series Type](Series_Type) and [series types table](Supported_Series#list-of-supported-series).
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 

@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Error_Chart/Jump_Line_Chart"
 sidebar_position: 2
 ---
 # Jump Line Chart with Error Bars
@@ -7,7 +8,7 @@ sidebar_position: 2
 
 This article explains how to create a Jump Line chart with error bars.
 
-To learn more about error charts in general and how to customize them, see [Error Chart (Overview)](overview). In addition, you can read the [Jump Line Chart](../jump-line-chart) article to learn about other available settings.
+To learn more about error charts in general and how to customize them, see [Error Chart (Overview)](Overview). In addition, you can read the [Jump Line Chart](../Jump_Line_Chart) article to learn about other available settings.
 
 ## Quick Start
 

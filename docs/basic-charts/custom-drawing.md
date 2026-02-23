@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Custom_Drawing"
 sidebar_position: 0.6
 ---
 # Custom Drawing
@@ -17,9 +18,9 @@ sidebar_position: 0.6
 
 ## Overview
 
-AnyChart provides a lot of series types out of the box, you can see all of them in the [List of supported chart types](../quick-start/supported-charts-types) and compatible series types can be [switched one into another during the runtime using](series-type).
+AnyChart provides a lot of series types out of the box, you can see all of them in the [List of supported chart types](../Quick_Start/Supported_Charts_Types) and compatible series types can be [switched one into another during the runtime using](Series_Type).
 
-All series can be customized in the various out of the box ways, like changing the style of the fill, solid lines into dashed lines, adding hatch pattern fill or changing the opacity - this information you can find in the article about the given series type or an overview of all shared options in [General Settings](general-settings).
+All series can be customized in the various out of the box ways, like changing the style of the fill, solid lines into dashed lines, adding hatch pattern fill or changing the opacity - this information you can find in the article about the given series type or an overview of all shared options in [General Settings](General_Settings).
 
 However, if you also have on option to change the way the series is drawn and provide your own drawing function(s) to create completly unique look of a basic series or a completly new chart type that is based on some of the basic series.
 
@@ -29,7 +30,7 @@ Some modifications can be done very easy, some require understanding how AnyChar
 
 At the moment you can override renderers only for the following series: Area, Area3d, Bar, Bar3d, Box, Bubble, Candlestick, Column, Column3d, JumpLine, Line, Marker, OHLC, RangeArea, RangeBar, RangeColumn, RangeSplineArea, RangeStepArea, Spline, SplineArea, StepArea, StepLine, Stick. 
 
-You can do this in Basic (Cartesian) Charts, [Scatter Charts](scatter-plot/overview) and [Stock Charts](../stock-charts), you can't do that in Radar and Polar Charts.
+You can do this in Basic (Cartesian) Charts, [Scatter Charts](Scatter_Plot/Overview) and [Stock Charts](../Stock_Charts), you can't do that in Radar and Polar Charts.
 
 If you want something more than what this article offers, please [contact us](http://support.anychart.com/) or you can go ahead and try to create your own series by forking [AnyChart at Github](https://github.com/AnyChart/AnyChart). Note: you still need a license if you are going to use the derivate projects in a commercial application.
 

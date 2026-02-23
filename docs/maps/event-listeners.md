@@ -1,4 +1,5 @@
 ---
+slug: "/Maps/Event_Listeners"
 sidebar_position: 10
 ---
 # Event Listeners in Maps
@@ -9,7 +10,7 @@ Listeners help to catch the users actions in order to add or change some informa
 
 ## Action Types
 
-There are two types of actions: point-oriented and mouse-oriented. All available listeners are listed in [Event listeners](../common-settings/event-listeners/#event-types) article. Any of those can be used with maps.
+There are two types of actions: point-oriented and mouse-oriented. All available listeners are listed in [Event listeners](../Common_Settings/Event_Listeners/#event-types) article. Any of those can be used with maps.
 
 ## Listener Types
 
@@ -23,7 +24,7 @@ There are five basic listener methods in AnyMaps:
  
 You can use first two of them to start listening the actions and rest are being used when we want to stop listening for the actions. 
 
-You can find everything about listeners in [Event Listeners](../common-settings/event-listeners) article. Look through the next couple of samples and explore them in the Playground to see that it works with maps the same as with charts.
+You can find everything about listeners in [Event Listeners](../Common_Settings/Event_Listeners) article. Look through the next couple of samples and explore them in the Playground to see that it works with maps the same as with charts.
  
 {sample}Maps\_Events\_01{sample}
 
@@ -65,4 +66,4 @@ map.listenOnce('click',function() {
 
 This sample can be modified: you can add an extra field to the map data which would contain a specific URL, so each region will redirect to different pages when double-clicked on.
 
-Look the main [Event Listener article](../common-settings/event-listeners) to learn more about the listeners.
+Look the main [Event Listener article](../Common_Settings/Event_Listeners) to learn more about the listeners.

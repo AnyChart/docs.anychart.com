@@ -1,3 +1,6 @@
+---
+slug: "/Common_Settings/Event_Listeners"
+---
 # Event Listeners
 
 ## Overview

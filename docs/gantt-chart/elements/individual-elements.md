@@ -1,4 +1,5 @@
 ---
+slug: "/Gantt_Chart/Elements/Individual_Elements"
 sidebar_position: 5
 ---
 # Individual Elements
@@ -7,10 +8,10 @@ sidebar_position: 5
 
 To adjust individual elements of a Project chart, use the following data fields:
 
-* `"actual"` to configure all [task types](project-chart#tasks-actual))
-* `"baseline"` to configure [baselines](project-chart#baselines-planned))
-* `"progress"` to configure [progress bars](project-chart#progress-bars)
-* `"connector"` to configure [connectors](project-chart#connectors)
+* `"actual"` to configure all [task types](Project_Chart#tasks-actual))
+* `"baseline"` to configure [baselines](Project_Chart#baselines-planned))
+* `"progress"` to configure [progress bars](Project_Chart#progress-bars)
+* `"connector"` to configure [connectors](Project_Chart#connectors)
 
 Combine them with fields corresponding to the methods of elements - for example, with `fill` and `stroke`:
 
@@ -92,9 +93,9 @@ chart.data(treeData);
 
 ## Resource Chart
 
-To adjust an individual [period](resource-chart#periods) of a Resource chart, you need to add extra data fields to the object that defines this period.
+To adjust an individual [period](Resource_Chart#periods) of a Resource chart, you need to add extra data fields to the object that defines this period.
 
-Use the `"connector"` field to configure [connectors](resource-chart#connectors) and fields corresponding to the methods of periods - for example, `fill` and `stroke`:
+Use the `"connector"` field to configure [connectors](Resource_Chart#connectors) and fields corresponding to the methods of periods - for example, `fill` and `stroke`:
 
 ```
 // create data

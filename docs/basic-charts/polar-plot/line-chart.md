@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Polar_Plot/Line_Chart"
 sidebar_position: 2
 ---
 # Polar Line Chart
@@ -7,7 +8,7 @@ sidebar_position: 2
 
 This article explains how to create a Polar Line chart in AnyChart.
 
-To learn more about polar charts in general and how to customize them, see [Polar Charts (Overview)](overview). In addition, you can read the [Line Chart](../line-chart) article to learn about other available settings.
+To learn more about polar charts in general and how to customize them, see [Polar Charts (Overview)](Overview). In addition, you can read the [Line Chart](../Line_Chart) article to learn about other available settings.
 
 ## Quick Start
 

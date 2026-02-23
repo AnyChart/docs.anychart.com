@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Waterfall_Chart"
 sidebar_position: 7.5
 ---
 # Waterfall Chart
@@ -12,12 +13,12 @@ As a rule, intermediate values are visualized as floating columns, while the ini
 This article explains how to create a basic Waterfall chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Waterfall chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#waterfall">Waterfall</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#waterfall">Waterfall</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Waterfall}anychart.charts.Waterfall{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value, isTotal</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">x, value, isTotal</a></td></tr>
 <tr><td>Multiple Series</td><td><a href="#multiple-series">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td><a href="#multiple-series">Multiple Series</a></td></tr>
@@ -30,17 +31,17 @@ This article explains how to create a basic Waterfall chart as well as configure
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="column-chart">Column</a></td></tr>
-<tr><td></td><td><a href="range-column-chart">Range Column</a></td></tr>
-<tr><td></td><td><a href="stacked/overview">Stacked</a></td></tr>
+<tr><td></td><td><a href="Column_Chart">Column</a></td></tr>
+<tr><td></td><td><a href="Range_Column_Chart">Range Column</a></td></tr>
+<tr><td></td><td><a href="Stacked/Overview">Stacked</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/waterfall-chart/">Chartopedia: Waterfall Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Waterfall chart requires adding the [Core](../quick-start/modules#core) and [Waterfall](../quick-start/modules#waterfall) modules:
+The Waterfall chart requires adding the [Core](../Quick_Start/Modules#core) and [Waterfall](../Quick_Start/Modules#waterfall) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -50,7 +51,7 @@ The Waterfall chart requires adding the [Core](../quick-start/modules#core) and 
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-waterfall.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules)
+Learn more: [Modules](../Quick_Start/Modules)
 
 ## Quick Start
 
@@ -98,7 +99,7 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Waterfall chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
@@ -228,7 +229,7 @@ So the calculated total should be 150 but the value provided in the data is 100 
 
 #### Columns
 
-The [appearance settings](../appearance-settings) of Waterfall columns can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.waterfall.series.Waterfall#normal}normal(){api}, {api:anychart.core.waterfall.series.Waterfall#hovered}hovered(){api}, and {api:anychart.core.waterfall.series.Waterfall#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of Waterfall columns can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.waterfall.series.Waterfall#normal}normal(){api}, {api:anychart.core.waterfall.series.Waterfall#hovered}hovered(){api}, and {api:anychart.core.waterfall.series.Waterfall#selected}selected(){api} methods.
 
 Combine them with the following methods to adjust columns indicating total values:
 
@@ -314,17 +315,17 @@ Here is a sample, notice there is no connector between two last bars: **2023** a
 
 ### Point Size
 
-This chart type allows you to set the size of its points. Read more in the [Point Size](../common-settings/point-size) article.
+This chart type allows you to set the size of its points. Read more in the [Point Size](../Common_Settings/Point_Size) article.
 
 ### Labels and Tooltips
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
 #### Tokens
 
-To change the text of labels, combine the {api:anychart.charts.Waterfall#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../common-settings/text-formatters#string-tokens).
+To change the text of labels, combine the {api:anychart.charts.Waterfall#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string-tokens).
 
 To configure tooltips, do the same with the {api:anychart.charts.Waterfall#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods. It is also possible to change the titles of tooltips: use {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
 
@@ -371,7 +372,7 @@ chart.tooltip().format("{%absolute}\n{%diff}\n\n{%custom_field}");
 
 #### Formatting Functions
 
-To configure labels and tooltips, you can use [formatting functions](../common-settings/text-formatters#formatting-functions) and the following fields (in addition to the default ones):
+To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting-functions) and the following fields (in addition to the default ones):
 
 * `diff`
 * `absolute`
@@ -431,7 +432,7 @@ chart.tooltip().titleFormat(function() {
 
 ### Legend
 
-The default legend of the Waterfall chart shows increasing, decreasing, and total columns. If you work with a multiple-series chart and want to show series instead, change the [source of legend items](../common-settings/legend/basic-settings#source) by combining the {api:anychart.charts.Waterfall#legend}legend(){api} method with {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api} and use `"default"` as a parameter:
+The default legend of the Waterfall chart shows increasing, decreasing, and total columns. If you work with a multiple-series chart and want to show series instead, change the [source of legend items](../Common_Settings/Legend/Basic_Settings#source) by combining the {api:anychart.charts.Waterfall#legend}legend(){api} method with {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api} and use `"default"` as a parameter:
 
 ```
 // add hatch fills

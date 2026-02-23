@@ -1,4 +1,5 @@
 ---
+slug: "/Gantt_Chart/Quick_Start_(Project)"
 sidebar_position: 2
 ---
 # Quick Start: Project Gantt Chart
@@ -9,9 +10,9 @@ This article demonstrates the steps required to create a basic Project Gantt cha
 
 ## Modules
 
-AnyGantt requires adding two [modules](../quick-start/modules) - [Core](../quick-start/modules#core) and [Gantt](../quick-start/modules#gantt). Place a link to two JavaScript files in the `<head>` section of your web page.
+AnyGantt requires adding two [modules](../Quick_Start/Modules) - [Core](../Quick_Start/Modules#core) and [Gantt](../Quick_Start/Modules#gantt). Place a link to two JavaScript files in the `<head>` section of your web page.
 
-**Note:** These files can be downloaded from the [AnyChart download page](../quick-start/downloading-anychart).
+**Note:** These files can be downloaded from the [AnyChart download page](../Quick_Start/Downloading_AnyChart).
 
 ```
 <head>
@@ -32,7 +33,7 @@ Add a block-based HTML element to your page, set the `id`, `width`, and `height`
 
 ## Data
 
-AnyGantt requires using the [tree data model](../working-with-data/tree-data-model). This is how your data should be organized for it:
+AnyGantt requires using the [tree data model](../Working_with_Data/Tree_Data_Model). This is how your data should be organized for it:
 
 ```
 // create data

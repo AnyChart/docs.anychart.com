@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Error_Chart/Overview"
 sidebar_position: 1
 ---
 # Error Chart
@@ -15,7 +16,7 @@ This article explains how to create and configure error bars on both Cartesian a
 
 Error bars do not require any modules except the modules required by the chart on which they are created.
 
-For scatter charts, combine the [Core](../../quick-start/modules#core) module with the [Scatter](../../quick-start/modules#scatter) module:
+For scatter charts, combine the [Core](../../Quick_Start/Modules#core) module with the [Scatter](../../Quick_Start/Modules#scatter) module:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -25,7 +26,7 @@ For scatter charts, combine the [Core](../../quick-start/modules#core) module wi
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-scatter.min.js"></script>
 ```
 
-For Cartesian charts, combine [Core](../../quick-start/modules#core) module with [Basic Cartesian](../../quick-start/modules#basic-cartesian):
+For Cartesian charts, combine [Core](../../Quick_Start/Modules#core) module with [Basic Cartesian](../../Quick_Start/Modules#basic-cartesian):
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -35,13 +36,13 @@ For Cartesian charts, combine [Core](../../quick-start/modules#core) module with
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
 ```
 
-You can also use the [Base](../../quick-start/modules#base) module, which includes, among other things, all the modules mentioned above:
+You can also use the [Base](../../Quick_Start/Modules#base) module, which includes, among other things, all the modules mentioned above:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
-Learn more: [Modules](../../quick-start/modules).
+Learn more: [Modules](../../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -204,7 +205,7 @@ Here is the full list of methods used to configure the appearance of error bars:
 * {api:anychart.core.utils.Error#valueErrorStroke}valueErrorStroke(){api} sets the stroke of Y-bars
 * {api:anychart.core.utils.Error#xErrorStroke}xErrorStroke(){api} sets the stroke of X-bars
 
-Each of the series types that support error bars has its own visual settings - see the [Supported Types](#supported-types) section. Also, you can learn more from the [Appearance Settings](../../appearance-settings) section.
+Each of the series types that support error bars has its own visual settings - see the [Supported Types](#supported-types) section. Also, you can learn more from the [Appearance Settings](../../Appearance_Settings) section.
 
 In the sample below, there is scatter chart with two Marker series and error bars on both of them, some of the appearance settings configured:
 
@@ -238,13 +239,13 @@ error2.xErrorStroke("black", 0.5);
 
 ## Labels and Tooltips
 
-[Labels](../../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../../common-settings/text-formatters) are available.
+[Labels](../../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../../Common_Settings/Text_Formatters) are available.
 
-A [Tooltip](../../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
 ### Tokens
 
-To change the text of labels, combine the **labels()** method of the series (or the chart if it is a scatter chart) and {api:anychart.core.ui.LabelsFactory#format}format(){api} with [tokens](../../common-settings/text-formatters#string-tokens).
+To change the text of labels, combine the **labels()** method of the series (or the chart if it is a scatter chart) and {api:anychart.core.ui.LabelsFactory#format}format(){api} with [tokens](../../Common_Settings/Text_Formatters#string-tokens).
 
 To configure tooltips, do the same with the **tooltip()** and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
@@ -271,7 +272,7 @@ series.tooltip().format("{%value} (\u00b1{%valueUpperError})");
 
 ### Formatting Functions
 
-Labels and tooltips are also configured with the help of [formatting functions](../../common-settings/text-formatters#formatting-functions) and the following fields (in addition to the default ones):
+Labels and tooltips are also configured with the help of [formatting functions](../../Common_Settings/Text_Formatters#formatting-functions) and the following fields (in addition to the default ones):
 
 * `valueLowerError`
 * `valueUpperError`
@@ -303,19 +304,19 @@ chart.tooltip().format(function() {
 
 Here is the list of Cartesian chart types that can be combined with error bars:
 
-* [Area with Error Bars](area-chart)
-* [Bar with Error Bars](bar-chart)
-* [Column with Error Bars](column-chart)
-* [Jump Line with Error Bars](jump-line-chart)
-* [Line with Error Bars](line-chart)
-* [Marker with Error Bars](marker-chart)
-* [Spline with Error Bars](spline-chart)
-* [Spline Area with Error Bars](spline-area-chart)
-* [Step Area with Error Bars](step-area-chart)
-* [Step Line with Error Bars](step-line-chart)
-* [Stick with Error Bars](stick-chart)
+* [Area with Error Bars](Area_Chart)
+* [Bar with Error Bars](Bar_Chart)
+* [Column with Error Bars](Column_Chart)
+* [Jump Line with Error Bars](Jump_Line_Chart)
+* [Line with Error Bars](Line_Chart)
+* [Marker with Error Bars](Marker_Chart)
+* [Spline with Error Bars](Spline_Chart)
+* [Spline Area with Error Bars](Spline_Area_Chart)
+* [Step Area with Error Bars](Step_Area_Chart)
+* [Step Line with Error Bars](Step_Line_Chart)
+* [Stick with Error Bars](Stick_Chart)
 
 Scatter charts compatible with error bars include:
 
-* [Scatter Line with Error Bars](scatter-line-chart)
-* [Scatter Marker with Error Bars](scatter-marker-chart)
+* [Scatter Line with Error Bars](Scatter_Line_Chart)
+* [Scatter Marker with Error Bars](Scatter_Marker_Chart)

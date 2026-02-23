@@ -1,4 +1,5 @@
 ---
+slug: "/Stock_Charts/Axes"
 sidebar_position: 4
 ---
 
@@ -8,11 +9,11 @@ sidebar_position: 4
 
 In AnyChart axes are used to control axes labels, lines and tick marks.  
   
-* To know how to operate with basic charts axes - please see: [Axis Basics](../axes-and-grids/axis-basics)
-* To know what scale options are available - [Scale tutorial](scales)
-* To learn how to create additional axes - [Additional axes](../axes-and-grids/additional-axes)
-* To learn how to configure axes labels - [Axes Labels](../axes-and-grids/axes-labels-formatting)
-* To find out how to add markers - see [Line Markers](../axes-and-grids/line-markers), [Range Markers](../axes-and-grids/range-markers), [Text Markers](../axes-and-grids/text-markers)
+* To know how to operate with basic charts axes - please see: [Axis Basics](../Axes_and_Grids/Axis_Basics)
+* To know what scale options are available - [Scale tutorial](Scales)
+* To learn how to create additional axes - [Additional axes](../Axes_and_Grids/Additional_Axes)
+* To learn how to configure axes labels - [Axes Labels](../Axes_and_Grids/Axes_Labels_Formatting)
+* To find out how to add markers - see [Line Markers](../Axes_and_Grids/Line_Markers), [Range Markers](../Axes_and_Grids/Range_Markers), [Text Markers](../Axes_and_Grids/Text_Markers)
 
 In this section we will demonstrate the differences of AnyStock axes and scales from basic charts' ones.
 
@@ -83,7 +84,7 @@ xAxis.height(40);
 
 ## Grids
 
-Grids are added to every plot using {api:anychart.core.stock.Plot#yGrid}grid{api} method, the settings are similar to [basic grids](../axes-and-grids/axis-basics#grids), but it is a method of a plot, not a chart:
+Grids are added to every plot using {api:anychart.core.stock.Plot#yGrid}grid{api} method, the settings are similar to [basic grids](../Axes_and_Grids/Axis_Basics#grids), but it is a method of a plot, not a chart:
 
 ```
 // defining the chart 

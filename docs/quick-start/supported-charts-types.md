@@ -1,4 +1,7 @@
 ---
+slug: "/Quick_Start/Supported_Charts_Types"
+---
+---
 sidebar_position: 3
 ---
 # Supported Charts Types
@@ -11,100 +14,100 @@ with links to tutorials where you can find out how to create them.
 
 | Name |
 |------|
-| [Area Chart](../basic-charts/area-chart) |
-| [Bar Chart](../basic-charts/bar-chart) |
-| [Bar Mekko Chart](../basic-charts/marimekko-chart/bar-mekko-chart) |
-| [Box Chart](../basic-charts/box-chart) |
-| [Bubble Chart](../basic-charts/bubble-chart) |
-| [Bullet Chart](../basic-charts/bullet-chart) |
-| [Calendar Chart](../basic-charts/calendar-chart) |
-| [Candlestick Chart](../basic-charts/japanese-candlestick-chart) |
-| [Circle Packing Chart](../basic-charts/circle-packing-chart) |
-| [Circular Gauge](../gauges/circular-gauge) |
-| [Column Chart](../basic-charts/column-chart) |
-| [Donut Chart](../basic-charts/doughnut-chart) |
-| [Error Chart](../basic-charts/error-chart) |
-| [Funnel Chart](../basic-charts/funnel-chart) |
-| [Gantt Chart](../gantt-chart) |
-| [Gauge Circular](../gauges/circular-gauge) |
-| [Gauge Linear](../gauges/linear-gauge) |
-| [Graph Chart](../basic-charts/network-graph) |
-| [Heat Map Chart](../basic-charts/heat-map-chart) |
-| [HiLo Chart](../basic-charts/hilo-chart) |
-| [Jump Line Chart](../basic-charts/jump-line-chart) |
-| [Line Chart](../basic-charts/line-chart) |
-| [Maps - Geo Maps](../maps/) |
-| [Maps - Colored Choropleth](../maps/choropleth-map) |
-| [Maps - Dot, Point, Marker](../maps/dot-point-map) |
-| [Maps - Connector, Line](../maps/connector-maps) |
-| [Maps - Proportional Bubbles](../maps/proportional-symbol-map) |
-| [Marimekko Chart](../basic-charts/marimekko-chart) |
-| [Marker Chart](../basic-charts/marker-chart) |
-| [Mekko Chart](../basic-charts/marimekko-chart) |
-| [Mosaic Chart](../basic-charts/marimekko-chart/mosaic-chart) |
-| [Network Chart](../basic-charts/network-graph) |
-| [OHLC Chart](../basic-charts/ohlc-chart) |
-| [Pareto Chart](../basic-charts/pareto-chart) |
-| [Percent Stacked Area Chart](../basic-charts/stacked/percent/area-chart) |
-| [Percent Stacked Bar](../basic-charts/stacked/percent/bar-chart) |
-| [Percent Stacked Column](../basic-charts/stacked/percent/column-chart) |
-| [Percent Stacked Spline Area Chart](../basic-charts/stacked/percent/spline-area-chart) |
-| [PERT Chart](../pert-chart/overview) |
-| [Pie Chart](../basic-charts/pie-chart) |
-| [3D Area Chart](../basic-charts/3d/area-chart) |
-| [3D Bar Chart](../basic-charts/3d/bar-chart) |
-| [3D Column Chart](../basic-charts/3d/column-chart) |
-| [3D Pie Chart](../basic-charts/3d/pie-chart) |
-| [3D Stacked Area](../basic-charts/stacked/value/3d-area-chart) |
-| [3D Stacked Bar](../basic-charts/stacked/value/3d-bar-chart) |
-| [3D Stacked Column](../basic-charts/stacked/value/3d-column-chart) |
-| [Polar Chart](../basic-charts/polar-plot/overview) |
-| [Pyramid Chart](../basic-charts/pyramid-chart) |
-| [Radar Chart](../basic-charts/radar-plot/overview) |
-| [Range Area Chart](../basic-charts/range-area-chart) |
-| [Range Bar Chart](../basic-charts/range-bar-chart) |
-| [Range Column Chart](../basic-charts/range-column-chart) |
-| [Range Spline Area Chart](../basic-charts/range-spline-area-chart) |
-| [Range Step Area Chart](../basic-charts/range-step-area-chart) |
-| [Sankey Chart](../basic-charts/sankey-diagram) |
-| [Sparkline Chart](../basic-charts/sparkline-chart) |
-| [Spline Chart](../basic-charts/spline-chart) |
-| [Spline Area Chart](../basic-charts/spline-area-chart) |
-| [Stick Chart](../basic-charts/stick-chart) |
-| [Stacked Area Chart](../basic-charts/stacked/value/area-chart) |
-| [Stacked Spline Area Chart](../basic-charts/stacked/value/spline-area-chart) |
-| [Stacked Bar Chart](../basic-charts/stacked/value/bar-chart) |
-| [Stacked Column Chart](../basic-charts/stacked/value/column-chart) |
-| [Step Area Chart](../basic-charts/step-area-chart) |
-| [Step Line Chart](../basic-charts/step-line-chart) |
-| [Stock Charts](../stock-charts/quick-start) |
-| [Sunburst Chart](../basic-charts/sunburst-chart) |
-| [Surface Chart](../3d-plot/surface-chart) |
-| [Tag Cloud](../basic-charts/tag-cloud) |
-| [Timeline Chart](../basic-charts/timeline-chart) |
-| [Treemap Chart](../basic-charts/treemap-chart) |
-| [Venn Diagram](../basic-charts/venn-diagram) |
-| [Vertical Area Chart](../basic-charts/vertical/area-chart) |
-| [Vertical Bar Mekko Chart](../basic-charts/vertical/bar-mekko-chart) |
-| [Vertical Bubble Chart](../basic-charts/vertical/bubble-chart) |
-| [Vertical HiLo Chart](../basic-charts/vertical/hilo-chart) |
-| [Vertical Jump Line Chart](../basic-charts/vertical/jump-line-chart) |
-| [Vertical Line Chart](../basic-charts/vertical/line-chart) |
-| [Vertical Marimekko Chart](../basic-charts/vertical/mekko-chart) |
-| [Vertical Marker Chart](../basic-charts/vertical/marker-chart) |
-| [Vertical Mekko Chart](../basic-charts/vertical/mekko-chart) |
-| [Vertical Mosaic Chart](../basic-charts/vertical/mosaic-chart) |
-| [Vertical Percent Stacked Area Chart](../basic-charts/stacked/percent/vertical-area-chart) |
-| [Vertical Percent Stacked Spline Area Chart](../basic-charts/stacked/percent/vertical-spline-area-chart) |
-| [Vertical Range Area Chart](../basic-charts/vertical/range-area-chart) |
-| [Vertical Range Spline Area Chart](../basic-charts/vertical/range-spline-area-chart) |
-| [Vertical Spline Chart](../basic-charts/vertical/spline-chart) |
-| [Vertical Spline Area Chart](../basic-charts/vertical/spline-area-chart) |
-| [Vertical Stacked Area Chart](../basic-charts/stacked/value/vertical-area-chart) |
-| [Vertical Stacked Spline Area Chart](../basic-charts/stacked/value/vertical-spline-area-chart) |
-| [Vertical Stick Chart](../basic-charts/vertical/stick-chart) |
-| [Vertical Step Area Chart](../basic-charts/vertical/step-area-chart) |
-| [Vertical Step Line Chart](../basic-charts/vertical/step-line-chart) |
-| [Waterfall Chart](../basic-charts/waterfall-chart) |
-| [Word Cloud](../basic-charts/tag-cloud) |
-| [Word Tree](../basic-charts/word-tree) |
+| [Area Chart](../Basic_Charts/Area_Chart) |
+| [Bar Chart](../Basic_Charts/Bar_Chart) |
+| [Bar Mekko Chart](../Basic_Charts/Marimekko_Chart/Bar_Mekko_Chart) |
+| [Box Chart](../Basic_Charts/Box_Chart) |
+| [Bubble Chart](../Basic_Charts/Bubble_Chart) |
+| [Bullet Chart](../Basic_Charts/Bullet_Chart) |
+| [Calendar Chart](../Basic_Charts/Calendar_Chart) |
+| [Candlestick Chart](../Basic_Charts/Japanese_Candlestick_Chart) |
+| [Circle Packing Chart](../Basic_Charts/Circle_Packing_Chart) |
+| [Circular Gauge](../Gauges/Circular_Gauge) |
+| [Column Chart](../Basic_Charts/Column_Chart) |
+| [Donut Chart](../Basic_Charts/Doughnut_Chart) |
+| [Error Chart](../Basic_Charts/Error_Chart) |
+| [Funnel Chart](../Basic_Charts/Funnel_Chart) |
+| [Gantt Chart](../Gantt_Chart) |
+| [Gauge Circular](../Gauges/Circular_Gauge) |
+| [Gauge Linear](../Gauges/Linear_Gauge) |
+| [Graph Chart](../Basic_Charts/Network_Graph) |
+| [Heat Map Chart](../Basic_Charts/Heat_Map_Chart) |
+| [HiLo Chart](../Basic_Charts/HiLo_Chart) |
+| [Jump Line Chart](../Basic_Charts/Jump_Line_Chart) |
+| [Line Chart](../Basic_Charts/Line_Chart) |
+| [Maps - Geo Maps](../Maps/) |
+| [Maps - Colored Choropleth](../Maps/Choropleth_Map) |
+| [Maps - Dot, Point, Marker](../Maps/Dot_(Point)_Map) |
+| [Maps - Connector, Line](../Maps/Connector_Maps) |
+| [Maps - Proportional Bubbles](../Maps/Proportional_Symbol_Map) |
+| [Marimekko Chart](../Basic_Charts/Marimekko_Chart) |
+| [Marker Chart](../Basic_Charts/Marker_Chart) |
+| [Mekko Chart](../Basic_Charts/Marimekko_Chart) |
+| [Mosaic Chart](../Basic_Charts/Marimekko_Chart/Mosaic_Chart) |
+| [Network Chart](../Basic_Charts/Network_Graph) |
+| [OHLC Chart](../Basic_Charts/OHLC_Chart) |
+| [Pareto Chart](../Basic_Charts/Pareto_Chart) |
+| [Percent Stacked Area Chart](../Basic_Charts/Stacked/Percent/Area_Chart) |
+| [Percent Stacked Bar](../Basic_Charts/Stacked/Percent/Bar_Chart) |
+| [Percent Stacked Column](../Basic_Charts/Stacked/Percent/Column_Chart) |
+| [Percent Stacked Spline Area Chart](../Basic_Charts/Stacked/Percent/Spline_Area_Chart) |
+| [PERT Chart](../PERT_Chart/Overview) |
+| [Pie Chart](../Basic_Charts/Pie_Chart) |
+| [3D Area Chart](../Basic_Charts/3D/Area_Chart) |
+| [3D Bar Chart](../Basic_Charts/3D/Bar_Chart) |
+| [3D Column Chart](../Basic_Charts/3D/Column_Chart) |
+| [3D Pie Chart](../Basic_Charts/3D/Pie_Chart) |
+| [3D Stacked Area](../Basic_Charts/Stacked/Value/3D_Area_Chart) |
+| [3D Stacked Bar](../Basic_Charts/Stacked/Value/3D_Bar_Chart) |
+| [3D Stacked Column](../Basic_Charts/Stacked/Value/3D_Column_Chart) |
+| [Polar Chart](../Basic_Charts/Polar_Plot/Overview) |
+| [Pyramid Chart](../Basic_Charts/Pyramid_Chart) |
+| [Radar Chart](../Basic_Charts/Radar_Plot/Overview) |
+| [Range Area Chart](../Basic_Charts/Range_Area_Chart) |
+| [Range Bar Chart](../Basic_Charts/Range_Bar_Chart) |
+| [Range Column Chart](../Basic_Charts/Range_Column_Chart) |
+| [Range Spline Area Chart](../Basic_Charts/Range_Spline_Area_Chart) |
+| [Range Step Area Chart](../Basic_Charts/Range_Step_Area_Chart) |
+| [Sankey Chart](../Basic_Charts/Sankey_Diagram) |
+| [Sparkline Chart](../Basic_Charts/Sparkline_Chart) |
+| [Spline Chart](../Basic_Charts/Spline_Chart) |
+| [Spline Area Chart](../Basic_Charts/Spline_Area_Chart) |
+| [Stick Chart](../Basic_Charts/Stick_Chart) |
+| [Stacked Area Chart](../Basic_Charts/Stacked/Value/Area_Chart) |
+| [Stacked Spline Area Chart](../Basic_Charts/Stacked/Value/Spline_Area_Chart) |
+| [Stacked Bar Chart](../Basic_Charts/Stacked/Value/Bar_Chart) |
+| [Stacked Column Chart](../Basic_Charts/Stacked/Value/Column_Chart) |
+| [Step Area Chart](../Basic_Charts/Step_Area_Chart) |
+| [Step Line Chart](../Basic_Charts/Step_Line_Chart) |
+| [Stock Charts](../Stock_Charts/Quick_Start) |
+| [Sunburst Chart](../Basic_Charts/Sunburst_Chart) |
+| [Surface Chart](../3D_Plot/Surface_Chart) |
+| [Tag Cloud](../Basic_Charts/Tag_Cloud) |
+| [Timeline Chart](../Basic_Charts/Timeline_Chart) |
+| [Treemap Chart](../Basic_Charts/Treemap_Chart) |
+| [Venn Diagram](../Basic_Charts/Venn_Diagram) |
+| [Vertical Area Chart](../Basic_Charts/Vertical/Area_Chart) |
+| [Vertical Bar Mekko Chart](../Basic_Charts/Vertical/Bar_Mekko_Chart) |
+| [Vertical Bubble Chart](../Basic_Charts/Vertical/Bubble_Chart) |
+| [Vertical HiLo Chart](../Basic_Charts/Vertical/HiLo_Chart) |
+| [Vertical Jump Line Chart](../Basic_Charts/Vertical/Jump_Line_Chart) |
+| [Vertical Line Chart](../Basic_Charts/Vertical/Line_Chart) |
+| [Vertical Marimekko Chart](../Basic_Charts/Vertical/Mekko_Chart) |
+| [Vertical Marker Chart](../Basic_Charts/Vertical/Marker_Chart) |
+| [Vertical Mekko Chart](../Basic_Charts/Vertical/Mekko_Chart) |
+| [Vertical Mosaic Chart](../Basic_Charts/Vertical/Mosaic_Chart) |
+| [Vertical Percent Stacked Area Chart](../Basic_Charts/Stacked/Percent/Vertical_Area_Chart) |
+| [Vertical Percent Stacked Spline Area Chart](../Basic_Charts/Stacked/Percent/Vertical_Spline_Area_Chart) |
+| [Vertical Range Area Chart](../Basic_Charts/Vertical/Range_Area_Chart) |
+| [Vertical Range Spline Area Chart](../Basic_Charts/Vertical/Range_Spline_Area_Chart) |
+| [Vertical Spline Chart](../Basic_Charts/Vertical/Spline_Chart) |
+| [Vertical Spline Area Chart](../Basic_Charts/Vertical/Spline_Area_Chart) |
+| [Vertical Stacked Area Chart](../Basic_Charts/Stacked/Value/Vertical_Area_Chart) |
+| [Vertical Stacked Spline Area Chart](../Basic_Charts/Stacked/Value/Vertical_Spline_Area_Chart) |
+| [Vertical Stick Chart](../Basic_Charts/Vertical/Stick_Chart) |
+| [Vertical Step Area Chart](../Basic_Charts/Vertical/Step_Area_Chart) |
+| [Vertical Step Line Chart](../Basic_Charts/Vertical/Step_Line_Chart) |
+| [Waterfall Chart](../Basic_Charts/Waterfall_Chart) |
+| [Word Cloud](../Basic_Charts/Tag_Cloud) |
+| [Word Tree](../Basic_Charts/Word_Tree) |

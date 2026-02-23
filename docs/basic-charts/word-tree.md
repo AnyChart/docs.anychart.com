@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Word_Tree"
 sidebar_position: 7.5
 ---
 # Word Tree
@@ -11,10 +12,10 @@ This article explains how to create a basic Word Tree chart as well as configure
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#word-tree">Word Tree</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#word-tree">Word Tree</a></td></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Wordtree}anychart.charts.Wordtree{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">id, parent, children, value, weight</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">id, parent, children, value, weight</a></td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -27,15 +28,15 @@ This article explains how to create a basic Word Tree chart as well as configure
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="tag-cloud">Tag Cloud</a></td></tr>
+<tr><td></td><td><a href="Tag_Cloud">Tag Cloud</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/word-tree/">Chartopedia: Word Tree</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Word Tree requires adding the [Core](../quick-start/modules#core) and [Word Tree](../quick-start/modules#word-tree) modules:
+The Word Tree requires adding the [Core](../Quick_Start/Modules#core) and [Word Tree](../Quick_Start/Modules#word-tree) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -45,7 +46,7 @@ The Word Tree requires adding the [Core](../quick-start/modules#core) and [Word 
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -94,13 +95,13 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Word Tree chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
 ### Data
 
-The Word Tree chart requires the [tree data model](../working-with-data/tree-data-model), which represents data as a hierarchical tree-like structure with data items connected by parent-child relationships.
+The Word Tree chart requires the [tree data model](../Working_with_Data/Tree_Data_Model), which represents data as a hierarchical tree-like structure with data items connected by parent-child relationships.
 
 You can establish the hierarchy between words **explicitly**, by passing [tree data](#tree) to the chart constructor. Alternatively, the relationship between words can be established **implicitly**: when you pass a [list of phrases](#list) or a [text](#text), AnyChart engine automatically analyzes the data.
 
@@ -118,7 +119,7 @@ With tree-like data, the following data fields are used:
 * `value` to set words / word combinations
 * `weight` to set weight
 
-When you pass the data to the chart constructor, add a second parameter - `"as-tree"` or `"as-table"`. The choice of the parameter and data fields depends on how exactly you data is organized. See [Tree Data Model: Setting Data](../working-with-data/tree-data-model#setting-data) to learn more. 
+When you pass the data to the chart constructor, add a second parameter - `"as-tree"` or `"as-table"`. The choice of the parameter and data fields depends on how exactly you data is organized. See [Tree Data Model: Setting Data](../Working_with_Data/Tree_Data_Model#setting-data) to learn more. 
 
 The **weight** (number of children) is calculated automatically. It is shown in [tooltips](#tooltips) and affects the font size. If for some reason you do not include an item's children in the data, you can specify the weight of this item manually.
 
@@ -361,7 +362,7 @@ chart.postfix("lines");
 
 ### Tooltips
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../common-settings/text-formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 ### Interactivity
 
@@ -370,8 +371,8 @@ The Word Tree chart is interactive by default. It comes with a built-in drilldow
 * {api:anychart.charts.Wordtree#drillTo}drillTo(){api} to drill to an item
 * {api:anychart.charts.Wordtree#drillUp}drillUp(){api} to drill up
 
-Sometimes you might also need to perform a [search](../working-with-data/tree-data-model#searching) in the data with the {api:anychart.data.Tree#search}search(){api} method of the {api:anychart.data.Tree}anychart.data.Tree{api} class
-(see the [Tree Data Model](../working-with-data/tree-data-model) article to learn more about operating tree-like data). For example, if you want to drill down to a particular item in the data tree, call {api:anychart.data.Tree#search}search(){api} to get the item and {api:anychart.charts.TreeMap#drillTo}drillTo(){api} to drill down to it. For drilling up, call {api:anychart.charts.TreeMap#drillUp}drillUp(){api}:
+Sometimes you might also need to perform a [search](../Working_with_Data/Tree_Data_Model#searching) in the data with the {api:anychart.data.Tree#search}search(){api} method of the {api:anychart.data.Tree}anychart.data.Tree{api} class
+(see the [Tree Data Model](../Working_with_Data/Tree_Data_Model) article to learn more about operating tree-like data). For example, if you want to drill down to a particular item in the data tree, call {api:anychart.data.Tree#search}search(){api} to get the item and {api:anychart.charts.TreeMap#drillTo}drillTo(){api} to drill down to it. For drilling up, call {api:anychart.charts.TreeMap#drillUp}drillUp(){api}:
 
 ```
 /* locate an item in the data tree

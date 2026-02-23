@@ -1,4 +1,5 @@
 ---
+slug: "/Maps/Drill_Down_Maps/Methods"
 sidebar_position: 2
 ---
 # Drill Down Maps
@@ -6,9 +7,9 @@ sidebar_position: 2
 ## Overview
 
 DrillDown Maps are useful but rather complicated, so we have created several methods to simplify the process of managing them. 
-To find information about creating Drill Down Maps and using AJAX read the [Basic Tutorial](basic-tutorial) and [AJAX Tutorial](ajax-tutorial).
+To find information about creating Drill Down Maps and using AJAX read the [Basic Tutorial](Basic_Tutorial) and [AJAX Tutorial](AJAX_Tutorial).
 
-In all samples of this article all necessary maps are being loaded ahead as scripts. Look at the [Maps List](../maps-list) for the list of AnyMaps and [Maps Quick Start article](../quick-start) to know how to load the maps. This way of working with maps can be reasonable in case if there is no need in a big amount of maps; otherwise, it's better to use AJAX requests, because a big amount of preloaded maps slows the page loading down.
+In all samples of this article all necessary maps are being loaded ahead as scripts. Look at the [Maps List](../Maps_List) for the list of AnyMaps and [Maps Quick Start article](../Quick_Start) to know how to load the maps. This way of working with maps can be reasonable in case if there is no need in a big amount of maps; otherwise, it's better to use AJAX requests, because a big amount of preloaded maps slows the page loading down.
 
 ## Methods
 
@@ -20,7 +21,7 @@ The following methods make working with drill down easier:
 
 ### Drill To
 
-Using the {api:anychart.charts.Map#drillTo}drillTo(){api} method will drill down to a selected region. This method requires the ID of the region/country and the map which matches the defined region and will be loaded. This method is used naturally in [listeners](../../common-settings/event-listeners).
+Using the {api:anychart.charts.Map#drillTo}drillTo(){api} method will drill down to a selected region. This method requires the ID of the region/country and the map which matches the defined region and will be loaded. This method is used naturally in [listeners](../../Common_Settings/Event_Listeners).
 
 ```
 // Drill down to specified map
@@ -29,7 +30,7 @@ map.drillTo("US", map);
 
 {sample}Maps\_Drill\_Down\_Methods\_01{sample}
 
-Another way to create a map with a drill down function is not to specify all maps ahead but use AJAX instead. In case of managing quite a big number of maps, it's better to use AJAX requests. Then there will be no need in loading all maps at once, which reduces inital the page loading time. Find all information about using AJAX to create drill dowm maps in the [AJAX Tutorial](ajax-tutorial).
+Another way to create a map with a drill down function is not to specify all maps ahead but use AJAX instead. In case of managing quite a big number of maps, it's better to use AJAX requests. Then there will be no need in loading all maps at once, which reduces inital the page loading time. Find all information about using AJAX to create drill dowm maps in the [AJAX Tutorial](AJAX_Tutorial).
 
 ### Drill Up
 
@@ -59,7 +60,7 @@ map.drillDownMap({
 
 {sample}Maps\_Drill\_Down\_Methods\_03{sample}
 
-More information about the use of these methods can be found in the [Basic Tutorial](basic-tutorial) and the [AJAX Tutorial](ajax-tutorial).
+More information about the use of these methods can be found in the [Basic Tutorial](Basic_Tutorial) and the [AJAX Tutorial](AJAX_Tutorial).
 
 ### Get Drill Down Path
 
@@ -88,4 +89,4 @@ function printPath(path){
 
 In the sample above the {api:anychart.core.MapPoint#getCurrentChart}getCurrentChart(){api} method is used to obtain the link to the current map. A custom function *printpath(path)* helps to print the whole path in the title of the chart.
 
-Using the {api:anychart.charts.Map#getDrilldownPath}getDrilldownPath(){api} method, we can make it easier to drill into any of the levels previous to the current one. That's where the Breadcrumbs help us. See the [Breadcrumbs article](breadcrumbs) to know how they can be used with the described method.
+Using the {api:anychart.charts.Map#getDrilldownPath}getDrilldownPath(){api} method, we can make it easier to drill into any of the levels previous to the current one. That's where the Breadcrumbs help us. See the [Breadcrumbs article](Breadcrumbs) to know how they can be used with the described method.

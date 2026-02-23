@@ -1,15 +1,16 @@
 ---
+slug: "/PERT_Chart"
 sidebar_position: 3
 ---
 # PERT Chart
 
 ## Overview
 
-A PERT Chart (otherwise known as a PERT Diagram) is a chart type realizes the Project Evaluation and Review Technique technology. It is applied mostly in large-scale projects where time is the major factor and allows to schedule a project without knowing precisely the details and durations of all activities. Find more information about PERT technology and using it in [PERT Overview](overview).
+A PERT Chart (otherwise known as a PERT Diagram) is a chart type realizes the Project Evaluation and Review Technique technology. It is applied mostly in large-scale projects where time is the major factor and allows to schedule a project without knowing precisely the details and durations of all activities. Find more information about PERT technology and using it in [PERT Overview](PERT_Chart/Overview).
 
 This article explains how to create a basic Pert Chart as well as configure settings that are specific to the type. 
 
-Pert Chart Data should be arranged as array of objects, where ID's of the tasks are necessary to be created. Extra data can be added if necessary. Read more about setting and managing the data in the [PERT Data](data) article.
+Pert Chart Data should be arranged as array of objects, where ID's of the tasks are necessary to be created. Extra data can be added if necessary. Read more about setting and managing the data in the [PERT Data](PERT_Chart/Data) article.
 
 See also: [Chartopedia: PERT Chart](https://www.anychart.com/chartopedia/chart-types/pert-chart/).
 
@@ -52,7 +53,7 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Pert Chart (for example, some interactivity settings).
 
-Read the overview of general settings: [General Settings](../basic-charts/general-settings).
+Read the overview of general settings: [General Settings](../Basic_Charts/General_Settings).
 
 ## Special Settings
 
@@ -90,7 +91,7 @@ chart.listen("pointsselect", function(e){
 
 There are two basic classes of elements in PERT: milestones and tasks. Also there is a critical path consists of both tasks and milestones.
 
-Learn more about colors and visual appearance of the chart from the [Appearance Settings](../appearance-settings) section.
+Learn more about colors and visual appearance of the chart from the [Appearance Settings](../Appearance_Settings) section.
 
 ### Tasks 
 
@@ -98,7 +99,7 @@ To set the spacing between tasks, use the {api:anychart.charts.Pert#horizontalSp
 
 Other settings are configured with the help of the {api:anychart.charts.Pert#tasks}tasks(){api} method.
 
-The colors of tasks can be set in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.pert.Tasks#normal}normal(){api}, {api:anychart.core.pert.Tasks#hovered}hovered(){api}, and {api:anychart.core.pert.Tasks#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}.
+The colors of tasks can be set in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.pert.Tasks#normal}normal(){api}, {api:anychart.core.pert.Tasks#hovered}hovered(){api}, and {api:anychart.core.pert.Tasks#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}.
 
 In the sample below, there is a Pert chart with tasks configured:
 
@@ -120,7 +121,7 @@ tasks.selected().stroke("#519790", 2);
 
 ### Duration calculation
 
-When the data is arranged, it is possible to set the exact duration for each task and the whole path. However, it is quite hard to evaluate time bounds of activities. To make an approximate calculation of the path duration, it is better to use three values: optimistic time (the shortest term which is necessary for an activity to be accomplished), pessimistic time (the longest term which is necessary for an activity to be accomplished) and the most likely time for the activity completion. There is a default formula used for the calculation, which you can find in the [Terminology article](terminology/#expected-time). To rearrange the formula, use the {api:anychart.charts.Pert#expectedTimeCalculator}expectedTimeCalculator(){api} method.
+When the data is arranged, it is possible to set the exact duration for each task and the whole path. However, it is quite hard to evaluate time bounds of activities. To make an approximate calculation of the path duration, it is better to use three values: optimistic time (the shortest term which is necessary for an activity to be accomplished), pessimistic time (the longest term which is necessary for an activity to be accomplished) and the most likely time for the activity completion. There is a default formula used for the calculation, which you can find in the [Terminology article](PERT_Chart/Terminology#expected-time). To rearrange the formula, use the {api:anychart.charts.Pert#expectedTimeCalculator}expectedTimeCalculator(){api} method.
 
 ```
 // Set expected time
@@ -188,7 +189,7 @@ chart.tasks().lowerLabels().format(function(e){
 
 To configure milestones, call the {api:anychart.charts.Pert#milestones}milestones(){api} method.
 
-The colors of milestones can be set in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.pert.Milestones#normal}normal(){api}, {api:anychart.core.pert.Milestones#hovered}hovered(){api}, and {api:anychart.core.pert.Milestones#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}.
+The colors of milestones can be set in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.pert.Milestones#normal}normal(){api}, {api:anychart.core.pert.Milestones#hovered}hovered(){api}, and {api:anychart.core.pert.Milestones#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}.
 
 In the sample below, there is a Pert chart with milestones configured:
 
@@ -225,7 +226,7 @@ tasks.stroke("#ffab91");
 
 ### Labels
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 Though, besides the colors and spacing, there are some special settings for the tasks' labels. Due to a specific shape, tasks have upper and lower labels, and it is possible to adjust both. Use the {api:anychart.core.pert.Tasks#upperLabels}upperLabels(){api} and {api:anychart.core.pert.Tasks#lowerLabels}lowerLabels(){api} methods for it.
 
@@ -267,7 +268,7 @@ chart.milestones().labels().format(function() {
 
 ### Tooltips
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../common-settings/text-formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 ### Statistics
 

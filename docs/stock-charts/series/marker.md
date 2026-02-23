@@ -1,8 +1,11 @@
+---
+slug: "/Stock_Charts/Series/Marker"
+---
 # AnyStock Marker Series
 
 ## Overview
 
-With Marker series every point on the plot is presented with a symbol. Find more about Marker series in the [Marker Chart tutorial](../../basic-charts/marker-chart).
+With Marker series every point on the plot is presented with a symbol. Find more about Marker series in the [Marker Chart tutorial](../../Basic_Charts/Marker_Chart).
 
 ## AnyStock Marker Series Adjustment
 
@@ -114,11 +117,11 @@ series.name("UK");
 
 {sample}STOCK\_Marker\_04{sample}
 
-See [Plot article](../chart-plots) to learn more about plots. 
+See [Plot article](../Chart_Plots) to learn more about plots. 
 
 ### Switching series type
 
-You can change the type of the series to another compatible type. See the [Series Type](series-type) and [series types table](supported-series#list-of-supported-series).
+You can change the type of the series to another compatible type. See the [Series Type](Series_Type) and [series types table](Supported_Series#list-of-supported-series).
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 

@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Treemap_Chart"
 sidebar_position: 6.3
 ---
 # Treemap Chart
@@ -10,11 +11,11 @@ A treemap is a visualization that displays hierarchically organized data as a se
 This article explains how to create a basic Treemap chart in AnyChart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Treemap chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#treemap">Treemap</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#treemap">Treemap</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.TreeMap}anychart.charts.TreeMap{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">id, parent, children, name, size, value</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">id, parent, children, name, size, value</a></td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -27,17 +28,17 @@ This article explains how to create a basic Treemap chart in AnyChart as well as
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="heat-map-chart">Heat Map</a></td></tr>
-<tr><td></td><td><a href="marimekko-chart">Marimekko</a></td></tr>
-<tr><td></td><td><a href="venn-diagram">Venn</a></td></tr>
+<tr><td></td><td><a href="Heat_Map_Chart">Heat Map</a></td></tr>
+<tr><td></td><td><a href="Marimekko_Chart">Marimekko</a></td></tr>
+<tr><td></td><td><a href="Venn_Diagram">Venn</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/treemap/">Chartopedia: Treemap Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Treemap chart requires adding the [Core](../quick-start/modules#core) and [Treemap](../quick-start/modules#treemap) modules:
+The Treemap chart requires adding the [Core](../Quick_Start/Modules#core) and [Treemap](../Quick_Start/Modules#treemap) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -47,7 +48,7 @@ The Treemap chart requires adding the [Core](../quick-start/modules#core) and [T
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-treemap.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -88,13 +89,13 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Treemap chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
   
 ### Data
 
-The Treemap chart requires the [tree data model](../working-with-data/tree-data-model). Use the following fields:
+The Treemap chart requires the [tree data model](../Working_with_Data/Tree_Data_Model). Use the following fields:
 
 * `id` to set unique identifiers
 * `parent` to set parents
@@ -186,7 +187,7 @@ chart.sort("asc");
 
 #### All Points
 
-The [appearance settings](../appearance-settings) of a Treemap chart can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.TreeMap#normal}normal(){api}, {api:anychart.charts.TreeMap#hovered}hovered(){api}, and {api:anychart.charts.TreeMap#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Treemap chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.TreeMap#normal}normal(){api}, {api:anychart.charts.TreeMap#hovered}hovered(){api}, and {api:anychart.charts.TreeMap#selected}selected(){api} methods.
 
 Combine them with the following methods:
 
@@ -243,7 +244,7 @@ chart = anychart.treeMap(data, "as-tree");
 
 ### Color Scale
 
-By default, the color scale of a Treemap chart is ordinal, and tiles are colored in the colors of the default [palette](../appearance-settings/palettes). Color ranges are set automatically.
+By default, the color scale of a Treemap chart is ordinal, and tiles are colored in the colors of the default [palette](../Appearance_Settings/Palettes). Color ranges are set automatically.
 
 #### Ordinal
 
@@ -307,13 +308,13 @@ chart.colorRange().length("90%");
 
 ### Labels and Tooltips
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
 #### Tokens
 
-To change the text of labels, combine the {api:anychart.charts.TreeMap#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../common-settings/text-formatters#string-tokens).
+To change the text of labels, combine the {api:anychart.charts.TreeMap#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string-tokens).
 
 To configure tooltips, do the same with the {api:anychart.charts.TreeMap#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
@@ -368,7 +369,7 @@ chart.tooltip().format(
 
 #### Formatting Functions
 
-To configure labels and tooltips, you can use [formatting functions](../common-settings/text-formatters#formatting-functions) and the following fields:
+To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting-functions) and the following fields:
 
 * `name`
 * `size`
@@ -450,16 +451,16 @@ You can limit the maximum height of headers, which might be necessary in case yo
 chart.maxHeadersHeight("20%");
 ```
 
-The text and font of headers can be configured in the **normal** and **hover** [states](../common-settings/interactivity/states): combine the {api:anychart.charts.TreeMap#normal}normal(){api} and {api:anychart.charts.TreeMap#hovered}hovered(){api} methods with {api:anychart.core.StateSettings#headers}headers(){api}.
+The text and font of headers can be configured in the **normal** and **hover** [states](../Common_Settings/Interactivity/States): combine the {api:anychart.charts.TreeMap#normal}normal(){api} and {api:anychart.charts.TreeMap#hovered}hovered(){api} methods with {api:anychart.core.StateSettings#headers}headers(){api}.
 
-Changing the default text of headers is similar to configuring [labels and tooltips](#labels-and-tooltips). You should use the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [tokens](../common-settings/text-formatters#string-tokens) or [formatting functions](../common-settings/text-formatters#formatting-functions):
+Changing the default text of headers is similar to configuring [labels and tooltips](#labels-and-tooltips). You should use the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [tokens](../Common_Settings/Text_Formatters#string-tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting-functions):
 
 ```
 // configure the text of headers in the hovered state
 chart.hovered().headers().format("{%value}");
 ```
 
-To [configure the font](../appearance-settings/text-settings) of headers, use methods listed in {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}:
+To [configure the font](../Appearance_Settings/Text_Settings) of headers, use methods listed in {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}:
 
 ```
 // configure the font of headers
@@ -542,10 +543,10 @@ The Treemap chart is interactive by default. It comes with a built-in drilldown 
 * {api:anychart.charts.TreeMap#drillUp}drillUp(){api} to drill up
 * {api:anychart.charts.TreeMap#getDrilldownPath}getDrilldownPath(){api} to get the drilldown path
 
-**Note:** By default it is also possible to drill down or up from the [context menu](../common-settings/ui-controls/context-menu): right-click on a tile or a header and select "Drill Down To" or "Drill Up" in the menu - if, of course, these options are available for the element.
+**Note:** By default it is also possible to drill down or up from the [context menu](../Common_Settings/UI_Controls/Context_Menu): right-click on a tile or a header and select "Drill Down To" or "Drill Up" in the menu - if, of course, these options are available for the element.
 
-Sometimes you might also need to perform a [search](../working-with-data/tree-data-model#searching) in the data with the {api:anychart.data.Tree#search}search(){api} method of the {api:anychart.data.Tree}anychart.data.Tree{api} class
-(see the [Tree Data Model](../working-with-data/tree-data-model) article to learn more about operating tree-like data). For example, if you want to drill down to a particular item in the data tree, call {api:anychart.data.Tree#search}search(){api} to get the item and {api:anychart.charts.TreeMap#drillTo}drillTo(){api} to drill down to it. For drilling up, call {api:anychart.charts.TreeMap#drillUp}drillUp(){api}:
+Sometimes you might also need to perform a [search](../Working_with_Data/Tree_Data_Model#searching) in the data with the {api:anychart.data.Tree#search}search(){api} method of the {api:anychart.data.Tree}anychart.data.Tree{api} class
+(see the [Tree Data Model](../Working_with_Data/Tree_Data_Model) article to learn more about operating tree-like data). For example, if you want to drill down to a particular item in the data tree, call {api:anychart.data.Tree#search}search(){api} to get the item and {api:anychart.charts.TreeMap#drillTo}drillTo(){api} to drill down to it. For drilling up, call {api:anychart.charts.TreeMap#drillUp}drillUp(){api}:
 
 ```
 /* locate an item in the data tree
@@ -565,7 +566,7 @@ This sample shows how to drill down to a particular item, drill up, and add the 
 
 #### Disabling Drilldown
 
-To disable the drilldown feature, you should add an [event listener](../common-settings/event-listeners) to your chart. Use the {api:anychart.core.Base#listen}listen(){api} method and specify the event type - `drillchange`:
+To disable the drilldown feature, you should add an [event listener](../Common_Settings/Event_Listeners) to your chart. Use the {api:anychart.core.Base#listen}listen(){api} method and specify the event type - `drillchange`:
 
 ```
 // disable the drilldown feature

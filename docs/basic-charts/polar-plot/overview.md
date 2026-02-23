@@ -1,17 +1,18 @@
 ---
+slug: "/Basic_Charts/Polar_Plot/Overview"
 sidebar_position: 1
 ---
 # Polar Charts
 
 ## Overview
 
-A polar chart is a [scatter chart](../scatter-plot/overview) drawn in the polar coordinate system - a two-dimensional coordinate system where each point is determined by a distance from a fixed point and an angle from a fixed direction.
+A polar chart is a [scatter chart](../Scatter_Plot/Overview) drawn in the polar coordinate system - a two-dimensional coordinate system where each point is determined by a distance from a fixed point and an angle from a fixed direction.
 
 This article explains how to create and configure polar charts. To find out which series can be drawn on a polar chart in AnyChart, see the [Supported Types](#supported-types) section.
 
 ## Modules
 
-Polar charts require adding the [Core](../../quick-start/modules#core) and [Polar](../../quick-start/modules#polar) modules:
+Polar charts require adding the [Core](../../Quick_Start/Modules#core) and [Polar](../../Quick_Start/Modules#polar) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -21,7 +22,7 @@ Polar charts require adding the [Core](../../quick-start/modules#core) and [Pola
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-polar.min.js"></script>
 ```
 
-Learn more: [Modules](../../quick-start/modules).
+Learn more: [Modules](../../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -95,7 +96,7 @@ var data = [
 
 ## Axes
 
-To learn about axes in general, see the [Axes and Grids](../../axes-and-grids) section.
+To learn about axes in general, see the [Axes and Grids](../../Axes_and_Grids) section.
 
 If you want to configure the stroke of the X- and Y-axes, use the {api:anychart.core.axes.Radar#stroke}stroke(){api} method:
 
@@ -118,7 +119,7 @@ chart.xAxis().stroke({
 
 ## Scales
 
-To learn about scales in general, see the [Scales](../../axes-and-grids/scales) section.
+To learn about scales in general, see the [Scales](../../Axes_and_Grids/Scales) section.
 
 Polar charts have one special setting that changes how polar chart behave: by default polar plot is an implementations of a standard polar coordinate system where both x and y coordinates are considered numbers, this mode is usually used for mathematical purposes.
 
@@ -137,7 +138,7 @@ Here is a sample of such plot with a cardioid:
 
 {sample}BCT\_Polar\_Chart\_05{sample}
 
-But in some data visualization cases it may be useful to work with polar chart is a slightly different way that resembles, in a way, [Radar Charts](../radar-plot). This is a case when X coordinates are texts, not numbers. To turn this mode of use the {api:anychart.charts.Polar#sortPointsByX}sortPointsByX(){api} method and set X-scale type to ordinal:
+But in some data visualization cases it may be useful to work with polar chart is a slightly different way that resembles, in a way, [Radar Charts](../Radar_Plot). This is a case when X coordinates are texts, not numbers. To turn this mode of use the {api:anychart.charts.Polar#sortPointsByX}sortPointsByX(){api} method and set X-scale type to ordinal:
 
 ```
 // set the type of the x-scale
@@ -148,10 +149,10 @@ chart.sortPointsByX(true);
 ```
 
 With these setting you can use:
-- [Polygon Chart](polygon-chart)
-- [Polyline Chart](polyline-chart)
-- [Column Chart](column-chart)
-- [Range Column Chart](range-column-chart)
+- [Polygon Chart](Polygon_Chart)
+- [Polyline Chart](Polyline_Chart)
+- [Column Chart](Column_Chart)
+- [Range Column Chart](Range_Column_Chart)
 
 And create charts like this one:
 
@@ -159,7 +160,7 @@ And create charts like this one:
 
 ## Grids
 
-This section explains how to configure the appearance and layout of grids on polar charts. You can also read about grids here: [Axis Basics: Grids](../../axes-and-grids/axis-basics#grids).
+This section explains how to configure the appearance and layout of grids on polar charts. You can also read about grids here: [Axis Basics: Grids](../../Axes_and_Grids/Axis_Basics#grids).
 
 By default, there are two grids: {api:anychart.charts.Polar#yGrid}yGrid(){api} and {api:anychart.charts.Polar#xGrid}xGrid(){api}
 
@@ -209,23 +210,23 @@ polar2.yGrid().palette(["gray 0.05", "gray 0.1"]);
 
 Stacked and percent stacked charts are multiple-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms.
 
-You can create stacked polar charts by enabling a special mode of the scale that makes series stack together. Read more: [Stacked Charts](../stacked/overview).
+You can create stacked polar charts by enabling a special mode of the scale that makes series stack together. Read more: [Stacked Charts](../Stacked/Overview).
 
 ## Supported Types
 
 Here is the list of supported polar charts:
 
-* [Polar Area](area-chart)
-* [Polar Column](column-chart)
-* [Polar Line](line-chart)
-* [Radar Marker](marker-chart)
-* [Polar Polygon](polygon-chart)
-* [Polar Polyline](polyline-chart)
-* [Polar Range Column](range-column-chart)
+* [Polar Area](Area_Chart)
+* [Polar Column](Column_Chart)
+* [Polar Line](Line_Chart)
+* [Radar Marker](Marker_Chart)
+* [Polar Polygon](Polygon_Chart)
+* [Polar Polyline](Polyline_Chart)
+* [Polar Range Column](Range_Column_Chart)
 
 See also stacked charts:
 
-* [Polar Stacked Column Chart](../stacked/value/polar-column-chart)
-* [Polar Percent Stacked Column Chart](../stacked/percent/polar-column-chart)
-* [Stacked Polygon Chart](../stacked/value/polygon-chart)
-* [Percent Stacked Polygon Chart](../stacked/percent/polygon-chart)
+* [Polar Stacked Column Chart](../Stacked/Value/Polar_Column_Chart)
+* [Polar Percent Stacked Column Chart](../Stacked/Percent/Polar_Column_Chart)
+* [Stacked Polygon Chart](../Stacked/Value/Polygon_Chart)
+* [Percent Stacked Polygon Chart](../Stacked/Percent/Polygon_Chart)

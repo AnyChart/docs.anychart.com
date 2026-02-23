@@ -1,4 +1,5 @@
 ---
+slug: "/Maps/Map_Crosshair"
 sidebar_position: 13.6
 ---
 # Map Crosshair

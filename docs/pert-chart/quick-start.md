@@ -1,4 +1,5 @@
 ---
+slug: "/PERT_Chart/Quick_Start"
 sidebar_position: 1
 ---
 # PERT Chart Quick Start
@@ -9,7 +10,7 @@ To get started with PERT Chart follow these simple steps and you will get your f
 
 ## Modules
 
-PERT chart requires adding the [Core](../quick-start/modules#core) and [PERT](../quick-start/modules#pert) modules. Reference two JavaScript files in the `<head>` section of your web page: 
+PERT chart requires adding the [Core](../Quick_Start/Modules#core) and [PERT](../Quick_Start/Modules#pert) modules. Reference two JavaScript files in the `<head>` section of your web page: 
 
 ```
 <head>
@@ -18,9 +19,9 @@ PERT chart requires adding the [Core](../quick-start/modules#core) and [PERT](..
 </head>
 ```
 
-**Note:** These files can be downloaded from the [AnyChart download page](../quick-start/downloading-anychart). 
+**Note:** These files can be downloaded from the [AnyChart download page](../Quick_Start/Downloading_AnyChart). 
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Create a Container
 
@@ -34,7 +35,7 @@ Add a block-based HTML element into your page, set the `id`, `width` and `height
 
 ## Prepare the Data
 
-There are two ways to set data for PERT charts, both based on [Anychart Tree Data Model](../working-with-data/tree-data-model): nodes and connections between them can be set either simultaneously or separately, in two sets of data. In this sample, the first way is shown:
+There are two ways to set data for PERT charts, both based on [Anychart Tree Data Model](../Working_with_Data/Tree_Data_Model): nodes and connections between them can be set either simultaneously or separately, in two sets of data. In this sample, the first way is shown:
 
 ```
 // data
@@ -48,12 +49,12 @@ var data = [
 ];
 ```
 
-Look through the [Data article](data) for more information about setting and managing the data.
+Look through the [Data article](Data) for more information about setting and managing the data.
 
 ## Create the Chart
 
 Add the JavaScript tag `<script>` with the following code anywhere in the  page. 
-This code example uses JavaScript API to create a chart, but you also can use [JSON, XML and CSV](../working-with-data/supported-data-formats). 
+This code example uses JavaScript API to create a chart, but you also can use [JSON, XML and CSV](../Working_with_Data/Supported_Data_Formats). 
 
 ```
 <script>

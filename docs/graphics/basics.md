@@ -1,13 +1,14 @@
 ---
+slug: "/Graphics/Basics"
 sidebar_position: 2.5
 ---
 # GraphicJS Basics
 
 ## Overview
 
-As you may have learned from [GraphicsJS Overview](overview), GraphicJS is a JavaScript graphics library which includes an {api:anychart.graphics}intuitive graphics API{api}, [Virtual DOM](virtual-dom), and [SVG/VML](browser-support) renderers.
+As you may have learned from [GraphicsJS Overview](Overview), GraphicJS is a JavaScript graphics library which includes an {api:anychart.graphics}intuitive graphics API{api}, [Virtual DOM](Virtual_DOM), and [SVG/VML](Browser_Support) renderers.
 
-In this article we will try to give an overview of GraphicsJS capabilities and go slightly far than [GraphicsJS Quick Start](quick-start) article does.
+In this article we will try to give an overview of GraphicsJS capabilities and go slightly far than [GraphicsJS Quick Start](Quick_Start) article does.
 
 ## Note to AnyChart Users
 
@@ -26,7 +27,7 @@ table.getCell(14,1).content().textWrap(anychart.graphics.vector.Text.TextWrap.NO
 
 These lines mean that the usage of anychart.graphics takes place in this or that sample. What is this anychart.graphics once again?
 
-anychart.graphics is [the JavaScript drawing library AnyChart 7+ is build upon](overview), and it is integrated in AnyChart, the library does everything in terms of rendering and display. All charts are based on this library. It *is not necessary to know how it works to use AnyChart charts*, but if you want to use options like drawing custom markers, create complicated dashboards or [pattern fills](./hatch-fill-settings#pattern), you should deal with some methods and techniques from GraphicsJS.
+anychart.graphics is [the JavaScript drawing library AnyChart 7+ is build upon](Overview), and it is integrated in AnyChart, the library does everything in terms of rendering and display. All charts are based on this library. It *is not necessary to know how it works to use AnyChart charts*, but if you want to use options like drawing custom markers, create complicated dashboards or [pattern fills](./Hatch_Fill_Settings#pattern), you should deal with some methods and techniques from GraphicsJS.
 
 ## Basics
 
@@ -46,7 +47,7 @@ Note that the stage coordinate system starts in the left top corner.
 
 ## Basic shapes and primitives
 
-On a stage, you can draw anything using simple shapes, such as [rectangles, ellipses, starts and more](shapes), [lines](paths), [Text](text-and-fonts), and more. Let's draw a simple picture: put a "ball" into the "box" using {api:anychart.graphics.vector.Stage#circle}circle(){api} and {api:anychart.graphics.vector.Stage#rect}rect(){api} methods:
+On a stage, you can draw anything using simple shapes, such as [rectangles, ellipses, starts and more](Shapes), [lines](Paths), [Text](Text_and_Fonts), and more. Let's draw a simple picture: put a "ball" into the "box" using {api:anychart.graphics.vector.Stage#circle}circle(){api} and {api:anychart.graphics.vector.Stage#rect}rect(){api} methods:
 
 ```
 // draw a circle
@@ -58,13 +59,13 @@ stage.rect(25, 50, 350, 300);
 
 {sample}GFX\_Basics\_01{sample}
 
-There are a lot of shapes and predefined paths in GraphicsJS: see [Shapes](shapes) and [Paths](paths) articles for more.
+There are a lot of shapes and predefined paths in GraphicsJS: see [Shapes](Shapes) and [Paths](Paths) articles for more.
 
 ## Path
 
 ### Building the path 
 
-To draw a custom complicated shapes use the {api:anychart.graphics#path}path(){api} method. Don't forget to check [Shapes](shapes) article, GraphicsJS has several built-in primitives, like {api:anychart.graphics.vector.Stage#star}star(){api} or {api:anychart.graphics.vector.Stage#cross}cross(){api}.
+To draw a custom complicated shapes use the {api:anychart.graphics#path}path(){api} method. Don't forget to check [Shapes](Shapes) article, GraphicsJS has several built-in primitives, like {api:anychart.graphics.vector.Stage#star}star(){api} or {api:anychart.graphics.vector.Stage#cross}cross(){api}.
 
 But {api:anychart.graphics#path}path(){api} allows you to draw any shape. Let's draw a triangle outside of the circle and a line inside the triangle:
 
@@ -84,7 +85,7 @@ stage.path().moveTo(200,50)
 
 As you can see, {api:anychart.graphics.vector.Path#moveTo}moveTo(){api} function is used to define the starting point of a drawing. To draw a line to the next point the {api:anychart.graphics.vector.Path#lineTo}lineTo(){api} method is used. To define that the particular drawing is finished the {api:anychart.graphics.vector.Path#close}close(){api} method is used.
 
-There are a several drawing methods, like {api:anychart.graphics.vector.Path#arcTo}arcTo(){api} or {api:anychart.graphics.vector.Path#curveTo}curveTo(){api}, learn more about learn more about them in [Paths](paths) article or {api:anychart.graphics.vector.Path}GraphicsJS Path Class API{api}.
+There are a several drawing methods, like {api:anychart.graphics.vector.Path#arcTo}arcTo(){api} or {api:anychart.graphics.vector.Path#curveTo}curveTo(){api}, learn more about learn more about them in [Paths](Paths) article or {api:anychart.graphics.vector.Path}GraphicsJS Path Class API{api}.
  
 ### Coloring
 
@@ -100,13 +101,13 @@ stage.circle(200, 250, 100)
 
 {sample}GFX\_Basics\_03{sample}
 
-Visit the [Fill](./fill-settings) or the [Stroke Guide](./stroke-settings) to learn more about coloring.
+Visit the [Fill](./Fill_Settings) or the [Stroke Guide](./Stroke_Settings) to learn more about coloring.
 
 ## Layers
 
-To create anything more complex than a bunch of lines and shapes you should use [Layers](layers), for example, if we want to show a pseudo-3D picture with a cube, cylinder and a hexagonal prism and make a realistic pseudo-3D we should not only color and position the figures correctly, but put some lights and shades together too. In terms of logic - working with layers is pretty similar to working with groups and layers in Photoshop or Illustrator.
+To create anything more complex than a bunch of lines and shapes you should use [Layers](Layers), for example, if we want to show a pseudo-3D picture with a cube, cylinder and a hexagonal prism and make a realistic pseudo-3D we should not only color and position the figures correctly, but put some lights and shades together too. In terms of logic - working with layers is pretty similar to working with groups and layers in Photoshop or Illustrator.
 
-One 3D figure may contain several shapes created using [primitives](shapes) or [paths](paths). Layers allow as to group, control and [transform](transformations) several elements at once. Using layers makes it really easy to operate with groups of elements, when you need to possible to [transform](transformations), [remove or add a plenty of elements](virtual-dom) - don't draw everything on a stage directly, [Layers](layers) is the way to go. 
+One 3D figure may contain several shapes created using [primitives](Shapes) or [paths](Paths). Layers allow as to group, control and [transform](Transformations) several elements at once. Using layers makes it really easy to operate with groups of elements, when you need to possible to [transform](Transformations), [remove or add a plenty of elements](Virtual_DOM) - don't draw everything on a stage directly, [Layers](Layers) is the way to go. 
 
 Layers are transparent by default, have no bounds and can be created as many times as necessary:
 
@@ -174,5 +175,5 @@ That's how the sample will look like with our added text element:
 
 {sample}GFX\_Basics\_07{sample}
 
-There are far much more settings to fix with the text elements. You can find all of them in [Text and Fonts](text-and-fonts) article and in {api:anychart.graphics.vector.Text}GraphicsJS Text Class API{api}.
+There are far much more settings to fix with the text elements. You can find all of them in [Text and Fonts](Text_and_Fonts) article and in {api:anychart.graphics.vector.Text}GraphicsJS Text Class API{api}.
 

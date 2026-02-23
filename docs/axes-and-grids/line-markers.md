@@ -1,11 +1,12 @@
 ---
+slug: "/Axes_and_Grids/Line_Markers"
 sidebar_position: 7
 ---
 # Line Markers
 
 ## Overview
 
-Line marker is a line that is drawn on chart plot and bound to some value on an axis. It may be used to show a trend or mark an important value. You can also place [Range Markers](../axes-and-grids/range-markers) to show Ranges and [Text Markers](../axes-and-grids/text-markers) to show Text.
+Line marker is a line that is drawn on chart plot and bound to some value on an axis. It may be used to show a trend or mark an important value. You can also place [Range Markers](../Axes_and_Grids/Range_Markers) to show Ranges and [Text Markers](../Axes_and_Grids/Text_Markers) to show Text.
 
 ## Declare
 

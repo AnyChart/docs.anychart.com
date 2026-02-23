@@ -1,9 +1,10 @@
 ---
+slug: "/Common_Settings/Legend/Overview"
 sidebar_position: 1
 ---
 # Overview
 
-A legend is a part of the chart that lists and explains its elements, making it easier to read and understand. In AnyChart, the legend can be used with [Basic Charts](../../basic-charts/general-settings#legend), [Stock Charts](../../stock-charts/legend), [Maps](../../maps/legend), and every other chart type.
+A legend is a part of the chart that lists and explains its elements, making it easier to read and understand. In AnyChart, the legend can be used with [Basic Charts](../../Basic_Charts/General_Settings#legend), [Stock Charts](../../Stock_Charts/Legend), [Maps](../../Maps/Legend), and every other chart type.
 
 The legend and its items are fully customizable: you can either modify any setting of the default legend or create a custom legend from scratch.
 
@@ -11,29 +12,29 @@ The legend and its items are fully customizable: you can either modify any setti
 
 The first article explains the basic settings affecting the whole legend - e.g., size and position:
 
-* [Basic Settings](basic-settings)
+* [Basic Settings](Basic_Settings)
 
 The following sections explain how to adjust various parts of the legend:
 
-* [Background](background)
-* [Title and Separator](title-and-separator)
-* [Tooltip](tooltip)
-* [Paginator](paginator)
-* [Hover Cursor](hover-cursor)
+* [Background](Background)
+* [Title and Separator](Title_and_Separator)
+* [Tooltip](Tooltip)
+* [Paginator](Paginator)
+* [Hover Cursor](Hover_Cursor)
 
 Legend items are also fully customizable - all at once or individually:
 
-* [Legend Items](legend-items)
-* [Individual Legend Items](individual-legend-items)
+* [Legend Items](Legend_Items)
+* [Individual Legend Items](Individual_Legend_Items)
 
 An alternative way to apply settings to the legend is using themes:
 
-* [Themes](themes)
+* [Themes](Themes)
 
 The options listed below allow creating advanced data visualizations:
 
-* [Events](events)
-* [Standalone Legend](standalone-legend)
+* [Events](Events)
+* [Standalone Legend](Standalone_Legend)
 
 ## Classes
 

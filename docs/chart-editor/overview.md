@@ -1,11 +1,12 @@
 ---
+slug: "/Chart_Editor/Overview"
 sidebar_position: 1
 ---
 # Chart Editor
 
 ## Overview
 
-Chart Editor is an [AnyChart Extension](../quick-start/modules#extensions) that provides a UI allowing you to create and set up various chart types. The result can be saved with the data in XML or JSON format or in a reusable format with a JavaScript code string.
+Chart Editor is an [AnyChart Extension](../Quick_Start/Modules#extensions) that provides a UI allowing you to create and set up various chart types. The result can be saved with the data in XML or JSON format or in a reusable format with a JavaScript code string.
 
 ## Prerequisites
 
@@ -24,7 +25,7 @@ Chart Editor works only if proper AnyChart files are included.
 
 ### Maps
 
-It is recommended to include **proj4.js** if you plan to use [Maps](../maps/):
+It is recommended to include **proj4.js** if you plan to use [Maps](../Maps/):
 
 ```
 <!-- include this if you plan to use Maps -->
@@ -33,7 +34,7 @@ It is recommended to include **proj4.js** if you plan to use [Maps](../maps/):
 
 ### Themes
 
-If you want to use [themes](../appearance-settings/themes), you need to include desired theme files as well:
+If you want to use [themes](../Appearance_Settings/Themes), you need to include desired theme files as well:
 
 ```
 <!-- themes -->
@@ -68,7 +69,7 @@ Chart Editor files to be included:
 
 ## Using
 
-AnyChart Chart Editor UI can be configured and used in several ways - please see [Configuration](configuration) and [Use Cases](use-cases) to learn more.
+AnyChart Chart Editor UI can be configured and used in several ways - please see [Configuration](Configuration) and [Use Cases](Use_Cases) to learn more.
 
 ## Contributing
 

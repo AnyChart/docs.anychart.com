@@ -1,4 +1,5 @@
 ---
+slug: "/Common_Settings/Accessibility/Overview"
 sidebar_position: 1
 ---
 
@@ -16,16 +17,16 @@ There are several ways in AnyChart that allow adding accessibility options. The 
 
 AnyChart Charts and Maps have been checked for compliance with the following standards:
 
-* [Section 508 Amendment to the Rehabilitation Act of 1973](section-508)
-* [EN 301 549 Accessibility requirements suitable for public procurement of ICT products and services in Europe](standard-en-301-549)
-* [Web Content Accessibility Guidelines (WCAG) 2.0](web-content-accessibility-guidelines)
+* [Section 508 Amendment to the Rehabilitation Act of 1973](Section_508)
+* [EN 301 549 Accessibility requirements suitable for public procurement of ICT products and services in Europe](Standard_EN_301_549)
+* [Web Content Accessibility Guidelines (WCAG) 2.0](Web_Content_Accessibility_Guidelines)
 
 ## Why a11y
 
-Accessibility is often abbreviated as the numeronym **a11y**, where the number 11 refers to the number of letters omitted. This parallels the abbreviations of internationalization and [localization](../localization) as i18n and l10n respectively and follows an Information and Communications Technology (ICT)-oriented convention, which is used widely in the software community.
+Accessibility is often abbreviated as the numeronym **a11y**, where the number 11 refers to the number of letters omitted. This parallels the abbreviations of internationalization and [localization](../Localization) as i18n and l10n respectively and follows an Information and Communications Technology (ICT)-oriented convention, which is used widely in the software community.
 
 ## Settings
 
 The accessibility support is enabled by default. It means that you do not need to enable accessibility unless you have turned it off. If the accessibility support is disabled, there are neither ARIA-tags nor ARIA-labels in the SVG structure, so the information available to a screen reader is barely understandable.
 
-AnyChart offers a wide variety of options to confugure accessibility. Please see the [Accessibility Settings](settings) article to learn more.
+AnyChart offers a wide variety of options to confugure accessibility. Please see the [Accessibility Settings](Settings) article to learn more.

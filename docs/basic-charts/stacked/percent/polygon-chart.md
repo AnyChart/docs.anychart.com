@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Stacked/Percent/Polygon_Chart"
 sidebar_position: 2.2
 ---
 # Percent Stacked Polygon Chart
@@ -7,11 +8,11 @@ sidebar_position: 2.2
 
 A Percent Stacked Polygon Chart (otherwise known as a 100% Stacked Polygon Chart) is a multiple-series Polygon Chart that displays the trend of the percentage each value contributes over time or categories.
 
-The concept of stacking in AnyChart is explained in this article: [Stacked (Overview)](../overview).
+The concept of stacking in AnyChart is explained in this article: [Stacked (Overview)](../Overview).
 
 ## Quick Start
 
-To build a Percent Stacked Polygon Chart, you should create a multiple-series [Polygon Chart](../../polygon-chart) and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to **percent**:
+To build a Percent Stacked Polygon Chart, you should create a multiple-series [Polygon Chart](../../Polygon_Chart) and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to **percent**:
 
 ```
 // create a chart
@@ -29,4 +30,4 @@ var series2 = chart.polygon(seriesData_2);
 
 ## Adjusting
 
-The Polygon series' settings are mostly the same as other series'. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../general-settings).
+The Polygon series' settings are mostly the same as other series'. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../General_Settings).

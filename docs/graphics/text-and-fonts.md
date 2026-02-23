@@ -1,4 +1,5 @@
 ---
+slug: "/Graphics/Text_and_Fonts"
 sidebar_position: 8
 ---
 # GraphicsJS Text and Fonts
@@ -130,7 +131,7 @@ var circlePath = stage.path();
 circlePath.circularArc(100, 100, 50, 50, 0, 360);
 ```
 
-[Path can be anything](paths), here is a sample with several curved texts:
+[Path can be anything](Paths), here is a sample with several curved texts:
 
 {sample :height 255}GFX\_Basic\_Text\_08{sample}
 

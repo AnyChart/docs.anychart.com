@@ -1,15 +1,16 @@
 ---
+slug: "/Graphics/Layers"
 sidebar_position: 5.5
 ---
 # GraphicsJS Layers
 
 ## Overview 
 
-{api:anychart.graphics.vector.Layer}Layer{api} is an object used to group elements in GraphicsJS. Elements must be grouped if you want to apply similar changes to them,  [transformation](transformations) and alike. You can change layers in [suspended mode](virtual-dom), increasing performance and improving user experience.
+{api:anychart.graphics.vector.Layer}Layer{api} is an object used to group elements in GraphicsJS. Elements must be grouped if you want to apply similar changes to them,  [transformation](Transformations) and alike. You can change layers in [suspended mode](Virtual_DOM), increasing performance and improving user experience.
 
 Layers are transparent, by default they have no bounds (which can be changed using {api:anychart.graphics.vector.Layer#clip}clip(){api} method) and you can create as many layers as necessary, including nested layers (using {api:anychart.graphics.vector.Layer#addChild}addChild(){api} method).
 
-Some basic samples of working with layers can be found in the [Basics: Layers](basics#layers) article.
+Some basic samples of working with layers can be found in the [Basics: Layers](Basics#layers) article.
 
 ## Creating and Managing
 
@@ -27,11 +28,11 @@ To add new elements to a layer use:
 * {api:anychart.graphics.vector.Layer#addChild}addChild(){api} or {api:anychart.graphics.vector.Layer#addChild}addChildAt(){api} methods in case of appending unbound elements,
 * or use {api:anychart.graphics.vector.Layer#rect}layer.rect(){api}, {api:anychart.graphics.vector.Layer#circle}layer.circle(){api}, {api:anychart.graphics.vector.Layer#path}layer.path(){api}, and others to create elements directly in a layer.
 
-Do not forget you can [suspend and resume](virtual-dom) rendering while changing layers or elements within layers.
+Do not forget you can [suspend and resume](Virtual_DOM) rendering while changing layers or elements within layers.
 
 ## Transformation
 
-Using layers makes it easier to operate with groups of elements. It's possible to transform them as a whole instead of working with each shape, path and element separately. See [Transformation](transformations) article.
+Using layers makes it easier to operate with groups of elements. It's possible to transform them as a whole instead of working with each shape, path and element separately. See [Transformation](Transformations) article.
 
 ## Clipping and Bounds
 

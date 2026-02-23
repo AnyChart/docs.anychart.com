@@ -1,4 +1,5 @@
 ---
+slug: "/Maps/Maps_List"
 sidebar_position: 3
 ---
 # AnyMap Map Collection

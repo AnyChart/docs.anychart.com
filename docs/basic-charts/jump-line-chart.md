@@ -1,44 +1,45 @@
 ---
+slug: "/Basic_Charts/Jump_Line_Chart"
 sidebar_position: 1.5
 ---
 # Jump Line Chart
 
 ## Overview
 
-Jump Line Chart is similar to [Line Chart](line-chart) and [Step Line Chart](step-line-chart): Jump Line considers the data points as the center points of "jumps" - horizontal line segments of a category width. 
+Jump Line Chart is similar to [Line Chart](Line_Chart) and [Step Line Chart](Step_Line_Chart): Jump Line considers the data points as the center points of "jumps" - horizontal line segments of a category width. 
 
 The difference between Step Line and Jump Line is in vertical line segments, connecting the "steps" of a Step Line: nothing connects the points in JumpLine. 
 
 Jump Line Charts are usually used for demonstrating rates.
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#basic-cartesian">Basic Cartesian</a> / <a href="../quick-start/modules#base">Base</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#basic-cartesian">Basic Cartesian</a> / <a href="../Quick_Start/Modules#base">Base</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.JumpLine}anychart.core.cartesian.series.JumpLine{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">x, value</a></td></tr>
-<tr><td>Multiple Series</td><td><a href="../working-with-data/overview">YES</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">x, value</a></td></tr>
+<tr><td>Multiple Series</td><td><a href="../Working_with_Data/Overview">YES</a></td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td><a href="vertical/jump-line-chart">Vertical Jump Line</a></td></tr>
+<tr><td>Vertical</td><td><a href="Vertical/Jump_Line_Chart">Vertical Jump Line</a></td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td><a href="error-chart/jump-line-chart">Jump Line Chart with Error Bars</a></td></tr>
+<tr><td>Error Bars</td><td><a href="Error_Chart/Jump_Line_Chart">Jump Line Chart with Error Bars</a></td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
-<tr><td>Stock</td><td><a href="../stock-charts/series/jump-line">Stock Line</a></td></tr>
+<tr><td>Stock</td><td><a href="../Stock_Charts/Series/Jump_Line">Stock Line</a></td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="line-chart">Line</a></td></tr>
-<tr><td></td><td><a href="step-line-chart">Step Line</a></td></tr>
+<tr><td></td><td><a href="Line_Chart">Line</a></td></tr>
+<tr><td></td><td><a href="Step_Line_Chart">Step Line</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/jump-line-chart/">Chartopedia: Jump Line Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Jump Line chart rrequires adding the [Core](../quick-start/modules#core) and [Basic Cartesian](../quick-start/modules#basic-cartesian) modules:
+The Jump Line chart rrequires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic-cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -48,13 +49,13 @@ The Jump Line chart rrequires adding the [Core](../quick-start/modules#core) and
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../quick-start/modules#base) module, which includes, among other things, the two modules mentioned above: 
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -93,13 +94,13 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Jump Line chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
 ### Appearance
 
-The [appearance settings](../appearance-settings) of a Jump Line chart can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.JumpLine#normal}normal(){api}, {api:anychart.core.cartesian.series.JumpLine#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.JumpLine#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Jump Line chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.JumpLine#normal}normal(){api}, {api:anychart.core.cartesian.series.JumpLine#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.JumpLine#selected}selected(){api} methods.
 
 Combine them with the {api:anychart.core.StateSettings#stroke}stroke(){api} method. Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
@@ -127,16 +128,16 @@ series2.selected().stroke("#0066cc", 4);
 
 ### Labels
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 ### Tooltips
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../common-settings/text-formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 ### Vertical Jump Line
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](vertical/overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical/Overview).
 
 Here is information about creating Vertical Jump Line series:
 
-* [Vertical Jump Line](vertical/jump-line-chart)
+* [Vertical Jump Line](Vertical/Jump_Line_Chart)

@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Polar_Plot/Range_Column_Chart"
 sidebar_position: 2
 ---
 # Polar Range Column Chart
@@ -7,7 +8,7 @@ sidebar_position: 2
 
 This article explains how to create a Polar Range Column chart in AnyChart.
 
-To learn more about polar charts in general and how to customize them, see [Polar Charts (Overview)](overview). In addition, you can read the [Range Column Chart](../range-column-chart) article to learn about other available settings.
+To learn more about polar charts in general and how to customize them, see [Polar Charts (Overview)](Overview). In addition, you can read the [Range Column Chart](../Range_Column_Chart) article to learn about other available settings.
 
 ## Quick Start
 
@@ -27,4 +28,4 @@ var series = chart.rangeColumn(data);
 
 ### Point Size
 
-This chart type allows you to set the size of its points. Read more in the [Point Size](../../common-settings/point-size) article.
+This chart type allows you to set the size of its points. Read more in the [Point Size](../../Common_Settings/Point_Size) article.

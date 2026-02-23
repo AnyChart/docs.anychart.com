@@ -42,8 +42,14 @@ mkdirSync(targetDir, {recursive: true});
 const files = readdirSync(sourceDir).filter(f => f.endsWith('.html'));
 let count = 0;
 for (const file of files) {
-  const content = readFileSync(join(sourceDir, file), 'utf-8');
-  const processed = content.replace(/\{\{branch-name\}\}/g, version);
+  let processed = readFileSync(join(sourceDir, file), 'utf-8');
+  processed = processed.replace(/\{\{branch-name\}\}/g, version);
+  // Inject explicit body styling so text outside the chart container is always
+  // readable, regardless of dark mode or browser defaults in the parent page.
+  processed = processed.replace(
+    '<style>',
+    '<style>\n        body { background-color: #fff; color: #333; }\n'
+  );
   writeFileSync(join(targetDir, file), processed, 'utf-8');
   count++;
 }

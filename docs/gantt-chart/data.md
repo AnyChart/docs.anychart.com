@@ -1,4 +1,5 @@
 ---
+slug: "/Gantt_Chart/Data"
 sidebar_position: 6
 ---
 # Data
@@ -7,9 +8,9 @@ sidebar_position: 6
 
 This article explains how to organize, map, and set data for Gantt charts.
 
-AnyGantt requires using the tree data model, which represents data as a hierarchical tree-like structure with data items connected by parent-child relationships. To learn more about it, read [Working with Data: Tree Data Model](../working-with-data/tree-data-model).
+AnyGantt requires using the tree data model, which represents data as a hierarchical tree-like structure with data items connected by parent-child relationships. To learn more about it, read [Working with Data: Tree Data Model](../Working_with_Data/Tree_Data_Model).
 
-Also, please keep in mind that working with data is slightly different for Project and Resource charts - see the [Project Chart: Data](project-chart#data) and [Resource Chart: Data](resource-chart#data) sections.
+Also, please keep in mind that working with data is slightly different for Project and Resource charts - see the [Project Chart: Data](Project_Chart#data) and [Resource Chart: Data](Resource_Chart#data) sections.
 
 **Note:** You can rename default data fields, as explained in the [Mapping](#mapping) section of this article.
 
@@ -17,14 +18,14 @@ Also, please keep in mind that working with data is slightly different for Proje
 
 Project and Resource charts work with different data fields:
 
-* [Project Chart: Data Fields](project-chart#data-fields)
-* [Resource Chart: Data Fields](resource-chart#data-fields)
+* [Project Chart: Data Fields](Project_Chart#data-fields)
+* [Resource Chart: Data Fields](Resource_Chart#data-fields)
 
 Here is the full list of available fields: {api:anychart.enums.GanttDataFields}anychart.enums.GanttDataFields{api}.
 
 **Note 1:** You can rename the default data fields - see the [Mapping](#mapping) section of this article.
 
-**Note 2:** You can also add custom fields to your data and use them to configure text - like, for example, in all the samples from [Timeline: Tooltips](timeline/tooltips).
+**Note 2:** You can also add custom fields to your data and use them to configure text - like, for example, in all the samples from [Timeline: Tooltips](Timeline/Tooltips).
 
 ## Setting Data
 
@@ -43,22 +44,22 @@ chart.data(treeData);
 
 See the following sections to learn more:
 
-* [Project Chart: Setting Data](project-chart#setting-data)
-* [Resource Chart: Setting Data](resource-chart#setting-data)
-* [Tree Data Model: Setting Data](../working-with-data/tree-data-model#setting-data)
+* [Project Chart: Setting Data](Project_Chart#setting-data)
+* [Resource Chart: Setting Data](Resource_Chart#setting-data)
+* [Tree Data Model: Setting Data](../Working_with_Data/Tree_Data_Model#setting-data)
 
 ## Hierarchy
 
 The sections below explain how to organize your data hierarchically:
 
-* [Project Chart: Hierarchy](project-chart#hierarchy)
-* [Resource Chart: Hierarchy](resource-chart#hierarchy)
+* [Project Chart: Hierarchy](Project_Chart#hierarchy)
+* [Resource Chart: Hierarchy](Resource_Chart#hierarchy)
 
 ## Date and Time Formats
 
 This section explains how you can format and interpret dates you use in your data:
 
-* [Date and Time Formats: Input](date-and-time-formats#input).
+* [Date and Time Formats: Input](Date_and_Time_Formats#input).
 
 ## Mapping
 
@@ -93,7 +94,7 @@ chart.data(mapping);
 
 These two ways of mapping data can be used simultaneously, like in the samples below.
 
-Read more: [Tree Data Model: Mapping](../working-with-data/tree-data-model#mapping).
+Read more: [Tree Data Model: Mapping](../Working_with_Data/Tree_Data_Model#mapping).
 
 ### Project Chart
 
@@ -158,7 +159,7 @@ chart.data(mapping);
 
 ### Resource Chart
 
-**Note:** You cannot rename the data fields that are used to set [periods](resource-chart#periods-and-resources): `id`, `start`, and `end`.
+**Note:** You cannot rename the data fields that are used to set [periods](Resource_Chart#periods-and-resources): `id`, `start`, and `end`.
 
 In this sample custom fields `child_items` and `intervals` are used. They are mapped as `children` and `periods`:
 

@@ -1,3 +1,6 @@
+---
+slug: "/Gauges/Pointers_and_Data"
+---
 # Pointers and Data
 
 ## Overview
@@ -358,7 +361,7 @@ tankC.emptyHatchFill("percent30");
 
 {sample}BCT\_Pointers-and-Data\_Tank\_17{sample} 
 
-The colors of empty parts (as well as the main colors) can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.core.linearGauge.pointers.Tank#normal}normal(){api}, {api:anychart.core.linearGauge.pointers.Tank#hovered}hovered(){api}, and {api:anychart.core.linearGauge.pointers.Tank#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#fill}emptyFill(){api} and {api:anychart.core.StateSettings#hatchFill}emptyHatchFill(){api}:
+The colors of empty parts (as well as the main colors) can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.linearGauge.pointers.Tank#normal}normal(){api}, {api:anychart.core.linearGauge.pointers.Tank#hovered}hovered(){api}, and {api:anychart.core.linearGauge.pointers.Tank#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#fill}emptyFill(){api} and {api:anychart.core.StateSettings#hatchFill}emptyHatchFill(){api}:
 
 ```
 // set colors for empty parts of tanks

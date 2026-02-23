@@ -1,3 +1,6 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Aroon"
+---
 # Aroon
 
 ## Overview
@@ -6,7 +9,7 @@ Developed by Tushar Chande in 1995, Aroon is an indicator system that determines
 
 The Aroon indicators measure the number of periods since price recorded an x-day high or low. There are two separate indicators: Aroon-Up and Aroon-Down. A 25-day Aroon-Up measures the number of days since a 25-day high. A 25-day Aroon-Down measures the number of days since a 25-day low. In this sense, the Aroon indicators are quite different from typical momentum oscillators, which focus on price relative to time. Aroon is unique because it focuses on time relative to price. Chartists can use the Aroon indicators to spot emerging trends, identify consolidations, define correction periods and anticipate reversals.
 
-Mathematical description of the indicator: [Aroon Mathematical Description](mathematical-description#aroon).
+Mathematical description of the indicator: [Aroon Mathematical Description](Mathematical_Description#aroon).
 
 ## Adding Indicator
 

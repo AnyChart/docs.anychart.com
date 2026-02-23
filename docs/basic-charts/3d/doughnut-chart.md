@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/3D/Doughnut_Chart"
 sidebar_position: 2
 ---
 # 3D Doughnut Chart
@@ -7,7 +8,7 @@ sidebar_position: 2
 
 This article explains how to create a 3D Doughnut chart in AnyChart.
 
-To learn more about 3D charts in general and how to customize them, see [3D Charts (Overview)](overview). You can also read the [Doughnut Chart](../doughnut-chart) article.
+To learn more about 3D charts in general and how to customize them, see [3D Charts (Overview)](Overview). You can also read the [Doughnut Chart](../Doughnut_Chart) article.
 
 ## Quick Start
 

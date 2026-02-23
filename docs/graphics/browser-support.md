@@ -1,4 +1,5 @@
 ---
+slug: "/Graphics/Browser_Support"
 sidebar_position: 9
 ---
 # GraphicsJS Browser Support

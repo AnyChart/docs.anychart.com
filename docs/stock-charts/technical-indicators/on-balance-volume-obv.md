@@ -1,10 +1,13 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/On_Balance_Volume_(OBV)"
+---
 # On Balance Volume (OBV)
 
 ## Overview
 
 On Balance Volume (OBV) measures buying and selling pressure as a cumulative indicator that adds volume on up days and subtracts volume on down days. OBV was developed by Joe Granville and introduced in his 1963 book, Granville's New Key to Stock Market Profits. It was one of the first indicators to measure positive and negative volume flow. Chartists can look for divergences between OBV and price to predict price movements or use OBV to confirm price trends.
 
-Mathematical description of the indicator: [On Balance Volume Mathematical Description](mathematical-description#on-balance-volume).
+Mathematical description of the indicator: [On Balance Volume Mathematical Description](Mathematical_Description#on-balance-volume).
 
 ## Adding Indicator
 

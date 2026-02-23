@@ -1,8 +1,11 @@
+---
+slug: "/Stock_Charts/Series/Range_Step_Area"
+---
 # AnyStock Range Step Area Series
 
 ## Overview
 
-Range Step Area Series is quite similar to [Range Area](range-area) series, both in visualization and purpose. It uses two values for a point, each point looks like a both-sided step, so the whole series form a polygon. Find more information about using Range Areas of different types in Basic Charts in the [Range Step Area Charts tutorial](../../basic-charts/range-step-area-chart).
+Range Step Area Series is quite similar to [Range Area](Range_Area) series, both in visualization and purpose. It uses two values for a point, each point looks like a both-sided step, so the whole series form a polygon. Find more information about using Range Areas of different types in Basic Charts in the [Range Step Area Charts tutorial](../../Basic_Charts/Range_Step_Area_Chart).
 
 ## AnyStock Step Area Series Adjustment
 
@@ -52,7 +55,7 @@ mapping = table.mapAs({'x': 'x', 'low': 'low', 'high': 'high'});
 
 {sample}STOCK\_Range\_Step\_Area\_02{sample}
 
-You can read more about mananging Data in Stocks in the [Stock Data tutorial](../data).
+You can read more about mananging Data in Stocks in the [Stock Data tutorial](../Data).
 
 ### Multi series
 
@@ -80,11 +83,11 @@ series_ex2.name("Experiment 2");
 
 {sample}STOCK\_Range\_Step\_Area\_04{sample}
 
-More about plots can be found in the [Plots tutorial](../chart-plots).
+More about plots can be found in the [Plots tutorial](../Chart_Plots).
 
 ### Switching series type
 
-You can change the type of the series to another compatible type. See the [Series Type](series-type) and [series types table](supported-series#list-of-supported-series).
+You can change the type of the series to another compatible type. See the [Series Type](Series_Type) and [series types table](Supported_Series#list-of-supported-series).
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 

@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Stacked/Value/Bar_Chart"
 sidebar_position: 1
 ---
 # Stacked Bar Chart
@@ -7,11 +8,11 @@ sidebar_position: 1
 
 A Stacked Bar Chart is a multiple-series Bar Chart that displays the trend of the value each series contributes over time or categories.
 
-The concept of stacking in AnyChart is described in this article: [Stacked (Overview)](../overview).
+The concept of stacking in AnyChart is described in this article: [Stacked (Overview)](../Overview).
 
 ## Quick Start
 
-To build a Stacked Bar Chart, create a multiple-series [Bar Chart](../../bar-chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **value**:
+To build a Stacked Bar Chart, create a multiple-series [Bar Chart](../../Bar_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **value**:
 
 ```
 // create a chart
@@ -29,4 +30,4 @@ var series2 = chart.bar(seriesData_2);
 
 ## Adjusting
 
-The Bar series' settings are mostly the same as other series'. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../general-settings).
+The Bar series' settings are mostly the same as other series'. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../General_Settings).

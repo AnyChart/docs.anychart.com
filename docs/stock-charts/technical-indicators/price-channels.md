@@ -1,10 +1,13 @@
+---
+slug: "/Stock_Charts/Technical_Indicators/Price_Channels"
+---
 # Price Channels
 
 ## Overview
 
 Price Channels are lines set above and below the price of a security. The upper channel is set at the x-period high and the lower channel is set at the x-period low. For a 20-day Price Channel, the upper channel would equal the 20-day high and the lower channel would equal the 20-day low. The dotted centerline is the midpoint between the two channel lines. Price Channels can be used to identify upward thrusts that signal the start of an uptrend or downward plunges that signal the start of a downtrend. Price Channels can also be used to identify overbought or oversold levels within a bigger downtrend or uptrend.
 
-Mathematical description of the indicator: [Price Channels Mathematical Description](mathematical-description#price-channels).
+Mathematical description of the indicator: [Price Channels Mathematical Description](Mathematical_Description#price-channels).
 
 ## Adding Indicator
 

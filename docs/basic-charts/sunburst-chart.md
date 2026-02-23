@@ -1,4 +1,5 @@
 ---
+slug: "/Basic_Charts/Sunburst_Chart"
 sidebar_position: 6
 ---
 # Sunburst Chart
@@ -10,11 +11,11 @@ A sunburst chart, otherwise known as a radial treemap or multi-level pie chart, 
 This article explains how to create a basic Sunburst chart in AnyChart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Sunburst chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td><a href="../quick-start/modules#core">Core</a> + <a href="../quick-start/modules#sunburst">Sunburst</a></td></tr>
+<tr><td>Modules</td><td><a href="../Quick_Start/Modules#core">Core</a> + <a href="../Quick_Start/Modules#sunburst">Sunburst</a></td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Sunburst}anychart.charts.Sunburst{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td><a href="../working-with-data/overview">id, parent, children, name, value</a></td></tr>
+<tr><td>Data Fields</td><td><a href="../Working_with_Data/Overview">id, parent, children, name, value</a></td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -27,17 +28,17 @@ This article explains how to create a basic Sunburst chart in AnyChart as well a
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td><a href="treemap-chart">Treemap</a></td></tr>
-<tr><td></td><td><a href="pie-chart">Pie</a></td></tr>
-<tr><td></td><td><a href="doughnut-chart">Doughnut</a></td></tr>
+<tr><td></td><td><a href="Treemap_Chart">Treemap</a></td></tr>
+<tr><td></td><td><a href="Pie_Chart">Pie</a></td></tr>
+<tr><td></td><td><a href="Doughnut_Chart">Doughnut</a></td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/sunburst-chart/">Chartopedia: Sunburst Chart</a></td></tr>
-<tr><td></td><td><a href="general-settings">General Settings</a></td></tr>
+<tr><td></td><td><a href="General_Settings">General Settings</a></td></tr>
 </table>
 
 ## Modules
 
-The Sunburst chart requires adding the [Core](../quick-start/modules#core) and [Sunburst](../quick-start/modules#sunburst) modules:
+The Sunburst chart requires adding the [Core](../Quick_Start/Modules#core) and [Sunburst](../Quick_Start/Modules#sunburst) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -47,7 +48,7 @@ The Sunburst chart requires adding the [Core](../quick-start/modules#core) and [
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-sunburst.min.js"></script>
 ```
 
-Learn more: [Modules](../quick-start/modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -88,13 +89,13 @@ chart.draw();
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Sunburst chart (for example, legend and interactivity settings).
 
-Read the overview of general settings: [General Settings](general-settings).
+Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
 ### Data
 
-The Sunburst chart requires the [tree data model](../working-with-data/tree-data-model). Use the following fields:
+The Sunburst chart requires the [tree data model](../Working_with_Data/Tree_Data_Model). Use the following fields:
 
 * `id` to set unique identifiers
 * `parent` to set parents
@@ -104,7 +105,7 @@ The Sunburst chart requires the [tree data model](../working-with-data/tree-data
 
 **Note:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels-and-tooltips) section of this article.
 
-Unlike other chart types based on the tree data structure (e.g., the [Treemap](treemap-chart) chart), this chart allows adding more than one root node:
+Unlike other chart types based on the tree data structure (e.g., the [Treemap](Treemap_Chart) chart), this chart allows adding more than one root node:
 
 ```
 // create data
@@ -321,7 +322,7 @@ chart.leaves().thickness("70%");
 
 #### All Points
 
-The [appearance settings](../appearance-settings) of a Sunburst chart can be configured in three [states](../common-settings/interactivity/states): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Sunburst#normal}normal(){api}, {api:anychart.charts.Sunburst#hovered}hovered(){api}, and {api:anychart.charts.Sunburst#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Sunburst chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Sunburst#normal}normal(){api}, {api:anychart.charts.Sunburst#hovered}hovered(){api}, and {api:anychart.charts.Sunburst#selected}selected(){api} methods.
 
 Combine them with the following methods:
 
@@ -462,7 +463,7 @@ chart.innerRadius(20);
 
 ### Center Content
 
-If the [inner radius](#radius) of a Sunburst chart if more than 0, there is a blank space in the center. You can place almost anything there: e.g., a text label, a chart, a map. See the [Doughnut Chart](doughnut-chart#center-content) article to learn about various types of center content.
+If the [inner radius](#radius) of a Sunburst chart if more than 0, there is a blank space in the center. You can place almost anything there: e.g., a text label, a chart, a map. See the [Doughnut Chart](Doughnut_Chart#center-content) article to learn about various types of center content.
 
 The center content is set with the {api:anychart.charts.Sunburst#center}center(){api} method, which provides the access to the {api:anychart.core.ui.Center}anychart.core.ui.Center{api} object.
 
@@ -488,13 +489,13 @@ chart.center().content(label);
 
 ### Labels and Tooltips
 
-[Labels](../common-settings/labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../common-settings/text-formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-A [Tooltip](../common-settings/tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
 #### Tokens
 
-To change the text of labels, combine the {api:anychart.charts.Sunburst#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../common-settings/text-formatters#string-tokens).
+To change the text of labels, combine the {api:anychart.charts.Sunburst#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string-tokens).
 
 To configure tooltips, do the same with the {api:anychart.charts.Sunburst#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
@@ -559,7 +560,7 @@ chart.tooltip().format("{%name}\n\nsales: {%value}\n{%custom_field}");
 
 #### Formatting Functions
 
-To configure labels and tooltips, you can use [formatting functions](../common-settings/text-formatters#formatting-functions) and the following fields:
+To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting-functions) and the following fields:
 
 * `name`
 * `value`
@@ -623,7 +624,7 @@ chart.leaves().labels().position("circular");
 
 By default, if you click on a leaf of a Sunburst chart, the leaf is selected, and if you click on a node that has children, a drilldown is performed (see the [drilldown](#drilldown) subsection to learn more).
 
-You can set another [selection mode](../common-settings/interactivity/overview#select) or disable selection - this setting is configured by calling the {api:anychart.charts.Sunburst#interactivity}interactivity(){api} and {api:anychart.core.utils.Interactivity#selectionMode}selectionMode(){api} methods with one of the parameters listed in {api:anychart.enums.SelectionMode}anychart.enums.SelectionMode{api}:
+You can set another [selection mode](../Common_Settings/Interactivity/Overview#select) or disable selection - this setting is configured by calling the {api:anychart.charts.Sunburst#interactivity}interactivity(){api} and {api:anychart.core.utils.Interactivity#selectionMode}selectionMode(){api} methods with one of the parameters listed in {api:anychart.enums.SelectionMode}anychart.enums.SelectionMode{api}:
 
 * `"drill-down"` (default)
 * `"multi-select"`
@@ -649,10 +650,10 @@ The Sunburst chart comes with a built-in drilldown feature: if you click on an e
 * {api:anychart.charts.Sunburst#drillUp}drillUp(){api} to drill up
 * {api:anychart.charts.Sunburst#getDrilldownPath}getDrilldownPath(){api} to get the drilldown path
 
-**Note:** By default it is also possible to drill down or up from the [context menu](../common-settings/ui-controls/context-menu): right-click on an element and select "Drill Down To" or "Drill Up" in the menu - if, of course, these options are available for the element.
+**Note:** By default it is also possible to drill down or up from the [context menu](../Common_Settings/UI_Controls/Context_Menu): right-click on an element and select "Drill Down To" or "Drill Up" in the menu - if, of course, these options are available for the element.
 
-Sometimes you might also need to perform a [search](../working-with-data/tree-data-model#searching) in the data with the {api:anychart.data.Tree#search}search(){api} method of the {api:anychart.data.Tree}anychart.data.Tree{api} class
-(see the [Tree Data Model](../working-with-data/tree-data-model) article to learn more about operating tree-like data). For example, if you want to drill down to a particular item in the data tree, call {api:anychart.data.Tree#search}search(){api} to get the item and {api:anychart.charts.Sunburst#drillTo}drillTo(){api} to drill down to it. For drilling up, call {api:anychart.charts.Sunburst#drillUp}drillUp(){api}:
+Sometimes you might also need to perform a [search](../Working_with_Data/Tree_Data_Model#searching) in the data with the {api:anychart.data.Tree#search}search(){api} method of the {api:anychart.data.Tree}anychart.data.Tree{api} class
+(see the [Tree Data Model](../Working_with_Data/Tree_Data_Model) article to learn more about operating tree-like data). For example, if you want to drill down to a particular item in the data tree, call {api:anychart.data.Tree#search}search(){api} to get the item and {api:anychart.charts.Sunburst#drillTo}drillTo(){api} to drill down to it. For drilling up, call {api:anychart.charts.Sunburst#drillUp}drillUp(){api}:
 
 ```
 /* locate an item in the data tree

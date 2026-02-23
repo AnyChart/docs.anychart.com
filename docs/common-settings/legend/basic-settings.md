@@ -1,4 +1,5 @@
 ---
+slug: "/Common_Settings/Legend/Basic_Settings"
 sidebar_position: 2
 ---
 # Basic Settings
@@ -13,7 +14,7 @@ The legend is defined as an instance of the {api:anychart.core.ui.Legend}anychar
 
 ### Enabling / Disabling
 
-Most chart types require you to enable the legend manually. But there are some exceptions - for example, the following types: [Pie](../../basic-charts/pie-chart), [Doughnut](../../basic-charts/doughnut-chart), [Funnel](../../basic-charts/funnel-chart), [Pyramid](../../basic-charts/pyramid-chart), [Venn](../../basic-charts/venn-diagram), [Waterfall](../../basic-charts/waterfall-chart).
+Most chart types require you to enable the legend manually. But there are some exceptions - for example, the following types: [Pie](../../Basic_Charts/Pie_Chart), [Doughnut](../../Basic_Charts/Doughnut_Chart), [Funnel](../../Basic_Charts/Funnel_Chart), [Pyramid](../../Basic_Charts/Pyramid_Chart), [Venn](../../Basic_Charts/Venn_Diagram), [Waterfall](../../Basic_Charts/Waterfall_Chart).
 
 To enable or disable the legend, pass `true` / `false` either to the {api:?entry=legend}legend(){api} method of the chart or to the {api:anychart.core.ui.Legend#enabled}enabled(){api} method of the legend:
 
@@ -39,9 +40,9 @@ This sample shows how to enable the legend of a multiple-series line chart by us
 
 ### Default Behavior
 
-As a rule, when you click on a [legend item](legend-items) of a multiple-series chart, the series of the chart it represents is shown / hidden, and when you hover over an item, the hover state of the series is enabled. As for single-series chart types, their legend items represent points, and the behavior of the legend varies with the type.
+As a rule, when you click on a [legend item](Legend_Items) of a multiple-series chart, the series of the chart it represents is shown / hidden, and when you hover over an item, the hover state of the series is enabled. As for single-series chart types, their legend items represent points, and the behavior of the legend varies with the type.
 
-**Note:** To learn how to change the default behavior of the legend, see the [Events](events) section.
+**Note:** To learn how to change the default behavior of the legend, see the [Events](Events) section.
 
 In the sample below, the last series of a multiple-series chart is initially disabled, but its icon is shown in the legend, and you can make the series appear by clicking on the icon:
 
@@ -73,13 +74,13 @@ chart.legend().itemsSourceMode("categories");
 ```
 
 **Note:** In this case, the 
-[default behavior](#default-behavior) settings do not apply. To bind legend items to elements of the chart, you have to use [events](events).
+[default behavior](#default-behavior) settings do not apply. To bind legend items to elements of the chart, you have to use [events](Events).
 
 Setting the source to `"categories"` may be reasonable if there is only one series:
 
 {sample}CS\_Legend\_Basic\_03{sample}
 
-Also, you can create [custom legend items](individual-legend-items#custom-items) and bind them to chart elements of your choice - for example, to chart points. To access such advanced options as as linking the legend to several charts at once or showing multiple legends on one chart, use the [standalone legend](standalone-legend).
+Also, you can create [custom legend items](Individual_Legend_Items#custom-items) and bind them to chart elements of your choice - for example, to chart points. To access such advanced options as as linking the legend to several charts at once or showing multiple legends on one chart, use the [standalone legend](Standalone_Legend).
 
 ## Layout
 
@@ -106,7 +107,7 @@ If the layout is set to `"horizontal"` / `"vertical"`, only a part of the items 
 
 When the layout is `"horizontal-expandable"` / `"vertical-expandable"`, the legend expands, and the chart takes up a smaller space.
 
-**Note 1:** The paginator can be configured: read the [Paginator](paginator) article to learn more.
+**Note 1:** The paginator can be configured: read the [Paginator](Paginator) article to learn more.
 
 **Note 2:** You can set a limit to the expansion of the legend - see the [Size: Expandable](#expandable) section.
 
@@ -196,8 +197,8 @@ chart.legend().drag(true);
 
 **Note 1:** The drag-and-drop mode works within the limits set by the position mode, which places the legend [outside or inside](#outside--inside) the area limited by the axes. If the position mode is the default `outside`, an additional limit is set by the [position](#position--alignment) of the legend relative to the chart.
 
-**Note 2:** When the drag-and-drop mode is enabled, you can use special events of the legend. See the [Events: Legend](events#legend) section.
+**Note 2:** When the drag-and-drop mode is enabled, you can use special events of the legend. See the [Events: Legend](Events#legend) section.
 
-This sample demonstrates the drag-and-drop mode, applied to a legend with the position mode set to [inside](#outside--inside) (also, the [background](background) is enabled):
+This sample demonstrates the drag-and-drop mode, applied to a legend with the position mode set to [inside](#outside--inside) (also, the [background](Background) is enabled):
 
 {sample}CS\_Legend\_Basic\_09{sample}
