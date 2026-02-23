@@ -478,7 +478,7 @@
 /* Center the dropdown on the page */
 div[class*='dropdownMenu'] {
   position: fixed !important;
-  top: 80px !important;
+  top: calc(var(--ifm-navbar-height) + 12px) !important;
   left: 50% !important;
   right: auto !important;
   transform: translateX(-50%);
@@ -516,7 +516,7 @@ div[class*='dropdownMenu'] {
   }
 
   div[class*='dropdownMenu'] {
-    top: 65px !important;
+    top: calc(var(--ifm-navbar-height) + 8px) !important;
     width: 94vw !important;
   }
 

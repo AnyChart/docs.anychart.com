@@ -29,3 +29,8 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 server/.env
+
+# Dev/debug artifacts
+screenshots/
+scripts/screenshot-*.mjs
+scripts/inspect-*.mjs
