@@ -24,3 +24,14 @@
 | 18 | 2026-02-20 | Server should serve both Docusaurus static build AND API (one process). Keep single repo, clean internal separation. Write the planning document. |
 | 19 | 2026-02-20 | Research GitHub OAuth App integration in Node.js/Express: OAuth App vs GitHub App, exact OAuth flow, required scopes, token types/expiration, session management, security (PKCE/state), Octokit usage with user tokens, GitHub API for fork/branch/commit/PR workflow. |
 | 20 | 2026-02-20 | Proceed with implementing the GitHub OAuth plan (all 5 phases), use subagents as needed |
+| 21 | 2026-02-23 | Explore project, understand current state. Two issues: 1) URL structure must preserve original docs.anychart.com paths (e.g. /Gantt_Chart/Elements/Resource_Chart instead of /gantt-chart/elements/resource-chart) for backward compatibility. 2) Text on samples outside chart container is same color as background, making it unreadable — fix readability. |
+| 22 | 2026-02-23 | Implement plan: Preserve original URLs via slug frontmatter + fix sample readability + SEO enhancements (robots.txt, trailingSlash, client-redirects plugin) |
+| 23 | 2026-02-23 | Make everything work smoothly SEO-wise — update all internal links to original-case so no redirect chains, clean build with zero warnings |
+| 24 | 2026-02-23 | Fix edit page to show 1-to-1 content matching the rendered docs page — currently shows raw markdown with {api:}, {sample}, {{branch-name}}, frontmatter visible instead of rendered output |
+2026-02-23 09:51 UTC | #[next] | Implement plan: Fix Edit Page — Replace Toast UI with CodeMirror, add preprocessing/reverse-preprocessing for clean diffs
+2026-02-23 10:04 UTC | #[next] | Write docs about the edit page system and explain how to test it
+2026-02-23 10:13 UTC | #[next] | Improve editor readability + add light/dark/system theme toggle to edit page like the main site
+2026-02-23 10:20 UTC | #[next] | Fix link colors in dark mode CodeMirror editor — too dark blue, barely readable
+2026-02-23 10:45 UTC | #[next] | Make theme toggle icons on main docs site look like the edit page 3-button pill (sun/monitor/moon)
+2026-02-23 10:53 UTC | #[next] | Fix spacing/padding of theme toggle buttons in navbar for consistency
+2026-02-23 11:01 UTC | #[next] | Recap, commit and push to gogin-AI-refactor; note UI rehaul coming next

@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { normalize } from 'node:path';
 import requireAuth from '../middleware/requireAuth.mjs';
 import { createOctokit, fetchContent, submitEdit } from '../lib/github.mjs';
+import { preprocessForEditor, reversePreprocess, mergeByLines } from '../lib/preprocess.mjs';
 
 const router = Router();
 
@@ -18,7 +19,8 @@ function validatePath(filePath) {
 
 /**
  * GET /api/content?path=docs/basic-charts/line-chart.md
- * Fetch file content from GitHub API using the user's token.
+ * Fetch file content from GitHub API, preprocess for the editor.
+ * Returns { path, content, frontmatter, rawContent }.
  * Requires authentication.
  */
 router.get('/content', requireAuth, async (req, res) => {
@@ -30,7 +32,16 @@ router.get('/content', requireAuth, async (req, res) => {
   try {
     const octokit = createOctokit(req.session.githubToken);
     const result = await fetchContent(octokit, path);
-    res.json(result);
+
+    // Preprocess: strip frontmatter, resolve directives
+    const { content, frontmatter } = preprocessForEditor(result.content);
+
+    res.json({
+      path: result.path,
+      content,
+      frontmatter,
+      rawContent: result.content,
+    });
   } catch (err) {
     if (err.status === 401) {
       req.session.destroy(() => {});
@@ -46,12 +57,13 @@ router.get('/content', requireAuth, async (req, res) => {
 
 /**
  * POST /api/suggest
- * Body: { path, content, description }
- * Creates a fork (if needed), branch, commit, and PR — all as the logged-in user.
+ * Body: { path, content, frontmatter, rawContent, description }
+ * Reverse-preprocesses editor content, merges with original for clean diff,
+ * then creates a fork (if needed), branch, commit, and PR.
  * Requires authentication.
  */
 router.post('/suggest', requireAuth, async (req, res) => {
-  const { path: rawPath, content, description } = req.body;
+  const { path: rawPath, content, frontmatter, rawContent, description } = req.body;
 
   // Validate inputs
   const path = validatePath(rawPath);
@@ -66,7 +78,15 @@ router.post('/suggest', requireAuth, async (req, res) => {
   }
 
   try {
-    const result = await submitEdit(req.session.githubToken, { path, content, description });
+    // Reverse-preprocess: restore directives and frontmatter
+    const restored = reversePreprocess(content, frontmatter || '');
+
+    // Merge with original raw content for clean diff
+    const finalContent = rawContent
+      ? mergeByLines(rawContent, restored)
+      : restored;
+
+    const result = await submitEdit(req.session.githubToken, { path, content: finalContent, description });
     res.json(result);
   } catch (err) {
     if (err.status === 401) {

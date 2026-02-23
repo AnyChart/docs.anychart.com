@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Suggest Changes — AnyChart Documentation</title>
 
-  <!-- Toast UI Editor -->
-  <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css">
-
   <!-- AnyChart brand font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap">
+
+  <!-- Apply saved theme immediately to prevent flash -->
+  <script>
+    (function() {
+      var saved = localStorage.getItem('anychart-edit-theme') || 'system';
+      var dark = saved === 'dark' || (saved === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+    })();
+  </script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,7 +27,7 @@
       min-height: 100vh;
     }
 
-    /* Header bar */
+    /* ===== Header bar ===== */
     .header {
       background: #2485d0;
       color: #fff;
@@ -45,6 +51,12 @@
       flex: 1;
     }
 
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
     .header-user {
       display: flex;
       align-items: center;
@@ -64,14 +76,52 @@
       font-size: 13px;
     }
 
-    /* Main layout */
+    /* ===== Theme toggle ===== */
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.15);
+      border-radius: 5px;
+      padding: 1px;
+      gap: 0;
+    }
+
+    .theme-toggle button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px 6px;
+      border-radius: 4px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1;
+      transition: background 0.15s, color 0.15s;
+      display: flex;
+      align-items: center;
+    }
+
+    .theme-toggle button:hover {
+      color: #fff;
+    }
+
+    .theme-toggle button.active {
+      background: rgba(255,255,255,0.25);
+      color: #fff;
+    }
+
+    .theme-toggle button svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* ===== Main layout ===== */
     .container {
       max-width: 960px;
       margin: 24px auto;
       padding: 0 16px;
     }
 
-    /* File path badge */
+    /* ===== File path badge ===== */
     .file-path {
       background: #fff;
       border: 1px solid #d2d2d2;
@@ -93,7 +143,7 @@
       font-size: 13px;
     }
 
-    /* Editor wrapper */
+    /* ===== Editor wrapper ===== */
     .editor-wrapper {
       background: #fff;
       border: 1px solid #d2d2d2;
@@ -102,7 +152,38 @@
       margin-bottom: 16px;
     }
 
-    /* Submission form */
+    /* CodeMirror — light mode defaults (overridden via JS theme for dark) */
+    .editor-wrapper .cm-editor {
+      height: 500px;
+      font-size: 14.5px;
+    }
+
+    .editor-wrapper .cm-editor.cm-focused {
+      outline: none;
+    }
+
+    .editor-wrapper .cm-scroller {
+      overflow: auto;
+      font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+      line-height: 1.7;
+    }
+
+    .editor-wrapper .cm-content {
+      padding: 16px 20px;
+    }
+
+    .editor-wrapper .cm-gutters {
+      border-right: 1px solid #e0e0e0;
+      background: #f8f8f8;
+      padding-right: 4px;
+    }
+
+    .editor-wrapper .cm-lineNumbers .cm-gutterElement {
+      min-width: 32px;
+      padding: 0 8px 0 4px;
+    }
+
+    /* ===== Submission form ===== */
     .submit-form {
       background: #fff;
       border: 1px solid #d2d2d2;
@@ -131,6 +212,7 @@
       font-family: inherit;
       font-size: 14px;
       color: #222;
+      background: #fff;
     }
 
     .form-group input:focus,
@@ -146,7 +228,7 @@
       margin-top: 4px;
     }
 
-    /* Buttons */
+    /* ===== Buttons ===== */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -200,7 +282,7 @@
       margin-top: 16px;
     }
 
-    /* Status messages */
+    /* ===== Status messages ===== */
     .status {
       margin-top: 16px;
       padding: 14px 18px;
@@ -228,7 +310,7 @@
       font-weight: 600;
     }
 
-    /* Loading state */
+    /* ===== Loading state ===== */
     .loading {
       text-align: center;
       padding: 60px 20px;
@@ -249,7 +331,7 @@
 
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* Login prompt */
+    /* ===== Login prompt ===== */
     .login-prompt {
       text-align: center;
       padding: 60px 20px;
@@ -272,35 +354,117 @@
       line-height: 1.5;
     }
 
-    /* Error page */
+    /* ===== Error page ===== */
     .error-page {
       text-align: center;
       padding: 60px 20px;
       color: #c62828;
     }
 
-    /* Dark mode */
-    @media (prefers-color-scheme: dark) {
-      body { background: #1b1b1d; color: #e3e3e3; }
-      .header { background: #2485d0; }
-      .file-path { background: #242526; border-color: #3a3a3c; color: #a0a0a0; }
-      .file-path code { color: #e06c75; background: #2d2d2d; }
-      .editor-wrapper { background: #242526; border-color: #3a3a3c; }
-      .submit-form { background: #242526; border-color: #3a3a3c; }
-      .form-group input,
-      .form-group textarea { background: #1b1b1d; border-color: #3a3a3c; color: #e3e3e3; }
-      .form-group label { color: #a0a0a0; }
-      .btn-secondary { background: #2d2d2d; border-color: #3a3a3c; color: #a0a0a0; }
-      .login-prompt { background: #242526; border-color: #3a3a3c; }
-      .login-prompt h2 { color: #e3e3e3; }
-      .login-prompt p { color: #a0a0a0; }
+    /* ================================================
+       DARK MODE — driven by data-theme="dark" on <html>
+       ================================================ */
+    [data-theme="dark"] body {
+      background: #1b1b1d;
+      color: #e3e3e3;
     }
 
-    /* Responsive */
+    [data-theme="dark"] .file-path {
+      background: #242526;
+      border-color: #3a3a3c;
+      color: #a0a0a0;
+    }
+
+    [data-theme="dark"] .file-path code {
+      color: #e06c75;
+      background: #2d2d2d;
+    }
+
+    [data-theme="dark"] .editor-wrapper {
+      background: #1e1e1e;
+      border-color: #3a3a3c;
+    }
+
+    [data-theme="dark"] .editor-wrapper .cm-gutters {
+      background: #252526;
+      border-color: #3a3a3c;
+    }
+
+    [data-theme="dark"] .submit-form {
+      background: #242526;
+      border-color: #3a3a3c;
+    }
+
+    [data-theme="dark"] .form-group input,
+    [data-theme="dark"] .form-group textarea {
+      background: #1b1b1d;
+      border-color: #3a3a3c;
+      color: #e3e3e3;
+    }
+
+    [data-theme="dark"] .form-group label {
+      color: #a0a0a0;
+    }
+
+    [data-theme="dark"] .form-hint {
+      color: #666;
+    }
+
+    [data-theme="dark"] .btn-secondary {
+      background: #2d2d2d;
+      border-color: #3a3a3c;
+      color: #a0a0a0;
+    }
+
+    [data-theme="dark"] .btn-secondary:hover {
+      background: #3a3a3c;
+    }
+
+    [data-theme="dark"] .login-prompt {
+      background: #242526;
+      border-color: #3a3a3c;
+    }
+
+    [data-theme="dark"] .login-prompt h2 {
+      color: #e3e3e3;
+    }
+
+    [data-theme="dark"] .login-prompt p {
+      color: #a0a0a0;
+    }
+
+    [data-theme="dark"] .loading {
+      color: #a0a0a0;
+    }
+
+    [data-theme="dark"] .loading .spinner {
+      border-color: #3a3a3c;
+      border-top-color: #4a9fe5;
+    }
+
+    [data-theme="dark"] .status.success {
+      background: #1b2e1b;
+      color: #6abf69;
+      border-color: #2e5a2e;
+    }
+
+    [data-theme="dark"] .status.error {
+      background: #2e1b1b;
+      color: #ef9a9a;
+      border-color: #5a2e2e;
+    }
+
+    [data-theme="dark"] .error-page {
+      color: #ef9a9a;
+    }
+
+    /* ===== Responsive ===== */
     @media (max-width: 640px) {
       .container { padding: 0 10px; margin: 12px auto; }
       .actions { flex-direction: column; gap: 10px; }
       .header-user span { display: none; }
+      .header { padding: 10px 12px; gap: 10px; }
+      .header h1 { font-size: 15px; }
     }
   </style>
 </head>
@@ -310,7 +474,21 @@
   <div class="header">
     <a href="/">&#8592; Back to Docs</a>
     <h1>Suggest Changes</h1>
-    <div id="header-user" class="header-user" style="display:none"></div>
+    <div class="header-right">
+      <!-- Theme toggle: Light / System / Dark -->
+      <div class="theme-toggle" id="theme-toggle">
+        <button type="button" data-mode="light" title="Light mode">
+          <svg viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0a.996.996 0 000-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 000-1.41.996.996 0 00-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 000-1.41.996.996 0 00-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
+        </button>
+        <button type="button" data-mode="system" title="System preference">
+          <svg viewBox="0 0 24 24"><path d="M20 3H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h3l-1 1v2h12v-2l-1-1h3c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 13H4V5h16v11z"/></svg>
+        </button>
+        <button type="button" data-mode="dark" title="Dark mode">
+          <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 109 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 01-4.4 2.26 5.403 5.403 0 01-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+        </button>
+      </div>
+      <div id="header-user" class="header-user" style="display:none"></div>
+    </div>
   </div>
 
   <!-- Main content -->
@@ -369,18 +547,87 @@
     </div>
   </div>
 
-  <!-- Toast UI Editor JS -->
-  <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
-
+  <!-- Theme toggle logic (runs before module script so it's immediate) -->
   <script>
+    (function() {
+      var STORAGE_KEY = 'anychart-edit-theme';
+      var currentMode = localStorage.getItem(STORAGE_KEY) || 'system';
+
+      function resolveTheme(mode) {
+        if (mode === 'dark') return 'dark';
+        if (mode === 'light') return 'light';
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+
+      function applyTheme(mode) {
+        currentMode = mode;
+        localStorage.setItem(STORAGE_KEY, mode);
+        document.documentElement.setAttribute('data-theme', resolveTheme(mode));
+        // Update active button
+        document.querySelectorAll('.theme-toggle button').forEach(function(btn) {
+          btn.classList.toggle('active', btn.getAttribute('data-mode') === mode);
+        });
+        // Notify CodeMirror (will be picked up by the module script)
+        window.dispatchEvent(new CustomEvent('theme-changed', { detail: { dark: resolveTheme(mode) === 'dark' } }));
+      }
+
+      // Set initial active state
+      document.querySelectorAll('.theme-toggle button').forEach(function(btn) {
+        btn.classList.toggle('active', btn.getAttribute('data-mode') === currentMode);
+        btn.addEventListener('click', function() {
+          applyTheme(btn.getAttribute('data-mode'));
+        });
+      });
+
+      // Listen for OS theme changes (matters when mode is "system")
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
+        if (currentMode === 'system') {
+          applyTheme('system');
+        }
+      });
+
+      // Expose for external use
+      window.getEditorThemeIsDark = function() {
+        return resolveTheme(currentMode) === 'dark';
+      };
+    })();
+  </script>
+
+  <!-- CodeMirror 6 via ESM import map -->
+  <script type="importmap">
+    {
+      "imports": {
+        "style-mod": "https://esm.sh/style-mod@4",
+        "w3c-keyname": "https://esm.sh/w3c-keyname@2",
+        "crelt": "https://esm.sh/crelt@1",
+        "@marijn/find-cluster-break": "https://esm.sh/@marijn/find-cluster-break@1",
+        "@lezer/": "https://esm.sh/*@lezer/",
+        "@codemirror/": "https://esm.sh/*@codemirror/",
+        "codemirror": "https://esm.sh/*codemirror"
+      }
+    }
+  </script>
+
+  <script type="module">
+    import { basicSetup, EditorView } from 'codemirror';
+    import { markdown } from '@codemirror/lang-markdown';
+    import { Compartment } from '@codemirror/state';
+    import { HighlightStyle, syntaxHighlighting } from '@codemirror/language';
+    import { tags } from '@lezer/highlight';
+
     // API base — same origin in production, localhost:3001 in dev
     const API_BASE = window.location.hostname === 'localhost' && window.location.port !== '3001'
       ? 'http://localhost:3001'
       : '';
 
-    let editor = null;
+    let editorView = null;
     let originalContent = '';
+    let storedFrontmatter = '';
+    let storedRawContent = '';
     let filePath = '';
+
+    // Compartment for swappable theme
+    const themeCompartment = new Compartment();
 
     // Parse ?path= from URL
     const params = new URLSearchParams(window.location.search);
@@ -392,8 +639,136 @@
       checkAuth();
     }
 
+    // Expose submitChanges globally for the onclick handler
+    window.submitChanges = submitChanges;
+
+    /** Build a CodeMirror theme for the given mode */
+    /** Dark mode syntax highlighting — readable on #1e1e1e */
+    const darkHighlight = HighlightStyle.define([
+      { tag: tags.heading,          color: '#6cb4ee', fontWeight: 'bold' },
+      { tag: tags.heading1,         color: '#6cb4ee', fontWeight: 'bold' },
+      { tag: tags.heading2,         color: '#6cb4ee', fontWeight: 'bold' },
+      { tag: tags.heading3,         color: '#6cb4ee', fontWeight: 'bold' },
+      { tag: tags.link,             color: '#8fc8f5', textDecoration: 'underline' },
+      { tag: tags.url,              color: '#8fc8f5' },
+      { tag: tags.emphasis,         color: '#c9a8e8', fontStyle: 'italic' },
+      { tag: tags.strong,           color: '#e3b97a', fontWeight: 'bold' },
+      { tag: tags.strikethrough,    color: '#888', textDecoration: 'line-through' },
+      { tag: tags.keyword,          color: '#c586c0' },
+      { tag: tags.atom,             color: '#d19a66' },
+      { tag: tags.string,           color: '#98c379' },
+      { tag: tags.monospace,        color: '#e06c75', backgroundColor: 'rgba(255,255,255,0.06)' },
+      { tag: tags.processingInstruction, color: '#888' },
+      { tag: tags.comment,          color: '#6a9955' },
+      { tag: tags.meta,             color: '#888' },
+      { tag: tags.contentSeparator, color: '#555' },
+      { tag: tags.quote,            color: '#a0a0a0', fontStyle: 'italic' },
+      { tag: tags.labelName,        color: '#8fc8f5' },
+    ]);
+
+    /** Light mode syntax highlighting */
+    const lightHighlight = HighlightStyle.define([
+      { tag: tags.heading,          color: '#1a5276', fontWeight: 'bold' },
+      { tag: tags.heading1,         color: '#1a5276', fontWeight: 'bold' },
+      { tag: tags.heading2,         color: '#1a5276', fontWeight: 'bold' },
+      { tag: tags.heading3,         color: '#1a5276', fontWeight: 'bold' },
+      { tag: tags.link,             color: '#2485d0', textDecoration: 'underline' },
+      { tag: tags.url,              color: '#2485d0' },
+      { tag: tags.emphasis,         color: '#6f42c1', fontStyle: 'italic' },
+      { tag: tags.strong,           color: '#b45309', fontWeight: 'bold' },
+      { tag: tags.strikethrough,    color: '#999', textDecoration: 'line-through' },
+      { tag: tags.keyword,          color: '#a626a4' },
+      { tag: tags.atom,             color: '#986801' },
+      { tag: tags.string,           color: '#50a14f' },
+      { tag: tags.monospace,        color: '#c7254e', backgroundColor: '#f9f2f4' },
+      { tag: tags.processingInstruction, color: '#999' },
+      { tag: tags.comment,          color: '#6a9955' },
+      { tag: tags.meta,             color: '#999' },
+      { tag: tags.contentSeparator, color: '#ccc' },
+      { tag: tags.quote,            color: '#76797b', fontStyle: 'italic' },
+      { tag: tags.labelName,        color: '#2485d0' },
+    ]);
+
+    function buildCMTheme(isDark) {
+      if (isDark) {
+        return [
+          EditorView.theme({
+            '&': {
+              backgroundColor: '#1e1e1e',
+              color: '#d4d4d4',
+            },
+            '.cm-content': {
+              caretColor: '#aeafad',
+            },
+            '.cm-cursor, .cm-dropCursor': {
+              borderLeftColor: '#aeafad',
+            },
+            '.cm-activeLine': {
+              backgroundColor: 'rgba(255,255,255,0.04)',
+            },
+            '.cm-gutters': {
+              backgroundColor: '#1e1e1e',
+              color: '#555',
+              borderRight: '1px solid #333',
+            },
+            '.cm-activeLineGutter': {
+              backgroundColor: 'rgba(255,255,255,0.06)',
+              color: '#888',
+            },
+            '&.cm-focused .cm-selectionBackground, .cm-selectionBackground': {
+              backgroundColor: '#264f78 !important',
+            },
+            '.cm-matchingBracket': {
+              backgroundColor: 'rgba(255,255,255,0.12)',
+              outline: '1px solid rgba(255,255,255,0.2)',
+            },
+          }, { dark: true }),
+          syntaxHighlighting(darkHighlight),
+        ];
+      }
+      return [
+        EditorView.theme({
+          '&': {
+            backgroundColor: '#fff',
+            color: '#222',
+          },
+          '.cm-content': {
+            caretColor: '#000',
+          },
+          '.cm-cursor, .cm-dropCursor': {
+            borderLeftColor: '#000',
+          },
+          '.cm-activeLine': {
+            backgroundColor: 'rgba(0,0,0,0.03)',
+          },
+          '.cm-gutters': {
+            backgroundColor: '#fafafa',
+            color: '#aaa',
+            borderRight: '1px solid #e8e8e8',
+          },
+          '.cm-activeLineGutter': {
+            backgroundColor: 'rgba(0,0,0,0.05)',
+            color: '#666',
+          },
+          '&.cm-focused .cm-selectionBackground, .cm-selectionBackground': {
+            backgroundColor: '#d7d4f0 !important',
+          },
+        }),
+        syntaxHighlighting(lightHighlight),
+      ];
+    }
+
+    // Listen for theme changes and reconfigure the editor
+    window.addEventListener('theme-changed', (e) => {
+      if (editorView) {
+        editorView.dispatch({
+          effects: themeCompartment.reconfigure(buildCMTheme(e.detail.dark)),
+        });
+      }
+    });
+
     /**
-     * Check if user is logged in. If yes, load the editor. If not, show login prompt.
+     * Check if user is logged in.
      */
     async function checkAuth() {
       try {
@@ -413,18 +788,12 @@
       }
     }
 
-    /**
-     * Show the GitHub login prompt.
-     */
     function showLoginPrompt() {
       const returnTo = `/edit?path=${encodeURIComponent(filePath)}`;
       document.getElementById('login-btn').href = `${API_BASE}/auth/github?returnTo=${encodeURIComponent(returnTo)}`;
       document.getElementById('login-section').style.display = 'block';
     }
 
-    /**
-     * Show the logged-in user in the header.
-     */
     function showUser(user) {
       const el = document.getElementById('header-user');
       el.innerHTML = `
@@ -459,28 +828,26 @@
 
         const data = await res.json();
         originalContent = data.content;
+        storedFrontmatter = data.frontmatter || '';
+        storedRawContent = data.rawContent || '';
 
         // Show editor
         document.getElementById('loading').style.display = 'none';
         document.getElementById('editor-section').style.display = 'block';
         document.getElementById('file-path-display').textContent = data.path;
 
-        // Initialize Toast UI Editor
-        editor = new toastui.Editor({
-          el: document.getElementById('editor'),
-          height: '500px',
-          initialEditType: 'wysiwyg',
-          initialValue: originalContent,
-          previewStyle: 'vertical',
-          usageStatistics: false,
-          toolbarItems: [
-            ['heading', 'bold', 'italic', 'strike'],
-            ['hr', 'quote'],
-            ['ul', 'ol', 'task'],
-            ['table', 'link'],
-            ['code', 'codeblock'],
-            ['scrollSync'],
+        const isDark = window.getEditorThemeIsDark();
+
+        // Initialize CodeMirror 6
+        editorView = new EditorView({
+          doc: originalContent,
+          extensions: [
+            basicSetup,
+            markdown(),
+            themeCompartment.of(buildCMTheme(isDark)),
+            EditorView.lineWrapping,
           ],
+          parent: document.getElementById('editor'),
         });
       } catch (err) {
         showError(`Failed to load document: ${err.message}`);
@@ -492,21 +859,19 @@
      */
     async function submitChanges() {
       const description = document.getElementById('description').value.trim();
-      const content = editor.getMarkdown();
+      const content = editorView.state.doc.toString();
       const submitBtn = document.getElementById('submit-btn');
 
-      // Validate
       if (description.length < 5) {
         showStatus('error', 'Please provide a description of your changes (at least 5 characters).');
         return;
       }
 
-      if (content.trim() === originalContent.trim()) {
+      if (content === originalContent) {
         showStatus('error', 'No changes detected. Please modify the document before submitting.');
         return;
       }
 
-      // Submit
       submitBtn.disabled = true;
       submitBtn.textContent = 'Submitting...';
       document.getElementById('status').style.display = 'none';
@@ -516,7 +881,13 @@
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           credentials: 'include',
-          body: JSON.stringify({ path: filePath, content, description }),
+          body: JSON.stringify({
+            path: filePath,
+            content,
+            frontmatter: storedFrontmatter,
+            rawContent: storedRawContent,
+            description,
+          }),
         });
 
         if (res.status === 401) {
@@ -534,7 +905,7 @@
 
         showStatus('success',
           `Your changes have been submitted for review! ` +
-          `<a href="${data.pr_url}" target="_blank" rel="noopener">View Pull Request #${data.pr_number}</a>`
+          `<a href="${data.pr_url}" target="_blank" rel="noopener noreferrer">View Pull Request #${data.pr_number}</a>`
         );
 
         submitBtn.textContent = 'Submitted';
