@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AnyChart Documentation — New Architecture Proposal</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0a0a0a; color: #e0e0e0; }
+
+  .slide {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 80px;
+    border-bottom: 1px solid #222;
+    position: relative;
+  }
+  .slide:nth-child(even) { background: #0f0f0f; }
+
+  .slide-number {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 14px;
+    color: #555;
+    font-variant-numeric: tabular-nums;
+  }
+
+  h1 { font-size: 48px; font-weight: 300; margin-bottom: 20px; color: #fff; }
+  h1 span { color: #2485d0; }
+  h2 { font-size: 36px; font-weight: 300; margin-bottom: 40px; color: #fff; }
+  h2 span { color: #2485d0; }
+  h3 { font-size: 24px; font-weight: 400; margin-bottom: 20px; color: #43a0e6; }
+
+  .subtitle { font-size: 22px; color: #888; margin-bottom: 40px; }
+
+  p { font-size: 18px; line-height: 1.7; color: #bbb; max-width: 900px; margin-bottom: 16px; }
+
+  .diagram {
+    background: #151515;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 40px;
+    margin: 30px 0;
+    font-family: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #ccc;
+    white-space: pre;
+    overflow-x: auto;
+  }
+
+  .highlight { color: #2485d0; }
+  .highlight-green { color: #4caf50; }
+  .highlight-orange { color: #ff9800; }
+  .highlight-red { color: #f44336; }
+  .highlight-purple { color: #b388ff; }
+
+  table {
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    width: 100%;
+    max-width: 1000px;
+  }
+  table th {
+    background: #1a1a2e;
+    color: #2485d0;
+    padding: 14px 20px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #2485d0;
+  }
+  table td {
+    padding: 12px 20px;
+    border-bottom: 1px solid #222;
+    color: #bbb;
+  }
+  table tr:hover td { background: #151520; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 30px 0;
+    max-width: 1000px;
+  }
+  .card {
+    background: #151515;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 30px;
+  }
+  .card h3 { margin-bottom: 12px; }
+  .card p { font-size: 16px; margin-bottom: 8px; }
+
+  .badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-right: 8px;
+  }
+  .badge-blue { background: rgba(36,133,208,0.2); color: #2485d0; border: 1px solid rgba(36,133,208,0.3); }
+  .badge-green { background: rgba(76,175,80,0.2); color: #4caf50; border: 1px solid rgba(76,175,80,0.3); }
+  .badge-orange { background: rgba(255,152,0,0.2); color: #ff9800; border: 1px solid rgba(255,152,0,0.3); }
+  .badge-red { background: rgba(244,67,54,0.2); color: #f44336; border: 1px solid rgba(244,67,54,0.3); }
+
+  .comparison {
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;
+    gap: 0;
+    align-items: center;
+    margin: 30px 0;
+    max-width: 1000px;
+  }
+  .comparison .arrow {
+    text-align: center;
+    font-size: 28px;
+    color: #2485d0;
+  }
+
+  ul { list-style: none; padding: 0; }
+  ul li {
+    font-size: 18px;
+    padding: 8px 0;
+    color: #bbb;
+    position: relative;
+    padding-left: 24px;
+  }
+  ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #2485d0;
+  }
+
+  .nav {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 8px;
+    z-index: 100;
+  }
+  .nav a {
+    background: #2485d0;
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  .nav a:hover { background: #43a0e6; }
+</style>
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<div class="slide" id="s1">
+  <span class="slide-number">01</span>
+  <h1>AnyChart <span>Documentation</span></h1>
+  <h1>New Architecture</h1>
+  <p class="subtitle">From Clojure monolith to containerized static site generator</p>
+  <p>Proposal for modernizing the documentation infrastructure with Docusaurus, Docker, and GitHub Actions.</p>
+  <p style="margin-top: 40px; color: #555;">February 2026 — gogin-AI-refactor</p>
+</div>
+
+<!-- Slide 2: Current vs New -->
+<div class="slide" id="s2">
+  <span class="slide-number">02</span>
+  <h2>Current State → <span>New State</span></h2>
+
+  <div class="comparison">
+    <div class="card">
+      <h3 style="color: #f44336;">Current System</h3>
+      <p>Clojure backend (docs-engine)</p>
+      <p>PostgreSQL for parsed content</p>
+      <p>Redis for queue communication</p>
+      <p>Sphinx for full-text search</p>
+      <p>PhantomJS for screenshots</p>
+      <p>jQuery frontend</p>
+      <p>Travis CI deployment</p>
+      <p style="margin-top: 16px;">
+        <span class="badge badge-red">7 dependencies</span>
+        <span class="badge badge-red">Complex</span>
+      </p>
+    </div>
+    <div class="arrow">→</div>
+    <div class="card">
+      <h3 style="color: #4caf50;">New System</h3>
+      <p>Docusaurus 3.9 (static site generator)</p>
+      <p>No database — files on disk</p>
+      <p>No queue — build at deploy time</p>
+      <p>Client-side search (built-in)</p>
+      <p>No PhantomJS needed</p>
+      <p>React frontend</p>
+      <p>GitHub Actions + Docker</p>
+      <p style="margin-top: 16px;">
+        <span class="badge badge-green">2 dependencies</span>
+        <span class="badge badge-green">Simple</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 3: Three-Layer Architecture -->
+<div class="slide" id="s3">
+  <span class="slide-number">03</span>
+  <h2>Three-Layer <span>Architecture</span></h2>
+
+  <table>
+    <tr>
+      <th>Layer</th>
+      <th>URL</th>
+      <th>Access</th>
+      <th>Purpose</th>
+    </tr>
+    <tr>
+      <td><span class="badge badge-green">Production</span></td>
+      <td>docs.anychart.com</td>
+      <td>Public</td>
+      <td>Current release documentation</td>
+    </tr>
+    <tr>
+      <td><span class="badge badge-orange">Staging</span></td>
+      <td>docs.anychart.stg</td>
+      <td>Auth-gated (GitHub OAuth)</td>
+      <td>Release preparation + diff highlighting</td>
+    </tr>
+    <tr>
+      <td><span class="badge badge-blue">Archives</span></td>
+      <td>docs.anychart.com/v7/, /v8/</td>
+      <td>Public</td>
+      <td>Major version snapshots</td>
+    </tr>
+  </table>
+</div>
+
+<!-- Slide 4: Docker Model -->
+<div class="slide" id="s4">
+  <span class="slide-number">04</span>
+  <h2>One Dockerfile, <span>Many Containers</span></h2>
+
+  <div class="diagram"><span class="highlight">One Dockerfile</span> → builds any branch into a container
+
+<span class="highlight-green">Production:</span>   branch=v8        IS_STAGING=false  → docs.anychart.com     <span class="highlight-green">:8080</span>
+<span class="highlight-orange">Staging:</span>      branch=develop   IS_STAGING=true   → docs.anychart.stg     <span class="highlight-orange">:8081</span>
+<span class="highlight-purple">DVF Preview:</span>  branch=DVF-5001  IS_STAGING=true   → localhost             <span class="highlight-purple">:8082</span>
+
+Same code. Same Dockerfile. Different env vars → different behavior.</div>
+
+  <p>Multi-stage build: Node.js builds the site → nginx serves static files. Final image is ~60MB with no runtime dependencies.</p>
+</div>
+
+<!-- Slide 5: Release Flow -->
+<div class="slide" id="s5">
+  <span class="slide-number">05</span>
+  <h2>Release <span>Flow</span></h2>
+
+  <div class="diagram">
+<span class="highlight-purple">DVF-5000</span> branch (timeline chart)      ─┐
+<span class="highlight-purple">DVF-5001</span> branch (license overhaul)     ─┤── merged into → <span class="highlight-orange">develop</span> (staging)
+<span class="highlight-purple">DVF-5002</span> branch (custom drawing fix)   ─┘
+                                                  │
+                                          GitHub Actions builds
+                                                  │
+                                                  ▼
+                                     <span class="highlight-orange">docs.anychart.stg</span>
+                                     Team reviews with <span class="highlight">diff highlights</span>
+                                     "This is new (DVF-5000)"
+                                                  │
+                                          Approved → merge
+                                                  │
+                                                  ▼
+                                     <span class="highlight-green">docs.anychart.com</span>
+                                     Public release
+</div>
+</div>
+
+<!-- Slide 6: Cross-Repo Automation -->
+<div class="slide" id="s6">
+  <span class="slide-number">06</span>
+  <h2>Cross-Repo <span>Automation</span></h2>
+
+  <div class="diagram">
+Developer pushes <span class="highlight-purple">DVF-5000</span> to <span class="highlight">AnyChart/AnyChart</span>
+        │
+        ▼
+GitHub Actions triggers automatically
+        │
+        ├── CDN build published at cdn.anychart.com/releases/<span class="highlight-purple">DVF-5000</span>/
+        │
+        └── Matching branch created in <span class="highlight">docs.anychart.com</span>
+                │
+                ▼
+        Docs writers edit the <span class="highlight-purple">DVF-5000</span> docs branch
+                │
+                ▼
+        Merge to develop → staging rebuilds
+</div>
+
+  <p>No manual branch creation. No manual CDN coordination. Push code → docs branch appears automatically.</p>
+</div>
+
+<!-- Slide 7: Diff Highlighting -->
+<div class="slide" id="s7">
+  <span class="slide-number">07</span>
+  <h2>Staging: <span>Diff Highlighting</span></h2>
+
+  <div class="diagram" style="color: #999;">
+┌──────────────────────────────────────────────────────────┐
+│ <span class="highlight-orange">⚠ STAGING — Release preparation</span>                        │
+│ 3 tickets: DVF-5000, DVF-5001, DVF-5002                 │
+│ 12 pages changed, 3 pages new                            │
+└──────────────────────────────────────────────────────────┘
+
+<span class="highlight">## Timeline Chart</span>
+
+<span style="border-left: 3px solid #4caf50; padding-left: 12px; display: inline;">The Timeline chart is a new chart type       <span class="highlight-green">│ NEW (DVF-5000)</span>
+that displays events along a time axis.       <span class="highlight-green">│</span></span>
+
+<span style="border-left: 3px solid #ff9800; padding-left: 12px; display: inline;">To create a timeline chart, use the           <span class="highlight-orange">│ CHANGED (DVF-5000)</span>
+<span style="color: #fff;">anychart.timeline()</span> constructor:              <span class="highlight-orange">│</span></span>
+</div>
+
+  <p>Visual "track changes" showing exactly what's new or modified, attributed to DVF tickets via git blame.</p>
+</div>
+
+<!-- Slide 8: Versioning Roadmap -->
+<div class="slide" id="s8">
+  <span class="slide-number">08</span>
+  <h2>Version <span>Roadmap</span></h2>
+
+  <table>
+    <tr>
+      <th>Version</th>
+      <th>Strategy</th>
+      <th>Status</th>
+    </tr>
+    <tr>
+      <td>v7</td>
+      <td>Frozen archive at /v7/</td>
+      <td><span class="badge badge-green">Live</span></td>
+    </tr>
+    <tr>
+      <td>v8</td>
+      <td>Current production at /. Becomes /v8/ archive when v9 launches</td>
+      <td><span class="badge badge-blue">Current</span></td>
+    </tr>
+    <tr>
+      <td>v9+</td>
+      <td>Per-minor-version switching (9.0.0 → 9.1.0 → 9.5.0) with version dropdown</td>
+      <td><span class="badge badge-orange">Planned</span></td>
+    </tr>
+  </table>
+
+  <p style="margin-top: 20px;">v9 is the clean break — proper versioning from day one. v7/v8 remain frozen snapshots.</p>
+</div>
+
+<!-- Slide 9: What's Done -->
+<div class="slide" id="s9">
+  <span class="slide-number">09</span>
+  <h2>Migration <span>Progress</span></h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Phase 1-3: Complete</h3>
+      <ul>
+        <li>421 pages migrated</li>
+        <li>All original URLs preserved</li>
+        <li>SEO: robots.txt, sitemap, redirects</li>
+        <li>Search (client-side, no Sphinx)</li>
+        <li>Dark mode + responsive design</li>
+        <li>Community edit flow (GitHub OAuth)</li>
+        <li>0 build errors</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Next: Infrastructure</h3>
+      <ul>
+        <li>Docker containerization</li>
+        <li>GitHub Actions CI/CD</li>
+        <li>Staging environment with diff view</li>
+        <li>Auth-gated staging access</li>
+        <li>Cross-repo automation</li>
+        <li>Version archives mechanism</li>
+        <li>API reference migration (later)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 10: Eliminated -->
+<div class="slide" id="s10">
+  <span class="slide-number">10</span>
+  <h2>Infrastructure <span>Eliminated</span></h2>
+
+  <table>
+    <tr>
+      <th>Component</th>
+      <th>Old System</th>
+      <th>New System</th>
+    </tr>
+    <tr>
+      <td>Backend</td>
+      <td>Clojure (docs-engine)</td>
+      <td>None — static files</td>
+    </tr>
+    <tr>
+      <td>Database</td>
+      <td>PostgreSQL</td>
+      <td>None — files on disk</td>
+    </tr>
+    <tr>
+      <td>Queue</td>
+      <td>Redis</td>
+      <td>None — build at deploy</td>
+    </tr>
+    <tr>
+      <td>Search</td>
+      <td>Sphinx</td>
+      <td>Client-side (built-in)</td>
+    </tr>
+    <tr>
+      <td>Screenshots</td>
+      <td>PhantomJS</td>
+      <td>Not needed</td>
+    </tr>
+    <tr>
+      <td>Frontend</td>
+      <td>jQuery + Grunt + LESS</td>
+      <td>React (Docusaurus)</td>
+    </tr>
+    <tr>
+      <td>CI/CD</td>
+      <td>Travis CI + SCP</td>
+      <td>GitHub Actions + Docker</td>
+    </tr>
+    <tr>
+      <td>Build tool</td>
+      <td>Leiningen (JVM)</td>
+      <td>npm (Node.js)</td>
+    </tr>
+  </table>
+</div>
+
+<div class="nav">
+  <a href="#s1" title="Top">↑</a>
+</div>
+
+</body>
+</html>

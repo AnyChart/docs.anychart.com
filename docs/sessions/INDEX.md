@@ -6,7 +6,7 @@
 |---------|------|-------|--------|----------|
 | OCD-000 | 2026-02-18 to 2026-02-23 | Docusaurus migration phases 1-3 (retrospective) | Complete | 421 pages migrated, SEO preserved, edit flow, dark mode, search |
 | OCD-001 | 2026-02-25 | Branch versioning design + session system setup | Complete | Three-layer model approved (prod + staging + archives), OCD system introduced |
-| OCD-002 | 2026-02-25 | Implementation planning + agent architecture | In Progress | 6 work streams defined, 4-agent architecture, phased execution |
+| OCD-002 | 2026-02-25 | Implementation planning + agent architecture | In Progress | 6 work streams defined, 4-agent architecture, Docker containers built (3 envs running) |
 
 ## By Topic
 
