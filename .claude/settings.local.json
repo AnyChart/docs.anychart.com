@@ -14,7 +14,8 @@
       "Bash(powershell -Command \"\\(Invoke-WebRequest -Uri ''https://www.anychart.com/_core/build/assets/home-360ad9480a.css'' -UseBasicParsing\\).Content.Substring\\(0, 10000\\)\")",
       "Bash(grep:*)",
       "Bash(wc:*)",
-      "Bash(git -C:*)"
+      "Bash(git -C:*)",
+      "WebFetch(domain:docs.github.com)"
     ]
   }
 }

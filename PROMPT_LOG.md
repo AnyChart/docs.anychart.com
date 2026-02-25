@@ -45,3 +45,5 @@
 | 30 | 2026-02-23 | Update README with full project documentation, add .gitignore for dev artifacts, fix CSS hardcoded values
 | 31 | 2026-02-23 | Create local TODO_NEXT_STEPS.md — plan for category pages, content cleanup, SEO/AI-search optimization
 | 32 | 2026-02-23 | Session wrap-up — recap and logging
+| 33 | 2026-02-25 | Review bosses' document (24FEB2026-UPDATE-INPUT.md) and discuss — general reflection on what's in it |
+| 34 | 2026-02-25 | Clarifications: API ref is later, docs first. Need branch-based doc versioning (DVF-XXXX ticket = DVF-XXXX docs version with switcher). Keep simple — git/GitHub/Actions, no extra DBs. Boss gave context doc, user must figure out implementation. |
