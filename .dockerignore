@@ -1,0 +1,17 @@
+node_modules
+build
+.docusaurus
+.git
+.github
+.claude
+*.log
+*.md
+!README.md
+screenshots
+prompts
+docs/sessions
+docs/plans
+TODO_NEXT_STEPS.md
+SESSION_LOG.md
+PROMPT_LOG.md
+CLAUDE.md

@@ -1,9 +1,9 @@
-# Documentation Versioning — Architecture Design (v2)
+# Documentation Versioning — Architecture Design (v3)
 
 **Date:** 2026-02-25
-**Status:** Draft — pending approval
-**OCD:** OCD-001
-**Supersedes:** v1 (multi-branch deployment) — replaced after design review
+**Status:** Approved — implementing Docker containers
+**OCD:** OCD-001 → OCD-002
+**Evolution:** v1 (multi-branch) → v2 (two-tier) → v3 (Docker containerized)
 
 ---
 
@@ -11,29 +11,26 @@
 
 When AnyChart develops features (tracked as DVF-XXXX Jira tickets), documentation changes need to be written, previewed, and reviewed before release. The historical system used synchronized branches + a Clojure-based staging server (`docs.anychart.stg`). That workflow is largely abandoned. We need a modern replacement.
 
-## Design Evolution
+## Architecture: One Dockerfile, Many Containers
 
-**v1 (rejected):** Deploy N separate branch versions at `docs.anychart.com/DVF-XXXX/`. Problems: each branch is a full ~100MB build, HTML has baked-in `baseUrl` so you can't mix pages across versions, complexity scales with branch count.
+**Core principle:** The docs app is a single codebase. Behavior changes via environment variables, not different codebases. Any branch can be built into a container.
 
-**v2 (current):** Two-tier model — production + staging. One staging branch aggregates all in-progress DVF changes. Diff highlighting shows what changed vs production. Much simpler.
+```
+One Dockerfile → builds any branch into a container
 
-## Architecture: Three-Layer Model
+Production container:  branch=v8,       IS_STAGING=false  → docs.anychart.com
+Staging container:     branch=develop,   IS_STAGING=true   → docs.anychart.stg
+DVF-5001 container:    branch=DVF-5001,  IS_STAGING=true   → localhost:3001
+DVF-5002 container:    branch=DVF-5002,  IS_STAGING=true   → localhost:3002
+```
+
+### Three-Layer Model
 
 | Layer | URL | Branch | Access | Purpose |
 |-------|-----|--------|--------|---------|
 | **Production** | `docs.anychart.com/` | `v8` (or `main`) | Public | Current major version |
-| **Staging** | `docs.anychart.stg` | `develop` (or `staging`) | Auth-gated (GitHub OAuth, AnyChart org/whitelist) | Release preparation — aggregated DVF changes with diff highlighting |
-| **Version archives** | `docs.anychart.com/v7/`, `/v8/`, etc. | Tagged snapshots | Public | Major release archives only (not patches/hotfixes) |
-
-### Version Archives
-
-Only **major releases** get archived (v7, v8, v9 — not 8.14.1 vs 8.14.0). When a new major version launches:
-
-1. Snapshot current production docs as `/vN/` archive (one-time build with `baseUrl: '/vN/'`)
-2. Deploy new major version to root `/`
-3. Add version switcher link (e.g., "Looking for v7 docs?")
-
-This already works in production — `docs.anychart.com/v7/` serves the frozen v7 documentation today. The pattern is proven.
+| **Staging** | `docs.anychart.stg` | `develop` (or `staging`) | Auth-gated (hosts file + GitHub OAuth) | Release preparation with diff highlighting |
+| **Version archives** | `docs.anychart.com/v7/`, `/v8/`, etc. | Tagged snapshots | Public | Major release archives only |
 
 ### Versioning Roadmap
 
@@ -43,178 +40,164 @@ This already works in production — `docs.anychart.com/v7/` serves the frozen v
 | **v8** | Current production at `/`. Will become frozen archive at `/v8/` when v9 launches |
 | **v9+** | New era — per-minor-version switching (9.0.0, 9.1.0, 9.5.0, etc.) with a version dropdown |
 
-v9 is the clean break. Since the Docusaurus setup will be mature by then, v9 can use proper versioning from day one — either Docusaurus built-in (`docs:version`) or the multi-build approach, decided closer to the v9 launch. v7 and v8 remain simple frozen snapshots with no minor-version switching.
+## Docker Architecture
 
-### Flow
+### Dockerfile (Multi-Stage Build)
 
 ```
-DVF-5000 docs branch (timeline chart)     ─┐
-DVF-5001 docs branch (license overhaul)    ─┤── merged into → staging branch
-DVF-5002 docs branch (custom drawing fix)  ─┘
-                                                    ↓
-                                           GitHub Actions builds
-                                                    ↓
-                                           Deployed to docs.anychart.stg
-                                                    ↓
-                                           Team reviews with diff highlighting
-                                           "This paragraph is new (DVF-5000)"
-                                           "This section changed (DVF-5001)"
-                                                    ↓
-                                           Approved → merge staging → production
-                                                    ↓
-                                           Deployed to docs.anychart.com
+Stage 1 — "builder":
+  FROM node:20-alpine
+  COPY package*.json → npm ci
+  COPY source code
+  ARG ANYCHART_VERSION, IS_STAGING
+  npm run build → produces /app/build/
+
+Stage 2 — "runtime":
+  FROM nginx:alpine
+  COPY --from=builder /app/build/ → /usr/share/nginx/html/
+  COPY nginx.conf
+  EXPOSE 80
 ```
 
-### Key Properties
+Two stages: Node builds the static site, nginx serves it. Final image is tiny (~50-100MB) with no Node.js runtime, no node_modules, no source code — just static files + nginx.
 
-1. **Two deployments, not N** — production and staging, that's it
-2. **Staging is the release preparation environment** — all DVF work lands here
-3. **Diff highlighting** — staging visually shows what changed vs production and which ticket introduced each change
-4. **Auth-gated staging** — GitHub OAuth, restricted to AnyChart org or whitelist
-5. **Edit flow is branch-aware** — "Suggest Change" on staging targets the staging branch; editor shows which branch you're editing
-6. **Same `baseUrl: '/'` for both** — no path prefix tricks, staging is a separate domain
-7. **Extendable to api.anychart.com** / `api.anychart.stg` later
+### docker-compose Setup
+
+```yaml
+# docker-compose.yml — runs 3 containers simultaneously
+services:
+  production:
+    build:
+      args:
+        ANYCHART_VERSION: "8.14.1"
+        IS_STAGING: "false"
+    ports: ["8080:80"]
+
+  staging:
+    build:
+      args:
+        ANYCHART_VERSION: "8.14.1"
+        IS_STAGING: "true"
+    ports: ["8081:80"]
+
+  preview:
+    build:
+      args:
+        ANYCHART_VERSION: "DVF-5001"
+        IS_STAGING: "true"
+    ports: ["8082:80"]
+```
+
+Run with `docker compose up` → three sites on ports 8080, 8081, 8082.
+
+### Environment Variables (Build-Time)
+
+| Variable | Production | Staging | DVF Preview |
+|----------|-----------|---------|-------------|
+| `ANYCHART_VERSION` | `8.14.1` | `8.14.1` | `DVF-5001` |
+| `IS_STAGING` | `false` | `true` | `true` |
+| `SITE_URL` | `https://docs.anychart.com` | `https://docs.anychart.stg` | (localhost) |
+
+### What Changes Per Environment
+
+The same app, but:
+
+| Feature | Production | Staging / DVF Preview |
+|---------|-----------|----------------------|
+| Read documentation | Everyone | Auth-gated |
+| Search | Everyone | Auth-gated users |
+| Suggest changes (edit) | Logged-in users | Team members |
+| Diff highlights | Hidden | Visible |
+| Admin panel | Hidden | Visible |
+| Staging banner | Hidden | Visible |
+
+Features are gated by `IS_STAGING` env var at build time and by auth at runtime.
+
+## Release Flow
+
+```
+1) DVF-5000 done → docs merged to develop
+   DVF-5001 done → docs merged to develop
+   (more features in progress...)
+
+2) Staging (built from develop) shows:
+   - All current docs + diff highlights for what changed
+   - Team reviews, continues writing for remaining features
+
+3) All features done → develop complete
+   → Merge develop → v8/main
+   → Production container rebuilds
+
+4) Production = staging content (minus staging-only UI)
+```
 
 ## Cross-Repo Automation
 
-When someone pushes a `DVF-*` branch to **AnyChart/AnyChart** (the library repo), automatically create a matching branch in **docs.anychart.com**:
+When someone pushes a `DVF-*` branch to **AnyChart/AnyChart** (the library repo):
 
 ```
 Push DVF-5000 to AnyChart/AnyChart
-  → GitHub Actions in AnyChart repo triggers
-  → Creates DVF-5000 branch in docs.anychart.com (from develop)
-  → Docs writers start editing DVF-5000 docs branch
-  → When ready, DVF-5000 merged into staging branch
-  → Staging rebuilds automatically
+  → GitHub Actions creates DVF-5000 branch in docs.anychart.com (from develop)
+  → Docs writers edit DVF-5000 docs branch
+  → Optionally spin up a DVF-5000 preview container
+  → When ready, merge DVF-5000 into develop
+  → Staging container rebuilds automatically
 ```
 
-This uses a cross-repo GitHub Actions workflow with a PAT or GitHub App token.
+## Diff Highlighting System (Future)
 
-## Diff Highlighting System
+Build-time diff annotation:
 
-The core feature of staging — showing what changed vs production.
+1. Script diffs markdown source between staging branch and production branch
+2. Changed sections annotated with DVF ticket attribution (via git blame)
+3. Outputs `diff-manifest.json`
+4. React component renders inline highlights on staging
 
-### Approach: Build-Time Diff Annotation
-
-1. At build time (GitHub Actions), the workflow checks out both the staging branch and the production branch
-2. A script diffs the markdown source files between the two branches
-3. Changed sections are annotated with metadata: which lines changed, which DVF ticket (from git blame/log)
-4. The Docusaurus build includes a custom component that renders these annotations as visual highlights
-
-### Visual Design (conceptual)
-
-```
-┌─────────────────────────────────────────────────┐
-│ ⚠ STAGING — Release preparation                │
-│ 3 tickets included: DVF-5000, DVF-5001, DVF-5002│
-│ 12 pages changed, 3 pages new                   │
-└─────────────────────────────────────────────────┘
-
-## Timeline Chart                          ← page content
-
-The Timeline chart is a new chart type     │ NEW (DVF-5000)
-that displays events along a time axis.    │
-                                           │
-
-To create a timeline chart, use the        │ CHANGED (DVF-5000)
-`anychart.timeline()` constructor:         │
-```
-
-### Implementation Options (to be decided)
-
-| Option | How | Complexity |
-|--------|-----|-----------|
-| **A: Remark plugin** | Custom remark plugin injects diff markers into MDX at build time | Medium |
-| **B: Wrapper component** | Build-time script generates a JSON diff manifest; React component highlights at render time | Medium |
-| **C: CSS-only overlay** | Generate a separate CSS file that highlights changed sections by line range | Low but fragile |
-| **D: Git-powered sidebar** | No inline highlighting; instead, a sidebar panel lists all changed files/sections with links | Low |
-
-Recommended: **Option B** — most flexible, cleanest separation of concerns.
+Implementation approach: **Wrapper component** — build-time script generates JSON manifest, React component highlights at render time.
 
 ## GitHub Actions Workflows
 
-**2 workflows (not 3 — simplified from v1):**
-
-| Workflow | Trigger | Target |
+| Workflow | Trigger | Action |
 |----------|---------|--------|
-| `deploy-production.yml` | push to `v8`/`main` | `docs.anychart.com` |
-| `deploy-staging.yml` | push to `develop`/`staging` | `docs.anychart.stg` |
+| `deploy-production.yml` | push to `v8`/`main` | Build Docker image, deploy to production server |
+| `deploy-staging.yml` | push to `develop` | Build Docker image, deploy to staging server |
+| `create-docs-branch.yml` | In AnyChart/AnyChart, push to `DVF-*` | Creates matching branch in docs repo |
 
-Both do the same thing: `npm ci → npm run build → rsync to VPS`. The staging workflow additionally runs the diff annotation step.
-
-Optional:
-| `create-docs-branch.yml` | In AnyChart/AnyChart repo, on push to `DVF-*` | Creates matching branch in docs repo |
-
-## Code Changes Required
-
-### 1. `docusaurus.config.ts` — `ANYCHART_VERSION` from env (already exists)
-
-```ts
-const ANYCHART_VERSION = process.env.ANYCHART_VERSION || '8.14.1';
-```
-
-No `BASE_URL` change needed — both production and staging use `baseUrl: '/'`.
-
-### 2. Staging detection via `customFields`
-
-```ts
-customFields: {
-  isStaging: process.env.IS_STAGING === 'true',
-  branchVersion: ANYCHART_VERSION,
-},
-```
-
-### 3. Staging banner component
-
-When `isStaging` is true, render a top banner showing:
-- "STAGING — Release preparation"
-- List of included DVF tickets
-- Count of changed/new pages
-
-### 4. Auth middleware for staging
-
-The existing Express server already has GitHub OAuth. For staging:
-- Check if authenticated user is in AnyChart GitHub org (or whitelist)
-- If not, show login prompt
-- Production site has no auth
-
-### 5. Edit flow branch awareness
-
-- On staging, "Suggest Change" targets the staging branch
-- Editor shows "You are editing the staging branch"
-- On production, "Suggest Change" targets `develop` (current behavior)
-
-### 6. Diff annotation build step
-
-A Node.js script that:
-1. Runs `git diff production-branch..staging-branch -- docs/`
-2. Parses the diff to identify changed files and line ranges
-3. Uses `git log` to attribute changes to DVF tickets
-4. Outputs a `diff-manifest.json` consumed by the staging banner and highlight components
+Workflows build Docker images and deploy them — no raw rsync. The container IS the deployment artifact.
 
 ## Security
 
-- GitHub OAuth gates staging access (AnyChart org or whitelist)
-- Production has no auth changes
-- SSH deployment keys for GitHub Actions (Ed25519, per-environment)
+### Network Level
+- `docs.anychart.stg` accessible only via hosts file (IP: 104.236.66.244)
+- No public DNS for staging domain
+- DVF preview containers run on staging server, same network restriction
+
+### Application Level
+- GitHub OAuth gates staging features (AnyChart org / whitelist)
+- Production has no auth on static pages
+- Edit flow requires GitHub login on both environments
+
+### CI/CD Level
+- GitHub Actions contained to `gogin-AI-refactor` branch during development
 - GitHub Environments: `production` (requires approval), `staging` (auto-deploy)
+- Docker images built in CI, pushed to registry, deployed via SSH
 
 ## Open Questions
 
-1. **Staging server** — is `104.236.66.244` still available? Does it need new setup or can we reuse it?
-2. **Staging branch strategy** — use `develop` as staging, or create a dedicated `staging` branch?
-3. **CDN version on staging** — should staging use the release-candidate CDN build, or latest stable?
-4. **Diff granularity** — highlight at page level (simpler) or paragraph/line level (richer)?
-5. **VPS SSH access** — credentials needed for GitHub Actions deployment secrets
+1. **Staging server (`104.236.66.244`)** — still available? Can we install Docker there?
+2. **Docker registry** — GitHub Container Registry (ghcr.io) or Docker Hub?
+3. **Staging branch strategy** — use `develop` as staging, or dedicated `staging` branch?
+4. **CDN version on staging** — release-candidate CDN build, or latest stable?
+5. **Diff granularity** — page level (simpler) or paragraph/line level (richer)?
 
 ## Extension to api.anychart.com
 
-Same two-tier model:
-- `api.anychart.com` — production
-- `api.anychart.stg` — staging with diff highlighting
-- Separate GitHub Actions workflows in the API reference repo
+Same pattern:
+- `api.anychart.com` — production container
+- `api.anychart.stg` — staging container
+- Same Dockerfile approach, different codebase
 - Same OAuth gating
 
 ---
 
-*Pending user approval before implementation.*
+*v3 approved. Docker implementation in progress (OCD-002).*

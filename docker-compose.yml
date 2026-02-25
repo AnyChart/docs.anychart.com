@@ -1,0 +1,60 @@
+# =============================================================================
+# AnyChart Docs — Docker Compose
+#
+# Runs 3 containers simultaneously demonstrating the three-layer model:
+#   - Production  (port 8080) — public docs, current release
+#   - Staging     (port 8081) — auth-gated, release preparation
+#   - DVF Preview (port 8082) — branch-specific preview
+#
+# Usage:
+#   docker compose up --build          Build and start all 3
+#   docker compose up --build production   Just production
+#   docker compose up --build staging      Just staging
+#   docker compose down                Stop all
+# =============================================================================
+
+services:
+  # ---------------------------------------------------------------------------
+  # Production — current released docs
+  # ---------------------------------------------------------------------------
+  production:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        ANYCHART_VERSION: "8.14.1"
+        IS_STAGING: "false"
+        SITE_URL: "https://docs.anychart.com"
+    ports:
+      - "8080:80"
+    container_name: docs-production
+
+  # ---------------------------------------------------------------------------
+  # Staging — release preparation, auth-gated, diff highlights
+  # ---------------------------------------------------------------------------
+  staging:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        ANYCHART_VERSION: "8.14.1"
+        IS_STAGING: "true"
+        SITE_URL: "https://docs.anychart.stg"
+    ports:
+      - "8081:80"
+    container_name: docs-staging
+
+  # ---------------------------------------------------------------------------
+  # DVF Preview — branch-specific feature preview
+  # ---------------------------------------------------------------------------
+  preview:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        ANYCHART_VERSION: "DVF-5001"
+        IS_STAGING: "true"
+        SITE_URL: "http://localhost:8082"
+    ports:
+      - "8082:80"
+    container_name: docs-preview

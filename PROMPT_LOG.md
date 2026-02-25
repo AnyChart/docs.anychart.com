@@ -47,3 +47,6 @@
 | 32 | 2026-02-23 | Session wrap-up — recap and logging
 | 33 | 2026-02-25 | Review bosses' document (24FEB2026-UPDATE-INPUT.md) and discuss — general reflection on what's in it |
 | 34 | 2026-02-25 | Clarifications: API ref is later, docs first. Need branch-based doc versioning (DVF-XXXX ticket = DVF-XXXX docs version with switcher). Keep simple — git/GitHub/Actions, no extra DBs. Boss gave context doc, user must figure out implementation. |
+| 35 | 2026-02-25 | Design review iterations: v1→v2 (three-layer model), version archives, OCD system, edit flow branch-awareness |
+| 36 | 2026-02-25 | Commit OCD, produce agent plans. Concerned about GitHub Actions on production repo — want safe approach. Wants separate docs-stg repo as sandbox. Research docs-engine latest commit. |
+| 37 | 2026-02-25 | DevOps colleague says safe to work on docs repo if contained to branch. Need 3 Docker environments: 1) local dev/test, 2) staging with admin, 3) production as static pages. Consult and document. |
