@@ -1,201 +1,219 @@
-# Branch-Based Documentation Versioning — Architecture Design
+# Documentation Versioning — Architecture Design (v2)
 
 **Date:** 2026-02-25
 **Status:** Draft — pending approval
 **OCD:** OCD-001
+**Supersedes:** v1 (multi-branch deployment) — replaced after design review
 
 ---
 
 ## Problem Statement
 
-When AnyChart develops a feature (tracked as a DVF-XXXX Jira ticket), documentation for that feature needs to be written and previewed before the release. The historical system used synchronized branches across repos + a Clojure-based staging server. That workflow is largely abandoned. We need a modern replacement using Docusaurus + GitHub Actions + the existing VPS.
+When AnyChart develops features (tracked as DVF-XXXX Jira tickets), documentation changes need to be written, previewed, and reviewed before release. The historical system used synchronized branches + a Clojure-based staging server (`docs.anychart.stg`). That workflow is largely abandoned. We need a modern replacement.
 
-## Requirements
+## Design Evolution
 
-1. **Branch-specific docs**: Push to a `DVF-*` branch in the docs repo → that branch's docs are built and deployed
-2. **URL scheme**: Main docs at `/Quick_Start`, branch at `/DVF-5000/Quick_Start`
-3. **CDN coupling**: Branch docs use the matching CDN library build (`cdn.anychart.com/releases/DVF-5000/...`)
-4. **Full site per branch**: Complete navigable docs, not just changed pages
-5. **Subtle version indicator**: Available but not prominent
-6. **Manual cleanup**: Branch versions persist until explicitly removed
-7. **Zero production impact**: Main docs completely untouched by branch operations
-8. **Extendable to api.anychart.com**: Same pattern should work for API reference later
+**v1 (rejected):** Deploy N separate branch versions at `docs.anychart.com/DVF-XXXX/`. Problems: each branch is a full ~100MB build, HTML has baked-in `baseUrl` so you can't mix pages across versions, complexity scales with branch count.
 
-## Chosen Approach: Multi-Deployment with Different `baseUrl`
+**v2 (current):** Two-tier model — production + staging. One staging branch aggregates all in-progress DVF changes. Diff highlighting shows what changed vs production. Much simpler.
 
-Each branch is an independent Docusaurus build with modified `baseUrl` and `ANYCHART_VERSION` environment variables. Builds are deployed to isolated subdirectories on the VPS. Nginx routes requests by path prefix.
+## Architecture: Three-Layer Model
 
-### Why This Over Alternatives
+| Layer | URL | Branch | Access | Purpose |
+|-------|-----|--------|--------|---------|
+| **Production** | `docs.anychart.com/` | `v8` (or `main`) | Public | Current major version |
+| **Staging** | `docs.anychart.stg` | `develop` (or `staging`) | Auth-gated (GitHub OAuth, AnyChart org/whitelist) | Release preparation — aggregated DVF changes with diff highlighting |
+| **Version archives** | `docs.anychart.com/v7/`, `/v8/`, etc. | Tagged snapshots | Public | Major release archives only (not patches/hotfixes) |
 
-| Alternative | Why rejected |
-|-------------|-------------|
-| Docusaurus built-in versioning | `routeBasePath: '/'` has known bugs (#4967, #9688); single `ANYCHART_VERSION` for all versions means samples/CDN links are wrong |
-| Multi-instance plugin | Requires config changes per branch; single preprocessor pass; conflicts with docs-only mode |
-| Spectro Cloud branch-orchestrator | Fragile shell scripts; same single-build limitations; designed for permanent semver, not transient branches |
+### Version Archives
 
-## Architecture
+Only **major releases** get archived (v7, v8, v9 — not 8.14.1 vs 8.14.0). When a new major version launches:
 
-### Build Flow
+1. Snapshot current production docs as `/vN/` archive (one-time build with `baseUrl: '/vN/'`)
+2. Deploy new major version to root `/`
+3. Add version switcher link (e.g., "Looking for v7 docs?")
 
-```
-Developer pushes to DVF-5000 branch
-       ↓
-GitHub Actions triggers (deploy-branch.yml)
-       ↓
-npm ci → ANYCHART_VERSION=DVF-5000 BASE_URL=/DVF-5000/ npm run build
-       ↓
-rsync build/ → VPS:/var/www/docs/DVF-5000/ (atomic swap)
-       ↓
-Update manifest.json on VPS
-       ↓
-Available at docs.anychart.com/DVF-5000/Quick_Start
-```
+This already works in production — `docs.anychart.com/v7/` serves the frozen v7 documentation today. The pattern is proven.
 
-### VPS Directory Structure
+### Versioning Roadmap
+
+| Version | Strategy |
+|---------|----------|
+| **v7** | Frozen archive at `/v7/` (already live) |
+| **v8** | Current production at `/`. Will become frozen archive at `/v8/` when v9 launches |
+| **v9+** | New era — per-minor-version switching (9.0.0, 9.1.0, 9.5.0, etc.) with a version dropdown |
+
+v9 is the clean break. Since the Docusaurus setup will be mature by then, v9 can use proper versioning from day one — either Docusaurus built-in (`docs:version`) or the multi-build approach, decided closer to the v9 launch. v7 and v8 remain simple frozen snapshots with no minor-version switching.
+
+### Flow
 
 ```
-/var/www/docs/
-├── root/                   # Production site (baseUrl: '/')
-│   ├── index.html
-│   ├── Quick_Start/
-│   ├── assets/
-│   ├── samples/
-│   └── ...
-├── DVF-5000/               # Branch version (baseUrl: '/DVF-5000/')
-│   ├── index.html
-│   ├── Quick_Start/
-│   ├── assets/
-│   ├── samples/
-│   └── ...
-├── manifest.json           # Tracks deployed branches
-└── manifest.json.lock      # flock concurrency lock
+DVF-5000 docs branch (timeline chart)     ─┐
+DVF-5001 docs branch (license overhaul)    ─┤── merged into → staging branch
+DVF-5002 docs branch (custom drawing fix)  ─┘
+                                                    ↓
+                                           GitHub Actions builds
+                                                    ↓
+                                           Deployed to docs.anychart.stg
+                                                    ↓
+                                           Team reviews with diff highlighting
+                                           "This paragraph is new (DVF-5000)"
+                                           "This section changed (DVF-5001)"
+                                                    ↓
+                                           Approved → merge staging → production
+                                                    ↓
+                                           Deployed to docs.anychart.com
 ```
 
-### Nginx Routing
+### Key Properties
 
-```nginx
-# Branch versions — prefix match, higher priority than /
-location ^~ /DVF- {
-    root /var/www/docs;
-    try_files $uri $uri/index.html =404;
-}
+1. **Two deployments, not N** — production and staging, that's it
+2. **Staging is the release preparation environment** — all DVF work lands here
+3. **Diff highlighting** — staging visually shows what changed vs production and which ticket introduced each change
+4. **Auth-gated staging** — GitHub OAuth, restricted to AnyChart org or whitelist
+5. **Edit flow is branch-aware** — "Suggest Change" on staging targets the staging branch; editor shows which branch you're editing
+6. **Same `baseUrl: '/'` for both** — no path prefix tricks, staging is a separate domain
+7. **Extendable to api.anychart.com** / `api.anychart.stg` later
 
-# Manifest endpoint
-location = /manifest.json {
-    alias /var/www/docs/manifest.json;
-    add_header Content-Type application/json;
-    add_header Cache-Control "no-cache";
-}
+## Cross-Repo Automation
 
-# Production site at /
-location / {
-    root /var/www/docs/root;
-    try_files $uri $uri/index.html $uri.html /index.html;
-}
+When someone pushes a `DVF-*` branch to **AnyChart/AnyChart** (the library repo), automatically create a matching branch in **docs.anychart.com**:
+
+```
+Push DVF-5000 to AnyChart/AnyChart
+  → GitHub Actions in AnyChart repo triggers
+  → Creates DVF-5000 branch in docs.anychart.com (from develop)
+  → Docs writers start editing DVF-5000 docs branch
+  → When ready, DVF-5000 merged into staging branch
+  → Staging rebuilds automatically
 ```
 
-### GitHub Actions Workflows
+This uses a cross-repo GitHub Actions workflow with a PAT or GitHub App token.
 
-**3 separate workflow files:**
+## Diff Highlighting System
 
-| Workflow | Trigger | Purpose |
-|----------|---------|---------|
-| `deploy-branch.yml` | push to `DVF-*` | Build + deploy branch version |
-| `deploy-production.yml` | push to main/develop | Build + deploy root site |
-| `cleanup-branch.yml` | manual dispatch + optional schedule | Remove branch version |
+The core feature of staging — showing what changed vs production.
 
-### Manifest Schema
+### Approach: Build-Time Diff Annotation
 
-```json
-{
-  "versions": {
-    "DVF-5000": {
-      "deployed_at": "2026-02-25T14:30:00Z",
-      "commit": "abc123",
-      "url": "/DVF-5000/"
-    }
-  },
-  "production": {
-    "branch": "develop",
-    "deployed_at": "2026-02-25T12:00:00Z",
-    "commit": "def456"
-  }
-}
+1. At build time (GitHub Actions), the workflow checks out both the staging branch and the production branch
+2. A script diffs the markdown source files between the two branches
+3. Changed sections are annotated with metadata: which lines changed, which DVF ticket (from git blame/log)
+4. The Docusaurus build includes a custom component that renders these annotations as visual highlights
+
+### Visual Design (conceptual)
+
 ```
+┌─────────────────────────────────────────────────┐
+│ ⚠ STAGING — Release preparation                │
+│ 3 tickets included: DVF-5000, DVF-5001, DVF-5002│
+│ 12 pages changed, 3 pages new                   │
+└─────────────────────────────────────────────────┘
+
+## Timeline Chart                          ← page content
+
+The Timeline chart is a new chart type     │ NEW (DVF-5000)
+that displays events along a time axis.    │
+                                           │
+
+To create a timeline chart, use the        │ CHANGED (DVF-5000)
+`anychart.timeline()` constructor:         │
+```
+
+### Implementation Options (to be decided)
+
+| Option | How | Complexity |
+|--------|-----|-----------|
+| **A: Remark plugin** | Custom remark plugin injects diff markers into MDX at build time | Medium |
+| **B: Wrapper component** | Build-time script generates a JSON diff manifest; React component highlights at render time | Medium |
+| **C: CSS-only overlay** | Generate a separate CSS file that highlights changed sections by line range | Low but fragile |
+| **D: Git-powered sidebar** | No inline highlighting; instead, a sidebar panel lists all changed files/sections with links | Low |
+
+Recommended: **Option B** — most flexible, cleanest separation of concerns.
+
+## GitHub Actions Workflows
+
+**2 workflows (not 3 — simplified from v1):**
+
+| Workflow | Trigger | Target |
+|----------|---------|--------|
+| `deploy-production.yml` | push to `v8`/`main` | `docs.anychart.com` |
+| `deploy-staging.yml` | push to `develop`/`staging` | `docs.anychart.stg` |
+
+Both do the same thing: `npm ci → npm run build → rsync to VPS`. The staging workflow additionally runs the diff annotation step.
+
+Optional:
+| `create-docs-branch.yml` | In AnyChart/AnyChart repo, on push to `DVF-*` | Creates matching branch in docs repo |
 
 ## Code Changes Required
 
-### 1. `docusaurus.config.ts` — Make `baseUrl` configurable
+### 1. `docusaurus.config.ts` — `ANYCHART_VERSION` from env (already exists)
 
 ```ts
-const BASE_URL = process.env.BASE_URL || '/';
-// ...
-baseUrl: BASE_URL,
+const ANYCHART_VERSION = process.env.ANYCHART_VERSION || '8.14.1';
 ```
 
-### 2. Preprocessor — Prefix sample paths with `BASE_URL`
+No `BASE_URL` change needed — both production and staging use `baseUrl: '/'`.
 
-Current (line ~48):
-```ts
-const src = `/samples/${cleanName}.html`;
-```
-
-Updated:
-```ts
-const src = `${BASE_URL}samples/${cleanName}.html`;
-```
-
-### 3. Add `customFields` for branch detection
+### 2. Staging detection via `customFields`
 
 ```ts
 customFields: {
+  isStaging: process.env.IS_STAGING === 'true',
   branchVersion: ANYCHART_VERSION,
-  isMainBuild: BASE_URL === '/',
 },
 ```
 
-### 4. Version indicator component
+### 3. Staging banner component
 
-When `isMainBuild` is false, show a subtle top banner:
-> "Preview: DVF-5000 documentation. [View stable docs →](https://docs.anychart.com/)"
+When `isStaging` is true, render a top banner showing:
+- "STAGING — Release preparation"
+- List of included DVF tickets
+- Count of changed/new pages
 
-### 5. `editUrl` per branch
+### 4. Auth middleware for staging
 
-```ts
-editUrl: `https://github.com/AnyChart/docs.anychart.com/edit/${process.env.GITHUB_REF_NAME || 'develop'}/`,
-```
+The existing Express server already has GitHub OAuth. For staging:
+- Check if authenticated user is in AnyChart GitHub org (or whitelist)
+- If not, show login prompt
+- Production site has no auth
+
+### 5. Edit flow branch awareness
+
+- On staging, "Suggest Change" targets the staging branch
+- Editor shows "You are editing the staging branch"
+- On production, "Suggest Change" targets `develop` (current behavior)
+
+### 6. Diff annotation build step
+
+A Node.js script that:
+1. Runs `git diff production-branch..staging-branch -- docs/`
+2. Parses the diff to identify changed files and line ranges
+3. Uses `git log` to attribute changes to DVF tickets
+4. Outputs a `diff-manifest.json` consumed by the staging banner and highlight components
 
 ## Security
 
-- Dedicated Ed25519 SSH key for deployments
-- Key stored as GitHub secret (`DEPLOY_SSH_KEY`)
-- Known hosts verified (`DEPLOY_SSH_KNOWN_HOSTS`)
-- Restricted shell on VPS allowing only rsync + specific commands
-- Branch deploy validates `DVF-` prefix before any file operations
-- Production and branch workflows use separate GitHub Environments (production requires approval)
+- GitHub OAuth gates staging access (AnyChart org or whitelist)
+- Production has no auth changes
+- SSH deployment keys for GitHub Actions (Ed25519, per-environment)
+- GitHub Environments: `production` (requires approval), `staging` (auto-deploy)
 
-## Disk & Performance
+## Open Questions
 
-- Each branch build: ~50-100MB (full site with samples)
-- 5 concurrent branches: ~500MB — trivial for a VPS
-- Build time per branch: 2-5 minutes
-- Only the pushed branch rebuilds — no impact on other branches or production
-
-## Open Questions (for implementation)
-
-1. **VPS access details** — SSH host, user, path needed for GitHub Actions secrets
-2. **Branch naming convention** — strict `DVF-NNNN` or allow `DVF-NNNN-description`?
-3. **CDN build timing** — is the CDN branch build guaranteed to exist when docs build deploys?
-4. **Express server involvement** — should branch versions go through Express, or nginx only?
-5. **Concurrent branch limit** — any practical limit on how many branch versions to support?
+1. **Staging server** — is `104.236.66.244` still available? Does it need new setup or can we reuse it?
+2. **Staging branch strategy** — use `develop` as staging, or create a dedicated `staging` branch?
+3. **CDN version on staging** — should staging use the release-candidate CDN build, or latest stable?
+4. **Diff granularity** — highlight at page level (simpler) or paragraph/line level (richer)?
+5. **VPS SSH access** — credentials needed for GitHub Actions deployment secrets
 
 ## Extension to api.anychart.com
 
-Same pattern applies:
-- Build API reference with `BASE_URL=/DVF-5000/` and matching `ANYCHART_VERSION`
-- Deploy to parallel directory on api.anychart.com VPS
-- Reuse nginx config pattern and manifest approach
-- Separate GitHub Actions workflows in the api repo
+Same two-tier model:
+- `api.anychart.com` — production
+- `api.anychart.stg` — staging with diff highlighting
+- Separate GitHub Actions workflows in the API reference repo
+- Same OAuth gating
 
 ---
 
