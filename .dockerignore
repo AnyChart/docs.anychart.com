@@ -9,8 +9,8 @@ build
 !README.md
 screenshots
 prompts
-docs/sessions
-docs/plans
+sessions
+plans
 TODO_NEXT_STEPS.md
 SESSION_LOG.md
 PROMPT_LOG.md

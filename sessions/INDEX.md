@@ -30,4 +30,4 @@
 - [Session Template](TEMPLATE.md)
 - [CLAUDE.md](../../CLAUDE.md) — Project instructions
 - [MEMORY.md](../../.claude/projects/D--AnyChart-Projects-docs-refactor-docs-anychart-com/memory/MEMORY.md) — Persistent memory
-- [Migration Plan](../plans/) — Design documents
+- [Design Documents](../plans/)
