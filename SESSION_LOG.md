@@ -1,5 +1,59 @@
 # SESSION_LOG.md
 
+## 2026-02-25 — Versioning Architecture + Docker + Content Audit
+
+**Branch:** `gogin-AI-refactor`
+**Commits:** `37db4e2`, `aa5ac73`, `8aa7a16`, `e471d84`, `f816ddc`, `98b2b3f` (6 total, pushed)
+
+### What was done
+
+1. **Versioning Architecture Design (OCD-001)**
+   - Reviewed boss's context document (`24FEB2026-UPDATE-INPUT.md`)
+   - Designed three-layer model: production + auth-gated staging + version archives
+   - v1 (multi-branch deployment) rejected — baseUrl baking problem
+   - v2/v3 (two-tier + Docker) approved
+   - Design doc: `plans/2026-02-25-branch-versioning-design.md`
+
+2. **OCD Session System**
+   - Adapted from Rolodex project's OCD pattern
+   - Created sessions/ dir with template, index, OCD-000 (retrospective), OCD-001, OCD-002
+
+3. **Docker Containerization (OCD-002)**
+   - Multi-stage Dockerfile: Node 20 builder → nginx:alpine runtime (~156MB)
+   - docker-compose.yml with 3 services
+   - nginx/default.conf for static serving
+   - 3 test branches: gogin-AI-refactor, -STG, -DVF
+   - All 3 containers built and running on :8080, :8081, :8082
+   - Architecture presentation: `plans/architecture-presentation.html`
+
+4. **Content Audit (OCD-003)**
+   - Audited all 421 pages for quality issues
+   - Found: 6 stubs, 17 "Coming soon" placeholders, 12 categories missing overviews, 39/41 categories using auto-generated landing pages
+   - Confirmed: all 1607 samples intact, all slugs present, ~80 variant pages correct as-is
+   - Created BACKLOG.md with prioritized findings
+   - No implementation — audit only, work deferred
+
+5. **Housekeeping**
+   - Moved plans/ and sessions/ out of docs/ (Docusaurus content dir)
+   - Updated .dockerignore and all internal references
+
+### Current state
+
+- 3 Docker containers run but `IS_STAGING` not wired into app yet
+- Content audit complete, backlog documented
+- Server work postponed (DevOps getting new server)
+- Build clean, all URLs preserved
+
+### Next session (OCD-004)
+
+- Wire IS_STAGING into Docusaurus components
+- Staging banner
+- Category landing pages (structural fix)
+- Diff highlighting foundation
+- Branch-aware edit flow
+
+---
+
 ## 2026-02-23 — UI/UX Rehaul + Responsive Navbar + Code Review
 
 **Branch:** `gogin-AI-refactor`

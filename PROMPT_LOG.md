@@ -50,3 +50,10 @@
 | 35 | 2026-02-25 | Design review iterations: v1→v2 (three-layer model), version archives, OCD system, edit flow branch-awareness |
 | 36 | 2026-02-25 | Commit OCD, produce agent plans. Concerned about GitHub Actions on production repo — want safe approach. Wants separate docs-stg repo as sandbox. Research docs-engine latest commit. |
 | 37 | 2026-02-25 | DevOps colleague says safe to work on docs repo if contained to branch. Need 3 Docker environments: 1) local dev/test, 2) staging with admin, 3) production as static pages. Consult and document. |
+| 38 | 2026-02-25 | Content cleanup now — get it done so it won't bother us later. Server stuff postponed, DevOps handling new server. |
+| 39 | 2026-02-25 | Audit content quality patterns across 421 doc pages: find shortest pages, stubs/TODOs, frontmatter inconsistencies, duplicate slugs, title mismatches, section completeness. |
+| 40 | 2026-02-25 | Audit ALL category index pages in docs/. Classify each as real-content vs placeholder/thin. Check _category_.json files. Report: totals, placeholders list, real-content list, missing index pages. |
+## Prompt #1772037932 — 2026-02-25T16:45:32Z
+
+Audit docs site for broken/problematic content: unconverted directives, empty pages, dead external links, empty samples, TODO/TBD markers. Research only, no changes.
+
