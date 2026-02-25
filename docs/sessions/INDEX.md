@@ -5,7 +5,8 @@
 | Session | Date | Focus | Status | Outcomes |
 |---------|------|-------|--------|----------|
 | OCD-000 | 2026-02-18 to 2026-02-23 | Docusaurus migration phases 1-3 (retrospective) | Complete | 421 pages migrated, SEO preserved, edit flow, dark mode, search |
-| OCD-001 | 2026-02-25 | Branch versioning design + session system setup | In Progress | Research complete, design in progress, OCD system introduced |
+| OCD-001 | 2026-02-25 | Branch versioning design + session system setup | Complete | Three-layer model approved (prod + staging + archives), OCD system introduced |
+| OCD-002 | 2026-02-25 | Implementation planning + agent architecture | In Progress | 6 work streams defined, 4-agent architecture, phased execution |
 
 ## By Topic
 
@@ -13,7 +14,10 @@
 - OCD-000: Full Docusaurus migration (scaffold, content, SEO, UI/UX, edit flow)
 
 ### Versioning
-- OCD-001: Branch-based versioning design (DVF-XXXX → docs version)
+- OCD-001: Versioning design — three-layer model (prod + staging + archives)
+
+### Planning
+- OCD-002: Implementation planning — 6 work streams, agent architecture
 
 ### Infrastructure
 - (pending) GitHub Actions CI/CD, deployment pipeline, nginx config
