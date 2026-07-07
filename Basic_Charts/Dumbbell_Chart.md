@@ -1,4 +1,4 @@
-{:index 1.7}
+{:index 1}
 # Dumbbell Chart
 
 ## Overview
@@ -186,9 +186,19 @@ var series = chart.dumbbell(data);
 series.markers().size(8);
 ```
 
+{sample}BCT\_Dumbbell\_Chart\_04{sample}
+
 ### Labels
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+
+```
+// enable and format the data labels (shows the high value)
+series.labels().enabled(true);
+series.labels().format("{%high}");
+```
+
+{sample}BCT\_Dumbbell\_Chart\_05{sample}
 
 ### Tooltips
 
@@ -201,3 +211,15 @@ Most types of series in AnyChart can be drawn both in horizontal and vertical or
 Here is information about creating Vertical Dumbbell series:
 
 * [Vertical Dumbbell](Vertical/Dumbbell_Chart)
+
+To draw a Dumbbell chart vertically, create a [Bar](Bar_Chart) chart and add a dumbbell series to it:
+
+```
+// create a bar chart (vertical orientation)
+chart = anychart.bar();
+
+// create a dumbbell series and set the data
+var series = chart.dumbbell(data);
+```
+
+{sample}BCT\_Dumbbell\_Chart\_06{sample}

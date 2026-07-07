@@ -1,4 +1,4 @@
-{:index 6.5}
+{:index 1.5}
 # Lollipop Chart
 
 ## Overview
@@ -182,9 +182,24 @@ var series = chart.lollipop(data);
 
 The size of the round head is controlled through the series markers: use the {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} and {api:anychart.core.ui.MarkersFactory#size}size(){api} methods to set the head radius (the default is 5px). This chart type also allows you to set the width of its points. Read more in the [Point Size](../Common_Settings/Point_Size) article.
 
+```
+// enlarge the round head marker (default radius is 5px)
+series.markers().size(12);
+```
+
+{sample}BCT\_Lollipop\_Chart\_04{sample}
+
 ### Labels
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+
+```
+// enable and format the data labels
+series.labels().enabled(true);
+series.labels().format("{%value}");
+```
+
+{sample}BCT\_Lollipop\_Chart\_05{sample}
 
 ### Tooltips
 
@@ -201,6 +216,15 @@ To learn about the stacked versions of the Lollipop chart and its modifications,
 * [Stacked Lollipop](Stacked/Value/Lollipop_Chart)
 * [Percent Stacked Lollipop](Stacked/Percent/Lollipop_Chart)
 
+Here is a stacked Lollipop chart with two series:
+
+```
+// enable value stacking on the Y scale
+chart.yScale().stackMode("value");
+```
+
+{sample}BCT\_Lollipop\_Chart\_06{sample}
+
 ### Vertical Lollipop
 
 Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical/Overview).
@@ -208,3 +232,15 @@ Most types of series in AnyChart can be drawn both in horizontal and vertical or
 Here is information about creating Vertical Lollipop series:
 
 * [Vertical Lollipop](Vertical/Lollipop_Chart)
+
+To draw a Lollipop chart vertically, create a [Bar](Bar_Chart) chart and add a lollipop series to it:
+
+```
+// create a bar chart (vertical orientation)
+chart = anychart.bar();
+
+// create a lollipop series and set the data
+var series = chart.lollipop(data);
+```
+
+{sample}BCT\_Lollipop\_Chart\_07{sample}
