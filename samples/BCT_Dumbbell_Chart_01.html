@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Dumbbell Chart 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+
+    <script src="https://cdn.anychart.com/releases/feat-staging-preview/js/anychart-bundle.min.js"></script>
+
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  // create data (x, low, high)
+  var data = [
+    ["Job A", 40000, 60000],
+    ["Job B", 50000, 80000],
+    ["Job C", 35000, 55000]
+  ];
+
+  // create a dumbbell chart
+  var chart = anychart.dumbbell();
+
+  // create a dumbbell series and set the data
+  var series = chart.dumbbell(data);
+  series.name("Salary range");
+
+  // set the chart title
+  chart.title("Dumbbell Chart: Basic Sample");
+
+  // set the container id and draw
+  chart.container("container");
+  chart.draw();
+});
+</script>
+</body>
+</html>

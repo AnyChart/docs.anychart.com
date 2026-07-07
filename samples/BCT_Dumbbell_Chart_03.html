@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Dumbbell Chart 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+
+    <script src="https://cdn.anychart.com/releases/feat-staging-preview/js/anychart-bundle.min.js"></script>
+
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  // create data with individual point settings
+  var data = [
+    {x: "Job A", low: 40000, high: 60000},
+    {x: "Job B", low: 50000, high: 80000,
+     normal:   {lowFill: "#5cd65c", highFill: "#2eb82e", stroke: "2 #5cd65c"},
+     hovered:  {lowFill: "#5cd65c", highFill: "#2eb82e", stroke: "3 #5cd65c"},
+     selected: {lowFill: "#5cd65c", highFill: "#2eb82e", stroke: "3 #5cd65c"}
+    },
+    {x: "Job C", low: 35000, high: 55000}
+  ];
+
+  // create a line chart
+  var chart = anychart.line();
+  chart.title("Dumbbell Chart: Individual Points");
+
+  // create a dumbbell series and set the data
+  var series = chart.dumbbell(data);
+
+  chart.container("container");
+  chart.draw();
+});
+</script>
+</body>
+</html>

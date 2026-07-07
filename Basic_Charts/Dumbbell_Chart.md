@@ -105,7 +105,7 @@ chart = anychart.line();
 var series = chart.dumbbell(data);
 ```
 
-*Interactive live samples will be added to this article once AnyChart-9 is published to the CDN.*
+{sample}BCT\_Dumbbell\_Chart\_01{sample}
 
 ## General Settings
 
@@ -147,6 +147,8 @@ series2.hovered().stroke("#0066cc", 2);
 series2.selected().stroke("#0066cc", 4);
 ```
 
+{sample}BCT\_Dumbbell\_Chart\_02{sample}
+
 #### Individual Points
 
 If you use object notation to set the data, you can change the appearance (and some other settings) of individual points by adding special fields to your data:
@@ -169,6 +171,8 @@ chart = anychart.line();
 // create a Dumbbell series and set the data
 var series = chart.dumbbell(data);
 ```
+
+{sample}BCT\_Dumbbell\_Chart\_03{sample}
 
 ### Endpoint Size
 

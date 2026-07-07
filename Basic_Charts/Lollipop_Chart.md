@@ -107,7 +107,7 @@ chart = anychart.column();
 var series = chart.lollipop(data);
 ```
 
-*Interactive live samples will be added to this article once AnyChart 9 is published to the CDN.*
+{sample}BCT\_Lollipop\_Chart\_01{sample}
 
 ## General Settings
 
@@ -149,6 +149,8 @@ series2.selected().stroke("#0066cc", 4);
 series2.selected().fill("#0066cc");
 ```
 
+{sample}BCT\_Lollipop\_Chart\_02{sample}
+
 #### Individual Points
 
 If you use object notation to set the data, you can change the appearance (and some other settings) of individual points by adding special fields to your data:
@@ -173,6 +175,8 @@ chart = anychart.column();
 // create a lollipop series and set the data
 var series = chart.lollipop(data);
 ```
+
+{sample}BCT\_Lollipop\_Chart\_03{sample}
 
 ### Point Size
 
