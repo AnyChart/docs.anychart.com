@@ -15,10 +15,10 @@ This article explains how to create a basic Lollipop chart as well as configure 
 <tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td>[Stacked Lollipop](Stacked/Value/Lollipop_Chart), [Percent Stacked Lollipop](Stacked/Percent/Lollipop_Chart)</td></tr>
-<tr><td>Vertical</td><td>[Vertical Lollipop](Vertical/Lollipop_Chart)</td></tr>
+<tr><td>Stacked</td><td>[Stacked Charts](Stacked/Overview)</td></tr>
+<tr><td>Vertical</td><td>[Vertical Charts](Vertical/Overview)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Lollipop Chart with Error Bars](Error_Chart/Lollipop_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Error Bars](Error_Chart/Overview)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
@@ -211,11 +211,6 @@ Stacked and percent stacked charts are multiple-series charts where related valu
 
 In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts](Stacked/Overview).
 
-To learn about the stacked versions of the Lollipop chart and its modifications, see:
-
-* [Stacked Lollipop](Stacked/Value/Lollipop_Chart)
-* [Percent Stacked Lollipop](Stacked/Percent/Lollipop_Chart)
-
 Here is a stacked Lollipop chart with two series:
 
 ```
@@ -228,10 +223,6 @@ chart.yScale().stackMode("value");
 ### Vertical Lollipop
 
 Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical/Overview).
-
-Here is information about creating Vertical Lollipop series:
-
-* [Vertical Lollipop](Vertical/Lollipop_Chart)
 
 To draw a Lollipop chart vertically, create a [Bar](Bar_Chart) chart and add a lollipop series to it:
 

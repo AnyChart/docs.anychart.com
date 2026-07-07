@@ -16,7 +16,7 @@ This article explains how to create a basic Dumbbell chart as well as configure 
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td>[Vertical Dumbbell](Vertical/Dumbbell_Chart)</td></tr>
+<tr><td>Vertical</td><td>[Vertical Charts](Vertical/Overview)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
@@ -207,10 +207,6 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 ### Vertical Dumbbell
 
 Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical/Overview).
-
-Here is information about creating Vertical Dumbbell series:
-
-* [Vertical Dumbbell](Vertical/Dumbbell_Chart)
 
 To draw a Dumbbell chart vertically, create a [Bar](Bar_Chart) chart and add a dumbbell series to it:
 
