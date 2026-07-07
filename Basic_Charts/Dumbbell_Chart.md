@@ -211,15 +211,3 @@ Most types of series in AnyChart can be drawn both in horizontal and vertical or
 Here is information about creating Vertical Dumbbell series:
 
 * [Vertical Dumbbell](Vertical/Dumbbell_Chart)
-
-To draw a Dumbbell chart vertically, create a [Bar](Bar_Chart) chart and add a dumbbell series to it:
-
-```
-// create a bar chart (vertical orientation)
-chart = anychart.bar();
-
-// create a dumbbell series and set the data
-var series = chart.dumbbell(data);
-```
-
-{sample}BCT\_Dumbbell\_Chart\_06{sample}
