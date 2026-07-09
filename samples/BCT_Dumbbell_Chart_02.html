@@ -8,12 +8,7 @@
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
 
     <style>
-        html, body, #container {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
     </style>
 </head>
 <body>
@@ -22,38 +17,36 @@
 anychart.onDocumentReady(function () {
   // create data for two series
   var seriesData_1 = [
-    ["Job A", 40000, 60000],
-    ["Job B", 50000, 80000],
-    ["Job C", 35000, 55000]
+    {x: "Job A", low: 40000, high: 60000},{x: "Job B", low: 50000, high: 80000},{x: "Job C", low: 35000, high: 55000}
   ];
   var seriesData_2 = [
-    ["Job A", 30000, 45000],
-    ["Job B", 42000, 62000],
-    ["Job C", 28000, 40000]
+    {x: "Job A", low: 30000, high: 45000},{x: "Job B", low: 42000, high: 62000},{x: "Job C", low: 28000, high: 40000}
   ];
 
   // create a line chart
   var chart = anychart.line();
   chart.title("Dumbbell Chart: Appearance");
 
-  // create the first dumbbell series and configure its appearance
+  // first dumbbell series
   var series1 = chart.dumbbell(seriesData_1);
+  series1.name("Department A");
   series1.normal().stroke("#00cc99", 1);
-  series1.normal().lowFill("#00cc99");
-  series1.normal().highFill("#004d38");
+  series1.normal().lowFill("#99e6d4");
+  series1.normal().highFill("#00cc99");
   series1.hovered().stroke("#00cc99", 2);
   series1.selected().stroke("#00cc99", 4);
 
-  // create the second dumbbell series and configure its appearance
+  // second dumbbell series
   var series2 = chart.dumbbell(seriesData_2);
+  series2.name("Department B");
   series2.normal().stroke("#0066cc", 1);
-  series2.normal().lowFill("#0066cc");
-  series2.normal().highFill("#003366");
+  series2.normal().lowFill("#99c2eb");
+  series2.normal().highFill("#0066cc");
   series2.hovered().stroke("#0066cc", 2);
   series2.selected().stroke("#0066cc", 4);
 
-  chart.container("container");
-  chart.draw();
+  // show a legend to tell the series apart
+  chart.legend().enabled(true);
 });
 </script>
 </body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Dumbbell Chart 05"/>
+    <meta name="ac:name" content="BCT Lollipop Chart 06"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
 
@@ -16,19 +16,16 @@
 <script>
 anychart.onDocumentReady(function () {
   var data = [
-    {x: "Job A", low: 40000, high: 60000},
-    {x: "Job B", low: 50000, high: 80000},
-    {x: "Job C", low: 35000, high: 55000}
+    {x: "January", value: 10000},{x: "February", value: 12000},{x: "March", value: 18000},{x: "April", value: 11000},{x: "May", value: 9000}
   ];
 
-  var chart = anychart.dumbbell();
-  chart.title("Dumbbell Chart: Labels");
+  var chart = anychart.lollipop();
+  chart.title("Lollipop Chart: Tooltip");
 
-  var series = chart.dumbbell(data);
+  var series = chart.lollipop(data);
 
-  // show BOTH endpoint values in the label
-  series.labels().enabled(true);
-  series.labels().format("{%low} - {%high}");
+  // customize the tooltip text
+  series.tooltip().format("{%x}: {%value}");
 });
 </script>
 </body>

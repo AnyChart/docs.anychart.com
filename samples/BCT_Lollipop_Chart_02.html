@@ -8,12 +8,7 @@
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
 
     <style>
-        html, body, #container {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
     </style>
 </head>
 <body>
@@ -22,26 +17,19 @@
 anychart.onDocumentReady(function () {
   // create data for two series
   var seriesData_1 = [
-    {x: "January", value: 10000},
-    {x: "February", value: 12000},
-    {x: "March", value: 18000},
-    {x: "April", value: 11000},
-    {x: "May", value: 9000}
+    {x: "January", value: 10000},{x: "February", value: 12000},{x: "March", value: 18000},{x: "April", value: 11000},{x: "May", value: 9000}
   ];
   var seriesData_2 = [
-    {x: "January", value: 7000},
-    {x: "February", value: 9000},
-    {x: "March", value: 13000},
-    {x: "April", value: 8000},
-    {x: "May", value: 6000}
+    {x: "January", value: 7000},{x: "February", value: 9000},{x: "March", value: 13000},{x: "April", value: 8000},{x: "May", value: 6000}
   ];
 
   // create a column chart
   var chart = anychart.column();
   chart.title("Lollipop Chart: Appearance");
 
-  // create the first lollipop series and configure its appearance
+  // first lollipop series
   var series1 = chart.lollipop(seriesData_1);
+  series1.name("2023");
   series1.normal().stroke("#00cc99", 2);
   series1.normal().fill("#00cc99");
   series1.hovered().stroke("#00cc99", 3);
@@ -49,8 +37,9 @@ anychart.onDocumentReady(function () {
   series1.selected().stroke("#00cc99", 4);
   series1.selected().fill("#00cc99");
 
-  // create the second lollipop series and configure its appearance
+  // second lollipop series
   var series2 = chart.lollipop(seriesData_2);
+  series2.name("2024");
   series2.normal().stroke("#0066cc", 2);
   series2.normal().fill("#0066cc");
   series2.hovered().stroke("#0066cc", 3);
@@ -58,8 +47,8 @@ anychart.onDocumentReady(function () {
   series2.selected().stroke("#0066cc", 4);
   series2.selected().fill("#0066cc");
 
-  chart.container("container");
-  chart.draw();
+  // show a legend to tell the series apart
+  chart.legend().enabled(true);
 });
 </script>
 </body>

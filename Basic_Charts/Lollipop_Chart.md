@@ -56,7 +56,7 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
-A Lollipop chart is a variation of a [Column](Column_Chart), so there are two ways to create it.
+A Lollipop chart is built on a Cartesian plot (like [Column](Column_Chart) and [Stick](Stick_Chart)), so there are two ways to create it.
 
 To create a Lollipop chart from scratch, use the {api:anychart#lollipop}anychart.lollipop(){api} chart constructor. If you pass the data to this chart constructor, it creates a Lollipop series.
 
@@ -73,7 +73,7 @@ var data = [
 ];
 
 // create a chart
-chart = anychart.lollipop();
+var chart = anychart.lollipop();
 
 // create a lollipop series and set the data
 var series = chart.lollipop(data);
@@ -88,22 +88,11 @@ chart.container("container");
 chart.draw();
 ```
 
-You can also add a Lollipop series to an existing Column chart:
+You can also start from a [Column](Column_Chart) (or [Bar](Bar_Chart)) chart and add the Lollipop series to it — only the constructor differs, the rest is identical:
 
 ```
-// create data
-var data = [
-  {x: "January", value: 10000},
-  {x: "February", value: 12000},
-  {x: "March", value: 18000},
-  {x: "April", value: 11000},
-  {x: "May", value: 9000}
-];
-
-// create a column chart
-chart = anychart.column();
-
-// create a lollipop series and set the data
+// create a column (or bar) chart, then add a lollipop series
+var chart = anychart.column();
 var series = chart.lollipop(data);
 ```
 
@@ -126,10 +115,28 @@ Combine them with the {api:anychart.core.StateSettings#stroke}stroke(){api} and 
 In the sample below, there are two Lollipop series with appearance settings configured:
 
 ```
-// create the first series
-var series1 = chart.lollipop(seriesData_1);
+// create data for two series
+var seriesData_1 = [
+  {x: "January", value: 10000},
+  {x: "February", value: 12000},
+  {x: "March", value: 18000},
+  {x: "April", value: 11000},
+  {x: "May", value: 9000}
+];
+var seriesData_2 = [
+  {x: "January", value: 7000},
+  {x: "February", value: 9000},
+  {x: "March", value: 13000},
+  {x: "April", value: 8000},
+  {x: "May", value: 6000}
+];
 
-// configure the visual settings of the first series
+// create a chart
+var chart = anychart.column();
+
+// first series
+var series1 = chart.lollipop(seriesData_1);
+series1.name("2023");
 series1.normal().stroke("#00cc99", 2);
 series1.normal().fill("#00cc99");
 series1.hovered().stroke("#00cc99", 3);
@@ -137,16 +144,18 @@ series1.hovered().fill("#00cc99");
 series1.selected().stroke("#00cc99", 4);
 series1.selected().fill("#00cc99");
 
-// create the second series
+// second series
 var series2 = chart.lollipop(seriesData_2);
-
-// configure the visual settings of the second series
+series2.name("2024");
 series2.normal().stroke("#0066cc", 2);
 series2.normal().fill("#0066cc");
 series2.hovered().stroke("#0066cc", 3);
 series2.hovered().fill("#0066cc");
 series2.selected().stroke("#0066cc", 4);
 series2.selected().fill("#0066cc");
+
+// a legend helps tell the two series apart
+chart.legend().enabled(true);
 ```
 
 {sample}BCT\_Lollipop\_Chart\_02{sample}
@@ -180,11 +189,14 @@ var series = chart.lollipop(data);
 
 ### Point Size
 
-The size of the round head is controlled through the series markers: use the {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} and {api:anychart.core.ui.MarkersFactory#size}size(){api} methods to set the head radius (the default is 5px). This chart type also allows you to set the width of its points. Read more in the [Point Size](../Common_Settings/Point_Size) article.
+A Lollipop point has two size-related parts. The **head** is a circular marker whose radius is set with {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} and {api:anychart.core.ui.MarkersFactory#size}size(){api} (the default radius is 5 px). The **stick** has no width of its own — its thickness is the series stroke width, so make it thicker or thinner through the stroke (see [Appearance](#appearance)).
 
 ```
-// enlarge the round head marker (default radius is 5px)
-series.markers().size(12);
+// enlarge the round head (default radius is 5 px)
+series.markers().size(10);
+
+// the stick thickness is the stroke width
+series.normal().stroke("#0066cc", 3);
 ```
 
 {sample}BCT\_Lollipop\_Chart\_04{sample}
@@ -204,6 +216,13 @@ series.labels().format("{%value}");
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+
+```
+// customize the tooltip text
+series.tooltip().format("{%x}: {%value}");
+```
+
+{sample}BCT\_Lollipop\_Chart\_06{sample}
 
 ### Stacked Lollipop
 
