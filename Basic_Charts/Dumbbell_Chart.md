@@ -106,6 +106,36 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
+### Data
+
+Data can be passed either to the {api:anychart#dumbbell}anychart.dumbbell(){api} chart constructor or to the {api:anychart.charts.Cartesian#dumbbell}dumbbell(){api} series method. A Dumbbell series uses three data fields:
+
+* `x` — the category
+* `low` — the lower value (the low dot)
+* `high` — the upper value (the high dot)
+
+You can set points as objects or as positional arrays `[x, low, high]`, or map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api} — for a Dumbbell, map all three fields:
+
+```
+// object notation
+var data = [
+  {x: "Job A", low: 40000, high: 60000},
+  {x: "Job B", low: 50000, high: 80000}
+];
+
+// or map the columns of a data set
+var dataSet = anychart.data.set([
+  ["Job A", 40000, 60000],
+  ["Job B", 50000, 80000]
+]);
+var mapping = dataSet.mapAs({x: 0, low: 1, high: 2});
+
+var chart = anychart.dumbbell();
+var series = chart.dumbbell(mapping);
+```
+
+{sample}BCT\_Dumbbell\_Chart\_07{sample}
+
 ### Appearance
 
 A Dumbbell point consists of a connecting line and two circular endpoint dots - one at the low value and one at the high value. These elements are styled separately. Giving the low and high dots distinct colors makes the direction of change easy to read.
@@ -219,6 +249,22 @@ series.tooltip().format("High: {%high}, Low: {%low}");
 ```
 
 {sample}BCT\_Dumbbell\_Chart\_06{sample}
+
+### Legend
+
+A [Legend](../Common_Settings/Legend) helps identify the series on a chart. Enable it with the {api:anychart.charts.Cartesian#legend}legend(){api} method — each series adds one legend item, labeled with its {api:anychart.core.cartesian.series.Dumbbell#name}name(){api}:
+
+```
+var series1 = chart.dumbbell(seriesData_1);
+series1.name("Department A");
+var series2 = chart.dumbbell(seriesData_2);
+series2.name("Department B");
+
+// enable the legend
+chart.legend().enabled(true);
+```
+
+{sample}BCT\_Dumbbell\_Chart\_08{sample}
 
 ### Vertical Dumbbell
 

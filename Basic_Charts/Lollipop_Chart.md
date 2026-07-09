@@ -106,6 +106,35 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
+### Data
+
+Data can be passed either to the {api:anychart#lollipop}anychart.lollipop(){api} chart constructor or to the {api:anychart.charts.Cartesian#lollipop}lollipop(){api} series method. A Lollipop series uses two data fields:
+
+* `x` — the category
+* `value` — the value that sets the height of the stick and the position of the head
+
+You can set points as objects or as positional arrays, or map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api} — convenient when several series share one data set:
+
+```
+// object notation
+var data = [
+  {x: "January", value: 10000},
+  {x: "February", value: 12000}
+];
+
+// or map the columns of a data set
+var dataSet = anychart.data.set([
+  ["January", 10000],
+  ["February", 12000]
+]);
+var mapping = dataSet.mapAs({x: 0, value: 1});
+
+var chart = anychart.lollipop();
+var series = chart.lollipop(mapping);
+```
+
+{sample}BCT\_Lollipop\_Chart\_07{sample}
+
 ### Appearance
 
 The [appearance settings](../Appearance_Settings) of a Lollipop chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Lollipop#normal}normal(){api}, {api:anychart.core.cartesian.series.Lollipop#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Lollipop#selected}selected(){api} methods.
@@ -223,6 +252,22 @@ series.tooltip().format("{%x}: {%value}");
 ```
 
 {sample}BCT\_Lollipop\_Chart\_06{sample}
+
+### Legend
+
+A [Legend](../Common_Settings/Legend) helps identify the series on a chart. Enable it with the {api:anychart.charts.Cartesian#legend}legend(){api} method — each series adds one legend item, labeled with its {api:anychart.core.cartesian.series.Lollipop#name}name(){api}:
+
+```
+var series1 = chart.lollipop(seriesData_1);
+series1.name("2023");
+var series2 = chart.lollipop(seriesData_2);
+series2.name("2024");
+
+// enable the legend
+chart.legend().enabled(true);
+```
+
+{sample}BCT\_Lollipop\_Chart\_08{sample}
 
 ### Stacked Lollipop
 
