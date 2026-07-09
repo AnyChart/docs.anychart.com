@@ -15,21 +15,20 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data (x, low, high)
   var data = [
     {x: "Job A", low: 40000, high: 60000},
     {x: "Job B", low: 50000, high: 80000},
     {x: "Job C", low: 35000, high: 55000}
   ];
 
-  // create a dumbbell chart
   var chart = anychart.dumbbell();
-
-  // create a dumbbell series and set the data
   var series = chart.dumbbell(data);
   series.name("Salary range");
-
   chart.title("Dumbbell Chart: Basic Sample");
+
+  // set the container id and draw
+  chart.container("container");
+  chart.draw();
 });
 </script>
 </body>

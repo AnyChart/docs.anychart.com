@@ -23,12 +23,12 @@ anychart.onDocumentReady(function () {
   chart.title("Lollipop Chart: Head and Stick Size");
 
   var series = chart.lollipop(data);
-
-  // enlarge the round head (default radius is 5px)
   series.markers().size(10);
-
-  // the stick thickness is the stroke width
   series.normal().stroke("#0066cc", 3);
+
+  // set the container id and draw
+  chart.container("container");
+  chart.draw();
 });
 </script>
 </body>

@@ -23,9 +23,11 @@ anychart.onDocumentReady(function () {
   chart.title("Lollipop Chart: Tooltip");
 
   var series = chart.lollipop(data);
-
-  // customize the tooltip text
   series.tooltip().format("{%x}: {%value}");
+
+  // set the container id and draw
+  chart.container("container");
+  chart.draw();
 });
 </script>
 </body>

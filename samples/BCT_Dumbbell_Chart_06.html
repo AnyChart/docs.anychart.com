@@ -25,9 +25,11 @@ anychart.onDocumentReady(function () {
   chart.title("Dumbbell Chart: Tooltip");
 
   var series = chart.dumbbell(data);
-
-  // a dumbbell has two values, so format the tooltip to show both
   series.tooltip().format("High: {%high}, Low: {%low}");
+
+  // set the container id and draw
+  chart.container("container");
+  chart.draw();
 });
 </script>
 </body>

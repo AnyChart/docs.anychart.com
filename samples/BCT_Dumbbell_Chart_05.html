@@ -25,10 +25,12 @@ anychart.onDocumentReady(function () {
   chart.title("Dumbbell Chart: Labels");
 
   var series = chart.dumbbell(data);
-
-  // show BOTH endpoint values in the label
   series.labels().enabled(true);
   series.labels().format("{%low} - {%high}");
+
+  // set the container id and draw
+  chart.container("container");
+  chart.draw();
 });
 </script>
 </body>

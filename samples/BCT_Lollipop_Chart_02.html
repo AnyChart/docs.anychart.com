@@ -23,11 +23,9 @@ anychart.onDocumentReady(function () {
     {x: "January", value: 7000},{x: "February", value: 9000},{x: "March", value: 13000},{x: "April", value: 8000},{x: "May", value: 6000}
   ];
 
-  // create a column chart
   var chart = anychart.column();
   chart.title("Lollipop Chart: Appearance");
 
-  // first lollipop series
   var series1 = chart.lollipop(seriesData_1);
   series1.name("2023");
   series1.normal().stroke("#00cc99", 2);
@@ -37,7 +35,6 @@ anychart.onDocumentReady(function () {
   series1.selected().stroke("#00cc99", 4);
   series1.selected().fill("#00cc99");
 
-  // second lollipop series
   var series2 = chart.lollipop(seriesData_2);
   series2.name("2024");
   series2.normal().stroke("#0066cc", 2);
@@ -47,8 +44,11 @@ anychart.onDocumentReady(function () {
   series2.selected().stroke("#0066cc", 4);
   series2.selected().fill("#0066cc");
 
-  // show a legend to tell the series apart
   chart.legend().enabled(true);
+
+  // set the container id and draw
+  chart.container("container");
+  chart.draw();
 });
 </script>
 </body>
