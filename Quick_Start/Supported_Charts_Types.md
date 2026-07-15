@@ -21,6 +21,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Circular Gauge](../Gauges/Circular_Gauge)</td></tr>
 <tr><td>[Column Chart](../Basic_Charts/Column_Chart)</td></tr>
 <tr><td>[Donut Chart](../Basic_Charts/Doughnut_Chart)</td></tr>
+<tr><td>[Dumbbell Chart](../Basic_Charts/Dumbbell_Chart)</td></tr>
 <tr><td>[Error Chart](../Basic_Charts/Error_Chart)</td></tr>
 <tr><td>[Funnel Chart](../Basic_Charts/Funnel_Chart)</td></tr>
 <tr><td>[Gantt Chart](../Gantt_Chart)</td></tr>
@@ -31,6 +32,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[HiLo Chart](../Basic_Charts/HiLo_Chart)</td></tr>
 <tr><td>[Jump Line Chart](../Basic_Charts/Jump_Line_Chart)</td></tr>
 <tr><td>[Line Chart](../Basic_Charts/Line_Chart)</td></tr>
+<tr><td>[Lollipop Chart](../Basic_Charts/Lollipop_Chart)</td></tr>
 <tr><td>[Maps - Geo Maps](../Maps/)</td></tr>
 <tr><td>[Maps - Colored Choropleth](../Maps/Choropleth_Map)</td></tr>
 <tr><td>[Maps - Dot, Point, Marker](../Maps/Dot_\(Point\)_Map)</td></tr>
@@ -46,6 +48,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Percent Stacked Area Chart](../Basic_Charts/Stacked/Percent/Area_Chart)</td></tr>
 <tr><td>[Percent Stacked Bar](../Basic_Charts/Stacked/Percent/Bar_Chart)</td></tr>
 <tr><td>[Percent Stacked Column](../Basic_Charts/Stacked/Percent/Column_Chart)</td></tr>
+<tr><td>[Percent Stacked Lollipop Chart](../Basic_Charts/Stacked/Percent/Lollipop_Chart)</td></tr>
 <tr><td>[Percent Stacked Spline Area Chart](../Basic_Charts/Stacked/Percent/Spline_Area_Chart)</td></tr>
 <tr><td>[PERT Chart](../PERT_Chart/Overview)</td></tr>
 <tr><td>[Pie Chart](../Basic_Charts/Pie_Chart)</td></tr>
@@ -73,6 +76,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Stacked Spline Area Chart](../Basic_Charts/Stacked/Value/Spline_Area_Chart)</td></tr>
 <tr><td>[Stacked Bar Chart](../Basic_Charts/Stacked/Value/Bar_Chart)</td></tr>
 <tr><td>[Stacked Column Chart](../Basic_Charts/Stacked/Value/Column_Chart)</td></tr>
+<tr><td>[Stacked Lollipop Chart](../Basic_Charts/Stacked/Value/Lollipop_Chart)</td></tr>
 <tr><td>[Step Area Chart](../Basic_Charts/Step_Area_Chart)</td></tr> 
 <tr><td>[Step Line Chart](../Basic_Charts/Step_Line_Chart)</td></tr>
 <tr><td>[Stock Charts](../Stock_Charts/Quick_Start)</td></tr>
@@ -85,9 +89,11 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Vertical Area Chart](../Basic_Charts/Vertical/Area_Chart)</td></tr>
 <tr><td>[Vertical Bar Mekko Chart](../Basic_Charts/Vertical/Bar_Mekko_Chart)</td></tr>
 <tr><td>[Vertical Bubble Chart](../Basic_Charts/Vertical/Bubble_Chart)</td></tr>
+<tr><td>[Vertical Dumbbell Chart](../Basic_Charts/Vertical/Dumbbell_Chart)</td></tr>
 <tr><td>[Vertical HiLo Chart](../Basic_Charts/Vertical/HiLo_Chart)</td></tr>
 <tr><td>[Vertical Jump Line Chart](../Basic_Charts/Vertical/Jump_Line_Chart)</td></tr>
 <tr><td>[Vertical Line Chart](../Basic_Charts/Vertical/Line_Chart)</td></tr>
+<tr><td>[Vertical Lollipop Chart](../Basic_Charts/Vertical/Lollipop_Chart)</td></tr>
 <tr><td>[Vertical Marimekko Chart](../Basic_Charts/Vertical/Mekko_Chart)</td></tr>
 <tr><td>[Vertical Marker Chart](../Basic_Charts/Vertical/Marker_Chart)</td></tr>
 <tr><td>[Vertical Mekko Chart](../Basic_Charts/Vertical/Mekko_Chart)</td></tr>
