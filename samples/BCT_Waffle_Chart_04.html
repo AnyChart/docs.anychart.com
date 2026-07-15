@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Waffle Chart 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
+
+    <style>
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  var data = [
+    {name: "In-store", value: 43},
+    {name: "Online", value: 31},
+    {name: "Wholesale", value: 17},
+    {name: "Other", value: 9}
+  ];
+
+  var chart = anychart.waffle(data);
+  chart.title("Waffle Chart: Cell Shape and Padding");
+
+  // draw round cells with wider gaps between them
+  chart.cellShape("circle");
+  chart.cellPadding(4);
+
+  chart.container("container");
+  chart.draw();
+});
+</script>
+</body>
+</html>

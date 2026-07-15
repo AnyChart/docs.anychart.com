@@ -360,6 +360,14 @@ A module for creating [Venn Diagrams](../Basic_Charts/Venn_Diagram):
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-venn.min.js"></script>
 ```
 
+### Waffle Chart
+
+A module for creating [Waffle](../Basic_Charts/Waffle_Chart) charts:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-waffle.min.js"></script>
+```
+
 ### Waterfall
 
 A module for creating [Waterfall](../Basic_Charts/Waterfall_Chart) charts:

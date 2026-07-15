@@ -109,6 +109,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Vertical Stick Chart](../Basic_Charts/Vertical/Stick_Chart)</td></tr>
 <tr><td>[Vertical Step Area Chart](../Basic_Charts/Vertical/Step_Area_Chart)</td></tr> 
 <tr><td>[Vertical Step Line Chart](../Basic_Charts/Vertical/Step_Line_Chart)</td></tr>
+<tr><td>[Waffle Chart](../Basic_Charts/Waffle_Chart)</td></tr>
 <tr><td>[Waterfall Chart](../Basic_Charts/Waterfall_Chart)</td></tr>
 <tr><td>[Word Cloud](../Basic_Charts/Tag_Cloud)</td></tr>
 <tr><td>[Word Tree](../Basic_Charts/Word_Tree)</td></tr>
