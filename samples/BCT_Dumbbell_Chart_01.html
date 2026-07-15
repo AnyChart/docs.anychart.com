@@ -23,8 +23,10 @@ anychart.onDocumentReady(function () {
 
   var chart = anychart.dumbbell();
   var series = chart.dumbbell(data);
-  series.name("Salary range");
   chart.title("Dumbbell Chart: Basic Sample");
+
+  // show both endpoint values in the tooltip
+  series.tooltip().format("High: {%high}, Low: {%low}");
 
   // set the container id and draw
   chart.container("container");

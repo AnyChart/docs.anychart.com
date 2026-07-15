@@ -34,7 +34,10 @@ anychart.onDocumentReady(function () {
   var series = chart.dumbbell(data);
 
   // enlarge the endpoint dots (default radius is 5px)
-  series.markers().size(10);
+  series.markers().size(8);
+
+  // show both endpoint values in the tooltip
+  series.tooltip().format("High: {%high}, Low: {%low}");
 
   chart.container("container");
   chart.draw();

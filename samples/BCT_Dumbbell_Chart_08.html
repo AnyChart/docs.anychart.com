@@ -32,6 +32,9 @@ anychart.onDocumentReady(function () {
 
   chart.legend().enabled(true);
 
+  // show both endpoint values in the tooltip
+  chart.tooltip().format("High: {%high}, Low: {%low}");
+
   chart.container("container");
   chart.draw();
 });

@@ -28,6 +28,9 @@ anychart.onDocumentReady(function () {
   series.labels().enabled(true);
   series.labels().format("{%low} - {%high}");
 
+  // show both endpoint values in the tooltip
+  series.tooltip().format("High: {%high}, Low: {%low}");
+
   // set the container id and draw
   chart.container("container");
   chart.draw();

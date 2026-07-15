@@ -137,9 +137,11 @@ var series = chart.lollipop(mapping);
 
 ### Appearance
 
-The [appearance settings](../Appearance_Settings) of a Lollipop chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Lollipop#normal}normal(){api}, {api:anychart.core.cartesian.series.Lollipop#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Lollipop#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Lollipop chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Lollipop#normal}normal(){api}, {api:anychart.core.cartesian.series.Lollipop#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Lollipop#selected}selected(){api} methods. A point is shown in the **hover** state when it is pointed at and in the **selected** state when it is clicked.
 
 Combine them with the {api:anychart.core.StateSettings#stroke}stroke(){api} and {api:anychart.core.StateSettings#fill}fill(){api} methods: the stroke styles the stick and the outline of the head, while the fill styles the head itself. Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+
+If you do not configure the colors explicitly, they are based on the chart [palette](../Appearance_Settings/Palettes): each series gets one base color, which is used for both the stick and the head. Explicit fill() and stroke() settings override the palette-based colors.
 
 In the sample below, there are two Lollipop series with appearance settings configured:
 
@@ -239,6 +241,8 @@ series.normal().stroke("#0066cc", 3);
 series.labels().enabled(true);
 series.labels().format("{%value}");
 ```
+
+To adjust the placement of labels, use the {api:anychart.core.ui.LabelsFactory#position}position(){api}, {api:anychart.core.ui.LabelsFactory#anchor}anchor(){api}, {api:anychart.core.ui.LabelsFactory#offsetX}offsetX(){api}, and {api:anychart.core.ui.LabelsFactory#offsetY}offsetY(){api} methods.
 
 {sample}BCT\_Lollipop\_Chart\_05{sample}
 

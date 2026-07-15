@@ -41,6 +41,9 @@ anychart.onDocumentReady(function () {
   series2.hovered().stroke("#0066cc", 2);
   series2.selected().stroke("#0066cc", 4);
 
+  // show both endpoint values in the tooltip
+  chart.tooltip().format("High: {%high}, Low: {%low}");
+
   chart.legend().enabled(true);
 
   // set the container id and draw

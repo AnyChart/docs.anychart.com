@@ -25,6 +25,9 @@ anychart.onDocumentReady(function () {
   chart.title("Dumbbell Chart: Data via data.set");
   var series = chart.dumbbell(mapping);
 
+  // show both endpoint values in the tooltip
+  series.tooltip().format("High: {%high}, Low: {%low}");
+
   chart.container("container");
   chart.draw();
 });

@@ -96,6 +96,8 @@ var chart = anychart.line();
 var series = chart.dumbbell(data);
 ```
 
+**Note:** a Dumbbell point carries two values, so configure the tooltip to display both of them — see [Tooltips](#tooltips).
+
 {sample}BCT\_Dumbbell\_Chart\_01{sample}
 
 ## General Settings
@@ -113,6 +115,8 @@ Data can be passed either to the {api:anychart#dumbbell}anychart.dumbbell(){api}
 * `x` — the category
 * `low` — the lower value (the low dot)
 * `high` — the upper value (the high dot)
+
+Please note that the connector between the dots does not show which of the two values comes "first": a point looks the same whether the change goes up or down. For before/after comparisons, encode the direction by giving the low and high dots distinct colors (see [Appearance](#appearance)).
 
 You can set points as objects or as positional arrays `[x, low, high]`, or map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api} — for a Dumbbell, map all three fields:
 
@@ -140,9 +144,11 @@ var series = chart.dumbbell(mapping);
 
 A Dumbbell point consists of a connecting line and two circular endpoint dots - one at the low value and one at the high value. These elements are styled separately. Giving the low and high dots distinct colors makes the direction of change easy to read.
 
-The [appearance settings](../Appearance_Settings) of a Dumbbell chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Dumbbell#normal}normal(){api}, {api:anychart.core.cartesian.series.Dumbbell#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Dumbbell#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Dumbbell chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Dumbbell#normal}normal(){api}, {api:anychart.core.cartesian.series.Dumbbell#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Dumbbell#selected}selected(){api} methods. A point is shown in the **hover** state when it is pointed at and in the **selected** state when it is clicked.
 
 The connecting line is styled with the {api:anychart.core.StateSettings#stroke}stroke(){api} method. The endpoint dots are styled with the {api:anychart.core.StateSettings#highFill}highFill(){api} and {api:anychart.core.StateSettings#highStroke}highStroke(){api} methods (for the high dot) and the {api:anychart.core.StateSettings#lowFill}lowFill(){api} and {api:anychart.core.StateSettings#lowStroke}lowStroke(){api} methods (for the low dot). Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+
+If you do not configure the colors explicitly, they are based on the chart [palette](../Appearance_Settings/Palettes): each series gets one base color, which is used for its connecting line and both endpoint dots. Explicit settings like highFill() or lowFill() override the palette-based colors.
 
 In the sample below, there are two Dumbbell series with appearance settings configured:
 
@@ -234,6 +240,8 @@ series.markers().size(8);
 series.labels().enabled(true);
 series.labels().format("{%low} - {%high}");
 ```
+
+To adjust the placement of labels, use the {api:anychart.core.ui.LabelsFactory#position}position(){api}, {api:anychart.core.ui.LabelsFactory#anchor}anchor(){api}, {api:anychart.core.ui.LabelsFactory#offsetX}offsetX(){api}, and {api:anychart.core.ui.LabelsFactory#offsetY}offsetY(){api} methods.
 
 {sample}BCT\_Dumbbell\_Chart\_05{sample}
 
