@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Org Chart 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
+
+    <style>
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  var data = [
+    {id: "ceo", name: "Sarah Johnson", title: "CEO"},
+    {id: "cto", parent: "ceo", name: "Michael Chen", title: "CTO"},
+    {id: "cfo", parent: "ceo", name: "Emily Davis", title: "CFO"},
+    {id: "coo", parent: "ceo", name: "Robert Wilson", title: "COO"},
+    {id: "eng", parent: "cto", name: "David Kim", title: "Head of Engineering"},
+    {id: "prod", parent: "cto", name: "Lisa Zhang", title: "Head of Product"},
+    {id: "acct", parent: "cfo", name: "Diana Ross", title: "Head of Accounting"},
+    {id: "ops", parent: "coo", name: "Peter Jackson", title: "Head of Operations"},
+    {id: "fe", parent: "eng", name: "Anna Lee", title: "Frontend Lead"},
+    {id: "be", parent: "eng", name: "Tom Harris", title: "Backend Lead"}
+  ];
+
+  var chart = anychart.orgChart(data, "as-table");
+  chart.title("Org Chart: Appearance");
+
+  // node cards in three states (plain colors)
+  chart.normal().fill("#f0f7ff");
+  chart.normal().stroke("1.5 #90a4ae");
+  chart.hovered().fill("#e3f2fd");
+  chart.hovered().stroke("2 #1976d2");
+  chart.selected().fill("#bbdefb");
+  chart.selected().stroke("2.5 #1565c0");
+
+  // the name (header) line of the cards
+  chart.labels().fontColor("#1a237e");
+  chart.labels().fontWeight("bold");
+
+  // the secondary title line of the cards
+  chart.titleFontColor("#546e7a");
+
+  // the connector lines
+  chart.connectorStroke("1.5 #90a4ae");
+
+  chart.container("container");
+  chart.draw();
+});
+</script>
+</body>
+</html>

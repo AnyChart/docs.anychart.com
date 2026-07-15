@@ -240,6 +240,14 @@ A module for creating [Network Graph](../Basic_Charts/Network_Graph) diagrams:
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-graph.min.js"></script>
 ```
 
+### Org Chart
+
+A module for creating [Org Chart](../Basic_Charts/Org_Chart) charts:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-org-chart.min.js"></script>
+```
+
 ### Pareto
 
 A module for creating [Pareto](../Basic_Charts/Pareto_Chart) charts:

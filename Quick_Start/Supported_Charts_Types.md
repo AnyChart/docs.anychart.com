@@ -46,6 +46,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Mosaic Chart](../Basic_Charts/Marimekko_Chart/Mosaic_Chart)</td></tr>
 <tr><td>[Network Chart](../Basic_Charts/Network_Graph)</td></tr>
 <tr><td>[OHLC Chart](../Basic_Charts/OHLC_Chart)</td></tr>
+<tr><td>[Org Chart](../Basic_Charts/Org_Chart)</td></tr>
 <tr><td>[Pareto Chart](../Basic_Charts/Pareto_Chart)</td></tr>
 <tr><td>[Percent Stacked Area Chart](../Basic_Charts/Stacked/Percent/Area_Chart)</td></tr>
 <tr><td>[Percent Stacked Bar](../Basic_Charts/Stacked/Percent/Bar_Chart)</td></tr>
