@@ -9,6 +9,7 @@ with links to tutorials where you can find out how to create them.
 
 <table>
 <tr><th>Name</th></tr>
+<tr><td>[Arc Diagram](../Basic_Charts/Arc_Diagram)</td></tr>
 <tr><td>[Area Chart](../Basic_Charts/Area_Chart)</td></tr>
 <tr><td>[Bar Chart](../Basic_Charts/Bar_Chart)</td></tr>
 <tr><td>[Bar Mekko Chart](../Basic_Charts/Marimekko_Chart/Bar_Mekko_Chart)</td></tr>

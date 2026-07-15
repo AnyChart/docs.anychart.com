@@ -96,6 +96,14 @@ AnyChart Core is the core of the engine. It is needed whenever you use any modul
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
 ```
 
+### Arc Diagram
+
+A module for creating [Arc Diagram](../Basic_Charts/Arc_Diagram) charts:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-arc-diagram.min.js"></script>
+```
+
 ### Bullet
 
 A module for creating [Bullet](../Basic_Charts/Bullet_Chart) charts:
