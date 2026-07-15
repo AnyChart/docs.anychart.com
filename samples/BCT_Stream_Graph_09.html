@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Stream Graph 09"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
+
+    <style>
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  var searchData = [
+    ["W1", 42],["W2", 45],["W3", 40],["W4", 38],["W5", 44],
+    ["W6", 50],["W7", 55],["W8", 52],["W9", 48],["W10", 46]
+  ];
+  var socialData = [
+    ["W1", 30],["W2", 33],["W3", 36],["W4", 40],["W5", 38],
+    ["W6", 35],["W7", 37],["W8", 42],["W9", 46],["W10", 49]
+  ];
+
+  var chart = anychart.streamGraph();
+  chart.title("Stream Graph: Axes");
+
+  var series1 = chart.splineArea(searchData);
+  series1.name("Search");
+  var series2 = chart.splineArea(socialData);
+  series2.name("Social");
+
+  // stack the layers from the zero baseline and show the Y axis
+  // (it is disabled by default: with the wiggle/silhouette offsets
+  // the vertical positions are relative)
+  chart.offset("zero");
+  chart.yAxis(true);
+  chart.yAxis().title("Weekly volume");
+  chart.xAxis().title("Week");
+
+  chart.container("container");
+  chart.draw();
+});
+</script>
+</body>
+</html>

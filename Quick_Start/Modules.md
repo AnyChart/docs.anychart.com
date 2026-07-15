@@ -312,6 +312,14 @@ A module for creating [Stock](../Stock_Charts/Overview) charts:
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
 ```
 
+### Stream Graph
+
+A module for creating [Stream Graph](../Basic_Charts/Stream_Graph) charts (requires [Basic Cartesian](#basic_cartesian)):
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stream-graph.min.js"></script>
+```
+
 ### Sunburst
 
 A module for creating [Sunburst](../Basic_Charts/Sunburst_Chart) charts:

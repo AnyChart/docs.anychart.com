@@ -80,6 +80,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Step Area Chart](../Basic_Charts/Step_Area_Chart)</td></tr> 
 <tr><td>[Step Line Chart](../Basic_Charts/Step_Line_Chart)</td></tr>
 <tr><td>[Stock Charts](../Stock_Charts/Quick_Start)</td></tr>
+<tr><td>[Stream Graph](../Basic_Charts/Stream_Graph)</td></tr>
 <tr><td>[Sunburst Chart](../Basic_Charts/Sunburst_Chart)</td></tr>
 <tr><td>[Surface Chart](../3D_Plot/Surface_Chart)</td></tr>
 <tr><td>[Tag Cloud](../Basic_Charts/Tag_Cloud)</td></tr>
