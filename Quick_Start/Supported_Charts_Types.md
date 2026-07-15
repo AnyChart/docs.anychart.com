@@ -21,6 +21,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Circle Packing Chart](../Basic_Charts/Circle_Packing_Chart)</td></tr>    
 <tr><td>[Circular Gauge](../Gauges/Circular_Gauge)</td></tr>
 <tr><td>[Column Chart](../Basic_Charts/Column_Chart)</td></tr>
+<tr><td>[Dependency Wheel](../Basic_Charts/Dependency_Wheel)</td></tr>
 <tr><td>[Donut Chart](../Basic_Charts/Doughnut_Chart)</td></tr>
 <tr><td>[Dumbbell Chart](../Basic_Charts/Dumbbell_Chart)</td></tr>
 <tr><td>[Error Chart](../Basic_Charts/Error_Chart)</td></tr>

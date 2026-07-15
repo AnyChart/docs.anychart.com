@@ -152,6 +152,14 @@ A module for creating [Circular Gauges](../Gauges/Circular_Gauge):
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-circular-gauge.min.js"></script>
 ```
 
+### Dependency Wheel
+
+A module for creating [Dependency Wheel](../Basic_Charts/Dependency_Wheel) charts:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-dependency-wheel.min.js"></script>
+```
+
 ### Gantt
 
 A module for creating Project and Resource [Gantt](../Gantt_Chart) charts:

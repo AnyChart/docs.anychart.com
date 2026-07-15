@@ -25,6 +25,7 @@ This article explains how to create a basic Arc diagram as well as configure set
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
+<tr><td></td><td>[Dependency Wheel](Dependency_Wheel)</td></tr>
 <tr><td></td><td>[Sankey Diagram](Sankey_Diagram)</td></tr>
 <tr><td></td><td>[Network Graph](Network_Graph)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
