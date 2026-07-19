@@ -23,24 +23,31 @@ anychart.onDocumentReady(function () {
     ["W1", 30],["W2", 33],["W3", 36],["W4", 40],["W5", 38],
     ["W6", 35],["W7", 37],["W8", 42],["W9", 46],["W10", 49]
   ];
+  var emailData = [
+    ["W1", 18],["W2", 20],["W3", 19],["W4", 22],["W5", 24],
+    ["W6", 23],["W7", 21],["W8", 20],["W9", 22],["W10", 25]
+  ];
 
   var chart = anychart.streamGraph();
-  chart.title("Stream Graph: Labels and Markers");
+  chart.title("Stream Graph: Appearance");
 
   var series1 = chart.splineArea(searchData);
   series1.name("Search");
   var series2 = chart.splineArea(socialData);
   series2.name("Social");
+  var series3 = chart.splineArea(emailData);
+  series3.name("Email");
 
-  // enable the labels on the first layer
-  series1.labels().enabled(true);
-  series1.labels().format("{%value}");
-  series1.labels().fontColor("#ffffff");
+  // one palette color per layer
+  chart.palette(["#01497c", "#2c7da0", "#61a5c2"]);
 
-  // enable the point markers on the second layer
-  series2.markers().enabled(true);
-  series2.markers().type("circle");
-  series2.markers().size(4);
+  // a thin white outline visually separates adjacent layers
+  series1.stroke("1.5 #ffffff");
+  series2.stroke("1.5 #ffffff");
+  series3.stroke("1.5 #ffffff");
+
+  // override the fill of one layer directly
+  series1.fill("#014f86");
 
   chart.container("container");
   chart.draw();

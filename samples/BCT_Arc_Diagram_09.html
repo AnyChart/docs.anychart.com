@@ -33,11 +33,17 @@ anychart.onDocumentReady(function () {
 
   // the tooltip of nodes
   chart.node().tooltip().titleFormat("Region: {%name}");
-  chart.node().tooltip().format("Total flow: {%weight}\nConnections: {%connections}");
 
   // the tooltip of links
   chart.link().tooltip().titleFormat("{%from} → {%to}");
   chart.link().tooltip().format("People (k): {%value}");
+
+  // the body of the node tooltip: a formatting function
+  chart.node().tooltip().format(function () {
+    return "Total flow: " + this.weight +
+      "\nConnections: " + this.connections +
+      "\nAverage per connection: " + Math.round(this.weight / this.connections);
+  });
 
   chart.container("container");
   chart.draw();

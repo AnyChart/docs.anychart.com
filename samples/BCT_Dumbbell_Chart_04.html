@@ -8,33 +8,24 @@
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
 
     <style>
-        html, body, #container {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
     </style>
 </head>
 <body>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  var data = [
+  // map the columns: x, low, high, and (for one point) custom dot colors
+  var dataSet = anychart.data.set([
     ["Job A", 40000, 60000],
-    ["Job B", 50000, 80000],
+    ["Job B", 50000, 80000, "#5cd65c", "#2eb82e"],
     ["Job C", 35000, 55000]
-  ];
+  ]);
+  var mapping = dataSet.mapAs({x: 0, low: 1, high: 2, lowFill: 3, highFill: 4});
 
-  // create a dumbbell chart
   var chart = anychart.dumbbell();
-  chart.title("Dumbbell Chart: Endpoint Size");
-
-  // create a dumbbell series and set the data
-  var series = chart.dumbbell(data);
-
-  // enlarge the endpoint dots (default radius is 5px)
-  series.markers().size(8);
+  chart.title("Dumbbell Chart: Individual Points (Data Mapping)");
+  var series = chart.dumbbell(mapping);
 
   // show both endpoint values in the tooltip
   series.tooltip().format("High: {%high}, Low: {%low}");

@@ -1,4 +1,4 @@
-{:index 5}
+{:index 2.05}
 # Percent Stacked Lollipop Chart
 
 ## Overview

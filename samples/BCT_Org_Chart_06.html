@@ -29,11 +29,16 @@ anychart.onDocumentReady(function () {
   ];
 
   var chart = anychart.orgChart(data, "as-table");
-  chart.title("Org Chart: Collapse and Expand");
+  chart.title("Org Chart: Node Size and Spacing");
 
-  // collapse the CTO branch by the node id; click the +/− indicator
-  // under a parent card to expand or collapse it interactively
-  chart.collapse("cto");
+  // the size of the node cards
+  chart.nodeWidth(180);
+  chart.nodeHeight(56);
+  chart.nodePadding(8);
+
+  // the gaps between levels and between siblings
+  chart.levelSpacing(50);
+  chart.siblingSpacing(16);
 
   chart.container("container");
   chart.draw();

@@ -15,18 +15,20 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  var data = [
-    {x: "January", value: 10000},{x: "February", value: 12000},{x: "March", value: 18000},{x: "April", value: 11000},{x: "May", value: 9000}
-  ];
+  // map the columns: x, value, and (for one point) a custom fill color
+  var dataSet = anychart.data.set([
+    ["January", 10000],
+    ["February", 12000],
+    ["March", 18000, "#5cd65c"],
+    ["April", 11000],
+    ["May", 9000]
+  ]);
+  var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2});
 
   var chart = anychart.lollipop();
-  chart.title("Lollipop Chart: Head and Stick Size");
+  chart.title("Lollipop Chart: Individual Points (Data Mapping)");
+  var series = chart.lollipop(mapping);
 
-  var series = chart.lollipop(data);
-  series.markers().size(10);
-  series.normal().stroke("#0066cc", 3);
-
-  // set the container id and draw
   chart.container("container");
   chart.draw();
 });

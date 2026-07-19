@@ -29,17 +29,10 @@ anychart.onDocumentReady(function () {
   ];
 
   var chart = anychart.arcDiagram(data);
-  chart.title("Arc Diagram: Node Settings");
+  chart.title("Arc Diagram: Sorting Nodes by Weight");
 
-  // states of the node bars
-  chart.node().normal().stroke("#ffffff", 1);
-  chart.node().hovered().stroke("#1b2740", 2);
-  chart.node().selected().stroke("#0b1220", 3);
-
-  // node labels: horizontal, bigger, dark
-  chart.node().normal().labels().rotation(0);
-  chart.node().normal().labels().fontSize(12);
-  chart.node().normal().labels().fontColor("#212121");
+  // order the nodes by their total flow instead of by name
+  chart.sortOrder("weight");
 
   chart.container("container");
   chart.draw();

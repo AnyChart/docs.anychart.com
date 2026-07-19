@@ -29,10 +29,13 @@ anychart.onDocumentReady(function () {
   ];
 
   var chart = anychart.arcDiagram(data);
-  chart.title("Arc Diagram: Vertical Orientation");
+  chart.title("Arc Diagram: Color Mode");
 
-  // place the nodes in a column; the arcs bow to the right
-  chart.orientation("vertical");
+  // one palette color per node
+  chart.palette(["#5b8ff9", "#61ddaa", "#65789b", "#f6bd16", "#7262fd", "#f6903d"]);
+
+  // blend each arc from the color of its source node to the color of its target node
+  chart.colorMode("gradient");
 
   chart.container("container");
   chart.draw();

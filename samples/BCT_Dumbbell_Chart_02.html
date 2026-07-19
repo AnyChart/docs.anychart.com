@@ -26,7 +26,6 @@ anychart.onDocumentReady(function () {
   chart.title("Dumbbell Chart: Appearance");
 
   var series1 = chart.dumbbell(seriesData_1);
-  series1.name("Department A");
   series1.normal().stroke("#00cc99", 1);
   series1.normal().lowFill("#99e6d4");
   series1.normal().highFill("#00cc99");
@@ -34,7 +33,6 @@ anychart.onDocumentReady(function () {
   series1.selected().stroke("#00cc99", 4);
 
   var series2 = chart.dumbbell(seriesData_2);
-  series2.name("Department B");
   series2.normal().stroke("#0066cc", 1);
   series2.normal().lowFill("#99c2eb");
   series2.normal().highFill("#0066cc");
@@ -43,8 +41,6 @@ anychart.onDocumentReady(function () {
 
   // show both endpoint values in the tooltip
   chart.tooltip().format("High: {%high}, Low: {%low}");
-
-  chart.legend().enabled(true);
 
   // set the container id and draw
   chart.container("container");

@@ -31,16 +31,21 @@ anychart.onDocumentReady(function () {
   ];
 
   var chart = anychart.dependencyWheel(data);
-  chart.title("Dependency Wheel: Link Settings");
+  chart.title("Dependency Wheel: Node Settings");
 
-  // states of the ribbons
-  chart.link().hovered().fill("#1b2740");
-  chart.link().selected().fill("#0b1220");
+  // states of the node arcs
+  chart.node().normal().stroke("#ffffff", 1);
+  chart.node().hovered().stroke("#1b2740", 2);
+  chart.node().selected().stroke("#0b1220", 3);
 
-  // show a label on every ribbon
-  chart.link().normal().labels().enabled(true);
-  chart.link().normal().labels().format("{%value}");
-  chart.link().normal().labels().fontSize(10);
+  // node labels: add the share of the total flow to the name
+  chart.node().normal().labels().format("{%name}\n{%percent}{decimalsCount:1}%");
+
+  // show every label, even if some of them collide
+  chart.dropOverlappedLabels(false);
+
+  // select the "Grid" node from code
+  chart.select(["Grid"]);
 
   chart.container("container");
   chart.draw();

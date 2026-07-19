@@ -39,6 +39,9 @@ anychart.onDocumentReady(function () {
   var series3 = chart.area(emailData);
   series3.name("Email");
 
+  // or switch an existing series to a different type
+  series1.seriesType("stepArea");
+
   chart.container("container");
   chart.draw();
 });

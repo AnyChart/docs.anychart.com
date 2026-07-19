@@ -15,23 +15,32 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // map the columns of a data set (three fields: from, to, weight)
-  var dataSet = anychart.data.set([
-    ["Asia", "Europe", 42],
-    ["Asia", "N. America", 51],
-    ["Asia", "Oceania", 18],
-    ["Africa", "Europe", 38],
-    ["Africa", "N. America", 9],
-    ["S. America", "N. America", 44],
-    ["S. America", "Europe", 16],
-    ["Europe", "N. America", 33],
-    ["N. America", "Oceania", 7],
-    ["Oceania", "Asia", 6]
-  ]);
-  var mapping = dataSet.mapAs({from: 0, to: 1, weight: 2});
+  var data = [
+    {from: "Asia", to: "Europe", weight: 42},
+    {from: "Asia", to: "N. America", weight: 51},
+    {from: "Asia", to: "Oceania", weight: 18},
+    {from: "Africa", to: "Europe", weight: 38},
+    {from: "Africa", to: "N. America", weight: 9},
+    {from: "S. America", to: "N. America", weight: 44},
+    {from: "S. America", to: "Europe", weight: 16},
+    {from: "Europe", to: "N. America", weight: 33},
+    {from: "N. America", to: "Oceania", weight: 7},
+    {from: "Oceania", to: "Asia", weight: 6}
+  ];
 
-  var chart = anychart.arcDiagram(mapping);
-  chart.title("Arc Diagram: Data via data.set");
+  var chart = anychart.arcDiagram(data);
+  chart.title("Arc Diagram: Node Settings");
+
+  // states of the node bars
+  chart.node().normal().fill("#5b8ff9");
+  chart.node().normal().stroke("#ffffff", 1);
+  chart.node().hovered().stroke("#1b2740", 2);
+  chart.node().selected().stroke("#0b1220", 3);
+
+  // node labels: horizontal, bigger, dark
+  chart.node().normal().labels().rotation(0);
+  chart.node().normal().labels().fontSize(12);
+  chart.node().normal().labels().fontColor("#212121");
 
   chart.container("container");
   chart.draw();

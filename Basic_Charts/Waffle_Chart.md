@@ -3,7 +3,9 @@
 
 ## Overview
 
-A Waffle chart (also known as a square pie chart) displays parts of a whole as a grid of small cells — 10×10 by default — where each category is represented by a block of cells proportional to its share of the total. Waffle charts serve the same purpose as [Pie](Pie_Chart) charts but are often easier to read precisely: cells can be counted, and on the default grid one cell equals 1% of the total. This type works best with a small number of categories.
+A Waffle chart (also known as a square pie chart) shows parts of a whole as a grid of small cells — 10×10 by default. Each category is a block of cells, proportional to its share of the total.
+
+Waffle charts serve the same purpose as [Pie](Pie_Chart) charts but are often easier to read precisely: cells can be counted, and on the default grid one cell equals 1% of the total. This type works best with a small number of categories.
 
 This article explains how to create a basic Waffle chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Waffle chart's characteristics:
 
@@ -26,7 +28,7 @@ This article explains how to create a basic Waffle chart as well as configure se
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Pie](Pie_Chart)</td></tr>
-<tr><td></td><td>[Donut](Doughnut_Chart)</td></tr>
+<tr><td></td><td>[Doughnut](Doughnut_Chart)</td></tr>
 <tr><td></td><td>[Treemap](Treemap_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
@@ -48,10 +50,10 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
-To create a Waffle chart, use the {api:anychart#waffle}anychart.waffle(){api} chart constructor and pass your data to it. Each data point carries two values — the category `name` and its `value`:
+To create a Waffle chart, use the {api:anychart#waffle}anychart.waffle(){api} chart constructor and pass your data to it. Each point has two values: `name` is the category, and `value` is its quantity — the chart automatically computes each category's share (percent) of the total from these values.
 
 ```
-// create data: each category's value is its share of the total
+// create data: values don't need to add up to 100 — the chart computes each category's share automatically
 var data = [
   {name: "In-store", value: 43},
   {name: "Online", value: 31},
@@ -60,10 +62,7 @@ var data = [
 ];
 
 // create a waffle chart and set the data
-var chart = anychart.waffle(data);
-
-// set the chart title
-chart.title("Waffle Chart: Basic Sample");
+chart = anychart.waffle(data);
 
 // set the container id
 chart.container("container");
@@ -82,41 +81,18 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
-### Data
-
-Data is passed to the {api:anychart#waffle}anychart.waffle(){api} chart constructor or to the {api:anychart.charts.Waffle#data}data(){api} method. A Waffle chart uses two data fields:
-
-* `name` (or `x`) — the category name
-* `value` — the value of the category (values that are zero or negative are ignored)
-
-The chart always fills the whole grid: each category gets a number of cells proportional to its share of the total of all values (rounded by the largest-remainder method). So, on the default 10×10 grid one cell represents 1% of the total, and if your values sum up to 100, one cell corresponds to exactly one unit of value.
-
-You can set points as objects, or map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api}:
-
-```
-// object notation
-var data = [
-  {name: "In-store", value: 43},
-  {name: "Online", value: 31}
-];
-
-// or map the columns of a data set
-var dataSet = anychart.data.set([
-  ["In-store", 43],
-  ["Online", 31]
-]);
-var mapping = dataSet.mapAs({name: 0, value: 1});
-
-var chart = anychart.waffle(mapping);
-```
-
-{sample}BCT\_Waffle\_Chart\_07{sample}
-
 ### Appearance
 
-The [appearance settings](../Appearance_Settings) of a Waffle chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Waffle#normal}normal(){api}, {api:anychart.charts.Waffle#hovered}hovered(){api}, and {api:anychart.charts.Waffle#selected}selected(){api} methods — the settings apply to the cells of the hovered / selected category as a whole. A category is shown in the **hover** state when it is pointed at and in the **selected** state when it is clicked (Ctrl/Cmd + click adds more categories to the selection, and a click on the empty area clears it). You can also select a category programmatically with {api:anychart.charts.Waffle#select}select(){api} and clear the selection with {api:anychart.charts.Waffle#unselect}unselect(){api}.
+The [appearance settings](../Appearance_Settings) of a Waffle chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Waffle#normal}normal(){api}, {api:anychart.charts.Waffle#hovered}hovered(){api}, and {api:anychart.charts.Waffle#selected}selected(){api} methods — the settings apply to the cells of the hovered / selected category as a whole. A category is shown in the **hover** state when it is pointed at and in the **selected** state when it is clicked (Ctrl/Cmd/Shift + click toggles a category into or out of a multi-category selection, and a click on the empty area clears it). You can also select a category programmatically with {api:anychart.charts.Waffle#select}select(){api} and clear the selection with {api:anychart.charts.Waffle#unselect}unselect(){api}.
 
-In the normal state, the color of each category comes from the chart [palette](../Appearance_Settings/Palettes) — set your own with the {api:anychart.charts.Waffle#palette}palette(){api} method. By default, the hovered and selected states transform that base color (lighten and darken it, respectively). To customize them, use the {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} methods — with a plain color or with a function that transforms the palette color of the category, available as `this.sourceColor`:
+Because a Waffle category is drawn as one block of identical cells, there is no per-cell styling: every cell in a category's block always shares the same fill and stroke.
+
+Combine the state methods with the following methods:
+
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
+
+In the normal state, the color of each category comes from the chart [palette](../Appearance_Settings/Palettes) — set your own with the {api:anychart.charts.Waffle#palette}palette(){api} method. By default, the hovered and selected states transform that base color: they lighten it on hover and darken it when selected. To customize this, pass fill() or stroke() a function that transforms the palette color of the category. Inside the function, the palette color is available as `this.sourceColor`:
 
 ```
 // one palette color per category
@@ -139,7 +115,9 @@ chart.selected().stroke("2 #212121");
 
 ### Grid Layout
 
-By default, the grid consists of 10×10 = 100 cells. To change it, use the {api:anychart.charts.Waffle#rows}rows(){api} and {api:anychart.charts.Waffle#columns}columns(){api} methods — the cells are allocated among the categories proportionally, whatever the grid size is:
+By default, the grid consists of 10×10 = 100 cells. To change it, use the {api:anychart.charts.Waffle#rows}rows(){api} and {api:anychart.charts.Waffle#columns}columns(){api} methods.
+
+The chart always fills the whole grid: each category gets a number of cells proportional to its share of the total of all values, rounded by the largest-remainder method (a way of rounding shares so they still add up to the full grid). This works no matter the grid size, so if your values sum up to 100, one cell of the default 10×10 grid corresponds to exactly one unit of value.
 
 ```
 // change the default 10×10 grid
@@ -153,10 +131,10 @@ chart.columns(20);
 
 The cells of a Waffle chart are squares by default, and their size is calculated automatically to fit the chart bounds. The following methods adjust the geometry of cells:
 
-* {api:anychart.charts.Waffle#cellShape}cellShape(){api} — `"square"` (default) or `"circle"`
+* {api:anychart.charts.Waffle#cellShape}cellShape(){api} — `"square"` or `"circle"` (`"square"` by default)
 * {api:anychart.charts.Waffle#cellPadding}cellPadding(){api} — the gap between adjacent cells, in pixels (2 by default)
 * {api:anychart.charts.Waffle#cellCornerRadius}cellCornerRadius(){api} — rounds the corners of square cells (0 by default)
-* {api:anychart.charts.Waffle#cellSize}cellSize(){api} — an explicit cell height in pixels; 0 (default) means auto-fit to the chart bounds
+* {api:anychart.charts.Waffle#cellSize}cellSize(){api} — an explicit cell height in pixels (0 by default, which means auto-fit to the chart bounds)
 * {api:anychart.charts.Waffle#cellAspectRatio}cellAspectRatio(){api} — the width-to-height ratio of a cell (1 by default)
 
 ```
@@ -165,6 +143,8 @@ chart.cellShape("circle");
 chart.cellPadding(4);
 ```
 
+{sample}BCT\_Waffle\_Chart\_04{sample}
+
 For square cells, you can round the corners instead:
 
 ```
@@ -172,15 +152,13 @@ chart.cellShape("square");
 chart.cellCornerRadius(4);
 ```
 
-{sample}BCT\_Waffle\_Chart\_04{sample}
-
 ### Fill Direction
 
 The {api:anychart.charts.Waffle#fillDirection}fillDirection(){api} method sets the order in which the cells of categories fill the grid:
 
 * `"left-to-right"` (default) — row by row, from the top row down
 * `"right-to-left"` — row by row, each row filled from its right end
-* `"top-to-bottom"` — column by column, from the left column on
+* `"top-to-bottom"` — column by column, starting from the left column
 * `"bottom-to-top"` — row by row, from the bottom row up
 
 ```
@@ -188,11 +166,11 @@ The {api:anychart.charts.Waffle#fillDirection}fillDirection(){api} method sets t
 chart.fillDirection("bottom-to-top");
 ```
 
-{sample}BCT\_Waffle\_Chart\_09{sample}
+{sample}BCT\_Waffle\_Chart\_05{sample}
 
 ### Labels
 
-[Labels](../Common_Settings/Labels) identify categories directly on the grid: one label per category is placed at the center of its block of cells. Labels are disabled by default; enable them with the {api:anychart.charts.Waffle#labels}labels(){api} method. The default format is `"{%name}\n{%percent}%"`, and the `{%name}`, `{%value}`, and `{%percent}` [text formatter](../Common_Settings/Text_Formatters) tokens are available:
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart. On a Waffle chart, they identify categories directly on the grid: one label per category, placed at the center of its block of cells. Labels are disabled by default; enable them with the {api:anychart.charts.Waffle#labels}labels(){api} method. The default format is `"{%name}\n{%percent}%"`, and the `{%name}`, `{%value}`, and `{%percent}` [text formatter](../Common_Settings/Text_Formatters) tokens are available:
 
 ```
 // enable the labels (the default format is "{%name}\n{%percent}%")
@@ -204,11 +182,11 @@ chart.labels().fontColor("#ffffff");
 chart.labels().fontWeight(600);
 ```
 
-{sample}BCT\_Waffle\_Chart\_05{sample}
+{sample}BCT\_Waffle\_Chart\_06{sample}
 
 ### Tooltips
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a category is hovered over. By default, it shows the category name as the title and `{%value} ({%percent}%)` as the text. To customize it, use the {api:anychart.charts.Waffle#tooltip}tooltip(){api} method with the same tokens as in [Labels](#labels):
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a category is hovered over. On a Waffle chart, it shows the category name as the title and `{%value} ({%percent}%)` as the text by default. To customize it, use the {api:anychart.charts.Waffle#tooltip}tooltip(){api} method with the same tokens as in [Labels](#labels):
 
 ```
 // customize the tooltip title and text
@@ -216,7 +194,7 @@ chart.tooltip().titleFormat("Channel: {%name}");
 chart.tooltip().format("{%value} orders — {%percent}% of the total");
 ```
 
-{sample}BCT\_Waffle\_Chart\_06{sample}
+{sample}BCT\_Waffle\_Chart\_07{sample}
 
 ### Legend
 

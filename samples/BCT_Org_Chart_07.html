@@ -15,22 +15,25 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data as a tree: children are nested into their parents
   var data = [
-    {name: "Sarah Johnson", title: "CEO", children: [
-      {name: "Michael Chen", title: "CTO", children: [
-        {name: "David Kim", title: "Head of Engineering"},
-        {name: "Lisa Zhang", title: "Head of Product"}
-      ]},
-      {name: "Emily Davis", title: "CFO"},
-      {name: "Robert Wilson", title: "COO"}
-    ]}
+    {id: "ceo", name: "Sarah Johnson", title: "CEO"},
+    {id: "cto", parent: "ceo", name: "Michael Chen", title: "CTO"},
+    {id: "cfo", parent: "ceo", name: "Emily Davis", title: "CFO"},
+    {id: "coo", parent: "ceo", name: "Robert Wilson", title: "COO"},
+    {id: "eng", parent: "cto", name: "David Kim", title: "Head of Engineering"},
+    {id: "prod", parent: "cto", name: "Lisa Zhang", title: "Head of Product"},
+    {id: "acct", parent: "cfo", name: "Diana Ross", title: "Head of Accounting"},
+    {id: "ops", parent: "coo", name: "Peter Jackson", title: "Head of Operations"},
+    {id: "fe", parent: "eng", name: "Anna Lee", title: "Frontend Lead"},
+    {id: "be", parent: "eng", name: "Tom Harris", title: "Backend Lead"}
   ];
 
-  // create an org chart in the "as-tree" mode
-  var chart = anychart.orgChart(data, "as-tree");
+  var chart = anychart.orgChart(data, "as-table");
+  chart.title("Org Chart: Collapse and Expand");
 
-  chart.title("Org Chart: Data as a Tree");
+  // collapse the CTO branch by the node id; click the +/− indicator
+  // under a parent card to expand or collapse it interactively
+  chart.collapse("cto");
 
   chart.container("container");
   chart.draw();

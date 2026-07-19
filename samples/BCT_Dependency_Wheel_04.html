@@ -31,10 +31,16 @@ anychart.onDocumentReady(function () {
   ];
 
   var chart = anychart.dependencyWheel(data);
-  chart.title("Dependency Wheel: Sorting Nodes");
+  chart.title("Dependency Wheel: Geometry");
 
-  // arrange the node arcs from the smallest to the largest
-  chart.sortOrder("asc");
+  // rotate the whole wheel a quarter-turn
+  chart.startAngle(90);
+
+  // widen the gaps between the node arcs (in radians)
+  chart.padAngle(0.06);
+
+  // make the node arcs thicker
+  chart.nodeWidth(30);
 
   chart.container("container");
   chart.draw();

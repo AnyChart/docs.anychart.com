@@ -15,36 +15,23 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  var searchData = [
-    ["W1", 42],["W2", 45],["W3", 40],["W4", 38],["W5", 44],
-    ["W6", 50],["W7", 55],["W8", 52],["W9", 48],["W10", 46]
-  ];
-  var socialData = [
-    ["W1", 30],["W2", 33],["W3", 36],["W4", 40],["W5", 38],
-    ["W6", 35],["W7", 37],["W8", 42],["W9", 46],["W10", 49]
-  ];
-  var emailData = [
-    ["W1", 18],["W2", 20],["W3", 19],["W4", 22],["W5", 24],
-    ["W6", 23],["W7", 21],["W8", 20],["W9", 22],["W10", 25]
-  ];
+  // one data set with a column per channel: [week, search, social]
+  var dataSet = anychart.data.set([
+    ["W1", 42, 30],["W2", 45, 33],["W3", 40, 36],["W4", 38, 40],["W5", 44, 38],
+    ["W6", 50, 35],["W7", 55, 37],["W8", 52, 42],["W9", 48, 46],["W10", 46, 49]
+  ]);
+
+  // map a column of the data set for each series
+  var searchMapping = dataSet.mapAs({x: 0, value: 1});
+  var socialMapping = dataSet.mapAs({x: 0, value: 2});
 
   var chart = anychart.streamGraph();
-  chart.title("Stream Graph: Appearance");
+  chart.title("Stream Graph: Data via data.set");
 
-  var series1 = chart.splineArea(searchData);
+  var series1 = chart.splineArea(searchMapping);
   series1.name("Search");
-  var series2 = chart.splineArea(socialData);
+  var series2 = chart.splineArea(socialMapping);
   series2.name("Social");
-  var series3 = chart.splineArea(emailData);
-  series3.name("Email");
-
-  // one palette color per layer
-  chart.palette(["#01497c", "#2c7da0", "#61a5c2"]);
-
-  // a thin white outline visually separates adjacent layers
-  series1.stroke("1.5 #ffffff");
-  series2.stroke("1.5 #ffffff");
-  series3.stroke("1.5 #ffffff");
 
   chart.container("container");
   chart.draw();

@@ -31,18 +31,10 @@ anychart.onDocumentReady(function () {
   ];
 
   var chart = anychart.dependencyWheel(data);
-  chart.title("Dependency Wheel: Node Settings");
+  chart.title("Dependency Wheel: Sorting Nodes");
 
-  // states of the node arcs
-  chart.node().normal().stroke("#ffffff", 1);
-  chart.node().hovered().stroke("#1b2740", 2);
-  chart.node().selected().stroke("#0b1220", 3);
-
-  // node labels: add the share of the total flow to the name
-  chart.node().normal().labels().format("{%name}\n{%percent}{decimalsCount:1}%");
-
-  // show every label, even if some of them collide
-  chart.dropOverlappedLabels(false);
+  // arrange the node arcs from the smallest to the largest
+  chart.sortOrder("asc");
 
   chart.container("container");
   chart.draw();

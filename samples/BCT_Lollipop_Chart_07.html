@@ -15,16 +15,17 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // map the columns of a data set
-  var dataSet = anychart.data.set([
-    ["January", 10000],["February", 12000],["March", 18000],["April", 11000],["May", 9000]
-  ]);
-  var mapping = dataSet.mapAs({x: 0, value: 1});
+  var data = [
+    {x: "January", value: 10000},{x: "February", value: 12000},{x: "March", value: 18000},{x: "April", value: 11000},{x: "May", value: 9000}
+  ];
 
   var chart = anychart.lollipop();
-  chart.title("Lollipop Chart: Data via data.set");
-  var series = chart.lollipop(mapping);
+  chart.title("Lollipop Chart: Tooltip");
 
+  var series = chart.lollipop(data);
+  series.tooltip().format("{%x}: {%value}");
+
+  // set the container id and draw
   chart.container("container");
   chart.draw();
 });

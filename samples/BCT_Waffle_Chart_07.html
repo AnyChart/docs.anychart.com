@@ -15,14 +15,19 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // map the columns of a data set (two fields: name, value)
-  var dataSet = anychart.data.set([
-    ["In-store", 43],["Online", 31],["Wholesale", 17],["Other", 9]
-  ]);
-  var mapping = dataSet.mapAs({name: 0, value: 1});
+  var data = [
+    {name: "In-store", value: 43},
+    {name: "Online", value: 31},
+    {name: "Wholesale", value: 17},
+    {name: "Other", value: 9}
+  ];
 
-  var chart = anychart.waffle(mapping);
-  chart.title("Waffle Chart: Data via data.set");
+  var chart = anychart.waffle(data);
+  chart.title("Waffle Chart: Tooltip");
+
+  // customize the tooltip title and text
+  chart.tooltip().titleFormat("Channel: {%name}");
+  chart.tooltip().format("{%value} orders — {%percent}% of the total");
 
   chart.container("container");
   chart.draw();

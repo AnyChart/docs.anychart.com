@@ -22,9 +22,13 @@ anychart.onDocumentReady(function () {
   ];
 
   var chart = anychart.dumbbell();
-  chart.title("Dumbbell Chart: Tooltip");
+  chart.title("Dumbbell Chart: Labels");
 
   var series = chart.dumbbell(data);
+  series.labels().enabled(true);
+  series.labels().format("{%low} - {%high}");
+
+  // show both endpoint values in the tooltip
   series.tooltip().format("High: {%high}, Low: {%low}");
 
   // set the container id and draw

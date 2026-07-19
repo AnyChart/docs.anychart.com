@@ -15,19 +15,19 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // map the columns of a data set (three fields: x, low, high)
-  var dataSet = anychart.data.set([
-    ["Job A", 40000, 60000],["Job B", 50000, 80000],["Job C", 35000, 55000]
-  ]);
-  var mapping = dataSet.mapAs({x: 0, low: 1, high: 2});
+  var data = [
+    {x: "Job A", low: 40000, high: 60000},
+    {x: "Job B", low: 50000, high: 80000},
+    {x: "Job C", low: 35000, high: 55000}
+  ];
 
   var chart = anychart.dumbbell();
-  chart.title("Dumbbell Chart: Data via data.set");
-  var series = chart.dumbbell(mapping);
+  chart.title("Dumbbell Chart: Tooltip");
 
-  // show both endpoint values in the tooltip
+  var series = chart.dumbbell(data);
   series.tooltip().format("High: {%high}, Low: {%low}");
 
+  // set the container id and draw
   chart.container("container");
   chart.draw();
 });

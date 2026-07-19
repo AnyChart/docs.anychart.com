@@ -29,16 +29,11 @@ anychart.onDocumentReady(function () {
   ];
 
   var chart = anychart.orgChart(data, "as-table");
-  chart.title("Org Chart: Node Size and Spacing");
+  chart.title("Org Chart: Curved Connectors");
 
-  // the size of the node cards
-  chart.nodeWidth(180);
-  chart.nodeHeight(56);
-  chart.nodePadding(8);
-
-  // the gaps between levels and between siblings
-  chart.levelSpacing(50);
-  chart.siblingSpacing(16);
+  // draw the parent-child connectors as smooth curves
+  chart.connectorType("curved");
+  chart.connectorStroke("2 #64b5f6");
 
   chart.container("container");
   chart.draw();

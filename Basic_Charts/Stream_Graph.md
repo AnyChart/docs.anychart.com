@@ -3,7 +3,9 @@
 
 ## Overview
 
-A Stream graph is a stacked area chart displaced around a shifting central baseline, which gives it a flowing, organic, "river-like" shape. Instead of stacking the series from a flat zero line, the whole stack is offset at every point — this makes a Stream graph a good choice for showing how the composition of a total changes over time across many series, when the overall shape matters more than exact values.
+A Stream graph is a stacked area chart. Unlike an ordinary stacked area chart, it does not stack the layers from a flat zero line: the whole stack is displaced around a shifting central baseline. This gives it a flowing, organic, "river-like" shape.
+
+A Stream graph works best when you want to show how the parts of a whole change over time across many series, and the overall shape matters more than exact values.
 
 This article explains how to create a basic Stream graph as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Stream graph's characteristics:
 
@@ -52,7 +54,9 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
-To create a Stream graph, use the {api:anychart#streamGraph}anychart.streamGraph(){api} chart constructor. Each series (layer) of the stream is added with the {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} method — the layers are always stacked, and the baseline is shifted automatically:
+To create a Stream graph, use the {api:anychart#streamGraph}anychart.streamGraph(){api} chart constructor. Each series (layer) of the stream is added with the {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} method. The layers are always stacked, and the baseline is shifted automatically.
+
+The following sample demonstrates how a basic Stream graph is created:
 
 ```
 // create data: weekly volume of three acquisition channels
@@ -80,9 +84,6 @@ series2.name("Social");
 var series3 = chart.splineArea(emailData);
 series3.name("Email");
 
-// set the chart title
-chart.title("Stream Graph: Basic Sample");
-
 // set the container id
 chart.container("container");
 
@@ -90,13 +91,13 @@ chart.container("container");
 chart.draw();
 ```
 
+{sample}BCT\_Stream\_Graph\_01{sample}
+
 You can also pass one or more data arrays straight to the constructor — a spline-area series is created for each of them:
 
 ```
 var chart = anychart.streamGraph(searchData, socialData, emailData);
 ```
-
-{sample}BCT\_Stream\_Graph\_01{sample}
 
 ## General Settings
 
@@ -113,7 +114,7 @@ Each layer of a Stream graph is a separate series with two data fields:
 * `x` — the category (usually a point in time)
 * `value` — the value of the layer at that category
 
-Data for a series is passed to the {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} (or [area / step-area](#series_type)) method — as an array, or as a mapped [data set](../Working_with_Data/Data_Sets), which is convenient when all layers share one table. Missing values can be set as `null` — such points are skipped without corrupting the baseline:
+Data for a series is passed to the {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} (or [area / step-area](#series_type)) method. You can pass a plain array, or map the columns of a shared [data set](../Working_with_Data/Data_Sets) — this is convenient when all layers share one table. Missing values can be set as `null`; such points are skipped without breaking the baseline:
 
 ```
 // one data set with a column per channel: [week, search, social]
@@ -133,7 +134,7 @@ var series2 = chart.splineArea(socialMapping);
 series2.name("Social");
 ```
 
-{sample}BCT\_Stream\_Graph\_07{sample}
+{sample}BCT\_Stream\_Graph\_02{sample}
 
 ### Offset
 
@@ -160,13 +161,16 @@ By default, the layers are drawn as [Spline Area](Spline_Area_Chart) series with
 var series1 = chart.area(searchData);
 var series2 = chart.area(socialData);
 var series3 = chart.area(emailData);
+
+// or switch an existing series to a different type
+series1.seriesType("stepArea");
 ```
 
 {sample}BCT\_Stream\_Graph\_04{sample}
 
 ### Appearance
 
-The color of each layer comes from the chart [palette](../Appearance_Settings/Palettes) — set your own with the {api:anychart.charts.StreamGraph#palette}palette(){api} method. The [appearance settings](../Appearance_Settings) of individual series are configured like in other area-based series: the {api:anychart.core.cartesian.series.Base#fill}fill(){api} method sets the layer fill, and the {api:anychart.core.cartesian.series.Base#stroke}stroke(){api} method sets its outline. Adjacent layers of a stream often read better when separated with a thin contrasting stroke:
+The color of each layer comes from the chart [palette](../Appearance_Settings/Palettes) — set your own with the {api:anychart.charts.StreamGraph#palette}palette(){api} method. The [appearance settings](../Appearance_Settings) of individual series are configured like in other area-based series: the {api:anychart.core.StateSettings#fill}fill(){api} method sets the layer fill, and the {api:anychart.core.StateSettings#stroke}stroke(){api} method sets its outline. Adjacent layers of a stream often read better when separated with a thin contrasting stroke:
 
 ```
 // one palette color per layer
@@ -176,13 +180,16 @@ chart.palette(["#01497c", "#2c7da0", "#61a5c2"]);
 series1.stroke("1.5 #ffffff");
 series2.stroke("1.5 #ffffff");
 series3.stroke("1.5 #ffffff");
+
+// override the fill of one layer directly
+series1.fill("#014f86");
 ```
 
-{sample}BCT\_Stream\_Graph\_02{sample}
+{sample}BCT\_Stream\_Graph\_05{sample}
 
 ### Labels and Markers
 
-[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart, and [markers](../Common_Settings/Markers) are icons that highlight the data points. Both are configured per series:
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart, and [markers](General_Settings#markers) are icons that highlight the data points. Both can be enabled on a whole series or on a single point, and both are configured per series; for text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 ```
 // enable the labels on the first layer
@@ -196,11 +203,11 @@ series2.markers().type("circle");
 series2.markers().size(4);
 ```
 
-{sample}BCT\_Stream\_Graph\_05{sample}
+{sample}BCT\_Stream\_Graph\_06{sample}
 
 ### Tooltips
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. On a Stream graph, the tooltip works in the `"union"` [display mode](../Common_Settings/Tooltip#display_modes) by default: one tooltip lists the values of all layers at the hovered category. Use font settings and [text formatters](../Common_Settings/Text_Formatters) to configure the text, or switch the mode with {api:anychart.core.ui.Tooltip#displayMode}displayMode(){api}:
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. On a Stream graph, the tooltip works in the `"union"` [display mode](../Common_Settings/Tooltip#display_mode) by default: one tooltip lists the values of all layers at the hovered category. Use font settings and [text formatters](../Common_Settings/Text_Formatters) to configure the text, or switch the mode with {api:anychart.core.ui.Tooltip#displayMode}displayMode(){api}:
 
 ```
 // the union tooltip lists all layers at the hovered category
@@ -208,11 +215,11 @@ chart.tooltip().titleFormat("Week {%x}");
 chart.tooltip().format("{%seriesName}: {%value}");
 ```
 
-{sample}BCT\_Stream\_Graph\_06{sample}
+{sample}BCT\_Stream\_Graph\_07{sample}
 
 ### Legend
 
-A [Legend](../Common_Settings/Legend) helps identify the layers of the stream: it is enabled on the Stream graph by default, and each series adds one legend item, labeled with its {api:anychart.core.cartesian.series.Base#name}name(){api}. Use the {api:anychart.core.ui.Legend#position}position(){api} and {api:anychart.core.ui.Legend#itemsLayout}itemsLayout(){api} methods to move it:
+A [Legend](../Common_Settings/Legend) helps identify the layers of the stream: it is enabled on the Stream graph by default, and each series adds one legend item, labeled with its {api:anychart.core.cartesian.series.Base#name}name(){api}. Use the {api:anychart.core.ui.Legend#position}position(){api} method to move it, and the {api:anychart.core.ui.Legend#itemsLayout}itemsLayout(){api} method to set how the items are arranged:
 
 ```
 // the legend is enabled by default; move it to the right

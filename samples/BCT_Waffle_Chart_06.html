@@ -23,11 +23,15 @@ anychart.onDocumentReady(function () {
   ];
 
   var chart = anychart.waffle(data);
-  chart.title("Waffle Chart: Tooltip");
+  chart.title("Waffle Chart: Labels");
 
-  // customize the tooltip title and text
-  chart.tooltip().titleFormat("Channel: {%name}");
-  chart.tooltip().format("{%value} orders — {%percent}% of the total");
+  // enable the labels (the default format is "{%name}\n{%percent}%")
+  chart.labels().enabled(true);
+
+  // show the name and the value instead
+  chart.labels().format("{%name}: {%value}");
+  chart.labels().fontColor("#ffffff");
+  chart.labels().fontWeight(600);
 
   chart.container("container");
   chart.draw();

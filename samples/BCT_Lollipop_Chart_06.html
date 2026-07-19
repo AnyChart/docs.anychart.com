@@ -20,10 +20,13 @@ anychart.onDocumentReady(function () {
   ];
 
   var chart = anychart.lollipop();
-  chart.title("Lollipop Chart: Tooltip");
+  chart.title("Lollipop Chart: Labels");
 
   var series = chart.lollipop(data);
-  series.tooltip().format("{%x}: {%value}");
+  series.labels().enabled(true);
+  series.labels().format("{%value}");
+  series.labels().anchor("center-bottom");
+  series.labels().offsetY(10);
 
   // set the container id and draw
   chart.container("container");

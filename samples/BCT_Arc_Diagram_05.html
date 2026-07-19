@@ -29,10 +29,15 @@ anychart.onDocumentReady(function () {
   ];
 
   var chart = anychart.arcDiagram(data);
-  chart.title("Arc Diagram: Sorting Nodes by Weight");
+  chart.title("Arc Diagram: Nodes and Arcs Geometry");
 
-  // order the nodes by their total flow instead of by name
-  chart.sortOrder("weight");
+  // make the node bars bigger and spread them wider
+  chart.nodeWidth(28);
+  chart.nodeSpacing(45);
+
+  // make the arcs taller and bow them below the baseline
+  chart.curvature(1.5);
+  chart.arcDirection("down");
 
   chart.container("container");
   chart.draw();

@@ -15,25 +15,32 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // map the columns of a data set (three fields: from, to, weight)
-  var dataSet = anychart.data.set([
-    ["Coal", "Grid", 38],
-    ["Gas", "Grid", 46],
-    ["Nuclear", "Grid", 22],
-    ["Hydro", "Grid", 17],
-    ["Solar", "Grid", 11],
-    ["Coal", "Heat", 9],
-    ["Gas", "Heat", 24],
-    ["Grid", "Industry", 41],
-    ["Grid", "Buildings", 52],
-    ["Grid", "Transport", 19],
-    ["Heat", "Industry", 18],
-    ["Heat", "Buildings", 21]
-  ]);
-  var mapping = dataSet.mapAs({from: 0, to: 1, weight: 2});
+  var data = [
+    {from: "Coal", to: "Grid", weight: 38},
+    {from: "Gas", to: "Grid", weight: 46},
+    {from: "Nuclear", to: "Grid", weight: 22},
+    {from: "Hydro", to: "Grid", weight: 17},
+    {from: "Solar", to: "Grid", weight: 11},
+    {from: "Coal", to: "Heat", weight: 9},
+    {from: "Gas", to: "Heat", weight: 24},
+    {from: "Grid", to: "Industry", weight: 41},
+    {from: "Grid", to: "Buildings", weight: 52},
+    {from: "Grid", to: "Transport", weight: 19},
+    {from: "Heat", to: "Industry", weight: 18},
+    {from: "Heat", to: "Buildings", weight: 21}
+  ];
 
-  var chart = anychart.dependencyWheel(mapping);
-  chart.title("Dependency Wheel: Data via data.set");
+  var chart = anychart.dependencyWheel(data);
+  chart.title("Dependency Wheel: Link Settings");
+
+  // states of the ribbons
+  chart.link().hovered().fill("#1b2740");
+  chart.link().selected().fill("#0b1220");
+
+  // show a label on every ribbon
+  chart.link().normal().labels().enabled(true);
+  chart.link().normal().labels().format("{%value}");
+  chart.link().normal().labels().fontSize(10);
 
   chart.container("container");
   chart.draw();

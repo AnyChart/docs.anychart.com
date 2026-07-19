@@ -29,15 +29,10 @@ anychart.onDocumentReady(function () {
   ];
 
   var chart = anychart.arcDiagram(data);
-  chart.title("Arc Diagram: Nodes and Arcs Geometry");
+  chart.title("Arc Diagram: Vertical Orientation");
 
-  // make the node bars bigger and spread them wider
-  chart.nodeWidth(28);
-  chart.nodeSpacing(45);
-
-  // make the arcs taller and bow them below the baseline
-  chart.curvature(1.5);
-  chart.arcDirection("down");
+  // place the nodes in a column; the arcs bow to the right
+  chart.orientation("vertical");
 
   chart.container("container");
   chart.draw();

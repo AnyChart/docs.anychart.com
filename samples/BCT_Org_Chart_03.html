@@ -29,10 +29,25 @@ anychart.onDocumentReady(function () {
   ];
 
   var chart = anychart.orgChart(data, "as-table");
-  chart.title("Org Chart: Left-to-Right Orientation");
+  chart.title("Org Chart: Appearance");
 
-  // grow the tree from the left edge to the right
-  chart.orientation("left-to-right");
+  // node cards in three states (plain colors)
+  chart.normal().fill("#f0f7ff");
+  chart.normal().stroke("1.5 #90a4ae");
+  chart.hovered().fill("#e3f2fd");
+  chart.hovered().stroke("2 #1976d2");
+  chart.selected().fill("#bbdefb");
+  chart.selected().stroke("2.5 #1565c0");
+
+  // the name (header) line of the cards
+  chart.labels().fontColor("#1a237e");
+  chart.labels().fontWeight("bold");
+
+  // the secondary title line of the cards
+  chart.titleFontColor("#546e7a");
+
+  // the connector lines
+  chart.connectorStroke("1.5 #90a4ae");
 
   chart.container("container");
   chart.draw();

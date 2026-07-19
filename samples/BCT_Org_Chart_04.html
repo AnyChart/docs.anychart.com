@@ -29,11 +29,10 @@ anychart.onDocumentReady(function () {
   ];
 
   var chart = anychart.orgChart(data, "as-table");
-  chart.title("Org Chart: Curved Connectors");
+  chart.title("Org Chart: Left-to-Right Orientation");
 
-  // draw the parent-child connectors as smooth curves
-  chart.connectorType("curved");
-  chart.connectorStroke("2 #64b5f6");
+  // grow the tree from the left edge to the right
+  chart.orientation("left-to-right");
 
   chart.container("container");
   chart.draw();
