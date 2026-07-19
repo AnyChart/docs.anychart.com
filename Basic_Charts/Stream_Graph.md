@@ -3,11 +3,11 @@
 
 ## Overview
 
-A Stream graph is a stacked area chart. Unlike an ordinary stacked area chart, it does not stack the layers from a flat zero line: the whole stack is displaced around a shifting central baseline. This gives it a flowing, organic, "river-like" shape.
+A Stream graph is a stacked area chart. But it does not stack the layers from a flat zero line. Instead, the whole stack moves around a central baseline that shifts. This gives the chart a flowing, organic, "river-like" shape.
 
-A Stream graph works best when you want to show how the parts of a whole change over time across many series, and the overall shape matters more than exact values.
+A Stream graph works best in one case. Use it to show how the parts of a whole change over time. It works well when you have many series. It fits when the overall shape matters more than exact values.
 
-This article explains how to create a basic Stream graph as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Stream graph's characteristics:
+This article shows how to create a basic Stream graph. It also shows how to set the options that are special to this type. You can also read the table below for a short overview of the Stream graph's features:
 
 <table border="1" class="seriesTABLE">
 <tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) + [Stream Graph](../Quick_Start/Modules#stream_graph)</td></tr>
@@ -36,7 +36,7 @@ This article explains how to create a basic Stream graph as well as configure se
 
 ## Modules
 
-The Stream graph requires adding the [Core](../Quick_Start/Modules#core), [Basic Cartesian](../Quick_Start/Modules#basic_cartesian), and [Stream Graph](../Quick_Start/Modules#stream_graph) modules:
+The Stream graph needs the [Core](../Quick_Start/Modules#core), [Basic Cartesian](../Quick_Start/Modules#basic_cartesian), and [Stream Graph](../Quick_Start/Modules#stream_graph) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -54,9 +54,9 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
-To create a Stream graph, use the {api:anychart#streamGraph}anychart.streamGraph(){api} chart constructor. Each series (layer) of the stream is added with the {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} method. The layers are always stacked, and the baseline is shifted automatically.
+To create a Stream graph, use the {api:anychart#streamGraph}anychart.streamGraph(){api} chart constructor. Add each series (layer) of the stream with the {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} method. The layers are always stacked. The baseline shifts on its own.
 
-The following sample demonstrates how a basic Stream graph is created:
+The sample below shows how to create a basic Stream graph:
 
 ```
 // create data: weekly volume of three acquisition channels
@@ -93,7 +93,7 @@ chart.draw();
 
 {sample}BCT\_Stream\_Graph\_01{sample}
 
-You can also pass one or more data arrays straight to the constructor — a spline-area series is created for each of them:
+You can also pass one or more data arrays straight to the constructor. A spline-area series is created for each one:
 
 ```
 var chart = anychart.streamGraph(searchData, socialData, emailData);
@@ -101,7 +101,7 @@ var chart = anychart.streamGraph(searchData, socialData, emailData);
 
 ## General Settings
 
-In AnyChart there are many settings that are configured in the same way for all chart types, including the Stream graph (for example, legend and interactivity settings).
+In AnyChart, many settings work the same way for all chart types. This includes the Stream graph, for example legend and interactivity settings.
 
 Read the overview of general settings: [General Settings](General_Settings).
 
@@ -114,7 +114,7 @@ Each layer of a Stream graph is a separate series with two data fields:
 * `x` — the category (usually a point in time)
 * `value` — the value of the layer at that category
 
-Data for a series is passed to the {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} (or [area / step-area](#series_type)) method. You can pass a plain array, or map the columns of a shared [data set](../Working_with_Data/Data_Sets) — this is convenient when all layers share one table. Missing values can be set as `null`; such points are skipped without breaking the baseline:
+Pass the data for a series to the {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} method (or the [area / step-area](#series_type) method). You can pass a plain array. You can also map the columns of a shared [data set](../Working_with_Data/Data_Sets). This is handy when all layers share one table. You can set missing values as `null`. Such points are skipped, and the baseline stays whole:
 
 ```
 // one data set with a column per channel: [week, search, social]
@@ -138,11 +138,11 @@ series2.name("Social");
 
 ### Offset
 
-The signature setting of the Stream graph is the **offset** — the algorithm that positions the baseline of the stack. It is controlled by the {api:anychart.charts.StreamGraph#offset}offset(){api} method:
+The key setting of the Stream graph is the **offset**. This is the algorithm that places the baseline of the stack. Control it with the {api:anychart.charts.StreamGraph#offset}offset(){api} method:
 
-* `"wiggle"` (default) — minimizes the change of slope of the layers (the Byron & Wattenberg "streamgraph" algorithm); the river meanders but stays compact
-* `"silhouette"` — centers the stack symmetrically around the zero line
-* `"expand"` — normalizes every category to a constant total height, so the chart shows shares of the total (like a percent-stacked chart with flat top and bottom edges)
+* `"wiggle"` (default) — reduces the change of slope of the layers (the Byron & Wattenberg "streamgraph" algorithm); the river bends but stays compact
+* `"silhouette"` — centers the stack evenly around the zero line
+* `"expand"` — gives every category the same total height; the chart then shows each layer's share of the total. It looks like a percent-stacked chart with flat top and bottom edges
 * `"zero"` — stacks the layers from a flat zero baseline (an ordinary stacked area chart)
 
 ```
@@ -154,7 +154,7 @@ chart.offset("silhouette");
 
 ### Series Type
 
-By default, the layers are drawn as [Spline Area](Spline_Area_Chart) series with smooth curved edges. Layers can also be drawn as plain [Area](Area_Chart) series (straight edges) or [Step Area](Step_Area_Chart) series (staircase edges) — use the {api:anychart.charts.StreamGraph#area}area(){api} and {api:anychart.charts.StreamGraph#stepArea}stepArea(){api} methods, or switch the type of an existing series with {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api}:
+By default, the layers are drawn as [Spline Area](Spline_Area_Chart) series with smooth curved edges. You can also draw the layers as plain [Area](Area_Chart) series (straight edges). Or draw them as [Step Area](Step_Area_Chart) series (staircase edges). Use the {api:anychart.charts.StreamGraph#area}area(){api} and {api:anychart.charts.StreamGraph#stepArea}stepArea(){api} methods. You can also change the type of an existing series with {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api}:
 
 ```
 // layers drawn as plain area series instead of spline-area
@@ -170,7 +170,7 @@ series1.seriesType("stepArea");
 
 ### Appearance
 
-The color of each layer comes from the chart [palette](../Appearance_Settings/Palettes) — set your own with the {api:anychart.charts.StreamGraph#palette}palette(){api} method. The [appearance settings](../Appearance_Settings) of individual series are configured like in other area-based series: the {api:anychart.core.StateSettings#fill}fill(){api} method sets the layer fill, and the {api:anychart.core.StateSettings#stroke}stroke(){api} method sets its outline. Adjacent layers of a stream often read better when separated with a thin contrasting stroke:
+The color of each layer comes from the chart [palette](../Appearance_Settings/Palettes). Set your own with the {api:anychart.charts.StreamGraph#palette}palette(){api} method. You set the [appearance settings](../Appearance_Settings) of single series like in other area-based series. The {api:anychart.core.StateSettings#fill}fill(){api} method sets the layer fill. The {api:anychart.core.StateSettings#stroke}stroke(){api} method sets its outline. Layers next to each other often read better with a thin contrasting stroke between them:
 
 ```
 // one palette color per layer
@@ -189,7 +189,7 @@ series1.fill("#014f86");
 
 ### Labels and Markers
 
-[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart, and [markers](General_Settings#markers) are icons that highlight the data points. Both can be enabled on a whole series or on a single point, and both are configured per series; for text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements. You can place them anywhere on any chart. [Markers](General_Settings#markers) are icons that highlight the data points. You can turn on both on a whole series or on a single point. You set both per series. For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 ```
 // enable the labels on the first layer
@@ -207,7 +207,7 @@ series2.markers().size(4);
 
 ### Tooltips
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. On a Stream graph, the tooltip works in the `"union"` [display mode](../Common_Settings/Tooltip#display_mode) by default: one tooltip lists the values of all layers at the hovered category. Use font settings and [text formatters](../Common_Settings/Text_Formatters) to configure the text, or switch the mode with {api:anychart.core.ui.Tooltip#displayMode}displayMode(){api}:
+A [Tooltip](../Common_Settings/Tooltip) is a text box. It shows when you hover over a point on a chart. On a Stream graph, the tooltip uses the `"union"` [display mode](../Common_Settings/Tooltip#display_mode) by default. In this mode, one tooltip lists the values of all layers at the hovered category. Use font settings and [text formatters](../Common_Settings/Text_Formatters) to set the text. You can also change the mode with {api:anychart.core.ui.Tooltip#displayMode}displayMode(){api}:
 
 ```
 // the union tooltip lists all layers at the hovered category
@@ -219,7 +219,7 @@ chart.tooltip().format("{%seriesName}: {%value}");
 
 ### Legend
 
-A [Legend](../Common_Settings/Legend) helps identify the layers of the stream: it is enabled on the Stream graph by default, and each series adds one legend item, labeled with its {api:anychart.core.cartesian.series.Base#name}name(){api}. Use the {api:anychart.core.ui.Legend#position}position(){api} method to move it, and the {api:anychart.core.ui.Legend#itemsLayout}itemsLayout(){api} method to set how the items are arranged:
+A [Legend](../Common_Settings/Legend) helps you identify the layers of the stream. It is turned on for the Stream graph by default. Each series adds one legend item, labeled with its {api:anychart.core.cartesian.series.Base#name}name(){api}. Use the {api:anychart.core.ui.Legend#position}position(){api} method to move it. Use the {api:anychart.core.ui.Legend#itemsLayout}itemsLayout(){api} method to set how the items are arranged:
 
 ```
 // the legend is enabled by default; move it to the right
@@ -231,7 +231,7 @@ chart.legend().itemsLayout("vertical");
 
 ### Axes
 
-The X axis of a Stream graph works like in other cartesian charts. The Y axis is **disabled by default**: with the `"wiggle"` and `"silhouette"` offsets the vertical positions are relative, so the axis values would be misleading. If you use the `"zero"` offset, the Y axis becomes meaningful again — enable it with the {api:anychart.charts.StreamGraph#yAxis}yAxis(){api} method:
+The X axis of a Stream graph works like in other cartesian charts. The Y axis is **disabled by default**. With the `"wiggle"` and `"silhouette"` offsets, the vertical positions are relative. So the axis values would mislead you. With the `"zero"` offset, the Y axis becomes meaningful again. Turn it on with the {api:anychart.charts.StreamGraph#yAxis}yAxis(){api} method:
 
 ```
 // stack the layers from the zero baseline and show the Y axis

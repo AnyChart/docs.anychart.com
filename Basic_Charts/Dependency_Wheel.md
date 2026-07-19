@@ -3,9 +3,9 @@
 
 ## Overview
 
-A Dependency wheel is a circular flow chart: the nodes are drawn as arcs around a wheel, and each link between two nodes is drawn as a ribbon connecting their arcs. The length of a node arc represents the total flow through that node, and the thickness of a ribbon represents the weight of the link. This type (also known as a chord diagram, since its ribbons are also called chords) works well for showing mutual dependencies or flows within a closed system — imports and exports, energy flows, dependencies between software packages, and so on.
+A Dependency wheel is a round flow chart. The nodes sit as arcs around a wheel. Each link between two nodes is drawn as a ribbon. The ribbon joins the two node arcs. The length of a node arc shows the total flow through that node. The thickness of a ribbon shows the weight of the link. This type is also called a chord diagram. That is because its ribbons are also called chords. It works well for flows inside a closed system. Some examples are imports and exports, energy flows, or links between software packages.
 
-This article explains how to create a basic Dependency wheel as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Dependency wheel's characteristics:
+This article shows how to make a basic Dependency wheel. It also shows how to set options that only this type has. The table below gives a short overview of the Dependency wheel's features:
 
 <table border="1" class="seriesTABLE">
 <tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Dependency Wheel](../Quick_Start/Modules#dependency_wheel)</td></tr>
@@ -33,7 +33,7 @@ This article explains how to create a basic Dependency wheel as well as configur
 
 ## Modules
 
-The Dependency wheel requires adding the [Core](../Quick_Start/Modules#core) and [Dependency Wheel](../Quick_Start/Modules#dependency_wheel) modules:
+The Dependency wheel needs the [Core](../Quick_Start/Modules#core) and [Dependency Wheel](../Quick_Start/Modules#dependency_wheel) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -47,7 +47,7 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
-To create a Dependency wheel, use the {api:anychart#dependencyWheel}anychart.dependencyWheel(){api} chart constructor. Each data row is a link between two nodes — the nodes themselves are created automatically from the `from` and `to` fields:
+To make a Dependency wheel, use the {api:anychart#dependencyWheel}anychart.dependencyWheel(){api} chart constructor. Each data row is a link between two nodes. AnyChart builds the nodes on its own from the `from` and `to` fields:
 
 ```
 // create data: energy flows from sources to consumers
@@ -83,7 +83,7 @@ chart.draw();
 
 ## General Settings
 
-In AnyChart there are many settings that are configured in the same way for all chart types, including the Dependency wheel (for example, interactivity settings).
+AnyChart has many settings that work the same way for all chart types. The Dependency wheel uses them too, for example interactivity settings.
 
 Read the overview of general settings: [General Settings](General_Settings).
 
@@ -91,13 +91,13 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-Data is passed to the {api:anychart#dependencyWheel}anychart.dependencyWheel(){api} chart constructor or to the {api:anychart.charts.DependencyWheel#data}data(){api} method. Each row describes one link with three data fields:
+Pass the data to the {api:anychart#dependencyWheel}anychart.dependencyWheel(){api} chart constructor or to the {api:anychart.charts.DependencyWheel#data}data(){api} method. Each row describes one link with three data fields:
 
 * `from` — the name of the source node
 * `to` — the name of the target node
 * `weight` — the weight of the link (sets the thickness of the ribbon)
 
-You can set links as objects or map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api}:
+You can set links as objects. Or you can map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api}:
 
 ```
 // map the columns of a data set (three fields: from, to, weight)
@@ -115,11 +115,11 @@ var chart = anychart.dependencyWheel(mapping);
 
 ### Color Mode
 
-The color of each node comes from the chart [palette](../Appearance_Settings/Palettes) — set your own with the {api:anychart.charts.DependencyWheel#palette}palette(){api} method. The ribbons are colored according to the {api:anychart.charts.DependencyWheel#colorMode}colorMode(){api} method:
+The color of each node comes from the chart [palette](../Appearance_Settings/Palettes). Set your own palette with the {api:anychart.charts.DependencyWheel#palette}palette(){api} method. The {api:anychart.charts.DependencyWheel#colorMode}colorMode(){api} method sets the color of the ribbons:
 
 * `"source"` (default) — a ribbon takes the color of its source (`from`) node
 * `"target"` — a ribbon takes the color of its target (`to`) node
-* `"gradient"` — a ribbon is blended from the source color to the target color; the {api:anychart.charts.DependencyWheel#reverseGradient}reverseGradient(){api} method flips the direction of the blend
+* `"gradient"` — a ribbon blends from the source color to the target color. The {api:anychart.charts.DependencyWheel#reverseGradient}reverseGradient(){api} method flips the direction of the blend
 
 ```
 // set a custom palette for the nodes
@@ -136,10 +136,10 @@ chart.colorMode("gradient");
 
 ### Wheel Geometry
 
-The following methods adjust the geometry of the wheel:
+These methods change the geometry of the wheel:
 
 * {api:anychart.charts.DependencyWheel#startAngle}startAngle(){api} — rotates the whole wheel, in degrees (0 by default)
-* {api:anychart.charts.DependencyWheel#padAngle}padAngle(){api} — the angular gap between adjacent node arcs, in radians (0.02 by default)
+* {api:anychart.charts.DependencyWheel#padAngle}padAngle(){api} — the angular gap between node arcs that sit next to each other, in radians (0.02 by default)
 * {api:anychart.charts.DependencyWheel#nodeWidth}nodeWidth(){api} — the thickness of the node arcs, in pixels (15 by default)
 
 ```
@@ -157,7 +157,7 @@ chart.nodeWidth(30);
 
 ### Sorting
 
-The {api:anychart.charts.DependencyWheel#sortOrder}sortOrder(){api} method arranges the node arcs around the wheel:
+The {api:anychart.charts.DependencyWheel#sortOrder}sortOrder(){api} method sets the order of the node arcs around the wheel:
 
 * `"desc"` (default) — by the total flow through the node, the largest first
 * `"asc"` — the smallest first
@@ -173,13 +173,13 @@ chart.sortOrder("asc");
 
 ### Nodes
 
-The node arcs and their labels are configured via the {api:anychart.charts.DependencyWheel#node}node(){api} method. The {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} methods are available in each of the three [states](../Common_Settings/Interactivity/States). Labels are drawn from the normal state only, so configure them with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state.
+Set the node arcs and their labels with the {api:anychart.charts.DependencyWheel#node}node(){api} method. The {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} methods work in each of the three [states](../Common_Settings/Interactivity/States). Labels come from the normal state only. So set them with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state.
 
-A node is hovered when it is pointed at; hovering it also highlights its ribbons. A node is selected when it is clicked, which replaces any previous selection; Ctrl/Cmd/Shift + click toggles a node into or out of a multi-node selection instead of replacing it. A plain click on the empty area clears the selection (Ctrl/Cmd/Shift + click on the empty area does nothing).
+A node is hovered when you point at it. Hovering a node also highlights its ribbons. A node is selected when you click it. A normal click replaces any earlier selection. Ctrl/Cmd/Shift + click adds a node to a multi-node selection or removes it. It does not replace the selection. A plain click on the empty area clears the selection. Ctrl/Cmd/Shift + click on the empty area does nothing.
 
-You can also control the selection from code: {api:anychart.charts.DependencyWheel#select}select(){api} accepts a node name or an array of node names to add them to the selection (call it with no arguments to select every node), and {api:anychart.charts.DependencyWheel#unselect}unselect(){api} accepts the same to remove just those nodes from the selection — call it with no arguments to clear the entire selection.
+You can also control the selection from code. {api:anychart.charts.DependencyWheel#select}select(){api} takes a node name or an array of node names. It adds them to the selection. Call it with no arguments to select every node. {api:anychart.charts.DependencyWheel#unselect}unselect(){api} takes the same and removes just those nodes from the selection. Call it with no arguments to clear the whole selection.
 
-Node labels are enabled by default and show the node name; the `{%name}`, `{%weight}`, `{%connections}` (number of links), and `{%percent}` (the node's share of the total flow) [text formatter](../Common_Settings/Text_Formatters) tokens are available. By default, labels that collide with already drawn ones are hidden — control this with the {api:anychart.charts.DependencyWheel#dropOverlappedLabels}dropOverlappedLabels(){api} method:
+Node labels are on by default and show the node name. You can use these [text formatter](../Common_Settings/Text_Formatters) tokens: `{%name}`, `{%weight}`, `{%connections}` (number of links), and `{%percent}` (the node's share of the total flow). By default, a label that overlaps an already drawn label is hidden. Control this with the {api:anychart.charts.DependencyWheel#dropOverlappedLabels}dropOverlappedLabels(){api} method:
 
 ```
 // states of the node arcs
@@ -201,7 +201,7 @@ chart.select(["Grid"]);
 
 ### Links
 
-The ribbons are configured via the {api:anychart.charts.DependencyWheel#link}link(){api} method — like [nodes](#nodes), in three states. A ribbon is hovered when it is pointed at, and selected when it is clicked; hovering or selecting a node also highlights its connected ribbons, and hovering or selecting a ribbon also highlights its two endpoint nodes. Link labels support the `{%from}`, `{%to}`, `{%value}`, and `{%name}` (the `from → to` string) [text formatter](../Common_Settings/Text_Formatters) tokens. They are hidden by default; enable them in the normal state to show a label on every ribbon:
+Set the ribbons with the {api:anychart.charts.DependencyWheel#link}link(){api} method. Like [nodes](#nodes), it works in three states. A ribbon is hovered when you point at it. It is selected when you click it. Hovering or selecting a node also highlights its ribbons. Hovering or selecting a ribbon also highlights its two end nodes. Link labels support these [text formatter](../Common_Settings/Text_Formatters) tokens: `{%from}`, `{%to}`, `{%value}`, and `{%name}` (the `from → to` string). They are hidden by default. Turn them on in the normal state to show a label on every ribbon:
 
 ```
 // states of the ribbons
@@ -218,7 +218,7 @@ chart.link().normal().labels().fontSize(10);
 
 ### Tooltips
 
-Nodes and links have separate [tooltips](../Common_Settings/Tooltip) with separate text contexts. The node tooltip supports the `{%name}`, `{%weight}` (total flow through the node), `{%connections}` (number of links), and `{%percent}` (the node's share of the total flow) tokens; the link tooltip supports `{%from}`, `{%to}`, `{%value}`, and `{%name}` (the `from → to` string). By default, the link tooltip uses the same format as the node tooltip, so its `{%weight}` and `{%connections}` tokens show no value for a link. It is recommended to configure the link tooltip explicitly, as shown below:
+Nodes and links have separate [tooltips](../Common_Settings/Tooltip) with separate text contexts. The node tooltip supports these tokens: `{%name}`, `{%weight}` (total flow through the node), `{%connections}` (number of links), and `{%percent}` (the node's share of the total flow). The link tooltip supports `{%from}`, `{%to}`, `{%value}`, and `{%name}` (the `from → to` string). By default, the link tooltip uses the same format as the node tooltip. So its `{%weight}` and `{%connections}` tokens show no value for a link. Set the link tooltip yourself, as shown below:
 
 ```
 // the tooltip of nodes

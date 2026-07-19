@@ -3,9 +3,9 @@
 
 ## Overview
 
-A Lollipop chart is a variation of the [Column](Column_Chart) and [Stick](Stick_Chart) charts. Each data point is drawn as a thin stick. The stick starts at the zero baseline and ends with a round "head" marker at the value. This is why the type visually combines a [Stick](Stick_Chart) with a [Marker](Marker_Chart) head. Lollipop charts show discrete data well. They are a lighter, less cluttered alternative to Column charts when you have many categories or want to emphasize the value at the end of each stick.
+A Lollipop chart is a variation of the [Column](Column_Chart) and [Stick](Stick_Chart) charts. Each data point is drawn as a thin stick. The stick starts at the zero baseline. It ends with a round "head" marker at the value. So this type joins a [Stick](Stick_Chart) with a [Marker](Marker_Chart) head. Lollipop charts show discrete data well. They are lighter and less busy than Column charts. Use them when you have many categories. They also help you stress the value at the end of each stick.
 
-This article explains how to create a basic Lollipop chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Lollipop chart's characteristics:
+This article shows how to build a basic Lollipop chart. It also shows how to set the options that belong to this type. The table below gives a short overview of the Lollipop chart's features:
 
 <table border="1" class="seriesTABLE">
 <tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) / [Base](../Quick_Start/Modules#base)</td></tr>
@@ -36,7 +36,7 @@ This article explains how to create a basic Lollipop chart as well as configure 
 
 ## Modules
 
-The Lollipop chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) modules:
+The Lollipop chart needs the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -46,7 +46,7 @@ The Lollipop chart requires adding the [Core](../Quick_Start/Modules#core) and [
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
+You can also use the [Base](../Quick_Start/Modules#base) module. It includes the two modules above and more: 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
@@ -58,9 +58,9 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 A Lollipop chart is built on a Cartesian plot, like [Column](Column_Chart) and [Stick](Stick_Chart). There are two ways to create it.
 
-To create a Lollipop chart from scratch, use the {api:anychart#lollipop}anychart.lollipop(){api} chart constructor. If you pass data to this constructor, it creates a Lollipop series. Each point has two values: `x` is the category, and `value` sets the height of the stick and the position of the head.
+To build a Lollipop chart from scratch, use the {api:anychart#lollipop}anychart.lollipop(){api} chart constructor. When you pass data to this constructor, it creates a Lollipop series. Each point has two values. The `x` value is the category. The `value` sets the height of the stick and the position of the head.
 
-Alternatively, start from a [Column](Column_Chart) (or [Bar](Bar_Chart)) chart and add a Lollipop series with the {api:anychart.charts.Cartesian#lollipop}lollipop(){api} method.
+You can also start from a [Column](Column_Chart) (or [Bar](Bar_Chart)) chart. Then add a Lollipop series with the {api:anychart.charts.Cartesian#lollipop}lollipop(){api} method.
 
 ```
 // create data
@@ -85,7 +85,7 @@ chart.container("container");
 chart.draw();
 ```
 
-You can also start from a [Column](Column_Chart) (or [Bar](Bar_Chart)) chart and add the Lollipop series to it. Only the constructor is different, the rest is the same:
+You can also start from a [Column](Column_Chart) (or [Bar](Bar_Chart)) chart. Then add the Lollipop series to it. Only the constructor is different. The rest is the same:
 
 ```
 // create a column (or bar) chart, then add a lollipop series
@@ -97,7 +97,7 @@ var series = chart.lollipop(data);
 
 ## General Settings
 
-In AnyChart there are many settings that are configured in the same way for all chart types, including the Lollipop chart (for example, legend and interactivity settings).
+AnyChart has many settings that work the same way for all chart types, including the Lollipop chart. Legend and interactivity settings are two examples.
 
 Read the overview of general settings: [General Settings](General_Settings).
 
@@ -107,20 +107,20 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 #### All Points
 
-The [appearance settings](../Appearance_Settings) of a Lollipop chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Lollipop#normal}normal(){api}, {api:anychart.core.cartesian.series.Lollipop#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Lollipop#selected}selected(){api} methods. A point is shown in the **hover** state when it is pointed at and in the **selected** state when it is clicked.
+You can set the [appearance settings](../Appearance_Settings) of a Lollipop chart in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Lollipop#normal}normal(){api}, {api:anychart.core.cartesian.series.Lollipop#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Lollipop#selected}selected(){api} methods. A point shows the **hover** state when you point at it. It shows the **selected** state when you click it.
 
 Combine them with the following methods:
 
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the color and thickness of the stick
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill of the head
 
-The head is a filled circle with no outline. Only fill() sets its color; stroke() does not affect the head.
+The head is a filled circle with no outline. Only fill() sets its color. stroke() does not affect the head.
 
-Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+You can also use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
-If you do not set the colors explicitly, they come from the chart [palette](../Appearance_Settings/Palettes): each series gets one base color, used for both the stick and the head. Explicit fill() and stroke() settings override the palette colors.
+If you do not set the colors yourself, they come from the chart [palette](../Appearance_Settings/Palettes). Each series gets one base color, used for both the stick and the head. Explicit fill() and stroke() settings override the palette colors.
 
-In the sample below, there are two Lollipop series with appearance settings configured:
+The sample below has two Lollipop series with appearance settings:
 
 ```
 // create data for two series
@@ -165,7 +165,7 @@ series2.selected().fill("#0066cc");
 
 #### Individual Points
 
-If you use object notation to set the data, you can change the appearance of individual points by adding special fields to your data:
+If you use object notation to set the data, you can change the look of single points. Just add special fields to your data:
 
 ```
 // create data
@@ -199,7 +199,7 @@ var series = chart.lollipop(data);
 
 {sample}BCT\_Lollipop\_Chart\_03{sample}
 
-If you use an array to set the data, you can also configure the appearance of individual points, but in a slightly different way. First add the extra values to the data set, then map the columns so that they can be interpreted by the component:
+If you use an array to set the data, you can also set the look of single points. The way is a bit different. First add the extra values to the data set. Then map the columns so the component can read them:
 
 ```
 // create a data set: x, value, and (for one point) a custom fill color
@@ -225,7 +225,7 @@ var series = chart.lollipop(mapping);
 
 ### Point Size
 
-A Lollipop point has two size-related parts. The **head** is a circular marker whose radius is set with {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} and {api:anychart.core.ui.MarkersFactory#size}size(){api} (the default radius is 4 px). The **stick** has no width of its own — its thickness is the series stroke width, so make it thicker or thinner through the stroke (see [Appearance](#appearance)).
+A Lollipop point has two parts with a size. The **head** is a round marker. Set its radius with {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} and {api:anychart.core.ui.MarkersFactory#size}size(){api} (the default radius is 4 px). The **stick** has no width of its own. Its thickness is the series stroke width. So make it thicker or thinner through the stroke (see [Appearance](#appearance)).
 
 ```
 // enlarge the round head (default radius is 4 px)
@@ -239,9 +239,9 @@ series.normal().stroke("#0066cc", 3);
 
 ### Labels
 
-[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements. You can place them anywhere on any chart. You can turn them on for a whole series or for a single point. For text labels, you can use font settings and [text formatters](../Common_Settings/Text_Formatters).
 
-You can enable the data labels and format them to show each point's value:
+You can turn on the data labels and format them to show each point's value:
 
 ```
 // enable and format the data labels
@@ -249,15 +249,15 @@ series.labels().enabled(true);
 series.labels().format("{%value}");
 ```
 
-To adjust the placement of labels, use the {api:anychart.core.ui.LabelsFactory#position}position(){api}, {api:anychart.core.ui.LabelsFactory#anchor}anchor(){api}, {api:anychart.core.ui.LabelsFactory#offsetX}offsetX(){api}, and {api:anychart.core.ui.LabelsFactory#offsetY}offsetY(){api} methods.
+To move the labels, use the {api:anychart.core.ui.LabelsFactory#position}position(){api}, {api:anychart.core.ui.LabelsFactory#anchor}anchor(){api}, {api:anychart.core.ui.LabelsFactory#offsetX}offsetX(){api}, and {api:anychart.core.ui.LabelsFactory#offsetY}offsetY(){api} methods.
 
 {sample}BCT\_Lollipop\_Chart\_06{sample}
 
 ### Tooltips
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box. It appears when you hover over a point on a chart. Many visual and other settings are available. For example, you can edit the text with font settings and [text formatters](../Common_Settings/Text_Formatters). You can also change the background style and move the tooltip.
 
-You can customize the tooltip text with a format string:
+You can set the tooltip text with a format string:
 
 ```
 // customize the tooltip text
@@ -268,9 +268,9 @@ series.tooltip().format("{%x}: {%value}");
 
 ### Stacked Lollipop
 
-Stacked and percent stacked charts are multiple-series charts where related values are placed atop one another, which allows comparing the contribution of a value to a total, either in absolute or percentage terms.
+Stacked and percent stacked charts hold many series. Related values sit on top of one another. This lets you compare how much one value adds to a total. You can do this in absolute or percentage terms.
 
-In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts](Stacked/Overview).
+In AnyChart, you can turn on a special scale mode. This makes the series stack together: see [Stacked Charts](Stacked/Overview).
 
 To learn about the stacked versions of the Lollipop chart and its modifications, see:
 
@@ -279,7 +279,7 @@ To learn about the stacked versions of the Lollipop chart and its modifications,
 
 ### Vertical Lollipop
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](Vertical/Overview).
+You can draw most series types in AnyChart in two ways: horizontal or vertical. See [Vertical Charts](Vertical/Overview).
 
 Here is information about creating Vertical Lollipop series:
 

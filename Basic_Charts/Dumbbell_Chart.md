@@ -3,9 +3,9 @@
 
 ## Overview
 
-A Dumbbell chart shows two values for each category: a low value and a high value. Each pair is drawn as two dots connected by a line. The line looks like a dumbbell, so this chart type is also called a DNA chart, a gap chart, or a connected-dot plot. Dumbbell charts are good at showing the change between two values. This makes them a popular choice for before/after comparisons and for showing gaps between values.
+A Dumbbell chart shows two values for each category: a low value and a high value. Each pair is drawn as two dots joined by a line. The line looks like a dumbbell. So this chart type is also called a DNA chart, a gap chart, or a connected-dot plot. Dumbbell charts show the change between two values well. This makes them a popular choice for before/after comparisons. They also work well for showing gaps between values.
 
-This article explains how to create a basic Dumbbell chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Dumbbell chart's characteristics:
+This article shows how to create a basic Dumbbell chart. It also shows how to set options that are special to this type. The table below gives you a short overview of the Dumbbell chart's features:
 
 <table border="1" class="seriesTABLE">
 <tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) / [Base](../Quick_Start/Modules#base)</td></tr>
@@ -38,7 +38,7 @@ This article explains how to create a basic Dumbbell chart as well as configure 
 
 ## Modules
 
-The Dumbbell chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) modules:
+The Dumbbell chart needs the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -48,7 +48,7 @@ The Dumbbell chart requires adding the [Core](../Quick_Start/Modules#core) and [
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
+You can also use the [Base](../Quick_Start/Modules#base) module. It includes the two modules above and some others: 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
@@ -58,11 +58,11 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
-To create a Dumbbell chart, use the {api:anychart#dumbbell}anychart.dumbbell(){api} chart constructor. If you pass data to this constructor, it creates a Dumbbell series too. Each point has three values: `x` is the category, `low` is the lower value, and `high` is the upper value. Set them as an object `{x: ..., low: ..., high: ...}` or as an array `[x, low, high]`.
+To create a Dumbbell chart, use the {api:anychart#dumbbell}anychart.dumbbell(){api} chart constructor. If you pass data to it, it creates a Dumbbell series too. Each point has three values. `x` is the category, `low` is the lower value, and `high` is the upper value. Set them as an object `{x: ..., low: ..., high: ...}` or as an array `[x, low, high]`.
 
 To add a Dumbbell series to a chart, call the {api:anychart.charts.Cartesian#dumbbell}dumbbell(){api} method.
 
-The following sample demonstrates how a basic Dumbbell chart is created:
+The sample below shows how to create a basic Dumbbell chart:
 
 ```
 // create data
@@ -99,7 +99,7 @@ A Dumbbell point has two values, low and high. The tooltip shows both by default
 
 ## General Settings
 
-In AnyChart there are many settings that are configured in the same way for all chart types, including the Dumbbell chart (for example, legend and interactivity settings).
+In AnyChart, many settings work the same way for all chart types, including the Dumbbell chart. Legend and interactivity settings are two examples.
 
 Read the overview of general settings: [General Settings](General_Settings).
 
@@ -109,21 +109,21 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 #### All Points
 
-A Dumbbell point has a connecting line and two circular dots: one at the low value and one at the high value. Each part can be styled separately. The line does not show which value came "first", so for before/after comparisons, give the low and high dots different colors to show the direction of change.
+A Dumbbell point has a connecting line and two round dots. One dot sits at the low value and one at the high value. You can style each part on its own. The line does not show which value came "first". So for before/after comparisons, give the low and high dots different colors. This shows the direction of the change.
 
-The [appearance settings](../Appearance_Settings) of a Dumbbell chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Dumbbell#normal}normal(){api}, {api:anychart.core.cartesian.series.Dumbbell#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Dumbbell#selected}selected(){api} methods. A point is shown in the **hover** state when it is pointed at and in the **selected** state when it is clicked.
+You can set the [appearance settings](../Appearance_Settings) of a Dumbbell chart in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Dumbbell#normal}normal(){api}, {api:anychart.core.cartesian.series.Dumbbell#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Dumbbell#selected}selected(){api} methods. A point shows the **hover** state when you point at it. It shows the **selected** state when you click it.
 
-Combine them with the following methods:
+Combine them with these methods:
 
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the connecting line
 * {api:anychart.core.StateSettings#highFill}highFill(){api} and {api:anychart.core.StateSettings#highStroke}highStroke(){api} to set the fill and stroke of the high dot
 * {api:anychart.core.StateSettings#lowFill}lowFill(){api} and {api:anychart.core.StateSettings#lowStroke}lowStroke(){api} to set the fill and stroke of the low dot
 
-Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+You can also use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
-If you do not set the colors explicitly, they come from the chart [palette](../Appearance_Settings/Palettes): each series gets one base color, used for its connecting line and both dots. Settings like highFill() or lowFill() override the palette colors.
+If you do not set the colors yourself, they come from the chart [palette](../Appearance_Settings/Palettes). Each series gets one base color for its connecting line and both dots. Settings like highFill() or lowFill() override the palette colors.
 
-In the sample below, there are two Dumbbell series with appearance settings configured:
+The sample below has two Dumbbell series with appearance settings:
 
 ```
 // create data for two series
@@ -162,7 +162,7 @@ series2.selected().stroke("#0066cc", 4);
 
 #### Individual Points
 
-If you use object notation to set the data, you can change the appearance of individual points by adding special fields to your data:
+If you use object notation to set the data, you can change the look of single points. Just add special fields to your data:
 
 ```
 // create data
@@ -197,7 +197,7 @@ var series = chart.dumbbell(data);
 
 {sample}BCT\_Dumbbell\_Chart\_03{sample}
 
-If you use an array to set the data, you can also configure the appearance of individual points, but in a slightly different way. First add the extra values to the data set, then map the columns so that they can be interpreted by the component:
+If you use an array to set the data, you can also style single points. The way is a little different. First add the extra values to the data set. Then map the columns so the component can read them:
 
 ```
 // create a data set: x, low, high, and (for one point) custom dot colors
@@ -221,7 +221,7 @@ var series = chart.dumbbell(mapping);
 
 ### Endpoint Size
 
-The circular dots of a Dumbbell series are configured through markers. Use the {api:anychart.core.cartesian.series.Dumbbell#markers}markers(){api} method to access them and the {api:anychart.core.ui.MarkersFactory#size}size(){api} method to set the radius of the dots (the default value is 4 px). The size applies to **both** dots equally. The fill, stroke, and hatch fill (`lowFill`/`highFill`, `lowStroke`/`highStroke`, `lowHatchFill`/`highHatchFill`) can differ between the low and high dots.
+You set the round dots of a Dumbbell series through markers. Use the {api:anychart.core.cartesian.series.Dumbbell#markers}markers(){api} method to reach them. Use the {api:anychart.core.ui.MarkersFactory#size}size(){api} method to set the radius of the dots (the default value is 4 px). The size applies to **both** dots the same way. The fill, stroke, and hatch fill can differ between the low and high dots (`lowFill`/`highFill`, `lowStroke`/`highStroke`, `lowHatchFill`/`highHatchFill`).
 
 ```
 // create a Dumbbell series and set the data
@@ -235,9 +235,9 @@ series.markers().size(8);
 
 ### Labels
 
-[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements. You can place them anywhere on any chart. Enable them on a whole series or on a single point. For text labels, you can use font settings and [text formatters](../Common_Settings/Text_Formatters).
 
-A Dumbbell point has two values, so set a format that shows both:
+A Dumbbell point has two values. So set a format that shows both:
 
 ```
 // enable the labels and show both endpoint values
@@ -245,13 +245,13 @@ series.labels().enabled(true);
 series.labels().format("{%low} - {%high}");
 ```
 
-To adjust the placement of labels, use the {api:anychart.core.ui.LabelsFactory#position}position(){api}, {api:anychart.core.ui.LabelsFactory#anchor}anchor(){api}, {api:anychart.core.ui.LabelsFactory#offsetX}offsetX(){api}, and {api:anychart.core.ui.LabelsFactory#offsetY}offsetY(){api} methods.
+To adjust where labels sit, use the {api:anychart.core.ui.LabelsFactory#position}position(){api}, {api:anychart.core.ui.LabelsFactory#anchor}anchor(){api}, {api:anychart.core.ui.LabelsFactory#offsetX}offsetX(){api}, and {api:anychart.core.ui.LabelsFactory#offsetY}offsetY(){api} methods.
 
 {sample}BCT\_Dumbbell\_Chart\_06{sample}
 
 ### Tooltips
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box that shows when you hover over a point. Many visual and other settings are available. For example, you can edit the text with font settings and [text formatters](../Common_Settings/Text_Formatters). You can also change the background style and move the tooltip.
 
 A Dumbbell point has two values. The tooltip shows both by default. To change the format, set your own:
 
@@ -264,7 +264,7 @@ series.tooltip().format("High: {%high}, Low: {%low}");
 
 ### Vertical Dumbbell
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](Vertical/Overview).
+Most series types in AnyChart can be drawn in two ways: horizontal and vertical. See [Vertical Charts](Vertical/Overview).
 
 Here is information about creating Vertical Dumbbell series:
 
