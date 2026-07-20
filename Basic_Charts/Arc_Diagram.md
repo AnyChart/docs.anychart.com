@@ -3,7 +3,7 @@
 
 ## Overview
 
-An Arc diagram shows connections between things. It places the nodes along one line. Each link between two nodes is drawn as an arc above or below that line.
+An Arc diagram shows connections between things. It places the nodes along one line. Each link between two nodes is drawn as an arc on one side of that line.
 
 The height of an arc depends on the distance between its two nodes. The thickness of an arc shows the weight of the link. The length of a node bar shows the total flow through that node.
 
@@ -100,7 +100,7 @@ Pass data to the {api:anychart#arcDiagram}anychart.arcDiagram(){api} chart const
 * `to` — the name of the target node
 * `weight` — the weight of the link (sets the thickness of the arc)
 
-An optional `group` field puts the link's nodes into a named group. You can use groups to [sort](#sorting) the nodes. Set links as objects, or map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api}:
+An optional `group` field puts the link's nodes into a named group. A node keeps the first group it gets: if a later row gives the same node another group, that value is ignored. You can use groups to [sort](#sorting) the nodes. Set links as objects, or map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api}:
 
 ```
 // map the columns of a data set (four fields: from, to, weight, group)
@@ -184,7 +184,7 @@ chart.sortOrder("weight");
 
 ### Nodes
 
-Set the node bars and their [labels](../Common_Settings/Labels) with the {api:anychart.charts.ArcDiagram#node}node(){api} method in three [states](../Common_Settings/Interactivity/States). The {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} methods work in each state. Labels are drawn from the normal state only. So set them with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state. A node is hovered when you point at it. Its connections are then highlighted. A node is selected when you click it. A click replaces any previous selection. Ctrl/Cmd + click instead toggles a node into or out of a multi-node selection. A plain click on the empty area clears the selection. Ctrl/Cmd + click there does nothing. You can also select nodes in code. Both {api:anychart.charts.ArcDiagram#select}select(){api} and {api:anychart.charts.ArcDiagram#unselect}unselect(){api} accept a node name or an array of node names. select() adds the given nodes to the selection. unselect() removes just the given nodes. Called with no argument, select() selects every node and unselect() clears the whole selection.
+Set the node bars and their [labels](../Common_Settings/Labels) with the {api:anychart.charts.ArcDiagram#node}node(){api} method in three [states](../Common_Settings/Interactivity/States). The {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} methods work in each state. Labels are drawn from the normal state only. So set them with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state. A node is hovered when you point at it. Its connections are then highlighted. A node is selected when you click it. A click replaces any previous selection. Ctrl/Cmd + click or Shift + click instead toggles a node into or out of a multi-node selection. A plain click on the empty area clears the selection. A click there with one of these keys does nothing. You can also select nodes in code. Both {api:anychart.charts.ArcDiagram#select}select(){api} and {api:anychart.charts.ArcDiagram#unselect}unselect(){api} accept a node name or an array of node names. select() adds the given nodes to the selection. unselect() removes just the given nodes. Called with no argument, select() selects every node and unselect() clears the whole selection.
 
 Node labels show the node name and are on by default. In the horizontal orientation they are drawn at an angle. Use {api:anychart.core.ui.LabelsFactory#rotation}rotation(){api} and font settings to adjust them:
 
@@ -222,7 +222,7 @@ chart.link().normal().labels().fontSize(10);
 
 ### Tooltips
 
-Nodes and links have separate [tooltips](../Common_Settings/Tooltip) with separate text contexts. The node tooltip supports three tokens: `{%name}`, `{%weight}`, and `{%connections}`. `{%weight}` is the total flow through the node. `{%connections}` is the number of links. The link tooltip supports `{%from}`, `{%to}`, and `{%value}`. By default, the link tooltip uses the same format as the node tooltip. So its `{%weight}` and `{%connections}` tokens show no value for a link. It is best to set the link tooltip yourself, as shown below:
+Nodes and links have separate [tooltips](../Common_Settings/Tooltip) with separate text contexts. The node tooltip supports `{%name}`, `{%weight}`, `{%connections}`, and `{%group}`. `{%weight}` is the total flow through the node. `{%connections}` is the number of links. `{%group}` is the group of the node, or an empty string if it has none. The link tooltip supports `{%from}`, `{%to}`, `{%value}`, and `{%name}` (the source and target names joined by an arrow). By default, the link tooltip uses the same format as the node tooltip. So its `{%weight}` and `{%connections}` tokens show no value for a link. It is best to set the link tooltip yourself, as shown below:
 
 ```
 // the tooltip of nodes

@@ -221,7 +221,7 @@ var series = chart.dumbbell(mapping);
 
 ### Endpoint Size
 
-You set the round dots of a Dumbbell series through markers. Use the {api:anychart.core.cartesian.series.Dumbbell#markers}markers(){api} method to reach them. Use the {api:anychart.core.ui.MarkersFactory#size}size(){api} method to set the radius of the dots (the default value is 4 px). The size applies to **both** dots the same way. The fill, stroke, and hatch fill can differ between the low and high dots (`lowFill`/`highFill`, `lowStroke`/`highStroke`, `lowHatchFill`/`highHatchFill`).
+You set the round dots of a Dumbbell series through markers. Use the {api:anychart.core.cartesian.series.Dumbbell#markers}markers(){api} method to reach them. Use the {api:anychart.core.ui.MarkersFactory#size}size(){api} method to set the radius of the dots (the default value is 5 px). The size applies to **both** dots the same way. The fill, stroke, and hatch fill can differ between the low and high dots (`lowFill`/`highFill`, `lowStroke`/`highStroke`, `lowHatchFill`/`highHatchFill`).
 
 ```
 // create a Dumbbell series and set the data

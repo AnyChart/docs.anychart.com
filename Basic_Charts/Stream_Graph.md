@@ -20,7 +20,7 @@ This article shows how to create a basic Stream graph. It also shows how to set 
 <tr><td>Stacked</td><td>Built-in (see [Offset](#offset))</td></tr>
 <tr><td>Vertical</td><td>N/A</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>N/A</td></tr>
+<tr><td>Error Bars</td><td>[YES](../Error_Chart/Overview)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>

@@ -161,7 +161,7 @@ The {api:anychart.charts.DependencyWheel#sortOrder}sortOrder(){api} method sets 
 
 * `"desc"` (default) — by the total flow through the node, the largest first
 * `"asc"` — the smallest first
-* `"none"` — in the order the nodes appear in the data
+* `"none"` — in the order the nodes appear in the data. Note: if the node names are numbers written as text, such as `"10"` or `"2"`, they are placed in growing number order instead
 * a function — your own compare function that sorts the node arcs, like the callback passed to `Array.sort`
 
 ```

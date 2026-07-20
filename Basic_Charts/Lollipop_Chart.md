@@ -58,7 +58,7 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 A Lollipop chart is built on a Cartesian plot, like [Column](Column_Chart) and [Stick](Stick_Chart). There are two ways to create it.
 
-To build a Lollipop chart from scratch, use the {api:anychart#lollipop}anychart.lollipop(){api} chart constructor. When you pass data to this constructor, it creates a Lollipop series. Each point has two values. The `x` value is the category. The `value` sets the height of the stick and the position of the head.
+To build a Lollipop chart from scratch, use the {api:anychart#lollipop}anychart.lollipop(){api} chart constructor. When you pass data to this constructor, it creates a Lollipop series. A point uses two data fields. The `x` field is the category. The `value` field sets the height of the stick and the position of the head. If you pass a plain array of numbers, only `value` is read, and `x` is set automatically.
 
 You can also start from a [Column](Column_Chart) (or [Bar](Bar_Chart)) chart. Then add a Lollipop series with the {api:anychart.charts.Cartesian#lollipop}lollipop(){api} method.
 
