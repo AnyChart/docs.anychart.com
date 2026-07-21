@@ -232,6 +232,22 @@ chart.zoomIn();
 
 [Labels](../Common_Settings/Labels) are text elements placed on the node cards. They are the `name` (header) line and the `title` line. You style them as shown in [Appearance](#appearance). Only the font settings of {api:anychart.charts.OrgChart#labels}labels(){api} apply: `fontColor()`, `fontFamily()`, `fontWeight()`, `fontSize()`, and `enabled()`. The label text always comes from the `name` and `title` data fields. [Text formatters](../Common_Settings/Text_Formatters) do not apply to the card labels. To show custom text, use the [tooltip](#tooltips) instead.
 
+```
+// the font family and the font size apply to both lines
+// the title line is drawn a bit smaller than the name line
+chart.labels().fontFamily("Verdana, sans-serif");
+chart.labels().fontSize(13);
+
+// the font color and the font weight change only the name (header) line
+chart.labels().fontColor("#1a237e");
+chart.labels().fontWeight("bold");
+
+// set the color of the title line on its own
+chart.titleFontColor("#00796b");
+```
+
+{sample}BCT\_Org\_Chart\_10{sample}
+
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box that appears when you hover over a card. It has many visual and other settings. For example, you can edit the text with font settings and [text formatters](../Common_Settings/Text_Formatters). You can also change the background style and move the tooltip.
