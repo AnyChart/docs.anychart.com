@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="DS Data Sheet 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-data-sheet.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css" />
+
+    <style>
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+  // every row object has six fields
+  var products = [
+    {sku: 101, product: 'Laptop Pro 15', category: 'Computers',   price: 1200, stock: 34,  status: 'In stock'},
+    {sku: 102, product: 'Office Chair',  category: 'Furniture',   price: 150,  stock: 120, status: 'In stock'},
+    {sku: 103, product: 'Monitor 27',    category: 'Computers',   price: 300,  stock: 58,  status: 'In stock'},
+    {sku: 104, product: 'Desk Lamp',     category: 'Furniture',   price: 45,   stock: 210, status: 'In stock'},
+    {sku: 105, product: 'Wireless Mouse',category: 'Accessories', price: 25,   stock: 430, status: 'Low stock'},
+    {sku: 106, product: 'USB-C Hub',     category: 'Accessories', price: 60,   stock: 95,  status: 'In stock'},
+    {sku: 107, product: 'Standing Desk', category: 'Furniture',   price: 890,  stock: 12,  status: 'Low stock'},
+    {sku: 108, product: 'Webcam HD',     category: 'Accessories', price: 80,   stock: 0,   status: 'Out of stock'}
+  ];
+
+  var chart = anychart.dataSheet(products);
+
+  // declare three columns out of the six data fields
+  // the binding property is "field" - never "key"
+  chart.column(0, {field: 'product',  title: 'Product',    width: 220});
+  chart.column(1, {field: 'category', title: 'Category',   width: 150});
+  chart.column(2, {field: 'price',    title: 'Price, USD', width: 130, dataType: 'number'});
+
+  // every setting is also a method on the column object
+  chart.column(2).title('Unit Price, USD');
+
+  // the other three fields (sku, stock, status) are not shown:
+  // declaring columns replaces the whole auto-generated set,
+  // so chart.columnCount() is 3, not 6
+
+  chart.container('container');
+  chart.draw();
+});
+</script>
+</body>
+</html>

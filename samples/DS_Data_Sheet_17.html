@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="DS Data Sheet 17"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-data-sheet.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css" />
+
+    <style>
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+  // the data
+  var data = [
+    {id: 1, product: 'Laptop',   category: 'Tech',   price: 1200, stock: 34,  supplier: 'Northwind'},
+    {id: 2, product: 'Chair',    category: 'Office', price: 150,  stock: 120, supplier: 'Contoso'},
+    {id: 3, product: 'Monitor',  category: 'Tech',   price: 300,  stock: 58,  supplier: 'Northwind'},
+    {id: 4, product: 'Desk',     category: 'Office', price: 450,  stock: 21,  supplier: 'Fabrikam'},
+    {id: 5, product: 'Keyboard', category: 'Tech',   price: 80,   stock: 240, supplier: 'Contoso'},
+    {id: 6, product: 'Lamp',     category: 'Office', price: 45,   stock: 175, supplier: 'Fabrikam'},
+    {id: 7, product: 'Headset',  category: 'Tech',   price: 220,  stock: 96,  supplier: 'Northwind'},
+    {id: 8, product: 'Cabinet',  category: 'Office', price: 380,  stock: 12,  supplier: 'Contoso'}
+  ];
+
+  // add a button bar and a preview panel above the grid
+  var container = document.getElementById('container');
+  var bar = document.createElement('div');
+  bar.style.cssText = 'height:150px;padding:8px;box-sizing:border-box;font:13px Arial,sans-serif';
+  bar.innerHTML =
+    '<button id="copy">Copy selected rows</button> ' +
+    '<span id="hint">tick the checkboxes to change the selection</span>' +
+    '<pre id="tsv" style="margin:6px 0 0;padding:6px;height:96px;overflow:auto;' +
+    'background:#f5f5f5;border:1px solid #e0e0e0;font:12px monospace"></pre>';
+  document.body.insertBefore(bar, container);
+  container.style.height = 'calc(100% - 150px)';
+
+  // create a data sheet
+  var chart = anychart.dataSheet(data);
+
+  // declare the columns
+  chart.column(0, {field: 'product',  title: 'Product',  width: 150});
+  chart.column(1, {field: 'category', title: 'Category', width: 120});
+  chart.column(2, {field: 'price',    title: 'Price',    width: 110, dataType: 'number'});
+  chart.column(3, {field: 'stock',    title: 'Units',    width: 110, dataType: 'number'});
+
+  // copy, cut and paste act on the selected rows
+  chart.selection().mode('checkbox');
+
+  // add the column titles to the copied content - off by default
+  chart.clipboard().includeHeaders(true);
+
+  // select two rows, or there is nothing to copy
+  chart.selection().selectedIndices([0, 2]);
+
+  // buildTSV() returns the same text that copy() writes to the clipboard
+  var panel = document.getElementById('tsv');
+  function showTSV() {
+    panel.textContent = chart.clipboard().buildTSV() || '(nothing selected)';
+  }
+
+  // a click by the user fires rowSelect; a selection made in code does not
+  chart.listen('rowSelect', showTSV);
+
+  // copy the selected rows to the system clipboard
+  document.getElementById('copy').onclick = function () {
+    chart.clipboard().copy();
+  };
+
+  // set the container id and draw
+  chart.container('container');
+  chart.draw();
+
+  showTSV();
+
+});
+</script>
+</body>
+</html>

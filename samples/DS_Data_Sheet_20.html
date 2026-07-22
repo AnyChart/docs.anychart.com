@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="DS Data Sheet 20"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-data-sheet.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css" />
+
+    <style>
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+  // the data
+  var data = [
+    {id: 1, product: 'Laptop',   category: 'Tech',   price: 1200, stock: 34,  supplier: 'Northwind'},
+    {id: 2, product: 'Chair',    category: 'Office', price: 150,  stock: 120, supplier: 'Contoso'},
+    {id: 3, product: 'Monitor',  category: 'Tech',   price: 300,  stock: 58,  supplier: 'Northwind'},
+    {id: 4, product: 'Desk',     category: 'Office', price: 450,  stock: 21,  supplier: 'Fabrikam'},
+    {id: 5, product: 'Keyboard', category: 'Tech',   price: 80,   stock: 240, supplier: 'Contoso'},
+    {id: 6, product: 'Lamp',     category: 'Office', price: 45,   stock: 175, supplier: 'Fabrikam'},
+    {id: 7, product: 'Headset',  category: 'Tech',   price: 220,  stock: 96,  supplier: 'Northwind'},
+    {id: 8, product: 'Cabinet',  category: 'Office', price: 380,  stock: 12,  supplier: 'Contoso'}
+  ];
+
+  // add a button bar and an event log above the grid
+  var container = document.getElementById('container');
+  var bar = document.createElement('div');
+  bar.style.cssText = 'height:170px;padding:8px;box-sizing:border-box;font:13px Arial,sans-serif';
+  bar.innerHTML =
+    '<button id="tech">Filter: Tech only</button> ' +
+    '<button id="clear">Clear filter</button> ' +
+    '<button id="find">Search for Tech</button> ' +
+    '<span>click a header, click a row, drag a column edge or a header</span>' +
+    '<div id="log" style="margin-top:6px;padding:6px;height:110px;overflow:auto;' +
+    'background:#f5f5f5;border:1px solid #e0e0e0;font:12px monospace"></div>';
+  document.body.insertBefore(bar, container);
+  container.style.height = 'calc(100% - 170px)';
+
+  // create a data sheet
+  var chart = anychart.dataSheet(data);
+
+  // declare the columns
+  chart.column(0, {field: 'product',  title: 'Product',  width: 150});
+  chart.column(1, {field: 'category', title: 'Category', width: 120});
+  chart.column(2, {field: 'price',    title: 'Price',    width: 110, dataType: 'number'});
+  chart.column(3, {field: 'stock',    title: 'Units',    width: 110, dataType: 'number'});
+
+  // newest line on top
+  var panel = document.getElementById('log');
+  function log(text) {
+    var line = document.createElement('div');
+    line.textContent = text;
+    panel.insertBefore(line, panel.firstChild);
+  }
+
+  // event names are plain strings
+
+  // a plain header click sends column and order, a sort set from code sends sorts
+  chart.listen('sort', function (e) {
+    var text = e.sorts
+      ? e.sorts.map(function (s) { return s.field + ' ' + s.order; }).join(', ')
+      : e.column + ' ' + e.order;
+    log(e.type + ' - ' + text);
+  });
+
+  chart.listen('filter', function (e) {
+    log(e.type + ' - ' + e.filteredCount + ' of ' + e.totalCount + ' rows');
+  });
+
+  // rowSelect comes from a click or the keyboard, never from select() in code
+  chart.listen('rowSelect', function (e) {
+    log(e.type + ' - data index ' + e.dataIndex + ', selected ' + e.selectedIndices.join(', '));
+  });
+
+  chart.listen('columnresize', function (e) {
+    log(e.type + ' - column ' + e.columnIndex + ' is now ' + Math.round(e.width) + 'px');
+  });
+
+  chart.listen('columnreorder', function (e) {
+    log(e.type + ' - from ' + e.fromIndex + ' to ' + e.toIndex);
+  });
+
+  chart.listen('search', function (e) {
+    log(e.type + ' - "' + e.query + '", ' + e.matchCount + ' matches');
+  });
+
+  // filters need a redraw
+  document.getElementById('tech').onclick = function () {
+    chart.filter().filterBy('category', {type: 'text', mode: 'exact', value: 'Tech'});
+    chart.draw();
+  };
+  document.getElementById('clear').onclick = function () {
+    chart.filter().clearFilters();
+    chart.draw();
+  };
+
+  // the search bar is built during draw(), so show() needs a redraw too
+  document.getElementById('find').onclick = function () {
+    chart.search().show();
+    chart.draw();
+    chart.search().query('Tech');
+  };
+
+  // set the container id and draw
+  chart.container('container');
+  chart.draw();
+
+});
+</script>
+</body>
+</html>
