@@ -71,14 +71,17 @@ The Data Sheet is a separate module. Load the [Core](../Quick_Start/Modules#core
 
 The big all-in-one bundle `anychart-bundle.min.js` is **not** enough on its own. It holds only a small placeholder for this type. If you call `anychart.dataSheet()` with the bundle alone, that placeholder throws an error and tells you to load the module. If you already use the bundle, add `anychart-data-sheet.min.js` after it. The module then replaces the placeholder and everything works.
 
-The Data Sheet also uses two stylesheets:
+The Data Sheet also needs three stylesheets:
 
 ```
 <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/data-sheet.css" />
 <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css" />
 ```
 
-The first file is the AnyChart UI stylesheet. The second file holds the AnyChart icon font. The icon font draws the small icons in the [context menu](#context_menu) - the menu that opens when you right-click. Without the font, every menu row shows an empty space instead of its icon.
+The second file, `data-sheet.css`, is **required**. The grid is built from HTML elements, and this file gives them their layout: it puts the cells of a row side by side and sets the column widths. Without it the grid still draws, but every cell drops onto its own line and the table becomes unreadable. This file is not part of `anychart-ui.min.css`, so you always add it yourself.
+
+The first file is the AnyChart UI stylesheet. The third file holds the AnyChart icon font. The icon font draws the small icons in the [context menu](#context_menu) - the menu that opens when you right-click. Without the font, every menu row shows an empty space instead of its icon.
 
 The grid also needs a container element with a height greater than zero:
 
@@ -90,7 +93,7 @@ The grid also needs a container element with a height greater than zero:
 <div id="container"></div>
 ```
 
-Every live sample on this page uses exactly these two script tags, these two link tags and this container. This section has no sample of its own, because a sample cannot show you its own `<head>`.
+Every live sample on this page uses exactly these two script tags, these three link tags and this container. This section has no sample of its own, because a sample cannot show you its own `<head>`.
 
 Learn more: [Modules](../Quick_Start/Modules).
 
