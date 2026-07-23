@@ -71,14 +71,17 @@ The Data Sheet is a separate module. Load the [Core](../Quick_Start/Modules#core
 
 The big all-in-one bundle `anychart-bundle.min.js` is **not** enough on its own. It holds only a small placeholder for this type. If you call `anychart.dataSheet()` with the bundle alone, that placeholder throws an error and tells you to load the module. If you already use the bundle, add `anychart-data-sheet.min.js` after it. The module then replaces the placeholder and everything works.
 
-The Data Sheet also uses two stylesheets:
+The Data Sheet also uses three stylesheets:
 
 ```
+<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/data-sheet.css" />
 <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
 <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css" />
 ```
 
-The first file is the AnyChart UI stylesheet. The second file holds the AnyChart icon font. The icon font draws the small icons in the [context menu](#context_menu) - the menu that opens when you right-click. Without the font, every menu row shows an empty space instead of its icon.
+The first file is the one that draws the grid. It holds every `anychart-ds-*` rule - the header, the row heights, the cell padding, the cell borders, the hover and selection colors, the group indent. Every other AnyChart type draws SVG and needs no stylesheet at all, but this one draws `<div>` elements. So without this file the grid still appears and still works, and still looks like plain unstyled text.
+
+The second file is the AnyChart UI stylesheet, which the [context menu](#context_menu) needs. The third file holds the AnyChart icon font, which draws the small icons inside that menu. Without the font, every menu row shows an empty space instead of its icon.
 
 The grid also needs a container element with a height greater than zero:
 
