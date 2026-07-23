@@ -3,9 +3,9 @@
 
 ## Overview
 
-A Waffle chart (also called a square pie chart) shows parts of a whole. It uses a grid of small cells — 10×10 by default. Each category is a block of cells. The block is sized to match its share of the total.
+A Waffle chart (also called a square pie chart) shows parts of a whole. It uses a grid of small cells — 10×10 by default. Each category is a block of cells. The block's size matches its share of the total.
 
-Waffle charts do the same job as [Pie](Pie_Chart) charts. But they are often easier to read exactly. You can count the cells. On the default grid, one cell equals 1% of the total. This type works best with a few categories.
+Waffle charts do the same job as [Pie](Pie_Chart) charts. But they often make exact values easier to read. You can count the cells. On the default grid, one cell equals 1% of the total. This type works best with a few categories.
 
 This article shows how to make a basic Waffle chart. It also shows how to set options that are special to this type. The table below gives a quick overview of the Waffle chart's features:
 
@@ -53,7 +53,7 @@ Learn more: [Modules](../Quick_Start/Modules).
 To make a Waffle chart, use the {api:anychart#waffle}anychart.waffle(){api} chart constructor. Pass your data to it. Each point has two values. `name` is the category, and `value` is its quantity. The chart works out each category's share (percent) of the total on its own.
 
 ```
-// create data: values don't need to add up to 100 — the chart computes each category's share automatically
+// create data: values don't need to add up to 100 — the chart works out each category's share on its own
 var data = [
   {name: "In-store", value: 43},
   {name: "Online", value: 31},
@@ -62,7 +62,7 @@ var data = [
 ];
 
 // create a waffle chart and set the data
-chart = anychart.waffle(data);
+var chart = anychart.waffle(data);
 
 // set the container id
 chart.container("container");
@@ -83,7 +83,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-You can set the [appearance settings](../Appearance_Settings) of a Waffle chart in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Waffle#normal}normal(){api}, {api:anychart.charts.Waffle#hovered}hovered(){api}, and {api:anychart.charts.Waffle#selected}selected(){api} methods. The settings apply to the whole block of cells in a category. A category enters the **hover** state when you point at it. It enters the **selected** state when you click it. Ctrl/Cmd/Shift + click adds or removes a category from a multi-category selection. A click on the empty area clears it. You can also select a category in code with {api:anychart.charts.Waffle#select}select(){api}. Clear the selection with {api:anychart.charts.Waffle#unselect}unselect(){api}.
+You can set the [appearance settings](../Appearance_Settings) of a Waffle chart in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Waffle#normal}normal(){api}, {api:anychart.charts.Waffle#hovered}hovered(){api}, and {api:anychart.charts.Waffle#selected}selected(){api} methods. The settings apply to the whole block of cells in a category. A category enters the **hover** state when you point at it. It enters the **selected** state when you click it. Ctrl/Cmd/Shift + click adds or removes a category from the selection. A click on the empty area clears the selection. You can also select a category in code with {api:anychart.charts.Waffle#select}select(){api}. Clear the selection with {api:anychart.charts.Waffle#unselect}unselect(){api}.
 
 A Waffle category is drawn as one block of identical cells. So there is no per-cell styling. Every cell in a category's block always shares the same fill and stroke.
 
@@ -92,7 +92,7 @@ Combine the state methods with the following methods:
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
-In the normal state, each category's color comes from the chart [palette](../Appearance_Settings/Palettes). Set your own with the {api:anychart.charts.Waffle#palette}palette(){api} method. By default, the hovered and selected states change that base color. They lighten it on hover and darken it when selected. To change this, pass a function to fill() or stroke(). The function changes the palette color of the category. Inside the function, the palette color is available as `this.sourceColor`:
+In the normal state, each category's color comes from the chart [palette](../Appearance_Settings/Palettes). Set your own with the {api:anychart.charts.Waffle#palette}palette(){api} method. By default, the hovered and selected states change that base color. They lighten it on hover and darken it when selected. To change this, pass a function to fill() or stroke(). The function changes the category's palette color. Inside the function, the palette color is available as `this.sourceColor`:
 
 ```
 // one palette color per category
@@ -117,7 +117,7 @@ chart.selected().stroke("2 #212121");
 
 By default, the grid has 10×10 = 100 cells. To change it, use the {api:anychart.charts.Waffle#rows}rows(){api} and {api:anychart.charts.Waffle#columns}columns(){api} methods.
 
-The chart always fills the whole grid. Each category gets a number of cells sized to match its share of the total. The chart rounds these with the largest-remainder method. This method rounds shares so they still add up to the full grid. It works with any grid size. Say your values add up to 100. Then one cell of the default 10×10 grid equals exactly one unit of value.
+The chart always fills the whole grid. Each category gets a number of cells that matches its share of the total. The chart rounds these numbers with the largest-remainder method. This method rounds shares so they still add up to the full grid. It works with any grid size. Say your values add up to 100. Then one cell of the default 10×10 grid equals exactly one unit of value.
 
 ```
 // change the default 10×10 grid
@@ -129,12 +129,12 @@ chart.columns(20);
 
 ### Cells
 
-The cells of a Waffle chart are squares by default. Their size is worked out on its own to fit the chart bounds. The following methods adjust the shape and size of cells:
+The cells of a Waffle chart are squares by default. The chart works out their size on its own to fit the chart area. The following methods adjust the shape and size of cells:
 
 * {api:anychart.charts.Waffle#cellShape}cellShape(){api} — `"square"` or `"circle"` (`"square"` by default)
-* {api:anychart.charts.Waffle#cellPadding}cellPadding(){api} — the gap between adjacent cells, in pixels (2 by default)
+* {api:anychart.charts.Waffle#cellPadding}cellPadding(){api} — the gap between cells, in pixels (2 by default)
 * {api:anychart.charts.Waffle#cellCornerRadius}cellCornerRadius(){api} — rounds the corners of square cells (0 by default)
-* {api:anychart.charts.Waffle#cellSize}cellSize(){api} — an explicit cell height in pixels (0 by default, which means auto-fit to the chart bounds)
+* {api:anychart.charts.Waffle#cellSize}cellSize(){api} — a fixed cell height in pixels (0 by default — the chart then works out the size on its own)
 * {api:anychart.charts.Waffle#cellAspectRatio}cellAspectRatio(){api} — the width-to-height ratio of a cell (1 by default)
 
 ```
@@ -154,7 +154,7 @@ chart.cellCornerRadius(4);
 
 ### Fill Direction
 
-The {api:anychart.charts.Waffle#fillDirection}fillDirection(){api} method sets the order in which the cells of categories fill the grid:
+The {api:anychart.charts.Waffle#fillDirection}fillDirection(){api} method sets the order in which cells fill the grid:
 
 * `"left-to-right"` (default) — row by row, from the top row down
 * `"right-to-left"` — row by row, each row filled from its right end
@@ -170,7 +170,7 @@ chart.fillDirection("bottom-to-top");
 
 ### Labels
 
-[Labels](../Common_Settings/Labels) are text or image elements. You can place them anywhere on any chart. On a Waffle chart, they name categories right on the grid. There is one label per category, placed at the center of its block of cells. Labels are off by default. Turn them on with the {api:anychart.charts.Waffle#labels}labels(){api} method. The default format is `"{%name}\n{%percent}%"`. You can use the `{%name}`, `{%value}`, and `{%percent}` [text formatter](../Common_Settings/Text_Formatters) tokens:
+[Labels](../Common_Settings/Labels) are text or image elements. You can place them anywhere on any chart. On a Waffle chart, they show category names directly on the grid. There is one label per category, placed at the center of its block of cells. Labels are off by default. Turn them on with the {api:anychart.charts.Waffle#labels}labels(){api} method. The default format is `"{%name}\n{%percent}%"`. You can use the `{%name}`, `{%value}`, and `{%percent}` [text formatter](../Common_Settings/Text_Formatters) tokens:
 
 ```
 // enable the labels (the default format is "{%name}\n{%percent}%")
@@ -198,7 +198,7 @@ chart.tooltip().format("{%value} orders — {%percent}% of the total");
 
 ### Legend
 
-A [Legend](../Common_Settings/Legend) links the colors to the category names. On a Waffle chart, the legend is on by default. It sits under the plot. Use the {api:anychart.core.ui.Legend#position}position(){api} and {api:anychart.core.ui.Legend#itemsLayout}itemsLayout(){api} methods to move it:
+A [Legend](../Common_Settings/Legend) links the colors to the category names. On a Waffle chart, the legend is on by default. It sits below the grid. Use the {api:anychart.core.ui.Legend#position}position(){api} and {api:anychart.core.ui.Legend#itemsLayout}itemsLayout(){api} methods to move it:
 
 ```
 // move the legend to the right and make it vertical

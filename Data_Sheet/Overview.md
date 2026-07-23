@@ -3,7 +3,7 @@
 
 ## Overview
 
-A Data Sheet is an interactive table. It shows your rows in columns. The user can sort the rows, filter them, search them and edit the cells. The user can also group the rows, and resize, reorder or pin the columns. Pinning keeps a column at the edge of the table while the other columns scroll. You can also do all of this from code.
+A Data Sheet is an interactive table. It shows your data in rows and columns. The user can sort the rows, filter them, search them and edit the cells. The user can also group the rows, and resize, reorder or pin the columns. Pinning keeps a column at the edge of the table while the other columns scroll. You can also do all of this from code.
 
 The Data Sheet draws HTML elements. It does not draw SVG. It is the only AnyChart type that works this way. This one fact explains all the other differences on this page. Cells are `<div>` elements with CSS classes. So you can style them in your own stylesheet, and find them with `querySelector()`.
 
@@ -140,7 +140,7 @@ Pass a plain array of row objects to {api:anychart.charts.DataSheet#data}data(){
 
 `anychart.data.Set` and `anychart.data.View` do **not** work with this type yet, even though most other AnyChart types accept them. If you pass a data set you get zero columns, no rows at all and the "No data" message - and no error. Use a plain array.
 
-The grid can also load rows from a server, one page at a time. It does this through the {api:anychart.charts.DataSheet#dataSource}dataSource(){api} controller. A controller is a small object that holds the settings of one feature: you call its methods to read and change those settings. You give this one an adapter that loads a single page and reports the total number of rows. The grid then asks for a page when the user scrolls into it, keeps the pages it already has, and fires a `dataload` or a `dataerror` event - see [Events](#events). Loading data from a server is a big topic, and this article does not cover it. Read {api:anychart.core.dataSheet.DataSource}anychart.core.dataSheet.DataSource{api} for the whole controller. Everything else on this page works with the plain array above.
+The grid can also load rows from a server, one page at a time. It does this through the {api:anychart.charts.DataSheet#dataSource}dataSource(){api} controller. A controller is a small object that holds the settings of one feature: you call its methods to read and change those settings. You give this one an adapter that loads a single page and reports the total number of rows. The grid then asks for a page when the user scrolls to it, keeps the pages it already has, and fires a `dataload` or a `dataerror` event - see [Events](#events). Loading data from a server is a big topic, and this article does not cover it. Read {api:anychart.core.dataSheet.DataSource}anychart.core.dataSheet.DataSource{api} for the whole controller. Everything else on this page works with the plain array above.
 
 Every row keeps the index it had in the array you passed. That number is called the **data index**. [Selection](#selection) and the [events](#events) address rows by the data index, not by the position on screen. This matters as soon as sorting or filtering is on.
 
@@ -151,7 +151,7 @@ The two sections below cover tree-shaped data, and how to change the data after 
 The Data Sheet reads two tree formats:
 
 * **Nested** - a parent row holds its children in a `children` array
-* **Flat** - every row has an `id`, and a child row points at its parent with a `parent` field
+* **Flat** - every row has an `id`, and a child row points to its parent with a `parent` field
 
 The field names `children`, `id` and `parent` are fixed. You cannot rename them.
 
@@ -184,7 +184,7 @@ The same tree in the flat format looks like this:
 
 ```
 // the same tree written as flat rows: every row has an id,
-// and a child row points at its parent with parent
+// and a child row points to its parent with parent
 var data = [
   {id: 1, name: "Tech", units: 408},
   {id: 2, name: "Laptop", units: 34, parent: 1},
@@ -263,9 +263,9 @@ chart.column(2).title('Unit Price, USD');
 
 Declaring columns **replaces** the whole automatic set. The sample data below has six fields, three columns are declared, and {api:anychart.charts.DataSheet#columnCount}columnCount(){api} returns 3. The columns appear in the index order you declare.
 
-**Start at 0 and leave no gaps.** The index you pass is a position in the list of columns. If you declare index 2 but not index 0 and 1, those two positions stay empty, and the next `draw()` throws a `TypeError` and shows nothing at all. Declare every index from 0 up to the last one you need.
+**Start at 0 and leave no gaps.** The index you pass is a position in the list of columns. If you declare index 2 but not indices 0 and 1, those two positions stay empty, and the next `draw()` throws a `TypeError` and shows nothing at all. Declare every index from 0 up to the last one you need.
 
-**A column cannot be taken away again.** There is no `removeColumn()`, and a column has no `visible()` setting, so the set of columns only ever grows. Declare the columns you want once, before the first `draw()`. To show a different set later, build a new Data Sheet - see [What Is Not Supported](#what_is_not_supported). For the same reason, never call `column(index)` just to test whether a column exists: as a getter it creates the column when the index is new.
+**A column cannot be removed.** There is no `removeColumn()`, and a column has no `visible()` setting, so the set of columns only ever grows. Declare the columns you want once, before the first `draw()`. To show a different set later, build a new Data Sheet - see [What Is Not Supported](#what_is_not_supported). For the same reason, never call `column(index)` just to test whether a column exists: as a getter it creates the column when the index is new.
 
 {sample}DS\_Data\_Sheet\_04{sample}
 
@@ -279,7 +279,7 @@ Each type has a default format:
 
 * `'number'` - thousands separators, from `toLocaleString()`
 * `'boolean'` - a check mark or a cross
-* `'date'` - a date in the date format of the browser language. Your value can be a `Date` object, a number of milliseconds, or a text string that `new Date()` can read. The grid shows any other value as it is, and sorts it as 1 January 1970
+* `'date'` - a date in the date format of the browser's language. Your value can be a `Date` object, a number of milliseconds, or a text string that `new Date()` can read. The grid shows any other value as it is, and sorts it as January 1, 1970
 * `'string'` - the plain text
 
 The {api:anychart.core.dataSheet.Column#format}format{api} setting replaces that default. It takes a format string. In that string, `{%value}` is a placeholder: the grid puts the cell value there. For example, `'{%value} pcs'` or `'${%value}'`. Add `{decimalsCount:N}` right after the placeholder to set the number of decimal places: `'${%value}{decimalsCount:2}'` shows `1200` as `$1200.00`. The setting also takes a function.
@@ -341,7 +341,7 @@ chart.column(5, {
 });
 ```
 
-Two columns can bind the same field. The sample below shows `price` four times, so you can watch the separator appear and disappear side by side.
+More than one column can bind the same field. The sample below shows `price` four times, so you can watch the separator appear and disappear side by side.
 
 {sample}DS\_Data\_Sheet\_05{sample}
 
@@ -672,7 +672,7 @@ chart.cellEditor().undo();
 
 Enter accepts the value. Esc cancels the edit. A click outside the cell accepts the value as well. {api:anychart.core.dataSheet.CellEditor#commitEdit}commitEdit(){api}, {api:anychart.core.dataSheet.CellEditor#cancelEdit}cancelEdit(){api} and {api:anychart.core.dataSheet.CellEditor#isEditing}isEditing(){api} do the same from your own buttons.
 
-**Only the user can start an edit.** The API reference lists {api:anychart.core.dataSheet.CellEditor#startEdit}startEdit(){api}, but it wants the internal cell element of the grid, and a data cell has no attribute that a selector can find it by - see [CSS Classes](#css_classes). So there is no supported way to open an editor from a button of your own in this release. {api:anychart.core.dataSheet.CellEditor#moveToNextCell}moveToNextCell(){api} fails for the same reason. It is the method the Tab key calls, and it is why Tab closes the editor instead of stepping to the next cell.
+**Only the user can start an edit.** The API reference lists {api:anychart.core.dataSheet.CellEditor#startEdit}startEdit(){api}, but it wants the internal cell element of the grid, and a data cell has no attribute that a selector can use to find it - see [CSS Classes](#css_classes). So there is no supported way to open an editor from a button of your own in this release. {api:anychart.core.dataSheet.CellEditor#moveToNextCell}moveToNextCell(){api} fails for the same reason. It is the method the Tab key calls, and it is why Tab closes the editor instead of stepping to the next cell.
 
 Ctrl+Z (Cmd+Z) undoes the last accepted change, and so does {api:anychart.core.dataSheet.CellEditor#undo}undo(){api}. The grid remembers the last 20 changes, and it records only the edits that really changed a value.
 
@@ -719,7 +719,7 @@ The zone adds one more row above the header. The grid does not make its own heig
 
 The {api:anychart.charts.DataSheet#hierarchy}hierarchy(){api} controller opens and closes the groups: {api:anychart.core.dataSheet.Hierarchy#expandAll}expandAll(){api} and {api:anychart.core.dataSheet.Hierarchy#collapseAll}collapseAll(){api} for all of them, and {api:anychart.core.dataSheet.Hierarchy#expand}expand(key){api}, {api:anychart.core.dataSheet.Hierarchy#collapse}collapse(key){api} and {api:anychart.core.dataSheet.Hierarchy#toggle}toggle(key){api} for one group at a time. {api:anychart.core.dataSheet.Hierarchy#isExpanded}isExpanded(key){api} reports the state of one group.
 
-A group key is the grouped fields down to that level, joined with `/`, then `=` and the value. Grouping by `category` alone gives `'category=Tech'`. Grouping by `category` and then `supplier` gives `'category=Tech'` for the outer group and `'category/supplier=Contoso'` for the inner one. {api:anychart.core.dataSheet.Hierarchy#getGroupFields}getGroupFields(){api} returns the fields you grouped by. These methods work for groups. They do not work for [tree data](#tree_data).
+A group key joins the grouped field names down to that level with `/`, then adds `=` and the value. Grouping by `category` alone gives `'category=Tech'`. Grouping by `category` and then `supplier` gives `'category=Tech'` for the outer group and `'category/supplier=Contoso'` for the inner one. {api:anychart.core.dataSheet.Hierarchy#getGroupFields}getGroupFields(){api} returns the fields you grouped by. These methods work for groups. They do not work for [tree data](#tree_data).
 
 Grouping follows the redraw rule, and it fires a `groupchange` event.
 
@@ -756,7 +756,7 @@ chart.rowSelectedFill("#ffe082");
 chart.noDataText("No products to show");
 ```
 
-The API does not cover the text alignment of a column, or the color of one single column. Everything else is CSS. The grid is HTML, so your own CSS rules apply to it. A number cell also gets the `anychart-ds-cell-number` class, which gives you a hook for one column type:
+The API does not cover the text alignment of a column, or the color of a single column. Everything else is CSS. The grid is HTML, so your own CSS rules apply to it. A number cell also gets the `anychart-ds-cell-number` class, which gives you a hook for one column type:
 
 ```
 /* what the API does not cover, CSS does */
@@ -867,7 +867,7 @@ for (var i = 1; i <= 5000; i++) {
 chart.virtualScroll().bufferSize(25);
 ```
 
-**Set these two options before the first `draw()`.** The controller does not tell the grid that something changed, so a `draw()` on its own after the change does nothing at all. The new value is picked up by the next redraw that something else triggers - a data change, a filter, a sort or a scroll. That makes the moment it takes effect hard to predict.
+**Set these two options before the first `draw()`.** The controller does not tell the grid that something changed, so a `draw()` on its own after the change does nothing at all. The new value is picked up by the next redraw that something else triggers - a data change, a filter, a sort or a scroll. So it is hard to predict when the change takes effect.
 
 Virtual scrolling needs a container with a real height. With a zero-height container the grid builds only the buffer rows - see the size rule in [Quick Start](#quick_start).
 
@@ -946,7 +946,7 @@ The context menu - the menu you open with a right-click - is on by default. On a
 
 The icons come from the AnyChart icon font - see [Modules and Styles](#modules_and_styles).
 
-{api:anychart.core.dataSheet.ContextMenu#items}items([...]){api} replaces the whole set. An item is `{text, action, icon}`, or `{separator: true}`. If `action` is a string, it names one of the built-in actions: `sortAsc`, `sortDesc`, `pinLeft`, `unpin`, `exportCsv`, `exportJson` or `print`. If `action` is a function, the grid calls it with a context object with `rowIndex`, `colIndex`, `dataIndex` and `field`:
+{api:anychart.core.dataSheet.ContextMenu#items}items([...]){api} replaces the whole set. An item is `{text, action, icon}`, or `{separator: true}`. If `action` is a string, it names one of the built-in actions: `sortAsc`, `sortDesc`, `pinLeft`, `unpin`, `exportCsv`, `exportJson` or `print`. If `action` is a function, the grid calls it with a context object that holds `rowIndex`, `colIndex`, `dataIndex` and `field`:
 
 ```
 // replace the whole menu: two built-in actions and one of your own
@@ -1012,7 +1012,7 @@ The CSV export quotes a field that holds the separator, a quote or a line break.
 
 * `title` - a heading above the table
 * `orientation` - `'landscape'`. Any other value gives portrait
-* `pageSize` - `'A4'`, `'Letter'` and so on. The grid checks only the characters. If a value holds anything but letters, digits and spaces, the grid uses A4 instead. If a value looks correct, the grid passes it to the browser, and a browser that does not know that size uses its own default page size
+* `pageSize` - `'A4'`, `'Letter'` and so on. The grid checks only the characters. If a value holds anything but letters, digits and spaces, the grid uses A4 instead. If a value looks correct, the grid passes it to the browser. A browser that does not know that size then uses its own default page size
 
 Printing always follows the current sorting and filtering.
 
@@ -1022,7 +1022,7 @@ This is not the AnyChart Exports module. The Data Sheet still has the shared `sa
 
 ## Saved Layout
 
-The {api:anychart.charts.DataSheet#state}state(){api} controller writes the current layout into the `localStorage` of the browser and reads it back, so a user finds the table as they left it. The snapshot holds the column widths, the pinned flags, the column order, the sorting, the filter, the selection mode and, when a hierarchy is active, the open and closed groups. It does **not** hold the data or the column declarations. Build those in code first, then restore.
+The {api:anychart.charts.DataSheet#state}state(){api} controller writes the current layout into the `localStorage` of the browser and reads it back, so a user finds the table as they left it. The snapshot holds the column widths, the pinned flags, the column order, the sorting, the filter and the selection mode. When a hierarchy is active, it also holds the open and closed groups. It does **not** hold the data or the column declarations. Build those in code first, then restore.
 
 ```
 // declare the columns first: restore only matches the columns that exist
