@@ -50,7 +50,7 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
-To make a Waffle chart, use the {api:anychart#waffle}anychart.waffle(){api} chart constructor. Pass your data to it. Each point has two values. `name` is the category, and `value` is its quantity. The chart works out each category's share (percent) of the total on its own.
+To make a Waffle chart, use the {api:anychart#waffle}anychart.waffle(){api} chart constructor. Pass your data to it. Each point has two values. `name` is the category, and `value` is its quantity. You can use `x` in place of `name`. The chart reads either field (`name` wins if you set both). The chart works out each category's share (percent) of the total on its own.
 
 ```
 // create data: values don't need to add up to 100 — the chart works out each category's share on its own
@@ -83,7 +83,9 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-You can set the [appearance settings](../Appearance_Settings) of a Waffle chart in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Waffle#normal}normal(){api}, {api:anychart.charts.Waffle#hovered}hovered(){api}, and {api:anychart.charts.Waffle#selected}selected(){api} methods. The settings apply to the whole block of cells in a category. A category enters the **hover** state when you point at it. It enters the **selected** state when you click it. Ctrl/Cmd/Shift + click adds or removes a category from the selection. A click on the empty area clears the selection. You can also select a category in code with {api:anychart.charts.Waffle#select}select(){api}. Clear the selection with {api:anychart.charts.Waffle#unselect}unselect(){api}.
+You can set the [appearance settings](../Appearance_Settings) of a Waffle chart in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Waffle#normal}normal(){api}, {api:anychart.charts.Waffle#hovered}hovered(){api}, and {api:anychart.charts.Waffle#selected}selected(){api} methods. The settings apply to the whole block of cells in a category.
+
+A category enters the **hover** state when you point at it. It enters the **selected** state when you click it. Ctrl/Cmd/Shift + click adds or removes a category from the selection. A click on the empty area clears the selection. You can also select a category in code with {api:anychart.charts.Waffle#select}select(){api}. Clear the selection with {api:anychart.charts.Waffle#unselect}unselect(){api}.
 
 A Waffle category is drawn as one block of identical cells. So there is no per-cell styling. Every cell in a category's block always shares the same fill and stroke.
 
@@ -119,6 +121,8 @@ By default, the grid has 10×10 = 100 cells. To change it, use the {api:anychart
 
 The chart always fills the whole grid. Each category gets a number of cells that matches its share of the total. The chart rounds these numbers with the largest-remainder method. This method rounds shares so they still add up to the full grid. It works with any grid size. Say your values add up to 100. Then one cell of the default 10×10 grid equals exactly one unit of value.
 
+When the shares do not divide evenly into cells, the chart hands the leftover cells to the categories with the largest remainders. For example, take the values 5, 3, and 1. Their exact shares of the default 100 cells are 55.6, 33.3, and 11.1 cells. The chart draws 56, 33, and 11 cells — together exactly 100.
+
 ```
 // change the default 10×10 grid
 chart.rows(5);
@@ -136,6 +140,8 @@ The cells of a Waffle chart are squares by default. The chart works out their si
 * {api:anychart.charts.Waffle#cellCornerRadius}cellCornerRadius(){api} — rounds the corners of square cells (0 by default)
 * {api:anychart.charts.Waffle#cellSize}cellSize(){api} — a fixed cell height in pixels (0 by default — the chart then works out the size on its own)
 * {api:anychart.charts.Waffle#cellAspectRatio}cellAspectRatio(){api} — the width-to-height ratio of a cell (1 by default)
+
+The two sizing modes work like this. With the default `cellSize(0)`, the chart fits the cells to the chart area, at the width-to-height ratio you set with `cellAspectRatio()`. When you set an explicit `cellSize`, the chart stops fitting: each cell is exactly that many pixels high and `cellSize × cellAspectRatio` pixels wide. If the grid then becomes bigger than the chart area, it does not shrink — the grid stays centered, and its edges are cut off.
 
 ```
 // draw round cells with wider gaps between them
@@ -160,6 +166,8 @@ The {api:anychart.charts.Waffle#fillDirection}fillDirection(){api} method sets t
 * `"right-to-left"` — row by row, each row filled from its right end
 * `"top-to-bottom"` — column by column, starting from the left column
 * `"bottom-to-top"` — row by row, from the bottom row up
+
+Three of the four directions fill the grid row by row. `top-to-bottom` is different on purpose: it is the only direction that fills the grid column by column. Use it when the category blocks should grow from left to right, one column at a time.
 
 ```
 // fill the grid from the bottom up

@@ -89,7 +89,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-The Org chart uses the [tree data model](../Working_with_Data/Tree_Data_Model). Each item has two text fields. The `name` field is the header line of the card. The `title` field is the second line. You set the hierarchy in one of two modes. The second argument of the constructor sets the mode:
+The Org chart uses the [tree data model](../Working_with_Data/Tree_Data_Model). Each item has two text fields. The `name` field is the header line of the card. The `title` field is the second line. Give every item a `name`. The `title` field is optional: a card without it shows only the name line. You set the hierarchy in one of two modes. The second argument of the constructor sets the mode:
 
 * `"as-table"` — a flat array where each item points to its parent with `id` and `parent` fields (the root item has no `parent`)
 * `"as-tree"` — a nested array where each parent holds its children in the `children` field
@@ -119,7 +119,7 @@ You can style the node cards in three [states](../Common_Settings/Interactivity/
 
 Combine the state methods with these methods:
 
-* {api:anychart.core.StateSettings#fill}fill(){api} to set the card background. It accepts a plain color, gradient, or pattern fill. A fill function is not supported here. The chart colors the card directly, not through the state color resolver
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the card background. It accepts a plain color, gradient, or pattern fill. A fill function is not supported here: the chart reads the setting as a ready color and never calls a function to compute it
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the card border
 
 Style the text of a card with the {api:anychart.charts.OrgChart#labels}labels(){api} method. Its font family and font size apply to both lines. The `title` line is drawn a bit smaller. The `fontColor()` and `fontWeight()` methods change only the `name` (header) line. Set the color of the `title` line separately with the {api:anychart.charts.OrgChart#titleFontColor}titleFontColor(){api} method. To hide both lines, turn off the labels with `chart.labels(false)`. Style the connector lines with {api:anychart.charts.OrgChart#connectorStroke}connectorStroke(){api}:

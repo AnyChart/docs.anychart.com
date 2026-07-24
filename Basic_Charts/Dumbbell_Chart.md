@@ -160,6 +160,37 @@ series2.selected().stroke("#0066cc", 4);
 
 {sample}BCT\_Dumbbell\_Chart\_02{sample}
 
+The sample below shows a real before/after case: salaries before and after an annual review. Here every new salary is higher than the old one. So the old salary goes to `low`, and the new salary goes to `high`. The gray dot marks the old value, and the green dot marks the new value. Every line reads from gray to green, so the direction of the change is visible at once.
+
+```
+// create data: salaries before (low) and after (high) an annual review
+var data = [
+  {x: "Anna", low: 52000, high: 58000},
+  {x: "Ben", low: 48000, high: 50000},
+  {x: "Carol", low: 61000, high: 70000},
+  {x: "Dan", low: 55000, high: 59000},
+  {x: "Eva", low: 44000, high: 51000}
+];
+
+// create a chart
+var chart = anychart.dumbbell();
+
+// create a Dumbbell series and set the data
+var series = chart.dumbbell(data);
+
+// gray = old salary, green = new salary
+series.normal().lowFill("#b3b3b3");
+series.normal().lowStroke("#b3b3b3");
+series.normal().highFill("#00cc99");
+series.normal().highStroke("#00cc99");
+series.normal().stroke("#b3b3b3", 2);
+
+// name both values in the tooltip
+series.tooltip().format("Before: {%low}, After: {%high}");
+```
+
+{sample}BCT\_Dumbbell\_Chart\_08{sample}
+
 #### Individual Points
 
 If you use objects to set the data, you can change the look of individual points. Just add special fields to your data:

@@ -3,7 +3,7 @@
 
 ## Overview
 
-An Arc diagram shows connections between items. It places the nodes along one line. Each link between two nodes is drawn as an arc on one side of that line.
+An Arc diagram shows connections between items. Each item is a node: a small bar on one shared line, the node line. Each link between two nodes is drawn as an arc on one side of the node line.
 
 The height of an arc depends on the distance between its two nodes. The thickness of an arc shows the weight of the link. The length of a node bar shows the total flow through that node.
 
@@ -100,6 +100,8 @@ Pass data to the {api:anychart#arcDiagram}anychart.arcDiagram(){api} chart const
 * `to` — the name of the target node
 * `weight` — the weight of the link (sets the thickness of the arc)
 
+A node's name is the exact string from the `from`/`to` fields. The same string is the node `id` in [Sorting](#sorting), the node name that select() accepts (see [Nodes](#nodes)), and the `{%name}` token in [Tooltips](#tooltips).
+
 An optional `group` field puts the link's nodes into a named group. A node keeps the first group it gets: if a later row gives the same node another group, that value is ignored. You can use groups to [sort](#sorting) the nodes. Pass the links as objects, or map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api}:
 
 ```
@@ -136,10 +138,10 @@ chart.colorMode("gradient");
 
 ### Orientation
 
-By default, the nodes sit in a row at the bottom of the chart. The arcs bow upward. The {api:anychart.charts.ArcDiagram#orientation}orientation(){api} method rotates the layout. With `"vertical"`, the nodes form a column and the arcs bow to the right. The {api:anychart.charts.ArcDiagram#arcDirection}arcDirection(){api} method flips the arcs to the other side of the node line. For the horizontal orientation, pass `"down"`. For the vertical one, pass `"left"`. This bows the arcs the other way. If you do not set it, the arcs bow up in the horizontal orientation and to the right in the vertical one.
+By default, the nodes sit in a row at the bottom of the chart. The arcs curve upward. The {api:anychart.charts.ArcDiagram#orientation}orientation(){api} method rotates the layout. With `"vertical"`, the nodes form a column and the arcs curve to the right. The {api:anychart.charts.ArcDiagram#arcDirection}arcDirection(){api} method flips the arcs to the other side of the node line. For the horizontal orientation, pass `"down"`. For the vertical one, pass `"left"`. This curves the arcs the other way. If you do not set it, the arcs curve up in the horizontal orientation and to the right in the vertical one.
 
 ```
-// place the nodes in a column; the arcs bow to the right
+// place the nodes in a column; the arcs curve to the right
 chart.orientation("vertical");
 ```
 
@@ -158,7 +160,7 @@ The following methods adjust the geometry of the diagram:
 chart.nodeWidth(28);
 chart.nodeSpacing(45);
 
-// make the arcs taller and bow them below the node line
+// make the arcs taller and curve them below the node line
 chart.curvature(1.5);
 chart.arcDirection("down");
 ```
@@ -184,7 +186,11 @@ chart.sortOrder("weight");
 
 ### Nodes
 
-Set the node bars and their [labels](../Common_Settings/Labels) with the {api:anychart.charts.ArcDiagram#node}node(){api} method in three [states](../Common_Settings/Interactivity/States). The {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} methods work in each state. Label settings come from the normal state only. So set them with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state. A node is hovered when you point at it. Its connections are then highlighted. A node is selected when you click it. A click replaces any previous selection. Instead, Ctrl/Cmd + click or Shift + click toggles a node into or out of a multi-node selection. A plain click on the empty area clears the selection. A click there with one of these keys does nothing. You can also select nodes in code. Both {api:anychart.charts.ArcDiagram#select}select(){api} and {api:anychart.charts.ArcDiagram#unselect}unselect(){api} accept a node name or an array of node names. select() adds those nodes to the selection. unselect() removes only those nodes. Called with no argument, select() selects every node and unselect() clears the whole selection.
+Set the node bars and their [labels](../Common_Settings/Labels) with the {api:anychart.charts.ArcDiagram#node}node(){api} method in three [states](../Common_Settings/Interactivity/States): **normal**, **hovered**, and **selected**. The {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} methods work in each state. Label settings come from the normal state only. So set them with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state.
+
+A node is hovered when you point at it. Its connections are then highlighted. A node is selected when you click it. A click replaces any previous selection. Instead, Ctrl/Cmd + click or Shift + click toggles a node into or out of a multi-node selection. A plain click on the empty area clears the selection. A click there with one of these keys does nothing.
+
+You can also select nodes in code. Both {api:anychart.charts.ArcDiagram#select}select(){api} and {api:anychart.charts.ArcDiagram#unselect}unselect(){api} accept a node name or an array of node names. select() adds those nodes to the selection. unselect() removes only those nodes. Called with no argument, select() selects every node and unselect() clears the whole selection.
 
 Node labels show the node name and are on by default. In the horizontal orientation they are drawn at an angle. Use {api:anychart.core.ui.LabelsFactory#rotation}rotation(){api} and font settings to adjust them:
 
@@ -199,6 +205,9 @@ chart.node().selected().stroke("#0b1220", 3);
 chart.node().normal().labels().rotation(0);
 chart.node().normal().labels().fontSize(12);
 chart.node().normal().labels().fontColor("#212121");
+
+// select two nodes in code
+chart.select(["Asia", "Europe"]);
 ```
 
 {sample}BCT\_Arc\_Diagram\_07{sample}

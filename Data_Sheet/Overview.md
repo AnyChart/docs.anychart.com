@@ -95,6 +95,43 @@ The grid also needs a container element with a height greater than zero:
 
 Every live sample on this page uses exactly these two script tags, these three link tags and this container. This section has no sample of its own, because a sample cannot show you its own `<head>`.
 
+Put together, a minimal page looks like this. You can copy it into a file and open it in a browser:
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-data-sheet.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/data-sheet.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css" />
+
+    <style>
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        anychart.onDocumentReady(function () {
+            var data = [
+                {id: 1, product: "Laptop", category: "Tech", price: 1200, stock: 34, status: "In stock"},
+                {id: 2, product: "Chair", category: "Office", price: 150, stock: 120, status: "In stock"},
+                {id: 3, product: "Monitor", category: "Tech", price: 300, stock: 58, status: "In stock"},
+                {id: 4, product: "Desk", category: "Office", price: 450, stock: 12, status: "Low"}
+            ];
+
+            var chart = anychart.dataSheet(data);
+            chart.container("container");
+            chart.draw();
+        });
+    </script>
+</body>
+</html>
+```
+
 Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
@@ -271,7 +308,7 @@ Declaring columns **replaces** the whole automatic set. The sample data below ha
 
 ### Data Types and Formats
 
-**Set `dataType` on every column you declare.** A declared column is a string column until you say otherwise. Only automatic columns get a detected type. A number in a string column loses its thousands separator, and the grid sorts it as text, so `'1200'` comes before `'450'`.
+A column's `dataType` tells the grid what kind of values the column holds. **Set `dataType` on every column you declare.** A declared column is a string column until you say otherwise. Only automatic columns get a detected type. A number in a string column loses its thousands separator, and the grid sorts it as text, so `'1200'` comes before `'450'`.
 
 {api:anychart.core.dataSheet.Column#dataType}dataType{api} takes `'string'`, `'number'`, `'date'` or `'boolean'`. It controls three things: how the grid compares values when it sorts, how it formats them, and which editor opens on a double-click.
 
@@ -383,7 +420,7 @@ The user can drag the right edge of a header cell to resize a column. Every resi
 
 ### Pinning and Reordering
 
-The {api:anychart.core.dataSheet.Column#pinned}pinned{api} setting takes `'left'`, `'right'` or `false` (default). Any other value unpins the column. A pinned column stays at the edge of the grid while the other columns scroll sideways.
+A pinned column stays at the edge of the grid while the other columns scroll sideways. The {api:anychart.core.dataSheet.Column#pinned}pinned{api} setting takes `'left'`, `'right'` or `false` (default). Any other value unpins the column.
 
 **Pinning needs a horizontal scrollbar, and the scrollbar needs `minWidth`.** Each row uses the CSS flexbox layout. That means the browser makes wide columns narrower so that they fit the container. Then the grid never scrolls sideways, the other columns never move, and pinning has no visible effect. Set `minWidth` equal to `width` on the columns, so the row cannot shrink them:
 
@@ -412,7 +449,7 @@ Pinning is also in the default [context menu](#context_menu), as "Pin Left" and 
 
 ## Header
 
-The {api:anychart.charts.DataSheet#header}header(){api} method returns the header controller. As in [Data](#data), a controller is a small object that holds the settings of one feature, and you call its methods to read and change those settings. Many features work this way: the header, sorting, filtering, search, selection, virtual scrolling, the clipboard, the export and the [saved layout](#saved_layout).
+The header is the row of column titles at the top of the grid. The {api:anychart.charts.DataSheet#header}header(){api} method returns the header controller. As in [Data](#data), a controller is a small object that holds the settings of one feature, and you call its methods to read and change those settings. Many features work this way: the header, sorting, filtering, search, selection, virtual scrolling, the clipboard, the export and the [saved layout](#saved_layout).
 
 The header controller has two settings:
 

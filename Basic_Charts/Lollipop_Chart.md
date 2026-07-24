@@ -3,7 +3,7 @@
 
 ## Overview
 
-A Lollipop chart is a variation of the [Column](Column_Chart) and [Stick](Stick_Chart) charts. Each data point is drawn as a thin stick. The stick starts at the zero baseline. It ends with a round "head" marker at the value. So this type combines a [Stick](Stick_Chart) with a [Marker](Marker_Chart) head. Lollipop charts work well for data split into categories. They are lighter and less crowded than Column charts. Use them when you have many categories. They also help you highlight the value at the end of each stick.
+A Lollipop chart shows each data point as a thin stick with a round "head" marker at its end. The stick starts at the zero baseline. The head marks the value. This type is a variation of the [Column](Column_Chart) and [Stick](Stick_Chart) charts: it combines a [Stick](Stick_Chart) with a [Marker](Marker_Chart) head. Lollipop charts work well for data split into categories. They are lighter and less crowded than Column charts. Use them when you have many categories. They also help you highlight the value at the end of each stick.
 
 This article shows how to build a basic Lollipop chart. It also shows how to set the options that are special to this type. The table below gives a short overview of the Lollipop chart's features:
 
@@ -56,11 +56,9 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
-A Lollipop chart is built on a Cartesian plot, like [Column](Column_Chart) and [Stick](Stick_Chart). There are two ways to create it.
+A Lollipop chart is built on a Cartesian plot (a chart area with an X axis and a Y axis), like [Column](Column_Chart) and [Stick](Stick_Chart). There are two ways to create it.
 
 To build a Lollipop chart from scratch, use the {api:anychart#lollipop}anychart.lollipop(){api} chart constructor. When you pass data to this constructor, it creates a Lollipop series. A point uses two data fields. The `x` field is the category. The `value` field sets the height of the stick and the position of the head. If you pass a plain array of numbers, only `value` is read, and `x` is set automatically.
-
-You can also start from a [Column](Column_Chart) (or [Bar](Bar_Chart)) chart. Then add a Lollipop series with the {api:anychart.charts.Cartesian#lollipop}lollipop(){api} method.
 
 ```
 // create data
@@ -85,7 +83,7 @@ chart.container("container");
 chart.draw();
 ```
 
-You can build the same chart from a [Column](Column_Chart) (or [Bar](Bar_Chart)) chart instead. Only the constructor is different. The rest is the same:
+You can also build the same chart from a [Column](Column_Chart) (or [Bar](Bar_Chart)) chart. In this case, add a Lollipop series with the {api:anychart.charts.Cartesian#lollipop}lollipop(){api} method. Only the constructor is different. The rest is the same:
 
 ```
 // create a column (or bar) chart, then add a lollipop series
@@ -225,7 +223,7 @@ var series = chart.lollipop(mapping);
 
 ### Point Size
 
-A Lollipop point has two parts you can size. The **head** is a round marker. Set its radius with {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} and {api:anychart.core.ui.MarkersFactory#size}size(){api} (the default radius is 4 px). The **stick** has no width of its own. Its thickness is the series stroke width. So make it thicker or thinner by setting the stroke width (see [Appearance](#appearance)).
+A Lollipop point has two parts you can size. The **head** is a round marker. Set its radius with {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} and {api:anychart.core.ui.MarkersFactory#size}size(){api} (the default radius is 4 px). The head is always a circle. You can change its size, but not its shape: the marker type setting does not affect the head. The **stick** has no width of its own. Its thickness is the series stroke width. So make it thicker or thinner by setting the stroke width (see [Appearance](#appearance)).
 
 ```
 // enlarge the round head (default radius is 4 px)

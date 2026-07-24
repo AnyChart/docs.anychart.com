@@ -3,7 +3,11 @@
 
 ## Overview
 
-A Dependency wheel is a round diagram of flows. The nodes sit as arcs around the wheel. Each link between two nodes is drawn as a ribbon. The ribbon joins the two node arcs. The length of a node arc shows the total flow through that node. The thickness of a ribbon shows the weight of the link. This type is also called a chord diagram. That is because its ribbons are also called chords. It works well for flows inside a closed system. Some examples are imports and exports, energy flows, or links between software packages.
+A Dependency wheel is a round diagram of flows. The nodes sit as arcs around the wheel. Each link between two nodes is drawn as a ribbon. The ribbon joins the two node arcs.
+
+The length of a node arc shows the total flow through that node. The thickness of a ribbon shows the weight of the link. This type is also called a chord diagram. That is because its ribbons are also called chords.
+
+It works well for flows inside a closed system. Some examples are imports and exports, energy flows, or links between software packages. If your flow moves in stages from sources to end points, a [Sankey diagram](Sankey_Diagram) can be the better choice. If you want to show the same links along a straight line, use an [Arc diagram](Arc_Diagram).
 
 This article shows how to make a basic Dependency wheel. It also shows how to set options that are special to this type. The table below gives a short overview of the Dependency wheel's features:
 
@@ -97,6 +101,8 @@ Pass the data to the {api:anychart#dependencyWheel}anychart.dependencyWheel(){ap
 * `to` — the name of the target node
 * `weight` — the weight of the link (sets the thickness of the ribbon)
 
+The same node name can appear in the `from` field of one row and in the `to` field of another. This is normal: it is still one node, and it is both a source and a target. Its arc shows the total of its incoming and outgoing flows. In the Quick Start data, `Grid` works this way: energy flows into it from the sources, and out of it to `Industry`, `Buildings`, and `Transport`.
+
 You can pass each link as an object. Or you can map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api}:
 
 ```
@@ -179,7 +185,7 @@ A node is hovered when you point at it. Hovering a node also highlights its ribb
 
 You can also control the selection from code. {api:anychart.charts.DependencyWheel#select}select(){api} takes a node name or an array of node names. It adds them to the selection. Call it with no arguments to select every node. {api:anychart.charts.DependencyWheel#unselect}unselect(){api} takes the same arguments and removes just those nodes from the selection. Call it with no arguments to clear the whole selection.
 
-Node labels are on by default and show the node name. You can use these [text formatter](../Common_Settings/Text_Formatters) tokens: `{%name}`, `{%weight}`, `{%connections}` (number of links), and `{%percent}` (the node's share of the total flow). By default, a label that overlaps an already drawn label is hidden. Control this with the {api:anychart.charts.DependencyWheel#dropOverlappedLabels}dropOverlappedLabels(){api} method:
+Node labels are on by default and show the node name. You can use these [text formatter](../Common_Settings/Text_Formatters) tokens: `{%name}`, `{%weight}`, `{%connections}` (number of links), and `{%percent}` (the node's share of the total flow). A token can also take [formatting parameters](../Common_Settings/Text_Formatters#formatting_parameters). In the sample below, `{decimalsCount:1}` limits the `{%percent}` value to one decimal. By default, a label that overlaps an already drawn label is hidden. Control this with the {api:anychart.charts.DependencyWheel#dropOverlappedLabels}dropOverlappedLabels(){api} method:
 
 ```
 // states of the node arcs

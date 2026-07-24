@@ -114,12 +114,12 @@ Each layer of a Stream graph is a separate series with two data fields:
 * `x` — the category (usually a point in time)
 * `value` — the value of the layer at that category
 
-Pass the data for a series to the {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} method (or the [area / step-area](#series_type) method). You can pass a plain array. You can also map the columns of a shared [data set](../Working_with_Data/Data_Sets). This is handy when all layers share one table. You can set missing values to `null`. These points are skipped, and the baseline stays unbroken:
+Pass the data for a series to the {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} method (or the [area / step-area](#series_type) method). You can pass a plain array. You can also map the columns of a shared [data set](../Working_with_Data/Data_Sets). This is handy when all layers share one table. You can set missing values to `null`. These points are skipped, and the baseline stays unbroken. In the sample below, the Social layer has no value at "W5": its band shows a gap, and the stream continues:
 
 ```
-// one data set with a column per channel: [week, search, social]
+// one data set with a column per channel: [week, search, social]; the social value at W5 is missing
 var dataSet = anychart.data.set([
-  ["W1", 42, 30],["W2", 45, 33],["W3", 40, 36],["W4", 38, 40],["W5", 44, 38],
+  ["W1", 42, 30],["W2", 45, 33],["W3", 40, 36],["W4", 38, 40],["W5", 44, null],
   ["W6", 50, 35],["W7", 55, 37],["W8", 52, 42],["W9", 48, 46],["W10", 46, 49]
 ]);
 
@@ -145,12 +145,23 @@ The key setting of the Stream graph is the **offset**. This is the algorithm tha
 * `"expand"` — gives every category the same total height; the chart then shows each layer's share of the total. It looks like a percent-stacked chart with flat top and bottom edges
 * `"zero"` — stacks the layers from a flat zero baseline (an ordinary stacked area chart)
 
+The sample below shows the `"silhouette"` offset. It also uses six layers instead of three: with many layers, the flowing shape of the stream is easier to see.
+
 ```
 // center the stack evenly around the zero line
 chart.offset("silhouette");
 ```
 
 {sample}BCT\_Stream\_Graph\_03{sample}
+
+The sample below shows the `"expand"` offset, which turns the stream into a share-of-total view:
+
+```
+// give every category the same total height to compare shares
+chart.offset("expand");
+```
+
+{sample}BCT\_Stream\_Graph\_10{sample}
 
 ### Series Type
 
