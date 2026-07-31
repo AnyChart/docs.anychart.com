@@ -21,7 +21,7 @@ Write the event name as a plain string. The `anychart.enums` object is not there
 <tr><td>clipboardpaste</td><td>fires after a paste</td></tr>
 <tr><td>contextmenuaction</td><td>item, rowIndex, colIndex</td></tr>
 <tr><td>dataload, dataerror</td><td>they belong to the dataSource() controller, which this section does not cover - see [Data](Data)</td></tr>
-<tr><td>detailexpand, detailcollapse</td><td>they belong to detail rows, which do not work in this release - see [What Is Not Supported](What_Is_Not_Supported)</td></tr>
+<tr><td>detailexpand, detailcollapse</td><td>they belong to detail rows, which this section does not cover</td></tr>
 </tbody>
 </table>
 

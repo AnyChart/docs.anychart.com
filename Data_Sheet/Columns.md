@@ -33,7 +33,7 @@ Declaring columns **replaces** the whole automatic set. The sample data below ha
 
 **Start at 0 and leave no gaps.** The index you pass is a position in the list of columns. If you declare index 2 but not indices 0 and 1, those two positions stay empty, and the next `draw()` throws a `TypeError` and shows nothing at all. Declare every index from 0 up to the last one you need.
 
-**A column cannot be removed.** There is no `removeColumn()`, and a column has no `visible()` setting, so the set of columns only ever grows. Declare the columns you want once, before the first `draw()`. To show a different set later, build a new Data Sheet - see [What Is Not Supported](What_Is_Not_Supported). For the same reason, never call `column(index)` just to test whether a column exists: as a getter it creates the column when the index is new.
+**A column cannot be removed.** There is no `removeColumn()`, and a column has no `visible()` setting, so the set of columns only ever grows. Declare the columns you want once, before the first `draw()`. To show a different set later, build a new Data Sheet. For the same reason, never call `column(index)` just to test whether a column exists: as a getter it creates the column when the index is new.
 
 {sample}DS\_Data\_Sheet\_04{sample}
 

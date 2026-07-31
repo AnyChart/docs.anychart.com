@@ -49,6 +49,8 @@ This is not the AnyChart Exports module. The Data Sheet still has the shared `sa
 
 ## Saved Layout
 
+{api:anychart.charts.DataSheet#toJson}toJson(){api} writes the settings of the grid as JSON, and `anychart.fromJson()` reads the `'data-sheet'` type back. The JSON holds the settings only. Build the data and the columns in code first, then apply the saved settings on top.
+
 The {api:anychart.charts.DataSheet#state}state(){api} controller writes the current layout into the `localStorage` of the browser and reads it back, so a user finds the table as they left it. The snapshot holds the column widths, the pinned flags, the column order, the sorting, the filter and the selection mode. When a hierarchy is active, it also holds the open and closed groups. It does **not** hold the data or the column declarations. Build those in code first, then restore.
 
 ```

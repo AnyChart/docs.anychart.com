@@ -88,7 +88,7 @@ These are the class names the grid puts on its elements. Use them in your own st
 <tr><td>anychart-ds-group-zone</td><td>the drop area above the header</td></tr>
 <tr><td>anychart-ds-group-chip, anychart-ds-group-chip-remove</td><td>a chip in that area and its remove button</td></tr>
 <tr><td>anychart-ds-toggle</td><td>the open/close arrow of a group or a tree row</td></tr>
-<tr><td>anychart-ds-detail-row, anychart-ds-detail-toggle</td><td>detail rows - see [What Is Not Supported](What_Is_Not_Supported)</td></tr>
+<tr><td>anychart-ds-detail-row, anychart-ds-detail-toggle</td><td>reserved for detail rows, which this section does not cover</td></tr>
 <tr><td>anychart-ds-search-bar</td><td>the search bar</td></tr>
 <tr><td>anychart-ds-search-input, anychart-ds-search-count</td><td>its input box and its counter</td></tr>
 <tr><td>anychart-ds-search-btn, anychart-ds-search-close</td><td>its buttons</td></tr>

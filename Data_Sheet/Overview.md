@@ -7,7 +7,7 @@ A Data Sheet is an interactive table. It shows your data in rows and columns. Th
 
 The Data Sheet draws HTML elements. It does not draw SVG. It is the only AnyChart type that works this way. This one fact explains all the other differences in this section. Cells are `<div>` elements with CSS classes. So you can style them in your own stylesheet, and find them with `querySelector()`.
 
-Because it is not an SVG chart, it is not built on the common chart class. It has no `title()`, no `legend()`, no `tooltip()`, no `credits()`, no `animation()` and no `background()`. Read [What Is Not Supported](What_Is_Not_Supported) before you look for them.
+Because it is not an SVG chart, it is not built on the common chart class. It has no `title()`, no `legend()`, no `tooltip()`, no `credits()`, no `animation()` and no `background()`. You build those around the grid instead: an HTML heading above the container for a title, a panel of your own for a tooltip, and CSS for the background.
 
 It also does one thing no chart can do. A screen reader can read it as a real table, because a Data Sheet is built from real HTML with ARIA roles. ARIA roles are extra HTML attributes that tell a screen reader what each element is. See [Accessibility](Accessibility).
 
@@ -44,14 +44,13 @@ This section shows how to make a Data Sheet and how to set its options. The tabl
 <tr><td>Copy and Paste</td><td>[clipboard()](Keyboard_and_Clipboard#copy_and_paste)</td></tr>
 <tr><td>Export</td><td>[export()](Export_and_Print)</td></tr>
 <tr><td>Saved Layout</td><td>[state()](Export_and_Print#saved_layout)</td></tr>
-<tr><th colspan=2>NOT SUPPORTED</th></tr>
-<tr><td>Title, Legend, Tooltip</td><td>N/A - see [What Is Not Supported](What_Is_Not_Supported)</td></tr>
-<tr><td>Credits, Animation, Background</td><td>N/A - see [What Is Not Supported](What_Is_Not_Supported)</td></tr>
-<tr><td>Custom Cell Content</td><td>N/A - a cell holds plain text, see [Data Types and Formats](Columns#data_types_and_formats)</td></tr>
-<tr><td>Hiding a Column</td><td>N/A - see [What Is Not Supported](What_Is_Not_Supported)</td></tr>
-<tr><td>Date Filter</td><td>N/A - text, number and boolean only, see [Filtering](Filtering_and_Search)</td></tr>
-<tr><td>Closing Tree Rows</td><td>N/A in this release - groups do close, see [Tree Data](Data#tree_data)</td></tr>
-<tr><td>Detail Rows</td><td>N/A in this release - see [What Is Not Supported](What_Is_Not_Supported)</td></tr>
+<tr><th colspan=2>DIFFERENCES FROM CHARTS</th></tr>
+<tr><td>Title, Legend, Tooltip</td><td>Build them around the grid in your own HTML</td></tr>
+<tr><td>Credits, Animation, Background</td><td>Style the grid with CSS - see [CSS Classes](Appearance#css_classes)</td></tr>
+<tr><td>Cell Content</td><td>Plain text - see [Data Types and Formats](Columns#data_types_and_formats)</td></tr>
+<tr><td>Column Set</td><td>Fixed once declared - see [Defining Columns](Columns#defining_columns)</td></tr>
+<tr><td>Filter Types</td><td>Text, number and boolean - see [Filtering](Filtering_and_Search)</td></tr>
+<tr><td>Tree Rows</td><td>Always open; groups do close - see [Tree Data](Data#tree_data)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Working with Data](../Working_with_Data/Overview)</td></tr>
 <tr><td></td><td>[Gantt Data Grid](../Gantt_Chart/Data_Grid/Overview)</td></tr>
