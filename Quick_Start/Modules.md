@@ -50,7 +50,7 @@ For example, to create an exportable Pie chart, combine Core with the [Pie and D
 
 The same logic applies to the **Base** module. However, please note that it already includes some chart types, so you have to reference other modules only if you need to add a chart type that is not included or a feature.
 
-As for **Bundle**, it includes all other modules except [Extensions](#extensions) and [Data Sheet](#data_sheet). Add the Data Sheet module yourself when you need it.
+As for **Bundle**, it includes all other modules except [Extensions](#extensions), [Data Sheet](#data_sheet) and the [Boost WebGL Renderer](#boost_webgl_renderer). Add those yourself when you need them.
 
 ## Builder
 
@@ -128,14 +128,6 @@ A module for creating [Cartesian 3D](../Basic_Charts/3D/Overview) charts (except
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian-3d.min.js"></script>
 ```
 
-### Boost (WebGL)
-
-An optional WebGL renderer for [Boost](../Common_Settings/Performance_Boost). Canvas-based boost is already part of the main bundle and needs no extra module; this one is only for the heaviest datasets. Unlike the modules above it is not added with a script tag — it is loaded on demand, and boost falls back to Canvas until it resolves:
-
-```
-anychart.loadModule('boost-webgl');
-```
-
 ### Calendar
 
 A module for creating [Calendar](../Basic_Charts/Calendar_Chart) charts:
@@ -162,7 +154,7 @@ A module for creating [Circular Gauges](../Gauges/Circular_Gauge):
 
 ### Data Sheet
 
-A module for creating a [Data Sheet](../Data_Sheet/Overview) — an interactive data grid. Unlike the other modules, it is not a part of **Bundle**, so you always add it next to **Core** or **Bundle**:
+A module for creating a [Data Sheet](../Data_Sheet/Overview) - an interactive data grid. Unlike the other modules, it is not a part of **Bundle**, so you always add it next to **Core** or **Bundle**:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-data-sheet.min.js"></script>
@@ -458,6 +450,20 @@ The UI Binding module is a set of utilities for binding HTML5 UI elements to cha
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui-binding.min.js"></script>
+```
+
+### Boost WebGL Renderer
+
+A module that enables the WebGL renderer for [Performance Boost](../Common_Settings/Performance_Boost). Canvas-based boost is part of the main bundle and needs no extra module; this one is only for the heaviest datasets.
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-boost-webgl.min.js"></script>
+```
+
+It can also be loaded on demand, in which case boost falls back to Canvas until it resolves:
+
+```
+anychart.loadModule("boost-webgl");
 ```
 
 ### VML Renderer 
