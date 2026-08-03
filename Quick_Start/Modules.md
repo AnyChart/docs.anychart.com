@@ -128,6 +128,14 @@ A module for creating [Cartesian 3D](../Basic_Charts/3D/Overview) charts (except
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian-3d.min.js"></script>
 ```
 
+### Boost (WebGL)
+
+An optional WebGL renderer for [Boost](../Common_Settings/Performance_Boost). Canvas-based boost is already part of the main bundle and needs no extra module; this one is only for the heaviest datasets. Unlike the modules above it is not added with a script tag — it is loaded on demand, and boost falls back to Canvas until it resolves:
+
+```
+anychart.loadModule('boost-webgl');
+```
+
 ### Calendar
 
 A module for creating [Calendar](../Basic_Charts/Calendar_Chart) charts:
