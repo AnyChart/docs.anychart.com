@@ -114,7 +114,7 @@ A module for creating [Bullet](../Basic_Charts/Bullet_Chart) charts:
 
 ### Basic Cartesian
 
-A module for creating basic Cartesian charts: [Area](../Basic_Charts/Area_Chart), [Bar](../Basic_Charts/Bar_Chart), [Box](../Basic_Charts/Box_Chart), [Bubble](../Basic_Charts/Bubble_Chart), [Column](../Basic_Charts/Column_Chart), [Dumbbell](../Basic_Charts/Dumbbell_Chart), [Area](../Basic_Charts/Area_Chart), [HiLo](../Basic_Charts/HiLo_Chart), [Candlestick](../Basic_Charts/Japanese_Candlestick_Chart), [Jump Line](../Basic_Charts/Jump_Line_Chart), [Line](../Basic_Charts/Line_Chart), [Lollipop](../Basic_Charts/Lollipop_Chart), [Marker](../Basic_Charts/Marker_Chart), [OHLC](../Basic_Charts/OHLC_Chart), [Range Area](../Basic_Charts/Range_Area_Chart), [Range Bar](../Basic_Charts/Range_Bar_Chart), [Range Column](../Basic_Charts/Range_Column_Chart), [Range Spline Area](../Basic_Charts/Range_Spline_Area_Chart), [Range Step Area](../Basic_Charts/Range_Step_Area_Chart), [Spline Area](../Basic_Charts/Spline_Area_Chart), [Spline](../Basic_Charts/Spline_Chart), [Step Area](../Basic_Charts/Step_Area_Chart), [Step Line](../Basic_Charts/Step_Line_Chart), [Stick](../Basic_Charts/Stick_Chart). 
+A module for creating basic Cartesian charts: [Area](../Basic_Charts/Area_Chart), [Bar](../Basic_Charts/Bar_Chart), [Box](../Basic_Charts/Box_Chart), [Bubble](../Basic_Charts/Bubble_Chart), [Column](../Basic_Charts/Column_Chart), [Dumbbell](../Basic_Charts/Dumbbell_Chart), [HiLo](../Basic_Charts/HiLo_Chart), [Candlestick](../Basic_Charts/Japanese_Candlestick_Chart), [Jump Line](../Basic_Charts/Jump_Line_Chart), [Line](../Basic_Charts/Line_Chart), [Lollipop](../Basic_Charts/Lollipop_Chart), [Marker](../Basic_Charts/Marker_Chart), [OHLC](../Basic_Charts/OHLC_Chart), [Range Area](../Basic_Charts/Range_Area_Chart), [Range Bar](../Basic_Charts/Range_Bar_Chart), [Range Column](../Basic_Charts/Range_Column_Chart), [Range Spline Area](../Basic_Charts/Range_Spline_Area_Chart), [Range Step Area](../Basic_Charts/Range_Step_Area_Chart), [Spline Area](../Basic_Charts/Spline_Area_Chart), [Spline](../Basic_Charts/Spline_Chart), [Step Area](../Basic_Charts/Step_Area_Chart), [Step Line](../Basic_Charts/Step_Line_Chart), [Stick](../Basic_Charts/Stick_Chart). 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
@@ -192,22 +192,6 @@ A module for creating [Graph](../Basic_Charts/Graph_Chart) charts:
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-graph.min.js"></script>
 ```
 
-### Geo Maps
-
-A module for creating [Geo Maps](../Maps/Quick_Start):
-
-```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-map.min.js"></script>
-```
-
-### Graph Chart
-
-A module for creating [Graph](../Basic_Charts/Graph_Chart) charts:
-
-```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-graph.min.js"></script>
-```
-
 ### Heat Map
 
 A module for creating [Heat Maps](../Basic_Charts/Heat_Map_Chart):
@@ -230,14 +214,6 @@ A module for creating [Mekko](../Basic_Charts/Marimekko_Chart/Mekko_Chart) chart
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-mekko.min.js"></script>
-```
-
-### Network Graph
-
-A module for creating [Network Graph](../Basic_Charts/Network_Graph) diagrams:
-
-```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-graph.min.js"></script>
 ```
 
 ### Network Graph
