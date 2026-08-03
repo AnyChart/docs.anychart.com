@@ -30,7 +30,7 @@ This section includes articles about features shared by most of the charts and m
 
 * [ASYNC Rendering](ASYNC_Rendering)
 * [Server-Side Rendering](Server-Side_Rendering)
-* [Performance: Boost and Decimation](Performance_Boost)
+* [Performance Boost](Performance_Boost)
 
 ## Export
 
