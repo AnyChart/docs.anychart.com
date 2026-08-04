@@ -57,6 +57,10 @@ chart.decimationAlgorithm("lttb");
 
 The value is a plain string, not an enum: an unrecognised one is not rejected, it falls through to `"min-max"`.
 
+This sample feeds 20000 points to a line chart and draws 2000 of them. Switch the algorithm in the code to see the difference between preserving the shape and preserving the envelope:
+
+{sample}CS\_Boost\_01{sample}
+
 ### When Decimation Is Skipped
 
 Decimation is deliberately not applied when dropping points would change what the chart means:
@@ -102,6 +106,10 @@ Two more conditions apply only in automatic mode, and `boostEnabled(true)` bypas
 * **The plot has more than one enabled series.** The boost canvas is composited above the SVG stage, so in a multi-series plot it would cover the SVG-rendered siblings and silently change their visible order.
 
 Forcing boost on a multi-series plot is supported, as long as you accept that the boosted series is drawn above its SVG siblings.
+
+This sample draws 40000 points on a single Canvas layer. Set `boostEnabled(false)` in the code to render the same data as SVG and compare:
+
+{sample}CS\_Boost\_02{sample}
 
 ## WebGL Renderer
 
