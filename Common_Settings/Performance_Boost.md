@@ -6,9 +6,9 @@ Large datasets make a chart slow in two different ways, and AnyChart answers eac
 
 **Decimation** reduces how many points are *drawn*. The data stays intact - the chart selects a representative subset and renders that, so an 80,000-point line still looks like the same line but costs a fraction of the DOM.
 
-**Boost** changes *how* points are drawn. Instead of one SVG element per point, the series is rasterised onto a single Canvas (or WebGL) layer, which removes the per-element cost entirely.
+**Boost** changes *how* points are drawn. Instead of one SVG element per point, the series is rasterized onto a single Canvas (or WebGL) layer, which removes the per-element cost entirely.
 
-The two are configured separately, but they are not independent at runtime: when boost is drawing a series, decimation is skipped for it, because boost renders every point cheaply and there is nothing to gain.
+The two are configured separately, but they are not independent at runtime: as soon as boost engages for a series, decimation is skipped for it, because boost is meant to render every point cheaply and there would be nothing to gain. The two never combine. Which series boost can actually render is a separate question - see [What Boost Draws](#what_boost_draws).
 
 Both are controlled by four settings, available on the chart and on individual series:
 
@@ -22,10 +22,17 @@ Both are controlled by four settings, available on the chart and on individual s
 The settings are defined on the chart base that owns orthogonal scales, so they are available on:
 
 * all Cartesian charts - line, area, column, bar, spline, step line, marker and the rest
-* [Cartesian 3D](../Basic_Charts/3D/Overview), [Heat Map](../Basic_Charts/Heat_Map_Chart), [Pareto](../Basic_Charts/Pareto_Chart), [Waterfall](../Basic_Charts/Waterfall_Chart) and [Mekko](../Basic_Charts/Marimekko_Chart/Mekko_Chart), which are built on the same base
+* [Cartesian 3D](../Basic_Charts/3D/Overview), [Heat Map](../Basic_Charts/Heat_Map_Chart), [Pareto](../Basic_Charts/Pareto_Chart), [Waterfall](../Basic_Charts/Waterfall_Chart), [Mekko](../Basic_Charts/Marimekko_Chart/Mekko_Chart) and [Stream Graph](../Basic_Charts/Stream_Graph), which are built on the same base
 * [Scatter](../Basic_Charts/Scatter_Plot/Overview), [Radar](../Basic_Charts/Radar_Plot/Overview) and [Polar](../Basic_Charts/Polar_Plot/Overview)
 
-[Stock](../Stock_Charts/Overview) series are built on the same series base, so the four settings work at series level there too, and the default 1500-point decimation applies.
+Having the methods is not the same as having an effect. Both mechanisms give up on stacked series, and three of those chart types stack by default:
+
+* [Waterfall](../Basic_Charts/Waterfall_Chart) and [Stream Graph](../Basic_Charts/Stream_Graph) stack unconditionally - stacking is what those chart types *are* - so the four settings are accepted and then never change anything.
+* [Mekko](../Basic_Charts/Marimekko_Chart/Mekko_Chart), Mosaic and Barmekko stack through their theme, so boost and decimation engage only if you turn stacking off with `chart.yScale().stackMode("none")`.
+
+[Cartesian 3D](../Basic_Charts/3D/Overview) has a different limit: its series are never boosted, whatever `boostEnabled()` says. Decimation still applies there.
+
+On [Stock](../Stock_Charts/Overview) the four methods exist on the series - not on the chart or the plot - but only `boostEnabled(true)` does anything. Decimation and the automatic boost threshold both need the Cartesian drawing plan, which stock series do not build, so `maxPointsRendered()`, `decimationAlgorithm()` and `boostThreshold()` are accepted and ignored, and the 1500-point default never applies. Stock does not need decimation anyway: it thins large series itself through [data grouping](../Stock_Charts/Data_Grouping).
 
 [Gantt](../Gantt_Chart/Overview) has its own `boostEnabled()` and `boostThreshold()` with different meaning: they count visible rows rather than data points, and the threshold defaults to 500.
 
@@ -55,24 +62,26 @@ chart.maxPointsRendered(2000);
 chart.decimationAlgorithm("lttb");
 ```
 
-The value is a plain string, not an enum: an unrecognised one is not rejected, it falls through to `"min-max"`.
+The value is a plain string, not an enum: an unrecognized one is not rejected, it falls through to `"min-max"`.
 
 This sample feeds 20000 points to a line chart and draws 2000 of them. It also switches boost off, because 20000 points is past the 5000-point boost threshold and a boosted series is never decimated. Switch the algorithm in the code to see the difference between preserving the shape and preserving the envelope:
 
 {sample}CS\_Boost\_01{sample}
 
-### When Decimation Is Skipped
+### When Decimation is Skipped
 
 Decimation is deliberately not applied when dropping points would change what the chart means:
 
 * **Stacked series** - removing a point from one series would break the stack alignment of the others.
 * **Bubble and other size-encoded series** - every point is an independent mark whose size carries data, so subset selection built for line envelopes visibly removes bubbles and shrinks the cloud.
-* **Series that boost will render anyway** - boost draws all points cheaply, so there is nothing to gain.
+* **Series that boost has engaged for** - boost is supposed to draw all points cheaply, so there is nothing to gain.
 * **Series at or below the limit**, and any series when `maxPointsRendered()` is `0`.
+
+The third rule is worth reading carefully: decimation is dropped the moment boost *engages*, which is decided before anything is drawn and without looking at whether the Canvas renderer knows the series shape. On an area series, where it does not, you get the worst of both - see [What Boost Draws](#what_boost_draws).
 
 ## Boost
 
-Boost rasterises a series onto a Canvas layer instead of building SVG elements.
+Boost rasterizes a series onto a Canvas layer instead of building SVG elements.
 
 By default `boostEnabled()` is `null`, meaning *automatic*: boost engages once a series exceeds `boostThreshold()`, which defaults to 5000 points.
 
@@ -91,13 +100,12 @@ chart.boostEnabled(true);
 chart.boostEnabled(false);
 ```
 
-### When Boost Is Skipped
+### When Boost is Skipped
 
-Some conditions are checked before `boostEnabled(true)` is honoured, so they apply in **every** mode:
+These conditions are checked up front, before anything is drawn and before `boostEnabled(true)` is honored, so they apply in **every** mode:
 
 * **Stacked series** and **3D series**.
-* **OHLC and range-based series** - range area, range column and similar - because their marks are composite shapes.
-* **Series whose drawer boost cannot render.** Boost draws line, step line, spline, area, bubble, marker and column shapes; anything else falls back to SVG.
+* **OHLC and range-based series** - range area, range column, range stick, dumbbell and similar - because their marks are composite shapes.
 * **Environments without Canvas or WebGL.**
 
 Two more conditions apply only in automatic mode, and `boostEnabled(true)` bypasses both:
@@ -107,7 +115,23 @@ Two more conditions apply only in automatic mode, and `boostEnabled(true)` bypas
 
 Forcing boost on a multi-series plot is supported, as long as you accept that the boosted series is drawn above its SVG siblings.
 
-This sample draws 40000 points on a single Canvas layer. Set `boostEnabled(false)` in the code to compare. The series then falls back to SVG, and decimation - no longer pre-empted by boost - trims it to the default 1500 points.
+The series *shape* is on neither list. Whether the Canvas renderer can draw the series at all is settled last, after the canvas has been attached and after decimation has already been dropped - which is what the next section is about.
+
+### What Boost Draws
+
+The Canvas renderer has a small repertoire of shapes. Three families come out the way you would expect:
+
+* **column and bar** series
+* **marker** series
+* **bubble** series
+
+**Line-shaped series** - line, spline, step line, jump line and stick - are boosted too, but the Canvas renderer fills them down to the zero line rather than stroking the outline, so a boosted line reads as an area. Keep `boostEnabled(false)` on them when the outline is the point.
+
+**Area-shaped series** - area, spline area and step area - are not drawn by the renderer at all. Boost still engages: the canvas is attached, decimation is skipped for the series, the renderer then finds no shape it knows and hands the series back to SVG, which draws every point. A 20000-point area chart therefore renders 20000 SVG vertices with boost on and 1500 with `boostEnabled(false)` - boost does not merely fail to help an area chart, it makes it slower. Because the default `boostEnabled()` is *automatic*, a single-series area chart above 5000 points reaches that state on its own; set `boostEnabled(false)` there.
+
+**Heat Map and Box** series fail harder still: the renderer accepts them, paints nothing, and does not hand them back to SVG, so the chart comes out empty for as long as boost is engaged. A heat map with more than 5000 cells falls into this by default too, so switch boost off there as well.
+
+This sample draws 40000 markers on a single Canvas layer - a marker series is one of the shapes the renderer draws faithfully. Set `boostEnabled(false)` in the code to compare: the series falls back to SVG, and decimation - no longer pre-empted by boost - trims it to the default 1500 points:
 
 {sample}CS\_Boost\_02{sample}
 
@@ -152,8 +176,8 @@ Note that the built-in defaults below are what the engine *behaves* like, not ne
 <table>
 <tbody>
 <tr>
-<th width='220'>Name</th>
-<th width='120'>Default</th>
+<th width="220">Name</th>
+<th width="120">Default</th>
 <th>Description</th>
 </tr>
 <tr>
