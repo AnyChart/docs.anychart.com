@@ -478,13 +478,13 @@ The UI Binding module is a set of utilities for binding HTML5 UI elements to cha
 
 ### Boost WebGL Renderer
 
-A module that enables the WebGL renderer for [Performance Boost](../Common_Settings/Performance_Boost). Canvas-based boost is part of the main bundle and needs no extra module; this one is only for the heaviest datasets.
+A module that enables the WebGL renderer for [Performance Boost](../Common_Settings/Performance_Boost). Canvas-based boost is part of the main bundle and needs no extra module; this one is only for the heaviest datasets. The module is new in AnyChart 9 - the file is not published under an 8.x release path, so the script tag below only resolves against a 9.x release:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-boost-webgl.min.js"></script>
 ```
 
-It can also be loaded on demand, in which case boost falls back to Canvas until it resolves:
+It can also be loaded on demand, in which case boost falls back to Canvas until it resolves. `loadModule()` takes the release path from the AnyChart script tag already on the page, so it never needs a version of its own:
 
 ```
 anychart.loadModule("boost-webgl");
