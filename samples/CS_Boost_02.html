@@ -5,10 +5,7 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
 
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <script src="https://cdn.anychart.com/releases/staging/js/anychart-bundle.min.js"></script>
 
     <style>
         html, body, #container {
@@ -31,8 +28,9 @@ anychart.onDocumentReady(function () {
     var chart = anychart.line(data);
     chart.title("Boost: one Canvas layer instead of 40000 SVG elements");
 
-    // Force boost rather than waiting for the 5000-point threshold, so the sample shows the
-    // Canvas path even if the data is trimmed. Set it to false to compare against plain SVG.
+    // 40000 points is past the 5000-point threshold, so boost would engage on its own here;
+    // setting it explicitly makes the switch visible. Set it to false to compare against SVG -
+    // decimation is no longer pre-empted then, and trims the line to the default 1500 points.
     chart.boostEnabled(true);
 
     // Boost draws every point, so decimation is skipped while it is active.

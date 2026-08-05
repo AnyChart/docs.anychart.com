@@ -22,8 +22,8 @@ Both are controlled by four settings, available on the chart and on individual s
 The settings are defined on the chart base that owns orthogonal scales, so they are available on:
 
 * all Cartesian charts - line, area, column, bar, spline, step line, marker and the rest
-* [Cartesian 3D](../Basic_Charts/3D/Overview), [Heat Map](../Basic_Charts/Heat_Map_Chart), [Pareto](../Basic_Charts/Pareto_Chart), [Waterfall](../Basic_Charts/Waterfall_Chart) and [Mekko](../Basic_Charts/Mekko_Chart), which are built on the same base
-* [Scatter](../Basic_Charts/Scatter_Plot/Overview), [Radar](../Basic_Charts/Radar_Chart) and [Polar](../Basic_Charts/Polar_Chart)
+* [Cartesian 3D](../Basic_Charts/3D/Overview), [Heat Map](../Basic_Charts/Heat_Map_Chart), [Pareto](../Basic_Charts/Pareto_Chart), [Waterfall](../Basic_Charts/Waterfall_Chart) and [Mekko](../Basic_Charts/Marimekko_Chart/Mekko_Chart), which are built on the same base
+* [Scatter](../Basic_Charts/Scatter_Plot/Overview), [Radar](../Basic_Charts/Radar_Plot/Overview) and [Polar](../Basic_Charts/Polar_Plot/Overview)
 
 [Stock](../Stock_Charts/Overview) series are built on the same series base, so the four settings work at series level there too, and the default 1500-point decimation applies.
 
@@ -57,7 +57,7 @@ chart.decimationAlgorithm("lttb");
 
 The value is a plain string, not an enum: an unrecognised one is not rejected, it falls through to `"min-max"`.
 
-This sample feeds 20000 points to a line chart and draws 2000 of them. Switch the algorithm in the code to see the difference between preserving the shape and preserving the envelope:
+This sample feeds 20000 points to a line chart and draws 2000 of them. It also switches boost off, because 20000 points is past the 5000-point boost threshold and a boosted series is never decimated. Switch the algorithm in the code to see the difference between preserving the shape and preserving the envelope:
 
 {sample}CS\_Boost\_01{sample}
 
@@ -107,13 +107,13 @@ Two more conditions apply only in automatic mode, and `boostEnabled(true)` bypas
 
 Forcing boost on a multi-series plot is supported, as long as you accept that the boosted series is drawn above its SVG siblings.
 
-This sample draws 40000 points on a single Canvas layer. Set `boostEnabled(false)` in the code to render the same data as SVG and compare:
+This sample draws 40000 points on a single Canvas layer. Set `boostEnabled(false)` in the code to compare. The series then falls back to SVG, and decimation - no longer pre-empted by boost - trims it to the default 1500 points.
 
 {sample}CS\_Boost\_02{sample}
 
 ## WebGL Renderer
 
-Canvas boost ships in the main bundle and needs nothing extra. A WebGL renderer is available as a separate opt-in module for the heaviest datasets. It can be added with a script tag like any other module, or loaded on demand:
+Canvas boost ships in the main bundle and needs nothing extra. A WebGL renderer is available as a separate opt-in module for the heaviest datasets, `anychart-boost-webgl.min.js`. It can be added with a script tag like any other [module](../Quick_Start/Modules#boost_webgl_renderer), or loaded on demand:
 
 ```
 // returns a promise; boost falls back to Canvas until it resolves
