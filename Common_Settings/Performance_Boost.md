@@ -131,7 +131,7 @@ The Canvas renderer has a small repertoire of shapes. Three families come out th
 
 **Heat Map and Box** series fail harder still: the renderer accepts them, paints nothing, and does not hand them back to SVG, so the chart comes out empty for as long as boost is engaged. A heat map with more than 5000 cells falls into this by default too, so switch boost off there as well.
 
-This sample draws 40000 markers on a single Canvas layer - a marker series is one of the shapes the renderer draws faithfully. Set `boostEnabled(false)` in the code to compare: the series falls back to SVG, and decimation - no longer pre-empted by boost - trims it to the default 1500 points:
+This sample draws 10000 markers on a single Canvas layer - a marker series is one of the shapes the renderer draws faithfully. Set `boostEnabled(false)` in the code to compare: the series falls back to SVG, and decimation - no longer pre-empted by boost - trims it to the default 1500 points:
 
 {sample}CS\_Boost\_02{sample}
 
