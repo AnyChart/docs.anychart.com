@@ -21,17 +21,17 @@
 <script>
 anychart.onDocumentReady(function () {
     var data = [];
-    for (var i = 0; i < 40000; i++) {
+    for (var i = 0; i < 10000; i++) {
         data.push([i, Math.sin(i / 900) * 40 + Math.sin(i / 23) * 6]);
     }
 
     var chart = anychart.marker(data);
-    chart.title("Boost: one Canvas layer instead of 40000 SVG elements");
+    chart.title("Boost: one Canvas layer instead of 10000 SVG elements");
 
     // A marker series is one of the shapes the Canvas renderer draws faithfully. Line and area
     // series are not - the renderer fills a line down to the zero line, and skips area series
     // altogether - so this sample uses markers.
-    // 40000 points is past the 5000-point threshold, so boost would engage on its own here;
+    // 10000 points is past the 5000-point threshold, so boost would engage on its own here;
     // setting it explicitly makes the switch visible. Set it to false to compare against SVG -
     // decimation is no longer pre-empted then, and trims the series to the default 1500 points.
     chart.boostEnabled(true);
