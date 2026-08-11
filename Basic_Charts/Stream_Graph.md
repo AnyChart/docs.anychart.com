@@ -3,11 +3,11 @@
 
 ## Overview
 
-A Stream graph is a stacked area chart. But it does not stack the layers from a flat zero line. Instead, the whole stack moves around a central baseline that shifts. This gives the chart a flowing, organic, "river-like" shape.
+A Stream graph is a stacked area chart. But it does not stack the layers from a flat zero line. Instead, the whole stack is arranged around a central baseline that moves up and down. This gives the chart a flowing, "river-like" shape.
 
-A Stream graph works best in one case. Use it to show how the parts of a whole change over time. It works well when you have many series. It fits when the overall shape matters more than exact values.
+A Stream graph is best for one thing. Use it to show how the parts of a whole change over time. It works well when you have many series. It fits when the overall shape matters more than exact values.
 
-This article shows how to create a basic Stream graph. It also shows how to set the options that are special to this type. You can also read the table below for a short overview of the Stream graph's features:
+This article shows how to create a basic Stream graph. It also shows how to set the options that are special to this type. You can read the table below for a short overview of the Stream graph's features:
 
 <table border="1" class="seriesTABLE">
 <tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) + [Stream Graph](../Quick_Start/Modules#stream_graph)</td></tr>
@@ -59,7 +59,7 @@ To create a Stream graph, use the {api:anychart#streamGraph}anychart.streamGraph
 The sample below shows how to create a basic Stream graph:
 
 ```
-// create data: weekly volume of three acquisition channels
+// create data: weekly volume of three traffic sources
 var searchData = [
   ["W1", 42],["W2", 45],["W3", 40],["W4", 38],["W5", 44],
   ["W6", 50],["W7", 55],["W8", 52],["W9", 48],["W10", 46]
@@ -93,7 +93,7 @@ chart.draw();
 
 {sample}BCT\_Stream\_Graph\_01{sample}
 
-You can also pass one or more data arrays straight to the constructor. A spline-area series is created for each one:
+You can also pass one or more data arrays straight to the constructor. AnyChart creates a spline-area series for each one:
 
 ```
 var chart = anychart.streamGraph(searchData, socialData, emailData);
@@ -101,7 +101,7 @@ var chart = anychart.streamGraph(searchData, socialData, emailData);
 
 ## General Settings
 
-In AnyChart, many settings work the same way for all chart types. This includes the Stream graph, for example legend and interactivity settings.
+In AnyChart, many settings work the same way for all chart types. This includes the Stream graph, for example its legend and interactivity settings.
 
 Read the overview of general settings: [General Settings](General_Settings).
 
@@ -114,12 +114,12 @@ Each layer of a Stream graph is a separate series with two data fields:
 * `x` — the category (usually a point in time)
 * `value` — the value of the layer at that category
 
-Pass the data for a series to the {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} method (or the [area / step-area](#series_type) method). You can pass a plain array. You can also map the columns of a shared [data set](../Working_with_Data/Data_Sets). This is handy when all layers share one table. You can set missing values as `null`. Such points are skipped, and the baseline stays whole:
+Pass the data for a series to the {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} method (or the [area / step-area](#series_type) method). You can pass a plain array. You can also map the columns of a shared [data set](../Working_with_Data/Data_Sets). This is handy when all layers share one table. You can set missing values to `null`. These points are skipped, and the baseline stays unbroken. In the sample below, the Social layer has no value at "W5": its band shows a gap, and the stream continues:
 
 ```
-// one data set with a column per channel: [week, search, social]
+// one data set with a column per channel: [week, search, social]; the social value at W5 is missing
 var dataSet = anychart.data.set([
-  ["W1", 42, 30],["W2", 45, 33],["W3", 40, 36],["W4", 38, 40],["W5", 44, 38],
+  ["W1", 42, 30],["W2", 45, 33],["W3", 40, 36],["W4", 38, 40],["W5", 44, null],
   ["W6", 50, 35],["W7", 55, 37],["W8", 52, 42],["W9", 48, 46],["W10", 46, 49]
 ]);
 
@@ -140,17 +140,28 @@ series2.name("Social");
 
 The key setting of the Stream graph is the **offset**. This is the algorithm that places the baseline of the stack. Control it with the {api:anychart.charts.StreamGraph#offset}offset(){api} method:
 
-* `"wiggle"` (default) — reduces the change of slope of the layers (the Byron & Wattenberg "streamgraph" algorithm); the river bends but stays compact
+* `"wiggle"` (default) — reduces how sharply the layers bend (the Byron & Wattenberg "streamgraph" algorithm); the river bends but stays compact
 * `"silhouette"` — centers the stack evenly around the zero line
 * `"expand"` — gives every category the same total height; the chart then shows each layer's share of the total. It looks like a percent-stacked chart with flat top and bottom edges
 * `"zero"` — stacks the layers from a flat zero baseline (an ordinary stacked area chart)
 
+The sample below shows the `"silhouette"` offset. It also uses six layers instead of three: with many layers, the flowing shape of the stream is easier to see.
+
 ```
-// center the stack symmetrically around the zero line
+// center the stack evenly around the zero line
 chart.offset("silhouette");
 ```
 
 {sample}BCT\_Stream\_Graph\_03{sample}
+
+The sample below shows the `"expand"` offset, which turns the stream into a share-of-total view:
+
+```
+// give every category the same total height to compare shares
+chart.offset("expand");
+```
+
+{sample}BCT\_Stream\_Graph\_10{sample}
 
 ### Series Type
 
@@ -170,7 +181,7 @@ series1.seriesType("stepArea");
 
 ### Appearance
 
-The color of each layer comes from the chart [palette](../Appearance_Settings/Palettes). Set your own with the {api:anychart.charts.StreamGraph#palette}palette(){api} method. You set the [appearance settings](../Appearance_Settings) of single series like in other area-based series. The {api:anychart.core.StateSettings#fill}fill(){api} method sets the layer fill. The {api:anychart.core.StateSettings#stroke}stroke(){api} method sets its outline. Layers next to each other often read better with a thin contrasting stroke between them:
+The color of each layer comes from the chart [palette](../Appearance_Settings/Palettes). Set your own with the {api:anychart.charts.StreamGraph#palette}palette(){api} method. You set the [appearance settings](../Appearance_Settings) of individual series the same way as in other area-based series. The {api:anychart.core.StateSettings#fill}fill(){api} method sets the layer fill. The {api:anychart.core.StateSettings#stroke}stroke(){api} method sets its outline. Layers next to each other often look clearer with a thin contrasting stroke between them:
 
 ```
 // one palette color per layer
@@ -189,7 +200,7 @@ series1.fill("#014f86");
 
 ### Labels and Markers
 
-[Labels](../Common_Settings/Labels) are text or image elements. You can place them anywhere on any chart. [Markers](General_Settings#markers) are icons that highlight the data points. You can turn on both on a whole series or on a single point. You set both per series. For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements. You can place them anywhere on any chart. [Markers](General_Settings#markers) are icons that highlight the data points. You can turn both on for a whole series or for a single point. You set both per series. For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 ```
 // enable the labels on the first layer
@@ -207,7 +218,7 @@ series2.markers().size(4);
 
 ### Tooltips
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box. It shows when you hover over a point on a chart. On a Stream graph, the tooltip uses the `"union"` [display mode](../Common_Settings/Tooltip#display_mode) by default. In this mode, one tooltip lists the values of all layers at the hovered category. Use font settings and [text formatters](../Common_Settings/Text_Formatters) to set the text. You can also change the mode with {api:anychart.core.ui.Tooltip#displayMode}displayMode(){api}:
+A [Tooltip](../Common_Settings/Tooltip) is a text box. It appears when you hover over a point on a chart. On a Stream graph, the tooltip uses the `"union"` [display mode](../Common_Settings/Tooltip#display_mode) by default. In this mode, one tooltip lists the values of all layers at the hovered category. Use font settings and [text formatters](../Common_Settings/Text_Formatters) to set the text. You can also change the mode with {api:anychart.core.ui.Tooltip#displayMode}displayMode(){api}:
 
 ```
 // the union tooltip lists all layers at the hovered category
@@ -231,7 +242,7 @@ chart.legend().itemsLayout("vertical");
 
 ### Axes
 
-The X axis of a Stream graph works like in other cartesian charts. The Y axis is **disabled by default**. With the `"wiggle"` and `"silhouette"` offsets, the vertical positions are relative. So the axis values would mislead you. With the `"zero"` offset, the Y axis becomes meaningful again. Turn it on with the {api:anychart.charts.StreamGraph#yAxis}yAxis(){api} method:
+The X axis of a Stream graph works the same way as in other cartesian charts. The Y axis is **disabled by default**. With the `"wiggle"` and `"silhouette"` offsets, the layers move up and down, so the axis values would mislead you. With the `"zero"` offset, the Y axis becomes meaningful again. Turn it on with the {api:anychart.charts.StreamGraph#yAxis}yAxis(){api} method:
 
 ```
 // stack the layers from the zero baseline and show the Y axis

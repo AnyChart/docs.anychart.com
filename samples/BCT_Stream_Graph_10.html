@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Stream Graph 03"/>
+    <meta name="ac:name" content="BCT Stream Graph 10"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
 
@@ -41,7 +41,7 @@ anychart.onDocumentReady(function () {
   ];
 
   var chart = anychart.streamGraph();
-  chart.title("Stream Graph: Silhouette Offset");
+  chart.title("Stream Graph: Expand Offset");
 
   var series1 = chart.splineArea(searchData);
   series1.name("Search");
@@ -56,8 +56,8 @@ anychart.onDocumentReady(function () {
   var series6 = chart.splineArea(videoData);
   series6.name("Video");
 
-  // center the stack symmetrically around the zero line
-  chart.offset("silhouette");
+  // give every category the same total height to compare shares
+  chart.offset("expand");
 
   chart.container("container");
   chart.draw();

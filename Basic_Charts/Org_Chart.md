@@ -3,7 +3,7 @@
 
 ## Overview
 
-An Org chart (organizational chart) shows the structure of an organization as a tree. Each node is a card with a name and a title. Parent-child links are drawn as connector lines between the cards. The chart lays out the tree on its own and fits it into the container. It also lets you collapse branches, zoom, and pan out of the box.
+An Org chart (organizational chart) shows the structure of an organization as a tree. Each node is a card with a name and a title. The chart draws parent-child links as connector lines between the cards. The chart lays out the tree automatically and fits it into the container. It also lets you collapse branches, zoom, and pan — all by default.
 
 This article shows how to make a basic Org chart. It also shows how to set options that are special to this type. You can read the table below for a quick overview of the Org chart's features:
 
@@ -75,13 +75,13 @@ chart.container("container");
 chart.draw();
 ```
 
-The chart is interactive by default. Hover a card to highlight it. Click a card to select it. Click the +/− indicator under a parent card to collapse or expand its branch.
+The chart is interactive by default. Hover over a card to highlight it. Click a card to select it. Click the +/− indicator under a parent card to collapse or expand its branch.
 
 {sample}BCT\_Org\_Chart\_01{sample}
 
 ## General Settings
 
-In AnyChart, many settings work the same way for all chart types. This includes the Org chart, for example its interactivity settings.
+In AnyChart, many settings work the same way for all chart types. This is true for the Org chart too. For example, its interactivity settings work the same way.
 
 Read the overview of general settings: [General Settings](General_Settings).
 
@@ -89,7 +89,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-The Org chart uses the [tree data model](../Working_with_Data/Tree_Data_Model). Each item has two text fields. The `name` field is the header line of the card. The `title` field is the second line. You set the hierarchy in one of two ways. The second argument of the constructor chooses the way:
+The Org chart uses the [tree data model](../Working_with_Data/Tree_Data_Model). Each item has two text fields. The `name` field is the header line of the card. The `title` field is the second line. Give every item a `name`. The `title` field is optional: a card without it shows only the name line. You set the hierarchy in one of two modes. The second argument of the constructor sets the mode:
 
 * `"as-table"` — a flat array where each item points to its parent with `id` and `parent` fields (the root item has no `parent`)
 * `"as-tree"` — a nested array where each parent holds its children in the `children` field
@@ -115,14 +115,14 @@ var chart = anychart.orgChart(data, "as-tree");
 
 ### Appearance
 
-You can set the node cards in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.OrgChart#normal}normal(){api}, {api:anychart.charts.OrgChart#hovered}hovered(){api}, and {api:anychart.charts.OrgChart#selected}selected(){api} methods. A card is hovered when you point at it. A card is selected when you click it. A click on the empty area clears the selection.
+You can style the node cards in three [states](../Common_Settings/Interactivity/States): **normal**, **hovered**, and **selected**. Use the {api:anychart.charts.OrgChart#normal}normal(){api}, {api:anychart.charts.OrgChart#hovered}hovered(){api}, and {api:anychart.charts.OrgChart#selected}selected(){api} methods. A card is hovered when you move the pointer over it. A card is selected when you click it. A click on the empty area clears the selection.
 
 Combine the state methods with these methods:
 
-* {api:anychart.core.StateSettings#fill}fill(){api} to set the card background. It accepts a plain color, gradient, or pattern fill. A fill function is not supported here. The card is painted directly, not through the state color resolver
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the card background. It accepts a plain color, gradient, or pattern fill. A fill function is not supported here: the chart reads the setting as a ready color and never calls a function to compute it
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the card border
 
-Style the text of a card with the {api:anychart.charts.OrgChart#labels}labels(){api} method. Its font family and font size apply to both lines. The `title` line is drawn a bit smaller. The `fontColor()` and `fontWeight()` methods change only the `name` (header) line. Set the color of the `title` line on its own with the {api:anychart.charts.OrgChart#titleFontColor}titleFontColor(){api} method. To hide both lines, turn off the labels with `chart.labels(false)`. Style the connector lines with {api:anychart.charts.OrgChart#connectorStroke}connectorStroke(){api}:
+Style the text of a card with the {api:anychart.charts.OrgChart#labels}labels(){api} method. Its font family and font size apply to both lines. The `title` line is drawn a bit smaller. The `fontColor()` and `fontWeight()` methods change only the `name` (header) line. Set the color of the `title` line separately with the {api:anychart.charts.OrgChart#titleFontColor}titleFontColor(){api} method. To hide both lines, turn off the labels with `chart.labels(false)`. Style the connector lines with {api:anychart.charts.OrgChart#connectorStroke}connectorStroke(){api}:
 
 ```
 // node cards in three states (plain colors)
@@ -148,7 +148,7 @@ chart.connectorStroke("1.5 #90a4ae");
 
 ### Orientation
 
-By default, the tree grows from the top down. The {api:anychart.charts.OrgChart#orientation}orientation(){api} method reflows it in any of the four directions:
+By default, the tree grows from the top down. The {api:anychart.charts.OrgChart#orientation}orientation(){api} method makes it grow in one of four directions:
 
 * `"top-to-bottom"` (default)
 * `"bottom-to-top"`
@@ -180,7 +180,7 @@ chart.connectorStroke("2 #64b5f6");
 
 ### Node Size and Spacing
 
-Use these methods to set the node cards and the tree spacing. The whole tree is rescaled on its own to fit the container:
+Use these methods to set the size of the node cards and the tree spacing. The chart rescales the whole tree automatically to fit the container:
 
 * {api:anychart.charts.OrgChart#nodeWidth}nodeWidth(){api} and {api:anychart.charts.OrgChart#nodeHeight}nodeHeight(){api} — the size of the node cards, in pixels (150×80 by default)
 * {api:anychart.charts.OrgChart#nodePadding}nodePadding(){api} — the inner padding of the card text (10 by default)
@@ -202,7 +202,7 @@ chart.siblingSpacing(16);
 
 ### Collapse and Expand
 
-Every parent card gets a +/− indicator. It collapses or expands the branch on click. You can also do the same in code:
+Every parent card gets a +/− indicator. It collapses or expands the branch when you click it. You can also do the same in code:
 
 * {api:anychart.charts.OrgChart#collapse}collapse(){api} and {api:anychart.charts.OrgChart#expand}expand(){api} — collapse or expand the branch of a node. Pass the node `id`, or pass the data item itself. Get the item with the search() method of the [tree](../Working_with_Data/Tree_Data_Model). This is useful in the `"as-tree"` mode, where items may have no `id` field
 * {api:anychart.charts.OrgChart#collapseAll}collapseAll(){api} and {api:anychart.charts.OrgChart#expandAll}expandAll(){api} — collapse or expand all branches at once
@@ -216,9 +216,9 @@ chart.collapse("cto");
 
 ### Zoom and Pan
 
-Mouse-wheel zoom and drag-to-pan are on by default. Control them with the {api:anychart.charts.OrgChart#zoomEnabled}zoomEnabled(){api} and {api:anychart.charts.OrgChart#panEnabled}panEnabled(){api} methods (each takes `true`/`false`). You can also drive the zoom in code:
+Mouse-wheel zoom and drag-to-pan are on by default. Control them with the {api:anychart.charts.OrgChart#zoomEnabled}zoomEnabled(){api} and {api:anychart.charts.OrgChart#panEnabled}panEnabled(){api} methods (each takes `true`/`false`). You can also control the zoom in code:
 
-* {api:anychart.charts.OrgChart#zoomIn}zoomIn(){api} and {api:anychart.charts.OrgChart#zoomOut}zoomOut(){api} — scale the tree up or down. The zoom is anchored to the top-left corner of the chart area, not its visual center. Repeated zoomIn() calls push the tree toward the bottom-right. Repeated zoomOut() calls pull it toward the top-left. Call fit() to recenter
+* {api:anychart.charts.OrgChart#zoomIn}zoomIn(){api} and {api:anychart.charts.OrgChart#zoomOut}zoomOut(){api} — scale the tree up or down. The zoom is fixed to the top-left corner of the chart area, not its visual center. Repeated zoomIn() calls push the tree toward the bottom-right. Repeated zoomOut() calls pull it toward the top-left. Call fit() to recenter
 * {api:anychart.charts.OrgChart#fit}fit(){api} — reset the zoom and pan and fit the whole tree into the container
 
 ```
@@ -242,7 +242,7 @@ chart.labels().fontSize(13);
 chart.labels().fontColor("#1a237e");
 chart.labels().fontWeight("bold");
 
-// set the color of the title line on its own
+// set the color of the title line separately
 chart.titleFontColor("#00796b");
 ```
 
@@ -250,9 +250,9 @@ chart.titleFontColor("#00796b");
 
 ### Tooltips
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box that appears when you hover over a card. It has many visual and other settings. For example, you can edit the text with font settings and [text formatters](../Common_Settings/Text_Formatters). You can also change the background style and move the tooltip.
+A [Tooltip](../Common_Settings/Tooltip) is a text box that appears when you hover over a card. It has many settings for its look and behavior. For example, you can edit the text with font settings and [text formatters](../Common_Settings/Text_Formatters). You can also change the background style and move the tooltip.
 
-By default, the tooltip shows the `name` field as the title. It shows the `title` field as the text. Use the {api:anychart.charts.OrgChart#tooltip}tooltip(){api} method with {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} to change it. The `{%name}` token is available in the formats. You can read any field of the hovered data item in a formatting function with {api:anychart.format.Context#getData}getData(){api}:
+By default, the tooltip shows the `name` field as the title. It shows the `title` field as the text. Use the {api:anychart.charts.OrgChart#tooltip}tooltip(){api} method with {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} to change it. The `{%name}` token works in both formats. You can read any field of the hovered data item in a formatting function with {api:anychart.format.Context#getData}getData(){api}:
 
 ```
 // the tooltip title shows the name; build the text from the data fields

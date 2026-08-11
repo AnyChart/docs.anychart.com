@@ -3,11 +3,11 @@
 
 ## Overview
 
-An Arc diagram shows connections between things. It places the nodes along one line. Each link between two nodes is drawn as an arc on one side of that line.
+An Arc diagram shows connections between items. Each item is a node: a small bar on one shared line, the node line. Each link between two nodes is drawn as an arc on one side of the node line.
 
 The height of an arc depends on the distance between its two nodes. The thickness of an arc shows the weight of the link. The length of a node bar shows the total flow through that node.
 
-An Arc diagram is a compact alternative to the [Network Graph](Network_Graph). Use it when the relationships matter more than the topology. It reads best when the nodes are ordered well (see [Sorting](#sorting)).
+An Arc diagram is a compact alternative to the [Network Graph](Network_Graph). Use it when the connections matter more than the overall shape of the network. It is easiest to read when the nodes are in a good order (see [Sorting](#sorting)).
 
 This article shows how to create a basic Arc diagram. It also explains the settings that are special to this type. The table below gives a quick overview of the Arc diagram's features:
 
@@ -86,7 +86,7 @@ chart.draw();
 
 ## General Settings
 
-AnyChart has many settings that work the same way for all chart types. This includes the Arc diagram, for example legend and interactivity settings.
+AnyChart has many settings that work the same way for all chart types. This includes the Arc diagram, for example its legend and interactivity settings.
 
 Read the overview of general settings: [General Settings](General_Settings).
 
@@ -100,7 +100,9 @@ Pass data to the {api:anychart#arcDiagram}anychart.arcDiagram(){api} chart const
 * `to` — the name of the target node
 * `weight` — the weight of the link (sets the thickness of the arc)
 
-An optional `group` field puts the link's nodes into a named group. A node keeps the first group it gets: if a later row gives the same node another group, that value is ignored. You can use groups to [sort](#sorting) the nodes. Set links as objects, or map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api}:
+A node's name is the exact string from the `from`/`to` fields. The same string is the node `id` in [Sorting](#sorting), the node name that select() accepts (see [Nodes](#nodes)), and the `{%name}` token in [Tooltips](#tooltips).
+
+An optional `group` field puts the link's nodes into a named group. A node keeps the first group it gets: if a later row gives the same node another group, that value is ignored. You can use groups to [sort](#sorting) the nodes. Pass the links as objects, or map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api}:
 
 ```
 // map the columns of a data set (four fields: from, to, weight, group)
@@ -136,21 +138,21 @@ chart.colorMode("gradient");
 
 ### Orientation
 
-By default, the nodes sit in a row at the bottom of the chart. The arcs bow upward. The {api:anychart.charts.ArcDiagram#orientation}orientation(){api} method rotates the layout. With `"vertical"`, the nodes form a column and the arcs bow to the right. The {api:anychart.charts.ArcDiagram#arcDirection}arcDirection(){api} method flips the arcs to the other side of the node line. For the horizontal orientation, pass `"down"`. For the vertical one, pass `"left"`. This bows the arcs the other way. Left unset, the arcs bow up in the horizontal orientation and right in the vertical one.
+By default, the nodes sit in a row at the bottom of the chart. The arcs curve upward. The {api:anychart.charts.ArcDiagram#orientation}orientation(){api} method rotates the layout. With `"vertical"`, the nodes form a column and the arcs curve to the right. The {api:anychart.charts.ArcDiagram#arcDirection}arcDirection(){api} method flips the arcs to the other side of the node line. For the horizontal orientation, pass `"down"`. For the vertical one, pass `"left"`. This curves the arcs the other way. If you do not set it, the arcs curve up in the horizontal orientation and to the right in the vertical one.
 
 ```
-// place the nodes in a column; the arcs bow to the right
+// place the nodes in a column; the arcs curve to the right
 chart.orientation("vertical");
 ```
 
 {sample}BCT\_Arc\_Diagram\_04{sample}
 
-### Nodes and Arcs Geometry
+### Node and Arc Geometry
 
 The following methods adjust the geometry of the diagram:
 
 * {api:anychart.charts.ArcDiagram#nodeWidth}nodeWidth(){api} — the thickness of the node bars, in pixels (20 by default)
-* {api:anychart.charts.ArcDiagram#nodeSpacing}nodeSpacing(){api} — the gap between nodes next to each other, in pixels (30 by default)
+* {api:anychart.charts.ArcDiagram#nodeSpacing}nodeSpacing(){api} — the gap between neighboring nodes, in pixels (30 by default)
 * {api:anychart.charts.ArcDiagram#curvature}curvature(){api} — the height of the arcs: values below 1 flatten them, values above 1 make them taller (1 by default)
 
 ```
@@ -158,7 +160,7 @@ The following methods adjust the geometry of the diagram:
 chart.nodeWidth(28);
 chart.nodeSpacing(45);
 
-// make the arcs taller and bow them below the baseline
+// make the arcs taller and curve them below the node line
 chart.curvature(1.5);
 chart.arcDirection("down");
 ```
@@ -184,7 +186,11 @@ chart.sortOrder("weight");
 
 ### Nodes
 
-Set the node bars and their [labels](../Common_Settings/Labels) with the {api:anychart.charts.ArcDiagram#node}node(){api} method in three [states](../Common_Settings/Interactivity/States). The {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} methods work in each state. Labels are drawn from the normal state only. So set them with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state. A node is hovered when you point at it. Its connections are then highlighted. A node is selected when you click it. A click replaces any previous selection. Ctrl/Cmd + click or Shift + click instead toggles a node into or out of a multi-node selection. A plain click on the empty area clears the selection. A click there with one of these keys does nothing. You can also select nodes in code. Both {api:anychart.charts.ArcDiagram#select}select(){api} and {api:anychart.charts.ArcDiagram#unselect}unselect(){api} accept a node name or an array of node names. select() adds the given nodes to the selection. unselect() removes just the given nodes. Called with no argument, select() selects every node and unselect() clears the whole selection.
+Set the node bars and their [labels](../Common_Settings/Labels) with the {api:anychart.charts.ArcDiagram#node}node(){api} method in three [states](../Common_Settings/Interactivity/States): **normal**, **hovered**, and **selected**. The {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} methods work in each state. Label settings come from the normal state only. So set them with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state.
+
+A node is hovered when you point at it. Its connections are then highlighted. A node is selected when you click it. A click replaces any previous selection. Instead, Ctrl/Cmd + click or Shift + click toggles a node into or out of a multi-node selection. A plain click on the empty area clears the selection. A click there with one of these keys does nothing.
+
+You can also select nodes in code. Both {api:anychart.charts.ArcDiagram#select}select(){api} and {api:anychart.charts.ArcDiagram#unselect}unselect(){api} accept a node name or an array of node names. select() adds those nodes to the selection. unselect() removes only those nodes. Called with no argument, select() selects every node and unselect() clears the whole selection.
 
 Node labels show the node name and are on by default. In the horizontal orientation they are drawn at an angle. Use {api:anychart.core.ui.LabelsFactory#rotation}rotation(){api} and font settings to adjust them:
 
@@ -199,6 +205,9 @@ chart.node().selected().stroke("#0b1220", 3);
 chart.node().normal().labels().rotation(0);
 chart.node().normal().labels().fontSize(12);
 chart.node().normal().labels().fontColor("#212121");
+
+// select two nodes in code
+chart.select(["Asia", "Europe"]);
 ```
 
 {sample}BCT\_Arc\_Diagram\_07{sample}
@@ -222,7 +231,7 @@ chart.link().normal().labels().fontSize(10);
 
 ### Tooltips
 
-Nodes and links have separate [tooltips](../Common_Settings/Tooltip) with separate text contexts. The node tooltip supports `{%name}`, `{%weight}`, `{%connections}`, and `{%group}`. `{%weight}` is the total flow through the node. `{%connections}` is the number of links. `{%group}` is the group of the node, or an empty string if it has none. The link tooltip supports `{%from}`, `{%to}`, `{%value}`, and `{%name}` (the source and target names joined by an arrow). By default, the link tooltip uses the same format as the node tooltip. So its `{%weight}` and `{%connections}` tokens show no value for a link. It is best to set the link tooltip yourself, as shown below:
+Nodes and links have separate [tooltips](../Common_Settings/Tooltip), each with its own set of tokens. The node tooltip supports `{%name}`, `{%weight}`, `{%connections}`, and `{%group}`. `{%weight}` is the total flow through the node. `{%connections}` is the number of links. `{%group}` is the group of the node, or an empty string if it has none. The link tooltip supports `{%from}`, `{%to}`, `{%value}`, and `{%name}` (the source and target names joined by an arrow). By default, the link tooltip uses the same format as the node tooltip. So its `{%weight}` and `{%connections}` tokens show no value for a link. It is best to set the link tooltip yourself, as shown below:
 
 ```
 // the tooltip of nodes
@@ -234,7 +243,7 @@ chart.link().tooltip().titleFormat("{%from} → {%to}");
 chart.link().tooltip().format("People (k): {%value}");
 ```
 
-You can also use a [formatting function](../Common_Settings/Text_Formatters#formatting_functions) instead of tokens. For example, you can compute the average flow per connection:
+You can also use a [formatting function](../Common_Settings/Text_Formatters#formatting_functions) instead of tokens. For example, you can calculate the average flow per connection:
 
 ```
 // show the average flow per connection
