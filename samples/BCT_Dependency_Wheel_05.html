@@ -19,6 +19,7 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+  // create data
   var data = [
     {from: "Coal", to: "Grid", weight: 38},
     {from: "Gas", to: "Grid", weight: 46},
@@ -34,13 +35,17 @@ anychart.onDocumentReady(function () {
     {from: "Heat", to: "Buildings", weight: 21}
   ];
 
+  // create a chart and set the data
   var chart = anychart.dependencyWheel(data);
+  // set the chart title
   chart.title("Dependency Wheel: Sorting Nodes");
 
   // arrange the node arcs from the smallest to the largest
   chart.sortOrder("asc");
 
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>
