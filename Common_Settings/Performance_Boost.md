@@ -12,10 +12,10 @@ The two are configured separately, but they are not independent at runtime: as s
 
 Both are controlled by four settings, available on the chart and on individual series:
 
-* {api:?entry=maxPointsRendered}maxPointsRendered(){api}
-* {api:?entry=decimationAlgorithm}decimationAlgorithm(){api}
-* {api:?entry=boostThreshold}boostThreshold(){api}
-* {api:?entry=boostEnabled}boostEnabled(){api}
+* {api:anychart.charts.Cartesian#maxPointsRendered}maxPointsRendered(){api}
+* {api:anychart.charts.Cartesian#decimationAlgorithm}decimationAlgorithm(){api}
+* {api:anychart.charts.Cartesian#boostThreshold}boostThreshold(){api}
+* {api:anychart.charts.Cartesian#boostEnabled}boostEnabled(){api}
 
 ## Supported Chart Types
 
@@ -30,17 +30,17 @@ Having the methods is not the same as having an effect. Both mechanisms give up 
 * [Waterfall](../Basic_Charts/Waterfall_Chart) and [Stream Graph](../Basic_Charts/Stream_Graph) stack unconditionally - stacking is what those chart types *are* - so the four settings are accepted and then never change anything.
 * [Mekko](../Basic_Charts/Marimekko_Chart/Mekko_Chart), Mosaic and Barmekko stack through their theme, so boost and decimation engage only if you turn stacking off with `chart.yScale().stackMode("none")`.
 
-[Cartesian 3D](../Basic_Charts/3D/Overview) has a different limit: its series are never boosted, whatever `boostEnabled()` says. Decimation still applies there.
+[Cartesian 3D](../Basic_Charts/3D/Overview) has a different limit: its series are never boosted, whatever {api:anychart.charts.Cartesian3d#boostEnabled}boostEnabled(){api} says. Decimation still applies there.
 
 On [Stock](../Stock_Charts/Overview) the four methods exist on the series - not on the chart or the plot - but only `boostEnabled(true)` does anything. Decimation and the automatic boost threshold both need the Cartesian drawing plan, which stock series do not build, so `maxPointsRendered()`, `decimationAlgorithm()` and `boostThreshold()` are accepted and ignored, and the 1500-point default never applies. Stock does not need decimation anyway: it thins large series itself through [data grouping](../Stock_Charts/Data_Grouping).
 
-[Gantt](../Gantt_Chart/Overview) has its own `boostEnabled()` and `boostThreshold()` with different meaning: they count visible rows rather than data points, and the threshold defaults to 500.
+[Gantt](../Gantt_Chart/Overview) has its own {api:anychart.charts.Gantt#boostEnabled}boostEnabled(){api} and {api:anychart.charts.Gantt#boostThreshold}boostThreshold(){api} with different meaning: they count visible rows rather than data points, and the threshold defaults to 500.
 
 Charts without orthogonal scales - Pie, Treemap, Sankey, gauges and similar types - do not have these methods at all. Calling them there raises a TypeError rather than being ignored.
 
 ## Decimation
 
-Decimation runs when a series has more points than `maxPointsRendered()`, which defaults to 1500.
+Decimation runs when a series has more points than {api:anychart.charts.Cartesian#maxPointsRendered}maxPointsRendered(){api}, which defaults to 1500.
 
 ```
 // draw at most 2000 points per series
@@ -51,7 +51,7 @@ Setting it to `0` turns decimation off for the chart.
 
 ### Algorithms
 
-`decimationAlgorithm()` accepts three values:
+{api:anychart.charts.Cartesian#decimationAlgorithm}decimationAlgorithm(){api} accepts three values:
 
 * `"auto"` - the default. Picks the algorithm from the series shape: `"min-max"` for discrete series, the ones whose drawer marks each point separately, and `"lttb"` for continuous ones such as line, area and spline.
 * `"lttb"` - Largest Triangle Three Buckets. Preserves the visual *shape* of a curve, keeping the points that contribute most to its silhouette. The right choice for line-like series.
@@ -75,7 +75,7 @@ Decimation is deliberately not applied when dropping points would change what th
 * **Stacked series** - removing a point from one series would break the stack alignment of the others.
 * **Bubble and other size-encoded series** - every point is an independent mark whose size carries data, so subset selection built for line envelopes visibly removes bubbles and shrinks the cloud.
 * **Series that boost has engaged for** - boost is supposed to draw all points cheaply, so there is nothing to gain.
-* **Series at or below the limit**, and any series when `maxPointsRendered()` is `0`.
+* **Series at or below the limit**, and any series when {api:anychart.charts.Cartesian#maxPointsRendered}maxPointsRendered(){api} is `0`.
 
 The third rule is worth reading carefully: decimation is dropped the moment boost *engages*, which is decided before anything is drawn and without looking at whether the Canvas renderer knows the series shape. On an area series, where it does not, you get the worst of both - see [What Boost Draws](#what_boost_draws).
 
@@ -83,14 +83,14 @@ The third rule is worth reading carefully: decimation is dropped the moment boos
 
 Boost rasterizes a series onto a Canvas layer instead of building SVG elements.
 
-By default `boostEnabled()` is `null`, meaning *automatic*: boost engages once a series exceeds `boostThreshold()`, which defaults to 5000 points.
+By default {api:anychart.charts.Cartesian#boostEnabled}boostEnabled(){api} is `null`, meaning *automatic*: boost engages once a series exceeds {api:anychart.charts.Cartesian#boostThreshold}boostThreshold(){api}, which defaults to 5000 points.
 
 ```
 // engage boost above 10000 points instead of the default 5000
 chart.boostThreshold(10000);
 ```
 
-Set `boostEnabled()` explicitly to force the decision:
+Set {api:anychart.charts.Cartesian#boostEnabled}boostEnabled(){api} explicitly to force the decision:
 
 ```
 // always boost, regardless of point count
@@ -102,15 +102,15 @@ chart.boostEnabled(false);
 
 ### When Boost is Skipped
 
-These conditions are checked up front, before anything is drawn and before `boostEnabled(true)` is honored, so they apply in **every** mode:
+These conditions are checked up front, before anything is drawn and before {api:anychart.charts.Cartesian#boostEnabled}boostEnabled(true){api} is honored, so they apply in **every** mode:
 
 * **Stacked series** and **3D series**.
 * **OHLC and range-based series** - range area, range column, range stick, dumbbell and similar - because their marks are composite shapes.
 * **Environments without Canvas or WebGL.**
 
-Two more conditions apply only in automatic mode, and `boostEnabled(true)` bypasses both:
+Two more conditions apply only in automatic mode, and {api:anychart.charts.Cartesian#boostEnabled}boostEnabled(true){api} bypasses both:
 
-* **The point count is at or below `boostThreshold()`**, or the threshold is `0`.
+* **The point count is at or below {api:anychart.charts.Cartesian#boostThreshold}boostThreshold(){api}**, or the threshold is `0`.
 * **The plot has more than one enabled series.** The boost canvas is composited above the SVG stage, so in a multi-series plot it would cover the SVG-rendered siblings and silently change their visible order.
 
 Forcing boost on a multi-series plot is supported, as long as you accept that the boosted series is drawn above its SVG siblings.
@@ -125,13 +125,13 @@ The Canvas renderer has a small repertoire of shapes. Three families come out th
 * **marker** series
 * **bubble** series
 
-**Line-shaped series** - line, spline, step line, jump line and stick - are boosted too, but the Canvas renderer fills them down to the zero line rather than stroking the outline, so a boosted line reads as an area. Keep `boostEnabled(false)` on them when the outline is the point.
+**Line-shaped series** - line, spline, step line, jump line and stick - are boosted too, but the Canvas renderer fills them down to the zero line rather than stroking the outline, so a boosted line reads as an area. Keep {api:anychart.charts.Cartesian#boostEnabled}boostEnabled(false){api} on them when the outline is the point.
 
-**Area-shaped series** - area, spline area and step area - are not drawn by the renderer at all. Boost still engages: the canvas is attached, decimation is skipped for the series, the renderer then finds no shape it knows and hands the series back to SVG, which draws every point. A 20000-point area chart therefore renders 20000 SVG vertices with boost on and 1500 with `boostEnabled(false)` - boost does not merely fail to help an area chart, it makes it slower. Because the default `boostEnabled()` is *automatic*, a single-series area chart above 5000 points reaches that state on its own; set `boostEnabled(false)` there.
+**Area-shaped series** - area, spline area and step area - are not drawn by the renderer at all. Boost still engages: the canvas is attached, decimation is skipped for the series, the renderer then finds no shape it knows and hands the series back to SVG, which draws every point. A 20000-point area chart therefore renders 20000 SVG vertices with boost on and 1500 with {api:anychart.charts.Cartesian#boostEnabled}boostEnabled(false){api} - boost does not merely fail to help an area chart, it makes it slower. Because the default {api:anychart.charts.Cartesian#boostEnabled}boostEnabled(){api} is *automatic*, a single-series area chart above 5000 points reaches that state on its own; set {api:anychart.charts.Cartesian#boostEnabled}boostEnabled(false){api} there.
 
 **Heat Map and Box** series fail harder still: the renderer accepts them, paints nothing, and does not hand them back to SVG, so the chart comes out empty for as long as boost is engaged. A heat map with more than 5000 cells falls into this by default too, so switch boost off there as well.
 
-This sample draws 10000 markers on a single Canvas layer - a marker series is one of the shapes the renderer draws faithfully. Set `boostEnabled(false)` in the code to compare: the series falls back to SVG, and decimation - no longer pre-empted by boost - trims it to the default 1500 points:
+This sample draws 10000 markers on a single Canvas layer - a marker series is one of the shapes the renderer draws faithfully. Set {api:anychart.charts.Cartesian#boostEnabled}boostEnabled(false){api} in the code to compare: the series falls back to SVG, and decimation - no longer pre-empted by boost - trims it to the default 1500 points:
 
 {sample}CS\_Boost\_02{sample}
 
@@ -169,7 +169,7 @@ var detail = chart.line(detailData);
 detail.maxPointsRendered(50000);
 ```
 
-Note that the built-in defaults below are what the engine *behaves* like, not necessarily what the getter returns. On Cartesian charts they come from the theme, so `chart.boostThreshold()` reads back 5000. On Scatter, Radar and Polar they are applied by the series as a fallback, so the getter returns `undefined` until the setting is assigned.
+Note that the built-in defaults below are what the engine *behaves* like, not necessarily what the getter returns. On Cartesian charts they come from the theme, so {api:anychart.charts.Cartesian#boostThreshold}chart.boostThreshold(){api} reads back 5000. On Scatter, Radar and Polar they are applied by the series as a fallback, so the getter returns `undefined` until the setting is assigned.
 
 ## Defaults
 
@@ -181,24 +181,24 @@ Note that the built-in defaults below are what the engine *behaves* like, not ne
 <th>Description</th>
 </tr>
 <tr>
-<td>maxPointsRendered()</td>
+<td>{api:anychart.charts.Cartesian#maxPointsRendered}maxPointsRendered(){api}</td>
 <td>1500</td>
 <td>Decimation starts above this many points per series; 0 disables it</td>
 </tr>
 <tr>
-<td>decimationAlgorithm()</td>
+<td>{api:anychart.charts.Cartesian#decimationAlgorithm}decimationAlgorithm(){api}</td>
 <td>"auto"</td>
 <td>"min-max" for discrete series, "lttb" for continuous ones</td>
 </tr>
 <tr>
-<td>boostThreshold()</td>
+<td>{api:anychart.charts.Cartesian#boostThreshold}boostThreshold(){api}</td>
 <td>5000</td>
 <td>Automatic boost starts above this many points per series</td>
 </tr>
 <tr>
-<td>boostEnabled()</td>
+<td>{api:anychart.charts.Cartesian#boostEnabled}boostEnabled(){api}</td>
 <td>null</td>
-<td>Automatic - decided by boostThreshold() and the rules above</td>
+<td>Automatic - decided by {api:anychart.charts.Cartesian#boostThreshold}boostThreshold(){api} and the rules above</td>
 </tr>
 </tbody>
 </table>
