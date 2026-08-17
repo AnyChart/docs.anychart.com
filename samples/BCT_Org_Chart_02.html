@@ -34,9 +34,12 @@ anychart.onDocumentReady(function () {
   // create an org chart in the "as-tree" mode
   var chart = anychart.orgChart(data, "as-tree");
 
+  // set the chart title
   chart.title("Org Chart: Data as a Tree");
 
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>

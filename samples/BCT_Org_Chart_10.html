@@ -19,6 +19,7 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+  // create data
   var data = [
     {id: "ceo", name: "Sarah Johnson", title: "CEO"},
     {id: "cto", parent: "ceo", name: "Michael Chen", title: "CTO"},
@@ -30,7 +31,9 @@ anychart.onDocumentReady(function () {
     {id: "ops", parent: "coo", name: "Peter Jackson", title: "Head of Operations"}
   ];
 
+  // create an org chart and set the data
   var chart = anychart.orgChart(data, "as-table");
+  // set the chart title
   chart.title("Org Chart: Labels");
 
   // the font family and the font size apply to both lines
@@ -45,7 +48,9 @@ anychart.onDocumentReady(function () {
   // set the color of the title line on its own
   chart.titleFontColor("#00796b");
 
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>

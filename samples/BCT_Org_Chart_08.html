@@ -19,6 +19,7 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+  // create data
   var data = [
     {id: "ceo", name: "Sarah Johnson", title: "CEO"},
     {id: "cto", parent: "ceo", name: "Michael Chen", title: "CTO"},
@@ -32,7 +33,9 @@ anychart.onDocumentReady(function () {
     {id: "be", parent: "eng", name: "Tom Harris", title: "Backend Lead"}
   ];
 
+  // create an org chart and set the data
   var chart = anychart.orgChart(data, "as-table");
+  // set the chart title
   chart.title("Org Chart: Zoom and Pan");
 
   // mouse-wheel zoom and drag-to-pan are enabled by default;
@@ -40,7 +43,9 @@ anychart.onDocumentReady(function () {
   // chart.zoomEnabled(false);
   // chart.panEnabled(false);
 
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 
   // zoom in programmatically (use fit() to reset zoom and pan)
