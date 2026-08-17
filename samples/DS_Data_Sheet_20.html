@@ -73,6 +73,7 @@ anychart.onDocumentReady(function () {
     log(e.type + ' - ' + text);
   });
 
+  // log how many rows survive a filter
   chart.listen('filter', function (e) {
     log(e.type + ' - ' + e.filteredCount + ' of ' + e.totalCount + ' rows');
   });
@@ -82,14 +83,17 @@ anychart.onDocumentReady(function () {
     log(e.type + ' - data index ' + e.dataIndex + ', selected ' + e.selectedIndices.join(', '));
   });
 
+  // log column resizes
   chart.listen('columnresize', function (e) {
     log(e.type + ' - column ' + e.columnIndex + ' is now ' + Math.round(e.width) + 'px');
   });
 
+  // log column reorders
   chart.listen('columnreorder', function (e) {
     log(e.type + ' - from ' + e.fromIndex + ' to ' + e.toIndex);
   });
 
+  // log search queries and match counts
   chart.listen('search', function (e) {
     log(e.type + ' - "' + e.query + '", ' + e.matchCount + ' matches');
   });

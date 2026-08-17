@@ -20,6 +20,7 @@
 <script>
 anychart.onDocumentReady(function () {
 
+  // create data
   var products = [
     {sku: 101, product: 'Laptop Pro 15', category: 'Computers',   price: 1200, stock: 34,  status: 'In stock'},
     {sku: 102, product: 'Office Chair',  category: 'Furniture',   price: 150,  stock: 120, status: 'In stock'},
@@ -31,6 +32,7 @@ anychart.onDocumentReady(function () {
     {sku: 108, product: 'Webcam HD',     category: 'Accessories', price: 80,   stock: 0,   status: 'Out of stock'}
   ];
 
+  // create a data sheet
   var chart = anychart.dataSheet(products);
 
   // a declared column is a string column unless you say otherwise
@@ -80,7 +82,9 @@ anychart.onDocumentReady(function () {
     }
   });
 
+  // set the container id
   chart.container('container');
+  // initiate drawing the data sheet
   chart.draw();
 });
 </script>

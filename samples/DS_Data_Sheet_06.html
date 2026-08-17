@@ -20,6 +20,7 @@
 <script>
 anychart.onDocumentReady(function () {
 
+  // create data
   var products = [
     {sku: 101, product: 'Laptop Pro 15', category: 'Computers',   price: 1200, stock: 34,  status: 'In stock'},
     {sku: 102, product: 'Office Chair',  category: 'Furniture',   price: 150,  stock: 120, status: 'In stock'},
@@ -31,6 +32,7 @@ anychart.onDocumentReady(function () {
     {sku: 108, product: 'Webcam HD',     category: 'Accessories', price: 80,   stock: 0,   status: 'Out of stock'}
   ];
 
+  // create a data sheet
   var chart = anychart.dataSheet(products);
 
   // 'fixed' keeps the width you set - this is the default
@@ -43,7 +45,9 @@ anychart.onDocumentReady(function () {
   chart.column(2, {field: 'product', title: 'Product', sizing: 'flex', flex: 1});
   chart.column(3, {field: 'status',  title: 'Status',  sizing: 'flex', flex: 2});
 
+  // set the container id
   chart.container('container');
+  // initiate drawing the data sheet
   chart.draw();
 
   // re-measure every 'auto' column - fixed and flex columns are left alone

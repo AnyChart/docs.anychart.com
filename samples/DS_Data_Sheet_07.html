@@ -20,6 +20,7 @@
 <script>
 anychart.onDocumentReady(function () {
 
+  // create data
   var products = [
     {sku: 101, product: 'Laptop Pro 15', category: 'Computers',   price: 1200, stock: 34,  status: 'In stock'},
     {sku: 102, product: 'Office Chair',  category: 'Furniture',   price: 150,  stock: 120, status: 'In stock'},
@@ -31,6 +32,7 @@ anychart.onDocumentReady(function () {
     {sku: 108, product: 'Webcam HD',     category: 'Accessories', price: 80,   stock: 0,   status: 'Out of stock'}
   ];
 
+  // create a data sheet
   var chart = anychart.dataSheet(products);
 
   // the columns are wider than the container, so the grid scrolls sideways
@@ -43,7 +45,9 @@ anychart.onDocumentReady(function () {
   chart.column(4, {field: 'sku',      title: 'SKU',      width: 160, minWidth: 160, dataType: 'number'});
   chart.column(5, {field: 'status',   title: 'Status',   width: 200, minWidth: 200, pinned: 'right'});
 
+  // set the container id
   chart.container('container');
+  // initiate drawing the data sheet
   chart.draw();
 
   // move SKU from position 4 to position 1
