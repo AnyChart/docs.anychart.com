@@ -18,6 +18,7 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+  // create data
   var seriesData_1 = [
     {x: "Job A", low: 40000, high: 60000},{x: "Job B", low: 50000, high: 80000},{x: "Job C", low: 35000, high: 55000}
   ];
@@ -25,17 +26,23 @@ anychart.onDocumentReady(function () {
     {x: "Job A", low: 30000, high: 45000},{x: "Job B", low: 42000, high: 62000},{x: "Job C", low: 28000, high: 40000}
   ];
 
+  // create a chart
   var chart = anychart.line();
+  // set the chart title
   chart.title("Dumbbell Chart: Appearance");
 
+  // create the first dumbbell series and set the data
   var series1 = chart.dumbbell(seriesData_1);
+  // configure the appearance of the first series
   series1.normal().stroke("#00cc99", 1);
   series1.normal().lowFill("#99e6d4");
   series1.normal().highFill("#00cc99");
   series1.hovered().stroke("#00cc99", 2);
   series1.selected().stroke("#00cc99", 4);
 
+  // create the second dumbbell series and set the data
   var series2 = chart.dumbbell(seriesData_2);
+  // configure the appearance of the second series
   series2.normal().stroke("#0066cc", 1);
   series2.normal().lowFill("#99c2eb");
   series2.normal().highFill("#0066cc");

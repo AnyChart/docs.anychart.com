@@ -26,13 +26,17 @@ anychart.onDocumentReady(function () {
   ]);
   var mapping = dataSet.mapAs({x: 0, low: 1, high: 2, lowFill: 3, highFill: 4});
 
+  // create a chart
   var chart = anychart.dumbbell();
+  // set the chart title
   chart.title("Dumbbell Chart: Individual Points (Data Mapping)");
+  // create a dumbbell series and set the mapped data
   var series = chart.dumbbell(mapping);
 
   // show both endpoint values in the tooltip
   series.tooltip().format("High: {%high}, Low: {%low}");
 
+  // set the container id and draw
   chart.container("container");
   chart.draw();
 });

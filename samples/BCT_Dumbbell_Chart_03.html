@@ -48,6 +48,7 @@ anychart.onDocumentReady(function () {
 
   // create a line chart
   var chart = anychart.line();
+  // set the chart title
   chart.title("Dumbbell Chart: Individual Points");
 
   // create a dumbbell series and set the data
@@ -56,6 +57,7 @@ anychart.onDocumentReady(function () {
   // show both endpoint values in the tooltip
   series.tooltip().format("High: {%high}, Low: {%low}");
 
+  // set the container id and draw
   chart.container("container");
   chart.draw();
 });

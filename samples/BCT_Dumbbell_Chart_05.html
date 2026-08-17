@@ -23,6 +23,7 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+  // create data
   var data = [
     ["Job A", 40000, 60000],
     ["Job B", 50000, 80000],
@@ -31,6 +32,7 @@ anychart.onDocumentReady(function () {
 
   // create a dumbbell chart
   var chart = anychart.dumbbell();
+  // set the chart title
   chart.title("Dumbbell Chart: Endpoint Size");
 
   // create a dumbbell series and set the data
@@ -42,6 +44,7 @@ anychart.onDocumentReady(function () {
   // show both endpoint values in the tooltip
   series.tooltip().format("High: {%high}, Low: {%low}");
 
+  // set the container id and draw
   chart.container("container");
   chart.draw();
 });
