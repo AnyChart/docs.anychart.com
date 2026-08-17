@@ -19,6 +19,7 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+  // create data
   var searchData = [
     ["W1", 42],["W2", 45],["W3", 40],["W4", 38],["W5", 44],
     ["W6", 50],["W7", 55],["W8", 52],["W9", 48],["W10", 46]
@@ -32,9 +33,12 @@ anychart.onDocumentReady(function () {
     ["W6", 23],["W7", 21],["W8", 20],["W9", 22],["W10", 25]
   ];
 
+  // create a chart
   var chart = anychart.streamGraph();
+  // set the chart title
   chart.title("Stream Graph: Tooltip");
 
+  // add a series (layer) per channel
   var series1 = chart.splineArea(searchData);
   series1.name("Search");
   var series2 = chart.splineArea(socialData);
@@ -46,7 +50,9 @@ anychart.onDocumentReady(function () {
   chart.tooltip().titleFormat("Week {%x}");
   chart.tooltip().format("{%seriesName}: {%value}");
 
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>

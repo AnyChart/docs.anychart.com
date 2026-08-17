@@ -19,6 +19,7 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+  // create data
   var searchData = [
     ["W1", 42],["W2", 45],["W3", 40],["W4", 38],["W5", 44],
     ["W6", 50],["W7", 55],["W8", 52],["W9", 48],["W10", 46]
@@ -31,6 +32,7 @@ anychart.onDocumentReady(function () {
     ["W1", 18],["W2", 20],["W3", 19],["W4", 22],["W5", 24],
     ["W6", 23],["W7", 21],["W8", 20],["W9", 22],["W10", 25]
   ];
+  // create data for three more channels
   var directData = [
     ["W1", 25],["W2", 22],["W3", 20],["W4", 24],["W5", 29],
     ["W6", 31],["W7", 27],["W8", 23],["W9", 21],["W10", 24]
@@ -44,9 +46,12 @@ anychart.onDocumentReady(function () {
     ["W6", 27],["W7", 22],["W8", 28],["W9", 34],["W10", 30]
   ];
 
+  // create a chart
   var chart = anychart.streamGraph();
+  // set the chart title
   chart.title("Stream Graph: Expand Offset");
 
+  // add a series (layer) per channel
   var series1 = chart.splineArea(searchData);
   series1.name("Search");
   var series2 = chart.splineArea(socialData);
@@ -63,7 +68,9 @@ anychart.onDocumentReady(function () {
   // give every category the same total height to compare shares
   chart.offset("expand");
 
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>

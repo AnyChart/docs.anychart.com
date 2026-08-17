@@ -29,15 +29,20 @@ anychart.onDocumentReady(function () {
   var searchMapping = dataSet.mapAs({x: 0, value: 1});
   var socialMapping = dataSet.mapAs({x: 0, value: 2});
 
+  // create a chart
   var chart = anychart.streamGraph();
+  // set the chart title
   chart.title("Stream Graph: Data via data.set");
 
+  // add a series (layer) per mapping
   var series1 = chart.splineArea(searchMapping);
   series1.name("Search");
   var series2 = chart.splineArea(socialMapping);
   series2.name("Social");
 
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>
