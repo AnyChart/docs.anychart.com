@@ -20,3 +20,9 @@ var series = chart.lollipop(data);
 ```
 
 {sample}BCT\_Vertical\_Lollipop\_Chart{sample}
+
+You can also build a vertical lollipop chart with the {api:anychart#bar}anychart.bar(){api} constructor - call `chart.lollipop(data)` on it, just like on `anychart.vertical()`.
+
+Unlike `anychart.lollipop()`, the vertical and bar presets do not include a soft minimum of 0, so the value scale fits the data and the sticks can start in mid-air instead of at zero. To anchor them at zero, call `chart.yScale().softMinimum(0)` - use `softMinimum()`, not `minimum()`, so the scale can still extend when your data goes negative.
+
+Note that {api:anychart.core.cartesian.series.Lollipop#pointWidth}pointWidth(){api} and {api:anychart.core.cartesian.series.Lollipop#maxPointWidth}maxPointWidth(){api} do not change the head radius or the stick thickness: the head is sized by `markers().size()` and the stick is styled by `stroke()`.
