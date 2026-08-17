@@ -28,9 +28,12 @@ anychart.onDocumentReady(function () {
 
   // create a column chart, then add lollipop series to it
   var chart = anychart.column();
+  // set the chart title
   chart.title("Lollipop Chart: Appearance");
 
+  // create the first lollipop series and set the data
   var series1 = chart.lollipop(seriesData_1);
+  // set the stroke and fill of the first series in the normal, hovered, and selected states
   series1.normal().stroke("#00cc99", 2);
   series1.normal().fill("#00cc99");
   series1.hovered().stroke("#00cc99", 3);
@@ -38,7 +41,9 @@ anychart.onDocumentReady(function () {
   series1.selected().stroke("#00cc99", 4);
   series1.selected().fill("#00cc99");
 
+  // create the second lollipop series and set the data
   var series2 = chart.lollipop(seriesData_2);
+  // set the stroke and fill of the second series in the normal, hovered, and selected states
   series2.normal().stroke("#0066cc", 2);
   series2.normal().fill("#0066cc");
   series2.hovered().stroke("#0066cc", 3);

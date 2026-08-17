@@ -47,11 +47,13 @@ anychart.onDocumentReady(function () {
 
   // create a column chart
   var chart = anychart.column();
+  // set the chart title
   chart.title("Lollipop Chart: Individual Points");
 
   // create a lollipop series and set the data
   var series = chart.lollipop(data);
 
+  // set the container id and draw
   chart.container("container");
   chart.draw();
 });
