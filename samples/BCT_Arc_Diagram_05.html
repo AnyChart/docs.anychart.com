@@ -19,6 +19,7 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+  // create data
   var data = [
     {from: "Asia", to: "Europe", weight: 42},
     {from: "Asia", to: "N. America", weight: 51},
@@ -32,7 +33,9 @@ anychart.onDocumentReady(function () {
     {from: "Oceania", to: "Asia", weight: 6}
   ];
 
+  // create an arc diagram and set the data
   var chart = anychart.arcDiagram(data);
+  // set the chart title
   chart.title("Arc Diagram: Nodes and Arcs Geometry");
 
   // make the node bars bigger and spread them wider
@@ -43,7 +46,9 @@ anychart.onDocumentReady(function () {
   chart.curvature(1.5);
   chart.arcDirection("down");
 
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>

@@ -19,6 +19,7 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+  // create data
   var data = [
     {from: "Asia", to: "Europe", weight: 42},
     {from: "Asia", to: "N. America", weight: 51},
@@ -32,7 +33,9 @@ anychart.onDocumentReady(function () {
     {from: "Oceania", to: "Asia", weight: 6}
   ];
 
+  // create an arc diagram and set the data
   var chart = anychart.arcDiagram(data);
+  // set the chart title
   chart.title("Arc Diagram: Link Settings");
 
   // states of the arcs
@@ -41,10 +44,12 @@ anychart.onDocumentReady(function () {
 
   // show a label on every arc
   chart.link().normal().labels().enabled(true);
-  chart.link().normal().labels().format("{%from} → {%to}: {%value}");
+  chart.link().normal().labels().format("{%from} -> {%to}: {%value}");
   chart.link().normal().labels().fontSize(10);
 
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>

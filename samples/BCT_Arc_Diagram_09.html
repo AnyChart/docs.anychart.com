@@ -19,6 +19,7 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+  // create data
   var data = [
     {from: "Asia", to: "Europe", weight: 42},
     {from: "Asia", to: "N. America", weight: 51},
@@ -32,14 +33,16 @@ anychart.onDocumentReady(function () {
     {from: "Oceania", to: "Asia", weight: 6}
   ];
 
+  // create an arc diagram and set the data
   var chart = anychart.arcDiagram(data);
+  // set the chart title
   chart.title("Arc Diagram: Tooltips");
 
   // the tooltip of nodes
   chart.node().tooltip().titleFormat("Region: {%name}");
 
   // the tooltip of links
-  chart.link().tooltip().titleFormat("{%from} → {%to}");
+  chart.link().tooltip().titleFormat("{%from} -> {%to}");
   chart.link().tooltip().format("People (k): {%value}");
 
   // the body of the node tooltip: a formatting function
@@ -49,7 +52,9 @@ anychart.onDocumentReady(function () {
       "\nAverage per connection: " + Math.round(this.weight / this.connections);
   });
 
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>

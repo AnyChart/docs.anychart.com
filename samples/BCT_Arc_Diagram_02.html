@@ -32,12 +32,17 @@ anychart.onDocumentReady(function () {
     ["N. America", "Oceania", 7, "Americas"],
     ["Oceania", "Asia", 6, "Eurasia"]
   ]);
+  // map the data
   var mapping = dataSet.mapAs({from: 0, to: 1, weight: 2, group: 3});
 
+  // create an arc diagram and set the data
   var chart = anychart.arcDiagram(mapping);
+  // set the chart title
   chart.title("Arc Diagram: Data via data.set");
 
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>
