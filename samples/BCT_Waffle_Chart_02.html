@@ -19,6 +19,7 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+  // create data
   var data = [
     {name: "In-store", value: 43},
     {name: "Online", value: 31},
@@ -26,7 +27,9 @@ anychart.onDocumentReady(function () {
     {name: "Other", value: 9}
   ];
 
+  // create a waffle chart and set the data
   var chart = anychart.waffle(data);
+  // set the chart title
   chart.title("Waffle Chart: Appearance");
 
   // one palette color per category
@@ -44,7 +47,9 @@ anychart.onDocumentReady(function () {
   });
   chart.selected().stroke("2 #212121");
 
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>

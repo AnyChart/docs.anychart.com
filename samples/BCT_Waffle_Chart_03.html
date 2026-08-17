@@ -19,6 +19,7 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+  // create data
   var data = [
     {name: "In-store", value: 43},
     {name: "Online", value: 31},
@@ -26,14 +27,18 @@ anychart.onDocumentReady(function () {
     {name: "Other", value: 9}
   ];
 
+  // create a waffle chart and set the data
   var chart = anychart.waffle(data);
-  chart.title("Waffle Chart: 5×20 Grid");
+  // set the chart title
+  chart.title("Waffle Chart: 5x20 Grid");
 
-  // change the default 10×10 grid
+  // change the default 10x10 grid
   chart.rows(5);
   chart.columns(20);
 
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>

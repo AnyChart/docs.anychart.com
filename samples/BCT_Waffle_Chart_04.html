@@ -19,6 +19,7 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+  // create data
   var data = [
     {name: "In-store", value: 43},
     {name: "Online", value: 31},
@@ -26,14 +27,18 @@ anychart.onDocumentReady(function () {
     {name: "Other", value: 9}
   ];
 
+  // create a waffle chart and set the data
   var chart = anychart.waffle(data);
+  // set the chart title
   chart.title("Waffle Chart: Cell Shape and Padding");
 
   // draw round cells with wider gaps between them
   chart.cellShape("circle");
   chart.cellPadding(4);
 
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>

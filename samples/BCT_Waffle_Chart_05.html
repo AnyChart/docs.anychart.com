@@ -25,15 +25,20 @@ anychart.onDocumentReady(function () {
     {name: "Remaining", value: 32}
   ];
 
+  // create a waffle chart and set the data
   var chart = anychart.waffle(data);
+  // set the chart title
   chart.title("Waffle Chart: Fill Direction");
 
+  // set the palette colors
   chart.palette(["#1976d2", "#e3e9ef"]);
 
   // fill the grid from the bottom up
   chart.fillDirection("bottom-to-top");
 
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>
