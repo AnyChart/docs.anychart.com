@@ -2,7 +2,7 @@
 
 ## Overview
 
-Modular System is the core of AnyChart 8. It allows you to significantly reduce the size of the JavaScript code running on your web page by connecting only those chart types and features that you actually use. The modular-based AnyChart is perfectly compatible with popular bundling tools such as Webpack, Browserify, and so on. 
+Modular System is the core of AnyChart. It allows you to significantly reduce the size of the JavaScript code running on your web page by connecting only those chart types and features that you actually use. The modular-based AnyChart is perfectly compatible with popular bundling tools such as Webpack, Browserify, and so on. 
 
 - [Modules List](https://anychart.com/download/products/)
 
@@ -81,7 +81,7 @@ AnyChart Base is a handy module that contains:
 - [Core](#core)
 - [Pie and Doughnut](#pie_and_doughnut)
 - [Basic Cartesian](#basic_cartesian)
-- [Scatter](../Basic_Charts/Scatter_Plot)
+- [Scatter](../Basic_Charts/Scatter_Plot/Overview)
 
 
 ```
@@ -184,9 +184,10 @@ A module for creating [Geo Maps](../Maps/Quick_Start):
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-map.min.js"></script>
 ```
 
+<!-- NOTE: some chart types are deliberately listed twice under two names (e.g. Graph Chart / Network Graph) - both entries load the same module file. These are intentional aliases; do not deduplicate. -->
 ### Graph Chart
 
-A module for creating [Graph](../Basic_Charts/Graph_Chart) charts:
+A module for creating [Graph](../Basic_Charts/Network_Graph) charts:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-graph.min.js"></script>
@@ -258,7 +259,7 @@ A module for creating [Pie](../Basic_Charts/Pie_Chart) and [Doughnut](../Basic_C
 
 ### Polar
 
-A module for creating [Polar](../Basic_Charts/Polar_Plot/Overview) charts:
+A module for creating [Polar](../Basic_Charts/Polar_Plot/Overview), [Polygon](../Basic_Charts/Polygon_Chart), and [Polyline](../Basic_Charts/Polyline_Chart) charts:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-polar.min.js"></script>
@@ -298,7 +299,7 @@ A module for creating [Sankey Diagrams](../Basic_Charts/Sankey_Diagram):
 
 ### Scatter
 
-A module for creating [Scatter](../Basic_Charts/Scatter_Plot/Overview) charts:
+A module for creating [Scatter](../Basic_Charts/Scatter_Plot/Overview) and [Quadrant](../Basic_Charts/Quadrant_Chart) charts:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-scatter.min.js"></script>
@@ -397,7 +398,7 @@ A module for creating [Waterfall](../Basic_Charts/Waterfall_Chart) charts:
 A module for creating [Word Tree](../Basic_Charts/Word_Tree) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-wordtree.min.js"></script>
 ```
 
 ## Features
