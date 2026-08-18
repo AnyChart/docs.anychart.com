@@ -39,8 +39,7 @@ anychart.onDocumentReady(function () {
   // make the node arcs wider (the default is 15 px)
   chart.nodeWidth(25);
 
-  // states of the ribbons: a ribbon keeps its own color and only gets
-  // deeper as the state gets more active
+  // link states: a link keeps its own color and only deepens
   chart.link().hovered().fill(function () {
     return anychart.color.darken(this.sourceColor, 0.1);
   });
@@ -48,8 +47,7 @@ anychart.onDocumentReady(function () {
     return anychart.color.darken(this.sourceColor, 0.25);
   });
 
-  // the tooltip of the ribbons names the route and its weekly flights, so
-  // the ribbon under the pointer is identified without labels on the wheel
+  // the tooltip of a link names the route and its weekly flights
   chart.link().tooltip().titleFormat("{%from} - {%to}");
   chart.link().tooltip().format("Weekly flights: {%value}");
 

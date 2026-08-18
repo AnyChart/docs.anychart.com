@@ -37,8 +37,7 @@
 var dataOrder = {};
 
 anychart.onDocumentReady(function () {
-  // create data: weekly flights between the cities. The rows come in the
-  // order the routes were added, which is not the order of their weights
+  // create data: rows in the order the routes were added, not by weight
   var data = [
     {from: "NYC", to: "Cairo", weight: 6},
     {from: "Paris", to: "Tokyo", weight: 18},

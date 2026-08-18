@@ -102,8 +102,7 @@ The same node name can appear in the `from` field of one row and in the `to` fie
 You can pass each link as an object. Or you can map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api}. Mapping is what you want when the data arrives as a table that holds more than the chart needs: name the columns to read, and the rest are ignored. The table below carries the airline and the aircraft type as well, and only three of its five columns are mapped:
 
 ```
-// the route table as it comes from the airline: the chart needs only
-// three of its five columns
+// the route table as it comes from the airline: five columns, three used
 var dataSet = anychart.data.set([
   ["AeroLine", "Paris", "Tokyo", 18, "B787"],
   ["AeroLine", "Paris", "NYC", 14, "A350"],
@@ -134,7 +133,7 @@ chart.palette([
   "#7262fd", "#78d3f8", "#9661bc", "#f6903d"
 ]);
 
-// blend each ribbon from its source color to its target color
+// blend each link from its source color to its target color
 chart.colorMode("gradient");
 
 // apply the chosen color mode: the chart redraws itself
@@ -217,8 +216,7 @@ Node labels are on by default and show the node name. You can use these [text fo
 The sample also sets the width of the node arcs with the {api:anychart.charts.DependencyWheel#nodeWidth}nodeWidth(){api} method and styles the three states as one scale: the fill grows darker and the stroke heavier as the state gets more active. Deriving the state fills from `sourceColor` keeps them consistent with the palette:
 
 ```
-// states of the node arcs: the fill grows darker and the stroke heavier
-// as the state gets more active (normal -> hovered -> selected)
+// node states: the fill darkens and the stroke thickens as the state gets more active
 chart.node().normal().fill(function () {
   return anychart.color.lighten(this.sourceColor, 0.25);
 });
@@ -252,8 +250,7 @@ Set the ribbons with the {api:anychart.charts.DependencyWheel#link}link(){api} m
 The three [states](../Common_Settings/Interactivity/States) work as they do for [nodes](#nodes). Deriving the state fills from `sourceColor` keeps a ribbon in its own color while it deepens:
 
 ```
-// states of the ribbons: a ribbon keeps its own color and only gets
-// deeper as the state gets more active
+// link states: a link keeps its own color and only deepens
 chart.link().hovered().fill(function () {
   return anychart.color.darken(this.sourceColor, 0.1);
 });
@@ -261,7 +258,7 @@ chart.link().selected().fill(function () {
   return anychart.color.darken(this.sourceColor, 0.25);
 });
 
-// the tooltip of the ribbons names the route and its weekly flights
+// the tooltip of a link names the route and its weekly flights
 chart.link().tooltip().titleFormat("{%from} - {%to}");
 chart.link().tooltip().format("Weekly flights: {%value}");
 ```
@@ -281,8 +278,7 @@ chart.node().tooltip().format(
   "Routes: {%connections}\nFlights a week: {%weight}\nShare of all flights: {%percent}{decimalsCount:1}%"
 );
 
-// the tooltip of a route: a link has its own tokens, and it keeps the
-// node format until you set this one
+// the tooltip of a link: it has its own tokens
 chart.link().tooltip().titleFormat("{%from} - {%to}");
 chart.link().tooltip().format("Flights a week: {%value}");
 ```

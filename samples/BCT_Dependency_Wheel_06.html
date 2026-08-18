@@ -39,8 +39,7 @@ anychart.onDocumentReady(function () {
   // make the node arcs wider (the default is 15 px)
   chart.nodeWidth(25);
 
-  // states of the node arcs: the fill grows darker and the stroke heavier
-  // as the state gets more active (normal -> hovered -> selected)
+  // node states: the fill darkens and the stroke thickens as the state gets more active
   chart.node().normal().fill(function () {
     return anychart.color.lighten(this.sourceColor, 0.25);
   });
@@ -54,7 +53,7 @@ anychart.onDocumentReady(function () {
   });
   chart.node().selected().stroke("#0b1220", 3);
 
-  // keep the ribbons unchanged when hovered: only the nodes react
+  // keep the links unchanged when hovered: only the nodes react
   chart.link().hovered().fill(function () {
     return {color: this.sourceColor, opacity: 0.65};
   });

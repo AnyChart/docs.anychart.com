@@ -45,8 +45,7 @@ anychart.onDocumentReady(function () {
     "Routes: {%connections}\nFlights a week: {%weight}\nShare of all flights: {%percent}{decimalsCount:1}%"
   );
 
-  // the tooltip of a route: a link has its own tokens, and it keeps the
-  // node format until you set this one
+  // the tooltip of a link: it has its own tokens
   chart.link().tooltip().titleFormat("{%from} - {%to}");
   chart.link().tooltip().format("Flights a week: {%value}");
 
