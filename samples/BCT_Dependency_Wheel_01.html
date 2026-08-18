@@ -19,27 +19,23 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data: energy flows from sources to consumers
+  // create data: weekly flights between the cities
   var data = [
-    {from: "Coal", to: "Grid", weight: 38},
-    {from: "Gas", to: "Grid", weight: 46},
-    {from: "Nuclear", to: "Grid", weight: 22},
-    {from: "Hydro", to: "Grid", weight: 17},
-    {from: "Solar", to: "Grid", weight: 11},
-    {from: "Coal", to: "Heat", weight: 9},
-    {from: "Gas", to: "Heat", weight: 24},
-    {from: "Grid", to: "Industry", weight: 41},
-    {from: "Grid", to: "Buildings", weight: 52},
-    {from: "Grid", to: "Transport", weight: 19},
-    {from: "Heat", to: "Industry", weight: 18},
-    {from: "Heat", to: "Buildings", weight: 21}
+    {from: "Paris", to: "Tokyo", weight: 18},
+    {from: "Paris", to: "NYC", weight: 14},
+    {from: "Paris", to: "Dubai", weight: 8},
+    {from: "Tokyo", to: "NYC", weight: 10},
+    {from: "Tokyo", to: "Dubai", weight: 5},
+    {from: "NYC", to: "Cairo", weight: 6},
+    {from: "Dubai", to: "Cairo", weight: 4}
   ];
 
   // create a dependency wheel and set the data
   var chart = anychart.dependencyWheel(data);
 
-  // set the chart title
+  // set the chart title and separate it from the wheel
   chart.title("Dependency Wheel: Basic Sample");
+  chart.title().padding(0, 0, 20, 0);
 
   // set the container id
   chart.container("container");
