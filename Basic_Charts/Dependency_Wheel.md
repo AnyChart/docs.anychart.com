@@ -125,6 +125,8 @@ The color of each node comes from the chart [palette](../Appearance_Settings/Pal
 * `"target"` — a ribbon takes the color of its target (`to`) node
 * `"gradient"` — a ribbon blends from the source color to the target color. The {api:anychart.charts.DependencyWheel#reverseGradient}reverseGradient(){api} method flips the direction of the blend
 
+Both methods work on a chart that is already drawn, so a control can switch the mode without rebuilding the chart. Use the buttons in the sample below to compare all four results:
+
 ```
 // set a custom palette for the nodes
 chart.palette([
@@ -134,6 +136,12 @@ chart.palette([
 
 // blend each ribbon from its source color to its target color
 chart.colorMode("gradient");
+
+// apply the chosen color mode: the chart redraws itself
+function changeColorMode(value) {
+  chart.colorMode(value == "reversed" ? "gradient" : value);
+  chart.reverseGradient(value == "reversed");
+}
 ```
 
 {sample}BCT\_Dependency\_Wheel\_03{sample}
