@@ -69,7 +69,7 @@ var data = [
 var chart = anychart.dependencyWheel(data);
 
 // set the chart title and separate it from the wheel
-chart.title("Dependency Wheel: Basic Sample");
+chart.title("Weekly flights between five cities");
 chart.title().padding(0, 0, 20, 0);
 
 // set the container id
@@ -97,18 +97,20 @@ Pass the data to the {api:anychart#dependencyWheel}anychart.dependencyWheel(){ap
 * `to` — the name of the target node
 * `weight` — the weight of the link (sets the thickness of the ribbon)
 
-The same node name can appear in the `from` field of one row and in the `to` field of another. This is normal: it is still one node, and it is both a source and a target. Its arc shows the total of its incoming and outgoing flows. In the Quick Start data, `Grid` works this way: energy flows into it from the sources, and out of it to `Industry`, `Buildings`, and `Transport`.
+The same node name can appear in the `from` field of one row and in the `to` field of another. This is normal: it is still one node, and it is both a source and a target. Its arc shows the total of its incoming and outgoing flows. In the sample below, `Tokyo` works this way: its arc covers the flights arriving from `Paris` together with those departing to `NYC` and `Dubai`.
 
-You can pass each link as an object. Or you can map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api}:
+You can pass each link as an object. Or you can map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api}. Mapping is what you want when the data arrives as a table that holds more than the chart needs: name the columns to read, and the rest are ignored. The table below carries the airline and the aircraft type as well, and only three of its five columns are mapped:
 
 ```
-// map the columns of a data set (three fields: from, to, weight)
+// the route table as it comes from the airline: the chart needs only
+// three of its five columns
 var dataSet = anychart.data.set([
-  ["Coal", "Grid", 38],
-  ["Gas", "Grid", 46],
-  ["Grid", "Industry", 41]
+  ["AeroLine", "Paris", "Tokyo", 18, "B787"],
+  ["AeroLine", "Paris", "NYC", 14, "A350"],
+  ["SkyJet", "Tokyo", "NYC", 10, "B777"]
 ]);
-var mapping = dataSet.mapAs({from: 0, to: 1, weight: 2});
+// map the columns the chart needs: from, to and weight
+var mapping = dataSet.mapAs({from: 1, to: 2, weight: 3});
 
 var chart = anychart.dependencyWheel(mapping);
 ```

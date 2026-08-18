@@ -19,28 +19,25 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // map the columns of a data set (three fields: from, to, weight)
+  // the route table as it comes from the airline: the chart needs only
+  // three of its five columns
   var dataSet = anychart.data.set([
-    ["Coal", "Grid", 38],
-    ["Gas", "Grid", 46],
-    ["Nuclear", "Grid", 22],
-    ["Hydro", "Grid", 17],
-    ["Solar", "Grid", 11],
-    ["Coal", "Heat", 9],
-    ["Gas", "Heat", 24],
-    ["Grid", "Industry", 41],
-    ["Grid", "Buildings", 52],
-    ["Grid", "Transport", 19],
-    ["Heat", "Industry", 18],
-    ["Heat", "Buildings", 21]
+    ["AeroLine", "Paris", "Tokyo", 18, "B787"],
+    ["AeroLine", "Paris", "NYC", 14, "A350"],
+    ["SkyJet", "Paris", "Dubai", 8, "A320"],
+    ["SkyJet", "Tokyo", "NYC", 10, "B777"],
+    ["AeroLine", "Tokyo", "Dubai", 5, "A330"],
+    ["SkyJet", "NYC", "Cairo", 6, "B737"],
+    ["AeroLine", "Dubai", "Cairo", 4, "A320"]
   ]);
-  // map the data
-  var mapping = dataSet.mapAs({from: 0, to: 1, weight: 2});
+  // map the columns the chart needs: from, to and weight
+  var mapping = dataSet.mapAs({from: 1, to: 2, weight: 3});
 
   // create a chart and set the data
   var chart = anychart.dependencyWheel(mapping);
-  // set the chart title
-  chart.title("Dependency Wheel: Data via data.set");
+  // set the chart title and separate it from the wheel
+  chart.title("Weekly flights, read from a wider route table");
+  chart.title().padding(0, 0, 20, 0);
 
   // set the container id
   chart.container("container");
