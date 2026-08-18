@@ -154,6 +154,8 @@ These methods change the geometry of the wheel:
 * {api:anychart.charts.DependencyWheel#padAngle}padAngle(){api} — the angular gap between node arcs that sit next to each other, in radians (0.02 by default)
 * {api:anychart.charts.DependencyWheel#nodeWidth}nodeWidth(){api} — the thickness of the node arcs, in pixels (15 by default)
 
+All three take effect on a chart that is already drawn. Drag the sliders in the sample below to see what each one changes:
+
 ```
 // rotate the whole wheel a quarter-turn
 chart.startAngle(90);
@@ -163,6 +165,12 @@ chart.padAngle(0.06);
 
 // make the node arcs thicker
 chart.nodeWidth(30);
+
+// rotate the wheel: the chart redraws itself
+function changeStartAngle(value) {
+  chart.startAngle(value);
+  document.getElementById("startAngleValue").value = value;
+}
 ```
 
 {sample}BCT\_Dependency\_Wheel\_04{sample}
