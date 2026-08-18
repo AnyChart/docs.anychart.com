@@ -174,6 +174,8 @@ Three of the four directions fill the grid row by row. `top-to-bottom` is differ
 chart.fillDirection("bottom-to-top");
 ```
 
+In the sample below, use the switcher to compare all four directions on the same data:
+
 {sample}BCT\_Waffle\_Chart\_05{sample}
 
 ### Labels
@@ -194,12 +196,12 @@ chart.labels().fontWeight(600);
 
 ### Tooltips
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box. It appears when you hover over a category. On a Waffle chart, it shows the category name as the title by default. The default text is `{%value} ({%percent}%)`. To change it, use the {api:anychart.charts.Waffle#tooltip}tooltip(){api} method with the same tokens as in [Labels](#labels):
+A [Tooltip](../Common_Settings/Tooltip) is a text box. It appears when you hover over a category. On a Waffle chart, it shows the category name as the title by default. The default text is `{%value} ({%percent}%)`. To change it, use the {api:anychart.charts.Waffle#tooltip}tooltip(){api} method with the same tokens as in [Labels](#labels). In the sample below, the values do not sum to 100, so the tooltip shows a value and a percentage that actually differ:
 
 ```
 // customize the tooltip title and text
 chart.tooltip().titleFormat("Channel: {%name}");
-chart.tooltip().format("{%value} orders — {%percent}% of the total");
+chart.tooltip().format("{%value} orders - {%percent}{decimalsCount:1}% of the total");
 ```
 
 {sample}BCT\_Waffle\_Chart\_07{sample}

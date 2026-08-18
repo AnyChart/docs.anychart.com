@@ -145,7 +145,7 @@ The key setting of the Stream graph is the **offset**. This is the algorithm tha
 * `"expand"` — gives every category the same total height; the chart then shows each layer's share of the total. It looks like a percent-stacked chart with flat top and bottom edges
 * `"zero"` — stacks the layers from a flat zero baseline (an ordinary stacked area chart)
 
-The sample below shows the `"silhouette"` offset. It also uses six layers instead of three: with many layers, the flowing shape of the stream is easier to see.
+The sample below starts with the `"silhouette"` offset and has a dropdown for switching between all four modes on the same data, so you can compare them directly. It also uses six layers instead of three: with many layers, the flowing shape of the stream is easier to see.
 
 ```
 // center the stack evenly around the zero line
@@ -154,27 +154,18 @@ chart.offset("silhouette");
 
 {sample}BCT\_Stream\_Graph\_03{sample}
 
-The sample below shows the `"expand"` offset, which turns the stream into a share-of-total view:
-
-```
-// give every category the same total height to compare shares
-chart.offset("expand");
-```
-
-{sample}BCT\_Stream\_Graph\_10{sample}
-
 ### Series Type
 
 By default, the layers are drawn as [Spline Area](Spline_Area_Chart) series with smooth curved edges. You can also draw the layers as plain [Area](Area_Chart) series (straight edges). Or draw them as [Step Area](Step_Area_Chart) series (staircase edges). Use the {api:anychart.charts.StreamGraph#area}area(){api} and {api:anychart.charts.StreamGraph#stepArea}stepArea(){api} methods. You can also change the type of an existing series with {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api}:
 
 ```
-// layers drawn as plain area series instead of spline-area
-var series1 = chart.area(searchData);
-var series2 = chart.area(socialData);
-var series3 = chart.area(emailData);
+// layers drawn as step-area series (staircase edges)
+var series1 = chart.stepArea(searchData);
+var series2 = chart.stepArea(socialData);
+var series3 = chart.stepArea(emailData);
 
-// or switch an existing series to a different type
-series1.seriesType("stepArea");
+// a series type can also be changed later, e.g.:
+// series1.seriesType("area");
 ```
 
 {sample}BCT\_Stream\_Graph\_04{sample}
