@@ -19,7 +19,7 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data: weekly flights between the cities (each city keeps at most 3 routes)
+  // create data: weekly flights between the cities
   var data = [
     {from: "Paris", to: "Tokyo", weight: 18},
     {from: "Paris", to: "NYC", weight: 14},
@@ -36,7 +36,7 @@ anychart.onDocumentReady(function () {
   chart.title("Dependency Wheel: Node Settings");
   chart.title().padding(0, 0, 20, 0);
 
-  // make the node arcs wider (the default is 15 px)
+  // make the node arcs wider
   chart.nodeWidth(25);
 
   // node states: the fill darkens and the stroke thickens as the state gets more active

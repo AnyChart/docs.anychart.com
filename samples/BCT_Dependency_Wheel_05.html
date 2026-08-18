@@ -72,7 +72,7 @@ anychart.onDocumentReady(function () {
 
 // apply the chosen order: the chart redraws itself
 function changeSortOrder(value) {
-  // sortOrder() takes "asc", "desc", "none", or a comparator of two nodes
+  // sortOrder() also takes a comparator of two nodes
   chart.sortOrder(value == "data" ? byDataOrder : value);
 }
 

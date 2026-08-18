@@ -159,7 +159,7 @@ All three take effect on a chart that is already drawn. Drag the sliders in the 
 // rotate the whole wheel a quarter-turn
 chart.startAngle(90);
 
-// widen the gaps between the node arcs (in radians)
+// widen the gaps between the node arcs
 chart.padAngle(0.06);
 
 // make the node arcs thicker
@@ -191,7 +191,7 @@ chart.sortOrder("asc");
 
 // apply the chosen order: the chart redraws itself
 function changeSortOrder(value) {
-  // sortOrder() takes "asc", "desc", "none", or a comparator of two nodes
+  // sortOrder() also takes a comparator of two nodes
   chart.sortOrder(value == "data" ? byDataOrder : value);
 }
 
@@ -237,7 +237,7 @@ chart.node().normal().labels().format("{%name} {%percent}{decimalsCount:1}%");
 // show every label, even if some of them overlap
 chart.dropOverlappedLabels(false);
 
-// make the node arcs wider (the default is 15 px)
+// make the node arcs wider
 chart.nodeWidth(25);
 ```
 
