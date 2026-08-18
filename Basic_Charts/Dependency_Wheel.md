@@ -185,22 +185,35 @@ A node is hovered when you point at it. Hovering a node also highlights its ribb
 
 You can also control the selection from code. {api:anychart.charts.DependencyWheel#select}select(){api} takes a node name or an array of node names. It adds them to the selection. Call it with no arguments to select every node. {api:anychart.charts.DependencyWheel#unselect}unselect(){api} takes the same arguments and removes just those nodes from the selection. Call it with no arguments to clear the whole selection.
 
-Node labels are on by default and show the node name. You can use these [text formatter](../Common_Settings/Text_Formatters) tokens: `{%name}`, `{%weight}`, `{%connections}` (number of links), and `{%percent}` (the node's share of the total flow). A token can also take [formatting parameters](../Common_Settings/Text_Formatters#formatting_parameters). In the sample below, `{decimalsCount:1}` limits the `{%percent}` value to one decimal. By default, a label that overlaps an already drawn label is hidden. Control this with the {api:anychart.charts.DependencyWheel#dropOverlappedLabels}dropOverlappedLabels(){api} method. Turn the protection off only when the dataset is small enough for every label to fit, like the one in the sample below:
+Node labels are on by default and show the node name. You can use these [text formatter](../Common_Settings/Text_Formatters) tokens: `{%name}`, `{%weight}`, `{%connections}` (number of links), and `{%percent}` (the node's share of the total flow). A token can also take [formatting parameters](../Common_Settings/Text_Formatters#formatting_parameters). In the sample below, `{decimalsCount:1}` limits the `{%percent}` value to one decimal. A label is one straight line of text touching the ring by default; set `labels().position("circular")` to lay it along the ring instead. By default, a label that overlaps an already drawn label is hidden. Control this with the {api:anychart.charts.DependencyWheel#dropOverlappedLabels}dropOverlappedLabels(){api} method. Turn the protection off only when the dataset is small enough for every label to fit, like the one in the sample below.
+
+The sample also sets the width of the node arcs with the {api:anychart.charts.DependencyWheel#nodeWidth}nodeWidth(){api} method and styles the three states as one scale: the fill grows darker and the stroke heavier as the state gets more active. Deriving the state fills from `sourceColor` keeps them consistent with the palette:
 
 ```
-// states of the node arcs
+// states of the node arcs: the fill grows darker and the stroke heavier
+// as the state gets more active (normal -> hovered -> selected)
+chart.node().normal().fill(function () {
+  return anychart.color.lighten(this.sourceColor, 0.25);
+});
 chart.node().normal().stroke("#ffffff", 1);
+chart.node().hovered().fill(function () {
+  return this.sourceColor;
+});
 chart.node().hovered().stroke("#1b2740", 2);
+chart.node().selected().fill(function () {
+  return anychart.color.darken(this.sourceColor, 0.2);
+});
 chart.node().selected().stroke("#0b1220", 3);
 
-// node labels: add the share of the total flow to the name
-chart.node().normal().labels().format("{%name}\n{%percent}{decimalsCount:1}%");
+// node labels: lay the text along the ring and add the share of the total flow
+chart.node().normal().labels().position("circular");
+chart.node().normal().labels().format("{%name} {%percent}{decimalsCount:1}%");
 
 // show every label, even if some of them overlap
 chart.dropOverlappedLabels(false);
 
-// select the "Grid" node from code
-chart.select(["Grid"]);
+// make the node arcs wider (the default is 15 px)
+chart.nodeWidth(25);
 ```
 
 {sample}BCT\_Dependency\_Wheel\_06{sample}

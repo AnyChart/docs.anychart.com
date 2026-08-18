@@ -19,34 +19,52 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data
+  // create data: weekly flights between the cities (each city keeps at most 3 routes)
   var data = [
-    {from: "Coal", to: "Grid", weight: 38},
-    {from: "Gas", to: "Grid", weight: 46},
-    {from: "Wind", to: "Grid", weight: 25},
-    {from: "Sun", to: "Grid", weight: 17},
-    {from: "Grid", to: "Homes", weight: 74},
-    {from: "Grid", to: "Firms", weight: 52}
+    {from: "Paris", to: "Tokyo", weight: 18},
+    {from: "Paris", to: "NYC", weight: 14},
+    {from: "Paris", to: "Dubai", weight: 8},
+    {from: "Tokyo", to: "NYC", weight: 10},
+    {from: "Tokyo", to: "Dubai", weight: 5},
+    {from: "NYC", to: "Cairo", weight: 6},
+    {from: "Dubai", to: "Cairo", weight: 4}
   ];
 
   // create a chart and set the data
   var chart = anychart.dependencyWheel(data);
-  // set the chart title
+  // set the chart title and separate it from the wheel
   chart.title("Dependency Wheel: Node Settings");
+  chart.title().padding(0, 0, 20, 0);
 
-  // states of the node arcs
+  // make the node arcs wider (the default is 15 px)
+  chart.nodeWidth(25);
+
+  // states of the node arcs: the fill grows darker and the stroke heavier
+  // as the state gets more active (normal -> hovered -> selected)
+  chart.node().normal().fill(function () {
+    return anychart.color.lighten(this.sourceColor, 0.25);
+  });
   chart.node().normal().stroke("#ffffff", 1);
+  chart.node().hovered().fill(function () {
+    return this.sourceColor;
+  });
   chart.node().hovered().stroke("#1b2740", 2);
+  chart.node().selected().fill(function () {
+    return anychart.color.darken(this.sourceColor, 0.2);
+  });
   chart.node().selected().stroke("#0b1220", 3);
 
-  // node labels: add the share of the total flow to the name
-  chart.node().normal().labels().format("{%name}\n{%percent}{decimalsCount:1}%");
+  // keep the ribbons unchanged when hovered: only the nodes react
+  chart.link().hovered().fill(function () {
+    return {color: this.sourceColor, opacity: 0.65};
+  });
+
+  // node labels: lay the text along the ring and add the share of the total flow
+  chart.node().normal().labels().position("circular");
+  chart.node().normal().labels().format("{%name} {%percent}{decimalsCount:1}%");
 
   // show every label, even if some of them collide
   chart.dropOverlappedLabels(false);
-
-  // select the "Grid" node from code
-  chart.select(["Grid"]);
 
   // set the container id
   chart.container("container");
