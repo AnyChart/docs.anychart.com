@@ -19,34 +19,36 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data
+  // create data: weekly flights between the cities
   var data = [
-    {from: "Coal", to: "Grid", weight: 38},
-    {from: "Gas", to: "Grid", weight: 46},
-    {from: "Nuclear", to: "Grid", weight: 22},
-    {from: "Hydro", to: "Grid", weight: 17},
-    {from: "Solar", to: "Grid", weight: 11},
-    {from: "Coal", to: "Heat", weight: 9},
-    {from: "Gas", to: "Heat", weight: 24},
-    {from: "Grid", to: "Industry", weight: 41},
-    {from: "Grid", to: "Buildings", weight: 52},
-    {from: "Grid", to: "Transport", weight: 19},
-    {from: "Heat", to: "Industry", weight: 18},
-    {from: "Heat", to: "Buildings", weight: 21}
+    {from: "Paris", to: "Tokyo", weight: 18},
+    {from: "Paris", to: "NYC", weight: 14},
+    {from: "Paris", to: "Dubai", weight: 8},
+    {from: "Tokyo", to: "NYC", weight: 10},
+    {from: "Tokyo", to: "Dubai", weight: 5},
+    {from: "NYC", to: "Cairo", weight: 6},
+    {from: "Dubai", to: "Cairo", weight: 4}
   ];
 
   // create a chart and set the data
   var chart = anychart.dependencyWheel(data);
-  // set the chart title
+  // set the chart title and separate it from the wheel
   chart.title("Dependency Wheel: Tooltips");
+  chart.title().padding(0, 0, 20, 0);
 
-  // the tooltip of nodes
-  chart.node().tooltip().titleFormat("Node: {%name}");
-  chart.node().tooltip().format("Total flow: {%weight}\nConnections: {%connections}");
+  // make the node arcs wider (the default is 15 px)
+  chart.nodeWidth(25);
 
-  // the tooltip of links
-  chart.link().tooltip().titleFormat("{%from} -> {%to}");
-  chart.link().tooltip().format("Weight: {%value}");
+  // the tooltip of a city, built from the node tokens
+  chart.node().tooltip().titleFormat("{%name}");
+  chart.node().tooltip().format(
+    "Routes: {%connections}\nFlights a week: {%weight}\nShare of all flights: {%percent}{decimalsCount:1}%"
+  );
+
+  // the tooltip of a route: a link has its own tokens, and it keeps the
+  // node format until you set this one
+  chart.link().tooltip().titleFormat("{%from} - {%to}");
+  chart.link().tooltip().format("Flights a week: {%value}");
 
   // set the container id
   chart.container("container");

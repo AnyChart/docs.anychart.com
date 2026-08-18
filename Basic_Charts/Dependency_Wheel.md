@@ -272,14 +272,19 @@ chart.link().tooltip().format("Weekly flights: {%value}");
 
 Nodes and links have separate [tooltips](../Common_Settings/Tooltip), each with its own set of tokens. The node tooltip supports these tokens: `{%name}`, `{%weight}` (total flow through the node), `{%connections}` (number of links), and `{%percent}` (the node's share of the total flow). The link tooltip supports `{%from}`, `{%to}`, `{%value}`, and `{%name}` (the `from → to` string). By default, the link tooltip uses the same format as the node tooltip. So its `{%weight}` and `{%connections}` tokens show no value for a link. Set the link tooltip yourself, as shown below:
 
-```
-// the tooltip of nodes
-chart.node().tooltip().titleFormat("Node: {%name}");
-chart.node().tooltip().format("Total flow: {%weight}\nConnections: {%connections}");
+A tooltip set with {api:anychart.core.Chart#tooltip}chart.tooltip(){api} applies to both, so a format written for one of them leaves the other with empty tokens. Set them separately:
 
-// the tooltip of links
-chart.link().tooltip().titleFormat("{%from} → {%to}");
-chart.link().tooltip().format("Weight: {%value}");
+```
+// the tooltip of a city, built from the node tokens
+chart.node().tooltip().titleFormat("{%name}");
+chart.node().tooltip().format(
+  "Routes: {%connections}\nFlights a week: {%weight}\nShare of all flights: {%percent}{decimalsCount:1}%"
+);
+
+// the tooltip of a route: a link has its own tokens, and it keeps the
+// node format until you set this one
+chart.link().tooltip().titleFormat("{%from} - {%to}");
+chart.link().tooltip().format("Flights a week: {%value}");
 ```
 
 {sample}BCT\_Dependency\_Wheel\_08{sample}
