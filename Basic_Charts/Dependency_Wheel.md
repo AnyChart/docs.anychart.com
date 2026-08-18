@@ -3,9 +3,9 @@
 
 ## Overview
 
-A Dependency wheel is a round diagram of flows. The nodes sit as arcs around the wheel. Each link between two nodes is drawn as a ribbon. The ribbon joins the two node arcs.
+A Dependency wheel is a round diagram of flows. The nodes sit as arcs around the wheel. Each link between two nodes is drawn as a band that joins their two arcs.
 
-The length of a node arc shows the total flow through that node. The thickness of a ribbon shows the weight of the link. This type is also called a chord diagram. That is because its ribbons are also called chords.
+The length of a node arc shows the total flow through that node. The thickness of a link shows its weight. This type is also called a chord diagram, and its links are also known as chords or ribbons.
 
 It works well for flows inside a closed system. Some examples are imports and exports, energy flows, or links between software packages. If your flow moves in stages from sources to end points, a [Sankey diagram](Sankey_Diagram) can be the better choice. If you want to show the same links along a straight line, use an [Arc diagram](Arc_Diagram).
 
@@ -95,7 +95,7 @@ Pass the data to the {api:anychart#dependencyWheel}anychart.dependencyWheel(){ap
 
 * `from` — the name of the source node
 * `to` — the name of the target node
-* `weight` — the weight of the link (sets the thickness of the ribbon)
+* `weight` — the weight of the link, which sets its thickness
 
 The same node name can appear in the `from` field of one row and in the `to` field of another. This is normal: it is still one node, and it is both a source and a target. Its arc shows the total of its incoming and outgoing flows. In the sample below, `Tokyo` works this way: its arc covers the flights arriving from `Paris` together with those departing to `NYC` and `Dubai`.
 
@@ -118,11 +118,11 @@ var chart = anychart.dependencyWheel(mapping);
 
 ### Color Mode
 
-The color of each node comes from the chart [palette](../Appearance_Settings/Palettes). Set your own palette with the {api:anychart.charts.DependencyWheel#palette}palette(){api} method. The {api:anychart.charts.DependencyWheel#colorMode}colorMode(){api} method sets the color of the ribbons:
+The color of each node comes from the chart [palette](../Appearance_Settings/Palettes). Set your own palette with the {api:anychart.charts.DependencyWheel#palette}palette(){api} method. The {api:anychart.charts.DependencyWheel#colorMode}colorMode(){api} method sets the color of the links:
 
-* `"source"` (default) — a ribbon takes the color of its source (`from`) node
-* `"target"` — a ribbon takes the color of its target (`to`) node
-* `"gradient"` — a ribbon blends from the source color to the target color. The {api:anychart.charts.DependencyWheel#reverseGradient}reverseGradient(){api} method flips the direction of the blend
+* `"source"` (default) — a link takes the color of its source (`from`) node
+* `"target"` — a link takes the color of its target (`to`) node
+* `"gradient"` — a link blends from the source color to the target color. The {api:anychart.charts.DependencyWheel#reverseGradient}reverseGradient(){api} method flips the direction of the blend
 
 Both methods work on a chart that is already drawn, so a control can switch the mode without rebuilding the chart. Use the buttons in the sample below to compare all four results:
 
@@ -207,7 +207,7 @@ function byDataOrder(node1, node2) {
 
 Set the node arcs and their labels with the {api:anychart.charts.DependencyWheel#node}node(){api} method. The {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} methods work in each of the three [states](../Common_Settings/Interactivity/States). Labels come from the normal state only. So set them with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state.
 
-A node is hovered when you point at it. Hovering a node also highlights its ribbons. A node is selected when you click it. A plain click replaces any earlier selection. Ctrl/Cmd/Shift + click adds a node to a multi-node selection or removes it. It does not replace the selection. A plain click on the empty area clears the selection. Ctrl/Cmd/Shift + click on the empty area does nothing.
+A node is hovered when you point at it. Hovering a node also highlights its links. A node is selected when you click it. A plain click replaces any earlier selection. Ctrl/Cmd/Shift + click adds a node to a multi-node selection or removes it. It does not replace the selection. A plain click on the empty area clears the selection. Ctrl/Cmd/Shift + click on the empty area does nothing.
 
 You can also control the selection from code. {api:anychart.charts.DependencyWheel#select}select(){api} takes a node name or an array of node names. It adds them to the selection. Call it with no arguments to select every node. {api:anychart.charts.DependencyWheel#unselect}unselect(){api} takes the same arguments and removes just those nodes from the selection. Call it with no arguments to clear the whole selection.
 
@@ -245,9 +245,9 @@ chart.nodeWidth(25);
 
 ### Links
 
-Set the ribbons with the {api:anychart.charts.DependencyWheel#link}link(){api} method. Like [nodes](#nodes), it works in three states. A ribbon is hovered when you point at it. It is selected when you click it. Hovering or selecting a node also highlights its ribbons. Hovering or selecting a ribbon also highlights its two end nodes. Link labels support these [text formatter](../Common_Settings/Text_Formatters) tokens: `{%from}`, `{%to}`, `{%value}`, and `{%name}` (the `from → to` string). They are hidden by default, and turning them on in the normal state shows a label on every ribbon at once, each one placed at the middle of its chord. That suits a wheel with few links; on a busy wheel the [tooltip](#tooltips) identifies a ribbon better, which is what the sample below uses.
+Set the links with the {api:anychart.charts.DependencyWheel#link}link(){api} method. Like [nodes](#nodes), it works in three states. A link is hovered when you point at it. It is selected when you click it. Hovering or selecting a node also highlights its links. Hovering or selecting a link also highlights its two end nodes. Link labels support these [text formatter](../Common_Settings/Text_Formatters) tokens: `{%from}`, `{%to}`, `{%value}`, and `{%name}` (the `from → to` string). They are hidden by default, and turning them on in the normal state shows a label on every link at once, each one placed at the middle of its band. That suits a wheel with few links; on a busy wheel the [tooltip](#tooltips) identifies a link better, which is what the sample below uses.
 
-The three [states](../Common_Settings/Interactivity/States) work as they do for [nodes](#nodes). Deriving the state fills from `sourceColor` keeps a ribbon in its own color while it deepens:
+The three [states](../Common_Settings/Interactivity/States) work as they do for [nodes](#nodes). Deriving the state fills from `sourceColor` keeps a link in its own color while it deepens:
 
 ```
 // link states: a link keeps its own color and only deepens
