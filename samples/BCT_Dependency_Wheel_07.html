@@ -19,35 +19,39 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data
+  // create data: weekly flights between the cities
   var data = [
-    {from: "Coal", to: "Grid", weight: 38},
-    {from: "Gas", to: "Grid", weight: 46},
-    {from: "Nuclear", to: "Grid", weight: 22},
-    {from: "Hydro", to: "Grid", weight: 17},
-    {from: "Solar", to: "Grid", weight: 11},
-    {from: "Coal", to: "Heat", weight: 9},
-    {from: "Gas", to: "Heat", weight: 24},
-    {from: "Grid", to: "Industry", weight: 41},
-    {from: "Grid", to: "Buildings", weight: 52},
-    {from: "Grid", to: "Transport", weight: 19},
-    {from: "Heat", to: "Industry", weight: 18},
-    {from: "Heat", to: "Buildings", weight: 21}
+    {from: "Paris", to: "Tokyo", weight: 18},
+    {from: "Paris", to: "NYC", weight: 14},
+    {from: "Paris", to: "Dubai", weight: 8},
+    {from: "Tokyo", to: "NYC", weight: 10},
+    {from: "Tokyo", to: "Dubai", weight: 5},
+    {from: "NYC", to: "Cairo", weight: 6},
+    {from: "Dubai", to: "Cairo", weight: 4}
   ];
 
   // create a chart and set the data
   var chart = anychart.dependencyWheel(data);
-  // set the chart title
+  // set the chart title and separate it from the wheel
   chart.title("Dependency Wheel: Link Settings");
+  chart.title().padding(0, 0, 20, 0);
 
-  // states of the ribbons
-  chart.link().hovered().fill("#1b2740");
-  chart.link().selected().fill("#0b1220");
+  // make the node arcs wider (the default is 15 px)
+  chart.nodeWidth(25);
 
-  // show a label on every ribbon
-  chart.link().normal().labels().enabled(true);
-  chart.link().normal().labels().format("{%value}");
-  chart.link().normal().labels().fontSize(10);
+  // states of the ribbons: a ribbon keeps its own color and only gets
+  // deeper as the state gets more active
+  chart.link().hovered().fill(function () {
+    return anychart.color.darken(this.sourceColor, 0.1);
+  });
+  chart.link().selected().fill(function () {
+    return anychart.color.darken(this.sourceColor, 0.25);
+  });
+
+  // the tooltip names the route and its weekly flights, so the ribbon
+  // under the pointer is identified without labels on the wheel
+  chart.tooltip().titleFormat("{%from} - {%to}");
+  chart.tooltip().format("Weekly flights: {%value}");
 
   // set the container id
   chart.container("container");

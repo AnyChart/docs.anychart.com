@@ -247,17 +247,23 @@ chart.nodeWidth(25);
 
 ### Links
 
-Set the ribbons with the {api:anychart.charts.DependencyWheel#link}link(){api} method. Like [nodes](#nodes), it works in three states. A ribbon is hovered when you point at it. It is selected when you click it. Hovering or selecting a node also highlights its ribbons. Hovering or selecting a ribbon also highlights its two end nodes. Link labels support these [text formatter](../Common_Settings/Text_Formatters) tokens: `{%from}`, `{%to}`, `{%value}`, and `{%name}` (the `from → to` string). They are hidden by default. Turn them on in the normal state to show a label on every ribbon:
+Set the ribbons with the {api:anychart.charts.DependencyWheel#link}link(){api} method. Like [nodes](#nodes), it works in three states. A ribbon is hovered when you point at it. It is selected when you click it. Hovering or selecting a node also highlights its ribbons. Hovering or selecting a ribbon also highlights its two end nodes. Link labels support these [text formatter](../Common_Settings/Text_Formatters) tokens: `{%from}`, `{%to}`, `{%value}`, and `{%name}` (the `from → to` string). They are hidden by default, and turning them on in the normal state shows a label on every ribbon at once, each one placed at the middle of its chord. That suits a wheel with few links; on a busy wheel the [tooltip](#tooltips) identifies a ribbon better, which is what the sample below uses.
+
+The three [states](../Common_Settings/Interactivity/States) work as they do for [nodes](#nodes). Deriving the state fills from `sourceColor` keeps a ribbon in its own color while it deepens:
 
 ```
-// states of the ribbons
-chart.link().hovered().fill("#1b2740");
-chart.link().selected().fill("#0b1220");
+// states of the ribbons: a ribbon keeps its own color and only gets
+// deeper as the state gets more active
+chart.link().hovered().fill(function () {
+  return anychart.color.darken(this.sourceColor, 0.1);
+});
+chart.link().selected().fill(function () {
+  return anychart.color.darken(this.sourceColor, 0.25);
+});
 
-// show a label on every ribbon
-chart.link().normal().labels().enabled(true);
-chart.link().normal().labels().format("{%value}");
-chart.link().normal().labels().fontSize(10);
+// the tooltip names the route and its weekly flights
+chart.tooltip().titleFormat("{%from} - {%to}");
+chart.tooltip().format("Weekly flights: {%value}");
 ```
 
 {sample}BCT\_Dependency\_Wheel\_07{sample}
