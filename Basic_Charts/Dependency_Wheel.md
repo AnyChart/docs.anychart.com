@@ -181,12 +181,25 @@ The {api:anychart.charts.DependencyWheel#sortOrder}sortOrder(){api} method sets 
 
 * `"desc"` (default) — by the total flow through the node, the largest first
 * `"asc"` — the smallest first
-* `"none"` — in the order the nodes appear in the data. Note: if the node names are numbers written as text, such as `"10"` or `"2"`, they are placed in number order, from smallest to largest, instead
+* `"none"` — in the order the nodes appear in the data. Set this value before the first {api:anychart.charts.DependencyWheel#draw}draw(){api}: on a chart that is already drawn it keeps the order of the previous sorting. Note: if the node names are numbers written as text, such as `"10"` or `"2"`, they are placed in number order, from smallest to largest, instead
 * a function — your own compare function that sorts the node arcs, like the callback passed to `Array.sort`
+
+The `"asc"` and `"desc"` values and a compare function all work on a chart that is already drawn. So a compare function is the way to bring back the order of the data on a live chart: build it from the positions of the nodes in your data, as the sample below does.
 
 ```
 // arrange the node arcs from the smallest to the largest
 chart.sortOrder("asc");
+
+// apply the chosen order: the chart redraws itself
+function changeSortOrder(value) {
+  // sortOrder() takes "asc", "desc", "none", or a comparator of two nodes
+  chart.sortOrder(value == "data" ? byDataOrder : value);
+}
+
+// a comparator: keep the cities in the order they appear in the data
+function byDataOrder(node1, node2) {
+  return dataOrder[node1.id] - dataOrder[node2.id];
+}
 ```
 
 {sample}BCT\_Dependency\_Wheel\_05{sample}
