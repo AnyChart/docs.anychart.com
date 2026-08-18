@@ -69,7 +69,7 @@ var data = [
 var chart = anychart.dependencyWheel(data);
 
 // set the chart title and separate it from the wheel
-chart.title("Weekly flights between five cities");
+chart.title("Dependency Wheel: Basic Sample");
 chart.title().padding(0, 0, 20, 0);
 
 // set the container id
