@@ -261,9 +261,9 @@ chart.link().selected().fill(function () {
   return anychart.color.darken(this.sourceColor, 0.25);
 });
 
-// the tooltip names the route and its weekly flights
-chart.tooltip().titleFormat("{%from} - {%to}");
-chart.tooltip().format("Weekly flights: {%value}");
+// the tooltip of the ribbons names the route and its weekly flights
+chart.link().tooltip().titleFormat("{%from} - {%to}");
+chart.link().tooltip().format("Weekly flights: {%value}");
 ```
 
 {sample}BCT\_Dependency\_Wheel\_07{sample}

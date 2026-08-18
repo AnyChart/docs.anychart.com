@@ -48,10 +48,10 @@ anychart.onDocumentReady(function () {
     return anychart.color.darken(this.sourceColor, 0.25);
   });
 
-  // the tooltip names the route and its weekly flights, so the ribbon
-  // under the pointer is identified without labels on the wheel
-  chart.tooltip().titleFormat("{%from} - {%to}");
-  chart.tooltip().format("Weekly flights: {%value}");
+  // the tooltip of the ribbons names the route and its weekly flights, so
+  // the ribbon under the pointer is identified without labels on the wheel
+  chart.link().tooltip().titleFormat("{%from} - {%to}");
+  chart.link().tooltip().format("Weekly flights: {%value}");
 
   // set the container id
   chart.container("container");
