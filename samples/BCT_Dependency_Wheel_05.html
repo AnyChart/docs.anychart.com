@@ -12,33 +12,55 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
 
     <style>
-        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { display: flex; flex-direction: column; font: 14px/1.4 "Segoe UI", Helvetica, Arial, sans-serif; color: #5a6672; }
+        #controls { display: flex; gap: 6px; align-items: center; padding: 12px; }
+        #controls input { position: absolute; opacity: 0; }
+        #controls label { padding: 5px 12px; border: 1px solid #d7dde3; border-radius: 4px; cursor: pointer; }
+        #controls input:checked + label { background: #1976d2; border-color: #1976d2; color: #ffffff; }
+        #controls input:focus-visible + label { outline: 2px solid #1976d2; outline-offset: 2px; }
+        #container { flex: 1; }
     </style>
 </head>
 <body>
+<div id="controls">
+    <span>Sort nodes:</span>
+    <input type="radio" name="sort" id="sortAsc" onclick="changeSortOrder('asc')" checked>
+    <label for="sortAsc">smallest first</label>
+    <input type="radio" name="sort" id="sortDesc" onclick="changeSortOrder('desc')">
+    <label for="sortDesc">largest first</label>
+    <input type="radio" name="sort" id="sortData" onclick="changeSortOrder('data')">
+    <label for="sortData">data order</label>
+</div>
 <div id="container"></div>
 <script>
+var dataOrder = {};
+
 anychart.onDocumentReady(function () {
-  // create data
+  // create data: weekly flights between the cities. The rows come in the
+  // order the routes were added, which is not the order of their weights
   var data = [
-    {from: "Coal", to: "Grid", weight: 38},
-    {from: "Gas", to: "Grid", weight: 46},
-    {from: "Nuclear", to: "Grid", weight: 22},
-    {from: "Hydro", to: "Grid", weight: 17},
-    {from: "Solar", to: "Grid", weight: 11},
-    {from: "Coal", to: "Heat", weight: 9},
-    {from: "Gas", to: "Heat", weight: 24},
-    {from: "Grid", to: "Industry", weight: 41},
-    {from: "Grid", to: "Buildings", weight: 52},
-    {from: "Grid", to: "Transport", weight: 19},
-    {from: "Heat", to: "Industry", weight: 18},
-    {from: "Heat", to: "Buildings", weight: 21}
+    {from: "NYC", to: "Cairo", weight: 6},
+    {from: "Paris", to: "Tokyo", weight: 18},
+    {from: "Dubai", to: "Cairo", weight: 4},
+    {from: "Paris", to: "NYC", weight: 14},
+    {from: "Paris", to: "Dubai", weight: 8},
+    {from: "Tokyo", to: "NYC", weight: 10},
+    {from: "Tokyo", to: "Dubai", weight: 5}
   ];
 
+  // remember where each city first appears in the data
+  var position = 0;
+  for (var i = 0; i < data.length; i++) {
+    if (!(data[i].from in dataOrder)) dataOrder[data[i].from] = position++;
+    if (!(data[i].to in dataOrder)) dataOrder[data[i].to] = position++;
+  }
+
   // create a chart and set the data
-  var chart = anychart.dependencyWheel(data);
-  // set the chart title
+  chart = anychart.dependencyWheel(data);
+  // set the chart title and separate it from the wheel
   chart.title("Dependency Wheel: Sorting Nodes");
+  chart.title().padding(0, 0, 20, 0);
 
   // arrange the node arcs from the smallest to the largest
   chart.sortOrder("asc");
@@ -48,6 +70,17 @@ anychart.onDocumentReady(function () {
   // initiate drawing the chart
   chart.draw();
 });
+
+// apply the chosen order: the chart redraws itself
+function changeSortOrder(value) {
+  // sortOrder() takes "asc", "desc", "none", or a comparator of two nodes
+  chart.sortOrder(value == "data" ? byDataOrder : value);
+}
+
+// a comparator: keep the cities in the order they appear in the data
+function byDataOrder(node1, node2) {
+  return dataOrder[node1.id] - dataOrder[node2.id];
+}
 </script>
 </body>
 </html>
