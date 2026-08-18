@@ -36,18 +36,18 @@ anychart.onDocumentReady(function () {
   // create a chart
   var chart = anychart.streamGraph();
   // set the chart title
-  chart.title("Stream Graph: Area Series (Straight Edges)");
+  chart.title("Stream Graph: Step Area Series");
 
-  // layers drawn as plain area series instead of spline-area
-  var series1 = chart.area(searchData);
+  // layers drawn as step-area series
+  var series1 = chart.stepArea(searchData);
   series1.name("Search");
-  var series2 = chart.area(socialData);
+  var series2 = chart.stepArea(socialData);
   series2.name("Social");
-  var series3 = chart.area(emailData);
+  var series3 = chart.stepArea(emailData);
   series3.name("Email");
 
-  // or switch an existing series to a different type
-  series1.seriesType("stepArea");
+  // a series type can also be changed later, e.g.:
+  // series1.seriesType("area");
 
   // set the container id
   chart.container("container");
