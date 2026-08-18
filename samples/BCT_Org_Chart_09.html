@@ -21,16 +21,16 @@
 anychart.onDocumentReady(function () {
   // create data
   var data = [
-    {id: "ceo", name: "Sarah Johnson", title: "CEO"},
-    {id: "cto", parent: "ceo", name: "Michael Chen", title: "CTO"},
-    {id: "cfo", parent: "ceo", name: "Emily Davis", title: "CFO"},
-    {id: "coo", parent: "ceo", name: "Robert Wilson", title: "COO"},
-    {id: "eng", parent: "cto", name: "David Kim", title: "Head of Engineering"},
-    {id: "prod", parent: "cto", name: "Lisa Zhang", title: "Head of Product"},
-    {id: "acct", parent: "cfo", name: "Diana Ross", title: "Head of Accounting"},
-    {id: "ops", parent: "coo", name: "Peter Jackson", title: "Head of Operations"},
-    {id: "fe", parent: "eng", name: "Anna Lee", title: "Frontend Lead"},
-    {id: "be", parent: "eng", name: "Tom Harris", title: "Backend Lead"}
+    {id: "ceo", name: "Sarah Johnson", title: "CEO", department: "Executive", location: "New York", hired: "2015-04-20", email: "sarah.johnson@example.com"},
+    {id: "cto", parent: "ceo", name: "Michael Chen", title: "CTO", department: "Executive", location: "San Francisco", hired: "2016-01-11", email: "michael.chen@example.com"},
+    {id: "cfo", parent: "ceo", name: "Emily Davis", title: "CFO", department: "Executive", location: "New York", hired: "2016-09-05", email: "emily.davis@example.com"},
+    {id: "coo", parent: "ceo", name: "Robert Wilson", title: "COO", department: "Executive", location: "Chicago", hired: "2017-03-13", email: "robert.wilson@example.com"},
+    {id: "eng", parent: "cto", name: "David Kim", title: "Head of Engineering", department: "Engineering", location: "San Francisco", hired: "2018-06-25", email: "david.kim@example.com"},
+    {id: "prod", parent: "cto", name: "Lisa Zhang", title: "Head of Product", department: "Product", location: "San Francisco", hired: "2019-03-11", email: "lisa.zhang@example.com"},
+    {id: "acct", parent: "cfo", name: "Diana Ross", title: "Head of Accounting", department: "Finance", location: "New York", hired: "2019-10-07", email: "diana.ross@example.com"},
+    {id: "ops", parent: "coo", name: "Peter Jackson", title: "Head of Operations", department: "Operations", location: "Chicago", hired: "2020-08-17", email: "peter.jackson@example.com"},
+    {id: "fe", parent: "eng", name: "Anna Lee", title: "Frontend Lead", department: "Engineering", location: "Austin", hired: "2021-05-03", email: "anna.lee@example.com"},
+    {id: "be", parent: "eng", name: "Tom Harris", title: "Backend Lead", department: "Engineering", location: "Austin", hired: "2022-02-14", email: "tom.harris@example.com"}
   ];
 
   // create an org chart and set the data
@@ -38,10 +38,13 @@ anychart.onDocumentReady(function () {
   // set the chart title
   chart.title("Org Chart: Tooltip");
 
-  // the tooltip title shows the name; build the text from the data fields
+  // the tooltip reads any data field via getData()
   chart.tooltip().titleFormat("{%name}");
   chart.tooltip().format(function () {
-    return "Role: " + this.getData("title") + "\nID: " + this.getData("id");
+    return "Department: " + this.getData("department") +
+      "\nLocation: " + this.getData("location") +
+      "\nHired: " + this.getData("hired") +
+      "\nEmail: " + this.getData("email");
   });
 
   // set the container id
