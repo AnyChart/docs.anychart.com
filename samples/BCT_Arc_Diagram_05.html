@@ -21,12 +21,12 @@
 <body>
 <div id="controls">
     <label>Node width
-        <input type="range" min="4" max="60" step="1" value="28" oninput="changeNodeWidth(this.value)">
-        <output id="nodeWidthValue">28</output>
+        <input type="range" min="4" max="60" step="1" value="30" oninput="changeNodeWidth(this.value)">
+        <output id="nodeWidthValue">30</output>
     </label>
     <label>Node spacing
-        <input type="range" min="0" max="90" step="1" value="45" oninput="changeNodeSpacing(this.value)">
-        <output id="nodeSpacingValue">45</output>
+        <input type="range" min="1" max="150" step="1" value="90" oninput="changeNodeSpacing(this.value)">
+        <output id="nodeSpacingValue">90</output>
     </label>
     <label>Curvature
         <input type="range" min="0.2" max="3" step="0.1" value="1.5" oninput="changeCurvature(this.value)">
@@ -36,18 +36,14 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data: migration flows between regions
+  // create data: requests between the departments of a company
   var data = [
-    {from: "Asia", to: "Europe", weight: 42},
-    {from: "Asia", to: "N. America", weight: 51},
-    {from: "Asia", to: "Oceania", weight: 18},
-    {from: "Africa", to: "Europe", weight: 38},
-    {from: "Africa", to: "N. America", weight: 9},
-    {from: "S. America", to: "N. America", weight: 44},
-    {from: "S. America", to: "Europe", weight: 16},
-    {from: "Europe", to: "N. America", weight: 33},
-    {from: "N. America", to: "Oceania", weight: 7},
-    {from: "Oceania", to: "Asia", weight: 6}
+    {from: "Sales", to: "Marketing", weight: 9},
+    {from: "Sales", to: "Finance", weight: 16},
+    {from: "Finance", to: "HR", weight: 5},
+    {from: "Support", to: "Sales", weight: 14},
+    {from: "Support", to: "Marketing", weight: 6},
+    {from: "Marketing", to: "HR", weight: 3}
   ];
 
   // create an arc diagram and set the data
@@ -57,8 +53,8 @@ anychart.onDocumentReady(function () {
   chart.title().padding(0, 0, 20, 0);
 
   // make the node bars bigger and spread them wider
-  chart.nodeWidth(28);
-  chart.nodeSpacing(45);
+  chart.nodeWidth(30);
+  chart.nodeSpacing(90);
 
   // make the arcs taller and curve them below the node line
   chart.curvature(1.5);

@@ -55,18 +55,14 @@ Learn more: [Modules](../Quick_Start/Modules).
 To create an Arc diagram, use the {api:anychart#arcDiagram}anychart.arcDiagram(){api} chart constructor. Each data row is a link between two nodes. The nodes are created on their own from the `from` and `to` fields:
 
 ```
-// create data: migration flows between regions
+// create data: requests between the departments of a company
 var data = [
-  {from: "Asia", to: "Europe", weight: 42},
-  {from: "Asia", to: "N. America", weight: 51},
-  {from: "Asia", to: "Oceania", weight: 18},
-  {from: "Africa", to: "Europe", weight: 38},
-  {from: "Africa", to: "N. America", weight: 9},
-  {from: "S. America", to: "N. America", weight: 44},
-  {from: "S. America", to: "Europe", weight: 16},
-  {from: "Europe", to: "N. America", weight: 33},
-  {from: "N. America", to: "Oceania", weight: 7},
-  {from: "Oceania", to: "Asia", weight: 6}
+  {from: "Sales", to: "Marketing", weight: 9},
+  {from: "Sales", to: "Finance", weight: 16},
+  {from: "Finance", to: "HR", weight: 5},
+  {from: "Support", to: "Sales", weight: 14},
+  {from: "Support", to: "Marketing", weight: 6},
+  {from: "Marketing", to: "HR", weight: 3}
 ];
 
 // create an arc diagram and set the data
@@ -76,6 +72,10 @@ var chart = anychart.arcDiagram(data);
 chart.title("Arc Diagram: Basic Sample");
 chart.title().padding(0, 0, 20, 0);
 
+// give the nodes room: wider bars and more spacing between them
+chart.nodeWidth(30);
+chart.nodeSpacing(90);
+
 // set the container id
 chart.container("container");
 
@@ -83,7 +83,7 @@ chart.container("container");
 chart.draw();
 ```
 
-In the sample below, the data rows are drawn as arcs above the row of region nodes:
+In the sample below, the data rows are drawn as arcs above the row of department nodes:
 
 {sample}BCT\_Arc\_Diagram\_01{sample}
 
@@ -107,11 +107,11 @@ Pass data to the {api:anychart#arcDiagram}anychart.arcDiagram(){api} chart const
 Pass the links as objects, or map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api}:
 
 ```
-// create data: migration flows between regions, with a group column
+// create data: requests between the departments of a company, with a group column
 var dataSet = anychart.data.set([
-  ["Asia", "Europe", 42, "Eurasia"],
-  ["Asia", "N. America", 51, "Eurasia"],
-  ["Africa", "Europe", 38, "Africa-Europe"]
+  ["Sales", "Marketing", 9, "Commercial"],
+  ["Sales", "Finance", 16, "Corporate"],
+  ["Finance", "HR", 5, "Corporate"]
 ]);
 // map the columns the chart needs: from, to, weight and group
 var mapping = dataSet.mapAs({from: 0, to: 1, weight: 2, group: 3});
@@ -133,7 +133,7 @@ The color of each node comes from the chart [palette](../Appearance_Settings/Pal
 
 ```
 // one palette color per node
-chart.palette(["#5b8ff9", "#61ddaa", "#65789b", "#f6bd16", "#7262fd", "#f6903d"]);
+chart.palette(["#5b8ff9", "#61ddaa", "#65789b", "#f6bd16", "#7262fd"]);
 
 // blend each arc from the color of its source node to the color of its target node
 chart.colorMode("gradient");
@@ -178,8 +178,8 @@ The following methods adjust the geometry of the diagram:
 
 ```
 // make the node bars bigger and spread them wider
-chart.nodeWidth(28);
-chart.nodeSpacing(45);
+chart.nodeWidth(30);
+chart.nodeSpacing(90);
 
 // make the arcs taller and curve them below the node line
 chart.curvature(1.5);
@@ -248,10 +248,10 @@ chart.node().normal().labels().fontSize(12);
 chart.node().normal().labels().fontColor("#212121");
 
 // select two nodes in code
-chart.select(["Asia", "Europe"]);
+chart.select(["Sales", "Finance"]);
 ```
 
-In the sample below, the node bars are blue with a white outline, their labels are horizontal, and the Asia and Europe nodes are selected from code:
+In the sample below, the node bars are blue with a white outline, their labels are horizontal, and the Sales and Finance nodes are selected from code:
 
 {sample}BCT\_Arc\_Diagram\_07{sample}
 
@@ -280,12 +280,12 @@ Nodes and links have separate [tooltips](../Common_Settings/Tooltip), each with 
 
 ```
 // the tooltip of nodes
-chart.node().tooltip().titleFormat("Region: {%name}");
+chart.node().tooltip().titleFormat("Department: {%name}");
 chart.node().tooltip().format("Total flow: {%weight}\nConnections: {%connections}");
 
 // the tooltip of links
 chart.link().tooltip().titleFormat("{%from} -> {%to}");
-chart.link().tooltip().format("People (k): {%value}");
+chart.link().tooltip().format("Requests: {%value}");
 ```
 
 You can also use a [formatting function](../Common_Settings/Text_Formatters#formatting_functions) instead of tokens. For example, you can calculate the average flow per connection:
@@ -299,6 +299,6 @@ chart.node().tooltip().format(function () {
 });
 ```
 
-In the sample below, the node tooltip adds the average flow per connection and the link tooltip names the route:
+In the sample below, the node tooltip adds the average flow per connection and the link tooltip shows the two connected departments:
 
 {sample}BCT\_Arc\_Diagram\_09{sample}

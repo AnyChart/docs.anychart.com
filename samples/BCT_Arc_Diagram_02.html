@@ -19,18 +19,14 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data: migration flows between regions, with a group column
+  // create data: requests between the departments of a company, with a group column
   var dataSet = anychart.data.set([
-    ["Asia", "Europe", 42, "Eurasia"],
-    ["Asia", "N. America", 51, "Eurasia"],
-    ["Asia", "Oceania", 18, "Eurasia"],
-    ["Africa", "Europe", 38, "Africa-Europe"],
-    ["Africa", "N. America", 9, "Africa-Europe"],
-    ["S. America", "N. America", 44, "Americas"],
-    ["S. America", "Europe", 16, "Americas"],
-    ["Europe", "N. America", 33, "Americas"],
-    ["N. America", "Oceania", 7, "Americas"],
-    ["Oceania", "Asia", 6, "Eurasia"]
+    ["Sales", "Marketing", 9, "Commercial"],
+    ["Sales", "Finance", 16, "Corporate"],
+    ["Finance", "HR", 5, "Corporate"],
+    ["Support", "Sales", 14, "Service"],
+    ["Support", "Marketing", 6, "Service"],
+    ["Marketing", "HR", 3, "Commercial"]
   ]);
   // map the columns the chart needs: from, to, weight and group
   var mapping = dataSet.mapAs({from: 0, to: 1, weight: 2, group: 3});
@@ -40,6 +36,10 @@ anychart.onDocumentReady(function () {
   // set the chart title and separate it from the diagram
   chart.title("Arc Diagram: Data Mapping");
   chart.title().padding(0, 0, 20, 0);
+
+  // give the nodes room: wider bars and more spacing between them
+  chart.nodeWidth(30);
+  chart.nodeSpacing(90);
 
   // set the container id
   chart.container("container");

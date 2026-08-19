@@ -29,18 +29,14 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data: migration flows between regions, with a group per link
+  // create data: requests between the departments of a company, with a group per link
   var data = [
-    {from: "Asia", to: "Europe", weight: 42, group: "Eurasia"},
-    {from: "Asia", to: "N. America", weight: 51, group: "Eurasia"},
-    {from: "Asia", to: "Oceania", weight: 18, group: "Eurasia"},
-    {from: "Africa", to: "Europe", weight: 38, group: "Africa-Europe"},
-    {from: "Africa", to: "N. America", weight: 9, group: "Africa-Europe"},
-    {from: "S. America", to: "N. America", weight: 44, group: "Americas"},
-    {from: "S. America", to: "Europe", weight: 16, group: "Americas"},
-    {from: "Europe", to: "N. America", weight: 33, group: "Americas"},
-    {from: "N. America", to: "Oceania", weight: 7, group: "Americas"},
-    {from: "Oceania", to: "Asia", weight: 6, group: "Eurasia"}
+    {from: "Sales", to: "Marketing", weight: 9, group: "Commercial"},
+    {from: "Sales", to: "Finance", weight: 16, group: "Corporate"},
+    {from: "Finance", to: "HR", weight: 5, group: "Corporate"},
+    {from: "Support", to: "Sales", weight: 14, group: "Service"},
+    {from: "Support", to: "Marketing", weight: 6, group: "Service"},
+    {from: "Marketing", to: "HR", weight: 3, group: "Commercial"}
   ];
 
   // create an arc diagram and set the data
@@ -48,6 +44,10 @@ anychart.onDocumentReady(function () {
   // set the chart title and separate it from the diagram
   chart.title("Arc Diagram: Sorting");
   chart.title().padding(0, 0, 20, 0);
+
+  // give the nodes room: wider bars and more spacing between them
+  chart.nodeWidth(30);
+  chart.nodeSpacing(90);
 
   // order the nodes by their total flow instead of by name
   chart.sortOrder("weight");
@@ -64,10 +64,10 @@ anychart.onDocumentReady(function () {
 });
 
 // one color per group of nodes
-var groupColors = {"Eurasia": "#5b8ff9", "Africa-Europe": "#f6bd16", "Americas": "#61ddaa"};
+var groupColors = {"Commercial": "#5b8ff9", "Corporate": "#61ddaa", "Service": "#f6bd16"};
 
 // the position of each node in the data, for the data-order comparator
-var dataOrder = {"Asia": 0, "Europe": 1, "N. America": 2, "Oceania": 3, "Africa": 4, "S. America": 5};
+var dataOrder = {"Sales": 0, "Marketing": 1, "Finance": 2, "HR": 3, "Support": 4};
 
 // keep the nodes in the order they appear in the data: a comparator
 function byDataOrder(node1, node2) {

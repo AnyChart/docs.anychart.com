@@ -19,18 +19,14 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data: migration flows between regions
+  // create data: requests between the departments of a company
   var data = [
-    {from: "Asia", to: "Europe", weight: 42},
-    {from: "Asia", to: "N. America", weight: 51},
-    {from: "Asia", to: "Oceania", weight: 18},
-    {from: "Africa", to: "Europe", weight: 38},
-    {from: "Africa", to: "N. America", weight: 9},
-    {from: "S. America", to: "N. America", weight: 44},
-    {from: "S. America", to: "Europe", weight: 16},
-    {from: "Europe", to: "N. America", weight: 33},
-    {from: "N. America", to: "Oceania", weight: 7},
-    {from: "Oceania", to: "Asia", weight: 6}
+    {from: "Sales", to: "Marketing", weight: 9},
+    {from: "Sales", to: "Finance", weight: 16},
+    {from: "Finance", to: "HR", weight: 5},
+    {from: "Support", to: "Sales", weight: 14},
+    {from: "Support", to: "Marketing", weight: 6},
+    {from: "Marketing", to: "HR", weight: 3}
   ];
 
   // create an arc diagram and set the data
@@ -39,12 +35,16 @@ anychart.onDocumentReady(function () {
   chart.title("Arc Diagram: Tooltips");
   chart.title().padding(0, 0, 20, 0);
 
+  // give the nodes room: wider bars and more spacing between them
+  chart.nodeWidth(30);
+  chart.nodeSpacing(90);
+
   // the tooltip of nodes
-  chart.node().tooltip().titleFormat("Region: {%name}");
+  chart.node().tooltip().titleFormat("Department: {%name}");
 
   // the tooltip of links
   chart.link().tooltip().titleFormat("{%from} -> {%to}");
-  chart.link().tooltip().format("People (k): {%value}");
+  chart.link().tooltip().format("Requests: {%value}");
 
   // the body of the node tooltip: a formatting function
   chart.node().tooltip().format(function () {
