@@ -123,18 +123,89 @@ In the sample below, the chart is built from a mapped data set instead of an arr
 
 {sample}BCT\_Arc\_Diagram\_02{sample}
 
-### Color Mode
+### Nodes
 
-The color of each node comes from the chart [palette](../Appearance_Settings/Palettes). Set your own with the {api:anychart.charts.ArcDiagram#palette}palette(){api} method. The {api:anychart.charts.ArcDiagram#colorMode}colorMode(){api} method colors the arcs:
+Set the node bars with the {api:anychart.charts.ArcDiagram#node}node(){api} method in three [states](../Common_Settings/Interactivity/States): **normal**, **hovered**, and **selected**.
+
+A node is hovered when you point at it. Its connections are then highlighted. A node is selected when you click it. A click replaces any previous selection. Instead, Ctrl/Cmd + click or Shift + click toggles a node into or out of a multi-node selection. A plain click on the empty area clears the selection.
+
+#### Node Labels
+
+Node [labels](../Common_Settings/Labels) show the node name and are on by default. Label settings come from the normal state only, so set them with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state. In the horizontal orientation the labels are drawn at an angle; to straighten them, call {api:anychart.core.ui.LabelsFactory#rotation}rotation(){api} with `0`. Font settings are available too:
+
+```
+// node labels: horizontal, bigger, dark
+chart.node().normal().labels().rotation(0);
+chart.node().normal().labels().fontSize(12);
+chart.node().normal().labels().fontColor("#212121");
+```
+
+#### Node Colors
+
+A node takes its color from the chart [palette](../Appearance_Settings/Palettes). To set your own palette, use the {api:anychart.charts.ArcDiagram#palette}palette(){api} method. To style the states, use the {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} methods:
+
+```
+// states of the node bars
+chart.node().normal().fill("#5b8ff9");
+chart.node().normal().stroke("#ffffff", 1);
+chart.node().hovered().stroke("#1b2740", 2);
+chart.node().selected().stroke("#0b1220", 3);
+
+// select two nodes in code
+chart.select(["Sales", "Finance"]);
+```
+
+#### Node Tooltip
+
+To set the [tooltip](../Common_Settings/Tooltip) of the nodes, use `node().tooltip()`:
+
+```
+// the tooltip of a node: its requests and connections
+chart.node().tooltip().titleFormat("Department: {%name}");
+chart.node().tooltip().format("Requests: {%weight}\nConnections: {%connections}");
+```
+
+In the sample below, the node bars are blue with a white outline, the labels are horizontal, the Sales and Finance nodes are selected from code, and the tooltip shows the requests and connections of a node:
+
+{sample}BCT\_Arc\_Diagram\_03{sample}
+
+### Links
+
+Set the arcs with the {api:anychart.charts.ArcDiagram#link}link(){api} method. Like [nodes](#nodes), it has three states: an arc is hovered when you point at it and selected when you click it.
+
+Link [labels](../Common_Settings/Labels) are hidden by default; turning them on shows a label on every arc at once, which suits a diagram with few links. The [link tooltip](#link_tooltip) identifies an arc better.
+
+#### Link Colors
+
+An arc takes its base color from [Link Color Mode](#link_color_mode). To style the states, use the {api:anychart.core.StateSettings#fill}fill(){api} method. If you derive the state fills from `sourceColor`, an arc keeps its own color and only becomes darker:
+
+```
+// link states: an arc keeps its own color and only becomes darker
+chart.link().hovered().fill(function () {
+  return anychart.color.darken(this.sourceColor, 0.2);
+});
+chart.link().selected().fill(function () {
+  return anychart.color.darken(this.sourceColor, 0.4);
+});
+```
+
+Hover or click an arc in the sample below to see how its color becomes darker:
+
+{sample}BCT\_Arc\_Diagram\_04{sample}
+
+#### Link Color Mode
+
+The {api:anychart.charts.ArcDiagram#colorMode}colorMode(){api} method sets the base color of the arcs:
 
 * `"source"` (default) — an arc takes the color of its source (`from`) node
 * `"target"` — an arc takes the color of its target (`to`) node
 * `"gradient"` — the arc blends from the source color to the target color. The {api:anychart.charts.ArcDiagram#reverseGradient}reverseGradient(){api} method flips the blend direction
 
-```
-// one palette color per node
-chart.palette(["#5b8ff9", "#61ddaa", "#65789b", "#f6bd16", "#7262fd"]);
+The mode sets only the base color of the arcs. The nodes keep their palette colors in every mode (see [Node Colors](#node_colors)).
 
+The mode works on a chart that is already drawn. Use the buttons in the sample below to compare all four results:
+
+```
 // blend each arc from the color of its source node to the color of its target node
 chart.colorMode("gradient");
 
@@ -145,9 +216,21 @@ function changeColorMode(value) {
 }
 ```
 
-The mode works on a chart that is already drawn. Use the buttons in the sample below to compare all four results:
+{sample}BCT\_Arc\_Diagram\_05{sample}
 
-{sample}BCT\_Arc\_Diagram\_03{sample}
+#### Link Tooltip
+
+Links have a [tooltip](../Common_Settings/Tooltip) of their own. By default, its title is the two node names joined by an arrow, and its body is the weight of the link. To set it, use `link().tooltip()`:
+
+```
+// the tooltip of a link names the two departments and the requests
+chart.link().tooltip().titleFormat("{%from} -> {%to}");
+chart.link().tooltip().format("Requests: {%value}");
+```
+
+In the sample below, the link tooltip shows the two connected departments and their requests:
+
+{sample}BCT\_Arc\_Diagram\_06{sample}
 
 ### Orientation
 
@@ -166,9 +249,9 @@ function setLayout(orientation, direction) {
 
 Both methods work on a chart that is already drawn. Use the buttons in the sample below to rotate the layout and flip the arcs:
 
-{sample}BCT\_Arc\_Diagram\_04{sample}
+{sample}BCT\_Arc\_Diagram\_07{sample}
 
-### Node and Arc Geometry
+### Geometry
 
 The following methods adjust the geometry of the diagram:
 
@@ -194,7 +277,7 @@ function changeNodeWidth(value) {
 
 All three methods work on a chart that is already drawn. Drag the sliders in the sample below to see what each one changes; the arcs stay below the node line:
 
-{sample}BCT\_Arc\_Diagram\_05{sample}
+{sample}BCT\_Arc\_Diagram\_08{sample}
 
 ### Sorting
 
@@ -223,75 +306,5 @@ function changeSortOrder(value) {
 
 Every order works on a chart that is already drawn. Use the buttons in the sample below to compare them; the node colors follow the `group` field, so the group order shows its clusters:
 
-{sample}BCT\_Arc\_Diagram\_06{sample}
-
-### Nodes
-
-Set the node bars and their [labels](../Common_Settings/Labels) with the {api:anychart.charts.ArcDiagram#node}node(){api} method in three [states](../Common_Settings/Interactivity/States): **normal**, **hovered**, and **selected**. The {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} methods work in each state. Label settings come from the normal state only. So set them with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state.
-
-A node is hovered when you point at it. Its connections are then highlighted. A node is selected when you click it. A click replaces any previous selection. Instead, Ctrl/Cmd + click or Shift + click toggles a node into or out of a multi-node selection. A plain click on the empty area clears the selection.
-
-Node labels show the node name and are on by default. In the horizontal orientation they are drawn at an angle; to straighten them, call {api:anychart.core.ui.LabelsFactory#rotation}rotation(){api} with `0`. Font settings are available too:
-
-```
-// states of the node bars
-chart.node().normal().fill("#5b8ff9");
-chart.node().normal().stroke("#ffffff", 1);
-chart.node().hovered().stroke("#1b2740", 2);
-chart.node().selected().stroke("#0b1220", 3);
-
-// node labels: horizontal, bigger, dark
-chart.node().normal().labels().rotation(0);
-chart.node().normal().labels().fontSize(12);
-chart.node().normal().labels().fontColor("#212121");
-
-// select two nodes in code
-chart.select(["Sales", "Finance"]);
-```
-
-In the sample below, the node bars are blue with a white outline, their labels are horizontal, and the Sales and Finance nodes are selected from code:
-
-{sample}BCT\_Arc\_Diagram\_07{sample}
-
-### Links
-
-Set the arcs with the {api:anychart.charts.ArcDiagram#link}link(){api} method. Like [nodes](#nodes), it has three states. Link [labels](../Common_Settings/Labels) are hidden by default; turning them on shows a label on every arc at once, which suits a diagram with few links. The [link tooltip](#tooltips) identifies an arc better:
-
-```
-// states of the arcs
-chart.link().hovered().fill("#1b2740");
-chart.link().selected().fill("#0b1220");
-```
-
-In the sample below, an arc turns dark when you hover or click it:
-
-{sample}BCT\_Arc\_Diagram\_08{sample}
-
-### Tooltips
-
-Nodes and links have separate [tooltips](../Common_Settings/Tooltip), each with its own set of tokens. The node tooltip supports `{%name}`, `{%weight}`, `{%connections}`, and `{%group}`. `{%weight}` is the total flow through the node. `{%connections}` is the number of links. `{%group}` is the group of the node, or an empty string if it has none. The link tooltip supports `{%from}`, `{%to}`, `{%value}`, and `{%name}` (the source and target names joined by an arrow). By default, the link tooltip uses the same format as the node tooltip. So its `{%weight}` and `{%connections}` tokens show no value for a link. It is best to set the link tooltip yourself, as shown below:
-
-```
-// the tooltip of nodes
-chart.node().tooltip().titleFormat("Department: {%name}");
-chart.node().tooltip().format("Total flow: {%weight}\nConnections: {%connections}");
-
-// the tooltip of links
-chart.link().tooltip().titleFormat("{%from} -> {%to}");
-chart.link().tooltip().format("Requests: {%value}");
-```
-
-You can also use a [formatting function](../Common_Settings/Text_Formatters#formatting_functions) instead of tokens. For example, you can calculate the average flow per connection:
-
-```
-// the body of the node tooltip: a formatting function
-chart.node().tooltip().format(function () {
-  return "Total flow: " + this.weight +
-    "\nConnections: " + this.connections +
-    "\nAverage per connection: " + Math.round(this.weight / this.connections);
-});
-```
-
-In the sample below, the node tooltip adds the average flow per connection and the link tooltip shows the two connected departments:
-
 {sample}BCT\_Arc\_Diagram\_09{sample}
+

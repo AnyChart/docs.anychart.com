@@ -12,72 +12,42 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
 
     <style>
-        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
-        body { display: flex; flex-direction: column; }
-        #controls { padding: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
-        #container { flex: 1; }
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
     </style>
 </head>
 <body>
-<div id="controls">
-    <span>Sort nodes:</span>
-    <label><input type="radio" name="sort" id="sortName" onclick="changeSortOrder('name')"> by name</label>
-    <label><input type="radio" name="sort" id="sortWeight" onclick="changeSortOrder('weight')" checked> by total flow</label>
-    <label><input type="radio" name="sort" id="sortGroup" onclick="changeSortOrder('group')"> by group</label>
-    <label><input type="radio" name="sort" id="sortData" onclick="changeSortOrder('data')"> data order</label>
-</div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data: requests between the departments of a company, with a group per link
+  // create data: requests between the departments of a company
   var data = [
-    {from: "Sales", to: "Marketing", weight: 9, group: "Commercial"},
-    {from: "Sales", to: "Finance", weight: 16, group: "Corporate"},
-    {from: "Finance", to: "HR", weight: 5, group: "Corporate"},
-    {from: "Support", to: "Sales", weight: 14, group: "Service"},
-    {from: "Support", to: "Marketing", weight: 6, group: "Service"},
-    {from: "Marketing", to: "HR", weight: 3, group: "Commercial"}
+    {from: "Sales", to: "Marketing", weight: 9},
+    {from: "Sales", to: "Finance", weight: 16},
+    {from: "Finance", to: "HR", weight: 5},
+    {from: "Support", to: "Sales", weight: 14},
+    {from: "Support", to: "Marketing", weight: 6},
+    {from: "Marketing", to: "HR", weight: 3}
   ];
 
   // create an arc diagram and set the data
-  chart = anychart.arcDiagram(data);
+  var chart = anychart.arcDiagram(data);
   // set the chart title and separate it from the diagram
-  chart.title("Arc Diagram: Sorting");
+  chart.title("Arc Diagram: Link Tooltip");
   chart.title().padding(0, 0, 20, 0);
 
   // give the nodes room: wider bars and more spacing between them
   chart.nodeWidth(30);
   chart.nodeSpacing(90);
 
-  // order the nodes by their total flow instead of by name
-  chart.sortOrder("weight");
-
-  // one fill per group, so the clusters are visible in the group order
-  chart.node().normal().fill(function () {
-    return groupColors[this.group];
-  });
+  // the tooltip of a link names the two departments and the requests
+  chart.link().tooltip().titleFormat("{%from} -> {%to}");
+  chart.link().tooltip().format("Requests: {%value}");
 
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
 });
-
-// one color per group of nodes
-var groupColors = {"Commercial": "#5b8ff9", "Corporate": "#61ddaa", "Service": "#f6bd16"};
-
-// the position of each node in the data, for the data-order comparator
-var dataOrder = {"Sales": 0, "Marketing": 1, "Finance": 2, "HR": 3, "Support": 4};
-
-// keep the nodes in the order they appear in the data: a comparator
-function byDataOrder(node1, node2) {
-  return dataOrder[node1.id] - dataOrder[node2.id];
-}
-
-// apply the chosen order: the chart redraws itself
-function changeSortOrder(value) {
-  chart.sortOrder(value == "data" ? byDataOrder : value);
-}
 </script>
 </body>
 </html>

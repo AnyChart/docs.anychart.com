@@ -20,18 +20,11 @@
 </head>
 <body>
 <div id="controls">
-    <label>Node width
-        <input type="range" min="4" max="60" step="1" value="30" oninput="changeNodeWidth(this.value)">
-        <output id="nodeWidthValue">30</output>
-    </label>
-    <label>Node spacing
-        <input type="range" min="1" max="150" step="1" value="90" oninput="changeNodeSpacing(this.value)">
-        <output id="nodeSpacingValue">90</output>
-    </label>
-    <label>Curvature
-        <input type="range" min="0.2" max="3" step="0.1" value="1.5" oninput="changeCurvature(this.value)">
-        <output id="curvatureValue">1.5</output>
-    </label>
+    <span>Color mode:</span>
+    <label><input type="radio" name="mode" id="modeSource" onclick="changeColorMode('source')"> source</label>
+    <label><input type="radio" name="mode" id="modeTarget" onclick="changeColorMode('target')"> target</label>
+    <label><input type="radio" name="mode" id="modeGradient" onclick="changeColorMode('gradient')" checked> gradient</label>
+    <label><input type="radio" name="mode" id="modeReversed" onclick="changeColorMode('reversed')"> gradient, reversed</label>
 </div>
 <div id="container"></div>
 <script>
@@ -49,16 +42,18 @@ anychart.onDocumentReady(function () {
   // create an arc diagram and set the data
   chart = anychart.arcDiagram(data);
   // set the chart title and separate it from the diagram
-  chart.title("Arc Diagram: Node and Arc Geometry");
+  chart.title("Arc Diagram: Color Mode");
   chart.title().padding(0, 0, 20, 0);
 
-  // make the node bars bigger and spread them wider
+  // give the nodes room: wider bars and more spacing between them
   chart.nodeWidth(30);
   chart.nodeSpacing(90);
 
-  // make the arcs taller and curve them below the node line
-  chart.curvature(1.5);
-  chart.arcDirection("down");
+  // one palette color per node
+  chart.palette(["#5b8ff9", "#61ddaa", "#65789b", "#f6bd16", "#7262fd"]);
+
+  // blend each arc from the color of its source node to the color of its target node
+  chart.colorMode("gradient");
 
   // set the container id
   chart.container("container");
@@ -66,22 +61,10 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// resize the node bars: the chart redraws itself
-function changeNodeWidth(value) {
-  chart.nodeWidth(value);
-  document.getElementById("nodeWidthValue").value = value;
-}
-
-// change the gap between the nodes: the chart redraws itself
-function changeNodeSpacing(value) {
-  chart.nodeSpacing(value);
-  document.getElementById("nodeSpacingValue").value = value;
-}
-
-// change the height of the arcs: the chart redraws itself
-function changeCurvature(value) {
-  chart.curvature(value);
-  document.getElementById("curvatureValue").value = value;
+// apply the chosen color mode: the chart redraws itself
+function changeColorMode(value) {
+  chart.colorMode(value == "reversed" ? "gradient" : value);
+  chart.reverseGradient(value == "reversed");
 }
 </script>
 </body>

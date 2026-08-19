@@ -12,10 +12,20 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
 
     <style>
-        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { display: flex; flex-direction: column; }
+        #controls { padding: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+        #container { flex: 1; }
     </style>
 </head>
 <body>
+<div id="controls">
+    <span>Layout:</span>
+    <label><input type="radio" name="layout" id="layoutHorizontalUp" onclick="setLayout('horizontal', 'up')"> horizontal (up)</label>
+    <label><input type="radio" name="layout" id="layoutHorizontalDown" onclick="setLayout('horizontal', 'down')"> horizontal (down)</label>
+    <label><input type="radio" name="layout" id="layoutVerticalLeft" onclick="setLayout('vertical', 'left')"> vertical (left)</label>
+    <label><input type="radio" name="layout" id="layoutVerticalRight" onclick="setLayout('vertical', 'right')" checked> vertical (right)</label>
+</div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -30,34 +40,29 @@ anychart.onDocumentReady(function () {
   ];
 
   // create an arc diagram and set the data
-  var chart = anychart.arcDiagram(data);
+  chart = anychart.arcDiagram(data);
   // set the chart title and separate it from the diagram
-  chart.title("Arc Diagram: Node Settings");
+  chart.title("Arc Diagram: Orientation");
   chart.title().padding(0, 0, 20, 0);
 
   // give the nodes room: wider bars and more spacing between them
   chart.nodeWidth(30);
   chart.nodeSpacing(90);
 
-  // states of the node bars
-  chart.node().normal().fill("#5b8ff9");
-  chart.node().normal().stroke("#ffffff", 1);
-  chart.node().hovered().stroke("#1b2740", 2);
-  chart.node().selected().stroke("#0b1220", 3);
-
-  // node labels: horizontal, bigger, dark
-  chart.node().normal().labels().rotation(0);
-  chart.node().normal().labels().fontSize(12);
-  chart.node().normal().labels().fontColor("#212121");
+  // place the nodes in a column; the arcs curve to the right
+  chart.orientation("vertical");
 
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
-
-  // select two nodes in code
-  chart.select(["Sales", "Finance"]);
 });
+
+// apply the chosen layout: the chart redraws itself
+function setLayout(orientation, direction) {
+  chart.orientation(orientation);
+  chart.arcDirection(direction);
+}
 </script>
 </body>
 </html>
