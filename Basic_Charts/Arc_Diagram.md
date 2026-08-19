@@ -156,9 +156,15 @@ By default, the nodes sit in a row at the bottom of the chart. The arcs curve up
 ```
 // place the nodes in a column; the arcs curve to the right
 chart.orientation("vertical");
+
+// apply the chosen layout: the chart redraws itself
+function setLayout(orientation, direction) {
+  chart.orientation(orientation);
+  chart.arcDirection(direction);
+}
 ```
 
-In the sample below, the nodes form a column and the arcs curve to the right:
+Both methods work on a chart that is already drawn. Use the buttons in the sample below to rotate the layout and flip the arcs:
 
 {sample}BCT\_Arc\_Diagram\_04{sample}
 
@@ -178,9 +184,15 @@ chart.nodeSpacing(45);
 // make the arcs taller and curve them below the node line
 chart.curvature(1.5);
 chart.arcDirection("down");
+
+// resize the node bars: the chart redraws itself
+function changeNodeWidth(value) {
+  chart.nodeWidth(value);
+  document.getElementById("nodeWidthValue").value = value;
+}
 ```
 
-In the sample below, the node bars are thicker and stand further apart, and the arcs are taller and curve below the node line:
+All three methods work on a chart that is already drawn. Drag the sliders in the sample below to see what each one changes; the arcs stay below the node line:
 
 {sample}BCT\_Arc\_Diagram\_05{sample}
 
@@ -197,9 +209,19 @@ Instead of a string, you can pass your own compare function. It works like a com
 ```
 // order the nodes by their total flow instead of by name
 chart.sortOrder("weight");
+
+// keep the nodes in the order they appear in the data: a comparator
+function byDataOrder(node1, node2) {
+  return dataOrder[node1.id] - dataOrder[node2.id];
+}
+
+// apply the chosen order: the chart redraws itself
+function changeSortOrder(value) {
+  chart.sortOrder(value == "data" ? byDataOrder : value);
+}
 ```
 
-In the sample below, the nodes are ordered by their total flow instead of alphabetically by name:
+Every order works on a chart that is already drawn. Use the buttons in the sample below to compare them; the node colors follow the `group` field, so the group order shows its clusters:
 
 {sample}BCT\_Arc\_Diagram\_06{sample}
 
