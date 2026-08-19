@@ -5,7 +5,7 @@
 
 A Dependency wheel is a round diagram of flows. The nodes sit as arcs around the wheel. Each link between two nodes is drawn as a band that joins their two arcs.
 
-The length of a node arc shows the total flow through that node. The thickness of a link shows its weight. This type is also called a chord diagram, and its links are also known as chords or ribbons.
+The length of a node arc shows the total flow through that node. The thickness of a link shows its weight. This type is also known as a chord diagram.
 
 It works well for flows inside a closed system. Some examples are imports and exports, energy flows, or links between software packages. If your flow moves in stages from sources to end points, a [Sankey diagram](Sankey_Diagram) can be the better choice. If you want to show the same links along a straight line, use an [Arc diagram](Arc_Diagram).
 
