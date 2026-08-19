@@ -116,95 +116,6 @@ var chart = anychart.dependencyWheel(mapping);
 
 {sample}BCT\_Dependency\_Wheel\_02{sample}
 
-### Color Mode
-
-The color of each node comes from the chart [palette](../Appearance_Settings/Palettes). Set your own palette with the {api:anychart.charts.DependencyWheel#palette}palette(){api} method. The {api:anychart.charts.DependencyWheel#colorMode}colorMode(){api} method sets the color of the links:
-
-* `"source"` (default) — a link takes the color of its source (`from`) node
-* `"target"` — a link takes the color of its target (`to`) node
-* `"gradient"` — a link blends from the source color to the target color. The {api:anychart.charts.DependencyWheel#reverseGradient}reverseGradient(){api} method flips the direction of the blend
-
-The mode sets only the base color of the links — the nodes keep their palette colors in every mode. To style the link states on top of the base color, see [Link Colors](#link_colors).
-
-Both methods work on a chart that is already drawn, so a control can switch the mode without rebuilding the chart. Use the buttons in the sample below to compare all four results:
-
-```
-// set a custom palette for the nodes
-chart.palette([
-  "#5b8ff9", "#61ddaa", "#65789b", "#f6bd16",
-  "#7262fd", "#78d3f8", "#9661bc", "#f6903d"
-]);
-
-// blend each link from its source color to its target color
-chart.colorMode("gradient");
-
-// apply the chosen color mode: the chart redraws itself
-function changeColorMode(value) {
-  chart.colorMode(value == "reversed" ? "gradient" : value);
-  chart.reverseGradient(value == "reversed");
-}
-```
-
-{sample}BCT\_Dependency\_Wheel\_03{sample}
-
-### Wheel Geometry
-
-These methods change the geometry of the wheel:
-
-* {api:anychart.charts.DependencyWheel#startAngle}startAngle(){api} — rotates the whole wheel, in degrees: 0, the default, starts the first node arc at the top, and positive values turn the wheel clockwise
-* {api:anychart.charts.DependencyWheel#padAngle}padAngle(){api} — the angular gap between node arcs that sit next to each other, in radians (0.02 by default)
-* {api:anychart.charts.DependencyWheel#nodeWidth}nodeWidth(){api} — the thickness of the node arcs, in pixels (15 by default)
-
-All three take effect on a chart that is already drawn. Drag the sliders in the sample below to see what each one changes:
-
-```
-// rotate the whole wheel a quarter-turn
-chart.startAngle(90);
-
-// widen the gaps between the node arcs
-chart.padAngle(0.06);
-
-// make the node arcs thicker
-chart.nodeWidth(30);
-
-// rotate the wheel: the chart redraws itself
-function changeStartAngle(value) {
-  chart.startAngle(value);
-  document.getElementById("startAngleValue").value = value;
-}
-```
-
-{sample}BCT\_Dependency\_Wheel\_04{sample}
-
-### Sorting
-
-The {api:anychart.charts.DependencyWheel#sortOrder}sortOrder(){api} method sets the order of the node arcs around the wheel. The first arc starts at the start angle — the top of the wheel by default, see [Wheel Geometry](#wheel_geometry) — and the following arcs are placed clockwise:
-
-* `"desc"` (default) — by the total flow through the node: the largest node starts at the top, the rest follow clockwise from largest to smallest
-* `"asc"` — the same, from smallest to largest
-* `"none"` — in the order the nodes appear in the data. Set this value before the first {api:anychart.charts.DependencyWheel#draw}draw(){api}: on a chart that is already drawn it keeps the order of the previous sorting. Note: if the node names are numbers written as text, such as `"10"` or `"2"`, they are placed in number order, from smallest to largest, instead
-* a function — your own compare function that sorts the node arcs, like the callback passed to `Array.sort`
-
-The `"asc"` and `"desc"` values and a compare function all work on a chart that is already drawn. So a compare function is the way to bring back the order of the data on a live chart: build it from the positions of the nodes in your data, as the sample below does.
-
-```
-// arrange the node arcs from the smallest to the largest
-chart.sortOrder("asc");
-
-// apply the chosen order: the chart redraws itself
-function changeSortOrder(value) {
-  // sortOrder() also takes a comparator of two nodes
-  chart.sortOrder(value == "data" ? byDataOrder : value);
-}
-
-// a comparator: keep the cities in the order they appear in the data
-function byDataOrder(node1, node2) {
-  return dataOrder[node1.id] - dataOrder[node2.id];
-}
-```
-
-{sample}BCT\_Dependency\_Wheel\_05{sample}
-
 ### Nodes
 
 Set the node arcs with the {api:anychart.charts.DependencyWheel#node}node(){api} method. It works in each of the three [states](../Common_Settings/Interactivity/States): normal, hovered, and selected.
@@ -307,3 +218,92 @@ chart.link().tooltip().format("Weekly flights: {%value}");
 In the sample below, the state fills deepen a link's own color and the tooltip names the route:
 
 {sample}BCT\_Dependency\_Wheel\_07{sample}
+### Wheel Geometry
+
+These methods change the geometry of the wheel:
+
+* {api:anychart.charts.DependencyWheel#startAngle}startAngle(){api} — rotates the whole wheel, in degrees: 0, the default, starts the first node arc at the top, and positive values turn the wheel clockwise
+* {api:anychart.charts.DependencyWheel#padAngle}padAngle(){api} — the angular gap between node arcs that sit next to each other, in radians (0.02 by default)
+* {api:anychart.charts.DependencyWheel#nodeWidth}nodeWidth(){api} — the thickness of the node arcs, in pixels (15 by default)
+
+All three take effect on a chart that is already drawn. Drag the sliders in the sample below to see what each one changes:
+
+```
+// rotate the whole wheel a quarter-turn
+chart.startAngle(90);
+
+// widen the gaps between the node arcs
+chart.padAngle(0.06);
+
+// make the node arcs thicker
+chart.nodeWidth(30);
+
+// rotate the wheel: the chart redraws itself
+function changeStartAngle(value) {
+  chart.startAngle(value);
+  document.getElementById("startAngleValue").value = value;
+}
+```
+
+{sample}BCT\_Dependency\_Wheel\_04{sample}
+
+### Color Mode
+
+The color of each node comes from the chart [palette](../Appearance_Settings/Palettes). Set your own palette with the {api:anychart.charts.DependencyWheel#palette}palette(){api} method. The {api:anychart.charts.DependencyWheel#colorMode}colorMode(){api} method sets the color of the links:
+
+* `"source"` (default) — a link takes the color of its source (`from`) node
+* `"target"` — a link takes the color of its target (`to`) node
+* `"gradient"` — a link blends from the source color to the target color. The {api:anychart.charts.DependencyWheel#reverseGradient}reverseGradient(){api} method flips the direction of the blend
+
+The mode sets only the base color of the links — the nodes keep their palette colors in every mode. To style the link states on top of the base color, see [Link Colors](#link_colors).
+
+Both methods work on a chart that is already drawn, so a control can switch the mode without rebuilding the chart. Use the buttons in the sample below to compare all four results:
+
+```
+// set a custom palette for the nodes
+chart.palette([
+  "#5b8ff9", "#61ddaa", "#65789b", "#f6bd16",
+  "#7262fd", "#78d3f8", "#9661bc", "#f6903d"
+]);
+
+// blend each link from its source color to its target color
+chart.colorMode("gradient");
+
+// apply the chosen color mode: the chart redraws itself
+function changeColorMode(value) {
+  chart.colorMode(value == "reversed" ? "gradient" : value);
+  chart.reverseGradient(value == "reversed");
+}
+```
+
+{sample}BCT\_Dependency\_Wheel\_03{sample}
+
+### Sorting
+
+The {api:anychart.charts.DependencyWheel#sortOrder}sortOrder(){api} method sets the order of the node arcs around the wheel. The first arc starts at the start angle — the top of the wheel by default, see [Wheel Geometry](#wheel_geometry) — and the following arcs are placed clockwise:
+
+* `"desc"` (default) — by the total flow through the node: the largest node starts at the top, the rest follow clockwise from largest to smallest
+* `"asc"` — the same, from smallest to largest
+* `"none"` — in the order the nodes appear in the data. Set this value before the first {api:anychart.charts.DependencyWheel#draw}draw(){api}: on a chart that is already drawn it keeps the order of the previous sorting. Note: if the node names are numbers written as text, such as `"10"` or `"2"`, they are placed in number order, from smallest to largest, instead
+* a function — your own compare function that sorts the node arcs, like the callback passed to `Array.sort`
+
+The `"asc"` and `"desc"` values and a compare function all work on a chart that is already drawn. So a compare function is the way to bring back the order of the data on a live chart: build it from the positions of the nodes in your data, as the sample below does.
+
+```
+// arrange the node arcs from the smallest to the largest
+chart.sortOrder("asc");
+
+// apply the chosen order: the chart redraws itself
+function changeSortOrder(value) {
+  // sortOrder() also takes a comparator of two nodes
+  chart.sortOrder(value == "data" ? byDataOrder : value);
+}
+
+// a comparator: keep the cities in the order they appear in the data
+function byDataOrder(node1, node2) {
+  return dataOrder[node1.id] - dataOrder[node2.id];
+}
+```
+
+{sample}BCT\_Dependency\_Wheel\_05{sample}
+
