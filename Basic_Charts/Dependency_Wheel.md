@@ -149,7 +149,7 @@ function changeColorMode(value) {
 
 These methods change the geometry of the wheel:
 
-* {api:anychart.charts.DependencyWheel#startAngle}startAngle(){api} — rotates the whole wheel, in degrees (0 by default)
+* {api:anychart.charts.DependencyWheel#startAngle}startAngle(){api} — rotates the whole wheel, in degrees: 0, the default, starts the first node arc at the top, and positive values turn the wheel clockwise
 * {api:anychart.charts.DependencyWheel#padAngle}padAngle(){api} — the angular gap between node arcs that sit next to each other, in radians (0.02 by default)
 * {api:anychart.charts.DependencyWheel#nodeWidth}nodeWidth(){api} — the thickness of the node arcs, in pixels (15 by default)
 
@@ -176,10 +176,10 @@ function changeStartAngle(value) {
 
 ### Sorting
 
-The {api:anychart.charts.DependencyWheel#sortOrder}sortOrder(){api} method sets the order of the node arcs around the wheel:
+The {api:anychart.charts.DependencyWheel#sortOrder}sortOrder(){api} method sets the order of the node arcs around the wheel. The first arc starts at the start angle — the top of the wheel by default, see [Wheel Geometry](#wheel_geometry) — and the following arcs are placed clockwise:
 
-* `"desc"` (default) — by the total flow through the node, the largest first
-* `"asc"` — the smallest first
+* `"desc"` (default) — by the total flow through the node: the largest node starts at the top, the rest follow clockwise from largest to smallest
+* `"asc"` — the same, from smallest to largest
 * `"none"` — in the order the nodes appear in the data. Set this value before the first {api:anychart.charts.DependencyWheel#draw}draw(){api}: on a chart that is already drawn it keeps the order of the previous sorting. Note: if the node names are numbers written as text, such as `"10"` or `"2"`, they are placed in number order, from smallest to largest, instead
 * a function — your own compare function that sorts the node arcs, like the callback passed to `Array.sort`
 
