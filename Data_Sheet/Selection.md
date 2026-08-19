@@ -45,4 +45,6 @@ showSelection();
 
 {api:anychart.charts.DataSheet#rowSelectedFill}rowSelectedFill(){api} sets the color of a selected row - see [Appearance](Appearance). The selection is also what [Copy and Paste](Keyboard_and_Clipboard#copy_and_paste) acts on.
 
+Use the buttons in the sample below to select the first two rows from code and to clear the selection, and tick the checkboxes to change the selection yourself.
+
 {sample}DS\_Data\_Sheet\_12{sample}

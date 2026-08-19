@@ -54,6 +54,8 @@ for (var i = 0; i < indices.length; i++) {
 
 With filtering switched off, or with no filter set, it returns every index.
 
+Use the `Clear filters` button in the sample below to drop both filters at once, and watch the row count in the line above the grid.
+
 {sample}DS\_Data\_Sheet\_10{sample}
 
 ## Search
@@ -99,5 +101,7 @@ A query you run from code does not fill the input box of the bar. No later call 
 Search looks at every row that the current filter keeps, including rows you have scrolled past. It looks only at the fields that have a column. If you declare columns, the values in the other fields are never found. It also matches the raw data value, not the text in the cell: on a formatted number, `1,200` finds nothing and `1200` finds the row.
 
 A `search` event carries `query` and `matchCount`.
+
+Use the buttons in the sample below to step through the matches of the `Tech` query and to close the search bar.
 
 {sample}DS\_Data\_Sheet\_11{sample}

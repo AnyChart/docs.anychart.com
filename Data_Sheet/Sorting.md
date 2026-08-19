@@ -40,4 +40,6 @@ A `sort` event fires whenever the grid re-sorts the rows. That is more often tha
 
 The payload depends on where the sort came from, not on how many levels it has. A sort made by a plain header click carries `column` and `order`. A sort set with `sortBy()`, with `addSort()` or by Shift+click carries `sorts` instead, even when it has only one level. So check `e.sorts` first, as the code in [Events](Events) does.
 
+Use the `Clear sort` button in the sample below to hand the two-level sort back to the user: while that sort is set, a plain header click changes nothing.
+
 {sample}DS\_Data\_Sheet\_09{sample}

@@ -34,4 +34,6 @@ Grouping follows the redraw rule, and it fires a `groupchange` event.
 
 **Do not set a sort in a grouped grid.** As [Sorting](Sorting) says, the row order comes from the groups, and the sort is ignored.
 
+Use the buttons in the sample below to open and close the three category groups, each of which carries a summed price and an average stock.
+
 {sample}DS\_Data\_Sheet\_14{sample}

@@ -64,6 +64,8 @@ In checkbox mode a click anywhere on a row toggles that row, not only a click on
 
 The `clipboardcopy` and `clipboardpaste` events fire - see [Events](Events).
 
+In the sample below, the panel shows the TSV that `buildTSV()` returns for the ticked rows, with the column titles on the first line.
+
 {sample}DS\_Data\_Sheet\_17{sample}
 
 ## Context Menu
@@ -82,12 +84,13 @@ chart.contextMenu().items([
   {separator: true},
   {text: 'Show cell info', icon: 'ac ac-info-circle', action: function (context) {
     // the context tells you which cell the menu was opened on
-    info.innerHTML = 'field: ' + context.field + ', data index: ' + context.dataIndex;
+    info.innerHTML = 'field: <b>' + context.field + '</b>, data index: <b>' + context.dataIndex +
+      '</b>, value: <b>' + data[context.dataIndex][context.field] + '</b>';
   }}
 ]);
 
 // open the same menu from your own button
-chart.contextMenu().show(x, y, {rowIndex: 0, colIndex: 2, dataIndex: 0, field: 'price'});
+chart.contextMenu().show(e.clientX, e.clientY, {rowIndex: 0, colIndex: 2, dataIndex: 0, field: 'price'});
 ```
 
 `items(null)` restores the defaults. `items()` with no argument does **not** read the menu back: it also throws your custom menu away and goes back to the defaults. There is no way to read the current menu.
@@ -95,5 +98,7 @@ chart.contextMenu().show(x, y, {rowIndex: 0, colIndex: 2, dataIndex: 0, field: '
 {api:anychart.core.dataSheet.ContextMenu#show}show(x, y, context){api} opens the menu from your own button or a long press, and {api:anychart.core.dataSheet.ContextMenu#hide}hide(){api} closes it. Build the context object with those four names. A menu you open this way always shows the entries for a cell, never the ones for a header. {api:anychart.core.dataSheet.ContextMenu#enabled}enabled(false){api} turns the menu off completely.
 
 A `contextmenuaction` event carries `item`, `rowIndex` and `colIndex`.
+
+In the sample below, right-click any cell or press the button to open the same three-entry menu, and `Show cell info` writes the field, the data index and the value into the line above the grid.
 
 {sample}DS\_Data\_Sheet\_18{sample}

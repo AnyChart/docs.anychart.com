@@ -25,4 +25,6 @@ chart.headerGroup('Stock', [2, 3]);
 
 A new group with a title that already exists replaces the old one. It does not add a second header group with the same title. {api:anychart.charts.DataSheet#headerGroups}headerGroups(){api} returns the current groups as `{title, columns}` objects, and {api:anychart.charts.DataSheet#removeHeaderGroup}removeHeaderGroup(title){api} deletes one.
 
+In the sample below, the header row is 72 px tall and carries two group titles: `Item` above Product and Category, and `Stock` above Price and Units.
+
 {sample}DS\_Data\_Sheet\_08{sample}

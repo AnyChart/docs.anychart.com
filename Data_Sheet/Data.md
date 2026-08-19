@@ -29,11 +29,15 @@ Always declare your columns when you use nested data. With automatic columns the
 var data = [
   {name: "Tech", units: 408, value: 94120, children: [
     {name: "Laptop", units: 34, value: 40800},
-    {name: "Monitor", units: 58, value: 17400}
+    {name: "Monitor", units: 58, value: 17400},
+    {name: "Keyboard", units: 240, value: 19200},
+    {name: "Headset", units: 76, value: 16720}
   ]},
   {name: "Office", units: 140, value: 28520, children: [
     {name: "Chair", units: 120, value: 18000},
-    {name: "Desk", units: 12, value: 5400}
+    {name: "Desk", units: 12, value: 5400},
+    {name: "Lamp", units: 0, value: 0},
+    {name: "Cabinet", units: 8, value: 5120}
   ]}
 ];
 
@@ -65,6 +69,8 @@ The two formats number the rows differently. In the flat format the child rows a
 
 **Limitation.** Tree rows are always fully open in this release, and you cannot close them. The arrows appear, but a click on an arrow does nothing. {api:anychart.core.dataSheet.Hierarchy#collapseAll}collapseAll(){api} does nothing here either, because the grid rebuilds the tree fully open on every redraw. {api:anychart.core.dataSheet.Hierarchy#expandAll}expandAll(){api} is harmless, because everything is already open. Opening and closing **do** work for groups - see [Grouping](Grouping). Use {api:anychart.core.dataSheet.Hierarchy#isActive}isActive(){api} to check that the grid built a tree or a grouping. It returns true in both cases, so it never tells you which of the two you have. To find that out, call {api:anychart.core.dataSheet.Hierarchy#getGroupFields}getGroupFields(){api} as well. It returns `null` when you did not group the rows. So `isActive()` true plus `getGroupFields()` null means the grid read your data as a tree.
 
+In the sample below, two parent rows carry four children each, and the three declared columns keep the `children` field out of the grid.
+
 {sample}DS\_Data\_Sheet\_02{sample}
 
 ## Updating the Data
@@ -93,5 +99,7 @@ function addRowNewArray() {
 The grid takes a one-time copy of the rows. It does not watch your array, and it does not watch any AnyChart data object.
 
 Cell editing works in the opposite direction. The grid writes the new values into the row objects you passed, so your own array already holds them. See [Cell Editing](Cell_Editing).
+
+Use the buttons in the sample below to compare the two calls: `Add row, same array` leaves the grid unchanged, and `Add row, new array` makes the new rows appear.
 
 {sample}DS\_Data\_Sheet\_03{sample}

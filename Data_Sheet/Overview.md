@@ -143,7 +143,11 @@ var data = [
   {id: 1, product: "Laptop", category: "Tech", price: 1200, stock: 34, status: "In stock"},
   {id: 2, product: "Chair", category: "Office", price: 150, stock: 120, status: "In stock"},
   {id: 3, product: "Monitor", category: "Tech", price: 300, stock: 58, status: "In stock"},
-  {id: 4, product: "Desk", category: "Office", price: 450, stock: 12, status: "Low"}
+  {id: 4, product: "Desk", category: "Office", price: 450, stock: 12, status: "Low"},
+  {id: 5, product: "Keyboard", category: "Tech", price: 80, stock: 240, status: "In stock"},
+  {id: 6, product: "Lamp", category: "Office", price: 45, stock: 0, status: "Out of stock"},
+  {id: 7, product: "Headset", category: "Tech", price: 220, stock: 76, status: "In stock"},
+  {id: 8, product: "Cabinet", category: "Office", price: 640, stock: 8, status: "Low"}
 ];
 
 // create a data sheet
@@ -167,5 +171,7 @@ Three rules apply to every Data Sheet in this section:
 * **Give the container a real height.** The grid fills its container. If the parent element has a height of zero, the scrolling area also gets no height. The grid then builds only a few rows, inside a box that is almost invisible. A container with `height: 100%` inside a page that has a height is fine.
 * **Settings need a redraw.** A setting you apply after the first `draw()` does nothing until you call `draw()` again. For example, `sortBy()` on its own leaves the rows untouched. This rule comes back in [Sorting](Sorting), [Filtering](Filtering_and_Search), [Search](Filtering_and_Search#search) and [Grouping](Grouping). Two groups of settings do not follow the rule, and a `draw()` does not help them: the [Header](Header) settings and the two [Large Data Sets](Large_Data_Sets) settings. Set those before the first `draw()`.
 * **Only the rows on screen exist in the page HTML.** 5,000 rows of data produce only a few dozen row elements. See [Large Data Sets](Large_Data_Sets).
+
+In the sample below, eight product rows become six automatic columns, and the price `1200` reads `1,200`.
 
 {sample}DS\_Data\_Sheet\_01{sample}

@@ -12,19 +12,20 @@ Remember this in your own code. A CSS rule, a `querySelectorAll()` count or a UI
 
 ```
 // build 5,000 rows
+var names = ["Laptop", "Chair", "Monitor", "Desk", "Keyboard", "Lamp", "Headset", "Cabinet", "Shelf", "Webcam"];
+var categories = ["Tech", "Office", "Storage"];
 var rows = [];
 for (var i = 1; i <= 5000; i++) {
   rows.push({
     id: i,
-    product: "Product #" + i,
-    category: "Tech",
+    product: names[i % names.length] + " #" + i,
+    category: categories[i % categories.length],
     price: 20 + ((i * 37) % 1500),
     stock: (i * 13) % 500
   });
 }
 
-// virtual scrolling is on by default:
-// keep 25 extra rows above and below the visible rows
+// virtual scrolling is on by default: keep 25 extra rows above and below the visible rows
 // set this before the first draw()
 chart.virtualScroll().bufferSize(25);
 ```
@@ -34,5 +35,7 @@ chart.virtualScroll().bufferSize(25);
 Virtual scrolling needs a container with a real height. With a zero-height container the grid builds only the buffer rows - see the size rule in [Quick Start](Overview#quick_start).
 
 The `aria-rowcount` attribute on the grid reports every row the current filter keeps, not the number of rows in the page. With no filter that is the whole data set, so for the sample below it reads 5000.
+
+In the sample below, the line above the grid compares the 5,000 rows in the data with the row elements that really exist in the page.
 
 {sample}DS\_Data\_Sheet\_16{sample}

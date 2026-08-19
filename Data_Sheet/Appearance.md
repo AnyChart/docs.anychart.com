@@ -54,6 +54,8 @@ Sizing works the same way as everywhere else in AnyChart: `container()`, `width(
 
 The grid works out its layout during `draw()`. So a container that changes size later - a responsive page, a splitter, a dashboard tile - needs a `draw()` of its own after the change. Call it from your own resize handler.
 
+In the sample below, the row height, the header height and the five fills come from the API, while the uppercase header text, the cell padding and the right-aligned number cells come from the CSS above.
+
 {sample}DS\_Data\_Sheet\_15{sample}
 
 ## CSS Classes

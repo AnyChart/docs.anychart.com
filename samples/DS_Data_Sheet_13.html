@@ -56,7 +56,7 @@ anychart.onDocumentReady(function () {
   chart.column(2, {field: 'price',    title: 'Price',    width: 110, dataType: 'number', editable: true});
   chart.column(3, {field: 'stock',    title: 'Units',    width: 110, dataType: 'number'});
 
-  // a validator must be set as a method call - the column config object ignores it
+  // a validator must be set as a method call - the column configuration object ignores it
   chart.column(2).validator(function (value, rowData) {
     if (value <= 0) {
       return 'The price of ' + rowData.product + ' must be above 0';

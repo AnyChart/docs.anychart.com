@@ -18,7 +18,7 @@ chart.filter().filterBy('category', {type: 'text', mode: 'exact', value: 'Tech'}
 
 // csv() returns the text AND downloads the file
 // the exported price is the raw 1200, not the $1200 shown in the cell
-var text = chart.export().csv({filename: 'products', separator: ','});
+out.textContent = chart.export().csv({filename: 'products', separator: ','});
 
 // json() only downloads, it returns nothing
 chart.export().json({filename: 'products', pretty: true});
@@ -44,6 +44,8 @@ The CSV export quotes a field that holds the separator, a quote or a line break.
 Printing always follows the current sorting and filtering.
 
 This is not the AnyChart Exports module. The Data Sheet still has the shared `saveAsPng()`, `saveAsPdf()`, `saveAsSvg()` and `toSvg()` methods. You will find them on the object, but they do not export the grid. The grid is HTML. These methods save the hidden SVG drawing area behind the grid, and that area is empty. Use `export().csv()`, `export().json()` or `print()` instead.
+
+Use the buttons in the sample below to export the four filtered Tech rows: the panel shows the CSV text, and the exported price is the raw number, not the `$` text in the cell.
 
 {sample}DS\_Data\_Sheet\_19{sample}
 

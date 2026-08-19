@@ -29,8 +29,9 @@ chart.column(2).validator(function (value, rowData) {
   return true;
 });
 
-// the edits are written into the row objects you passed to data(), but
-// celleditend fires just BEFORE the value is written, so read your array inside setTimeout
+// the edits are written into the row objects you passed to data()
+// celleditend fires just BEFORE the new value is written,
+// so read your array on the next tick
 chart.listen('celleditend', function () {
   setTimeout(showData, 0);
 });
@@ -56,5 +57,7 @@ Five things to know before you use cell editing in your own code:
 * **A number edit with no validator becomes 0.** Text that is not a number is written into your data as `0`, not rejected. Add a validator if that matters
 
 To stop an edit from starting, return `false` from a `celleditstart` listener. Do **not** call `e.preventDefault()` on that event - see [Events](Events).
+
+In the sample below, double-click a Product or a Price cell to edit it: the panel under the grid shows your own array, a price of 0 or less is rejected, and `Undo last edit` reverts the last change.
 
 {sample}DS\_Data\_Sheet\_13{sample}

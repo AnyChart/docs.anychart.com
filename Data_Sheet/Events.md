@@ -64,4 +64,6 @@ Three things surprise people:
 
 There are no row click, double-click or hover events. Use `rowSelect` for a click, and CSS `:hover` or `rowHoverFill()` for a hover.
 
+Use the buttons in the sample below, and click a header, click a row or drag a column edge, to see each event and its payload appear in the log.
+
 {sample}DS\_Data\_Sheet\_20{sample}

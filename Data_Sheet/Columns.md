@@ -35,6 +35,8 @@ Declaring columns **replaces** the whole automatic set. The sample data below ha
 
 **A column cannot be removed.** There is no `removeColumn()`, and a column has no `visible()` setting, so the set of columns only ever grows. Declare the columns you want once, before the first `draw()`. To show a different set later, build a new Data Sheet. For the same reason, never call `column(index)` just to test whether a column exists: as a getter it creates the column when the index is new.
 
+In the sample below, six data fields give three declared columns, and a method call replaces the title of the price column.
+
 {sample}DS\_Data\_Sheet\_04{sample}
 
 ## Data Types and Formats
@@ -68,7 +70,7 @@ chart.column(0, {field: 'product', title: 'Product', width: 200});
 chart.column(1, {field: 'price', title: 'Price', width: 130, dataType: 'number'});
 
 // a format FUNCTION takes no arguments - the value arrives as this.value
-// it also replaces the default number formatting, so the separator is gone: $1200
+// it also replaces the default number formatting, so the separator is gone
 chart.column(2, {
   field: 'price',
   title: 'Price, function',
@@ -79,7 +81,7 @@ chart.column(2, {
   }
 });
 
-// a format STRING uses the {%value} placeholder: 34 pcs
+// a format STRING uses the {%value} placeholder
 chart.column(3, {
   field: 'stock',
   title: 'Stock, format string',
@@ -147,6 +149,8 @@ You do not always have to call {api:anychart.charts.DataSheet#autoSizeColumns}au
 
 The user can drag the right edge of a header cell to resize a column. Every resize fires a `columnresize` event - see [Events](Events).
 
+In the sample below, the SKU column is `'fixed'`, the Category column is `'auto'`, and the Product and Status columns are `'flex'` columns that split the free space one third to two thirds.
+
 {sample}DS\_Data\_Sheet\_06{sample}
 
 ## Pinning and Reordering
@@ -158,7 +162,7 @@ A pinned column stays at the edge of the grid while the other columns scroll sid
 ```
 // the columns are wider than the container, so the grid scrolls sideways
 // minWidth matters here: without it the row squeezes the columns to fit,
-// nothing scrolls sideways, and pinning has no visible effect
+// nothing scrolls sideways, and a pinned column has nothing to freeze against
 chart.column(0, {field: 'product',  title: 'Product',  width: 220, minWidth: 220, pinned: 'left'});
 chart.column(1, {field: 'category', title: 'Category', width: 170, minWidth: 170});
 chart.column(2, {field: 'price',    title: 'Price',    width: 160, minWidth: 160, dataType: 'number'});
@@ -167,7 +171,7 @@ chart.column(4, {field: 'sku',      title: 'SKU',      width: 160, minWidth: 160
 chart.column(5, {field: 'status',   title: 'Status',   width: 200, minWidth: 200, pinned: 'right'});
 
 // move SKU from position 4 to position 1
-// reorderColumn() never moves a pinned column, so Product stays first and Status stays last
+// pinned columns are never moved, so Product stays first and Status stays last
 chart.reorderColumn(4, 1);
 chart.draw();
 ```
@@ -175,5 +179,7 @@ chart.draw();
 {api:anychart.charts.DataSheet#reorderColumn}reorderColumn(fromIndex, toIndex){api} moves a column from code. The user can do the same by dragging a header cell. Both routes fire a `columnreorder` event. `reorderColumn()` refuses to move a pinned column, and it refuses to drop a column onto one. Dragging has no such rule, so a user can still drag a pinned header out of its place.
 
 Pinning is also in the default [context menu](Keyboard_and_Clipboard#context_menu), as "Pin Left" and "Unpin Column".
+
+In the sample below, Product is pinned left and Status is pinned right, so both stay in place while the other columns scroll sideways, and `reorderColumn(4, 1)` has already moved SKU to the second position.
 
 {sample}DS\_Data\_Sheet\_07{sample}
