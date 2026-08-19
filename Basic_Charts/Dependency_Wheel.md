@@ -187,7 +187,7 @@ Set the links with the {api:anychart.charts.DependencyWheel#link}link(){api} met
 
 Link [labels](../Common_Settings/Labels) are hidden by default. Turning them on in the normal state shows a label on every link at once, each one placed at the middle of its band. This works well when there are only a few links. When there are many, use the [link tooltip](#link_tooltip) instead.
 
-#### Link Colors
+#### Link Color Mode
 
 The {api:anychart.charts.DependencyWheel#colorMode}colorMode(){api} method sets the base color of the links:
 
@@ -212,7 +212,9 @@ function changeColorMode(value) {
 
 {sample}BCT\_Dependency\_Wheel\_04{sample}
 
-A link is drawn with a fill only. To style the states, use the {api:anychart.core.StateSettings#fill}fill(){api} method. If you derive the state fills from `sourceColor`, a link keeps its own color and only becomes darker:
+#### Link Colors
+
+A link is drawn with a fill only, and its base color comes from [Link Color Mode](#link_color_mode). To style the states, use the {api:anychart.core.StateSettings#fill}fill(){api} method. If you derive the state fills from `sourceColor`, a link keeps its own color and only becomes darker:
 
 ```
 // link states: a link keeps its own color and only deepens
