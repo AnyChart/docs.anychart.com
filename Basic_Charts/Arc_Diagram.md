@@ -231,8 +231,6 @@ Set the node bars and their [labels](../Common_Settings/Labels) with the {api:an
 
 A node is hovered when you point at it. Its connections are then highlighted. A node is selected when you click it. A click replaces any previous selection. Instead, Ctrl/Cmd + click or Shift + click toggles a node into or out of a multi-node selection. A plain click on the empty area clears the selection. A click there with one of these keys does nothing.
 
-You can also select nodes in code. Both {api:anychart.charts.ArcDiagram#select}select(){api} and {api:anychart.charts.ArcDiagram#unselect}unselect(){api} accept a node name or an array of node names. select() adds those nodes to the selection. unselect() removes only those nodes. Called with no argument, select() selects every node and unselect() clears the whole selection.
-
 Node labels show the node name and are on by default. In the horizontal orientation they are drawn at an angle. Use {api:anychart.core.ui.LabelsFactory#rotation}rotation(){api} and font settings to adjust them:
 
 ```
