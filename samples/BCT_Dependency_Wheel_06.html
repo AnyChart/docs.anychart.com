@@ -65,6 +65,12 @@ anychart.onDocumentReady(function () {
   // show every label, even if some of them collide
   chart.dropOverlappedLabels(false);
 
+  // the tooltip of a city, built from the node tokens
+  chart.node().tooltip().titleFormat("{%name}");
+  chart.node().tooltip().format(
+    "Routes: {%connections}\nFlights a week: {%weight}\nShare of all flights: {%percent}{decimalsCount:1}%"
+  );
+
   // set the container id
   chart.container("container");
   // initiate drawing the chart

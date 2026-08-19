@@ -124,6 +124,8 @@ The color of each node comes from the chart [palette](../Appearance_Settings/Pal
 * `"target"` — a link takes the color of its target (`to`) node
 * `"gradient"` — a link blends from the source color to the target color. The {api:anychart.charts.DependencyWheel#reverseGradient}reverseGradient(){api} method flips the direction of the blend
 
+The mode sets only the base color of the links — the nodes keep their palette colors in every mode. To style the link states on top of the base color, see [Link Colors](#link_colors).
+
 Both methods work on a chart that is already drawn, so a control can switch the mode without rebuilding the chart. Use the buttons in the sample below to compare all four results:
 
 ```
@@ -205,11 +207,13 @@ function byDataOrder(node1, node2) {
 
 ### Nodes
 
-Set the node arcs and their labels with the {api:anychart.charts.DependencyWheel#node}node(){api} method. The {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} methods work in each of the three [states](../Common_Settings/Interactivity/States). Labels come from the normal state only. So set them with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state.
+Set the node arcs with the {api:anychart.charts.DependencyWheel#node}node(){api} method. It works in each of the three [states](../Common_Settings/Interactivity/States): normal, hovered, and selected.
 
 A node is hovered when you point at it. Hovering a node also highlights its links. A node is selected when you click it. A plain click replaces any earlier selection. Ctrl/Cmd/Shift + click adds a node to a multi-node selection or removes it. It does not replace the selection. A plain click on the empty area clears the selection.
 
-[Labels](../Common_Settings/Labels) of the nodes are enabled by default and show the node name. Font settings and [text formatters](../Common_Settings/Text_Formatters) are available:
+#### Node Labels
+
+[Labels](../Common_Settings/Labels) of the nodes are enabled by default and show the node name. They come from the normal state only, so set them with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state. Font settings and [text formatters](../Common_Settings/Text_Formatters) are available:
 
 ```
 // add the node's share of the total flow to its label
@@ -226,11 +230,13 @@ chart.node().normal().labels().position("circular");
 A label that overlaps an already drawn label is hidden by default. To control this behavior, use the {api:anychart.charts.DependencyWheel#dropOverlappedLabels}dropOverlappedLabels(){api} method:
 
 ```
-// show every label, even if some of them overlap
+// show every label, even if some of them collide
 chart.dropOverlappedLabels(false);
 ```
 
-The {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} methods accept functions; deriving the state fills from `sourceColor` keeps them consistent with the palette:
+#### Node Colors
+
+A node takes its color from the chart [palette](../Appearance_Settings/Palettes) — see [Color Mode](#color_mode). To style the states, use the {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} methods. They accept functions, and deriving the state fills from `sourceColor` keeps them consistent with the palette:
 
 ```
 // node states: the fill darkens and the stroke thickens as the state gets more active
@@ -248,15 +254,31 @@ chart.node().selected().fill(function () {
 chart.node().selected().stroke("#0b1220", 3);
 ```
 
-In the sample below, the three states are styled as one scale — the fill grows darker and the stroke heavier as the state gets more active — and every label is laid along the ring:
+#### Node Tooltip
+
+Nodes and links have separate [tooltips](../Common_Settings/Tooltip). A tooltip set with {api:anychart.core.Chart#tooltip}chart.tooltip(){api} applies to both, so a format written for one of them leaves the other with empty tokens. To set the node tooltip, use `node().tooltip()`:
+
+```
+// the tooltip of a city, built from the node tokens
+chart.node().tooltip().titleFormat("{%name}");
+chart.node().tooltip().format(
+  "Routes: {%connections}\nFlights a week: {%weight}\nShare of all flights: {%percent}{decimalsCount:1}%"
+);
+```
+
+In the sample below, every label is laid along the ring, the three states are styled as one scale — the fill grows darker and the stroke heavier as the state gets more active — and the tooltip reports what the node knows:
 
 {sample}BCT\_Dependency\_Wheel\_06{sample}
 
 ### Links
 
-Set the links with the {api:anychart.charts.DependencyWheel#link}link(){api} method. Like [nodes](#nodes), it works in three states. A link is hovered when you point at it. It is selected when you click it. Hovering or selecting a node also highlights its links. Hovering or selecting a link also highlights its two end nodes. Link labels support these [text formatter](../Common_Settings/Text_Formatters) tokens: `{%from}`, `{%to}`, `{%value}`, and `{%name}` (the `from → to` string). They are hidden by default, and turning them on in the normal state shows a label on every link at once, each one placed at the middle of its band. That suits a wheel with few links; on a busy wheel the [tooltip](#tooltips) identifies a link better, which is what the sample below uses.
+Set the links with the {api:anychart.charts.DependencyWheel#link}link(){api} method. Like [nodes](#nodes), it works in three states. A link is hovered when you point at it. It is selected when you click it. Hovering or selecting a node also highlights its links. Hovering or selecting a link also highlights its two end nodes.
 
-The three [states](../Common_Settings/Interactivity/States) work as they do for [nodes](#nodes). Deriving the state fills from `sourceColor` keeps a link in its own color while it deepens:
+Link [labels](../Common_Settings/Labels) are hidden by default. Turning them on in the normal state shows a label on every link at once, each one placed at the middle of its band. That suits a wheel with few links; on a busy wheel the [link tooltip](#link_tooltip) identifies a link better.
+
+#### Link Colors
+
+A link is drawn with a fill only, and its base color comes from [Color Mode](#color_mode). To style the states, use the {api:anychart.core.StateSettings#fill}fill(){api} method. Deriving the state fills from `sourceColor` keeps a link in its own color while it deepens:
 
 ```
 // link states: a link keeps its own color and only deepens
@@ -266,30 +288,18 @@ chart.link().hovered().fill(function () {
 chart.link().selected().fill(function () {
   return anychart.color.darken(this.sourceColor, 0.25);
 });
+```
 
+#### Link Tooltip
+
+By default, the link tooltip uses the same format as the node tooltip, and node tokens show no value for a link. To set it, use `link().tooltip()`:
+
+```
 // the tooltip of a link names the route and its weekly flights
 chart.link().tooltip().titleFormat("{%from} - {%to}");
 chart.link().tooltip().format("Weekly flights: {%value}");
 ```
 
+In the sample below, the state fills deepen a link's own color and the tooltip names the route:
+
 {sample}BCT\_Dependency\_Wheel\_07{sample}
-
-### Tooltips
-
-Nodes and links have separate [tooltips](../Common_Settings/Tooltip), each with its own set of tokens. The node tooltip supports these tokens: `{%name}`, `{%weight}` (total flow through the node), `{%connections}` (number of links), and `{%percent}` (the node's share of the total flow). The link tooltip supports `{%from}`, `{%to}`, `{%value}`, and `{%name}` (the `from → to` string). By default, the link tooltip uses the same format as the node tooltip. So its `{%weight}` and `{%connections}` tokens show no value for a link. Set the link tooltip yourself, as shown below:
-
-A tooltip set with {api:anychart.core.Chart#tooltip}chart.tooltip(){api} applies to both, so a format written for one of them leaves the other with empty tokens. Set them separately:
-
-```
-// the tooltip of a city, built from the node tokens
-chart.node().tooltip().titleFormat("{%name}");
-chart.node().tooltip().format(
-  "Routes: {%connections}\nFlights a week: {%weight}\nShare of all flights: {%percent}{decimalsCount:1}%"
-);
-
-// the tooltip of a link: it has its own tokens
-chart.link().tooltip().titleFormat("{%from} - {%to}");
-chart.link().tooltip().format("Flights a week: {%value}");
-```
-
-{sample}BCT\_Dependency\_Wheel\_08{sample}
