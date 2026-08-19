@@ -1,9 +1,19 @@
 {:index 15}
 # Events
 
-Listen with the normal `chart.listen(type, handler)`.
+The grid reports what the user does through events. A header click, a filter, a row selection, a column resize, a clipboard action and a cell edit each fire an event, and the event object carries the details of what changed. You subscribe to them with the same `listen()` method that every other AnyChart type uses.
 
-Write the event name as a plain string. The `anychart.enums` object is not there when your code runs, so you cannot use its constants. The names are not case sensitive: `listen()` and the grid both change the name to lower case. Note that `e.type` always arrives in lower case: a listener for `'rowSelect'` reads `e.type` as `'rowselect'`.
+Use events when something outside the grid has to react: a counter that shows how many rows survived a filter, a panel that follows the selected row, a save call after an edit, or a rule that blocks an edit before the editor opens. This article shows how to attach a listener, lists every event with its payload, and covers the cases where an event fires more or less often than you expect.
+
+## Attaching a Listener
+
+To handle an event, use the normal `chart.listen(type, handler)`. Write the event name as a plain string. The `anychart.enums` object is not there when your code runs, so you cannot use its constants.
+
+The names are not case sensitive: `listen()` and the grid both change the name to lower case. Note that `e.type` always arrives in lower case: a listener for `'rowSelect'` reads `e.type` as `'rowselect'`.
+
+## Event Reference
+
+The grid fires the events below. Each row names the payload the handler receives, or the behavior that is special to that event:
 
 <table class="dtTABLE" width="700">
 <tbody>
@@ -24,6 +34,10 @@ Write the event name as a plain string. The `anychart.enums` object is not there
 <tr><td>detailexpand, detailcollapse</td><td>they belong to detail rows, which this section does not cover</td></tr>
 </tbody>
 </table>
+
+## Reading the Payload
+
+To find out what changed, read the properties of the event object inside the handler. The listeners below read the payload of the six events that a user action produces most often:
 
 ```
 // a plain header click sends column and order, a sort set from code sends sorts
@@ -56,14 +70,20 @@ chart.listen('search', function (e) {
 });
 ```
 
-Three things surprise people:
-
-* `rowSelect` fires from a user click or a keyboard selection. It does **not** fire from `select()` or `selectedIndices()` in code - see [Selection](Selection)
-* To stop a cell edit, return `false` from your `celleditstart` listener. Do not call `e.preventDefault()` on `celleditstart` or `celleditend`. The event object has a property with that name. The property hides the method, so the call fails. Setting `e.preventDefault = true` does nothing either, because the listener gets a copy of the event
-* `sort` fires whenever the grid re-sorts the rows, not only when the sort changes. A filter change or a data change re-runs the sort and fires the event again
-
-There are no row click, double-click or hover events. Use `rowSelect` for a click, and CSS `:hover` or `rowHoverFill()` for a hover.
-
 Use the buttons in the sample below, and click a header, click a row or drag a column edge, to see each event and its payload appear in the log.
 
 {sample}DS\_Data\_Sheet\_20{sample}
+
+## When Events Fire
+
+`rowSelect` fires from a user click or a keyboard selection. It does **not** fire from `select()` or `selectedIndices()` in code - see [Selection](Selection).
+
+`sort` fires whenever the grid re-sorts the rows, not only when the sort changes. A filter change or a data change re-runs the sort and fires the event again. See [Sorting](Sorting) and [Filtering](Filtering_and_Search).
+
+## Blocking a Cell Edit
+
+To stop a cell edit, return `false` from your `celleditstart` listener. Do not call `e.preventDefault()` on `celleditstart` or `celleditend`. The event object has a property with that name. The property hides the method, so the call fails. Setting `e.preventDefault = true` does nothing either, because the listener gets a copy of the event. See [Cell Editing](Cell_Editing).
+
+## Mouse and Hover Events
+
+There are no row click, double-click or hover events. Use `rowSelect` for a click, and CSS `:hover` or `rowHoverFill()` for a hover - see [Appearance](Appearance).
