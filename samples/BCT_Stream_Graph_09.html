@@ -31,8 +31,9 @@ anychart.onDocumentReady(function () {
 
   // create a chart
   var chart = anychart.streamGraph();
-  // set the chart title
+  // set the chart title and separate it from the stream
   chart.title("Stream Graph: Axes");
+  chart.title().padding(0, 0, 20, 0);
 
   // add a series (layer) per channel
   var series1 = chart.splineArea(searchData);
@@ -41,8 +42,6 @@ anychart.onDocumentReady(function () {
   series2.name("Social");
 
   // stack the layers from the zero baseline and show the Y axis
-  // (it is disabled by default: with the wiggle/silhouette offsets
-  // the vertical positions are relative)
   chart.offset("zero");
   chart.yAxis(true);
   // set the titles of the axes

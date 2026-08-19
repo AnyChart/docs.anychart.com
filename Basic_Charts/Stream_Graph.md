@@ -59,7 +59,7 @@ To create a Stream graph, use the {api:anychart#streamGraph}anychart.streamGraph
 The sample below shows how to create a basic Stream graph:
 
 ```
-// create data: weekly volume of three traffic sources
+// create data: weekly volume of three acquisition channels
 var searchData = [
   ["W1", 42],["W2", 45],["W3", 40],["W4", 38],["W5", 44],
   ["W6", 50],["W7", 55],["W8", 52],["W9", 48],["W10", 46]
@@ -145,10 +145,10 @@ The key setting of the Stream graph is the **offset**. This is the algorithm tha
 * `"expand"` — gives every category the same total height; the chart then shows each layer's share of the total. It looks like a percent-stacked chart with flat top and bottom edges
 * `"zero"` — stacks the layers from a flat zero baseline (an ordinary stacked area chart)
 
-The sample below starts with the `"silhouette"` offset and has a dropdown for switching between all four modes on the same data, so you can compare them directly. It also uses six layers instead of three: with many layers, the flowing shape of the stream is easier to see.
+Use the buttons in the sample below to compare all four modes on the same six-layer stream:
 
 ```
-// center the stack evenly around the zero line
+// set the initial offset mode
 chart.offset("silhouette");
 ```
 
@@ -156,23 +156,22 @@ chart.offset("silhouette");
 
 ### Series Type
 
-By default, the layers are drawn as [Spline Area](Spline_Area_Chart) series with smooth curved edges. You can also draw the layers as plain [Area](Area_Chart) series (straight edges). Or draw them as [Step Area](Step_Area_Chart) series (staircase edges). Use the {api:anychart.charts.StreamGraph#area}area(){api} and {api:anychart.charts.StreamGraph#stepArea}stepArea(){api} methods. You can also change the type of an existing series with {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api}:
+By default, the layers are drawn as [Spline Area](Spline_Area_Chart) series with smooth curved edges. You can also draw the layers as plain [Area](Area_Chart) series (straight edges). Or draw them as [Step Area](Step_Area_Chart) series (staircase edges). Use the {api:anychart.charts.StreamGraph#area}area(){api} and {api:anychart.charts.StreamGraph#stepArea}stepArea(){api} methods. You can also change the type of an existing series with {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api}.
 
 ```
-// layers drawn as step-area series (staircase edges)
+// layers drawn as step-area series
 var series1 = chart.stepArea(searchData);
 var series2 = chart.stepArea(socialData);
 var series3 = chart.stepArea(emailData);
-
-// a series type can also be changed later, e.g.:
-// series1.seriesType("area");
 ```
+
+In the sample below, the three layers are drawn as step-area series:
 
 {sample}BCT\_Stream\_Graph\_04{sample}
 
 ### Appearance
 
-The color of each layer comes from the chart [palette](../Appearance_Settings/Palettes). Set your own with the {api:anychart.charts.StreamGraph#palette}palette(){api} method. You set the [appearance settings](../Appearance_Settings) of individual series the same way as in other area-based series. The {api:anychart.core.StateSettings#fill}fill(){api} method sets the layer fill. The {api:anychart.core.StateSettings#stroke}stroke(){api} method sets its outline. Layers next to each other often look clearer with a thin contrasting stroke between them:
+The color of each layer comes from the chart [palette](../Appearance_Settings/Palettes). Set your own with the {api:anychart.charts.StreamGraph#palette}palette(){api} method. You set the [appearance settings](../Appearance_Settings) of individual series the same way as in other area-based series. The {api:anychart.core.cartesian.series.Base#fill}fill(){api} method sets the layer fill. The {api:anychart.core.cartesian.series.Base#stroke}stroke(){api} method sets its outline. Layers next to each other often look clearer with a thin contrasting stroke between them:
 
 ```
 // one palette color per layer
@@ -186,6 +185,8 @@ series3.stroke("1.5 #ffffff");
 // override the fill of one layer directly
 series1.fill("#014f86");
 ```
+
+In the sample below, the layers take their colors from a custom palette, a thin white stroke separates them, and the Search layer has a fill of its own:
 
 {sample}BCT\_Stream\_Graph\_05{sample}
 
@@ -205,6 +206,8 @@ series2.markers().type("circle");
 series2.markers().size(4);
 ```
 
+In the sample below, the Search layer shows a value label at every point and the Social layer shows circular point markers:
+
 {sample}BCT\_Stream\_Graph\_06{sample}
 
 ### Tooltips
@@ -216,6 +219,8 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box. It appears when you hover
 chart.tooltip().titleFormat("Week {%x}");
 chart.tooltip().format("{%seriesName}: {%value}");
 ```
+
+Hover a point in the sample below to see the union tooltip: its title shows the week and its body lists all three layers:
 
 {sample}BCT\_Stream\_Graph\_07{sample}
 
@@ -229,11 +234,13 @@ chart.legend().position("right");
 chart.legend().itemsLayout("vertical");
 ```
 
+In the sample below, the legend sits to the right of the stream with its items in one vertical column:
+
 {sample}BCT\_Stream\_Graph\_08{sample}
 
 ### Axes
 
-The X axis of a Stream graph works the same way as in other cartesian charts. The Y axis is **disabled by default**. With the `"wiggle"` and `"silhouette"` offsets, the layers move up and down, so the axis values would mislead you. With the `"zero"` offset, the Y axis becomes meaningful again. Turn it on with the {api:anychart.charts.StreamGraph#yAxis}yAxis(){api} method:
+The X axis of a Stream graph works the same way as in other cartesian charts. The Y axis is **disabled by default**. With the `"wiggle"` and `"silhouette"` offsets (see [Offset](#offset)), the layers move up and down, so the axis values would mislead you. With the `"zero"` offset, the Y axis becomes meaningful again. Turn it on with the {api:anychart.charts.StreamGraph#yAxis}yAxis(){api} method:
 
 ```
 // stack the layers from the zero baseline and show the Y axis
@@ -242,5 +249,7 @@ chart.yAxis(true);
 chart.yAxis().title("Weekly volume");
 chart.xAxis().title("Week");
 ```
+
+In the sample below, the layers are stacked from the zero baseline and both axes are shown with a title:
 
 {sample}BCT\_Stream\_Graph\_09{sample}

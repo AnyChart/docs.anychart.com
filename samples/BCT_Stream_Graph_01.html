@@ -44,11 +44,13 @@ anychart.onDocumentReady(function () {
   var series3 = chart.splineArea(emailData);
   series3.name("Email");
 
-  // set the chart title
+  // set the chart title and separate it from the stream
   chart.title("Stream Graph: Basic Sample");
+  chart.title().padding(0, 0, 20, 0);
 
-  // set the container id and draw
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>

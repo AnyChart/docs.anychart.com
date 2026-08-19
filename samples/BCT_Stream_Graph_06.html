@@ -31,8 +31,9 @@ anychart.onDocumentReady(function () {
 
   // create a chart
   var chart = anychart.streamGraph();
-  // set the chart title
+  // set the chart title and separate it from the stream
   chart.title("Stream Graph: Labels and Markers");
+  chart.title().padding(0, 0, 20, 0);
 
   // add a series (layer) per channel
   var series1 = chart.splineArea(searchData);

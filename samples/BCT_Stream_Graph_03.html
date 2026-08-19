@@ -12,32 +12,24 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
 
     <style>
-        html, body {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        label {
-            display: inline-block;
-            margin: 10px 0 0 10px;
-        }
-        #container {
-            position: absolute;
-            width: 100%;
-            top: 40px;
-            bottom: 0;
-        }
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { display: flex; flex-direction: column; }
+        #controls { padding: 10px; }
+        #container { flex: 1; }
     </style>
 </head>
 <body>
-<label for="offsetSelect">Offset: </label>
-<select id="offsetSelect" onchange="changeOffset()">
-    <option value="wiggle">wiggle</option>
-    <option value="silhouette" selected="selected">silhouette</option>
-    <option value="expand">expand</option>
-    <option value="zero">zero</option>
-</select>
+<div id="controls">
+    <span>Offset:</span>
+    <input type="radio" name="offset" id="offsetWiggle" onclick="changeOffset('wiggle')">
+    <label for="offsetWiggle">wiggle</label>
+    <input type="radio" name="offset" id="offsetSilhouette" onclick="changeOffset('silhouette')" checked>
+    <label for="offsetSilhouette">silhouette</label>
+    <input type="radio" name="offset" id="offsetExpand" onclick="changeOffset('expand')">
+    <label for="offsetExpand">expand</label>
+    <input type="radio" name="offset" id="offsetZero" onclick="changeOffset('zero')">
+    <label for="offsetZero">zero</label>
+</div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -70,8 +62,9 @@ anychart.onDocumentReady(function () {
 
   // create a chart
   chart = anychart.streamGraph();
-  // set the chart title
+  // set the chart title and separate it from the stream
   chart.title("Stream Graph: Offset");
+  chart.title().padding(0, 0, 20, 0);
 
   // add a series (layer) per channel
   var series1 = chart.splineArea(searchData);
@@ -96,9 +89,9 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// apply the chosen offset mode
-function changeOffset() {
-  chart.offset(document.getElementById("offsetSelect").value);
+// apply the chosen offset mode: the chart redraws itself
+function changeOffset(value) {
+  chart.offset(value);
 }
 </script>
 </body>

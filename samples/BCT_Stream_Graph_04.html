@@ -35,8 +35,9 @@ anychart.onDocumentReady(function () {
 
   // create a chart
   var chart = anychart.streamGraph();
-  // set the chart title
-  chart.title("Stream Graph: Step Area Series");
+  // set the chart title and separate it from the stream
+  chart.title("Stream Graph: Series Type");
+  chart.title().padding(0, 0, 20, 0);
 
   // layers drawn as step-area series
   var series1 = chart.stepArea(searchData);
@@ -45,9 +46,6 @@ anychart.onDocumentReady(function () {
   series2.name("Social");
   var series3 = chart.stepArea(emailData);
   series3.name("Email");
-
-  // a series type can also be changed later, e.g.:
-  // series1.seriesType("area");
 
   // set the container id
   chart.container("container");
