@@ -173,7 +173,19 @@ In the sample below, the node bars are blue with a white outline, the labels are
 
 Set the arcs with the {api:anychart.charts.ArcDiagram#link}link(){api} method. Like [nodes](#nodes), it has three states: an arc is hovered when you point at it and selected when you click it.
 
-Link [labels](../Common_Settings/Labels) are hidden by default; turning them on shows a label on every arc at once, which suits a diagram with few links. The [link tooltip](#link_tooltip) identifies an arc better.
+#### Link Labels
+
+Link [labels](../Common_Settings/Labels) are hidden by default. Turning them on shows a label on every arc at once, which suits a diagram with few links; on a busy diagram the [link tooltip](#link_tooltip) identifies an arc better. A short format keeps the labels readable:
+
+```
+// show the weight of each link on its arc
+chart.link().normal().labels().enabled(true);
+chart.link().normal().labels().format("{%value}");
+```
+
+In the sample below, each arc carries its weight:
+
+{sample}BCT\_Arc\_Diagram\_04{sample}
 
 #### Link Colors
 
@@ -191,7 +203,7 @@ chart.link().selected().fill(function () {
 
 Hover or click an arc in the sample below to see how its color becomes darker:
 
-{sample}BCT\_Arc\_Diagram\_04{sample}
+{sample}BCT\_Arc\_Diagram\_05{sample}
 
 #### Link Color Mode
 
@@ -216,21 +228,21 @@ function changeColorMode(value) {
 }
 ```
 
-{sample}BCT\_Arc\_Diagram\_05{sample}
+{sample}BCT\_Arc\_Diagram\_06{sample}
 
 #### Link Tooltip
 
-Links have a [tooltip](../Common_Settings/Tooltip) of their own. By default, its title is the two node names joined by an arrow, and its body is the weight of the link. To set it, use `link().tooltip()`:
+Links have a [tooltip](../Common_Settings/Tooltip) of their own. By default, its title is the two node names joined by an arrow, and its body is the weight of the link. To set your own text, use `link().tooltip()`:
 
 ```
-// the tooltip of a link names the two departments and the requests
+// the tooltip of a link: a sentence built from its tokens
 chart.link().tooltip().titleFormat("{%from} -> {%to}");
-chart.link().tooltip().format("Requests: {%value}");
+chart.link().tooltip().format("{%value} requests from {%from} to {%to}");
 ```
 
-In the sample below, the link tooltip shows the two connected departments and their requests:
+In the sample below, the link tooltip puts the weight and the two departments into a sentence:
 
-{sample}BCT\_Arc\_Diagram\_06{sample}
+{sample}BCT\_Arc\_Diagram\_07{sample}
 
 ### Orientation
 
@@ -249,7 +261,7 @@ function setLayout(orientation, direction) {
 
 Both methods work on a chart that is already drawn. Use the buttons in the sample below to rotate the layout and flip the arcs:
 
-{sample}BCT\_Arc\_Diagram\_07{sample}
+{sample}BCT\_Arc\_Diagram\_08{sample}
 
 ### Geometry
 
@@ -277,7 +289,7 @@ function changeNodeWidth(value) {
 
 All three methods work on a chart that is already drawn. Drag the sliders in the sample below to see what each one changes; the arcs stay below the node line:
 
-{sample}BCT\_Arc\_Diagram\_08{sample}
+{sample}BCT\_Arc\_Diagram\_09{sample}
 
 ### Sorting
 
@@ -306,5 +318,5 @@ function changeSortOrder(value) {
 
 Every order works on a chart that is already drawn. Use the buttons in the sample below to compare them; the node colors follow the `group` field, so the group order shows its clusters:
 
-{sample}BCT\_Arc\_Diagram\_09{sample}
+{sample}BCT\_Arc\_Diagram\_10{sample}
 
