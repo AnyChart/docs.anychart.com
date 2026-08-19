@@ -13,10 +13,12 @@ To build a Vertical Dumbbell chart, use the {api:anychart#vertical}anychart.vert
 
 ```
 // create a chart
-chart = anychart.vertical();
+var chart = anychart.vertical();
 
 // create a dumbbell series and set the data
 var series = chart.dumbbell(data);
 ```
+
+In the sample below, the categories run down the vertical axis and each dumbbell extends horizontally.
 
 {sample}BCT\_Vertical\_Dumbbell\_Chart{sample}

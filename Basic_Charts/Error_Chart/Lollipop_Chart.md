@@ -12,13 +12,13 @@ To learn more about error charts in general and how to customize them, see [Erro
 To build a Lollipop chart, use the {api:anychart#lollipop}anychart.lollipop(){api} chart constructor, then create a Lollipop series with the {api:anychart.charts.Cartesian#lollipop}lollipop(){api} method. To add error bars, call {api:anychart.core.cartesian.series.Lollipop#error}error(){api}.
 
 ```
-// create a chart
-chart = anychart.lollipop();
+// create a lollipop chart
+var chart = anychart.lollipop();
 
 // create a lollipop series and set the data
 var series = chart.lollipop(data);
 
-// create error bars
+// add error bars to the series
 series.error("10%");
 ```
 

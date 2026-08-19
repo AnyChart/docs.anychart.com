@@ -12,8 +12,8 @@ To learn more about vertical charts in general and how to customize them, see [V
 To build a Vertical Lollipop chart, use the {api:anychart#vertical}anychart.vertical(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#lollipop}lollipop(){api} method to create a Lollipop series.
 
 ```
-// create a chart
-chart = anychart.vertical();
+// create a vertical chart
+var chart = anychart.vertical();
 
 // create a lollipop series and set the data
 var series = chart.lollipop(data);

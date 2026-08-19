@@ -12,14 +12,15 @@ The concept of stacking in AnyChart is explained in this article: [Stacked (Over
 To build a Percent Stacked Lollipop Chart, create a multiple-series [Lollipop Chart](../../Lollipop_Chart) and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to **percent**:
 
 ```
-// create a chart
-chart = anychart.column();
+// create a column chart, then add lollipop series to it
+var chart = anychart.column();
 
 // enable the percent stacking mode
 chart.yScale().stackMode("percent");
 
-// create lollipop series
+// create the first lollipop series and set the data
 var series1 = chart.lollipop(seriesData_1);
+// create the second lollipop series and set the data
 var series2 = chart.lollipop(seriesData_2);
 ```
 
