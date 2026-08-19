@@ -12,70 +12,50 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
 
     <style>
-        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
-        body { display: flex; flex-direction: column; }
-        #controls { padding: 10px; }
-        #container { flex: 1; }
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
     </style>
 </head>
 <body>
-<div id="controls">
-    <span>Sort nodes:</span>
-    <input type="radio" name="sort" id="sortAsc" onclick="changeSortOrder('asc')" checked>
-    <label for="sortAsc">smallest first</label>
-    <input type="radio" name="sort" id="sortDesc" onclick="changeSortOrder('desc')">
-    <label for="sortDesc">largest first</label>
-    <input type="radio" name="sort" id="sortData" onclick="changeSortOrder('data')">
-    <label for="sortData">data order</label>
-</div>
 <div id="container"></div>
 <script>
-var dataOrder = {};
-
 anychart.onDocumentReady(function () {
-  // create data: rows in the order the routes were added, not by weight
+  // create data: weekly flights between the cities
   var data = [
-    {from: "NYC", to: "Cairo", weight: 6},
     {from: "Paris", to: "Tokyo", weight: 18},
-    {from: "Dubai", to: "Cairo", weight: 4},
     {from: "Paris", to: "NYC", weight: 14},
     {from: "Paris", to: "Dubai", weight: 8},
     {from: "Tokyo", to: "NYC", weight: 10},
-    {from: "Tokyo", to: "Dubai", weight: 5}
+    {from: "Tokyo", to: "Dubai", weight: 5},
+    {from: "NYC", to: "Cairo", weight: 6},
+    {from: "Dubai", to: "Cairo", weight: 4}
   ];
 
-  // remember where each city first appears in the data
-  var position = 0;
-  for (var i = 0; i < data.length; i++) {
-    if (!(data[i].from in dataOrder)) dataOrder[data[i].from] = position++;
-    if (!(data[i].to in dataOrder)) dataOrder[data[i].to] = position++;
-  }
-
   // create a chart and set the data
-  chart = anychart.dependencyWheel(data);
+  var chart = anychart.dependencyWheel(data);
   // set the chart title and separate it from the wheel
-  chart.title("Dependency Wheel: Sorting Nodes");
+  chart.title("Dependency Wheel: Link Settings");
   chart.title().padding(0, 0, 20, 0);
 
-  // arrange the node arcs from the smallest to the largest
-  chart.sortOrder("asc");
+  // make the node arcs wider
+  chart.nodeWidth(25);
+
+  // link states: a link keeps its own color and only deepens
+  chart.link().hovered().fill(function () {
+    return anychart.color.darken(this.sourceColor, 0.1);
+  });
+  chart.link().selected().fill(function () {
+    return anychart.color.darken(this.sourceColor, 0.25);
+  });
+
+  // the tooltip of a link names the route and its weekly flights
+  chart.link().tooltip().titleFormat("{%from} - {%to}");
+  chart.link().tooltip().format("Weekly flights: {%value}");
 
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
 });
-
-// apply the chosen order: the chart redraws itself
-function changeSortOrder(value) {
-  // sortOrder() also takes a comparator of two nodes
-  chart.sortOrder(value == "data" ? byDataOrder : value);
-}
-
-// a comparator: keep the cities in the order they appear in the data
-function byDataOrder(node1, node2) {
-  return dataOrder[node1.id] - dataOrder[node2.id];
-}
 </script>
 </body>
 </html>

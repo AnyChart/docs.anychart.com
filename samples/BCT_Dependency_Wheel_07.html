@@ -12,10 +12,24 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
 
     <style>
-        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { display: flex; flex-direction: column; }
+        #controls { padding: 10px; }
+        #container { flex: 1; }
     </style>
 </head>
 <body>
+<div id="controls">
+    <span>Color mode:</span>
+    <input type="radio" name="mode" id="modeSource" onclick="changeColorMode('source')">
+    <label for="modeSource">source</label>
+    <input type="radio" name="mode" id="modeTarget" onclick="changeColorMode('target')">
+    <label for="modeTarget">target</label>
+    <input type="radio" name="mode" id="modeGradient" onclick="changeColorMode('gradient')" checked>
+    <label for="modeGradient">gradient</label>
+    <input type="radio" name="mode" id="modeReversed" onclick="changeColorMode('reversed')">
+    <label for="modeReversed">gradient, reversed</label>
+</div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -31,31 +45,31 @@ anychart.onDocumentReady(function () {
   ];
 
   // create a chart and set the data
-  var chart = anychart.dependencyWheel(data);
+  chart = anychart.dependencyWheel(data);
   // set the chart title and separate it from the wheel
-  chart.title("Dependency Wheel: Link Settings");
+  chart.title("Dependency Wheel: Color Mode");
   chart.title().padding(0, 0, 20, 0);
 
-  // make the node arcs wider
-  chart.nodeWidth(25);
+  // set a custom palette for the nodes
+  chart.palette([
+    "#5b8ff9", "#61ddaa", "#65789b", "#f6bd16",
+    "#7262fd", "#78d3f8", "#9661bc", "#f6903d"
+  ]);
 
-  // link states: a link keeps its own color and only deepens
-  chart.link().hovered().fill(function () {
-    return anychart.color.darken(this.sourceColor, 0.1);
-  });
-  chart.link().selected().fill(function () {
-    return anychart.color.darken(this.sourceColor, 0.25);
-  });
-
-  // the tooltip of a link names the route and its weekly flights
-  chart.link().tooltip().titleFormat("{%from} - {%to}");
-  chart.link().tooltip().format("Weekly flights: {%value}");
+  // blend each link from its source color to its target color
+  chart.colorMode("gradient");
 
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
 });
+
+// apply the chosen color mode: the chart redraws itself
+function changeColorMode(value) {
+  chart.colorMode(value == "reversed" ? "gradient" : value);
+  chart.reverseGradient(value == "reversed");
+}
 </script>
 </body>
 </html>

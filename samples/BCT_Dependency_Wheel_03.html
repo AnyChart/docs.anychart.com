@@ -12,24 +12,10 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
 
     <style>
-        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
-        body { display: flex; flex-direction: column; }
-        #controls { padding: 10px; }
-        #container { flex: 1; }
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
     </style>
 </head>
 <body>
-<div id="controls">
-    <span>Color mode:</span>
-    <input type="radio" name="mode" id="modeSource" onclick="changeColorMode('source')">
-    <label for="modeSource">source</label>
-    <input type="radio" name="mode" id="modeTarget" onclick="changeColorMode('target')">
-    <label for="modeTarget">target</label>
-    <input type="radio" name="mode" id="modeGradient" onclick="changeColorMode('gradient')" checked>
-    <label for="modeGradient">gradient</label>
-    <input type="radio" name="mode" id="modeReversed" onclick="changeColorMode('reversed')">
-    <label for="modeReversed">gradient, reversed</label>
-</div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -45,31 +31,51 @@ anychart.onDocumentReady(function () {
   ];
 
   // create a chart and set the data
-  chart = anychart.dependencyWheel(data);
+  var chart = anychart.dependencyWheel(data);
   // set the chart title and separate it from the wheel
-  chart.title("Dependency Wheel: Color Mode");
+  chart.title("Dependency Wheel: Node Settings");
   chart.title().padding(0, 0, 20, 0);
 
-  // set a custom palette for the nodes
-  chart.palette([
-    "#5b8ff9", "#61ddaa", "#65789b", "#f6bd16",
-    "#7262fd", "#78d3f8", "#9661bc", "#f6903d"
-  ]);
+  // make the node arcs wider
+  chart.nodeWidth(25);
 
-  // blend each link from its source color to its target color
-  chart.colorMode("gradient");
+  // node states: the fill darkens and the stroke thickens as the state gets more active
+  chart.node().normal().fill(function () {
+    return anychart.color.lighten(this.sourceColor, 0.25);
+  });
+  chart.node().normal().stroke("#ffffff", 1);
+  chart.node().hovered().fill(function () {
+    return this.sourceColor;
+  });
+  chart.node().hovered().stroke("#1b2740", 2);
+  chart.node().selected().fill(function () {
+    return anychart.color.darken(this.sourceColor, 0.2);
+  });
+  chart.node().selected().stroke("#0b1220", 3);
+
+  // keep the links unchanged when hovered: only the nodes react
+  chart.link().hovered().fill(function () {
+    return {color: this.sourceColor, opacity: 0.65};
+  });
+
+  // node labels: lay the text along the ring and add the share of the total flow
+  chart.node().normal().labels().position("circular");
+  chart.node().normal().labels().format("{%name} {%percent}{decimalsCount:1}%");
+
+  // show every label, even if some of them collide
+  chart.dropOverlappedLabels(false);
+
+  // the tooltip of a city, built from the node tokens
+  chart.node().tooltip().titleFormat("{%name}");
+  chart.node().tooltip().format(
+    "Routes: {%connections}\nFlights a week: {%weight}\nShare of all flights: {%percent}{decimalsCount:1}%"
+  );
 
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
 });
-
-// apply the chosen color mode: the chart redraws itself
-function changeColorMode(value) {
-  chart.colorMode(value == "reversed" ? "gradient" : value);
-  chart.reverseGradient(value == "reversed");
-}
 </script>
 </body>
 </html>

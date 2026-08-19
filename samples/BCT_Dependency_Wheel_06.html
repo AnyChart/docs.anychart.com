@@ -12,10 +12,28 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
 
     <style>
-        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { display: flex; flex-direction: column; }
+        #controls { padding: 10px; }
+        #controls label { margin-right: 20px; }
+        #container { flex: 1; }
     </style>
 </head>
 <body>
+<div id="controls">
+    <label>Start angle
+        <input type="range" min="0" max="360" step="15" value="90" oninput="changeStartAngle(this.value)">
+        <output id="startAngleValue">90</output>
+    </label>
+    <label>Pad angle
+        <input type="range" min="0" max="0.2" step="0.01" value="0.06" oninput="changePadAngle(this.value)">
+        <output id="padAngleValue">0.06</output>
+    </label>
+    <label>Node width
+        <input type="range" min="5" max="40" step="1" value="30" oninput="changeNodeWidth(this.value)">
+        <output id="nodeWidthValue">30</output>
+    </label>
+</div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -31,51 +49,43 @@ anychart.onDocumentReady(function () {
   ];
 
   // create a chart and set the data
-  var chart = anychart.dependencyWheel(data);
+  chart = anychart.dependencyWheel(data);
   // set the chart title and separate it from the wheel
-  chart.title("Dependency Wheel: Node Settings");
+  chart.title("Dependency Wheel: Geometry");
   chart.title().padding(0, 0, 20, 0);
 
-  // make the node arcs wider
-  chart.nodeWidth(25);
+  // rotate the whole wheel a quarter-turn
+  chart.startAngle(90);
 
-  // node states: the fill darkens and the stroke thickens as the state gets more active
-  chart.node().normal().fill(function () {
-    return anychart.color.lighten(this.sourceColor, 0.25);
-  });
-  chart.node().normal().stroke("#ffffff", 1);
-  chart.node().hovered().fill(function () {
-    return this.sourceColor;
-  });
-  chart.node().hovered().stroke("#1b2740", 2);
-  chart.node().selected().fill(function () {
-    return anychart.color.darken(this.sourceColor, 0.2);
-  });
-  chart.node().selected().stroke("#0b1220", 3);
+  // widen the gaps between the node arcs
+  chart.padAngle(0.06);
 
-  // keep the links unchanged when hovered: only the nodes react
-  chart.link().hovered().fill(function () {
-    return {color: this.sourceColor, opacity: 0.65};
-  });
-
-  // node labels: lay the text along the ring and add the share of the total flow
-  chart.node().normal().labels().position("circular");
-  chart.node().normal().labels().format("{%name} {%percent}{decimalsCount:1}%");
-
-  // show every label, even if some of them collide
-  chart.dropOverlappedLabels(false);
-
-  // the tooltip of a city, built from the node tokens
-  chart.node().tooltip().titleFormat("{%name}");
-  chart.node().tooltip().format(
-    "Routes: {%connections}\nFlights a week: {%weight}\nShare of all flights: {%percent}{decimalsCount:1}%"
-  );
+  // make the node arcs thicker
+  chart.nodeWidth(30);
 
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
 });
+
+// rotate the wheel: the chart redraws itself
+function changeStartAngle(value) {
+  chart.startAngle(value);
+  document.getElementById("startAngleValue").value = value;
+}
+
+// resize the gaps between the node arcs
+function changePadAngle(value) {
+  chart.padAngle(value);
+  document.getElementById("padAngleValue").value = value;
+}
+
+// set the thickness of the node arcs
+function changeNodeWidth(value) {
+  chart.nodeWidth(value);
+  document.getElementById("nodeWidthValue").value = value;
+}
 </script>
 </body>
 </html>

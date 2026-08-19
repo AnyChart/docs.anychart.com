@@ -179,7 +179,7 @@ chart.node().tooltip().format(
 
 In the sample below, every label is laid along the ring, the three states are styled as one scale — the fill grows darker and the stroke heavier as the state gets more active — and the tooltip reports what the node knows:
 
-{sample}BCT\_Dependency\_Wheel\_06{sample}
+{sample}BCT\_Dependency\_Wheel\_03{sample}
 
 ### Links
 
@@ -203,7 +203,7 @@ chart.link().selected().fill(function () {
 
 Hover or click a link in the sample below to see its fill deepen:
 
-{sample}BCT\_Dependency\_Wheel\_08{sample}
+{sample}BCT\_Dependency\_Wheel\_04{sample}
 
 #### Link Tooltip
 
@@ -217,7 +217,7 @@ chart.link().tooltip().format("Weekly flights: {%value}");
 
 In the sample below, the state fills deepen a link's own color and the tooltip names the route:
 
-{sample}BCT\_Dependency\_Wheel\_07{sample}
+{sample}BCT\_Dependency\_Wheel\_05{sample}
 ### Wheel Geometry
 
 These methods change the geometry of the wheel:
@@ -245,7 +245,7 @@ function changeStartAngle(value) {
 }
 ```
 
-{sample}BCT\_Dependency\_Wheel\_04{sample}
+{sample}BCT\_Dependency\_Wheel\_06{sample}
 
 ### Color Mode
 
@@ -276,7 +276,7 @@ function changeColorMode(value) {
 }
 ```
 
-{sample}BCT\_Dependency\_Wheel\_03{sample}
+{sample}BCT\_Dependency\_Wheel\_07{sample}
 
 ### Sorting
 
@@ -305,5 +305,5 @@ function byDataOrder(node1, node2) {
 }
 ```
 
-{sample}BCT\_Dependency\_Wheel\_05{sample}
+{sample}BCT\_Dependency\_Wheel\_08{sample}
 
