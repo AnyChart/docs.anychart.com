@@ -103,8 +103,6 @@ Pass data to the {api:anychart#arcDiagram}anychart.arcDiagram(){api} chart const
 * `to` — the name of the target node
 * `weight` — the weight of the link (sets the thickness of the arc)
 
-A node's name is the exact string from the `from`/`to` fields. The same string is the node `id` in [Sorting](#sorting), the node name that select() accepts (see [Nodes](#nodes)), and the `{%name}` token in [Tooltips](#tooltips).
-
 An optional `group` field puts the link's nodes into a named group. A node keeps the first group it gets: if a later row gives the same node another group, that value is ignored. You can use groups to [sort](#sorting) the nodes. Pass the links as objects, or map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api}:
 
 ```
