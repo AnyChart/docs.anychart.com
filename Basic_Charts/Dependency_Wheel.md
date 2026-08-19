@@ -290,6 +290,10 @@ chart.link().selected().fill(function () {
 });
 ```
 
+Hover or click a link in the sample below to see its fill deepen:
+
+{sample}BCT\_Dependency\_Wheel\_08{sample}
+
 #### Link Tooltip
 
 By default, the link tooltip uses the same format as the node tooltip, and node tokens show no value for a link. To set it, use `link().tooltip()`:

@@ -33,21 +33,16 @@ anychart.onDocumentReady(function () {
   // create a chart and set the data
   var chart = anychart.dependencyWheel(data);
   // set the chart title and separate it from the wheel
-  chart.title("Dependency Wheel: Tooltips");
+  chart.title("Dependency Wheel: Link Colors");
   chart.title().padding(0, 0, 20, 0);
 
-  // make the node arcs wider
-  chart.nodeWidth(25);
-
-  // the tooltip of a city, built from the node tokens
-  chart.node().tooltip().titleFormat("{%name}");
-  chart.node().tooltip().format(
-    "Routes: {%connections}\nFlights a week: {%weight}\nShare of all flights: {%percent}{decimalsCount:1}%"
-  );
-
-  // the tooltip of a link: it has its own tokens
-  chart.link().tooltip().titleFormat("{%from} - {%to}");
-  chart.link().tooltip().format("Flights a week: {%value}");
+  // link states: a link keeps its own color and only deepens
+  chart.link().hovered().fill(function () {
+    return anychart.color.darken(this.sourceColor, 0.1);
+  });
+  chart.link().selected().fill(function () {
+    return anychart.color.darken(this.sourceColor, 0.25);
+  });
 
   // set the container id
   chart.container("container");
