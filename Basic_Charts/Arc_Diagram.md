@@ -137,9 +137,15 @@ chart.palette(["#5b8ff9", "#61ddaa", "#65789b", "#f6bd16", "#7262fd", "#f6903d"]
 
 // blend each arc from the color of its source node to the color of its target node
 chart.colorMode("gradient");
+
+// apply the chosen color mode: the chart redraws itself
+function changeColorMode(value) {
+  chart.colorMode(value == "reversed" ? "gradient" : value);
+  chart.reverseGradient(value == "reversed");
+}
 ```
 
-In the sample below, each node takes a color from the palette and every arc blends from the color of its source node to the color of its target node:
+The mode works on a chart that is already drawn. Use the buttons in the sample below to compare all four results:
 
 {sample}BCT\_Arc\_Diagram\_03{sample}
 
