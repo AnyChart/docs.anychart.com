@@ -178,9 +178,10 @@ Set the arcs with the {api:anychart.charts.ArcDiagram#link}link(){api} method. L
 Link [labels](../Common_Settings/Labels) are hidden by default. Turning them on shows a label on every arc at once, which suits a diagram with few links; on a busy diagram the [link tooltip](#link_tooltip) identifies an arc better. A short format keeps the labels readable:
 
 ```
-// show the weight of each link on its arc
+// show the weight of each link on its arc, with no leader lines
 chart.link().normal().labels().enabled(true);
 chart.link().normal().labels().format("{%value}");
+chart.link().normal().labels().connectorStroke("none");
 ```
 
 In the sample below, each arc carries its weight:
