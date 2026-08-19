@@ -209,9 +209,28 @@ Set the node arcs and their labels with the {api:anychart.charts.DependencyWheel
 
 A node is hovered when you point at it. Hovering a node also highlights its links. A node is selected when you click it. A plain click replaces any earlier selection. Ctrl/Cmd/Shift + click adds a node to a multi-node selection or removes it. It does not replace the selection. A plain click on the empty area clears the selection.
 
-Node labels are on by default and show the node name. To change the text, pass a [text formatter](../Common_Settings/Text_Formatters) to the labels' `format()` method — the sample below adds the node's share of the total flow with the `{%percent}` token. A label is one straight line of text touching the ring by default; set `labels().position("circular")` to lay it along the ring instead. A label that overlaps an already drawn label is hidden by default. Control this with the {api:anychart.charts.DependencyWheel#dropOverlappedLabels}dropOverlappedLabels(){api} method, and turn the protection off only when the dataset is small enough for every label to fit, like the one in the sample below.
+[Labels](../Common_Settings/Labels) of the nodes are enabled by default and show the node name. Font settings and [text formatters](../Common_Settings/Text_Formatters) are available:
 
-The sample also sets the width of the node arcs with the {api:anychart.charts.DependencyWheel#nodeWidth}nodeWidth(){api} method and styles the three states as one scale: the fill grows darker and the stroke heavier as the state gets more active. Deriving the state fills from `sourceColor` keeps them consistent with the palette:
+```
+// add the node's share of the total flow to its label
+chart.node().normal().labels().format("{%name} {%percent}{decimalsCount:1}%");
+```
+
+By default, a label is one straight line of text touching the ring. To lay it along the ring, call `labels().position()` with the `"circular"` parameter:
+
+```
+// lay the node labels along the ring
+chart.node().normal().labels().position("circular");
+```
+
+A label that overlaps an already drawn label is hidden by default. To control this behavior, use the {api:anychart.charts.DependencyWheel#dropOverlappedLabels}dropOverlappedLabels(){api} method:
+
+```
+// show every label, even if some of them overlap
+chart.dropOverlappedLabels(false);
+```
+
+The {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} methods accept functions; deriving the state fills from `sourceColor` keeps them consistent with the palette:
 
 ```
 // node states: the fill darkens and the stroke thickens as the state gets more active
@@ -227,17 +246,9 @@ chart.node().selected().fill(function () {
   return anychart.color.darken(this.sourceColor, 0.2);
 });
 chart.node().selected().stroke("#0b1220", 3);
-
-// node labels: lay the text along the ring and add the share of the total flow
-chart.node().normal().labels().position("circular");
-chart.node().normal().labels().format("{%name} {%percent}{decimalsCount:1}%");
-
-// show every label, even if some of them overlap
-chart.dropOverlappedLabels(false);
-
-// make the node arcs wider
-chart.nodeWidth(25);
 ```
+
+In the sample below, the three states are styled as one scale — the fill grows darker and the stroke heavier as the state gets more active — and every label is laid along the ring:
 
 {sample}BCT\_Dependency\_Wheel\_06{sample}
 
