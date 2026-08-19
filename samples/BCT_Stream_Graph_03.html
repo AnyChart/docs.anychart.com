@@ -14,21 +14,17 @@
     <style>
         html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
         body { display: flex; flex-direction: column; }
-        #controls { padding: 10px; }
+        #controls { padding: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
         #container { flex: 1; }
     </style>
 </head>
 <body>
 <div id="controls">
     <span>Offset:</span>
-    <input type="radio" name="offset" id="offsetWiggle" onclick="changeOffset('wiggle')">
-    <label for="offsetWiggle">wiggle</label>
-    <input type="radio" name="offset" id="offsetSilhouette" onclick="changeOffset('silhouette')" checked>
-    <label for="offsetSilhouette">silhouette</label>
-    <input type="radio" name="offset" id="offsetExpand" onclick="changeOffset('expand')">
-    <label for="offsetExpand">expand</label>
-    <input type="radio" name="offset" id="offsetZero" onclick="changeOffset('zero')">
-    <label for="offsetZero">zero</label>
+    <label><input type="radio" name="offset" id="offsetWiggle" onclick="changeOffset('wiggle')"> wiggle</label>
+    <label><input type="radio" name="offset" id="offsetSilhouette" onclick="changeOffset('silhouette')" checked> silhouette</label>
+    <label><input type="radio" name="offset" id="offsetExpand" onclick="changeOffset('expand')"> expand</label>
+    <label><input type="radio" name="offset" id="offsetZero" onclick="changeOffset('zero')"> zero</label>
 </div>
 <div id="container"></div>
 <script>

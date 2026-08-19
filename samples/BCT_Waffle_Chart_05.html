@@ -14,7 +14,7 @@
     <style>
         html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
         body { display: flex; flex-direction: column; }
-        #controls { padding: 10px; }
+        #controls { padding: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
         #controls label { margin-right: 20px; }
         #container { flex: 1; }
     </style>
@@ -22,14 +22,10 @@
 <body>
 <div id="controls">
     <span>Fill direction:</span>
-    <input type="radio" name="direction" id="directionLeftToRight" onclick="changeFillDirection('left-to-right')">
-    <label for="directionLeftToRight">left-to-right</label>
-    <input type="radio" name="direction" id="directionRightToLeft" onclick="changeFillDirection('right-to-left')">
-    <label for="directionRightToLeft">right-to-left</label>
-    <input type="radio" name="direction" id="directionTopToBottom" onclick="changeFillDirection('top-to-bottom')">
-    <label for="directionTopToBottom">top-to-bottom</label>
-    <input type="radio" name="direction" id="directionBottomToTop" onclick="changeFillDirection('bottom-to-top')" checked>
-    <label for="directionBottomToTop">bottom-to-top</label>
+    <label><input type="radio" name="direction" id="directionLeftToRight" onclick="changeFillDirection('left-to-right')"> left-to-right</label>
+    <label><input type="radio" name="direction" id="directionRightToLeft" onclick="changeFillDirection('right-to-left')"> right-to-left</label>
+    <label><input type="radio" name="direction" id="directionTopToBottom" onclick="changeFillDirection('top-to-bottom')"> top-to-bottom</label>
+    <label><input type="radio" name="direction" id="directionBottomToTop" onclick="changeFillDirection('bottom-to-top')" checked> bottom-to-top</label>
 </div>
 <div id="container"></div>
 <script>

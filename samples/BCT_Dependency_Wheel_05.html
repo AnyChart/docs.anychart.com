@@ -14,21 +14,17 @@
     <style>
         html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
         body { display: flex; flex-direction: column; }
-        #controls { padding: 10px; }
+        #controls { padding: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
         #container { flex: 1; }
     </style>
 </head>
 <body>
 <div id="controls">
     <span>Color mode:</span>
-    <input type="radio" name="mode" id="modeSource" onclick="changeColorMode('source')">
-    <label for="modeSource">source</label>
-    <input type="radio" name="mode" id="modeTarget" onclick="changeColorMode('target')">
-    <label for="modeTarget">target</label>
-    <input type="radio" name="mode" id="modeGradient" onclick="changeColorMode('gradient')" checked>
-    <label for="modeGradient">gradient</label>
-    <input type="radio" name="mode" id="modeReversed" onclick="changeColorMode('reversed')">
-    <label for="modeReversed">gradient, reversed</label>
+    <label><input type="radio" name="mode" id="modeSource" onclick="changeColorMode('source')"> source</label>
+    <label><input type="radio" name="mode" id="modeTarget" onclick="changeColorMode('target')"> target</label>
+    <label><input type="radio" name="mode" id="modeGradient" onclick="changeColorMode('gradient')" checked> gradient</label>
+    <label><input type="radio" name="mode" id="modeReversed" onclick="changeColorMode('reversed')"> gradient, reversed</label>
 </div>
 <div id="container"></div>
 <script>

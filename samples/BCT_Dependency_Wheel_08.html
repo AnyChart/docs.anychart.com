@@ -14,19 +14,16 @@
     <style>
         html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
         body { display: flex; flex-direction: column; }
-        #controls { padding: 10px; }
+        #controls { padding: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
         #container { flex: 1; }
     </style>
 </head>
 <body>
 <div id="controls">
     <span>Sort nodes:</span>
-    <input type="radio" name="sort" id="sortAsc" onclick="changeSortOrder('asc')" checked>
-    <label for="sortAsc">smallest first</label>
-    <input type="radio" name="sort" id="sortDesc" onclick="changeSortOrder('desc')">
-    <label for="sortDesc">largest first</label>
-    <input type="radio" name="sort" id="sortData" onclick="changeSortOrder('data')">
-    <label for="sortData">data order</label>
+    <label><input type="radio" name="sort" id="sortAsc" onclick="changeSortOrder('asc')" checked> smallest first</label>
+    <label><input type="radio" name="sort" id="sortDesc" onclick="changeSortOrder('desc')"> largest first</label>
+    <label><input type="radio" name="sort" id="sortData" onclick="changeSortOrder('data')"> data order</label>
 </div>
 <div id="container"></div>
 <script>
