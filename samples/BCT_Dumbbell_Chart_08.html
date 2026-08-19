@@ -18,7 +18,7 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data: salaries before (low) and after (high) an annual review
+  // create data: old salary as low, new salary as high
   var data = [
     {x: "Anna", low: 52000, high: 58000},
     {x: "Ben", low: 48000, high: 50000},
@@ -29,10 +29,11 @@ anychart.onDocumentReady(function () {
 
   // create a chart
   var chart = anychart.dumbbell();
-  // set the chart title
-  chart.title("Salaries Before (gray) and After (green) the Annual Review");
+  // set the chart title and separate it from the plot
+  chart.title("Dumbbell Chart: Before and After Comparison");
+  chart.title().padding(0, 0, 20, 0);
 
-  // create a Dumbbell series and set the data
+  // create a dumbbell series and set the data
   var series = chart.dumbbell(data);
 
   // gray = old salary, green = new salary
@@ -45,8 +46,9 @@ anychart.onDocumentReady(function () {
   // name both values in the tooltip
   series.tooltip().format("Before: {%low}, After: {%high}");
 
-  // set the container id and draw
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>

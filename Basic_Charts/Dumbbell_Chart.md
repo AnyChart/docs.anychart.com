@@ -75,7 +75,7 @@ var data = [
 // create a chart
 var chart = anychart.dumbbell();
 
-// create a Dumbbell series and set the data
+// create a dumbbell series and set the data
 var series = chart.dumbbell(data);
 
 // set the container id
@@ -90,12 +90,12 @@ chart.draw();
 You can also start from a [Line](Line_Chart) or [Column](Column_Chart) chart and add a Dumbbell series to it. Only the constructor is different:
 
 ```
-// create a line (or column) chart, then add a Dumbbell series
+// create a line chart, then add a dumbbell series
 var chart = anychart.line();
 var series = chart.dumbbell(data);
 ```
 
-A Dumbbell point has two values, low and high. The tooltip shows both by default. You can change how it looks — see [Tooltips](#tooltips).
+A Dumbbell point has two values, low and high. The tooltip shows both by default. You can change how it looks (see [Tooltips](#tooltips)).
 
 ## General Settings
 
@@ -141,16 +141,18 @@ var seriesData_2 = [
 // create a chart
 var chart = anychart.line();
 
-// first series
+// create the first dumbbell series and set the data
 var series1 = chart.dumbbell(seriesData_1);
+// configure the appearance of the first series
 series1.normal().stroke("#00cc99", 1);
 series1.normal().lowFill("#99e6d4");
 series1.normal().highFill("#00cc99");
 series1.hovered().stroke("#00cc99", 2);
 series1.selected().stroke("#00cc99", 4);
 
-// second series
+// create the second dumbbell series and set the data
 var series2 = chart.dumbbell(seriesData_2);
+// configure the appearance of the second series
 series2.normal().stroke("#0066cc", 1);
 series2.normal().lowFill("#99c2eb");
 series2.normal().highFill("#0066cc");
@@ -163,7 +165,7 @@ series2.selected().stroke("#0066cc", 4);
 The sample below shows a real before/after case: salaries before and after an annual review. Here every new salary is higher than the old one. So the old salary goes to `low`, and the new salary goes to `high`. The gray dot marks the old value, and the green dot marks the new value. Every line reads from gray to green, so the direction of the change is visible at once.
 
 ```
-// create data: salaries before (low) and after (high) an annual review
+// create data: old salary as low, new salary as high
 var data = [
   {x: "Anna", low: 52000, high: 58000},
   {x: "Ben", low: 48000, high: 50000},
@@ -175,7 +177,7 @@ var data = [
 // create a chart
 var chart = anychart.dumbbell();
 
-// create a Dumbbell series and set the data
+// create a dumbbell series and set the data
 var series = chart.dumbbell(data);
 
 // gray = old salary, green = new salary
@@ -196,7 +198,7 @@ series.tooltip().format("Before: {%low}, After: {%high}");
 If you use objects to set the data, you can change the look of individual points. Just add special fields to your data:
 
 ```
-// create data
+// create data with individual point settings
 var data = [
   {x: "Job A", low: 40000, high: 60000},
   {x: "Job B", low: 50000, high: 80000,
@@ -219,19 +221,21 @@ var data = [
   {x: "Job C", low: 35000, high: 55000}
 ];
 
-// create a chart
-chart = anychart.line();
+// create a line chart
+var chart = anychart.line();
 
-// create a Dumbbell series and set the data
+// create a dumbbell series and set the data
 var series = chart.dumbbell(data);
 ```
+
+In the sample below, the second point carries its own dot colors and connecting line, set through the `normal`, `hovered`, and `selected` fields of its data object.
 
 {sample}BCT\_Dumbbell\_Chart\_03{sample}
 
 If you use an array to set the data, you can also style individual points. The steps are a little different. First add the extra values to the data set. Then map the columns so the series can read them:
 
 ```
-// create a data set: x, low, high, and (for one point) custom dot colors
+// create a data set with custom dot colors for one point
 var dataSet = anychart.data.set([
   ["Job A", 40000, 60000],
   ["Job B", 50000, 80000, "#5cd65c", "#2eb82e"],
@@ -244,9 +248,11 @@ var mapping = dataSet.mapAs({x: 0, low: 1, high: 2, lowFill: 3, highFill: 4});
 // create a chart
 var chart = anychart.dumbbell();
 
-// create a Dumbbell series and set the data
+// create a dumbbell series and set the mapped data
 var series = chart.dumbbell(mapping);
 ```
+
+In the sample below, the second row of the data set carries two extra values, and the mapping turns them into the low and high dot colors of that point.
 
 {sample}BCT\_Dumbbell\_Chart\_04{sample}
 
@@ -255,12 +261,14 @@ var series = chart.dumbbell(mapping);
 The round dots of a Dumbbell series are drawn as markers. Use the {api:anychart.core.cartesian.series.Dumbbell#markers}markers(){api} method to work with them. Use the {api:anychart.core.ui.MarkersFactory#size}size(){api} method to set the radius of the dots (the default value is 5 px). The size applies to **both** dots the same way. The fill, stroke, and hatch fill can differ between the low and high dots (`lowFill`/`highFill`, `lowStroke`/`highStroke`, `lowHatchFill`/`highHatchFill`).
 
 ```
-// create a Dumbbell series and set the data
+// create a dumbbell series and set the data
 var series = chart.dumbbell(data);
 
-// set the size of the dots
+// enlarge the endpoint dots
 series.markers().size(8);
 ```
+
+In the sample below, the dots of every point are drawn at size 8 instead of the default.
 
 {sample}BCT\_Dumbbell\_Chart\_05{sample}
 
@@ -271,12 +279,14 @@ series.markers().size(8);
 A Dumbbell point has two values. So set a format that shows both:
 
 ```
-// enable the labels and show both endpoint values
+// enable and format the series labels
 series.labels().enabled(true);
 series.labels().format("{%low} - {%high}");
 ```
 
 To adjust where labels sit, use the {api:anychart.core.ui.LabelsFactory#position}position(){api}, {api:anychart.core.ui.LabelsFactory#anchor}anchor(){api}, {api:anychart.core.ui.LabelsFactory#offsetX}offsetX(){api}, and {api:anychart.core.ui.LabelsFactory#offsetY}offsetY(){api} methods.
+
+In the sample below, every point carries a label with its low and high values.
 
 {sample}BCT\_Dumbbell\_Chart\_06{sample}
 
@@ -290,6 +300,8 @@ A Dumbbell point has two values. The tooltip shows both by default. To change th
 // show both endpoint values in the tooltip
 series.tooltip().format("High: {%high}, Low: {%low}");
 ```
+
+In the sample below, the tooltip of every point names the high value first and the low value second.
 
 {sample}BCT\_Dumbbell\_Chart\_07{sample}
 

@@ -15,15 +15,24 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+  // create data
   var data = [
     ["Job A", 40000, 60000],
     ["Job B", 50000, 80000],
     ["Job C", 35000, 55000]
   ];
+  // create a chart
   var chart = anychart.vertical();
-  chart.title("Vertical Dumbbell Chart");
+  // set the chart title and separate it from the plot
+  chart.title("Vertical Dumbbell Chart: Quick Start");
+  chart.title().padding(0, 0, 20, 0);
+
+  // create a dumbbell series and set the data
   var series = chart.dumbbell(data);
+
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>

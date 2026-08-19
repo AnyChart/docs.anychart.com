@@ -18,18 +18,23 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data
+  // create data for two series
   var seriesData_1 = [
-    {x: "Job A", low: 40000, high: 60000},{x: "Job B", low: 50000, high: 80000},{x: "Job C", low: 35000, high: 55000}
+    {x: "Job A", low: 40000, high: 60000},
+    {x: "Job B", low: 50000, high: 80000},
+    {x: "Job C", low: 35000, high: 55000}
   ];
   var seriesData_2 = [
-    {x: "Job A", low: 30000, high: 45000},{x: "Job B", low: 42000, high: 62000},{x: "Job C", low: 28000, high: 40000}
+    {x: "Job A", low: 30000, high: 45000},
+    {x: "Job B", low: 42000, high: 62000},
+    {x: "Job C", low: 28000, high: 40000}
   ];
 
   // create a chart
   var chart = anychart.line();
-  // set the chart title
+  // set the chart title and separate it from the plot
   chart.title("Dumbbell Chart: Appearance");
+  chart.title().padding(0, 0, 20, 0);
 
   // create the first dumbbell series and set the data
   var series1 = chart.dumbbell(seriesData_1);
@@ -52,8 +57,9 @@ anychart.onDocumentReady(function () {
   // show both endpoint values in the tooltip
   chart.tooltip().format("High: {%high}, Low: {%low}");
 
-  // set the container id and draw
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>
