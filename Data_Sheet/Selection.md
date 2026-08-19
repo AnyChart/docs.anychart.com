@@ -61,7 +61,7 @@ chart.draw();
 showSelection();
 ```
 
-Use the buttons in the sample below to select the first two rows from code and to clear the selection, and tick the checkboxes to change the selection yourself.
+Use the buttons in the sample below to select rows from code and to clear the selection, and tick the checkboxes to change the selection yourself.
 
 {sample}DS\_Data\_Sheet\_12{sample}
 

@@ -83,7 +83,7 @@ chart.container("container");
 chart.draw();
 ```
 
-In the sample below, the ten data rows are drawn as arcs above a row of six region nodes:
+In the sample below, the data rows are drawn as arcs above the row of region nodes:
 
 {sample}BCT\_Arc\_Diagram\_01{sample}
 

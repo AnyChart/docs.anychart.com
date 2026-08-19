@@ -48,6 +48,6 @@ Write your own code for the rows that exist, not for the whole data set. A CSS r
 
 The `aria-rowcount` attribute on the grid reports every row the current [filter](Filtering_and_Search) keeps, not the number of rows in the page - see [Accessibility](Accessibility). With no filter that is the whole data set, so for the sample below it reads 5000.
 
-In the sample below, the line above the grid compares the 5,000 rows in the data with the row elements that really exist in the page.
+In the sample below, the line above the grid compares the number of rows in the data with the row elements that really exist in the page.
 
 {sample}DS\_Data\_Sheet\_16{sample}

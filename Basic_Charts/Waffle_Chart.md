@@ -131,7 +131,7 @@ chart.rows(5);
 chart.columns(20);
 ```
 
-In the sample below, the grid is 5 rows by 20 columns:
+In the sample below, the grid dimensions are set with rowsCount() and columnsCount():
 
 {sample}BCT\_Waffle\_Chart\_03{sample}
 

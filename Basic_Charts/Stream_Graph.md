@@ -165,7 +165,7 @@ var series2 = chart.stepArea(socialData);
 var series3 = chart.stepArea(emailData);
 ```
 
-In the sample below, the three layers are drawn as step-area series:
+In the sample below, the layers are drawn as step-area series:
 
 {sample}BCT\_Stream\_Graph\_04{sample}
 
