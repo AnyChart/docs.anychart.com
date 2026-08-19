@@ -15,20 +15,24 @@
         html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
         body { display: flex; flex-direction: column; }
         #controls { padding: 10px; }
+        #controls label { margin-right: 20px; }
         #container { flex: 1; }
     </style>
 </head>
 <body>
 <div id="controls">
-    <span>Color mode:</span>
-    <input type="radio" name="mode" id="modeSource" onclick="changeColorMode('source')">
-    <label for="modeSource">source</label>
-    <input type="radio" name="mode" id="modeTarget" onclick="changeColorMode('target')">
-    <label for="modeTarget">target</label>
-    <input type="radio" name="mode" id="modeGradient" onclick="changeColorMode('gradient')" checked>
-    <label for="modeGradient">gradient</label>
-    <input type="radio" name="mode" id="modeReversed" onclick="changeColorMode('reversed')">
-    <label for="modeReversed">gradient, reversed</label>
+    <label>Start angle
+        <input type="range" min="0" max="360" step="15" value="90" oninput="changeStartAngle(this.value)">
+        <output id="startAngleValue">90</output>
+    </label>
+    <label>Pad angle
+        <input type="range" min="0" max="0.2" step="0.01" value="0.06" oninput="changePadAngle(this.value)">
+        <output id="padAngleValue">0.06</output>
+    </label>
+    <label>Node width
+        <input type="range" min="5" max="40" step="1" value="30" oninput="changeNodeWidth(this.value)">
+        <output id="nodeWidthValue">30</output>
+    </label>
 </div>
 <div id="container"></div>
 <script>
@@ -47,17 +51,17 @@ anychart.onDocumentReady(function () {
   // create a chart and set the data
   chart = anychart.dependencyWheel(data);
   // set the chart title and separate it from the wheel
-  chart.title("Dependency Wheel: Color Mode");
+  chart.title("Dependency Wheel: Geometry");
   chart.title().padding(0, 0, 20, 0);
 
-  // set a custom palette for the nodes
-  chart.palette([
-    "#5b8ff9", "#61ddaa", "#65789b", "#f6bd16",
-    "#7262fd", "#78d3f8", "#9661bc", "#f6903d"
-  ]);
+  // rotate the whole wheel a quarter-turn
+  chart.startAngle(90);
 
-  // blend each link from its source color to its target color
-  chart.colorMode("gradient");
+  // widen the gaps between the node arcs
+  chart.padAngle(0.06);
+
+  // make the node arcs thicker
+  chart.nodeWidth(30);
 
   // set the container id
   chart.container("container");
@@ -65,10 +69,22 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// apply the chosen color mode: the chart redraws itself
-function changeColorMode(value) {
-  chart.colorMode(value == "reversed" ? "gradient" : value);
-  chart.reverseGradient(value == "reversed");
+// rotate the wheel: the chart redraws itself
+function changeStartAngle(value) {
+  chart.startAngle(value);
+  document.getElementById("startAngleValue").value = value;
+}
+
+// resize the gaps between the node arcs
+function changePadAngle(value) {
+  chart.padAngle(value);
+  document.getElementById("padAngleValue").value = value;
+}
+
+// set the thickness of the node arcs
+function changeNodeWidth(value) {
+  chart.nodeWidth(value);
+  document.getElementById("nodeWidthValue").value = value;
 }
 </script>
 </body>

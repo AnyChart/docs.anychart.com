@@ -12,28 +12,10 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
 
     <style>
-        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
-        body { display: flex; flex-direction: column; }
-        #controls { padding: 10px; }
-        #controls label { margin-right: 20px; }
-        #container { flex: 1; }
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
     </style>
 </head>
 <body>
-<div id="controls">
-    <label>Start angle
-        <input type="range" min="0" max="360" step="15" value="90" oninput="changeStartAngle(this.value)">
-        <output id="startAngleValue">90</output>
-    </label>
-    <label>Pad angle
-        <input type="range" min="0" max="0.2" step="0.01" value="0.06" oninput="changePadAngle(this.value)">
-        <output id="padAngleValue">0.06</output>
-    </label>
-    <label>Node width
-        <input type="range" min="5" max="40" step="1" value="30" oninput="changeNodeWidth(this.value)">
-        <output id="nodeWidthValue">30</output>
-    </label>
-</div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -49,43 +31,31 @@ anychart.onDocumentReady(function () {
   ];
 
   // create a chart and set the data
-  chart = anychart.dependencyWheel(data);
+  var chart = anychart.dependencyWheel(data);
   // set the chart title and separate it from the wheel
-  chart.title("Dependency Wheel: Geometry");
+  chart.title("Dependency Wheel: Link Settings");
   chart.title().padding(0, 0, 20, 0);
 
-  // rotate the whole wheel a quarter-turn
-  chart.startAngle(90);
+  // make the node arcs wider
+  chart.nodeWidth(25);
 
-  // widen the gaps between the node arcs
-  chart.padAngle(0.06);
+  // link states: a link keeps its own color and only deepens
+  chart.link().hovered().fill(function () {
+    return anychart.color.darken(this.sourceColor, 0.1);
+  });
+  chart.link().selected().fill(function () {
+    return anychart.color.darken(this.sourceColor, 0.25);
+  });
 
-  // make the node arcs thicker
-  chart.nodeWidth(30);
+  // the tooltip of a link names the route and its weekly flights
+  chart.link().tooltip().titleFormat("{%from} - {%to}");
+  chart.link().tooltip().format("Weekly flights: {%value}");
 
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
 });
-
-// rotate the wheel: the chart redraws itself
-function changeStartAngle(value) {
-  chart.startAngle(value);
-  document.getElementById("startAngleValue").value = value;
-}
-
-// resize the gaps between the node arcs
-function changePadAngle(value) {
-  chart.padAngle(value);
-  document.getElementById("padAngleValue").value = value;
-}
-
-// set the thickness of the node arcs
-function changeNodeWidth(value) {
-  chart.nodeWidth(value);
-  document.getElementById("nodeWidthValue").value = value;
-}
 </script>
 </body>
 </html>

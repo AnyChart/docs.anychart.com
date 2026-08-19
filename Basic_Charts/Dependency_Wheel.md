@@ -147,7 +147,7 @@ chart.dropOverlappedLabels(false);
 
 #### Node Colors
 
-A node takes its color from the chart [palette](../Appearance_Settings/Palettes) (see [Color Mode](#color_mode)). To style the states, use the {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} methods. They accept functions. If you derive the state fills from `sourceColor`, they stay consistent with the palette:
+A node takes its color from the chart [palette](../Appearance_Settings/Palettes). To set your own palette, use the {api:anychart.charts.DependencyWheel#palette}palette(){api} method. To style the states, use the {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} methods. They accept functions. If you derive the state fills from `sourceColor`, they stay consistent with the palette:
 
 ```
 // node states: the fill darkens and the stroke thickens as the state gets more active
@@ -189,7 +189,30 @@ Link [labels](../Common_Settings/Labels) are hidden by default. Turning them on 
 
 #### Link Colors
 
-A link is drawn with a fill only, and its base color comes from [Color Mode](#color_mode). To style the states, use the {api:anychart.core.StateSettings#fill}fill(){api} method. If you derive the state fills from `sourceColor`, a link keeps its own color and only becomes darker:
+The {api:anychart.charts.DependencyWheel#colorMode}colorMode(){api} method sets the base color of the links:
+
+* `"source"` (default) — a link takes the color of its source (`from`) node
+* `"target"` — a link takes the color of its target (`to`) node
+* `"gradient"` — a link blends from the source color to the target color. The {api:anychart.charts.DependencyWheel#reverseGradient}reverseGradient(){api} method flips the direction of the blend
+
+The mode sets only the base color of the links. The nodes keep their palette colors in every mode (see [Node Colors](#node_colors)).
+
+The mode works on a chart that is already drawn, so a control can switch it without rebuilding the chart. Use the buttons in the sample below to compare all four results:
+
+```
+// blend each link from its source color to its target color
+chart.colorMode("gradient");
+
+// apply the chosen color mode: the chart redraws itself
+function changeColorMode(value) {
+  chart.colorMode(value == "reversed" ? "gradient" : value);
+  chart.reverseGradient(value == "reversed");
+}
+```
+
+{sample}BCT\_Dependency\_Wheel\_04{sample}
+
+A link is drawn with a fill only. To style the states, use the {api:anychart.core.StateSettings#fill}fill(){api} method. If you derive the state fills from `sourceColor`, a link keeps its own color and only becomes darker:
 
 ```
 // link states: a link keeps its own color and only deepens
@@ -203,7 +226,7 @@ chart.link().selected().fill(function () {
 
 Hover or click a link in the sample below to see how its fill becomes darker:
 
-{sample}BCT\_Dependency\_Wheel\_04{sample}
+{sample}BCT\_Dependency\_Wheel\_05{sample}
 
 #### Link Tooltip
 
@@ -217,7 +240,7 @@ chart.link().tooltip().format("Weekly flights: {%value}");
 
 In the sample below, the state fills make a link darker and the tooltip shows the route:
 
-{sample}BCT\_Dependency\_Wheel\_05{sample}
+{sample}BCT\_Dependency\_Wheel\_06{sample}
 
 ### Wheel Geometry
 
@@ -243,37 +266,6 @@ chart.nodeWidth(30);
 function changeStartAngle(value) {
   chart.startAngle(value);
   document.getElementById("startAngleValue").value = value;
-}
-```
-
-{sample}BCT\_Dependency\_Wheel\_06{sample}
-
-### Color Mode
-
-The color of each node comes from the chart [palette](../Appearance_Settings/Palettes). Set your own palette with the {api:anychart.charts.DependencyWheel#palette}palette(){api} method. The {api:anychart.charts.DependencyWheel#colorMode}colorMode(){api} method sets the color of the links:
-
-* `"source"` (default) — a link takes the color of its source (`from`) node
-* `"target"` — a link takes the color of its target (`to`) node
-* `"gradient"` — a link blends from the source color to the target color. The {api:anychart.charts.DependencyWheel#reverseGradient}reverseGradient(){api} method flips the direction of the blend
-
-The mode sets only the base color of the links. The nodes keep their palette colors in every mode. To style the link states on top of the base color, see [Link Colors](#link_colors).
-
-Both methods work on a chart that is already drawn, so a control can switch the mode without rebuilding the chart. Use the buttons in the sample below to compare all four results:
-
-```
-// set a custom palette for the nodes
-chart.palette([
-  "#5b8ff9", "#61ddaa", "#65789b", "#f6bd16",
-  "#7262fd", "#78d3f8", "#9661bc", "#f6903d"
-]);
-
-// blend each link from its source color to its target color
-chart.colorMode("gradient");
-
-// apply the chosen color mode: the chart redraws itself
-function changeColorMode(value) {
-  chart.colorMode(value == "reversed" ? "gradient" : value);
-  chart.reverseGradient(value == "reversed");
 }
 ```
 
