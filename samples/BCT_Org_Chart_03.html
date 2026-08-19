@@ -19,7 +19,7 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data
+  // create data: a flat table with id/parent references
   var data = [
     {id: "ceo", name: "Sarah Johnson", title: "CEO"},
     {id: "cto", parent: "ceo", name: "Michael Chen", title: "CTO"},
@@ -35,10 +35,11 @@ anychart.onDocumentReady(function () {
 
   // create an org chart and set the data
   var chart = anychart.orgChart(data, "as-table");
-  // set the chart title
+  // set the chart title and separate it from the tree
   chart.title("Org Chart: Appearance");
+  chart.title().padding(0, 0, 20, 0);
 
-  // node cards in three states (plain colors)
+  // node cards in three states
   chart.normal().fill("#f0f7ff");
   chart.normal().stroke("1.5 #90a4ae");
   chart.hovered().fill("#e3f2fd");

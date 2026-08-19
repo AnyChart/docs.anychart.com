@@ -3,7 +3,7 @@
 
 ## Overview
 
-An Org chart (organizational chart) shows the structure of an organization as a tree. Each node is a card with a name and a title. The chart draws parent-child links as connector lines between the cards. The chart lays out the tree automatically and fits it into the container. It also lets you collapse branches, zoom, and pan — all by default.
+An Org chart (organizational chart) shows the structure of an organization as a tree. Each node is a card with a name and a title. The chart draws parent-child links as connector lines between the cards. The chart lays out the tree automatically and fits it into the container. It also lets you collapse branches, zoom, and pan, all by default.
 
 This article shows how to make a basic Org chart. It also shows how to set options that are special to this type. You can read the table below for a quick overview of the Org chart's features:
 
@@ -111,6 +111,8 @@ var data = [
 var chart = anychart.orgChart(data, "as-tree");
 ```
 
+In the sample below, the chart reads nested data in the `"as-tree"` mode, and no item carries an `id` or a `parent` field:
+
 {sample}BCT\_Org\_Chart\_02{sample}
 
 ### Appearance
@@ -125,7 +127,7 @@ Combine the state methods with these methods:
 Style the text of a card with the {api:anychart.charts.OrgChart#labels}labels(){api} method. Its font family and font size apply to both lines. The `title` line is drawn a bit smaller. The `fontColor()` and `fontWeight()` methods change only the `name` (header) line. Set the color of the `title` line separately with the {api:anychart.charts.OrgChart#titleFontColor}titleFontColor(){api} method. To hide both lines, turn off the labels with `chart.labels(false)`. Style the connector lines with {api:anychart.charts.OrgChart#connectorStroke}connectorStroke(){api}:
 
 ```
-// node cards in three states (plain colors)
+// node cards in three states
 chart.normal().fill("#f0f7ff");
 chart.normal().stroke("1.5 #90a4ae");
 chart.hovered().fill("#e3f2fd");
@@ -144,6 +146,8 @@ chart.titleFontColor("#546e7a");
 chart.connectorStroke("1.5 #90a4ae");
 ```
 
+In the sample below, the fill and the stroke of a card change when you hover over it and when you click it, the name line is bold and dark blue, and the title line is gray:
+
 {sample}BCT\_Org\_Chart\_03{sample}
 
 ### Orientation
@@ -160,6 +164,8 @@ By default, the tree grows from the top down. The {api:anychart.charts.OrgChart#
 chart.orientation("left-to-right");
 ```
 
+In the sample below, the tree grows from the left edge of the container to the right:
+
 {sample}BCT\_Org\_Chart\_04{sample}
 
 ### Connectors
@@ -175,6 +181,8 @@ The {api:anychart.charts.OrgChart#connectorType}connectorType(){api} method sets
 chart.connectorType("curved");
 chart.connectorStroke("2 #64b5f6");
 ```
+
+In the sample below, the parent-child connectors are smooth curves drawn with a thicker blue stroke:
 
 {sample}BCT\_Org\_Chart\_05{sample}
 
@@ -198,6 +206,8 @@ chart.levelSpacing(50);
 chart.siblingSpacing(16);
 ```
 
+In the sample below, the cards are wider and shorter than the default ones, and the gaps between the levels and between the siblings are smaller:
+
 {sample}BCT\_Org\_Chart\_06{sample}
 
 ### Collapse and Expand
@@ -212,6 +222,8 @@ Every parent card gets a +/− indicator. It collapses or expands the branch whe
 chart.collapse("cto");
 ```
 
+In the sample below, the CTO branch is collapsed from the start, and the +/− indicator under a parent card expands or collapses its branch:
+
 {sample}BCT\_Org\_Chart\_07{sample}
 
 ### Zoom and Pan
@@ -222,9 +234,11 @@ Mouse-wheel zoom and drag-to-pan are on by default. Control them with the {api:a
 * {api:anychart.charts.OrgChart#fit}fit(){api} — reset the zoom and pan and fit the whole tree into the container
 
 ```
-// zoom in programmatically (use fit() to reset zoom and pan)
+// zoom in programmatically
 chart.zoomIn();
 ```
+
+In the sample below, the chart is zoomed in by one step after the draw, and you can zoom it with the mouse wheel and pan it by dragging:
 
 {sample}BCT\_Org\_Chart\_08{sample}
 
@@ -242,9 +256,11 @@ chart.labels().fontSize(13);
 chart.labels().fontColor("#1a237e");
 chart.labels().fontWeight("bold");
 
-// set the color of the title line separately
+// set the color of the title line on its own
 chart.titleFontColor("#00796b");
 ```
+
+In the sample below, both label lines are set in Verdana, the name line is bold and dark blue, and the title line is teal:
 
 {sample}BCT\_Org\_Chart\_10{sample}
 
@@ -252,10 +268,10 @@ chart.titleFontColor("#00796b");
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box that appears when you hover over a card. It has many settings for its look and behavior. For example, you can edit the text with font settings and [text formatters](../Common_Settings/Text_Formatters). You can also change the background style and move the tooltip.
 
-By default, the tooltip shows the `name` field as the title. It shows the `title` field as the text. Use the {api:anychart.charts.OrgChart#tooltip}tooltip(){api} method with {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} to change it. The `{%name}` token works in both formats. You can read any field of the hovered data item in a formatting function with {api:anychart.format.Context#getData}getData(){api}. In the sample below, the data items carry extra fields (department, location, hire date, e-mail), and the tooltip shows them instead of repeating what the card already displays:
+By default, the tooltip shows the `name` field as the title. It shows the `title` field as the text. Use the {api:anychart.charts.OrgChart#tooltip}tooltip(){api} method with {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} to change it. The `{%name}` token works in both formats. You can read any field of the hovered data item in a formatting function with {api:anychart.format.Context#getData}getData(){api}. In the sample below, the data items carry extra fields (department, location, hire date, email), and the tooltip shows them instead of repeating what the card already displays:
 
 ```
-// the tooltip title shows the name; the text reads extra data fields
+// the tooltip reads any data field via getData()
 chart.tooltip().titleFormat("{%name}");
 chart.tooltip().format(function () {
   return "Department: " + this.getData("department") +

@@ -19,7 +19,7 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data
+  // create data: a flat table with id/parent references and extra fields
   var data = [
     {id: "ceo", name: "Sarah Johnson", title: "CEO", department: "Executive", location: "New York", hired: "2015-04-20", email: "sarah.johnson@example.com"},
     {id: "cto", parent: "ceo", name: "Michael Chen", title: "CTO", department: "Executive", location: "San Francisco", hired: "2016-01-11", email: "michael.chen@example.com"},
@@ -35,8 +35,9 @@ anychart.onDocumentReady(function () {
 
   // create an org chart and set the data
   var chart = anychart.orgChart(data, "as-table");
-  // set the chart title
-  chart.title("Org Chart: Tooltip");
+  // set the chart title and separate it from the tree
+  chart.title("Org Chart: Tooltips");
+  chart.title().padding(0, 0, 20, 0);
 
   // the tooltip reads any data field via getData()
   chart.tooltip().titleFormat("{%name}");

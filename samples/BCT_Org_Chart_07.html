@@ -19,7 +19,7 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data
+  // create data: a flat table with id/parent references
   var data = [
     {id: "ceo", name: "Sarah Johnson", title: "CEO"},
     {id: "cto", parent: "ceo", name: "Michael Chen", title: "CTO"},
@@ -35,11 +35,11 @@ anychart.onDocumentReady(function () {
 
   // create an org chart and set the data
   var chart = anychart.orgChart(data, "as-table");
-  // set the chart title
+  // set the chart title and separate it from the tree
   chart.title("Org Chart: Collapse and Expand");
+  chart.title().padding(0, 0, 20, 0);
 
-  // collapse the CTO branch by the node id; click the +/- indicator
-  // under a parent card to expand or collapse it interactively
+  // collapse the CTO branch by the node id
   chart.collapse("cto");
 
   // set the container id
