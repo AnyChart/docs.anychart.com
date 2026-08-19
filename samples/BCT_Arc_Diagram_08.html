@@ -43,11 +43,6 @@ anychart.onDocumentReady(function () {
   chart.link().hovered().fill("#1b2740");
   chart.link().selected().fill("#0b1220");
 
-  // show a label on every arc
-  chart.link().normal().labels().enabled(true);
-  chart.link().normal().labels().format("{%from} -> {%to}: {%value}");
-  chart.link().normal().labels().fontSize(10);
-
   // set the container id
   chart.container("container");
   // initiate drawing the chart

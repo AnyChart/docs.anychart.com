@@ -255,20 +255,15 @@ In the sample below, the node bars are blue with a white outline, their labels a
 
 ### Links
 
-Set the arcs and their [labels](../Common_Settings/Labels) with the {api:anychart.charts.ArcDiagram#link}link(){api} method. Like [nodes](#nodes), it has three states. Link labels support the `{%from}`, `{%to}`, and `{%value}` [text formatter](../Common_Settings/Text_Formatters) tokens. They are hidden by default. Enable them in the normal state to show a label on every arc. Sometimes a label is moved aside to avoid overlap. It then draws a thin leader line back to its arc:
+Set the arcs with the {api:anychart.charts.ArcDiagram#link}link(){api} method. Like [nodes](#nodes), it has three states. Link [labels](../Common_Settings/Labels) are hidden by default; turning them on shows a label on every arc at once, which suits a diagram with few links. The [link tooltip](#tooltips) identifies an arc better:
 
 ```
 // states of the arcs
 chart.link().hovered().fill("#1b2740");
 chart.link().selected().fill("#0b1220");
-
-// show a label on every arc
-chart.link().normal().labels().enabled(true);
-chart.link().normal().labels().format("{%from} -> {%to}: {%value}");
-chart.link().normal().labels().fontSize(10);
 ```
 
-In the sample below, the arcs carry labels with their two node names and their weight, and an arc turns dark when you hover or click it:
+In the sample below, an arc turns dark when you hover or click it:
 
 {sample}BCT\_Arc\_Diagram\_08{sample}
 
