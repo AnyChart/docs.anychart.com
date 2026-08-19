@@ -103,7 +103,7 @@ Pass data to the {api:anychart#arcDiagram}anychart.arcDiagram(){api} chart const
 * `to` — the name of the target node
 * `weight` — the weight of the link (sets the thickness of the arc)
 
-An optional `group` field puts the link's nodes into a named group. A node keeps the first group it gets: if a later row gives the same node another group, that value is ignored. You can use groups to [sort](#sorting) the nodes. Pass the links as objects, or map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api}:
+An optional `group` field puts the link's nodes into a named group: [sorting](#sorting) can then place the nodes of a group next to each other. A node keeps the first group the data gives it. Pass the links as objects, or map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api}:
 
 ```
 // create data: migration flows between regions, with a group column
