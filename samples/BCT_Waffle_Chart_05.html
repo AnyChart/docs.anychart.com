@@ -12,29 +12,25 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
 
     <style>
-        html, body {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        label {
-            display: inline-block;
-            margin: 10px 0 0 10px;
-        }
-        #container {
-            position: absolute;
-            width: 100%;
-            top: 40px;
-            bottom: 0;
-        }
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { display: flex; flex-direction: column; }
+        #controls { padding: 10px; }
+        #controls label { margin-right: 20px; }
+        #container { flex: 1; }
     </style>
 </head>
 <body>
-<label><input onclick="changeFillDirection('left-to-right')" type="radio" name="direction">left-to-right</label>
-<label><input onclick="changeFillDirection('right-to-left')" type="radio" name="direction">right-to-left</label>
-<label><input onclick="changeFillDirection('top-to-bottom')" type="radio" name="direction">top-to-bottom</label>
-<label><input onclick="changeFillDirection('bottom-to-top')" type="radio" name="direction" checked>bottom-to-top</label>
+<div id="controls">
+    <span>Fill direction:</span>
+    <input type="radio" name="direction" id="directionLeftToRight" onclick="changeFillDirection('left-to-right')">
+    <label for="directionLeftToRight">left-to-right</label>
+    <input type="radio" name="direction" id="directionRightToLeft" onclick="changeFillDirection('right-to-left')">
+    <label for="directionRightToLeft">right-to-left</label>
+    <input type="radio" name="direction" id="directionTopToBottom" onclick="changeFillDirection('top-to-bottom')">
+    <label for="directionTopToBottom">top-to-bottom</label>
+    <input type="radio" name="direction" id="directionBottomToTop" onclick="changeFillDirection('bottom-to-top')" checked>
+    <label for="directionBottomToTop">bottom-to-top</label>
+</div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -46,10 +42,12 @@ anychart.onDocumentReady(function () {
 
   // create a waffle chart and set the data
   chart = anychart.waffle(data);
-  // set the chart title
-  chart.title("Waffle Chart: Fill Direction");
 
-  // set the palette colors
+  // set the chart title and separate it from the grid
+  chart.title("Waffle Chart: Fill Direction");
+  chart.title().padding(0, 0, 20, 0);
+
+  // contrast the two categories so the fill direction stays visible
   chart.palette(["#1976d2", "#e3e9ef"]);
 
   // fill the grid from the bottom up
@@ -61,10 +59,9 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// apply the chosen fill direction and redraw
+// apply the chosen fill direction: the chart redraws itself
 function changeFillDirection(direction) {
   chart.fillDirection(direction);
-  chart.draw();
 }
 </script>
 </body>

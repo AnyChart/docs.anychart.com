@@ -29,10 +29,12 @@ anychart.onDocumentReady(function () {
 
   // create a waffle chart and set the data
   var chart = anychart.waffle(data);
-  // set the chart title
-  chart.title("Waffle Chart: Labels");
 
-  // enable the labels (the default format is "{%name}\n{%percent}%")
+  // set the chart title and separate it from the grid
+  chart.title("Waffle Chart: Labels");
+  chart.title().padding(0, 0, 20, 0);
+
+  // enable the labels
   chart.labels().enabled(true);
 
   // show the name and the value instead

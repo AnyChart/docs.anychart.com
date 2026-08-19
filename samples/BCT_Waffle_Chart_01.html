@@ -30,11 +30,13 @@ anychart.onDocumentReady(function () {
   // create a waffle chart and set the data
   var chart = anychart.waffle(data);
 
-  // set the chart title
+  // set the chart title and separate it from the grid
   chart.title("Waffle Chart: Basic Sample");
+  chart.title().padding(0, 0, 20, 0);
 
-  // set the container id and draw
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>

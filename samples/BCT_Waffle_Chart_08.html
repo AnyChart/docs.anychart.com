@@ -29,8 +29,10 @@ anychart.onDocumentReady(function () {
 
   // create a waffle chart and set the data
   var chart = anychart.waffle(data);
-  // set the chart title
+
+  // set the chart title and separate it from the grid
   chart.title("Waffle Chart: Legend");
+  chart.title().padding(0, 0, 20, 0);
 
   // move the legend to the right and make it vertical
   chart.legend().position("right");

@@ -3,7 +3,7 @@
 
 ## Overview
 
-A Waffle chart (also called a square pie chart) shows parts of a whole. It uses a grid of small cells — 10×10 by default. Each category is a block of cells. The block's size matches its share of the total.
+A Waffle chart (also called a square pie chart) shows parts of a whole. It uses a grid of small cells, 10×10 by default. Each category is a block of cells. The block's size matches its share of the total.
 
 Waffle charts do the same job as [Pie](Pie_Chart) charts. But they often make exact values easier to read. You can count the cells. On the default grid, one cell equals 1% of the total. This type works best with a few categories.
 
@@ -50,10 +50,10 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
-To make a Waffle chart, use the {api:anychart#waffle}anychart.waffle(){api} chart constructor. Pass your data to it. Each point has two values. `name` is the category, and `value` is its quantity. You can use `x` in place of `name`. The chart reads either field (`name` wins if you set both). The chart works out each category's share (percent) of the total on its own.
+To make a Waffle chart, use the {api:anychart#waffle}anychart.waffle(){api} chart constructor. Pass your data to it. Each row has two values. `name` is the category, and `value` is its quantity. You can use `x` in place of `name`. The chart reads either field (`name` wins if you set both). The chart works out each category's share (percent) of the total on its own.
 
 ```
-// create data: values don't need to add up to 100 — the chart works out each category's share on its own
+// create data: each value is a quantity - the chart computes each category's share
 var data = [
   {name: "In-store", value: 43},
   {name: "Online", value: 31},
@@ -103,7 +103,7 @@ chart.palette(["#1976d2", "#64b5f6", "#ffa000", "#dde3ea"]);
 // separate the cells with a white stroke
 chart.normal().stroke("#ffffff");
 
-// lighten cells on hover and darken them when selected (clicked)
+// lighten cells on hover and darken them when selected
 chart.hovered().fill(function () {
   return anychart.color.lighten(this.sourceColor, 0.35);
 });
@@ -113,6 +113,8 @@ chart.selected().fill(function () {
 chart.selected().stroke("2 #212121");
 ```
 
+In the sample below, pointing at a category lightens its block of cells, and clicking it darkens the block and gives its cells a dark outline:
+
 {sample}BCT\_Waffle\_Chart\_02{sample}
 
 ### Grid Layout
@@ -121,13 +123,15 @@ By default, the grid has 10×10 = 100 cells. To change it, use the {api:anychart
 
 The chart always fills the whole grid. Each category gets a number of cells that matches its share of the total. The chart rounds these numbers with the largest-remainder method. This method rounds shares so they still add up to the full grid. It works with any grid size. Say your values add up to 100. Then one cell of the default 10×10 grid equals exactly one unit of value.
 
-When the shares do not divide evenly into cells, the chart hands the leftover cells to the categories with the largest remainders. For example, take the values 5, 3, and 1. Their exact shares of the default 100 cells are 55.6, 33.3, and 11.1 cells. The chart draws 56, 33, and 11 cells — together exactly 100.
+When the shares do not divide evenly into cells, the chart hands the leftover cells to the categories with the largest remainders. For example, take the values 5, 3, and 1. Their exact shares of the default 100 cells are 55.6, 33.3, and 11.1 cells. The chart draws 56, 33, and 11 cells, together exactly 100.
 
 ```
-// change the default 10×10 grid
+// change the default 10x10 grid
 chart.rows(5);
 chart.columns(20);
 ```
+
+In the sample below, the grid is 5 rows by 20 columns:
 
 {sample}BCT\_Waffle\_Chart\_03{sample}
 
@@ -141,13 +145,15 @@ The cells of a Waffle chart are squares by default. The chart works out their si
 * {api:anychart.charts.Waffle#cellSize}cellSize(){api} — a fixed cell height in pixels (0 by default — the chart then works out the size on its own)
 * {api:anychart.charts.Waffle#cellAspectRatio}cellAspectRatio(){api} — the width-to-height ratio of a cell (1 by default)
 
-The two sizing modes work like this. With the default `cellSize(0)`, the chart fits the cells to the chart area, at the width-to-height ratio you set with `cellAspectRatio()`. When you set an explicit `cellSize`, the chart stops fitting: each cell is exactly that many pixels high and `cellSize × cellAspectRatio` pixels wide. If the grid then becomes bigger than the chart area, it does not shrink — the grid stays centered, and its edges are cut off.
+The two sizing modes work like this. With the default `cellSize(0)`, the chart fits the cells to the chart area, at the width-to-height ratio you set with `cellAspectRatio()`. When you set an explicit `cellSize`, the chart stops fitting: each cell is exactly that many pixels high and `cellSize × cellAspectRatio` pixels wide. If the grid then becomes bigger than the chart area, it does not shrink. The grid stays centered, and its edges are cut off.
 
 ```
 // draw round cells with wider gaps between them
 chart.cellShape("circle");
 chart.cellPadding(4);
 ```
+
+In the sample below, the cells are circles with a 4-pixel gap between them:
 
 {sample}BCT\_Waffle\_Chart\_04{sample}
 
@@ -183,7 +189,7 @@ In the sample below, use the switcher to compare all four directions on the same
 [Labels](../Common_Settings/Labels) are text or image elements. You can place them anywhere on any chart. On a Waffle chart, they show category names directly on the grid. There is one label per category, placed at the center of its block of cells. Labels are off by default. Turn them on with the {api:anychart.charts.Waffle#labels}labels(){api} method. The default format is `"{%name}\n{%percent}%"`. You can use the `{%name}`, `{%value}`, and `{%percent}` [text formatter](../Common_Settings/Text_Formatters) tokens:
 
 ```
-// enable the labels (the default format is "{%name}\n{%percent}%")
+// enable the labels
 chart.labels().enabled(true);
 
 // show the name and the value instead
@@ -191,6 +197,8 @@ chart.labels().format("{%name}: {%value}");
 chart.labels().fontColor("#ffffff");
 chart.labels().fontWeight(600);
 ```
+
+In the sample below, each block of cells carries a white label with the category name and its value:
 
 {sample}BCT\_Waffle\_Chart\_06{sample}
 
@@ -215,5 +223,7 @@ A [Legend](../Common_Settings/Legend) links the colors to the category names. On
 chart.legend().position("right");
 chart.legend().itemsLayout("vertical");
 ```
+
+In the sample below, the legend sits to the right of the grid, with its items stacked vertically:
 
 {sample}BCT\_Waffle\_Chart\_08{sample}

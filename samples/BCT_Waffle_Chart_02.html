@@ -29,8 +29,10 @@ anychart.onDocumentReady(function () {
 
   // create a waffle chart and set the data
   var chart = anychart.waffle(data);
-  // set the chart title
+
+  // set the chart title and separate it from the grid
   chart.title("Waffle Chart: Appearance");
+  chart.title().padding(0, 0, 20, 0);
 
   // one palette color per category
   chart.palette(["#1976d2", "#64b5f6", "#ffa000", "#dde3ea"]);
@@ -38,7 +40,7 @@ anychart.onDocumentReady(function () {
   // separate the cells with a white stroke
   chart.normal().stroke("#ffffff");
 
-  // lighten cells on hover and darken them when selected (clicked)
+  // lighten cells on hover and darken them when selected
   chart.hovered().fill(function () {
     return anychart.color.lighten(this.sourceColor, 0.35);
   });

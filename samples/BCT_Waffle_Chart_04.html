@@ -29,8 +29,10 @@ anychart.onDocumentReady(function () {
 
   // create a waffle chart and set the data
   var chart = anychart.waffle(data);
-  // set the chart title
-  chart.title("Waffle Chart: Cell Shape and Padding");
+
+  // set the chart title and separate it from the grid
+  chart.title("Waffle Chart: Cells");
+  chart.title().padding(0, 0, 20, 0);
 
   // draw round cells with wider gaps between them
   chart.cellShape("circle");

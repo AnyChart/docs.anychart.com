@@ -29,8 +29,10 @@ anychart.onDocumentReady(function () {
 
   // create a waffle chart and set the data
   var chart = anychart.waffle(data);
-  // set the chart title
-  chart.title("Waffle Chart: 5x20 Grid");
+
+  // set the chart title and separate it from the grid
+  chart.title("Waffle Chart: Grid Layout");
+  chart.title().padding(0, 0, 20, 0);
 
   // change the default 10x10 grid
   chart.rows(5);
