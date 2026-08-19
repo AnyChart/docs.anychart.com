@@ -194,10 +194,10 @@ A link is drawn with a fill only, and its base color comes from [Link Color Mode
 ```
 // link states: a link keeps its own color and only deepens
 chart.link().hovered().fill(function () {
-  return anychart.color.darken(this.sourceColor, 0.1);
+  return anychart.color.darken(this.sourceColor, 0.2);
 });
 chart.link().selected().fill(function () {
-  return anychart.color.darken(this.sourceColor, 0.25);
+  return anychart.color.darken(this.sourceColor, 0.4);
 });
 ```
 

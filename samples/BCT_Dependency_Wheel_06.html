@@ -41,10 +41,10 @@ anychart.onDocumentReady(function () {
 
   // link states: a link keeps its own color and only deepens
   chart.link().hovered().fill(function () {
-    return anychart.color.darken(this.sourceColor, 0.1);
+    return anychart.color.darken(this.sourceColor, 0.2);
   });
   chart.link().selected().fill(function () {
-    return anychart.color.darken(this.sourceColor, 0.25);
+    return anychart.color.darken(this.sourceColor, 0.4);
   });
 
   // the tooltip of a link names the route and its weekly flights
