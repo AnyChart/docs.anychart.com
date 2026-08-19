@@ -72,8 +72,9 @@ var data = [
 // create an arc diagram and set the data
 var chart = anychart.arcDiagram(data);
 
-// set the chart title
+// set the chart title and separate it from the diagram
 chart.title("Arc Diagram: Basic Sample");
+chart.title().padding(0, 0, 20, 0);
 
 // set the container id
 chart.container("container");
@@ -81,6 +82,8 @@ chart.container("container");
 // initiate drawing the chart
 chart.draw();
 ```
+
+In the sample below, the ten data rows are drawn as arcs above a row of six region nodes:
 
 {sample}BCT\_Arc\_Diagram\_01{sample}
 
@@ -105,16 +108,19 @@ A node's name is the exact string from the `from`/`to` fields. The same string i
 An optional `group` field puts the link's nodes into a named group. A node keeps the first group it gets: if a later row gives the same node another group, that value is ignored. You can use groups to [sort](#sorting) the nodes. Pass the links as objects, or map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api}:
 
 ```
-// map the columns of a data set (four fields: from, to, weight, group)
+// create data: migration flows between regions, with a group column
 var dataSet = anychart.data.set([
   ["Asia", "Europe", 42, "Eurasia"],
   ["Asia", "N. America", 51, "Eurasia"],
   ["Africa", "Europe", 38, "Africa-Europe"]
 ]);
+// map the columns the chart needs: from, to, weight and group
 var mapping = dataSet.mapAs({from: 0, to: 1, weight: 2, group: 3});
 
 var chart = anychart.arcDiagram(mapping);
 ```
+
+In the sample below, the chart is built from a mapped data set instead of an array of objects:
 
 {sample}BCT\_Arc\_Diagram\_02{sample}
 
@@ -134,6 +140,8 @@ chart.palette(["#5b8ff9", "#61ddaa", "#65789b", "#f6bd16", "#7262fd", "#f6903d"]
 chart.colorMode("gradient");
 ```
 
+In the sample below, each node takes a color from the palette and every arc blends from the color of its source node to the color of its target node:
+
 {sample}BCT\_Arc\_Diagram\_03{sample}
 
 ### Orientation
@@ -144,6 +152,8 @@ By default, the nodes sit in a row at the bottom of the chart. The arcs curve up
 // place the nodes in a column; the arcs curve to the right
 chart.orientation("vertical");
 ```
+
+In the sample below, the nodes form a column and the arcs curve to the right:
 
 {sample}BCT\_Arc\_Diagram\_04{sample}
 
@@ -165,6 +175,8 @@ chart.curvature(1.5);
 chart.arcDirection("down");
 ```
 
+In the sample below, the node bars are thicker and stand further apart, and the arcs are taller and curve below the node line:
+
 {sample}BCT\_Arc\_Diagram\_05{sample}
 
 ### Sorting
@@ -181,6 +193,8 @@ Instead of a string, you can pass your own compare function. It works like a com
 // order the nodes by their total flow instead of by name
 chart.sortOrder("weight");
 ```
+
+In the sample below, the nodes are ordered by their total flow instead of alphabetically by name:
 
 {sample}BCT\_Arc\_Diagram\_06{sample}
 
@@ -210,6 +224,8 @@ chart.node().normal().labels().fontColor("#212121");
 chart.select(["Asia", "Europe"]);
 ```
 
+In the sample below, the node bars are blue with a white outline, their labels are horizontal, and the Asia and Europe nodes are selected from code:
+
 {sample}BCT\_Arc\_Diagram\_07{sample}
 
 ### Links
@@ -223,9 +239,11 @@ chart.link().selected().fill("#0b1220");
 
 // show a label on every arc
 chart.link().normal().labels().enabled(true);
-chart.link().normal().labels().format("{%from} → {%to}: {%value}");
+chart.link().normal().labels().format("{%from} -> {%to}: {%value}");
 chart.link().normal().labels().fontSize(10);
 ```
+
+In the sample below, the arcs carry labels with their two node names and their weight, and an arc turns dark when you hover or click it:
 
 {sample}BCT\_Arc\_Diagram\_08{sample}
 
@@ -239,17 +257,21 @@ chart.node().tooltip().titleFormat("Region: {%name}");
 chart.node().tooltip().format("Total flow: {%weight}\nConnections: {%connections}");
 
 // the tooltip of links
-chart.link().tooltip().titleFormat("{%from} → {%to}");
+chart.link().tooltip().titleFormat("{%from} -> {%to}");
 chart.link().tooltip().format("People (k): {%value}");
 ```
 
 You can also use a [formatting function](../Common_Settings/Text_Formatters#formatting_functions) instead of tokens. For example, you can calculate the average flow per connection:
 
 ```
-// show the average flow per connection
+// the body of the node tooltip: a formatting function
 chart.node().tooltip().format(function () {
-  return "Average per connection: " + Math.round(this.weight / this.connections);
+  return "Total flow: " + this.weight +
+    "\nConnections: " + this.connections +
+    "\nAverage per connection: " + Math.round(this.weight / this.connections);
 });
 ```
+
+In the sample below, the node tooltip adds the average flow per connection and the link tooltip names the route:
 
 {sample}BCT\_Arc\_Diagram\_09{sample}

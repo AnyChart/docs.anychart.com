@@ -19,7 +19,7 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data
+  // create data: migration flows between regions
   var data = [
     {from: "Asia", to: "Europe", weight: 42},
     {from: "Asia", to: "N. America", weight: 51},
@@ -35,8 +35,9 @@ anychart.onDocumentReady(function () {
 
   // create an arc diagram and set the data
   var chart = anychart.arcDiagram(data);
-  // set the chart title
+  // set the chart title and separate it from the diagram
   chart.title("Arc Diagram: Vertical Orientation");
+  chart.title().padding(0, 0, 20, 0);
 
   // place the nodes in a column; the arcs curve to the right
   chart.orientation("vertical");
