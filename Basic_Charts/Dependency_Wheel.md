@@ -218,6 +218,7 @@ chart.link().tooltip().format("Weekly flights: {%value}");
 In the sample below, the state fills deepen a link's own color and the tooltip names the route:
 
 {sample}BCT\_Dependency\_Wheel\_05{sample}
+
 ### Wheel Geometry
 
 These methods change the geometry of the wheel:
