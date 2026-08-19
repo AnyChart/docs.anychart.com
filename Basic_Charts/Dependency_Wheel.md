@@ -3,11 +3,11 @@
 
 ## Overview
 
-A Dependency wheel is a round diagram of flows. The nodes sit as arcs around the wheel. Each link between two nodes is drawn as a band that joins their two arcs.
+A Dependency wheel is a round diagram of flows. The nodes are placed as arcs around the wheel. Each link between two nodes is drawn as a band that joins their two arcs.
 
 The length of a node arc shows the total flow through that node. The thickness of a link shows its weight. This type is also known as a chord diagram.
 
-It works well for flows inside a closed system. Some examples are imports and exports, energy flows, or links between software packages. If your flow moves in stages from sources to end points, a [Sankey diagram](Sankey_Diagram) can be the better choice. If you want to show the same links along a straight line, use an [Arc diagram](Arc_Diagram).
+It works well for flows inside a closed system. Some examples are imports and exports, energy flows, or links between software packages. If your flow moves in stages from sources to end points, a [Sankey diagram](Sankey_Diagram) may be a better choice. If you want to show the same links along a straight line, use an [Arc diagram](Arc_Diagram).
 
 This article shows how to make a basic Dependency wheel. It also shows how to set options that are special to this type. The table below gives a short overview of the Dependency wheel's features:
 
@@ -51,7 +51,7 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
-To make a Dependency wheel, use the {api:anychart#dependencyWheel}anychart.dependencyWheel(){api} chart constructor. Each data row is a link between two nodes. AnyChart builds the nodes on its own from the `from` and `to` fields:
+To make a Dependency wheel, use the {api:anychart#dependencyWheel}anychart.dependencyWheel(){api} chart constructor. Each data row is a link between two nodes. AnyChart builds the nodes automatically from the `from` and `to` fields:
 
 ```
 // create data: weekly flights between the cities
@@ -97,9 +97,9 @@ Pass the data to the {api:anychart#dependencyWheel}anychart.dependencyWheel(){ap
 * `to` — the name of the target node
 * `weight` — the weight of the link, which sets its thickness
 
-The same node name can appear in the `from` field of one row and in the `to` field of another. This is normal: it is still one node, and it is both a source and a target. Its arc shows the total of its incoming and outgoing flows. In the sample below, `Tokyo` works this way: its arc covers the flights arriving from `Paris` together with those departing to `NYC` and `Dubai`.
+The same node name can appear in the `from` field of one row and in the `to` field of another. It is still one node, and it works as both a source and a target. Its arc shows the total of its incoming and outgoing flows. In the sample below, `Tokyo` works this way: its arc covers the flights arriving from `Paris` together with those departing to `NYC` and `Dubai`.
 
-You can pass each link as an object. Or you can map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api}. Mapping is what you want when the data arrives as a table that holds more than the chart needs: name the columns to read, and the rest are ignored. The table below carries the airline and the aircraft type as well, and only three of its five columns are mapped:
+You can pass each link as an object. Or you can map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api}. Use mapping when the data comes as a table that contains more than the chart needs: name the columns to read, and the other columns are ignored. The table below also contains the airline and the aircraft type, and only three of its five columns are mapped:
 
 ```
 // the route table as it comes from the airline: five columns, three used
@@ -124,14 +124,14 @@ A node is hovered when you point at it. Hovering a node also highlights its link
 
 #### Node Labels
 
-[Labels](../Common_Settings/Labels) of the nodes are enabled by default and show the node name. They come from the normal state only, so set them with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state. Font settings and [text formatters](../Common_Settings/Text_Formatters) are available:
+[Labels](../Common_Settings/Labels) of the nodes are enabled by default and show the node name. Labels are taken from the normal state only, so set them with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state. Font settings and [text formatters](../Common_Settings/Text_Formatters) are available:
 
 ```
 // add the node's share of the total flow to its label
 chart.node().normal().labels().format("{%name} {%percent}{decimalsCount:1}%");
 ```
 
-By default, a label is one straight line of text touching the ring. To lay it along the ring, call `labels().position()` with the `"circular"` parameter:
+By default, a label is a straight line of text next to the ring. To place it along the ring, call `labels().position()` with the `"circular"` parameter:
 
 ```
 // lay the node labels along the ring
@@ -147,7 +147,7 @@ chart.dropOverlappedLabels(false);
 
 #### Node Colors
 
-A node takes its color from the chart [palette](../Appearance_Settings/Palettes) — see [Color Mode](#color_mode). To style the states, use the {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} methods. They accept functions, and deriving the state fills from `sourceColor` keeps them consistent with the palette:
+A node takes its color from the chart [palette](../Appearance_Settings/Palettes) (see [Color Mode](#color_mode)). To style the states, use the {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api} methods. They accept functions. If you derive the state fills from `sourceColor`, they stay consistent with the palette:
 
 ```
 // node states: the fill darkens and the stroke thickens as the state gets more active
@@ -167,7 +167,7 @@ chart.node().selected().stroke("#0b1220", 3);
 
 #### Node Tooltip
 
-Nodes and links have separate [tooltips](../Common_Settings/Tooltip). A tooltip set with {api:anychart.core.Chart#tooltip}chart.tooltip(){api} applies to both, so a format written for one of them leaves the other with empty tokens. To set the node tooltip, use `node().tooltip()`:
+Nodes and links have separate [tooltips](../Common_Settings/Tooltip). A tooltip set with {api:anychart.core.Chart#tooltip}chart.tooltip(){api} applies to both. If you write a format for one of them, the tokens of the other stay empty. To set the node tooltip, use `node().tooltip()`:
 
 ```
 // the tooltip of a city, built from the node tokens
@@ -177,7 +177,7 @@ chart.node().tooltip().format(
 );
 ```
 
-In the sample below, every label is laid along the ring, the three states are styled as one scale — the fill grows darker and the stroke heavier as the state gets more active — and the tooltip reports what the node knows:
+In the sample below, the labels are placed along the ring, the state fills and strokes are derived from `sourceColor`, and the tooltip shows the node tokens:
 
 {sample}BCT\_Dependency\_Wheel\_03{sample}
 
@@ -185,11 +185,11 @@ In the sample below, every label is laid along the ring, the three states are st
 
 Set the links with the {api:anychart.charts.DependencyWheel#link}link(){api} method. Like [nodes](#nodes), it works in three states. A link is hovered when you point at it. It is selected when you click it. Hovering or selecting a node also highlights its links. Hovering or selecting a link also highlights its two end nodes.
 
-Link [labels](../Common_Settings/Labels) are hidden by default. Turning them on in the normal state shows a label on every link at once, each one placed at the middle of its band. That suits a wheel with few links; on a busy wheel the [link tooltip](#link_tooltip) identifies a link better.
+Link [labels](../Common_Settings/Labels) are hidden by default. Turning them on in the normal state shows a label on every link at once, each one placed at the middle of its band. This works well when there are only a few links. When there are many, use the [link tooltip](#link_tooltip) instead.
 
 #### Link Colors
 
-A link is drawn with a fill only, and its base color comes from [Color Mode](#color_mode). To style the states, use the {api:anychart.core.StateSettings#fill}fill(){api} method. Deriving the state fills from `sourceColor` keeps a link in its own color while it deepens:
+A link is drawn with a fill only, and its base color comes from [Color Mode](#color_mode). To style the states, use the {api:anychart.core.StateSettings#fill}fill(){api} method. If you derive the state fills from `sourceColor`, a link keeps its own color and only becomes darker:
 
 ```
 // link states: a link keeps its own color and only deepens
@@ -201,7 +201,7 @@ chart.link().selected().fill(function () {
 });
 ```
 
-Hover or click a link in the sample below to see its fill deepen:
+Hover or click a link in the sample below to see how its fill becomes darker:
 
 {sample}BCT\_Dependency\_Wheel\_04{sample}
 
@@ -215,7 +215,7 @@ chart.link().tooltip().titleFormat("{%from} - {%to}");
 chart.link().tooltip().format("Weekly flights: {%value}");
 ```
 
-In the sample below, the state fills deepen a link's own color and the tooltip names the route:
+In the sample below, the state fills make a link darker and the tooltip shows the route:
 
 {sample}BCT\_Dependency\_Wheel\_05{sample}
 
@@ -223,7 +223,7 @@ In the sample below, the state fills deepen a link's own color and the tooltip n
 
 These methods change the geometry of the wheel:
 
-* {api:anychart.charts.DependencyWheel#startAngle}startAngle(){api} — rotates the whole wheel, in degrees: 0, the default, starts the first node arc at the top, and positive values turn the wheel clockwise
+* {api:anychart.charts.DependencyWheel#startAngle}startAngle(){api} — rotates the whole wheel, in degrees. The default is 0, which places the first node arc at the top. Positive values turn the wheel clockwise
 * {api:anychart.charts.DependencyWheel#padAngle}padAngle(){api} — the angular gap between node arcs that sit next to each other, in radians (0.02 by default)
 * {api:anychart.charts.DependencyWheel#nodeWidth}nodeWidth(){api} — the thickness of the node arcs, in pixels (15 by default)
 
@@ -256,7 +256,7 @@ The color of each node comes from the chart [palette](../Appearance_Settings/Pal
 * `"target"` — a link takes the color of its target (`to`) node
 * `"gradient"` — a link blends from the source color to the target color. The {api:anychart.charts.DependencyWheel#reverseGradient}reverseGradient(){api} method flips the direction of the blend
 
-The mode sets only the base color of the links — the nodes keep their palette colors in every mode. To style the link states on top of the base color, see [Link Colors](#link_colors).
+The mode sets only the base color of the links. The nodes keep their palette colors in every mode. To style the link states on top of the base color, see [Link Colors](#link_colors).
 
 Both methods work on a chart that is already drawn, so a control can switch the mode without rebuilding the chart. Use the buttons in the sample below to compare all four results:
 
@@ -281,14 +281,14 @@ function changeColorMode(value) {
 
 ### Sorting
 
-The {api:anychart.charts.DependencyWheel#sortOrder}sortOrder(){api} method sets the order of the node arcs around the wheel. The first arc starts at the start angle — the top of the wheel by default, see [Wheel Geometry](#wheel_geometry) — and the following arcs are placed clockwise:
+The {api:anychart.charts.DependencyWheel#sortOrder}sortOrder(){api} method sets the order of the node arcs around the wheel. The first arc starts at the start angle, which is the top of the wheel by default (see [Wheel Geometry](#wheel_geometry)). The following arcs are placed clockwise:
 
 * `"desc"` (default) — by the total flow through the node: the largest node starts at the top, the rest follow clockwise from largest to smallest
-* `"asc"` — the same, from smallest to largest
+* `"asc"` — by the total flow, from smallest to largest
 * `"none"` — in the order the nodes appear in the data. Set this value before the first {api:anychart.charts.DependencyWheel#draw}draw(){api}: on a chart that is already drawn it keeps the order of the previous sorting. Note: if the node names are numbers written as text, such as `"10"` or `"2"`, they are placed in number order, from smallest to largest, instead
 * a function — your own compare function that sorts the node arcs, like the callback passed to `Array.sort`
 
-The `"asc"` and `"desc"` values and a compare function all work on a chart that is already drawn. So a compare function is the way to bring back the order of the data on a live chart: build it from the positions of the nodes in your data, as the sample below does.
+The `"asc"` and `"desc"` values and a compare function all work on a chart that is already drawn. To restore the order of the data on such a chart, use a compare function built from the positions of the nodes in your data, as shown in the sample below.
 
 ```
 // arrange the node arcs from the smallest to the largest
