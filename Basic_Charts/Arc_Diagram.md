@@ -102,7 +102,7 @@ Pass data to the {api:anychart#arcDiagram}anychart.arcDiagram(){api} chart const
 * `from` — the name of the source node
 * `to` — the name of the target node
 * `weight` — the weight of the link (sets the thickness of the arc)
-* `group` — optional; a named group for the link's nodes, used by [sorting](#sorting)
+* `group` — optional; a named group for the link's nodes
 
 Pass the links as objects, or map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api}:
 
