@@ -167,7 +167,7 @@ chart.node().selected().stroke("#0b1220", 3);
 
 #### Node Tooltip
 
-Nodes and links have separate [tooltips](../Common_Settings/Tooltip). A tooltip set with {api:anychart.core.Chart#tooltip}chart.tooltip(){api} applies to both. If you write a format for one of them, the tokens of the other stay empty. To set the node tooltip, use `node().tooltip()`:
+To set the [tooltip](../Common_Settings/Tooltip) of the nodes, use `node().tooltip()`:
 
 ```
 // the tooltip of a city, built from the node tokens
@@ -207,7 +207,7 @@ Hover or click a link in the sample below to see how its fill becomes darker:
 
 #### Link Tooltip
 
-By default, the link tooltip uses the same format as the node tooltip, and node tokens show no value for a link. To set it, use `link().tooltip()`:
+Links have a [tooltip](../Common_Settings/Tooltip) of their own, but by default it uses the format of the [node tooltip](#node_tooltip), and node tokens show no value for a link. A tooltip set with {api:anychart.core.Chart#tooltip}chart.tooltip(){api} also applies to both nodes and links. To set the link tooltip separately, use `link().tooltip()`:
 
 ```
 // the tooltip of a link names the route and its weekly flights
