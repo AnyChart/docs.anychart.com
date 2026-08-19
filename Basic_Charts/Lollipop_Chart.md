@@ -70,15 +70,20 @@ var data = [
   {x: "May", value: 9000}
 ];
 
-// create a chart
+// create a lollipop chart
 var chart = anychart.lollipop();
 
 // create a lollipop series and set the data
 var series = chart.lollipop(data);
+// set the series name
+series.name("Sales");
+
+// set the chart title and separate it from the plot
+chart.title("Lollipop Chart: Basic Sample");
+chart.title().padding(0, 0, 20, 0);
 
 // set the container id
 chart.container("container");
-
 // initiate drawing the chart
 chart.draw();
 ```
@@ -86,7 +91,7 @@ chart.draw();
 You can also build the same chart from a [Column](Column_Chart) (or [Bar](Bar_Chart)) chart. In this case, add a Lollipop series with the {api:anychart.charts.Cartesian#lollipop}lollipop(){api} method. Only the constructor is different. The rest is the same:
 
 ```
-// create a column (or bar) chart, then add a lollipop series
+// create a column chart, then add a lollipop series to it
 var chart = anychart.column();
 var series = chart.lollipop(data);
 ```
@@ -140,8 +145,9 @@ var seriesData_2 = [
 // create a column chart, then add lollipop series to it
 var chart = anychart.column();
 
-// first series
+// create the first lollipop series and set the data
 var series1 = chart.lollipop(seriesData_1);
+// set the stroke and fill of the first series in the normal, hovered, and selected states
 series1.normal().stroke("#00cc99", 2);
 series1.normal().fill("#00cc99");
 series1.hovered().stroke("#00cc99", 3);
@@ -149,8 +155,9 @@ series1.hovered().fill("#00cc99");
 series1.selected().stroke("#00cc99", 4);
 series1.selected().fill("#00cc99");
 
-// second series
+// create the second lollipop series and set the data
 var series2 = chart.lollipop(seriesData_2);
+// set the stroke and fill of the second series in the normal, hovered, and selected states
 series2.normal().stroke("#0066cc", 2);
 series2.normal().fill("#0066cc");
 series2.hovered().stroke("#0066cc", 3);
@@ -166,7 +173,7 @@ series2.selected().fill("#0066cc");
 If you use objects to set the data, you can change the look of individual points. Just add special fields to your data:
 
 ```
-// create data
+// create data with individual point settings
 var data = [
   {x: "January", value: 10000},
   {x: "February", value: 12000},
@@ -188,7 +195,7 @@ var data = [
   {x: "May", value: 9000}
 ];
 
-// create a chart
+// create a column chart
 var chart = anychart.column();
 
 // create a lollipop series and set the data
@@ -200,7 +207,7 @@ var series = chart.lollipop(data);
 If you use an array to set the data, you can also set the look of individual points. It works a bit differently. First add the extra values to the data set. Then map the columns so the chart can read them:
 
 ```
-// create a data set: x, value, and (for one point) a custom fill color
+// create a data set with a custom fill color for one point
 var dataSet = anychart.data.set([
   ["January", 10000],
   ["February", 12000],
@@ -209,10 +216,10 @@ var dataSet = anychart.data.set([
   ["May", 9000]
 ]);
 
-// map the columns
+// map the columns: x, value and fill
 var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2});
 
-// create a chart
+// create a lollipop chart
 var chart = anychart.lollipop();
 
 // create a lollipop series and set the data
@@ -226,12 +233,13 @@ var series = chart.lollipop(mapping);
 A Lollipop point has two parts you can size. The **head** is a round marker. Set its radius with {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} and {api:anychart.core.ui.MarkersFactory#size}size(){api} (the default radius is 4 px). The head is always a circle. You can change its size, but not its shape: the marker type setting does not affect the head. The **stick** has no width of its own. Its thickness is the series stroke width. So make it thicker or thinner by setting the stroke width (see [Appearance](#appearance)).
 
 ```
-// enlarge the round head (default radius is 4 px)
+// set the size of the lollipop heads
 series.markers().size(10);
-
-// the stick thickness is the stroke width
+// set the stroke of the lollipop sticks
 series.normal().stroke("#0066cc", 3);
 ```
+
+In the sample below, each head has a radius of 10 px and each stick is 3 px thick:
 
 {sample}BCT\_Lollipop\_Chart\_05{sample}
 
@@ -242,12 +250,14 @@ series.normal().stroke("#0066cc", 3);
 You can turn on the data labels and format them to show each point's value:
 
 ```
-// enable and format the data labels
+// enable and configure the series labels
 series.labels().enabled(true);
 series.labels().format("{%value}");
 ```
 
 To move the labels, use the {api:anychart.core.ui.LabelsFactory#position}position(){api}, {api:anychart.core.ui.LabelsFactory#anchor}anchor(){api}, {api:anychart.core.ui.LabelsFactory#offsetX}offsetX(){api}, and {api:anychart.core.ui.LabelsFactory#offsetY}offsetY(){api} methods.
+
+In the sample below, every point carries a label with its value, placed above the head:
 
 {sample}BCT\_Lollipop\_Chart\_06{sample}
 
@@ -258,9 +268,11 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box. It appears when you hover
 You can set the tooltip text with a format string:
 
 ```
-// customize the tooltip text
+// set the tooltip format
 series.tooltip().format("{%x}: {%value}");
 ```
+
+In the sample below, hover over a point to see its month and value in the tooltip:
 
 {sample}BCT\_Lollipop\_Chart\_07{sample}
 

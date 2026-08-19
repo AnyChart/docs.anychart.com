@@ -40,11 +40,13 @@ anychart.onDocumentReady(function () {
   // set the series name
   series.name("Sales");
 
-  // set the chart title
+  // set the chart title and separate it from the plot
   chart.title("Lollipop Chart: Basic Sample");
+  chart.title().padding(0, 0, 20, 0);
 
-  // set the container id and draw
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>

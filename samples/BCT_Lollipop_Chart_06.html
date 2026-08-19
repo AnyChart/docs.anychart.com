@@ -20,13 +20,19 @@
 anychart.onDocumentReady(function () {
   // create data
   var data = [
-    {x: "January", value: 10000},{x: "February", value: 12000},{x: "March", value: 18000},{x: "April", value: 11000},{x: "May", value: 9000}
+    {x: "January", value: 10000},
+    {x: "February", value: 12000},
+    {x: "March", value: 18000},
+    {x: "April", value: 11000},
+    {x: "May", value: 9000}
   ];
 
   // create a lollipop chart
   var chart = anychart.lollipop();
-  // set the chart title
+
+  // set the chart title and separate it from the plot
   chart.title("Lollipop Chart: Labels");
+  chart.title().padding(0, 0, 20, 0);
 
   // create a lollipop series and set the data
   var series = chart.lollipop(data);
@@ -36,8 +42,9 @@ anychart.onDocumentReady(function () {
   series.labels().anchor("center-bottom");
   series.labels().offsetY(10);
 
-  // set the container id and draw
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>

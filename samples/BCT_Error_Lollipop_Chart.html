@@ -15,6 +15,7 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+  // create data
   var data = [
     {x: "January", value: 10000},
     {x: "February", value: 12000},
@@ -22,11 +23,23 @@ anychart.onDocumentReady(function () {
     {x: "April", value: 11000},
     {x: "May", value: 9000}
   ];
+
+  // create a lollipop chart
   var chart = anychart.lollipop();
+
+  // set the chart title and separate it from the plot
   chart.title("Lollipop Chart with Error Bars");
+  chart.title().padding(0, 0, 20, 0);
+
+  // create a lollipop series and set the data
   var series = chart.lollipop(data);
+
+  // add error bars to the series
   series.error("10%");
+
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>

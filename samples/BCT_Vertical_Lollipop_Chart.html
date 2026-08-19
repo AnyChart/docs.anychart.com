@@ -15,6 +15,7 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+  // create data
   var data = [
     {x: "January", value: 10000},
     {x: "February", value: 12000},
@@ -22,10 +23,20 @@ anychart.onDocumentReady(function () {
     {x: "April", value: 11000},
     {x: "May", value: 9000}
   ];
+
+  // create a vertical chart
   var chart = anychart.vertical();
+
+  // set the chart title and separate it from the plot
   chart.title("Vertical Lollipop Chart");
+  chart.title().padding(0, 0, 20, 0);
+
+  // create a lollipop series and set the data
   var series = chart.lollipop(data);
+
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>

@@ -20,16 +20,26 @@
 anychart.onDocumentReady(function () {
   // create data for two series
   var seriesData_1 = [
-    {x: "January", value: 10000},{x: "February", value: 12000},{x: "March", value: 18000},{x: "April", value: 11000},{x: "May", value: 9000}
+    {x: "January", value: 10000},
+    {x: "February", value: 12000},
+    {x: "March", value: 18000},
+    {x: "April", value: 11000},
+    {x: "May", value: 9000}
   ];
   var seriesData_2 = [
-    {x: "January", value: 7000},{x: "February", value: 9000},{x: "March", value: 13000},{x: "April", value: 8000},{x: "May", value: 6000}
+    {x: "January", value: 7000},
+    {x: "February", value: 9000},
+    {x: "March", value: 13000},
+    {x: "April", value: 8000},
+    {x: "May", value: 6000}
   ];
 
   // create a column chart, then add lollipop series to it
   var chart = anychart.column();
-  // set the chart title
+
+  // set the chart title and separate it from the plot
   chart.title("Lollipop Chart: Appearance");
+  chart.title().padding(0, 0, 20, 0);
 
   // create the first lollipop series and set the data
   var series1 = chart.lollipop(seriesData_1);
@@ -51,8 +61,9 @@ anychart.onDocumentReady(function () {
   series2.selected().stroke("#0066cc", 4);
   series2.selected().fill("#0066cc");
 
-  // set the container id and draw
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>

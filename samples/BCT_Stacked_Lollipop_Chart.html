@@ -15,18 +15,43 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+  // create data for two series
   var seriesData_1 = [
-    {x: "January", value: 10000},{x: "February", value: 12000},{x: "March", value: 18000},{x: "April", value: 11000},{x: "May", value: 9000}
+    {x: "January", value: 10000},
+    {x: "February", value: 12000},
+    {x: "March", value: 18000},
+    {x: "April", value: 11000},
+    {x: "May", value: 9000}
   ];
   var seriesData_2 = [
-    {x: "January", value: 7000},{x: "February", value: 9000},{x: "March", value: 8000},{x: "April", value: 6000},{x: "May", value: 5000}
+    {x: "January", value: 7000},
+    {x: "February", value: 9000},
+    {x: "March", value: 8000},
+    {x: "April", value: 6000},
+    {x: "May", value: 5000}
   ];
+
+  // create a column chart, then add lollipop series to it
   var chart = anychart.column();
+
+  // set the chart title and separate it from the plot
   chart.title("Stacked Lollipop Chart");
+  chart.title().padding(0, 0, 20, 0);
+
+  // enable the value stacking mode
   chart.yScale().stackMode("value");
-  var series1 = chart.lollipop(seriesData_1); series1.name("2023");
-  var series2 = chart.lollipop(seriesData_2); series2.name("2024");
+
+  // create the first lollipop series and set the data
+  var series1 = chart.lollipop(seriesData_1);
+  series1.name("2023");
+
+  // create the second lollipop series and set the data
+  var series2 = chart.lollipop(seriesData_2);
+  series2.name("2024");
+
+  // set the container id
   chart.container("container");
+  // initiate drawing the chart
   chart.draw();
 });
 </script>
