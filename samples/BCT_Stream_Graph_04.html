@@ -20,10 +20,17 @@
 </head>
 <body>
 <div id="controls">
-    <span>Series type:</span>
-    <label><input type="radio" name="type" id="typeSplineArea" onclick="changeSeriesType('spline-area')"> spline-area</label>
-    <label><input type="radio" name="type" id="typeArea" onclick="changeSeriesType('area')"> area</label>
-    <label><input type="radio" name="type" id="typeStepArea" onclick="changeSeriesType('step-area')" checked> step-area</label>
+    <label>Series type:
+        <select id="seriesType" onchange="changeSeriesType(this.value)">
+            <option value="spline-area">spline-area</option>
+            <option value="area">area</option>
+            <option value="step-area" selected>step-area</option>
+            <option value="column">column</option>
+            <option value="bar">bar</option>
+            <option value="stick">stick</option>
+            <option value="lollipop">lollipop</option>
+        </select>
+    </label>
 </div>
 <div id="container"></div>
 <script>

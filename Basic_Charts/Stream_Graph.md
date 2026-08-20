@@ -163,13 +163,9 @@ The Y axis is hidden by default and the sample shows it only for `"zero"`: it is
 
 ### Series Type
 
-A layer can be drawn with any of the three area series types. They differ only in the shape of the edges:
+Each layer is an ordinary cartesian series, so it can be drawn with any series type that can be stacked. By default, the layers are {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} series. To use another type, add the layer with the method of that type, for example {api:anychart.charts.StreamGraph#area}area(){api} or {api:anychart.charts.StreamGraph#stepArea}stepArea(){api}. The types can be mixed in one chart: every layer is stacked the same way whatever its type.
 
-* {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} (default) — smooth curves
-* {api:anychart.charts.StreamGraph#area}area(){api} — straight lines between the points
-* {api:anychart.charts.StreamGraph#stepArea}stepArea(){api} — steps
-
-The types can be mixed in one chart: every layer is stacked the same way whatever its type. To change the type of a series that already exists, call its {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api} method; it works on a chart that is already drawn:
+To change the type of a series that already exists, call its {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api} method. It works on a chart that is already drawn:
 
 ```
 // layers drawn as step-area series
@@ -185,7 +181,7 @@ function changeSeriesType(value) {
 }
 ```
 
-Switch the type in the sample below to compare the three edge shapes on the same stream:
+Choose a series type in the sample below to see the same stream drawn with it:
 
 {sample}BCT\_Stream\_Graph\_04{sample}
 
