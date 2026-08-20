@@ -214,7 +214,7 @@ The {api:anychart.charts.ArcDiagram#colorMode}colorMode(){api} method sets the b
 
 * `"source"` (default) — a link takes the color of its source (`from`) node
 * `"target"` — a link takes the color of its target (`to`) node
-* `"gradient"` — the arc blends from the source color to the target color. The {api:anychart.charts.ArcDiagram#reverseGradient}reverseGradient(){api} method flips the blend direction
+* `"gradient"` — the link blends from the source color to the target color. The {api:anychart.charts.ArcDiagram#reverseGradient}reverseGradient(){api} method flips the blend direction
 
 The mode sets only the base color of the links. The nodes keep their palette colors in every mode (see [Node Colors](#node_colors)).
 
