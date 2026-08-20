@@ -171,7 +171,9 @@ In the sample below, the node bars are blue with a white outline, the labels are
 
 ### Links
 
-Set the arcs with the {api:anychart.charts.ArcDiagram#link}link(){api} method. Like [nodes](#nodes), it has three states: an arc is hovered when you point at it and selected when you click it.
+A link is an arc that connects two nodes. Each row of the [data](#data) makes one link, from the `from` node to the `to` node, and the `weight` of the row sets the thickness of the arc. Set the arcs with the {api:anychart.charts.ArcDiagram#link}link(){api} method.
+
+Like [nodes](#nodes), a link has three states: **normal**, **hovered** when you point at it, and **selected** when you click it.
 
 #### Link Labels
 
