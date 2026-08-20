@@ -171,31 +171,31 @@ In the sample below, the node bars are blue with a white outline, the labels are
 
 ### Links
 
-A link is an arc that connects two nodes. Each row of the [data](#data) makes one link, from the `from` node to the `to` node, and the `weight` of the row sets the thickness of the arc. Set the arcs with the {api:anychart.charts.ArcDiagram#link}link(){api} method.
+A link is an arc that connects two nodes. Each row of the [data](#data) makes one link, from the `from` node to the `to` node, and the `weight` of the row sets the thickness of the arc. Set the links with the {api:anychart.charts.ArcDiagram#link}link(){api} method.
 
 Like [nodes](#nodes), a link has three states: **normal**, **hovered** when you point at it, and **selected** when you click it.
 
 #### Link Labels
 
-Link [labels](../Common_Settings/Labels) are hidden by default. Turning them on shows a label on every arc at once, which suits a diagram with few links; on a busy diagram the [link tooltip](#link_tooltip) identifies an arc better. A short format keeps the labels readable:
+Link [labels](../Common_Settings/Labels) are hidden by default. Turning them on shows a label on every link at once, which suits a diagram with few links; on a busy diagram the [link tooltip](#link_tooltip) identifies an arc better. A short format keeps the labels readable:
 
 ```
-// show the weight of each link on its arc, with no leader lines
+// show the weight of each link, with no leader lines
 chart.link().normal().labels().enabled(true);
 chart.link().normal().labels().format("{%value}");
 chart.link().normal().labels().connectorStroke("none");
 ```
 
-In the sample below, each arc carries its weight:
+In the sample below, each link carries its weight:
 
 {sample}BCT\_Arc\_Diagram\_04{sample}
 
 #### Link Colors
 
-An arc takes its base color from [Link Color Mode](#link_color_mode). To style the states, use the {api:anychart.core.StateSettings#fill}fill(){api} method. If you derive the state fills from `sourceColor`, an arc keeps its own color and only becomes darker:
+A link takes its base color from [Link Color Mode](#link_color_mode). To style the states, use the {api:anychart.core.StateSettings#fill}fill(){api} method. If you derive the state fills from `sourceColor`, a link keeps its own color and only becomes darker:
 
 ```
-// link states: an arc keeps its own color and only becomes darker
+// link states: a link keeps its own color and only becomes darker
 chart.link().hovered().fill(function () {
   return anychart.color.darken(this.sourceColor, 0.2);
 });
@@ -204,24 +204,24 @@ chart.link().selected().fill(function () {
 });
 ```
 
-Hover or click an arc in the sample below to see how its color becomes darker:
+Hover or click a link in the sample below to see how its color becomes darker:
 
 {sample}BCT\_Arc\_Diagram\_05{sample}
 
 #### Link Color Mode
 
-The {api:anychart.charts.ArcDiagram#colorMode}colorMode(){api} method sets the base color of the arcs:
+The {api:anychart.charts.ArcDiagram#colorMode}colorMode(){api} method sets the base color of the links:
 
-* `"source"` (default) — an arc takes the color of its source (`from`) node
-* `"target"` — an arc takes the color of its target (`to`) node
+* `"source"` (default) — a link takes the color of its source (`from`) node
+* `"target"` — a link takes the color of its target (`to`) node
 * `"gradient"` — the arc blends from the source color to the target color. The {api:anychart.charts.ArcDiagram#reverseGradient}reverseGradient(){api} method flips the blend direction
 
-The mode sets only the base color of the arcs. The nodes keep their palette colors in every mode (see [Node Colors](#node_colors)).
+The mode sets only the base color of the links. The nodes keep their palette colors in every mode (see [Node Colors](#node_colors)).
 
 The mode works on a chart that is already drawn. Use the buttons in the sample below to compare all four results:
 
 ```
-// blend each arc from the color of its source node to the color of its target node
+// blend each link from the color of its source node to the color of its target node
 chart.colorMode("gradient");
 
 // apply the chosen color mode: the chart redraws itself

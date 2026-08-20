@@ -39,7 +39,7 @@ anychart.onDocumentReady(function () {
   chart.nodeWidth(30);
   chart.nodeSpacing(90);
 
-  // show the weight of each link on its arc, with no leader lines
+  // show the weight of each link, with no leader lines
   chart.link().normal().labels().enabled(true);
   chart.link().normal().labels().format("{%value}");
   chart.link().normal().labels().connectorStroke("none");

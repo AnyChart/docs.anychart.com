@@ -39,7 +39,7 @@ anychart.onDocumentReady(function () {
   chart.nodeWidth(30);
   chart.nodeSpacing(90);
 
-  // link states: an arc keeps its own color and only becomes darker
+  // link states: a link keeps its own color and only becomes darker
   chart.link().hovered().fill(function () {
     return anychart.color.darken(this.sourceColor, 0.2);
   });
