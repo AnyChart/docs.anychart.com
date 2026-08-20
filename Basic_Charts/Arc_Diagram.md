@@ -5,7 +5,7 @@
 
 An Arc diagram shows connections between items. Each item is a node: a small bar on one shared line, the node line. Each link between two nodes is drawn as an arc on one side of the node line.
 
-The height of an arc depends on the distance between its two nodes. The thickness of an arc shows the weight of the link. The length of a node bar shows the total flow through that node.
+The height of a link depends on the distance between its two nodes. The thickness of a link shows its weight. The length of a node bar shows the total flow through that node.
 
 An Arc diagram is a compact alternative to the [Network Graph](Network_Graph). Use it when the connections matter more than the overall shape of the network. It is easiest to read when the nodes are in a good order (see [Sorting](#sorting)).
 
@@ -83,7 +83,7 @@ chart.container("container");
 chart.draw();
 ```
 
-In the sample below, the data rows are drawn as arcs above the row of department nodes:
+In the sample below, the data rows are drawn as links above the row of department nodes:
 
 {sample}BCT\_Arc\_Diagram\_01{sample}
 
@@ -101,7 +101,7 @@ Pass data to the {api:anychart#arcDiagram}anychart.arcDiagram(){api} chart const
 
 * `from` — the name of the source node
 * `to` — the name of the target node
-* `weight` — the weight of the link (sets the thickness of the arc)
+* `weight` — the weight of the link (sets its thickness)
 * `group` — optional; a named group for the link's nodes
 
 Pass the links as objects, or map the columns of an {api:anychart.data#set}anychart.data.set(){api} with {api:anychart.data.Set#mapAs}mapAs(){api}:
@@ -171,13 +171,13 @@ In the sample below, the node bars are blue with a white outline, the labels are
 
 ### Links
 
-A link is an arc that connects two nodes. Each row of the [data](#data) makes one link, from the `from` node to the `to` node, and the `weight` of the row sets the thickness of the arc. Set the links with the {api:anychart.charts.ArcDiagram#link}link(){api} method.
+A link connects two nodes. Each row of the [data](#data) makes one link, from the `from` node to the `to` node, and the `weight` of the row sets its thickness. Set the links with the {api:anychart.charts.ArcDiagram#link}link(){api} method.
 
 Like [nodes](#nodes), a link has three states: **normal**, **hovered** when you point at it, and **selected** when you click it.
 
 #### Link Labels
 
-Link [labels](../Common_Settings/Labels) are hidden by default. Turning them on shows a label on every link at once, which suits a diagram with few links; on a busy diagram the [link tooltip](#link_tooltip) identifies an arc better. A short format keeps the labels readable:
+Link [labels](../Common_Settings/Labels) are hidden by default. Turning them on shows a label on every link at once, which suits a diagram with few links; on a busy diagram the [link tooltip](#link_tooltip) identifies a link better. A short format keeps the labels readable:
 
 ```
 // show the weight of each link, with no leader lines
@@ -249,10 +249,10 @@ In the sample below, the link tooltip puts the weight and the two departments in
 
 ### Orientation
 
-By default, the nodes sit in a row at the bottom of the chart. The arcs curve upward. The {api:anychart.charts.ArcDiagram#orientation}orientation(){api} method rotates the layout. With `"vertical"`, the nodes form a column and the arcs curve to the right. The {api:anychart.charts.ArcDiagram#arcDirection}arcDirection(){api} method flips the arcs to the other side of the node line. For the horizontal orientation, pass `"down"`. For the vertical one, pass `"left"`. This curves the arcs the other way. If you do not set it, the arcs curve up in the horizontal orientation and to the right in the vertical one.
+By default, the nodes sit in a row at the bottom of the chart. The links curve upward. The {api:anychart.charts.ArcDiagram#orientation}orientation(){api} method rotates the layout. With `"vertical"`, the nodes form a column and the links curve to the right. The {api:anychart.charts.ArcDiagram#arcDirection}arcDirection(){api} method flips the links to the other side of the node line. For the horizontal orientation, pass `"down"`. For the vertical one, pass `"left"`. This curves the links the other way. If you do not set it, the links curve up in the horizontal orientation and to the right in the vertical one.
 
 ```
-// place the nodes in a column; the arcs curve to the right
+// place the nodes in a column; the links curve to the right
 chart.orientation("vertical");
 
 // apply the chosen layout: the chart redraws itself
@@ -262,7 +262,7 @@ function setLayout(orientation, direction) {
 }
 ```
 
-Both methods work on a chart that is already drawn. Use the buttons in the sample below to rotate the layout and flip the arcs:
+Both methods work on a chart that is already drawn. Use the buttons in the sample below to rotate the layout and flip the links:
 
 {sample}BCT\_Arc\_Diagram\_08{sample}
 
@@ -272,14 +272,14 @@ The following methods adjust the geometry of the diagram:
 
 * {api:anychart.charts.ArcDiagram#nodeWidth}nodeWidth(){api} — the thickness of the node bars, in pixels (20 by default)
 * {api:anychart.charts.ArcDiagram#nodeSpacing}nodeSpacing(){api} — the gap between neighboring nodes, in pixels (30 by default)
-* {api:anychart.charts.ArcDiagram#curvature}curvature(){api} — the height of the arcs: values below 1 flatten them, values above 1 make them taller (1 by default)
+* {api:anychart.charts.ArcDiagram#curvature}curvature(){api} — the height of the links: values below 1 flatten them, values above 1 make them taller (1 by default)
 
 ```
 // make the node bars bigger and spread them wider
 chart.nodeWidth(30);
 chart.nodeSpacing(90);
 
-// make the arcs taller and curve them below the node line
+// make the links taller and curve them below the node line
 chart.curvature(1.5);
 chart.arcDirection("down");
 
@@ -290,7 +290,7 @@ function changeNodeWidth(value) {
 }
 ```
 
-All three methods work on a chart that is already drawn. Drag the sliders in the sample below to see what each one changes; the arcs stay below the node line:
+All three methods work on a chart that is already drawn. Drag the sliders in the sample below to see what each one changes; the links stay below the node line:
 
 {sample}BCT\_Arc\_Diagram\_09{sample}
 
