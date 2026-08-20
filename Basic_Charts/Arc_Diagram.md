@@ -125,9 +125,9 @@ In the sample below, the links come from a mapped data set, unlike the [Quick St
 
 ### Nodes
 
-Set the node bars with the {api:anychart.charts.ArcDiagram#node}node(){api} method in three [states](../Common_Settings/Interactivity/States): **normal**, **hovered**, and **selected**.
+A node is a bar on the node line. The chart creates one node for every distinct name in the `from` and `to` fields of the [data](#data), and the weight of a node is the sum of the weights of its links. Set the node bars with the {api:anychart.charts.ArcDiagram#node}node(){api} method.
 
-A node is hovered when you point at it. Its connections are then highlighted. A node is selected when you click it. A click replaces any previous selection. Instead, Ctrl/Cmd + click or Shift + click toggles a node into or out of a multi-node selection. A plain click on the empty area clears the selection.
+A node has three [states](../Common_Settings/Interactivity/States): **normal**, **hovered** when you point at it (its links are highlighted too), and **selected** when you click it. Ctrl/Cmd + click or Shift + click selects several nodes; a click on the empty area clears the selection.
 
 #### Node Labels
 
