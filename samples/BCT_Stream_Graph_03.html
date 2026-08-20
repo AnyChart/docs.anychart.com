@@ -88,6 +88,8 @@ anychart.onDocumentReady(function () {
 // apply the chosen offset mode: the chart redraws itself
 function changeOffset(value) {
   chart.offset(value);
+  // the Y axis is hidden by default; show it only for the flat zero baseline
+  chart.yAxis(value == "zero");
 }
 </script>
 </body>

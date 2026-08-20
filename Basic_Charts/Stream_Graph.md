@@ -7,6 +7,8 @@ A Stream graph is a stacked area chart. But it does not stack the layers from a 
 
 A Stream graph is best for one thing. Use it to show how the parts of a whole change over time. It works well when you have many series. It fits when the overall shape matters more than exact values.
 
+Because the baseline moves, the vertical position of a layer carries no value. Only its thickness does. That is why the Y axis is hidden by default. Read the values in the tooltip, or switch to the `"zero"` offset and turn the axis on (see [Axes](#axes)).
+
 This article shows how to create a basic Stream graph. It also shows how to set the options that are special to this type. You can read the table below for a short overview of the Stream graph's features:
 
 <table border="1" class="seriesTABLE">
@@ -171,11 +173,18 @@ The key setting of the Stream graph is the **offset**. This is the algorithm tha
 * `"expand"` — gives every category the same total height; the chart then shows each layer's share of the total. It looks like a percent-stacked chart with flat top and bottom edges
 * `"zero"` — stacks the layers from a flat zero baseline (an ordinary stacked area chart)
 
-Use the buttons in the sample below to compare all four modes on the same six-layer stream:
+Use the buttons in the sample below to compare all four modes on the same stream. The Y axis follows the offset: it is shown only for `"zero"`, the one mode where the vertical position of a layer is a value:
 
 ```
 // set the initial offset mode
 chart.offset("silhouette");
+
+// apply the chosen offset mode: the chart redraws itself
+function changeOffset(value) {
+  chart.offset(value);
+  // the Y axis is hidden by default; show it only for the flat zero baseline
+  chart.yAxis(value == "zero");
+}
 ```
 
 {sample}BCT\_Stream\_Graph\_03{sample}
