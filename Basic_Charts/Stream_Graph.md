@@ -143,8 +143,6 @@ The layers of a Stream graph are always stacked. What changes the look of the ch
 * `"expand"` — the stack is stretched to the same height everywhere: each layer shows its share of the total
 * `"zero"` — the baseline is the flat zero line: an ordinary stacked area chart (see [Axes](#axes))
 
-Use the buttons in the sample below to compare all four modes on the same stream. The Y axis follows the offset: it is shown only for `"zero"`, the one mode where the vertical position of a layer is a value:
-
 ```
 // set the initial offset mode
 chart.offset("silhouette");
@@ -157,7 +155,11 @@ function changeOffset(value) {
 }
 ```
 
+Switch the offset in the sample below to compare all four modes on the same stream:
+
 {sample}BCT\_Stream\_Graph\_03{sample}
+
+The Y axis is hidden by default and the sample shows it only for `"zero"`: it is the one mode where the vertical position of a layer is a value (see [Axes](#axes)).
 
 ### Series Type
 
