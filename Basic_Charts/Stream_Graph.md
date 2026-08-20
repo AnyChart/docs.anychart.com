@@ -136,12 +136,12 @@ In the sample below, the data comes from a shared data set, and the Social layer
 
 ### Offset
 
-The key setting of the Stream graph is the **offset**. This is the algorithm that places the baseline of the stack. Control it with the {api:anychart.charts.StreamGraph#offset}offset(){api} method:
+The layers of a Stream graph are always stacked. What changes the look of the chart is where the bottom of the stack, the **baseline**, is placed at each category. The {api:anychart.charts.StreamGraph#offset}offset(){api} method sets the rule for it:
 
-* `"wiggle"` (default) — reduces how sharply the layers bend (the Byron & Wattenberg "streamgraph" algorithm); the river bends but stays compact
-* `"silhouette"` — centers the stack evenly around the zero line
-* `"expand"` — gives every category the same total height; the chart then shows each layer's share of the total. It looks like a percent-stacked chart with flat top and bottom edges
-* `"zero"` — stacks the layers from a flat zero baseline (an ordinary stacked area chart)
+* `"wiggle"` (default) — the baseline moves up or down at each category so that the layers bend as little as possible. The stack stays centered on the whole, and the stream flows smoothly. This is the classic Stream graph look.
+* `"silhouette"` — the baseline is set so that the stack is centered at every category: half of the total is above the zero line, half below. The outline is symmetric, and the layers bend more than with `"wiggle"`.
+* `"expand"` — the total height is the same at every category, and each layer takes its share of it. The top and bottom edges are flat, and the chart reads like a percent-stacked area chart.
+* `"zero"` — the baseline is the flat zero line. The chart is an ordinary stacked area chart, and the Y axis can be shown (see [Axes](#axes)).
 
 Use the buttons in the sample below to compare all four modes on the same stream. The Y axis follows the offset: it is shown only for `"zero"`, the one mode where the vertical position of a layer is a value:
 
