@@ -163,16 +163,29 @@ The Y axis is hidden by default and the sample shows it only for `"zero"`: it is
 
 ### Series Type
 
-By default, the layers are drawn as [Spline Area](Spline_Area_Chart) series with smooth curved edges. You can also draw the layers as plain [Area](Area_Chart) series (straight edges). Or draw them as [Step Area](Step_Area_Chart) series (staircase edges). Use the {api:anychart.charts.StreamGraph#area}area(){api} and {api:anychart.charts.StreamGraph#stepArea}stepArea(){api} methods. You can also change the type of an existing series with {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api}.
+A layer can be drawn with any of the three area series types. They differ only in the shape of the edges:
+
+* {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} (default) — smooth curves
+* {api:anychart.charts.StreamGraph#area}area(){api} — straight lines between the points
+* {api:anychart.charts.StreamGraph#stepArea}stepArea(){api} — steps
+
+The types can be mixed in one chart: every layer is stacked the same way whatever its type. To change the type of a series that already exists, call its {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api} method; it works on a chart that is already drawn:
 
 ```
 // layers drawn as step-area series
 var series1 = chart.stepArea(searchData);
 var series2 = chart.stepArea(socialData);
 var series3 = chart.stepArea(emailData);
+
+// apply the chosen type to every layer: the chart redraws itself
+function changeSeriesType(value) {
+  for (var i = 0; i < chart.getSeriesCount(); i++) {
+    chart.getSeriesAt(i).seriesType(value);
+  }
+}
 ```
 
-In the sample below, the layers are drawn as step-area series:
+Switch the type in the sample below to compare the three edge shapes on the same stream:
 
 {sample}BCT\_Stream\_Graph\_04{sample}
 
