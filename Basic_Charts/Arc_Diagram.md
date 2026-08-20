@@ -294,11 +294,13 @@ All three methods work on a chart that is already drawn. Drag the sliders in the
 
 ### Sorting
 
-The order of the nodes has a big effect on how readable an Arc diagram is. The {api:anychart.charts.ArcDiagram#sortOrder}sortOrder(){api} method arranges them:
+The order of the nodes has a big effect on how readable an Arc diagram is. The {api:anychart.charts.ArcDiagram#sortOrder}sortOrder(){api} method arranges them. The first node sits at the left end of the node line, or at the top of it in the vertical [orientation](#orientation); the rest follow along the line:
 
 * `"name"` (default) — alphabetically by node name
 * `"weight"` — by the total flow through the node, the largest first
-* `"group"` — grouped by the `group` field of the [data](#data)
+* `"group"` — by the `group` field of the [data](#data), in alphabetical order of the group names
+
+Nodes with the same weight, or in the same group, are placed alphabetically by name.
 
 Instead of a string, you can pass your own compare function. It works like a compare function for `Array.sort()`. It receives two node objects. Each node has fields like `id`, `weight`, and `group`.
 
