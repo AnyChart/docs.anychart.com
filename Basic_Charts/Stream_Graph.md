@@ -54,7 +54,9 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
-To create a Stream graph, use the {api:anychart#streamGraph}anychart.streamGraph(){api} chart constructor. Add each series (layer) of the stream with the {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} method. The layers are always stacked. The baseline shifts on its own.
+To create a Stream graph, use the {api:anychart#streamGraph}anychart.streamGraph(){api} chart constructor. If you pass one or more data arrays to this chart constructor, it creates a Spline Area series (a layer) for each of them.
+
+To create a series explicitly, call the {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} method. The layers are always stacked, and the baseline shifts on its own.
 
 The sample below shows how to create a basic Stream graph:
 
@@ -103,42 +105,12 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-A Stream graph is made of layers, and each layer is a separate series. A series reads two data fields from each row:
+Each layer of a Stream graph is a separate series with two data fields:
 
 * `x` — the category (usually a point in time)
 * `value` — the value of the layer at that category
 
-A missing value is written as `null`. The point is skipped, and the baseline stays unbroken.
-
-There are three ways to give the chart its data. The subsections below show each of them.
-
-#### Data Arrays in the Constructor
-
-The shortest form: pass one array per layer to the {api:anychart#streamGraph}anychart.streamGraph(){api} constructor. The chart creates a spline-area series for each array, in the order of the arguments:
-
-```
-// one array per layer, passed to the constructor
-var chart = anychart.streamGraph(searchData, socialData, emailData);
-```
-
-#### Data Array per Series
-
-Create the chart empty and add each layer with the {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} method (or another [series type](#series_type)), passing its array. Use this form when you set up each series, for example to name it:
-
-```
-// create an empty stream graph
-var chart = anychart.streamGraph();
-
-// add a series (layer) per channel
-var series1 = chart.splineArea(searchData);
-series1.name("Search");
-var series2 = chart.splineArea(socialData);
-series2.name("Social");
-```
-
-#### Data Set with Mapping
-
-Put all layers in one {api:anychart.data#set}anychart.data.set(){api} and map a column for each series with {api:anychart.data.Set#mapAs}mapAs(){api}. Use this form when your data comes as a table with a column per layer:
+Besides plain arrays, a series accepts a mapping of an {api:anychart.data#set}anychart.data.set(){api}. Use it when all layers come in one table with a column per layer: map the columns of each series with {api:anychart.data.Set#mapAs}mapAs(){api}. A missing value is written as `null`: the point is skipped, and the baseline stays unbroken.
 
 ```
 // one data set with a column per channel: [week, search, social]; the social value at W5 is missing
