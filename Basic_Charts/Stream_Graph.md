@@ -108,19 +108,37 @@ A Stream graph is made of layers, and each layer is a separate series. A series 
 * `x` — the category (usually a point in time)
 * `value` — the value of the layer at that category
 
-There are three ways to give the chart its data:
+A missing value is written as `null`. The point is skipped, and the baseline stays unbroken.
 
-* **Arrays in the constructor.** Pass one array per layer to {api:anychart#streamGraph}anychart.streamGraph(){api}. The chart creates a spline-area series for each array. This is the shortest form.
-* **An array per series.** Create the chart empty, then add each layer with {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} (or another [series type](#series_type)) and pass its array. Use this form when you set up each series, as in the [Quick Start](#quick_start).
-* **A shared data set.** Put all layers in one {api:anychart.data#set}anychart.data.set(){api} and map a column for each series with {api:anychart.data.Set#mapAs}mapAs(){api}. Use this form when your data comes as a table with a column per layer.
+There are three ways to give the chart its data. The subsections below show each of them.
 
-The shortest form looks like this:
+#### Data Arrays in the Constructor
+
+The shortest form: pass one array per layer to the {api:anychart#streamGraph}anychart.streamGraph(){api} constructor. The chart creates a spline-area series for each array, in the order of the arguments:
 
 ```
+// one array per layer, passed to the constructor
 var chart = anychart.streamGraph(searchData, socialData, emailData);
 ```
 
-With a shared data set, the columns are mapped for each series:
+#### Data Array per Series
+
+Create the chart empty and add each layer with the {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} method (or another [series type](#series_type)), passing its array. Use this form when you set up each series, for example to name it:
+
+```
+// create an empty stream graph
+var chart = anychart.streamGraph();
+
+// add a series (layer) per channel
+var series1 = chart.splineArea(searchData);
+series1.name("Search");
+var series2 = chart.splineArea(socialData);
+series2.name("Social");
+```
+
+#### Data Set with Mapping
+
+Put all layers in one {api:anychart.data#set}anychart.data.set(){api} and map a column for each series with {api:anychart.data.Set#mapAs}mapAs(){api}. Use this form when your data comes as a table with a column per layer:
 
 ```
 // one data set with a column per channel: [week, search, social]; the social value at W5 is missing
@@ -140,7 +158,7 @@ var series2 = chart.splineArea(socialMapping);
 series2.name("Social");
 ```
 
-A missing value is written as `null`. The point is skipped, and the baseline stays unbroken. In the sample below, the data comes from a shared data set, and the Social layer has no value at "W5": its band shows a gap, and the stream continues:
+In the sample below, the data comes from a shared data set, and the Social layer has no value at "W5": its band shows a gap, and the stream continues:
 
 {sample}BCT\_Stream\_Graph\_02{sample}
 
