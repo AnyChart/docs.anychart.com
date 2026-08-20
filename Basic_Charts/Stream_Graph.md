@@ -103,18 +103,24 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-Each layer of a Stream graph is a separate series with two data fields:
+A Stream graph is made of layers, and each layer is a separate series. A series reads two data fields from each row:
 
 * `x` — the category (usually a point in time)
 * `value` — the value of the layer at that category
 
-You can pass one or more data arrays straight to the constructor. AnyChart creates a spline-area series for each one:
+There are three ways to give the chart its data:
+
+* **Arrays in the constructor.** Pass one array per layer to {api:anychart#streamGraph}anychart.streamGraph(){api}. The chart creates a spline-area series for each array. This is the shortest form.
+* **An array per series.** Create the chart empty, then add each layer with {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} (or another [series type](#series_type)) and pass its array. Use this form when you set up each series, as in the [Quick Start](#quick_start).
+* **A shared data set.** Put all layers in one {api:anychart.data#set}anychart.data.set(){api} and map a column for each series with {api:anychart.data.Set#mapAs}mapAs(){api}. Use this form when your data comes as a table with a column per layer.
+
+The shortest form looks like this:
 
 ```
 var chart = anychart.streamGraph(searchData, socialData, emailData);
 ```
 
-Or pass the data of each series to the {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} method (or the [area / step-area](#series_type) method). You can pass a plain array. You can also map the columns of a shared [data set](../Working_with_Data/Data_Sets). This is handy when all layers share one table. You can set missing values to `null`. These points are skipped, and the baseline stays unbroken. In the sample below, the Social layer has no value at "W5": its band shows a gap, and the stream continues:
+With a shared data set, the columns are mapped for each series:
 
 ```
 // one data set with a column per channel: [week, search, social]; the social value at W5 is missing
@@ -133,6 +139,8 @@ series1.name("Search");
 var series2 = chart.splineArea(socialMapping);
 series2.name("Social");
 ```
+
+A missing value is written as `null`. The point is skipped, and the baseline stays unbroken. In the sample below, the data comes from a shared data set, and the Social layer has no value at "W5": its band shows a gap, and the stream continues:
 
 {sample}BCT\_Stream\_Graph\_02{sample}
 
