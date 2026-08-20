@@ -97,7 +97,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-Pass data to the {api:anychart#arcDiagram}anychart.arcDiagram(){api} chart constructor or to the {api:anychart.charts.ArcDiagram#data}data(){api} method. Each row describes one link with three data fields:
+Pass data to the {api:anychart#arcDiagram}anychart.arcDiagram(){api} chart constructor or to the {api:anychart.charts.ArcDiagram#data}data(){api} method. Each row describes one link with these data fields:
 
 * `from` — the name of the source node
 * `to` — the name of the target node
@@ -119,7 +119,7 @@ var mapping = dataSet.mapAs({from: 0, to: 1, weight: 2, group: 3});
 var chart = anychart.arcDiagram(mapping);
 ```
 
-In the sample below, the chart is built from a mapped data set instead of an array of objects:
+In the sample below, the links come from a mapped data set, unlike the [Quick Start](#quick_start) sample, which passes them as objects:
 
 {sample}BCT\_Arc\_Diagram\_02{sample}
 
