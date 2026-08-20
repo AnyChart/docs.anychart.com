@@ -93,12 +93,6 @@ chart.draw();
 
 {sample}BCT\_Stream\_Graph\_01{sample}
 
-You can also pass one or more data arrays straight to the constructor. AnyChart creates a spline-area series for each one:
-
-```
-var chart = anychart.streamGraph(searchData, socialData, emailData);
-```
-
 ## General Settings
 
 In AnyChart, many settings work the same way for all chart types. This includes the Stream graph, for example its legend and interactivity settings.
@@ -114,7 +108,13 @@ Each layer of a Stream graph is a separate series with two data fields:
 * `x` — the category (usually a point in time)
 * `value` — the value of the layer at that category
 
-Pass the data for a series to the {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} method (or the [area / step-area](#series_type) method). You can pass a plain array. You can also map the columns of a shared [data set](../Working_with_Data/Data_Sets). This is handy when all layers share one table. You can set missing values to `null`. These points are skipped, and the baseline stays unbroken. In the sample below, the Social layer has no value at "W5": its band shows a gap, and the stream continues:
+You can pass one or more data arrays straight to the constructor. AnyChart creates a spline-area series for each one:
+
+```
+var chart = anychart.streamGraph(searchData, socialData, emailData);
+```
+
+Or pass the data of each series to the {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} method (or the [area / step-area](#series_type) method). You can pass a plain array. You can also map the columns of a shared [data set](../Working_with_Data/Data_Sets). This is handy when all layers share one table. You can set missing values to `null`. These points are skipped, and the baseline stays unbroken. In the sample below, the Social layer has no value at "W5": its band shows a gap, and the stream continues:
 
 ```
 // one data set with a column per channel: [week, search, social]; the social value at W5 is missing
