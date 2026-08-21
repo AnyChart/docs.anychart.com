@@ -208,13 +208,24 @@ In the sample below, the layers take their colors from a custom palette, a thin 
 
 ### Labels and Markers
 
-[Labels](../Common_Settings/Labels) are text or image elements. You can place them anywhere on any chart. [Markers](General_Settings#markers) are icons that highlight the data points. You can turn both on for a whole series or for a single point. You set both per series. For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+Layer [labels](../Common_Settings/Labels) are off by default. To show the value at every point of a layer, enable the {api:anychart.core.cartesian.series.Base#labels}labels(){api} of that series: the default text is the point value. To change the text, call {api:anychart.core.ui.LabelsFactory#format}format(){api} with a [text formatter](../Common_Settings/Text_Formatters). By default, the labels are placed at the top edge of the layer; font settings such as {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api} are available.
+
+To label a single point differently, add a `label` field to its data row: the settings in it override the series labels for that point.
+
+[Markers](General_Settings#markers) are icons at the data points. To show them on a layer, enable the {api:anychart.core.cartesian.series.Base#markers}markers(){api} of that series and set their type and size:
 
 ```
-// enable the labels on the first layer
+// a label field in a data row overrides the series labels for that point
+var searchData = [
+  ["W1", 42], ["W2", 45], ["W3", 40], ["W4", 38], ["W5", 44], ["W6", 50],
+  {x: "W7", value: 55, label: {format: "peak: {%value}", fontWeight: "bold"}},
+  ["W8", 52], ["W9", 48], ["W10", 46]
+];
+
+// show the value at every point of the first layer
 series1.labels().enabled(true);
-series1.labels().format("{%value}");
-series1.labels().fontColor("#ffffff");
+// set the label font color
+series1.labels().fontColor("#1d3557");
 
 // enable the point markers on the second layer
 series2.markers().enabled(true);
@@ -222,7 +233,7 @@ series2.markers().type("circle");
 series2.markers().size(4);
 ```
 
-In the sample below, the Search layer shows a value label at every point and the Social layer shows circular point markers:
+In the sample below, the Search layer shows a value label at every point with a custom bold label at its peak, and the Social layer shows circular point markers:
 
 {sample}BCT\_Stream\_Graph\_06{sample}
 

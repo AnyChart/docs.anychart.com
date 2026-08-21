@@ -19,10 +19,11 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data
+  // create data; a label field in a data row overrides the series labels for that point
   var searchData = [
-    ["W1", 42],["W2", 45],["W3", 40],["W4", 38],["W5", 44],
-    ["W6", 50],["W7", 55],["W8", 52],["W9", 48],["W10", 46]
+    ["W1", 42], ["W2", 45], ["W3", 40], ["W4", 38], ["W5", 44], ["W6", 50],
+    {x: "W7", value: 55, label: {format: "peak: {%value}", fontWeight: "bold"}},
+    ["W8", 52], ["W9", 48], ["W10", 46]
   ];
   var socialData = [
     ["W1", 30],["W2", 33],["W3", 36],["W4", 40],["W5", 38],
@@ -41,10 +42,10 @@ anychart.onDocumentReady(function () {
   var series2 = chart.splineArea(socialData);
   series2.name("Social");
 
-  // enable the labels on the first layer
+  // show the value at every point of the first layer
   series1.labels().enabled(true);
-  series1.labels().format("{%value}");
-  series1.labels().fontColor("#ffffff");
+  // set the label font color
+  series1.labels().fontColor("#1d3557");
 
   // enable the point markers on the second layer
   series2.markers().enabled(true);
