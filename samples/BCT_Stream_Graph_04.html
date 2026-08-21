@@ -30,11 +30,6 @@
             <option value="lollipop">lollipop</option>
         </select>
     </label>
-    <span>Offset:</span>
-    <label><input type="radio" name="offset" onclick="changeOffset('wiggle')" checked> wiggle</label>
-    <label><input type="radio" name="offset" onclick="changeOffset('silhouette')"> silhouette</label>
-    <label><input type="radio" name="offset" onclick="changeOffset('expand')"> expand</label>
-    <label><input type="radio" name="offset" onclick="changeOffset('zero')"> zero</label>
 </div>
 <div id="container"></div>
 <script>
@@ -79,13 +74,6 @@ function changeSeriesType(value) {
   for (var i = 0; i < chart.getSeriesCount(); i++) {
     chart.getSeriesAt(i).seriesType(value);
   }
-}
-
-// apply the chosen offset mode: the chart redraws itself
-function changeOffset(value) {
-  chart.offset(value);
-  // the Y axis is hidden by default; show it only for the flat zero baseline
-  chart.yAxis(value == "zero");
 }
 </script>
 </body>
