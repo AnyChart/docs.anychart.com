@@ -241,23 +241,26 @@ In the sample below, the Search layer shows a value label at every point with a 
 
 A [tooltip](../Common_Settings/Tooltip) is a text box that appears when a point is hovered. On a stream graph the tooltip is in the `"union"` [display mode](../Common_Settings/Tooltip#display_mode) by default: one box titled with the hovered category lists a line per layer, and the default line is the layer name and the value. To change the mode, call {api:anychart.core.ui.Tooltip#displayMode}displayMode(){api}.
 
-To change the line of each layer, call {api:anychart.core.ui.Tooltip#format}format(){api} with a [text formatter](../Common_Settings/Text_Formatters). To change how the lines are assembled, call {api:anychart.core.ui.Tooltip#unionFormat}unionFormat(){api} with a function: its context holds the points of all layers at the hovered category in `points` and their formatted lines in `formattedValues`, so a total of the layers can be added:
+To change the line of each layer, call {api:anychart.core.ui.Tooltip#format}format(){api} with a [text formatter](../Common_Settings/Text_Formatters); to change the title, call {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}. A formatting function gets the points of all layers at the hovered category in `points`, so the title can carry their total. To use HTML tags in the text, enable {api:anychart.core.ui.Tooltip#useHtml}useHtml(){api}. To change how the lines are assembled, call {api:anychart.core.ui.Tooltip#unionFormat}unionFormat(){api}:
 
 ```
-// format the line of each layer
-chart.tooltip().format("{%seriesName}: {%value}k");
+// allow HTML tags in the tooltip text
+chart.tooltip().useHtml(true);
 
-// assemble the union tooltip: the layer lines, then the total of the hovered category
-chart.tooltip().unionFormat(function () {
+// the title shows the hovered category and the total of all layers
+chart.tooltip().titleFormat(function () {
   var total = 0;
   for (var i = 0; i < this.points.length; i++) {
     total += this.points[i].value;
   }
-  return this.formattedValues.join("\n") + "\nTotal: " + total + "k";
+  return this.x + " &middot; total <b>" + total + "k</b>";
 });
+
+// format the line of each layer
+chart.tooltip().format("{%seriesName}: <b>{%value}k</b>");
 ```
 
-Hover a point in the sample below: the union tooltip lists the three layers and their total at the hovered week:
+Hover a point in the sample below: the title shows the week and the total, the lines list the three layers:
 
 {sample}BCT\_Stream\_Graph\_07{sample}
 

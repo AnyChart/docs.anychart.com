@@ -47,17 +47,20 @@ anychart.onDocumentReady(function () {
   var series3 = chart.splineArea(emailData);
   series3.name("Email");
 
-  // format the line of each layer
-  chart.tooltip().format("{%seriesName}: {%value}k");
+  // allow HTML tags in the tooltip text
+  chart.tooltip().useHtml(true);
 
-  // assemble the union tooltip: the layer lines, then the total of the hovered category
-  chart.tooltip().unionFormat(function () {
+  // the title shows the hovered category and the total of all layers
+  chart.tooltip().titleFormat(function () {
     var total = 0;
     for (var i = 0; i < this.points.length; i++) {
       total += this.points[i].value;
     }
-    return this.formattedValues.join("\n") + "\nTotal: " + total + "k";
+    return this.x + " &middot; total <b>" + total + "k</b>";
   });
+
+  // format the line of each layer
+  chart.tooltip().format("{%seriesName}: <b>{%value}k</b>");
 
   // set the container id
   chart.container("container");
