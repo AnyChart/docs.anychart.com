@@ -280,16 +280,21 @@ In the sample below, the legend sits to the right of the stream with its items i
 
 ### Axes
 
-The X axis of a Stream graph works the same way as in other cartesian charts. The Y axis is **disabled by default**. With the `"wiggle"` and `"silhouette"` offsets (see [Offset](#offset)), the layers move up and down, so the axis values would mislead you. With the `"zero"` offset, the Y axis becomes meaningful again. Turn it on with the {api:anychart.charts.StreamGraph#yAxis}yAxis(){api} method:
+The X axis of a stream graph works the same way as in other cartesian charts, see [Axis Basics](../Axes_and_Grids/Axis_Basics). The Y axis is **disabled by default**: with the `"wiggle"`, `"silhouette"`, and `"expand"` offsets (see [Offset](#offset)) the layers are placed around an internal baseline, and the values of the Y scale mean nothing to the reader. With the `"zero"` offset, the layers are stacked from zero and the Y axis shows the running totals, so it is worth enabling it with the {api:anychart.charts.StreamGraph#yAxis}yAxis(){api} method. Axis titles are set with {api:anychart.core.axes.Linear#title}title(){api}; axis labels are formatted with the {api:anychart.core.axes.Linear#labels}labels(){api} of the axis and a [text formatter](../Common_Settings/Text_Formatters), see [Axes Labels Formatting](../Axes_and_Grids/Axes_Labels_Formatting):
 
 ```
 // stack the layers from the zero baseline and show the Y axis
 chart.offset("zero");
 chart.yAxis(true);
+
+// set the titles of the axes
 chart.yAxis().title("Weekly volume");
 chart.xAxis().title("Week");
+
+// format the Y axis labels with a unit
+chart.yAxis().labels().format("{%value}k");
 ```
 
-In the sample below, the layers are stacked from the zero baseline and both axes are shown with a title:
+In the sample below, the layers are stacked from the zero baseline, both axes carry a title, and the Y axis labels show the unit:
 
 {sample}BCT\_Stream\_Graph\_09{sample}

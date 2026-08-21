@@ -48,6 +48,9 @@ anychart.onDocumentReady(function () {
   chart.yAxis().title("Weekly volume");
   chart.xAxis().title("Week");
 
+  // format the Y axis labels with a unit
+  chart.yAxis().labels().format("{%value}k");
+
   // set the container id
   chart.container("container");
   // initiate drawing the chart
