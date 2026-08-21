@@ -163,7 +163,7 @@ The Y axis is hidden by default and the sample shows it only for `"zero"`: it is
 
 ### Series Type
 
-Each layer is an ordinary cartesian series and can be drawn with any of the area or column series types. By default, the layers are {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} series. To use another type, add the layer with the method of that type, for example {api:anychart.charts.StreamGraph#area}area(){api} or {api:anychart.charts.StreamGraph#stepArea}stepArea(){api}. The types can be mixed in one chart: every layer is stacked the same way whatever its type.
+Each layer is an ordinary cartesian series and can be drawn with any of the area or column series types. By default, the layers are {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} series. To use another type, add the layer with the method of that type, for example {api:anychart.charts.StreamGraph#area}area(){api} or {api:anychart.charts.StreamGraph#stepArea}stepArea(){api}.
 
 To change the type of a series that already exists, call its {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api} method. It works on a chart that is already drawn:
 
@@ -181,7 +181,7 @@ function changeSeriesType(value) {
 }
 ```
 
-Choose a series type in the sample below to see the same stream drawn with it, or keep the mixed set:
+Choose a series type in the sample below to see the same stream drawn with it:
 
 {sample}BCT\_Stream\_Graph\_04{sample}
 
