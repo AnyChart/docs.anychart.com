@@ -260,7 +260,7 @@ chart.tooltip().titleFormat(function () {
 chart.tooltip().format("{%seriesName}: <b>{%value}k</b>");
 ```
 
-Hover a point in the sample below: the title shows the week and the total, the lines list the three layers:
+Hover a point in the sample below: the title shows the week and the total, the lines list the layers:
 
 {sample}BCT\_Stream\_Graph\_07{sample}
 
