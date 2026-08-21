@@ -229,11 +229,11 @@ series1.labels().fontColor("#1d3557");
 
 // enable the point markers on the second layer
 series2.markers().enabled(true);
-series2.markers().type("circle");
-series2.markers().size(4);
+series2.markers().type("triangle-up");
+series2.markers().size(6);
 ```
 
-In the sample below, the Search layer shows a value label at every point with a custom bold label at its peak, and the Social layer shows circular point markers:
+In the sample below, the Search layer shows a value label at every point with a custom bold label at its peak, and the Social layer shows triangular point markers:
 
 {sample}BCT\_Stream\_Graph\_06{sample}
 
