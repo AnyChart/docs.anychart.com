@@ -198,8 +198,8 @@ series1.stroke("1.5 #ffffff");
 series2.stroke("1.5 #ffffff");
 series3.stroke("1.5 #ffffff");
 
-// override the fill of one layer directly
-series1.fill("#014f86");
+// override the fill of one layer directly, a named color works too
+series1.fill("coral");
 ```
 
 In the sample below, the layers take their colors from a custom palette, a thin white stroke separates them, and the Search layer has a fill of its own:
