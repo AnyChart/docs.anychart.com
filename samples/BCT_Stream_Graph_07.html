@@ -47,9 +47,17 @@ anychart.onDocumentReady(function () {
   var series3 = chart.splineArea(emailData);
   series3.name("Email");
 
-  // the union tooltip lists all layers at the hovered category
-  chart.tooltip().titleFormat("Week {%x}");
-  chart.tooltip().format("{%seriesName}: {%value}");
+  // format the line of each layer
+  chart.tooltip().format("{%seriesName}: {%value}k");
+
+  // assemble the union tooltip: the layer lines, then the total of the hovered category
+  chart.tooltip().unionFormat(function () {
+    var total = 0;
+    for (var i = 0; i < this.points.length; i++) {
+      total += this.points[i].value;
+    }
+    return this.formattedValues.join("\n") + "\nTotal: " + total + "k";
+  });
 
   // set the container id
   chart.container("container");

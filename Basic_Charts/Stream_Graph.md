@@ -239,15 +239,25 @@ In the sample below, the Search layer shows a value label at every point with a 
 
 ### Tooltips
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box. It appears when you hover over a point on a chart. On a Stream graph, the tooltip uses the `"union"` [display mode](../Common_Settings/Tooltip#display_mode) by default. In this mode, one tooltip lists the values of all layers at the hovered category. Use font settings and [text formatters](../Common_Settings/Text_Formatters) to set the text. You can also change the mode with {api:anychart.core.ui.Tooltip#displayMode}displayMode(){api}:
+A [tooltip](../Common_Settings/Tooltip) is a text box that appears when a point is hovered. On a stream graph the tooltip is in the `"union"` [display mode](../Common_Settings/Tooltip#display_mode) by default: one box titled with the hovered category lists a line per layer, and the default line is the layer name and the value. To change the mode, call {api:anychart.core.ui.Tooltip#displayMode}displayMode(){api}.
+
+To change the line of each layer, call {api:anychart.core.ui.Tooltip#format}format(){api} with a [text formatter](../Common_Settings/Text_Formatters). To change how the lines are assembled, call {api:anychart.core.ui.Tooltip#unionFormat}unionFormat(){api} with a function: its context holds the points of all layers at the hovered category in `points` and their formatted lines in `formattedValues`, so a total of the layers can be added:
 
 ```
-// the union tooltip lists all layers at the hovered category
-chart.tooltip().titleFormat("Week {%x}");
-chart.tooltip().format("{%seriesName}: {%value}");
+// format the line of each layer
+chart.tooltip().format("{%seriesName}: {%value}k");
+
+// assemble the union tooltip: the layer lines, then the total of the hovered category
+chart.tooltip().unionFormat(function () {
+  var total = 0;
+  for (var i = 0; i < this.points.length; i++) {
+    total += this.points[i].value;
+  }
+  return this.formattedValues.join("\n") + "\nTotal: " + total + "k";
+});
 ```
 
-Hover a point in the sample below to see the union tooltip: its title shows the week and its body lists all three layers:
+Hover a point in the sample below: the union tooltip lists the three layers and their total at the hovered week:
 
 {sample}BCT\_Stream\_Graph\_07{sample}
 
