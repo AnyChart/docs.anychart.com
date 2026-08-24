@@ -126,32 +126,40 @@ In the sample below, the sliders set the number of rows and columns of the grid:
 
 ### Cells
 
-The cells of a Waffle chart are squares by default. The chart works out their size on its own to fit the chart area. The following methods adjust the shape and size of cells:
+The chart draws the cells on its own — you only set how they look. Two groups of settings control them: the shape of a cell and the sizing of the grid.
 
-* {api:anychart.charts.Waffle#cellShape}cellShape(){api} — `"square"` or `"circle"` (`"square"` by default)
-* {api:anychart.charts.Waffle#cellPadding}cellPadding(){api} — the gap between cells, in pixels (2 by default)
-* {api:anychart.charts.Waffle#cellCornerRadius}cellCornerRadius(){api} — rounds the corners of square cells (0 by default)
-* {api:anychart.charts.Waffle#cellSize}cellSize(){api} — a fixed cell height in pixels (0 by default — the chart then works out the size on its own)
-* {api:anychart.charts.Waffle#cellAspectRatio}cellAspectRatio(){api} — the width-to-height ratio of a cell (1 by default)
+#### Cell Shape
 
-The two sizing modes work like this. With the default `cellSize(0)`, the chart fits the cells to the chart area, at the width-to-height ratio you set with `cellAspectRatio()`. When you set an explicit `cellSize`, the chart stops fitting: each cell is exactly that many pixels high and `cellSize × cellAspectRatio` pixels wide. If the grid then becomes bigger than the chart area, it does not shrink. The grid stays centered, and its edges are cut off.
+Cells are squares by default. To draw them as circles, use the {api:anychart.charts.Waffle#cellShape}cellShape(){api} method. For square cells, you can round the corners with {api:anychart.charts.Waffle#cellCornerRadius}cellCornerRadius(){api}; circle cells ignore this setting:
 
 ```
-// draw round cells with wider gaps between them
-chart.cellShape("circle");
-chart.cellPadding(4);
-```
-
-In the sample below, the cells are circles with a 4-pixel gap between them, and the radio buttons switch between the two cell shapes:
-
-{sample}BCT\_Waffle\_Chart\_04{sample}
-
-For square cells, you can round the corners instead:
-
-```
+// draw square cells and round their corners
 chart.cellShape("square");
 chart.cellCornerRadius(4);
 ```
+
+In the sample below, the radio buttons switch between the two cell shapes, and the slider rounds the corners of the square cells:
+
+{sample}BCT\_Waffle\_Chart\_04{sample}
+
+#### Cell Size
+
+By default, the chart fits the cells to the chart area. The {api:anychart.charts.Waffle#cellPadding}cellPadding(){api} method sets the gap between cells, and {api:anychart.charts.Waffle#cellAspectRatio}cellAspectRatio(){api} sets their width-to-height ratio.
+
+To give the cells a fixed size instead, use {api:anychart.charts.Waffle#cellSize}cellSize(){api}: each cell is then exactly that many pixels high and `cellSize × cellAspectRatio` pixels wide. A fixed-size grid does not shrink to fit: if it outgrows the chart area, it stays centered, and its edges are cut off. Set the size back to `0` to return to the automatic fit:
+
+```
+// widen the gaps between the cells
+chart.cellPadding(4);
+
+// fixed cell height, cells twice as wide as they are high
+chart.cellSize(20);
+chart.cellAspectRatio(2);
+```
+
+In the sample below, the sliders set the gap between the cells, their fixed height, and their aspect ratio; at zero height, the chart fits the cells automatically:
+
+{sample}BCT\_Waffle\_Chart\_09{sample}
 
 ### Fill Direction
 

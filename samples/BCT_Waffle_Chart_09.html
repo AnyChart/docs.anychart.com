@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Waffle Chart 04"/>
+    <meta name="ac:name" content="BCT Waffle Chart 09"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
 
@@ -20,12 +20,17 @@
 </head>
 <body>
 <div id="controls">
-    <span>Cell shape:</span>
-    <label><input type="radio" name="cellShape" onclick="changeCellShape('square')" checked> square</label>
-    <label><input type="radio" name="cellShape" onclick="changeCellShape('circle')"> circle</label>
-    <label>Corner radius
-        <input type="range" min="0" max="8" step="1" value="4" oninput="changeCellCornerRadius(this.value)">
-        <output id="cornerRadiusValue">4</output>
+    <label>Padding
+        <input type="range" min="0" max="8" step="1" value="4" oninput="changeCellPadding(this.value)">
+        <output id="paddingValue">4</output>
+    </label>
+    <label>Cell height
+        <input type="range" min="0" max="40" step="1" value="20" oninput="changeCellSize(this.value)">
+        <output id="cellSizeValue">20</output>
+    </label>
+    <label>Aspect ratio
+        <input type="range" min="0.5" max="2" step="0.1" value="2" oninput="changeCellAspectRatio(this.value)">
+        <output id="aspectRatioValue">2</output>
     </label>
 </div>
 <div id="container"></div>
@@ -43,12 +48,15 @@ anychart.onDocumentReady(function () {
   chart = anychart.waffle(data);
 
   // set the chart title and separate it from the grid
-  chart.title("Waffle Chart: Cell Shape");
+  chart.title("Waffle Chart: Cell Size");
   chart.title().padding(0, 0, 20, 0);
 
-  // draw square cells and round their corners
-  chart.cellShape("square");
-  chart.cellCornerRadius(4);
+  // widen the gaps between the cells
+  chart.cellPadding(4);
+
+  // fixed cell height, cells twice as wide as they are high
+  chart.cellSize(20);
+  chart.cellAspectRatio(2);
 
   // set the container id
   chart.container("container");
@@ -56,15 +64,22 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// switch the shape of the cells: the chart redraws itself
-function changeCellShape(value) {
-  chart.cellShape(value);
+// change the gap between the cells: the chart redraws itself
+function changeCellPadding(value) {
+  chart.cellPadding(value);
+  document.getElementById("paddingValue").value = value;
 }
 
-// round the corners of square cells: circle cells ignore the radius
-function changeCellCornerRadius(value) {
-  chart.cellCornerRadius(value);
-  document.getElementById("cornerRadiusValue").value = value;
+// change the fixed cell height: zero returns to the automatic fit
+function changeCellSize(value) {
+  chart.cellSize(value);
+  document.getElementById("cellSizeValue").value = value;
+}
+
+// change the width-to-height ratio of the cells: the chart redraws itself
+function changeCellAspectRatio(value) {
+  chart.cellAspectRatio(value);
+  document.getElementById("aspectRatioValue").value = value;
 }
 </script>
 </body>
