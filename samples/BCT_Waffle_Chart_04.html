@@ -23,7 +23,7 @@
     <span>Cell shape:</span>
     <label><input type="radio" name="cellShape" onclick="changeCellShape('square')" checked> square</label>
     <label><input type="radio" name="cellShape" onclick="changeCellShape('circle')"> circle</label>
-    <label>Corner radius
+    <label id="cornerRadiusControl">Corner radius
         <input type="range" min="0" max="8" step="1" value="4" oninput="changeCellCornerRadius(this.value)">
         <output id="cornerRadiusValue">4</output>
     </label>
@@ -56,9 +56,10 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// switch the shape of the cells: the chart redraws itself
+// switch the shape of the cells: the corner radius applies to squares only, so its slider hides for circles
 function changeCellShape(value) {
   chart.cellShape(value);
+  document.getElementById("cornerRadiusControl").style.display = value === "square" ? "" : "none";
 }
 
 // round the corners of square cells: circle cells ignore the radius
