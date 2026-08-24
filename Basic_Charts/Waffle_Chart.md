@@ -142,7 +142,7 @@ chart.cellShape("circle");
 chart.cellPadding(4);
 ```
 
-In the sample below, the cells are circles with a 4-pixel gap between them:
+In the sample below, the cells are circles with a 4-pixel gap between them, and the radio buttons switch between the two cell shapes:
 
 {sample}BCT\_Waffle\_Chart\_04{sample}
 
