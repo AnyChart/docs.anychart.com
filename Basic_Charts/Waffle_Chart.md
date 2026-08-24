@@ -159,7 +159,7 @@ chart.cellAspectRatio(2);
 
 In the sample below, the sliders set the gap between the cells, their fixed height, and their aspect ratio; at zero height, the chart fits the cells automatically:
 
-{sample}BCT\_Waffle\_Chart\_09{sample}
+{sample}BCT\_Waffle\_Chart\_05{sample}
 
 ### Fill Direction
 
@@ -179,7 +179,7 @@ chart.fillDirection("bottom-to-top");
 
 In the sample below, use the switcher to compare all four directions on the same data:
 
-{sample}BCT\_Waffle\_Chart\_05{sample}
+{sample}BCT\_Waffle\_Chart\_06{sample}
 
 ### Labels
 
@@ -197,7 +197,7 @@ chart.labels().fontWeight(600);
 
 In the sample below, each block of cells carries a white label with the category name and its value:
 
-{sample}BCT\_Waffle\_Chart\_06{sample}
+{sample}BCT\_Waffle\_Chart\_07{sample}
 
 ### Tooltips
 
@@ -209,7 +209,7 @@ chart.tooltip().titleFormat("Channel: {%name}");
 chart.tooltip().format("{%value} orders - {%percent}{decimalsCount:1}% of the total");
 ```
 
-{sample}BCT\_Waffle\_Chart\_07{sample}
+{sample}BCT\_Waffle\_Chart\_08{sample}
 
 ### Legend
 
@@ -223,4 +223,4 @@ chart.legend().itemsLayout("vertical");
 
 In the sample below, the legend sits to the right of the grid, with its items stacked vertically:
 
-{sample}BCT\_Waffle\_Chart\_08{sample}
+{sample}BCT\_Waffle\_Chart\_09{sample}

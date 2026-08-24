@@ -19,24 +19,24 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data
+  // create data - the values do not need to sum to 100
   var data = [
-    {name: "In-store", value: 43},
-    {name: "Online", value: 31},
-    {name: "Wholesale", value: 17},
-    {name: "Other", value: 9}
+    {name: "In-store", value: 1240},
+    {name: "Online", value: 890},
+    {name: "Wholesale", value: 470},
+    {name: "Other", value: 260}
   ];
 
   // create a waffle chart and set the data
   var chart = anychart.waffle(data);
 
   // set the chart title and separate it from the grid
-  chart.title("Waffle Chart: Legend");
+  chart.title("Waffle Chart: Tooltips");
   chart.title().padding(0, 0, 20, 0);
 
-  // move the legend to the right and make it vertical
-  chart.legend().position("right");
-  chart.legend().itemsLayout("vertical");
+  // customize the tooltip title and text
+  chart.tooltip().titleFormat("Channel: {%name}");
+  chart.tooltip().format("{%value} orders - {%percent}{decimalsCount:1}% of the total");
 
   // set the container id
   chart.container("container");

@@ -15,39 +15,48 @@
         html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
         body { display: flex; flex-direction: column; }
         #controls { padding: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
-        #controls label { margin-right: 20px; }
         #container { flex: 1; }
     </style>
 </head>
 <body>
 <div id="controls">
-    <span>Fill direction:</span>
-    <label><input type="radio" name="direction" id="directionLeftToRight" onclick="changeFillDirection('left-to-right')"> left-to-right</label>
-    <label><input type="radio" name="direction" id="directionRightToLeft" onclick="changeFillDirection('right-to-left')"> right-to-left</label>
-    <label><input type="radio" name="direction" id="directionTopToBottom" onclick="changeFillDirection('top-to-bottom')"> top-to-bottom</label>
-    <label><input type="radio" name="direction" id="directionBottomToTop" onclick="changeFillDirection('bottom-to-top')" checked> bottom-to-top</label>
+    <label>Padding
+        <input type="range" min="1" max="8" step="1" value="4" oninput="changeCellPadding(this.value)">
+        <output id="paddingValue">4</output>
+    </label>
+    <label>Cell height
+        <input type="range" min="0" max="20" step="1" value="20" oninput="changeCellSize(this.value)">
+        <output id="cellSizeValue">20</output>
+    </label>
+    <label>Aspect ratio
+        <input type="range" min="0.5" max="2" step="0.1" value="2" oninput="changeCellAspectRatio(this.value)">
+        <output id="aspectRatioValue">2</output>
+    </label>
 </div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // a progress-style waffle: the share completed vs the remainder
+  // create data
   var data = [
-    {name: "Completed", value: 68},
-    {name: "Remaining", value: 32}
+    {name: "In-store", value: 43},
+    {name: "Online", value: 31},
+    {name: "Wholesale", value: 17},
+    {name: "Other", value: 9}
   ];
 
   // create a waffle chart and set the data
   chart = anychart.waffle(data);
 
   // set the chart title and separate it from the grid
-  chart.title("Waffle Chart: Fill Direction");
+  chart.title("Waffle Chart: Cell Size");
   chart.title().padding(0, 0, 20, 0);
 
-  // contrast the two categories so the fill direction stays visible
-  chart.palette(["#1976d2", "#e3e9ef"]);
+  // widen the gaps between the cells
+  chart.cellPadding(4);
 
-  // fill the grid from the bottom up
-  chart.fillDirection("bottom-to-top");
+  // fixed cell height, cells twice as wide as they are high
+  chart.cellSize(20);
+  chart.cellAspectRatio(2);
 
   // set the container id
   chart.container("container");
@@ -55,9 +64,22 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// apply the chosen fill direction: the chart redraws itself
-function changeFillDirection(direction) {
-  chart.fillDirection(direction);
+// change the gap between the cells: the chart redraws itself
+function changeCellPadding(value) {
+  chart.cellPadding(value);
+  document.getElementById("paddingValue").value = value;
+}
+
+// change the fixed cell height: zero returns to the automatic fit
+function changeCellSize(value) {
+  chart.cellSize(value);
+  document.getElementById("cellSizeValue").value = value;
+}
+
+// change the width-to-height ratio of the cells: the chart redraws itself
+function changeCellAspectRatio(value) {
+  chart.cellAspectRatio(value);
+  document.getElementById("aspectRatioValue").value = value;
 }
 </script>
 </body>

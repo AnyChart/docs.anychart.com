@@ -12,27 +12,10 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
 
     <style>
-        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
-        body { display: flex; flex-direction: column; }
-        #controls { padding: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
-        #container { flex: 1; }
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
     </style>
 </head>
 <body>
-<div id="controls">
-    <label>Padding
-        <input type="range" min="1" max="8" step="1" value="4" oninput="changeCellPadding(this.value)">
-        <output id="paddingValue">4</output>
-    </label>
-    <label>Cell height
-        <input type="range" min="0" max="20" step="1" value="20" oninput="changeCellSize(this.value)">
-        <output id="cellSizeValue">20</output>
-    </label>
-    <label>Aspect ratio
-        <input type="range" min="0.5" max="2" step="0.1" value="2" oninput="changeCellAspectRatio(this.value)">
-        <output id="aspectRatioValue">2</output>
-    </label>
-</div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -45,42 +28,21 @@ anychart.onDocumentReady(function () {
   ];
 
   // create a waffle chart and set the data
-  chart = anychart.waffle(data);
+  var chart = anychart.waffle(data);
 
   // set the chart title and separate it from the grid
-  chart.title("Waffle Chart: Cell Size");
+  chart.title("Waffle Chart: Legend");
   chart.title().padding(0, 0, 20, 0);
 
-  // widen the gaps between the cells
-  chart.cellPadding(4);
-
-  // fixed cell height, cells twice as wide as they are high
-  chart.cellSize(20);
-  chart.cellAspectRatio(2);
+  // move the legend to the right and make it vertical
+  chart.legend().position("right");
+  chart.legend().itemsLayout("vertical");
 
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
 });
-
-// change the gap between the cells: the chart redraws itself
-function changeCellPadding(value) {
-  chart.cellPadding(value);
-  document.getElementById("paddingValue").value = value;
-}
-
-// change the fixed cell height: zero returns to the automatic fit
-function changeCellSize(value) {
-  chart.cellSize(value);
-  document.getElementById("cellSizeValue").value = value;
-}
-
-// change the width-to-height ratio of the cells: the chart redraws itself
-function changeCellAspectRatio(value) {
-  chart.cellAspectRatio(value);
-  document.getElementById("aspectRatioValue").value = value;
-}
 </script>
 </body>
 </html>
