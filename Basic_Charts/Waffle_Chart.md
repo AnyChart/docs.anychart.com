@@ -183,7 +183,11 @@ In the sample below, use the switcher to compare all four directions on the same
 
 ### Labels
 
-[Labels](../Common_Settings/Labels) are text or image elements. You can place them anywhere on any chart. On a Waffle chart, they show category names directly on the grid. There is one label per category, placed at the center of its block of cells. Labels are off by default. Turn them on with the {api:anychart.charts.Waffle#labels}labels(){api} method. The default format is `"{%name}\n{%percent}%"`. You can use the `{%name}`, `{%value}`, and `{%percent}` [text formatter](../Common_Settings/Text_Formatters) tokens:
+[Labels](../Common_Settings/Labels) are text elements shown directly on the grid: one label per category, at the center of its block of cells.
+
+Labels are off by default. To turn them on, use the {api:anychart.charts.Waffle#labels}labels(){api} method. The default text is the category name and its percent share. To change it, call {api:anychart.core.ui.LabelsFactory#format}format(){api} with a [text formatter](../Common_Settings/Text_Formatters): the `{%name}`, `{%value}`, and `{%percent}` tokens are available.
+
+The blocks take both light and dark palette colors, so style the text for both: a white bold font with a dark {api:anychart.core.ui.LabelsFactory#textShadow}textShadow(){api} stays readable on any block:
 
 ```
 // enable the labels
@@ -191,11 +195,14 @@ chart.labels().enabled(true);
 
 // show the name and the value instead
 chart.labels().format("{%name}: {%value}");
+
+// white bold text with a dark shadow reads on light and dark cells alike
 chart.labels().fontColor("#ffffff");
 chart.labels().fontWeight(600);
+chart.labels().textShadow("1px 1px 2px #000000");
 ```
 
-In the sample below, each block of cells carries a white label with the category name and its value:
+In the sample below, each block of cells carries a white label with the category name and its value, and the dark text shadow keeps it readable on the light cells:
 
 {sample}BCT\_Waffle\_Chart\_07{sample}
 
