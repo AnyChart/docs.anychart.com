@@ -12,10 +12,23 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
 
     <style>
-        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { display: flex; flex-direction: column; }
+        #controls { padding: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+        #container { flex: 1; }
     </style>
 </head>
 <body>
+<div id="controls">
+    <label>Rows
+        <input type="range" min="1" max="30" step="1" value="5" oninput="changeRows(this.value)">
+        <output id="rowsValue">5</output>
+    </label>
+    <label>Columns
+        <input type="range" min="1" max="30" step="1" value="20" oninput="changeColumns(this.value)">
+        <output id="columnsValue">20</output>
+    </label>
+</div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -28,7 +41,7 @@ anychart.onDocumentReady(function () {
   ];
 
   // create a waffle chart and set the data
-  var chart = anychart.waffle(data);
+  chart = anychart.waffle(data);
 
   // set the chart title and separate it from the grid
   chart.title("Waffle Chart: Grid Layout");
@@ -43,6 +56,18 @@ anychart.onDocumentReady(function () {
   // initiate drawing the chart
   chart.draw();
 });
+
+// change the number of grid rows: the chart redraws itself
+function changeRows(value) {
+  chart.rows(value);
+  document.getElementById("rowsValue").value = value;
+}
+
+// change the number of grid columns: the chart redraws itself
+function changeColumns(value) {
+  chart.columns(value);
+  document.getElementById("columnsValue").value = value;
+}
 </script>
 </body>
 </html>

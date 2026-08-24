@@ -122,7 +122,7 @@ chart.rows(5);
 chart.columns(20);
 ```
 
-In the sample below, the grid dimensions are set with rowsCount() and columnsCount():
+In the sample below, the sliders set the number of rows and columns of the grid:
 
 {sample}BCT\_Waffle\_Chart\_03{sample}
 
