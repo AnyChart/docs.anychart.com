@@ -83,18 +83,9 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-You can set the [appearance settings](../Appearance_Settings) of a Waffle chart in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Waffle#normal}normal(){api}, {api:anychart.charts.Waffle#hovered}hovered(){api}, and {api:anychart.charts.Waffle#selected}selected(){api} methods. The settings apply to the whole block of cells in a category.
+Each category's color comes from the chart [palette](../Appearance_Settings/Palettes). Set your own with the {api:anychart.charts.Waffle#palette}palette(){api} method. A category is drawn as one block of identical cells, so there is no per-cell styling: every cell in the block shares the same fill and stroke.
 
-A category enters the **hover** state when you point at it. It enters the **selected** state when you click it. Ctrl/Cmd/Shift + click adds or removes a category from the selection. A click on the empty area clears the selection. You can also select a category in code with {api:anychart.charts.Waffle#select}select(){api}. Clear the selection with {api:anychart.charts.Waffle#unselect}unselect(){api}.
-
-A Waffle category is drawn as one block of identical cells. So there is no per-cell styling. Every cell in a category's block always shares the same fill and stroke.
-
-Combine the state methods with the following methods:
-
-* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
-* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
-
-In the normal state, each category's color comes from the chart [palette](../Appearance_Settings/Palettes). Set your own with the {api:anychart.charts.Waffle#palette}palette(){api} method. By default, the hovered and selected states change that base color. They lighten it on hover and darken it when selected. To change this, pass a function to fill() or stroke(). The function changes the category's palette color. Inside the function, the palette color is available as `this.sourceColor`:
+The [appearance settings](../Appearance_Settings) react to the three [states](../Common_Settings/Interactivity/States). Use the {api:anychart.charts.Waffle#normal}normal(){api}, {api:anychart.charts.Waffle#hovered}hovered(){api}, and {api:anychart.charts.Waffle#selected}selected(){api} methods with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}. A category is hovered when you point at it and selected when you click it; {api:anychart.charts.Waffle#select}select(){api} and {api:anychart.charts.Waffle#unselect}unselect(){api} do the same in code. By default, hovering lightens the palette color, and selecting darkens it. To change how a state reacts, pass a function to fill() or stroke(): inside it, the palette color is available as `this.sourceColor`:
 
 ```
 // one palette color per category
