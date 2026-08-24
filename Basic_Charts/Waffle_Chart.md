@@ -112,9 +112,7 @@ In the sample below, pointing at a category lightens its block of cells, and cli
 
 By default, the grid has 10×10 = 100 cells. To change it, use the {api:anychart.charts.Waffle#rows}rows(){api} and {api:anychart.charts.Waffle#columns}columns(){api} methods.
 
-The chart always fills the whole grid. Each category gets a number of cells that matches its share of the total. The chart rounds these numbers with the largest-remainder method. This method rounds shares so they still add up to the full grid. It works with any grid size. Say your values add up to 100. Then one cell of the default 10×10 grid equals exactly one unit of value.
-
-When the shares do not divide evenly into cells, the chart hands the leftover cells to the categories with the largest remainders. For example, take the values 5, 3, and 1. Their exact shares of the default 100 cells are 55.6, 33.3, and 11.1 cells. The chart draws 56, 33, and 11 cells, together exactly 100.
+The chart always fills the whole grid. Each category gets a block of cells that matches its share of the total. When the shares do not divide into whole cells, the chart rounds them so that the blocks still add up to the exact full grid (the largest-remainder method): a block can be off by at most one cell, the grid as a whole is never off.
 
 ```
 // change the default 10x10 grid
