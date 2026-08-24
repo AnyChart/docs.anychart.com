@@ -157,7 +157,7 @@ chart.cellSize(20);
 chart.cellAspectRatio(2);
 ```
 
-In the sample below, the sliders set the gap between the cells, their fixed height, and their aspect ratio; at zero height, the chart fits the cells automatically:
+In the sample below, the sliders set the gap between the cells, their fixed height, and their aspect ratio:
 
 {sample}BCT\_Waffle\_Chart\_05{sample}
 
