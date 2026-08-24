@@ -220,7 +220,11 @@ chart.tooltip().format("{%value} orders - {%percent}{decimalsCount:1}% of the to
 
 ### Legend
 
-A [Legend](../Common_Settings/Legend) links the colors to the category names. On a Waffle chart, the legend is on by default. It sits below the grid. Use the {api:anychart.core.ui.Legend#position}position(){api} and {api:anychart.core.ui.Legend#itemsLayout}itemsLayout(){api} methods to move it:
+A [Legend](../Common_Settings/Legend) links the colors to the category names. On a Waffle chart, the legend is on by default. It sits below the grid.
+
+The legend items are interactive. Pointing at an item hovers its category, and clicking it selects the category — the same [states](../Common_Settings/Interactivity/States) as pointing at and clicking the block of cells itself.
+
+Use the {api:anychart.core.ui.Legend#position}position(){api} and {api:anychart.core.ui.Legend#itemsLayout}itemsLayout(){api} methods to move the legend:
 
 ```
 // move the legend to the right and make it vertical
