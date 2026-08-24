@@ -3,9 +3,9 @@
 
 ## Overview
 
-A Waffle chart (also called a square pie chart) shows parts of a whole. It uses a grid of small cells, 10×10 by default. Each category is a block of cells. The block's size matches its share of the total.
+A Waffle chart shows parts of a whole. It uses a grid of small cells, 10×10 by default. Each category is a block of cells. The block's size matches its share of the total.
 
-Waffle charts do the same job as [Pie](Pie_Chart) charts. But they often make exact values easier to read. You can count the cells. On the default grid, one cell equals 1% of the total. This type works best with a few categories.
+Waffle charts do the same job as [Pie](Pie_Chart) charts, which is why they are sometimes called square pie charts. But they often make exact values easier to read. You can count the cells. On the default grid, one cell equals 1% of the total. This type works best with a few categories.
 
 This article shows how to make a basic Waffle chart. It also shows how to set options that are special to this type. The table below gives a quick overview of the Waffle chart's features:
 
