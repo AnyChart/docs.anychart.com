@@ -201,7 +201,7 @@ chart.nodeHeight(56);
 chart.nodePadding(8);
 ```
 
-In the sample below, the cards are wider and shorter than the default ones:
+In the sample below, the sliders change the size of the node cards and the inner padding of their text:
 
 {sample}BCT\_Org\_Chart\_05{sample}
 

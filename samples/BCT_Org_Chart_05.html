@@ -12,10 +12,28 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
 
     <style>
-        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { display: flex; flex-direction: column; }
+        #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
+        #controls input[type="range"] { width: 90px; vertical-align: middle; }
+        #container { flex: 1; }
     </style>
 </head>
 <body>
+<div id="controls">
+    <label>Width
+        <input type="range" min="100" max="250" step="1" value="180" oninput="changeNodeWidth(this.value)">
+        <output id="nodeWidthValue">180</output>
+    </label>
+    <label>Height
+        <input type="range" min="40" max="140" step="1" value="56" oninput="changeNodeHeight(this.value)">
+        <output id="nodeHeightValue">56</output>
+    </label>
+    <label>Padding
+        <input type="range" min="0" max="24" step="1" value="8" oninput="changeNodePadding(this.value)">
+        <output id="nodePaddingValue">8</output>
+    </label>
+</div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -34,7 +52,7 @@ anychart.onDocumentReady(function () {
   ];
 
   // create an org chart and set the data
-  var chart = anychart.orgChart(data, "as-table");
+  chart = anychart.orgChart(data, "as-table");
   // set the chart title and separate it from the tree
   chart.title("Org Chart: Node Size");
   chart.title().padding(0, 0, 20, 0);
@@ -49,6 +67,24 @@ anychart.onDocumentReady(function () {
   // initiate drawing the chart
   chart.draw();
 });
+
+// change the width of the node cards: the chart redraws itself
+function changeNodeWidth(value) {
+  chart.nodeWidth(value);
+  document.getElementById("nodeWidthValue").value = value;
+}
+
+// change the height of the node cards: the chart redraws itself
+function changeNodeHeight(value) {
+  chart.nodeHeight(value);
+  document.getElementById("nodeHeightValue").value = value;
+}
+
+// change the inner padding of the card text: the chart redraws itself
+function changeNodePadding(value) {
+  chart.nodePadding(value);
+  document.getElementById("nodePaddingValue").value = value;
+}
 </script>
 </body>
 </html>
