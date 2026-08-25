@@ -221,7 +221,7 @@ chart.connectorType("curved");
 chart.connectorStroke("2 #64b5f6");
 ```
 
-In the sample below, the parent-child connectors are smooth curves drawn with a thicker blue stroke:
+In the sample below, the radio buttons switch the shape of the parent-child connectors, drawn with a thicker blue stroke:
 
 {sample}BCT\_Org\_Chart\_06{sample}
 
