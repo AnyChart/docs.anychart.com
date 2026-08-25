@@ -36,21 +36,16 @@ anychart.onDocumentReady(function () {
   // create an org chart and set the data
   var chart = anychart.orgChart(data, "as-table");
   // set the chart title and separate it from the tree
-  chart.title("Org Chart: Zoom and Pan");
+  chart.title("Org Chart: Collapse and Expand");
   chart.title().padding(0, 0, 20, 0);
 
-  // mouse-wheel zoom and drag-to-pan are enabled by default;
-  // this is how to turn them off:
-  // chart.interactivity().zoomOnMouseWheel(false);
-  // chart.interactivity().drag(false);
+  // collapse the CTO branch by the node id
+  chart.collapse("cto");
 
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
-
-  // zoom in programmatically
-  chart.zoomIn();
 });
 </script>
 </body>

@@ -16,7 +16,7 @@ This article shows how to make a basic Org chart. It also shows how to set optio
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td>[orientation()](#tree_layout)</td></tr>
+<tr><td>Vertical</td><td>[orientation()](#orientation)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
@@ -225,9 +225,11 @@ In the sample below, the radio buttons switch the shape of the parent-child conn
 
 {sample}BCT\_Org\_Chart\_06{sample}
 
-### Tree Layout
+### Layout
 
-The chart lays out the tree automatically and rescales it to fit the container. Three methods shape that layout.
+The chart lays out the tree automatically and rescales it to fit the container. The subsections below cover the growth direction of the tree and its gaps.
+
+#### Orientation
 
 By default, the tree grows from the top down. The {api:anychart.charts.OrgChart#orientation}orientation(){api} method makes it grow in one of four directions:
 
@@ -236,23 +238,31 @@ By default, the tree grows from the top down. The {api:anychart.charts.OrgChart#
 * `"left-to-right"`
 * `"right-to-left"`
 
+```
+// grow the tree from the left edge to the right
+chart.orientation("left-to-right");
+```
+
+In the sample below, the radio buttons switch the growth direction of the tree:
+
+{sample}BCT\_Org\_Chart\_07{sample}
+
+#### Gaps
+
 The spacing methods set the gaps of the tree:
 
 * {api:anychart.charts.OrgChart#levelSpacing}levelSpacing(){api} — the gap between the levels of the tree (80 by default)
 * {api:anychart.charts.OrgChart#siblingSpacing}siblingSpacing(){api} — the gap between sibling cards (30 by default)
 
 ```
-// grow the tree from the left edge to the right
-chart.orientation("left-to-right");
-
 // the gaps between levels and between siblings
 chart.levelSpacing(50);
 chart.siblingSpacing(16);
 ```
 
-In the sample below, the radio buttons switch the growth direction of the tree, and the sliders change the gaps between the levels and between the siblings:
+In the sample below, the sliders change the gaps between the levels and between the siblings:
 
-{sample}BCT\_Org\_Chart\_07{sample}
+{sample}BCT\_Org\_Chart\_08{sample}
 
 ### Collapse and Expand
 
@@ -269,7 +279,7 @@ chart.collapse("cto");
 
 In the sample below, the CTO branch is collapsed from the start, and the +/− indicator under a parent card expands or collapses its branch:
 
-{sample}BCT\_Org\_Chart\_08{sample}
+{sample}BCT\_Org\_Chart\_09{sample}
 
 ### Zoom and Pan
 
@@ -292,7 +302,7 @@ chart.zoomIn();
 
 In the sample below, the chart is zoomed in by one step after the draw, and you can zoom it with the mouse wheel and pan it by dragging:
 
-{sample}BCT\_Org\_Chart\_09{sample}
+{sample}BCT\_Org\_Chart\_10{sample}
 
 ### Tooltips
 
@@ -311,4 +321,4 @@ chart.tooltip().format(function () {
 });
 ```
 
-{sample}BCT\_Org\_Chart\_10{sample}
+{sample}BCT\_Org\_Chart\_11{sample}
