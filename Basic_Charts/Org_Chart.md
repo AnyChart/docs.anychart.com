@@ -124,7 +124,7 @@ Combine the state methods with these methods:
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the card background. It accepts a plain color, gradient, or pattern fill. A fill function is not supported here: the chart reads the setting as a ready color and never calls a function to compute it
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the card border. In the **hovered** and **selected** states it also colors the connectors that touch the card (see [Connectors](#connectors))
 
-A plain color can be written in any CSS notation: a hex string, an `rgb()` string, or a named color. The snippet below uses a different notation for each state:
+A plain color can be written in any CSS notation: a hex string, an `rgb()` string, or a named color — see [Color Management](../Appearance_Settings/Color_Management). The snippet below uses a different notation for each state:
 
 ```
 // normal state: hex strings
