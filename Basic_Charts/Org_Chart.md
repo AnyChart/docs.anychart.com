@@ -148,7 +148,7 @@ In the sample below, the fill and the stroke of a card change when you hover ove
 
 [Labels](../Common_Settings/Labels) are the text lines of a card: the `name` (header) line and the `title` line. The {api:anychart.charts.OrgChart#labels}labels(){api} method styles them, and only its font settings apply:
 
-* `fontFamily()` and `fontSize()` — both lines; the `title` line is drawn a bit smaller
+* `fontFamily()` and `fontSize()` — both lines; the `title` line is drawn 2 px smaller than the set size
 * `fontColor()` and `fontWeight()` — the `name` line only
 * the color of the `title` line is set separately, with the {api:anychart.charts.OrgChart#titleFontColor}titleFontColor(){api} method
 * `chart.labels(false)` hides both lines
@@ -157,7 +157,7 @@ The label text always comes from the `name` and `title` data fields. [Text forma
 
 ```
 // the font family and the font size apply to both lines
-// the title line is drawn a bit smaller than the name line
+// the title line is drawn 2 px smaller than the name line
 chart.labels().fontFamily("Verdana, sans-serif");
 chart.labels().fontSize(13);
 
