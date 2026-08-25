@@ -227,7 +227,7 @@ In the sample below, the radio buttons switch the shape of the parent-child conn
 
 ### Layout
 
-The chart lays out the tree automatically and rescales it to fit the container. The subsections below cover the growth direction of the tree and its gaps.
+The chart lays out the tree automatically and rescales it to fit the container. The subsections below cover the growth direction of the tree and its spacing.
 
 #### Orientation
 
@@ -247,20 +247,20 @@ In the sample below, the radio buttons switch the growth direction of the tree:
 
 {sample}BCT\_Org\_Chart\_07{sample}
 
-#### Gaps
+#### Spacing
 
-The spacing methods set the gaps of the tree:
+Two methods set the spacing of the tree:
 
-* {api:anychart.charts.OrgChart#levelSpacing}levelSpacing(){api} — the gap between the levels of the tree (80 by default)
-* {api:anychart.charts.OrgChart#siblingSpacing}siblingSpacing(){api} — the gap between sibling cards (30 by default)
+* {api:anychart.charts.OrgChart#levelSpacing}levelSpacing(){api} — the spacing between the levels of the tree (80 by default)
+* {api:anychart.charts.OrgChart#siblingSpacing}siblingSpacing(){api} — the spacing between sibling cards (30 by default)
 
 ```
-// the gaps between levels and between siblings
+// the spacing between levels and between siblings
 chart.levelSpacing(50);
 chart.siblingSpacing(16);
 ```
 
-In the sample below, the sliders change the gaps between the levels and between the siblings:
+In the sample below, the sliders change the spacing between the levels and between the siblings:
 
 {sample}BCT\_Org\_Chart\_08{sample}
 

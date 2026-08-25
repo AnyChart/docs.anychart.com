@@ -21,11 +21,11 @@
 </head>
 <body>
 <div id="controls">
-    <label>Level gap
+    <label>Level spacing
         <input type="range" min="10" max="150" step="1" value="50" oninput="changeLevelSpacing(this.value)">
         <output id="levelSpacingValue">50</output>
     </label>
-    <label>Sibling gap
+    <label>Sibling spacing
         <input type="range" min="1" max="60" step="1" value="16" oninput="changeSiblingSpacing(this.value)">
         <output id="siblingSpacingValue">16</output>
     </label>
@@ -50,10 +50,10 @@ anychart.onDocumentReady(function () {
   // create an org chart and set the data
   chart = anychart.orgChart(data, "as-table");
   // set the chart title and separate it from the tree
-  chart.title("Org Chart: Gaps");
+  chart.title("Org Chart: Spacing");
   chart.title().padding(0, 0, 20, 0);
 
-  // the gaps between levels and between siblings
+  // the spacing between levels and between siblings
   chart.levelSpacing(50);
   chart.siblingSpacing(16);
 
@@ -63,13 +63,13 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// change the gap between the levels of the tree: the chart redraws itself
+// change the spacing between the levels of the tree: the chart redraws itself
 function changeLevelSpacing(value) {
   chart.levelSpacing(value);
   document.getElementById("levelSpacingValue").value = value;
 }
 
-// change the gap between sibling cards: the chart redraws itself
+// change the spacing between sibling cards: the chart redraws itself
 function changeSiblingSpacing(value) {
   chart.siblingSpacing(value);
   document.getElementById("siblingSpacingValue").value = value;
