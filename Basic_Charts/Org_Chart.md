@@ -89,7 +89,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-The Org chart uses the [tree data model](../Working_with_Data/Tree_Data_Model). Each item has two text fields. The `name` field is the header line of the card. The `title` field is the job title (like "CEO") — not a heading — and is drawn as the second, smaller line. Give every item a `name`. The `title` field is optional: a card without it shows only the name line. You set the hierarchy in one of two modes. The second argument of the constructor sets the mode:
+The Org chart uses the [tree data model](../Working_with_Data/Tree_Data_Model). Each item has two text fields. The `name` field is the header line of the card. The `title` field is the second, smaller line of the card. Its name comes from the job title it holds in an organization chart — the field itself takes any text. Give every item a `name`. The `title` field is optional: a card without it shows only the name line. You set the hierarchy in one of two modes. The second argument of the constructor sets the mode:
 
 * `"as-table"` — a flat array where each item points to its parent with `id` and `parent` fields (the root item has no `parent`)
 * `"as-tree"` — a nested array where each parent holds its children in the `children` field
@@ -148,7 +148,7 @@ In the sample below, the fill and the stroke of a card change when you hover ove
 
 ### Labels
 
-Each card draws two lines of text: the `name` line — the bold header — and the `title` line below it, smaller and gray, showing the job title. Together they are the card's [labels](../Common_Settings/Labels). Two methods style them: {api:anychart.charts.OrgChart#labels}labels(){api} owns the shared font and the `name` line (only its font settings apply), and {api:anychart.charts.OrgChart#titleFontColor}titleFontColor(){api} owns the color of the `title` line:
+Each card draws two lines of text: the `name` line — the bold header — and the `title` line below it, smaller and gray. Together they are the card's [labels](../Common_Settings/Labels). Two methods style them: {api:anychart.charts.OrgChart#labels}labels(){api} owns the shared font and the `name` line (only its font settings apply), and {api:anychart.charts.OrgChart#titleFontColor}titleFontColor(){api} owns the color of the `title` line:
 
 <table border="1" class="seriesTABLE">
 <tr><th></th><th>name line</th><th>title line</th></tr>
