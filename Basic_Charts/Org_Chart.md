@@ -115,11 +115,7 @@ In the sample below, the chart reads nested data in the `"as-tree"` mode, and no
 
 {sample}BCT\_Org\_Chart\_02{sample}
 
-### Nodes
-
-Each node of the Org chart is drawn as a card. The subsections below cover the card settings: the background and the border in the interactivity states, the text lines, and the card size.
-
-#### Node States
+### Appearance
 
 You can style the node cards in three [states](../Common_Settings/Interactivity/States): **normal**, **hovered**, and **selected**. Use the {api:anychart.charts.OrgChart#normal}normal(){api}, {api:anychart.charts.OrgChart#hovered}hovered(){api}, and {api:anychart.charts.OrgChart#selected}selected(){api} methods. A card is hovered when you move the pointer over it. A card is selected when you click it. A click on the empty area clears the selection.
 
@@ -142,7 +138,7 @@ In the sample below, the fill and the stroke of a card change when you hover ove
 
 {sample}BCT\_Org\_Chart\_03{sample}
 
-#### Node Labels
+### Labels
 
 [Labels](../Common_Settings/Labels) are the text elements of a card: the `name` (header) line and the `title` line. Only the font settings of {api:anychart.charts.OrgChart#labels}labels(){api} apply: `fontColor()`, `fontFamily()`, `fontWeight()`, `fontSize()`, and `enabled()`. The font family and the font size apply to both lines; the `title` line is drawn a bit smaller. The `fontColor()` and `fontWeight()` methods change only the `name` (header) line. Set the color of the `title` line separately with the {api:anychart.charts.OrgChart#titleFontColor}titleFontColor(){api} method. To hide both lines, turn off the labels with `chart.labels(false)`.
 
@@ -166,7 +162,7 @@ In the sample below, both label lines are set in Verdana, the name line is bold 
 
 {sample}BCT\_Org\_Chart\_04{sample}
 
-#### Node Size
+### Node Size
 
 Use these methods to set the size of the node cards:
 
@@ -192,7 +188,7 @@ The chart draws the parent-child links as connector lines between the cards. The
 * `"straight"` — direct diagonal segments
 * `"curved"` — smooth curves
 
-The {api:anychart.charts.OrgChart#connectorStroke}connectorStroke(){api} method sets the line style: the color, the thickness, and the dash pattern. It applies in the **normal** state only. When the card at either end of a connector is hovered or selected, the connector is drawn with the `stroke()` of that state instead (see [Node States](#node_states)).
+The {api:anychart.charts.OrgChart#connectorStroke}connectorStroke(){api} method sets the line style: the color, the thickness, and the dash pattern. It applies in the **normal** state only. When the card at either end of a connector is hovered or selected, the connector is drawn with the `stroke()` of that state instead (see [Appearance](#appearance)).
 
 ```
 // draw the parent-child connectors as smooth curves
