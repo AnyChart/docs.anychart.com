@@ -300,7 +300,7 @@ You can also control the zoom in code:
 chart.zoomIn();
 ```
 
-In the sample below, the chart is zoomed in by one step after the draw, and you can zoom it with the mouse wheel and pan it by dragging:
+In the sample below, the chart is zoomed in by one step after the draw, the buttons zoom it in and out and fit it back into the container, and you can also zoom it with the mouse wheel and pan it by dragging:
 
 {sample}BCT\_Org\_Chart\_10{sample}
 
