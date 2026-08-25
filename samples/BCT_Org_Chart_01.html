@@ -40,6 +40,9 @@ anychart.onDocumentReady(function () {
   chart.title("Org Chart: Basic Sample");
   chart.title().padding(0, 0, 20, 0);
 
+  // start with one branch collapsed to show both indicator states
+  chart.collapse("cfo");
+
   // set the container id
   chart.container("container");
   // initiate drawing the chart
