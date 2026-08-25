@@ -277,7 +277,7 @@ Every parent card gets a +/− indicator. It collapses or expands the branch whe
 chart.collapse("cto");
 ```
 
-In the sample below, the CTO branch is collapsed from the start, and the +/− indicator under a parent card expands or collapses its branch:
+In the sample below, the CTO branch is collapsed from the start, the +/− indicator under a parent card expands or collapses its branch, and the buttons collapse or expand all branches at once:
 
 {sample}BCT\_Org\_Chart\_09{sample}
 
