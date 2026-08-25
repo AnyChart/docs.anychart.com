@@ -3,7 +3,7 @@
 
 ## Overview
 
-An Org chart (organizational chart) shows the structure of an organization as a tree. Each node is a card with a name and a title. The chart draws parent-child links as connector lines between the cards. The chart lays out the tree automatically and fits it into the container. It also lets you collapse branches, zoom, and pan, all by default.
+An Org chart (organizational chart) shows a hierarchy as a tree of cards. Each node is a card with a name and a title, and the chart draws parent-child links as connector lines between the cards. The structure of an organization — who reports to whom — is the namesake use case, but any hierarchical data fits: departments and teams, product categories, site maps, family trees. The chart lays out the tree automatically and fits it into the container. It also lets you collapse branches, zoom, and pan, all by default.
 
 This article shows how to make a basic Org chart. It also shows how to set options that are special to this type. You can read the table below for a quick overview of the Org chart's features:
 
