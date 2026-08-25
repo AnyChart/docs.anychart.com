@@ -146,12 +146,15 @@ In the sample below, the fill and the stroke of a card change when you hover ove
 
 ### Labels
 
-[Labels](../Common_Settings/Labels) are the text lines of a card: the `name` (header) line and the `title` line. The {api:anychart.charts.OrgChart#labels}labels(){api} method styles them, and only its font settings apply:
+Each card draws two lines of text: the `name` line — the bold header — and the `title` line below it, smaller and gray. Together they are the card's [labels](../Common_Settings/Labels). Two methods style them: {api:anychart.charts.OrgChart#labels}labels(){api} owns the shared font and the `name` line (only its font settings apply), and {api:anychart.charts.OrgChart#titleFontColor}titleFontColor(){api} owns the color of the `title` line:
 
-* `fontFamily()` and `fontSize()` — both lines; the `title` line is drawn 2 px smaller than the set size
-* `fontColor()` and `fontWeight()` — the `name` line only
-* the color of the `title` line is set separately, with the {api:anychart.charts.OrgChart#titleFontColor}titleFontColor(){api} method
-* `chart.labels(false)` hides both lines
+<table border="1" class="seriesTABLE">
+<tr><th></th><th>name line</th><th>title line</th></tr>
+<tr><td>Font and size</td><td><code>labels().fontFamily()</code>, <code>labels().fontSize()</code></td><td>the same, drawn 2 px smaller</td></tr>
+<tr><td>Color</td><td><code>labels().fontColor()</code></td><td><code>titleFontColor()</code></td></tr>
+<tr><td>Weight</td><td><code>labels().fontWeight()</code> (bold by default)</td><td>always regular</td></tr>
+<tr><td>Visibility</td><td colspan=2><code>chart.labels(false)</code> hides both lines</td></tr>
+</table>
 
 The label text always comes from the `name` and `title` data fields. [Text formatters](../Common_Settings/Text_Formatters) do not apply to the card labels. To show custom text, use the [tooltip](#tooltips) instead.
 
