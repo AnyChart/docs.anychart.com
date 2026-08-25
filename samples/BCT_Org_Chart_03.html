@@ -36,7 +36,7 @@ anychart.onDocumentReady(function () {
   // create an org chart and set the data
   var chart = anychart.orgChart(data, "as-table");
   // set the chart title and separate it from the tree
-  chart.title("Org Chart: Appearance");
+  chart.title("Org Chart: Node Appearance");
   chart.title().padding(0, 0, 20, 0);
 
   // node cards in three states
@@ -46,16 +46,6 @@ anychart.onDocumentReady(function () {
   chart.hovered().stroke("2 #1976d2");
   chart.selected().fill("#bbdefb");
   chart.selected().stroke("2.5 #1565c0");
-
-  // the name (header) line of the cards
-  chart.labels().fontColor("#1a237e");
-  chart.labels().fontWeight("bold");
-
-  // the secondary title line of the cards
-  chart.titleFontColor("#546e7a");
-
-  // the connector lines
-  chart.connectorStroke("1.5 #90a4ae");
 
   // set the container id
   chart.container("container");
