@@ -306,9 +306,11 @@ In the sample below, the chart is zoomed in by one step after the draw, the butt
 
 ### Tooltips
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box that appears when you hover over a card. It has many settings for its look and behavior. For example, you can edit the text with font settings and [text formatters](../Common_Settings/Text_Formatters). You can also change the background style and move the tooltip.
+A [Tooltip](../Common_Settings/Tooltip) is a text box that appears when you hover over a card. Its look and behavior — fonts, background, position — are the standard AnyChart tooltip settings.
 
-By default, the tooltip shows the `name` field as the title. It shows the `title` field as the text. Use the {api:anychart.charts.OrgChart#tooltip}tooltip(){api} method with {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} to change it. The `{%name}` token works in both formats. You can read any field of the hovered data item in a formatting function with {api:anychart.format.Context#getData}getData(){api}. In the sample below, the data items carry extra fields (department, location, hire date, email), and the tooltip shows them instead of repeating what the card already displays:
+By default, the title of the tooltip shows the `name` field, and the text shows the `title` field. Change them with {api:anychart.charts.OrgChart#tooltip}tooltip(){api}: {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} sets the title, {api:anychart.core.ui.Tooltip#format}format(){api} sets the text. A formatting function can read any field of the hovered item with {api:anychart.format.Context#getData}getData(){api}.
+
+In the sample below, the tooltip shows extra data fields instead of repeating what the card already displays:
 
 ```
 // the tooltip reads any data field via getData()
