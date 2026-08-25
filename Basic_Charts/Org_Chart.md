@@ -124,7 +124,7 @@ Combine the state methods with these methods:
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the card background. It accepts a plain color, gradient, or pattern fill. A fill function is not supported here: the chart reads the setting as a ready color and never calls a function to compute it
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the card border. In the **hovered** and **selected** states it also colors the connectors that touch the card (see [Connectors](#connectors))
 
-A plain color can be written in any CSS notation: a hex string, an `rgb()` string, or a named color — see [Color Management](../Appearance_Settings/Color_Management). The snippet below uses a different notation for each state:
+A plain color can be written in any CSS notation: a hex string, an `rgb()` string, or a named color — see [Color Management](../Appearance_Settings/Color_Management).
 
 ```
 // normal state: hex strings
@@ -146,7 +146,12 @@ In the sample below, the fill and the stroke of a card change when you hover ove
 
 ### Labels
 
-[Labels](../Common_Settings/Labels) are the text elements of a card: the `name` (header) line and the `title` line. Only the font settings of {api:anychart.charts.OrgChart#labels}labels(){api} apply: `fontColor()`, `fontFamily()`, `fontWeight()`, `fontSize()`, and `enabled()`. The font family and the font size apply to both lines; the `title` line is drawn a bit smaller. The `fontColor()` and `fontWeight()` methods change only the `name` (header) line. Set the color of the `title` line separately with the {api:anychart.charts.OrgChart#titleFontColor}titleFontColor(){api} method. To hide both lines, turn off the labels with `chart.labels(false)`.
+[Labels](../Common_Settings/Labels) are the text lines of a card: the `name` (header) line and the `title` line. The {api:anychart.charts.OrgChart#labels}labels(){api} method styles them, and only its font settings apply:
+
+* `fontFamily()` and `fontSize()` — both lines; the `title` line is drawn a bit smaller
+* `fontColor()` and `fontWeight()` — the `name` line only
+* the color of the `title` line is set separately, with the {api:anychart.charts.OrgChart#titleFontColor}titleFontColor(){api} method
+* `chart.labels(false)` hides both lines
 
 The label text always comes from the `name` and `title` data fields. [Text formatters](../Common_Settings/Text_Formatters) do not apply to the card labels. To show custom text, use the [tooltip](#tooltips) instead.
 
