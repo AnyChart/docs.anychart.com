@@ -164,7 +164,7 @@ chart.titleFontColor("#00796b");
 
 In the sample below, both label lines are set in Verdana, the name line is bold and dark blue, and the title line is teal:
 
-{sample}BCT\_Org\_Chart\_10{sample}
+{sample}BCT\_Org\_Chart\_04{sample}
 
 #### Node Size
 
@@ -182,7 +182,7 @@ chart.nodePadding(8);
 
 In the sample below, the cards are wider and shorter than the default ones:
 
-{sample}BCT\_Org\_Chart\_06{sample}
+{sample}BCT\_Org\_Chart\_05{sample}
 
 ### Connectors
 
@@ -202,7 +202,7 @@ chart.connectorStroke("2 #64b5f6");
 
 In the sample below, the parent-child connectors are smooth curves drawn with a thicker blue stroke:
 
-{sample}BCT\_Org\_Chart\_05{sample}
+{sample}BCT\_Org\_Chart\_06{sample}
 
 ### Tree Layout
 
@@ -231,7 +231,7 @@ chart.siblingSpacing(16);
 
 In the sample below, the radio buttons switch the growth direction of the tree, and the sliders change the gaps between the levels and between the siblings:
 
-{sample}BCT\_Org\_Chart\_04{sample}
+{sample}BCT\_Org\_Chart\_07{sample}
 
 ### Collapse and Expand
 
@@ -247,7 +247,7 @@ chart.collapse("cto");
 
 In the sample below, the CTO branch is collapsed from the start, and the +/− indicator under a parent card expands or collapses its branch:
 
-{sample}BCT\_Org\_Chart\_07{sample}
+{sample}BCT\_Org\_Chart\_08{sample}
 
 ### Zoom and Pan
 
@@ -263,7 +263,7 @@ chart.zoomIn();
 
 In the sample below, the chart is zoomed in by one step after the draw, and you can zoom it with the mouse wheel and pan it by dragging:
 
-{sample}BCT\_Org\_Chart\_08{sample}
+{sample}BCT\_Org\_Chart\_09{sample}
 
 ### Tooltips
 
@@ -282,4 +282,4 @@ chart.tooltip().format(function () {
 });
 ```
 
-{sample}BCT\_Org\_Chart\_09{sample}
+{sample}BCT\_Org\_Chart\_10{sample}

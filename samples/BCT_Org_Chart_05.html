@@ -36,12 +36,13 @@ anychart.onDocumentReady(function () {
   // create an org chart and set the data
   var chart = anychart.orgChart(data, "as-table");
   // set the chart title and separate it from the tree
-  chart.title("Org Chart: Curved Connectors");
+  chart.title("Org Chart: Node Size");
   chart.title().padding(0, 0, 20, 0);
 
-  // draw the parent-child connectors as smooth curves
-  chart.connectorType("curved");
-  chart.connectorStroke("2 #64b5f6");
+  // the size of the node cards
+  chart.nodeWidth(180);
+  chart.nodeHeight(56);
+  chart.nodePadding(8);
 
   // set the container id
   chart.container("container");
