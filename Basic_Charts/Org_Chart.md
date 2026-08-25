@@ -94,6 +94,8 @@ The Org chart uses the [tree data model](../Working_with_Data/Tree_Data_Model). 
 * `"as-table"` — a flat array where each item points to its parent with `id` and `parent` fields (the root item has no `parent`)
 * `"as-tree"` — a nested array where each parent holds its children in the `children` field
 
+If you omit the mode and the items carry `parent` references, the chart detects the flat table itself and logs a warning — pass the mode explicitly to keep the console clean.
+
 ```
 // create data as a tree: children are nested into their parents
 var data = [
@@ -150,13 +152,16 @@ Each card draws two lines of text: the `name` line — the bold header — and t
 
 <table border="1" class="seriesTABLE">
 <tr><th></th><th>name line</th><th>title line</th></tr>
+<tr><td>Text</td><td><code>labels().format()</code> (the <code>name</code> field by default)</td><td>always the <code>title</code> data field</td></tr>
 <tr><td>Font and size</td><td><code>labels().fontFamily()</code>, <code>labels().fontSize()</code></td><td>the same, drawn 2 px smaller</td></tr>
 <tr><td>Color</td><td><code>labels().fontColor()</code></td><td><code>titleFontColor()</code></td></tr>
 <tr><td>Weight</td><td><code>labels().fontWeight()</code> (bold by default)</td><td>always regular</td></tr>
 <tr><td>Visibility</td><td colspan=2><code>chart.labels(false)</code> hides both lines</td></tr>
 </table>
 
-The label text always comes from the `name` and `title` data fields. [Text formatters](../Common_Settings/Text_Formatters) do not apply to the card labels. To show custom text, use the [tooltip](#tooltips) instead.
+The text of the `name` line is set with `labels().format()` — a [text formatter](../Common_Settings/Text_Formatters) with the `{%name}`, `{%title}`, and `{%id}` tokens; a formatting function can read any data field with `getData()`. A format that returns an empty string removes the `name` line of that card.
+
+On a large tree, the chart shrinks the cards until the text no longer fits. The {api:anychart.charts.OrgChart#labelsDisplayMode}labelsDisplayMode(){api} method sets what happens to the labels then: `"drop"` (default) hides the labels that would be unreadable, `"clip"` crops them to the card.
 
 ```
 // the font family and the font size apply to both lines
@@ -168,11 +173,16 @@ chart.labels().fontSize(13);
 chart.labels().fontColor("#1a237e");
 chart.labels().fontWeight("bold");
 
+// uppercase the name line with a formatting function
+chart.labels().format(function () {
+  return this.getData("name").toUpperCase();
+});
+
 // set the color of the title line on its own
 chart.titleFontColor("#00796b");
 ```
 
-In the sample below, both label lines are set in Verdana, the name line is bold and dark blue, and the title line is teal:
+In the sample below, both label lines are set in Verdana, the name line is bold, dark blue, and uppercased by a formatting function, and the title line is teal:
 
 {sample}BCT\_Org\_Chart\_04{sample}
 
@@ -202,7 +212,7 @@ The chart draws the parent-child links as connector lines between the cards. The
 * `"straight"` — direct diagonal segments
 * `"curved"` — smooth curves
 
-The {api:anychart.charts.OrgChart#connectorStroke}connectorStroke(){api} method sets the line style: the color, the thickness, and the dash pattern. It applies in the **normal** state only. When the card at either end of a connector is hovered or selected, the connector is drawn with the `stroke()` of that state instead (see [Appearance](#appearance)).
+The {api:anychart.charts.OrgChart#connectorStroke}connectorStroke(){api} method sets the line style: the color, the thickness, and the dash pattern. It applies in the **normal** state only. When the card at either end of a connector is hovered or selected, the connector is drawn with the `stroke()` of that state instead (see [Appearance](#appearance)). The line is itself interactive: hovering or clicking it acts on the card at its child end.
 
 ```
 // draw the parent-child connectors as smooth curves
@@ -249,6 +259,7 @@ Every parent card gets a +/− indicator. It collapses or expands the branch whe
 
 * {api:anychart.charts.OrgChart#collapse}collapse(){api} and {api:anychart.charts.OrgChart#expand}expand(){api} — collapse or expand the branch of a node. Pass the node `id`, or pass the data item itself. Get the item with the search() method of the [tree](../Working_with_Data/Tree_Data_Model). This is useful in the `"as-tree"` mode, where items may have no `id` field
 * {api:anychart.charts.OrgChart#collapseAll}collapseAll(){api} and {api:anychart.charts.OrgChart#expandAll}expandAll(){api} — collapse or expand all branches at once
+* {api:anychart.charts.OrgChart#expandTo}expandTo(){api} — show the tree down to the given level and collapse everything deeper: `expandTo(1)` leaves only the root visible
 
 ```
 // collapse the CTO branch by the node id
@@ -261,9 +272,16 @@ In the sample below, the CTO branch is collapsed from the start, and the +/− i
 
 ### Zoom and Pan
 
-Mouse-wheel zoom and drag-to-pan are on by default. Control them with the {api:anychart.charts.OrgChart#zoomEnabled}zoomEnabled(){api} and {api:anychart.charts.OrgChart#panEnabled}panEnabled(){api} methods (each takes `true`/`false`). You can also control the zoom in code:
+Mouse-wheel zoom and drag-to-pan are on by default and work anywhere on the chart — over the cards and over the empty area alike. On touch screens, pinch does the zoom. Wheel zoom is anchored at the pointer: the spot under the cursor stays in place.
 
-* {api:anychart.charts.OrgChart#zoomIn}zoomIn(){api} and {api:anychart.charts.OrgChart#zoomOut}zoomOut(){api} — scale the tree up or down. The zoom is fixed to the top-left corner of the chart area, not its visual center. Repeated zoomIn() calls push the tree toward the bottom-right. Repeated zoomOut() calls pull it toward the top-left. Call fit() to recenter
+Both gestures are controlled through the {api:anychart.charts.OrgChart#interactivity}interactivity(){api} method:
+
+* `chart.interactivity().zoomOnMouseWheel()` — enable or disable wheel zoom (`true`/`false`)
+* `chart.interactivity().drag()` — enable or disable panning
+
+You can also control the zoom in code:
+
+* {api:anychart.charts.OrgChart#zoomIn}zoomIn(){api} and {api:anychart.charts.OrgChart#zoomOut}zoomOut(){api} — scale the tree up or down around the center of the chart area
 * {api:anychart.charts.OrgChart#fit}fit(){api} — reset the zoom and pan and fit the whole tree into the container
 
 ```

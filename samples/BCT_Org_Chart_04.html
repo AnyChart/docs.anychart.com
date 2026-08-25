@@ -46,6 +46,11 @@ anychart.onDocumentReady(function () {
   chart.labels().fontColor("#1a237e");
   chart.labels().fontWeight("bold");
 
+  // uppercase the name line with a formatting function
+  chart.labels().format(function () {
+    return this.getData("name").toUpperCase();
+  });
+
   // set the color of the title line on its own
   chart.titleFontColor("#00796b");
 
