@@ -124,14 +124,20 @@ Combine the state methods with these methods:
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the card background. It accepts a plain color, gradient, or pattern fill. A fill function is not supported here: the chart reads the setting as a ready color and never calls a function to compute it
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the card border. In the **hovered** and **selected** states it also colors the connectors that touch the card (see [Connectors](#connectors))
 
+A plain color can be written in any CSS notation: a hex string, an `rgb()` string, or a named color. The snippet below uses a different notation for each state:
+
 ```
-// node cards in three states
-chart.normal().fill("#f0f7ff");
-chart.normal().stroke("1.5 #90a4ae");
-chart.hovered().fill("#e3f2fd");
-chart.hovered().stroke("2 #1976d2");
-chart.selected().fill("#bbdefb");
-chart.selected().stroke("2.5 #1565c0");
+// normal state: hex strings
+chart.normal().fill("#e3f2fd");
+chart.normal().stroke("1.5 #1976d2");
+
+// hovered state: rgb() strings
+chart.hovered().fill("rgb(255,224,130)");
+chart.hovered().stroke("2 rgb(245,124,0)");
+
+// selected state: named colors
+chart.selected().fill("lightgreen");
+chart.selected().stroke("2.5 green");
 ```
 
 In the sample below, the fill and the stroke of a card change when you hover over it and when you click it, and the connectors that touch the card take the stroke of the same state:
