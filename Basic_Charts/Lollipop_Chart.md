@@ -102,43 +102,13 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 #### All Points
 
-You can set the [appearance settings](../Appearance_Settings) of a Lollipop chart in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Lollipop#normal}normal(){api}, {api:anychart.core.cartesian.series.Lollipop#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Lollipop#selected}selected(){api} methods. A point shows the **hover** state when you point at it. It shows the **selected** state when you click it.
+A lollipop point is a stick with a head. Two methods split it: {api:anychart.core.StateSettings#stroke}stroke(){api} sets the color and thickness of the stick, {api:anychart.core.StateSettings#fill}fill(){api} sets the color of the head. The head is a filled circle with no outline — `stroke()` does not affect it.
 
-Combine them with the following methods:
+Set both per [state](../Common_Settings/Interactivity/States) with the {api:anychart.core.cartesian.series.Lollipop#normal}normal(){api}, {api:anychart.core.cartesian.series.Lollipop#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Lollipop#selected}selected(){api} methods. A point is hovered when you point at it and selected when you click it.
 
-* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the color and thickness of the stick
-* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill of the head
-
-The head is a filled circle with no outline. Only fill() sets its color. stroke() does not affect the head.
-
-You can also use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
-
-If you do not set the colors yourself, they come from the chart [palette](../Appearance_Settings/Palettes). Each series gets one base color, used for both the stick and the head. Your own fill() and stroke() settings override the palette colors.
-
-The sample below has two Lollipop series with appearance settings:
+By default, the colors come from the chart [palette](../Appearance_Settings/Palettes): each series gets one base color for both the stick and the head. Your own `fill()` and `stroke()` override it.
 
 ```
-// create data for two series
-var seriesData_1 = [
-  {x: "January", value: 10000},
-  {x: "February", value: 12000},
-  {x: "March", value: 18000},
-  {x: "April", value: 11000},
-  {x: "May", value: 9000}
-];
-var seriesData_2 = [
-  {x: "January", value: 7000},
-  {x: "February", value: 9000},
-  {x: "March", value: 13000},
-  {x: "April", value: 8000},
-  {x: "May", value: 6000}
-];
-
-// create a column chart, then add lollipop series to it
-var chart = anychart.column();
-
-// create the first lollipop series and set the data
-var series1 = chart.lollipop(seriesData_1);
 // set the stroke and fill of the first series in the normal, hovered, and selected states
 series1.normal().stroke("#00cc99", 2);
 series1.normal().fill("#00cc99");
@@ -146,17 +116,9 @@ series1.hovered().stroke("#00cc99", 3);
 series1.hovered().fill("#00cc99");
 series1.selected().stroke("#00cc99", 4);
 series1.selected().fill("#00cc99");
-
-// create the second lollipop series and set the data
-var series2 = chart.lollipop(seriesData_2);
-// set the stroke and fill of the second series in the normal, hovered, and selected states
-series2.normal().stroke("#0066cc", 2);
-series2.normal().fill("#0066cc");
-series2.hovered().stroke("#0066cc", 3);
-series2.hovered().fill("#0066cc");
-series2.selected().stroke("#0066cc", 4);
-series2.selected().fill("#0066cc");
 ```
+
+In the sample below, two series set their own stick and head colors in all three states:
 
 {sample}BCT\_Lollipop\_Chart\_02{sample}
 
@@ -170,25 +132,15 @@ var data = [
   {x: "January", value: 10000},
   {x: "February", value: 12000},
   {x: "March", value: 18000,
-   normal:   {
-               stroke: "3 #5cd65c",
-               fill: "#5cd65c"
-             },
-   hovered:  {
-               stroke: "4 #5cd65c",
-               fill: "#5cd65c"
-             },
-   selected: {
-               stroke: "4 #5cd65c",
-               fill: "#5cd65c"
-             }
-  },
+   normal: {stroke: "3 #5cd65c", fill: "#5cd65c"},
+   hovered: {stroke: "4 #5cd65c", fill: "#5cd65c"},
+   selected: {stroke: "4 #5cd65c", fill: "#5cd65c"}},
   {x: "April", value: 11000},
   {x: "May", value: 9000}
 ];
 
-// create a column chart
-var chart = anychart.column();
+// create a lollipop chart
+var chart = anychart.lollipop();
 
 // create a lollipop series and set the data
 var series = chart.lollipop(data);
