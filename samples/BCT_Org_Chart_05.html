@@ -22,15 +22,15 @@
 <body>
 <div id="controls">
     <label>Width
-        <input type="range" min="100" max="250" step="1" value="180" oninput="changeNodeWidth(this.value)">
+        <input type="range" min="150" max="250" step="1" value="180" oninput="changeNodeWidth(this.value)">
         <output id="nodeWidthValue">180</output>
     </label>
     <label>Height
-        <input type="range" min="40" max="140" step="1" value="56" oninput="changeNodeHeight(this.value)">
-        <output id="nodeHeightValue">56</output>
+        <input type="range" min="60" max="100" step="1" value="60" oninput="changeNodeHeight(this.value)">
+        <output id="nodeHeightValue">60</output>
     </label>
     <label>Padding
-        <input type="range" min="0" max="24" step="1" value="8" oninput="changeNodePadding(this.value)">
+        <input type="range" min="8" max="24" step="1" value="8" oninput="changeNodePadding(this.value)">
         <output id="nodePaddingValue">8</output>
     </label>
 </div>
@@ -59,7 +59,7 @@ anychart.onDocumentReady(function () {
 
   // the size of the node cards
   chart.nodeWidth(180);
-  chart.nodeHeight(56);
+  chart.nodeHeight(60);
   chart.nodePadding(8);
 
   // set the container id

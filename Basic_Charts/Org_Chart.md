@@ -197,7 +197,7 @@ Use these methods to set the size of the node cards:
 ```
 // the size of the node cards
 chart.nodeWidth(180);
-chart.nodeHeight(56);
+chart.nodeHeight(60);
 chart.nodePadding(8);
 ```
 
