@@ -126,7 +126,7 @@ You can style the node cards in three [states](../Common_Settings/Interactivity/
 Combine the state methods with these methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the card background. It accepts a plain color, gradient, or pattern fill. A fill function is not supported here: the chart reads the setting as a ready color and never calls a function to compute it
-* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the card border
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the card border. In the **hovered** and **selected** states it also colors the connectors that touch the card (see [Connectors](#connectors))
 
 ```
 // node cards in three states
@@ -138,7 +138,7 @@ chart.selected().fill("#bbdefb");
 chart.selected().stroke("2.5 #1565c0");
 ```
 
-In the sample below, the fill and the stroke of a card change when you hover over it and when you click it:
+In the sample below, the fill and the stroke of a card change when you hover over it and when you click it, and the connectors that touch the card take the stroke of the same state:
 
 {sample}BCT\_Org\_Chart\_03{sample}
 
@@ -192,7 +192,7 @@ The chart draws the parent-child links as connector lines between the cards. The
 * `"straight"` — direct diagonal segments
 * `"curved"` — smooth curves
 
-The {api:anychart.charts.OrgChart#connectorStroke}connectorStroke(){api} method sets the line style: the color, the thickness, and the dash pattern.
+The {api:anychart.charts.OrgChart#connectorStroke}connectorStroke(){api} method sets the line style: the color, the thickness, and the dash pattern. It applies in the **normal** state only. When the card at either end of a connector is hovered or selected, the connector is drawn with the `stroke()` of that state instead (see [Node Appearance](#node_appearance)).
 
 ```
 // draw the parent-child connectors as smooth curves
