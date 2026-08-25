@@ -148,7 +148,7 @@ In the sample below, the fill and the stroke of a card change when you hover ove
 
 ### Labels
 
-Each card draws two lines of text: the `name` line — the bold header — and the `title` line below it, smaller and gray. Together they are the card's [labels](../Common_Settings/Labels). Two methods style them: {api:anychart.charts.OrgChart#labels}labels(){api} owns the shared font and the `name` line (only its font settings apply), and {api:anychart.charts.OrgChart#titleFontColor}titleFontColor(){api} owns the color of the `title` line:
+Each card draws two lines of text: the `name` line and the `title` line under it. Together they are the card's [labels](../Common_Settings/Labels). Two methods style them — {api:anychart.charts.OrgChart#labels}labels(){api} and {api:anychart.charts.OrgChart#titleFontColor}titleFontColor(){api}. Only the font settings of `labels()` apply:
 
 <table border="1" class="seriesTABLE">
 <tr><th></th><th>name line</th><th>title line</th></tr>
