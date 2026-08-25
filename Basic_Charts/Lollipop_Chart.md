@@ -88,14 +88,6 @@ chart.container("container");
 chart.draw();
 ```
 
-You can also build the same chart from a [Column](Column_Chart) (or [Bar](Bar_Chart)) chart. In this case, add a Lollipop series with the {api:anychart.charts.Cartesian#lollipop}lollipop(){api} method. Only the constructor is different. The rest is the same:
-
-```
-// create a column chart, then add a lollipop series to it
-var chart = anychart.column();
-var series = chart.lollipop(data);
-```
-
 {sample}BCT\_Lollipop\_Chart\_01{sample}
 
 ## General Settings
