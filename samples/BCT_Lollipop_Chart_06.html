@@ -31,16 +31,13 @@ anychart.onDocumentReady(function () {
   var chart = anychart.lollipop();
 
   // set the chart title and separate it from the plot
-  chart.title("Lollipop Chart: Labels");
+  chart.title("Lollipop Chart: Tooltips");
   chart.title().padding(0, 0, 20, 0);
 
   // create a lollipop series and set the data
   var series = chart.lollipop(data);
-  // enable and configure the series labels
-  series.labels().enabled(true);
-  series.labels().format("{%value}");
-  series.labels().anchor("center-bottom");
-  series.labels().offsetY(10);
+  // set the tooltip format
+  series.tooltip().format("{%x}: {%value}");
 
   // set the container id
   chart.container("container");

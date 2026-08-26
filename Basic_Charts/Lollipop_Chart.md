@@ -148,29 +148,7 @@ var series = chart.lollipop(data);
 
 {sample}BCT\_Lollipop\_Chart\_03{sample}
 
-If you use an array to set the data, you can also set the look of individual points. It works a bit differently. First add the extra values to the data set. Then map the columns so the chart can read them:
-
-```
-// create a data set with a custom fill color for one point
-var dataSet = anychart.data.set([
-  ["January", 10000],
-  ["February", 12000],
-  ["March", 18000, "#5cd65c"],
-  ["April", 11000],
-  ["May", 9000]
-]);
-
-// map the columns: x, value and fill
-var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2});
-
-// create a lollipop chart
-var chart = anychart.lollipop();
-
-// create a lollipop series and set the data
-var series = chart.lollipop(mapping);
-```
-
-{sample}BCT\_Lollipop\_Chart\_04{sample}
+The same fields can come from array data: map the extra columns with {api:anychart.data.Set#mapAs}mapAs(){api}. See [Data Sets: Mapping](../Working_with_Data/Data_Sets#mapping).
 
 ### Point Size
 
@@ -185,7 +163,7 @@ series.normal().stroke("#0066cc", 3);
 
 In the sample below, each head has a radius of 10 px and each stick is 3 px thick:
 
-{sample}BCT\_Lollipop\_Chart\_05{sample}
+{sample}BCT\_Lollipop\_Chart\_04{sample}
 
 ### Labels
 
@@ -203,7 +181,7 @@ To move the labels, use the {api:anychart.core.ui.LabelsFactory#position}positio
 
 In the sample below, every point carries a label with its value, placed above the head:
 
-{sample}BCT\_Lollipop\_Chart\_06{sample}
+{sample}BCT\_Lollipop\_Chart\_05{sample}
 
 ### Tooltips
 
@@ -218,7 +196,7 @@ series.tooltip().format("{%x}: {%value}");
 
 In the sample below, hover over a point to see its month and value in the tooltip:
 
-{sample}BCT\_Lollipop\_Chart\_07{sample}
+{sample}BCT\_Lollipop\_Chart\_06{sample}
 
 ### Stacked Lollipop
 

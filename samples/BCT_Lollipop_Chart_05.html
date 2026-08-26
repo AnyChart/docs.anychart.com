@@ -31,15 +31,16 @@ anychart.onDocumentReady(function () {
   var chart = anychart.lollipop();
 
   // set the chart title and separate it from the plot
-  chart.title("Lollipop Chart: Point Size");
+  chart.title("Lollipop Chart: Labels");
   chart.title().padding(0, 0, 20, 0);
 
   // create a lollipop series and set the data
   var series = chart.lollipop(data);
-  // set the size of the lollipop heads
-  series.markers().size(10);
-  // set the stroke of the lollipop sticks
-  series.normal().stroke("#0066cc", 3);
+  // enable and configure the series labels
+  series.labels().enabled(true);
+  series.labels().format("{%value}");
+  series.labels().anchor("center-bottom");
+  series.labels().offsetY(10);
 
   // set the container id
   chart.container("container");
