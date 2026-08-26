@@ -11,26 +11,18 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
 
     <style>
-        html, body, #container {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
     </style>
 </head>
 <body>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data with individual point settings
+  // create data
   var data = [
     {x: "January", value: 10000},
     {x: "February", value: 12000},
-    {x: "March", value: 18000,
-     normal: {stroke: "3 #5cd65c", fill: "#5cd65c"},
-     hovered: {stroke: "4 #5cd65c", fill: "#5cd65c"},
-     selected: {stroke: "4 #5cd65c", fill: "#5cd65c"}},
+    {x: "March", value: 18000},
     {x: "April", value: 11000},
     {x: "May", value: 9000}
   ];
@@ -39,11 +31,13 @@ anychart.onDocumentReady(function () {
   var chart = anychart.lollipop();
 
   // set the chart title and separate it from the plot
-  chart.title("Lollipop Chart: Individual Points");
+  chart.title("Lollipop Chart: Point Size");
   chart.title().padding(0, 0, 20, 0);
 
   // create a lollipop series and set the data
   var series = chart.lollipop(data);
+  // set the size of the lollipop heads
+  series.markers().size(10);
 
   // set the container id
   chart.container("container");

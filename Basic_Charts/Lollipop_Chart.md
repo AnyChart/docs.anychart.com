@@ -122,6 +122,19 @@ In the sample below, two series set their own stick and head colors in all three
 
 {sample}BCT\_Lollipop\_Chart\_02{sample}
 
+#### Point Size
+
+The head is a circle, and its size is its radius. Set the radius with {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} and {api:anychart.core.ui.MarkersFactory#size}size(){api}. The default is 4 px. The radius is the same in the normal, hovered, and selected states. The head is always a circle: the marker type does not change it.
+
+```
+// set the size of the lollipop heads
+series.markers().size(10);
+```
+
+In the sample below, the heads have a radius of 10 px:
+
+{sample}BCT\_Lollipop\_Chart\_03{sample}
+
 #### Individual Points
 
 If you use objects to set the data, you can change the look of individual points. Just add special fields to your data:
@@ -146,22 +159,9 @@ var chart = anychart.lollipop();
 var series = chart.lollipop(data);
 ```
 
-{sample}BCT\_Lollipop\_Chart\_03{sample}
+{sample}BCT\_Lollipop\_Chart\_04{sample}
 
 The same fields can come from array data: map the extra columns with {api:anychart.data.Set#mapAs}mapAs(){api}. See [Data Sets: Mapping](../Working_with_Data/Data_Sets#mapping).
-
-#### Point Size
-
-The head is a circle, and its size is its radius. Set the radius with {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} and {api:anychart.core.ui.MarkersFactory#size}size(){api}. The default is 4 px. The radius is the same in the normal, hovered, and selected states. The head is always a circle: the marker type does not change it.
-
-```
-// set the size of the lollipop heads
-series.markers().size(10);
-```
-
-In the sample below, the heads have a radius of 10 px:
-
-{sample}BCT\_Lollipop\_Chart\_04{sample}
 
 ### Labels
 
