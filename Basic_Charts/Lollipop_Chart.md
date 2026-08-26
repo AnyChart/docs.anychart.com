@@ -150,27 +150,16 @@ var series = chart.lollipop(data);
 
 The same fields can come from array data: map the extra columns with {api:anychart.data.Set#mapAs}mapAs(){api}. See [Data Sets: Mapping](../Working_with_Data/Data_Sets#mapping).
 
-### Markers
+#### Point Size
 
-On a lollipop the head is not a marker: the series draws it, and {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} is off by default. One marker setting applies anyway: {api:anychart.core.ui.MarkersFactory#size}size(){api} is the head radius, 4 px by default.
-
-Enable {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} to draw a marker on top of each head. It keeps the head's radius and takes its own {api:anychart.core.ui.MarkersFactory#type}type(){api}, {api:anychart.core.ui.MarkersFactory#fill}fill(){api}, and {api:anychart.core.ui.MarkersFactory#stroke}stroke(){api}. A white fill with a colored stroke turns the head into a ring.
-
-Set the marker per state with {api:anychart.core.cartesian.series.Lollipop#hovered}hovered(){api} and {api:anychart.core.cartesian.series.Lollipop#selected}selected(){api}: a larger size or another type on hover. The head itself does not change.
+The head is a circle, and its size is its radius. Set the radius with {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} and {api:anychart.core.ui.MarkersFactory#size}size(){api}. The default is 4 px. The radius is the same in the normal, hovered, and selected states. The head is always a circle: the marker type does not change it.
 
 ```
-// set the head radius
-series.markers().size(6);
-// draw a marker on top of each head
-series.markers().enabled(true);
-// turn the head into a ring: white fill and a colored stroke
-series.markers().fill("#ffffff");
-series.markers().stroke("#0066cc", 2);
-// enlarge the marker on hover
-series.hovered().markers().size(9);
+// set the size of the lollipop heads
+series.markers().size(10);
 ```
 
-In the sample below, the heads are rings; hover over a point to see its ring grow:
+In the sample below, the heads have a radius of 10 px:
 
 {sample}BCT\_Lollipop\_Chart\_04{sample}
 
