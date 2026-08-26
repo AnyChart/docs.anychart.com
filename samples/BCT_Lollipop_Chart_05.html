@@ -38,8 +38,8 @@ anychart.onDocumentReady(function () {
   var series = chart.lollipop(data);
   // enable the series labels
   series.labels().enabled(true);
-  // show the value with a thousands separator
-  series.labels().format("{%value}{groupsSeparator:\\,}");
+  // show the category and the value
+  series.labels().format("{%x}: {%value}");
 
   // set the container id
   chart.container("container");
