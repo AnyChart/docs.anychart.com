@@ -154,20 +154,14 @@ The same fields can come from array data: map the extra columns with {api:anycha
 
 The **head** is a circle, and its size is its radius. Set the radius with {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} and {api:anychart.core.ui.MarkersFactory#size}size(){api}. The default is 4 px. The radius is the same in the normal, hovered, and selected states. The head is always a circle: the marker type has no effect on it.
 
-The **stick** has no size setting of its own. Its thickness is the stroke width of the series, the second argument of {api:anychart.core.StateSettings#stroke}stroke(){api}. The default is 1.5 px.
-
 ```
 // set the size of the lollipop heads
 series.markers().size(10);
-// set the stroke of the lollipop sticks
-series.normal().stroke("#0066cc", 3);
 ```
 
-In the sample below, the heads have a radius of 10 px and the sticks are 3 px thick:
+In the sample below, the heads have a radius of 10 px:
 
 {sample}BCT\_Lollipop\_Chart\_04{sample}
-
-See [Appearance](#appearance) for the colors of the stick and the head.
 
 ### Labels
 
