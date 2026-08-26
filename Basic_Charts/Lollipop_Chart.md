@@ -165,21 +165,22 @@ The same fields can come from array data: map the extra columns with {api:anycha
 
 ### Labels
 
-[Labels](../Common_Settings/Labels) are text or image elements. You can place them anywhere on any chart. You can turn them on for a whole series or for a single point. For text labels, you can use font settings and [text formatters](../Common_Settings/Text_Formatters).
+[Labels](../Common_Settings/Labels) are text elements attached to points. Turn them on for the series with {api:anychart.core.cartesian.series.Lollipop#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api}: each point gets a label with its value above the head.
 
-You can turn on the data labels and format them to show each point's value:
+To change the text, call {api:anychart.core.ui.LabelsFactory#format}format(){api} with [text formatters](../Common_Settings/Text_Formatters). A token such as `{%value}` reads a point field; a token setting such as `{groupsSeparator:\,}` shapes the number.
 
 ```
-// enable and configure the series labels
+// enable the series labels
 series.labels().enabled(true);
-series.labels().format("{%value}");
+// show the value with a thousands separator
+series.labels().format("{%value}{groupsSeparator:\\,}");
 ```
 
-To move the labels, use the {api:anychart.core.ui.LabelsFactory#position}position(){api}, {api:anychart.core.ui.LabelsFactory#anchor}anchor(){api}, {api:anychart.core.ui.LabelsFactory#offsetX}offsetX(){api}, and {api:anychart.core.ui.LabelsFactory#offsetY}offsetY(){api} methods.
-
-In the sample below, every point carries a label with its value, placed above the head:
+In the sample below, each point shows its value with a thousands separator:
 
 {sample}BCT\_Lollipop\_Chart\_05{sample}
+
+See [Labels](../Common_Settings/Labels) for the position, anchor, offsets, and font of the labels.
 
 ### Tooltips
 

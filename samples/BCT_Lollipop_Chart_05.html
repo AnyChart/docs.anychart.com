@@ -36,11 +36,10 @@ anychart.onDocumentReady(function () {
 
   // create a lollipop series and set the data
   var series = chart.lollipop(data);
-  // enable and configure the series labels
+  // enable the series labels
   series.labels().enabled(true);
-  series.labels().format("{%value}");
-  series.labels().anchor("center-bottom");
-  series.labels().offsetY(10);
+  // show the value with a thousands separator
+  series.labels().format("{%value}{groupsSeparator:\\,}");
 
   // set the container id
   chart.container("container");
