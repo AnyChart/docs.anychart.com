@@ -167,16 +167,16 @@ The same fields can come from array data: map the extra columns with {api:anycha
 
 [Labels](../Common_Settings/Labels) are text elements attached to points. Turn them on for the series with {api:anychart.core.cartesian.series.Lollipop#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api}: each point gets a label with its value above the head.
 
-To change the text, call {api:anychart.core.ui.LabelsFactory#format}format(){api} with [text formatters](../Common_Settings/Text_Formatters): tokens such as `{%x}` and `{%value}` read the fields of the point.
+To change the text, call {api:anychart.core.ui.LabelsFactory#format}format(){api} with [text formatters](../Common_Settings/Text_Formatters): a token such as `{%value}` reads a field of the point.
 
 ```
 // enable the series labels
 series.labels().enabled(true);
-// show the category and the value
-series.labels().format("{%x}: {%value}");
+// show the value of the point
+series.labels().format("{%value}");
 ```
 
-In the sample below, each label shows the category and the value of its point:
+In the sample below, each label shows the value of its point:
 
 {sample}BCT\_Lollipop\_Chart\_05{sample}
 

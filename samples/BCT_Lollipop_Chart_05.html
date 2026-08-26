@@ -38,8 +38,8 @@ anychart.onDocumentReady(function () {
   var series = chart.lollipop(data);
   // enable the series labels
   series.labels().enabled(true);
-  // show the category and the value
-  series.labels().format("{%x}: {%value}");
+  // show the value of the point
+  series.labels().format("{%value}");
 
   // set the container id
   chart.container("container");
