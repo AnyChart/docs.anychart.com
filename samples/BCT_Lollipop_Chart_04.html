@@ -31,13 +31,20 @@ anychart.onDocumentReady(function () {
   var chart = anychart.lollipop();
 
   // set the chart title and separate it from the plot
-  chart.title("Lollipop Chart: Point Size");
+  chart.title("Lollipop Chart: Markers");
   chart.title().padding(0, 0, 20, 0);
 
   // create a lollipop series and set the data
   var series = chart.lollipop(data);
-  // set the size of the lollipop heads
-  series.markers().size(10);
+  // set the head radius
+  series.markers().size(6);
+  // draw a marker on top of each head
+  series.markers().enabled(true);
+  // turn the head into a ring: white fill and a colored stroke
+  series.markers().fill("#ffffff");
+  series.markers().stroke("#0066cc", 2);
+  // enlarge the marker on hover
+  series.hovered().markers().size(9);
 
   // set the container id
   chart.container("container");
