@@ -94,7 +94,7 @@ The Org chart uses the [tree data model](../Working_with_Data/Tree_Data_Model). 
 * `"as-table"` — a flat array where each item points to its parent with `id` and `parent` fields (the root item has no `parent`)
 * `"as-tree"` — a nested array where each parent holds its children in the `children` field
 
-If you omit the mode and the items carry `parent` references, the chart detects the flat table itself and logs a warning — pass the mode explicitly to keep the console clean.
+If you omit the mode and the items carry `parent` references, the chart detects the flat table itself and logs a warning — pass the mode explicitly to keep the console clean. If the items carry both `parent` and `children` fields, the mode is ambiguous: the chart reads the data as a tree and warns about it, and an item that is linked only by `parent` ends up as a second root. An item whose `parent` points at itself is left where it is, with no warning.
 
 ```
 // create data as a tree: children are nested into their parents
@@ -119,7 +119,7 @@ In the sample below, the chart reads nested data in the `"as-tree"` mode, and no
 
 ### Appearance
 
-You can style the node cards in three [states](../Common_Settings/Interactivity/States): **normal**, **hovered**, and **selected**. Use the {api:anychart.charts.OrgChart#normal}normal(){api}, {api:anychart.charts.OrgChart#hovered}hovered(){api}, and {api:anychart.charts.OrgChart#selected}selected(){api} methods. A card is hovered when you move the pointer over it. A card is selected when you click it. A click on the empty area clears the selection.
+You can style the node cards in three [states](../Common_Settings/Interactivity/States): **normal**, **hovered**, and **selected**. Use the {api:anychart.charts.OrgChart#normal}normal(){api}, {api:anychart.charts.OrgChart#hovered}hovered(){api}, and {api:anychart.charts.OrgChart#selected}selected(){api} methods. A card is hovered when you move the pointer over it. A card is selected when you click it — see [Selection](#selection).
 
 Combine the state methods with these methods:
 
@@ -146,6 +146,20 @@ In the sample below, the fill and the stroke of a card change when you hover ove
 
 {sample}BCT\_Org\_Chart\_03{sample}
 
+### Selection
+
+A plain click selects one card and replaces whatever was selected before. Hold **Ctrl** (**Cmd** on macOS) or **Shift** and click to add a card to the selection; the same modifier-held click on a card that is already selected removes it. A plain click on the empty area clears the selection, while a modifier-held click there leaves it as it is.
+
+The same works in code:
+
+* {api:anychart.charts.OrgChart#select}select(){api} — select a card. Pass the node `id`, or pass the data item itself. It adds to the selection, so call it once per card
+* {api:anychart.charts.OrgChart#unselect}unselect(){api} — clear the selection
+* {api:anychart.charts.OrgChart#getSelectedPoints}getSelectedPoints(){api} — the cards that are selected at the moment
+
+The chart dispatches the `"pointsSelect"` event whenever the selected set changes, and the listener reads the new set with `getSelectedPoints()`: [Event Listeners](../Common_Settings/Event_Listeners).
+
+To make the cards unselectable, set the selection mode to `"none"` with `chart.interactivity().selectionMode("none")`. The click events still fire. Read more: [Interactivity](../Common_Settings/Interactivity/Overview).
+
 ### Labels
 
 Each card draws two lines of text: the `name` line and the `title` line under it. Together they are the card's [labels](../Common_Settings/Labels). Two methods style them — {api:anychart.charts.OrgChart#labels}labels(){api} and {api:anychart.charts.OrgChart#titleFontColor}titleFontColor(){api}. Only the font settings of `labels()` apply:
@@ -156,7 +170,7 @@ Each card draws two lines of text: the `name` line and the `title` line under it
 <tr><td>Font</td><td><code>labels().fontFamily()</code></td><td>follows the name line</td></tr>
 <tr><td>Size</td><td><code>labels().fontSize()</code></td><td>follows the name line, drawn 2 px smaller</td></tr>
 <tr><td>Color</td><td><code>labels().fontColor()</code></td><td><code>titleFontColor()</code></td></tr>
-<tr><td>Weight</td><td><code>labels().fontWeight()</code> (bold by default)</td><td>not settable — always regular</td></tr>
+<tr><td>Weight</td><td><code>labels().fontWeight()</code> (regular by default)</td><td>not settable — always regular</td></tr>
 <tr><td>Visibility</td><td colspan=2><code>chart.labels(false)</code> hides both lines</td></tr>
 </table>
 
@@ -172,6 +186,7 @@ chart.labels().fontSize(13);
 
 // the font color and the font weight change only the name (header) line
 chart.labels().fontColor("#1a237e");
+// the name line is regular by default: make it bold
 chart.labels().fontWeight("bold");
 
 // uppercase the name line with a formatting function
@@ -213,7 +228,7 @@ The chart draws the parent-child links as connector lines between the cards. The
 * `"straight"` — direct diagonal segments
 * `"curved"` — smooth curves
 
-The {api:anychart.charts.OrgChart#connectorStroke}connectorStroke(){api} method sets the line style: the color, the thickness, and the dash pattern. It applies in the **normal** state only. When the card at either end of a connector is hovered or selected, the connector is drawn with the `stroke()` of that state instead (see [Appearance](#appearance)). The line is itself interactive: hovering or clicking it acts on the card at its child end.
+The {api:anychart.charts.OrgChart#connectorStroke}connectorStroke(){api} method sets the line style: the color, the thickness, and the dash pattern. It applies in the **normal** state only. When the card at either end of a connector is hovered or selected, the connector is drawn with the `stroke()` of that state instead (see [Appearance](#appearance)). The line is itself interactive: hovering it highlights the card at its child end. Clicking it leaves the selection unchanged, but it still reports a click on that card to an [event listener](../Common_Settings/Event_Listeners).
 
 ```
 // draw the parent-child connectors as smooth curves
@@ -283,12 +298,15 @@ In the sample below, the CTO branch is collapsed from the start, the +/− indic
 
 ### Zoom and Pan
 
-Mouse-wheel zoom and drag-to-pan are on by default and work anywhere on the chart — over the cards and over the empty area alike. On touch screens, pinch does the zoom. Wheel zoom is anchored at the pointer: the spot under the cursor stays in place.
+Mouse-wheel zoom and drag-to-pan are on by default and work anywhere on the chart — over the cards and over the empty area alike. On touch screens, pinch does the zoom. Wheel zoom is anchored at the pointer: the spot under the cursor stays in place. It stops at 0.1x and at 10x, and at either limit the wheel is still taken by the chart, so the page does not scroll instead.
 
 Both gestures are controlled through the {api:anychart.charts.OrgChart#interactivity}interactivity(){api} method:
 
 * `chart.interactivity().zoomOnMouseWheel()` — enable or disable wheel zoom (`true`/`false`)
+* `chart.interactivity().scrollOnMouseWheel()` — make the wheel pan the tree vertically instead of zooming it (`false` by default)
 * `chart.interactivity().drag()` — enable or disable panning
+
+The two wheel options exclude each other: turning one on turns the other off, so `scrollOnMouseWheel(true)` also switches off the default wheel zoom. Turning one off leaves the other as it is — `zoomOnMouseWheel(false)` alone gives the wheel back to the page.
 
 You can also control the zoom in code:
 

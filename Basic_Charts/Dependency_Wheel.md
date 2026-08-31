@@ -68,13 +68,11 @@ var data = [
 // create a dependency wheel and set the data
 var chart = anychart.dependencyWheel(data);
 
-// set the chart title and separate it from the wheel
+// set the chart title
 chart.title("Dependency Wheel: Basic Sample");
-chart.title().padding(0, 0, 20, 0);
 
 // set the container id
 chart.container("container");
-
 // initiate drawing the chart
 chart.draw();
 ```
@@ -106,7 +104,11 @@ You can pass each link as an object. Or you can map the columns of an {api:anych
 var dataSet = anychart.data.set([
   ["AeroLine", "Paris", "Tokyo", 18, "B787"],
   ["AeroLine", "Paris", "NYC", 14, "A350"],
-  ["SkyJet", "Tokyo", "NYC", 10, "B777"]
+  ["SkyJet", "Paris", "Dubai", 8, "A320"],
+  ["SkyJet", "Tokyo", "NYC", 10, "B777"],
+  ["AeroLine", "Tokyo", "Dubai", 5, "A330"],
+  ["SkyJet", "NYC", "Cairo", 6, "B737"],
+  ["AeroLine", "Dubai", "Cairo", 4, "A320"]
 ]);
 // map the columns the chart needs: from, to and weight
 var mapping = dataSet.mapAs({from: 1, to: 2, weight: 3});
@@ -121,6 +123,8 @@ var chart = anychart.dependencyWheel(mapping);
 Set the node arcs with the {api:anychart.charts.DependencyWheel#node}node(){api} method. It works in each of the three [states](../Common_Settings/Interactivity/States): normal, hovered, and selected.
 
 A node is hovered when you point at it. Hovering a node also highlights its links. A node is selected when you click it. A plain click replaces any earlier selection. Ctrl/Cmd/Shift + click adds a node to a multi-node selection or removes it. It does not replace the selection. A plain click on the empty area clears the selection.
+
+These gestures are the default ones, and `chart.interactivity()` changes them: {api:anychart.core.utils.Interactivity#selectionMode}selectionMode(){api} limits the selection to one node or turns it off, and {api:anychart.core.utils.Interactivity#multiSelectOnClick}multiSelectOnClick(){api} makes a plain click behave like a Ctrl + click. With `multiSelectOnClick(true)`, a plain click adds to the selection instead of replacing it, and a click on the empty area no longer clears it. Read more: [General Settings](General_Settings).
 
 #### Node Labels
 
@@ -183,7 +187,7 @@ In the sample below, the labels are placed along the ring, the state fills and s
 
 ### Links
 
-Set the links with the {api:anychart.charts.DependencyWheel#link}link(){api} method. Like [nodes](#nodes), it works in three states. A link is hovered when you point at it. It is selected when you click it. Hovering or selecting a node also highlights its links. Hovering or selecting a link also highlights its two end nodes.
+Set the links with the {api:anychart.charts.DependencyWheel#link}link(){api} method. Like [nodes](#nodes), it works in three states. A link is hovered when you point at it. It is selected when you click it. Hovering or selecting a node also highlights its links. Hovering or selecting a link also highlights its two end nodes. The click gestures and the settings that change them are the same as for [nodes](#nodes).
 
 Link [labels](../Common_Settings/Labels) are hidden by default. Turning them on in the normal state shows a label on every link at once, each one placed at the middle of its band. This works well when there are only a few links. When there are many, use the [link tooltip](#link_tooltip) instead.
 
@@ -248,18 +252,21 @@ In the sample below, the state fills make a link darker and the tooltip shows th
 
 These methods change the geometry of the wheel:
 
-* {api:anychart.charts.DependencyWheel#startAngle}startAngle(){api} — rotates the whole wheel, in degrees. The default is 0, which places the first node arc at the top. Positive values turn the wheel clockwise
-* {api:anychart.charts.DependencyWheel#padAngle}padAngle(){api} — the angular gap between node arcs that sit next to each other, in radians (0.02 by default)
+* {api:anychart.charts.DependencyWheel#startAngle}startAngle(){api} — rotates the whole wheel, in degrees. The default is 0, which places the first node arc at the top. Positive values turn the wheel clockwise, unless `clockwise()` reverses the direction
+* {api:anychart.charts.DependencyWheel#padAngle}padAngle(){api} — the angular gap between node arcs that sit next to each other, in degrees (1 by default). A value out of range is brought back in: a negative value is read as 0, and a value of 360 or more as just under 360. When the wheel is drawn, each gap is also capped at 180 degrees divided by the number of node arcs, so the gaps never take up more than half of the ring
 * {api:anychart.charts.DependencyWheel#nodeWidth}nodeWidth(){api} — the thickness of the node arcs, in pixels (15 by default)
+* {api:anychart.charts.DependencyWheel#radius}radius(){api} — the outer radius of the ring of node arcs. A number is a size in pixels, a percent string is a share of the smaller side of the chart area. The default, `"50%"`, is also the largest ring the chart draws, so larger values change nothing: use this method to make the ring smaller and leave room for long labels or a title
+* {api:anychart.charts.DependencyWheel#minAngle}minAngle(){api} — the smallest angular size of a node arc, in degrees. The default is 0, which sizes every arc in proportion to the flow through the node. A larger value makes the smallest nodes easy to see and to point at, and the rest of the ring is still shared out in proportion. When the minimums do not all fit, they are scaled down together, so the arcs never overlap
+* {api:anychart.charts.DependencyWheel#clockwise}clockwise(){api} — the direction of the layout, `true` by default. Setting it to `false` mirrors the wheel across the start angle: the same arcs in the same sizes and with the same gaps, placed the other way round
 
-All three take effect on a chart that is already drawn. Drag the sliders in the sample below to see what each one changes:
+All of them take effect on a chart that is already drawn. Drag the sliders in the sample below to change the start angle, the pad angle and the node width:
 
 ```
 // rotate the whole wheel a quarter-turn
 chart.startAngle(90);
 
 // widen the gaps between the node arcs
-chart.padAngle(0.06);
+chart.padAngle(3);
 
 // make the node arcs thicker
 chart.nodeWidth(30);
@@ -275,7 +282,7 @@ function changeStartAngle(value) {
 
 ### Sorting
 
-The {api:anychart.charts.DependencyWheel#sortOrder}sortOrder(){api} method sets the order of the node arcs around the wheel. The first arc starts at the start angle, which is the top of the wheel by default (see [Wheel Geometry](#wheel_geometry)). The following arcs are placed clockwise:
+The {api:anychart.charts.DependencyWheel#sortOrder}sortOrder(){api} method sets the order of the node arcs around the wheel. The first arc starts at the start angle, which is the top of the wheel by default (see [Wheel Geometry](#wheel_geometry)); in the mirrored layout of `clockwise(false)` it ends there instead. The arcs that follow are placed clockwise, or counter-clockwise when the layout is mirrored:
 
 * `"desc"` (default) — by the total flow through the node: the largest node starts at the top, the rest follow clockwise from largest to smallest
 * `"asc"` — by the total flow, from smallest to largest

@@ -31,13 +31,11 @@ anychart.onDocumentReady(function () {
 
   // create an arc diagram and set the data
   var chart = anychart.arcDiagram(data);
-  // set the chart title and separate it from the diagram
+  // set the chart title
   chart.title("Arc Diagram: Link Settings");
-  chart.title().padding(0, 0, 20, 0);
 
-  // give the nodes room: wider bars and more spacing between them
+  // make the node bars thicker
   chart.nodeWidth(30);
-  chart.nodeSpacing(90);
 
   // link states: a link keeps its own color and only becomes darker
   chart.link().hovered().fill(function () {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Stream Graph 03"/>
+    <meta name="ac:name" content="BCT Stream Graph 10"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
 
@@ -20,14 +20,15 @@
 </head>
 <body>
 <div id="controls">
-    <span>Offset:</span>
-    <label><input type="radio" name="offset" id="offsetWiggle" onclick="changeOffset('wiggle')"> wiggle</label>
-    <label><input type="radio" name="offset" id="offsetSilhouette" onclick="changeOffset('silhouette')" checked> silhouette</label>
-    <label><input type="radio" name="offset" id="offsetExpand" onclick="changeOffset('expand')"> expand</label>
-    <label><input type="radio" name="offset" id="offsetZero" onclick="changeOffset('zero')"> zero</label>
+    <span>Layer order:</span>
+    <label><input type="radio" name="sortOrder" onclick="changeSortOrder('none')"> none</label>
+    <label><input type="radio" name="sortOrder" onclick="changeSortOrder('asc')"> asc</label>
+    <label><input type="radio" name="sortOrder" onclick="changeSortOrder('desc')"> desc</label>
+    <label><input type="radio" name="sortOrder" onclick="changeSortOrder('inside-out')" checked> inside-out</label>
 </div>
 <div id="container"></div>
 <script>
+var chart;
 anychart.onDocumentReady(function () {
   // create data
   var searchData = [
@@ -59,7 +60,7 @@ anychart.onDocumentReady(function () {
   // create a chart
   chart = anychart.streamGraph();
   // set the chart title
-  chart.title("Stream Graph: Offset");
+  chart.title("Stream Graph: Layer Order");
 
   // add a series (layer) per channel
   var series1 = chart.splineArea(searchData);
@@ -75,8 +76,8 @@ anychart.onDocumentReady(function () {
   var series6 = chart.splineArea(videoData);
   series6.name("Video");
 
-  // set the initial offset mode
-  chart.offset("silhouette");
+  // set the initial layer order
+  chart.sortOrder("inside-out");
 
   // set the container id
   chart.container("container");
@@ -84,11 +85,9 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// apply the chosen offset mode: the chart redraws itself
-function changeOffset(value) {
-  chart.offset(value);
-  // the Y axis is hidden by default; show it only for the flat zero baseline
-  chart.yAxis(value == "zero");
+// apply the chosen layer order: the chart redraws itself
+function changeSortOrder(value) {
+  chart.sortOrder(value);
 }
 </script>
 </body>

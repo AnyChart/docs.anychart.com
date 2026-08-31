@@ -71,6 +71,8 @@ chart.container("container");
 chart.draw();
 ```
 
+Only rows with a positive value take part. The chart drops zero, negative, and non-numeric rows before it works out the total, so they get no cells, no legend entry, and no share of their own — and they do not change anyone else's share either.
+
 {sample}BCT\_Waffle\_Chart\_01{sample}
 
 ## General Settings
@@ -85,7 +87,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 Each category's color comes from the chart [palette](../Appearance_Settings/Palettes). Set your own with the {api:anychart.charts.Waffle#palette}palette(){api} method. A category is drawn as one block of identical cells, so there is no per-cell styling: every cell in the block shares the same fill and stroke.
 
-The [appearance settings](../Appearance_Settings) react to the three [states](../Common_Settings/Interactivity/States). Use the {api:anychart.charts.Waffle#normal}normal(){api}, {api:anychart.charts.Waffle#hovered}hovered(){api}, and {api:anychart.charts.Waffle#selected}selected(){api} methods with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}. A category is hovered when you point at it and selected when you click it; {api:anychart.charts.Waffle#select}select(){api} and {api:anychart.charts.Waffle#unselect}unselect(){api} do the same in code. By default, hovering lightens the palette color, and selecting darkens it. To change how a state reacts, pass a function to fill() or stroke(): inside it, the palette color is available as `this.sourceColor`:
+The [appearance settings](../Appearance_Settings) react to the three [states](../Common_Settings/Interactivity/States). Use the {api:anychart.charts.Waffle#normal}normal(){api}, {api:anychart.charts.Waffle#hovered}hovered(){api}, and {api:anychart.charts.Waffle#selected}selected(){api} methods with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}. A category is hovered when you point at it and selected when you click it. By default, hovering lightens the palette color, and selecting darkens it. To change how a state reacts, pass a function to fill() or stroke(): inside it, the palette color is available as `this.sourceColor`:
 
 ```
 // one palette color per category
@@ -108,11 +110,17 @@ In the sample below, pointing at a category lightens its block of cells, and cli
 
 {sample}BCT\_Waffle\_Chart\_02{sample}
 
+Cells can carry a hatch pattern as well as a color. Set it with {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} on {api:anychart.charts.Waffle#normal}normal(){api}: pass a pattern name, or `true` for the default backward-diagonal one. A pattern tells the categories apart without relying on color, which also survives black-and-white printing. Only the normal state draws it: `hovered().hatchFill()` and `selected().hatchFill()` accept a value and read it back, but never paint, so a hatched category keeps the same pattern in every state. The pattern covers the whole block, so it crosses any [label](#labels) sitting on it.
+
+Clicking a category selects it and clears the previous one; clicking it again keeps it selected, and clicking outside the grid clears the selection. Modifier keys do not add to it. In code, {api:anychart.charts.Waffle#select}select(){api} takes the index of a category, or an array of indexes to select several at once, and {api:anychart.charts.Waffle#unselect}unselect(){api} clears the selection — a category name is not accepted. How the chart reacts to clicks is a general interactivity setting: see [General Settings](General_Settings#interactivity).
+
 ### Grid Layout
 
 By default, the grid has 10×10 = 100 cells. To change it, use the {api:anychart.charts.Waffle#rows}rows(){api} and {api:anychart.charts.Waffle#columns}columns(){api} methods.
 
-The chart always fills the whole grid. Each category gets a block of cells that matches its share of the total. When the shares do not divide into whole cells, the chart rounds them so that the blocks still add up to the exact full grid (the largest-remainder method): a block can be off by at most one cell, the grid as a whole is never off.
+When the data is valid, the chart always fills the whole grid. Each category gets a block of cells that matches its share of the total. When the shares do not divide into whole cells, the chart rounds them so that the blocks still add up to the exact full grid (the largest-remainder method): a block can be off by at most one cell, the grid as a whole is never off.
+
+Two cases break that rule, and both are drawn as an empty chart area. A grid with no rows or no columns is accepted as it is and has nothing to fill, and a total that is not a finite number leaves every cell unpainted. Nothing is drawn in place of the grid, here or when the data itself is empty: the standard *No data* label is off until you turn it on with {api:anychart.charts.Waffle#noData}noData(){api} — see [No Data Label](../Working_with_Data/No_Data_Label).
 
 ```
 // change the default 10x10 grid
@@ -130,7 +138,7 @@ The chart draws the cells on its own — you only set how they look. Two groups 
 
 #### Cell Shape
 
-Cells are squares by default. To draw them as circles, use the {api:anychart.charts.Waffle#cellShape}cellShape(){api} method. For square cells, you can round the corners with {api:anychart.charts.Waffle#cellCornerRadius}cellCornerRadius(){api}; circle cells ignore this setting:
+Cells are squares by default. To draw them as circles, use the {api:anychart.charts.Waffle#cellShape}cellShape(){api} method. For square cells, you can round the corners with {api:anychart.charts.Waffle#cellCornerRadius}cellCornerRadius(){api}; circle cells ignore this setting. The shape name is matched without regard to case; any other value falls back to the default shape and reports a warning in the browser console:
 
 ```
 // draw square cells and round their corners
@@ -172,6 +180,8 @@ The {api:anychart.charts.Waffle#fillDirection}fillDirection(){api} method sets t
 
 Three of the four directions fill the grid row by row. `top-to-bottom` is different on purpose: it is the only direction that fills the grid column by column. Use it when the category blocks should grow from left to right, one column at a time.
 
+Write the names with their hyphens, as above. The case does not matter, but any other spelling falls back to the default direction and reports a warning in the browser console.
+
 ```
 // fill the grid from the bottom up
 chart.fillDirection("bottom-to-top");
@@ -185,9 +195,9 @@ In the sample below, use the switcher to compare all four directions on the same
 
 [Labels](../Common_Settings/Labels) are text elements shown directly on the grid: one label per category, at the center of its block of cells.
 
-Labels are off by default. To turn them on, use the {api:anychart.charts.Waffle#labels}labels(){api} method. The default text is the category name and its percent share. To change it, call {api:anychart.core.ui.LabelsFactory#format}format(){api} with a [text formatter](../Common_Settings/Text_Formatters): the `{%name}`, `{%value}`, and `{%percent}` tokens are available.
+Labels are off by default. To turn them on, use the {api:anychart.charts.Waffle#labels}labels(){api} method. The default text is the category name and its percent share. To change it, call {api:anychart.core.ui.LabelsFactory#format}format(){api} with a [text formatter](../Common_Settings/Text_Formatters): the `{%name}`, `{%value}`, and `{%percent}` tokens are available. Each label sits on a light rounded backdrop that the theme draws behind the text; use {api:anychart.core.ui.LabelsFactory#background}background(){api} to change or remove it.
 
-The blocks take both light and dark palette colors, so style the text for both: a white bold font with a dark {api:anychart.core.ui.LabelsFactory#textShadow}textShadow(){api} stays readable on any block:
+The blocks take both light and dark palette colors. To put the text directly on the cells, remove the backdrop and outline the glyphs instead: a white bold font with a dark {api:anychart.core.ui.LabelsFactory#textShadow}textShadow(){api} outline stays readable on any block:
 
 ```
 // enable the labels
@@ -196,19 +206,22 @@ chart.labels().enabled(true);
 // show the name and the value instead
 chart.labels().format("{%name}: {%value}");
 
-// white bold text with a dark shadow reads on light and dark cells alike
+// replace the default backdrop with outlined text
+chart.labels().background("transparent");
 chart.labels().fontColor("#ffffff");
 chart.labels().fontWeight(600);
-chart.labels().textShadow("1px 1px 2px #000000");
+
+// outline the glyphs: one dark shadow on each side
+chart.labels().textShadow("-1px -1px #000, 1px -1px #000, -1px 1px #000, 1px 1px #000");
 ```
 
-In the sample below, each block of cells carries a white label with the category name and its value, and the dark text shadow keeps it readable on the light cells:
+In the sample below, the default backdrop is replaced with outlined white labels that read on light and dark cells alike:
 
 {sample}BCT\_Waffle\_Chart\_07{sample}
 
 ### Tooltips
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box. It appears when you hover over a category. On a Waffle chart, it shows the category name as the title by default. The default text is `{%value} ({%percent}%)`. To change it, use the {api:anychart.charts.Waffle#tooltip}tooltip(){api} method with the same tokens as in [Labels](#labels). In the sample below, the values do not sum to 100, so the tooltip shows a value and a percentage that actually differ:
+A [Tooltip](../Common_Settings/Tooltip) is a text box. It appears when you hover over a category. On a Waffle chart, it shows the category name as the title by default, and below it the value, followed by the category's percent share in brackets, rounded to at most one decimal place. To change it, use the {api:anychart.charts.Waffle#tooltip}tooltip(){api} method with the same tokens as in [Labels](#labels). In the sample below, the values do not sum to 100, so the tooltip shows a value and a percentage that actually differ:
 
 ```
 // customize the tooltip title and text

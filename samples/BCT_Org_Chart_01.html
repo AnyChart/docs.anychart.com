@@ -36,9 +36,8 @@ anychart.onDocumentReady(function () {
   // create an org chart and set the data
   var chart = anychart.orgChart(data, "as-table");
 
-  // set the chart title and separate it from the tree
+  // set the chart title
   chart.title("Org Chart: Basic Sample");
-  chart.title().padding(0, 0, 20, 0);
 
   // start with one branch collapsed to show both indicator states
   chart.collapse("cfo");

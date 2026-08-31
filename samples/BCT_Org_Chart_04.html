@@ -33,9 +33,8 @@ anychart.onDocumentReady(function () {
 
   // create an org chart and set the data
   var chart = anychart.orgChart(data, "as-table");
-  // set the chart title and separate it from the tree
+  // set the chart title
   chart.title("Org Chart: Labels");
-  chart.title().padding(0, 0, 20, 0);
 
   // the font family and the font size apply to both lines
   // the title line is drawn 2 px smaller than the name line
@@ -44,6 +43,7 @@ anychart.onDocumentReady(function () {
 
   // the font color and the font weight change only the name (header) line
   chart.labels().fontColor("#1a237e");
+  // the name line is regular by default: make it bold
   chart.labels().fontWeight("bold");
 
   // uppercase the name line with a formatting function

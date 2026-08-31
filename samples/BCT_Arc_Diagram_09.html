@@ -14,23 +14,24 @@
     <style>
         html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
         body { display: flex; flex-direction: column; }
-        #controls { padding: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+        #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
+        #controls input[type="range"] { width: 90px; vertical-align: middle; }
         #container { flex: 1; }
     </style>
 </head>
 <body>
 <div id="controls">
+    <label>Node span
+        <input type="range" min="30" max="100" step="5" value="85" oninput="changeNodesSpan(this.value)">
+        <output id="nodesSpanValue">85%</output>
+    </label>
     <label>Node width
         <input type="range" min="4" max="60" step="1" value="30" oninput="changeNodeWidth(this.value)">
         <output id="nodeWidthValue">30</output>
     </label>
-    <label>Node spacing
-        <input type="range" min="1" max="150" step="1" value="90" oninput="changeNodeSpacing(this.value)">
-        <output id="nodeSpacingValue">90</output>
-    </label>
     <label>Curvature
-        <input type="range" min="0.2" max="3" step="0.1" value="1.5" oninput="changeCurvature(this.value)">
-        <output id="curvatureValue">1.5</output>
+        <input type="range" min="0.2" max="1.2" step="0.05" value="0.8" oninput="changeCurvature(this.value)">
+        <output id="curvatureValue">0.8</output>
     </label>
 </div>
 <div id="container"></div>
@@ -48,16 +49,15 @@ anychart.onDocumentReady(function () {
 
   // create an arc diagram and set the data
   chart = anychart.arcDiagram(data);
-  // set the chart title and separate it from the diagram
+  // set the chart title
   chart.title("Arc Diagram: Geometry");
-  chart.title().padding(0, 0, 20, 0);
 
-  // make the node bars bigger and spread them wider
+  // give the row of nodes most of the node line and make the bars thicker
+  chart.nodesSpan("85%");
   chart.nodeWidth(30);
-  chart.nodeSpacing(90);
 
-  // make the links taller and curve them below the node line
-  chart.curvature(1.5);
+  // set the height of the links and curve them below the node line
+  chart.curvature(0.8);
   chart.arcDirection("down");
 
   // set the container id
@@ -66,16 +66,16 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
+// spread the nodes over more or less of the node line: the chart redraws itself
+function changeNodesSpan(value) {
+  chart.nodesSpan(value + "%");
+  document.getElementById("nodesSpanValue").value = value + "%";
+}
+
 // resize the node bars: the chart redraws itself
 function changeNodeWidth(value) {
   chart.nodeWidth(value);
   document.getElementById("nodeWidthValue").value = value;
-}
-
-// change the gap between the nodes: the chart redraws itself
-function changeNodeSpacing(value) {
-  chart.nodeSpacing(value);
-  document.getElementById("nodeSpacingValue").value = value;
 }
 
 // change the height of the links: the chart redraws itself

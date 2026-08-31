@@ -40,10 +40,13 @@ anychart.onDocumentReady(function () {
   // show the name and the value instead
   chart.labels().format("{%name}: {%value}");
 
-  // white bold text with a dark shadow reads on light and dark cells alike
+  // replace the default backdrop with outlined text
+  chart.labels().background("transparent");
   chart.labels().fontColor("#ffffff");
   chart.labels().fontWeight(600);
-  chart.labels().textShadow("1px 1px 2px #000000");
+
+  // outline the glyphs: one dark shadow on each side
+  chart.labels().textShadow("-1px -1px #000, 1px -1px #000, -1px 1px #000, 1px 1px #000");
 
   // set the container id
   chart.container("container");

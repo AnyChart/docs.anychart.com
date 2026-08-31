@@ -49,9 +49,8 @@ anychart.onDocumentReady(function () {
 
   // create an org chart and set the data
   chart = anychart.orgChart(data, "as-table");
-  // set the chart title and separate it from the tree
+  // set the chart title
   chart.title("Org Chart: Spacing");
-  chart.title().padding(0, 0, 20, 0);
 
   // the spacing between levels and between siblings
   chart.levelSpacing(50);

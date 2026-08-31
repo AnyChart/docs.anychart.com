@@ -31,9 +31,8 @@ anychart.onDocumentReady(function () {
 
   // create a chart
   var chart = anychart.streamGraph();
-  // set the chart title and separate it from the stream
+  // set the chart title
   chart.title("Stream Graph: Data");
-  chart.title().padding(0, 0, 20, 0);
 
   // add a series (layer) per mapping
   var series1 = chart.splineArea(searchMapping);

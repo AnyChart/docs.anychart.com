@@ -35,9 +35,8 @@ anychart.onDocumentReady(function () {
 
   // create an org chart and set the data
   var chart = anychart.orgChart(data, "as-table");
-  // set the chart title and separate it from the tree
+  // set the chart title
   chart.title("Org Chart: Tooltips");
-  chart.title().padding(0, 0, 20, 0);
 
   // the tooltip reads any data field via getData()
   chart.tooltip().titleFormat("{%name}");

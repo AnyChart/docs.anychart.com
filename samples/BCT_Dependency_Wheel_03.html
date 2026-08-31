@@ -32,9 +32,8 @@ anychart.onDocumentReady(function () {
 
   // create a chart and set the data
   var chart = anychart.dependencyWheel(data);
-  // set the chart title and separate it from the wheel
+  // set the chart title
   chart.title("Dependency Wheel: Node Settings");
-  chart.title().padding(0, 0, 20, 0);
 
   // make the node arcs wider
   chart.nodeWidth(25);
@@ -58,9 +57,11 @@ anychart.onDocumentReady(function () {
     return {color: this.sourceColor, opacity: 0.65};
   });
 
-  // node labels: lay the text along the ring and add the share of the total flow
-  chart.node().normal().labels().position("circular");
+  // add the node's share of the total flow to its label
   chart.node().normal().labels().format("{%name} {%percent}{decimalsCount:1}%");
+
+  // lay the node labels along the ring
+  chart.node().normal().labels().position("circular");
 
   // show every label, even if some of them collide
   chart.dropOverlappedLabels(false);

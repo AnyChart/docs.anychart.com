@@ -124,7 +124,7 @@ In the sample below, two series set their own stick and head colors in all three
 
 #### Point Size
 
-The head is a circle, and its size is its radius. Set the radius with {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} and {api:anychart.core.ui.MarkersFactory#size}size(){api}; the default is 4 px. In the hovered and selected states, the head has a radius of its own: set it through {api:anychart.core.cartesian.series.Lollipop#hovered}hovered(){api} and {api:anychart.core.cartesian.series.Lollipop#selected}selected(){api}; the default is 6 px. The head is always a circle: the marker type does not change it.
+The head is a circle, and its size is its radius. Set it with {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} and {api:anychart.core.ui.MarkersFactory#size}size(){api}. In the hovered and selected states, the head has a radius of its own, slightly larger by default: set it through {api:anychart.core.cartesian.series.Lollipop#hovered}hovered(){api} and {api:anychart.core.cartesian.series.Lollipop#selected}selected(){api}. The head is always a circle: the marker type does not change it.
 
 ```
 // set the size of the lollipop heads
@@ -140,7 +140,7 @@ In the sample below, the heads have a radius of 10 px, and 12 px when hovered or
 
 #### Individual Points
 
-If you use objects to set the data, you can change the look of individual points. Just add special fields to your data:
+To change the look of an individual point, set its configuration right in the data. The same settings you apply to all points, added as fields of the point, affect only that point:
 
 ```
 // create data with individual point settings
