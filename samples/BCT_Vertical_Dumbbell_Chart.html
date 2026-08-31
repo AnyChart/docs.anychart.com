@@ -19,13 +19,16 @@ anychart.onDocumentReady(function () {
   var data = [
     ["Job A", 40000, 60000],
     ["Job B", 50000, 80000],
-    ["Job C", 35000, 55000]
+    ["Job C", 35000, 55000],
+    ["Job D", 45000, 65000],
+    ["Job E", 30000, 70000]
   ];
-  // create a chart
+
+  // create a vertical chart
   var chart = anychart.vertical();
-  // set the chart title and separate it from the plot
-  chart.title("Vertical Dumbbell Chart: Quick Start");
-  chart.title().padding(0, 0, 20, 0);
+
+  // set the chart title
+  chart.title("Vertical Dumbbell Chart");
 
   // create a dumbbell series and set the data
   var series = chart.dumbbell(data);

@@ -11,52 +11,34 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
 
     <style>
-        html, body, #container {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
     </style>
 </head>
 <body>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data with individual point settings
+  // create data
   var data = [
-    {x: "Job A", low: 40000, high: 60000},
-    {x: "Job B", low: 50000, high: 80000,
-     normal:   {
-                 lowFill: "#5cd65c",
-                 highFill: "#2eb82e",
-                 stroke: "2 #5cd65c"
-               },
-     hovered:  {
-                 lowFill: "#5cd65c",
-                 highFill: "#2eb82e",
-                 stroke: "3 #5cd65c"
-               },
-     selected: {
-                 lowFill: "#5cd65c",
-                 highFill: "#2eb82e",
-                 stroke: "3 #5cd65c"
-               }
-    },
-    {x: "Job C", low: 35000, high: 55000}
+    ["Job A", 40000, 60000],
+    ["Job B", 50000, 80000],
+    ["Job C", 35000, 55000]
   ];
 
-  // create a line chart
-  var chart = anychart.line();
-  // set the chart title and separate it from the plot
-  chart.title("Dumbbell Chart: Individual Points");
-  chart.title().padding(0, 0, 20, 0);
+  // create a chart
+  var chart = anychart.dumbbell();
+
+  // set the chart title
+  chart.title("Dumbbell Chart: Endpoint Size");
 
   // create a dumbbell series and set the data
   var series = chart.dumbbell(data);
 
-  // show both endpoint values in the tooltip
-  series.tooltip().format("High: {%high}, Low: {%low}");
+  // set the size of the endpoints
+  series.markers().size(8);
+  // set the size in the hovered and selected states
+  series.hovered().markers().size(10);
+  series.selected().markers().size(10);
 
   // set the container id
   chart.container("container");
