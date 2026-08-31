@@ -152,13 +152,31 @@ A plain click selects one card and replaces whatever was selected before. Hold *
 
 The same works in code:
 
-* {api:anychart.charts.OrgChart#select}select(){api} — select a card. Pass the node `id`, or pass the data item itself. It adds to the selection, so call it once per card
-* {api:anychart.charts.OrgChart#unselect}unselect(){api} — clear the selection
+* `select()` — select a card. Pass the node `id`, or pass the data item itself. It adds to the selection, so call it once per card
+* `unselect()` — clear the selection
 * {api:anychart.charts.OrgChart#getSelectedPoints}getSelectedPoints(){api} — the cards that are selected at the moment
 
-The chart dispatches the `"pointsSelect"` event whenever the selected set changes, and the listener reads the new set with `getSelectedPoints()`: [Event Listeners](../Common_Settings/Event_Listeners).
+The chart dispatches the `"pointsSelect"` event whenever the selected set changes, and the listener reads the new set with `getSelectedPoints()`: [Event Listeners](../Common_Settings/Event_Listeners):
+
+```
+// select two cards from code
+function selectPair() {
+  chart.select("cto");
+  chart.select("cfo");
+}
+
+// keep a live readout of the selection
+chart.listen("pointsSelect", function () {
+  var names = chart.getSelectedPoints().map(function (p) { return p.get("name"); });
+  document.getElementById("selectedCards").value = names.join(", ") || "none";
+});
+```
 
 To make the cards unselectable, set the selection mode to `"none"` with `chart.interactivity().selectionMode("none")`. The click events still fire. Read more: [Interactivity](../Common_Settings/Interactivity/Overview).
+
+In the sample below, click the cards — plain to replace, with **Ctrl** or **Shift** held to add — or use the buttons; the readout under them is driven by the `"pointsSelect"` event:
+
+{sample}BCT\_Org\_Chart\_04{sample}
 
 ### Labels
 
@@ -166,17 +184,17 @@ Each card draws two lines of text: the `name` line and the `title` line under it
 
 <table border="1" class="seriesTABLE">
 <tr><th>To change</th><th>of the name line</th><th>of the title line</th></tr>
-<tr><td>Text</td><td><code>labels().format()</code> (the <code>name</code> field by default)</td><td>not formattable — always the <code>title</code> data field</td></tr>
-<tr><td>Font</td><td><code>labels().fontFamily()</code></td><td>follows the name line</td></tr>
-<tr><td>Size</td><td><code>labels().fontSize()</code></td><td>follows the name line, drawn 2 px smaller</td></tr>
-<tr><td>Color</td><td><code>labels().fontColor()</code></td><td><code>titleFontColor()</code></td></tr>
-<tr><td>Weight</td><td><code>labels().fontWeight()</code> (regular by default)</td><td>not settable — always regular</td></tr>
-<tr><td>Visibility</td><td colspan=2><code>chart.labels(false)</code> hides both lines</td></tr>
+<tr><td>Text</td><td>{api:anychart.core.ui.LabelsFactory#format}labels().format(){api} (the <code>name</code> field by default)</td><td>not formattable — always the <code>title</code> data field</td></tr>
+<tr><td>Font</td><td>{api:anychart.core.ui.LabelsFactory#fontFamily}labels().fontFamily(){api}</td><td>follows the name line</td></tr>
+<tr><td>Size</td><td>{api:anychart.core.ui.LabelsFactory#fontSize}labels().fontSize(){api}</td><td>follows the name line, drawn 2 px smaller</td></tr>
+<tr><td>Color</td><td>{api:anychart.core.ui.LabelsFactory#fontColor}labels().fontColor(){api}</td><td>{api:anychart.charts.OrgChart#titleFontColor}titleFontColor(){api}</td></tr>
+<tr><td>Weight</td><td>{api:anychart.core.ui.LabelsFactory#fontWeight}labels().fontWeight(){api} (regular by default)</td><td>not settable — always regular</td></tr>
+<tr><td>Visibility</td><td colspan=2>{api:anychart.charts.OrgChart#labels}chart.labels(false){api} hides both lines</td></tr>
 </table>
 
-The text of the `name` line is set with `labels().format()` — a [text formatter](../Common_Settings/Text_Formatters) with the `{%name}`, `{%title}`, and `{%id}` tokens; a formatting function can read any data field with `getData()`. A format that returns an empty string removes the `name` line of that card.
+The text of the `name` line is set with {api:anychart.core.ui.LabelsFactory#format}labels().format(){api} — a [text formatter](../Common_Settings/Text_Formatters) with the `{%name}`, `{%title}`, and `{%id}` tokens; a formatting function can read any data field with `getData()`. A format that returns an empty string removes the `name` line of that card.
 
-On a large tree, the chart shrinks the cards until the text no longer fits. The {api:anychart.charts.OrgChart#labelsDisplayMode}labelsDisplayMode(){api} method sets what happens to the labels then: `"drop"` (default) hides the labels that would be unreadable, `"clip"` crops them to the card.
+The font size is set in the layout's own scale: when the chart shrinks or zooms the tree to fit its frame, the rendered text shrinks or grows with the cards, so on screen it can differ from the value you set. On a large tree, the chart shrinks the cards until the text no longer fits. The `labelsDisplayMode()` method sets what happens to the labels then: `"drop"` (default) hides the labels that would be unreadable, `"clip"` crops them to the card.
 
 ```
 // the font family and the font size apply to both lines
@@ -200,7 +218,7 @@ chart.titleFontColor("#00796b");
 
 In the sample below, both label lines are set in Verdana, the name line is bold, dark blue, and uppercased by a formatting function, and the title line is teal:
 
-{sample}BCT\_Org\_Chart\_04{sample}
+{sample}BCT\_Org\_Chart\_05{sample}
 
 ### Node Size
 
@@ -218,7 +236,7 @@ chart.nodePadding(8);
 
 In the sample below, the sliders change the size of the node cards and the inner padding of their text:
 
-{sample}BCT\_Org\_Chart\_05{sample}
+{sample}BCT\_Org\_Chart\_06{sample}
 
 ### Connectors
 
@@ -238,7 +256,7 @@ chart.connectorStroke("2 #64b5f6");
 
 In the sample below, the radio buttons switch the shape of the parent-child connectors, drawn with a thicker blue stroke:
 
-{sample}BCT\_Org\_Chart\_06{sample}
+{sample}BCT\_Org\_Chart\_07{sample}
 
 ### Layout
 
@@ -260,7 +278,7 @@ chart.orientation("left-to-right");
 
 In the sample below, the radio buttons switch the growth direction of the tree:
 
-{sample}BCT\_Org\_Chart\_07{sample}
+{sample}BCT\_Org\_Chart\_08{sample}
 
 #### Spacing
 
@@ -277,7 +295,7 @@ chart.siblingSpacing(16);
 
 In the sample below, the sliders change the spacing between the levels and between the siblings:
 
-{sample}BCT\_Org\_Chart\_08{sample}
+{sample}BCT\_Org\_Chart\_09{sample}
 
 ### Collapse and Expand
 
@@ -285,7 +303,7 @@ Every parent card gets a +/− indicator. It collapses or expands the branch whe
 
 * {api:anychart.charts.OrgChart#collapse}collapse(){api} and {api:anychart.charts.OrgChart#expand}expand(){api} — collapse or expand the branch of a node. Pass the node `id`, or pass the data item itself. Get the item with the search() method of the [tree](../Working_with_Data/Tree_Data_Model). This is useful in the `"as-tree"` mode, where items may have no `id` field
 * {api:anychart.charts.OrgChart#collapseAll}collapseAll(){api} and {api:anychart.charts.OrgChart#expandAll}expandAll(){api} — collapse or expand all branches at once
-* {api:anychart.charts.OrgChart#expandTo}expandTo(){api} — show the tree down to the given level and collapse everything deeper: `expandTo(1)` leaves only the root visible
+* `expandTo()` — show the tree down to the given level and collapse everything deeper: `expandTo(1)` leaves only the root visible
 
 ```
 // collapse the CTO branch by the node id
@@ -294,13 +312,13 @@ chart.collapse("cto");
 
 In the sample below, the CTO branch is collapsed from the start, the +/− indicator under a parent card expands or collapses its branch, and the buttons collapse or expand all branches at once:
 
-{sample}BCT\_Org\_Chart\_09{sample}
+{sample}BCT\_Org\_Chart\_10{sample}
 
 ### Zoom and Pan
 
 Mouse-wheel zoom and drag-to-pan are on by default and work anywhere on the chart — over the cards and over the empty area alike. On touch screens, pinch does the zoom. Wheel zoom is anchored at the pointer: the spot under the cursor stays in place. It stops at 0.1x and at 10x, and at either limit the wheel is still taken by the chart, so the page does not scroll instead.
 
-Both gestures are controlled through the {api:anychart.charts.OrgChart#interactivity}interactivity(){api} method:
+Both gestures are controlled through the `interactivity()` method:
 
 * `chart.interactivity().zoomOnMouseWheel()` — enable or disable wheel zoom (`true`/`false`)
 * `chart.interactivity().scrollOnMouseWheel()` — make the wheel pan the tree vertically instead of zooming it (`false` by default)
@@ -320,7 +338,7 @@ chart.zoomIn();
 
 In the sample below, the chart is zoomed in by one step after the draw, the buttons zoom it in and out and fit it back into the container, and you can also zoom it with the mouse wheel and pan it by dragging:
 
-{sample}BCT\_Org\_Chart\_10{sample}
+{sample}BCT\_Org\_Chart\_11{sample}
 
 ### Tooltips
 
@@ -341,4 +359,4 @@ chart.tooltip().format(function () {
 });
 ```
 
-{sample}BCT\_Org\_Chart\_11{sample}
+{sample}BCT\_Org\_Chart\_12{sample}

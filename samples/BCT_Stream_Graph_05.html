@@ -12,12 +12,22 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
 
     <style>
-        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { display: flex; flex-direction: column; }
+        #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
+        #container { flex: 1; }
     </style>
 </head>
 <body>
+<div id="controls">
+    <span>Series type:</span>
+    <label><input type="radio" name="seriesType" onclick="changeSeriesType('spline-area')"> spline-area</label>
+    <label><input type="radio" name="seriesType" onclick="changeSeriesType('area')"> area</label>
+    <label><input type="radio" name="seriesType" onclick="changeSeriesType('step-area')" checked> step-area</label>
+</div>
 <div id="container"></div>
 <script>
+var chart;
 anychart.onDocumentReady(function () {
   // create data
   var searchData = [
@@ -34,37 +44,37 @@ anychart.onDocumentReady(function () {
   ];
 
   // create a chart
-  var chart = anychart.streamGraph();
+  chart = anychart.streamGraph();
   // set the chart title
-  chart.title("Stream Graph: Appearance");
+  chart.title("Stream Graph: Series Type");
 
-  // add a series (layer) per channel
-  var series1 = chart.splineArea(searchData);
+  // layers drawn as step-area series
+  var series1 = chart.stepArea(searchData);
   series1.name("Search");
-  var series2 = chart.splineArea(socialData);
+  var series2 = chart.stepArea(socialData);
   series2.name("Social");
-  var series3 = chart.splineArea(emailData);
+  var series3 = chart.stepArea(emailData);
   series3.name("Email");
 
-  // one palette color per layer
-  chart.palette(["#01497c", "#2c7da0", "#61a5c2"]);
+  // the layer labels are a spline-area default: set them for every type
+  chart.maxLabels().enabled(true);
+  chart.maxLabels().format("{%seriesName}");
 
-  // a thin white outline visually separates adjacent layers
-  series1.stroke("1.5 #ffffff");
-  series2.stroke("1.5 #ffffff");
-  series3.stroke("1.5 #ffffff");
-
-  // override the fill of one layer directly, a named color works too
-  series1.fill("coral");
-
-  // hide the default layer labels: this sample is about colors
-  chart.maxLabels().enabled(false);
+  // make the layer labels readable
+  chart.maxLabels().fontColor("#000000");
 
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
 });
+
+// apply the chosen type to every layer: the chart redraws itself
+function changeSeriesType(value) {
+  for (var i = 0; i < chart.getSeriesCount(); i++) {
+    chart.getSeriesAt(i).seriesType(value);
+  }
+}
 </script>
 </body>
 </html>

@@ -32,23 +32,16 @@ anychart.onDocumentReady(function () {
   // create an arc diagram and set the data
   var chart = anychart.arcDiagram(data);
   // set the chart title
-  chart.title("Arc Diagram: Link Settings");
-
-  // make the node bars thicker
-  chart.nodeWidth(30);
-
-  // link states: a link keeps its own color and only becomes darker
-  chart.link().hovered().fill(function () {
-    return anychart.color.darken(this.sourceColor, 0.2);
-  });
-  chart.link().selected().fill(function () {
-    return anychart.color.darken(this.sourceColor, 0.4);
-  });
+  chart.title("Arc Diagram: Node Tooltip");
 
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
+
+  // the tooltip of a node: its requests and connections
+  chart.node().tooltip().titleFormat("Department: {%name}");
+  chart.node().tooltip().format("Requests: {%weight}\nConnections: {%connections}");
 });
 </script>
 </body>

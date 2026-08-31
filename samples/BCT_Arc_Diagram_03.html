@@ -32,33 +32,16 @@ anychart.onDocumentReady(function () {
   // create an arc diagram and set the data
   var chart = anychart.arcDiagram(data);
   // set the chart title
-  chart.title("Arc Diagram: Node Settings");
+  chart.title("Arc Diagram: Node Labels");
 
-  // make the node bars thicker
-  chart.nodeWidth(30);
-
-  // states of the node bars
-  chart.node().normal().fill("#5b8ff9");
-  chart.node().normal().stroke("#ffffff", 1);
-  chart.node().hovered().stroke("#1b2740", 2);
-  chart.node().selected().stroke("#0b1220", 3);
-
-  // node labels: horizontal, bigger, dark
-  chart.node().normal().labels().rotation(0);
-  chart.node().normal().labels().fontSize(12);
-  chart.node().normal().labels().fontColor("#212121");
-
+  // node labels: tilted the other way, bigger, blue
+  chart.node().normal().labels().rotation(45);
+  chart.node().normal().labels().fontSize(18);
+  chart.node().normal().labels().fontColor("#1976d2");
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
-
-  // select two nodes in code
-  chart.select(["Sales", "Finance"]);
-
-  // the tooltip of a node: its requests and connections
-  chart.node().tooltip().titleFormat("Department: {%name}");
-  chart.node().tooltip().format("Requests: {%weight}\nConnections: {%connections}");
 });
 </script>
 </body>

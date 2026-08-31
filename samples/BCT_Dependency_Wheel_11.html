@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Dependency Wheel 06"/>
+    <meta name="ac:name" content="BCT Dependency Wheel 11"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
 
@@ -20,39 +20,41 @@
 </head>
 <body>
 <div id="controls">
-    <span>Color mode:</span>
-    <label><input type="radio" name="mode" id="modeSource" onclick="changeColorMode('source')"> source</label>
-    <label><input type="radio" name="mode" id="modeTarget" onclick="changeColorMode('target')"> target</label>
-    <label><input type="radio" name="mode" id="modeGradient" onclick="changeColorMode('gradient')" checked> gradient</label>
-    <label><input type="radio" name="mode" id="modeReversed" onclick="changeColorMode('reversed')"> gradient, reversed</label>
+    <span>Sort nodes:</span>
+    <label><input type="radio" name="sort" id="sortAsc" onclick="changeSortOrder('asc')" checked> smallest first</label>
+    <label><input type="radio" name="sort" id="sortDesc" onclick="changeSortOrder('desc')"> largest first</label>
+    <label><input type="radio" name="sort" id="sortData" onclick="changeSortOrder('data')"> data order</label>
 </div>
 <div id="container"></div>
 <script>
+var dataOrder = {};
+
 anychart.onDocumentReady(function () {
-  // create data: weekly flights between the cities
+  // create data: rows in the order the routes were added, not by weight
   var data = [
+    {from: "NYC", to: "Cairo", weight: 6},
     {from: "Paris", to: "Tokyo", weight: 18},
+    {from: "Dubai", to: "Cairo", weight: 4},
     {from: "Paris", to: "NYC", weight: 14},
     {from: "Paris", to: "Dubai", weight: 8},
     {from: "Tokyo", to: "NYC", weight: 10},
-    {from: "Tokyo", to: "Dubai", weight: 5},
-    {from: "NYC", to: "Cairo", weight: 6},
-    {from: "Dubai", to: "Cairo", weight: 4}
+    {from: "Tokyo", to: "Dubai", weight: 5}
   ];
+
+  // remember where each city first appears in the data
+  var position = 0;
+  for (var i = 0; i < data.length; i++) {
+    if (!(data[i].from in dataOrder)) dataOrder[data[i].from] = position++;
+    if (!(data[i].to in dataOrder)) dataOrder[data[i].to] = position++;
+  }
 
   // create a chart and set the data
   chart = anychart.dependencyWheel(data);
   // set the chart title
-  chart.title("Dependency Wheel: Color Mode");
+  chart.title("Dependency Wheel: Sorting Nodes");
 
-  // set a custom palette for the nodes
-  chart.palette([
-    "#5b8ff9", "#61ddaa", "#65789b", "#f6bd16",
-    "#7262fd", "#78d3f8", "#9661bc", "#f6903d"
-  ]);
-
-  // blend each link from its source color to its target color
-  chart.colorMode("gradient");
+  // arrange the node arcs from the smallest to the largest
+  chart.sortOrder("asc");
 
   // set the container id
   chart.container("container");
@@ -60,10 +62,15 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// apply the chosen color mode: the chart redraws itself
-function changeColorMode(value) {
-  chart.colorMode(value == "reversed" ? "gradient" : value);
-  chart.reverseGradient(value == "reversed");
+// apply the chosen order: the chart redraws itself
+function changeSortOrder(value) {
+  // sortOrder() also takes a comparator of two nodes
+  chart.sortOrder(value == "data" ? byDataOrder : value);
+}
+
+// a comparator: keep the cities in the order they appear in the data
+function byDataOrder(node1, node2) {
+  return dataOrder[node1.id] - dataOrder[node2.id];
 }
 </script>
 </body>

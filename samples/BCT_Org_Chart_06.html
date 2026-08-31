@@ -15,15 +15,24 @@
         html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
         body { display: flex; flex-direction: column; }
         #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
+        #controls input[type="range"] { width: 90px; vertical-align: middle; }
         #container { flex: 1; }
     </style>
 </head>
 <body>
 <div id="controls">
-    <span>Connector shape:</span>
-    <label><input type="radio" name="connectorType" onclick="changeConnectorType('orthogonal')"> orthogonal</label>
-    <label><input type="radio" name="connectorType" onclick="changeConnectorType('straight')"> straight</label>
-    <label><input type="radio" name="connectorType" onclick="changeConnectorType('curved')" checked> curved</label>
+    <label>Width
+        <input type="range" min="150" max="250" step="1" value="180" oninput="changeNodeWidth(this.value)">
+        <output id="nodeWidthValue">180</output>
+    </label>
+    <label>Height
+        <input type="range" min="60" max="100" step="1" value="60" oninput="changeNodeHeight(this.value)">
+        <output id="nodeHeightValue">60</output>
+    </label>
+    <label>Padding
+        <input type="range" min="8" max="24" step="1" value="8" oninput="changeNodePadding(this.value)">
+        <output id="nodePaddingValue">8</output>
+    </label>
 </div>
 <div id="container"></div>
 <script>
@@ -45,11 +54,12 @@ anychart.onDocumentReady(function () {
   // create an org chart and set the data
   chart = anychart.orgChart(data, "as-table");
   // set the chart title
-  chart.title("Org Chart: Connectors");
+  chart.title("Org Chart: Node Size");
 
-  // draw the parent-child connectors as smooth curves
-  chart.connectorType("curved");
-  chart.connectorStroke("2 #64b5f6");
+  // the size of the node cards
+  chart.nodeWidth(180);
+  chart.nodeHeight(60);
+  chart.nodePadding(8);
 
   // set the container id
   chart.container("container");
@@ -57,9 +67,22 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// change the shape of the parent-child connectors: the chart redraws itself
-function changeConnectorType(value) {
-  chart.connectorType(value);
+// change the width of the node cards: the chart redraws itself
+function changeNodeWidth(value) {
+  chart.nodeWidth(value);
+  document.getElementById("nodeWidthValue").value = value;
+}
+
+// change the height of the node cards: the chart redraws itself
+function changeNodeHeight(value) {
+  chart.nodeHeight(value);
+  document.getElementById("nodeHeightValue").value = value;
+}
+
+// change the inner padding of the card text: the chart redraws itself
+function changeNodePadding(value) {
+  chart.nodePadding(value);
+  document.getElementById("nodePaddingValue").value = value;
 }
 </script>
 </body>

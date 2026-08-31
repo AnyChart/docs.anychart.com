@@ -99,7 +99,7 @@ chart.draw();
 
 In AnyChart, many settings work the same way for all chart types. This includes the Stream graph, for example its legend and interactivity settings.
 
-A click on the stream selects a whole category: one point in every layer, because the points of a Stream graph are grouped by their `x`. Shift + click adds another category to the selection, a plain click and a Ctrl/Cmd + click both replace it, and a click outside the plot clears it. These gestures come from the {api:anychart.charts.StreamGraph#interactivity}interactivity(){api} settings of the chart, where {api:anychart.core.utils.Interactivity#selectionMode}selectionMode(){api} narrows the selection to a single point or turns it off.
+A click on the stream selects a whole category: one point in every layer, because the points of a Stream graph are grouped by their `x`. Shift + click adds another category to the selection, a plain click and a Ctrl/Cmd + click both replace it, and a click outside the plot clears it. These gestures come from the `interactivity()` settings of the chart, where {api:anychart.core.utils.Interactivity#selectionMode}selectionMode(){api} narrows the selection to a single point or turns it off.
 
 Read the overview of general settings: [General Settings](General_Settings).
 
@@ -163,11 +163,11 @@ Switch the offset in the sample below to compare all four modes on the same stre
 
 The Y axis is hidden by default and the sample shows it only for `"zero"`: it is the one mode where the vertical position of a layer is a value (see [Axes](#axes)).
 
-A series that is not part of the stack, a threshold or an average drawn with {api:anychart.charts.StreamGraph#line}line(){api} for example, is covered by the Y scale in the `"wiggle"`, `"silhouette"`, and `"zero"` modes, so it lands inside the plot. In `"expand"` it is not: that mode replaces the values with shares of the total, the extra series keeps its own values, and it ends up drawn far outside the plot, where nobody sees it. Put such a line on one of the other three modes.
+A series that is not part of the stack, a threshold or an average drawn with `line()` for example, is covered by the Y scale in the `"wiggle"`, `"silhouette"`, and `"zero"` modes, so it lands inside the plot. In `"expand"` it is not: that mode replaces the values with shares of the total, the extra series keeps its own values, and it ends up drawn far outside the plot, where nobody sees it. Put such a line on one of the other three modes.
 
 ### Layer Order
 
-The layers are stacked in the order they are added, the first one on top. The {api:anychart.charts.StreamGraph#sortOrder}sortOrder(){api} method restacks them, which decides which layers end up in the middle of the stream, where a band bends the least and reads the best:
+The layers are stacked in the order they are added, the first one on top. The `sortOrder()` method restacks them, which decides which layers end up in the middle of the stream, where a band bends the least and reads the best:
 
 * `"none"` (default) — the order the layers were added in
 * `"asc"` — the layers are ranked by size, the total of their values with negative ones counted as positive, and the smallest goes to the bottom
@@ -190,11 +190,11 @@ function changeSortOrder(value) {
 
 Switch the order in the sample below to see the same six layers restacked:
 
-{sample}BCT\_Stream\_Graph\_10{sample}
+{sample}BCT\_Stream\_Graph\_04{sample}
 
 ### Series Type
 
-Each layer is an ordinary cartesian series and can be drawn with any of the area or column series types. By default, the layers are {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} series. To use another type, add the layer with the method of that type, for example {api:anychart.charts.StreamGraph#area}area(){api} or {api:anychart.charts.StreamGraph#stepArea}stepArea(){api}.
+Each layer is an ordinary cartesian series and can be drawn with any of the area series types. By default, the layers are {api:anychart.charts.StreamGraph#splineArea}splineArea(){api} series. To use another type, add the layer with the method of that type, for example {api:anychart.charts.StreamGraph#area}area(){api} or {api:anychart.charts.StreamGraph#stepArea}stepArea(){api}.
 
 To change the type of a series that already exists, call its {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api} method. It works on a chart that is already drawn.
 
@@ -220,7 +220,7 @@ function changeSeriesType(value) {
 
 Choose a series type in the sample below to see the same stream drawn with it:
 
-{sample}BCT\_Stream\_Graph\_04{sample}
+{sample}BCT\_Stream\_Graph\_05{sample}
 
 ### Appearance
 
@@ -241,19 +241,34 @@ series1.fill("coral");
 
 In the sample below, the layers take their colors from a custom palette, a thin white stroke separates them, and the Search layer has a fill of its own:
 
-{sample}BCT\_Stream\_Graph\_05{sample}
+{sample}BCT\_Stream\_Graph\_06{sample}
 
 ### Labels and Markers
 
+A layer carries three kinds of marks: the layer label the chart draws on its own, the point labels you enable, and the point markers.
+
+#### Layer Labels
+
 Every layer is labeled on the stream itself, without any setting: one [label](../Common_Settings/Labels) with the {api:anychart.core.cartesian.series.Base#name}name(){api} of the layer, centered in the band. The chart draws it at the category where the band is thick enough to hold the whole text, never at the first or the last one, and leaves it out of a layer that has no such place — a thin band on a small chart ends up unlabeled. This label is the {api:anychart.core.StateSettings#maxLabels}maxLabels(){api} of the layer, and its {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method turns it off.
 
-The {api:anychart.core.ui.LabelsFactory#format}format(){api} method sets the text of this label with a [text formatter](../Common_Settings/Text_Formatters); it is built from the largest point of the layer, so `{%value}` in it prints that largest value wherever on the stream the label lands. The {api:anychart.core.ui.LabelsFactory#position}position(){api} method moves the label inside the band: `"center"` by default, `"center-top"` and `"center-bottom"` push it to the edges. Write the two-part names — the bare words `"top"` and `"bottom"` are not positions, and a label given one of them silently ends up at the top of the band. Only the vertical half of the value has any effect, as the category is the chart's to choose.
+The layer label is configured like any [label](../Common_Settings/Labels): set its text with {api:anychart.core.ui.LabelsFactory#format}format(){api} and a [text formatter](../Common_Settings/Text_Formatters) — it is built from the largest point of the layer, so `{%value}` prints that largest value — and use the usual font settings. As an example, the demo below moves the label inside the band with the {api:anychart.core.ui.LabelsFactory#position}position(){api} method of a layer's own `maxLabels()`: `"center"` by default, `"center-top"` and `"center-bottom"` push it to the edges (write the two-part names).
 
-Point [labels](../Common_Settings/Labels) are a separate setting and are off by default. Enabling the {api:anychart.core.cartesian.series.Base#labels}labels(){api} of a layer puts the value of every point at the top edge of the band; font settings such as {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api} are available. The largest point of the layer is the exception: its label is the layer label described above, so it carries the layer name in the middle of the band instead of the value, and turning the layer label off leaves that point with no label at all.
+```
+// show the layer name and its largest value
+chart.maxLabels().format("{%seriesName}: {%value}");
+// make the layer labels readable
+chart.maxLabels().fontColor("#000000");
+```
 
-To label a single point differently, add a `label` field to its data row: the settings in it override the series labels for that point.
+In the sample below, the layer labels show the name and the largest value of each layer; switch the position to move them inside their bands:
 
-[Markers](General_Settings#markers) are icons at the data points. On a Stream graph a marker sits in the middle of the band at its category rather than at the value of the point: the Y axis is hidden, so an icon on the edge of a band would read as a value the point does not have. Pointing at the stream paints such a marker too, which is how the chart shows the category under the pointer. To show markers of your own on a layer, enable the {api:anychart.core.cartesian.series.Base#markers}markers(){api} of that series and set their type and size:
+{sample}BCT\_Stream\_Graph\_07{sample}
+
+#### Point Labels
+
+Point [labels](../Common_Settings/Labels) are a separate setting and are off by default. Enabling the {api:anychart.core.cartesian.series.Base#labels}labels(){api} of a layer puts the value of every point at the top edge of the band; font settings such as {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api} are available. The largest point of the layer is the exception: its label is the [layer label](#layer_labels), so it carries the layer name in the middle of the band instead of the value, and turning the layer label off leaves that point with no label at all.
+
+To label a single point differently, add a `label` field to its data row: the settings in it override the series labels for that point:
 
 ```
 // create data; a label field in a data row overrides the series labels for that point
@@ -266,17 +281,27 @@ var searchData = [
 // show the value at every point of the first layer
 series1.labels().enabled(true);
 // set the label font color
-series1.labels().fontColor("#1d3557");
+series1.labels().fontColor("#000000");
+```
 
+In the sample below, the Search layer shows a value label at every point, with a bold custom label at its lowest one. The largest point, `55` at W7, is the exception in action: it carries the layer name in the band instead of its value:
+
+{sample}BCT\_Stream\_Graph\_08{sample}
+
+#### Markers
+
+[Markers](General_Settings#markers) are icons at the data points. On a Stream graph a marker sits in the middle of the band at its category rather than at the value of the point: the Y axis is hidden, so an icon on the edge of a band would read as a value the point does not have. Pointing at the stream paints such a marker too, which is how the chart shows the category under the pointer. To show markers of your own on a layer, enable the {api:anychart.core.cartesian.series.Base#markers}markers(){api} of that series and set their type and size:
+
+```
 // enable the point markers on the second layer
 series2.markers().enabled(true);
 series2.markers().type("triangle-up");
 series2.markers().size(6);
 ```
 
-In the sample below, the Search layer shows a value label at every point, with a bold custom label at its lowest one, and the Social layer shows triangular point markers:
+In the sample below, the Social layer shows triangular point markers:
 
-{sample}BCT\_Stream\_Graph\_06{sample}
+{sample}BCT\_Stream\_Graph\_09{sample}
 
 ### Tooltips
 
@@ -303,7 +328,7 @@ chart.tooltip().format("{%seriesName}: <b>{%value}k</b>");
 
 Hover a point in the sample below: the title shows the week and the total, the lines list the layers:
 
-{sample}BCT\_Stream\_Graph\_07{sample}
+{sample}BCT\_Stream\_Graph\_10{sample}
 
 ### Legend
 
@@ -317,7 +342,7 @@ chart.legend().itemsLayout("vertical");
 
 In the sample below, the legend sits to the right of the stream with its items in one vertical column:
 
-{sample}BCT\_Stream\_Graph\_08{sample}
+{sample}BCT\_Stream\_Graph\_11{sample}
 
 ### Axes
 
@@ -338,4 +363,4 @@ chart.yAxis().labels().format("{%value}k");
 
 In the sample below, the layers are stacked from the zero baseline, both axes carry a title, and the Y axis labels show the unit:
 
-{sample}BCT\_Stream\_Graph\_09{sample}
+{sample}BCT\_Stream\_Graph\_12{sample}

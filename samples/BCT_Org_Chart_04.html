@@ -12,10 +12,18 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
 
     <style>
-        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { display: flex; flex-direction: column; }
+        #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
+        #container { flex: 1; }
     </style>
 </head>
 <body>
+<div id="controls">
+    <button onclick="selectPair()">Select the CTO and the CFO</button>
+    <button onclick="clearSelection()">Clear</button>
+    <span>selected: <output id="selectedCards">none</output></span>
+</div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -28,37 +36,40 @@ anychart.onDocumentReady(function () {
     {id: "eng", parent: "cto", name: "David Kim", title: "Head of Engineering"},
     {id: "prod", parent: "cto", name: "Lisa Zhang", title: "Head of Product"},
     {id: "acct", parent: "cfo", name: "Diana Ross", title: "Head of Accounting"},
-    {id: "ops", parent: "coo", name: "Peter Jackson", title: "Head of Operations"}
+    {id: "ops", parent: "coo", name: "Peter Jackson", title: "Head of Operations"},
+    {id: "fe", parent: "eng", name: "Anna Lee", title: "Frontend Lead"},
+    {id: "be", parent: "eng", name: "Tom Harris", title: "Backend Lead"}
   ];
 
   // create an org chart and set the data
-  var chart = anychart.orgChart(data, "as-table");
+  chart = anychart.orgChart(data, "as-table");
+
   // set the chart title
-  chart.title("Org Chart: Labels");
+  chart.title("Org Chart: Selection");
 
-  // the font family and the font size apply to both lines
-  // the title line is drawn 2 px smaller than the name line
-  chart.labels().fontFamily("Verdana, sans-serif");
-  chart.labels().fontSize(13);
-
-  // the font color and the font weight change only the name (header) line
-  chart.labels().fontColor("#1a237e");
-  // the name line is regular by default: make it bold
-  chart.labels().fontWeight("bold");
-
-  // uppercase the name line with a formatting function
-  chart.labels().format(function () {
-    return this.getData("name").toUpperCase();
+  // keep a live readout of the selection
+  chart.listen("pointsSelect", function () {
+    var names = chart.getSelectedPoints().map(function (p) { return p.get("name"); });
+    document.getElementById("selectedCards").value = names.join(", ") || "none";
   });
-
-  // set the color of the title line on its own
-  chart.titleFontColor("#00796b");
 
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
 });
+
+// select two cards from code
+function selectPair() {
+  chart.select("cto");
+  chart.select("cfo");
+}
+
+// clear the selection from code
+function clearSelection() {
+  chart.unselect();
+  document.getElementById("selectedCards").value = "none";
+}
 </script>
 </body>
 </html>

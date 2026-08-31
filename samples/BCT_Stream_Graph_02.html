@@ -40,6 +40,9 @@ anychart.onDocumentReady(function () {
   var series2 = chart.splineArea(socialMapping);
   series2.name("Social");
 
+  // make the layer labels readable
+  chart.maxLabels().fontColor("#000000");
+
   // set the container id
   chart.container("container");
   // initiate drawing the chart

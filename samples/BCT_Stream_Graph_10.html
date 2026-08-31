@@ -12,23 +12,12 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
 
     <style>
-        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
-        body { display: flex; flex-direction: column; }
-        #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
-        #container { flex: 1; }
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
     </style>
 </head>
 <body>
-<div id="controls">
-    <span>Layer order:</span>
-    <label><input type="radio" name="sortOrder" onclick="changeSortOrder('none')"> none</label>
-    <label><input type="radio" name="sortOrder" onclick="changeSortOrder('asc')"> asc</label>
-    <label><input type="radio" name="sortOrder" onclick="changeSortOrder('desc')"> desc</label>
-    <label><input type="radio" name="sortOrder" onclick="changeSortOrder('inside-out')" checked> inside-out</label>
-</div>
 <div id="container"></div>
 <script>
-var chart;
 anychart.onDocumentReady(function () {
   // create data
   var searchData = [
@@ -43,24 +32,11 @@ anychart.onDocumentReady(function () {
     ["W1", 18],["W2", 20],["W3", 19],["W4", 22],["W5", 24],
     ["W6", 23],["W7", 21],["W8", 20],["W9", 22],["W10", 25]
   ];
-  // create data for three more channels
-  var directData = [
-    ["W1", 25],["W2", 22],["W3", 20],["W4", 24],["W5", 29],
-    ["W6", 31],["W7", 27],["W8", 23],["W9", 21],["W10", 24]
-  ];
-  var referralData = [
-    ["W1", 10],["W2", 14],["W3", 19],["W4", 23],["W5", 20],
-    ["W6", 15],["W7", 12],["W8", 16],["W9", 21],["W10", 18]
-  ];
-  var videoData = [
-    ["W1", 8],["W2", 12],["W3", 18],["W4", 26],["W5", 31],
-    ["W6", 27],["W7", 22],["W8", 28],["W9", 34],["W10", 30]
-  ];
 
   // create a chart
-  chart = anychart.streamGraph();
+  var chart = anychart.streamGraph();
   // set the chart title
-  chart.title("Stream Graph: Layer Order");
+  chart.title("Stream Graph: Tooltips");
 
   // add a series (layer) per channel
   var series1 = chart.splineArea(searchData);
@@ -69,26 +45,30 @@ anychart.onDocumentReady(function () {
   series2.name("Social");
   var series3 = chart.splineArea(emailData);
   series3.name("Email");
-  var series4 = chart.splineArea(directData);
-  series4.name("Direct");
-  var series5 = chart.splineArea(referralData);
-  series5.name("Referral");
-  var series6 = chart.splineArea(videoData);
-  series6.name("Video");
 
-  // set the initial layer order
-  chart.sortOrder("inside-out");
+  // allow HTML tags in the tooltip text
+  chart.tooltip().useHtml(true);
+
+  // the title shows the hovered category and the total of all layers
+  chart.tooltip().titleFormat(function () {
+    var total = 0;
+    for (var i = 0; i < this.points.length; i++) {
+      total += this.points[i].value;
+    }
+    return this.x + " &middot; total <b>" + total + "k</b>";
+  });
+
+  // format the line of each layer
+  chart.tooltip().format("{%seriesName}: <b>{%value}k</b>");
+
+  // make the layer labels readable
+  chart.maxLabels().fontColor("#000000");
 
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
 });
-
-// apply the chosen layer order: the chart redraws itself
-function changeSortOrder(value) {
-  chart.sortOrder(value);
-}
 </script>
 </body>
 </html>

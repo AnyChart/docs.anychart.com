@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Stream Graph 08"/>
+    <meta name="ac:name" content="BCT Stream Graph 12"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
 
@@ -19,11 +19,10 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data; a label field in a data row overrides the series labels for that point
+  // create data
   var searchData = [
-    ["W1", 42], ["W2", 45], ["W3", 40],
-    {x: "W4", value: 38, label: {format: "low: {%value}", fontWeight: "bold"}},
-    ["W5", 44], ["W6", 50], ["W7", 55], ["W8", 52], ["W9", 48], ["W10", 46]
+    ["W1", 42],["W2", 45],["W3", 40],["W4", 38],["W5", 44],
+    ["W6", 50],["W7", 55],["W8", 52],["W9", 48],["W10", 46]
   ];
   var socialData = [
     ["W1", 30],["W2", 33],["W3", 36],["W4", 40],["W5", 38],
@@ -33,7 +32,7 @@ anychart.onDocumentReady(function () {
   // create a chart
   var chart = anychart.streamGraph();
   // set the chart title
-  chart.title("Stream Graph: Point Labels");
+  chart.title("Stream Graph: Axes");
 
   // add a series (layer) per channel
   var series1 = chart.splineArea(searchData);
@@ -41,10 +40,15 @@ anychart.onDocumentReady(function () {
   var series2 = chart.splineArea(socialData);
   series2.name("Social");
 
-  // show the value at every point of the first layer
-  series1.labels().enabled(true);
-  // set the label font color
-  series1.labels().fontColor("#000000");
+  // stack the layers from the zero baseline and show the Y axis
+  chart.offset("zero");
+  chart.yAxis(true);
+  // set the titles of the axes
+  chart.yAxis().title("Weekly volume");
+  chart.xAxis().title("Week");
+
+  // format the Y axis labels with a unit
+  chart.yAxis().labels().format("{%value}k");
 
   // make the layer labels readable
   chart.maxLabels().fontColor("#000000");

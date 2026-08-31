@@ -21,67 +21,57 @@
 </head>
 <body>
 <div id="controls">
-    <label>Node span
-        <input type="range" min="30" max="100" step="5" value="85" oninput="changeNodesSpan(this.value)">
-        <output id="nodesSpanValue">85%</output>
+    <label>Max links
+        <input type="range" min="10" max="150" step="10" value="50" oninput="changeMaxLinks(this.value)">
+        <output id="maxLinksValue">50</output>
     </label>
-    <label>Node width
-        <input type="range" min="4" max="60" step="1" value="30" oninput="changeNodeWidth(this.value)">
-        <output id="nodeWidthValue">30</output>
-    </label>
-    <label>Curvature
-        <input type="range" min="0.2" max="1.2" step="0.05" value="0.8" oninput="changeCurvature(this.value)">
-        <output id="curvatureValue">0.8</output>
-    </label>
+    <span>drawn: <output id="renderedCount"></output></span>
 </div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data: requests between the departments of a company
-  var data = [
-    {from: "Sales", to: "Marketing", weight: 9},
-    {from: "Sales", to: "Finance", weight: 16},
-    {from: "Finance", to: "HR", weight: 5},
-    {from: "Support", to: "Sales", weight: 14},
-    {from: "Support", to: "Marketing", weight: 6},
-    {from: "Marketing", to: "HR", weight: 3}
-  ];
+  // generate data: 15 servers, 150 weighted connections between them
+  var serverName = function (k) {
+    return "Server " + (k < 9 ? "0" : "") + (k + 1);
+  };
+  var data = [];
+  for (var i = 0; i < 150; i++) {
+    var from = i % 15;
+    var to = (from + 1 + (i * 7) % 14) % 15;
+    data.push({from: serverName(from), to: serverName(to), weight: 1 + (i * 13) % 40});
+  }
 
   // create an arc diagram and set the data
   chart = anychart.arcDiagram(data);
   // set the chart title
-  chart.title("Arc Diagram: Geometry");
+  chart.title("Arc Diagram: Data Volume");
 
-  // give the row of nodes most of the node line and make the bars thicker
-  chart.nodesSpan("85%");
-  chart.nodeWidth(30);
+  // keep the servers in data order
+  chart.sortOrder("none");
 
-  // set the height of the links and curve them below the node line
-  chart.curvature(0.8);
-  chart.arcDirection("down");
+  // draw only the heaviest links
+  chart.maxLinksRendered(50);
 
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
+
+  showRendered();
 });
 
-// spread the nodes over more or less of the node line: the chart redraws itself
-function changeNodesSpan(value) {
-  chart.nodesSpan(value + "%");
-  document.getElementById("nodesSpanValue").value = value + "%";
+// set the limit: the chart redraws itself
+function changeMaxLinks(value) {
+  chart.maxLinksRendered(value);
+  document.getElementById("maxLinksValue").value = value;
+  showRendered();
 }
 
-// resize the node bars: the chart redraws itself
-function changeNodeWidth(value) {
-  chart.nodeWidth(value);
-  document.getElementById("nodeWidthValue").value = value;
-}
-
-// change the height of the links: the chart redraws itself
-function changeCurvature(value) {
-  chart.curvature(value);
-  document.getElementById("curvatureValue").value = value;
+// read the result of the last drawing
+function showRendered() {
+  var n = chart.getRenderedLinksCount();
+  var simplified = chart.isSimplified();
+  document.getElementById("renderedCount").value = n + (simplified ? " (simplified)" : " (all)");
 }
 </script>
 </body>

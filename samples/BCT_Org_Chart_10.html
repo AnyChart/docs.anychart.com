@@ -20,9 +20,8 @@
 </head>
 <body>
 <div id="controls">
-    <button onclick="zoomInStep()">Zoom in</button>
-    <button onclick="zoomOutStep()">Zoom out</button>
-    <button onclick="fitTree()">Fit</button>
+    <button onclick="collapseAllBranches()">Collapse all</button>
+    <button onclick="expandAllBranches()">Expand all</button>
 </div>
 <div id="container"></div>
 <script>
@@ -44,35 +43,25 @@ anychart.onDocumentReady(function () {
   // create an org chart and set the data
   chart = anychart.orgChart(data, "as-table");
   // set the chart title
-  chart.title("Org Chart: Zoom and Pan");
+  chart.title("Org Chart: Collapse and Expand");
 
-  // mouse-wheel zoom and drag-to-pan are enabled by default;
-  // this is how to turn them off:
-  // chart.interactivity().zoomOnMouseWheel(false);
-  // chart.interactivity().drag(false);
+  // collapse the CTO branch by the node id
+  chart.collapse("cto");
 
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
-
-  // zoom in programmatically
-  chart.zoomIn();
 });
 
-// zoom the tree in by one step
-function zoomInStep() {
-  chart.zoomIn();
+// collapse all branches at once
+function collapseAllBranches() {
+  chart.collapseAll();
 }
 
-// zoom the tree out by one step
-function zoomOutStep() {
-  chart.zoomOut();
-}
-
-// reset the zoom and pan and fit the whole tree into the container
-function fitTree() {
-  chart.fit();
+// expand all branches at once
+function expandAllBranches() {
+  chart.expandAll();
 }
 </script>
 </body>

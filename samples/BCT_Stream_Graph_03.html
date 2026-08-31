@@ -78,6 +78,9 @@ anychart.onDocumentReady(function () {
   // set the initial offset mode
   chart.offset("silhouette");
 
+  // make the layer labels readable
+  chart.maxLabels().fontColor("#000000");
+
   // set the container id
   chart.container("container");
   // initiate drawing the chart

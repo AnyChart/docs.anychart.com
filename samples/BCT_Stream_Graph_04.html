@@ -20,13 +20,11 @@
 </head>
 <body>
 <div id="controls">
-    <span>Series type:</span>
-    <label><input type="radio" name="seriesType" onclick="changeSeriesType('spline-area')"> spline-area</label>
-    <label><input type="radio" name="seriesType" onclick="changeSeriesType('area')"> area</label>
-    <label><input type="radio" name="seriesType" onclick="changeSeriesType('step-area')" checked> step-area</label>
-    <label><input type="radio" name="seriesType" onclick="changeSeriesType('column')"> column</label>
-    <label><input type="radio" name="seriesType" onclick="changeSeriesType('stick')"> stick</label>
-    <label><input type="radio" name="seriesType" onclick="changeSeriesType('lollipop')"> lollipop</label>
+    <span>Layer order:</span>
+    <label><input type="radio" name="sortOrder" onclick="changeSortOrder('none')"> none</label>
+    <label><input type="radio" name="sortOrder" onclick="changeSortOrder('asc')"> asc</label>
+    <label><input type="radio" name="sortOrder" onclick="changeSortOrder('desc')"> desc</label>
+    <label><input type="radio" name="sortOrder" onclick="changeSortOrder('inside-out')" checked> inside-out</label>
 </div>
 <div id="container"></div>
 <script>
@@ -45,23 +43,44 @@ anychart.onDocumentReady(function () {
     ["W1", 18],["W2", 20],["W3", 19],["W4", 22],["W5", 24],
     ["W6", 23],["W7", 21],["W8", 20],["W9", 22],["W10", 25]
   ];
+  // create data for three more channels
+  var directData = [
+    ["W1", 25],["W2", 22],["W3", 20],["W4", 24],["W5", 29],
+    ["W6", 31],["W7", 27],["W8", 23],["W9", 21],["W10", 24]
+  ];
+  var referralData = [
+    ["W1", 10],["W2", 14],["W3", 19],["W4", 23],["W5", 20],
+    ["W6", 15],["W7", 12],["W8", 16],["W9", 21],["W10", 18]
+  ];
+  var videoData = [
+    ["W1", 8],["W2", 12],["W3", 18],["W4", 26],["W5", 31],
+    ["W6", 27],["W7", 22],["W8", 28],["W9", 34],["W10", 30]
+  ];
 
   // create a chart
   chart = anychart.streamGraph();
   // set the chart title
-  chart.title("Stream Graph: Series Type");
+  chart.title("Stream Graph: Layer Order");
 
-  // layers drawn as step-area series
-  var series1 = chart.stepArea(searchData);
+  // add a series (layer) per channel
+  var series1 = chart.splineArea(searchData);
   series1.name("Search");
-  var series2 = chart.stepArea(socialData);
+  var series2 = chart.splineArea(socialData);
   series2.name("Social");
-  var series3 = chart.stepArea(emailData);
+  var series3 = chart.splineArea(emailData);
   series3.name("Email");
+  var series4 = chart.splineArea(directData);
+  series4.name("Direct");
+  var series5 = chart.splineArea(referralData);
+  series5.name("Referral");
+  var series6 = chart.splineArea(videoData);
+  series6.name("Video");
 
-  // the layer labels are a spline-area default: set them for every type
-  chart.maxLabels().enabled(true);
-  chart.maxLabels().format("{%seriesName}");
+  // set the initial layer order
+  chart.sortOrder("inside-out");
+
+  // make the layer labels readable
+  chart.maxLabels().fontColor("#000000");
 
   // set the container id
   chart.container("container");
@@ -69,11 +88,9 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// apply the chosen type to every layer: the chart redraws itself
-function changeSeriesType(value) {
-  for (var i = 0; i < chart.getSeriesCount(); i++) {
-    chart.getSeriesAt(i).seriesType(value);
-  }
+// apply the chosen layer order: the chart redraws itself
+function changeSortOrder(value) {
+  chart.sortOrder(value);
 }
 </script>
 </body>

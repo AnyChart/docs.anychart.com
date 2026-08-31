@@ -15,13 +15,20 @@
         html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
         body { display: flex; flex-direction: column; }
         #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
+        #controls input[type="range"] { width: 90px; vertical-align: middle; }
         #container { flex: 1; }
     </style>
 </head>
 <body>
 <div id="controls">
-    <button onclick="collapseAllBranches()">Collapse all</button>
-    <button onclick="expandAllBranches()">Expand all</button>
+    <label>Level spacing
+        <input type="range" min="10" max="150" step="1" value="50" oninput="changeLevelSpacing(this.value)">
+        <output id="levelSpacingValue">50</output>
+    </label>
+    <label>Sibling spacing
+        <input type="range" min="1" max="60" step="1" value="16" oninput="changeSiblingSpacing(this.value)">
+        <output id="siblingSpacingValue">16</output>
+    </label>
 </div>
 <div id="container"></div>
 <script>
@@ -43,10 +50,11 @@ anychart.onDocumentReady(function () {
   // create an org chart and set the data
   chart = anychart.orgChart(data, "as-table");
   // set the chart title
-  chart.title("Org Chart: Collapse and Expand");
+  chart.title("Org Chart: Spacing");
 
-  // collapse the CTO branch by the node id
-  chart.collapse("cto");
+  // the spacing between levels and between siblings
+  chart.levelSpacing(50);
+  chart.siblingSpacing(16);
 
   // set the container id
   chart.container("container");
@@ -54,14 +62,16 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// collapse all branches at once
-function collapseAllBranches() {
-  chart.collapseAll();
+// change the spacing between the levels of the tree: the chart redraws itself
+function changeLevelSpacing(value) {
+  chart.levelSpacing(value);
+  document.getElementById("levelSpacingValue").value = value;
 }
 
-// expand all branches at once
-function expandAllBranches() {
-  chart.expandAll();
+// change the spacing between sibling cards: the chart redraws itself
+function changeSiblingSpacing(value) {
+  chart.siblingSpacing(value);
+  document.getElementById("siblingSpacingValue").value = value;
 }
 </script>
 </body>

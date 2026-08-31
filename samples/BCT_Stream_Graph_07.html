@@ -12,60 +12,64 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
 
     <style>
-        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { display: flex; flex-direction: column; }
+        #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
+        #container { flex: 1; }
     </style>
 </head>
 <body>
+<div id="controls">
+    <span>Label position:</span>
+    <label><input type="radio" name="pos" onclick="changePosition('center-top')"> center-top</label>
+    <label><input type="radio" name="pos" checked onclick="changePosition('center')"> center</label>
+    <label><input type="radio" name="pos" onclick="changePosition('center-bottom')"> center-bottom</label>
+</div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
   // create data
   var searchData = [
-    ["W1", 42],["W2", 45],["W3", 40],["W4", 38],["W5", 44],
-    ["W6", 50],["W7", 55],["W8", 52],["W9", 48],["W10", 46]
+    ["W1", 42], ["W2", 45], ["W3", 40], ["W4", 38], ["W5", 44],
+    ["W6", 50], ["W7", 55], ["W8", 52], ["W9", 48], ["W10", 46]
   ];
   var socialData = [
     ["W1", 30],["W2", 33],["W3", 36],["W4", 40],["W5", 38],
     ["W6", 35],["W7", 37],["W8", 42],["W9", 46],["W10", 49]
   ];
   var emailData = [
-    ["W1", 18],["W2", 20],["W3", 19],["W4", 22],["W5", 24],
-    ["W6", 23],["W7", 21],["W8", 20],["W9", 22],["W10", 25]
+    ["W1", 18],["W2", 16],["W3", 19],["W4", 21],["W5", 20],
+    ["W6", 22],["W7", 19],["W8", 17],["W9", 20],["W10", 18]
   ];
 
   // create a chart
-  var chart = anychart.streamGraph();
+  chart = anychart.streamGraph();
   // set the chart title
-  chart.title("Stream Graph: Tooltips");
+  chart.title("Stream Graph: Layer Labels");
 
   // add a series (layer) per channel
-  var series1 = chart.splineArea(searchData);
-  series1.name("Search");
-  var series2 = chart.splineArea(socialData);
-  series2.name("Social");
-  var series3 = chart.splineArea(emailData);
-  series3.name("Email");
+  chart.splineArea(searchData).name("Search");
+  chart.splineArea(socialData).name("Social");
+  chart.splineArea(emailData).name("Email");
 
-  // allow HTML tags in the tooltip text
-  chart.tooltip().useHtml(true);
+  // show the layer name and its largest value
+  chart.maxLabels().format("{%seriesName}: {%value}");
 
-  // the title shows the hovered category and the total of all layers
-  chart.tooltip().titleFormat(function () {
-    var total = 0;
-    for (var i = 0; i < this.points.length; i++) {
-      total += this.points[i].value;
-    }
-    return this.x + " &middot; total <b>" + total + "k</b>";
-  });
-
-  // format the line of each layer
-  chart.tooltip().format("{%seriesName}: <b>{%value}k</b>");
+  // make the layer labels readable
+  chart.maxLabels().fontColor("#000000");
 
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
 });
+
+// move the layer labels inside the bands: the chart redraws itself
+function changePosition(value) {
+  for (var i = 0; i < chart.getSeriesCount(); i++) {
+    chart.getSeriesAt(i).maxLabels().position(value);
+  }
+}
 </script>
 </body>
 </html>

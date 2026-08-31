@@ -126,6 +126,17 @@ A node is hovered when you point at it. Hovering a node also highlights its link
 
 These gestures are the default ones, and `chart.interactivity()` changes them: {api:anychart.core.utils.Interactivity#selectionMode}selectionMode(){api} limits the selection to one node or turns it off, and {api:anychart.core.utils.Interactivity#multiSelectOnClick}multiSelectOnClick(){api} makes a plain click behave like a Ctrl + click. With `multiSelectOnClick(true)`, a plain click adds to the selection instead of replacing it, and a click on the empty area no longer clears it. Read more: [General Settings](General_Settings).
 
+#### Node Width
+
+The {api:anychart.charts.DependencyWheel#nodeWidth}nodeWidth(){api} method sets the thickness of the node arcs, in pixels. It takes effect on a chart that is already drawn. Drag the slider in the sample below to change it:
+
+```
+// make the node arcs thicker
+chart.nodeWidth(30);
+```
+
+{sample}BCT\_Dependency\_Wheel\_03{sample}
+
 #### Node Labels
 
 [Labels](../Common_Settings/Labels) of the nodes are enabled by default and show the node name. Labels are taken from the normal state only, so set them with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state. Font settings and [text formatters](../Common_Settings/Text_Formatters) are available:
@@ -183,7 +194,7 @@ chart.node().tooltip().format(
 
 In the sample below, the labels are placed along the ring, the state fills and strokes are derived from `sourceColor`, and the tooltip shows the node tokens:
 
-{sample}BCT\_Dependency\_Wheel\_03{sample}
+{sample}BCT\_Dependency\_Wheel\_04{sample}
 
 ### Links
 
@@ -207,7 +218,7 @@ chart.link().selected().fill(function () {
 
 Hover or click a link in the sample below to see how its fill becomes darker:
 
-{sample}BCT\_Dependency\_Wheel\_04{sample}
+{sample}BCT\_Dependency\_Wheel\_05{sample}
 
 #### Link Color Mode
 
@@ -232,7 +243,7 @@ function changeColorMode(value) {
 }
 ```
 
-{sample}BCT\_Dependency\_Wheel\_05{sample}
+{sample}BCT\_Dependency\_Wheel\_06{sample}
 
 #### Link Tooltip
 
@@ -246,39 +257,60 @@ chart.link().tooltip().format("Weekly flights: {%value}");
 
 In the sample below, the state fills make a link darker and the tooltip shows the route:
 
-{sample}BCT\_Dependency\_Wheel\_06{sample}
+{sample}BCT\_Dependency\_Wheel\_07{sample}
 
 ### Wheel Geometry
 
-These methods change the geometry of the wheel:
+The options below set the shape of the wheel itself: where it points, how the node arcs share the circle, and how big the ring is. All of them take effect on a chart that is already drawn.
 
-* {api:anychart.charts.DependencyWheel#startAngle}startAngle(){api} — rotates the whole wheel, in degrees. The default is 0, which places the first node arc at the top. Positive values turn the wheel clockwise, unless `clockwise()` reverses the direction
-* {api:anychart.charts.DependencyWheel#padAngle}padAngle(){api} — the angular gap between node arcs that sit next to each other, in degrees (1 by default). A value out of range is brought back in: a negative value is read as 0, and a value of 360 or more as just under 360. When the wheel is drawn, each gap is also capped at 180 degrees divided by the number of node arcs, so the gaps never take up more than half of the ring
-* {api:anychart.charts.DependencyWheel#nodeWidth}nodeWidth(){api} — the thickness of the node arcs, in pixels (15 by default)
-* {api:anychart.charts.DependencyWheel#radius}radius(){api} — the outer radius of the ring of node arcs. A number is a size in pixels, a percent string is a share of the smaller side of the chart area. The default, `"50%"`, is also the largest ring the chart draws, so larger values change nothing: use this method to make the ring smaller and leave room for long labels or a title
-* {api:anychart.charts.DependencyWheel#minAngle}minAngle(){api} — the smallest angular size of a node arc, in degrees. The default is 0, which sizes every arc in proportion to the flow through the node. A larger value makes the smallest nodes easy to see and to point at, and the rest of the ring is still shared out in proportion. When the minimums do not all fit, they are scaled down together, so the arcs never overlap
-* {api:anychart.charts.DependencyWheel#clockwise}clockwise(){api} — the direction of the layout, `true` by default. Setting it to `false` mirrors the wheel across the start angle: the same arcs in the same sizes and with the same gaps, placed the other way round
+#### Orientation
 
-All of them take effect on a chart that is already drawn. Drag the sliders in the sample below to change the start angle, the pad angle and the node width:
+{api:anychart.charts.DependencyWheel#startAngle}startAngle(){api} rotates the whole wheel, in degrees. The default is 0, which places the first node arc at the top, and positive values turn the wheel clockwise.
+
+`clockwise()` sets the direction of the layout, `true` by default. Setting it to `false` mirrors the wheel across the start angle: the same arcs in the same sizes and with the same gaps, placed the other way round.
 
 ```
 // rotate the whole wheel a quarter-turn
 chart.startAngle(90);
 
+// mirror the layout across the start angle
+chart.clockwise(false);
+```
+
+In the sample below, drag the slider to rotate the wheel and switch the direction to mirror it:
+
+{sample}BCT\_Dependency\_Wheel\_08{sample}
+
+#### Angles
+
+{api:anychart.charts.DependencyWheel#padAngle}padAngle(){api} sets the angular gap between node arcs that sit next to each other, in degrees. A value out of range is brought back in: a negative value is read as 0, and a value of 360 or more as just under 360. When the wheel is drawn, each gap is also capped at 180 degrees divided by the number of node arcs, so the gaps never take up more than half of the ring.
+
+`minAngle()` sets the smallest angular size of a node arc, in degrees. The default is 0, which sizes every arc in proportion to the flow through the node. A larger value makes the smallest nodes easy to see and to point at, and the rest of the ring is still shared out in proportion. When the minimums do not all fit, they are scaled down together, so the arcs never overlap.
+
+```
 // widen the gaps between the node arcs
 chart.padAngle(3);
 
-// make the node arcs thicker
-chart.nodeWidth(30);
-
-// rotate the wheel: the chart redraws itself
-function changeStartAngle(value) {
-  chart.startAngle(value);
-  document.getElementById("startAngleValue").value = value;
-}
+// give the smallest node arcs a floor
+chart.minAngle(10);
 ```
 
-{sample}BCT\_Dependency\_Wheel\_07{sample}
+In the sample below, the sliders set the gap between the arcs and the floor under the smallest ones:
+
+{sample}BCT\_Dependency\_Wheel\_09{sample}
+
+#### Radius
+
+The `radius()` method sets the outer radius of the ring of node arcs. A number is a size in pixels, a percent string is a share of the smaller side of the chart area. The default, `"50%"`, is also the largest ring the chart draws, so larger values change nothing: use this method to make the ring smaller and leave room for long labels or a title.
+
+```
+// shrink the ring to leave room around it
+chart.radius("35%");
+```
+
+In the sample below, the slider shrinks and grows the ring:
+
+{sample}BCT\_Dependency\_Wheel\_10{sample}
 
 ### Sorting
 
@@ -307,5 +339,5 @@ function byDataOrder(node1, node2) {
 }
 ```
 
-{sample}BCT\_Dependency\_Wheel\_08{sample}
+{sample}BCT\_Dependency\_Wheel\_11{sample}
 

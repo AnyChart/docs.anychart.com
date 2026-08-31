@@ -12,10 +12,20 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
 
     <style>
-        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { display: flex; flex-direction: column; }
+        #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
+        #controls input[type="range"] { width: 90px; vertical-align: middle; }
+        #container { flex: 1; }
     </style>
 </head>
 <body>
+<div id="controls">
+    <label>Node width
+        <input type="range" min="5" max="40" step="1" value="30" oninput="changeNodeWidth(this.value)">
+        <output id="nodeWidthValue">30</output>
+    </label>
+</div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -31,52 +41,24 @@ anychart.onDocumentReady(function () {
   ];
 
   // create a chart and set the data
-  var chart = anychart.dependencyWheel(data);
+  chart = anychart.dependencyWheel(data);
   // set the chart title
-  chart.title("Dependency Wheel: Node Settings");
+  chart.title("Dependency Wheel: Node Width");
 
-  // make the node arcs wider
-  chart.nodeWidth(25);
-
-  // node states: the fill darkens and the stroke thickens as the state gets more active
-  chart.node().normal().fill(function () {
-    return anychart.color.lighten(this.sourceColor, 0.25);
-  });
-  chart.node().normal().stroke("#ffffff", 1);
-  chart.node().hovered().fill(function () {
-    return this.sourceColor;
-  });
-  chart.node().hovered().stroke("#1b2740", 2);
-  chart.node().selected().fill(function () {
-    return anychart.color.darken(this.sourceColor, 0.2);
-  });
-  chart.node().selected().stroke("#0b1220", 3);
-
-  // keep the links unchanged when hovered: only the nodes react
-  chart.link().hovered().fill(function () {
-    return {color: this.sourceColor, opacity: 0.65};
-  });
-
-  // add the node's share of the total flow to its label
-  chart.node().normal().labels().format("{%name} {%percent}{decimalsCount:1}%");
-
-  // lay the node labels along the ring
-  chart.node().normal().labels().position("circular");
-
-  // show every label, even if some of them collide
-  chart.dropOverlappedLabels(false);
-
-  // the tooltip of a city, built from the node tokens
-  chart.node().tooltip().titleFormat("{%name}");
-  chart.node().tooltip().format(
-    "Routes: {%connections}\nFlights a week: {%weight}\nShare of all flights: {%percent}{decimalsCount:1}%"
-  );
+  // make the node arcs thicker
+  chart.nodeWidth(30);
 
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
 });
+
+// set the thickness of the node arcs
+function changeNodeWidth(value) {
+  chart.nodeWidth(value);
+  document.getElementById("nodeWidthValue").value = value;
+}
 </script>
 </body>
 </html>

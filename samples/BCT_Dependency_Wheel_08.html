@@ -15,46 +15,45 @@
         html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
         body { display: flex; flex-direction: column; }
         #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
+        #controls input[type="range"] { width: 90px; vertical-align: middle; }
         #container { flex: 1; }
     </style>
 </head>
 <body>
 <div id="controls">
-    <span>Sort nodes:</span>
-    <label><input type="radio" name="sort" id="sortAsc" onclick="changeSortOrder('asc')" checked> smallest first</label>
-    <label><input type="radio" name="sort" id="sortDesc" onclick="changeSortOrder('desc')"> largest first</label>
-    <label><input type="radio" name="sort" id="sortData" onclick="changeSortOrder('data')"> data order</label>
+    <label>Start angle
+        <input type="range" min="0" max="345" step="15" value="90" oninput="changeStartAngle(this.value)">
+        <output id="startAngleValue">90</output>
+    </label>
+    <label>Direction
+        <label><input type="radio" name="dir" onchange="changeDirection(true)"> clockwise</label>
+        <label><input type="radio" name="dir" checked onchange="changeDirection(false)"> counter-clockwise</label>
+    </label>
 </div>
 <div id="container"></div>
 <script>
-var dataOrder = {};
-
 anychart.onDocumentReady(function () {
-  // create data: rows in the order the routes were added, not by weight
+  // create data: weekly flights between the cities
   var data = [
-    {from: "NYC", to: "Cairo", weight: 6},
     {from: "Paris", to: "Tokyo", weight: 18},
-    {from: "Dubai", to: "Cairo", weight: 4},
     {from: "Paris", to: "NYC", weight: 14},
     {from: "Paris", to: "Dubai", weight: 8},
     {from: "Tokyo", to: "NYC", weight: 10},
-    {from: "Tokyo", to: "Dubai", weight: 5}
+    {from: "Tokyo", to: "Dubai", weight: 5},
+    {from: "NYC", to: "Cairo", weight: 6},
+    {from: "Dubai", to: "Cairo", weight: 4}
   ];
-
-  // remember where each city first appears in the data
-  var position = 0;
-  for (var i = 0; i < data.length; i++) {
-    if (!(data[i].from in dataOrder)) dataOrder[data[i].from] = position++;
-    if (!(data[i].to in dataOrder)) dataOrder[data[i].to] = position++;
-  }
 
   // create a chart and set the data
   chart = anychart.dependencyWheel(data);
   // set the chart title
-  chart.title("Dependency Wheel: Sorting Nodes");
+  chart.title("Dependency Wheel: Orientation");
 
-  // arrange the node arcs from the smallest to the largest
-  chart.sortOrder("asc");
+  // rotate the whole wheel a quarter-turn
+  chart.startAngle(90);
+
+  // mirror the layout across the start angle
+  chart.clockwise(false);
 
   // set the container id
   chart.container("container");
@@ -62,15 +61,15 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// apply the chosen order: the chart redraws itself
-function changeSortOrder(value) {
-  // sortOrder() also takes a comparator of two nodes
-  chart.sortOrder(value == "data" ? byDataOrder : value);
+// rotate the wheel: the chart redraws itself
+function changeStartAngle(value) {
+  chart.startAngle(value);
+  document.getElementById("startAngleValue").value = value;
 }
 
-// a comparator: keep the cities in the order they appear in the data
-function byDataOrder(node1, node2) {
-  return dataOrder[node1.id] - dataOrder[node2.id];
+// set the direction of the layout
+function changeDirection(value) {
+  chart.clockwise(value);
 }
 </script>
 </body>

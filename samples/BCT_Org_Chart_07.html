@@ -20,11 +20,10 @@
 </head>
 <body>
 <div id="controls">
-    <span>Orientation:</span>
-    <label><input type="radio" name="orientation" onclick="changeOrientation('top-to-bottom')"> top-to-bottom</label>
-    <label><input type="radio" name="orientation" onclick="changeOrientation('bottom-to-top')"> bottom-to-top</label>
-    <label><input type="radio" name="orientation" onclick="changeOrientation('left-to-right')" checked> left-to-right</label>
-    <label><input type="radio" name="orientation" onclick="changeOrientation('right-to-left')"> right-to-left</label>
+    <span>Connector shape:</span>
+    <label><input type="radio" name="connectorType" onclick="changeConnectorType('orthogonal')"> orthogonal</label>
+    <label><input type="radio" name="connectorType" onclick="changeConnectorType('straight')"> straight</label>
+    <label><input type="radio" name="connectorType" onclick="changeConnectorType('curved')" checked> curved</label>
 </div>
 <div id="container"></div>
 <script>
@@ -46,10 +45,11 @@ anychart.onDocumentReady(function () {
   // create an org chart and set the data
   chart = anychart.orgChart(data, "as-table");
   // set the chart title
-  chart.title("Org Chart: Orientation");
+  chart.title("Org Chart: Connectors");
 
-  // grow the tree from the left edge to the right
-  chart.orientation("left-to-right");
+  // draw the parent-child connectors as smooth curves
+  chart.connectorType("curved");
+  chart.connectorStroke("2 #64b5f6");
 
   // set the container id
   chart.container("container");
@@ -57,9 +57,9 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// change the growth direction of the tree: the chart redraws itself
-function changeOrientation(value) {
-  chart.orientation(value);
+// change the shape of the parent-child connectors: the chart redraws itself
+function changeConnectorType(value) {
+  chart.connectorType(value);
 }
 </script>
 </body>
