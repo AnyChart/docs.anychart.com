@@ -34,9 +34,8 @@ anychart.onDocumentReady(function () {
   // create a column chart, then add lollipop series to it
   var chart = anychart.column();
 
-  // set the chart title and separate it from the plot
+  // set the chart title
   chart.title("Stacked Lollipop Chart");
-  chart.title().padding(0, 0, 20, 0);
 
   // enable the value stacking mode
   chart.yScale().stackMode("value");

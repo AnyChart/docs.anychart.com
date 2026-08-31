@@ -78,9 +78,8 @@ var series = chart.lollipop(data);
 // set the series name
 series.name("Sales");
 
-// set the chart title and separate it from the plot
+// set the chart title
 chart.title("Lollipop Chart: Basic Sample");
-chart.title().padding(0, 0, 20, 0);
 
 // set the container id
 chart.container("container");
@@ -184,11 +183,12 @@ In the sample below, each label shows the value of its point:
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box. It appears when you hover over a point on a chart. It has many visual and other settings. For example, you can edit the text with font settings and [text formatters](../Common_Settings/Text_Formatters). You can also change the background style and move the tooltip.
 
-You can set the tooltip text with a format string:
+The tooltip has a title and a text body. Set them with {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and {api:anychart.core.ui.Tooltip#format}format(){api}:
 
 ```
-// set the tooltip format
-series.tooltip().format("{%x}: {%value}");
+// set the tooltip title and text
+series.tooltip().titleFormat("Month: {%x}");
+series.tooltip().format("Value: {%value}");
 ```
 
 In the sample below, hover over a point to see its month and value in the tooltip:
