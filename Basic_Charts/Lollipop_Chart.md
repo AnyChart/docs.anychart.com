@@ -165,9 +165,9 @@ The same fields can come from array data: map the extra columns with {api:anycha
 
 ### Labels
 
-[Labels](../Common_Settings/Labels) are text elements attached to points. Turn them on for the series with {api:anychart.core.cartesian.series.Lollipop#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api}: each point gets a label with its value above the head.
+[Labels](../Common_Settings/Labels) are text elements attached to points. Enable and format them with {api:anychart.core.cartesian.series.Lollipop#labels}labels(){api}, {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api}, and {api:anychart.core.ui.LabelsFactory#format}format(){api}. The default label shows the value of the point above the head.
 
-To change the text, call {api:anychart.core.ui.LabelsFactory#format}format(){api} with [text formatters](../Common_Settings/Text_Formatters): a token such as `{%value}` reads a field of the point.
+In {api:anychart.core.ui.LabelsFactory#format}format(){api}, use [text formatters](../Common_Settings/Text_Formatters): a token such as `{%value}` reads a field of the point.
 
 ```
 // enable the series labels
@@ -179,8 +179,6 @@ series.labels().format("{%value}");
 In the sample below, each label shows the value of its point:
 
 {sample}BCT\_Lollipop\_Chart\_05{sample}
-
-See [Labels](../Common_Settings/Labels) for the position, anchor, offsets, and font of the labels.
 
 ### Tooltips
 
