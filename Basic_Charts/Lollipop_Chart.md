@@ -19,6 +19,7 @@ This article shows how to build a basic Lollipop chart. It also shows how to set
 <tr><td>Vertical</td><td>[Vertical Lollipop](Vertical/Lollipop_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>[Lollipop Chart with Error Bars](Error_Chart/Lollipop_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Lollipop Chart with Error Bars](Error_Chart/Lollipop_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
@@ -200,19 +201,19 @@ In the sample below, hover over a point to see its month and value in the toolti
 
 ### Stacked Lollipop
 
-Stacked and percent stacked charts have many series. Related values sit on top of one another. This lets you compare how much one value adds to a total. You can do this with real values or with percentages.
-
-In AnyChart, you can turn on a special scale mode. This makes the series stack together: see [Stacked Charts](Stacked/Overview).
-
-To learn about the stacked versions of the Lollipop chart and its modifications, see:
+Several Lollipop series can be stacked on one another, by real values or by percentages: see [Stacked Charts](Stacked/Overview).
 
 * [Stacked Lollipop](Stacked/Value/Lollipop_Chart)
 * [Percent Stacked Lollipop](Stacked/Percent/Lollipop_Chart)
 
 ### Vertical Lollipop
 
-You can draw most series types in AnyChart in two ways: horizontal or vertical. See [Vertical Charts](Vertical/Overview).
-
-Read more about creating Vertical Lollipop series:
+Like most series types in AnyChart, the Lollipop series can be drawn with the categories running down the vertical axis: see [Vertical Charts](Vertical/Overview).
 
 * [Vertical Lollipop](Vertical/Lollipop_Chart)
+
+### Error Bars
+
+A Lollipop series can carry error bars: see [Error Chart (Overview)](Error_Chart/Overview).
+
+* [Lollipop Chart with Error Bars](Error_Chart/Lollipop_Chart)
