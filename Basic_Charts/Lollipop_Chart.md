@@ -123,14 +123,17 @@ In the sample below, two series set their own stick and head colors in all three
 
 #### Point Size
 
-The head is a circle, and its size is its radius. Set the radius with {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} and {api:anychart.core.ui.MarkersFactory#size}size(){api}. The default is 4 px. The radius is the same in the normal, hovered, and selected states. The head is always a circle: the marker type does not change it.
+The head is a circle, and its size is its radius. Set the radius with {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} and {api:anychart.core.ui.MarkersFactory#size}size(){api}; the default is 4 px. In the hovered and selected states, the head has a radius of its own: set it through {api:anychart.core.cartesian.series.Lollipop#hovered}hovered(){api} and {api:anychart.core.cartesian.series.Lollipop#selected}selected(){api}; the default is 6 px. The head is always a circle: the marker type does not change it.
 
 ```
 // set the size of the lollipop heads
 series.markers().size(10);
+// set the size in the hovered and selected states
+series.hovered().markers().size(12);
+series.selected().markers().size(12);
 ```
 
-In the sample below, the heads have a radius of 10 px:
+In the sample below, the heads have a radius of 10 px, and 12 px when hovered or selected:
 
 {sample}BCT\_Lollipop\_Chart\_03{sample}
 

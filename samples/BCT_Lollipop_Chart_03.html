@@ -37,6 +37,9 @@ anychart.onDocumentReady(function () {
   var series = chart.lollipop(data);
   // set the size of the lollipop heads
   series.markers().size(10);
+  // set the size in the hovered and selected states
+  series.hovered().markers().size(12);
+  series.selected().markers().size(12);
 
   // set the container id
   chart.container("container");
