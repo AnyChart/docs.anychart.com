@@ -12,8 +12,8 @@ The concept of stacking in AnyChart is described in this article: [Stacked (Over
 To build a Stacked Lollipop Chart, create a multiple-series [Lollipop Chart](../../Lollipop_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method to **value**:
 
 ```
-// create a column chart, then add lollipop series to it
-var chart = anychart.column();
+// create a lollipop chart
+var chart = anychart.lollipop();
 
 // enable the value stacking mode
 chart.yScale().stackMode("value");

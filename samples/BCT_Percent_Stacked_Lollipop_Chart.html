@@ -31,18 +31,23 @@ anychart.onDocumentReady(function () {
     {x: "May", value: 5000}
   ];
 
-  // create a column chart, then add lollipop series to it
-  var chart = anychart.column();
+  // create a lollipop chart
+  var chart = anychart.lollipop();
 
   // set the chart title
   chart.title("Percent Stacked Lollipop Chart");
 
   // enable the percent stacking mode
   chart.yScale().stackMode("percent");
+  // show percentages on the vertical axis
+  chart.yAxis().labels().format("{%value}%");
 
   // create the first lollipop series and set the data
   var series1 = chart.lollipop(seriesData_1);
   series1.name("2023");
+
+  // turn off clipping so the plot bounds do not cut the heads at the 100% line
+  series1.clip(false);
 
   // create the second lollipop series and set the data
   var series2 = chart.lollipop(seriesData_2);

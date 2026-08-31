@@ -31,8 +31,8 @@ anychart.onDocumentReady(function () {
     {x: "May", value: 5000}
   ];
 
-  // create a column chart, then add lollipop series to it
-  var chart = anychart.column();
+  // create a lollipop chart
+  var chart = anychart.lollipop();
 
   // set the chart title
   chart.title("Stacked Lollipop Chart");
@@ -42,11 +42,13 @@ anychart.onDocumentReady(function () {
 
   // create the first lollipop series and set the data
   var series1 = chart.lollipop(seriesData_1);
-  series1.name("2023");
+  // set the name of the first series
+  series1.name("Online");
 
   // create the second lollipop series and set the data
   var series2 = chart.lollipop(seriesData_2);
-  series2.name("2024");
+  // set the name of the second series
+  series2.name("Retail");
 
   // set the container id
   chart.container("container");
