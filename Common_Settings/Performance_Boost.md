@@ -8,7 +8,7 @@ Large datasets make a chart slow in two different ways, and AnyChart answers eac
 
 **Boost** changes *how* points are drawn. Instead of one SVG element per point, the series is rasterized onto a single Canvas (or WebGL) layer, which removes the per-element cost entirely.
 
-The two are configured separately, but they are not independent at runtime: as soon as boost engages for a series, decimation is skipped for it, because boost is meant to render every point cheaply and there would be nothing to gain. The two never combine. Which series boost can actually render is a separate question - see [What Boost Draws](#what_boost_draws).
+The two are configured separately, but they are not independent at runtime: as soon as boost engages for a series, decimation is skipped for it, because boost is meant to render every point cheaply and there would be nothing to gain. The two never combine. Whether the Canvas renderer has a way to draw the series shape at all is part of that same decision and is made before either mechanism runs, so a series boost turns down keeps its decimation - see [When Boost is Skipped](#when_boost_is_skipped).
 
 Both are controlled by four settings, available on the chart and on individual series:
 
@@ -33,6 +33,8 @@ Having the methods is not the same as having an effect. Both mechanisms give up 
 [Cartesian 3D](../Basic_Charts/3D/Overview) has a different limit: its series are never boosted, whatever {api:anychart.charts.Cartesian3d#boostEnabled}boostEnabled(){api} says. Decimation still applies there.
 
 On [Stock](../Stock_Charts/Overview) the four methods exist on the series - not on the chart or the plot - but only `boostEnabled(true)` does anything. Decimation and the automatic boost threshold both need the Cartesian drawing plan, which stock series do not build, so `maxPointsRendered()`, `decimationAlgorithm()` and `boostThreshold()` are accepted and ignored, and the 1500-point default never applies. Stock does not need decimation anyway: it thins large series itself through [data grouping](../Stock_Charts/Data_Grouping).
+
+[Timeline](../Basic_Charts/Timeline_Chart) series take `boostEnabled()` and `boostThreshold()` without complaint, but neither of the two series types can be boosted: moment and range are both refused, and `boostEnabled(true)` there only produces a warning - see [When Boost is Skipped](#when_boost_is_skipped).
 
 [Gantt](../Gantt_Chart/Overview) has its own {api:anychart.charts.Gantt#boostEnabled}boostEnabled(){api} and {api:anychart.charts.Gantt#boostThreshold}boostThreshold(){api} with different meaning: they count visible rows rather than data points, and the threshold defaults to 500.
 
@@ -75,9 +77,10 @@ Decimation is deliberately not applied when dropping points would change what th
 * **Stacked series** - removing a point from one series would break the stack alignment of the others.
 * **Bubble and other size-encoded series** - every point is an independent mark whose size carries data, so subset selection built for line envelopes visibly removes bubbles and shrinks the cloud.
 * **Series that boost has engaged for** - boost is supposed to draw all points cheaply, so there is nothing to gain.
+* **Heat map series** - always, whatever boost is doing. Thinning selects points along one ordered axis, and a categorical matrix has no midpoint to collapse neighboring cells into, so both algorithms would delete most of the grid. This is the one series type that neither mechanism touches.
 * **Series at or below the limit**, and any series when {api:anychart.charts.Cartesian#maxPointsRendered}maxPointsRendered(){api} is `0`.
 
-The third rule is worth reading carefully: decimation is dropped the moment boost *engages*, which is decided before anything is drawn and without looking at whether the Canvas renderer knows the series shape. On an area series, where it does not, you get the worst of both - see [What Boost Draws](#what_boost_draws).
+The boost rule is narrower than it sounds. Boost only engages for a series it can actually draw, and the series shape is settled before the canvas is attached - so a series boost refuses keeps its decimation instead of losing it on the way in. Heat map is the exception, and for the reason above: it is left undecimated either way. Which shapes boost refuses is in [When Boost is Skipped](#when_boost_is_skipped).
 
 ## Boost
 
@@ -106,7 +109,10 @@ These conditions are checked up front, before anything is drawn and before {api:
 
 * **Stacked series** and **3D series**.
 * **OHLC and range-based series** - range area, range column, range stick, dumbbell and similar - because their marks are composite shapes.
+* **Series whose drawer has no boost renderer** - area, spline area and step area, jump line, stick, box, heat map, timeline moment, timeline range, and the polar flavor of column. The refusal happens before the canvas is attached, so these series draw through SVG and are decimated exactly as they would be with boost off: at {api:anychart.charts.Cartesian#maxPointsRendered}maxPointsRendered(500){api}, 3000 points give 500 boxes, 500 polar sectors and 500 timeline moments whether or not `boostEnabled(true)` was asked for. Heat map, per the rule above, is not decimated either.
 * **Environments without Canvas or WebGL.**
+
+An explicit {api:anychart.charts.Cartesian#boostEnabled}boostEnabled(true){api} on a series with no boost renderer draws nothing differently - it prints a console warning naming the series type and leaves the series on the SVG path. The warning is de-duplicated, so redrawing the same chart does not repeat it.
 
 Two more conditions apply only in automatic mode, and {api:anychart.charts.Cartesian#boostEnabled}boostEnabled(true){api} bypasses both:
 
@@ -115,7 +121,9 @@ Two more conditions apply only in automatic mode, and {api:anychart.charts.Carte
 
 Forcing boost on a multi-series plot is supported, as long as you accept that the boosted series is drawn above its SVG siblings.
 
-The series *shape* is on neither list. Whether the Canvas renderer can draw the series at all is settled last, after the canvas has been attached and after decimation has already been dropped - which is what the next section is about.
+The series *shape* is on the first list, and it is checked first: whether the Canvas renderer has a way to draw the series decides the question before the canvas is attached and before decimation is dropped. What the renderer does with the shapes it does know is the next section.
+
+Polar column is the only refusal that changes the *picture* rather than the cost. Above the threshold it used to paint cartesian columns over the polar grid; now it draws radial sectors like the rest of the chart and is decimated like any other series.
 
 ### What Boost Draws
 
@@ -127,9 +135,7 @@ The Canvas renderer has a small repertoire of shapes. Three families come out th
 
 **Line-shaped series** - line, spline, step line, jump line and stick - are boosted too, but the Canvas renderer fills them down to the zero line rather than stroking the outline, so a boosted line reads as an area. Keep {api:anychart.charts.Cartesian#boostEnabled}boostEnabled(false){api} on them when the outline is the point.
 
-**Area-shaped series** - area, spline area and step area - are not drawn by the renderer at all. Boost still engages: the canvas is attached, decimation is skipped for the series, the renderer then finds no shape it knows and hands the series back to SVG, which draws every point. A 20000-point area chart therefore renders 20000 SVG vertices with boost on and 1500 with {api:anychart.charts.Cartesian#boostEnabled}boostEnabled(false){api} - boost does not merely fail to help an area chart, it makes it slower. Because the default {api:anychart.charts.Cartesian#boostEnabled}boostEnabled(){api} is *automatic*, a single-series area chart above 5000 points reaches that state on its own; set {api:anychart.charts.Cartesian#boostEnabled}boostEnabled(false){api} there.
-
-**Heat Map and Box** series fail harder still: the renderer accepts them, paints nothing, and does not hand them back to SVG, so the chart comes out empty for as long as boost is engaged. A heat map with more than 5000 cells falls into this by default too, so switch boost off there as well.
+**Refused series** - area-shaped series, box, heat map, the timeline series, polar column and the rest of the list in [When Boost is Skipped](#when_boost_is_skipped) - never reach the renderer at all: boost turns them down up front, so they draw through SVG and there is nothing to switch off by hand.
 
 This sample draws 10000 markers on a single Canvas layer - a marker series is one of the shapes the renderer draws faithfully. Set {api:anychart.charts.Cartesian#boostEnabled}boostEnabled(false){api} in the code to compare: the series falls back to SVG, and decimation - no longer pre-empted by boost - trims it to the default 1500 points:
 
