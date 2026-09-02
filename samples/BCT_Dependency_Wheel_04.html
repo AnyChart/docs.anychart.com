@@ -60,8 +60,8 @@ anychart.onDocumentReady(function () {
   // add the node's share of the total flow to its label
   chart.node().normal().labels().format("{%name} {%percent}{decimalsCount:1}%");
 
-  // lay the node labels along the ring
-  chart.node().normal().labels().position("circular");
+  // opt out of the circular default: draw the node labels as straight lines beside the ring
+  chart.node().normal().labels().position("tangential");
 
   // show every label, even if some of them collide
   chart.dropOverlappedLabels(false);

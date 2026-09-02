@@ -139,18 +139,18 @@ chart.nodeWidth(30);
 
 #### Node Labels
 
-[Labels](../Common_Settings/Labels) of the nodes are enabled by default and show the node name. Labels are taken from the normal state only, so set them with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state. Font settings and [text formatters](../Common_Settings/Text_Formatters) are available:
+[Labels](../Common_Settings/Labels) of the nodes are enabled by default and show the node name. Set the base settings with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state; the hovered and selected states override the settings you give them and inherit the rest. Font settings and [text formatters](../Common_Settings/Text_Formatters) are available:
 
 ```
 // add the node's share of the total flow to its label
 chart.node().normal().labels().format("{%name} {%percent}{decimalsCount:1}%");
 ```
 
-By default, a label is a straight line of text next to the ring. To place it along the ring, call `labels().position()` with the `"circular"` parameter:
+By default, a label is bent along the ring. To draw it as a straight line of text beside the ring instead, call `labels().position()` with the `"tangential"` parameter:
 
 ```
-// lay the node labels along the ring
-chart.node().normal().labels().position("circular");
+// opt out of the circular default: draw the node labels as straight lines beside the ring
+chart.node().normal().labels().position("tangential");
 ```
 
 A label that overlaps an already drawn label is hidden by default. To control this behavior, use the {api:anychart.charts.DependencyWheel#dropOverlappedLabels}dropOverlappedLabels(){api} method:
@@ -192,7 +192,7 @@ chart.node().tooltip().format(
 );
 ```
 
-In the sample below, the labels are placed along the ring, the state fills and strokes are derived from `sourceColor`, and the tooltip shows the node tokens:
+In the sample below, the labels are straightened out of their default curve, the state fills and strokes are derived from `sourceColor`, and the tooltip shows the node tokens:
 
 {sample}BCT\_Dependency\_Wheel\_04{sample}
 
