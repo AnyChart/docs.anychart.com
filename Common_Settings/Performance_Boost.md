@@ -133,7 +133,7 @@ The Canvas renderer has a small repertoire of shapes. Three families come out th
 * **marker** series
 * **bubble** series
 
-**Line-shaped series** - line, spline, step line, jump line and stick - are boosted too, but the Canvas renderer fills them down to the zero line rather than stroking the outline, so a boosted line reads as an area. Keep {api:anychart.charts.Cartesian#boostEnabled}boostEnabled(false){api} on them when the outline is the point.
+**Line-shaped series** - line, spline and step line - are boosted, and the Canvas renderer draws them as outlines, with the stroke set on the series. Jump line and stick are not part of that set - they have no boost renderer of their own and sit on the refusal list in [When Boost is Skipped](#when_boost_is_skipped).
 
 **Refused series** - area-shaped series, box, heat map, the timeline series, polar column and the rest of the list in [When Boost is Skipped](#when_boost_is_skipped) - never reach the renderer at all: boost turns them down up front, so they draw through SVG and there is nothing to switch off by hand.
 
