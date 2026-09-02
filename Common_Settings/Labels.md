@@ -96,6 +96,10 @@ Labels postions is set using an anchor set by {api:anychart.standalones.LabelsFa
 
 Fine tuning can be done using {api:anychart.standalones.LabelsFactory#offsetX}offsetX(){api} and {api:anychart.standalones.LabelsFactory#offsetY}offsetY(){api} methods.
 
+Which offset wins depends on the kind of label. On series labels - cartesian, stock and map series, heat map and sunburst - an offset set on the labels factory takes priority over an offset set on an individual label, so `series.labels().offsetX()` overrides the value put on a single label of that series. On axis labels, pie types and standalone label factories the priority is reversed and the individual label wins. Both orders are intentional. Zero on the factory is a value like any other, not an absent setting: `series.labels().offsetX(0)` cancels an individual label's offset exactly as a non-zero factory offset does, which is the case most often mistaken for a defect.
+
+A related cascade rule: a hovered or selected value that comes from a theme ranks below a normal value you set yourself, so a theme's hover default does not override your own `normal()` setting.
+
 Labels are rotated using {api:anychart.standalones.LabelsFactory#rotation}rotation(){api} method.
 
 Here is how you can put labels in the center of columns:
