@@ -20,7 +20,7 @@ This article shows how to create a basic Arc diagram. It also explains the setti
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td>[orientation("vertical")](#orientation)</td></tr>
+<tr><td>Vertical</td><td>[layout("vertical")](#layout)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
@@ -257,24 +257,28 @@ Nothing is reported in the console when this happens. Read the result back with 
 chart.maxLinksRendered(50);
 ```
 
-Nodes are not thinned the same way: every node gets a share of the node line, so the bars grow thinner as nodes are added — widen the chart or use the vertical [orientation](#orientation) when there are many.
+Nodes are not thinned the same way: every node gets a share of the node line, so the bars grow thinner as nodes are added — widen the chart or use the vertical [layout](#layout) when there are many.
 
 In the sample below, drag the slider to change the limit and watch how many links the chart actually draws:
 
 {sample}BCT\_Arc\_Diagram\_09{sample}
 
-### Orientation
+### Layout
 
-By default, the nodes sit in a row at the bottom of the chart. The links curve upward. The {api:anychart.charts.ArcDiagram#orientation}orientation(){api} method rotates the layout. With `"vertical"`, the nodes form a column and the links curve to the right. The {api:anychart.charts.ArcDiagram#arcDirection}arcDirection(){api} method flips the links to the other side of the node line. For the horizontal orientation, pass `"down"`. For the vertical one, pass `"left"`. This curves the links the other way. If you do not set it, the links curve up in the horizontal orientation and to the right in the vertical one.
+By default the nodes sit in a row at the bottom of the chart and the links curve upward. The {api:anychart.charts.ArcDiagram#layout}layout(){api} method rotates that: with `"vertical"` the nodes form a column and the links curve to the right. A value that is neither `"horizontal"` nor `"vertical"` is discarded without an error and the chart falls back to `"horizontal"`, so a misspelled value silently un-rotates a vertical chart.
+
+The {api:anychart.charts.ArcDiagram#reverseArcs}reverseArcs(){api} method flips the links to the other side of the node line. It takes a boolean, `false` by default, and `true` curves the links down in the horizontal layout and to the left in the vertical one.
+
+Every non-empty string is truthy, so code written against the older four-value direction option has to translate the value and not only the method name: the former `"down"` and `"left"` become `true`, everything else `false`.
 
 ```
 // place the nodes in a column; the links curve to the right
-chart.orientation("vertical");
+chart.layout("vertical");
 
 // apply the chosen layout: the chart redraws itself
-function setLayout(orientation, direction) {
-  chart.orientation(orientation);
-  chart.arcDirection(direction);
+function setLayout(layout, reverse) {
+  chart.layout(layout);
+  chart.reverseArcs(reverse);
 }
 ```
 
@@ -298,7 +302,7 @@ chart.nodeWidth(30);
 
 // set the height of the links and curve them below the node line
 chart.curvature(0.8);
-chart.arcDirection("down");
+chart.reverseArcs(true);
 
 // spread the nodes over more or less of the node line: the chart redraws itself
 function changeNodesSpan(value) {
@@ -313,7 +317,7 @@ All of them work on a chart that is already drawn. Drag the sliders in the sampl
 
 ### Sorting
 
-The order of the nodes has a big effect on how readable an Arc diagram is. The {api:anychart.charts.ArcDiagram#sortOrder}sortOrder(){api} method arranges them. The first node sits at the left end of the node line, or at the top of it in the vertical [orientation](#orientation); the rest follow along the line:
+The order of the nodes has a big effect on how readable an Arc diagram is. The {api:anychart.charts.ArcDiagram#sortOrder}sortOrder(){api} method arranges them. The first node sits at the left end of the node line, or at the top of it in the vertical [layout](#layout); the rest follow along the line:
 
 * `"name"` (default) — alphabetically by node name
 * `"weight"` — by the total flow through the node, the largest first

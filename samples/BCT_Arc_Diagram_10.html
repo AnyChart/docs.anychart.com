@@ -21,10 +21,10 @@
 <body>
 <div id="controls">
     <span>Layout:</span>
-    <label><input type="radio" name="layout" id="layoutHorizontalUp" onclick="setLayout('horizontal', 'up')"> horizontal (up)</label>
-    <label><input type="radio" name="layout" id="layoutHorizontalDown" onclick="setLayout('horizontal', 'down')"> horizontal (down)</label>
-    <label><input type="radio" name="layout" id="layoutVerticalLeft" onclick="setLayout('vertical', 'left')"> vertical (left)</label>
-    <label><input type="radio" name="layout" id="layoutVerticalRight" onclick="setLayout('vertical', 'right')" checked> vertical (right)</label>
+    <label><input type="radio" name="layout" id="layoutHorizontalUp" onclick="setLayout('horizontal', false)"> horizontal (up)</label>
+    <label><input type="radio" name="layout" id="layoutHorizontalDown" onclick="setLayout('horizontal', true)"> horizontal (down)</label>
+    <label><input type="radio" name="layout" id="layoutVerticalLeft" onclick="setLayout('vertical', true)"> vertical (left)</label>
+    <label><input type="radio" name="layout" id="layoutVerticalRight" onclick="setLayout('vertical', false)" checked> vertical (right)</label>
 </div>
 <div id="container"></div>
 <script>
@@ -42,13 +42,13 @@ anychart.onDocumentReady(function () {
   // create an arc diagram and set the data
   chart = anychart.arcDiagram(data);
   // set the chart title
-  chart.title("Arc Diagram: Orientation");
+  chart.title("Arc Diagram: Layout");
 
   // make the node bars thicker
   chart.nodeWidth(30);
 
   // place the nodes in a column; the links curve to the right
-  chart.orientation("vertical");
+  chart.layout("vertical");
 
   // set the container id
   chart.container("container");
@@ -57,9 +57,9 @@ anychart.onDocumentReady(function () {
 });
 
 // apply the chosen layout: the chart redraws itself
-function setLayout(orientation, direction) {
-  chart.orientation(orientation);
-  chart.arcDirection(direction);
+function setLayout(layout, reverse) {
+  chart.layout(layout);
+  chart.reverseArcs(reverse);
 }
 </script>
 </body>
