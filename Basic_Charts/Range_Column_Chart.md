@@ -270,6 +270,32 @@ This chart type allows you to set the size of its points. Read more in the [Poin
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
+A range point is labeled at its high end and shows the high value. Pass `"rangeMode"` to {api:anychart.core.ui.LabelsFactory#position}position(){api} to label both ends instead: the point then draws two labels, the high-end one printing the high value and the low-end one printing the low value.
+
+```
+// enable the series labels
+series.labels().enabled(true);
+// label both ends of every point
+series.labels().position("rangeMode");
+```
+
+To give each end its own text, use a format function. In `"rangeMode"` the format context carries `this["rangeEnd"]`: it is `"low"` on the low-end label and undefined on the high-end one, so one function can branch on the end it is rendering:
+
+```
+// give each end its own text
+series.labels().format(function () {
+  return this["rangeEnd"] == "low" ? "Min " + this["low"] : "Max " + this["high"];
+});
+```
+
+Read the point fields directly, as in the snippet above. On the low-end label the format context is a delegate object: `rangeEnd` is its only own field and the point fields are inherited, so `this["low"]`, `this["high"]`, destructuring, `for...in` and {api:anychart.format.Context#getData}getData(){api} work the same on both labels, while a snapshot of the context's own keys does not - `Object.keys(this)`, `{...this}` and `this.hasOwnProperty("high")` see only `rangeEnd` there.
+
+`this["rangeEnd"]` reaches format functions only. A [text formatter](../Common_Settings/Text_Formatters) string cannot tell the two labels apart: the `{%rangeEnd}` token prints nothing on either of them, and `{%low}` and `{%high}` resolve to the same two values on both.
+
+The same pairing works on the other range series: [Range Bar](Range_Bar_Chart), [Range Area](Range_Area_Chart), [Range Spline Area](Range_Spline_Area_Chart), [Range Step Area](Range_Step_Area_Chart), [HiLo](HiLo_Chart), and [Dumbbell](Dumbbell_Chart).
+
+{sample}BCT\_Range\_Column\_Chart\_07{sample}
+
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.

@@ -270,6 +270,8 @@ This chart type allows you to set the size of its points. Read more in the [Poin
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
+A range point is labeled at its high end and shows the high value. Pass `"rangeMode"` to {api:anychart.core.ui.LabelsFactory#position}position(){api} to label both ends instead - the low-end label prints the low value, and a format function tells the two ends apart through `this["rangeEnd"]`: see [Range Column Chart](Range_Column_Chart).
+
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.

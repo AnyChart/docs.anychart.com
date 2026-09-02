@@ -182,6 +182,8 @@ In the sample below, the second point carries its own endpoint colors and connec
 
 [Labels](../Common_Settings/Labels) are text elements attached to points. Enable and format them with {api:anychart.core.cartesian.series.Dumbbell#labels}labels(){api}, {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api}, and {api:anychart.core.ui.LabelsFactory#format}format(){api}. The default label sits at the high endpoint and shows the high value of the point.
 
+Pass `"rangeMode"` to {api:anychart.core.ui.LabelsFactory#position}position(){api} to label both endpoints instead - the low endpoint then prints the low value, and a format function tells the two apart through `this["rangeEnd"]`: see [Range Column Chart](Range_Column_Chart).
+
 In {api:anychart.core.ui.LabelsFactory#format}format(){api}, use [text formatters](../Common_Settings/Text_Formatters): tokens such as `{%low}` and `{%high}` read the fields of the point.
 
 ```

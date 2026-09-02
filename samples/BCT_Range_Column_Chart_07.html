@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Range Column Chart 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+
+    <style>
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  // create data
+  var data = [
+    {x: "January", low: 0.7, high: 6.1},
+    {x: "February", low: 0.6, high: 6.3},
+    {x: "March", low: 1.9, high: 8.5},
+    {x: "April", low: 3.1, high: 10.8},
+    {x: "May", low: 5.7, high: 14.4}
+  ];
+
+  // create a chart
+  var chart = anychart.column();
+
+  // set the chart title
+  chart.title("Range Column Chart: Labels at Both Ends");
+
+  // create a range column series and set the data
+  var series = chart.rangeColumn(data);
+
+  // enable the series labels
+  series.labels().enabled(true);
+  // label both ends of every point
+  series.labels().position("rangeMode");
+  // give each end its own text: branch on rangeEnd, read low and high straight off the context
+  series.labels().format(function () {
+    return this["rangeEnd"] == "low" ? "Min " + this["low"] : "Max " + this["high"];
+  });
+
+  // set the container id
+  chart.container("container");
+  // initiate drawing the chart
+  chart.draw();
+});
+</script>
+</body>
+</html>
