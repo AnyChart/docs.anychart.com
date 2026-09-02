@@ -316,12 +316,12 @@ In the sample below, the slider shrinks and grows the ring:
 
 The {api:anychart.charts.DependencyWheel#sortOrder}sortOrder(){api} method sets the order of the node arcs around the wheel. The first arc starts at the start angle, which is the top of the wheel by default (see [Wheel Geometry](#wheel_geometry)); in the mirrored layout of `clockwise(false)` it ends there instead. The arcs that follow are placed clockwise, or counter-clockwise when the layout is mirrored:
 
-* `"desc"` (default) — by the total flow through the node: the largest node starts at the top, the rest follow clockwise from largest to smallest
-* `"asc"` — by the total flow, from smallest to largest
-* `"none"` — in the order the nodes appear in the data. Set this value before the first {api:anychart.charts.DependencyWheel#draw}draw(){api}: on a chart that is already drawn it keeps the order of the previous sorting. Note: if the node names are numbers written as text, such as `"10"` or `"2"`, they are placed in number order, from smallest to largest, instead
+* `"desc"` (default) — by the node weight, the total flow through the node: the largest node starts at the top, the rest follow clockwise from largest to smallest
+* `"asc"` — by the node weight, from smallest to largest
+* `"none"` — in the order the nodes appear in the data
 * a function — your own compare function that sorts the node arcs, like the callback passed to `Array.sort`
 
-The `"asc"` and `"desc"` values and a compare function all work on a chart that is already drawn. To restore the order of the data on such a chart, use a compare function built from the positions of the nodes in your data, as shown in the sample below.
+All four forms work on a chart that is already drawn: `"none"` returns the arcs to the order of the data. A compare function gives any other order you need — it receives two nodes and reads the fields they expose, `id` and `weight`, the total flow through the node; there is no `totalFlow` field.
 
 ```
 // arrange the node arcs from the smallest to the largest
