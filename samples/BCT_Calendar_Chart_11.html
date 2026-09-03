@@ -56,8 +56,8 @@ anychart.onDocumentReady(function () {
   // let the chart grow its own container to the height it needs
   chart.autoHeight(true);
 
-  // show the height the chart wrote to the container
-  chart.listen("chartDraw", showHeight);
+  // show every height the chart writes to the container
+  new ResizeObserver(showHeight).observe(document.getElementById("container"));
 
   // set the container id
   chart.container("container");
