@@ -13,42 +13,37 @@
 
     <style>
         html, body { width: 100%; margin: 0; padding: 0; }
-        #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
-        #controls output { display: inline-block; text-align: left; min-width: 7ch; }
-        /* the start height fits one year; autoHeight() rewrites it as the data grows */
+        /* the start height fits nothing like five years; autoHeight() rewrites it */
         #container { width: 100%; height: 200px; }
     </style>
 </head>
 <body>
-<div id="controls">
-    <span>years:
-        <label><input type="radio" name="years" onclick="setYears(1)" checked> 1</label>
-        <label><input type="radio" name="years" onclick="setYears(2)"> 2</label>
-        <label><input type="radio" name="years" onclick="setYears(3)"> 3</label>
-    </span>
-    <span>container: <output id="heightValue"></output></span>
-</div>
 <div id="container"></div>
 <script>
-// data spanning three years, newest year first
-var data = [
-  {x: "2026-02-08", value: 5},
-  {x: "2026-06-17", value: 1},
-  {x: "2026-08-21", value: 6},
-  {x: "2026-10-29", value: 9},
-  {x: "2025-01-12", value: 2},
-  {x: "2025-04-20", value: 4},
-  {x: "2025-07-11", value: 8},
-  {x: "2025-11-05", value: 3},
-  {x: "2024-01-12", value: 6},
-  {x: "2024-05-14", value: 1},
-  {x: "2024-09-03", value: 4},
-  {x: "2024-12-24", value: 7}
-];
-
 anychart.onDocumentReady(function () {
-  // create a chart and set one year of data
-  chart = anychart.calendar(data.slice(0, 4));
+  // create data spanning five years
+  var data = [
+    {x: "2022-03-15", value: 3},
+    {x: "2022-07-22", value: 8},
+    {x: "2022-11-09", value: 2},
+    {x: "2023-02-14", value: 6},
+    {x: "2023-06-30", value: 1},
+    {x: "2023-10-17", value: 7},
+    {x: "2024-01-12", value: 6},
+    {x: "2024-05-14", value: 1},
+    {x: "2024-09-03", value: 4},
+    {x: "2024-12-24", value: 7},
+    {x: "2025-01-12", value: 2},
+    {x: "2025-04-20", value: 4},
+    {x: "2025-07-11", value: 8},
+    {x: "2025-11-05", value: 3},
+    {x: "2026-02-08", value: 5},
+    {x: "2026-06-17", value: 1},
+    {x: "2026-10-29", value: 9}
+  ];
+
+  // create a chart and set the data
+  var chart = anychart.calendar(data);
 
   // set the chart title
   chart.title("Calendar Chart: Auto Height");
@@ -56,28 +51,12 @@ anychart.onDocumentReady(function () {
   // let the chart grow its own container to the height it needs
   chart.autoHeight(true);
 
-  // show every height the chart writes to the container
-  new ResizeObserver(showHeight).observe(document.getElementById("container"));
-
   // set the container id
   chart.container("container");
 
   // initiate drawing the chart
   chart.draw();
 });
-
-// show the chosen number of years: the chart resizes its container to fit
-function setYears(count) {
-  // let the next redraw shrink the container when years are removed
-  chart.resetAutoHeight();
-  chart.data(data.slice(0, count * 4));
-}
-
-// read the height of the container element
-function showHeight() {
-  var height = document.getElementById("container").offsetHeight;
-  document.getElementById("heightValue").value = height + " px";
-}
 </script>
 </body>
 </html>
