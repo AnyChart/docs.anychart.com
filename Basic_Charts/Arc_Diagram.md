@@ -127,7 +127,7 @@ In the sample below, the links come from a mapped data set, unlike the [Quick St
 
 A node is a bar on the node line. The chart creates one node for every distinct name in the `from` and `to` fields of the [data](#data), and the weight of a node is the sum of the weights of its links. Set the node bars with the {api:anychart.charts.ArcDiagram#node}node(){api} method.
 
-A node has three [states](../Common_Settings/Interactivity/States): **normal**, **hovered** when you point at it (its links are highlighted too), and **selected** when you click it. Ctrl/Cmd + click or Shift + click selects several nodes, and the same gesture on a node that is already selected takes it back out of the selection; a click on the empty area clears the selection. These gestures come from the `interactivity()` settings of the chart — see [General Settings](General_Settings).
+A node has three [states](../Common_Settings/Interactivity/States): **normal**, **hovered** when you point at it (its links are highlighted too), and **selected** when you click it. Ctrl/Cmd + click or Shift + click selects several nodes, and the same gesture on a node that is already selected takes it back out of the selection; a click on the empty area clears the selection. These gestures come from the {api:anychart.charts.ArcDiagram#interactivity}interactivity(){api} settings of the chart — see [General Settings](General_Settings).
 
 #### Node Labels
 
@@ -185,7 +185,7 @@ In the sample below, hover over a node to see its requests and connections in th
 
 A link connects two nodes. Each row of the [data](#data) makes one link, from the `from` node to the `to` node, and the `weight` of the row sets its thickness. Set the links with the {api:anychart.charts.ArcDiagram#link}link(){api} method.
 
-Like [nodes](#nodes), a link has three states: **normal**, **hovered** when you point at it, and **selected** when you click it. Selecting a link also highlights the two nodes at its ends and fades the other links, so the selected connection stands out. The gestures are the ones described for [nodes](#nodes) and come from the same `interactivity()` settings.
+Like [nodes](#nodes), a link has three states: **normal**, **hovered** when you point at it, and **selected** when you click it. Selecting a link also highlights the two nodes at its ends and fades the other links, so the selected connection stands out. The gestures are the ones described for [nodes](#nodes) and come from the same {api:anychart.charts.ArcDiagram#interactivity}interactivity(){api} settings.
 
 #### Link Labels
 
@@ -248,9 +248,9 @@ In the sample below, the link tooltip puts the weight and the two departments in
 
 #### Data Volume
 
-A diagram with a great many links is drawn in a simplified form. When the data holds more links than `maxLinksRendered()` allows, the chart draws the heaviest ones and leaves the rest out. Every node keeps at least one of its links, and a link that is already selected is never left out, so the setting is a target rather than a hard ceiling. The data itself and the weights of the nodes are untouched.
+A diagram with a great many links is drawn in a simplified form. When the data holds more links than {api:anychart.charts.ArcDiagram#maxLinksRendered}maxLinksRendered(){api} allows, the chart draws the heaviest ones and leaves the rest out. Every node keeps at least one of its links, and a link that is already selected is never left out, so the setting is a target rather than a hard ceiling. The data itself and the weights of the nodes are untouched.
 
-Nothing is reported in the console when this happens. Read the result back with `isSimplified()` and `getRenderedLinksCount()`, and pass `0` to draw every link:
+Nothing is reported in the console when this happens. Read the result back with {api:anychart.charts.ArcDiagram#isSimplified}isSimplified(){api} and {api:anychart.charts.ArcDiagram#getRenderedLinksCount}getRenderedLinksCount(){api}, and pass `0` to draw every link:
 
 ```
 // draw only the heaviest links
@@ -290,7 +290,7 @@ Both methods work on a chart that is already drawn. Use the buttons in the sampl
 
 The following methods adjust the geometry of the diagram:
 
-* `nodesSpan()` — how much of the node line the row of nodes takes up. A number is a length in pixels, a string such as `"60%"` is a share of the line (`"85%"` by default), and a share above `100%` is clamped to the full line. Whatever is left over becomes the gaps between the nodes, so this is the method that decides how far apart they sit
+* {api:anychart.charts.ArcDiagram#nodesSpan}nodesSpan(){api} — how much of the node line the row of nodes takes up. A number is a length in pixels, a string such as `"60%"` is a share of the line (`"85%"` by default), and a share above `100%` is clamped to the full line. Whatever is left over becomes the gaps between the nodes, so this is the method that decides how far apart they sit
 * {api:anychart.charts.ArcDiagram#nodeWidth}nodeWidth(){api} — the thickness of the node bars, in pixels (20 by default)
 * {api:anychart.charts.ArcDiagram#nodeSpacing}nodeSpacing(){api} — the smallest gap allowed between two neighboring nodes, in pixels (30 by default). It is a floor, not the gap itself: as long as the gaps that come out of `nodesSpan()` are wider than it, it changes nothing, and when it does take effect the node bars become thinner instead of the row becoming longer. Pass `0` to let the bars sit side by side
 * {api:anychart.charts.ArcDiagram#curvature}curvature(){api} — the height of the links: values below 1 flatten them, values above 1 make them taller, until the arcs reach the plot edge and stop growing (1 by default)
