@@ -167,7 +167,7 @@ A series that is not part of the stack, a threshold or an average drawn with `li
 
 ### Layer Order
 
-The layers are stacked in the order they are added, the first one on top. The `sortOrder()` method restacks them, which decides which layers end up in the middle of the stream, where a band bends the least and reads the best:
+The layers are stacked in the order they are added, the first one on top. The {api:anychart.charts.StreamGraph#sortOrder}sortOrder(){api} method restacks them, which decides which layers end up in the middle of the stream, where a band bends the least and reads the best:
 
 * `"none"` (default) — the order the layers were added in
 * `"asc"` — the layers are ranked by size, the total of their values with negative ones counted as positive, and the smallest goes to the bottom
@@ -224,7 +224,7 @@ Choose a series type in the sample below to see the same stream drawn with it:
 
 ### Appearance
 
-The color of each layer comes from the chart [palette](../Appearance_Settings/Palettes). Set your own with the {api:anychart.charts.StreamGraph#palette}palette(){api} method. You set the [appearance settings](../Appearance_Settings) of individual series the same way as in other area-based series. The {api:anychart.core.cartesian.series.Base#fill}fill(){api} method sets the layer fill. The {api:anychart.core.cartesian.series.Base#stroke}stroke(){api} method sets its outline. Layers next to each other often look clearer with a thin contrasting stroke between them:
+The color of each layer comes from the chart [palette](../Appearance_Settings/Palettes). Set your own with the {api:anychart.charts.StreamGraph#palette}palette(){api} method. You set the [appearance settings](../Appearance_Settings) of individual series the same way as in other area-based series. The {api:anychart.core.cartesian.series.SplineArea#fill}fill(){api} method sets the layer fill. The {api:anychart.core.cartesian.series.SplineArea#stroke}stroke(){api} method sets its outline. Layers next to each other often look clearer with a thin contrasting stroke between them:
 
 ```
 // one palette color per layer
@@ -251,7 +251,7 @@ A layer carries three kinds of marks: the layer label the chart draws on its own
 
 Every layer is labeled on the stream itself, without any setting: one [label](../Common_Settings/Labels) with the {api:anychart.core.cartesian.series.Base#name}name(){api} of the layer, centered in the band. The chart draws it at the category where the band is thick enough to hold the whole text, never at the first or the last one, and leaves it out of a layer that has no such place — a thin band on a small chart ends up unlabeled. This label is the {api:anychart.core.StateSettings#maxLabels}maxLabels(){api} of the layer, and its {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method turns it off.
 
-The layer label is configured like any [label](../Common_Settings/Labels): set its text with {api:anychart.core.ui.LabelsFactory#format}format(){api} and a [text formatter](../Common_Settings/Text_Formatters) — it is built from the largest point of the layer, so `{%value}` prints that largest value — and use the usual font settings. As an example, the demo below moves the label inside the band with the {api:anychart.core.ui.LabelsFactory#position}position(){api} method of a layer's own `maxLabels()`: `"center"` by default, `"center-top"` and `"center-bottom"` push it to the edges (write the two-part names).
+The layer label is configured like any [label](../Common_Settings/Labels): set its text with {api:anychart.core.ui.LabelsFactory#format}format(){api} and a [text formatter](../Common_Settings/Text_Formatters) — it is built from the largest point of the layer, so `{%value}` prints that largest value — and use the usual font settings. As an example, the demo below moves the label inside the band with the {api:anychart.core.ui.LabelsFactory#position}position(){api} method of a layer's own {api:anychart.core.StateSettings#maxLabels}maxLabels(){api}: `"center"` by default, `"center-top"` and `"center-bottom"` push it to the edges (write the two-part names).
 
 ```
 // show the layer name and its largest value
