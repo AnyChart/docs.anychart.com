@@ -96,9 +96,14 @@ Labels postions is set using an anchor set by {api:anychart.standalones.LabelsFa
 
 Fine tuning can be done using {api:anychart.standalones.LabelsFactory#offsetX}offsetX(){api} and {api:anychart.standalones.LabelsFactory#offsetY}offsetY(){api} methods.
 
-Which offset wins depends on the kind of label. On series labels - cartesian, stock and map series, heat map and sunburst - an offset set on the labels factory takes priority over an offset set on an individual label, so `series.labels().offsetX()` overrides the value put on a single label of that series. On axis labels, pie types and standalone label factories the priority is reversed and the individual label wins. Both orders are intentional. Zero on the factory is a value like any other, not an absent setting: `series.labels().offsetX(0)` cancels an individual label's offset exactly as a non-zero factory offset does, which is the case most often mistaken for a defect.
+When the same offset is set on the factory and on an individual label, the winner is fixed by the kind of label, and both orders are intentional:
 
-A related cascade rule: a hovered or selected value that comes from a theme ranks below a normal value you set yourself, so a theme's hover default does not override your own `normal()` setting.
+* On series labels the factory wins: `series.labels().offsetX()` overrides the offset of an individual label. This is the order on [cartesian series](../Quick_Start/Supported_Charts_Types), [stock](../Stock_Charts/Overview) and [map](../Maps/Quick_Start) series, [Heat Map](../Basic_Charts/Heat_Map_Chart), and [Sunburst](../Basic_Charts/Sunburst_Chart).
+* On [axis labels](../Axes_and_Grids/Axes_Labels_Formatting), [Pie](../Basic_Charts/Pie_Chart)-family types, and standalone label factories the individual label wins.
+
+Zero on the factory is a value, not an absent setting: `series.labels().offsetX(0)` cancels an individual label's offset the same way a non-zero value does.
+
+A hovered or selected value taken from a [theme](#themes) ranks below a normal value set in code: the theme's hover default does not override your own `normal()` setting.
 
 Labels are rotated using {api:anychart.standalones.LabelsFactory#rotation}rotation(){api} method.
 

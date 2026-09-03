@@ -301,7 +301,7 @@ xAxis.overlapMode("allowOverlap");
 
 ## Individual Settings
 
-In some cases when there is a need in deep customization you can use {api:anychart.core.ui.LabelsFactory#getLabel}getLabel{api} and {api:anychart.core.ui.LabelsFactory#getLabelsCount}getLabelsCount{api} methods to access individual labels and solve different tasks. The recipe shown here is for axis labels, where a setting made on an individual label wins over the same setting made on the labels factory. On series labels the priority is the other way round, so an offset or another setting applied to a single series label is overridden by the series labels factory - see [Labels](../Common_Settings/Labels#position).
+In some cases when there is a need in deep customization you can use {api:anychart.core.ui.LabelsFactory#getLabel}getLabel{api} and {api:anychart.core.ui.LabelsFactory#getLabelsCount}getLabelsCount{api} methods to access individual labels and solve different tasks. The recipe is reliable on axis labels, where an individual label's setting wins over the factory's. On series labels the priority is reversed - the factory overrides the individual label: see [Labels](../Common_Settings/Labels#position).
 
 **Note:** these methods work properly only after the full chart display. Use [Event listeners](../Common_Settings/Event_Listeners) or be sure you execute the code with these methods in proper tim.
 
