@@ -391,23 +391,17 @@ chart.tooltip().format(function() {
 
 ### Auto Height
 
-A Calendar chart is as tall as its data is long: every year in the data gets a block of its own, and the title, the legend, and the color range take room on top of that. When the container is shorter than the total, the chart is squeezed into what it is given. The {api:anychart.charts.Calendar#autoHeight}autoHeight(){api} method inverts that: the chart measures the height it needs and writes that height onto its own container element. It is off by default, so a chart keeps the height its page gives it until you turn auto height on.
+A Calendar chart is as tall as the years in its data, and a container sized by the page squeezes it. The {api:anychart.charts.Calendar#autoHeight}autoHeight(){api} method inverts the dependency: after every redraw the chart measures the height it needs and writes it onto its own container element. It is off by default, and it works only on a chart that owns its container: on a stage shared with other charts nothing is written and the chart warns once.
 
-Three methods are involved:
+* {api:anychart.charts.Calendar#autoHeight}autoHeight(){api} to turn the resizing on and off
+* {api:anychart.charts.Calendar#resetAutoHeight}resetAutoHeight(){api} to let the next redraw shrink the container
+* {api:anychart.charts.Calendar#getActualHeight}getActualHeight(){api} to read the measured height without resizing anything
 
-* {api:anychart.charts.Calendar#autoHeight}autoHeight(){api} to enable or disable the resizing
-* {api:anychart.charts.Calendar#resetAutoHeight}resetAutoHeight(){api} to start a new growth episode
-* {api:anychart.charts.Calendar#getActualHeight}getActualHeight(){api} to read the height the chart needs
+The write is grow-only: shrink requests coming from the chart's own resize handling are ignored, so the height cannot oscillate. Under the default theme the measurement depends on the chart width alone and settles in one step. A percent-sized vertical {api:anychart.core.Chart#padding}padding(){api}, {api:anychart.core.Chart#margin}margin(){api}, or color range instead ties the measurement to the container height being written, and every write raises the next measurement: after a fixed number of growth steps in one update episode the chart stops and warns once, naming the height it stopped at. Pixel values remove the loop.
 
-Auto height is a ratchet: it only ever grows the container, never shrinks it. With pixel-sized settings the measurement does not depend on the container, so one growth step is enough and the chart settles on the next redraw.
+The grow-only guard lets go on an explicit signal: {api:anychart.charts.Calendar#resetAutoHeight}resetAutoHeight(){api}, a window resize, or a {api:anychart.core.Chart#draw}draw(){api} call of your own. The next redraw is then accepted even when it is smaller, which is how the container follows removed data down. The reset itself writes nothing: the container changes only when a real redraw follows.
 
-Percent-sized settings break that. A percent-normalized {api:anychart.core.Chart#padding}padding(){api} or {api:anychart.core.Chart#margin}margin(){api} is resolved against the container height that auto height is writing, so every step feeds the next one and the value keeps climbing. Growth is therefore capped: after a fixed number of growth steps within one update episode the chart stops raising the container and writes a single warning that names the cause and the height it stopped at. Sizing padding and margin in pixels removes the loop.
-
-A growth episode covers the draws that follow a single update. {api:anychart.charts.Calendar#resetAutoHeight}resetAutoHeight(){api} drops the growth state the ratchet has accumulated, so the next draw measures from the container's current height again and gets the full step budget. An explicit {api:anychart.core.Chart#draw}draw(){api} call also opens a new episode, so the reset is the way to ask for a fresh start without redrawing.
-
-{api:anychart.charts.Calendar#getActualHeight}getActualHeight(){api} is the measurement on its own, in pixels, and it answers with or without auto height enabled: a chart squeezed into a short container still reports the height it would need. The number covers the space below the plots as well as above it, so a bottom color range, a bottom legend, or bottom padding adds exactly as much as the same element placed on top.
-
-Auto height needs the chart to own its stage. A chart drawn into a stage shared with other charts cannot resize a container that is not its own, so the call is accepted and the getter keeps returning what you set, but no height is written and the chart reports one warning per instance. Give such a chart a container of its own to use auto height.
+{api:anychart.charts.Calendar#getActualHeight}getActualHeight(){api} answers with or without auto height enabled and counts the space below the plots the same as the space above, so a chart squeezed into a short container still reports the height it would need.
 
 ```
 // let the chart grow its own container to the height it needs
