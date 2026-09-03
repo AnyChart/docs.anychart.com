@@ -84,7 +84,7 @@ Read the overview of general settings: [General Settings](General_Settings).
   
 ### Data
 
-Data for a Calendar chart can be passed to the chart constructor or to the {api:anychart.charts.Calendar#Calendar#data}data(){api} method.
+Data for a Calendar chart can be passed to the chart constructor or to the {api:anychart.charts.Calendar#data}data(){api} method.
 
 Use the following data fields:
 
