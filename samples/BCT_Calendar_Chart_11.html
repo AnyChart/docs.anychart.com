@@ -5,46 +5,52 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
 
-    <script src="https://cdn.anychart.com/releases/staging/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/staging/js/anychart-calendar.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/staging/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/staging/js/anychart-ui.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-calendar.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4"/>
 
     <style>
         html, body { width: 100%; margin: 0; padding: 0; }
+        #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
+        #controls output { display: inline-block; text-align: left; min-width: 18ch; }
         /* the container is deliberately too short for three years of data */
         #container { width: 100%; height: 200px; }
     </style>
 </head>
 <body>
+<div id="controls">
+    <label><input type="checkbox" onchange="toggleAutoHeight(this.checked)"> autoHeight()</label>
+    <span>container: <output id="heightValue"></output></span>
+</div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
   // create data spanning three years
   var data = [
-    {x: "2020-01-12", value: 6},
-    {x: "2020-02-19", value: 9},
-    {x: "2020-05-14", value: 1},
-    {x: "2020-09-03", value: 4},
-    {x: "2020-12-24", value: 7},
-    {x: "2021-01-12", value: 2},
-    {x: "2021-04-20", value: 4},
-    {x: "2021-07-11", value: 8},
-    {x: "2021-11-05", value: 3},
-    {x: "2022-02-08", value: 5},
-    {x: "2022-06-17", value: 1},
-    {x: "2022-10-29", value: 9}
+    {x: "2024-01-12", value: 6},
+    {x: "2024-02-19", value: 9},
+    {x: "2024-05-14", value: 1},
+    {x: "2024-09-03", value: 4},
+    {x: "2024-12-24", value: 7},
+    {x: "2025-01-12", value: 2},
+    {x: "2025-04-20", value: 4},
+    {x: "2025-07-11", value: 8},
+    {x: "2025-11-05", value: 3},
+    {x: "2026-02-08", value: 5},
+    {x: "2026-06-17", value: 1},
+    {x: "2026-10-29", value: 9}
   ];
 
   // create a chart and set the data
-  var chart = anychart.calendar(data);
+  chart = anychart.calendar(data);
 
   // set the chart title
   chart.title("Calendar Chart: Auto Height");
 
-  // let the chart grow its own container to the height it needs
-  chart.autoHeight(true);
+  // show how the squeezed container compares to the height the chart needs
+  chart.listen("chartDraw", showHeight);
 
   // set the container id
   chart.container("container");
@@ -52,6 +58,25 @@ anychart.onDocumentReady(function () {
   // initiate drawing the chart
   chart.draw();
 });
+
+// enable or disable the automatic container resizing
+function toggleAutoHeight(enabled) {
+  if (enabled) {
+    // let the chart grow its own container to the height it needs
+    chart.autoHeight(true);
+  } else {
+    // stop managing the height and squeeze the chart again
+    chart.autoHeight(false);
+    document.getElementById("container").style.height = "200px";
+  }
+}
+
+// read the container height and the height the chart needs
+function showHeight() {
+  var container = document.getElementById("container");
+  var value = container.offsetHeight + " px of " + Math.ceil(chart.getActualHeight()) + " px needed";
+  document.getElementById("heightValue").value = value;
+}
 </script>
 </body>
 </html>

@@ -53,13 +53,13 @@ To create a Calendar chart, use the {api:anychart#calendar}anychart.calendar(){a
 ```
 // create data
 var data = [
-  {x: "2020-01-12", value: "6"},
-  {x: "2020-01-15", value: "2"},
-  {x: "2020-01-18", value: "2"},
-  {x: "2020-01-19", value: "5"},
-  {x: "2020-02-03", value: "1"},
-  {x: "2020-02-19", value: "9"},
-  {x: "2020-03-19", value: "2"}
+  {x: "2026-01-12", value: "6"},
+  {x: "2026-01-15", value: "2"},
+  {x: "2026-01-18", value: "2"},
+  {x: "2026-01-19", value: "5"},
+  {x: "2026-02-03", value: "1"},
+  {x: "2026-02-19", value: "9"},
+  {x: "2026-03-19", value: "2"}
 ];
 
 // create a chart and set the data
@@ -98,21 +98,21 @@ This is how working with data fields of the Calendar chart looks like:
 ```
 // create data
 var data = [
-  {x: "2020-01-12", value: "6"},
-  {x: "2020-01-15", value: "2"},
-  {x: "2020-01-18", value: "2"},
-  {x: "2020-01-19", value: "5"},
-  {x: "2020-02-03", value: "1"},
-  {x: "2020-02-19", value: "9"},
-  {x: "2020-03-19", value: "2"},
-  {x: "2020-04-13", value: "3"},
-  {x: "2020-04-15", value: "3"},
-  {x: "2020-04-20", value: "4"},
-  {x: "2020-04-21", value: "1"},
-  {x: "2020-05-10", value: "3"},
-  {x: "2020-05-11", value: "1"},
-  {x: "2020-05-14", value: "1"},
-  {x: "2021-01-12", value: "2"}
+  {x: "2025-01-12", value: "6"},
+  {x: "2025-01-15", value: "2"},
+  {x: "2025-01-18", value: "2"},
+  {x: "2025-01-19", value: "5"},
+  {x: "2025-02-03", value: "1"},
+  {x: "2025-02-19", value: "9"},
+  {x: "2025-03-19", value: "2"},
+  {x: "2025-04-13", value: "3"},
+  {x: "2025-04-15", value: "3"},
+  {x: "2025-04-20", value: "4"},
+  {x: "2025-04-21", value: "1"},
+  {x: "2025-05-10", value: "3"},
+  {x: "2025-05-11", value: "1"},
+  {x: "2025-05-14", value: "1"},
+  {x: "2026-01-12", value: "2"}
 ];
 
 // create a chart and set the data
@@ -310,21 +310,21 @@ This sample shows how to work with tokens:
 ```
 // create data
 var data = [
-  {x: "2020-01-12", value: "6", custom_field: "info 1" },
-  {x: "2020-01-15", value: "2", custom_field: "info 2" },
-  {x: "2020-01-18", value: "2", custom_field: "info 3" },
-  {x: "2020-01-19", value: "5", custom_field: "info 4" },
-  {x: "2020-02-03", value: "1", custom_field: "info 5" },
-  {x: "2020-02-19", value: "9", custom_field: "info 6" },
-  {x: "2020-03-19", value: "2", custom_field: "info 7" },
-  {x: "2020-04-13", value: "3", custom_field: "info 8" },
-  {x: "2020-04-15", value: "3", custom_field: "info 9" },
-  {x: "2020-04-20", value: "4", custom_field: "info 10"},
-  {x: "2020-04-21", value: "1", custom_field: "info 11"},
-  {x: "2020-05-10", value: "3", custom_field: "info 12"},
-  {x: "2020-05-11", value: "1", custom_field: "info 13"},
-  {x: "2020-05-14", value: "1", custom_field: "info 14"},
-  {x: "2021-01-12", value: "2", custom_field: "info 15"}
+  {x: "2025-01-12", value: "6", custom_field: "info 1" },
+  {x: "2025-01-15", value: "2", custom_field: "info 2" },
+  {x: "2025-01-18", value: "2", custom_field: "info 3" },
+  {x: "2025-01-19", value: "5", custom_field: "info 4" },
+  {x: "2025-02-03", value: "1", custom_field: "info 5" },
+  {x: "2025-02-19", value: "9", custom_field: "info 6" },
+  {x: "2025-03-19", value: "2", custom_field: "info 7" },
+  {x: "2025-04-13", value: "3", custom_field: "info 8" },
+  {x: "2025-04-15", value: "3", custom_field: "info 9" },
+  {x: "2025-04-20", value: "4", custom_field: "info 10"},
+  {x: "2025-04-21", value: "1", custom_field: "info 11"},
+  {x: "2025-05-10", value: "3", custom_field: "info 12"},
+  {x: "2025-05-11", value: "1", custom_field: "info 13"},
+  {x: "2025-05-14", value: "1", custom_field: "info 14"},
+  {x: "2026-01-12", value: "2", custom_field: "info 15"}
 ];
 
 // create a chart and set the data
@@ -352,21 +352,21 @@ The sample below demonstrates how to work with formatting functions:
 ```
 // create data
 var data = [
-  {x: "2020-01-12", value: "6", custom_field: "info 1" },
-  {x: "2020-01-15", value: "2", custom_field: "info 2" },
-  {x: "2020-01-18", value: "2", custom_field: "info 3" },
-  {x: "2020-01-19", value: "5", custom_field: "info 4" },
-  {x: "2020-02-03", value: "1", custom_field: "info 5" },
-  {x: "2020-02-19", value: "9", custom_field: "info 6" },
-  {x: "2020-03-19", value: "2", custom_field: "info 7" },
-  {x: "2020-04-13", value: "3", custom_field: "info 8" },
-  {x: "2020-04-15", value: "3", custom_field: "info 9" },
-  {x: "2020-04-20", value: "4", custom_field: "info 10"},
-  {x: "2020-04-21", value: "1", custom_field: "info 11"},
-  {x: "2020-05-10", value: "3", custom_field: "info 12"},
-  {x: "2020-05-11", value: "1", custom_field: "info 13"},
-  {x: "2020-05-14", value: "1", custom_field: "info 14"},
-  {x: "2021-01-12", value: "2", custom_field: "info 15"}
+  {x: "2025-01-12", value: "6", custom_field: "info 1" },
+  {x: "2025-01-15", value: "2", custom_field: "info 2" },
+  {x: "2025-01-18", value: "2", custom_field: "info 3" },
+  {x: "2025-01-19", value: "5", custom_field: "info 4" },
+  {x: "2025-02-03", value: "1", custom_field: "info 5" },
+  {x: "2025-02-19", value: "9", custom_field: "info 6" },
+  {x: "2025-03-19", value: "2", custom_field: "info 7" },
+  {x: "2025-04-13", value: "3", custom_field: "info 8" },
+  {x: "2025-04-15", value: "3", custom_field: "info 9" },
+  {x: "2025-04-20", value: "4", custom_field: "info 10"},
+  {x: "2025-04-21", value: "1", custom_field: "info 11"},
+  {x: "2025-05-10", value: "3", custom_field: "info 12"},
+  {x: "2025-05-11", value: "1", custom_field: "info 13"},
+  {x: "2025-05-14", value: "1", custom_field: "info 14"},
+  {x: "2026-01-12", value: "2", custom_field: "info 15"}
 ];
 
 // create a chart and set the data
@@ -407,6 +407,8 @@ The grow-only guard lets go on an explicit signal: {api:anychart.charts.Calendar
 // let the chart grow its own container to the height it needs
 chart.autoHeight(true);
 ```
+
+In the sample below, the container is deliberately too short for the three years in the data. Turn auto height on to let the chart grow the container to the height it reports, and off to squeeze the chart back:
 
 {sample}BCT\_Calendar\_Chart\_11{sample}
 
