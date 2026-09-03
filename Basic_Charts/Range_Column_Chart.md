@@ -279,7 +279,7 @@ series.labels().enabled(true);
 series.labels().position("rangeMode");
 ```
 
-To give each end its own text, use a format function. In `"rangeMode"` the format context carries `this["rangeEnd"]`: it is `"low"` on the low-end label and undefined on the high-end one, so one function can branch on the end it is rendering:
+To give each end its own text, use a format function - `"rangeMode"` reaches format functions only, and a `{%rangeEnd}` token in a [text formatter](../Common_Settings/Text_Formatters) string prints nothing. In the function, `this["rangeEnd"]` is `"low"` on the low-end label and undefined on the high-end one, so one function can branch on the end it is rendering:
 
 ```
 // give each end its own text
@@ -288,9 +288,7 @@ series.labels().format(function () {
 });
 ```
 
-Read the point fields directly, as in the snippet above. On the low-end label the format context is a delegate object: `rangeEnd` is its only own field and the point fields are inherited, so `this["low"]`, `this["high"]`, destructuring, `for...in` and {api:anychart.format.Context#getData}getData(){api} work the same on both labels, while a snapshot of the context's own keys does not - `Object.keys(this)`, `{...this}` and `this.hasOwnProperty("high")` see only `rangeEnd` there.
-
-`this["rangeEnd"]` reaches format functions only. A [text formatter](../Common_Settings/Text_Formatters) string cannot tell the two labels apart: the `{%rangeEnd}` token prints nothing on either of them, and `{%low}` and `{%high}` resolve to the same two values on both.
+Read the point fields directly, as in the snippet: on the low-end label they are inherited through a delegate context whose only own field is `rangeEnd`, so a snapshot of its own keys - `Object.keys(this)` or `{...this}` - comes back nearly empty. The full contract is in {api:anychart.format.Context}anychart.format.Context{api}.
 
 The same pairing works on the other range series: [Range Bar](Range_Bar_Chart), [Range Area](Range_Area_Chart), [Range Spline Area](Range_Spline_Area_Chart), [Range Step Area](Range_Step_Area_Chart), [HiLo](HiLo_Chart), and [Dumbbell](Dumbbell_Chart).
 
