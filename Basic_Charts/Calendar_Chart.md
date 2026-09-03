@@ -408,7 +408,7 @@ The grow-only guard lets go on an explicit signal: {api:anychart.charts.Calendar
 chart.autoHeight(true);
 ```
 
-In the sample below, the container is deliberately too short for the three years in the data. Turn auto height on to let the chart grow the container to the height it reports, and off to squeeze the chart back:
+In the sample below, auto height is on and the container starts as tall as one year of data. Add years to watch the chart grow its own container; going back down shrinks it, because the demo calls {api:anychart.charts.Calendar#resetAutoHeight}resetAutoHeight(){api} before changing the data:
 
 {sample}BCT\_Calendar\_Chart\_11{sample}
 
