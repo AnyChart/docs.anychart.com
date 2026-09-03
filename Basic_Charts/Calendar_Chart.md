@@ -412,9 +412,7 @@ In the sample below, the container starts 200 pixels tall, and auto height grows
 
 {sample}BCT\_Calendar\_Chart\_11{sample}
 
-#### Doing It by Hand
-
-The draw event is not a place to size the container. A handler that writes the container height when the chart is drawn makes the write trigger the next draw, which writes again, so the chart oscillates instead of settling:
+The obvious way to do this by hand does not work. A handler that writes the container height on the draw event makes the write trigger the next draw, which writes again, and the chart oscillates instead of settling:
 
 ```
 // this oscillates: the write causes the next draw, which causes the next write
@@ -424,4 +422,4 @@ chart.listen("chartDraw", function () {
 });
 ```
 
-{api:anychart.charts.Calendar#autoHeight}autoHeight(){api} does the same job with a step budget and a warning when it runs out, which is what keeps the loop finite.
+{api:anychart.charts.Calendar#autoHeight}autoHeight(){api} is that loop with a step budget and a warning when it runs out.
