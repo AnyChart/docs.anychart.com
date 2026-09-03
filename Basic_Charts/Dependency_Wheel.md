@@ -267,7 +267,7 @@ The options below set the shape of the wheel itself: where it points, how the no
 
 {api:anychart.charts.DependencyWheel#startAngle}startAngle(){api} rotates the whole wheel, in degrees. The default is 0, which places the first node arc at the top, and positive values turn the wheel clockwise.
 
-`clockwise()` sets the direction of the layout, `true` by default. Setting it to `false` mirrors the wheel across the start angle: the same arcs in the same sizes and with the same gaps, placed the other way round.
+{api:anychart.charts.DependencyWheel#clockwise}clockwise(){api} sets the direction of the layout, `true` by default. Setting it to `false` mirrors the wheel across the start angle: the same arcs in the same sizes and with the same gaps, placed the other way round.
 
 ```
 // rotate the whole wheel a quarter-turn
@@ -285,7 +285,7 @@ In the sample below, drag the slider to rotate the wheel and switch the directio
 
 {api:anychart.charts.DependencyWheel#padAngle}padAngle(){api} sets the angular gap between node arcs that sit next to each other, in degrees. A value out of range is brought back in: a negative value is read as 0, and a value of 360 or more as just under 360. When the wheel is drawn, each gap is also capped at 180 degrees divided by the number of node arcs, so the gaps never take up more than half of the ring.
 
-`minAngle()` sets the smallest angular size of a node arc, in degrees. The default is 0, which sizes every arc in proportion to the flow through the node. A larger value makes the smallest nodes easy to see and to point at, and the rest of the ring is still shared out in proportion. When the minimums do not all fit, they are scaled down together, so the arcs never overlap.
+{api:anychart.charts.DependencyWheel#minAngle}minAngle(){api} sets the smallest angular size of a node arc, in degrees. The default is 0, which sizes every arc in proportion to the flow through the node. A larger value makes the smallest nodes easy to see and to point at, and the rest of the ring is still shared out in proportion. When the minimums do not all fit, they are scaled down together, so the arcs never overlap.
 
 ```
 // widen the gaps between the node arcs
@@ -301,7 +301,7 @@ In the sample below, the sliders set the gap between the arcs and the floor unde
 
 #### Radius
 
-The `radius()` method sets the outer radius of the ring of node arcs. A number is a size in pixels, a percent string is a share of the smaller side of the chart area. The default, `"50%"`, is also the largest ring the chart draws, so larger values change nothing: use this method to make the ring smaller and leave room for long labels or a title.
+The {api:anychart.charts.DependencyWheel#radius}radius(){api} method sets the outer radius of the ring of node arcs. A number is a size in pixels, a percent string is a share of the smaller side of the chart area. The default, `"50%"`, is also the largest ring the chart draws, so larger values change nothing: use this method to make the ring smaller and leave room for long labels or a title.
 
 ```
 // shrink the ring to leave room around it
