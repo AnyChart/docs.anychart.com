@@ -29,7 +29,7 @@ var controller = plot.annotations();
 
 // create a Label annotation
 controller.label({
-    xAnchor: "2025-08-03",
+    xAnchor: "2006-07-30",
     valueAnchor: 17.24,
     text: "Buy"
 });
@@ -50,7 +50,7 @@ This sample shows two Label annotations with text and font configured (by using 
 ```
 // create the first Label annotation and configure its text and font
 var label1 = controller.label({
-     xAnchor: "2025-08-03",
+     xAnchor: "2006-07-30",
      valueAnchor: 17.24,
      fontSize: 20,
      fontFamily: "Courier",
@@ -61,7 +61,7 @@ var label1 = controller.label({
 var label2 = controller.label();
 
 // set the position of the second annotation
-    label2.xAnchor("2026-11-01");
+    label2.xAnchor("2007-10-28");
     label2.valueAnchor(32.51);
 
 // set the text of the second annotation
@@ -97,7 +97,7 @@ In the sample below, there are two Label annotations with some of the visual set
 /* create the first Label annotation
 and configure its size, offset, and visual settings*/
 var label1 = controller.label({
-    xAnchor: "2025-08-03",
+    xAnchor: "2006-07-30",
     valueAnchor: 17.24,
     text: "Buy",
     normal: {fontColor: "#008000", fontSize: 20},
@@ -109,7 +109,7 @@ var label1 = controller.label({
 var label2 = controller.label();
 
 // set the position of the second annotation
-label2.xAnchor("2026-11-01");
+label2.xAnchor("2007-10-28");
 label2.valueAnchor(32.51);
 
 // set the text of the second annotation

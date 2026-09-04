@@ -29,7 +29,7 @@ var controller = plot.annotations();
 
 // create a Vertical Line annotation
 controller.verticalLine({
-    xAnchor: "2026-09-27"
+    xAnchor: "2007-09-23"
 });
 ```
 
@@ -57,7 +57,7 @@ In the sample below, there are two Vertical Line annotations with some of the vi
 ```
 // create the first Vertical Line annotation and configure its visual settings
 var verticalLine1 = controller.verticalLine({
-    xAnchor: "2026-09-27",
+    xAnchor: "2007-09-23",
     hovered: {stroke: "2 #ff0000"},
     selected: {stroke: "4 #ff0000"}
 });
@@ -66,7 +66,7 @@ var verticalLine1 = controller.verticalLine({
 var verticalLine2 = controller.verticalLine();
 
 // set the position of the second annotation
-verticalLine2.xAnchor("2024-05-26");
+verticalLine2.xAnchor("2005-05-22");
  
 // configure the visual settings of the second annotation
 verticalLine2.normal().stroke("#006600", 1, "10 2");

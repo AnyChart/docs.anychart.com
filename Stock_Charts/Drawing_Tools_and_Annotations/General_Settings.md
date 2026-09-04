@@ -39,9 +39,9 @@ var controller = plot.annotations();
 
 // create an Ellipse annotation
 controller.ellipse({
-    xAnchor: "2024-11-25",
+    xAnchor: "2006-11-20",
     valueAnchor: 25.92,
-    secondXAnchor: "2026-08-16",
+    secondXAnchor: "2008-08-10",
     secondValueAnchor: 24.91,
 });
 ```
@@ -63,9 +63,9 @@ In the sample below, there are two annotations, an Ellipse and an Infinite Line,
 ```
 // create an Ellipse annotation and configure its visual settings
 plot.annotations().ellipse({
-    xAnchor: "2024-11-25",
+    xAnchor: "2006-11-20",
     valueAnchor: 25.92,
-    secondXAnchor: "2025-03-01",
+    secondXAnchor: "2007-02-24",
     secondValueAnchor: 31.92,
     hovered: {
         fill: "#398cae 0.3",
@@ -79,9 +79,9 @@ plot.annotations().ellipse({
 
 // create an Infinite Line annotation and configure its visual settings
 controller.infiniteLine({
-    xAnchor: "2023-09-10",
+    xAnchor: "2005-09-04",
     valueAnchor: 18.58,
-    secondXAnchor: "2026-08-16",
+    secondXAnchor: "2008-08-10",
     secondValueAnchor: 24.91,
     hovered: {stroke: "2 #ff0000"},
     selected: {stroke: "4 #ff0000"}
@@ -95,17 +95,17 @@ You can also use methods instead of objects. For example, in this sample the mar
 ```
 // create an Ellipse annotation
 var ellipse = controller.ellipse({
-    xAnchor: "2024-11-25",
+    xAnchor: "2006-11-20",
     valueAnchor: 25.92,
-    secondXAnchor: "2025-03-01",
+    secondXAnchor: "2007-02-24",
     secondValueAnchor: 31.92,
 });
 
 // create an Infinite Line annotation
 var infiniteLine = controller.infiniteLine({
-    xAnchor: "2023-09-10",
+    xAnchor: "2005-09-04",
     valueAnchor: 18.58,
-    secondXAnchor: "2026-08-16",
+    secondXAnchor: "2008-08-10",
     secondValueAnchor: 24.91,
 });
 
@@ -143,17 +143,17 @@ var controller = plot.annotations();
 
 // create an Ellipse annotation
 var ellipse = plot.annotations().ellipse({
-    xAnchor: "2024-11-25",
+    xAnchor: "2006-11-20",
     valueAnchor: 25.92,
-    secondXAnchor: "2025-03-01",
+    secondXAnchor: "2007-02-24",
     secondValueAnchor: 31.92,
 });
 
 // create an Infinite Line annotation
 var infiniteLine = plot.annotations().infiniteLine({
-    xAnchor: "2023-09-10",
+    xAnchor: "2005-09-04",
     valueAnchor: 18.58,
-    secondXAnchor: "2026-08-16",
+    secondXAnchor: "2008-08-10",
     secondValueAnchor: 24.91,
 });
 
@@ -184,17 +184,17 @@ var controller = plot.annotations();
 
 // create an Infinite Line annotation (automatically bound to the main y-scale)
 controller.infiniteLine({
-    xAnchor: "2022-01-11",
+    xAnchor: "2004-01-06",
     valueAnchor: 2039.63,
-    secondXAnchor: "2022-01-20",
+    secondXAnchor: "2004-01-15",
     secondValueAnchor: 2088.10
 });
 
 //create an Ellipse annotation
 var ellipse = controller.ellipse({
-    xAnchor: "2022-01-12",
+    xAnchor: "2004-01-07",
     valueAnchor: 2583950080,
-    secondXAnchor: "2022-01-14",
+    secondXAnchor: "2004-01-09",
     secondValueAnchor: 2783950080
 });
 

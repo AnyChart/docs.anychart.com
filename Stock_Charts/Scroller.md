@@ -33,7 +33,7 @@ There are several basic methods to configure the scroller:
 
 ```
 // adjust the scroller
-chart.selectRange('2026-01-02','2026-01-15');
+chart.selectRange('2004-01-02','2004-01-15');
 chart.scroller().thumbs(false);
 chart.scroller().fill('green 0.1');
 chart.scroller().selectedFill('green 0.5');

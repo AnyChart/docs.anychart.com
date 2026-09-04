@@ -29,9 +29,9 @@ var controller = plot.annotations();
 
 // create a Fibonacci Time Zones annotation
 controller.fibonacciTimezones({
-    xAnchor: "2025-08-03",
+    xAnchor: "2006-07-30",
     valueAnchor: 17.24,
-    secondXAnchor: "2026-01-11",
+    secondXAnchor: "2007-01-07",
     secondValueAnchor: 28.92
 });
 ```
@@ -47,9 +47,9 @@ You can set the levels of a Fibonacci Time Zones annotation by using the {api:an
 ```
 // create a Fibonacci Time Zones annotation
 controller.fibonacciTimezones({
-    xAnchor: "2025-08-03",
+    xAnchor: "2006-07-30",
     valueAnchor: 17.24,
-    secondXAnchor: "2026-01-11",
+    secondXAnchor: "2007-01-07",
     secondValueAnchor: 28.92,
     levels: [0,0.4,1]
 });
@@ -79,9 +79,9 @@ In the sample below, there are two Fibonacci Timezones annotations with some of 
 ```
 // create the first Fibonacci Time Zones annotation and configure its visual settings
 var fibonacciTimezones1 = controller.fibonacciTimezones({
-    xAnchor: "2025-08-03",
+    xAnchor: "2006-07-30",
     valueAnchor: 17.24,
-    secondXAnchor: "2026-01-11",
+    secondXAnchor: "2007-01-07",
     secondValueAnchor: 28.92,
     normal: {
         labels: {fontColor: "#ff0000"}
@@ -102,9 +102,9 @@ var fibonacciTimezones1 = controller.fibonacciTimezones({
 var fibonacciTimezones2 = controller.fibonacciTimezones();
 
 // set the position of the second annotation
-fibonacciTimezones2.xAnchor("2023-01-15");
+fibonacciTimezones2.xAnchor("2004-01-11");
 fibonacciTimezones2.valueAnchor(29.13);
-fibonacciTimezones2.secondXAnchor("2023-06-11");
+fibonacciTimezones2.secondXAnchor("2004-06-06");
 fibonacciTimezones2.secondValueAnchor(23.82);
  
 // configure the visual settings of the second annotation
@@ -121,9 +121,9 @@ To configure the visual settings of a certain level, use the {api:anychart.core.
 ```
 // create a Fibonacci Time Zones annotation
 controller.fibonacciTimezones({
-    xAnchor: "2025-08-03",
+    xAnchor: "2006-07-30",
     valueAnchor: 17.24,
-    secondXAnchor: "2026-01-11",
+    secondXAnchor: "2007-01-07",
     secondValueAnchor: 28.92,
     normal: {stroke: colorLevels},
     hovered: {stroke: colorLevels},
@@ -160,9 +160,9 @@ Combine the {api:anychart.core.annotations.FibonacciTimezones#labels}labels(){ap
 ```
 // create a Fibonacci Time Zones annotation
 var fibonacciTimezones = controller.fibonacciTimezones({
-    xAnchor: "2023-08-13",
+    xAnchor: "2004-08-08",
     valueAnchor: 17.9,
-    secondXAnchor: "2025-10-12",
+    secondXAnchor: "2006-10-08",
     secondValueAnchor: 24.5
 });
 

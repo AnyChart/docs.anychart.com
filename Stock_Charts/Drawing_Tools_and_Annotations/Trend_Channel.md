@@ -29,11 +29,11 @@ var controller = plot.annotations();
 
 // create a Trend Channel annotation
 controller.trendChannel({
-    xAnchor: "2026-01-11",
+    xAnchor: "2007-01-07",
     valueAnchor: 28.92,
-    secondXAnchor: "2026-09-27",
+    secondXAnchor: "2007-09-23",
     secondValueAnchor: 33.13,
-    thirdXAnchor: "2025-08-03",
+    thirdXAnchor: "2006-07-30",
     thirdValueAnchor: 17.24
 });
 ```
@@ -63,11 +63,11 @@ In the sample below, there are two Trend Channel annotations with some of the vi
 ```
 // create the first Trend Channel annotation and configure its visual settings
 var trendChannel1 = controller.trendChannel({
-    xAnchor: "2026-01-11",
+    xAnchor: "2007-01-07",
     valueAnchor: 28.92,
-    secondXAnchor: "2026-09-27",
+    secondXAnchor: "2007-09-23",
     secondValueAnchor: 33.13,
-    thirdXAnchor: "2025-08-03",
+    thirdXAnchor: "2006-07-30",
     thirdValueAnchor: 17.24,
     hovered: {
         fill: "#398cae 0.3",
@@ -84,11 +84,11 @@ var trendChannel1 = controller.trendChannel({
 var trendChannel2 = controller.trendChannel();
 
 // set the position of the second annotation
-trendChannel2.xAnchor("2023-01-15");
+trendChannel2.xAnchor("2004-01-11");
 trendChannel2.valueAnchor(29.13);
-trendChannel2.secondXAnchor("2024-11-03");
+trendChannel2.secondXAnchor("2005-10-30");
 trendChannel2.secondValueAnchor(17.87);
-trendChannel2.thirdXAnchor("2023-08-13");
+trendChannel2.thirdXAnchor("2004-08-08");
 trendChannel2.thirdValueAnchor(17.86);
 
 // configure the visual settings of the second annotation

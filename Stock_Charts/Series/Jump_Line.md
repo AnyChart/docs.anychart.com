@@ -16,10 +16,10 @@ Here is how to set data as an array of arrays, array contains values and then yo
 // set the data
 table = anychart.data.table();
 table.addData([
-    ['2026-01-02', 29955800],
-    ['2026-01-05', 38892100],
-    ['2026-01-06', 43684400],
-    ['2026-01-07', 48757500]
+    ['2004-01-02', 29955800],
+    ['2004-01-05', 38892100],
+    ['2004-01-06', 43684400],
+    ['2004-01-07', 48757500]
 ]);
 
 // map the data
@@ -35,10 +35,10 @@ The next sample contains the same data arranged as array of objects.
 // set the data
 table = anychart.data.table("x");
 table.addData([
-    {'x':"2026-01-02", 'value': 29955800},
-    {'x':"2026-01-05", 'value': 38892100},
-    {'x':"2026-01-06", 'value': 43684400},
-    {'x':"2026-01-07", 'value': 48757500},
+    {'x':"2004-01-02", 'value': 29955800},
+    {'x':"2004-01-05", 'value': 38892100},
+    {'x':"2004-01-06", 'value': 43684400},
+    {'x':"2004-01-07", 'value': 48757500},
 ]);
 
 // map the data

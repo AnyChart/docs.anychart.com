@@ -29,7 +29,7 @@ var controller = plot.annotations();
 
 // create a Marker annotation
 controller.marker({
-    xAnchor: "2026-07-19",
+    xAnchor: "2008-07-13",
     valueAnchor: 21.66
 });
 ```
@@ -51,7 +51,7 @@ The first annotation in the following sample is of the default type (down arrow)
 ```
 // create the first Marker annotation and configure its size and offset
 var marker1 = controller.marker({
-    xAnchor: "2026-07-19",
+    xAnchor: "2008-07-13",
     valueAnchor: 21.66,
     size: 30,
     offsetY: 10
@@ -61,7 +61,7 @@ var marker1 = controller.marker({
 var marker2 = controller.marker();
 
 // set the position of the second annotation
-marker2.xAnchor("2025-01-12");
+marker2.xAnchor("2007-01-07");
 marker2.valueAnchor(28.92);
 
 // set the type of the second annotation
@@ -96,7 +96,7 @@ In the sample below, there are two Marker annotations with some of the visual se
 ```
 // create the first Marker annotation and configure its size, offset and visual settings
 var marker1 = controller.marker({
-    xAnchor: "2026-07-19",
+    xAnchor: "2008-07-13",
     valueAnchor: 21.66,
     size: 30,
     offsetY: 10,
@@ -115,7 +115,7 @@ var marker1 = controller.marker({
 var marker2 = controller.marker();
 
 // set the position of the second annotation
-marker2.xAnchor("2025-01-12");
+marker2.xAnchor("2007-01-07");
 marker2.valueAnchor(28.92);
 
 // set the type of the second annotation
