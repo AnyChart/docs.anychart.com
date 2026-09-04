@@ -23,14 +23,14 @@ var data = [
   {
     id: "1",
     name: "Development",
-    actualStart: 1768780800000,
-    actualEnd: 1773446400000,
+    actualStart: 1515974400000,
+    actualEnd: 1520640000000,
     children: [
       {
         id: "1_1",
         name: "Analysis",
-        actualStart: 1768780800000,
-        actualEnd: 1769644800000
+        actualStart: 1515974400000,
+        actualEnd: 1516838400000
       }
   ]}
 ];
@@ -45,7 +45,7 @@ The [Date.UTC()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/
 For example, *January 15, 2018* is represented as:
 
 * `Date.UTC(2026,0,19)`
-* `Date.UTC(2026,0,19,0,0,0,0)`
+* `Date.UTC(2018,0,15,0,0,0,0)`
 
 Sample Code
 

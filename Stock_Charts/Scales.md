@@ -77,7 +77,7 @@ chart.plot(0).yScale().comparisonMode("percent");
 chart.plot(0).yScale().compareWith("seriesStart");
 
 // value mode with custom date as the comparison date
-// date is 25 of April 2008, set as a JavaScript Timestamp 
+// date is 24 of April 2008, set as a JavaScript Timestamp 
 chart.plot(1).yScale().comparisonMode("value");
 chart.plot(1).yScale().compareWith(1209081600000);
 // the following line gives the same result
