@@ -29,9 +29,9 @@ var controller = plot.annotations();
 
 // create a Line annotation
 controller.line({
-    xAnchor: "2024-08-04",
+    xAnchor: "2006-07-30",
     valueAnchor: 17.24,
-    secondXAnchor: "2026-04-12",
+    secondXAnchor: "2008-04-06",
     secondValueAnchor: 23.38
 });
 ```
@@ -60,9 +60,9 @@ In the sample below, there are two Line annotations with some of the visual sett
 ```
 // create the first Line annotation and configure its visual settings
 var line1 = controller.line({
-    xAnchor: "2024-08-04",
+    xAnchor: "2006-07-30",
     valueAnchor: 17.24,
-    secondXAnchor: "2026-04-12",
+    secondXAnchor: "2008-04-06",
     secondValueAnchor: 23.38,
     hovered: {stroke: "2 #ff0000"},
     selected: {stroke: "4 #ff0000"}
@@ -72,9 +72,9 @@ var line1 = controller.line({
 var line2 = controller.line();
 
 // set the position of the second annotation
-line2.xAnchor("2022-06-12");
+line2.xAnchor("2004-06-06");
 line2.valueAnchor(23.82);
-line2.secondXAnchor("2025-01-12");
+line2.secondXAnchor("2007-01-07");
 line2.secondValueAnchor(28.92);
  
 // configure the visual settings of the second annotation

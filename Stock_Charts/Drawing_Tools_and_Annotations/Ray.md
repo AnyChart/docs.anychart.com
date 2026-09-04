@@ -29,9 +29,9 @@ var controller = plot.annotations();
 
 // create a Ray annotation
 controller.ray({
-    xAnchor: "2024-08-04",
+    xAnchor: "2006-07-30",
     valueAnchor: 17.24,
-    secondXAnchor: "2026-05-03",
+    secondXAnchor: "2008-04-27",
     secondValueAnchor: 26.75
 });
 ```
@@ -60,9 +60,9 @@ In the sample below, there are two Ray annotations with some of the visual setti
 ```
 // create the first Ray annotation and configure its visual settings
 var ray1 = controller.ray({
-    xAnchor: "2024-08-04",
+    xAnchor: "2006-07-30",
     valueAnchor: 17.24,
-    secondXAnchor: "2026-05-03",
+    secondXAnchor: "2008-04-27",
     secondValueAnchor: 26.75,
     hovered: {stroke: "2 #ff0000"},
     selected: {stroke: "4 #ff0000"}
@@ -72,9 +72,9 @@ var ray1 = controller.ray({
 var ray2 = controller.ray();
 
 // set the position of the second annotation
-ray2.xAnchor("2022-06-12");
+ray2.xAnchor("2004-06-06");
 ray2.valueAnchor(23.82);
-ray2.secondXAnchor("2025-09-28");
+ray2.secondXAnchor("2007-09-23");
 ray2.secondValueAnchor(33.13);
  
 // configure the visual settings of the second annotation

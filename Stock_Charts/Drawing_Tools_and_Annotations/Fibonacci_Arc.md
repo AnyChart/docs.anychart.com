@@ -29,9 +29,9 @@ var controller = plot.annotations();
 
 // create a Fibonacci Arc annotation
 controller.fibonacciArc({
-    xAnchor: "2025-08-03",
+    xAnchor: "2006-07-30",
     valueAnchor: 17.24,
-    secondXAnchor: "2026-01-11",
+    secondXAnchor: "2007-01-07",
     secondValueAnchor: 28.92
 });
 ```
@@ -47,9 +47,9 @@ You can set the levels of a Fibonacci Arc annotation by using the {api:anychart.
 ```
 // create a Fibonacci Arc annotation
 controller.fibonacciArc({
-    xAnchor: "2025-08-03",
+    xAnchor: "2006-07-30",
     valueAnchor: 17.24,
-    secondXAnchor: "2026-01-11",
+    secondXAnchor: "2007-01-07",
     secondValueAnchor: 28.92,
     levels: [0, 0.2, 0.4, 0.7, 1]
 });
@@ -79,9 +79,9 @@ In the sample below, there are two Fibonacci Arc annotations with some of the vi
 ```
 // create the first Fibonacci Arc annotation and configure its visual settings
 var fibonacciArc1 = controller.fibonacciArc({
-    xAnchor: "2025-08-03",
+    xAnchor: "2006-07-30",
     valueAnchor: 17.24,
-    secondXAnchor: "2026-01-11",
+    secondXAnchor: "2007-01-07",
     secondValueAnchor: 28.92,
     normal: {
         labels: {fontColor: "#ff0000"}
@@ -102,9 +102,9 @@ var fibonacciArc1 = controller.fibonacciArc({
 var fibonacciArc2 = controller.fibonacciArc();
 
 // set the position of the second annotation
-fibonacciArc2.xAnchor("2023-01-15");
+fibonacciArc2.xAnchor("2004-01-11");
 fibonacciArc2.valueAnchor(29.13);
-fibonacciArc2.secondXAnchor("2023-08-13");
+fibonacciArc2.secondXAnchor("2004-08-08");
 fibonacciArc2.secondValueAnchor(17.86);
  
 // configure the visual settings of the second annotation
@@ -121,9 +121,9 @@ To configure the visual settings of a certain level, use the {api:anychart.core.
 ```
 // create a Fibonacci Arc annotation
 controller.fibonacciArc({
-    xAnchor: "2025-08-03",
+    xAnchor: "2006-07-30",
     valueAnchor: 17.24,
-    secondXAnchor: "2026-01-11",
+    secondXAnchor: "2007-01-07",
     secondValueAnchor: 28.92,
     normal: {stroke: colorLevels},
     hovered: {stroke: colorLevels},
@@ -160,9 +160,9 @@ Combine the {api:anychart.core.annotations.FibonacciArc#labels}labels(){api} and
 ```
 // create a Fibonacci Arc annotation
 var fibonacciArc = controller.fibonacciArc({
-    xAnchor: "2025-08-03",
+    xAnchor: "2006-07-30",
     valueAnchor: 17.24,
-    secondXAnchor: "2026-01-11",
+    secondXAnchor: "2007-01-07",
     secondValueAnchor: 28.92
 });
 

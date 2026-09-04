@@ -343,7 +343,7 @@ selectable = mapping.createSelectable();
 This method creates a selection including all rows. You can narrow it down to a **range of dates** of your choice - call {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters, which can be passed as numbers, strings, or Date objects:
 
 ```
-selectable.select("2010-01-05", "2014-01-05");
+selectable.select("2002-01-01", "2006-01-01");
 ```
 
 Also, sometimes the {api:anychart.data.TableSelectable#selectAll}selectAll(){api} method, allowing you to select all dates, might be helpful. Please note that both methods return instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
@@ -351,14 +351,14 @@ Also, sometimes the {api:anychart.data.TableSelectable#selectAll}selectAll(){api
 You can call {api:anychart.data.TableSelectable#select}select(){api} and {api:anychart.data.TableSelectable#selectAll}selectAll(){api} with two optional parameters for **grouping the selected data**, like in the second sample in the [Iterating](#iterating) section. One of these parameters sets the time interval - for example, a day, a month, a year, etc. (see {api:anychart.enums.Interval}anychart.enums.Interval{api}), and the other sets the number of intervals:
 
 ```
-selectable.select("2010-01-05", "2014-01-05", "year", 2);
+selectable.select("2002-01-01", "2006-01-01", "year", 2);
 ```
 
 **2. Accessing Rows.** To access a row of a table in a selection, perform a [search](#searching) on the key of the row - call the {api:anychart.data.TableSelectable#search}search(){api} method on the instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}:
 
 ```
 selectable = mapping.createSelectable();
-selectable.select("2010-01-05", "2014-01-05");
+selectable.select("2002-01-01", "2006-01-01");
 selectable.search("2012-01-05", "exact");
 ```
 

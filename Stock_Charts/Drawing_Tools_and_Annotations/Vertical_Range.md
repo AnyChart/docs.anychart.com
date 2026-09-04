@@ -29,8 +29,8 @@ var controller = plot.annotations();
 
 // create a Vertical Channel annotation
 controller.verticalRange({
-    xAnchor: "2026-01-11",
-    secondXAnchor: "2026-09-27",
+    xAnchor: "2007-01-07",
+    secondXAnchor: "2007-09-23",
 });
 ```
 
@@ -59,8 +59,8 @@ In the sample below, there are two Vertical Channel annotations with some of the
 ```
 // create the first Vertical Channel annotation and configure its visual settings
 var verticalChannel1 = controller.verticalRange({
-    xAnchor: "2026-01-11",
-    secondXAnchor: "2026-09-27",
+    xAnchor: "2007-01-07",
+    secondXAnchor: "2007-09-23",
     hovered: {
         fill: "#398cae 0.3",
         stroke: "2 #ff0000"
@@ -76,8 +76,8 @@ var verticalChannel1 = controller.verticalRange({
 var verticalChannel2 = controller.verticalRange();
 
 // set the position of the second annotation
-verticalChannel2.xAnchor("2023-01-15");
-verticalChannel2.secondXAnchor("2024-11-03");
+verticalChannel2.xAnchor("2004-01-11");
+verticalChannel2.secondXAnchor("2005-10-30");
 
 // configure the visual settings of the second annotation
 verticalChannel2.normal().fill("none");

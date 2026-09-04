@@ -29,9 +29,9 @@ var controller = plot.annotations();
 
 // create a Rectangle annotation
 controller.rectangle({
-    xAnchor: "2025-11-23",
+    xAnchor: "2006-11-19",
     valueAnchor: 29.84,
-    secondXAnchor: "2026-03-29",
+    secondXAnchor: "2007-03-25",
     secondValueAnchor: 25.11
 });
 ```
@@ -62,9 +62,9 @@ In the sample below, there are two Rectangle annotations with some of the visual
 ```
 // create the first Rectangle annotation and configure its visual settings
 var rectangle1 = controller.rectangle({
-    xAnchor: "2025-11-23",
+    xAnchor: "2006-11-19",
     valueAnchor: 29.84,
-    secondXAnchor: "2026-03-29",
+    secondXAnchor: "2007-03-25",
     secondValueAnchor: 25.11,
     hovered: {
         fill: "#398cae 0.3",
@@ -81,9 +81,9 @@ var rectangle1 = controller.rectangle({
 var rectangle2 = controller.rectangle();
 
 // set the position of the second annotation
-rectangle2.xAnchor("2024-11-24");
+rectangle2.xAnchor("2005-11-20");
 rectangle2.valueAnchor(15.55);
-rectangle2.secondXAnchor("2026-03-01");
+rectangle2.secondXAnchor("2007-02-25");
 rectangle2.secondValueAnchor(23.30);
  
 // configure the visual settings of the second annotation

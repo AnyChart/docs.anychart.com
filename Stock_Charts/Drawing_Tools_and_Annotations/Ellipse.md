@@ -29,9 +29,9 @@ var controller = plot.annotations();
 
 // create an Ellipse annotation
 controller.ellipse({
-    xAnchor: "2024-11-25",
+    xAnchor: "2006-11-20",
     valueAnchor: 25.92,
-    secondXAnchor: "2026-08-16",
+    secondXAnchor: "2008-08-10",
     secondValueAnchor: 24.91,
 });
 ```
@@ -62,9 +62,9 @@ In the sample below, there are two Ellipse annotations with some of the visual s
 ```
 // create the first Ellipse annotation and configure its visual settings
 var ellipse1 = controller.ellipse({
-    xAnchor: "2024-11-25",
+    xAnchor: "2006-11-20",
     valueAnchor: 25.92,
-    secondXAnchor: "2025-03-01",
+    secondXAnchor: "2007-02-24",
     secondValueAnchor: 31.92,
     hovered: {
         fill: "#398cae 0.3",
@@ -81,9 +81,9 @@ var ellipse1 = controller.ellipse({
 var ellipse2 = controller.ellipse();
 
 // set the position of the second annotation
-ellipse2.xAnchor("2023-11-26");
+ellipse2.xAnchor("2005-11-20");
 ellipse2.valueAnchor(15.55);
-ellipse2.secondXAnchor("2025-03-02");
+ellipse2.secondXAnchor("2007-02-25");
 ellipse2.secondValueAnchor(23.30);
  
 // configure the visual settings of the second annotation
