@@ -29,11 +29,11 @@ var controller = plot.annotations();
 
 // create a Triangle annotation
 controller.triangle({
-    xAnchor: "2006-03-14",
+    xAnchor: "2025-03-18",
     valueAnchor: 25.14,
-    secondXAnchor: "2007-02-25",
+    secondXAnchor: "2026-03-01",
     secondValueAnchor: 34.5,
-    thirdXAnchor: "2007-02-04",
+    thirdXAnchor: "2026-02-08",
     thirdValueAnchor: 20.65
 });
 ```
@@ -64,11 +64,11 @@ In the sample below, there are two Triangle annotations with some of the visual 
 ```
 // create the first Triangle annotation and configure its visual settings
 var triangle1 = controller.triangle({
-    xAnchor: "2006-03-14",
+    xAnchor: "2025-03-18",
     valueAnchor: 25.14,
-    secondXAnchor: "2007-02-25",
+    secondXAnchor: "2026-03-01",
     secondValueAnchor: 34.5,
-    thirdXAnchor: "2007-02-04",
+    thirdXAnchor: "2026-02-08",
     thirdValueAnchor: 20.65,
     hovered: {
         fill: "#398cae 0.3",
@@ -85,11 +85,11 @@ var triangle1 = controller.triangle({
 var triangle2 = controller.triangle();
 
 // set the position of the second annotation
-triangle2.xAnchor("2004-09-15");
+triangle2.xAnchor("2023-09-20");
 triangle2.valueAnchor(15);
-triangle2.secondXAnchor("2004-12-26");
+triangle2.secondXAnchor("2023-12-31");
 triangle2.secondValueAnchor(23);
-triangle2.thirdXAnchor("2005-10-02");
+triangle2.thirdXAnchor("2024-10-06");
 triangle2.thirdValueAnchor(15);
 
 // configure the visual settings of the second annotation

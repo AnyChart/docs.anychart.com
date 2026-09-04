@@ -18,19 +18,19 @@ var data = [
   {
     id: "1",
     name: "Development",
-    baselineStart: "2018-01-12",
-    baselineEnd: "2018-03-04",
-    actualStart: "2018-01-15",
-    actualEnd: "2018-03-10",
+    baselineStart: "2026-01-16",
+    baselineEnd: "2026-03-08",
+    actualStart: "2026-01-19",
+    actualEnd: "2026-03-14",
     children: [
       {
         id: "1_1",
         name: "Analysis",
-        baselineStart: "2018-01-12",
-        baselineEnd: "2018-01-25",
+        baselineStart: "2026-01-16",
+        baselineEnd: "2026-01-29",
         baseline: {fill: "#dd2c00 0.3", stroke: "0.5 #dd2c00"},
-        actualStart: "2018-01-15",
-        actualEnd: "2018-01-25",
+        actualStart: "2026-01-19",
+        actualEnd: "2026-01-29",
         actual: {fill: "#dd2c00", stroke: "0.5 #dd2c00"},
         progressValue: "75%",
         progress: {fill: "#455a64 0.5", stroke: "0.5 #dd2c00"},
@@ -41,10 +41,10 @@ var data = [
       {
         id: "1_2",
         name: "Design",
-        baselineStart: "2018-01-20",
-        baselineEnd: "2018-01-31",
-        actualStart: "2018-01-20",
-        actualEnd: "2018-02-04",
+        baselineStart: "2026-01-24",
+        baselineEnd: "2026-02-04",
+        actualStart: "2026-01-24",
+        actualEnd: "2026-02-08",
         progressValue: "100%",
         connectTo: "1_4",
         connectorType: "start-start"
@@ -52,25 +52,25 @@ var data = [
       {
         id: "1_3",
         name: "Meeting",
-        actualStart: "2018-02-05",
-        actualEnd: "2018-02-05"
+        actualStart: "2026-02-09",
+        actualEnd: "2026-02-09"
       },
       {
         id: "1_4",
         name: "Implementation",
-        baselineStart: "2018-02-01",
-        baselineEnd: "2018-02-19",
-        actualStart: "2018-02-05",
-        actualEnd: "2018-02-24",
+        baselineStart: "2026-02-05",
+        baselineEnd: "2026-02-23",
+        actualStart: "2026-02-09",
+        actualEnd: "2026-02-28",
         progressValue: "60%"
       },
       {
         id: "1_5",
         name: "Testing",
-        baselineStart: "2018-02-20",
-        baselineEnd: "2018-03-05",
-        actualStart: "2018-02-25",
-        actualEnd: "2018-03-10"
+        baselineStart: "2026-02-24",
+        baselineEnd: "2026-03-09",
+        actualStart: "2026-03-01",
+        actualEnd: "2026-03-14"
       }
   ]}
 ];
@@ -101,26 +101,26 @@ var data = [
     id: "1",
     name: "Server 1",
     periods: [
-      {id:"1_1", start: "2018-01-02", end: "2018-01-25",
+      {id:"1_1", start: "2026-01-06", end: "2026-01-29",
        fill: "#dd2c00", stroke: "#dd2c00",
        connectTo: "1_2", connectorType: "finish-start",
        connector: {fill: "#dd2c00", stroke: "2 #dd2c00"}},
-      {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
-      {id:"1_3", start: "2018-03-03", end: "2018-03-25"}
+      {id:"1_2", start: "2026-02-01", end: "2026-02-26"},
+      {id:"1_3", start: "2026-03-07", end: "2026-03-29"}
   ]},
   {
     id: "2",
     name: "Server 2",
     periods: [
-      {id: "2_1", start: "2018-01-07", end: "2018-02-15",
+      {id: "2_1", start: "2026-01-11", end: "2026-02-19",
        connectTo: "2_2", connectorType: "finish-start"},
-      {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
+      {id: "2_2", start: "2026-03-02", end: "2026-03-24"}
   ]},
   {
     id: "3",
     name: "Server 3",
     periods: [
-      {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
+      {id: "3_1", start: "2026-01-08", end: "2026-03-29"}
   ]}
 ];
 

@@ -73,15 +73,15 @@ var dataTable = anychart.data.table(0);
 
 // add data
 dataTable.addData([
-  ["2015-12-25", 512.53, 514.88, 505.69, 507.34],
-  ["2015-12-26", 511.83, 514.98, 505.59, 506.23],
-  ["2015-12-27", 511.22, 515.30, 505.49, 506.47],
-  ["2015-12-28", 510.35, 515.72, 505.23, 505.80],
-  ["2015-12-29", 510.53, 515.86, 505.38, 508.25],
-  ["2015-12-30", 511.43, 515.98, 505.66, 507.45],
-  ["2015-12-31", 511.50, 515.33, 505.99, 507.98],
-  ["2016-01-01", 511.32, 514.29, 505.99, 506.37],
-  ["2016-01-02", 511.70, 514.87, 506.18, 506.75]
+  ["2023-12-29", 512.53, 514.88, 505.69, 507.34],
+  ["2023-12-30", 511.83, 514.98, 505.59, 506.23],
+  ["2023-12-31", 511.22, 515.30, 505.49, 506.47],
+  ["2024-01-01", 510.35, 515.72, 505.23, 505.80],
+  ["2024-01-02", 510.53, 515.86, 505.38, 508.25],
+  ["2024-01-03", 511.43, 515.98, 505.66, 507.45],
+  ["2024-01-04", 511.50, 515.33, 505.99, 507.98],
+  ["2024-01-05", 511.32, 514.29, 505.99, 506.37],
+  ["2024-01-06", 511.70, 514.87, 506.18, 506.75]
 ]);
 
 // map the data
@@ -106,15 +106,15 @@ var dataTable = anychart.data.table("x");
 
 // add data
 dataTable.addData([
-  {"x": "2015-12-25", "open": 512.53, "high": 514.88, "low": 505.69, "close": 507.34},
-  {"x": "2015-12-26", "open": 511.83, "high": 514.98, "low": 505.59, "close": 506.23},
-  {"x": "2015-12-27", "open": 511.22, "high": 515.30, "low": 505.49, "close": 506.47},
-  {"x": "2015-12-28", "open": 510.35, "high": 515.72, "low": 505.23, "close": 505.80},
-  {"x": "2015-12-29", "open": 510.53, "high": 515.86, "low": 505.38, "close": 508.25},
-  {"x": "2015-12-30", "open": 511.43, "high": 515.98, "low": 505.66, "close": 507.45},
-  {"x": "2015-12-31", "open": 511.50, "high": 515.33, "low": 505.99, "close": 507.98},
-  {"x": "2016-01-01", "open": 511.32, "high": 514.29, "low": 505.99, "close": 506.37},
-  {"x": "2016-01-02", "open": 511.70, "high": 514.87, "low": 506.18, "close": 506.75}
+  {"x": "2023-12-29", "open": 512.53, "high": 514.88, "low": 505.69, "close": 507.34},
+  {"x": "2023-12-30", "open": 511.83, "high": 514.98, "low": 505.59, "close": 506.23},
+  {"x": "2023-12-31", "open": 511.22, "high": 515.30, "low": 505.49, "close": 506.47},
+  {"x": "2024-01-01", "open": 510.35, "high": 515.72, "low": 505.23, "close": 505.80},
+  {"x": "2024-01-02", "open": 510.53, "high": 515.86, "low": 505.38, "close": 508.25},
+  {"x": "2024-01-03", "open": 511.43, "high": 515.98, "low": 505.66, "close": 507.45},
+  {"x": "2024-01-04", "open": 511.50, "high": 515.33, "low": 505.99, "close": 507.98},
+  {"x": "2024-01-05", "open": 511.32, "high": 514.29, "low": 505.99, "close": 506.37},
+  {"x": "2024-01-06", "open": 511.70, "high": 514.87, "low": 506.18, "close": 506.75}
 ]); 
 
 // map the data
@@ -140,15 +140,15 @@ Use the `columnsSeparator` and `rowsSeparator` fields to set separators and `ign
 ```
 // create data
 var data = "Dates;Open;High;Low;Close*" +
-           "2015-12-25;512.53;514.88;505.69;507.34*" +
-           "2015-12-26;511.83;514.98;505.59;506.23*" +
-           "2015-12-27;511.22;515.30;505.49;506.47*" +
-           "2015-12-28;510.35;515.72;505.23;505.80*" +
-           "2015-12-29;510.53;515.86;505.38;508.25*" +
-           "2015-12-30;511.43;515.98;505.66;507.45*" +
-           "2015-12-31;511.50;515.33;505.99;507.98*" +
-           "2016-01-01;511.32;514.29;505.99;506.37*" +
-           "2016-01-02;511.70;514.87;506.18;506.75";
+           "2023-12-29;512.53;514.88;505.69;507.34*" +
+           "2023-12-30;511.83;514.98;505.59;506.23*" +
+           "2023-12-31;511.22;515.30;505.49;506.47*" +
+           "2024-01-01;510.35;515.72;505.23;505.80*" +
+           "2024-01-02;510.53;515.86;505.38;508.25*" +
+           "2024-01-03;511.43;515.98;505.66;507.45*" +
+           "2024-01-04;511.50;515.33;505.99;507.98*" +
+           "2024-01-05;511.32;514.29;505.99;506.37*" +
+           "2024-01-06;511.70;514.87;506.18;506.75";
 
 // create an object with csv settings
 csvSettings = {ignoreFirstRow: true, columnsSeparator: ";", rowsSeparator: "*"};
@@ -210,15 +210,15 @@ var dataTable = anychart.data.table(0);
 
 // add data
 dataTable.addData([
-  ["2015-12-25", 512.53, 514.88, 505.69, 507.34],
-  ["2015-12-26", 511.83, 514.98, 505.59, 506.23],
-  ["2015-12-27", 511.22, 515.30, 505.49, 506.47],
-  ["2015-12-28", 510.35, 515.72, 505.23, 505.80],
-  ["2015-12-29", 510.53, 515.86, 505.38, 508.25],
-  ["2015-12-30", 511.43, 515.98, 505.66, 507.45],
-  ["2015-12-31", 511.50, 515.33, 505.99, 507.98],
-  ["2016-01-01", 511.32, 514.29, 505.99, 506.37],
-  ["2016-01-02", 511.70, 514.87, 506.18, 506.75]
+  ["2023-12-29", 512.53, 514.88, 505.69, 507.34],
+  ["2023-12-30", 511.83, 514.98, 505.59, 506.23],
+  ["2023-12-31", 511.22, 515.30, 505.49, 506.47],
+  ["2024-01-01", 510.35, 515.72, 505.23, 505.80],
+  ["2024-01-02", 510.53, 515.86, 505.38, 508.25],
+  ["2024-01-03", 511.43, 515.98, 505.66, 507.45],
+  ["2024-01-04", 511.50, 515.33, 505.99, 507.98],
+  ["2024-01-05", 511.32, 514.29, 505.99, 506.37],
+  ["2024-01-06", 511.70, 514.87, 506.18, 506.75]
 ]);
 
 // map the data for the first series
@@ -251,15 +251,15 @@ var dataTable = anychart.data.table(0);
 
 // add data
 dataTable.addData([
-  ["2015-12-25", 512.53, 514.88, 505.69, 507.34],
-  ["2015-12-26", 511.83, 514.98, 505.59, 506.23],
-  ["2015-12-27", 511.22, 515.30, 505.49, 506.47],
-  ["2015-12-28", 510.35, 515.72, 505.23, 505.80],
-  ["2015-12-29", 510.53, 515.86, 505.38, 508.25],
-  ["2015-12-30", 511.43, 515.98, 505.66, 507.45],
-  ["2015-12-31", 511.50, 515.33, 505.99, 507.98],
-  ["2016-01-01", 511.32, 514.29, 505.99, 506.37],
-  ["2016-01-02", 511.70, 514.87, 506.18, 506.75]
+  ["2023-12-29", 512.53, 514.88, 505.69, 507.34],
+  ["2023-12-30", 511.83, 514.98, 505.59, 506.23],
+  ["2023-12-31", 511.22, 515.30, 505.49, 506.47],
+  ["2024-01-01", 510.35, 515.72, 505.23, 505.80],
+  ["2024-01-02", 510.53, 515.86, 505.38, 508.25],
+  ["2024-01-03", 511.43, 515.98, 505.66, 507.45],
+  ["2024-01-04", 511.50, 515.33, 505.99, 507.98],
+  ["2024-01-05", 511.32, 514.29, 505.99, 506.37],
+  ["2024-01-06", 511.70, 514.87, 506.18, 506.75]
 ]);
 
 // map the data for the frist series
@@ -295,19 +295,19 @@ var dataTable_2 = anychart.data.table(0);
 
 // add data to the first table
 dataTable_1.addData([
-  ["2018-01-01", 512.53],
-  ["2018-01-03", 511.22],
-  ["2018-01-05", 510.53],
-  ["2018-01-07", 511.50],
-  ["2018-01-09", 511.70]
+  ["2026-01-05", 512.53],
+  ["2026-01-07", 511.22],
+  ["2026-01-09", 510.53],
+  ["2026-01-11", 511.50],
+  ["2026-01-13", 511.70]
 ]);
 
 // add data to the second table
 dataTable_2.addData([
-  ["2018-01-02", 511.83],
-  ["2018-01-04", 510.35],
-  ["2018-01-06", 511.43],
-  ["2018-01-08", 511.32]
+  ["2026-01-06", 511.83],
+  ["2026-01-08", 510.35],
+  ["2026-01-10", 511.43],
+  ["2026-01-12", 511.32]
 ]);
 
 // map the first table
@@ -343,7 +343,7 @@ selectable = mapping.createSelectable();
 This method creates a selection including all rows. You can narrow it down to a **range of dates** of your choice - call {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters, which can be passed as numbers, strings, or Date objects:
 
 ```
-selectable.select("2002-01-01", "2006-01-01");
+selectable.select("2010-01-05", "2014-01-05");
 ```
 
 Also, sometimes the {api:anychart.data.TableSelectable#selectAll}selectAll(){api} method, allowing you to select all dates, might be helpful. Please note that both methods return instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
@@ -351,15 +351,15 @@ Also, sometimes the {api:anychart.data.TableSelectable#selectAll}selectAll(){api
 You can call {api:anychart.data.TableSelectable#select}select(){api} and {api:anychart.data.TableSelectable#selectAll}selectAll(){api} with two optional parameters for **grouping the selected data**, like in the second sample in the [Iterating](#iterating) section. One of these parameters sets the time interval - for example, a day, a month, a year, etc. (see {api:anychart.enums.Interval}anychart.enums.Interval{api}), and the other sets the number of intervals:
 
 ```
-selectable.select("2002-01-01", "2006-01-01", "year", 2);
+selectable.select("2010-01-05", "2014-01-05", "year", 2);
 ```
 
 **2. Accessing Rows.** To access a row of a table in a selection, perform a [search](#searching) on the key of the row - call the {api:anychart.data.TableSelectable#search}search(){api} method on the instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}:
 
 ```
 selectable = mapping.createSelectable();
-selectable.select("2002-01-01", "2006-01-01");
-selectable.search("2004-01-01", "exact");
+selectable.select("2010-01-05", "2014-01-05");
+selectable.search("2012-01-05", "exact");
 ```
 
 ## Data Manipulation
@@ -420,8 +420,8 @@ The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.T
 
 ```
 dataTable.addData([
-  ["2016-01-01", 511.32, 514.29, 505.99, 506.37],
-  ["2016-01-02", 511.70, 514.87, 506.18, 506.75]
+  ["2024-01-05", 511.32, 514.29, 505.99, 506.37],
+  ["2024-01-06", 511.70, 514.87, 506.18, 506.75]
 ]);
 ```
 
@@ -435,7 +435,7 @@ var mapping = dataTable.mapAs(
 );
 
 dataTable.addData([
-  ["2016-01-01", 511.32, 514.29, 505.99, 506.37, "4 #00838f"],
+  ["2024-01-05", 511.32, 514.29, 505.99, 506.37, "4 #00838f"],
 ]);
 ```
 
@@ -459,15 +459,15 @@ dataTable = anychart.data.table(0);
 
 // add data
 dataTable.addData([
-  ["2015-12-25", 506.69, 511.88],
-  ["2015-12-26", 507.59, 514.98],
-  ["2015-12-27", 505.49, 516.30],
-  ["2015-12-28", 506.23, 514.72],
-  ["2015-12-29", 505.38, 517.86],
-  ["2015-12-30", 506.66, 516.98],
-  ["2015-12-31", 505.99, 513.33],
-  ["2016-01-01", 507.99, 515.29],
-  ["2016-01-02", 506.18, 514.87]
+  ["2023-12-29", 506.69, 511.88],
+  ["2023-12-30", 507.59, 514.98],
+  ["2023-12-31", 505.49, 516.30],
+  ["2024-01-01", 506.23, 514.72],
+  ["2024-01-02", 505.38, 517.86],
+  ["2024-01-03", 506.66, 516.98],
+  ["2024-01-04", 505.99, 513.33],
+  ["2024-01-05", 507.99, 515.29],
+  ["2024-01-06", 506.18, 514.87]
 ]);
 
 // map the data
@@ -480,7 +480,7 @@ var chart = anychart.stock();
 var ohlcSeries = chart.plot(0).rangeColumn(mapping);
 
 // update the first row
-dataTable.addData([["2015-12-25", 510.69, 516.88," #dd2c00"]]);
+dataTable.addData([["2023-12-29", 510.69, 516.88," #dd2c00"]]);
 ```
 
 In the following sample, the first row of the table is updated on-the-fly after you enter custom parameters. To learn more about coloring individual points in Stock charts, see [Stock Charts: Data](../Stock_Charts/Data#individual_point_settings).
@@ -492,7 +492,7 @@ In the following sample, the first row of the table is updated on-the-fly after 
 To remove a range of rows, call the {api:anychart.data.Table#remove}remove(){api} method of {api:anychart.data.Table}anychart.data.Table{api} with two keys (dates) as parameters - they can be passed as numbers, strings, or Date objects:
 
 ```
-dataTable.remove("2015-12-28", "2015-12-31");  
+dataTable.remove("2024-01-01", "2024-01-04");  
 ```
 
 The {api:anychart.data.Table#removeFirst}removeFirst(){api} method allows you to remove the first n rows (1 by default):

@@ -25,8 +25,8 @@ The {api:anychart.scales.GanttDateTime#maximum}maximum(){api} and {api:anychart.
 
 ```
 // set the minimum and maximum values of the scale
-chart.getTimeline().scale().minimum("2018-01-01");
-chart.getTimeline().scale().maximum("2018-07-15");
+chart.getTimeline().scale().minimum("2026-01-05");
+chart.getTimeline().scale().maximum("2026-07-19");
 ```
 
 As you can see, the minimum and maximum affect the position and relative size of timeline [elements](../Elements):

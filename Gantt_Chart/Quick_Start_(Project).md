@@ -38,38 +38,38 @@ var data = [
   {
     id: "1",
     name: "Development",
-    actualStart: "2018-01-15",
-    actualEnd: "2018-03-10",
+    actualStart: "2026-01-19",
+    actualEnd: "2026-03-14",
     children: [
       {
         id: "1_1",
         name: "Analysis",
-        actualStart: "2018-01-15",
-        actualEnd: "2018-01-25"
+        actualStart: "2026-01-19",
+        actualEnd: "2026-01-29"
       },
       {
         id: "1_2",
         name: "Design",
-        actualStart: "2018-01-20",
-        actualEnd: "2018-02-04"
+        actualStart: "2026-01-24",
+        actualEnd: "2026-02-08"
       },
       {
         id: "1_3",
         name: "Meeting",
-        actualStart: "2018-02-05",
-        actualEnd: "2018-02-05"
+        actualStart: "2026-02-09",
+        actualEnd: "2026-02-09"
       },
       {
         id: "1_4",
         name: "Implementation",
-        actualStart: "2018-02-05",
-        actualEnd: "2018-02-24"
+        actualStart: "2026-02-09",
+        actualEnd: "2026-02-28"
       },
       {
         id: "1_5",
         name: "Testing",
-        actualStart: "2018-02-25",
-        actualEnd: "2018-03-10"
+        actualStart: "2026-03-01",
+        actualEnd: "2026-03-14"
       }
   ]}
 ];    
@@ -87,38 +87,38 @@ To create a chart, add the JavaScript tag `<script>` with the code below.
       {
         id: "1",
         name: "Development",
-        actualStart: "2018-01-15",
-        actualEnd: "2018-03-10",
+        actualStart: "2026-01-19",
+        actualEnd: "2026-03-14",
         children: [
           {
             id: "1_1",
             name: "Analysis",
-            actualStart: "2018-01-15",
-            actualEnd: "2018-01-25"
+            actualStart: "2026-01-19",
+            actualEnd: "2026-01-29"
           },
           {
             id: "1_2",
             name: "Design",
-            actualStart: "2018-01-20",
-            actualEnd: "2018-02-04"
+            actualStart: "2026-01-24",
+            actualEnd: "2026-02-08"
           },
           {
             id: "1_3",
             name: "Meeting",
-            actualStart: "2018-02-05",
-            actualEnd: "2018-02-05"
+            actualStart: "2026-02-09",
+            actualEnd: "2026-02-09"
           },
           {
             id: "1_4",
             name: "Implementation",
-            actualStart: "2018-02-05",
-            actualEnd: "2018-02-24"
+            actualStart: "2026-02-09",
+            actualEnd: "2026-02-28"
           },
           {
             id: "1_5",
             name: "Testing",
-            actualStart: "2018-02-25",
-            actualEnd: "2018-03-10"
+            actualStart: "2026-03-01",
+            actualEnd: "2026-03-14"
           }
       ]}
     ];
@@ -164,38 +164,38 @@ Here is the full source code of the sample. You can copy the code to a file on y
           {
             id: "1",
             name: "Development",
-            actualStart: "2018-01-15",
-            actualEnd: "2018-03-10",
+            actualStart: "2026-01-19",
+            actualEnd: "2026-03-14",
             children: [
               {
                 id: "1_1",
                 name: "Analysis",
-                actualStart: "2018-01-15",
-                actualEnd: "2018-01-25"
+                actualStart: "2026-01-19",
+                actualEnd: "2026-01-29"
               },
               {
                 id: "1_2",
                 name: "Design",
-                actualStart: "2018-01-20",
-                actualEnd: "2018-02-04"
+                actualStart: "2026-01-24",
+                actualEnd: "2026-02-08"
               },
               {
                 id: "1_3",
                 name: "Meeting",
-                actualStart: "2018-02-05",
-                actualEnd: "2018-02-05"
+                actualStart: "2026-02-09",
+                actualEnd: "2026-02-09"
               },
               {
                 id: "1_4",
                 name: "Implementation",
-                actualStart: "2018-02-05",
-                actualEnd: "2018-02-24"
+                actualStart: "2026-02-09",
+                actualEnd: "2026-02-28"
               },
               {
                 id: "1_5",
                 name: "Testing",
-                actualStart: "2018-02-25",
-                actualEnd: "2018-03-10"
+                actualStart: "2026-03-01",
+                actualEnd: "2026-03-14"
               }
           ]}
         ];

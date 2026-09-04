@@ -31,51 +31,51 @@ anychart.onDocumentReady(function () {
       {
         id: "1",
         name: "Parent Task",
-        actualStart: "2018-01-15",
-        actualEnd: "2018-03-10",
+        actualStart: "2026-01-19",
+        actualEnd: "2026-03-14",
         children: [
           {
             id: "1_1",
             name: "Task",
-            actualStart: "2018-01-15",
-            actualEnd: "2018-01-25"
+            actualStart: "2026-01-19",
+            actualEnd: "2026-01-29"
           },
           {
             id: "1_2",
             name: "Task",
-            actualStart: "2018-01-20",
-            actualEnd: "2018-02-04"
+            actualStart: "2026-01-24",
+            actualEnd: "2026-02-08"
           },
           {
             id: "1_3",
             name: "Milestone",
-            actualStart: "2018-02-05",
-            actualEnd: "2018-02-05"
+            actualStart: "2026-02-09",
+            actualEnd: "2026-02-09"
           },
           {
             id: "1_4",
             name: "Parent Task",
-            actualStart: "2018-02-05",
-            actualEnd: "2018-02-24",
+            actualStart: "2026-02-09",
+            actualEnd: "2026-02-28",
             children: [
               {
                 id: "1_4_1",
                 name: "Task",
-                actualStart: "2018-02-05",
-                actualEnd: "2018-02-10"
+                actualStart: "2026-02-09",
+                actualEnd: "2026-02-14"
               },
               {
                 id: "1_4_2",
                 name: "Task",
-                actualStart: "2018-02-11",
-                actualEnd: "2018-02-24"
+                actualStart: "2026-02-15",
+                actualEnd: "2026-02-28"
               }
           ]},
           {
             id: "2",
             name: "Task",
-            actualStart: "2018-02-05",
-            actualEnd: "2018-03-10",
+            actualStart: "2026-02-09",
+            actualEnd: "2026-03-14",
           }
       ]}
     ];
@@ -90,7 +90,7 @@ anychart.onDocumentReady(function () {
     chart.data(treeData);
 
     // configure the scale
-    chart.getTimeline().scale().maximum("2018-03-15");
+    chart.getTimeline().scale().maximum("2026-03-19");
 
     // set the container id
     chart.container("container");

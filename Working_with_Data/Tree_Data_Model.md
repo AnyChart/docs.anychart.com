@@ -243,38 +243,38 @@ var data = [
   {
     id: "1",
     name: "Root",
-    start_date: "2018-01-15",
-    end_date: "2018-03-10",
+    start_date: "2026-01-19",
+    end_date: "2026-03-14",
     child_items: [
       {
         id: "1_1",
         name: "Child 1",
-        start_date: "2018-01-15",
-        end_date: "2018-01-25"
+        start_date: "2026-01-19",
+        end_date: "2026-01-29"
       },
       {
         id: "1_2",
         name: "Child 2",
-        start_date: "2018-01-20",
-        end_date: "2018-02-04"
+        start_date: "2026-01-24",
+        end_date: "2026-02-08"
       },
       {
         id: "1_3",
         name: "Child 3",
-        start_date: "2018-02-05",
-        end_date: "2018-02-05"
+        start_date: "2026-02-09",
+        end_date: "2026-02-09"
       },
       {
         id: "1_4",
         name: "Child 4",
-        start_date: "2018-02-05",
-        end_date: "2018-02-24"
+        start_date: "2026-02-09",
+        end_date: "2026-02-28"
       },
       {
         id: "1_5",
         name: "Child 5",
-        start_date: "2018-02-25",
-        end_date: "2018-03-10"
+        start_date: "2026-03-01",
+        end_date: "2026-03-14"
       }
   ]}
 ];
@@ -447,44 +447,44 @@ var data = [
   {
     id: "1",
     name: "Root",
-    actualStart: "2018-01-15",
-    actualEnd: "2018-03-10",
+    actualStart: "2026-01-19",
+    actualEnd: "2026-03-14",
     actual: {},
     employee: {firstName: null, lastName: null},
     children: [
       {
         id: "1_1",
         name: "Child 1",
-        actualStart: "2018-01-15",
-        actualEnd: "2018-01-25",
+        actualStart: "2026-01-19",
+        actualEnd: "2026-01-29",
         employee: {firstName: "John", lastName: "Doe"}
       },
       {
         id: "1_2",
         name: "Child 2",
-        actualStart: "2018-01-20",
-        actualEnd: "2018-02-04",
+        actualStart: "2026-01-24",
+        actualEnd: "2026-02-08",
         employee: {firstName: "Frank", lastName: "Foe"}
       },
       {
         id: "1_3",
         name: "Child 3",
-        actualStart: "2018-02-05",
-        actualEnd: "2018-02-05",
+        actualStart: "2026-02-09",
+        actualEnd: "2026-02-09",
         employee: {firstName: "Marta", lastName: "Moe"}
       },
       {
         id: "1_4",
         name: "Child 4",
-        actualStart: "2018-02-05",
-        actualEnd: "2018-02-24",
+        actualStart: "2026-02-09",
+        actualEnd: "2026-02-28",
         employee: {firstName: "John", lastName: "Doe"}
       },
       {
         id: "1_5",
         name: "Child 5",
-        actualStart: "2018-02-25",
-        actualEnd: "2018-03-10",
+        actualStart: "2026-03-01",
+        actualEnd: "2026-03-14",
         employee: {firstName: "Jane", lastName: "Poe"}
       }
   ]}

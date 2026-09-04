@@ -15,12 +15,12 @@ Here is how to set data as an array of arrays, array contains values and then yo
 ```
 table = anychart.data.table();
 table.addData([
-	['2010-01-01', 5.8, 7.9],
-	['2010-02-01', 4.6, 6.1],
-	['2010-03-01', 5.9, 8.1],
-	['2010-04-01', 7.8, 10.7],
-	['2010-05-01', 10.5, 13.7],
-	['2010-06-01', 13.8, 17]
+	['2026-01-02', 5.8, 7.9],
+	['2026-02-02', 4.6, 6.1],
+	['2026-03-02', 5.9, 8.1],
+	['2026-04-02', 7.8, 10.7],
+	['2026-05-02', 10.5, 13.7],
+	['2026-06-02', 13.8, 17]
 ]);
 
 mapping = table.mapAs();
@@ -35,12 +35,12 @@ The next sample contains the same data arranged as array of objects.
 ```
 table = anychart.data.table('x');
 table.addData([
-	{x: '2010-01-01', low: 5.8,  high: 7.9},
-	{x: '2010-02-01', low: 4.6,  high: 6.1},
-	{x: '2010-03-01', low: 5.9,  high: 8.1},
-	{x: '2010-04-01', low: 7.8,  high: 10.7},
-	{x: '2010-05-01', low: 10.5, high: 13.7},
-	{x: '2010-06-01', low: 13.8, high: 17}
+	{x: '2026-01-02', low: 5.8,  high: 7.9},
+	{x: '2026-02-02', low: 4.6,  high: 6.1},
+	{x: '2026-03-02', low: 5.9,  high: 8.1},
+	{x: '2026-04-02', low: 7.8,  high: 10.7},
+	{x: '2026-05-02', low: 10.5, high: 13.7},
+	{x: '2026-06-02', low: 13.8, high: 17}
 ]);
 
 mapping = table.mapAs({low: 'low', high: 'high'});

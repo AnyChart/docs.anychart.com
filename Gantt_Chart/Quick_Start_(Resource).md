@@ -39,22 +39,22 @@ var data = [
     id: "1",
     name: "Server 1",
     periods: [
-      {id:"1_1", start: "2018-01-05", end: "2018-01-25"},
-      {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
-      {id:"1_3", start: "2018-03-03", end: "2018-03-25"}
+      {id:"1_1", start: "2026-01-09", end: "2026-01-29"},
+      {id:"1_2", start: "2026-02-01", end: "2026-02-26"},
+      {id:"1_3", start: "2026-03-07", end: "2026-03-29"}
   ]},
   {
     id: "2",
     name: "Server 2",
     periods: [
-      {id: "2_1", start: "2018-01-07", end: "2018-02-15"},
-      {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
+      {id: "2_1", start: "2026-01-11", end: "2026-02-19"},
+      {id: "2_2", start: "2026-03-02", end: "2026-03-24"}
   ]},
   {
     id: "3",
     name: "Server 3",
     periods: [
-      {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
+      {id: "3_1", start: "2026-01-08", end: "2026-03-29"}
   ]}
 ];
 ```
@@ -72,22 +72,22 @@ To create a chart, add the JavaScript tag `<script>` with the code below.
         id: "1",
         name: "Server 1",
         periods: [
-          {id:"1_1", start: "2018-01-05", end: "2018-01-25"},
-          {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
-          {id:"1_3", start: "2018-03-03", end: "2018-03-25"}
+          {id:"1_1", start: "2026-01-09", end: "2026-01-29"},
+          {id:"1_2", start: "2026-02-01", end: "2026-02-26"},
+          {id:"1_3", start: "2026-03-07", end: "2026-03-29"}
       ]},
       {
         id: "2",
         name: "Server 2",
         periods: [
-          {id: "2_1", start: "2018-01-07", end: "2018-02-15"},
-          {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
+          {id: "2_1", start: "2026-01-11", end: "2026-02-19"},
+          {id: "2_2", start: "2026-03-02", end: "2026-03-24"}
       ]},
       {
         id: "3",
         name: "Server 3",
         periods: [
-          {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
+          {id: "3_1", start: "2026-01-08", end: "2026-03-29"}
       ]}
     ];
     // create a data tree
@@ -133,22 +133,22 @@ Here is the full source code of the sample. You can copy the code to a file on y
             id: "1",
             name: "Server 1",
             periods: [
-              {id:"1_1", start: "2018-01-05", end: "2018-01-25"},
-              {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
-              {id:"1_3", start: "2018-03-03", end: "2018-03-25"}
+              {id:"1_1", start: "2026-01-09", end: "2026-01-29"},
+              {id:"1_2", start: "2026-02-01", end: "2026-02-26"},
+              {id:"1_3", start: "2026-03-07", end: "2026-03-29"}
           ]},
           {
             id: "2",
             name: "Server 2",
             periods: [
-              {id: "2_1", start: "2018-01-07", end: "2018-02-15"},
-              {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
+              {id: "2_1", start: "2026-01-11", end: "2026-02-19"},
+              {id: "2_2", start: "2026-03-02", end: "2026-03-24"}
           ]},
           {
             id: "3",
             name: "Server 3",
             periods: [
-              {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
+              {id: "3_1", start: "2026-01-08", end: "2026-03-29"}
           ]}
         ];
         // create a data tree

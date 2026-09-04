@@ -26,23 +26,23 @@ Lets create a simple Range Bar chart with DateTime Y-axis. For the first we have
 </tr>
 <tr>
 <td>Development</td>
-<td>01/01/2000</td>
-<td>02/15/2002</td>
+<td>01/01/2022</td>
+<td>02/16/2024</td>
 </tr>
 <tr>
 <td>Internal Testing</td>
-<td>06/01/2001</td>
-<td>07/01/2003</td>
+<td>06/02/2023</td>
+<td>07/01/2025</td>
 </tr>
 <tr>
 <td>Field Test </td>
-<td>02/25/2002</td>
-<td>07/01/2003</td>
+<td>02/26/2024</td>
+<td>07/01/2025</td>
 </tr>
 <tr>
 <td>Licensing</td>
-<td>07/01/2003</td>
-<td>07/01/2004</td>
+<td>07/01/2025</td>
+<td>07/02/2026</td>
 </tr>
 </tbody>
 </table>
@@ -61,10 +61,10 @@ Now we need to create data for range bars. Here it is:
 
 ```
 chart.rangeBar([
-  {x: "Development", low: Date.UTC(2000, 01, 01), high: Date.UTC(2002, 02, 15)},
-  {x: "Internal Testing", low: Date.UTC(2001, 06, 01), high: Date.UTC(2003, 07, 01), fill: "red"},
-  {x: "Field Tests", low: Date.UTC(2002, 02, 25), high: Date.UTC(2003, 07, 01), fill: "green"},
-  {x: "Licensing", low: Date.UTC(2003, 07, 01), high: Date.UTC(2004, 07, 01), fill: "yellow"}
+  {x: "Development", low: Date.UTC(2022, 01, 01), high: Date.UTC(2024, 02, 15)},
+  {x: "Internal Testing", low: Date.UTC(2023, 06, 02), high: Date.UTC(2025, 07, 01), fill: "red"},
+  {x: "Field Tests", low: Date.UTC(2024, 02, 25), high: Date.UTC(2025, 07, 01), fill: "green"},
+  {x: "Licensing", low: Date.UTC(2025, 07, 01), high: Date.UTC(2026, 07, 02), fill: "yellow"}
 ]);
 ```
 
@@ -93,10 +93,10 @@ dateMinorTicks.interval(0, 2);
 chart.yScale(dateScale);
 //set data
 chart.rangeBar([
-    {x: 'Development', low: Date.UTC(2000, 01, 01), high: Date.UTC(2002, 02, 15)},
-    {x: 'Internal Testing', low: Date.UTC(2001, 06, 01), high: Date.UTC(2003, 07, 01)},
-    {x: 'Field Tests', low: Date.UTC(2002, 02, 25), high: Date.UTC(2003, 07, 01)},
-    {x: 'Licensing', low: Date.UTC(2003, 07, 01), high: Date.UTC(2004, 07, 01)}
+    {x: 'Development', low: Date.UTC(2022, 01, 01), high: Date.UTC(2024, 02, 15)},
+    {x: 'Internal Testing', low: Date.UTC(2023, 06, 02), high: Date.UTC(2025, 07, 01)},
+    {x: 'Field Tests', low: Date.UTC(2024, 02, 25), high: Date.UTC(2025, 07, 01)},
+    {x: 'Licensing', low: Date.UTC(2025, 07, 01), high: Date.UTC(2026, 07, 02)}
 ]);
 
 // y axis getter

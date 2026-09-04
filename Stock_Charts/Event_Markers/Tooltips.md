@@ -34,12 +34,12 @@ plot.eventMarkers({"groups": [
     "format": "A",
     "data": [
       {
-        "date": "2006-06-08",
+        "date": "2024-06-13",
         "description": "Cisco announced the acquisition of Audium Corporation.",
         "short_desc": "Audium Corporation Acquisition"
       },
       {
-        "date": "2008-04-27",
+        "date": "2026-05-03",
         "description": "Cisco announced its intent to acquire PostPath, Inc.",
         "short_desc": "PostPath Acquisition"
       }
@@ -75,12 +75,12 @@ plot.eventMarkers({"groups": [
     "format": "A",
     "data": [
       {
-        "date": "2006-06-08",
+        "date": "2024-06-13",
         "description": "Cisco announced the acquisition of Audium Corporation.",
         "short_desc": "Audium Corporation Acquisition"
       },
       {
-        "date": "2008-04-27",
+        "date": "2026-05-03",
         "description": "Cisco announced its intent to acquire PostPath, Inc.",
         "short_desc": "PostPath Acquisition"
       }

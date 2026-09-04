@@ -24,11 +24,11 @@ plot.eventMarkers({"groups": [
   {
     "data": [
       {
-        "date": "2006-06-08",
+        "date": "2016-06-09",
         "description": "Cisco announced the acquisition of Audium Corporation."
       },
       {
-        "date": "2008-04-27",
+        "date": "2018-04-29",
         "description": "Cisco announced its intent to acquire PostPath, Inc."
       }
     ]
@@ -85,11 +85,11 @@ plot.eventMarkers({"groups": [
     "format": "A",
     "data": [
       {
-        "date": "2006-06-08",
+        "date": "2016-06-09",
         "description": "Cisco announced the acquisition of Audium Corporation."
       },
       {
-        "date": "2008-04-27",
+        "date": "2018-04-29",
         "description": "Cisco announced its intent to acquire PostPath, Inc."
       }
     ]
@@ -98,11 +98,11 @@ plot.eventMarkers({"groups": [
     "format": "B",
     "data": [
       {
-        "date": "2009-02-10",
+        "date": "2019-02-12",
         "description": "Cisco and Tata Consultancy Services announced strategic alliance."
       },
       {
-        "date": "2009-02-12",
+        "date": "2019-02-14",
         "description": "Cisco unveiled 'Intelligent Urbanisation' vision for Bangalore."
       }
     ]
@@ -135,11 +135,11 @@ var eventMarkers = plot.eventMarkers();
 // add the first group of event markers
 eventMarkers.group(0, [
   {
-    "date": "2006-06-08",
+    "date": "2016-06-09",
     "description": "Cisco announced the acquisition of Audium Corporation."
   },
   {
-    "date": "2008-04-27",
+    "date": "2018-04-29",
     "description": "Cisco announced its intent to acquire PostPath, Inc."
   }
 ]);
@@ -150,11 +150,11 @@ eventMarkers.group(0).format("A");
 // add the second group of event markers
 eventMarkers.group(1, [
   {
-    "date": "2009-02-10",
+    "date": "2019-02-12",
     "description": "Cisco and Tata Consultancy Services announced strategic alliance."
   },
   {
-    "date": "2009-02-12",
+    "date": "2019-02-14",
     "description": "Cisco unveiled 'Intelligent Urbanisation' vision for Bangalore."
   }
 ]);
@@ -175,11 +175,11 @@ This method accepts an array of objects with information about events. Unlike {a
 // add event markers
 plot.eventMarkers().data([
   {
-    "date": "2006-06-08",
+    "date": "2016-06-09",
     "description": "Cisco announced the acquisition of Audium Corporation."
   },
   {
-    "date": "2008-04-27",
+    "date": "2018-04-29",
     "description": "Cisco announced its intent to acquire PostPath, Inc."
   }
 ]);
@@ -377,11 +377,11 @@ In the following sample, data does not include dates the event markers are bound
 // create data
 dataTable = anychart.data.table();
 dataTable.addData([
-    ["2016-01-05",  -2.0],
-    ["2016-01-07",  -9.4],
-    ["2016-01-08",  -4.5],
-    ["2016-01-11",  -3.1],
-    ["2016-01-12",  -7.9]
+    ["2026-01-06",  -2.0],
+    ["2026-01-08",  -9.4],
+    ["2026-01-09",  -4.5],
+    ["2026-01-12",  -3.1],
+    ["2026-01-13",  -7.9]
 ]);
 ```
 
@@ -391,15 +391,15 @@ plot.eventMarkers({"groups": [
   {
     "data": [
       {
-        "date": "2016-01-06",
+        "date": "2026-01-07",
         "description": "Event 1"
       },
       {
-        "date": "2016-01-09",
+        "date": "2026-01-10",
         "description": "Event 2"
       },
       {
-        "date": "2016-01-10",
+        "date": "2026-01-11",
         "description": "Event 3"
       },
     ]
@@ -424,7 +424,7 @@ plot.eventMarkers({"groups": [
     "data": [
       {
         "symbol": "1",
-        "date": "2006-06-08",
+        "date": "2016-06-09",
         "description": "Cisco announced the acquisition of Audium Corporation.",
         "normal":   {"type": "circle",
                      "fill": "#d1ead9", "stroke": "2 #009933",
@@ -439,7 +439,7 @@ plot.eventMarkers({"groups": [
       },
       {
         "symbol": "2",
-        "date": "2008-04-27",
+        "date": "2018-04-29",
         "description": "Cisco announced its intent to acquire PostPath, Inc.",
         "normal":   {"type": "rect", "width": 40,
                      "fill": "#ead9d1", "stroke": "2 #990033",

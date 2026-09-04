@@ -31,46 +31,46 @@ anychart.onDocumentReady(function () {
       {
         id: "1",
         name: "Tasks",
-        actualStart: "2018-02-02",
-        actualEnd: "2018-02-25",
+        actualStart: "2026-02-06",
+        actualEnd: "2026-03-01",
         children: [
           {
             id: "1_1",
             name: "Task 1",
-            actualStart: "2018-02-02",
-            actualEnd: "2018-02-07",
+            actualStart: "2026-02-06",
+            actualEnd: "2026-02-11",
             connectTo: "1_2",
             connectorType: "finish-start"
           },
           {
             id: "1_2",
             name: "Task 2",
-            actualStart: "2018-02-09",
-            actualEnd: "2018-02-09",
+            actualStart: "2026-02-13",
+            actualEnd: "2026-02-13",
             connectTo: "1_5",
             connectorType: "start-start"
           },
           {
             id: "1_3",
             name: "Task 3",
-            actualStart: "2018-02-11",
-            actualEnd: "2018-02-23",
+            actualStart: "2026-02-15",
+            actualEnd: "2026-02-27",
             connectTo: "1_4",
             connectorType: "finish-finish"
           },
           {
             id: "1_4",
             name: "Task 4",
-            actualStart: "2018-02-18",
-            actualEnd: "2018-02-25",
+            actualStart: "2026-02-22",
+            actualEnd: "2026-03-01",
             connectTo: "1_5",
             connectorType: "start-finish"
           },
           {
             id: "1_5",
             name: "Task 5",
-            actualStart: "2018-02-15",
-            actualEnd: "2018-02-21"
+            actualStart: "2026-02-19",
+            actualEnd: "2026-02-25"
           }
       ]}
     ];
@@ -85,7 +85,7 @@ anychart.onDocumentReady(function () {
     chart.data(treeData);
 
     // configure the scale
-    chart.getTimeline().scale().maximum("2018-02-27");
+    chart.getTimeline().scale().maximum("2026-03-03");
 
     // disable labels of elements
     chart.getTimeline().elements().labels(false);

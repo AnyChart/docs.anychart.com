@@ -52,7 +52,7 @@ Along with binding marker to an axis, it is possible to use a scale for marker p
 ```
 var marker = chart.lineMarker();
 marker.layout("vertical");
-marker.value(Date.UTC(2016, 1, 01));
+marker.value(Date.UTC(2026, 1, 02));
 marker.scale(chart.xScale());
 ```
 
@@ -60,7 +60,7 @@ Here is a sample that shows the production of crude oil. The line marker is used
 
 ```
 var text = chart.textMarker();
-text.value(Date.UTC(2016, 1, 01));
+text.value(Date.UTC(2026, 1, 02));
 text.axis(chart.xAxis());
 ```
 

@@ -633,18 +633,18 @@ To add any parameter to the meta of the series, you need to set the parameter na
 // set first series data
 
 var series_1 = chart.ohlc([
-    {x: Date.UTC(2007, 7, 28), open: 511.53, high: 514.98, low: 505.79, close :506.40},
-    {x: Date.UTC(2007, 7, 30), open: 517.36, high: 518.40, low: 516.58, close: 516.80},
-    {x: Date.UTC(2007, 8, 1), open: 513.10, high: 516.50, low: 511.47, close: 515.25},
+    {x: Date.UTC(2026, 8, 1), open: 511.53, high: 514.98, low: 505.79, close :506.40},
+    {x: Date.UTC(2026, 8, 3), open: 517.36, high: 518.40, low: 516.58, close: 516.80},
+    {x: Date.UTC(2026, 8, 5), open: 513.10, high: 516.50, low: 511.47, close: 515.25},
 ]);
 series_1.meta("company", "ACME Corp.");
  
 // set second series data
 
 var series_2 = chart.ohlc([
-    {x: Date.UTC(2007, 7, 28), open: 522.95, high: 523.10, low: 522.50, close: 522.52},
-    {x: Date.UTC(2007, 7, 30), open: 524.49, high: 524.91, low: 524.38, close: 524.61},
-    {x: Date.UTC(2007, 8, 1), open: 518.81, high: 520.03, low: 517.51, close: 519.73}
+    {x: Date.UTC(2026, 8, 1), open: 522.95, high: 523.10, low: 522.50, close: 522.52},
+    {x: Date.UTC(2026, 8, 3), open: 524.49, high: 524.91, low: 524.38, close: 524.61},
+    {x: Date.UTC(2026, 8, 5), open: 518.81, high: 520.03, low: 517.51, close: 519.73}
 ]);
 series_2.meta("company", "Duff B. Corp.");
 

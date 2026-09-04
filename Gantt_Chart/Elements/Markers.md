@@ -9,11 +9,11 @@ Use the `markers` data field to add an array of markers to your data. In this ar
 
 ```
 markers: [
-  {value: "2018-01-18"},
-  {value: "2018-02-02"},
-  {value: "2018-02-05"},
-  {value: "2018-03-01"},
-  {value: "2018-03-06"}
+  {value: "2026-01-22"},
+  {value: "2026-02-06"},
+  {value: "2026-02-09"},
+  {value: "2026-03-05"},
+  {value: "2026-03-10"}
 ],
 ```
 
@@ -33,11 +33,11 @@ Also, you can configure individual markers with the help of extra data fields co
 
 ```
 markers: [
-  {value: "2018-01-18", type: "cross"},
-  {value: "2018-02-02", type: "circle"},
-  {value: "2018-02-05", type: "diamond", fill: "#ffa000"},
-  {value: "2018-03-01", type: "diagonal-cross"},
-  {value: "2018-03-06", type: "diagonal-cross"}
+  {value: "2026-01-22", type: "cross"},
+  {value: "2026-02-06", type: "circle"},
+  {value: "2026-02-09", type: "diamond", fill: "#ffa000"},
+  {value: "2026-03-05", type: "diagonal-cross"},
+  {value: "2026-03-10", type: "diagonal-cross"}
 ]
 ```
 
@@ -53,52 +53,52 @@ var data = [
   {
     id: "1",
     name: "Development",
-    actualStart: "2018-01-15",
-    actualEnd: "2018-03-10",
+    actualStart: "2026-01-19",
+    actualEnd: "2026-03-14",
     markers: [
-      {value: "2018-01-18", type: "cross"},
-      {value: "2018-02-02", type: "circle"},
-      {value: "2018-02-05", type: "diamond", fill: "#ffa000"},
-      {value: "2018-03-01", type: "diagonal-cross"},
-      {value: "2018-03-06", type: "diagonal-cross"}
+      {value: "2026-01-22", type: "cross"},
+      {value: "2026-02-06", type: "circle"},
+      {value: "2026-02-09", type: "diamond", fill: "#ffa000"},
+      {value: "2026-03-05", type: "diagonal-cross"},
+      {value: "2026-03-10", type: "diagonal-cross"}
     ],
     children: [
       {
         id: "1_1",
         name: "Analysis",
-        actualStart: "2018-01-15",
-        actualEnd: "2018-01-25"
+        actualStart: "2026-01-19",
+        actualEnd: "2026-01-29"
       },
       {
         id: "1_2",
         name: "Design",
-        actualStart: "2018-01-20",
-        actualEnd: "2018-02-04",
+        actualStart: "2026-01-24",
+        actualEnd: "2026-02-08",
         markers: [
-          {value: "2018-01-18", type: "cross"}
+          {value: "2026-01-22", type: "cross"}
       ]},
       {
         id: "1_3",
         name: "Meeting",
-        actualStart: "2018-02-05",
-        actualEnd: "2018-02-05",
+        actualStart: "2026-02-09",
+        actualEnd: "2026-02-09",
         markers: [
-          {value: "2018-02-02", type: "circle"},
+          {value: "2026-02-06", type: "circle"},
       ]},
       {
         id: "1_4",
         name: "Implementation",
-        actualStart: "2018-02-05",
-        actualEnd: "2018-02-24"
+        actualStart: "2026-02-09",
+        actualEnd: "2026-02-28"
       },
       {
         id: "1_5",
         name: "Testing",
-        actualStart: "2018-02-25",
-        actualEnd: "2018-03-10",
+        actualStart: "2026-03-01",
+        actualEnd: "2026-03-14",
         markers: [
-          {value: "2018-03-01", type: "diagonal-cross"},
-          {value: "2018-03-06", type: "diagonal-cross"}
+          {value: "2026-03-05", type: "diagonal-cross"},
+          {value: "2026-03-10", type: "diagonal-cross"}
       ]}
   ]}
 ];
@@ -130,30 +130,30 @@ var data = [
     id: "A",
     name: "Location A",
     markers: [
-      {value: "2018-01-10", type: "diagonal-cross"},
-      {value: "2018-01-17", type: "cross"},
-      {value: "2018-03-15", type: "diamond", fill: "#ffa000"}
+      {value: "2026-01-14", type: "diagonal-cross"},
+      {value: "2026-01-21", type: "cross"},
+      {value: "2026-03-19", type: "diamond", fill: "#ffa000"}
     ],
     children: [
       {
         id: "1",
         name: "Server 1",
         periods: [
-          {id: "1_1", start: "2018-01-05", end: "2018-01-25"},
-          {id: "1_2", start: "2018-01-28", end: "2018-02-22"},
-          {id: "1_3", start: "2018-03-03", end: "2018-03-25"}
+          {id: "1_1", start: "2026-01-09", end: "2026-01-29"},
+          {id: "1_2", start: "2026-02-01", end: "2026-02-26"},
+          {id: "1_3", start: "2026-03-07", end: "2026-03-29"}
       ]},
       {
         id: "2",
         name: "Server 2",
         periods: [
-          {id: "2_1", start: "2018-01-07", end: "2018-02-15"},
-          {id: "2_2", start: "2018-02-26", end: "2018-03-20"},
+          {id: "2_1", start: "2026-01-11", end: "2026-02-19"},
+          {id: "2_2", start: "2026-03-02", end: "2026-03-24"},
         ],
         markers: [
-          {value: "2018-01-10", type: "diagonal-cross"},
-          {value: "2018-01-17", type: "cross"},
-          {value: "2018-03-15", type: "diamond", fill: "#ffa000"}
+          {value: "2026-01-14", type: "diagonal-cross"},
+          {value: "2026-01-21", type: "cross"},
+          {value: "2026-03-19", type: "diamond", fill: "#ffa000"}
       ]}
   ]},
   {
@@ -164,7 +164,7 @@ var data = [
         id: "3",
         name: "Server 3",
         periods: [
-          {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
+          {id: "3_1", start: "2026-01-08", end: "2026-03-29"}
     ]}
   ]}
 ];

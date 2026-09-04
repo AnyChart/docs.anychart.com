@@ -33,18 +33,18 @@ anychart.onDocumentReady(function () {
 
   // setting y scale type as dateTime and adjusting minimum and maximum values
   var dateScale = anychart.scales.dateTime();
-  dateScale.minimum(Date.UTC(1999, 00, 01));
-  dateScale.maximum(Date.UTC(2005, 00, 01));
+  dateScale.minimum(Date.UTC(2020, 00, 03));
+  dateScale.maximum(Date.UTC(2026, 00, 03));
   chart.yScale(dateScale);
   var yTicks = chart.yScale().ticks();
   yTicks.interval(1);
 
   // setting data
   var series = chart.rangeColumn([
-    {x: "Development", low: Date.UTC(2000, 01, 01), high: Date.UTC(2002, 02, 15)},
-    {x: "Internal Testing", low: Date.UTC(2001, 06, 01), high: Date.UTC(2003, 07, 01)},
-    {x: "Field Tests", low: Date.UTC(2002, 02, 25), high: Date.UTC(2003, 07, 01)},
-    {x: "Licensing", low: Date.UTC(2003, 07, 01), high: Date.UTC(2004, 07, 01)}
+    {x: "Development", low: Date.UTC(2021, 01, 02), high: Date.UTC(2023, 02, 17)},
+    {x: "Internal Testing", low: Date.UTC(2022, 06, 03), high: Date.UTC(2024, 07, 02)},
+    {x: "Field Tests", low: Date.UTC(2023, 02, 27), high: Date.UTC(2024, 07, 02)},
+    {x: "Licensing", low: Date.UTC(2024, 07, 02), high: Date.UTC(2025, 07, 03)}
   ]);
   series.tooltip(false);
 

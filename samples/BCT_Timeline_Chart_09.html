@@ -30,25 +30,25 @@ anychart.onDocumentReady(function () {
     // create data
 
     var rangeData1 = [
-      ["Task 1", Date.UTC(2004,0,4), Date.UTC(2004,7,1)],
-      ["Task 2", Date.UTC(2004,7,1), Date.UTC(2005,8,10)]
+      ["Task 1", Date.UTC(2024,0,7), Date.UTC(2024,7,4)],
+      ["Task 2", Date.UTC(2024,7,4), Date.UTC(2025,8,13)]
     ];
 
     var rangeData2 = [
-      ["New Task 1", Date.UTC(2005,10,1), Date.UTC(2006,5,1)],
-      ["New Task 2", Date.UTC(2006,5,15), Date.UTC(2006,11,1)]
+      ["New Task 1", Date.UTC(2025,10,4), Date.UTC(2026,5,4)],
+      ["New Task 2", Date.UTC(2026,5,18), Date.UTC(2026,11,4)]
     ];
 
     var momentData1 = [
-      [Date.UTC(2004,2,21), "Meeting 1"],
-      [Date.UTC(2005,3,19), "Meeting 2"],
-      [Date.UTC(2006,1,1),  "Meeting 3"]
+      [Date.UTC(2024,2,24), "Meeting 1"],
+      [Date.UTC(2025,3,22), "Meeting 2"],
+      [Date.UTC(2026,1,4),  "Meeting 3"]
     ];
 
     var momentData2 = [
-      [Date.UTC(2004,5,12), "Training 1"],
-      [Date.UTC(2005,5,1),  "Training 2"],
-      [Date.UTC(2006,1,26), "Training 3"]
+      [Date.UTC(2024,5,15), "Training 1"],
+      [Date.UTC(2025,5,4),  "Training 2"],
+      [Date.UTC(2026,2,1), "Training 3"]
     ];
 
     // create a chart
@@ -78,8 +78,8 @@ anychart.onDocumentReady(function () {
     var lineMarker2 = chart.lineMarker(1);
 
     // set values of markers
-    lineMarker1.value(Date.UTC(2004,0,1));
-    lineMarker2.value(Date.UTC(2005,0,1));
+    lineMarker1.value(Date.UTC(2024,0,4));
+    lineMarker2.value(Date.UTC(2025,0,4));
 
     // set the stroke of markers
     lineMarker1.stroke("#dd2c00", 3);

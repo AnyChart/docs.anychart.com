@@ -49,39 +49,39 @@ anychart.onDocumentReady(function () {
       {
         id: "1",
         name: "Root",
-        actualStart: Date.UTC(2018, 0, 15),
-        actualEnd: Date.UTC(2018, 2, 10),
+        actualStart: Date.UTC(2026, 0, 19),
+        actualEnd: Date.UTC(2026, 2, 14),
         actual: {},
         children: [
           {
             id: "1_1",
             name: "Child 1",
-            actualStart: Date.UTC(2018, 0, 15),
-            actualEnd: Date.UTC(2018, 0, 25)
+            actualStart: Date.UTC(2026, 0, 19),
+            actualEnd: Date.UTC(2026, 0, 29)
           },
           {
             id: "1_2",
             name: "Child 2",
-            actualStart: Date.UTC(2018, 0, 20),
-            actualEnd: Date.UTC(2018, 1, 4)
+            actualStart: Date.UTC(2026, 0, 24),
+            actualEnd: Date.UTC(2026, 1, 8)
           },
           {
             id: "1_3",
             name: "Child 3",
-            actualStart: Date.UTC(2018, 1, 5),
-            actualEnd: Date.UTC(2018, 1, 5)
+            actualStart: Date.UTC(2026, 1, 9),
+            actualEnd: Date.UTC(2026, 1, 9)
           },
           {
             id: "1_4",
             name: "Child 4",
-            actualStart: Date.UTC(2018, 1, 5),
-            actualEnd: Date.UTC(2018, 1, 24)
+            actualStart: Date.UTC(2026, 1, 9),
+            actualEnd: Date.UTC(2026, 1, 28)
           },
           {
             id: "1_5",
             name: "Child 5",
-            actualStart: Date.UTC(2018, 1, 25),
-            actualEnd: Date.UTC(2018, 2, 10)
+            actualStart: Date.UTC(2026, 2, 1),
+            actualEnd: Date.UTC(2026, 2, 14)
           }
       ]}
     ];
@@ -93,7 +93,7 @@ anychart.onDocumentReady(function () {
     chart.data(data, "as-tree");
 
     // configure the scale
-    chart.getTimeline().scale().maximum(Date.UTC(2018, 2, 15));
+    chart.getTimeline().scale().maximum(Date.UTC(2026, 2, 19));
 
     // set the chart title
     chart.title().useHtml(true);
