@@ -50,5 +50,5 @@ calendar.availabilities([
   {each:'day', from: '10:00', to: '18:00'},
   {each:'day', from: '14:00', to: '15:00', isWorking: false}
 ]);
-var getWorkingTime = calendar.getWorkingSchedule(Date.UTC(2016, 0, 31), Date.UTC(2016, 1, 1));
+var getWorkingTime = calendar.getWorkingSchedule(Date.UTC(2026, 1, 1), Date.UTC(2026, 1, 2));
 ```

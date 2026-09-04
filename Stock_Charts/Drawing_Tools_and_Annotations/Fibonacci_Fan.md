@@ -29,9 +29,9 @@ var controller = plot.annotations();
 
 // create a Fibonacci Fan annotation
 controller.fibonacciFan({
-    xAnchor: "2007-01-07",
+    xAnchor: "2024-01-07",
     valueAnchor: 28.92,
-    secondXAnchor: "2009-03-01",
+    secondXAnchor: "2026-03-01",
     secondValueAnchor: 14.18
 });
 ```
@@ -47,9 +47,9 @@ You can set the levels and time levels of a Fibonacci Fan annotation by using th
 ```
 // create a Fibonacci Fan annotation
 controller.fibonacciFan({
-    xAnchor: "2007-01-07",
+    xAnchor: "2024-01-07",
     valueAnchor: 28.92,
-    secondXAnchor: "2009-03-01",
+    secondXAnchor: "2026-03-01",
     secondValueAnchor: 14.18,
     levels: [0, 0.2, 0.4, 0.7, 1],
     timeLevels: [0, 0.2, 0.4, 0.7, 1]
@@ -80,9 +80,9 @@ In the sample below, there are two Fibonacci Fan annotations with some of the vi
 
 ```
 var fibonacciFan1 = controller.fibonacciFan({
-    xAnchor: "2007-01-07",
+    xAnchor: "2024-01-07",
     valueAnchor: 28.92,
-    secondXAnchor: "2009-03-01",
+    secondXAnchor: "2026-03-01",
     secondValueAnchor: 14.18,
     normal: {
         labels: {fontColor: "#ff0000"},
@@ -105,9 +105,9 @@ var fibonacciFan1 = controller.fibonacciFan({
 var fibonacciFan2 = controller.fibonacciFan();
 
 // set the position of the second annotation
-fibonacciFan2.xAnchor("2006-01-29");
+fibonacciFan2.xAnchor("2023-01-29");
 fibonacciFan2.valueAnchor(18.2);
-fibonacciFan2.secondXAnchor("2004-01-11");
+fibonacciFan2.secondXAnchor("2021-01-10");
 fibonacciFan2.secondValueAnchor(29.13);
  
 // configure the visual settings of the second annotation
@@ -126,9 +126,9 @@ To configure the visual settings of a certain level or time level, use the {api:
 ```
 // create a Fibonacci Fan annotation
 controller.fibonacciFan({
-    xAnchor: "2007-01-07",
+    xAnchor: "2024-01-07",
     valueAnchor: 28.92,
-    secondXAnchor: "2009-03-01",
+    secondXAnchor: "2026-03-01",
     secondValueAnchor: 14.18,
     normal: {stroke: colorLevels},
     hovered: {stroke: colorLevels},
@@ -189,9 +189,9 @@ Instead of tokens, you can also use [formatting functions](../../Common_Settings
 ```
 // create a Fibonacci Fan annotation
 var fibonacciFan = controller.fibonacciFan({
-    xAnchor: "2007-01-07",
+    xAnchor: "2024-01-07",
     valueAnchor: 28.92,
-    secondXAnchor: "2009-03-01",
+    secondXAnchor: "2026-03-01",
     secondValueAnchor: 14.18
 });
 

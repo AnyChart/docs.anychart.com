@@ -29,9 +29,9 @@ var controller = plot.annotations();
 
 // create a Fibonacci Retracement annotation
 controller.fibonacciRetracement({
-    xAnchor: "2006-07-30",
+    xAnchor: "2025-08-03",
     valueAnchor: 17.24,
-    secondXAnchor: "2007-01-07",
+    secondXAnchor: "2026-01-11",
     secondValueAnchor: 28.92
 });
 ```
@@ -47,9 +47,9 @@ You can set the levels of a Fibonacci Retracement annotation by using the {api:a
 ```
 // create a Fibonacci Retracement annotation
 controller.fibonacciRetracement({
-    xAnchor: "2006-07-30",
+    xAnchor: "2025-08-03",
     valueAnchor: 17.24,
-    secondXAnchor: "2007-01-07",
+    secondXAnchor: "2026-01-11",
     secondValueAnchor: 28.92,
     levels: [0, 0.2, 0.4, 0.7, 1]
 });
@@ -79,9 +79,9 @@ In the sample below, there are two Fibonacci Retracement annotations with some o
 ```
 // create the first Fibonacci Retracement annotation and configure its visual settings
 var fibonacciRetracement1 = controller.fibonacciRetracement({
-    xAnchor: "2006-07-30",
+    xAnchor: "2025-08-03",
     valueAnchor: 17.24,
-    secondXAnchor: "2007-01-07",
+    secondXAnchor: "2026-01-11",
     secondValueAnchor: 28.92,
     normal: {
             labels: {fontColor: "#FF0000"}
@@ -102,9 +102,9 @@ var fibonacciRetracement1 = controller.fibonacciRetracement({
 var fibonacciRetracement2 = controller.fibonacciRetracement();
 
 // set the position of the second annotation
-fibonacciRetracement2.xAnchor("2007-09-23");
+fibonacciRetracement2.xAnchor("2026-09-27");
 fibonacciRetracement2.valueAnchor(33.1);
-fibonacciRetracement2.secondXAnchor("2004-08-08");
+fibonacciRetracement2.secondXAnchor("2023-08-13");
 fibonacciRetracement2.secondValueAnchor(17.86);
  
 // configure the visual settings of the second annotation
@@ -121,9 +121,9 @@ To configure the visual settings of a certain level, use the {api:anychart.core.
 ```
 // create a Fibonacci Retracement annotation
 controller.fibonacciRetracement({
-    xAnchor: "2006-07-30",
+    xAnchor: "2025-08-03",
     valueAnchor: 17.24,
-    secondXAnchor: "2007-01-07",
+    secondXAnchor: "2026-01-11",
     secondValueAnchor: 28.92,
     normal: {stroke: colorLevels},
     hovered: {stroke: colorLevels},
@@ -160,9 +160,9 @@ Combine the {api:anychart.core.annotations.FibonacciRetracement#labels}labels(){
 ```
 // create a Fibonacci Retracement annotation
 var fibonacciRetracement = controller.fibonacciRetracement({
-    xAnchor: "2006-07-30",
+    xAnchor: "2025-08-03",
     valueAnchor: 17.24,
-    secondXAnchor: "2007-01-07",
+    secondXAnchor: "2026-01-11",
     secondValueAnchor: 28.92
 });
 

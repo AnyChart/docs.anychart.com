@@ -103,38 +103,38 @@ var data = [
   {
     id: "1",
     name: "Development",
-    start_date: "2018-01-15",
-    end_date: "2018-03-10",
+    start_date: "2026-01-19",
+    end_date: "2026-03-14",
     child_items: [
       {
         id: "1_1",
         name: "Analysis",
-        start_date: "2018-01-15",
-        end_date: "2018-01-25"
+        start_date: "2026-01-19",
+        end_date: "2026-01-29"
       },
       {
         id: "1_2",
         name: "Design",
-        start_date: "2018-01-20",
-        end_date: "2018-02-04"
+        start_date: "2026-01-24",
+        end_date: "2026-02-08"
       },
       {
         id: "1_3",
         name: "Meeting",
-        start_date: "2018-02-05",
-        actualEnd: "2018-02-05"
+        start_date: "2026-02-09",
+        actualEnd: "2026-02-09"
       },
       {
         id: "1_4",
         name: "Implementation",
-        start_date: "2018-02-05",
-        end_date: "2018-02-24"
+        start_date: "2026-02-09",
+        end_date: "2026-02-28"
       },
       {
         id: "1_5",
         name: "Testing",
-        start_date: "2018-02-25",
-        end_date: "2018-03-10"
+        start_date: "2026-03-01",
+        end_date: "2026-03-14"
       }
   ]}
 ];
@@ -171,16 +171,16 @@ var data = [
         id: "1",
         name: "Server 1",
         intervals: [
-          {id: "1_1", start: "2018-01-05", end: "2018-01-25"},
-          {id: "1_2", start: "2018-01-28", end: "2018-02-22"},
-          {id: "1_3", start: "2018-03-03", end: "2018-03-25"}
+          {id: "1_1", start: "2026-01-09", end: "2026-01-29"},
+          {id: "1_2", start: "2026-02-01", end: "2026-02-26"},
+          {id: "1_3", start: "2026-03-07", end: "2026-03-29"}
       ]},
       {
         id: "2",
         name: "Server 2",
         intervals: [
-          {id: "2_1", start: "2018-01-07", end: "2018-02-15"},
-          {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
+          {id: "2_1", start: "2026-01-11", end: "2026-02-19"},
+          {id: "2_2", start: "2026-03-02", end: "2026-03-24"}
       ]}
   ]},
   {
@@ -191,7 +191,7 @@ var data = [
         id: "3",
         name: "Server 3",
         intervals: [
-          {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
+          {id: "3_1", start: "2026-01-08", end: "2026-03-29"}
       ]}
   ]}
 ];

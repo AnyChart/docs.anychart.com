@@ -60,25 +60,25 @@ The following sample demonstrates how a basic Timeline chart is created:
 // create data
 
 var rangeData1 = [
-  ["Task 1", Date.UTC(2004,0,4), Date.UTC(2004,7,1)],
-  ["Task 2", Date.UTC(2004,7,1), Date.UTC(2005,8,10)]
+  ["Task 1", Date.UTC(2023,0,8), Date.UTC(2023,7,6)],
+  ["Task 2", Date.UTC(2023,7,6), Date.UTC(2024,8,14)]
 ];
 
 var rangeData2 = [
-  ["New Task 1", Date.UTC(2005,10,1), Date.UTC(2006,5,1)],
-  ["New Task 2", Date.UTC(2006,5,15), Date.UTC(2006,11,1)]
+  ["New Task 1", Date.UTC(2024,10,5), Date.UTC(2025,5,5)],
+  ["New Task 2", Date.UTC(2025,5,19), Date.UTC(2025,11,5)]
 ];
 
 var momentData1 = [
-  [Date.UTC(2004,2,21), "Meeting 1"],
-  [Date.UTC(2005,3,19), "Meeting 2"],
-  [Date.UTC(2006,1,1),  "Meeting 3"]
+  [Date.UTC(2023,2,26), "Meeting 1"],
+  [Date.UTC(2024,3,23), "Meeting 2"],
+  [Date.UTC(2025,1,5),  "Meeting 3"]
 ];
 
 var momentData2 = [
-  [Date.UTC(2004,5,12), "Training 1"],
-  [Date.UTC(2005,5,1),  "Training 2"],
-  [Date.UTC(2006,1,26), "Training 3"]
+  [Date.UTC(2023,5,17), "Training 1"],
+  [Date.UTC(2024,5,5),  "Training 2"],
+  [Date.UTC(2025,2,2), "Training 3"]
 ];
 
 // create a chart
@@ -138,25 +138,25 @@ If ranges overlap, they are drawn with different heights, like two first ranges 
 // create data
 
 var rangeData1 = [
-  {name: "Task 1", start: Date.UTC(2004,0,4), end: Date.UTC(2004,11,1)},
-  {name: "Task 2", start: Date.UTC(2004,7,1), end: Date.UTC(2005,8,10)}
+  {name: "Task 1", start: Date.UTC(2023,0,8), end: Date.UTC(2023,11,6)},
+  {name: "Task 2", start: Date.UTC(2023,7,6), end: Date.UTC(2024,8,14)}
 ];
 
 var rangeData2 = [
-  {name: "New Task 1", start: Date.UTC(2005,10,1), end: Date.UTC(2006,5,1)},
-  {name: "New Task 2", start: Date.UTC(2006,5,15), end: Date.UTC(2006,11,1)}
+  {name: "New Task 1", start: Date.UTC(2024,10,5), end: Date.UTC(2025,5,5)},
+  {name: "New Task 2", start: Date.UTC(2025,5,19), end: Date.UTC(2025,11,5)}
 ];
 
 var momentData1 = [
-  {x: Date.UTC(2004,2,21), y: "Meeting 1"},
-  {x: Date.UTC(2005,3,19), y: "Meeting 2"},
-  {x: Date.UTC(2006,1,1),  y: "Meeting 3"}
+  {x: Date.UTC(2023,2,26), y: "Meeting 1"},
+  {x: Date.UTC(2024,3,23), y: "Meeting 2"},
+  {x: Date.UTC(2025,1,5),  y: "Meeting 3"}
 ];
 
 var momentData2 = [
-  {x: Date.UTC(2004,5,12), y: "Training 1"},
-  {x: Date.UTC(2005,5,1),  y: "Training 2"},
-  {x: Date.UTC(2006,1,26), y: "Training 3"}
+  {x: Date.UTC(2023,5,17), y: "Training 1"},
+  {x: Date.UTC(2024,5,5),  y: "Training 2"},
+  {x: Date.UTC(2025,2,2), y: "Training 3"}
 ];
 
 // create a chart
@@ -244,12 +244,12 @@ If you use object notation to set the data, it is possible to configure each nod
 // create data
 
 var rangeData1 = [
-  {name: "Task 1", start: Date.UTC(2004,0,4), end: Date.UTC(2004,7,1),
+  {name: "Task 1", start: Date.UTC(2023,0,8), end: Date.UTC(2023,7,6),
    normal: {fill: "#01b53f", stroke: "null"},
    hovered: {fill: "#01b53f", stroke: "null"},
    selected: {fill: "#01b53f", stroke: "null"}
   },
-  {name: "Task 2", start: Date.UTC(2004,7,1), end: Date.UTC(2005,8,10),
+  {name: "Task 2", start: Date.UTC(2023,7,6), end: Date.UTC(2024,8,14),
    normal: {fill: "#ff6600", stroke: "null"},
    hovered: {fill: "#ff6600", stroke: "null"},
    selected: {fill: "#ff6600", stroke: "null"}
@@ -257,12 +257,12 @@ var rangeData1 = [
 ];
 
 var rangeData2 = [
-  {name: "New Task 1", start: Date.UTC(2005,10,1), end: Date.UTC(2006,5,1),
+  {name: "New Task 1", start: Date.UTC(2024,10,5), end: Date.UTC(2025,5,5),
    normal: {fill: "#00a8e0", stroke: "null"},
    hovered: {fill: "#00a8e0", stroke: "null"},
    selected: {fill: "#00a8e0", stroke: "null"}
   },
-  {name: "New Task 2", start: Date.UTC(2006,5,15), end: Date.UTC(2006,11,1),
+  {name: "New Task 2", start: Date.UTC(2025,5,19), end: Date.UTC(2025,11,5),
    normal: {fill: "#f6bc16", stroke: "null"},
    hovered: {fill: "#f6bc16", stroke: "null"},
    selected: {fill: "#f6bc16", stroke: "null"}
@@ -367,7 +367,7 @@ If you use object notation to set the data, it is possible to configure each nod
 // create data
 
 var momentData1 = [
-  {x: Date.UTC(2004,2,21), y: "Meeting 1",
+  {x: Date.UTC(2023,2,26), y: "Meeting 1",
    normal:   {
                marker: {
                          type: "star5", size: 8,
@@ -390,14 +390,14 @@ var momentData1 = [
                 stroke: "2 #dd2c00"
              }
   },
-  {x: Date.UTC(2005,3,19), y: "Meeting 2"},
-  {x: Date.UTC(2006,1,1),  y: "Meeting 3"}
+  {x: Date.UTC(2024,3,23), y: "Meeting 2"},
+  {x: Date.UTC(2025,1,5),  y: "Meeting 3"}
 ];
 
 var momentData2 = [
-  {x: Date.UTC(2004,5,12), y: "Training 1"},
-  {x: Date.UTC(2005,5,1),  y: "Training 2"},
-  {x: Date.UTC(2006,1,26), y: "Training 3"}
+  {x: Date.UTC(2023,5,17), y: "Training 1"},
+  {x: Date.UTC(2024,5,5),  y: "Training 2"},
+  {x: Date.UTC(2025,2,2), y: "Training 3"}
 ];
 
 // create a chart
@@ -473,8 +473,8 @@ var textMarker1 = chart.textMarker(0);
 var textMarker2 = chart.textMarker(1);
 
 // set the values of markers
-textMarker1.value(Date.UTC(2004,0,1));
-textMarker2.value(Date.UTC(2005,0,1));
+textMarker1.value(Date.UTC(2023,0,5));
+textMarker2.value(Date.UTC(2024,0,6));
 
 // set the text of markers
 textMarker1.useHtml(true);
@@ -531,8 +531,8 @@ var lineMarker1 = chart.lineMarker(0);
 var lineMarker2 = chart.lineMarker(1);
 
 // set values of markers
-lineMarker1.value(Date.UTC(2004,0,1));
-lineMarker2.value(Date.UTC(2005,0,1));
+lineMarker1.value(Date.UTC(2023,0,5));
+lineMarker2.value(Date.UTC(2024,0,6));
 
 // set the stroke of markers
 lineMarker1.stroke("#dd2c00", 3);
@@ -598,12 +598,12 @@ var rangeMarker1 = chart.rangeMarker(0);
 var rangeMarker2 = chart.rangeMarker(1);
 
 // set the range of the first marker
-rangeMarker1.from(Date.UTC(2004,0,1));
-rangeMarker1.to(Date.UTC(2005,0,1));
+rangeMarker1.from(Date.UTC(2023,0,5));
+rangeMarker1.to(Date.UTC(2024,0,6));
 
 // set the range of the second marker
-rangeMarker2.from(Date.UTC(2005,0,1));
-rangeMarker2.to(Date.UTC(2006,0,1));
+rangeMarker2.from(Date.UTC(2024,0,6));
+rangeMarker2.to(Date.UTC(2025,0,5));
 
 // set the fill of markers
 rangeMarker1.fill("#dd2c00", 0.2);
@@ -858,8 +858,8 @@ This sample shows how to adjust the scale. Labels of the axis are configured to 
 
 ```
 // set the minimum and maximum values of the scale
-chart.scale().minimum(Date.UTC(2003,7,30));
-chart.scale().maximum(Date.UTC(2007,5,30));
+chart.scale().minimum(Date.UTC(2022,8,3));
+chart.scale().maximum(Date.UTC(2026,6,4));
 
 // set the starting month of the fiscal year
 chart.scale().fiscalYearStartMonth(7);
@@ -936,7 +936,7 @@ Use the following methods to navigate the chart:
 
 ```
 // zoom the chart to the given dates
-chart.zoomTo(Date.UTC(2005,3,1), Date.UTC(2006,3,1)); 
+chart.zoomTo(Date.UTC(2024,3,5), Date.UTC(2025,3,5)); 
 ```
 
 ```

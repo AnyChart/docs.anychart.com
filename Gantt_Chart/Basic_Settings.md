@@ -159,21 +159,21 @@ In the following sample, the second root task (*PR Campaign*) is collapsed by de
 { 
   id: "2",
   name: "PR Campaign",
-  actualStart: "2018-02-15",
-  actualEnd: "2018-03-22",
+  actualStart: "2026-02-19",
+  actualEnd: "2026-03-26",
   collapsed: true,
   children: [
     {
       id: "2_1",
       name: "Planning",
-      actualStart: "2018-02-15",
-      actualEnd: "2018-03-10"
+      actualStart: "2026-02-19",
+      actualEnd: "2026-03-14"
     },
     {
       id: "2_2",
       name: "Promoting",
-      actualStart: "2018-03-11",
-      actualEnd: "2018-03-22"
+      actualStart: "2026-03-15",
+      actualEnd: "2026-03-26"
     }
 ]}
 ```
@@ -221,7 +221,7 @@ To set a **range of dates**, specify two timestamps as parameters:
 
 ```
 // zoom the timeline to the given dates
-chart.zoomTo(Date.UTC(2018, 1, 3), Date.UTC(2018, 1, 6));
+chart.zoomTo(Date.UTC(2026, 1, 7), Date.UTC(2026, 1, 10));
 ```
 
 To set a **range of time units**, specify three parameters: **unit**, **count** (the number of units), and **anchor**:

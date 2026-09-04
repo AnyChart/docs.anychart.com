@@ -23,14 +23,14 @@ var data = [
   {
     id: "1",
     name: "Development",
-    actualStart: 1515974400000,
-    actualEnd: 1520640000000,
+    actualStart: 1768780800000,
+    actualEnd: 1773446400000,
     children: [
       {
         id: "1_1",
         name: "Analysis",
-        actualStart: 1515974400000,
-        actualEnd: 1516838400000
+        actualStart: 1768780800000,
+        actualEnd: 1769644800000
       }
   ]}
 ];
@@ -44,8 +44,8 @@ The [Date.UTC()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/
 
 For example, *January 15, 2018* is represented as:
 
-* `Date.UTC(2018,0,15)`
-* `Date.UTC(2018,0,15,0,0,0,0)`
+* `Date.UTC(2026,0,19)`
+* `Date.UTC(2026,0,19,0,0,0,0)`
 
 Sample Code
 
@@ -55,14 +55,14 @@ var data = [
   {
     id: "1",
     name: "Development",
-    actualStart: Date.UTC(2018,0,15),
-    actualEnd: Date.UTC(2018,2,10),
+    actualStart: Date.UTC(2026,0,19),
+    actualEnd: Date.UTC(2026,2,14),
     children: [
       {
         id: "1_1",
         name: "Analysis",
-        actualStart:  Date.UTC(2018,0,15),
-        actualEnd:  Date.UTC(2018,0,25)
+        actualStart:  Date.UTC(2026,0,19),
+        actualEnd:  Date.UTC(2026,0,29)
       }
   ]}
 ];
@@ -74,8 +74,8 @@ You can set the date or date/time with the help of the [Date object](https://dev
 
 For example, *January 15, 2018* is represented as:
 
-* `new Date("2018-01-15")`
-* `new Date("2018-01-15T00:00:00.000Z")`
+* `new Date("2026-01-19")`
+* `new Date("2026-01-19T00:00:00.000Z")`
 
 Sample Code
 
@@ -85,14 +85,14 @@ var data = [
   {
     id: "1",
     name: "Development",
-    actualStart: new Date("2018-01-15"),
-    actualEnd: new Date("2018-03-10"),
+    actualStart: new Date("2026-01-19"),
+    actualEnd: new Date("2026-03-14"),
     children: [
       {
         id: "1_1",
         name: "Analysis",
-        actualStart: new Date("2018-01-15"),
-        actualEnd: new Date("2018-01-25")
+        actualStart: new Date("2026-01-19"),
+        actualEnd: new Date("2026-01-29")
       }
   ]}
 ];
@@ -105,7 +105,7 @@ To set dates, you can use strings with dates or date/times. You should be very c
 
 If you set [input date/time format](#inputdatetimeformat\(\)) and [input locale](#inputlocale\(\)) AnyChart  follows the rules of pattern and locale to create a proper date.
 
-If [input date/time format](#inputdatetimeformat\(\)) and [input locale](#inputlocale\(\)) are not defined explicitly, then AnyChart simply passes the string to [Date objects](#date_object) constructor. It means that setting the string `"2018-01-15"` without specifying [input date/time format](#inputdatetimeformat\(\)) is equivalent to using [Date Object](#date_object) in the following way: `new Date("2018-01-15")`. The way date object interprets the string depends on the browser and user environement settings.
+If [input date/time format](#inputdatetimeformat\(\)) and [input locale](#inputlocale\(\)) are not defined explicitly, then AnyChart simply passes the string to [Date objects](#date_object) constructor. It means that setting the string `"2026-01-19"` without specifying [input date/time format](#inputdatetimeformat\(\)) is equivalent to using [Date Object](#date_object) in the following way: `new Date("2026-01-19")`. The way date object interprets the string depends on the browser and user environement settings.
 
 As a rule, to make sure that strings are interpreted correctly, you should always set:
 
@@ -114,8 +114,8 @@ As a rule, to make sure that strings are interpreted correctly, you should alway
 
 Various date/time patterns can be used. For example: *January 15, 2018* can be represented as:
 
-* `"2018-01-15"`
-* `"2018-01-15T00:00:00.000Z"`
+* `"2026-01-19"`
+* `"2026-01-19T00:00:00.000Z"`
 
 Strings with the pattern above do not require any additional settings, but it is **highly recommended to set the input date/time format**. Otherwise, the way how dates are interpreted may be affected by users' browser settings.
 
@@ -127,14 +127,14 @@ var data = [
   {
     id: "1",
     name: "Development",
-    actualStart: "2018-01-15",
-    actualEnd: "2018-03-10",
+    actualStart: "2026-01-19",
+    actualEnd: "2026-03-14",
     children: [
       {
         id: "1_1",
         name: "Analysis",
-        actualStart: "2018-01-15",
-        actualEnd: "2018-01-25"
+        actualStart: "2026-01-19",
+        actualEnd: "2026-01-29"
       }
   ]}
 ];
@@ -160,14 +160,14 @@ var data = [
   {
     id: "1",
     name: "Development",
-    actualStart: "2018-01-15",
-    actualEnd: "2018-03-10",
+    actualStart: "2026-01-19",
+    actualEnd: "2026-03-14",
     children: [
       {
         id: "1_1",
         name: "Analysis",
-        actualStart: "2018-01-15",
-        actualEnd: "2018-01-25"
+        actualStart: "2026-01-19",
+        actualEnd: "2026-01-29"
       }
   ]}
 ];
@@ -274,14 +274,14 @@ var data = [
   {
     id: "1",
     name: "Development",
-    actualStart: "2018-01-15",
-    actualEnd: "2018-03-10",
+    actualStart: "2026-01-19",
+    actualEnd: "2026-03-14",
     children: [
       {
         id: "1_1",
         name: "Analysis",
-        actualStart: "2018-01-15",
-        actualEnd: "2018-01-25"
+        actualStart: "2026-01-19",
+        actualEnd: "2026-01-29"
       }
   ]}
 ];
@@ -330,14 +330,14 @@ var data = [
   {
     id: "1",
     name: "Development",
-    actualStart: "2018-01-15",
-    actualEnd: "2018-03-10",
+    actualStart: "2026-01-19",
+    actualEnd: "2026-03-14",
     children: [
       {
         id: "1_1",
         name: "Analysis",
-        actualStart: "2018-01-15",
-        actualEnd: "2018-01-25"
+        actualStart: "2026-01-19",
+        actualEnd: "2026-01-29"
       }
   ]}
 ];

@@ -30,25 +30,25 @@ anychart.onDocumentReady(function () {
     // create data
 
     var rangeData1 = [
-      ["Task 1", Date.UTC(2004,0,4), Date.UTC(2004,7,1)],
-      ["Task 2", Date.UTC(2004,7,1), Date.UTC(2005,8,10)]
+      ["Task 1", Date.UTC(2024,0,7), Date.UTC(2024,7,4)],
+      ["Task 2", Date.UTC(2024,7,4), Date.UTC(2025,8,13)]
     ];
 
     var rangeData2 = [
-      ["New Task 1", Date.UTC(2005,10,1), Date.UTC(2006,5,1)],
-      ["New Task 2", Date.UTC(2006,5,15), Date.UTC(2006,11,1)]
+      ["New Task 1", Date.UTC(2025,10,4), Date.UTC(2026,5,4)],
+      ["New Task 2", Date.UTC(2026,5,18), Date.UTC(2026,11,4)]
     ];
 
     var momentData1 = [
-      [Date.UTC(2004,2,21), "Meeting 1"],
-      [Date.UTC(2005,3,19), "Meeting 2"],
-      [Date.UTC(2006,1,1),  "Meeting 3"]
+      [Date.UTC(2024,2,24), "Meeting 1"],
+      [Date.UTC(2025,3,22), "Meeting 2"],
+      [Date.UTC(2026,1,4),  "Meeting 3"]
     ];
 
     var momentData2 = [
-      [Date.UTC(2004,5,12), "Training 1"],
-      [Date.UTC(2005,5,1),  "Training 2"],
-      [Date.UTC(2006,1,26), "Training 3"]
+      [Date.UTC(2024,5,15), "Training 1"],
+      [Date.UTC(2025,5,4),  "Training 2"],
+      [Date.UTC(2026,2,1), "Training 3"]
     ];
 
     // create a chart
@@ -78,12 +78,12 @@ anychart.onDocumentReady(function () {
     var rangeMarker2 = chart.rangeMarker(1);
 
     // set the range of the first marker
-    rangeMarker1.from(Date.UTC(2004,0,1));
-    rangeMarker1.to(Date.UTC(2005,0,1));
+    rangeMarker1.from(Date.UTC(2024,0,4));
+    rangeMarker1.to(Date.UTC(2025,0,4));
 
     // set the range of the second marker
-    rangeMarker2.from(Date.UTC(2005,0,1));
-    rangeMarker2.to(Date.UTC(2006,0,1));
+    rangeMarker2.from(Date.UTC(2025,0,4));
+    rangeMarker2.to(Date.UTC(2026,0,4));
 
     // set the fill of markers
     rangeMarker1.fill("#dd2c00", 0.2);

@@ -33,11 +33,11 @@ Here is an example where the price indicator is shown for two series and minimal
 // set the data
 table = anychart.data.table();
 table.addData([        
-  ['2016-04-01', 18.23, 19.36, 18.18, 19.31, 1284],
-  ['2016-04-02', 19.50, 19.89, 19.00, 19.29, 1384],
-  ['2016-04-03', 19.13, 19.15, 18.43, 18.75, 1484],
-  ['2016-04-06', 18.54, 18.76, 18.27, 18.76, 1484],
-  ['2016-04-07', 18.76, 19.14, 18.63, 18.76, 1584]
+  ['2026-04-03', 18.23, 19.36, 18.18, 19.31, 1284],
+  ['2026-04-04', 19.50, 19.89, 19.00, 19.29, 1384],
+  ['2026-04-05', 19.13, 19.15, 18.43, 18.75, 1484],
+  ['2026-04-08', 18.54, 18.76, 18.27, 18.76, 1484],
+  ['2026-04-09', 18.76, 19.14, 18.63, 18.76, 1584]
 ]);
   
 // map the data
@@ -94,7 +94,7 @@ Here is a sample of a chart with three price indicators, each tracks the same se
 ```
 indicator1 = chart.plot(0).priceIndicator(0, {value: 'first-visible'});
 indicator2 = chart.plot(0).priceIndicator(1, {value: 'series-end'});
-indicator3 = chart.plot(0).priceIndicator(2, {value: '2006-08-09'});
+indicator3 = chart.plot(0).priceIndicator(2, {value: '2016-08-10'});
 ```
 
 {sample}STOCK\_Price\_Indicator\_03{sample}
