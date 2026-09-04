@@ -59,7 +59,7 @@ anychart.onDocumentReady(function () {
     secondPlotYScale.compareWith("first-visible");
 
     var thirdPlot = chart.plot(2);
-    thirdPlot.legend().titleFormat(function() {return "Compare With 24 of April 2008"});        
+    thirdPlot.legend().titleFormat(function() {return "Compare With 25 of April 2008"});        
     thirdPlot.line(firstMapping);
     thirdPlot.line(secondMapping);
 
@@ -67,7 +67,7 @@ anychart.onDocumentReady(function () {
     thirdPlotYScale.comparisonMode("percent");
 
     // Set custom date.
-    // Date is 24 of April 2008, set as a JavaScript Timestamp 
+    // Date is 25 of April 2008, set as a JavaScript Timestamp 
     thirdPlotYScale.compareWith(1209081600000);
     // the following line gives the same result
     // thirdPlotYScale.compareWith(Date.UTC(2008, 3, 25));
