@@ -125,6 +125,7 @@ Combine the state methods with these methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the card background. It accepts a plain color, gradient, or pattern fill. A fill function is not supported here: the chart reads the setting as a ready color and never calls a function to compute it
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the card border. In the **hovered** and **selected** states it also colors the connectors that touch the card (see [Connectors](#connectors))
+* {api:anychart.core.StateSettings#labels}labels(){api} to style the card text — see [Labels](#labels). Set the base settings in the normal state; the hovered and selected states override the settings you give them and inherit the rest. The font settings apply per state: size, family, color, weight, style, variant, decoration, opacity, letter spacing, text direction, line height, text indent, and vertical and horizontal alignment. The layout settings do not: the position and offsets of the text are owned by the card
 
 A plain color can be written in any CSS notation: a hex string, an `rgb()` string, or a named color — see [Color Management](../Appearance_Settings/Color_Management).
 
