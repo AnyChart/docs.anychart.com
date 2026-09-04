@@ -27,19 +27,19 @@ anychart.onDocumentReady(function () {
 
   // data
   var data = [
-    [Date.UTC(2025, 0, 03), 10000],
-    [Date.UTC(2025, 1, 03), 12000],
-    [Date.UTC(2025, 2, 03), 18000],
-    [Date.UTC(2025, 3, 03), 11000],
-    [Date.UTC(2025, 4, 03), 9000],
-    [Date.UTC(2025, 5, 03), 12000],
-    [Date.UTC(2025, 6, 03), 15000],
-    [Date.UTC(2025, 7, 03), 16000],
-    [Date.UTC(2025, 8, 03), 13000],
-    [Date.UTC(2025, 9, 03), 19000],
-    [Date.UTC(2025, 10, 03), 12000],
-    [Date.UTC(2025, 11, 03), 14000],
-    [Date.UTC(2026, 0, 2), 13000]
+    [Date.UTC(2010, 0, 01), 10000],
+    [Date.UTC(2010, 1, 01), 12000],
+    [Date.UTC(2010, 2, 01), 18000],
+    [Date.UTC(2010, 3, 01), 11000],
+    [Date.UTC(2010, 4, 01), 9000],
+    [Date.UTC(2010, 5, 01), 12000],
+    [Date.UTC(2010, 6, 01), 15000],
+    [Date.UTC(2010, 7, 01), 16000],
+    [Date.UTC(2010, 8, 01), 13000],
+    [Date.UTC(2010, 9, 01), 19000],
+    [Date.UTC(2010, 10, 01), 12000],
+    [Date.UTC(2010, 11, 01), 14000],
+    [Date.UTC(2010, 11, 31), 13000]
   ];
 
   // chart type
@@ -47,8 +47,8 @@ anychart.onDocumentReady(function () {
 
   chart.xScale(anychart.scales.dateTime());
 
-  chart.xScale().minimum(Date.UTC(2025, 0, 2));
-  chart.xScale().maximum(Date.UTC(2026, 0, 03));
+  chart.xScale().minimum(Date.UTC(2009, 11, 31));
+  chart.xScale().maximum(Date.UTC(2011, 0, 01));
 
   chart.yScale().minimum(0);
 
@@ -62,16 +62,16 @@ anychart.onDocumentReady(function () {
 
   // divide plot on seasons
   var seasonMarker_1 = chart.lineMarker();
-  seasonMarker_1.value(Date.UTC(2025, 2, 03));
+  seasonMarker_1.value(Date.UTC(2010, 2, 01));
   seasonMarker_1.axis(chart.xAxis());
   var seasonMarker_2 = chart.lineMarker();
-  seasonMarker_2.value(Date.UTC(2025, 5, 03));
+  seasonMarker_2.value(Date.UTC(2010, 5, 01));
   seasonMarker_2.axis(chart.xAxis());
   var seasonMarker_3 = chart.lineMarker();
-  seasonMarker_3.value(Date.UTC(2025, 8, 03));
+  seasonMarker_3.value(Date.UTC(2010, 8, 01));
   seasonMarker_3.axis(chart.xAxis());
   var seasonMarker_4 = chart.lineMarker();
-  seasonMarker_4.value(Date.UTC(2025, 11, 03));
+  seasonMarker_4.value(Date.UTC(2010, 11, 01));
   seasonMarker_4.axis(chart.xAxis());
 
   chart.line(data);
