@@ -33,13 +33,6 @@ The display mode sets how the crosshair follows the pointer. To set it, call the
 * `"float"` - both lines follow the pointer
 * `"sticky-x"` - the vertical line jumps from one data point to the next, while the horizontal line and its Y-label follow the pointer
 
-The `"sticky-x"` mode is supported by AnyStock only: on other chart types it acts as `"float"`.
-
-```
-// set the display mode of the crosshair
-chart.crosshair().displayMode("sticky-x");
-```
-
 In the sample below, the radio buttons switch the display mode:
 
 {sample}STOCK\_Crosshair\_02{sample}
