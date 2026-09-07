@@ -39,12 +39,11 @@ anychart.onDocumentReady(function () {
   // show the name and the value instead
   chart.labels().format("{%name}: {%value}");
 
-  // replace the default backdrop with outlined text
-  chart.labels().background("transparent");
+  // outlined white text: a bold white font ...
   chart.labels().fontColor("#ffffff");
   chart.labels().fontWeight(600);
 
-  // outline the glyphs: one dark shadow on each side
+  // ... with one dark shadow on each side
   chart.labels().textShadow("-1px -1px #000, 1px -1px #000, -1px 1px #000, 1px 1px #000");
 
   // set the container id

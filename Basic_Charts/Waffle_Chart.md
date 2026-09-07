@@ -195,9 +195,9 @@ In the sample below, use the switcher to compare all four directions on the same
 
 [Labels](../Common_Settings/Labels) are text elements shown directly on the grid: one label per category, at the center of its block of cells.
 
-Labels are off by default. To turn them on, use the {api:anychart.charts.Waffle#labels}labels(){api} method. The default text is the category name and its percent share. To change it, call {api:anychart.core.ui.LabelsFactory#format}format(){api} with a [text formatter](../Common_Settings/Text_Formatters): the `{%name}`, `{%value}`, and `{%percent}` tokens are available. Each label sits on a light rounded backdrop that the theme draws behind the text; use {api:anychart.core.ui.LabelsFactory#background}background(){api} to change or remove it.
+Labels are off by default. To turn them on, use the {api:anychart.charts.Waffle#labels}labels(){api} method. The default text is the category name and its percent share. To change it, call {api:anychart.core.ui.LabelsFactory#format}format(){api} with a [text formatter](../Common_Settings/Text_Formatters): the `{%name}`, `{%value}`, and `{%percent}` tokens are available.
 
-The blocks take both light and dark palette colors. To put the text directly on the cells, remove the backdrop and outline the glyphs instead: a white bold font with a dark {api:anychart.core.ui.LabelsFactory#textShadow}textShadow(){api} outline stays readable on any block:
+A label is drawn in black directly on the cells of its category, with nothing behind the text. How well it reads depends on your palette, as with any chart type that draws labels over a fill. When a palette mixes light and dark colors, outline the glyphs instead of picking one font color: a white bold font with a dark {api:anychart.core.ui.LabelsFactory#textShadow}textShadow(){api} outline reads on any block, while plain white text is lost on light cells:
 
 ```
 // enable the labels
@@ -206,16 +206,15 @@ chart.labels().enabled(true);
 // show the name and the value instead
 chart.labels().format("{%name}: {%value}");
 
-// replace the default backdrop with outlined text
-chart.labels().background("transparent");
+// outlined white text: a bold white font ...
 chart.labels().fontColor("#ffffff");
 chart.labels().fontWeight(600);
 
-// outline the glyphs: one dark shadow on each side
+// ... with one dark shadow on each side
 chart.labels().textShadow("-1px -1px #000, 1px -1px #000, -1px 1px #000, 1px 1px #000");
 ```
 
-In the sample below, the default backdrop is replaced with outlined white labels that read on light and dark cells alike:
+In the sample below, the labels are outlined white text that reads on light and dark cells alike:
 
 {sample}BCT\_Waffle\_Chart\_07{sample}
 

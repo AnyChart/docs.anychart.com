@@ -27,14 +27,20 @@ This sample shows how to disable and enable the crosshair:
 
 ## Display Mode
 
-The default display mode of the crosshair is **sticky**: its vertical line always sticks to the data points of the series, jumping from one point to another. You can make it move more smoothly (float) by changing the display mode to **float**.
+The display mode sets how the crosshair follows the pointer. To set it, call the {api:anychart.core.ui.Crosshair#displayMode}displayMode(){api} method with one of the following values - see {api:anychart.enums.CrosshairDisplayMode}anychart.enums.CrosshairDisplayMode{api}:
 
-To set the display mode, call the {api:anychart.core.ui.Crosshair#displayMode}displayMode(){api} method with either `"sticky"` or `"float"` as a parameter - see {api:anychart.enums.CrosshairDisplayMode}anychart.enums.CrosshairDisplayMode{api}:
+* `"sticky"` (default) - both lines jump from one data point to the next
+* `"float"` - both lines follow the pointer
+* `"sticky-x"` - the vertical line jumps from one data point to the next, while the horizontal line and its Y-label follow the pointer
+
+The `"sticky-x"` mode is supported by AnyStock only: on other chart types it acts as `"float"`.
 
 ```
 // set the display mode of the crosshair
-chart.crosshair().displayMode("float");
+chart.crosshair().displayMode("sticky-x");
 ```
+
+In the sample below, the radio buttons switch the display mode:
 
 {sample}STOCK\_Crosshair\_02{sample}
 
