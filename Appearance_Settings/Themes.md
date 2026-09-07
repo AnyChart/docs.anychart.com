@@ -50,7 +50,9 @@ Out of the box Themes can be located either at [Themes Section at AnyChart CDN](
 
 You can find minified and uncompressed themes at CDN, it is recommended to use minifed themes in production, uncompressed themes can be used to create new themes, you can compress them with the JavaScript compression tool of your choice or use uncompressed.
 
-There are 16 themes in AnyChart at the moment: *Coffee*, *Dark Blue*, *Dark Earth*, *Dark Glamour*, *Dark Provence*, *Default Theme*, *Light Blue*, *Light Earth*, *Light Glamour*, *Light Provence*, *Monochrome*, *Morning*, *Pastel*, *Sea*, *6.x Version*, *Wines*.
+There are 17 themes in AnyChart at the moment: *Coffee*, *Contrast*, *Dark Blue*, *Dark Earth*, *Dark Glamour*, *Dark Provence*, *Default Theme*, *Light Blue*, *Light Earth*, *Light Glamour*, *Light Provence*, *Monochrome*, *Morning*, *Pastel*, *Sea*, *6.x Version*, *Wines*.
+
+The *Contrast* theme is the accessibility variant of the default theme: the same layout, with the palette darkened so that every series color reaches a contrast ratio of at least 3:1 against the white background. You do not reference its file: the [high-contrast mode](../Common_Settings/Accessibility/Settings#high_contrast) loads it on demand and switches the whole page to it.
 
 And there are 11 accompanying [Color palettes](Palettes) which are used by these themes, but their use can be combined if needed.
 

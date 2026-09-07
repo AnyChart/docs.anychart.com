@@ -84,3 +84,26 @@ chart.a11y().mode("data-table")
 ```
 
 {sample}CMN\_Accessibility\_04{sample}
+
+## High Contrast
+
+To raise the contrast of every chart on the page at once, switch on the high-contrast mode with the {api:anychart#a11yHighContrast}anychart.a11yHighContrast(){api} method. It applies the *Contrast* theme (see [Themes](../../Appearance_Settings/Themes#out_of_the_box_themes)): the default theme with its palette darkened so that each series color reaches a contrast ratio of at least 3:1 against the white background.
+
+* The mode is off by default. Called without arguments, the method returns the current state.
+* Switching on loads the theme file on demand, so the method returns a promise that resolves when the theme is applied. Switching off is immediate.
+* The theme that was active before the switch is remembered, and switching off brings it back.
+* Like any theme, the high-contrast palette is used by the charts created after the switch. A chart drawn earlier keeps its colors until you create it again.
+
+```
+// switch the high-contrast mode on
+anychart.a11yHighContrast(true).then(function () {
+  // create the chart here
+});
+
+// switch the high-contrast mode off
+anychart.a11yHighContrast(false);
+```
+
+In the sample below, the checkbox switches the high-contrast mode and creates the chart again:
+
+{sample}CMN\_Accessibility\_05{sample}
