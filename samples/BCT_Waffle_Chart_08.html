@@ -37,6 +37,9 @@ anychart.onDocumentReady(function () {
   chart.tooltip().titleFormat("Channel: {%name}");
   chart.tooltip().format("{%value} orders - {%percent}{decimalsCount:1}% of the total");
 
+  // show the default labels: the category name and its percent share
+  chart.labels(true);
+
   // set the container id
   chart.container("container");
   // initiate drawing the chart
