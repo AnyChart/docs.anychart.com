@@ -50,6 +50,11 @@ anychart.onDocumentReady(function () {
   chart.selected().fill("lightgreen");
   chart.selected().stroke("2.5 green");
 
+  // the name line follows the state too
+  chart.hovered().labels().fontColor("rgb(245,124,0)");
+  chart.selected().labels().fontColor("green");
+  chart.selected().labels().fontWeight("bold");
+
   // set the container id
   chart.container("container");
   // initiate drawing the chart

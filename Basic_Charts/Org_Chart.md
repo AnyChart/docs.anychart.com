@@ -141,9 +141,14 @@ chart.hovered().stroke("2 rgb(245,124,0)");
 // selected state: named colors
 chart.selected().fill("lightgreen");
 chart.selected().stroke("2.5 green");
+
+// the name line follows the state too
+chart.hovered().labels().fontColor("rgb(245,124,0)");
+chart.selected().labels().fontColor("green");
+chart.selected().labels().fontWeight("bold");
 ```
 
-In the sample below, the fill and the stroke of a card change when you hover over it and when you click it, and the connectors that touch the card take the stroke of the same state:
+In the sample below, the fill, the stroke, and the name line of a card change when you hover over it and when you click it, and the connectors that touch the card take the stroke of the same state:
 
 {sample}BCT\_Org\_Chart\_03{sample}
 
