@@ -4,41 +4,33 @@
     <meta name="ac:name" content="BCT Network Graph 16"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
-    
+
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-graph.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    
+
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
-    
+
     <style>
-        html, body {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        label {
-            display: inline-block;
-            margin: 10px 0 0 10px;
-        }
-        #titleLabel {
-            font-weight: 600;
-        }
-        #container {
-            position: absolute;
-            width: 100%;
-            top: 35px;
-            bottom: 0;
-        }
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { display: flex; flex-direction: column; }
+        #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
+        #controls span { font-weight: 600; }
+        #container { flex: 1; }
     </style>
 </head>
 <body>
-<label id="titleLabel">Use Mouse Wheel To:</label>
-<label><input onclick="enableZoom()" type="radio" name="mode" checked>Zoom</label>
-<label><input onclick="enableScroll()" type="radio" name="mode">Scroll</label>  
-<label><input onclick="disableZoomAndScroll()" type="radio" name="mode">None</label>
+<div id="controls">
+    <span>Use the mouse wheel to:</span>
+    <label><input onclick="enableZoom()" type="radio" name="mode" checked> zoom</label>
+    <label><input onclick="enableScroll()" type="radio" name="mode"> scroll</label>
+    <label><input onclick="disableZoomAndScroll()" type="radio" name="mode"> nothing</label>
+    <span>Panning bounds:</span>
+    <label><input onclick="boundsFree()" type="radio" name="bounds" checked> free</label>
+    <label><input onclick="boundsContain()" type="radio" name="bounds"> contain</label>
+    <label><input onclick="boundsAutoCenter()" type="radio" name="bounds"> auto-center</label>
+</div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -94,6 +86,21 @@ function enableScroll() {
 function disableZoomAndScroll() {
   chart.interactivity().zoomOnMouseWheel(false);
   chart.interactivity().scrollOnMouseWheel(false);
+}
+
+// allow dragging the chart anywhere (the default)
+function boundsFree() {
+  chart.interactivity().boundsMode("free");
+}
+
+// keep the chart inside its container
+function boundsContain() {
+  chart.interactivity().boundsMode("contain");
+}
+
+// slide the chart back to the center once it is dragged fully out of view
+function boundsAutoCenter() {
+  chart.interactivity().boundsMode("auto-center");
 }
 </script>
 </body>

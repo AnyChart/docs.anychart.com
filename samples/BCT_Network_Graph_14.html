@@ -4,50 +4,32 @@
     <meta name="ac:name" content="BCT Network Graph 14"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
-    
+
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-graph.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    
+
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
-    
+
     <style>
-        html, body {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        button {
-            margin: 10px 0 0 10px;
-        }
-        label {
-            display: inline-block;
-            margin: 10px 0 0 10px;
-        }
-        input {
-            width: 30px;
-        }
-        #fitButton {
-            position: absolute;
-            right: 10px;
-        }
-        #container {
-            position: absolute;
-            width: 100%;
-            top: 35px;
-            bottom: 0;
-        }
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { display: flex; flex-direction: column; }
+        #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
+        #controls input { width: 40px; }
+        #container { flex: 1; }
     </style>
 </head>
 <body>
-<button id="zoomInButton" onclick="zoomIn()">Zoom In</button>
-<button id="zoomOutButton" onclick="zoomOut()">Zoom Out</button>
-<button id="moveButton" onclick="move()">Move</button>
-<label>x: <input id="xInput" value="50"></label>
-<label>y: <input id="yInput" value="-50"></label>
-<button id="fitButton" onclick="fit()">Fit to Container</button>
+<div id="controls">
+    <button id="zoomInButton" onclick="zoomIn()">Zoom In</button>
+    <button id="zoomOutButton" onclick="zoomOut()">Zoom Out</button>
+    <label>Zoom: <output id="zoomLevel">1</output></label>
+    <label>x: <input id="xInput" value="50"></label>
+    <label>y: <input id="yInput" value="-50"></label>
+    <button id="moveButton" onclick="move()">Move</button>
+    <button id="fitButton" onclick="fit()">Fit to Container</button>
+</div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -82,6 +64,10 @@ anychart.onDocumentReady(function () {
     // prevent the default behavior of the chart
     chart.interactivity().enabled(false);
 
+    // limit the zoom to the range from 0.5 to 10
+    chart.minZoom(0.5);
+    chart.maxZoom(10);
+
     // set the chart title
     chart.title("Network Graph: Navigation (Methods)");
 
@@ -92,26 +78,35 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
+// get the current zoom factor
+function showZoom() {
+  var zoom = chart.getZoomLevel();
+  document.getElementById("zoomLevel").value = zoom.toFixed(2);
+}
+
 // zoom the chart in
 function zoomIn() {
-  chart.zoomIn();  
+  chart.zoomIn();
+  showZoom();
 }
 
 // zoom the chart out
 function zoomOut() {
-  chart.zoomOut();  
+  chart.zoomOut();
+  showZoom();
 }
 
 // move the chart by given values
 function move() {
   var x = document.getElementById("xInput").value;
   var y = document.getElementById("yInput").value;
-  chart.move(x, y);  
+  chart.move(x, y);
 }
 
 // fit the chart to the container
 function fit() {
-  chart.fit();  
+  chart.fit();
+  showZoom();
 }
 </script>
 </body>

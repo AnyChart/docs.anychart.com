@@ -15,6 +15,7 @@
         html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
         body { display: flex; flex-direction: column; }
         #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
+        #controls span { font-weight: 600; }
         #container { flex: 1; }
     </style>
 </head>
@@ -23,6 +24,11 @@
     <button onclick="zoomInStep()">Zoom in</button>
     <button onclick="zoomOutStep()">Zoom out</button>
     <button onclick="fitTree()">Fit</button>
+    <label>Zoom: <output id="zoomLevel">1</output></label>
+    <span>Panning bounds:</span>
+    <label><input type="radio" name="bounds" onclick="boundsContain()" checked> contain</label>
+    <label><input type="radio" name="bounds" onclick="boundsFree()"> free</label>
+    <label><input type="radio" name="bounds" onclick="boundsAutoCenter()"> auto-center</label>
 </div>
 <div id="container"></div>
 <script>
@@ -51,6 +57,10 @@ anychart.onDocumentReady(function () {
   // chart.interactivity().zoomOnMouseWheel(false);
   // chart.interactivity().drag(false);
 
+  // let the tree zoom out to 0.7 of its fitted size and in to 4x
+  chart.minZoom(0.7);
+  chart.maxZoom(4);
+
   // set the container id
   chart.container("container");
   // initiate drawing the chart
@@ -58,21 +68,49 @@ anychart.onDocumentReady(function () {
 
   // zoom in programmatically
   chart.zoomIn();
+  showZoom();
+
+  // keep the zoom readout current after wheel zoom
+  document.getElementById("container").addEventListener("wheel", showZoom, {passive: true});
 });
+
+// read the current zoom
+function showZoom() {
+  var zoom = chart.getZoomLevel();
+  document.getElementById("zoomLevel").value = zoom.toFixed(2);
+}
 
 // zoom the tree in by one step
 function zoomInStep() {
   chart.zoomIn();
+  showZoom();
 }
 
 // zoom the tree out by one step
 function zoomOutStep() {
   chart.zoomOut();
+  showZoom();
 }
 
 // reset the zoom and pan and fit the whole tree into the container
 function fitTree() {
   chart.fit();
+  showZoom();
+}
+
+// keep the tree inside the chart area (the default)
+function boundsContain() {
+  chart.interactivity().boundsMode("contain");
+}
+
+// let the tree be dragged anywhere
+function boundsFree() {
+  chart.interactivity().boundsMode("free");
+}
+
+// slide the tree back to the center once it is dragged fully out of view
+function boundsAutoCenter() {
+  chart.interactivity().boundsMode("auto-center");
 }
 </script>
 </body>

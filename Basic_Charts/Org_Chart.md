@@ -317,13 +317,18 @@ In the sample below, the CTO branch is collapsed from the start, the +/− indic
 
 ### Zoom and Pan
 
-Mouse-wheel zoom and drag-to-pan are on by default and work anywhere on the chart — over the cards and over the empty area alike. On touch screens, pinch does the zoom. Wheel zoom is anchored at the pointer: the spot under the cursor stays in place. It stops at 0.1x and at 10x, and at either limit the wheel is still taken by the chart, so the page does not scroll instead.
+Mouse-wheel zoom and drag-to-pan are on by default and work anywhere on the chart — over the cards and over the empty area alike. On touch screens, pinch does the zoom. Wheel zoom is anchored at the pointer: the spot under the cursor stays in place. The zoom is measured against the fitted tree: 1 is the tree scaled to fit the chart area, and by default the zoom goes from 0.8 to 7. At either limit the wheel is still taken by the chart, so the page does not scroll instead.
 
-Both gestures are controlled through the `interactivity()` method:
+Panning is bounded by default: the tree cannot be dragged out of the chart area. When the tree is smaller than the area, it stays fully inside; when it is bigger, its far edge stops at the edge of the area.
 
-* `chart.interactivity().zoomOnMouseWheel()` — enable or disable wheel zoom (`true`/`false`)
-* `chart.interactivity().scrollOnMouseWheel()` — make the wheel pan the tree vertically instead of zooming it (`false` by default)
-* `chart.interactivity().drag()` — enable or disable panning
+Both gestures are controlled through the {api:anychart.charts.OrgChart#interactivity}interactivity(){api} method:
+
+* {api:anychart.core.orgChart.Interactivity#zoomOnMouseWheel}zoomOnMouseWheel(){api} — enable or disable wheel zoom (`true`/`false`)
+* {api:anychart.core.orgChart.Interactivity#scrollOnMouseWheel}scrollOnMouseWheel(){api} — make the wheel pan the tree vertically instead of zooming it (`false` by default)
+* {api:anychart.core.orgChart.Interactivity#drag}drag(){api} — enable or disable panning
+* {api:anychart.core.orgChart.Interactivity#boundsMode}boundsMode(){api} — how far the tree can be panned: `"contain"` (default), `"free"`, or `"auto-center"`
+
+With `"contain"`, the tree stays inside the chart area. With `"free"`, it can be dragged anywhere. With `"auto-center"`, it can be dragged anywhere too, but when you release it fully out of view, it slides back to the center.
 
 The two wheel options exclude each other: turning one on turns the other off, so `scrollOnMouseWheel(true)` also switches off the default wheel zoom. Turning one off leaves the other as it is — `zoomOnMouseWheel(false)` alone gives the wheel back to the page.
 
@@ -331,13 +336,25 @@ You can also control the zoom in code:
 
 * {api:anychart.charts.OrgChart#zoomIn}zoomIn(){api} and {api:anychart.charts.OrgChart#zoomOut}zoomOut(){api} — scale the tree up or down around the center of the chart area
 * {api:anychart.charts.OrgChart#fit}fit(){api} — reset the zoom and pan and fit the whole tree into the container
+* {api:anychart.charts.OrgChart#minZoom}minZoom(){api} and {api:anychart.charts.OrgChart#maxZoom}maxZoom(){api} — set the zoom limits (0.8 and 7 by default); the wheel, pinch, `zoomIn()` and `zoomOut()` all stop there
+* {api:anychart.charts.OrgChart#getZoomLevel}getZoomLevel(){api} — read the current zoom (1 = the tree fitted to the chart area)
 
 ```
+// let the tree zoom out to 0.7 of its fitted size and in to 4x
+chart.minZoom(0.7);
+chart.maxZoom(4);
+
 // zoom in programmatically
 chart.zoomIn();
+
+// read the current zoom
+var zoom = chart.getZoomLevel();
+
+// let the tree be dragged anywhere
+chart.interactivity().boundsMode("free");
 ```
 
-In the sample below, the chart is zoomed in by one step after the draw, the buttons zoom it in and out and fit it back into the container, and you can also zoom it with the mouse wheel and pan it by dragging:
+In the sample below, the buttons zoom the tree and fit it back, the readout shows the current zoom, and the radio buttons switch the panning bounds:
 
 {sample}BCT\_Org\_Chart\_11{sample}
 

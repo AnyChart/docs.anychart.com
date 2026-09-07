@@ -739,6 +739,8 @@ Use the following methods to navigate the chart:
 * {api:anychart.charts.Graph#zoom}zoom(){api} to zoom in and out 
 * {api:anychart.charts.Graph#move}move(){api} to move the chart by given values
 * {api:anychart.charts.Graph#fit}fit(){api} to fit the chart to the container
+* {api:anychart.charts.Graph#minZoom}minZoom(){api} and {api:anychart.charts.Graph#maxZoom}maxZoom(){api} to set the zoom limits (0.4 and 100 by default); `zoomIn()`, `zoomOut()`, `zoom()`, the mouse wheel and pinch all stop there
+* {api:anychart.charts.Graph#getZoomLevel}getZoomLevel(){api} to get the current zoom factor (1 = the initial scale)
 
 
 ```
@@ -761,7 +763,18 @@ chart.move(50, -50);
 chart.fit();  
 ```
 
-This is how these methods work:
+```
+// limit the zoom to the range from 0.5 to 10
+chart.minZoom(0.5);
+chart.maxZoom(10);
+```
+
+```
+// get the current zoom factor
+var zoom = chart.getZoomLevel();
+```
+
+In the sample below, the buttons zoom and move the chart, and the readout shows the current zoom factor:
 
 {sample}BCT\_Network\_Graph\_14{sample}
 
@@ -812,7 +825,7 @@ Combine it with the methods below and `true` / `false` as a parameter:
 
 * {api:anychart.core.graph.elements.Interactivity#zoomOnMouseWheel}zoomOnMouseWheel(){api} to allow or prevent zooming the chart with the mouse wheel
 * {api:anychart.core.graph.elements.Interactivity#scrollOnMouseWheel}scrollOnMouseWheel(){api} to allow or prevent scrolling the chart with the mouse wheel
-* {api:anychart.charts.Graph#enabled}enabled(){api} to allow or prevent moving the chart
+* {api:anychart.core.graph.elements.Interactivity#enabled}enabled(){api} to allow or prevent moving the chart
 
 
 ```
@@ -820,7 +833,18 @@ Combine it with the methods below and `true` / `false` as a parameter:
 chart.interactivity().scrollOnMouseWheel(true);
 ```
 
-The following sample shows how the mouse wheel can be used:
+By default, the chart can be dragged anywhere, even completely out of view. To limit the panning, call {api:anychart.core.graph.elements.Interactivity#boundsMode}boundsMode(){api} with one of the following values:
+
+* `"free"` (default) to allow dragging the chart anywhere
+* `"contain"` to keep the chart inside the chart area — when the chart is bigger than the area, its far edge stops at the edge of the area
+* `"auto-center"` to allow dragging the chart anywhere, but slide it back to the center when you release it fully out of view
+
+```
+// keep the chart inside its container
+chart.interactivity().boundsMode("contain");
+```
+
+In the following sample, the radio buttons switch what the mouse wheel does and how far the chart can be dragged:
 
 {sample}BCT\_Network\_Graph\_16{sample}
 
