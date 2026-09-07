@@ -322,27 +322,40 @@ In the sample below, the CTO branch is collapsed from the start, the +/− indic
 
 ### Zoom and Pan
 
-Mouse-wheel zoom and drag-to-pan are on by default and work anywhere on the chart — over the cards and over the empty area alike. On touch screens, pinch does the zoom. Wheel zoom is anchored at the pointer: the spot under the cursor stays in place. The zoom is measured against the fitted tree: 1 is the tree scaled to fit the chart area, and by default the zoom goes from 0.8 to 7. At either limit the wheel is still taken by the chart, so the page does not scroll instead.
+Mouse-wheel zoom and drag-to-pan are on by default; on touch screens, pinch does the zoom. The gestures are configured through the {api:anychart.charts.OrgChart#interactivity}interactivity(){api} method, and the zoom can also be driven from code.
 
-Panning is bounded by default: the tree cannot be dragged out of the chart area. When the tree is smaller than the area, it stays fully inside; when it is bigger, its far edge stops at the edge of the area.
+#### Gestures
 
-Both gestures are controlled through the {api:anychart.charts.OrgChart#interactivity}interactivity(){api} method:
+The gestures work anywhere on the chart — over the cards and over the empty area alike. Wheel zoom is anchored at the pointer: the spot under the cursor stays in place.
+
+Combine `interactivity()` with these methods:
 
 * {api:anychart.core.orgChart.Interactivity#zoomOnMouseWheel}zoomOnMouseWheel(){api} — enable or disable wheel zoom (`true`/`false`)
 * {api:anychart.core.orgChart.Interactivity#scrollOnMouseWheel}scrollOnMouseWheel(){api} — make the wheel pan the tree vertically instead of zooming it (`false` by default)
 * {api:anychart.core.orgChart.Interactivity#drag}drag(){api} — enable or disable panning
-* {api:anychart.core.orgChart.Interactivity#boundsMode}boundsMode(){api} — how far the tree can be panned: `"contain"` (default), `"free"`, or `"auto-center"`
 
-With `"contain"`, the tree stays inside the chart area. With `"free"`, it can be dragged anywhere. With `"auto-center"`, it can be dragged anywhere too, but when you release it fully out of view, it slides back to the center.
+The two wheel options exclude each other: turning one on turns the other off, and turning both off gives the wheel back to the page.
 
-The two wheel options exclude each other: turning one on turns the other off, so `scrollOnMouseWheel(true)` also switches off the default wheel zoom. Turning one off leaves the other as it is — `zoomOnMouseWheel(false)` alone gives the wheel back to the page.
+```
+// make the wheel scroll the tree instead of zooming it
+chart.interactivity().scrollOnMouseWheel(true);
 
-You can also control the zoom in code:
+// turn off panning
+chart.interactivity().drag(false);
+```
+
+In the sample below, the radio buttons set what the mouse wheel does, and the checkbox turns panning on and off:
+
+{sample}BCT\_Org\_Chart\_11{sample}
+
+#### Zoom Level
+
+The zoom level is measured against the fitted tree: 1 is the tree scaled to fit the chart area. By default it goes from 0.8 to 7, and every way of zooming — the wheel, pinch, and the methods below — stops at the limits.
 
 * {api:anychart.charts.OrgChart#zoomIn}zoomIn(){api} and {api:anychart.charts.OrgChart#zoomOut}zoomOut(){api} — scale the tree up or down around the center of the chart area
 * {api:anychart.charts.OrgChart#fit}fit(){api} — reset the zoom and pan and fit the whole tree into the container
-* {api:anychart.charts.OrgChart#minZoom}minZoom(){api} and {api:anychart.charts.OrgChart#maxZoom}maxZoom(){api} — set the zoom limits (0.8 and 7 by default); the wheel, pinch, `zoomIn()` and `zoomOut()` all stop there
-* {api:anychart.charts.OrgChart#getZoomLevel}getZoomLevel(){api} — read the current zoom (1 = the tree fitted to the chart area)
+* {api:anychart.charts.OrgChart#minZoom}minZoom(){api} and {api:anychart.charts.OrgChart#maxZoom}maxZoom(){api} — set the zoom limits
+* {api:anychart.charts.OrgChart#getZoomLevel}getZoomLevel(){api} — read the current zoom level
 
 ```
 // let the tree zoom out to 0.7 of its fitted size and in to 4x
@@ -352,16 +365,30 @@ chart.maxZoom(4);
 // zoom in programmatically
 chart.zoomIn();
 
-// read the current zoom
+// read the current zoom level
 var zoom = chart.getZoomLevel();
+```
 
+In the sample below, the buttons zoom the tree and fit it back, and the chart title shows the current zoom level:
+
+{sample}BCT\_Org\_Chart\_12{sample}
+
+#### Panning Bounds
+
+Panning is bounded by default: the tree cannot be dragged out of the chart area. To change that, call {api:anychart.core.orgChart.Interactivity#boundsMode}boundsMode(){api} with one of the following values:
+
+* `"contain"` (default) — the tree stays inside the chart area; when it is bigger than the area, its far edge stops at the edge of the area
+* `"free"` — the tree can be dragged anywhere
+* `"auto-center"` — the tree can be dragged anywhere, but when you release it fully out of view, it slides back to the center
+
+```
 // let the tree be dragged anywhere
 chart.interactivity().boundsMode("free");
 ```
 
-In the sample below, the buttons zoom the tree and fit it back, the readout shows the current zoom, and the radio buttons switch the panning bounds:
+In the sample below, the drop-down list switches the panning bounds — drag the tree out of view in each mode:
 
-{sample}BCT\_Org\_Chart\_11{sample}
+{sample}BCT\_Org\_Chart\_13{sample}
 
 ### Tooltips
 
@@ -382,4 +409,4 @@ chart.tooltip().format(function () {
 });
 ```
 
-{sample}BCT\_Org\_Chart\_12{sample}
+{sample}BCT\_Org\_Chart\_14{sample}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Org Chart 12"/>
+    <meta name="ac:name" content="BCT Org Chart 13"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
 
@@ -20,9 +20,13 @@
 </head>
 <body>
 <div id="controls">
-    <button onclick="zoomInStep()">Zoom in</button>
-    <button onclick="zoomOutStep()">Zoom out</button>
-    <button onclick="fitTree()">Fit</button>
+    <label>Panning bounds:
+        <select onchange="setBounds(this.value)">
+            <option value="contain">contain</option>
+            <option value="free">free</option>
+            <option value="auto-center">auto-center</option>
+        </select>
+    </label>
 </div>
 <div id="container"></div>
 <script>
@@ -43,46 +47,18 @@ anychart.onDocumentReady(function () {
 
   // create an org chart and set the data
   chart = anychart.orgChart(data, "as-table");
-
-  // let the tree zoom out to 0.7 of its fitted size and in to 4x
-  chart.minZoom(0.7);
-  chart.maxZoom(4);
+  // set the chart title
+  chart.title("Org Chart: Panning Bounds");
 
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
-
-  // zoom in programmatically
-  chart.zoomIn();
-  showZoom();
-
-  // keep the title current after wheel zoom
-  document.getElementById("container").addEventListener("wheel", showZoom, {passive: true});
 });
 
-// read the current zoom level and show it in the title
-function showZoom() {
-  var zoom = chart.getZoomLevel();
-  chart.title("Org Chart: Zoom Level (" + zoom.toFixed(2) + ")");
-}
-
-// zoom the tree in by one step
-function zoomInStep() {
-  chart.zoomIn();
-  showZoom();
-}
-
-// zoom the tree out by one step
-function zoomOutStep() {
-  chart.zoomOut();
-  showZoom();
-}
-
-// reset the zoom and pan and fit the whole tree into the container
-function fitTree() {
-  chart.fit();
-  showZoom();
+// set how far the tree can be dragged: "contain", "free" or "auto-center"
+function setBounds(mode) {
+  chart.interactivity().boundsMode(mode);
 }
 </script>
 </body>

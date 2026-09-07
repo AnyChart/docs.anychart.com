@@ -21,14 +21,11 @@
 </head>
 <body>
 <div id="controls">
-    <button onclick="zoomInStep()">Zoom in</button>
-    <button onclick="zoomOutStep()">Zoom out</button>
-    <button onclick="fitTree()">Fit</button>
-    <label>Zoom: <output id="zoomLevel">1</output></label>
-    <span>Panning bounds:</span>
-    <label><input type="radio" name="bounds" onclick="boundsContain()" checked> contain</label>
-    <label><input type="radio" name="bounds" onclick="boundsFree()"> free</label>
-    <label><input type="radio" name="bounds" onclick="boundsAutoCenter()"> auto-center</label>
+    <span>Use the mouse wheel to:</span>
+    <label><input type="radio" name="wheel" onclick="wheelZooms()" checked> zoom</label>
+    <label><input type="radio" name="wheel" onclick="wheelScrolls()"> scroll</label>
+    <label><input type="radio" name="wheel" onclick="wheelDoesNothing()"> nothing</label>
+    <label><input type="checkbox" onclick="toggleDrag(this.checked)" checked> drag to pan</label>
 </div>
 <div id="container"></div>
 <script>
@@ -50,67 +47,33 @@ anychart.onDocumentReady(function () {
   // create an org chart and set the data
   chart = anychart.orgChart(data, "as-table");
   // set the chart title
-  chart.title("Org Chart: Zoom and Pan");
-
-  // mouse-wheel zoom and drag-to-pan are enabled by default;
-  // this is how to turn them off:
-  // chart.interactivity().zoomOnMouseWheel(false);
-  // chart.interactivity().drag(false);
-
-  // let the tree zoom out to 0.7 of its fitted size and in to 4x
-  chart.minZoom(0.7);
-  chart.maxZoom(4);
+  chart.title("Org Chart: Gestures");
 
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
-
-  // zoom in programmatically
-  chart.zoomIn();
-  showZoom();
-
-  // keep the zoom readout current after wheel zoom
-  document.getElementById("container").addEventListener("wheel", showZoom, {passive: true});
 });
 
-// read the current zoom
-function showZoom() {
-  var zoom = chart.getZoomLevel();
-  document.getElementById("zoomLevel").value = zoom.toFixed(2);
+// make the wheel zoom the tree (the default)
+function wheelZooms() {
+  chart.interactivity().zoomOnMouseWheel(true);
 }
 
-// zoom the tree in by one step
-function zoomInStep() {
-  chart.zoomIn();
-  showZoom();
+// make the wheel scroll the tree instead of zooming it
+function wheelScrolls() {
+  chart.interactivity().scrollOnMouseWheel(true);
 }
 
-// zoom the tree out by one step
-function zoomOutStep() {
-  chart.zoomOut();
-  showZoom();
+// give the wheel back to the page
+function wheelDoesNothing() {
+  chart.interactivity().zoomOnMouseWheel(false);
+  chart.interactivity().scrollOnMouseWheel(false);
 }
 
-// reset the zoom and pan and fit the whole tree into the container
-function fitTree() {
-  chart.fit();
-  showZoom();
-}
-
-// keep the tree inside the chart area (the default)
-function boundsContain() {
-  chart.interactivity().boundsMode("contain");
-}
-
-// let the tree be dragged anywhere
-function boundsFree() {
-  chart.interactivity().boundsMode("free");
-}
-
-// slide the tree back to the center once it is dragged fully out of view
-function boundsAutoCenter() {
-  chart.interactivity().boundsMode("auto-center");
+// turn panning on or off
+function toggleDrag(enabled) {
+  chart.interactivity().drag(enabled);
 }
 </script>
 </body>
