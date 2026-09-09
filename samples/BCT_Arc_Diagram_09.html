@@ -25,7 +25,7 @@
 <body>
 <div id="controls">
     <label>Max links
-        <input type="range" min="10" max="150" step="10" value="50" oninput="changeMaxLinks(this.value)">
+        <input type="range" min="5" max="100" step="5" value="50" oninput="changeMaxLinks(this.value)">
         <output id="maxLinksValue">50</output>
     </label>
     <span>drawn: <output id="renderedCount"></output></span>
@@ -33,15 +33,18 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // generate data: 15 servers, 150 weighted connections between them
+  // generate data: 15 servers, every pair of them connected once (105 links), each link
+  // with its own weight between 1 and 40; the weights are spread evenly, in a fixed order
   var serverName = function (k) {
     return "Server " + (k < 9 ? "0" : "") + (k + 1);
   };
   var data = [];
-  for (var i = 0; i < 150; i++) {
-    var from = i % 15;
-    var to = (from + 1 + (i * 7) % 14) % 15;
-    data.push({from: serverName(from), to: serverName(to), weight: 1 + (i * 13) % 40});
+  var n = 0;
+  for (var from = 0; from < 15; from++) {
+    for (var to = from + 1; to < 15; to++) {
+      data.push({from: serverName(from), to: serverName(to), weight: 1 + (n * 17) % 40});
+      n++;
+    }
   }
 
   // create an arc diagram and set the data
