@@ -184,17 +184,17 @@ var controller = plot.annotations();
 
 // create an Infinite Line annotation (automatically bound to the main y-scale)
 controller.infiniteLine({
-    xAnchor: "2004-01-06",
+    xAnchor: "2026-01-06",
     valueAnchor: 2039.63,
-    secondXAnchor: "2004-01-15",
+    secondXAnchor: "2026-01-15",
     secondValueAnchor: 2088.10
 });
 
 //create an Ellipse annotation
 var ellipse = controller.ellipse({
-    xAnchor: "2004-01-07",
+    xAnchor: "2026-01-07",
     valueAnchor: 2583950080,
-    secondXAnchor: "2004-01-09",
+    secondXAnchor: "2026-01-09",
     secondValueAnchor: 2783950080
 });
 
