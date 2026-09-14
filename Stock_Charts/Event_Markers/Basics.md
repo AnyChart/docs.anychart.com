@@ -377,11 +377,11 @@ In the following sample, data does not include dates the event markers are bound
 // create data
 dataTable = anychart.data.table();
 dataTable.addData([
-    ["2016-01-05",  -2.0],
-    ["2016-01-07",  -9.4],
-    ["2016-01-08",  -4.5],
-    ["2016-01-11",  -3.1],
-    ["2016-01-12",  -7.9]
+    ["2026-01-06",  -2.0],
+    ["2026-01-08",  -9.4],
+    ["2026-01-09",  -4.5],
+    ["2026-01-12",  -3.1],
+    ["2026-01-13",  -7.9]
 ]);
 ```
 
@@ -391,15 +391,15 @@ plot.eventMarkers({"groups": [
   {
     "data": [
       {
-        "date": "2016-01-06",
+        "date": "2026-01-07",
         "description": "Event 1"
       },
       {
-        "date": "2016-01-09",
+        "date": "2026-01-10",
         "description": "Event 2"
       },
       {
-        "date": "2016-01-10",
+        "date": "2026-01-11",
         "description": "Event 3"
       },
     ]
