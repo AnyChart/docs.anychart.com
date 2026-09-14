@@ -15,12 +15,12 @@ Here is how to set data as an array of arrays, array contains values and then yo
 ```
 table = anychart.data.table();
 table.addData([
-	['2010-01-01', 5.8, 7.9],
-	['2010-02-01', 4.6, 6.1],
-	['2010-03-01', 5.9, 8.1],
-	['2010-04-01', 7.8, 10.7],
-	['2010-05-01', 10.5, 13.7],
-	['2010-06-01', 13.8, 17]
+	['2023-01-01', 5.8, 7.9],
+	['2023-02-01', 4.6, 6.1],
+	['2023-03-01', 5.9, 8.1],
+	['2023-04-01', 7.8, 10.7],
+	['2023-05-01', 10.5, 13.7],
+	['2023-06-01', 13.8, 17]
 ]);
 
 mapping = table.mapAs();
@@ -35,12 +35,12 @@ The next sample contains the same data arranged as array of objects.
 ```
 table = anychart.data.table('x');
 table.addData([
-	{x: '2010-01-01', low: 5.8,  high: 7.9},
-	{x: '2010-02-01', low: 4.6,  high: 6.1},
-	{x: '2010-03-01', low: 5.9,  high: 8.1},
-	{x: '2010-04-01', low: 7.8,  high: 10.7},
-	{x: '2010-05-01', low: 10.5, high: 13.7},
-	{x: '2010-06-01', low: 13.8, high: 17}
+	{x: '2023-01-01', low: 5.8,  high: 7.9},
+	{x: '2023-02-01', low: 4.6,  high: 6.1},
+	{x: '2023-03-01', low: 5.9,  high: 8.1},
+	{x: '2023-04-01', low: 7.8,  high: 10.7},
+	{x: '2023-05-01', low: 10.5, high: 13.7},
+	{x: '2023-06-01', low: 13.8, high: 17}
 ]);
 
 mapping = table.mapAs({low: 'low', high: 'high'});
@@ -57,11 +57,11 @@ Multiple series on different plots:
 ```
 // set the series for London
 var series_lon = chart.plot(0).rangeColumn(mapping_lon);
-series_lon.name("Water temperature in London in 2010-2012");
+series_lon.name("Water temperature in London in 2023-2025");
 
 // set the series for Edinburgh
 var series_edb = chart.plot(1).rangeColumn(mapping_edb);
-series_edb.name("Water temperature in Edinburgh in 2010-2012");
+series_edb.name("Water temperature in Edinburgh in 2023-2025");
 ```
 
 {sample}STOCK\_Range\_Column\_03{sample}

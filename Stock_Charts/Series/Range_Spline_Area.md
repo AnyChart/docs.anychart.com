@@ -18,18 +18,18 @@ Here is how to set data as an array of arrays, array contains values and then yo
 // set the data
 table = anychart.data.table();
 table.addData([
-    ['2000-01-01', 2, 6],
-    ['2000-02-01', 2, 7],
-    ['2000-03-01', 3, 10],
-    ['2000-04-01', 5, 13],
-    ['2000-05-01', 8, 17],
-    ['2000-06-01', 11, 20],
-    ['2000-07-01', 13, 22],
-    ['2000-08-01', 13, 21],
-    ['2000-09-01', 11, 19],
-    ['2000-10-01', 8, 14],
-    ['2000-11-01', 5, 10],
-    ['2000-12-01', 5, 7],
+    ['2021-01-01', 2, 6],
+    ['2021-02-01', 2, 7],
+    ['2021-03-01', 3, 10],
+    ['2021-04-01', 5, 13],
+    ['2021-05-01', 8, 17],
+    ['2021-06-01', 11, 20],
+    ['2021-07-01', 13, 22],
+    ['2021-08-01', 13, 21],
+    ['2021-09-01', 11, 19],
+    ['2021-10-01', 8, 14],
+    ['2021-11-01', 5, 10],
+    ['2021-12-01', 5, 7],
 ]);
   
 // map the data
@@ -53,18 +53,18 @@ The next sample demonstrates the data arranged as array of objects.
 // set the data
 table = anychart.data.table('x');
 table.addData([
-    {x: '2000-01-01', low: 2, high: 6},
-    {x: '2000-02-01', low: 2, high: 7},
-    {x: '2000-03-01', low: 3, high: 10},
-    {x: '2000-04-01', low: 5, high: 13},
-    {x: '2000-05-01', low: 8, high: 17},
-    {x: '2000-06-01', low: 11, high: 20},
-    {x: '2000-07-01', low: 13, high: 22},
-    {x: '2000-08-01', low: 13, high: 21},
-    {x: '2000-09-01', low: 11, high: 19},
-    {x: '2000-10-01', low: 8, high: 14},
-    {x: '2000-11-01', low: 5, high: 10},
-    {x: '2000-12-01', low: 5, high: 7}
+    {x: '2021-01-01', low: 2, high: 6},
+    {x: '2021-02-01', low: 2, high: 7},
+    {x: '2021-03-01', low: 3, high: 10},
+    {x: '2021-04-01', low: 5, high: 13},
+    {x: '2021-05-01', low: 8, high: 17},
+    {x: '2021-06-01', low: 11, high: 20},
+    {x: '2021-07-01', low: 13, high: 22},
+    {x: '2021-08-01', low: 13, high: 21},
+    {x: '2021-09-01', low: 11, high: 19},
+    {x: '2021-10-01', low: 8, high: 14},
+    {x: '2021-11-01', low: 5, high: 10},
+    {x: '2021-12-01', low: 5, high: 7}
 ]);
   
 // map the data
@@ -88,11 +88,11 @@ Simple multiple-series chart:
 // set the data
 table = anychart.data.table();
 table.addData([
-    ['2000-01-01', 2, 6, -3, 4],
-    ['2000-02-01', 2, 7, -2, 5],
-    ['2000-03-01', 3, 10, 2, 10],
-    ['2000-04-01', 5, 13, 7, 16],
-    ['2000-05-01', 8, 17, 12, 22]
+    ['2021-01-01', 2, 6, -3, 4],
+    ['2021-02-01', 2, 7, -2, 5],
+    ['2021-03-01', 3, 10, 2, 10],
+    ['2021-04-01', 5, 13, 7, 16],
+    ['2021-05-01', 8, 17, 12, 22]
 ]);
   
 // map the data
@@ -108,11 +108,11 @@ chart = anychart.stock();
 
 // set the series
 var series_lon = chart.plot(0).rangeSplineArea(mapping_lon);
-series_lon.name("Temperature Range (London 2000-2004)");
+series_lon.name("Temperature Range (London 2021-2025)");
 
 // set the series
 var series_ny = chart.plot(0).rangeSplineArea(mapping_ny);
-series_ny.name("Temperature Range (New York 2000-2004)");
+series_ny.name("Temperature Range (New York 2021-2025)");
 ```
 
 {sample}STOCK\_Range\_Spline\_Area\_03{sample}
