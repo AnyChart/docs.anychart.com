@@ -50,9 +50,9 @@
 <body>
 <button id="zoomToButton" onclick="zoomTo()">Zoom To</button>
 <label>start date:</label>
-<label id="dateLabel1">01 April 2005</label>
+<label id="dateLabel1">01 April 2024</label>
 <label>end date: </label>
-<label id="dateLabel2">01 April 2006</label>
+<label id="dateLabel2">01 April 2025</label>
 <button id="fitButton" onclick="fit()">Fit to Container</button>
 <div id="container"></div>
 <script>
@@ -61,25 +61,25 @@ anychart.onDocumentReady(function () {
     // create data
 
     var rangeData1 = [
-      ["Task 1", Date.UTC(2004,0,4), Date.UTC(2004,7,1)],
-      ["Task 2", Date.UTC(2004,7,1), Date.UTC(2005,8,10)]
+      ["Task 1", Date.UTC(2023,0,4), Date.UTC(2023,7,1)],
+      ["Task 2", Date.UTC(2023,7,1), Date.UTC(2024,8,10)]
     ];
 
     var rangeData2 = [
-      ["New Task 1", Date.UTC(2005,10,1), Date.UTC(2006,5,1)],
-      ["New Task 2", Date.UTC(2006,5,15), Date.UTC(2006,11,1)]
+      ["New Task 1", Date.UTC(2024,10,1), Date.UTC(2025,5,1)],
+      ["New Task 2", Date.UTC(2025,5,15), Date.UTC(2025,11,1)]
     ];
 
     var momentData1 = [
-      [Date.UTC(2004,2,21), "Meeting 1"],
-      [Date.UTC(2005,3,19), "Meeting 2"],
-      [Date.UTC(2006,1,1),  "Meeting 3"]
+      [Date.UTC(2023,2,21), "Meeting 1"],
+      [Date.UTC(2024,3,19), "Meeting 2"],
+      [Date.UTC(2025,1,1),  "Meeting 3"]
     ];
 
     var momentData2 = [
-      [Date.UTC(2004,5,12), "Training 1"],
-      [Date.UTC(2005,5,1),  "Training 2"],
-      [Date.UTC(2006,1,26), "Training 3"]
+      [Date.UTC(2023,5,12), "Training 1"],
+      [Date.UTC(2024,5,1),  "Training 2"],
+      [Date.UTC(2025,1,26), "Training 3"]
     ];
 
     // create a chart
@@ -116,7 +116,7 @@ anychart.onDocumentReady(function () {
 
 // zoom the chart to the given dates
 function zoomTo() {
-  chart.zoomTo(Date.UTC(2005,3,1), Date.UTC(2006,3,1));  
+  chart.zoomTo(Date.UTC(2024,3,1), Date.UTC(2025,3,1));  
 }
 
 // fit the chart to the container
