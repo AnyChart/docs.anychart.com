@@ -981,7 +981,7 @@ It requires adding the [Common UI](../Quick_Start/Modules#common_ui) module:
 ```
 
 ```
-<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4"/> 
+<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css"/> 
 ```
 
 Also, you should reference the `anychart-ui.min.css` and `anychart-font.min.css` files:
