@@ -25,9 +25,9 @@
         <input type="range" min="30" max="100" step="5" value="85" oninput="changeNodesSpan(this.value)">
         <output id="nodesSpanValue">85%</output>
     </label>
-    <label>Node width
-        <input type="range" min="4" max="50" step="1" value="30" oninput="changeNodeWidth(this.value)">
-        <output id="nodeWidthValue">30</output>
+    <label>Node thickness
+        <input type="range" min="4" max="50" step="1" value="30" oninput="changeNodeThickness(this.value)">
+        <output id="nodeThicknessValue">30</output>
     </label>
     <label>Curvature
         <input type="range" min="0.2" max="1.2" step="0.05" value="0.8" oninput="changeCurvature(this.value)">
@@ -54,7 +54,7 @@ anychart.onDocumentReady(function () {
 
   // give the row of nodes most of the node line and make the bars thicker
   chart.nodesSpan("85%");
-  chart.nodeWidth(30);
+  chart.nodeHeight(30);
 
   // set the height of the links and curve them below the node line
   chart.curvature(0.8);
@@ -72,10 +72,10 @@ function changeNodesSpan(value) {
   document.getElementById("nodesSpanValue").value = value + "%";
 }
 
-// resize the node bars: the chart redraws itself
-function changeNodeWidth(value) {
-  chart.nodeWidth(value);
-  document.getElementById("nodeWidthValue").value = value;
+// change the thickness of the node bars: the chart redraws itself
+function changeNodeThickness(value) {
+  chart.nodeHeight(value);
+  document.getElementById("nodeThicknessValue").value = value;
 }
 
 // change the height of the links: the chart redraws itself
