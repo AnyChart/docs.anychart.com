@@ -72,7 +72,7 @@ var chart = anychart.arcDiagram(data);
 chart.title("Arc Diagram: Basic Sample");
 
 // make the node bars thicker
-chart.nodeWidth(30);
+chart.nodeHeight(30);
 
 // set the container id
 chart.container("container");
@@ -291,14 +291,14 @@ Both methods work on a chart that is already drawn. Use the buttons in the sampl
 The following methods adjust the geometry of the diagram:
 
 * {api:anychart.charts.ArcDiagram#nodesSpan}nodesSpan(){api} — how much of the node line the row of nodes takes up. A number is a length in pixels, a string such as `"60%"` is a share of the line (`"85%"` by default), and a share above `100%` is clamped to the full line. Whatever is left over becomes the gaps between the nodes, so this is the method that decides how far apart they sit
-* {api:anychart.charts.ArcDiagram#nodeWidth}nodeWidth(){api} — the thickness of the node bars, in pixels (20 by default)
+* {api:anychart.charts.ArcDiagram#nodeHeight}nodeHeight(){api} — the thickness of the node bars across the node line, in pixels (20 by default); the length of a bar along the line follows its weight
 * {api:anychart.charts.ArcDiagram#nodeSpacing}nodeSpacing(){api} — the smallest gap allowed between two neighboring nodes, in pixels (30 by default). It is a floor, not the gap itself: as long as the gaps that come out of `nodesSpan()` are wider than it, it changes nothing, and when it does take effect the node bars become thinner instead of the row becoming longer. Pass `0` to let the bars sit side by side
 * {api:anychart.charts.ArcDiagram#curvature}curvature(){api} — the height of the links: values below 1 flatten them, values above 1 make them taller, until the arcs reach the plot edge and stop growing (1 by default)
 
 ```
 // give the row of nodes most of the node line and make the bars thicker
 chart.nodesSpan("85%");
-chart.nodeWidth(30);
+chart.nodeHeight(30);
 
 // set the height of the links and curve them below the node line
 chart.curvature(0.8);
