@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="DSV2 Data Sheet 14"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-data-sheet.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/data-sheet.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css" />
+
+    <style>
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { display: flex; flex-direction: column; }
+        #controls { padding: 8px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; }
+        #container { flex: 1; }
+    </style>
+</head>
+<body>
+<div id="controls">
+    <label>Group by
+        <select id="groupField" onchange="applyGrouping(this.value)">
+            <option value="category" selected>Category</option>
+            <option value="supplier">Supplier</option>
+            <option value="nested">Category, then Supplier</option>
+            <option value="none">nothing</option>
+        </select>
+    </label>
+    <button onclick="expandAll()">Expand all</button>
+    <button onclick="collapseAll()">Collapse all</button>
+    <output id="state"></output>
+</div>
+<div id="container"></div>
+<script>
+var chart;
+var state;
+
+anychart.onDocumentReady(function () {
+
+  // the data
+  var data = [
+    {id: 1,  product: "Laptop",   category: "Tech",    price: 1200, units: 34,  supplier: "Northwind"},
+    {id: 2,  product: "Chair",    category: "Office",  price: 150,  units: 120, supplier: "Contoso"},
+    {id: 3,  product: "Monitor",  category: "Tech",    price: 300,  units: 58,  supplier: "Northwind"},
+    {id: 4,  product: "Desk",     category: "Office",  price: 450,  units: 21,  supplier: "Fabrikam"},
+    {id: 5,  product: "Keyboard", category: "Tech",    price: 80,   units: 240, supplier: "Contoso"},
+    {id: 6,  product: "Lamp",     category: "Office",  price: 45,   units: 175, supplier: "Fabrikam"},
+    {id: 7,  product: "Headset",  category: "Tech",    price: 220,  units: 96,  supplier: "Northwind"},
+    {id: 8,  product: "Cabinet",  category: "Office",  price: 380,  units: 12,  supplier: "Contoso"},
+    {id: 9,  product: "Shelf",    category: "Office",  price: 210,  units: 42,  supplier: "Fabrikam"},
+    {id: 10, product: "Router",   category: "Tech",    price: 130,  units: 64,  supplier: "Contoso"},
+    {id: 11, product: "Footrest", category: "Office",  price: 60,   units: 88,  supplier: "Northwind"},
+    {id: 12, product: "Locker",   category: "Office",  price: 540,  units: 9,   supplier: "Fabrikam"}
+  ];
+
+  // create a data sheet
+  chart = anychart.dataSheet(data);
+
+  // declare the columns
+  chart.column(0, {field: "product", title: "Product", width: 150});
+  chart.column(1, {field: "category", title: "Category", width: 120});
+  chart.column(2, {field: "supplier", title: "Supplier", width: 130});
+  chart.column(3, {field: "price", title: "Price", width: 110, dataType: "number"});
+  chart.column(4, {field: "units", title: "Units", width: 110, dataType: "number"});
+
+  // a grouping change fires groupchange with the fields
+  state = document.getElementById("state");
+  chart.listen("groupchange", function (e) {
+    state.value = "grouped by " + e.fields;
+  });
+
+  // fold the rows into groups and summarize each one
+  chart.groupBy("category", {aggregates: {price: "sum", units: "max"}});
+
+  // show the zone that holds a chip per grouped field
+  chart.groupZone(true);
+
+  // set the container id
+  chart.container("container");
+
+  // initiate drawing the data sheet
+  chart.draw();
+});
+
+// group by one field, nest two, or drop the grouping
+function applyGrouping(value) {
+  if (value === "none")
+    chart.groupBy(null);
+  else if (value === "nested")
+    chart.groupBy(["category", "supplier"], {aggregates: {price: "sum", units: "max"}});
+  else
+    chart.groupBy(value, {aggregates: {price: "sum", units: "max"}});
+  chart.draw();
+}
+
+// open every group
+function expandAll() {
+  chart.hierarchy().expandAll();
+  chart.draw();
+}
+
+// close every group
+function collapseAll() {
+  chart.hierarchy().collapseAll();
+  chart.draw();
+}
+</script>
+</body>
+</html>
