@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="DSV2 Data Sheet 13"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-data-sheet.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/data-sheet.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css" />
+
+    <style>
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { display: flex; flex-direction: column; }
+        #controls { padding: 8px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; }
+        #container { flex: 1; }
+    </style>
+</head>
+<body>
+<div id="controls">
+    <label>Find
+        <select id="query" onchange="runQuery(this.value)">
+            <option value="tech" selected>tech</option>
+            <option value="desk">desk</option>
+            <option value="north">north</option>
+        </select>
+    </label>
+    <button onclick="findNext()">Next match</button>
+    <button onclick="findPrev()">Previous match</button>
+    <button onclick="closeSearch()">Close the bar</button>
+    <output id="state"></output>
+</div>
+<div id="container"></div>
+<script>
+var chart;
+var state;
+
+anychart.onDocumentReady(function () {
+
+  // the data
+  var data = [
+    {id: 1,  product: "Laptop",   category: "Tech",    price: 1200, units: 34,  supplier: "Northwind"},
+    {id: 2,  product: "Chair",    category: "Office",  price: 150,  units: 120, supplier: "Contoso"},
+    {id: 3,  product: "Monitor",  category: "Tech",    price: 300,  units: 58,  supplier: "Northwind"},
+    {id: 4,  product: "Desk",     category: "Office",  price: 450,  units: 21,  supplier: "Fabrikam"},
+    {id: 5,  product: "Keyboard", category: "Tech",    price: 80,   units: 240, supplier: "Contoso"},
+    {id: 6,  product: "Lamp",     category: "Office",  price: 45,   units: 175, supplier: "Fabrikam"},
+    {id: 7,  product: "Headset",  category: "Tech",    price: 220,  units: 96,  supplier: "Northwind"},
+    {id: 8,  product: "Cabinet",  category: "Office",  price: 380,  units: 12,  supplier: "Contoso"},
+    {id: 9,  product: "Shelf",    category: "Office",  price: 210,  units: 42,  supplier: "Fabrikam"},
+    {id: 10, product: "Router",   category: "Tech",    price: 130,  units: 64,  supplier: "Contoso"},
+    {id: 11, product: "Footrest", category: "Office",  price: 60,   units: 88,  supplier: "Northwind"},
+    {id: 12, product: "Locker",   category: "Office",  price: 540,  units: 9,   supplier: "Fabrikam"}
+  ];
+
+  // create a data sheet
+  chart = anychart.dataSheet(data);
+
+  // declare the columns
+  // search looks only at the fields that have a column
+  chart.column(0, {field: "product", title: "Product", width: 150});
+  chart.column(1, {field: "category", title: "Category", width: 120});
+  chart.column(2, {field: "supplier", title: "Supplier", width: 130});
+  chart.column(3, {field: "units", title: "Units", width: 110, dataType: "number"});
+
+  // the search event reports the query and how many cells matched
+  state = document.getElementById("state");
+  chart.listen("search", function (e) {
+    state.value = e.query + ": " + e.matchCount + " matching cells";
+  });
+
+  // set the container id
+  chart.container("container");
+
+  // initiate drawing the data sheet
+  chart.draw();
+
+  // open the search bar and run a query
+  // Ctrl+F opens the same bar by hand, with the input focused
+  chart.search().show();
+  chart.search().query("tech");
+  chart.draw();
+});
+
+// query() matches any part of a value, case-insensitively
+function runQuery(text) {
+  chart.search().query(text);
+}
+
+// next() steps to the following match and scrolls it into view
+function findNext() {
+  chart.search().next();
+}
+
+// prev() steps back; both cycle at the ends
+function findPrev() {
+  chart.search().prev();
+}
+
+// close() shuts the bar; isVisible() reports whether it is open
+function closeSearch() {
+  chart.search().close();
+  chart.draw();
+  state.value = "the bar is open: " + chart.search().isVisible();
+}
+</script>
+</body>
+</html>

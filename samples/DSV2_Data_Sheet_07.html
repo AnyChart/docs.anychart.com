@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="DSV2 Data Sheet 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-data-sheet.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/data-sheet.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css" />
+
+    <style>
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        #container { width: 100%; height: 100%; }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+  // every row object has six fields
+  var products = [
+    {product: 'Laptop',  category: 'Tech',   price: 1200, units: 34,  date: '2024-01-15', inStock: true},
+    {product: 'Chair',   category: 'Office', price: 150,  units: 120, date: '2024-02-03', inStock: true},
+    {product: 'Monitor', category: 'Tech',   price: 300,  units: 58,  date: '2024-02-18', inStock: true},
+    {product: 'Lamp',    category: 'Office', price: 45,   units: 210, date: '2024-03-07', inStock: true},
+    {product: 'Mouse',   category: 'Tech',   price: 25,   units: 430, date: '2024-03-22', inStock: false},
+    {product: 'Hub',     category: 'Tech',   price: 60,   units: 95,  date: '2024-04-11', inStock: true},
+    {product: 'Desk',    category: 'Office', price: 450,  units: 12,  date: '2024-04-29', inStock: false},
+    {product: 'Webcam',  category: 'Tech',   price: 80,   units: 0,   date: '2024-05-14', inStock: false}
+  ];
+
+  // create a data sheet
+  var chart = anychart.dataSheet(products);
+
+  // a column shows the value as text unless dataType says otherwise
+  chart.column(0, {field: 'product', title: 'Product', width: 200});
+
+  // a format string puts the value into your own text with {%value}
+  chart.column(1, {field: 'price', title: 'Price', width: 120, dataType: 'number', format: '${%value}'});
+
+  // a date column: AnyChart formats the value, the same way on every machine
+  chart.column(2, {field: 'date', title: 'Added', width: 130, dataType: 'date'});
+
+  // a boolean column: the cell shows a tick or a cross
+  chart.column(3, {field: 'inStock', title: 'In Stock', width: 110, dataType: 'boolean'});
+
+  // a format function takes no arguments and reads this.value
+  chart.column(4, {field: 'units', title: 'Units', width: 130, dataType: 'number',
+    format: function () {
+      return this.value + ' pcs';
+    }
+  });
+
+  // set the container id
+  chart.container('container');
+  // initiate drawing the data sheet
+  chart.draw();
+});
+</script>
+</body>
+</html>
