@@ -130,13 +130,11 @@ A node has three [states](../Common_Settings/Interactivity/States): **normal**, 
 
 Node [labels](../Common_Settings/Labels) show the node name and are drawn wherever there is room for them. Set the base settings with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state; the hovered and selected states override the settings you give them and inherit the rest. Pointing at a link highlights the labels of both nodes it connects, so both of them take the hovered settings.
 
-When two labels would collide, the chart moves one of them into a free lane further from the node line and draws a leader line back to its node; a label that fits in no lane is left out (see [Label Crowding](#label_crowding)). The leader lines are thin and grey by default; the {api:anychart.core.ui.LabelsFactory#connectorStroke}connectorStroke(){api} method restyles them, and `"none"` removes them.
-
 The labels are drawn straight. To turn them, call {api:anychart.core.ui.LabelsFactory#rotation}rotation(){api} with the angle you want. Font settings are available too, and each state restyles the labels it owns:
 
 ```
 // node labels: tilted, bigger, blue
-chart.node().normal().labels().rotation(45);
+chart.node().normal().labels().rotation(30);
 chart.node().normal().labels().fontSize(18);
 chart.node().normal().labels().fontColor("#1976d2");
 
@@ -145,35 +143,22 @@ chart.node().hovered().labels().fontColor("#0b1220");
 chart.node().selected().labels().fontColor("#d32f2f");
 ```
 
-In the sample below, the node labels are tilted, enlarged, and colored, and they change color when you point at a node or select it:
+When two labels would collide, the chart moves one of them into a free lane further from the node line and draws a connector line back to its node. The connector lines are thin and grey by default; the {api:anychart.core.ui.LabelsFactory#connectorStroke}connectorStroke(){api} method restyles them, and `"none"` removes them.
+
+To decide what becomes of a label that fits in no lane, call `overflow()`: `"hide"`, the default, drops it, and `"stack"` keeps it by opening another lane. To cap how many labels the chart places, call `maxCount()` — the heaviest nodes keep theirs. In the `"hide"` mode `connectorMaxLength()` bounds the connector line as well: a label that would need a longer one is left out. All three belong to the layout, so they are set once, on the labels of the normal state:
+
+```
+// hide the node labels that do not fit, cap their number and the connector length
+chart.node().labels().overflow("hide");
+chart.node().labels().maxCount(24);
+chart.node().labels().connectorMaxLength(20);
+```
+
+The `getUnplacedNodeLabels()` method reads back the nodes whose labels were left out of the last drawing.
+
+In the sample below, the node labels are tilted, enlarged, and colored, and the controls decide what the chart does with the ones that do not fit:
 
 {sample}BCT\_Arc\_Diagram\_03{sample}
-
-#### Label Crowding
-
-When a diagram has more nodes than the node line has room for labels, the chart places as many labels as it can and leaves the rest out. The `overflow()` method of the node labels decides what happens to a label that does not fit: `"hide"`, the default, drops it, and `"stack"` keeps it by opening another lane.
-
-To cap how many labels the chart places, call `maxCount()` — the heaviest nodes keep theirs. In the `"hide"` mode you can also keep the leader lines short with `connectorMaxLength()`: a label that would need a longer one is left out. Both are settings of the layout, so they are set once, on the labels of the normal state:
-
-```
-// hide the node labels that do not fit, and cap their number and their leader lines
-chart.node().labels().overflow("hide");
-chart.node().labels().maxCount(120);
-chart.node().labels().connectorMaxLength(40);
-```
-
-To find out how many labels were left out of the last drawing, call `getUnplacedNodeLabels()`:
-
-```
-// read how many node labels were left out of the last drawing
-function showUnplaced() {
-  document.getElementById("unplacedCount").value = chart.getUnplacedNodeLabels().length;
-}
-```
-
-In the sample below, switch between the two modes and watch how many labels the chart leaves out:
-
-{sample}BCT\_Arc\_Diagram\_14{sample}
 
 #### Node Colors
 
@@ -236,7 +221,7 @@ function thicknessFromWeight() {
 
 Use the buttons in the sample below to compare the three, and point at a link or click it to see the state thicknesses:
 
-{sample}BCT\_Arc\_Diagram\_15{sample}
+{sample}BCT\_Arc\_Diagram\_14{sample}
 
 #### Link Labels
 
