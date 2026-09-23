@@ -34,9 +34,6 @@ anychart.onDocumentReady(function () {
   // set the chart title
   chart.title("Arc Diagram: Link Tooltip");
 
-  // make the node bars thicker
-  chart.nodeHeight(30);
-
   // the tooltip of a link: a sentence built from its tokens
   chart.link().tooltip().titleFormat("{%from} -> {%to}");
   chart.link().tooltip().format("{%value} requests from {%from} to {%to}");

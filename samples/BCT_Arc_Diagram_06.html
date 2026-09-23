@@ -34,9 +34,6 @@ anychart.onDocumentReady(function () {
   // set the chart title
   chart.title("Arc Diagram: Link Labels");
 
-  // make the node bars thicker
-  chart.nodeHeight(30);
-
   // show the weight of each link
   chart.link().normal().labels().enabled(true);
   chart.link().normal().labels().format("{%value}");

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Arc Diagram 14"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-arc-diagram.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css"/>
+
+    <style>
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { display: flex; flex-direction: column; }
+        #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
+        #controls input[type="range"] { width: 90px; vertical-align: middle; }
+        #controls output { display: inline-block; text-align: left; }
+        #maxCountValue, #connectorValue { min-width: 3ch; }
+        #unplacedCount { min-width: 3ch; }
+        #container { flex: 1; }
+    </style>
+</head>
+<body>
+<div id="controls">
+    <span>Labels that do not fit:</span>
+    <label><input type="radio" name="overflow" id="overflowHide" onclick="changeOverflow('hide')" checked> hide</label>
+    <label><input type="radio" name="overflow" id="overflowStack" onclick="changeOverflow('stack')"> stack</label>
+    <label>Max labels
+        <input type="range" min="5" max="120" step="5" value="120" oninput="changeMaxCount(this.value)">
+        <output id="maxCountValue">120</output>
+    </label>
+    <label>Leader length
+        <input type="range" min="10" max="120" step="10" value="40" oninput="changeConnectorMaxLength(this.value)">
+        <output id="connectorValue">40</output>
+    </label>
+    <span>left out: <output id="unplacedCount"></output></span>
+</div>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  // generate data: 120 servers in a ring, each one connected to the next and to the third
+  // one after it, with a weight between 1 and 30
+  var serverName = function (k) {
+    return "Server " + (k < 9 ? "0" : "") + (k + 1);
+  };
+  var data = [];
+  for (var i = 0; i < 120; i++) {
+    data.push({from: serverName(i), to: serverName((i + 1) % 120), weight: 1 + (i * 7) % 30});
+    data.push({from: serverName(i), to: serverName((i + 3) % 120), weight: 1 + (i * 13) % 20});
+  }
+
+  // create an arc diagram and set the data
+  chart = anychart.arcDiagram(data);
+  // set the chart title
+  chart.title("Arc Diagram: Label Crowding");
+
+  // hide the node labels that do not fit, and cap their number and their leader lines
+  chart.node().labels().overflow("hide");
+  chart.node().labels().maxCount(120);
+  chart.node().labels().connectorMaxLength(40);
+
+  // set the container id
+  chart.container("container");
+  // initiate drawing the chart
+  chart.draw();
+
+  showUnplaced();
+});
+
+// stack the labels that do not fit, or hide them: the chart redraws itself
+function changeOverflow(value) {
+  chart.node().labels().overflow(value);
+  showUnplaced();
+}
+
+// set how many node labels the chart may place
+function changeMaxCount(value) {
+  chart.node().labels().maxCount(value);
+  document.getElementById("maxCountValue").value = value;
+  showUnplaced();
+}
+
+// set how far a label may sit from its node
+function changeConnectorMaxLength(value) {
+  chart.node().labels().connectorMaxLength(value);
+  document.getElementById("connectorValue").value = value;
+  showUnplaced();
+}
+
+// read how many node labels were left out of the last drawing
+function showUnplaced() {
+  document.getElementById("unplacedCount").value = chart.getUnplacedNodeLabels().length;
+}
+</script>
+</body>
+</html>

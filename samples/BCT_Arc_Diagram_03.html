@@ -34,10 +34,15 @@ anychart.onDocumentReady(function () {
   // set the chart title
   chart.title("Arc Diagram: Node Labels");
 
-  // node labels: tilted the other way, bigger, blue
+  // node labels: tilted, bigger, blue
   chart.node().normal().labels().rotation(45);
   chart.node().normal().labels().fontSize(18);
   chart.node().normal().labels().fontColor("#1976d2");
+
+  // the label of the node under the pointer, and of a selected node
+  chart.node().hovered().labels().fontColor("#0b1220");
+  chart.node().selected().labels().fontColor("#d32f2f");
+
   // set the container id
   chart.container("container");
   // initiate drawing the chart
