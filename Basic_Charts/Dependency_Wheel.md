@@ -153,6 +153,15 @@ By default, a label is bent along the ring. To draw it as a straight line of tex
 chart.node().normal().labels().position("tangential");
 ```
 
+To run each label outward from the center, along the ray of its node, pass `"radial"` instead. The position works on a chart that is already drawn, so a control can switch it:
+
+```
+// place the node labels: along the ring, beside it, or outward from the center
+function changeLabelPosition(value) {
+  chart.node().normal().labels().position(value);
+}
+```
+
 A label that overlaps an already drawn label is hidden by default. To control this behavior, use the {api:anychart.charts.DependencyWheel#dropOverlappedLabels}dropOverlappedLabels(){api} method:
 
 ```
@@ -192,7 +201,7 @@ chart.node().tooltip().format(
 );
 ```
 
-In the sample below, the labels are straightened out of their default curve, the state fills and strokes are derived from `sourceColor`, and the tooltip shows the node tokens:
+In the sample below, the radios place the node labels, the state fills and strokes are derived from `sourceColor`, and the tooltip shows the node tokens:
 
 {sample}BCT\_Dependency\_Wheel\_04{sample}
 
@@ -301,7 +310,7 @@ In the sample below, the sliders set the gap between the arcs and the floor unde
 
 #### Radius
 
-The {api:anychart.charts.DependencyWheel#radius}radius(){api} method sets the outer radius of the ring of node arcs. A number is a size in pixels, a percent string is a share of the smaller side of the chart area. The default, `"50%"`, is also the largest ring the chart draws, so larger values change nothing: use this method to make the ring smaller and leave room for long labels or a title.
+The {api:anychart.charts.DependencyWheel#radius}radius(){api} method sets the outer radius of the ring of node arcs. A number is a size in pixels, a percent string is a share of the smaller side of the chart area. The default, `"50%"`, is also the largest ring the chart draws, so larger values change nothing: use this method to make the ring smaller and leave room around it. When the node labels are on, the chart reserves room for them outside the ring, so that largest ring is smaller than it is with the labels off.
 
 ```
 // shrink the ring to leave room around it
