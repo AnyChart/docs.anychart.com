@@ -22,8 +22,10 @@
 <body>
 <div id="controls">
     <span>Cell shape:</span>
-    <label><input type="radio" name="cellShape" onclick="changeCellShape('square')" checked> square</label>
-    <label><input type="radio" name="cellShape" onclick="changeCellShape('circle')"> circle</label>
+    <label><input type="radio" name="shape" onclick="changeCellShape('square')" checked> square</label>
+    <label><input type="radio" name="shape" onclick="changeCellShape('circle')"> circle</label>
+    <label><input type="radio" name="shape" onclick="changeCellShape('star5')"> star5</label>
+    <label><input type="radio" name="shape" onclick="changeCellShape('arrow-up')"> arrow-up</label>
     <label id="cornerRadiusControl">Corner radius
         <input type="range" min="0" max="8" step="1" value="4" oninput="changeCellCornerRadius(this.value)">
         <output id="cornerRadiusValue">4</output>
@@ -47,10 +49,10 @@ anychart.onDocumentReady(function () {
   chart.title("Waffle Chart: Cell Shape");
 
   // draw square cells and round their corners
-  chart.cellShape("square");
-  chart.cellCornerRadius(4);
+  chart.cell().shape("square");
+  chart.cell().cornerRadius(4);
 
-  // show the default labels: the category name and its percent share
+  // show the default labels: the category name
   chart.labels(true);
 
   // set the container id
@@ -59,15 +61,15 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// switch the shape of the cells: the corner radius applies to squares only, so its slider hides for circles
+// switch the shape of the cells: the corner radius applies to squares only, so its slider hides for the other shapes
 function changeCellShape(value) {
-  chart.cellShape(value);
+  chart.cell().shape(value);
   document.getElementById("cornerRadiusControl").style.display = value === "square" ? "" : "none";
 }
 
-// round the corners of square cells: circle cells ignore the radius
+// round the corners of square cells: the other shapes ignore the radius
 function changeCellCornerRadius(value) {
-  chart.cellCornerRadius(value);
+  chart.cell().cornerRadius(value);
   document.getElementById("cornerRadiusValue").value = value;
 }
 </script>

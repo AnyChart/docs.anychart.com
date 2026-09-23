@@ -39,12 +39,9 @@ anychart.onDocumentReady(function () {
   // show the name and the value instead
   chart.labels().format("{%name}: {%value}");
 
-  // outlined white text: a bold white font ...
+  // restyle the label background and the font color on it
+  chart.labels().background().fill("#212121");
   chart.labels().fontColor("#ffffff");
-  chart.labels().fontWeight(600);
-
-  // ... with one dark shadow on each side
-  chart.labels().textShadow("-1px -1px #000, 1px -1px #000, -1px 1px #000, 1px 1px #000");
 
   // set the container id
   chart.container("container");

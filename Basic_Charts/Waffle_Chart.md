@@ -112,7 +112,7 @@ In the sample below, pointing at a category lightens its block of cells, and cli
 
 Cells can carry a hatch pattern as well as a color. Set it with {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} on {api:anychart.charts.Waffle#normal}normal(){api}: pass a pattern name, or `true` for the default backward-diagonal one. A pattern tells the categories apart without relying on color, which also survives black-and-white printing. Only the normal state draws it: `hovered().hatchFill()` and `selected().hatchFill()` accept a value and read it back, but never paint, so a hatched category keeps the same pattern in every state. The pattern covers the whole block, so it crosses any [label](#labels) sitting on it.
 
-Clicking a category selects it and clears the previous one; clicking it again keeps it selected, and clicking the chart area outside the grid clears the selection. A click with Ctrl, Shift or Cmd held adds the category to the selection instead of replacing it, and a Ctrl-click on a selected category removes it again. To keep the selection to one category whatever the keys, set {api:anychart.charts.Waffle#selectionMode}selectionMode(){api} to `"single-select"`. In code, {api:anychart.charts.Waffle#select}select(){api} takes the index of a category, or an array of indexes to select several at once, and {api:anychart.charts.Waffle#unselect}unselect(){api} clears the selection — a category name is not accepted. How the chart reacts to clicks is a general interactivity setting: see [General Settings](General_Settings#interactivity). In code, {api:anychart.charts.Waffle#select}select(){api} takes the index of a category, or an array of indexes to select several at once, and {api:anychart.charts.Waffle#unselect}unselect(){api} clears the selection — a category name is not accepted. How the chart reacts to clicks is a general interactivity setting: see [General Settings](General_Settings#interactivity).
+Clicking a category selects it and clears the previous one; clicking it again keeps it selected, and clicking the chart area outside the grid clears the selection. A click with Ctrl, Shift or Cmd held adds the category to the selection instead of replacing it, and a Ctrl-click on a selected category removes it again. To keep the selection to one category whatever the keys, set {api:anychart.charts.Waffle#selectionMode}selectionMode(){api} to `"single-select"`. In code, {api:anychart.charts.Waffle#select}select(){api} takes the index of a category, or an array of indexes to select several at once, and {api:anychart.charts.Waffle#unselect}unselect(){api} clears the selection — a category name is not accepted. How the chart reacts to clicks is a general interactivity setting: see [General Settings](General_Settings#interactivity).
 
 ### Grid Layout
 
@@ -134,35 +134,35 @@ In the sample below, the sliders set the number of rows and columns of the grid:
 
 ### Cells
 
-The chart draws the cells on its own — you only set how they look. Two groups of settings control them: the shape of a cell and the sizing of the grid.
+The chart draws the cells on its own — you only set how they look. Every cell setting lives on the cell object, which the `cell()` method returns. Two groups of settings control the cells: the shape of a cell and the sizing of the grid.
 
 #### Cell Shape
 
-Cells are squares by default. To draw them as circles, use the {api:anychart.charts.Waffle#cellShape}cellShape(){api} method. For square cells, you can round the corners with {api:anychart.charts.Waffle#cellCornerRadius}cellCornerRadius(){api}; circle cells ignore this setting. The shape name is matched without regard to case; any other value falls back to the default shape and reports a warning in the browser console:
+Cells are squares by default. To draw another shape, pass its name to `cell().shape()`: the names are the library's marker shapes, such as a circle, a star, or an arrow. The legend icon repeats the shape you choose. For square cells, `cell().cornerRadius()` rounds the corners; the other shapes ignore it. The shape name is matched without regard to case, and any other value falls back to the default shape:
 
 ```
 // draw square cells and round their corners
-chart.cellShape("square");
-chart.cellCornerRadius(4);
+chart.cell().shape("square");
+chart.cell().cornerRadius(4);
 ```
 
-In the sample below, the radio buttons switch between the two cell shapes, and the slider rounds the corners of the square cells:
+In the sample below, the radio buttons switch the shape of the cells, and the slider rounds the corners of the square cells:
 
 {sample}BCT\_Waffle\_Chart\_04{sample}
 
 #### Cell Size
 
-By default, the chart fits the cells to the chart area. The {api:anychart.charts.Waffle#cellPadding}cellPadding(){api} method sets the gap between cells, and {api:anychart.charts.Waffle#cellAspectRatio}cellAspectRatio(){api} sets their width-to-height ratio.
+By default, the chart fits the cells to the chart area. The `cell().padding()` method sets the gap between cells, and `cell().aspectRatio()` sets their width-to-height ratio.
 
-To give the cells a fixed size instead, use {api:anychart.charts.Waffle#cellSize}cellSize(){api}: each cell is then exactly that many pixels high and `cellSize × cellAspectRatio` pixels wide. A fixed-size grid does not shrink to fit: if it outgrows the chart area, it stays centered, and its edges are cut off. Set the size back to `0` to return to the automatic fit:
+To give the cells a fixed size instead, use `cell().size()`: each cell is then exactly that many pixels high, and its width is that size multiplied by the aspect ratio. A fixed-size grid does not shrink to fit: if it outgrows the chart area, it stays centered, and its edges are cut off. Set the size back to `0` to return to the automatic fit:
 
 ```
 // widen the gaps between the cells
-chart.cellPadding(4);
+chart.cell().padding(4);
 
 // fixed cell height, cells twice as wide as they are high
-chart.cellSize(20);
-chart.cellAspectRatio(2);
+chart.cell().size(20);
+chart.cell().aspectRatio(2);
 ```
 
 In the sample below, the sliders set the gap between the cells, their fixed height, and their aspect ratio:
@@ -180,7 +180,7 @@ The {api:anychart.charts.Waffle#fillDirection}fillDirection(){api} method sets t
 
 Three of the four directions fill the grid row by row. `top-to-bottom` is different on purpose: it is the only direction that fills the grid column by column. Use it when the category blocks should grow from left to right, one column at a time.
 
-Write the names with their hyphens, as above. The case does not matter, but any other spelling falls back to the default direction and reports a warning in the browser console.
+Write the names with their hyphens, as above. The case does not matter, but any other spelling falls back to the default direction.
 
 ```
 // fill the grid from the bottom up
@@ -195,9 +195,9 @@ In the sample below, use the switcher to compare all four directions on the same
 
 [Labels](../Common_Settings/Labels) are text elements shown directly on the grid: one label per category, at the center of its block of cells.
 
-Labels are off by default. To turn them on, use the {api:anychart.charts.Waffle#labels}labels(){api} method. The default text is the category name and its percent share. To change it, call {api:anychart.core.ui.LabelsFactory#format}format(){api} with a [text formatter](../Common_Settings/Text_Formatters): the `{%name}`, `{%value}`, and `{%percent}` tokens are available.
+Labels are off by default. To turn them on, use the {api:anychart.charts.Waffle#labels}labels(){api} method. The default text is the category name. To change it, call {api:anychart.core.ui.LabelsFactory#format}format(){api} with a [text formatter](../Common_Settings/Text_Formatters): the `{%name}`, `{%value}`, and `{%percent}` tokens are available.
 
-A label is drawn in black directly on the cells of its category, with nothing behind the text. How well it reads depends on your palette, as with any chart type that draws labels over a fill. When a palette mixes light and dark colors, outline the glyphs instead of picking one font color: a white bold font with a dark {api:anychart.core.ui.LabelsFactory#textShadow}textShadow(){api} outline reads on any block, while plain white text is lost on light cells:
+Each label sits on a white plate with rounded corners, so black text reads on any palette. The plate is a [background](../Appearance_Settings/Background): restyle it with {api:anychart.core.ui.LabelsFactory#background}background(){api}, and pick a {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api} that reads on it:
 
 ```
 // enable the labels
@@ -206,15 +206,12 @@ chart.labels().enabled(true);
 // show the name and the value instead
 chart.labels().format("{%name}: {%value}");
 
-// outlined white text: a bold white font ...
+// restyle the label background and the font color on it
+chart.labels().background().fill("#212121");
 chart.labels().fontColor("#ffffff");
-chart.labels().fontWeight(600);
-
-// ... with one dark shadow on each side
-chart.labels().textShadow("-1px -1px #000, 1px -1px #000, -1px 1px #000, 1px 1px #000");
 ```
 
-In the sample below, the labels are outlined white text that reads on light and dark cells alike:
+In the sample below, each label shows the name and the value in white on a dark plate:
 
 {sample}BCT\_Waffle\_Chart\_07{sample}
 
