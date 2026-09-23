@@ -31,8 +31,8 @@
         <output id="maxCountValue">24</output>
     </label>
     <label>Rotation
-        <input type="range" min="0" max="90" step="15" value="30" oninput="changeRotation(this.value)">
-        <output id="rotationValue">30</output>
+        <input type="range" min="0" max="90" step="15" value="0" oninput="changeRotation(this.value)">
+        <output id="rotationValue">0</output>
     </label>
     <label>Connector length
         <input type="range" min="0" max="120" step="10" value="20" oninput="changeConnectorMaxLength(this.value)">
@@ -97,8 +97,7 @@ anychart.onDocumentReady(function () {
   // set the chart title
   chart.title("Arc Diagram: Node Labels");
 
-  // node labels: tilted, bigger, blue
-  chart.node().normal().labels().rotation(30);
+  // node labels: bigger, blue
   chart.node().normal().labels().fontSize(18);
   chart.node().normal().labels().fontColor("#1976d2");
 

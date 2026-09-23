@@ -133,8 +133,7 @@ Node [labels](../Common_Settings/Labels) show the node name and are drawn wherev
 The labels are drawn straight. To turn them, call {api:anychart.core.ui.LabelsFactory#rotation}rotation(){api} with the angle you want. Font settings are available too, and each state restyles the labels it owns:
 
 ```
-// node labels: tilted, bigger, blue
-chart.node().normal().labels().rotation(30);
+// node labels: bigger, blue
 chart.node().normal().labels().fontSize(18);
 chart.node().normal().labels().fontColor("#1976d2");
 
@@ -156,7 +155,7 @@ chart.node().labels().connectorMaxLength(20);
 
 The `getUnplacedNodeLabels()` method reads back the nodes whose labels were left out of the last drawing.
 
-In the sample below, the node labels are tilted, enlarged, and colored, and the controls decide what the chart does with the ones that do not fit:
+In the sample below, the node labels are enlarged and colored, the slider turns them, and the controls decide what the chart does with the ones that do not fit:
 
 {sample}BCT\_Arc\_Diagram\_03{sample}
 
