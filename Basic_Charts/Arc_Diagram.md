@@ -123,45 +123,29 @@ In the sample below, the links come from a mapped data set, unlike the [Quick St
 
 ### Nodes
 
-A node is a shape on the node line; its shape and size are set in [Node Shape](#node_shape). The chart creates one node for every distinct name in the `from` and `to` fields of the [data](#data), and the weight of a node is the sum of the weights of its links. Set the nodes with the {api:anychart.charts.ArcDiagram#node}node(){api} method.
+A node is a circle on the node line; its size is set in [Node Size](#node_size). The chart creates one node for every distinct name in the `from` and `to` fields of the [data](#data), and the weight of a node is the sum of the weights of its links. Set the nodes with the {api:anychart.charts.ArcDiagram#node}node(){api} method.
 
-A node has three [states](../Common_Settings/Interactivity/States): **normal**, **hovered** when you point at it (its links are highlighted too), and **selected** when you click it. Ctrl/Cmd + click or Shift + click selects several nodes, and the same gesture on a node that is already selected takes it back out of the selection; a click on the empty area clears the selection. These gestures come from the {api:anychart.charts.ArcDiagram#interactivity}interactivity(){api} settings of the chart — see [General Settings](General_Settings).
+A node has three [states](../Common_Settings/Interactivity/States): **normal**, **hovered** when you point at it (its links are highlighted too), and **selected** when you click it. Ctrl/Cmd + click or Shift + click adds a node to the selection, the same click removes it, and a click on the empty area clears the selection. The gestures come from the {api:anychart.charts.ArcDiagram#interactivity}interactivity(){api} settings of the chart (see [General Settings](General_Settings)).
 
-#### Node Shape
+#### Node Size
 
-A node is drawn as a circle whose size follows its weight, so the heaviest node is the largest one. To draw the nodes as rectangles instead, pass `"rectangle"` to the `shape()` method of `node()`. A circle takes its diameter from `width()`; a rectangle takes its size along the node line from `width()` and its size across the line from `height()`.
-
-To keep the weighted sizes inside a range, call `minNodeSize()` and `maxNodeSize()`. To give every node the same size instead, call `weightedNodes(false)`. A width set on `node()` also gives every node that size, because it replaces the size the weight would give it, and `chart.node(id)` carries the same settings for a single node:
+A node is drawn as a circle whose size follows its weight, so the heaviest node is the largest one. To keep the weighted sizes inside a range, call `minNodeSize()` and `maxNodeSize()`:
 
 ```
-// draw the nodes as rectangles and set their size across the node line
-chart.node().shape("rectangle");
-chart.node().height(20);
-
 // keep the weighted sizes between the two bounds
-chart.minNodeSize(6);
-chart.maxNodeSize(20);
-
-// give one node a size of its own
-chart.node("HR").width(24);
+chart.minNodeSize(10);
+chart.maxNodeSize(16);
 ```
 
-```
-// take the size of a node from its weight, or give every node the same size
-function changeWeightedNodes(value) {
-  chart.weightedNodes(value);
-}
-```
-
-All of them work on a chart that is already drawn. Use the controls in the sample below to reshape and resize the nodes; one of them keeps a size of its own throughout:
+In the sample below, the sliders set the two bounds:
 
 {sample}BCT\_Arc\_Diagram\_13{sample}
 
 #### Node Labels
 
-Node [labels](../Common_Settings/Labels) show the node name and are drawn wherever there is room for them. Set the base settings with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state; the hovered and selected states override the settings you give them and inherit the rest. Pointing at a link highlights the labels of both nodes it connects, so both of them take the hovered settings.
+Node [labels](../Common_Settings/Labels) show the node name. Set them with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state; the hovered and selected states override the settings you give them and inherit the rest. Pointing at a link highlights the labels of both nodes it connects.
 
-The labels are drawn straight. To turn them, call {api:anychart.core.ui.LabelsFactory#rotation}rotation(){api} with the angle you want. Font settings are available too, and each state restyles the labels it owns:
+To turn the labels, call {api:anychart.core.ui.LabelsFactory#rotation}rotation(){api} with an angle. Font settings apply per state:
 
 ```
 // node labels: blue
@@ -172,9 +156,7 @@ chart.node().hovered().labels().fontColor("#0b1220");
 chart.node().selected().labels().fontColor("#d32f2f");
 ```
 
-When two labels would collide, the chart moves one of them into a free lane further from the node line and draws a connector line back to its node. The connector lines are thin and grey by default; the {api:anychart.core.ui.LabelsFactory#connectorStroke}connectorStroke(){api} method restyles them, and `"none"` removes them.
-
-To decide what becomes of a label that fits in no lane, call `overflow()`: `"hide"`, the default, drops it, and `"stack"` keeps it by opening another lane. To cap how many labels the chart places, call `maxCount()` — the heaviest nodes keep theirs. In the `"hide"` mode, `connectorMaxLength()` bounds the connector line as well: a label that would need a longer one is left out. These settings belong to the layout, so they are set once, on the labels of the normal state:
+When two labels would collide, the chart moves one of them into a further lane and draws a connector line to its node. To style the connector lines, call {api:anychart.core.ui.LabelsFactory#connectorStroke}connectorStroke(){api}; `"none"` removes them. To cap how many labels the chart places, call `maxCount()`: the heaviest nodes keep theirs. Both settings belong to the layout, so they are set on the labels of the normal state:
 
 ```
 // cap how many node labels the chart places
@@ -222,9 +204,9 @@ In the sample below, hover over a node to see its requests and connections in th
 
 ### Links
 
-A link connects two nodes. Each row of the [data](#data) makes one link, from the `from` node to the `to` node, and the `weight` of the row sets its thickness unless you set one yourself (see [Link Thickness](#link_thickness)). Set the links with the {api:anychart.charts.ArcDiagram#link}link(){api} method.
+A link connects two nodes. Each row of the [data](#data) makes one link, from the `from` node to the `to` node, and the `weight` of the row sets its thickness (see [Link Thickness](#link_thickness)). Set the links with the {api:anychart.charts.ArcDiagram#link}link(){api} method.
 
-Like [nodes](#nodes), a link has three states: **normal**, **hovered** when you point at it, and **selected** when you click it. Selecting a link also highlights the two nodes at its ends and fades the other links, so the selected connection stands out. The gestures are the ones described for [nodes](#nodes) and come from the same {api:anychart.charts.ArcDiagram#interactivity}interactivity(){api} settings.
+A link has the same three states as a [node](#nodes). Selecting a link also highlights its two nodes and fades the other links.
 
 #### Link Thickness
 
@@ -252,7 +234,7 @@ In the sample below, the radios switch the thickness between a number, the weigh
 
 #### Link Labels
 
-Link [labels](../Common_Settings/Labels) are hidden by default. Turning them on shows a label on every link at once, which suits a diagram with few links; on a busy diagram the [link tooltip](#link_tooltip) identifies a link better. On a diagram large enough to be simplified (see [Data Volume](#data_volume)), only the links that are actually drawn carry labels. A short format keeps the labels readable:
+Link [labels](../Common_Settings/Labels) are hidden by default. To show them, enable the labels of the normal state and set their format:
 
 ```
 // show the weight of each link
@@ -272,14 +254,14 @@ The {api:anychart.charts.ArcDiagram#colorMode}colorMode(){api} method sets the b
 * `"target"` — a link takes the color of its target (`to`) node
 * `"gradient"` — the link blends from the source color to the target color. The {api:anychart.charts.ArcDiagram#reverseGradient}reverseGradient(){api} method flips the blend direction
 
-The mode colors the nodes as well: in the gradient mode every node takes a gradient fill of its own, while the other two modes leave the nodes their [palette](#node_colors) colors. It works on a chart that is already drawn:
+In the gradient mode the nodes take a gradient fill too. The mode can be changed on a chart that is already drawn:
 
 ```
 // blend each link from the color of its source node to the color of its target node
 chart.colorMode("gradient");
 ```
 
-To style the states of the links, use the {api:anychart.core.StateSettings#fill}fill(){api} method. If you derive the state fills from `sourceColor`, a link keeps its own color and only becomes darker:
+To style the states of the links, use the {api:anychart.core.StateSettings#fill}fill(){api} method. A function receives `sourceColor`, the base color of the link:
 
 ```
 // link states: a link keeps its own color and only becomes darker
@@ -291,13 +273,13 @@ chart.link().selected().fill(function () {
 });
 ```
 
-Use the buttons in the sample below to compare the color modes, and hover or click a link to see its state color:
+In the sample below, the controls switch the color mode; hover over a link or click it to see its state color:
 
 {sample}BCT\_Arc\_Diagram\_07{sample}
 
 #### Link Tooltip
 
-Links have a [tooltip](../Common_Settings/Tooltip) of their own. By default, its title is the two node names joined by an arrow, and its body is the weight of the link. To set your own text, use `link().tooltip()`:
+Links have a [tooltip](../Common_Settings/Tooltip) of their own: by default, the title is the two node names and the text is the weight. To set the text, use `link().tooltip()`:
 
 ```
 // the tooltip of a link: a sentence built from its tokens
@@ -311,24 +293,24 @@ In the sample below, the link tooltip puts the weight and the two departments in
 
 #### Data Volume
 
-A diagram with a great many links is drawn in a simplified form. When the data holds more links than {api:anychart.charts.ArcDiagram#maxLinksRendered}maxLinksRendered(){api} allows, the chart draws the heaviest ones and leaves the rest out. Every node keeps at least one of its links, and a link that is already selected is never left out, so the setting is a target rather than a hard ceiling. The data itself and the weights of the nodes are untouched.
+When the data holds more links than {api:anychart.charts.ArcDiagram#maxLinksRendered}maxLinksRendered(){api} allows, the chart draws the heaviest ones and leaves the rest out; every node keeps at least one link, and a selected link is never left out. The data and the node weights are untouched.
 
-Nothing is reported in the console when this happens. Read the result back with {api:anychart.charts.ArcDiagram#isSimplified}isSimplified(){api} and {api:anychart.charts.ArcDiagram#getRenderedLinksCount}getRenderedLinksCount(){api}, and pass `0` to draw every link:
+To read the result back, use {api:anychart.charts.ArcDiagram#isSimplified}isSimplified(){api} and {api:anychart.charts.ArcDiagram#getRenderedLinksCount}getRenderedLinksCount(){api}; pass `0` to draw every link:
 
 ```
 // draw only the heaviest links
 chart.maxLinksRendered(50);
 ```
 
-In the sample below, drag the slider to change the limit and watch how many links the chart actually draws:
+In the sample below, the slider sets the limit and the readout shows how many links the chart draws:
 
 {sample}BCT\_Arc\_Diagram\_09{sample}
 
 ### Layout
 
-By default the nodes sit in a row at the bottom of the chart and the links curve upward. The {api:anychart.charts.ArcDiagram#layout}layout(){api} method rotates that: with `"vertical"` the nodes form a column and the links curve to the right. A value that is neither `"horizontal"` nor `"vertical"` is discarded without an error and the chart falls back to `"horizontal"`, so a misspelled value silently un-rotates a vertical chart.
+By default, the nodes sit in a row at the bottom of the chart and the links curve upward. To place the nodes in a column with the links curving to the right, pass `"vertical"` to the {api:anychart.charts.ArcDiagram#layout}layout(){api} method.
 
-The {api:anychart.charts.ArcDiagram#reverseArcs}reverseArcs(){api} method flips the links to the other side of the node line. It takes a boolean, `false` by default, and `true` curves the links down in the horizontal layout and to the left in the vertical one.
+To flip the links to the other side of the node line, call {api:anychart.charts.ArcDiagram#reverseArcs}reverseArcs(){api} with `true`: the links curve down in the horizontal layout and to the left in the vertical one.
 
 ```
 // place the nodes in a column; the links curve to the right
@@ -341,16 +323,15 @@ function setLayout(layout, reverse) {
 }
 ```
 
-Both methods work on a chart that is already drawn. Use the buttons in the sample below to rotate the layout and flip the links:
+Both methods work on a chart that is already drawn. In the sample below, the controls rotate the layout and flip the links:
 
 {sample}BCT\_Arc\_Diagram\_10{sample}
 
 ### Placement
 
-The following methods place the nodes and the links:
+The {api:anychart.charts.ArcDiagram#nodesSpan}nodesSpan(){api} method sets how much of the node line the row of nodes takes: a number is a length in pixels, a string such as `"60%"` is a share of the line (`"85%"` by default). The rest of the line becomes the gaps between the nodes.
 
-* {api:anychart.charts.ArcDiagram#nodesSpan}nodesSpan(){api} — how much of the node line the row of nodes takes up. A number is a length in pixels, a string such as `"60%"` is a share of the line (`"85%"` by default), and a share above `100%` is clamped to the full line. Whatever is left over becomes the gaps between the nodes, so this is the method that decides how far apart they sit
-* {api:anychart.charts.ArcDiagram#curvature}curvature(){api} — the height of the links: values below 1 flatten them, values above 1 make them taller, until the links reach the plot edge and stop growing (1 by default)
+The {api:anychart.charts.ArcDiagram#curvature}curvature(){api} method sets the height of the links: values below 1 flatten them, values above 1 make them taller (1 by default).
 
 ```
 // give the row of nodes most of the node line
@@ -367,13 +348,13 @@ function changeNodesSpan(value) {
 }
 ```
 
-All of them work on a chart that is already drawn. Drag the sliders in the sample below to see what each one changes; the links stay below the node line:
+Both methods work on a chart that is already drawn. In the sample below, the sliders set the span and the curvature; the links stay below the node line:
 
 {sample}BCT\_Arc\_Diagram\_11{sample}
 
 ### Sorting
 
-The order of the nodes has a big effect on how readable an Arc diagram is. The {api:anychart.charts.ArcDiagram#sortOrder}sortOrder(){api} method arranges them. The first node sits at the left end of the node line, or at the top of it in the vertical [layout](#layout); the rest follow along the line:
+The {api:anychart.charts.ArcDiagram#sortOrder}sortOrder(){api} method arranges the nodes along the node line, from its left end (its top in the vertical [layout](#layout)):
 
 * `"name"` (default) — alphabetically by node name
 * `"weight"` — by the total flow through the node, the largest first
@@ -381,7 +362,7 @@ The order of the nodes has a big effect on how readable an Arc diagram is. The {
 
 Nodes with the same weight, or in the same group, are placed alphabetically by name.
 
-Instead of a string, you can pass your own compare function. It works like a compare function for `Array.sort()`. It receives two node objects. Each node has fields like `id`, `weight`, and `group`.
+Instead of a string, pass a compare function, as for `Array.sort()`: it receives two node objects with the `id`, `weight`, and `group` fields.
 
 ```
 // order the nodes by their total flow instead of by name
@@ -398,7 +379,7 @@ function changeSortOrder(value) {
 }
 ```
 
-Every order works on a chart that is already drawn. Use the buttons in the sample below to compare them; the node colors follow the `group` field, so the group order shows its clusters:
+Every order works on a chart that is already drawn. In the sample below, the controls switch the order; the node colors follow the `group` field:
 
 {sample}BCT\_Arc\_Diagram\_12{sample}
 

@@ -21,23 +21,13 @@
 </head>
 <body>
 <div id="controls">
-    <span>Shape:</span>
-    <label><input type="radio" name="shape" id="shapeCircle" onclick="changeShape('circle')"> circle</label>
-    <label><input type="radio" name="shape" id="shapeRectangle" onclick="changeShape('rectangle')" checked> rectangle</label>
-    <label>Node height
-        <input type="range" min="4" max="40" step="2" value="20" oninput="changeHeight(this.value)">
-        <output id="heightValue">20</output>
-    </label>
-    <span>Size from weight:</span>
-    <label><input type="radio" name="weighted" id="weightedOn" onclick="changeWeightedNodes(true)" checked> yes</label>
-    <label><input type="radio" name="weighted" id="weightedOff" onclick="changeWeightedNodes(false)"> no</label>
     <label>Smallest
-        <input type="range" min="2" max="20" step="2" value="6" oninput="changeMinNodeSize(this.value)">
-        <output id="minNodeSizeValue">6</output>
+        <input type="range" min="2" max="20" step="2" value="10" oninput="changeMinNodeSize(this.value)">
+        <output id="minNodeSizeValue">10</output>
     </label>
     <label>Largest
-        <input type="range" min="6" max="20" step="2" value="20" oninput="changeMaxNodeSize(this.value)">
-        <output id="maxNodeSizeValue">20</output>
+        <input type="range" min="6" max="20" step="2" value="16" oninput="changeMaxNodeSize(this.value)">
+        <output id="maxNodeSizeValue">16</output>
     </label>
 </div>
 <div id="container"></div>
@@ -56,18 +46,11 @@ anychart.onDocumentReady(function () {
   // create an arc diagram and set the data
   chart = anychart.arcDiagram(data);
   // set the chart title
-  chart.title("Arc Diagram: Node Shape");
-
-  // draw the nodes as rectangles and set their size across the node line
-  chart.node().shape("rectangle");
-  chart.node().height(20);
+  chart.title("Arc Diagram: Node Size");
 
   // keep the weighted sizes between the two bounds
-  chart.minNodeSize(6);
-  chart.maxNodeSize(20);
-
-  // give one node a size of its own
-  chart.node("HR").width(24);
+  chart.minNodeSize(10);
+  chart.maxNodeSize(16);
 
   // set the container id
   chart.container("container");
@@ -75,21 +58,8 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// apply the chosen shape: the chart redraws itself
-function changeShape(value) {
-  chart.node().shape(value);
-}
 
-// set the size of the nodes across the node line
-function changeHeight(value) {
-  chart.node().height(value);
-  document.getElementById("heightValue").value = value;
-}
 
-// take the size of a node from its weight, or give every node the same size
-function changeWeightedNodes(value) {
-  chart.weightedNodes(value);
-}
 
 // set the smallest size a weighted node can take
 function changeMinNodeSize(value) {
