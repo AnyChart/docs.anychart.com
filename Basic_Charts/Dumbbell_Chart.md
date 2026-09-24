@@ -101,7 +101,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 #### All Points
 
-A Dumbbell point has a connecting line and two endpoints: one at the low value and one at the high value. Each endpoint is a marker of the series, so it takes its fill, outline, shape, and size from the marker settings. You can style each part on its own.
+A Dumbbell point has a connecting line and two endpoints: one at the low value and one at the high value. Each endpoint is a marker of the series: its fill comes from the low and high fill settings, its outline, shape, and size from the marker settings. You can style each part on its own.
 
 You can set the [appearance settings](../Appearance_Settings) of a Dumbbell chart in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Dumbbell#normal}normal(){api}, {api:anychart.core.cartesian.series.Dumbbell#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Dumbbell#selected}selected(){api} methods. A point shows the **hover** state when you point at it. It shows the **selected** state when you click it.
 
@@ -196,7 +196,7 @@ In the sample below, each label shows the low and high values of its point:
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box. It appears when you hover over a point on a chart. It has many visual and other settings. For example, you can edit the text with font settings and [text formatters](../Common_Settings/Text_Formatters). You can also change the background style and move the tooltip.
 
-The tooltip has a title and a text body. Set them with {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} on the {api:anychart.charts.Cartesian#tooltip}tooltip(){api} of the chart. In the text, use [text formatters](../Common_Settings/Text_Formatters): `{%x}` is the category, `{%low}` and `{%high}` are the two values of the point. When several series have a point in the same category, one tooltip lists them all:
+The tooltip has a title and a text body. Set them with {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} on the {api:anychart.charts.Cartesian#tooltip}tooltip(){api} of the chart. In the text, use text formatters: `{%x}` is the category, `{%low}` and `{%high}` are the two values of the point. When several series have a point in the same category, one tooltip lists them all:
 
 ```
 // set the tooltip title and text
