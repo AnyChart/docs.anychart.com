@@ -183,7 +183,7 @@ chart.node().labels().maxCount(24);
 chart.node().normal().labels().connectorStroke("#1976d2", 1);
 ```
 
-In the sample below, the node labels and their connector lines are blue, and the slider caps how many labels the chart places:
+In the sample below, the node labels and their connector lines are blue; one slider caps how many labels the chart places, the other turns them:
 
 {sample}BCT\_Arc\_Diagram\_03{sample}
 

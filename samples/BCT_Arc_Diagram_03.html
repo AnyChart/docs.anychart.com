@@ -17,7 +17,7 @@
         #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
         #controls input[type="range"] { width: 90px; vertical-align: middle; }
         #controls output { display: inline-block; text-align: left; }
-        #maxCountValue { min-width: 3ch; }
+        #maxCountValue, #rotationValue { min-width: 3ch; }
         #container { flex: 1; }
     </style>
 </head>
@@ -26,6 +26,10 @@
     <label>Max labels
         <input type="range" min="4" max="24" step="1" value="24" oninput="changeMaxCount(this.value)">
         <output id="maxCountValue">24</output>
+    </label>
+    <label>Rotation
+        <input type="range" min="0" max="90" step="15" value="0" oninput="changeRotation(this.value)">
+        <output id="rotationValue">0</output>
     </label>
 </div>
 <div id="container"></div>
@@ -103,6 +107,13 @@ anychart.onDocumentReady(function () {
   chart.draw();
 
 });
+
+
+// turn the node labels by the given angle
+function changeRotation(value) {
+  chart.node().normal().labels().rotation(value);
+  document.getElementById("rotationValue").value = value;
+}
 
 
 // set how many node labels the chart may place
