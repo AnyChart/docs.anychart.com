@@ -123,9 +123,39 @@ In the sample below, the links come from a mapped data set, unlike the [Quick St
 
 ### Nodes
 
-A node is a shape on the node line: a circle whose size follows the weight of the node, unless you set the shape or the size yourself (see [Node Shape](#node_shape)). The chart creates one node for every distinct name in the `from` and `to` fields of the [data](#data), and the weight of a node is the sum of the weights of its links. Set the nodes with the {api:anychart.charts.ArcDiagram#node}node(){api} method.
+A node is a shape on the node line; its shape and size are set in [Node Shape](#node_shape). The chart creates one node for every distinct name in the `from` and `to` fields of the [data](#data), and the weight of a node is the sum of the weights of its links. Set the nodes with the {api:anychart.charts.ArcDiagram#node}node(){api} method.
 
 A node has three [states](../Common_Settings/Interactivity/States): **normal**, **hovered** when you point at it (its links are highlighted too), and **selected** when you click it. Ctrl/Cmd + click or Shift + click selects several nodes, and the same gesture on a node that is already selected takes it back out of the selection; a click on the empty area clears the selection. These gestures come from the {api:anychart.charts.ArcDiagram#interactivity}interactivity(){api} settings of the chart — see [General Settings](General_Settings).
+
+#### Node Shape
+
+A node is drawn as a circle whose size follows its weight, so the heaviest node is the largest one. To draw the nodes as rectangles instead, pass `"rectangle"` to the `shape()` method of `node()`. A circle takes its diameter from `width()`; a rectangle takes its size along the node line from `width()` and its size across the line from `height()`.
+
+To keep the weighted sizes inside a range, call `minNodeSize()` and `maxNodeSize()`. To give every node the same size instead, call `weightedNodes(false)`. A width set on `node()` also gives every node that size, because it replaces the size the weight would give it, and `chart.node(id)` carries the same settings for a single node:
+
+```
+// draw the nodes as rectangles and set their size across the node line
+chart.node().shape("rectangle");
+chart.node().height(20);
+
+// keep the weighted sizes between the two bounds
+chart.minNodeSize(6);
+chart.maxNodeSize(20);
+
+// give one node a size of its own
+chart.node("HR").width(24);
+```
+
+```
+// take the size of a node from its weight, or give every node the same size
+function changeWeightedNodes(value) {
+  chart.weightedNodes(value);
+}
+```
+
+All of them work on a chart that is already drawn. Use the controls in the sample below to reshape and resize the nodes; one of them keeps a size of its own throughout:
+
+{sample}BCT\_Arc\_Diagram\_13{sample}
 
 #### Node Labels
 
@@ -148,15 +178,13 @@ When two labels would collide, the chart moves one of them into a free lane furt
 To decide what becomes of a label that fits in no lane, call `overflow()`: `"hide"`, the default, drops it, and `"stack"` keeps it by opening another lane. To cap how many labels the chart places, call `maxCount()` — the heaviest nodes keep theirs. In the `"hide"` mode `connectorMaxLength()` bounds the connector line as well: a label that would need a longer one is left out. All three belong to the layout, so they are set once, on the labels of the normal state:
 
 ```
-// hide the node labels that do not fit, cap their number and the connector length
-chart.node().labels().overflow("hide");
+// stack the node labels that do not fit, cap their number and the connector length
+chart.node().labels().overflow("stack");
 chart.node().labels().maxCount(24);
 chart.node().labels().connectorMaxLength(20);
 ```
 
-The `getUnplacedNodeLabels()` method reads back the nodes whose labels were left out of the last drawing.
-
-In the sample below, the node labels are enlarged and colored, the slider turns them, and the controls decide what the chart does with the ones that do not fit:
+In the sample below, the node labels are enlarged and colored, and the controls decide what the chart does with the ones that do not fit:
 
 {sample}BCT\_Arc\_Diagram\_03{sample}
 
@@ -319,36 +347,6 @@ function setLayout(layout, reverse) {
 Both methods work on a chart that is already drawn. Use the buttons in the sample below to rotate the layout and flip the links:
 
 {sample}BCT\_Arc\_Diagram\_10{sample}
-
-### Node Shape
-
-A node is drawn as a circle whose size follows its weight, so the heaviest node is the largest one. To draw the nodes as rectangles instead, pass `"rectangle"` to the `shape()` method of `node()`. A circle takes its diameter from `width()`; a rectangle takes its size along the node line from `width()` and its size across the line from `height()`.
-
-To keep the weighted sizes inside a range, call `minNodeSize()` and `maxNodeSize()`. To give every node the same size instead, call `weightedNodes(false)`. A width set on `node()` also gives every node that size, because it replaces the size the weight would give it, and `chart.node(id)` carries the same settings for a single node:
-
-```
-// draw the nodes as rectangles and set their size across the node line
-chart.node().shape("rectangle");
-chart.node().height(20);
-
-// keep the weighted sizes between the two bounds
-chart.minNodeSize(6);
-chart.maxNodeSize(20);
-
-// give one node a size of its own
-chart.node("HR").width(24);
-```
-
-```
-// take the size of a node from its weight, or give every node the same size
-function changeWeightedNodes(value) {
-  chart.weightedNodes(value);
-}
-```
-
-All of them work on a chart that is already drawn. Use the controls in the sample below to reshape and resize the nodes; one of them keeps a size of its own throughout:
-
-{sample}BCT\_Arc\_Diagram\_13{sample}
 
 ### Placement
 
