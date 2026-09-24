@@ -35,7 +35,7 @@ anychart.onDocumentReady(function () {
   var series = chart.dumbbell(data);
 
   // set the size of the endpoints
-  series.markers().size(8);
+  series.normal().markers().size(8);
   // set the size in the hovered and selected states
   series.hovered().markers().size(10);
   series.selected().markers().size(10);

@@ -43,16 +43,16 @@ anychart.onDocumentReady(function () {
   var seriesThisYear = chart.dumbbell(dataThisYear).name("This Year");
 
   // set the endpoint shape of each series
-  seriesLastYear.markers().type("circle");
-  seriesThisYear.markers().type("square");
+  seriesLastYear.normal().markers().type("circle");
+  seriesThisYear.normal().markers().type("square");
   // set the endpoint shape in the hovered state
   seriesLastYear.hovered().markers().type("diamond");
   // set the endpoint shape in the selected state
   seriesLastYear.selected().markers().type("cross");
 
   // set the size of the endpoints
-  seriesLastYear.markers().size(7);
-  seriesThisYear.markers().size(7);
+  seriesLastYear.normal().markers().size(7);
+  seriesThisYear.normal().markers().size(7);
 
   // set the container id
   chart.container("container");

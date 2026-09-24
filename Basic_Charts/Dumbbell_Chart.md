@@ -135,15 +135,15 @@ In the sample below, salaries before an annual review go to `low` and salaries a
 
 #### Endpoint Shape
 
-The shape of the endpoints is the marker type of the series. Set it with {api:anychart.core.cartesian.series.Dumbbell#markers}markers(){api} and {api:anychart.core.ui.MarkersFactory#type}type(){api}, and give two series different shapes to tell them apart without color:
+The endpoints of a point are the markers of its series, and their shape is set per state. Call {api:anychart.core.cartesian.series.Dumbbell#normal}normal(){api}, {api:anychart.core.cartesian.series.Dumbbell#hovered}hovered(){api} or {api:anychart.core.cartesian.series.Dumbbell#selected}selected(){api}, then {api:anychart.core.cartesian.series.Dumbbell#markers}markers(){api} of that state and {api:anychart.core.ui.MarkersFactory#type}type(){api}. Give two series different shapes to tell them apart without color:
 
 ```
 // set the endpoint shape of each series
-seriesLastYear.markers().type("circle");
-seriesThisYear.markers().type("square");
+seriesLastYear.normal().markers().type("circle");
+seriesThisYear.normal().markers().type("square");
 ```
 
-The hovered and selected states take a shape of their own through {api:anychart.core.cartesian.series.Dumbbell#hovered}hovered(){api} and {api:anychart.core.cartesian.series.Dumbbell#selected}selected(){api}:
+A state that sets no shape of its own keeps the normal one:
 
 ```
 // set the endpoint shape in the hovered state
@@ -160,11 +160,11 @@ In the sample below, one series has round endpoints and the other square ones, o
 
 #### Endpoint Size
 
-The endpoints of a Dumbbell point sit at the ends of its connecting line: one at the low value and one at the high value. Their size is their radius. Set it with {api:anychart.core.cartesian.series.Dumbbell#markers}markers(){api} and {api:anychart.core.ui.MarkersFactory#size}size(){api}; the size applies to both endpoints of a point the same way. The hovered and selected states take a size of their own through {api:anychart.core.cartesian.series.Dumbbell#hovered}hovered(){api} and {api:anychart.core.cartesian.series.Dumbbell#selected}selected(){api}.
+The endpoints of a Dumbbell point sit at the ends of its connecting line: one at the low value and one at the high value. Their size is their radius, and it is set per state like the shape: call {api:anychart.core.cartesian.series.Dumbbell#normal}normal(){api}, {api:anychart.core.cartesian.series.Dumbbell#hovered}hovered(){api} or {api:anychart.core.cartesian.series.Dumbbell#selected}selected(){api}, then {api:anychart.core.cartesian.series.Dumbbell#markers}markers(){api} and {api:anychart.core.ui.MarkersFactory#size}size(){api}. The size applies to both endpoints of a point the same way.
 
 ```
 // set the size of the endpoints
-series.markers().size(8);
+series.normal().markers().size(8);
 // set the size in the hovered and selected states
 series.hovered().markers().size(10);
 series.selected().markers().size(10);
