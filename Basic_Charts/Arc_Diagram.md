@@ -228,9 +228,9 @@ Like [nodes](#nodes), a link has three states: **normal**, **hovered** when you 
 
 #### Link Thickness
 
-The thickness of a link follows its weight. To set it yourself, call `thickness()` on the state you want: a number gives every link the same thickness, and `null` hands the weight back. `link().thickness()` is short for the normal state, and the hovered and selected states fall back to the normal thickness while you leave them unset.
+By default, the thickness of a link is proportional to its weight. To set the thickness, use the `thickness()` method of the normal, hovered, or selected state of `link()`. It accepts a number, which gives every link the same thickness, or `null`, which returns to the weight. The hovered and selected states inherit the thickness of the normal state unless you set their own.
 
-A function is called for each link and returns its thickness, so the thickness can come from the data instead:
+To set the thickness from the data, pass a function: it is called for each link and returns the thickness of that link.
 
 ```
 // the same thickness for every link, thicker under the pointer and when selected
@@ -246,7 +246,7 @@ function thicknessFromWeight() {
 }
 ```
 
-Use the buttons in the sample below to compare the three, and point at a link or click it to see the state thicknesses:
+In the sample below, the radios switch the thickness between a number, the weight, and a function; hover over a link or click it to see the thickness of the hovered and selected states:
 
 {sample}BCT\_Arc\_Diagram\_14{sample}
 
