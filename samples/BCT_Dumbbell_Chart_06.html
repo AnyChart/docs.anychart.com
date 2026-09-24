@@ -35,8 +35,8 @@ anychart.onDocumentReady(function () {
   var series = chart.dumbbell(data);
 
   // set the tooltip title and text
-  series.tooltip().titleFormat("Position: {%x}");
-  series.tooltip().format("Low: {%low}, High: {%high}");
+  chart.tooltip().titleFormat("Position: {%x}");
+  chart.tooltip().format("Low: {%low}, High: {%high}");
 
   // set the container id
   chart.container("container");

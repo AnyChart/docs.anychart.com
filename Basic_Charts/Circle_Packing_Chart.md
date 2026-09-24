@@ -29,6 +29,7 @@ This article explains how to create a basic Circle Packing chart in AnyChart as 
 <tr><td></td><td>[Treemap](Treemap_Chart)</td></tr>
 <tr><td></td><td>[Venn](Venn_Diagram)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td></td><td>[Chartopedia: Circle Packing Chart](https://www.anychart.com/chartopedia/chart-types/circle-packing-chart/)</td></tr>
 <tr><td></td><td>[Chartopedia: Circle Packing Chart](https://www.anychart.com/products/anychart/gallery/Circle_Packing/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>

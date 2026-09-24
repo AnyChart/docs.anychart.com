@@ -27,7 +27,7 @@
     </label>
     <label>Cell height
         <input type="range" min="10" max="20" step="1" value="20" oninput="changeCellSize(this.value)">
-        <output id="cellSizeValue">20</output>
+        <output id="sizeValue">20</output>
     </label>
     <label>Aspect ratio
         <input type="range" min="0.5" max="2" step="0.1" value="2" oninput="changeCellAspectRatio(this.value)">
@@ -52,11 +52,11 @@ anychart.onDocumentReady(function () {
   chart.title("Waffle Chart: Cell Size");
 
   // widen the gaps between the cells
-  chart.cellPadding(4);
+  chart.cell().padding(4);
 
   // fixed cell height, cells twice as wide as they are high
-  chart.cellSize(20);
-  chart.cellAspectRatio(2);
+  chart.cell().size(20);
+  chart.cell().aspectRatio(2);
 
   // set the container id
   chart.container("container");
@@ -66,19 +66,19 @@ anychart.onDocumentReady(function () {
 
 // change the gap between the cells: the chart redraws itself
 function changeCellPadding(value) {
-  chart.cellPadding(value);
+  chart.cell().padding(value);
   document.getElementById("paddingValue").value = value;
 }
 
 // change the fixed cell height: the chart redraws itself
 function changeCellSize(value) {
-  chart.cellSize(value);
-  document.getElementById("cellSizeValue").value = value;
+  chart.cell().size(value);
+  document.getElementById("sizeValue").value = value;
 }
 
 // change the width-to-height ratio of the cells: the chart redraws itself
 function changeCellAspectRatio(value) {
-  chart.cellAspectRatio(value);
+  chart.cell().aspectRatio(value);
   document.getElementById("aspectRatioValue").value = value;
 }
 </script>

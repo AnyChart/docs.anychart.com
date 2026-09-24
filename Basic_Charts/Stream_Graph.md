@@ -31,6 +31,7 @@ This article shows how to create a basic Stream graph. It also shows how to set 
 <tr><td></td><td>[Spline Area](Spline_Area_Chart)</td></tr>
 <tr><td></td><td>[Area](Area_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td></td><td>[Chartopedia: Stream Graph](https://www.anychart.com/chartopedia/chart-types/stream-graph/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
@@ -112,12 +113,12 @@ Each layer of a Stream graph is a separate series with two data fields:
 * `x` — the category (usually a point in time)
 * `value` — the value of the layer at that category
 
-Besides plain arrays, a series accepts a mapping of an {api:anychart.data#set}anychart.data.set(){api}. Use it when all layers come in one table with a column per layer: map the columns of each series with {api:anychart.data.Set#mapAs}mapAs(){api}. A missing value is written as `null`: the point is skipped, and the baseline stays unbroken.
+Besides plain arrays, a series accepts a mapping of an {api:anychart.data#set}anychart.data.set(){api}. Use it when all layers come in one table with a column per layer: map the columns of each series with {api:anychart.data.Set#mapAs}mapAs(){api}.
 
 ```
-// one data set with a column per channel: [week, search, social]; the social value at W5 is missing
+// one data set with a column per channel: [week, search, social]
 var dataSet = anychart.data.set([
-  ["W1", 42, 30],["W2", 45, 33],["W3", 40, 36],["W4", 38, 40],["W5", 44, null],
+  ["W1", 42, 30],["W2", 45, 33],["W3", 40, 36],["W4", 38, 40],["W5", 44, 38],
   ["W6", 50, 35],["W7", 55, 37],["W8", 52, 42],["W9", 48, 46],["W10", 46, 49]
 ]);
 
@@ -132,7 +133,7 @@ var series2 = chart.splineArea(socialMapping);
 series2.name("Social");
 ```
 
-In the sample below, the data comes from a shared data set, and the Social layer has no value at "W5": its band shows a gap, and the stream continues:
+In the sample below, both layers are mapped from one shared data set:
 
 {sample}BCT\_Stream\_Graph\_02{sample}
 

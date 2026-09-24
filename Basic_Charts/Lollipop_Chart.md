@@ -3,7 +3,7 @@
 
 ## Overview
 
-A Lollipop chart shows each data point as a thin stick with a round "head" marker at its end. The stick starts at the zero baseline. The head marks the value. This type is a variation of the [Column](Column_Chart) and [Stick](Stick_Chart) charts: it combines a [Stick](Stick_Chart) with a [Marker](Marker_Chart) head. Lollipop charts work well for data split into categories. They are lighter and less crowded than Column charts. Use them when you have many categories. They also help you highlight the value at the end of each stick.
+A Lollipop chart shows each data point as a thin stick with a "head" marker at its end. The stick starts at the zero baseline. The head marks the value. This type is a variation of the [Column](Column_Chart) and [Stick](Stick_Chart) charts: it combines a [Stick](Stick_Chart) with a [Marker](Marker_Chart) head. Lollipop charts work well for data split into categories. They are lighter and less crowded than Column charts. Use them when you have many categories. They also help you highlight the value at the end of each stick.
 
 This article shows how to build a basic Lollipop chart. It also shows how to set the options that are special to this type. The table below gives a short overview of the Lollipop chart's features:
 
@@ -18,7 +18,6 @@ This article shows how to build a basic Lollipop chart. It also shows how to set
 <tr><td>Stacked</td><td>[Stacked Lollipop](Stacked/Value/Lollipop_Chart), [Percent Stacked Lollipop](Stacked/Percent/Lollipop_Chart)</td></tr>
 <tr><td>Vertical</td><td>[Vertical Lollipop](Vertical/Lollipop_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Lollipop Chart with Error Bars](Error_Chart/Lollipop_Chart)</td></tr>
 <tr><td>Error Bars</td><td>[Lollipop Chart with Error Bars](Error_Chart/Lollipop_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
@@ -102,7 +101,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 #### All Points
 
-A lollipop point is a stick with a head. Two methods split it: {api:anychart.core.StateSettings#stroke}stroke(){api} sets the color and thickness of the stick, {api:anychart.core.StateSettings#fill}fill(){api} sets the color of the head. The head is a filled circle with no outline — `stroke()` does not affect it.
+A lollipop point is a stick with a head. Two methods split it: {api:anychart.core.StateSettings#stroke}stroke(){api} sets the color and thickness of the stick, {api:anychart.core.StateSettings#fill}fill(){api} sets the color of the head. The head takes an outline in a darker shade of its own color.
 
 Set both per [state](../Common_Settings/Interactivity/States) with the {api:anychart.core.cartesian.series.Lollipop#normal}normal(){api}, {api:anychart.core.cartesian.series.Lollipop#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Lollipop#selected}selected(){api} methods. A point is hovered when you point at it and selected when you click it.
 
@@ -122,25 +121,31 @@ In the sample below, two series set their own stick and head colors in all three
 
 {sample}BCT\_Lollipop\_Chart\_02{sample}
 
-#### Point Size
+#### Head
 
-The head is a circle, and its size is its radius. Set it with {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} and {api:anychart.core.ui.MarkersFactory#size}size(){api}. In the hovered and selected states, the head has a radius of its own, slightly larger by default: set it through {api:anychart.core.cartesian.series.Lollipop#hovered}hovered(){api} and {api:anychart.core.cartesian.series.Lollipop#selected}selected(){api}. The head is always a circle: the marker type does not change it.
+The head of a point is the marker of its series, and it is set per state. Call {api:anychart.core.cartesian.series.Lollipop#normal}normal(){api}, {api:anychart.core.cartesian.series.Lollipop#hovered}hovered(){api} or {api:anychart.core.cartesian.series.Lollipop#selected}selected(){api}, then {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} of that state: {api:anychart.core.ui.MarkersFactory#type}type(){api} sets the shape of the head and {api:anychart.core.ui.MarkersFactory#size}size(){api} its size. A state that sets no shape or size of its own keeps the normal ones. Give two series different head shapes and they stay apart without color.
 
 ```
-// set the size of the lollipop heads
-series.markers().size(10);
-// set the size in the hovered and selected states
-series.hovered().markers().size(12);
-series.selected().markers().size(12);
+// set the shape and the size of the heads
+series1.normal().markers().type("circle");
+series1.normal().markers().size(10);
+// set the shape and the size in the hovered and selected states
+series1.hovered().markers().type("star5");
+series1.hovered().markers().size(12);
+series1.selected().markers().type("star5");
+series1.selected().markers().size(12);
+// set a different head shape for the second series
+series2.normal().markers().type("square");
+series2.normal().markers().size(10);
 ```
 
-In the sample below, the heads have a radius of 10 px, and 12 px when hovered or selected:
+In the sample below, the two series carry different head shapes, and each head changes shape and grows when hovered or selected:
 
 {sample}BCT\_Lollipop\_Chart\_03{sample}
 
 #### Individual Points
 
-To change the look of an individual point, set its configuration right in the data. The same settings you apply to all points, added as fields of the point, affect only that point:
+To change the look of an individual point, set its configuration right in the data. The same settings you apply to all points, added as fields of the point, affect only that point. A `marker` field sets the shape of that head in every state:
 
 ```
 // create data with individual point settings
@@ -151,7 +156,7 @@ var data = [
    normal: {stroke: "3 #5cd65c", fill: "#5cd65c"},
    hovered: {stroke: "4 #5cd65c", fill: "#5cd65c"},
    selected: {stroke: "4 #5cd65c", fill: "#5cd65c"}},
-  {x: "April", value: 11000},
+  {x: "April", value: 11000, marker: {type: "square"}},
   {x: "May", value: 9000}
 ];
 
@@ -187,11 +192,11 @@ In the sample below, each label shows the value of its point:
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box. It appears when you hover over a point on a chart. It has many visual and other settings. For example, you can edit the text with font settings and [text formatters](../Common_Settings/Text_Formatters). You can also change the background style and move the tooltip.
 
-The tooltip has a title and a text body. Set them with {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and {api:anychart.core.ui.Tooltip#format}format(){api}:
+The tooltip has a title and a text body. Set the title with {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} on the tooltip of the chart and the text with {api:anychart.core.ui.Tooltip#format}format(){api} on the tooltip of the series. In the text, use text formatters: `{%x}` is the category and `{%value}` is the value of the point. When several series have a point in the same category, one tooltip lists them all:
 
 ```
 // set the tooltip title and text
-series.tooltip().titleFormat("Month: {%x}");
+chart.tooltip().titleFormat("Month: {%x}");
 series.tooltip().format("Value: {%value}");
 ```
 

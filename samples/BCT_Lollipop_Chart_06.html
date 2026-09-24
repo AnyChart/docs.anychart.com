@@ -36,7 +36,7 @@ anychart.onDocumentReady(function () {
   // create a lollipop series and set the data
   var series = chart.lollipop(data);
   // set the tooltip title and text
-  series.tooltip().titleFormat("Month: {%x}");
+  chart.tooltip().titleFormat("Month: {%x}");
   series.tooltip().format("Value: {%value}");
 
   // set the container id

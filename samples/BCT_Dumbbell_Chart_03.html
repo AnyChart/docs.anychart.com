@@ -18,27 +18,40 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data
-  var data = [
-    ["Job A", 40000, 60000],
-    ["Job B", 50000, 80000],
-    ["Job C", 35000, 55000]
+  // create data for the first series
+  var dataLastYear = [
+    {x: "Job A", low: 40000, high: 60000},
+    {x: "Job B", low: 50000, high: 80000},
+    {x: "Job C", low: 35000, high: 55000}
+  ];
+
+  // create data for the second series
+  var dataThisYear = [
+    {x: "Job A", low: 45000, high: 66000},
+    {x: "Job B", low: 54000, high: 86000},
+    {x: "Job C", low: 38000, high: 60000}
   ];
 
   // create a chart
   var chart = anychart.dumbbell();
 
   // set the chart title
-  chart.title("Dumbbell Chart: Endpoint Size");
+  chart.title("Dumbbell Chart: Endpoints");
 
-  // create a dumbbell series and set the data
-  var series = chart.dumbbell(data);
+  // create two dumbbell series and set the data
+  var seriesLastYear = chart.dumbbell(dataLastYear).name("Last Year");
+  var seriesThisYear = chart.dumbbell(dataThisYear).name("This Year");
 
-  // set the size of the endpoints
-  series.markers().size(8);
-  // set the size in the hovered and selected states
-  series.hovered().markers().size(10);
-  series.selected().markers().size(10);
+  // set the endpoint shape and size of each series
+  seriesLastYear.normal().markers().type("circle");
+  seriesLastYear.normal().markers().size(7);
+  seriesThisYear.normal().markers().type("square");
+  seriesThisYear.normal().markers().size(7);
+  // set the endpoint shape and size in the hovered and selected states
+  seriesLastYear.hovered().markers().type("diamond");
+  seriesLastYear.hovered().markers().size(9);
+  seriesLastYear.selected().markers().type("cross");
+  seriesLastYear.selected().markers().size(9);
 
   // set the container id
   chart.container("container");

@@ -20,32 +20,34 @@
 anychart.onDocumentReady(function () {
   // create data: old salary as low, new salary as high
   var data = [
-    {x: "Anna", low: 52000, high: 58000},
-    {x: "Ben", low: 48000, high: 50000},
-    {x: "Carol", low: 61000, high: 70000},
-    {x: "Dan", low: 55000, high: 59000},
-    {x: "Eva", low: 44000, high: 51000}
+    {x: "Anna", low: 42000, high: 58000},
+    {x: "Ben", low: 38000, high: 50000},
+    {x: "Carol", low: 51000, high: 70000},
+    {x: "Dan", low: 45000, high: 59000},
+    {x: "Eva", low: 34000, high: 51000}
   ];
 
   // create a chart
   var chart = anychart.dumbbell();
 
   // set the chart title
-  chart.title("Dumbbell Chart: Appearance");
+  chart.title("Dumbbell Chart: All Points");
 
   // create a dumbbell series and set the data
   var series = chart.dumbbell(data);
+  // set the size of the endpoints
+  series.normal().markers().size(7);
 
   // gray = old salary, green = new salary
   series.normal().lowFill("#b3b3b3");
-  series.normal().lowStroke("#b3b3b3");
   series.normal().highFill("#00cc99");
-  series.normal().highStroke("#00cc99");
+  // outline both endpoints
+  series.normal().markers().stroke("#7f7f7f", 1);
 
   // set the connecting line in all three states
-  series.normal().stroke("#b3b3b3", 1);
-  series.hovered().stroke("#b3b3b3", 2);
-  series.selected().stroke("#b3b3b3", 4);
+  series.normal().stroke("#b3b3b3", 2);
+  series.hovered().stroke("#b3b3b3", 4);
+  series.selected().stroke("#b3b3b3", 6);
 
   // set the container id
   chart.container("container");

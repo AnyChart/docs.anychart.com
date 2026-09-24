@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Dumbbell Chart 04"/>
+    <meta name="ac:name" content="BCT Dumbbell Chart 07"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
 
@@ -18,26 +18,41 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data with individual point settings
-  var data = [
+  // create data for the first series
+  var dataLastYear = [
     {x: "Job A", low: 40000, high: 60000},
-    {x: "Job B", low: 50000, high: 80000,
-     normal: {lowFill: "#5cd65c", highFill: "#2eb82e", stroke: "2 #5cd65c", marker: {type: "star5"}},
-     hovered: {lowFill: "#5cd65c", highFill: "#2eb82e", stroke: "3 #5cd65c"},
-     selected: {lowFill: "#5cd65c", highFill: "#2eb82e", stroke: "3 #5cd65c"}},
+    {x: "Job B", low: 50000, high: 80000},
     {x: "Job C", low: 35000, high: 55000}
+  ];
+
+  // create data for the second series, with a shape set for one point
+  var dataThisYear = [
+    {x: "Job A", low: 45000, high: 66000},
+    {x: "Job B", low: 54000, high: 86000, marker: {type: "star5"}},
+    {x: "Job C", low: 38000, high: 60000}
   ];
 
   // create a chart
   var chart = anychart.dumbbell();
 
   // set the chart title
-  chart.title("Dumbbell Chart: Individual Points");
+  chart.title("Dumbbell Chart: Endpoint Shape");
 
-  // create a dumbbell series and set the data
-  var series = chart.dumbbell(data);
+  // create two dumbbell series and set the data
+  var seriesLastYear = chart.dumbbell(dataLastYear).name("Last Year");
+  var seriesThisYear = chart.dumbbell(dataThisYear).name("This Year");
+
+  // set the endpoint shape of each series
+  seriesLastYear.normal().markers().type("circle");
+  seriesThisYear.normal().markers().type("square");
+  // set the endpoint shape in the hovered state
+  seriesLastYear.hovered().markers().type("diamond");
+  // set the endpoint shape in the selected state
+  seriesLastYear.selected().markers().type("cross");
+
   // set the size of the endpoints
-  series.normal().markers().size(8);
+  seriesLastYear.normal().markers().size(7);
+  seriesThisYear.normal().markers().size(7);
 
   // set the container id
   chart.container("container");

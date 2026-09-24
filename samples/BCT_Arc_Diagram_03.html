@@ -12,37 +12,118 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css"/>
 
     <style>
-        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { display: flex; flex-direction: column; }
+        #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
+        #controls input[type="range"] { width: 90px; vertical-align: middle; }
+        #controls output { display: inline-block; text-align: left; }
+        #maxCountValue, #rotationValue { min-width: 3ch; }
+        #container { flex: 1; }
     </style>
 </head>
 <body>
+<div id="controls">
+    <label>Max labels
+        <input type="range" min="4" max="24" step="1" value="24" oninput="changeMaxCount(this.value)">
+        <output id="maxCountValue">24</output>
+    </label>
+    <label>Rotation
+        <input type="range" min="-90" max="90" step="5" value="0" oninput="changeRotation(this.value)">
+        <output id="rotationValue">0</output>
+    </label>
+</div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data: requests between the departments of a company
+  // create data: weekly flights between European airports
   var data = [
-    {from: "Sales", to: "Marketing", weight: 9},
-    {from: "Sales", to: "Finance", weight: 16},
-    {from: "Finance", to: "HR", weight: 5},
-    {from: "Support", to: "Sales", weight: 14},
-    {from: "Support", to: "Marketing", weight: 6},
-    {from: "Marketing", to: "HR", weight: 3}
+    {from: "London", to: "Paris", weight: 182},
+    {from: "London", to: "Amsterdam", weight: 154},
+    {from: "London", to: "Dublin", weight: 168},
+    {from: "London", to: "Frankfurt", weight: 112},
+    {from: "London", to: "Madrid", weight: 98},
+    {from: "London", to: "Barcelona", weight: 105},
+    {from: "London", to: "Rome", weight: 77},
+    {from: "London", to: "Zurich", weight: 84},
+    {from: "London", to: "Copenhagen", weight: 56},
+    {from: "London", to: "Istanbul", weight: 49},
+    {from: "Paris", to: "Amsterdam", weight: 91},
+    {from: "Paris", to: "Madrid", weight: 88},
+    {from: "Paris", to: "Rome", weight: 74},
+    {from: "Paris", to: "Lisbon", weight: 52},
+    {from: "Paris", to: "Munich", weight: 63},
+    {from: "Paris", to: "Brussels", weight: 28},
+    {from: "Amsterdam", to: "Frankfurt", weight: 86},
+    {from: "Amsterdam", to: "Copenhagen", weight: 70},
+    {from: "Amsterdam", to: "Oslo", weight: 45},
+    {from: "Amsterdam", to: "Warsaw", weight: 42},
+    {from: "Amsterdam", to: "Barcelona", weight: 66},
+    {from: "Amsterdam", to: "Dublin", weight: 59},
+    {from: "Frankfurt", to: "Munich", weight: 94},
+    {from: "Frankfurt", to: "Berlin", weight: 89},
+    {from: "Frankfurt", to: "Vienna", weight: 67},
+    {from: "Frankfurt", to: "Prague", weight: 35},
+    {from: "Frankfurt", to: "Athens", weight: 31},
+    {from: "Madrid", to: "Barcelona", weight: 147},
+    {from: "Madrid", to: "Lisbon", weight: 76},
+    {from: "Madrid", to: "Rome", weight: 48},
+    {from: "Barcelona", to: "Milan", weight: 44},
+    {from: "Rome", to: "Milan", weight: 103},
+    {from: "Rome", to: "Athens", weight: 58},
+    {from: "Munich", to: "Vienna", weight: 72},
+    {from: "Munich", to: "Berlin", weight: 61},
+    {from: "Zurich", to: "Vienna", weight: 39},
+    {from: "Vienna", to: "Budapest", weight: 33},
+    {from: "Vienna", to: "Berlin", weight: 41},
+    {from: "Warsaw", to: "Prague", weight: 26},
+    {from: "Copenhagen", to: "Stockholm", weight: 85},
+    {from: "Stockholm", to: "Helsinki", weight: 79},
+    {from: "Oslo", to: "Stockholm", weight: 68},
+    {from: "Istanbul", to: "Athens", weight: 37},
+    {from: "Brussels", to: "Milan", weight: 22},
+    {from: "Budapest", to: "Istanbul", weight: 19}
   ];
 
   // create an arc diagram and set the data
-  var chart = anychart.arcDiagram(data);
+  chart = anychart.arcDiagram(data);
   // set the chart title
   chart.title("Arc Diagram: Node Labels");
 
-  // node labels: tilted the other way, bigger, blue
-  chart.node().normal().labels().rotation(45);
-  chart.node().normal().labels().fontSize(18);
+  // node labels: blue
   chart.node().normal().labels().fontColor("#1976d2");
+
+  // the label of the node under the pointer, and of a selected node
+  chart.node().hovered().labels().fontColor("#0b1220");
+  chart.node().selected().labels().fontColor("#d32f2f");
+
+  // cap how many node labels the chart places
+  chart.node().labels().maxCount(24);
+  // draw the connector lines in the label color
+  chart.node().normal().labels().connectorStroke("#1976d2", 1);
+
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
+
 });
+
+
+// turn the node labels by the given angle
+function changeRotation(value) {
+  chart.node().normal().labels().rotation(value);
+  document.getElementById("rotationValue").value = value;
+}
+
+
+// set how many node labels the chart may place
+function changeMaxCount(value) {
+  chart.node().labels().maxCount(value);
+  document.getElementById("maxCountValue").value = value;
+}
+
+
+
 </script>
 </body>
 </html>

@@ -31,7 +31,7 @@ anychart.onDocumentReady(function () {
      normal: {stroke: "3 #5cd65c", fill: "#5cd65c"},
      hovered: {stroke: "4 #5cd65c", fill: "#5cd65c"},
      selected: {stroke: "4 #5cd65c", fill: "#5cd65c"}},
-    {x: "April", value: 11000},
+    {x: "April", value: 11000, marker: {type: "square"}},
     {x: "May", value: 9000}
   ];
 
@@ -43,6 +43,8 @@ anychart.onDocumentReady(function () {
 
   // create a lollipop series and set the data
   var series = chart.lollipop(data);
+  // set the size of the heads
+  series.normal().markers().size(10);
 
   // set the container id
   chart.container("container");

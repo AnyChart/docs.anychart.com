@@ -16,14 +16,17 @@
         body { display: flex; flex-direction: column; }
         #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
         #controls input[type="range"] { width: 90px; vertical-align: middle; }
+        #cornerRadiusControl.off { opacity: 0.4; }
         #container { flex: 1; }
     </style>
 </head>
 <body>
 <div id="controls">
     <span>Cell shape:</span>
-    <label><input type="radio" name="cellShape" onclick="changeCellShape('square')" checked> square</label>
-    <label><input type="radio" name="cellShape" onclick="changeCellShape('circle')"> circle</label>
+    <label><input type="radio" name="shape" onclick="changeCellShape('square')" checked> square</label>
+    <label><input type="radio" name="shape" onclick="changeCellShape('circle')"> circle</label>
+    <label><input type="radio" name="shape" onclick="changeCellShape('triangle-up')"> triangle-up</label>
+    <label><input type="radio" name="shape" onclick="changeCellShape('arrow-down')"> arrow-down</label>
     <label id="cornerRadiusControl">Corner radius
         <input type="range" min="0" max="8" step="1" value="4" oninput="changeCellCornerRadius(this.value)">
         <output id="cornerRadiusValue">4</output>
@@ -47,10 +50,10 @@ anychart.onDocumentReady(function () {
   chart.title("Waffle Chart: Cell Shape");
 
   // draw square cells and round their corners
-  chart.cellShape("square");
-  chart.cellCornerRadius(4);
+  chart.cell().normal().shape("square");
+  chart.cell().normal().cornerRadius(4);
 
-  // show the default labels: the category name and its percent share
+  // show the default labels: the category name
   chart.labels(true);
 
   // set the container id
@@ -59,15 +62,17 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// switch the shape of the cells: the corner radius applies to squares only, so its slider hides for circles
+// switch the shape of the cells: the corner radius applies to squares only, so its slider is disabled for the other shapes
 function changeCellShape(value) {
-  chart.cellShape(value);
-  document.getElementById("cornerRadiusControl").style.display = value === "square" ? "" : "none";
+  chart.cell().normal().shape(value);
+  var control = document.getElementById("cornerRadiusControl");
+  control.className = value === "square" ? "" : "off";
+  control.querySelector("input").disabled = value !== "square";
 }
 
-// round the corners of square cells: circle cells ignore the radius
+// round the corners of square cells: the other shapes ignore the radius
 function changeCellCornerRadius(value) {
-  chart.cellCornerRadius(value);
+  chart.cell().normal().cornerRadius(value);
   document.getElementById("cornerRadiusValue").value = value;
 }
 </script>

@@ -32,6 +32,7 @@ This article shows how to make a basic Dependency wheel. It also shows how to se
 <tr><td></td><td>[Arc Diagram](Arc_Diagram)</td></tr>
 <tr><td></td><td>[Sankey Diagram](Sankey_Diagram)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td></td><td>[Chartopedia: Dependency Wheel](https://www.anychart.com/chartopedia/chart-types/dependency-wheel/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
@@ -142,15 +143,17 @@ chart.nodeWidth(30);
 [Labels](../Common_Settings/Labels) of the nodes are enabled by default and show the node name. Set the base settings with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state; the hovered and selected states override the settings you give them and inherit the rest. Font settings and [text formatters](../Common_Settings/Text_Formatters) are available:
 
 ```
-// add the node's share of the total flow to its label
-chart.node().normal().labels().format("{%name} {%percent}{decimalsCount:1}%");
+// add the weekly flights of the node to its label
+chart.node().normal().labels().format("{%name}: {%weight} flights");
 ```
 
-By default, a label is bent along the ring. To draw it as a straight line of text beside the ring instead, call `labels().position()` with the `"tangential"` parameter:
+A node label has three positions, set with `labels().position()`: `"circular"`, the default, bends the label along the ring; `"tangential"` draws it as a straight line of text beside the ring; `"radial"` runs it outward from the center, along the ray of its node. The position works on a chart that is already drawn, so a control can switch it:
 
 ```
-// opt out of the circular default: draw the node labels as straight lines beside the ring
-chart.node().normal().labels().position("tangential");
+// place the node labels: along the ring, beside it, or outward from the center
+function changeLabelPosition(value) {
+  chart.node().normal().labels().position(value);
+}
 ```
 
 A label that overlaps an already drawn label is hidden by default. To control this behavior, use the {api:anychart.charts.DependencyWheel#dropOverlappedLabels}dropOverlappedLabels(){api} method:
@@ -192,7 +195,7 @@ chart.node().tooltip().format(
 );
 ```
 
-In the sample below, the labels are straightened out of their default curve, the state fills and strokes are derived from `sourceColor`, and the tooltip shows the node tokens:
+In the sample below, the radios place the node labels, the state fills and strokes are derived from `sourceColor`, and the tooltip shows the node tokens:
 
 {sample}BCT\_Dependency\_Wheel\_04{sample}
 
@@ -301,7 +304,7 @@ In the sample below, the sliders set the gap between the arcs and the floor unde
 
 #### Radius
 
-The {api:anychart.charts.DependencyWheel#radius}radius(){api} method sets the outer radius of the ring of node arcs. A number is a size in pixels, a percent string is a share of the smaller side of the chart area. The default, `"50%"`, is also the largest ring the chart draws, so larger values change nothing: use this method to make the ring smaller and leave room for long labels or a title.
+The {api:anychart.charts.DependencyWheel#radius}radius(){api} method sets the outer radius of the ring of node arcs. A number is a size in pixels, a percent string is a share of the smaller side of the chart area. The default, `"50%"`, is also the largest ring the chart draws, so larger values change nothing: use this method to make the ring smaller and leave room around it.
 
 ```
 // shrink the ring to leave room around it

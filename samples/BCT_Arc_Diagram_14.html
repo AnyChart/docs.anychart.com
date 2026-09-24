@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Arc Diagram 10"/>
+    <meta name="ac:name" content="BCT Arc Diagram 14"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
 
@@ -20,11 +20,10 @@
 </head>
 <body>
 <div id="controls">
-    <span>Layout:</span>
-    <label><input type="radio" name="layout" id="layoutHorizontalUp" onclick="setLayout('horizontal', false)"> horizontal (up)</label>
-    <label><input type="radio" name="layout" id="layoutHorizontalDown" onclick="setLayout('horizontal', true)"> horizontal (down)</label>
-    <label><input type="radio" name="layout" id="layoutVerticalLeft" onclick="setLayout('vertical', true)"> vertical (left)</label>
-    <label><input type="radio" name="layout" id="layoutVerticalRight" onclick="setLayout('vertical', false)" checked> vertical (right)</label>
+    <span>Link thickness:</span>
+    <label><input type="radio" name="thickness" id="thicknessFixed" onclick="changeThickness('fixed')" checked> the same for every link</label>
+    <label><input type="radio" name="thickness" id="thicknessWeight" onclick="changeThickness('weight')"> from the weight</label>
+    <label><input type="radio" name="thickness" id="thicknessFormula" onclick="changeThickness('formula')"> from a formula</label>
 </div>
 <div id="container"></div>
 <script>
@@ -42,10 +41,12 @@ anychart.onDocumentReady(function () {
   // create an arc diagram and set the data
   chart = anychart.arcDiagram(data);
   // set the chart title
-  chart.title("Arc Diagram: Layout");
+  chart.title("Arc Diagram: Link Thickness");
 
-  // place the nodes in a column; the links curve to the right
-  chart.layout("vertical");
+  // the same thickness for every link, thicker under the pointer and when selected
+  chart.link().normal().thickness(2);
+  chart.link().hovered().thickness(6);
+  chart.link().selected().thickness(4);
 
   // set the container id
   chart.container("container");
@@ -53,10 +54,17 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// apply the chosen layout: the chart redraws itself
-function setLayout(layout, reverse) {
-  chart.layout(layout);
-  chart.reverseArcs(reverse);
+// a thickness of its own for every link, from its weight
+function thicknessFromWeight() {
+  return this.value / 4;
+}
+
+// the thickness of a link in the normal state: a number, a formula, or the weight
+var thicknessModes = {"fixed": 2, "weight": null, "formula": thicknessFromWeight};
+
+// apply the chosen thickness: the chart redraws itself
+function changeThickness(value) {
+  chart.link().normal().thickness(thicknessModes[value]);
 }
 </script>
 </body>
