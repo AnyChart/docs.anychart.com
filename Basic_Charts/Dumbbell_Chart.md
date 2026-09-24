@@ -111,10 +111,6 @@ Combine them with these methods:
 * {api:anychart.core.StateSettings#lowFill}lowFill(){api} and {api:anychart.core.StateSettings#highFill}highFill(){api} to set the fill of the low and the high endpoint
 * {api:anychart.core.cartesian.series.Dumbbell#markers}markers(){api} with {api:anychart.core.ui.MarkersFactory#stroke}stroke(){api} to set the outline of both endpoints
 
-You can also use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
-
-If you do not set the colors yourself, they come from the chart [palette](../Appearance_Settings/Palettes). Each series gets one base color for its connecting line and both endpoints, and the endpoints outline themselves with a darker shade of it. Settings like {api:anychart.core.StateSettings#highFill}highFill(){api} or {api:anychart.core.StateSettings#lowFill}lowFill(){api} override the palette colors.
-
 The connecting line does not show which value comes first. So when the two values are a before/after pair, give the low and high endpoints different colors — the direction of the change becomes visible at once:
 
 ```
@@ -125,9 +121,9 @@ series.normal().highFill("#00cc99");
 series.normal().markers().stroke("#7f7f7f", 1);
 
 // set the connecting line in all three states
-series.normal().stroke("#b3b3b3", 1);
-series.hovered().stroke("#b3b3b3", 2);
-series.selected().stroke("#b3b3b3", 4);
+series.normal().stroke("#b3b3b3", 2);
+series.hovered().stroke("#b3b3b3", 4);
+series.selected().stroke("#b3b3b3", 6);
 ```
 
 In the sample below, salaries before an annual review go to `low` and salaries after it go to `high`, so every pair reads from the gray endpoint to the green one, both outlined in gray. Hover over a point or click it to see the hovered and selected strokes:

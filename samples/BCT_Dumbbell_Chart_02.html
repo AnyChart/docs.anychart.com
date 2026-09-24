@@ -20,11 +20,11 @@
 anychart.onDocumentReady(function () {
   // create data: old salary as low, new salary as high
   var data = [
-    {x: "Anna", low: 52000, high: 58000},
-    {x: "Ben", low: 48000, high: 50000},
-    {x: "Carol", low: 61000, high: 70000},
-    {x: "Dan", low: 55000, high: 59000},
-    {x: "Eva", low: 44000, high: 51000}
+    {x: "Anna", low: 42000, high: 58000},
+    {x: "Ben", low: 38000, high: 50000},
+    {x: "Carol", low: 51000, high: 70000},
+    {x: "Dan", low: 45000, high: 59000},
+    {x: "Eva", low: 34000, high: 51000}
   ];
 
   // create a chart
@@ -45,9 +45,9 @@ anychart.onDocumentReady(function () {
   series.normal().markers().stroke("#7f7f7f", 1);
 
   // set the connecting line in all three states
-  series.normal().stroke("#b3b3b3", 1);
-  series.hovered().stroke("#b3b3b3", 2);
-  series.selected().stroke("#b3b3b3", 4);
+  series.normal().stroke("#b3b3b3", 2);
+  series.hovered().stroke("#b3b3b3", 4);
+  series.selected().stroke("#b3b3b3", 6);
 
   // set the container id
   chart.container("container");
