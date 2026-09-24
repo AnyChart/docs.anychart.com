@@ -132,7 +132,7 @@ In the sample below, salaries before an annual review go to `low` and salaries a
 
 #### Endpoints
 
-The shape and the size of the endpoints are set per state. Call {api:anychart.core.cartesian.series.Dumbbell#normal}normal(){api}, {api:anychart.core.cartesian.series.Dumbbell#hovered}hovered(){api} or {api:anychart.core.cartesian.series.Dumbbell#selected}selected(){api}, then {api:anychart.core.cartesian.series.Dumbbell#markers}markers(){api} of that state: {api:anychart.core.ui.MarkersFactory#type}type(){api} sets the shape and {api:anychart.core.ui.MarkersFactory#size}size(){api} the size, which applies to both endpoints of a point the same way. A state that sets no shape or size of its own keeps the normal ones. Give two series different shapes to tell them apart without color:
+The shape and the size of the endpoints are set per state. Call {api:anychart.core.cartesian.series.Dumbbell#normal}normal(){api}, {api:anychart.core.cartesian.series.Dumbbell#hovered}hovered(){api} or {api:anychart.core.cartesian.series.Dumbbell#selected}selected(){api}, then {api:anychart.core.cartesian.series.Dumbbell#markers}markers(){api} of that state: {api:anychart.core.ui.MarkersFactory#type}type(){api} sets the shape and {api:anychart.core.ui.MarkersFactory#size}size(){api} the size. A state that sets no shape or size of its own keeps the normal ones. Give two series different shapes to tell them apart without color:
 
 ```
 // set the endpoint shape and size of each series

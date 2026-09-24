@@ -192,7 +192,7 @@ In the sample below, each label shows the value of its point:
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box. It appears when you hover over a point on a chart. It has many visual and other settings. For example, you can edit the text with font settings and [text formatters](../Common_Settings/Text_Formatters). You can also change the background style and move the tooltip.
 
-The tooltip has a title and a text body. One tooltip covers all the series at the hovered point, so the title is set on the chart with {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}, and the text is set on each series with {api:anychart.core.ui.Tooltip#format}format(){api}:
+The tooltip has a title and a text body. Set the title with {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} on the tooltip of the chart and the text with {api:anychart.core.ui.Tooltip#format}format(){api} on the tooltip of the series. In the text, use text formatters: `{%x}` is the category and `{%value}` is the value of the point. When several series have a point in the same category, one tooltip lists them all:
 
 ```
 // set the tooltip title and text
