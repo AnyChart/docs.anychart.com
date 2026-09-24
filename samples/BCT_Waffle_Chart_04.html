@@ -49,8 +49,8 @@ anychart.onDocumentReady(function () {
   chart.title("Waffle Chart: Cell Shape");
 
   // draw square cells and round their corners
-  chart.cell().shape("square");
-  chart.cell().cornerRadius(4);
+  chart.cell().normal().shape("square");
+  chart.cell().normal().cornerRadius(4);
 
   // show the default labels: the category name
   chart.labels(true);
@@ -63,13 +63,13 @@ anychart.onDocumentReady(function () {
 
 // switch the shape of the cells: the corner radius applies to squares only, so its slider hides for the other shapes
 function changeCellShape(value) {
-  chart.cell().shape(value);
+  chart.cell().normal().shape(value);
   document.getElementById("cornerRadiusControl").style.display = value === "square" ? "" : "none";
 }
 
 // round the corners of square cells: the other shapes ignore the radius
 function changeCellCornerRadius(value) {
-  chart.cell().cornerRadius(value);
+  chart.cell().normal().cornerRadius(value);
   document.getElementById("cornerRadiusValue").value = value;
 }
 </script>

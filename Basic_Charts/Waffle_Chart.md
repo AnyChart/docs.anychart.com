@@ -86,7 +86,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-Each category's color comes from the chart [palette](../Appearance_Settings/Palettes). Set your own with the {api:anychart.charts.Waffle#palette}palette(){api} method. A category is drawn as one block of identical cells, so there is no per-cell styling: every cell in the block shares the same fill and stroke.
+Each category's color comes from the chart [palette](../Appearance_Settings/Palettes). Set your own with the {api:anychart.charts.Waffle#palette}palette(){api} method. A category is drawn as one block of cells; to style the cells one by one, or per state, see [Cell States](#cell_states).
 
 The [appearance settings](../Appearance_Settings) react to the three [states](../Common_Settings/Interactivity/States). Use the {api:anychart.charts.Waffle#normal}normal(){api}, {api:anychart.charts.Waffle#hovered}hovered(){api}, and {api:anychart.charts.Waffle#selected}selected(){api} methods with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}. A category is hovered when you point at it and selected when you click it. By default, hovering lightens the palette color, and selecting darkens it. To change how a state reacts, pass a function to fill() or stroke(): inside it, the palette color is available as `this.sourceColor`:
 
@@ -135,16 +135,16 @@ In the sample below, the sliders set the number of rows and columns of the grid:
 
 ### Cells
 
-The chart draws the cells on its own — you only set how they look. Every cell setting lives on the cell object, which the `cell()` method returns. Two groups of settings control the cells: the shape of a cell and the sizing of the grid.
+The chart draws the cells on its own; you set how they look with the `cell()` method. The look of a cell is set per state: `cell().normal()`, `cell().hovered()`, and `cell().selected()` carry its shape, corner radius, fill, stroke, and hatch fill. The sizing of the grid is set on `cell()` itself, once for the whole chart.
 
 #### Cell Shape
 
-Cells are squares by default. To draw another shape, pass its name to `cell().shape()`: the names are the library's marker shapes, such as a circle, a star, or an arrow. The legend icon repeats the shape you choose. For square cells, `cell().cornerRadius()` rounds the corners; the other shapes ignore it. The shape name is matched without regard to case, and any other value falls back to the default shape:
+Cells are squares by default. To draw another shape, pass its name to `shape()` of the normal state: the names are the library's marker shapes, such as a circle, a star, or an arrow. The legend icon repeats the shape you choose. For square cells, `cornerRadius()` rounds the corners; the other shapes ignore it. The shape name is matched without regard to case, and any other value falls back to the default shape:
 
 ```
 // draw square cells and round their corners
-chart.cell().shape("square");
-chart.cell().cornerRadius(4);
+chart.cell().normal().shape("square");
+chart.cell().normal().cornerRadius(4);
 ```
 
 In the sample below, the radio buttons switch the shape of the cells, and the slider rounds the corners of the square cells:
@@ -170,6 +170,28 @@ In the sample below, the sliders set the gap between the cells, their fixed heig
 
 {sample}BCT\_Waffle\_Chart\_05{sample}
 
+#### Cell States
+
+The fill, the stroke, the hatch fill, and the shape of the cells are set per state with `cell().normal()`, `cell().hovered()`, and `cell().selected()`. A setting of a cell state takes precedence over the same setting of the chart state (see [Appearance](#appearance)). Pointing at a cell highlights its whole category, so the hovered and selected settings apply to every cell of the category.
+
+A function passed as a fill, a stroke, or a hatch fill is called for every cell. In it, `this.cellIndex` is the number of the cell in the grid, `this.row` and `this.column` are its position, `this.state` is the state of the cell, and `this.sourceColor` is the palette color of its category, so one rule can style the cells one by one:
+
+```
+// cell states: white gaps, round cells under the pointer, a red fill when selected
+chart.cell().normal().stroke("#ffffff", 1);
+chart.cell().hovered().shape("circle");
+chart.cell().selected().fill("#d32f2f");
+
+// a lighter fill for every other cell of a category
+chart.cell().normal().fill(function () {
+  return this.cellIndex % 2 ? anychart.color.lighten(this.sourceColor, 0.4) : this.sourceColor;
+});
+```
+
+In the sample below, every other cell of a category is lighter, the cells of the category under the pointer turn round, and a selected category turns red:
+
+{sample}BCT\_Waffle\_Chart\_06{sample}
+
 ### Fill Direction
 
 The {api:anychart.charts.Waffle#fillDirection}fillDirection(){api} method sets the order in which cells fill the grid:
@@ -190,7 +212,7 @@ chart.fillDirection("bottom-to-top");
 
 In the sample below, use the switcher to compare all four directions on the same data:
 
-{sample}BCT\_Waffle\_Chart\_06{sample}
+{sample}BCT\_Waffle\_Chart\_07{sample}
 
 ### Labels
 
@@ -214,7 +236,7 @@ chart.labels().fontColor("#ffffff");
 
 In the sample below, each label shows the name and the value in white on a dark plate:
 
-{sample}BCT\_Waffle\_Chart\_07{sample}
+{sample}BCT\_Waffle\_Chart\_08{sample}
 
 ### Tooltips
 
@@ -226,7 +248,7 @@ chart.tooltip().titleFormat("Channel: {%name}");
 chart.tooltip().format("{%value} orders - {%percent}{decimalsCount:1}% of the total");
 ```
 
-{sample}BCT\_Waffle\_Chart\_08{sample}
+{sample}BCT\_Waffle\_Chart\_09{sample}
 
 ### Legend
 
@@ -244,4 +266,4 @@ chart.legend().itemsLayout("vertical");
 
 In the sample below, the legend sits to the right of the grid, with its items stacked vertically:
 
-{sample}BCT\_Waffle\_Chart\_09{sample}
+{sample}BCT\_Waffle\_Chart\_10{sample}
