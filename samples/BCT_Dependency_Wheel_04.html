@@ -21,8 +21,8 @@
 <body>
 <div id="controls">
     <span>Node labels:</span>
-    <label><input type="radio" name="labelPosition" id="posCircular" onclick="changeLabelPosition('circular')"> circular</label>
-    <label><input type="radio" name="labelPosition" id="posTangential" onclick="changeLabelPosition('tangential')" checked> tangential</label>
+    <label><input type="radio" name="labelPosition" id="posCircular" onclick="changeLabelPosition('circular')" checked> circular</label>
+    <label><input type="radio" name="labelPosition" id="posTangential" onclick="changeLabelPosition('tangential')"> tangential</label>
     <label><input type="radio" name="labelPosition" id="posRadial" onclick="changeLabelPosition('radial')"> radial</label>
 </div>
 <div id="container"></div>
@@ -68,9 +68,6 @@ anychart.onDocumentReady(function () {
 
   // add the node's share of the total flow to its label
   chart.node().normal().labels().format("{%name} {%percent}{decimalsCount:1}%");
-
-  // opt out of the circular default: draw the node labels as straight lines beside the ring
-  chart.node().normal().labels().position("tangential");
 
   // show every label, even if some of them collide
   chart.dropOverlappedLabels(false);

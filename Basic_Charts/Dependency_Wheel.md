@@ -146,14 +146,7 @@ chart.nodeWidth(30);
 chart.node().normal().labels().format("{%name} {%percent}{decimalsCount:1}%");
 ```
 
-By default, a label is bent along the ring. To draw it as a straight line of text beside the ring instead, call `labels().position()` with the `"tangential"` parameter:
-
-```
-// opt out of the circular default: draw the node labels as straight lines beside the ring
-chart.node().normal().labels().position("tangential");
-```
-
-To run each label outward from the center, along the ray of its node, pass `"radial"` instead. The position works on a chart that is already drawn, so a control can switch it:
+By default, a label is bent along the ring. To change this, call `labels().position()`: `"tangential"` draws the label as a straight line of text beside the ring, and `"radial"` runs it outward from the center, along the ray of its node. The position works on a chart that is already drawn, so a control can switch it:
 
 ```
 // place the node labels: along the ring, beside it, or outward from the center
