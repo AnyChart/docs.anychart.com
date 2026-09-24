@@ -108,8 +108,7 @@ You can set the [appearance settings](../Appearance_Settings) of a Dumbbell char
 Combine them with these methods:
 
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the connecting line
-* {api:anychart.core.StateSettings#highFill}highFill(){api} to set the fill of the high endpoint
-* {api:anychart.core.StateSettings#lowFill}lowFill(){api} to set the fill of the low endpoint
+* {api:anychart.core.StateSettings#lowFill}lowFill(){api} and {api:anychart.core.StateSettings#highFill}highFill(){api} to set the fill of the low and the high endpoint
 * {api:anychart.core.cartesian.series.Dumbbell#markers}markers(){api} with {api:anychart.core.ui.MarkersFactory#stroke}stroke(){api} to set the outline of both endpoints
 
 You can also use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
@@ -122,6 +121,8 @@ The connecting line does not show which value comes first. So when the two value
 // gray = old salary, green = new salary
 series.normal().lowFill("#b3b3b3");
 series.normal().highFill("#00cc99");
+// outline both endpoints
+series.normal().markers().stroke("#7f7f7f", 1);
 
 // set the connecting line in all three states
 series.normal().stroke("#b3b3b3", 1);
@@ -129,61 +130,41 @@ series.hovered().stroke("#b3b3b3", 2);
 series.selected().stroke("#b3b3b3", 4);
 ```
 
-In the sample below, salaries before an annual review go to `low` and salaries after it go to `high`, so every pair reads from the gray endpoint to the green one. Hover over a point or click it to see the hovered and selected strokes:
+In the sample below, salaries before an annual review go to `low` and salaries after it go to `high`, so every pair reads from the gray endpoint to the green one, both outlined in gray. Hover over a point or click it to see the hovered and selected strokes:
 
 {sample}BCT\_Dumbbell\_Chart\_02{sample}
 
-#### Endpoint Shape
+#### Endpoints
 
-The endpoints of a point are the markers of its series, and their shape is set per state. Call {api:anychart.core.cartesian.series.Dumbbell#normal}normal(){api}, {api:anychart.core.cartesian.series.Dumbbell#hovered}hovered(){api} or {api:anychart.core.cartesian.series.Dumbbell#selected}selected(){api}, then {api:anychart.core.cartesian.series.Dumbbell#markers}markers(){api} of that state and {api:anychart.core.ui.MarkersFactory#type}type(){api}. Give two series different shapes to tell them apart without color:
+The shape and the size of the endpoints are set per state. Call {api:anychart.core.cartesian.series.Dumbbell#normal}normal(){api}, {api:anychart.core.cartesian.series.Dumbbell#hovered}hovered(){api} or {api:anychart.core.cartesian.series.Dumbbell#selected}selected(){api}, then {api:anychart.core.cartesian.series.Dumbbell#markers}markers(){api} of that state: {api:anychart.core.ui.MarkersFactory#type}type(){api} sets the shape and {api:anychart.core.ui.MarkersFactory#size}size(){api} the size, which applies to both endpoints of a point the same way. A state that sets no shape or size of its own keeps the normal ones. Give two series different shapes to tell them apart without color:
 
 ```
-// set the endpoint shape of each series
+// set the endpoint shape and size of each series
 seriesLastYear.normal().markers().type("circle");
+seriesLastYear.normal().markers().size(7);
 seriesThisYear.normal().markers().type("square");
-```
-
-A state that sets no shape of its own keeps the normal one:
-
-```
-// set the endpoint shape in the hovered state
+seriesThisYear.normal().markers().size(7);
+// set the endpoint shape and size in the hovered and selected states
 seriesLastYear.hovered().markers().type("diamond");
-// set the endpoint shape in the selected state
+seriesLastYear.hovered().markers().size(9);
 seriesLastYear.selected().markers().type("cross");
+seriesLastYear.selected().markers().size(9);
 ```
 
-A single point takes its own shape from the `marker` field of its data, for example `marker: {type: "star5"}`, and keeps it in the states where the series does not set a shape of its own.
-
-In the sample below, one series has round endpoints and the other square ones, one point of the second series is starred, and the round endpoints turn into diamonds when you hover over them and into crosses when you click them:
-
-{sample}BCT\_Dumbbell\_Chart\_07{sample}
-
-#### Endpoint Size
-
-The endpoints of a Dumbbell point sit at the ends of its connecting line: one at the low value and one at the high value. Their size is their radius, and it is set per state like the shape: call {api:anychart.core.cartesian.series.Dumbbell#normal}normal(){api}, {api:anychart.core.cartesian.series.Dumbbell#hovered}hovered(){api} or {api:anychart.core.cartesian.series.Dumbbell#selected}selected(){api}, then {api:anychart.core.cartesian.series.Dumbbell#markers}markers(){api} and {api:anychart.core.ui.MarkersFactory#size}size(){api}. The size applies to both endpoints of a point the same way.
-
-```
-// set the size of the endpoints
-series.normal().markers().size(8);
-// set the size in the hovered and selected states
-series.hovered().markers().size(10);
-series.selected().markers().size(10);
-```
-
-In the sample below, the endpoints are enlarged, and grow a little more when hovered or selected:
+In the sample below, one series has round endpoints and the other square ones; the round endpoints turn into larger diamonds when you hover over them and into larger crosses when you click them:
 
 {sample}BCT\_Dumbbell\_Chart\_03{sample}
 
 #### Individual Points
 
-To change the look of an individual point, set its configuration right in the data. The same settings you apply to all points, added as fields of the point, affect only that point:
+To change the look of an individual point, set its configuration right in the data. The same settings you apply to all points, added as fields of the point, affect only that point. A `marker` field in the `normal` block of the point sets the shape of its endpoints, and the point keeps that shape in every state:
 
 ```
 // create data with individual point settings
 var data = [
   {x: "Job A", low: 40000, high: 60000},
   {x: "Job B", low: 50000, high: 80000,
-   normal: {lowFill: "#5cd65c", highFill: "#2eb82e", stroke: "2 #5cd65c"},
+   normal: {lowFill: "#5cd65c", highFill: "#2eb82e", stroke: "2 #5cd65c", marker: {type: "star5"}},
    hovered: {lowFill: "#5cd65c", highFill: "#2eb82e", stroke: "3 #5cd65c"},
    selected: {lowFill: "#5cd65c", highFill: "#2eb82e", stroke: "3 #5cd65c"}},
   {x: "Job C", low: 35000, high: 55000}
@@ -192,7 +173,7 @@ var data = [
 
 With array data, the same settings travel as extra columns: add the values to the rows and map them with {api:anychart.data.Set#mapAs}mapAs(){api} — see [Working with Data](../Working_with_Data/Overview).
 
-In the sample below, the second point carries its own endpoint colors and connecting line:
+In the sample below, the second point carries its own endpoint colors, connecting line, and endpoint shape:
 
 {sample}BCT\_Dumbbell\_Chart\_04{sample}
 
@@ -219,9 +200,7 @@ In the sample below, each label shows the low and high values of its point:
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box. It appears when you hover over a point on a chart. It has many visual and other settings. For example, you can edit the text with font settings and [text formatters](../Common_Settings/Text_Formatters). You can also change the background style and move the tooltip.
 
-The tooltip of a Dumbbell chart covers the whole category: hovering over one point opens a tooltip that lists every series with a point in that category.
-
-The tooltip has a title and a text body. Set them with {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} on the {api:anychart.charts.Cartesian#tooltip}tooltip(){api} of the chart:
+The tooltip has a title and a text body. One tooltip covers all the series at the hovered point, so set them on the {api:anychart.charts.Cartesian#tooltip}tooltip(){api} of the chart with {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and {api:anychart.core.ui.Tooltip#format}format(){api}:
 
 ```
 // set the tooltip title and text

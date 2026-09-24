@@ -31,14 +31,18 @@ anychart.onDocumentReady(function () {
   var chart = anychart.dumbbell();
 
   // set the chart title
-  chart.title("Dumbbell Chart: Appearance");
+  chart.title("Dumbbell Chart: All Points");
 
   // create a dumbbell series and set the data
   var series = chart.dumbbell(data);
+  // set the size of the endpoints
+  series.normal().markers().size(7);
 
   // gray = old salary, green = new salary
   series.normal().lowFill("#b3b3b3");
   series.normal().highFill("#00cc99");
+  // outline both endpoints
+  series.normal().markers().stroke("#7f7f7f", 1);
 
   // set the connecting line in all three states
   series.normal().stroke("#b3b3b3", 1);
