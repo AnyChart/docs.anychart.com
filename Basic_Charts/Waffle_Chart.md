@@ -135,7 +135,7 @@ In the sample below, the sliders set the number of rows and columns of the grid:
 
 ### Cells
 
-The chart draws the cells on its own; you set how they look with the `cell()` method. The look of a cell is set per state: `cell().normal()`, `cell().hovered()`, and `cell().selected()` carry its shape, corner radius, fill, stroke, and hatch fill. The sizing of the grid is set on `cell()` itself, once for the whole chart.
+The chart draws the cells on its own; you set how they look with the `cell()` method. Its settings fall into three groups: the [shape](#cell_shape) of the cells, the [sizing](#cell_size) of the grid, and the look of the cells in each [state](#cell_states).
 
 #### Cell Shape
 
