@@ -131,17 +131,15 @@ A node has three [states](../Common_Settings/Interactivity/States): **normal**, 
 
 A node is drawn as a circle whose size follows its weight, so the heaviest node is the largest one. To draw the nodes as rectangles instead, pass `"rectangle"` to `shape()` of `node()`; a rectangle takes its size along the node line from `width()` and across it from `height()`.
 
-To keep the weighted sizes inside a range, call `minNodeSize()` and `maxNodeSize()`; to give every node the same size, call `weightedNodes(false)`. A width set on `node()` replaces the weighted size, and `chart.node(id)` carries the same settings for a single node:
+To keep the weighted sizes inside a range, call `minNodeSize()` and `maxNodeSize()`:
 
 ```
 // keep the weighted sizes between the two bounds
 chart.minNodeSize(10);
-chart.maxNodeSize(34);
-// give one node a size of its own
-chart.node("HR").width(40);
+chart.maxNodeSize(16);
 ```
 
-In the sample below, the radios switch the shape and the weighting, the sliders set the bounds, and one node keeps a size of its own throughout:
+In the sample below, the radios switch the shape and the sliders set the two bounds:
 
 {sample}BCT\_Arc\_Diagram\_13{sample}
 
