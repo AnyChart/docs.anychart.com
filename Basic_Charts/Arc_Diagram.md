@@ -33,6 +33,7 @@ This article shows how to create a basic Arc diagram. It also explains the setti
 <tr><td></td><td>[Sankey Diagram](Sankey_Diagram)</td></tr>
 <tr><td></td><td>[Network Graph](Network_Graph)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td></td><td>[Chartopedia: Arc Diagram](https://www.anychart.com/chartopedia/chart-types/arc-diagram/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 

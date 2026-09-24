@@ -28,6 +28,7 @@ This article shows how to make a basic Org chart. It also shows how to set optio
 <tr><td></td><td>[Treemap](Treemap_Chart)</td></tr>
 <tr><td></td><td>[Sunburst](Sunburst_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td></td><td>[Chartopedia: Organizational Chart](https://www.anychart.com/chartopedia/chart-types/organizational-chart/)</td></tr>
 <tr><td></td><td>[Tree Data Model](../Working_with_Data/Tree_Data_Model)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>

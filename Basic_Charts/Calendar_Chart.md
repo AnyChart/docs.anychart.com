@@ -28,6 +28,7 @@ This article explains how to create a basic Calendar chart in AnyChart as well a
 <tr><td></td><td>[Heat Map](Heat_Map_Chart)</td></tr>
 <tr><td></td><td>[Treemap](Treemap_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td></td><td>[Chartopedia: Calendar Chart](https://www.anychart.com/chartopedia/chart-types/calendar-chart/)</td></tr>
 <tr><td></td><td>[Chartopedia: Calendar Chart](https://www.anychart.com/products/anychart/gallery/Calendar_Chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>

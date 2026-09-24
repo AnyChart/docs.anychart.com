@@ -31,6 +31,7 @@ This article shows how to make a basic Waffle chart. It also shows how to set op
 <tr><td></td><td>[Doughnut](Doughnut_Chart)</td></tr>
 <tr><td></td><td>[Treemap](Treemap_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td></td><td>[Chartopedia: Waffle Chart](https://www.anychart.com/chartopedia/chart-types/waffle-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 

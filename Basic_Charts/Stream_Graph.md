@@ -31,6 +31,7 @@ This article shows how to create a basic Stream graph. It also shows how to set 
 <tr><td></td><td>[Spline Area](Spline_Area_Chart)</td></tr>
 <tr><td></td><td>[Area](Area_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td></td><td>[Chartopedia: Stream Graph](https://www.anychart.com/chartopedia/chart-types/stream-graph/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
