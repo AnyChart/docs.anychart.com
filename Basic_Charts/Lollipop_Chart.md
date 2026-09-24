@@ -190,9 +190,9 @@ In the sample below, each label shows the value of its point:
 
 ### Tooltips
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box. It appears when you hover over a chart. It has many visual and other settings. For example, you can edit the text with font settings and [text formatters](../Common_Settings/Text_Formatters). You can also change the background style and move the tooltip.
+A [Tooltip](../Common_Settings/Tooltip) is a text box. It appears when you hover over a point on a chart. It has many visual and other settings. For example, you can edit the text with font settings and [text formatters](../Common_Settings/Text_Formatters). You can also change the background style and move the tooltip.
 
-The tooltip opens for a whole category, so its title belongs to the chart and its text to the series. Set them with {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and {api:anychart.core.ui.Tooltip#format}format(){api}:
+The tooltip has a title and a text body. One tooltip covers all the series at the hovered point, so the title is set on the chart with {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}, and the text is set on each series with {api:anychart.core.ui.Tooltip#format}format(){api}:
 
 ```
 // set the tooltip title and text
@@ -200,7 +200,7 @@ chart.tooltip().titleFormat("Month: {%x}");
 series.tooltip().format("Value: {%value}");
 ```
 
-In the sample below, hover over a category to see its month and value in the tooltip:
+In the sample below, hover over a point to see its month and value in the tooltip:
 
 {sample}BCT\_Lollipop\_Chart\_06{sample}
 
