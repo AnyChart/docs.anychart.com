@@ -129,31 +129,19 @@ A node has three [states](../Common_Settings/Interactivity/States): **normal**, 
 
 #### Node Shape
 
-A node is drawn as a circle whose size follows its weight, so the heaviest node is the largest one. To draw the nodes as rectangles instead, pass `"rectangle"` to the `shape()` method of `node()`. A circle takes its diameter from `width()`; a rectangle takes its size along the node line from `width()` and its size across the line from `height()`.
+A node is drawn as a circle whose size follows its weight, so the heaviest node is the largest one. To draw the nodes as rectangles instead, pass `"rectangle"` to `shape()` of `node()`; a rectangle takes its size along the node line from `width()` and across it from `height()`.
 
-To keep the weighted sizes inside a range, call `minNodeSize()` and `maxNodeSize()`. To give every node the same size instead, call `weightedNodes(false)`. A width set on `node()` also gives every node that size, because it replaces the size the weight would give it, and `chart.node(id)` carries the same settings for a single node:
+To keep the weighted sizes inside a range, call `minNodeSize()` and `maxNodeSize()`; to give every node the same size, call `weightedNodes(false)`. A width set on `node()` replaces the weighted size, and `chart.node(id)` carries the same settings for a single node:
 
 ```
-// draw the nodes as rectangles and set their size across the node line
-chart.node().shape("rectangle");
-chart.node().height(20);
-
 // keep the weighted sizes between the two bounds
-chart.minNodeSize(6);
-chart.maxNodeSize(20);
-
+chart.minNodeSize(10);
+chart.maxNodeSize(34);
 // give one node a size of its own
-chart.node("HR").width(24);
+chart.node("HR").width(40);
 ```
 
-```
-// take the size of a node from its weight, or give every node the same size
-function changeWeightedNodes(value) {
-  chart.weightedNodes(value);
-}
-```
-
-All of them work on a chart that is already drawn. Use the controls in the sample below to reshape and resize the nodes; one of them keeps a size of its own throughout:
+In the sample below, the radios switch the shape and the weighting, the sliders set the bounds, and one node keeps a size of its own throughout:
 
 {sample}BCT\_Arc\_Diagram\_13{sample}
 
