@@ -43,8 +43,8 @@ anychart.onDocumentReady(function () {
   // create the first lollipop series and set the data
   var series1 = chart.lollipop(seriesData_1);
   // set the shape and the size of the heads
-  series1.markers().type("circle");
-  series1.markers().size(10);
+  series1.normal().markers().type("circle");
+  series1.normal().markers().size(10);
   // set the shape and the size in the hovered and selected states
   series1.hovered().markers().type("star5");
   series1.hovered().markers().size(12);
@@ -54,8 +54,8 @@ anychart.onDocumentReady(function () {
   // create the second lollipop series and set the data
   var series2 = chart.lollipop(seriesData_2);
   // set a different head shape for the second series
-  series2.markers().type("square");
-  series2.markers().size(10);
+  series2.normal().markers().type("square");
+  series2.normal().markers().size(10);
   // set the shape and the size in the hovered and selected states
   series2.hovered().markers().type("diamond");
   series2.hovered().markers().size(12);

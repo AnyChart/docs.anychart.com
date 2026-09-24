@@ -123,20 +123,20 @@ In the sample below, two series set their own stick and head colors in all three
 
 #### Head
 
-To set the shape of the head, call {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} and {api:anychart.core.ui.MarkersFactory#type}type(){api}. To set its size, call {api:anychart.core.ui.MarkersFactory#size}size(){api}. The hovered and selected states take a shape and a size of their own through {api:anychart.core.cartesian.series.Lollipop#hovered}hovered(){api} and {api:anychart.core.cartesian.series.Lollipop#selected}selected(){api}. Give two series different head shapes and they stay apart without color.
+The head of a point is the marker of its series, and it is set per state. Call {api:anychart.core.cartesian.series.Lollipop#normal}normal(){api}, {api:anychart.core.cartesian.series.Lollipop#hovered}hovered(){api} or {api:anychart.core.cartesian.series.Lollipop#selected}selected(){api}, then {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} of that state: {api:anychart.core.ui.MarkersFactory#type}type(){api} sets the shape of the head and {api:anychart.core.ui.MarkersFactory#size}size(){api} its size. A state that sets no shape or size of its own keeps the normal ones. Give two series different head shapes and they stay apart without color.
 
 ```
 // set the shape and the size of the heads
-series1.markers().type("circle");
-series1.markers().size(10);
+series1.normal().markers().type("circle");
+series1.normal().markers().size(10);
 // set the shape and the size in the hovered and selected states
 series1.hovered().markers().type("star5");
 series1.hovered().markers().size(12);
 series1.selected().markers().type("star5");
 series1.selected().markers().size(12);
 // set a different head shape for the second series
-series2.markers().type("square");
-series2.markers().size(10);
+series2.normal().markers().type("square");
+series2.normal().markers().size(10);
 ```
 
 In the sample below, the two series carry different head shapes, and each head changes shape and grows when hovered or selected:
