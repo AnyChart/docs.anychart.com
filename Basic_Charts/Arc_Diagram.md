@@ -174,16 +174,16 @@ chart.node().selected().labels().fontColor("#d32f2f");
 
 When two labels would collide, the chart moves one of them into a free lane further from the node line and draws a connector line back to its node. The connector lines are thin and grey by default; the {api:anychart.core.ui.LabelsFactory#connectorStroke}connectorStroke(){api} method restyles them, and `"none"` removes them.
 
-To decide what becomes of a label that fits in no lane, call `overflow()`: `"hide"`, the default, drops it, and `"stack"` keeps it by opening another lane. To cap how many labels the chart places, call `maxCount()` — the heaviest nodes keep theirs. In the `"hide"` mode `connectorMaxLength()` bounds the connector line as well: a label that would need a longer one is left out. All three belong to the layout, so they are set once, on the labels of the normal state:
+To decide what becomes of a label that fits in no lane, call `overflow()`: `"hide"`, the default, drops it, and `"stack"` keeps it by opening another lane. To cap how many labels the chart places, call `maxCount()` — the heaviest nodes keep theirs. In the `"hide"` mode, `connectorMaxLength()` bounds the connector line as well: a label that would need a longer one is left out. These settings belong to the layout, so they are set once, on the labels of the normal state:
 
 ```
-// stack the node labels that do not fit, cap their number and the connector length
-chart.node().labels().overflow("stack");
+// cap how many node labels the chart places
 chart.node().labels().maxCount(24);
-chart.node().labels().connectorMaxLength(20);
+// draw the connector lines in the label color
+chart.node().normal().labels().connectorStroke("#1976d2", 1);
 ```
 
-In the sample below, the node labels are colored, and the controls decide what the chart does with the ones that do not fit:
+In the sample below, the node labels and their connector lines are blue, and the slider caps how many labels the chart places:
 
 {sample}BCT\_Arc\_Diagram\_03{sample}
 

@@ -17,22 +17,15 @@
         #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
         #controls input[type="range"] { width: 90px; vertical-align: middle; }
         #controls output { display: inline-block; text-align: left; }
-        #maxCountValue, #connectorValue { min-width: 3ch; }
+        #maxCountValue { min-width: 3ch; }
         #container { flex: 1; }
     </style>
 </head>
 <body>
 <div id="controls">
-    <span>Labels that do not fit:</span>
-    <label><input type="radio" name="overflow" id="overflowHide" onclick="changeOverflow('hide')"> hide</label>
-    <label><input type="radio" name="overflow" id="overflowStack" onclick="changeOverflow('stack')" checked> stack</label>
     <label>Max labels
         <input type="range" min="4" max="24" step="1" value="24" oninput="changeMaxCount(this.value)">
         <output id="maxCountValue">24</output>
-    </label>
-    <label>Connector length
-        <input type="range" min="0" max="120" step="10" value="20" oninput="changeConnectorMaxLength(this.value)">
-        <output id="connectorValue">20</output>
     </label>
 </div>
 <div id="container"></div>
@@ -99,10 +92,10 @@ anychart.onDocumentReady(function () {
   chart.node().hovered().labels().fontColor("#0b1220");
   chart.node().selected().labels().fontColor("#d32f2f");
 
-  // stack the node labels that do not fit, cap their number and the connector length
-  chart.node().labels().overflow("stack");
+  // cap how many node labels the chart places
   chart.node().labels().maxCount(24);
-  chart.node().labels().connectorMaxLength(20);
+  // draw the connector lines in the label color
+  chart.node().normal().labels().connectorStroke("#1976d2", 1);
 
   // set the container id
   chart.container("container");
@@ -111,10 +104,6 @@ anychart.onDocumentReady(function () {
 
 });
 
-// stack the node labels that do not fit, or hide them: the chart redraws itself
-function changeOverflow(value) {
-  chart.node().labels().overflow(value);
-}
 
 // set how many node labels the chart may place
 function changeMaxCount(value) {
@@ -123,11 +112,6 @@ function changeMaxCount(value) {
 }
 
 
-// set how long the connector line of a node label may be
-function changeConnectorMaxLength(value) {
-  chart.node().labels().connectorMaxLength(value);
-  document.getElementById("connectorValue").value = value;
-}
 
 </script>
 </body>
