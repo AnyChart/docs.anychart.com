@@ -320,8 +320,6 @@ Nothing is reported in the console when this happens. Read the result back with 
 chart.maxLinksRendered(50);
 ```
 
-Nodes are not thinned the same way: every node gets a share of the node line, so the nodes grow smaller as they are added. Give the node line more room — widen the chart, or switch to the vertical [layout](#layout) when the chart is taller than it is wide.
-
 In the sample below, drag the slider to change the limit and watch how many links the chart actually draws:
 
 {sample}BCT\_Arc\_Diagram\_09{sample}
