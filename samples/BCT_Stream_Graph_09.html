@@ -48,6 +48,9 @@ anychart.onDocumentReady(function () {
   // make the layer labels readable
   chart.maxLabels().fontColor("#000000");
 
+  // spread the categories over the full width of the plot
+  chart.xScale().mode("continuous");
+
   // set the container id
   chart.container("container");
   // initiate drawing the chart
