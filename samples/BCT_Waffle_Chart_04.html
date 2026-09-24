@@ -16,6 +16,7 @@
         body { display: flex; flex-direction: column; }
         #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
         #controls input[type="range"] { width: 90px; vertical-align: middle; }
+        #cornerRadiusControl.off { opacity: 0.4; }
         #container { flex: 1; }
     </style>
 </head>
@@ -24,8 +25,8 @@
     <span>Cell shape:</span>
     <label><input type="radio" name="shape" onclick="changeCellShape('square')" checked> square</label>
     <label><input type="radio" name="shape" onclick="changeCellShape('circle')"> circle</label>
-    <label><input type="radio" name="shape" onclick="changeCellShape('star5')"> star5</label>
-    <label><input type="radio" name="shape" onclick="changeCellShape('arrow-up')"> arrow-up</label>
+    <label><input type="radio" name="shape" onclick="changeCellShape('triangle-up')"> triangle-up</label>
+    <label><input type="radio" name="shape" onclick="changeCellShape('arrow-down')"> arrow-down</label>
     <label id="cornerRadiusControl">Corner radius
         <input type="range" min="0" max="8" step="1" value="4" oninput="changeCellCornerRadius(this.value)">
         <output id="cornerRadiusValue">4</output>
@@ -61,10 +62,12 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// switch the shape of the cells: the corner radius applies to squares only, so its slider hides for the other shapes
+// switch the shape of the cells: the corner radius applies to squares only, so its slider is disabled for the other shapes
 function changeCellShape(value) {
   chart.cell().normal().shape(value);
-  document.getElementById("cornerRadiusControl").style.display = value === "square" ? "" : "none";
+  var control = document.getElementById("cornerRadiusControl");
+  control.className = value === "square" ? "" : "off";
+  control.querySelector("input").disabled = value !== "square";
 }
 
 // round the corners of square cells: the other shapes ignore the radius

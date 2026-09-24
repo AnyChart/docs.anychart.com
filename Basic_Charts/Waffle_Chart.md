@@ -139,7 +139,7 @@ The chart draws the cells on its own; you set how they look with the `cell()` me
 
 #### Cell Shape
 
-Cells are squares by default. To draw another shape, pass its name to `shape()` of the normal state: the names are the library's marker shapes, such as a circle, a star, or an arrow. The legend icon repeats the shape you choose. For square cells, `cornerRadius()` rounds the corners; the other shapes ignore it. The shape name is matched without regard to case, and any other value falls back to the default shape:
+Cells are squares by default. To draw another shape, pass its name to `shape()` of the normal state: the names are the library's marker shapes, listed in {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}, such as a circle, a triangle, or an arrow. The legend icon repeats the shape you choose. For square cells, `cornerRadius()` rounds the corners; the other shapes ignore it. The shape name is matched without regard to case, and any other value falls back to the default shape:
 
 ```
 // draw square cells and round their corners
@@ -172,9 +172,9 @@ In the sample below, the sliders set the gap between the cells, their fixed heig
 
 #### Cell States
 
-The fill, the stroke, the hatch fill, and the shape of the cells are set per state with `cell().normal()`, `cell().hovered()`, and `cell().selected()`. A setting of a cell state takes precedence over the same setting of the chart state (see [Appearance](#appearance)). Pointing at a cell highlights its whole category, so the hovered and selected settings apply to every cell of the category.
+The cells are styled per state. Call `cell().normal()`, `cell().hovered()`, or `cell().selected()`, then the `fill()`, `stroke()`, `hatchFill()`, or `shape()` method of that state. A setting of a cell state overrides the same setting of the chart state (see [Appearance](#appearance)). The hovered and selected states apply to the whole category of the cell.
 
-A function passed as a fill, a stroke, or a hatch fill is called for every cell. In it, `this.cellIndex` is the number of the cell in the grid, `this.row` and `this.column` are its position, `this.state` is the state of the cell, and `this.sourceColor` is the palette color of its category, so one rule can style the cells one by one:
+To style the cells one by one, pass a function to `fill()`, `stroke()`, or `hatchFill()`. It is called for every cell with `this.cellIndex`, the number of the cell in the grid, `this.row` and `this.column`, its position, `this.state`, its state, and `this.sourceColor`, the palette color of its category:
 
 ```
 // cell states: white gaps, round cells under the pointer, a red fill when selected
