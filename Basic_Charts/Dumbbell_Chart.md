@@ -196,7 +196,7 @@ In the sample below, each label shows the low and high values of its point:
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box. It appears when you hover over a point on a chart. It has many visual and other settings. For example, you can edit the text with font settings and [text formatters](../Common_Settings/Text_Formatters). You can also change the background style and move the tooltip.
 
-The tooltip has a title and a text body. One tooltip covers all the series at the hovered point, so set them on the {api:anychart.charts.Cartesian#tooltip}tooltip(){api} of the chart with {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and {api:anychart.core.ui.Tooltip#format}format(){api}:
+The tooltip has a title and a text body. Set them with {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} on the {api:anychart.charts.Cartesian#tooltip}tooltip(){api} of the chart. In the text, use [text formatters](../Common_Settings/Text_Formatters): `{%x}` is the category, `{%low}` and `{%high}` are the two values of the point. When several series have a point in the same category, one tooltip lists them all:
 
 ```
 // set the tooltip title and text
