@@ -123,15 +123,13 @@ In the sample below, the links come from a mapped data set, unlike the [Quick St
 
 ### Nodes
 
-A node is a shape on the node line; its shape and size are set in [Node Shape](#node_shape). The chart creates one node for every distinct name in the `from` and `to` fields of the [data](#data), and the weight of a node is the sum of the weights of its links. Set the nodes with the {api:anychart.charts.ArcDiagram#node}node(){api} method.
+A node is a circle on the node line; its size is set in [Node Size](#node_size). The chart creates one node for every distinct name in the `from` and `to` fields of the [data](#data), and the weight of a node is the sum of the weights of its links. Set the nodes with the {api:anychart.charts.ArcDiagram#node}node(){api} method.
 
 A node has three [states](../Common_Settings/Interactivity/States): **normal**, **hovered** when you point at it (its links are highlighted too), and **selected** when you click it. Ctrl/Cmd + click or Shift + click selects several nodes, and the same gesture on a node that is already selected takes it back out of the selection; a click on the empty area clears the selection. These gestures come from the {api:anychart.charts.ArcDiagram#interactivity}interactivity(){api} settings of the chart — see [General Settings](General_Settings).
 
-#### Node Shape
+#### Node Size
 
-A node is drawn as a circle whose size follows its weight, so the heaviest node is the largest one. To draw the nodes as rectangles instead, pass `"rectangle"` to `shape()` of `node()`; a rectangle takes its size along the node line from `width()` and across it from `height()`.
-
-To keep the weighted sizes inside a range, call `minNodeSize()` and `maxNodeSize()`:
+A node is drawn as a circle whose size follows its weight, so the heaviest node is the largest one. To keep the weighted sizes inside a range, call `minNodeSize()` and `maxNodeSize()`:
 
 ```
 // keep the weighted sizes between the two bounds
@@ -139,7 +137,7 @@ chart.minNodeSize(10);
 chart.maxNodeSize(16);
 ```
 
-In the sample below, the radios switch the shape and the sliders set the two bounds:
+In the sample below, the sliders set the two bounds:
 
 {sample}BCT\_Arc\_Diagram\_13{sample}
 

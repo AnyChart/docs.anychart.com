@@ -21,9 +21,6 @@
 </head>
 <body>
 <div id="controls">
-    <span>Shape:</span>
-    <label><input type="radio" name="shape" id="shapeCircle" onclick="changeShape('circle')" checked> circle</label>
-    <label><input type="radio" name="shape" id="shapeRectangle" onclick="changeShape('rectangle')"> rectangle</label>
     <label>Smallest
         <input type="range" min="2" max="20" step="2" value="10" oninput="changeMinNodeSize(this.value)">
         <output id="minNodeSizeValue">10</output>
@@ -49,7 +46,7 @@ anychart.onDocumentReady(function () {
   // create an arc diagram and set the data
   chart = anychart.arcDiagram(data);
   // set the chart title
-  chart.title("Arc Diagram: Node Shape");
+  chart.title("Arc Diagram: Node Size");
 
   // keep the weighted sizes between the two bounds
   chart.minNodeSize(10);
@@ -61,10 +58,6 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// apply the chosen shape: the chart redraws itself
-function changeShape(value) {
-  chart.node().shape(value);
-}
 
 
 
