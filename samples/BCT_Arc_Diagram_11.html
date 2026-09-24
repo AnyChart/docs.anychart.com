@@ -25,10 +25,6 @@
         <input type="range" min="30" max="100" step="5" value="85" oninput="changeNodesSpan(this.value)">
         <output id="nodesSpanValue">85%</output>
     </label>
-    <label>Node spacing
-        <input type="range" min="0" max="240" step="10" value="30" oninput="changeNodeSpacing(this.value)">
-        <output id="nodeSpacingValue">30</output>
-    </label>
     <label>Curvature
         <input type="range" min="0.2" max="1.2" step="0.05" value="0.8" oninput="changeCurvature(this.value)">
         <output id="curvatureValue">0.8</output>
@@ -52,9 +48,8 @@ anychart.onDocumentReady(function () {
   // set the chart title
   chart.title("Arc Diagram: Placement");
 
-  // give the row of nodes most of the node line and keep a gap between them
+  // give the row of nodes most of the node line
   chart.nodesSpan("85%");
-  chart.nodeSpacing(30);
 
   // set the height of the links and curve them below the node line
   chart.curvature(0.8);
@@ -72,11 +67,6 @@ function changeNodesSpan(value) {
   document.getElementById("nodesSpanValue").value = value + "%";
 }
 
-// change the smallest gap between two nodes: the chart redraws itself
-function changeNodeSpacing(value) {
-  chart.nodeSpacing(value);
-  document.getElementById("nodeSpacingValue").value = value;
-}
 
 // change the height of the links: the chart redraws itself
 function changeCurvature(value) {
