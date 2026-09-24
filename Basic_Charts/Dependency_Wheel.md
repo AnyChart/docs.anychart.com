@@ -142,11 +142,11 @@ chart.nodeWidth(30);
 [Labels](../Common_Settings/Labels) of the nodes are enabled by default and show the node name. Set the base settings with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state; the hovered and selected states override the settings you give them and inherit the rest. Font settings and [text formatters](../Common_Settings/Text_Formatters) are available:
 
 ```
-// add the node's share of the total flow to its label
-chart.node().normal().labels().format("{%name} {%percent}{decimalsCount:1}%");
+// add the weekly flights of the node to its label
+chart.node().normal().labels().format("{%name}: {%weight} flights");
 ```
 
-By default, a label is bent along the ring. To change this, call `labels().position()`: `"tangential"` draws the label as a straight line of text beside the ring, and `"radial"` runs it outward from the center, along the ray of its node. The position works on a chart that is already drawn, so a control can switch it:
+A node label has three positions, set with `labels().position()`: `"circular"`, the default, bends the label along the ring; `"tangential"` draws it as a straight line of text beside the ring; `"radial"` runs it outward from the center, along the ray of its node. The position works on a chart that is already drawn, so a control can switch it:
 
 ```
 // place the node labels: along the ring, beside it, or outward from the center
@@ -303,7 +303,7 @@ In the sample below, the sliders set the gap between the arcs and the floor unde
 
 #### Radius
 
-The {api:anychart.charts.DependencyWheel#radius}radius(){api} method sets the outer radius of the ring of node arcs. A number is a size in pixels, a percent string is a share of the smaller side of the chart area. The default, `"50%"`, is also the largest ring the chart draws, so larger values change nothing: use this method to make the ring smaller and leave room around it. When the node labels are on, the chart reserves room for them outside the ring, so that largest ring is smaller than it is with the labels off.
+The {api:anychart.charts.DependencyWheel#radius}radius(){api} method sets the outer radius of the ring of node arcs. A number is a size in pixels, a percent string is a share of the smaller side of the chart area. The default, `"50%"`, is also the largest ring the chart draws, so larger values change nothing: use this method to make the ring smaller and leave room around it.
 
 ```
 // shrink the ring to leave room around it

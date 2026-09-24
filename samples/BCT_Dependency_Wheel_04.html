@@ -66,8 +66,8 @@ anychart.onDocumentReady(function () {
     return {color: this.sourceColor, opacity: 0.65};
   });
 
-  // add the node's share of the total flow to its label
-  chart.node().normal().labels().format("{%name} {%percent}{decimalsCount:1}%");
+  // add the weekly flights of the node to its label
+  chart.node().normal().labels().format("{%name}: {%weight} flights");
 
   // show every label, even if some of them collide
   chart.dropOverlappedLabels(false);
