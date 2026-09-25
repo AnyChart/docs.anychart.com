@@ -174,12 +174,12 @@ The position works on a chart that is already drawn, so a control can switch it,
 // place the node labels and fit the text to the position: the city along the ring or beside it, the airport code outward from the center
 function changeLabelPosition(value) {
   var labels = chart.node().normal().labels();
-  labels.position(value);
   if (value == "radial") {
     labels.format(airportCode);
   } else {
     labels.format("{%name}");
   }
+  labels.position(value);
 }
 ```
 
