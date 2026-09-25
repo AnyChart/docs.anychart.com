@@ -179,8 +179,6 @@ series.labels().format(function () {
   }
   return "Max " + this["high"];
 });
-// leave room for the low-end labels
-chart.yScale().minimum(-3);
 ```
 
 In the sample below, both ends of every point are labeled:
