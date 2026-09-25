@@ -29,43 +29,50 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data: weekly flights between the airports, named by their codes
+  // create data: weekly flights between the cities
   var data = [
-    {from: "CDG", to: "HND", weight: 18},
-    {from: "CDG", to: "JFK", weight: 14},
-    {from: "CDG", to: "DXB", weight: 8},
-    {from: "HND", to: "JFK", weight: 10},
-    {from: "HND", to: "DXB", weight: 5},
-    {from: "JFK", to: "CAI", weight: 6},
-    {from: "DXB", to: "CAI", weight: 4},
-    {from: "LHR", to: "JFK", weight: 16},
-    {from: "LHR", to: "SIN", weight: 9},
-    {from: "SIN", to: "HND", weight: 7},
-    {from: "SIN", to: "SYD", weight: 11},
-    {from: "SYD", to: "LAX", weight: 6},
-    {from: "LAX", to: "JFK", weight: 15},
-    {from: "LAX", to: "HND", weight: 8},
-    {from: "FRA", to: "CDG", weight: 5},
-    {from: "FRA", to: "JFK", weight: 9},
-    {from: "FRA", to: "DXB", weight: 6},
-    {from: "GRU", to: "LAX", weight: 4},
-    {from: "GRU", to: "CDG", weight: 5},
-    {from: "CAI", to: "LHR", weight: 3}
+    {from: "Paris", to: "Tokyo", weight: 18},
+    {from: "Paris", to: "New York", weight: 14},
+    {from: "Paris", to: "Dubai", weight: 8},
+    {from: "Tokyo", to: "New York", weight: 10},
+    {from: "Tokyo", to: "Dubai", weight: 5},
+    {from: "New York", to: "Cairo", weight: 6},
+    {from: "Dubai", to: "Cairo", weight: 4},
+    {from: "London", to: "New York", weight: 16},
+    {from: "London", to: "Singapore", weight: 9},
+    {from: "Singapore", to: "Tokyo", weight: 7},
+    {from: "Singapore", to: "Sydney", weight: 11},
+    {from: "Sydney", to: "Los Angeles", weight: 6},
+    {from: "Los Angeles", to: "New York", weight: 15},
+    {from: "Los Angeles", to: "Tokyo", weight: 8},
+    {from: "Cairo", to: "London", weight: 3}
   ];
   // create a chart and set the data
   chart = anychart.dependencyWheel(data);
   // set the chart title
   chart.title("Dependency Wheel: Label Position");
-  // run the node labels outward from the center: short names stay readable on a crowded ring
+  // run the node labels outward from the center and name the airports by their codes
   chart.node().normal().labels().position("radial");
+  chart.node().normal().labels().format(airportCode);
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
 });
-// place the node labels: along the ring, beside it, or outward from the center
+// the airport code of each city
+var codes = {"Paris": "CDG", "Tokyo": "HND", "New York": "JFK", "Dubai": "DXB", "Cairo": "CAI", "London": "LHR", "Singapore": "SIN", "Sydney": "SYD", "Los Angeles": "LAX"};
+function airportCode() {
+  return codes[this.name];
+}
+// place the node labels and fit the text to the position: the city along the ring or beside it, the airport code outward from the center
 function changeLabelPosition(value) {
-  chart.node().normal().labels().position(value);
+  var labels = chart.node().normal().labels();
+  labels.position(value);
+  if (value == "radial") {
+    labels.format(airportCode);
+  } else {
+    labels.format("{%name}");
+  }
 }
 </script>
 </body>
