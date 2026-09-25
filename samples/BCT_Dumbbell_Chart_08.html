@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Range Column Chart 07"/>
+    <meta name="ac:name" content="BCT Dumbbell Chart 08"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
 
@@ -21,22 +21,16 @@
 anychart.onDocumentReady(function () {
   // create data
   var data = [
-    {x: "January", low: 0.7, high: 6.1},
-    {x: "February", low: 0.6, high: 6.3},
-    {x: "March", low: 1.9, high: 8.5},
-    {x: "April", low: 3.1, high: 10.8},
-    {x: "May", low: 5.7, high: 14.4}
+    {x: "Job A", low: 40000, high: 60000},
+    {x: "Job B", low: 50000, high: 80000},
+    {x: "Job C", low: 35000, high: 55000}
   ];
-
   // create a chart
-  var chart = anychart.column();
-
+  var chart = anychart.dumbbell();
   // set the chart title
-  chart.title("Range Column Chart: Labels at Both Ends");
-
-  // create a range column series and set the data
-  var series = chart.rangeColumn(data);
-
+  chart.title("Dumbbell Chart: Labels at Both Ends");
+  // create a dumbbell series and set the data
+  var series = chart.dumbbell(data);
   // label both ends of every point
   series.labels().enabled(true);
   series.labels().position("rangeMode");
@@ -48,7 +42,7 @@ anychart.onDocumentReady(function () {
     return "Max " + this["high"];
   });
   // leave room for the low-end labels
-  chart.yScale().minimum(-3);
+  chart.yScale().minimum(30000);
   // set the container id
   chart.container("container");
   // initiate drawing the chart

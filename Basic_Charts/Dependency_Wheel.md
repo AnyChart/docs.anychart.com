@@ -147,7 +147,27 @@ chart.nodeWidth(30);
 chart.node().normal().labels().format("{%name}: {%weight} flights");
 ```
 
-A node label has three positions, set with `labels().position()`: `"circular"`, the default, bends the label along the ring; `"tangential"` draws it as a straight line of text beside the ring; `"radial"` runs it outward from the center, along the ray of its node. The position works on a chart that is already drawn, so a control can switch it:
+A label that overlaps an already drawn label is hidden by default. To control this behavior, use the {api:anychart.charts.DependencyWheel#dropOverlappedLabels}dropOverlappedLabels(){api} method:
+
+```
+// show every label, even if some of them collide
+chart.dropOverlappedLabels(false);
+```
+
+In the sample below, the label of each city shows its flights:
+
+{sample}BCT\_Dependency\_Wheel\_04{sample}
+
+#### Label Position
+
+A node label has three positions, set with `labels().position()`: `"circular"`, the default, bends the label along the ring; `"tangential"` draws it as a straight line of text beside the ring; `"radial"` runs it outward from the center, along the ray of its node. Radial labels take the least room around the ring, so they suit a wheel with many nodes and short names:
+
+```
+// run the node labels outward from the center: short names stay readable on a crowded ring
+chart.node().normal().labels().position("radial");
+```
+
+The position works on a chart that is already drawn, so a control can switch it:
 
 ```
 // place the node labels: along the ring, beside it, or outward from the center
@@ -156,12 +176,9 @@ function changeLabelPosition(value) {
 }
 ```
 
-A label that overlaps an already drawn label is hidden by default. To control this behavior, use the {api:anychart.charts.DependencyWheel#dropOverlappedLabels}dropOverlappedLabels(){api} method:
+In the sample below, the nodes are airports named by their codes, and the radios switch the position of the labels:
 
-```
-// show every label, even if some of them collide
-chart.dropOverlappedLabels(false);
-```
+{sample}BCT\_Dependency\_Wheel\_12{sample}
 
 #### Node Colors
 
@@ -183,21 +200,23 @@ chart.node().selected().fill(function () {
 chart.node().selected().stroke("#0b1220", 3);
 ```
 
+In the sample below, hover and click a node: the fill darkens and the stroke thickens with the state:
+
+{sample}BCT\_Dependency\_Wheel\_13{sample}
+
 #### Node Tooltip
 
 To set the [tooltip](../Common_Settings/Tooltip) of the nodes, use `node().tooltip()`:
 
 ```
 // the tooltip of a city, built from the node tokens
-chart.node().tooltip().titleFormat("{%name}");
-chart.node().tooltip().format(
-  "Routes: {%connections}\nFlights a week: {%weight}\nShare of all flights: {%percent}{decimalsCount:1}%"
-);
+chart.node().tooltip().titleFormat("{%name}: {%weight} flights a week");
+chart.node().tooltip().format("Routes: {%connections}\nShare of all flights: {%percent}{decimalsCount:1}%");
 ```
 
-In the sample below, the radios place the node labels, the state fills and strokes are derived from `sourceColor`, and the tooltip shows the node tokens:
+In the sample below, the title of the tooltip carries the flights of the city, and the text its routes and its share of all flights:
 
-{sample}BCT\_Dependency\_Wheel\_04{sample}
+{sample}BCT\_Dependency\_Wheel\_14{sample}
 
 ### Links
 

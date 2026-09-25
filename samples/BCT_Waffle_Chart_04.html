@@ -16,18 +16,38 @@
         body { display: flex; flex-direction: column; }
         #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
         #controls input[type="range"] { width: 90px; vertical-align: middle; }
-        #cornerRadiusControl.off { opacity: 0.4; }
+        #cornerRadiusControl.off { display: none; }
         #container { flex: 1; }
     </style>
 </head>
 <body>
 <div id="controls">
-    <span>Cell shape:</span>
-    <label><input type="radio" name="shape" onclick="changeCellShape('square')" checked> square</label>
-    <label><input type="radio" name="shape" onclick="changeCellShape('circle')"> circle</label>
-    <label><input type="radio" name="shape" onclick="changeCellShape('triangle-up')"> triangle-up</label>
-    <label><input type="radio" name="shape" onclick="changeCellShape('arrow-down')"> arrow-down</label>
-    <label id="cornerRadiusControl">Corner radius
+    <label>Cell shape
+        <select onchange="changeCellShape(this.value)">
+            <option value="circle" selected>circle</option>
+            <option value="square">square</option>
+            <option value="diamond">diamond</option>
+            <option value="triangle-up">triangle-up</option>
+            <option value="triangle-down">triangle-down</option>
+            <option value="triangle-right">triangle-right</option>
+            <option value="triangle-left">triangle-left</option>
+            <option value="cross">cross</option>
+            <option value="diagonal-cross">diagonal-cross</option>
+            <option value="star4">star4</option>
+            <option value="star5">star5</option>
+            <option value="star6">star6</option>
+            <option value="star7">star7</option>
+            <option value="star10">star10</option>
+            <option value="pentagon">pentagon</option>
+            <option value="trapezium">trapezium</option>
+            <option value="arrowhead">arrowhead</option>
+            <option value="arrow-up">arrow-up</option>
+            <option value="arrow-right">arrow-right</option>
+            <option value="arrow-down">arrow-down</option>
+            <option value="arrow-left">arrow-left</option>
+        </select>
+    </label>
+    <label id="cornerRadiusControl" class="off">Corner radius
         <input type="range" min="0" max="8" step="1" value="4" oninput="changeCellCornerRadius(this.value)">
         <output id="cornerRadiusValue">4</output>
     </label>
@@ -49,12 +69,11 @@ anychart.onDocumentReady(function () {
   // set the chart title
   chart.title("Waffle Chart: Cell Shape");
 
-  // draw square cells and round their corners
-  chart.cell().normal().shape("square");
+  // draw round cells
+  chart.cell().normal().shape("circle");
+  // round the corners of square cells: the other shapes ignore the radius
   chart.cell().normal().cornerRadius(4);
 
-  // show the default labels: the category name
-  chart.labels(true);
 
   // set the container id
   chart.container("container");
@@ -62,12 +81,10 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// switch the shape of the cells: the corner radius applies to squares only, so its slider is disabled for the other shapes
+// switch the shape of the cells to any marker type the cell accepts: the corner radius applies to squares only, so its slider is shown for squares alone
 function changeCellShape(value) {
   chart.cell().normal().shape(value);
-  var control = document.getElementById("cornerRadiusControl");
-  control.className = value === "square" ? "" : "off";
-  control.querySelector("input").disabled = value !== "square";
+  document.getElementById("cornerRadiusControl").className = value === "square" ? "" : "off";
 }
 
 // round the corners of square cells: the other shapes ignore the radius

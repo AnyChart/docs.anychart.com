@@ -270,27 +270,28 @@ This chart type allows you to set the size of its points. Read more in the [Poin
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-A range point is labeled at its high end and shows the high value. Pass `"rangeMode"` to {api:anychart.core.ui.LabelsFactory#position}position(){api} to label both ends instead: the point then draws two labels, the high-end one printing the high value and the low-end one printing the low value.
+#### Labels at Both Ends
+
+Pass `"rangeMode"` to {api:anychart.core.ui.LabelsFactory#position}position(){api} to label both ends of a point: the high-end label shows the high value, the low-end label the low value. To give the ends different text, use a format function and check `this["rangeEnd"]`: it is `"low"` on the low-end label.
+
+The low-end label sits below its end. Set the minimum of the value scale below the lowest low, or the plot cuts the label.
 
 ```
-// enable the series labels
-series.labels().enabled(true);
 // label both ends of every point
+series.labels().enabled(true);
 series.labels().position("rangeMode");
-```
-
-To give each end its own text, use a format function - `"rangeMode"` reaches format functions only, and a `{%rangeEnd}` token in a [text formatter](../Common_Settings/Text_Formatters) string prints nothing. In the function, `this["rangeEnd"]` is `"low"` on the low-end label and undefined on the high-end one, so one function can branch on the end it is rendering:
-
-```
-// give each end its own text
+// set the text of each end
 series.labels().format(function () {
-  return this["rangeEnd"] == "low" ? "Min " + this["low"] : "Max " + this["high"];
+  if (this["rangeEnd"] == "low") {
+    return "Min " + this["low"];
+  }
+  return "Max " + this["high"];
 });
+// leave room for the low-end labels
+chart.yScale().minimum(-3);
 ```
 
-Read the point fields directly, as in the snippet: on the low-end label they are inherited through a delegate context whose only own field is `rangeEnd`, so a snapshot of its own keys - `Object.keys(this)` or `{...this}` - comes back nearly empty. The full contract is in {api:anychart.format.Context}anychart.format.Context{api}.
-
-The same pairing works on the other range series: [Range Bar](Range_Bar_Chart), [Range Area](Range_Area_Chart), [Range Spline Area](Range_Spline_Area_Chart), [Range Step Area](Range_Step_Area_Chart), [HiLo](HiLo_Chart), and [Dumbbell](Dumbbell_Chart).
+In the sample below, both ends of every point are labeled:
 
 {sample}BCT\_Range\_Column\_Chart\_07{sample}
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Range Column Chart 07"/>
+    <meta name="ac:name" content="BCT Range Step Area Chart 04"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
 
@@ -21,22 +21,18 @@
 anychart.onDocumentReady(function () {
   // create data
   var data = [
-    {x: "January", low: 0.7, high: 6.1},
-    {x: "February", low: 0.6, high: 6.3},
-    {x: "March", low: 1.9, high: 8.5},
-    {x: "April", low: 3.1, high: 10.8},
-    {x: "May", low: 5.7, high: 14.4}
+    {x: "2019", low: 0.10, high: 0.16},
+    {x: "2020", low: 0.13, high: 0.21},
+    {x: "2021", low: 0.12, high: 0.19},
+    {x: "2022", low: 0.16, high: 0.24},
+    {x: "2023", low: 0.14, high: 0.22}
   ];
-
   // create a chart
-  var chart = anychart.column();
-
+  var chart = anychart.area();
   // set the chart title
-  chart.title("Range Column Chart: Labels at Both Ends");
-
-  // create a range column series and set the data
-  var series = chart.rangeColumn(data);
-
+  chart.title("Range Step Area Chart: Labels at Both Ends");
+  // create a range step area series and set the data
+  var series = chart.rangeStepArea(data);
   // label both ends of every point
   series.labels().enabled(true);
   series.labels().position("rangeMode");
@@ -48,7 +44,7 @@ anychart.onDocumentReady(function () {
     return "Max " + this["high"];
   });
   // leave room for the low-end labels
-  chart.yScale().minimum(-3);
+  chart.yScale().minimum(0.05);
   // set the container id
   chart.container("container");
   // initiate drawing the chart
