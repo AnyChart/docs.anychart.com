@@ -138,8 +138,6 @@ series.stepDirection("backward");
 
 Pass `"rangeMode"` to {api:anychart.core.ui.LabelsFactory#position}position(){api} to label both ends of a point: the high-end label shows the high value, the low-end label the low value. To give the ends different text, use a format function and check `this["rangeEnd"]`: it is `"low"` on the low-end label.
 
-The low-end label sits below its end. Set the minimum of the value scale below the lowest low, or the plot cuts the label.
-
 ```
 // label both ends of every point
 series.labels().enabled(true);
