@@ -160,23 +160,30 @@ In the sample below, the label of each city shows its flights:
 
 #### Label Position
 
-A node label has three positions, set with `labels().position()`: `"circular"`, the default, bends the label along the ring; `"tangential"` draws it as a straight line of text beside the ring; `"radial"` runs it outward from the center, along the ray of its node. Radial labels take the least room around the ring, so they suit a wheel with many nodes and short names:
+A node label has three positions, set with `labels().position()`: `"circular"`, the default, bends the label along the ring; `"tangential"` draws it as a straight line of text beside the ring; `"radial"` runs it outward from the center, along the ray of its node. A radial label takes room from the ring, so keep its text short:
 
 ```
-// run the node labels outward from the center: short names stay readable on a crowded ring
+// run the node labels outward from the center and name the airports by their codes
 chart.node().normal().labels().position("radial");
+chart.node().normal().labels().format(airportCode);
 ```
 
-The position works on a chart that is already drawn, so a control can switch it:
+The position works on a chart that is already drawn, so a control can switch it, and the text can follow the position:
 
 ```
-// place the node labels: along the ring, beside it, or outward from the center
+// place the node labels and fit the text to the position: the city along the ring or beside it, the airport code outward from the center
 function changeLabelPosition(value) {
-  chart.node().normal().labels().position(value);
+  var labels = chart.node().normal().labels();
+  labels.position(value);
+  if (value == "radial") {
+    labels.format(airportCode);
+  } else {
+    labels.format("{%name}");
+  }
 }
 ```
 
-In the sample below, the nodes are airports named by their codes, and the radios switch the position of the labels:
+In the sample below, the radios switch the position of the labels: the city along the ring or beside it, the airport code outward from the center:
 
 {sample}BCT\_Dependency\_Wheel\_12{sample}
 
