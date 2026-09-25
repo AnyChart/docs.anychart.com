@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Dependency Wheel 04"/>
+    <meta name="ac:name" content="BCT Dependency Wheel 13"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
 
@@ -34,11 +34,20 @@ anychart.onDocumentReady(function () {
   // create a chart and set the data
   var chart = anychart.dependencyWheel(data);
   // set the chart title
-  chart.title("Dependency Wheel: Node Labels");
-  // add the weekly flights of the node to its label
-  chart.node().normal().labels().format("{%name}: {%weight} flights");
-  // show every label, even if some of them collide
-  chart.dropOverlappedLabels(false);
+  chart.title("Dependency Wheel: Node Colors");
+  // node states: the fill darkens and the stroke thickens as the state gets more active
+  chart.node().normal().fill(function () {
+    return anychart.color.lighten(this.sourceColor, 0.25);
+  });
+  chart.node().normal().stroke("#ffffff", 1);
+  chart.node().hovered().fill(function () {
+    return this.sourceColor;
+  });
+  chart.node().hovered().stroke("#1b2740", 2);
+  chart.node().selected().fill(function () {
+    return anychart.color.darken(this.sourceColor, 0.2);
+  });
+  chart.node().selected().stroke("#0b1220", 3);
   // set the container id
   chart.container("container");
   // initiate drawing the chart

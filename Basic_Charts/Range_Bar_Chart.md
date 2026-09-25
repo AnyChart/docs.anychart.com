@@ -270,7 +270,30 @@ This chart type allows you to set the size of its points. Read more in the [Poin
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-A range point is labeled at its high end and shows the high value. Pass `"rangeMode"` to {api:anychart.core.ui.LabelsFactory#position}position(){api} to label both ends instead - the low-end label prints the low value, and a format function tells the two ends apart through `this["rangeEnd"]`: see [Range Column Chart](Range_Column_Chart).
+#### Labels at Both Ends
+
+Pass `"rangeMode"` to {api:anychart.core.ui.LabelsFactory#position}position(){api} to label both ends of a point: the high-end label shows the high value, the low-end label the low value. To give the ends different text, use a format function and check `this["rangeEnd"]`: it is `"low"` on the low-end label.
+
+The low-end label sits below its end. Set the minimum of the value scale below the lowest low, or the plot cuts the label.
+
+```
+// label both ends of every point
+series.labels().enabled(true);
+series.labels().position("rangeMode");
+// set the text of each end
+series.labels().format(function () {
+  if (this["rangeEnd"] == "low") {
+    return "Min " + this["low"];
+  }
+  return "Max " + this["high"];
+});
+// leave room for the low-end labels
+chart.yScale().minimum(-3);
+```
+
+In the sample below, both ends of every point are labeled:
+
+{sample}BCT\_Range\_Bar\_Chart\_07{sample}
 
 ### Tooltips
 

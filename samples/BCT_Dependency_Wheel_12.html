@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Dependency Wheel 12"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-dependency-wheel.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+
+    <style>
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { display: flex; flex-direction: column; }
+        #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
+        #container { flex: 1; }
+    </style>
+</head>
+<body>
+<div id="controls">
+    <span>Label position:</span>
+    <label><input type="radio" name="labelPosition" onclick="changeLabelPosition('circular')"> circular</label>
+    <label><input type="radio" name="labelPosition" onclick="changeLabelPosition('tangential')"> tangential</label>
+    <label><input type="radio" name="labelPosition" onclick="changeLabelPosition('radial')" checked> radial</label>
+</div>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  // create data: weekly flights between the airports, named by their codes
+  var data = [
+    {from: "CDG", to: "HND", weight: 18},
+    {from: "CDG", to: "JFK", weight: 14},
+    {from: "CDG", to: "DXB", weight: 8},
+    {from: "HND", to: "JFK", weight: 10},
+    {from: "HND", to: "DXB", weight: 5},
+    {from: "JFK", to: "CAI", weight: 6},
+    {from: "DXB", to: "CAI", weight: 4},
+    {from: "LHR", to: "JFK", weight: 16},
+    {from: "LHR", to: "SIN", weight: 9},
+    {from: "SIN", to: "HND", weight: 7},
+    {from: "SIN", to: "SYD", weight: 11},
+    {from: "SYD", to: "LAX", weight: 6},
+    {from: "LAX", to: "JFK", weight: 15},
+    {from: "LAX", to: "HND", weight: 8},
+    {from: "FRA", to: "CDG", weight: 5},
+    {from: "FRA", to: "JFK", weight: 9},
+    {from: "FRA", to: "DXB", weight: 6},
+    {from: "GRU", to: "LAX", weight: 4},
+    {from: "GRU", to: "CDG", weight: 5},
+    {from: "CAI", to: "LHR", weight: 3}
+  ];
+  // create a chart and set the data
+  chart = anychart.dependencyWheel(data);
+  // set the chart title
+  chart.title("Dependency Wheel: Label Position");
+  // run the node labels outward from the center: short names stay readable on a crowded ring
+  chart.node().normal().labels().position("radial");
+  // set the container id
+  chart.container("container");
+  // initiate drawing the chart
+  chart.draw();
+});
+// place the node labels: along the ring, beside it, or outward from the center
+function changeLabelPosition(value) {
+  chart.node().normal().labels().position(value);
+}
+</script>
+</body>
+</html>

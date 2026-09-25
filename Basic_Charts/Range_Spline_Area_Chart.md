@@ -96,3 +96,34 @@ The Rangee Spline Area chart is a modification of the Range Area chart, so these
 Also, in AnyChart there are many settings that are configured in the same way for all chart types, including the Range Spline Area chart (for example, legend and interactivity settings): [General Settings](General_Settings).
 
 In addition, see the full list of methods available for the Range Spline Area series: {api:anychart.core.cartesian.series.RangeSplineArea}anychart.core.cartesian.series.RangeSplineArea{api}.
+
+## Special Settings
+
+### Labels
+
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+
+#### Labels at Both Ends
+
+Pass `"rangeMode"` to {api:anychart.core.ui.LabelsFactory#position}position(){api} to label both ends of a point: the high-end label shows the high value, the low-end label the low value. To give the ends different text, use a format function and check `this["rangeEnd"]`: it is `"low"` on the low-end label.
+
+The low-end label sits below its end. Set the minimum of the value scale below the lowest low, or the plot cuts the label.
+
+```
+// label both ends of every point
+series.labels().enabled(true);
+series.labels().position("rangeMode");
+// set the text of each end
+series.labels().format(function () {
+  if (this["rangeEnd"] == "low") {
+    return "Min " + this["low"];
+  }
+  return "Max " + this["high"];
+});
+// leave room for the low-end labels
+chart.yScale().minimum(-3);
+```
+
+In the sample below, both ends of every point are labeled:
+
+{sample}BCT\_Range\_Spline\_Area\_Chart\_02{sample}

@@ -177,8 +177,6 @@ In the sample below, the second point carries its own endpoint colors, connectin
 
 [Labels](../Common_Settings/Labels) are text elements attached to points. Enable and format them with {api:anychart.core.cartesian.series.Dumbbell#labels}labels(){api}, {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api}, and {api:anychart.core.ui.LabelsFactory#format}format(){api}. The default label sits at the high endpoint and shows the high value of the point.
 
-Pass `"rangeMode"` to {api:anychart.core.ui.LabelsFactory#position}position(){api} to label both endpoints instead - the low endpoint then prints the low value, and a format function tells the two apart through `this["rangeEnd"]`: see [Range Column Chart](Range_Column_Chart).
-
 In {api:anychart.core.ui.LabelsFactory#format}format(){api}, use [text formatters](../Common_Settings/Text_Formatters): tokens such as `{%low}` and `{%high}` read the fields of the point.
 
 ```
@@ -191,6 +189,31 @@ series.labels().format("{%low} - {%high}");
 In the sample below, each label shows the low and high values of its point:
 
 {sample}BCT\_Dumbbell\_Chart\_05{sample}
+
+#### Labels at Both Ends
+
+Pass `"rangeMode"` to {api:anychart.core.ui.LabelsFactory#position}position(){api} to label both ends of a point: the high-end label shows the high value, the low-end label the low value. To give the ends different text, use a format function and check `this["rangeEnd"]`: it is `"low"` on the low-end label.
+
+The low-end label sits below its end. Set the minimum of the value scale below the lowest low, or the plot cuts the label.
+
+```
+// label both ends of every point
+series.labels().enabled(true);
+series.labels().position("rangeMode");
+// set the text of each end
+series.labels().format(function () {
+  if (this["rangeEnd"] == "low") {
+    return "Min " + this["low"];
+  }
+  return "Max " + this["high"];
+});
+// leave room for the low-end labels
+chart.yScale().minimum(30000);
+```
+
+In the sample below, both ends of every point are labeled:
+
+{sample}BCT\_Dumbbell\_Chart\_08{sample}
 
 ### Tooltips
 

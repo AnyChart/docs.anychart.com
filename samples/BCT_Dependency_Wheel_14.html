@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Dependency Wheel 04"/>
+    <meta name="ac:name" content="BCT Dependency Wheel 14"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
 
@@ -34,11 +34,10 @@ anychart.onDocumentReady(function () {
   // create a chart and set the data
   var chart = anychart.dependencyWheel(data);
   // set the chart title
-  chart.title("Dependency Wheel: Node Labels");
-  // add the weekly flights of the node to its label
-  chart.node().normal().labels().format("{%name}: {%weight} flights");
-  // show every label, even if some of them collide
-  chart.dropOverlappedLabels(false);
+  chart.title("Dependency Wheel: Node Tooltip");
+  // the tooltip of a city, built from the node tokens
+  chart.node().tooltip().titleFormat("{%name}: {%weight} flights a week");
+  chart.node().tooltip().format("Routes: {%connections}\nShare of all flights: {%percent}{decimalsCount:1}%");
   // set the container id
   chart.container("container");
   // initiate drawing the chart

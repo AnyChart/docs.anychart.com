@@ -139,15 +139,16 @@ The chart draws the cells on its own; you set how they look with the `cell()` me
 
 #### Cell Shape
 
-Cells are squares by default. To draw another shape, pass its name to `shape()` of the normal state: the names are the library's marker shapes, listed in {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}, such as a circle, a triangle, or an arrow. The legend icon repeats the shape you choose. For square cells, `cornerRadius()` rounds the corners; the other shapes ignore it. The shape name is matched without regard to case, and any other value falls back to the default shape:
+Cells are squares by default. To draw another shape, pass its name to `shape()` of the normal state: the names are the library's marker shapes, listed in {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}, such as a circle, a triangle, or an arrow; a cell takes every marker shape except the two line shapes. The legend icon repeats the shape you choose. For square cells, `cornerRadius()` rounds the corners; the other shapes ignore it. The shape name is matched without regard to case, and any other value keeps the current shape:
 
 ```
-// draw square cells and round their corners
-chart.cell().normal().shape("square");
+// draw round cells
+chart.cell().normal().shape("circle");
+// round the corners of square cells: the other shapes ignore the radius
 chart.cell().normal().cornerRadius(4);
 ```
 
-In the sample below, the radio buttons switch the shape of the cells, and the slider rounds the corners of the square cells:
+In the sample below, the dropdown switches the shape of the cells through every marker shape a cell accepts; for square cells, a slider rounds the corners:
 
 {sample}BCT\_Waffle\_Chart\_04{sample}
 
