@@ -23,9 +23,9 @@
 <body>
 <div id="controls">
     <span>Use the mouse wheel to:</span>
-    <label><input type="radio" name="wheel" onclick="wheelZooms()" checked> zoom</label>
+    <label><input type="radio" name="wheel" onclick="wheelZooms()"> zoom</label>
     <label><input type="radio" name="wheel" onclick="wheelScrolls()"> scroll</label>
-    <label><input type="radio" name="wheel" onclick="wheelDoesNothing()"> nothing</label>
+    <label><input type="radio" name="wheel" onclick="wheelDoesNothing()" checked> nothing</label>
     <label><input type="checkbox" onclick="toggleDrag(this.checked)" checked> drag to pan</label>
 </div>
 <div id="container"></div>
@@ -61,7 +61,7 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// make the wheel zoom the tree (the default)
+// make the wheel zoom the tree
 function wheelZooms() {
   chart.interactivity().zoomOnMouseWheel(true);
 }
@@ -71,7 +71,7 @@ function wheelScrolls() {
   chart.interactivity().scrollOnMouseWheel(true);
 }
 
-// give the wheel back to the page
+// give the wheel back to the page: the default
 function wheelDoesNothing() {
   chart.interactivity().zoomOnMouseWheel(false);
   chart.interactivity().scrollOnMouseWheel(false);

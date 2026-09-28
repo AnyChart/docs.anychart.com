@@ -23,6 +23,7 @@
 <div id="controls">
     <button onclick="collapseAllBranches()">Collapse all</button>
     <button onclick="expandAllBranches()">Expand all</button>
+    <span>Last change: <output id="lastChange">none</output></span>
 </div>
 <div id="container"></div>
 <script>
@@ -48,6 +49,12 @@ anychart.onDocumentReady(function () {
 
   // collapse the CTO branch by the node id
   chart.collapse("cto");
+
+  // show the last collapsed or expanded card
+  chart.listen("rowcollapseexpand", function (e) {
+    var state = e.collapsed ? "collapsed" : "expanded";
+    document.getElementById("lastChange").value = e.item.get("name") + " " + state;
+  });
 
   // add the zoom control
   var zoomController = anychart.ui.zoom();
