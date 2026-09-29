@@ -95,7 +95,7 @@ The Org chart uses the [tree data model](../Working_with_Data/Tree_Data_Model). 
 * `"as-table"` — a flat array where each item points to its parent with `id` and `parent` fields (the root item has no `parent`)
 * `"as-tree"` — a nested array where each parent holds its children in the `children` field
 
-If you omit the mode and the items carry `parent` references, the chart detects the flat table itself and logs a warning — pass the mode explicitly to keep the console clean. If the items carry both `parent` and `children` fields, the mode is ambiguous: the chart reads the data as a tree and warns about it, and an item that is linked only by `parent` ends up as a second root. An item whose `parent` points at itself is left where it is, with no warning. If several items share an `id`, the chart draws the first one and skips the rest: in the `"as-table"` mode, the items that point at that `id` attach under the first card; in the `"as-tree"` mode, the children of a skipped item are skipped too.
+If you omit the mode and the items carry `parent` references, the chart detects the flat table itself and logs a warning — pass the mode explicitly to keep the console clean. If the items carry both `parent` and `children` fields, the mode is ambiguous: the chart reads the data as a tree and warns about it, and an item that is linked only by `parent` ends up as a second root. An item whose `parent` points at itself is dropped from the chart together with the items under it, with no warning. If several items share an `id`, the chart draws the first one and skips the rest: in the `"as-table"` mode, the items that point at that `id` attach under the first card; in the `"as-tree"` mode, the children of a skipped item are skipped too.
 
 ```
 // create data as a tree: children are nested into their parents
@@ -176,7 +176,7 @@ chart.level(1, {
 });
 ```
 
-In the sample below, the root card and the second level are styled with `level()`, and one card keeps the fill set in its data item:
+In the sample below, the root card and the second level are styled with `level()`, and one card of the second level keeps the fill set in its data item:
 
 {sample}BCT\_Org\_Chart\_15{sample}
 
@@ -191,7 +191,7 @@ The `type` field of a data item picks the layout of its card. Three types are bu
 <tr><td><code>"agent"</code></td><td><code>icon</code></td><td><code>name</code></td><td>the word "agent"</td><td><code>owner</code></td><td><code>kind</code></td></tr>
 </table>
 
-A card without a `type` shows the `name` and `title` fields, like the cards in the rest of this article. A field that an item does not have is left out of its card.
+The details of the department and agent cards carry their own labels, such as "Headcount:" and "Owner:". A card without a `type` shows the `name` and `title` fields, like the cards in the rest of this article. A field that an item does not have is left out of its card.
 
 To change a type or add your own, call {api:anychart.charts.OrgChart#nodeTypes}nodeTypes(){api} with an object keyed by the type name. For each part of the card — `image`, `title`, `subtitle`, `details`, `badge` — give the data field to read, or `null` to hide the part. A type also takes the style settings that `level()` takes, and they apply to every card of that type.
 
@@ -402,7 +402,7 @@ zoomController.target(chart);
 zoomController.render();
 ```
 
-Exporting and printing always render the whole tree, whatever the current zoom and pan.
+Exporting and printing always render every expanded card of the tree, whatever the current zoom and pan; collapsed branches stay collapsed in the output.
 
 #### Gestures
 
@@ -438,7 +438,7 @@ The zoom level is measured against the natural size of the cards: at 1, every ca
 * {api:anychart.charts.OrgChart#fit}fit(){api} — reset the zoom and pan and fit the whole tree into the container
 * {api:anychart.charts.OrgChart#minZoom}minZoom(){api} and {api:anychart.charts.OrgChart#maxZoom}maxZoom(){api} — set the zoom limits
 * {api:anychart.charts.OrgChart#getZoomLevel}getZoomLevel(){api} — read the current zoom level
-* {api:anychart.charts.OrgChart#goToNode}goToNode(){api} — show one card: expand the branches that hide it, zoom to a readable scale, bring the card into view, and select it. Pass the node `id` or the data item
+* {api:anychart.charts.OrgChart#goToNode}goToNode(){api} — show one card: expand the branches that hide it, zoom to a readable scale, bring the card into view, and make it the only selected card. Pass the node `id` or the data item
 
 ```
 // let the tree zoom out to 0.7 and in to 4 times the natural card size

@@ -62,6 +62,9 @@ anychart.onDocumentReady(function () {
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
+
+  // show the direction the tree is actually drawn in
+  chart.title("Org Chart: Orientation (" + chart.getEffectiveOrientation() + ")");
 });
 
 // change the growth direction of the tree: the chart redraws itself
