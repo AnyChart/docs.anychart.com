@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Org Chart 02"/>
+    <meta name="ac:name" content="BCT Org Chart 16"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
 
@@ -20,23 +20,28 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  // create data as a tree: children are nested into their parents
+  // create data: the type field picks the card layout of each item
   var data = [
-    {name: "Sarah Johnson", title: "CEO", children: [
-      {name: "Michael Chen", title: "CTO", children: [
-        {name: "David Kim", title: "Head of Engineering"},
-        {name: "Lisa Zhang", title: "Head of Product"}
-      ]},
-      {name: "Emily Davis", title: "CFO"},
-      {name: "Robert Wilson", title: "COO"}
-    ]}
+    {id: "ceo", type: "person", name: "Sarah Johnson", position: "CEO", email: "sarah.johnson@example.com", status: "Office"},
+    {id: "tech", parent: "ceo", type: "department", name: "Technology", head: "Michael Chen", headcount: 48, budget: "$6.2M"},
+    {id: "fin", parent: "ceo", type: "department", name: "Finance", head: "Emily Davis", headcount: 12, budget: "$1.4M"},
+    {id: "eng", parent: "tech", type: "person", name: "David Kim", position: "Head of Engineering", email: "david.kim@example.com", status: "Remote"},
+    {id: "prod", parent: "tech", type: "person", name: "Lisa Zhang", position: "Head of Product", email: "lisa.zhang@example.com", status: "Office"},
+    {id: "bot", parent: "fin", type: "agent", name: "Invoice Assistant", owner: "Diana Ross", kind: "AI"}
   ];
 
-  // create an org chart in the "as-tree" mode
-  var chart = anychart.orgChart(data, "as-tree");
-
+  // create an org chart and set the data
+  var chart = anychart.orgChart(data, "as-table");
   // set the chart title
-  chart.title("Org Chart: Data as a Tree");
+  chart.title("Org Chart: Node Types");
+
+  // give the department cards their own fill
+  chart.nodeTypes({
+    department: {fill: "#f1f8e9"}
+  });
+
+  // widen the cards to fit the email addresses
+  chart.nodeWidth(190);
 
   // add the zoom control
   var zoomController = anychart.ui.zoom();

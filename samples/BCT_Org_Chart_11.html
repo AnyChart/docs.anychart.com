@@ -10,6 +10,7 @@
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css"/>
 
     <style>
         html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
@@ -22,9 +23,9 @@
 <body>
 <div id="controls">
     <span>Use the mouse wheel to:</span>
-    <label><input type="radio" name="wheel" onclick="wheelZooms()" checked> zoom</label>
+    <label><input type="radio" name="wheel" onclick="wheelZooms()"> zoom</label>
     <label><input type="radio" name="wheel" onclick="wheelScrolls()"> scroll</label>
-    <label><input type="radio" name="wheel" onclick="wheelDoesNothing()"> nothing</label>
+    <label><input type="radio" name="wheel" onclick="wheelDoesNothing()" checked> nothing</label>
     <label><input type="checkbox" onclick="toggleDrag(this.checked)" checked> drag to pan</label>
 </div>
 <div id="container"></div>
@@ -49,13 +50,18 @@ anychart.onDocumentReady(function () {
   // set the chart title
   chart.title("Org Chart: Gestures");
 
+  // add the zoom control
+  var zoomController = anychart.ui.zoom();
+  zoomController.target(chart);
+  zoomController.render();
+
   // set the container id
   chart.container("container");
   // initiate drawing the chart
   chart.draw();
 });
 
-// make the wheel zoom the tree (the default)
+// make the wheel zoom the tree
 function wheelZooms() {
   chart.interactivity().zoomOnMouseWheel(true);
 }
@@ -65,7 +71,7 @@ function wheelScrolls() {
   chart.interactivity().scrollOnMouseWheel(true);
 }
 
-// give the wheel back to the page
+// give the wheel back to the page: the default
 function wheelDoesNothing() {
   chart.interactivity().zoomOnMouseWheel(false);
   chart.interactivity().scrollOnMouseWheel(false);

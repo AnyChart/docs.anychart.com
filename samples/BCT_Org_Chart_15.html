@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Org Chart 13"/>
+    <meta name="ac:name" content="BCT Org Chart 15"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
 
@@ -13,22 +13,10 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css"/>
 
     <style>
-        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
-        body { display: flex; flex-direction: column; }
-        #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
-        #container { flex: 1; }
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
     </style>
 </head>
 <body>
-<div id="controls">
-    <label>Panning bounds:
-        <select onchange="setBounds(this.value)">
-            <option value="contain">contain</option>
-            <option value="free">free</option>
-            <option value="auto-center">auto-center</option>
-        </select>
-    </label>
-</div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -36,7 +24,7 @@ anychart.onDocumentReady(function () {
   var data = [
     {id: "ceo", name: "Sarah Johnson", title: "CEO"},
     {id: "cto", parent: "ceo", name: "Michael Chen", title: "CTO"},
-    {id: "cfo", parent: "ceo", name: "Emily Davis", title: "CFO"},
+    {id: "cfo", parent: "ceo", name: "Emily Davis", title: "CFO", fill: "#fff3e0"},
     {id: "coo", parent: "ceo", name: "Robert Wilson", title: "COO"},
     {id: "eng", parent: "cto", name: "David Kim", title: "Head of Engineering"},
     {id: "prod", parent: "cto", name: "Lisa Zhang", title: "Head of Product"},
@@ -47,9 +35,23 @@ anychart.onDocumentReady(function () {
   ];
 
   // create an org chart and set the data
-  chart = anychart.orgChart(data, "as-table");
+  var chart = anychart.orgChart(data, "as-table");
   // set the chart title
-  chart.title("Org Chart: Panning Bounds");
+  chart.title("Org Chart: Levels");
+
+  // the root level: a dark card with light text
+  chart.level(0, {
+    fill: "#1565c0",
+    stroke: "1.5 #0d47a1",
+    labels: {fontColor: "#ffffff"},
+    titleFontColor: "#bbdefb"
+  });
+
+  // the second level: tinted cards and thicker connectors leading into them
+  chart.level(1, {
+    fill: "#e3f2fd",
+    connectorStroke: "2.5 #1976d2"
+  });
 
   // add the zoom control
   var zoomController = anychart.ui.zoom();
@@ -61,11 +63,6 @@ anychart.onDocumentReady(function () {
   // initiate drawing the chart
   chart.draw();
 });
-
-// set how far the tree can be dragged: "contain", "free" or "auto-center"
-function setBounds(mode) {
-  chart.interactivity().boundsMode(mode);
-}
 </script>
 </body>
 </html>
