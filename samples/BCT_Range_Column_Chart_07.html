@@ -42,11 +42,15 @@ anychart.onDocumentReady(function () {
   series.labels().position("rangeMode");
   // set the text of each end
   series.labels().format(function () {
-    if (this["rangeEnd"] == "low") {
+    if (this["rangeSide"] == "low") {
       return "Min " + this["low"];
     }
     return "Max " + this["high"];
   });
+  // set the font color of the high-end labels
+  series.normal().highLabels({fontColor: "#d84315"});
+  // set the font color of the low-end labels
+  series.normal().lowLabels({fontColor: "#1565c0"});
   // leave room for the low-end labels
   chart.yScale().minimum(-3);
   // set the container id
