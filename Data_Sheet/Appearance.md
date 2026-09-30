@@ -58,7 +58,7 @@ To align the text of a column, or to color one single column, write a CSS rule. 
 }
 ```
 
-To set the cell padding and the cell borders, use CSS or the API: `cellPadding()` takes the left and right padding of a cell in pixels, and `cellBorder()` takes a CSS border value. The [group](Grouping) header colors and the [tree](Data#tree_data) indent come from CSS only.
+To set the cell padding and the cell borders, use CSS or the API: `cellPadding()` takes the left and right padding of a cell in pixels, and `cellBorder()` takes a CSS border value with a named or hex color, such as `'1px solid #ccc'`. The [group](Grouping) header color and the [tree](Data#tree_data) indent have setters too: `groupHeaderFill()` takes a color, and `indentSize()` takes the indent of one tree level in pixels.
 
 In the sample below, the row height, the header height and the five fills come from the API, while the uppercase header text, the cell padding and the right-aligned number cells come from the CSS above.
 

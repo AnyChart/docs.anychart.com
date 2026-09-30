@@ -17,7 +17,7 @@ There are three kinds of filter configuration:
 
 * **Text** - `{type: 'text', mode: 'contains' | 'startsWith' | 'exact', value: '...'}`. The match is not case sensitive. `mode` defaults to `contains`. An empty value matches every row
 * **Number** - `{type: 'number', min: 100, max: 500}`. Both ends are included, and both are optional. A value that is not a number never passes
-* **Boolean** - `{type: 'boolean', value: true}`. `true` keeps the rows that hold `true`, `1`, `'true'` or `'yes'`, and `false` keeps the rows that hold `false`, `0` or `'false'`. A row with any other value passes neither filter
+* **Boolean** - `{type: 'boolean', value: true}`. `true` keeps the rows that hold `true`, `1`, `'true'` or `'yes'`, and `false` keeps the rows that hold `false`, `0`, `'false'` or `'no'`. The text values match in any letter case, and `'1'` and `'0'` match as text too. A row with any other value passes neither filter
 
 **These three are the only types.** There is no date filter. Any other `type`, and any other `mode` in a text filter, lets every row through. You get no error, and the `filter` event still reports that the grid removed no rows. To filter a date column, put a number in your data next to the date and use a number filter.
 
