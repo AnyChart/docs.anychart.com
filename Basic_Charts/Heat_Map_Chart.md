@@ -97,6 +97,8 @@ Use the following data fields:
 
 By default, items are colored automatically according to their values (heats). However, you can set the color of each item manually by adding extra fields to your data, and in this case the `heat` field can be omitted. See the [Appearance](#individual_points) section to learn more.
 
+A cell whose `heat` is `null`, `NaN`, or non-empty text that is not a number is drawn in light gray (`#f8f8f8`) with no label, whatever the color scale. A number written as a string, such as `"7"`, counts as that number.
+
 **Note:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
 This is how working with data fields of the Heat Map chart looks like:
@@ -118,12 +120,12 @@ var data = [
   {x: "2013", y: "C", heat: 38},
   {x: "2010", y: "D", heat: 8},
   {x: "2011", y: "D", heat: 8},
-  {x: "2012", y: "D", heat: 7},
-  {x: "2013", y: "D", heat: 8}
+  {x: "2012", y: "D", heat: "7"},
+  {x: "2013", y: "D", heat: null}
 ];
 
 // create a chart and set the data
-chart = anychart.heatMap(data);
+var chart = anychart.heatMap(data);
 ```
 
 {sample}BCT\_Heat\_Map\_Chart\_02{sample}
