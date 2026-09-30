@@ -23,7 +23,7 @@ This article shows how to create a basic Dumbbell chart. It also shows how to se
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
-<tr><td>Stock</td><td>N/A</td></tr>
+<tr><td>Stock</td><td>[Stock Dumbbell](../Stock_Charts/Series/Supported_Series)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[HiLo](HiLo_Chart)</td></tr>
 <tr><td></td><td>[Range Bar](Range_Bar_Chart)</td></tr>

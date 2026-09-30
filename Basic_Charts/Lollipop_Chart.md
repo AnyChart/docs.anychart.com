@@ -23,7 +23,7 @@ This article shows how to build a basic Lollipop chart. It also shows how to set
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
-<tr><td>Stock</td><td>N/A</td></tr>
+<tr><td>Stock</td><td>[Stock Lollipop](../Stock_Charts/Series/Supported_Series)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Stick](Stick_Chart)</td></tr>
 <tr><td></td><td>[Column](Column_Chart)</td></tr>

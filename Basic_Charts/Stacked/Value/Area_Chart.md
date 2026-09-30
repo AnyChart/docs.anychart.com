@@ -7,6 +7,8 @@ A Stacked Area Chart is a multiple-series Area Chart that displays the trend of 
 
 The concept of stacking in AnyChart is described in this article: [Stacked (Overview)](../Overview).
 
+To arrange the stacked layers around a central baseline instead of a flat zero line, use the [Stream Graph](../../Stream_Graph).
+
 ## Quick Start
 
 To build a Stacked Area Chart, create a multiple-series [Area Chart](../../Area_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **value**:
