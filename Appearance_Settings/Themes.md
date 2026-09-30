@@ -14,53 +14,56 @@ AnyChart comes with a number of Out of the box themes that can be used to change
 
 ### Out of the box Themes
 
-Out of the box Themes can be located either at [Themes Section at AnyChart CDN](https://cdn.anychart.com/) or in the AnyChart Downloadable Package, these themes change the look, feel and layout of every chart, map, gauge, treemap or stock chart. You are free to use and modify these themes as you want. To use any of these themes you need, just with any [External theme](#external_themes) reference the proper file in HTML document and then apply theme by name:
+Out of the box themes change the look, feel and layout of every chart, map, gauge, treemap or stock chart. You are free to use and modify these themes as you want.
+
+Each theme is a module file on the [AnyChart CDN](https://cdn.anychart.com/), named `anychart-theme-<name>.min.js`, where the name is written in lowercase with hyphens between the words. Reference the theme file after the bundle or the [modules](../Quick_Start/Modules): a theme file referenced before them does not register its theme.
 
 ```
-<head>
-  <!--Link to the files with out of the box themes -->
-  <script src="https://cdn.anychart.com/themes/2.0.0/coffee.min.js"></script>
-  <script src="https://cdn.anychart.com/themes/2.0.0/dark_blue.min.js"></script>
-  <script>
-    anychart.onDocumentReady(function () {
-      // data
-      var data = [
-        ["Department Stores", 637166],
-        ["Discount Stores", 721630],
-        ["Men's/Women's Specialty Stores", 148662],
-        ["All other outlets", 90000]
-      ];
-
-      // apply coffee theme
-      anychart.theme(anychart.themes.coffee);
-
-      // apply dark blue theme
-      // anychart.theme(anychart.themes.darkBlue);
-
-      // create and display chart
-      var chart = anychart.bar();
-      chart.bar(data);
-
-      chart.container("container");
-      chart.draw();
-    });
-  </script>
-</head>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-coffee.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-dark-blue.min.js"></script>
 ```
 
-You can find minified and uncompressed themes at CDN, it is recommended to use minifed themes in production, uncompressed themes can be used to create new themes, you can compress them with the JavaScript compression tool of your choice or use uncompressed.
+The theme file registers the theme in `anychart.themes` under its name in camelCase, for example `darkBlue`. To apply the theme, pass it to {api:anychart#theme}theme(){api} before you create a chart:
 
-There are 17 themes in AnyChart at the moment: *Coffee*, *Contrast*, *Dark Blue*, *Dark Earth*, *Dark Glamour*, *Dark Provence*, *Default Theme*, *Light Blue*, *Light Earth*, *Light Glamour*, *Light Provence*, *Monochrome*, *Morning*, *Pastel*, *Sea*, *6.x Version*, *Wines*.
+```
+// apply the Dark Blue theme
+anychart.theme(anychart.themes.darkBlue);
+```
 
-The *Contrast* theme is the accessibility variant of the default theme: the same layout, with the palette darkened so that every series color reaches a contrast ratio of at least 3:1 against the white background. You do not reference its file: the [high-contrast mode](../Common_Settings/Accessibility/Settings#high_contrast) loads it on demand and switches the whole page to it.
+There are 17 out of the box themes in AnyChart: *Coffee*, *Contrast*, *Dark Blue*, *Dark Earth*, *Dark Glamour*, *Dark Provence*, *Dark Turquoise*, *Light Blue*, *Light Earth*, *Light Glamour*, *Light Provence*, *Light Turquoise*, *Monochrome*, *Morning*, *Pastel*, *Sea*, *Wines*. The [Themes](../Quick_Start/Modules#themes) table of the Modules article lists the file and a short description of each theme.
 
-And there are 11 accompanying [Color palettes](Palettes) which are used by these themes, but their use can be combined if needed.
+The *Contrast* theme is the accessibility variant of the default theme: the same layout, with the palette darkened so that every series color reaches a contrast ratio of at least 3:1 against the white background. Besides referencing its file, you can switch on the [high-contrast mode](../Common_Settings/Accessibility/Settings#high_contrast) with {api:anychart#a11yHighContrast}anychart.a11yHighContrast(){api}: `anychart.a11yHighContrast(true)` loads the *Contrast* theme on demand and applies it, and `anychart.a11yHighContrast(false)` restores the previous theme.
 
-Here is a simple demo where you can choose a theme and a palette and change them on-the-fly:
+And there are 11 accompanying [Color palettes](Palettes) which are used by these themes, but their use can be combined if needed. To set a palette by name, pass the name to the {api:anychart.charts.Cartesian#palette}palette(){api} method of a chart. The name is the key of the palette in `anychart.palettes`, such as `sea` or `coffee`:
+
+```
+// set the palette by name
+chart.palette("sea");
+```
+
+In a theme, a palette name works as the value of the `palette` key: `{"palette": "sea"}`.
+
+In the sample below, you can switch the theme and set a palette by name:
 
 {sample}AS\_Themes\_00{sample}
 
 You can also take a look at the [AnyChart Themes Demo](https://www.anychart.com/solutions/themes-demo/) where you can try every theme and palette on any of charts and maps available in AnyChart JavaScript Charts package.
+
+### Loading Themes on Demand
+
+To load an out of the box theme without a script tag, call {api:anychart.theme#load}anychart.theme.load(){api} with the theme name. The method loads the theme file, applies the theme and returns a Promise, so create charts when it resolves:
+
+```
+// load and apply the Coffee theme, then create the chart
+anychart.theme.load("coffee").then(createChart);
+```
+
+The method takes the names of the one-word themes: *coffee*, *contrast*, *monochrome*, *morning*, *pastel*, *sea* and *wines*. Reference the other themes with a script tag, as shown in the [Out of the box Themes](#out_of_the_box_themes) section.
+
+In the sample below, choosing a theme loads it and creates the chart again:
+
+{sample}AS\_Themes\_07{sample}
 
 ## Create Theme
 
@@ -178,6 +181,8 @@ chart.bar(data);
 chart.container("container");
 chart.draw();
 ```
+
+A theme object can also be applied with {api:anychart.theme#preset}anychart.theme.preset(){api}, which has the same effect as {api:anychart#theme}theme(){api}.
 
 There is a sample chart with an internal theme. Click "Launch in playground" to view JS settings:
 

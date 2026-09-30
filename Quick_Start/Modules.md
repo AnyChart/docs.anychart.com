@@ -475,6 +475,123 @@ A module that enables VML support for old browsers.
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-vml.min.js"></script>
 ```
 
+## Themes
+
+The out of the box [themes](../Appearance_Settings/Themes#out_of_the_box_themes) are modules too. The theme files are not part of the [Bundle](#bundle): reference a theme file after the bundle or the modules, from the same `https://cdn.anychart.com/releases/{{branch-name}}/js/` folder, and apply the theme by its key.
+
+<table class="dtTABLE" width="700">
+<tbody>
+<tr>
+<th><b>Theme</b></th>
+<th><b>File</b></th>
+<th><b>Key in anychart.themes</b></th>
+<th><b>Description</b></th>
+</tr>
+<tr>
+<td>Coffee</td>
+<td>anychart-theme-coffee.min.js</td>
+<td>coffee</td>
+<td>Brown background, dark brown text, brown palette</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>anychart-theme-contrast.min.js</td>
+<td>contrast</td>
+<td>The default theme with its palette darkened for a contrast ratio of at least 3:1 against white</td>
+</tr>
+<tr>
+<td>Dark Blue</td>
+<td>anychart-theme-dark-blue.min.js</td>
+<td>darkBlue</td>
+<td>Dark blue-gray background, light gray text, blue palette</td>
+</tr>
+<tr>
+<td>Dark Earth</td>
+<td>anychart-theme-dark-earth.min.js</td>
+<td>darkEarth</td>
+<td>Near-black background, gray text, olive and brown palette</td>
+</tr>
+<tr>
+<td>Dark Glamour</td>
+<td>anychart-theme-dark-glamour.min.js</td>
+<td>darkGlamour</td>
+<td>Dark slate background, light pink text, pink and purple palette</td>
+</tr>
+<tr>
+<td>Dark Provence</td>
+<td>anychart-theme-dark-provence.min.js</td>
+<td>darkProvence</td>
+<td>Dark gray background, light lavender text, lavender, light blue and olive palette</td>
+</tr>
+<tr>
+<td>Dark Turquoise</td>
+<td>anychart-theme-dark-turquoise.min.js</td>
+<td>darkTurquoise</td>
+<td>Dark gray background, light gray text, turquoise palette</td>
+</tr>
+<tr>
+<td>Light Blue</td>
+<td>anychart-theme-light-blue.min.js</td>
+<td>lightBlue</td>
+<td>Light blue-gray background, blue-gray text, blue palette</td>
+</tr>
+<tr>
+<td>Light Earth</td>
+<td>anychart-theme-light-earth.min.js</td>
+<td>lightEarth</td>
+<td>Off-white background, gray text, olive and brown palette</td>
+</tr>
+<tr>
+<td>Light Glamour</td>
+<td>anychart-theme-light-glamour.min.js</td>
+<td>lightGlamour</td>
+<td>White background, dark wine text, pink and purple palette</td>
+</tr>
+<tr>
+<td>Light Provence</td>
+<td>anychart-theme-light-provence.min.js</td>
+<td>lightProvence</td>
+<td>White background, mauve text, lavender, light blue and olive palette</td>
+</tr>
+<tr>
+<td>Light Turquoise</td>
+<td>anychart-theme-light-turquoise.min.js</td>
+<td>lightTurquoise</td>
+<td>Light gray background, dark gray text, turquoise palette</td>
+</tr>
+<tr>
+<td>Monochrome</td>
+<td>anychart-theme-monochrome.min.js</td>
+<td>monochrome</td>
+<td>White background, gray text, black and gray palette</td>
+</tr>
+<tr>
+<td>Morning</td>
+<td>anychart-theme-morning.min.js</td>
+<td>morning</td>
+<td>White background, dark blue-gray text, blue, yellow and pink palette</td>
+</tr>
+<tr>
+<td>Pastel</td>
+<td>anychart-theme-pastel.min.js</td>
+<td>pastel</td>
+<td>Off-white background, taupe text, pastel palette</td>
+</tr>
+<tr>
+<td>Sea</td>
+<td>anychart-theme-sea.min.js</td>
+<td>sea</td>
+<td>Off-white background, gray text, sea green and blue palette</td>
+</tr>
+<tr>
+<td>Wines</td>
+<td>anychart-theme-wines.min.js</td>
+<td>wines</td>
+<td>Brick wall image background, dark brown text, wine red, olive and orange palette</td>
+</tr>
+</tbody>
+</table>
+
 ## Extensions
 
 Extension modules provide additional functionality. Extensions **CANNOT** be a part of [Bundle](#bundle) or compiled into it using [Builder](#builder).
