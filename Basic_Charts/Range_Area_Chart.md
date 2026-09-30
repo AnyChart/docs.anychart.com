@@ -33,6 +33,7 @@ This article explains how to create a basic Range Area chart as well as configur
 <tr><td></td><td>[Range Spline Area](Range_Spline_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Step Area](Range_Step_Area_Chart)</td></tr>
 <tr><td></td><td>[HiLo](HiLo_Chart)</td></tr>
+<tr><td></td><td>[Dumbbell](Dumbbell_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Chartopedia: Range Area Chart](https://www.anychart.com/chartopedia/chart-types/range-area-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>

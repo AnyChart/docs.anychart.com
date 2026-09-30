@@ -26,6 +26,8 @@ This article explains how to create a basic Sankey diagram as well as configure 
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Network Graph](Network_Graph)</td></tr>
+<tr><td></td><td>[Arc Diagram](Arc_Diagram)</td></tr>
+<tr><td></td><td>[Dependency Wheel](Dependency_Wheel)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Chartopedia: Sankey Diagram](https://www.anychart.com/chartopedia/chart-types/sankey-diagram/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>

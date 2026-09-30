@@ -28,6 +28,7 @@ This article explains how to create a basic Pie chart as well as configure setti
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Doughnut](Doughnut_Chart)</td></tr>
+<tr><td></td><td>[Waffle](Waffle_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Chartopedia: Pie Chart](https://www.anychart.com/chartopedia/chart-types/pie-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>

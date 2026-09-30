@@ -27,6 +27,8 @@ This article explains how to create a basic Marker chart as well as configure se
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Bubble](Bubble_Chart)</td></tr>
 <tr><td></td><td>[Dot (Point) Maps](../Maps/Dot\_\(Point\)\_Map)</td></tr>
+<tr><td></td><td>[Dumbbell](Dumbbell_Chart)</td></tr>
+<tr><td></td><td>[Lollipop](Lollipop_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Chartopedia: Marker Chart](https://www.anychart.com/chartopedia/chart-types/dot-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
