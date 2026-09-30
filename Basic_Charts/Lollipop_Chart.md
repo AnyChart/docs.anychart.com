@@ -23,7 +23,7 @@ This article shows how to build a basic Lollipop chart. It also shows how to set
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
-<tr><td>Stock</td><td>N/A</td></tr>
+<tr><td>Stock</td><td>[Stock Lollipop](../Stock_Charts/Series/Supported_Series)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Stick](Stick_Chart)</td></tr>
 <tr><td></td><td>[Column](Column_Chart)</td></tr>
@@ -187,6 +187,36 @@ series.labels().format("{%value}");
 In the sample below, each label shows the value of its point:
 
 {sample}BCT\_Lollipop\_Chart\_05{sample}
+
+#### Labels on Both Sides of the Head
+
+Pass `"rangeMode"` to {api:anychart.core.ui.LabelsFactory#position}position(){api} to draw two labels for every point: one above the head and one below it. Both show the value of the point by default. To give them different text, use a format function and check `this["rangeSide"]`: it is `"high"` on the label above the head and `"low"` on the label below it.
+
+```
+// draw two labels for every point
+series.labels().enabled(true);
+series.labels().position("rangeMode");
+// show the value above the head and the plan below it
+series.labels().format(function () {
+  if (this["rangeSide"] == "low") {
+    return "plan " + this.getData("plan");
+  }
+  return this["value"];
+});
+```
+
+To set up the labels of one side, call {api:anychart.core.StateSettings#highLabels}highLabels(){api} or {api:anychart.core.StateSettings#lowLabels}lowLabels(){api} on {api:anychart.core.cartesian.series.Lollipop#normal}normal(){api}. A setting made there overrides the same setting of `labels()` for that side only; every other setting, the format included, is taken from `labels()`. These methods have no effect unless the position is `"rangeMode"`.
+
+```
+// set the font color of the labels above the heads
+series.normal().highLabels({fontColor: "#d84315"});
+// set the font color of the labels below the heads
+series.normal().lowLabels({fontColor: "#1565c0"});
+```
+
+In the sample below, every point has its value above the head and its plan, a custom data field, below it, each in its own font color:
+
+{sample}BCT\_Lollipop\_Chart\_07{sample}
 
 ### Tooltips
 

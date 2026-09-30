@@ -10,6 +10,8 @@ Like the regular pie chart, the doughnut chart is used with small sets of data t
 
 The Doughnut chart is a modification of the Pie chart and shares almost all the settings with it, so this article explains just how to create a basic Doughnut chart and configure its labels. To learn about other settings, read the [Pie Chart](Pie_Chart) article. See also [Chartopedia: Doughnut Chart](https://www.anychart.com/chartopedia/chart-types/donut-chart/).
 
+Another chart that shows parts of a whole is the [Waffle chart](Waffle_Chart): it draws the shares as blocks of cells in a grid.
+
 ## Modules
 
 The Doughnut chart requires adding the [Core](../Quick_Start/Modules#core) and [Pie and Doughnut](../Quick_Start/Modules#pie_and_doughnut) modules:
