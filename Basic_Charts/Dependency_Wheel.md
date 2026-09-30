@@ -207,7 +207,15 @@ chart.node().selected().fill(function () {
 chart.node().selected().stroke("#0b1220", 3);
 ```
 
-In the sample below, hover and click a node: the fill darkens and the stroke thickens with the state:
+To draw a hatch pattern over the node arcs, use the {api:anychart.core.dependencyWheel.elements.Node#hatchFill}hatchFill(){api} method. With `true`, the nodes take the patterns of the {api:anychart.charts.DependencyWheel#hatchFillPalette}hatchFillPalette(){api} in turn:
+
+```
+// hatch the nodes: each node takes the next pattern of the palette
+chart.hatchFillPalette(["horizontal", "vertical", "grid", "diagonal-cross", "percent50"]);
+chart.node().hatchFill(true);
+```
+
+In the sample below, each node arc carries a pattern of its own; hover and click a node: the fill darkens and the stroke thickens with the state:
 
 {sample}BCT\_Dependency\_Wheel\_13{sample}
 
@@ -245,7 +253,14 @@ chart.link().selected().fill(function () {
 });
 ```
 
-Hover or click a link in the sample below to see how its fill becomes darker:
+To draw a hatch pattern over the links, use the {api:anychart.core.dependencyWheel.elements.Link#hatchFill}hatchFill(){api} method:
+
+```
+// draw a white hatch pattern over the links
+chart.link().hatchFill("backward-diagonal", "#ffffff", 1, 8);
+```
+
+In the sample below, the links carry a white hatch pattern. Hover or click a link to see how its fill becomes darker:
 
 {sample}BCT\_Dependency\_Wheel\_05{sample}
 

@@ -48,6 +48,9 @@ anychart.onDocumentReady(function () {
     return anychart.color.darken(this.sourceColor, 0.2);
   });
   chart.node().selected().stroke("#0b1220", 3);
+  // hatch the nodes: each node takes the next pattern of the palette
+  chart.hatchFillPalette(["horizontal", "vertical", "grid", "diagonal-cross", "percent50"]);
+  chart.node().hatchFill(true);
   // set the container id
   chart.container("container");
   // initiate drawing the chart

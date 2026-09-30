@@ -57,6 +57,13 @@ anychart.onDocumentReady(function () {
     );
     chart.dropoff().hovered().stroke("#455a64");
 
+    // draw a hatch pattern over the dropoffs
+    chart.dropoff().normal().hatchFill("backward-diagonal", "#455a64", 1, 8);
+
+    // hatch the nodes with the first pattern of the hatch fill palette
+    chart.hatchFillPalette(["vertical"]);
+    chart.node().normal().hatchFill(true);
+
     // set the chart title
     chart.title("Sankey Diagram: Appearance");
 

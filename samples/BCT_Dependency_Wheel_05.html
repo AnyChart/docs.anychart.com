@@ -43,6 +43,9 @@ anychart.onDocumentReady(function () {
     return anychart.color.darken(this.sourceColor, 0.4);
   });
 
+  // draw a white hatch pattern over the links
+  chart.link().hatchFill("backward-diagonal", "#ffffff", 1, 8);
+
   // set the container id
   chart.container("container");
   // initiate drawing the chart

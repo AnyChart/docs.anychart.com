@@ -102,7 +102,7 @@ On the chart, the width of each flow represents its `weight` value, and the heig
 
 **Note 1:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
-**Note 2:** You should avoid creating cycles in the data: if A links to itself, or links to B which links to C which links to A, chart cannot be drawn.
+**Note 2:** You should avoid creating cycles in the data. A row that links a node to itself is not drawn. A row that closes a cycle is not drawn either: if A links to B and B links to C, a later row from C to A is left out. The weights of these rows are not counted in the nodes.
 
 In the sample below, there is a Sankey with nodes organized in three columns. Please note that the `"USA"` and `"China"`, unlike other nodes in the first and third columns, are linked directly.
 
@@ -225,8 +225,11 @@ Combine the **normal()** and **hovered()** methods of [nodes](#nodes) / [flows](
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
 
 Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+
+To take the hatch fill from the chart's palette, pass `true` to `hatchFill()`. The palette is set with the {api:anychart.charts.Sankey#hatchFillPalette}hatchFillPalette(){api} method, and nodes, flows and dropoffs set to `true` all take its first pattern.
 
 In this sample, there is a Sankey chart with appearance settings configured:
 
@@ -246,6 +249,13 @@ chart.dropoff().normal().fill(
   {keys: ["#dd2c00 0.4", "#455a64 0.7"], angle: 270}
 );
 chart.dropoff().hovered().stroke("#455a64");
+
+// draw a hatch pattern over the dropoffs
+chart.dropoff().normal().hatchFill("backward-diagonal", "#455a64", 1, 8);
+
+// hatch the nodes with the first pattern of the hatch fill palette
+chart.hatchFillPalette(["vertical"]);
+chart.node().normal().hatchFill(true);
 ```
 
 {sample}BCT\_Sankey\_Diagram\_07{sample}

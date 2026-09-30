@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Arc Diagram 15"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-arc-diagram.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css"/>
+
+    <style>
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  // create data: requests between the departments of a company
+  var data = [
+    {from: "Sales", to: "Marketing", weight: 9},
+    {from: "Sales", to: "Finance", weight: 16},
+    {from: "Finance", to: "HR", weight: 5},
+    {from: "Support", to: "Sales", weight: 14},
+    {from: "Support", to: "Marketing", weight: 6},
+    {from: "Marketing", to: "HR", weight: 3}
+  ];
+
+  // create an arc diagram and set the data
+  var chart = anychart.arcDiagram(data);
+  // set the chart title
+  chart.title("Arc Diagram: Node Hatch Fill");
+
+  // keep the weighted sizes between the two bounds
+  chart.minNodeSize(24);
+  chart.maxNodeSize(32);
+
+  // hatch the nodes: each node takes the next pattern of the palette
+  chart.hatchFillPalette(["horizontal", "vertical", "grid", "diagonal-cross", "percent50"]);
+  chart.node().normal().hatchFill(true);
+
+  // set the container id
+  chart.container("container");
+  // initiate drawing the chart
+  chart.draw();
+});
+</script>
+</body>
+</html>

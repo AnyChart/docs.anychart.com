@@ -188,6 +188,20 @@ In the sample below, the nodes are blue with a white outline, and the Sales and 
 
 {sample}BCT\_Arc\_Diagram\_04{sample}
 
+#### Node Hatch Fill
+
+To draw a hatch pattern over the nodes, use the {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} method of a node state. With `true`, the nodes take the patterns of the {api:anychart.charts.ArcDiagram#hatchFillPalette}hatchFillPalette(){api} in turn:
+
+```
+// hatch the nodes: each node takes the next pattern of the palette
+chart.hatchFillPalette(["horizontal", "vertical", "grid", "diagonal-cross", "percent50"]);
+chart.node().normal().hatchFill(true);
+```
+
+In the sample below, the nodes are drawn larger, and each one carries a pattern of its own:
+
+{sample}BCT\_Arc\_Diagram\_15{sample}
+
 #### Node Tooltip
 
 To set the [tooltip](../Common_Settings/Tooltip) of the nodes, use `node().tooltip()`:
