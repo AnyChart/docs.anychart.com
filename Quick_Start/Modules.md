@@ -50,7 +50,7 @@ For example, to create an exportable Pie chart, combine Core with the [Pie and D
 
 The same logic applies to the **Base** module. However, please note that it already includes some chart types, so you have to reference other modules only if you need to add a chart type that is not included or a feature.
 
-As for **Bundle**, it includes all other modules except [Extensions](#extensions), [Data Sheet](#data_sheet) and the [Boost WebGL Renderer](#boost_webgl_renderer). Add those yourself when you need them.
+As for **Bundle**, it includes all other modules except [Extensions](#extensions) and the [Boost WebGL Renderer](#boost_webgl_renderer). Add those yourself when you need them.
 
 ## Builder
 
@@ -154,7 +154,7 @@ A module for creating [Circular Gauges](../Gauges/Circular_Gauge):
 
 ### Data Sheet
 
-A module for creating a [Data Sheet](../Data_Sheet/Overview) - an interactive data grid. Unlike the other modules, it is not a part of **Bundle**, so you always add it next to **Core** or **Bundle**:
+A module for creating a [Data Sheet](../Data_Sheet/Overview) - an interactive data grid:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-data-sheet.min.js"></script>
