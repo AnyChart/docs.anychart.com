@@ -35,7 +35,7 @@ There are 17 out of the box themes in AnyChart: *Coffee*, *Contrast*, *Dark Blue
 
 The *Contrast* theme is the accessibility variant of the default theme: the same layout, with the palette darkened so that every series color reaches a contrast ratio of at least 3:1 against the white background. Besides referencing its file, you can switch on the [high-contrast mode](../Common_Settings/Accessibility/Settings#high_contrast) with {api:anychart#a11yHighContrast}anychart.a11yHighContrast(){api}: `anychart.a11yHighContrast(true)` loads the *Contrast* theme on demand and applies it, and `anychart.a11yHighContrast(false)` restores the previous theme.
 
-And there are 11 accompanying [Color palettes](Palettes) which are used by these themes, but their use can be combined if needed. To set a palette by name, pass the name to the {api:anychart.charts.Cartesian#palette}palette(){api} method of a chart. The name is the key of the palette in `anychart.palettes`, such as `sea` or `coffee`:
+And there are accompanying [Color palettes](Palettes) which are used by these themes, but their use can be combined if needed: `blue`, `coffee`, `earth`, `glamour`, `monochrome`, `morning`, `pastel`, `provence`, `sea`, `turquoise` and `wines`, as well as `defaultPalette` and `v6`. To set a palette by name, pass the name to the {api:anychart.charts.Cartesian#palette}palette(){api} method of a chart. The name is the key of the palette in `anychart.palettes`, such as `sea` or `coffee`:
 
 ```
 // set the palette by name
@@ -58,8 +58,6 @@ To load an out of the box theme without a script tag, call {api:anychart.theme#l
 // load and apply the Coffee theme, then create the chart
 anychart.theme.load("coffee").then(createChart);
 ```
-
-The method takes the names of the one-word themes: *coffee*, *contrast*, *monochrome*, *morning*, *pastel*, *sea* and *wines*. Reference the other themes with a script tag, as shown in the [Out of the box Themes](#out_of_the_box_themes) section.
 
 In the sample below, choosing a theme loads it and creates the chart again:
 
