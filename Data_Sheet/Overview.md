@@ -20,7 +20,7 @@ This section shows how to make a Data Sheet and how to set its options. The tabl
 <tr><th colspan=2>DATA</th></tr>
 <tr><td>Data Format</td><td>Array of row objects</td></tr>
 <tr><td>Column Binding</td><td>[field](Columns#defining_columns)</td></tr>
-<tr><td>Tree Data</td><td>[children, or id / parent](Data#tree_data) - always fully open</td></tr>
+<tr><td>Tree Data</td><td>[children, or id / parent](Data#tree_data)</td></tr>
 <tr><th colspan=2>RENDERING</th></tr>
 <tr><td>Output</td><td>HTML DOM (not SVG)</td></tr>
 <tr><td>Stylesheet</td><td>Required - see [Modules and Styles](#modules_and_styles)</td></tr>
@@ -38,11 +38,10 @@ This section shows how to make a Data Sheet and how to set its options. The tabl
 <tr><td>Saved Layout</td><td>[state()](Export_and_Print#saved_layout)</td></tr>
 <tr><th colspan=2>DIFFERENCES FROM CHARTS</th></tr>
 <tr><td>Title, Legend, Tooltip</td><td>Build them around the grid in your own HTML</td></tr>
-<tr><td>Credits, Animation, Background</td><td>Style the grid with CSS - see [CSS Classes](Appearance#css_classes)</td></tr>
+<tr><td>Animation, Background</td><td>Style the grid with CSS - see [CSS Classes](Appearance#css_classes)</td></tr>
 <tr><td>Cell Content</td><td>Plain text - see [Data Types and Formats](Columns#data_types_and_formats)</td></tr>
 <tr><td>Column Set</td><td>Fixed once declared - see [Defining Columns](Columns#defining_columns)</td></tr>
 <tr><td>Filter Types</td><td>Text, number and boolean - see [Filtering](Filtering_and_Search)</td></tr>
-<tr><td>Tree Rows</td><td>Always open; groups do close - see [Tree Data](Data#tree_data)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Working with Data](../Working_with_Data/Overview)</td></tr>
 <tr><td></td><td>[Gantt Data Grid](../Gantt_Chart/Data_Grid/Overview)</td></tr>
@@ -56,11 +55,11 @@ The grid also does one thing no chart can do. A screen reader can read it as a r
 
 ## Differences from Charts
 
-Because it is not an SVG chart, the Data Sheet is not built on the common chart class. It has no `title()`, no `legend()`, no `tooltip()`, no `credits()`, no `animation()` and no `background()`. You build those around the grid instead: an HTML heading above the container for a title, a panel of your own for a tooltip, and CSS for the background. To set colors and borders, use the [CSS classes](Appearance#css_classes) of the grid.
+Because it is not an SVG chart, the Data Sheet is not built on the common chart class. It has no `title()`, no `legend()`, no `tooltip()`, no `animation()` and no `background()`. You build those around the grid instead: an HTML heading above the container for a title, a panel of your own for a tooltip, and CSS for the background. To set colors and borders, use the [CSS classes](Appearance#css_classes) of the grid.
 
 ## Modules and Styles
 
-A Data Sheet needs its own module, three stylesheets and a container with a real height. This part of the article lists all of them, and ends with a page that you can copy as it is.
+A Data Sheet needs its module, three stylesheets and a container with a real height. This part of the article lists all of them, and ends with a page that you can copy as it is.
 
 ### Modules
 
@@ -74,7 +73,7 @@ The Data Sheet is a separate module. Load the [Core](../Quick_Start/Modules#core
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-data-sheet.min.js"></script>
 ```
 
-The big all-in-one bundle `anychart-bundle.min.js` is **not** enough on its own. It holds only a small placeholder for this type. If you call `anychart.dataSheet()` with the bundle alone, that placeholder throws an error and tells you to load the module. If you already use the bundle, add `anychart-data-sheet.min.js` after it. The module then replaces the placeholder and everything works.
+The all-in-one bundle `anychart-bundle.min.js` includes the Data Sheet. If you already use the bundle, `anychart.dataSheet()` works with no extra script.
 
 Learn more: [Modules](../Quick_Start/Modules).
 
@@ -90,7 +89,7 @@ The Data Sheet also needs three stylesheets:
 
 The second file, `data-sheet.css`, is **required**. It holds every `anychart-ds-*` rule - the header, the row heights, the cell padding, the cell borders, the hover and selection colors, the group indent. Every other AnyChart type draws SVG and needs no stylesheet at all, but this one draws `<div>` elements, so it needs real CSS for its layout: the file puts the cells of a row side by side and sets the column widths. Without it the grid still draws, but every cell drops onto its own line and the table becomes unreadable. This file is not part of `anychart-ui.min.css`, so you always add it yourself.
 
-The first file is the AnyChart UI stylesheet, which the [context menu](Keyboard_and_Clipboard#context_menu) needs. The third file holds the AnyChart icon font, which draws the small icons inside that menu - the menu that opens when you right-click. Without the font, every menu row shows an empty space instead of its icon.
+The first file is the common AnyChart UI stylesheet. The third file holds the AnyChart icon font, which draws the small icons inside the [context menu](Keyboard_and_Clipboard#context_menu) - the menu that opens when you right-click. Without the font, every menu row shows an empty space instead of its icon.
 
 ### Container
 
@@ -188,8 +187,7 @@ The grid is interactive from the start. Click a header to [sort](Sorting). Drag 
 
 ## Rules for Every Grid
 
-Three rules apply to every Data Sheet:
+Two rules apply to every Data Sheet:
 
-* **Give the container a real height.** The grid fills its container. If the parent element has a height of zero, the scrolling area also gets no height. The grid then builds only a few rows, inside a box that is almost invisible. A container with `height: 100%` inside a page that has a height is fine.
-* **Settings need a redraw.** A setting you apply after the first `draw()` does nothing until you call `draw()` again. For example, `sortBy()` on its own leaves the rows untouched. This rule comes back in [Sorting](Sorting), [Filtering](Filtering_and_Search), [Search](Filtering_and_Search#search) and [Grouping](Grouping). Two groups of settings do not follow the rule, and a `draw()` does not help them: the [Header](Header) settings and the two [Large Data Sets](Large_Data_Sets) settings. Set those before the first `draw()`.
+* **Give the container a real height.** The grid fills its container. A container with `height: 100%` inside a page that has a height is fine.
 * **Only the rows on screen exist in the page HTML.** 5,000 rows of data produce only a few dozen row elements. See [Large Data Sets](Large_Data_Sets).

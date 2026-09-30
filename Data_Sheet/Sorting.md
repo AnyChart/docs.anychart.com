@@ -17,7 +17,7 @@ To sort from code, use the {api:anychart.charts.DataSheet#sorting}sorting(){api}
 * {api:anychart.core.dataSheet.Sorting#addSort}addSort(field, order){api} - adds one more sort level at the end of the list. If the field is already in the list, the grid moves it to the end
 * {api:anychart.core.dataSheet.Sorting#getSorts}getSorts(){api} - returns a copy of the list, most important level first
 * {api:anychart.core.dataSheet.Sorting#clearSort}clearSort(){api} - empties the list of sort levels and brings back the original row order
-* {api:anychart.core.dataSheet.Sorting#order}order(){api} returns `'asc'`, `'desc'` or `'none'`, and {api:anychart.core.dataSheet.Sorting#column}column(){api} returns the field of the last level. You can also call each of them with a value. If the list of sort levels is empty, the grid then sorts by that field and that order. `sortBy()` does the same in one call. Use `sortBy()`
+* {api:anychart.core.dataSheet.Sorting#order}order(){api} returns `'asc'`, `'desc'` or `'none'`, and {api:anychart.core.dataSheet.Sorting#column}column(){api} returns the field of the first level. You can also call each of them with a value. If the list of sort levels is empty, the grid then sorts by that field and that order. `sortBy()` does the same in one call. Use `sortBy()`
 * {api:anychart.core.dataSheet.Sorting#enabled}enabled(false){api} - a click on a header no longer changes the order
 
 ## Sorting from Code
@@ -41,8 +41,6 @@ document.getElementById('clear').onclick = function () {
   chart.draw();
 };
 ```
-
-Remember the redraw rule from [Rules for Every Grid](Overview#rules_for_every_grid): a sort you set from code takes effect on the next `draw()`.
 
 ## Code Sorts and Header Clicks
 

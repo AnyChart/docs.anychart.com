@@ -9,7 +9,7 @@ Reach for this page when a user needs the table outside the browser: a spreadshe
 
 {api:anychart.charts.DataSheet#export}export(){api} returns the export controller. The controller has one method per format: `csv()` and `json()`.
 
-Both exporters write the **raw** data values, not the text you see in the cells. A cell showing `$1200` exports as `1200`. If you need the displayed text, format the data before it reaches the grid. See [Data Types and Formats](Columns#data_types_and_formats) for what the cells show.
+The CSV export writes the text you see in the cells, and the JSON export writes the raw data values. A cell showing `$1200` exports as `$1200` to CSV and as `1200` to JSON. See [Data Types and Formats](Columns#data_types_and_formats) for what the cells show.
 
 ## CSV Export
 
@@ -20,13 +20,13 @@ Both exporters write the **raw** data values, not the text you see in the cells.
 * `filename` - `data-sheet-export` by default. The grid adds `.csv`
 * `filteredOnly` - true by default. The grid exports only the rows that the current sorting and filtering leave on screen
 
-The CSV export also cleans the `filename`. It keeps letters, digits, underscore, dot, dash and space, and removes every other character. So `'Q1 report/2026'` gives the file `Q1 report2026.csv`. The JSON export does not clean it - pass a safe name yourself.
+Both exports clean the `filename`. They keep Latin letters, digits, underscore, dot, dash and space, and remove every other character. So `'Q1 report/2026'` gives the file `Q1 report2026.csv`. Accented and non-Latin letters are removed as well, so write the name in Latin letters.
 
 The CSV export quotes a field that holds the separator, a quote or a line break. It also changes a value that starts with `=`, so a spreadsheet does not run it as a formula. The JSON export does neither.
 
 ## JSON Export
 
-{api:anychart.core.dataSheet.Export#json}json(options){api} only downloads. It returns nothing. Its options are `filename`, `filteredOnly` and `pretty` (true by default).
+{api:anychart.core.dataSheet.Export#json}json(options){api} works the same way: it returns the JSON text and starts a browser download. Its options are `filename`, `filteredOnly` and `pretty` (true by default).
 
 A JSON row holds only the fields that have a column. The grid drops the data properties with no column. See [Defining Columns](Columns#defining_columns).
 
@@ -51,19 +51,20 @@ The three methods work on a grid that is already drawn, so a button can call eac
 ```
 // the export follows the current filter and sorting
 chart.filter().filterBy('category', {type: 'text', mode: 'exact', value: 'Tech'});
+chart.draw();
 
 // csv() returns the text AND downloads the file
-// the exported price is the raw 1200, not the $1200 shown in the cell
+// the CSV holds the text shown in the cell: $1200
 out.textContent = chart.export().csv({filename: 'products', separator: ','});
 
-// json() only downloads, it returns nothing
+// json() returns the text AND downloads the file, with the raw price 1200
 chart.export().json({filename: 'products', pretty: true});
 
 // print() opens the print dialog of the browser
 chart.print({title: 'Tech products', orientation: 'landscape', pageSize: 'A4'});
 ```
 
-Use the buttons in the sample below to export the four filtered Tech rows: the panel shows the CSV text, and the exported price is the raw number, not the `$` text in the cell.
+Use the buttons in the sample below to export the four filtered Tech rows: the panel shows the CSV text, with the price as the cell shows it.
 
 {sample}DS\_Data\_Sheet\_19{sample}
 
@@ -73,7 +74,7 @@ A layout is everything the user changed around the data: the column sizes, the c
 
 ### Settings as JSON
 
-{api:anychart.charts.DataSheet#toJson}toJson(){api} writes the settings of the grid as JSON, and `anychart.fromJson()` reads the `'data-sheet'` type back. The JSON holds the settings only. Build the data and the columns in code first, then apply the saved settings on top.
+{api:anychart.charts.DataSheet#toJson}toJson(){api} writes the settings of the grid as JSON, and `anychart.fromJson()` reads the `'data-sheet'` type back. The JSON holds the settings and the column declarations, but not the data. `anychart.fromJson()` builds a new grid with the same columns and no rows, so pass the rows to `data()` before you draw it.
 
 ### The State Controller
 
@@ -97,10 +98,10 @@ chart.state().autoSave('products-grid');
 
 ### State Methods
 
-{api:anychart.core.dataSheet.State#save}save(key){api} takes one snapshot, {api:anychart.core.dataSheet.State#restore}restore(key){api} applies one, {api:anychart.core.dataSheet.State#clear}clear(key){api} deletes it, and {api:anychart.core.dataSheet.State#autoSave}autoSave(key){api} saves again after every change. `autoSave(key, false)` switches that off and keeps what is already stored.
+{api:anychart.core.dataSheet.State#save}save(key){api} takes one snapshot, {api:anychart.core.dataSheet.State#restore}restore(key){api} applies one, {api:anychart.core.dataSheet.State#clear}clear(key){api} deletes it, and {api:anychart.core.dataSheet.State#autoSave}autoSave(key){api} saves again after every sort, filter, column resize or column reorder. `autoSave(key, false)` switches that off and keeps what is already stored.
 
 ### Storage Keys and Limits
 
-The real key in `localStorage` is `'anychart-datasheet-' + key`, so two grids on one page need two different keys. Where `localStorage` is not available, or full, all of these methods do nothing and report nothing. `restore()` does not redraw the grid - call `draw()` after it.
+The real key in `localStorage` is `'anychart-data-sheet-' + key`, so two grids on one page need two different keys. Where `localStorage` is not available, or full, all of these methods do nothing and report nothing.
 
 This section has no sample, because a saved layout only shows its value on the **second** visit, and a sample starts fresh every time.

@@ -21,6 +21,10 @@ AnyStock supports a lot of different series types. For the general information o
 <td>x, value</td>
 </tr>
 <tr>
+<td>{api:anychart.core.stock.Plot#dumbbell}Dumbbell series in AnyStock{api}</td>
+<td>x, high, low</td>
+</tr>
+<tr>
 <td>[HiLo series in AnyStock](HiLo)</td>
 <td>x, high, low</td>
 </tr>
@@ -34,6 +38,10 @@ AnyStock supports a lot of different series types. For the general information o
 </tr>
 <tr>
 <td>[Line series in AnyStock](Line)</td>
+<td>x, value</td>
+</tr>
+<tr>
+<td>{api:anychart.core.stock.Plot#lollipop}Lollipop series in AnyStock{api}</td>
 <td>x, value</td>
 </tr>
 <tr>

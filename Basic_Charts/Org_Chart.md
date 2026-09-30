@@ -154,9 +154,28 @@ In the sample below, the fill, the stroke, and the name line of a card change wh
 
 {sample}BCT\_Org\_Chart\_03{sample}
 
+#### Node Shape
+
+The cards are rectangles by default. To draw them as ellipses or circles, call {api:anychart.charts.OrgChart#shape}shape(){api} with one of the following values:
+
+* `"rectangle"` (default) — the card fills its box, and `cornerRadius()` rounds its corners
+* `"ellipse"` — the ellipse inscribed in the card box
+* `"circle"` — a circle as wide as the smaller side of the card box, centered in it
+
+The text of an ellipse or a circle card is laid out inside the shape, and a line that does not fit ends in an ellipsis. To give one level its own shape, pass `shape` to [level()](#levels).
+
+```
+// draw the cards as ellipses
+chart.shape("ellipse");
+```
+
+In the sample below, the radio buttons switch the shape of the cards:
+
+{sample}BCT\_Org\_Chart\_17{sample}
+
 #### Levels
 
-To style a whole level of the tree, call {api:anychart.charts.OrgChart#level}level(){api} with the depth of the level — 0 is the root — and an object with the settings. It takes `fill`, `stroke`, `cornerRadius`, `labels`, `titleFontColor`, and `connectorStroke`, which styles the connectors that lead into the cards of the level, as well as the `normal`, `hovered`, and `selected` states.
+To style a whole level of the tree, call {api:anychart.charts.OrgChart#level}level(){api} with the depth of the level — 0 is the root — and an object with the settings. It takes `fill`, `stroke`, `cornerRadius`, `shape`, `labels`, and `titleFontColor`, as well as the `normal`, `hovered`, and `selected` states. It also takes the connector settings, which style the connectors that lead into the cards of the level: `connectorStroke`, `connectorType`, and the [connector markers](#connector_markers) `connectorStartMarker`, `connectorMiddleMarker`, and `connectorEndMarker`.
 
 A card takes each setting from the most specific place that sets it: its own data item, then its level, then its [node type](#node_types), then the chart. A data item carries the settings as its own fields — for example, `fill`.
 
@@ -174,9 +193,14 @@ chart.level(1, {
   fill: "#e3f2fd",
   connectorStroke: "2.5 #1976d2"
 });
+
+// the third level: curved connectors leading into its cards
+chart.level(2, {
+  connectorType: "curved"
+});
 ```
 
-In the sample below, the root card and the second level are styled with `level()`, and one card of the second level keeps the fill set in its data item:
+In the sample below, the root card and the second level are styled with `level()`, one card of the second level keeps the fill set in its data item, and the connectors that lead into the third level are curved:
 
 {sample}BCT\_Org\_Chart\_15{sample}
 
@@ -308,6 +332,8 @@ The chart draws the parent-child links as connector lines between the cards. The
 * `"straight"` — direct diagonal segments
 * `"curved"` — smooth curves
 
+To give the connectors that lead into one level of the tree their own shape, pass `connectorType` to [level()](#levels).
+
 The {api:anychart.charts.OrgChart#connectorStroke}connectorStroke(){api} method sets the line style: the color, the thickness, and the dash pattern. It applies in the **normal** state only. When the card at either end of a connector is hovered or selected, the connector is drawn with the `stroke()` of that state instead (see [Appearance](#appearance)). The line is itself interactive: hovering it highlights the card at its child end. Clicking it leaves the selection unchanged, but it still reports a click on that card to an [event listener](../Common_Settings/Event_Listeners).
 
 ```
@@ -319,6 +345,34 @@ chart.connectorStroke("2 #64b5f6");
 In the sample below, the radio buttons switch the shape of the parent-child connectors, drawn with a thicker blue stroke:
 
 {sample}BCT\_Org\_Chart\_07{sample}
+
+#### Connector Markers
+
+A connector can carry a marker at each of three places. Call {api:anychart.charts.OrgChart#connectorStartMarker}connectorStartMarker(){api} for the parent end, {api:anychart.charts.OrgChart#connectorMiddleMarker}connectorMiddleMarker(){api} for the middle, and {api:anychart.charts.OrgChart#connectorEndMarker}connectorEndMarker(){api} for the child end. Each takes an object with the marker settings. The markers are off by default: set `enabled` to `true` to draw them. The object also takes these fields:
+
+* `type` — the marker type, such as `"circle"` (default), `"arrowhead"`, `"square"`, or `"diamond"`: see {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}. A name that is not a marker type, such as `"arrow"`, draws a star
+* `size` — the size of the marker (6 by default)
+* `fill` — the fill of the marker
+
+A new object replaces the previous one as a whole, so pass every field you need in each call.
+
+```
+// a dot at the parent end, a diamond in the middle, and an arrowhead at the child end
+chart.connectorStartMarker({enabled: true, type: "circle", size: 5});
+chart.connectorMiddleMarker({enabled: true, type: "diamond", size: 8});
+chart.connectorEndMarker({enabled: true, type: "arrowhead", size: 14, fill: "#1976d2"});
+```
+
+To set the markers of the connectors that lead into one level, pass the same objects to [level()](#levels). To set the markers of one connector, add them to the data item of the card at its child end. The settings are merged field by field: a field of the data item wins over the same field of the level, which wins over the chart, and the fields a place does not set come from the next one.
+
+```
+// the connectors into the second level: an orange arrowhead
+chart.level(1, {connectorEndMarker: {fill: "#f57c00"}});
+```
+
+In the sample below, every connector has a dot, a diamond, and an arrowhead, the arrowheads that lead into the second level are orange, one data item makes its own arrowhead green, and the radio buttons switch the middle marker:
+
+{sample}BCT\_Org\_Chart\_18{sample}
 
 ### Layout
 
@@ -364,7 +418,15 @@ In the sample below, the sliders change the spacing between the levels and betwe
 
 ### Collapse and Expand
 
-Every parent card gets a button that collapses or expands its branch; a collapsed card shows the number of hidden cards on the button. You can also do the same in code:
+Every parent card gets a button that collapses or expands its branch; a collapsed card shows the number of hidden cards on the button. When a card is drawn smaller than 40 pixels on screen, its button and the number appear only while the pointer is over the card.
+
+To collapse a branch from the start, set the `collapsed` field of its data item to `true`:
+
+```
+{id: "coo", parent: "ceo", name: "Robert Wilson", title: "COO", collapsed: true},
+```
+
+You can also collapse and expand the branches in code:
 
 * {api:anychart.charts.OrgChart#collapse}collapse(){api} and {api:anychart.charts.OrgChart#expand}expand(){api} — collapse or expand the branch of a node. Pass the node `id`, or pass the data item itself. Get the item with the search() method of the [tree](../Working_with_Data/Tree_Data_Model). This is useful in the `"as-tree"` mode, where items may have no `id` field
 * {api:anychart.charts.OrgChart#collapseAll}collapseAll(){api} and {api:anychart.charts.OrgChart#expandAll}expandAll(){api} — collapse or expand all branches at once
@@ -385,13 +447,13 @@ chart.listen("rowcollapseexpand", function (e) {
 });
 ```
 
-In the sample below, the CTO branch is collapsed from the start, the button under a parent card expands or collapses its branch, the buttons above the chart collapse or expand all branches at once, and the readout shows the last change:
+In the sample below, the CTO branch is collapsed from the start by `collapse()` and the COO branch by its `collapsed` field, the button under a parent card expands or collapses its branch, the buttons above the chart collapse or expand all branches at once, and the readout shows the last change:
 
 {sample}BCT\_Org\_Chart\_10{sample}
 
 ### Zoom and Pan
 
-Drag-to-pan is on by default. Zoom is off by default: the mouse wheel scrolls the page and pinch does nothing, so the tree never zooms by accident. To let users zoom the tree, add a zoom control, turn on the wheel and pinch gestures with the {api:anychart.charts.OrgChart#interactivity}interactivity(){api} method (see [Gestures](#gestures)), or zoom from code (see [Zoom Level](#zoom_level)).
+Drag-to-pan is on by default, and the pointer turns into the move cursor while you drag the tree. Zoom is off by default: the mouse wheel scrolls the page and pinch does nothing, so the tree never zooms by accident. To let users zoom the tree, add a zoom control, turn on the wheel and pinch gestures with the {api:anychart.charts.OrgChart#interactivity}interactivity(){api} method (see [Gestures](#gestures)), or zoom from code (see [Zoom Level](#zoom_level)).
 
 The zoom control is a panel with the zoom-in, zoom-out, and fit buttons. Every sample in this article has one. Combine the {api:anychart.ui#zoom}anychart.ui.zoom(){api} method with {api:anychart.ui.Zoom#target}target(){api} and {api:anychart.ui.Zoom#render}render(){api} to create it — the panel needs the UI module and its stylesheets, see [Zoom Controls](../Common_Settings/UI_Controls/Zoom_Controls):
 

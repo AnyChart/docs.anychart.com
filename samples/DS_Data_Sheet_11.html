@@ -61,8 +61,7 @@ anychart.onDocumentReady(function () {
   chart.draw();
 
   // open the search bar and run a query
-  // both steps need a redraw: the bar is built during draw(),
-  // and query() searches the rows that the first draw() prepared
+  // query() searches the rows that the first draw() prepared
   chart.search().show();
   chart.search().query('Tech');
   chart.draw();

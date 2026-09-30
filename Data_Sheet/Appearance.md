@@ -34,7 +34,7 @@ chart.rowSelectedFill("#ffe082");
 chart.noDataText("No products to show");
 ```
 
-The height of the header row is a [Header](Header) setting, not a row setting, and you set it before the first `draw()`.
+The height of the header row is a [Header](Header) setting, not a row setting.
 
 ## CSS Styling
 
@@ -58,7 +58,7 @@ To align the text of a column, or to color one single column, write a CSS rule. 
 }
 ```
 
-Use CSS for the cell padding and the cell borders. `cellPadding()` and `cellBorder()` are in the API, and they give back the values you set, but nothing in this release reads those values. The padding and the borders come from the [stylesheet](Overview#modules_and_styles). The [group](Grouping) header colors and the [tree](Data#tree_data) indent are CSS as well.
+To set the cell padding and the cell borders, use CSS or the API: `cellPadding()` takes the left and right padding of a cell in pixels, and `cellBorder()` takes a CSS border value with a named or hex color, such as `'1px solid #ccc'`. The [group](Grouping) header color and the [tree](Data#tree_data) indent have setters too: `groupHeaderFill()` takes a color, and `indentSize()` takes the indent of one tree level in pixels.
 
 In the sample below, the row height, the header height and the five fills come from the API, while the uppercase header text, the cell padding and the right-aligned number cells come from the CSS above.
 
@@ -68,11 +68,11 @@ In the sample below, the row height, the header height and the five fills come f
 
 The grid writes the column widths, the row heights and the row colors as inline styles. An inline style is stronger than a simple class rule, so a simple class rule has no effect. Use a stronger selector, as the CSS above does with `#container`, or set the color through the API instead.
 
-## Grid Size and Redraw
+## Grid Size
 
 Sizing works the same way as everywhere else in AnyChart: `container()`, `width()`, `height()` and `bounds()`. With none of them set, the grid takes the size of its container.
 
-The grid works out its layout during `draw()`. So a container that changes size later - a responsive page, a splitter, a dashboard tile - needs a `draw()` of its own after the change. Call it from your own resize handler.
+The grid takes its size at the first `draw()`. When the container changes size later - a responsive page, a splitter, a dashboard tile - pass the new size to `width()` and `height()` from your own resize handler.
 
 ## CSS Classes
 
@@ -121,6 +121,6 @@ These are the class names the grid puts on its elements. Use them in your own st
 </tbody>
 </table>
 
-The grid also writes a few attributes that you can use in a selector: `data-data-index` on a data row, `data-group-key`, `data-depth` and `data-node-type` on a group row, and `data-col-index` on a header cell and its resize handle. A data cell has none of these attributes. A data cell carries only a class and `role="gridcell"`, so a selector cannot find one single cell. Find its row first, then take the cell by its position in that row.
+The grid also writes a few attributes that you can use in a selector: `data-data-index` on a data row, `data-group-key`, `data-depth` and `data-node-type` on a group row, and `data-col-index` on a header cell and its resize handle. A data cell carries `data-row`, the position of its row on screen, and `data-col`, the index of its column. Both start at 0, so `.anychart-ds-cell[data-row="0"][data-col="1"]` finds one single cell.
 
 The stylesheet also has rules for a few class names that the current build never puts on an element, such as `anychart-ds-sort-badge` and `anychart-ds-drop-indicator`. Do not rely on them.

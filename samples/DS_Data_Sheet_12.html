@@ -69,7 +69,7 @@ anychart.onDocumentReady(function () {
     showSelection();
   });
 
-  // selecting from code does NOT fire rowSelect, and it needs a redraw to show up,
+  // selecting from code does NOT fire rowSelect,
   // so update your own display right after the call
   document.getElementById('first2').onclick = function () {
     chart.selection().selectedIndices([0, 1]);

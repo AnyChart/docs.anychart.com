@@ -61,12 +61,12 @@ anychart.onDocumentReady(function () {
   var out = document.getElementById('out');
 
   // csv() returns the text AND downloads the file
-  // the exported price is the raw 1200, not the $1200 shown in the cell
+  // the CSV holds the text shown in the cell: $1200
   document.getElementById('csv').onclick = function () {
     out.textContent = chart.export().csv({filename: 'products', separator: ','});
   };
 
-  // json() only downloads, it returns nothing
+  // json() returns the text AND downloads the file, with the raw price 1200
   document.getElementById('json').onclick = function () {
     chart.export().json({filename: 'products', pretty: true});
     out.textContent = 'products.json downloaded';

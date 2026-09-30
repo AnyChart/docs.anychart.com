@@ -55,9 +55,9 @@ A column's `dataType` tells the grid what kind of values the column holds. **Set
 
 Until you set a format of your own, each type renders its values in a way that suits it:
 
-* `'number'` - thousands separators, from `toLocaleString()`
+* `'number'` - a comma between the thousands: `1200` reads `1,200`
 * `'boolean'` - a check mark or a cross
-* `'date'` - a date in the date format of the browser's language. Your value can be a `Date` object, a number of milliseconds, or a text string that `new Date()` can read. The grid shows any other value as it is, and sorts it as January 1, 1970
+* `'date'` - a date as month, day and year: `1/15/2024`. Your value can be a `Date` object, a number of milliseconds, or a text string that `new Date()` can read. The grid shows any other value as it is, and sorts it like an empty cell
 * `'string'` - the plain text
 
 ### Custom Formats

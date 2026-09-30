@@ -98,7 +98,7 @@ anychart.onDocumentReady(function () {
     log(e.type + ' - "' + e.query + '", ' + e.matchCount + ' matches');
   });
 
-  // filters need a redraw
+  // filter the rows by category, then clear the filters
   document.getElementById('tech').onclick = function () {
     chart.filter().filterBy('category', {type: 'text', mode: 'exact', value: 'Tech'});
     chart.draw();
@@ -108,7 +108,7 @@ anychart.onDocumentReady(function () {
     chart.draw();
   };
 
-  // the search bar is built during draw(), so show() needs a redraw too
+  // open the search bar and run a query
   document.getElementById('find').onclick = function () {
     chart.search().show();
     chart.draw();

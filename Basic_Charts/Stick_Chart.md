@@ -28,6 +28,7 @@ This article explains how to create a basic Stick chart as well as configure set
 <tr><td></td><td>[Column](Column_Chart)</td></tr>
 <tr><td></td><td>[Line](Line_Chart)</td></tr>
 <tr><td></td><td>[HiLo](HiLo_Chart)</td></tr>
+<tr><td></td><td>[Lollipop](Lollipop_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Chartopedia: Stick Chart](https://www.anychart.com/chartopedia/chart-types/stick-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>

@@ -60,11 +60,12 @@ anychart.onDocumentReady(function () {
     ["All other outlets", 90000]
   ];
 
-  // apply custom theme
+  // apply theme
   anychart.theme(customTheme);
 
   // create chart
-  var chart = anychart.bar(data);
+  var chart = anychart.bar();
+  chart.bar(data);
 
   // set container and draw chart
   chart.container("container");

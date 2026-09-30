@@ -26,6 +26,7 @@ This article explains how to create a basic Network Graph as well as configure s
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Sankey Diagram](Sankey_Diagram)</td></tr>
+<tr><td></td><td>[Arc Diagram](Arc_Diagram)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Chartopedia: Network Graph](https://www.anychart.com/chartopedia/chart-types/network-graph/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>

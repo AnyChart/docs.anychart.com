@@ -31,6 +31,7 @@ This article explains how to create a basic Range Column chart as well as config
 <tr><td></td><td>[Bar](Bar_Chart)</td></tr>
 <tr><td></td><td>[Range Bar](Range_Bar_Chart)</td></tr>
 <tr><td></td><td>[HiLo](HiLo_Chart)</td></tr>
+<tr><td></td><td>[Dumbbell](Dumbbell_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Chartopedia: Range Column Chart](https://www.anychart.com/chartopedia/chart-types/range-column-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
@@ -272,7 +273,7 @@ This chart type allows you to set the size of its points. Read more in the [Poin
 
 #### Labels at Both Ends
 
-Pass `"rangeMode"` to {api:anychart.core.ui.LabelsFactory#position}position(){api} to label both ends of a point: the high-end label shows the high value, the low-end label the low value. To give the ends different text, use a format function and check `this["rangeEnd"]`: it is `"low"` on the low-end label.
+Pass `"rangeMode"` to {api:anychart.core.ui.LabelsFactory#position}position(){api} to label both ends of a point: the high-end label shows the high value, the low-end label the low value. To give the ends different text, use a format function and check `this["rangeSide"]`: it is `"high"` on the high-end label and `"low"` on the low-end label.
 
 ```
 // label both ends of every point
@@ -280,14 +281,23 @@ series.labels().enabled(true);
 series.labels().position("rangeMode");
 // set the text of each end
 series.labels().format(function () {
-  if (this["rangeEnd"] == "low") {
+  if (this["rangeSide"] == "low") {
     return "Min " + this["low"];
   }
   return "Max " + this["high"];
 });
 ```
 
-In the sample below, both ends of every point are labeled:
+To set up the labels of one end, call {api:anychart.core.StateSettings#highLabels}highLabels(){api} or {api:anychart.core.StateSettings#lowLabels}lowLabels(){api} on {api:anychart.core.cartesian.series.RangeColumn#normal}normal(){api}. A setting made there overrides the same setting of `labels()` for that end only; every other setting, the format included, is taken from `labels()`. These methods have no effect unless the position is `"rangeMode"`.
+
+```
+// set the font color of the high-end labels
+series.normal().highLabels({fontColor: "#d84315"});
+// set the font color of the low-end labels
+series.normal().lowLabels({fontColor: "#1565c0"});
+```
+
+In the sample below, both ends of every point are labeled and each end has its own font color:
 
 {sample}BCT\_Range\_Column\_Chart\_07{sample}
 

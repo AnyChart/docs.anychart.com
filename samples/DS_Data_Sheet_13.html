@@ -50,7 +50,7 @@ anychart.onDocumentReady(function () {
   // create a data sheet
   var chart = anychart.dataSheet(data);
 
-  // editing needs TWO switches: editable on the column, and cellEditor().enabled() on the grid
+  // editable: true lets the user edit the cells of a column
   chart.column(0, {field: 'product',  title: 'Product',  width: 150, editable: true});
   chart.column(1, {field: 'category', title: 'Category', width: 120});
   chart.column(2, {field: 'price',    title: 'Price',    width: 110, dataType: 'number', editable: true});
@@ -63,8 +63,6 @@ anychart.onDocumentReady(function () {
     }
     return true;
   });
-
-  chart.cellEditor().enabled(true);
 
   // the edits are written into the row objects you passed to data()
   var panelEl = document.getElementById('panel');

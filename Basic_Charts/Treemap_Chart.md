@@ -28,6 +28,8 @@ This article explains how to create a basic Treemap chart in AnyChart as well as
 <tr><td></td><td>[Heat Map](Heat_Map_Chart)</td></tr>
 <tr><td></td><td>[Marimekko](Marimekko_Chart/Mekko_Chart)</td></tr>
 <tr><td></td><td>[Venn](Venn_Diagram)</td></tr>
+<tr><td></td><td>[Org Chart](Org_Chart)</td></tr>
+<tr><td></td><td>[Waffle](Waffle_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Chartopedia: Treemap Chart](https://www.anychart.com/chartopedia/chart-types/treemap/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>

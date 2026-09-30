@@ -115,10 +115,12 @@ Each layer of a Stream graph is a separate series with two data fields:
 
 Besides plain arrays, a series accepts a mapping of an {api:anychart.data#set}anychart.data.set(){api}. Use it when all layers come in one table with a column per layer: map the columns of each series with {api:anychart.data.Set#mapAs}mapAs(){api}.
 
+A layer breaks at a category where its value is missing (`null`). To draw it through the gap, call {api:anychart.core.cartesian.series.SplineArea#connectMissingPoints}connectMissingPoints(){api} on the series: the layer takes a value between its neighbors at that category, and the layers above it rest on that value.
+
 ```
 // one data set with a column per channel: [week, search, social]
 var dataSet = anychart.data.set([
-  ["W1", 42, 30],["W2", 45, 33],["W3", 40, 36],["W4", 38, 40],["W5", 44, 38],
+  ["W1", 42, 30],["W2", 45, 33],["W3", 40, 36],["W4", 38, 40],["W5", 44, null],
   ["W6", 50, 35],["W7", 55, 37],["W8", 52, 42],["W9", 48, 46],["W10", 46, 49]
 ]);
 
@@ -131,9 +133,11 @@ var series1 = chart.splineArea(searchMapping);
 series1.name("Search");
 var series2 = chart.splineArea(socialMapping);
 series2.name("Social");
+// draw the layer through its missing value
+series2.connectMissingPoints(true);
 ```
 
-In the sample below, both layers are mapped from one shared data set:
+In the sample below, both layers are mapped from one shared data set, and the Social layer is drawn through its missing value:
 
 {sample}BCT\_Stream\_Graph\_02{sample}
 
