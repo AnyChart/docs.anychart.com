@@ -3,7 +3,7 @@
 
 The header is the row of column titles at the top of the grid. It tells the user what each column holds, and it is also the place where the user works with the columns: a click on a header cell [sorts](Sorting) the column, and a drag of its right edge [resizes](Columns#column_width) it.
 
-This article shows how to set the height of the header row, how to hide the row, and how to add a second level of titles above the columns. It also shows when those settings reach the grid, because the header is an exception to the redraw rule of the Data Sheet.
+This article shows how to set the height of the header row, how to hide the row, and how to add a second level of titles above the columns.
 
 ## Header Settings
 
@@ -24,10 +24,6 @@ chart.header().height(72);
 `header().height()` and `rowHeight()` are separate settings. `rowHeight()` does not touch the header.
 
 The fill of the header row and the CSS classes of its cells are covered in [Appearance](Appearance#css_classes).
-
-## Redraw Exception
-
-**Set the header options before the first `draw()`.** `header().height()`, `header().enabled()`, {api:anychart.charts.DataSheet#headerGroup}headerGroup(){api} and {api:anychart.charts.DataSheet#removeHeaderGroup}removeHeaderGroup(){api} do not reach the grid on a later redraw. They reach it only when something else changes a column. This is one of the two exceptions to the redraw rule in [Rules for Every Grid](Overview#rules_for_every_grid). The other one is in [Large Data Sets](Large_Data_Sets).
 
 ## Header Groups
 

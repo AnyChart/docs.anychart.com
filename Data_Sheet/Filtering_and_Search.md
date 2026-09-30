@@ -11,15 +11,13 @@ To show only the rows that match your conditions, use the {api:anychart.charts.D
 
 A filter reads the raw data value, not the text in the cell. If a column has a `format`, write the filter for the raw value, not for the text that the format produces. See [Data Types and Formats](Columns#data_types_and_formats).
 
-Filters follow the redraw rule as well: a filter you set takes effect on the next `draw()`.
-
 ### Filter Types
 
 There are three kinds of filter configuration:
 
 * **Text** - `{type: 'text', mode: 'contains' | 'startsWith' | 'exact', value: '...'}`. The match is not case sensitive. `mode` defaults to `contains`. An empty value matches every row
 * **Number** - `{type: 'number', min: 100, max: 500}`. Both ends are included, and both are optional. A value that is not a number never passes
-* **Boolean** - `{type: 'boolean', value: true}`. The grid compares with `==`, so any value that JavaScript treats as true counts as true
+* **Boolean** - `{type: 'boolean', value: true}`. `true` keeps the rows that hold `true`, `1`, `'true'` or `'yes'`, and `false` keeps the rows that hold `false`, `0` or `'false'`. A row with any other value passes neither filter
 
 **These three are the only types.** There is no date filter. Any other `type`, and any other `mode` in a text filter, lets every row through. You get no error, and the `filter` event still reports that the grid removed no rows. To filter a date column, put a number in your data next to the date and use a number filter.
 
@@ -94,7 +92,7 @@ A `search` event carries `query` and `matchCount`.
 
 ### Call Order
 
-**The order of the calls matters.** The grid builds the search bar during `draw()`, and `query()` searches the rows that a `draw()` prepared. So draw the grid first, then call `show()` and `query()`, then draw again:
+**The order of the calls matters.** `query()` searches the rows that a `draw()` prepared. So draw the grid first, then call `show()` and `query()`:
 
 ```
 // the search event reports the query and how many cells matched
@@ -106,8 +104,7 @@ chart.container('container');
 chart.draw();
 
 // open the search bar and run a query
-// both steps need a redraw: the bar is built during draw(),
-// and query() searches the rows that the first draw() prepared
+// query() searches the rows that the first draw() prepared
 chart.search().show();
 chart.search().query('Tech');
 chart.draw();
@@ -118,11 +115,11 @@ chart.search().next();
 chart.search().prev();
 ```
 
-Ctrl+F (Cmd+F on macOS) opens the bar too, but the bar itself appears only on the next redraw. See [Keyboard Shortcuts](Keyboard_and_Clipboard#keyboard_shortcuts).
+Ctrl+F (Cmd+F on macOS) opens the bar too. See [Keyboard Shortcuts](Keyboard_and_Clipboard#keyboard_shortcuts).
 
 ### The Input Box and the Counter
 
-A query you run from code does not fill the input box of the bar. No later call fills it either. The box stays empty until the user types in it. The highlighting and `matchCount()` are still correct. The counter beside the box is also empty at first: when `query()` runs, the bar does not exist yet. `next()` or `prev()` then fills the counter in. That is why the sample below prints the count in a line of its own.
+A query you run from code does not fill the input box of the bar. No later call fills it either. The box stays empty until the user types in it. The highlighting and `matchCount()` are still correct. When `query()` runs right after `show()`, as in the code above, the counter beside the box is also empty at first. `next()` or `prev()` then fills the counter in. That is why the sample below prints the count in a line of its own.
 
 ### Search Scope
 

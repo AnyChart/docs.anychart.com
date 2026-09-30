@@ -1,19 +1,19 @@
 {:index 2}
 # Data
 
-The grid takes its rows from a plain JavaScript array. Each object in the array is one row, and each key of that object is one field. This is the only data format the Data Sheet accepts, so the data sets that other AnyChart types take do not work here.
+The grid takes its rows from a plain JavaScript array. Each object in the array is one row, and each key of that object is one field.
 
 This page shows how to pass the rows, where the rows come from when a server holds them, how the grid numbers the rows, how it reads a tree, and how to replace the data after the grid is drawn.
 
 ## Data Format
 
-To set the data, pass a plain array of row objects to {api:anychart.charts.DataSheet#data}data(){api}. This is the only data format that this type supports. Each object is one row, and each key is one field. Call `data()` with no argument to read the array of row objects back.
+To set the data, pass a plain array of row objects to {api:anychart.charts.DataSheet#data}data(){api}. Each object is one row, and each key is one field. Call `data()` with no argument to read the rows back.
 
-`anychart.data.Set` and `anychart.data.View` do **not** work with this type yet, even though most other AnyChart types accept them. If you pass a data set you get zero columns, no rows at all and the "No data" message - and no error. Use a plain array.
+The grid also accepts an array of arrays, CSV text, and the data sets `anychart.data.Set` and `anychart.data.View`. With an array of arrays the fields are named by position: `0`, `1` and so on. With CSV text the first line gives the field names.
 
 ## Server-Side Data
 
-The grid can also load rows from a server, one page at a time. It does this through the {api:anychart.charts.DataSheet#dataSource}dataSource(){api} controller. A controller is a small object that holds the settings of one feature: you call its methods to read and change those settings. You give this one an adapter that loads a single page and reports the total number of rows. The grid then asks for a page when the user scrolls to it, keeps the pages it already has, and fires a `dataload` or a `dataerror` event. See [Events](Events).
+The grid can also load rows from a server. It does this through the {api:anychart.charts.DataSheet#dataSource}dataSource(){api} controller. A controller is a small object that holds the settings of one feature: you call its methods to read and change those settings. You give this one an adapter that loads a page of rows and reports the total number of rows. When the adapter answers, the grid fires a `dataload` or a `dataerror` event. See [Events](Events).
 
 A server-side load is a big topic, and this page does not cover it. Read {api:anychart.core.dataSheet.DataSource}anychart.core.dataSheet.DataSource{api} for the whole controller. Every other section on this page works with the plain array above.
 
@@ -89,7 +89,7 @@ The two formats number the rows differently. In the flat format the child rows a
 
 ### Open and Closed Rows
 
-**Limitation.** Tree rows are always fully open in this release, and you cannot close them. The arrows appear, but a click on an arrow does nothing. {api:anychart.core.dataSheet.Hierarchy#collapseAll}collapseAll(){api} does nothing here either, because the grid rebuilds the tree fully open on every redraw. {api:anychart.core.dataSheet.Hierarchy#expandAll}expandAll(){api} is harmless, because everything is already open. Groups **do** open and close - see [Grouping](Grouping).
+A parent row has an arrow. A click on the arrow closes the branch, and the next click opens it again. To close or open every branch from code, call {api:anychart.core.dataSheet.Hierarchy#collapseAll}collapseAll(){api} or {api:anychart.core.dataSheet.Hierarchy#expandAll}expandAll(){api}. Groups open and close the same way - see [Grouping](Grouping).
 
 ### Tree or Grouping Check
 
@@ -118,7 +118,7 @@ function addRowNewArray() {
 }
 ```
 
-The grid takes a one-time copy of the rows. It does not watch your array, and it does not watch any AnyChart data object.
+The grid copies the array and keeps your row objects. It does not watch your array, and it does not watch any AnyChart data object.
 
 Cell editing works in the opposite direction. The grid writes the new values into the row objects you passed, so your own array already holds them. See [Cell Editing](Cell_Editing).
 

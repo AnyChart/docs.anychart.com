@@ -15,12 +15,12 @@ The grid root has `tabindex="0"`, so the user can Tab into it and then use these
 <tr><td>Arrow keys</td><td>move the focused cell</td></tr>
 <tr><td>Home, End</td><td>jump to the first or the last column</td></tr>
 <tr><td>Ctrl+Home, Ctrl+End</td><td>jump to the first or the last row</td></tr>
-<tr><td>Enter, Space</td><td>select the focused row. Hold Ctrl to add it to the selection</td></tr>
-<tr><td>Ctrl+C, Ctrl+X, Ctrl+V</td><td>copy, cut and paste the selected rows</td></tr>
-<tr><td>Ctrl+F</td><td>open the search bar. The bar itself appears on the next redraw</td></tr>
+<tr><td>Enter, Space</td><td>select the focused row. In the multi mode, hold Ctrl to add it to the selection</td></tr>
+<tr><td>Ctrl+C, Ctrl+X, Ctrl+V</td><td>copy or cut the selected rows, and paste at the focused cell</td></tr>
+<tr><td>Ctrl+F</td><td>open the search bar</td></tr>
 <tr><td>Esc</td><td>close the search bar, or cancel a cell edit</td></tr>
 <tr><td>Enter (while editing)</td><td>accept the value</td></tr>
-<tr><td>Tab, Shift+Tab (while editing)</td><td>accept the value and close the editor. They do not move to the next cell</td></tr>
+<tr><td>Tab, Shift+Tab (while editing)</td><td>accept the value and open the next or the previous editable cell</td></tr>
 <tr><td>Ctrl+Z</td><td>undo the last cell edit</td></tr>
 <tr><td>Shift+click on a header</td><td>add a sort level</td></tr>
 </tbody>
@@ -86,7 +86,7 @@ The context menu opens with a right-click, and it is on by default. Its entries 
 
 ### Default Entries
 
-On a cell the menu holds, in this order: Sort Ascending, Sort Descending, a separator, Pin Left (or Unpin Column), a separator, Export as CSV, Export as JSON, Print to PDF. A right-click on a header adds a Group by / Remove Grouping entry. These entries drive [Sorting](Sorting), [Column Pinning](Columns#column_pinning), [Export and Print](Export_and_Print) and [Grouping](Grouping).
+On a cell the menu holds, in this order: Sort Ascending, Sort Descending, a separator, Pin Left (or Unpin Column), a separator, Export as CSV, Export as JSON, Print to PDF. These entries drive [Sorting](Sorting), [Column Pinning](Columns#column_pinning) and [Export and Print](Export_and_Print).
 
 The icons come from the AnyChart icon font - see [Modules and Styles](Overview#modules_and_styles).
 
