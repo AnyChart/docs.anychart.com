@@ -70,6 +70,28 @@ The AnyChart Bundle build contains all [chart modules](#chart_modules) and [feat
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
 ```
 
+## Loading Modules on Demand
+
+To load a module at run time, without a script tag, call the {api:anychart#loadModule}loadModule(){api} method with the name of the module. The name is the name of the module file without the `anychart-` prefix and the `.min.js` ending: for example, `anychart-sankey.min.js` is `sankey`. The method returns a Promise that is resolved when the module is ready to use:
+
+```
+anychart.loadModule("sankey").then(function () {
+  var chart = anychart.sankey(data);
+  chart.container("container");
+  chart.draw();
+});
+```
+
+A module that is already on the page is not loaded again, and the Promise is resolved at once. To start loading a module in advance without waiting for the result, call the {api:anychart#preload}preload(){api} method.
+
+The module files are taken from the folder of the AnyChart script that is on the page. If there is no such script, or the module files are stored in another place, set the location first by calling the {api:anychart.loadModule#configure}configure(){api} method:
+
+```
+anychart.loadModule.configure({cdnBase: "https://cdn.anychart.com/releases/{{branch-name}}/"});
+```
+
+Each file is checked against the hash published with the release. A file that does not match is not executed.
+
 ## Chart Modules
 
 The following modules are available:
