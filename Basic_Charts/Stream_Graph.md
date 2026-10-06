@@ -10,7 +10,7 @@ A Stream graph is best for one thing. Use it to show how the parts of a whole ch
 This article shows how to create a basic Stream graph. It also shows how to set the options that are special to this type. You can read the table below for a short overview of the Stream graph's features:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) + [Stream Graph](../Quick_Start/Modules#stream_graph)</td></tr>
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Stream Graph](../Quick_Start/Modules#stream_graph)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.StreamGraph}anychart.charts.StreamGraph{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -37,14 +37,10 @@ This article shows how to create a basic Stream graph. It also shows how to set 
 
 ## Modules
 
-The Stream graph needs the [Core](../Quick_Start/Modules#core), [Basic Cartesian](../Quick_Start/Modules#basic_cartesian), and [Stream Graph](../Quick_Start/Modules#stream_graph) modules:
+The Stream graph needs the [Core](../Quick_Start/Modules#core) and [Stream Graph](../Quick_Start/Modules#stream_graph) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
-```
-
-```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
 ```
 
 ```
