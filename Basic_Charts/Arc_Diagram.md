@@ -46,7 +46,7 @@ The Arc diagram needs the [Core](../Quick_Start/Modules#core) and [Arc Diagram](
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-arc-diagram.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-arc.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
