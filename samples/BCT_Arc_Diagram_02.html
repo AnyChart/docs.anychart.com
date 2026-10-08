@@ -6,7 +6,7 @@
     <meta name="ac:desc" content=""/>
 
     <script src="https://cdn.anychart.com/releases/staging/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/staging/js/anychart-arc-diagram.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/staging/js/anychart-arc.min.js"></script>
     <script src="https://cdn.anychart.com/releases/staging/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/staging/js/anychart-ui.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
@@ -37,7 +37,7 @@ anychart.onDocumentReady(function () {
   chart.title("Arc Diagram: Data Mapping");
 
   // make the node bars thicker
-  chart.nodeHeight(30);
+  chart.node().normal().height(30);
 
   // set the container id
   chart.container("container");

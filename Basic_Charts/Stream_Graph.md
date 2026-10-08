@@ -47,7 +47,7 @@ The Stream graph needs the [Core](../Quick_Start/Modules#core), [Basic Cartesian
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stream-graph.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stream.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).

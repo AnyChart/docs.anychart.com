@@ -41,7 +41,7 @@ The Org chart needs the [Core](../Quick_Start/Modules#core) and [Org Chart](../Q
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-org-chart.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-org.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).

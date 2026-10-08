@@ -101,7 +101,7 @@ AnyChart Core is the core of the engine. It is needed whenever you use any modul
 A module for creating [Arc Diagram](../Basic_Charts/Arc_Diagram) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-arc-diagram.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-arc.min.js"></script>
 ```
 
 ### Bullet
@@ -230,7 +230,7 @@ A module for creating [Network Graph](../Basic_Charts/Network_Graph) diagrams:
 A module for creating [Org Chart](../Basic_Charts/Org_Chart) charts:
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-org-chart.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-org.min.js"></script>
 ```
 
 ### Pareto
@@ -326,7 +326,7 @@ A module for creating [Stock](../Stock_Charts/Overview) charts:
 A module for creating [Stream Graph](../Basic_Charts/Stream_Graph) charts (requires [Basic Cartesian](#basic_cartesian)):
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stream-graph.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stream.min.js"></script>
 ```
 
 ### Sunburst

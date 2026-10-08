@@ -138,12 +138,12 @@ The chart draws the cells on its own — you only set how they look. Two groups 
 
 #### Cell Shape
 
-Cells are squares by default. To draw them as circles, use the {api:anychart.charts.Waffle#cellShape}cellShape(){api} method. For square cells, you can round the corners with {api:anychart.charts.Waffle#cellCornerRadius}cellCornerRadius(){api}; circle cells ignore this setting. The shape name is matched without regard to case; any other value falls back to the default shape and reports a warning in the browser console:
+Cells are squares by default. To draw them as circles, use the {api:anychart.core.waffle.Cell#shape}cell().shape(){api} method. For square cells, you can round the corners with {api:anychart.core.waffle.Cell#cornerRadius}cell().cornerRadius(){api}; circle cells ignore this setting. The shape name is matched without regard to case; any other value falls back to the default shape and reports a warning in the browser console:
 
 ```
 // draw square cells and round their corners
-chart.cellShape("square");
-chart.cellCornerRadius(4);
+chart.cell().shape("square");
+chart.cell().cornerRadius(4);
 ```
 
 In the sample below, the radio buttons switch between the two cell shapes, and the slider rounds the corners of the square cells:
@@ -152,17 +152,17 @@ In the sample below, the radio buttons switch between the two cell shapes, and t
 
 #### Cell Size
 
-By default, the chart fits the cells to the chart area. The {api:anychart.charts.Waffle#cellPadding}cellPadding(){api} method sets the gap between cells, and {api:anychart.charts.Waffle#cellAspectRatio}cellAspectRatio(){api} sets their width-to-height ratio.
+By default, the chart fits the cells to the chart area. The {api:anychart.core.waffle.Cell#padding}cell().padding(){api} method sets the gap between cells, and {api:anychart.core.waffle.Cell#aspectRatio}cell().aspectRatio(){api} sets their width-to-height ratio.
 
-To give the cells a fixed size instead, use {api:anychart.charts.Waffle#cellSize}cellSize(){api}: each cell is then exactly that many pixels high and `cellSize × cellAspectRatio` pixels wide. A fixed-size grid does not shrink to fit: if it outgrows the chart area, it stays centered, and its edges are cut off. Set the size back to `0` to return to the automatic fit:
+To give the cells a fixed size instead, use {api:anychart.core.waffle.Cell#size}cell().size(){api}: each cell is then exactly that many pixels high and `size × aspectRatio` pixels wide. A fixed-size grid does not shrink to fit: if it outgrows the chart area, it stays centered, and its edges are cut off. Set the size back to `0` to return to the automatic fit:
 
 ```
 // widen the gaps between the cells
-chart.cellPadding(4);
+chart.cell().padding(4);
 
 // fixed cell height, cells twice as wide as they are high
-chart.cellSize(20);
-chart.cellAspectRatio(2);
+chart.cell().size(20);
+chart.cell().aspectRatio(2);
 ```
 
 In the sample below, the sliders set the gap between the cells, their fixed height, and their aspect ratio:

@@ -6,7 +6,7 @@
     <meta name="ac:desc" content=""/>
 
     <script src="https://cdn.anychart.com/releases/staging/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/staging/js/anychart-arc-diagram.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/staging/js/anychart-arc.min.js"></script>
     <script src="https://cdn.anychart.com/releases/staging/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/staging/js/anychart-ui.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
@@ -54,7 +54,7 @@ anychart.onDocumentReady(function () {
 
   // give the row of nodes most of the node line and make the bars thicker
   chart.nodesSpan("85%");
-  chart.nodeHeight(30);
+  chart.node().normal().height(30);
 
   // set the height of the links and curve them below the node line
   chart.curvature(0.8);
@@ -74,7 +74,7 @@ function changeNodesSpan(value) {
 
 // change the thickness of the node bars: the chart redraws itself
 function changeNodeThickness(value) {
-  chart.nodeHeight(value);
+  chart.node().normal().height(value);
   document.getElementById("nodeThicknessValue").value = value;
 }
 
