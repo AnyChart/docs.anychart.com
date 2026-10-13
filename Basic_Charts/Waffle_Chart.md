@@ -139,7 +139,7 @@ The chart draws the cells on its own; you set how they look with the `cell()` me
 
 #### Cell Shape
 
-Cells are squares by default. To draw another shape, pass its name to `shape()` of the normal state: the names are the library's marker shapes, listed in {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}, such as a circle, a triangle, or an arrow; a cell takes every marker shape except the two line shapes. The legend icon repeats the shape you choose. For square cells, `cornerRadius()` rounds the corners; the other shapes ignore it. The shape name is matched without regard to case, and any other value, the two line shapes included, turns the cells back into squares:
+Cells are squares by default. To draw another shape, pass its name to `shape()` of the normal state: the names are the library's marker shapes, listed in {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}, such as a circle, a triangle, or an arrow; a cell takes every marker shape except the two line shapes. The legend icon repeats the shape you choose. For square cells, `cornerRadius()` rounds the corners; the other shapes ignore it. The shape name is matched without regard to case, and any other value keeps the current shape:
 
 ```
 // draw round cells
