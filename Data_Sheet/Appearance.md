@@ -16,7 +16,7 @@ To change the height of the rows or the fill colors of the grid, call these meth
 * {api:anychart.charts.DataSheet#rowSelectedFill}rowSelectedFill(){api} - `'#d2e3fc'`
 * {api:anychart.charts.DataSheet#noDataText}noDataText(){api} - the message shown when there is nothing to display, either because the data is empty or because a filter matched no row
 
-These take plain strings and numbers. They are not the fill objects used in the rest of AnyChart. There are no gradients and no fill functions here, even though the names look like chart fills.
+These take plain strings and numbers. They are not the fill objects used in the rest of AnyChart. A fill takes any CSS color or CSS gradient string, such as `'linear-gradient(90deg, red, blue)'`, but not a gradient object or a fill function, even though the names look like chart fills.
 
 ```
 // set the row height and the header height

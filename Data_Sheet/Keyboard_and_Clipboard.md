@@ -7,7 +7,7 @@ Read this article when you want a grid the user can drive without the mouse, whe
 
 ## Keyboard Shortcuts
 
-The grid root has `tabindex="0"`, so the user can Tab into it and then use these keys. On macOS, use Cmd where the table says Ctrl.
+The grid root has `tabindex="0"`, so the user can Tab into it and then use these keys. On macOS, use Cmd where the table says Ctrl. The exceptions are Ctrl+Home and Ctrl+End: they work with the Control key only.
 
 <table class="dtTABLE" width="700">
 <tbody>

@@ -291,7 +291,7 @@ function changeColorMode(value) {
 
 #### Link Tooltip
 
-Links have a [tooltip](../Common_Settings/Tooltip) of their own, but by default it uses the format of the [node tooltip](#node_tooltip), and node tokens show no value for a link. A tooltip set with {api:anychart.core.Chart#tooltip}chart.tooltip(){api} also applies to both nodes and links. To set the link tooltip separately, use `link().tooltip()`:
+Links have a [tooltip](../Common_Settings/Tooltip) of their own. By default, its title names the two end nodes of the link, and its text shows the weight of the link. A tooltip set with {api:anychart.core.Chart#tooltip}chart.tooltip(){api} also applies to both nodes and links. To set the link tooltip separately, use `link().tooltip()`:
 
 ```
 // the tooltip of a link names the route and its weekly flights
