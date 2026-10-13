@@ -54,7 +54,7 @@ chart.hovered().stroke("#669999", 3);
 
 ### Multiple Series
 
-Most chart types in AnyChart allow creating multiple series. Such charts also have the **normal()**, **hovered()**, and **selected()** methods, but the colors of series are not set there, so you should configure the states of series.
+Most chart types in AynChart allow creating multiple series. Such charts do not have the **normal()**, **hovered()**, and **selected()** methods, but their series do, so you should configure the states of series.
 
 See the [Series](#series) section of this article to learn more. Some additional information can be found in the [Points](#series) and [Shortcuts](#shortcuts_\(normal\)) sections.
 

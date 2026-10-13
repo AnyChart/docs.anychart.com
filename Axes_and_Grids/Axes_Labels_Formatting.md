@@ -27,7 +27,7 @@ You have a full control over the axis labels in {api:anychart.core.ui.LabelsFact
   
 It's possible to make text formatting easier by using tokens - special substrings that represent each a label parameter. A token looks like *{%keywordName}*, for example `{%value}` or `{%axisName}`. Before displaying each token is being replaced by a corresponding value. In the [Text Formatters article](../Common_Settings/Text_Formatters#tokens_list) you can find the list of available tokens.
 
-format works with function or with a string with or without tokens. A default axis label shows the axis value. On ordinal and numeric axes the default label's format works like the following function, and on date-time axes it also formats the date according to the tick interval:
+Format works with a function or with a string, with or without tokens. By default, an axis label shows the axis value, which corresponds to the following function:
 
 ```
 chart.xAxis().labels().format(function() {

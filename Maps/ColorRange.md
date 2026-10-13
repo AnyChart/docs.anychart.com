@@ -49,9 +49,7 @@ To enable the ColorRange, there's a simple method {api:anychart.charts.Map#color
 
 ```
 // create and enable the colorRange
-map.colorRange(true);
-// get the colorRange to adjust it
-var colorRange = map.colorRange();
+var cr = map.colorRange(true);
 ```
 	
 Look at the samples below: we have added the ColorRange to the both previous samples. In the first sample the ColorRange looks like a number of different-colored rectangles because of ordinal Scale. The number of rectangles depends on the number of ranges defined above.

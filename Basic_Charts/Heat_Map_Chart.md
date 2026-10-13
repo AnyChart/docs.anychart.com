@@ -204,7 +204,7 @@ chart = anychart.heatMap(data);
 
 ### Color Scale
 
-By default, the color scale of a Heat Map chart is ordinal, and cells are colored in shades from light blue (#90caf9) to dark blue (#01579b), not in the colors of the chart palette. Color ranges are set automatically.
+By default, the color scale of a Heat Map chart is ordinal, and cells are colored in graded shades of one color rather than in the colors of the chart [palette](../Appearance_Settings/Palettes); to choose the colors yourself, create the color scale explicitly, as described below. Color ranges are set automatically.
 
 #### Ordinal
 

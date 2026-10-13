@@ -277,7 +277,7 @@ Here is a live sampe:
 
 {sample}AGST\_Scales\_12{sample}
 
-The same can be done with linear X-scales, for example in a Scatter chart. The default X-scale of other cartesian charts is ordinal: it has no minimum and maximum, so this code does not apply to it.
+The same can be done with X-scales if needed:
 
 ```
 // sync minimum and maximum values of the scales
