@@ -151,7 +151,7 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 	<li>Lower Envelope: **20 Period MA - (20 Period MA * 0.1)**</li>
 </ol>
 
-MA is the moving average set by the smoothing type parameter of the {api:anychart.core.stock.Plot#env}env(){api} method: an [EMA](#exponential_moving_average) by default, or an [SMA](#simple_moving_average) when the parameter is `"sma"`.
+MA is the moving average set by the `maType` parameter of the {api:anychart.core.stock.Plot#env}env(){api} method: an [EMA](#exponential_moving_average) by default, or an [SMA](#simple_moving_average) when the parameter is `"sma"`.
 
 ## Exponential Moving Average
 
