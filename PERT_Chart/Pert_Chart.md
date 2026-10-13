@@ -211,8 +211,8 @@ Critical Path consists of milestones and tasks. If nothing special is set for th
 // set critical path milestones colors
 milestones = chart.criticalPath().milestones();
 milestones.fill("#ffab91");
-milestones.hoverFill("#ff6e40");
-milestones.selectFill("#ff6e40");
+milestones.hovered().fill("#ff6e40");
+milestones.selected().fill("#ff6e40");
 milestones.labels().fontColor("#86614e");
 // set critical tasks stroke
 tasks = chart.criticalPath().tasks();

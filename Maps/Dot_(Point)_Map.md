@@ -179,7 +179,7 @@ We can customize our map by creating our own, unique markers. We need to set a f
 ```
 // creating a custom marker for the CITRUS company series using a function
 series_citrus.type(customMarkerType);
-series_citrus.hoverType(customMarkerType);
+series_citrus.hovered().type(customMarkerType);
 
 function customMarkerType(path, x, y, size) {
 var numericSize = +size;

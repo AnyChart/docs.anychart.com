@@ -29,7 +29,7 @@ chart = anychart.stock();
 var plot = chart.plot(0);
 
 // create EMA indicators with period 20
-var ema20 = plot.sma(mapping, 20).series();
+var ema20 = plot.ema(mapping, 20).series();
 ema20.stroke('#bf360c');
 ```
 
@@ -39,7 +39,7 @@ Here is a live sample:
 
 ## Indicator Parameters
 
-EMA indicator need three parameters: mapping with the `"value"` field in it, period and a type of series to be displayed as:
+EMA indicator has three parameters: the mapping with the `"value"` field in it (required), the period (20 by default) and the type of series to be displayed as (`"line"` by default):
 
 ```
 var ema10 = plot.ema(mapping, 10, "column");

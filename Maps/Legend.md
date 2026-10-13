@@ -45,7 +45,7 @@ series.colorScale(scale);
 And then tell legend where to get items:
 
 ```
-map.legend().legend(true);
+map.legend().enabled(true);
 map.legend().itemsSourceMode('categories');
 ```
 

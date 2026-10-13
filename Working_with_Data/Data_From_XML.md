@@ -11,7 +11,7 @@ XML or Extensible Markup Language, is a markup language that defines a set of ru
 
 ## Schema
 
-XML Schema specifies a XML-based format to define the structure of XML data (visit [https://en.wikipedia.org/wiki/XML_schema](https://en.wikipedia.org/wiki/XML_schema) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. XML schema for AnyChart version 8.7.1 is located at [https://cdn.anychart.com/schemas/8.7.1/xml-schema.xsd](https://cdn.anychart.com/schemas/8.7.1/xml-schema.xsd)). This file can be used to validate your own XML structure.
+XML Schema specifies a XML-based format to define the structure of XML data (visit [https://en.wikipedia.org/wiki/XML_schema](https://en.wikipedia.org/wiki/XML_schema) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. XML schema for AnyChart version 9.0.0 is located at [https://cdn.anychart.com/schemas/9.0.0/xml-schema.xsd](https://cdn.anychart.com/schemas/9.0.0/xml-schema.xsd). This file can be used to validate your own XML structure.
 
 ## XML vs JavaScript
 
@@ -20,7 +20,7 @@ To load chart configuration in XML format you should use {api:anychart#fromXml}f
 ```
 // xml data
 var xml = '<?xml version="1.0" encoding="utf-8"?>' +
-  '<anychart xmlns="https://cdn.anychart.com/schemas/8.7.1/xml-schema.xsd">' +
+  '<anychart xmlns="https://cdn.anychart.com/schemas/9.0.0/xml-schema.xsd">' +
     '<chart type="pie" container="container" title="XML Sample Pie">' +
        '<data>' +
             '<point name="Apples" value="128.14" fill="Green"/>'+
@@ -53,7 +53,7 @@ The same chart can be created using XML
 ```
 anychart.fromXml(
 '<?xml version="1.0" encoding="utf-8"?>' +
-  '<anychart xmlns="https://cdn.anychart.com/schemas/8.7.1/xml-schema.xsd">' +
+  '<anychart xmlns="https://cdn.anychart.com/schemas/9.0.0/xml-schema.xsd">' +
     '<chart type="column" container="container">' +
       '<series_list>'+
         '<series type="column">'+
@@ -63,6 +63,7 @@ anychart.fromXml(
             '<point value="163.21"/>'+
             '<point value="229.98"/>'+
           '</data>'+
+        '</series>'+
       '</series_list>'+
     '</chart>'+
   '</anychart>'
@@ -88,7 +89,7 @@ and in XML format this looks like
 <!-- set chart type and chart container -->
 <chart type="column" container="container">
 <!-- set scale type and anjust minimum & maximum values -->
-<y_scale type="line" minimum="100" maximum="350"/>
+<y_scale type="linear" minimum="100" maximum="350"/>
 </chart>
 ```
 
@@ -163,10 +164,12 @@ Visual settings can be vital for a chart. XML can contain any method and paramet
 
 ```xml
 <!-- series settings -->
-<series fill="gold" stroke="gray" hover_stroke="darkred" hatch_fill="diagonal-brick">
+<series fill="gold" stroke="gray" hatch_fill="diagonal-brick">
 
-  <!-- customize hover hatch fill -->
-  <hover_hatch_fill type="diagonal-brick" color="darkred"/>
+  <!-- customize hover stroke and hatch fill -->
+  <hovered stroke="darkred">
+    <hatch_fill type="diagonal-brick" color="darkred"/>
+  </hovered>
 
 </series>
 ```
@@ -434,7 +437,7 @@ var newScale = anychart.scales.linear();
 newScale.minimum(0)
     .maximum(100)
     .ticks().interval(10);
-extraYScale.minorTicks().interval(2);
+newScale.minorTicks().interval(2);
 
 
 

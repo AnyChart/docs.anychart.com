@@ -37,8 +37,8 @@ This type of ColorScale looks like a single bar colored with a gradient, where i
 <img src = "https://static.anychart.com/images/quant_colorrange.jpg">
 
 Using the Linear type of coloring, there are three ways of coloring the map:
-1) we may define no colors - in this case the coloring will be based on the default palette;
-2) we may define only one color - in this case the coloring gradient will be built from very light grey to the only defined color;
+1) we may define no colors - in this case the gradient runs from light blue to dark blue, as set by the theme; the chart palette is not used;
+2) we may define only one color - in this case all regions are filled with that color, with no gradient;
 3) the more colors we define here, the more colors will the gradient contain. 
 
 ```
@@ -163,7 +163,7 @@ For example, from yellow through orange to brown or from light-green to deep-eme
 </tbody>
 </table>
 
-Use the {api:anychart.color#bipolarHueProgression}anychart.color.bipolarHueProgression(){api} to make a progression between two similar hues.
+Use the {api:anychart.color#blendedHueProgression}anychart.color.blendedHueProgression(){api} to make a progression between two similar hues.
 
 In case you haven't defined any of the colors, they will be generated automatically (of the default color). 
 

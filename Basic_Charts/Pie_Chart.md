@@ -228,13 +228,13 @@ chart.startAngle(90);
 
 ### Sorting Order
 
-By default, slices are sorted in descending order according to their values. You can sort them in ascending order or disable sorting.
+By default, slices are not sorted and keep the order of the data. You can sort them in descending or ascending order.
 
 To set the sorting mode, call the {api:anychart.charts.Pie#sort}sort(){api} method with one of the parameters listed in {api:anychart.enums.Sort}anychart.enums.Sort{api}:
 
-* `"desc"` (default)
+* `"desc"`
 * `"asc"`
-* `"none"`
+* `"none"` (default)
 
 ```
 // set the sorting mode
@@ -254,7 +254,7 @@ You can set the range of explosion (in pixels or as a percentage) by using the {
 chart.selected().explode("3%");
 ```
 
-Be default slices explode by 7% when selected.
+By default, slices explode by 5% when selected.
 
 To make some slices exploded (selected) by default, call {api:anychart.charts.Pie#select}select(){api} with an array of their indexes as a parameter:
 

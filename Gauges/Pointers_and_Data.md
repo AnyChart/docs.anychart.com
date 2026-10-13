@@ -6,7 +6,7 @@ Pointers are elements of the Gauge charts, which are necessary for the data repr
 
 ## Connection with the Data
 
-By default, when a pointer is added to the JavaScript gauge chart, it shows the first value from the DataSet (if you've got more than one) or the only one. In case you need the second pointer with the same value to display or you have more than one value in your dataSet and you need one of your pointers to show this particular value  different from the first one, you need to connect the data with the pointer in some way. On the other hand, the situation when you need to show any value from your dataSet on the axis which is not the only and the first might take place as well.
+By default, each pointer added to the JavaScript gauge chart shows the value from the DataSet that matches the order in which the pointer was created: the first pointer shows the first value, the second pointer shows the second value, and so on. Knobs are numbered separately from the other pointers. In case you need two pointers to show the same value, or a pointer to show a value other than the one it gets by default, you need to connect the data with the pointer in some way. On the other hand, the situation when you need to show any value from your dataSet on the axis which is not the only and the first might take place as well.
 
 These problems are to be easily resolved using the {api:anychart.core.gauge.pointers.Base#dataIndex}dataIndex(){api} and the {api:anychart.core.gauge.pointers.Base#axisIndex}axisIndex{api} methods. You can find more information about these methods below.
 
@@ -174,12 +174,7 @@ var bar = gauge.bar();
 bar.position("inside");
 ```
 
-It's possible to use only the first letters of the position as a value, e.g.:
-
-```
-var bar = gauge.bar();
-bar.position("i");
-```
+Use the full name of the position: a shortened value such as `"i"` is not recognized, and the bar is placed in the center.
 
 {sample}BCT\_Pointers-and-Data\_Bar\_03{sample}
 
@@ -358,7 +353,7 @@ tankC.emptyHatchFill("percent30");
 
 {sample}BCT\_Pointers-and-Data\_Tank\_17{sample} 
 
-The colors of empty parts (as well as the main colors) can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.linearGauge.pointers.Tank#normal}normal(){api}, {api:anychart.core.linearGauge.pointers.Tank#hovered}hovered(){api}, and {api:anychart.core.linearGauge.pointers.Tank#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#fill}emptyFill(){api} and {api:anychart.core.StateSettings#hatchFill}emptyHatchFill(){api}:
+The colors of empty parts (as well as the main colors) can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.linearGauge.pointers.Tank#normal}normal(){api}, {api:anychart.core.linearGauge.pointers.Tank#hovered}hovered(){api}, and {api:anychart.core.linearGauge.pointers.Tank#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#emptyFill}emptyFill(){api} and {api:anychart.core.StateSettings#emptyHatchFill}emptyHatchFill(){api}:
 
 ```
 // set colors for empty parts of tanks

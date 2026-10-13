@@ -519,7 +519,7 @@ The out of the box [themes](../Appearance_Settings/Themes#out_of_the_box_themes)
 <td>Contrast</td>
 <td>anychart-theme-contrast.min.js</td>
 <td>contrast</td>
-<td>The default theme with its palette darkened for a contrast ratio of at least 3:1 against white</td>
+<td>White background, dark text, 10-color palette safe for color-vision deficiencies, every color at least 4.5:1 against white</td>
 </tr>
 <tr>
 <td>Dark Blue</td>

@@ -126,7 +126,7 @@ In the sample below, there are two Range Bar series with appearance settings con
 
 ```
 // create the first series
-var series1 = chart.RangeBar(seriesData_1);
+var series1 = chart.rangeBar(seriesData_1);
 
 // configure the visual settings of the first series
 series1.normal().fill("#00cc99", 0.3);
@@ -137,7 +137,7 @@ series1.hovered().stroke("#00cc99", 2, "10 5", "round");
 series1.selected().stroke("#00cc99", 4, "10 5", "round");
 
 // create the second series
-var series2 = chart.RangeBar(seriesData_2);
+var series2 = chart.rangeBar(seriesData_2);
 
 // configure the visual settings of the second series
 series2.normal().fill("#0066cc", 0.3);

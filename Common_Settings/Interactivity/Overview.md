@@ -46,7 +46,7 @@ There are also two basic events: hover and select.
 
 #### Hover
 
-Our interactive hover might be of two types: "bySpot", which is a sort of multi-hover, and "byX", which is the same as single-select.
+Our interactive hover can be of three types: "single", which hovers only the point under the cursor, "bySpot", which is a sort of multi-hover, and "byX", which hovers all points with the X value under the cursor. The default mode depends on the chart type: for example, a line chart starts in "byX" and a column chart in "single".
 
 ##### bySpot 
 
@@ -61,14 +61,14 @@ interactivity.spotRadius(30);
 
 {sample}CS\_Interactivity\_03{sample}
 
-This way of hovering, when the hover state is enabled for a couple of points simultaneously, is a multi-hover mode. Now let's look at the single-hover mode ("byX").
+This way of hovering, when the hover state is enabled for a couple of points simultaneously, is a multi-hover mode. Now let's look at the "byX" mode.
 
 ##### byX
 
-Note that you can define the mode in a easier way:
+Note that you can define the mode in an easier way:
 
 ```
-// single-hover enabling 
+// hover by X
 chart.interactivity("byX");
 ```
 
@@ -76,7 +76,7 @@ The code line above does the same as the previous one, but we have changed the h
 
 {sample}CS\_Interactivity\_04{sample}
 
-So, the "byX" mode gives us a single-hover mode, when it even isn't necessary to hover the point, you just need to move the cursor over the chart plot. So the y-coordinate doesn't matter at all in this case. It might be useful when you've got a lot of points on a chart and you need to emphasize them.
+So, in the "byX" mode it isn't even necessary to hover the point, you just need to move the cursor over the chart plot: all points with the X value under the cursor are hovered, and the y-coordinate doesn't matter at all. It might be useful when you've got a lot of points on a chart and you need to emphasize them.
 
 Now, let's have a look at the **select and multi-select** features.
 
@@ -237,11 +237,11 @@ Next sample uses chart's legend to trigger changes of a point. When we hover an 
 
 ### Charts
 
-Use the {api:anychart.core.Chart#startSelectMarquee}startSelectMarquee(){api} and {api:anychart.core.Chart#cancelMarquee}cancelMarquee(){api} methods to work with rectangle marquee select.
+Use the {api:anychart.core.Chart#startSelectRectangleMarquee}startSelectRectangleMarquee(){api} and {api:anychart.core.Chart#cancelMarquee}cancelMarquee(){api} methods to work with rectangle marquee select.
 
 Use the {api:anychart.core.Chart#selectMarqueeFill}selectMarqueeFill(){api} and {api:anychart.core.Chart#selectMarqueeStroke}selectMarqueeStroke(){api} methods to configure marquee appearance.
 
-Handle `"selectMarqueeStart"`, `'selectMarqueeChange'` and `'selectMarqueeFinish'` events {api:anychart.core.Chart#inMarquee}inMarquee{api} property to track marquee progress.
+Handle `"selectMarqueeStart"`, `'selectMarqueeChange'` and `'selectMarqueeFinish'` events and use the {api:anychart.core.Chart#inMarquee}inMarquee(){api} method to track marquee progress.
 
 ### Stock 
 
@@ -254,7 +254,7 @@ As you know, AnyChart supports quite a variety of chart types. Some of them are 
 
 ```
 // set chart data
-var chart = funnel(data);
+var chart = anychart.funnel(data);
 
 // get point #4
 var point = chart.getPoint(3);

@@ -107,7 +107,7 @@ Read the overview of general settings: [General Settings](../General_Settings).
 
 ### Stacked Mode
 
-When Mekko chart is created, both its scales are put into stacked mode: the Y-scale to [percent stacked mode](../Stacked/Overview#percent_stacking) and X-scale to value stacking mode.
+When Mekko chart is created, its Y-scale is put into [percent stacked mode](../Stacked/Overview#percent_stacking). The X-scale is ordinal and is not stacked: the width of each column is proportional to the column total.
 
 Changing the Y-scale to [value stacked mode](../Stacked/Overview#value_stacking) but consider using the[Bar Mekko Chart](Bar_Mekko_Chart) in such cases.
 
@@ -115,7 +115,7 @@ Changing the X-scale will convert Mekko chart into usual [percent stacked column
 
 ### Padding
 
-Padding between points is a special setting in Mekko charts, it is controlled with {api:anychart.charts.Mekko#pointsPadding}pointsPadding(){api} method and sets the distance between elements (tiles), it serves only aesthetic purpose and it is set to different default values in [Mekko](#mekko), [Bar Mekko](Bar_Mekko_Chart), and [Mosaic](Mosaic_Chart) constructors.
+Padding between points is a special setting in Mekko charts, it is controlled with {api:anychart.charts.Mekko#pointsPadding}pointsPadding(){api} method and sets the distance between elements (tiles), it serves only aesthetic purpose. By default it is 0 in [Mekko](#mekko) and [Bar Mekko](Bar_Mekko_Chart) charts and 5 in [Mosaic](Mosaic_Chart) charts.
 
 ### Appearance
 

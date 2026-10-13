@@ -41,7 +41,7 @@ Here is a live sample:
 
 There are eight parameters the IKH indicator has, one of them is necessary - the mapping.
 
-Then you can set the base period, the conversion period, the leading period, and series types.
+Then you can set the conversion period, the base period, the leading period, and series types.
 
 The following code sample demonstrates a IKH indicator with parameters set as default:
 

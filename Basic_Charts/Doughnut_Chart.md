@@ -100,7 +100,7 @@ In this sample, there are outside labels with customized connectors:
 
 #### Inner Labels
 
-To place labels into the blank area in the center of a Doughnut chart, call the {api:anychart.core.ui.LabelsFactory.Label#position}position(){api} method with the `"inside"` parameter. You can also configure the offset of the inner labels by using the {api:anychart.charts.Pie#insideLabelsOffset}isideLabelsOffset(){api} method.
+To place labels into the blank area in the center of a Doughnut chart, call the {api:anychart.core.ui.LabelsFactory.Label#position}position(){api} method with the `"inside"` parameter. You can also configure the offset of the inner labels by using the {api:anychart.charts.Pie#insideLabelsOffset}insideLabelsOffset(){api} method.
 
 The sample below shows a Doughnut chart with inner labels, the offset is -75%:
 

@@ -3,7 +3,7 @@
 
 ## Overview
 
-"No data label" feature allows you to show a message or modify the look of the chart in cases when there is nothing to show. There are a lot of cases when there is nothing to show: the data set is empty or not set, the series are hidden, the series are there but there are no point to show. By default "No Data Label" appears when AnyChart can't find any element to be put on a chart. Series with empty values are still considered as "Data has been set" event.
+"No data label" feature allows you to show a message or modify the look of the chart in cases when there is nothing to show. There are a lot of cases when there is nothing to show: the data set is empty or not set, the series are hidden, the series are there but there are no point to show. "No Data Label" is disabled by default; once enabled, it appears when AnyChart can't find any element to be put on a chart. Series with empty values are still considered as "Data has been set" event.
 
 ## Enabling / Disabling
 

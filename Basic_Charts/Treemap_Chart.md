@@ -517,9 +517,9 @@ chart = anychart.treeMap(data, "as-tree");
 
 #### Display Mode
 
-By default, the text of a header is not shown if it does not fit its height. However, you can hide such text or always show the text of headers. To set the display mode of headers, call the {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode{api} method with one of the parameters listed in {api:anychart.enums.LabelsDisplayMode}anychart.enums.LabelsDisplayMode{api}:
+By default, the text of a header is always shown, even if it does not fit its height. However, you can clip or hide such text. To set the display mode of headers, call the {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode{api} method with one of the parameters listed in {api:anychart.enums.LabelsDisplayMode}anychart.enums.LabelsDisplayMode{api}:
 
-* `"alwaysShow"` (default)
+* `"always-show"` (default)
 * `"clip"`
 * `"drop"`
 

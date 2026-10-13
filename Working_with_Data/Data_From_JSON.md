@@ -11,7 +11,7 @@ JSON or JavaScript Object Notation, is an open standard format that uses human-r
 
 ## Schema
 
-JSON Schema specifies a JSON-based format to define the structure of JSON data (visit [https://en.wikipedia.org/wiki/JSON#Schema\_and\_metadata](https://en.wikipedia.org/wiki/JSON#Schema\_and\_metadata) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. AnyChart JSON schema varies from version to version. For example, JSON Schema for AnyChart version 8.7.1 is located at [https://cdn.anychart.com/schemas/8.7.1/json-schema.json](https://cdn.anychart.com/schemas/8.7.1/json-schema.json). Whenever you use AnyChart JSON schema - make sure its corresponds to the version of AnyChart.
+JSON Schema specifies a JSON-based format to define the structure of JSON data (visit [https://en.wikipedia.org/wiki/JSON#Schema\_and\_metadata](https://en.wikipedia.org/wiki/JSON#Schema\_and\_metadata) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. AnyChart JSON schema varies from version to version. For example, JSON Schema for AnyChart version 9.0.0 is located at [https://cdn.anychart.com/schemas/9.0.0/json-schema.json](https://cdn.anychart.com/schemas/9.0.0/json-schema.json). Whenever you use AnyChart JSON schema - make sure its corresponds to the version of AnyChart.
 
 ## JSON vs JavaScript
 
@@ -175,14 +175,16 @@ Visual settings are vital for a chart. JSON can control any method and parameter
 ```
 "fill":"gold",
 "stroke": "gray",
-"hoverStroke": "darkred",
 "hatchFill": {
   "type": "diagonal-brick",
   "color": "gray"
 },
-"hoverHatchFill":{
-  "type:": "diagonal-brick",
-  "color": "darkred"
+"hovered": {
+  "stroke": "darkred",
+  "hatchFill": {
+    "type": "diagonal-brick",
+    "color": "darkred"
+  }
 }
 ```
 
@@ -301,7 +303,7 @@ chart.title()
     // title background settings
     background: {
       // enable background
-      enabled: "true",
+      enabled: true,
       // background inner color
       fill: "#FFD700",
       // set background border
@@ -443,8 +445,8 @@ chart.yAxis(1)
   .scale(newYScale)
   .title()
     .text("Extra Y Axis");
-  .minorTicks()
-    .enabled(true);
+  chart.yAxis(1).minorTicks()
+  .enabled(true);
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0;">
@@ -469,7 +471,7 @@ chart.yAxis(1)
     title: "Basic Y Axis"
   },{
     orientation: "right",
-    scale: "newScale",
+    scale: 2,
     title:{
       text: "Extra Y Axis"},
       minorTicks: {

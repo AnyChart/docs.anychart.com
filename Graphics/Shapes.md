@@ -197,7 +197,7 @@ Use the {api:anychart.graphics.vector.Shape#fill}fill(){api} method to fill the 
 
 ```
 // color the star with a golden color
-star.fill("gold")";
+star.fill("gold");
 ```
 
 {sample :height 150}GFX\_Basic\_Shapes\_06{sample}

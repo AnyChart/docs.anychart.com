@@ -47,7 +47,7 @@ The next two parameters, "maPeriod" and "maType", set the period and type of the
 The following code sample demonstrates a Volume + MA indicator with parameters set as default:
 
 ```
-var sma10 = plot.sma(mapping, 20, "sma", "stick", "line");
+var volumeMa = plot.volumeMa(mapping, 20, "sma", "stick", "line");
 ```
 
 ## Visualization

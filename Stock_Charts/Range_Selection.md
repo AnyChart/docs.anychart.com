@@ -172,7 +172,7 @@ var customRanges = [
     },
     {
         'text': '10',
-        'type': 'points'
+        'type': 'points',
         'count': 10,
         'anchor': 'last-date'
     }

@@ -107,7 +107,7 @@ background.cornerType("round");
 background.corners(10);
 ```
 
-Also, it is possible to choose radius of any corner. Just set four number for every corner in this order: top-left, top-right, bottom-left, bottom-right corner. If a radius set to 0, no effect will be applied. Settings for bottom-right and bottom-left corners:
+Also, it is possible to choose radius of any corner. Just set four numbers, one for every corner, in this order: top-left, top-right, bottom-right, bottom-left corner. If a radius is set to 0, no effect will be applied. Settings for bottom-right and bottom-left corners:
 
 ```
 var background = chart.background();

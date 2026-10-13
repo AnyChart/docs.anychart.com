@@ -126,7 +126,7 @@ var chart = anychart.calendar(data);
 
 The Calendar chart displays all the days of the year (or years). While some of them are specified in data with values assigned to them, others may be not. These two type of days are colored different colors and have different [appearance settings](../Appearance_Settings).
 
-The appearance settings of days with values can be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **hover**. Use the {api:anychart.charts.CirclePacking#normal}normal(){api} and {api:anychart.charts.CirclePacking#hovered}hovered(){api} methods.
+The appearance settings of days with values can be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **hover**. Use the {api:anychart.core.calendar.settings.Days#normal}normal(){api} and {api:anychart.core.calendar.settings.Days#hovered}hovered(){api} methods.
 
 Combine them with the following methods:
 
@@ -211,7 +211,7 @@ months.underSpace(20);
 To configure years, use the following methods:
 
 * {api:anychart.core.calendar.settings.Years#inverted}inverted(){api} to invert the order of years
-* {api:anychart.core.calendar.settings.Years#background}background(){api} to set the [background](../Common_Settings/Background)
+* {api:anychart.core.calendar.settings.Years#background}background(){api} to set the [background](../Appearance_Settings/Background)
 * {api:anychart.core.calendar.settings.Years#title}title(){api} to set the [title](../Common_Settings/Title)
 * {api:anychart.core.calendar.settings.Years#underSpace}underSpace(){api} to set the gap between years
 

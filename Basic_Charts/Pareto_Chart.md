@@ -65,10 +65,10 @@ You [should not create series explicitly](#series), a chart does it for you. The
 
 ```
 dataset = [
-        {x: "A", 19},
-        {x: "B", 9},
-        {x: "C", 29},
-        {x: "D", 89},
+        {x: "A", value: 19},
+        {x: "B", value: 9},
+        {x: "C", value: 29},
+        {x: "D", value: 89},
        ];
 
 chart = anychart.pareto(dataset);
@@ -78,10 +78,10 @@ If you want to reset all data you can do that using the {api:anychart.charts.Par
 
 ```
 dataset = [
-        {x: "A", 19},
-        {x: "B", 9},
-        {x: "C", 29},
-        {x: "D", 89},
+        {x: "A", value: 19},
+        {x: "B", value: 9},
+        {x: "C", value: 29},
+        {x: "D", value: 89},
        ];
 
 chart = anychart.pareto();
@@ -93,24 +93,24 @@ If you want to append some data (everything is recalculated automatically when y
 
 ```
 data = [
-        {x: "A", 19},
-        {x: "B", 9},
-        {x: "C", 29},
-        {x: "D", 89},
+        {x: "A", value: 19},
+        {x: "B", value: 9},
+        {x: "C", value: 29},
+        {x: "D", value: 89},
         ];
 
 chart = anychart.pareto(data);
 
 extra_data = [
-        {x: "E", 19},
-        {x: "F", 9},
-        {x: "G", 29},
-        {x: "H", 89},
+        {x: "E", value: 19},
+        {x: "F", value: 9},
+        {x: "G", value: 29},
+        {x: "H", value: 89},
         ]
 
 newData = chart.data().concat(extra_data);
 
-chart.data(extra_data);
+chart.data(newData);
 ```
 
 ### Series
@@ -197,12 +197,12 @@ This chart type allows you to set the size of its points. Read more in the [Poin
 To configure Pareto series labels settings please study general [Labels Tutorial](../Common_Settings/Labels) first. Configuring labels for series in a Pareto chart is just the same, you can do whatever you want with any of them:
 
 ```
-// line series enable labels
+// column series enable labels
 chart.getSeriesAt(0).labels(true);
 chart.getSeriesAt(0).labels().position("Center");
 chart.getSeriesAt(0).labels().anchor("Center");
 
-// columns series enable labels
+// line series labels
 chart.getSeries(1).labels(false);
 chart.getSeries(1).selected().labels().enabled(true);
 chart.getSeries(1).selected().labels().anchor("center-bottom");
@@ -241,7 +241,7 @@ To access scales and axis use the following code:
 // main scale
 valueScale = chart.getSeriesAt(0).yScale();
 // percent scale
-percentScale = chart.getSeriesAt(0).yScale();
+percentScale = chart.getSeriesAt(1).yScale();
 
 // value axis 
 valueAxis = chart.yAxis(0);

@@ -204,7 +204,7 @@ series.labels().format("{%name}\n{%size}");
 
 Find out more about Text Formatters [here](../Common_Settings/Text_Formatters).
 
-Labels are enabled by default, they can be turned on and off using the {api:anychart.core.ui.Label#enabled}enabled(){api} method as usual.
+Labels are disabled by default, they can be turned on and off using the {api:anychart.core.ui.Label#enabled}enabled(){api} method as usual.
 
 {sample}Maps\_Proportional\_Symbol\_11{sample}
 

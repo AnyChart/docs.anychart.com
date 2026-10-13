@@ -158,7 +158,7 @@ The sample below demonstrates controlling text settings and using padding for th
 ```
 table
   .cellPadding(10)      // set 10px padding from each border of every cell
-  .vAlign('center')      // set vertical align of the text
+  .vAlign('middle')      // set vertical align of the text
   .hAlign('right')        // set horizontal align of the text
   .fontWeight(600)   // set text font weight
   .fontSize(12)           // set text font size

@@ -68,7 +68,7 @@ table.addData([
 ]);
   
 // map the data
-mapping = table.mapAs({'x:"x", 'high':"high", 'low': "low"});
+mapping = table.mapAs({'x': 'x', 'high': 'high', 'low': 'low'});
 
 // chart type
 chart = anychart.stock();

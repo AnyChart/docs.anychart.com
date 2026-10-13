@@ -18,7 +18,7 @@ Here is the full list of events that work with event markers:
 <tr><td>eventMarkerDblClick</td><td>Event type for the marker double click</td></tr>
 <tr><td>eventMarkerMouseDown</td><td>Event type for the marker mouse down</td></tr>
 <tr><td>eventMarkerMouseMove</td><td>Event type for the marker mouse move</td></tr>
-<tr><td>eventMarkerMouseOut</td><td>Event type for the marker mouse over</td></tr>
+<tr><td>eventMarkerMouseOut</td><td>Event type for the marker mouse out</td></tr>
 <tr><td>eventMarkerMouseOver</td><td>Event type for the marker mouse over</td></tr>
 <tr><td>eventMarkerMouseUp</td><td>Event type for the marker mouse up</td></tr>
 </table>

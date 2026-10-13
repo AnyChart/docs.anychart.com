@@ -9,7 +9,7 @@ To learn more about polar charts in general and how to customize them, see [Pola
 
 ## Quick Start
 
-To build a Polar Column chart, use the {api:anychart#polar}anychart.polar(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#column}column(){api} method to create a Column series:
+To build a Polar Column chart, use the {api:anychart#polar}anychart.polar(){api} chart constructor. Then call the {api:anychart.charts.Polar#column}column(){api} method to create a Column series:
 
 ```
 // create a chart

@@ -16,7 +16,7 @@ To build a Polar Line chart, use the {api:anychart#polar}anychart.polar(){api} c
 chart = anychart.polar();
 
 // create a line series and set the data
-var series = chart.polar(data);
+var series = chart.line(data);
 ```
 
 {sample}BCT\_Polar\_Line\_Chart{sample}

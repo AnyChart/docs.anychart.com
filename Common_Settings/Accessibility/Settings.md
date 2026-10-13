@@ -10,7 +10,7 @@ The default accessibility mode is [Chart Elements](#chart_elements_mode): a user
 
 ## Enabling / Disabling
 
-To make a chart accessible for everyone, you need to enable the {api:anychart.core.Chart#a11y}a11y(){api} method of the chart or series, which means "accessibility". Accessibility support is enabled by default, but in case you have switched it off and need to enable it back again, use {api:anychart.core.utils.ChartA11y#enabled}enable(){api}.
+To make a chart accessible for everyone, you need to enable the {api:anychart.core.Chart#a11y}a11y(){api} method of the chart or series, which means "accessibility". Accessibility support is enabled by default, but in case you have switched it off and need to enable it back again, use {api:anychart.core.utils.ChartA11y#enabled}enabled(){api}.
 
 ```
 // enable the accessibility of the chart

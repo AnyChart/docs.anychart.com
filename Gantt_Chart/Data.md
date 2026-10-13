@@ -122,7 +122,7 @@ var data = [
         id: "1_3",
         name: "Meeting",
         start_date: "2026-02-09",
-        actualEnd: "2026-02-09"
+        end_date: "2026-02-09"
       },
       {
         id: "1_4",

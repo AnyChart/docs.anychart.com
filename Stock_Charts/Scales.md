@@ -3,7 +3,7 @@
 
 ## Overview
 
-In AnyChart scales control calculations and modes while Axes control axes labels, lines and tick marks. Learn more about basis Axes options available (like tickmarks, axis line and so on) see [Axes](Axes Tutorial), to learn more about basic scale options (like maximum, minimum, scale modes and so on) see [Scale tutorial](../Axes_and_Grids/Scales).
+In AnyChart scales control calculations and modes while Axes control axes labels, lines and tick marks. Learn more about basis Axes options available (like tickmarks, axis line and so on) see [Axes](Axes), to learn more about basic scale options (like maximum, minimum, scale modes and so on) see [Scale tutorial](../Axes_and_Grids/Scales).
 
 In this section we will demonstrate only the differences of AnyStock scales from basic charts' ones.
 
@@ -77,7 +77,7 @@ chart.plot(0).yScale().comparisonMode("percent");
 chart.plot(0).yScale().compareWith("seriesStart");
 
 // value mode with custom date as the comparison date
-// date is 24 of April 2008, set as a JavaScript Timestamp 
+// date is 25 of April 2008, set as a JavaScript Timestamp 
 chart.plot(1).yScale().comparisonMode("value");
 chart.plot(1).yScale().compareWith(1209081600000);
 // the following line gives the same result

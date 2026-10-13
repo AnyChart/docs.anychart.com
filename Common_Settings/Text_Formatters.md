@@ -25,7 +25,7 @@ anychart.onDocumentReady(function () {
   // set tooltip text template
   var tooltip = chart.getSeries(0).tooltip();
   tooltip.title().text("Content");
-  tooltip.format("{%x} is a {%season} month\nLowest temp: {%value}&deg;C");
+  tooltip.format("{%x} is a {%season} month\nLowest temp: {%value}\xb0C");
 
   // set series labels text template
   var seriesLabels = chart.getSeries(0).labels().enabled(true);
@@ -64,16 +64,13 @@ The full list of tokens is available in API: {api:anychart.enums.Statistics}anyc
 <td>{%value}</td><td>The y value of this point.</td>
 </tr>
 <tr>
-<td>{%yValue}</td><td>The y value of this point.</td>
-</tr>
-<tr>
 <td>{%yPercentOfSeries}</td><td>The percentage of the series this point represents.</td>
 </tr>
 <tr>
 <td>{%yPercentOfTotal}</td><td>The percentage of all the series on the chart this point represents.</td>
 </tr>
 <tr>
-<td>{%xValue}</td><td>The x value of this point (Scatter Plot charts).</td>
+<td>{%x}</td><td>The x value (or category name) of this point.</td>
 </tr>
 <tr>
 <td>{%bubbleSize}</td><td>The bubble size value of this point (Bubble chart).</td>
@@ -130,13 +127,10 @@ The full list of tokens is available in API: {api:anychart.enums.Statistics}anyc
 <td>{%seriesLastXValue}</td><td>The x value of the last point in this series (Scatter plot charts).</td>
 </tr>
 <tr>
-<td>{%seriesLastYValue}</td><td>The y value of the first point in this series.</td>
+<td>{%seriesLastYValue}</td><td>The y value of the last point in this series.</td>
 </tr>
 <tr>
 <td>{%seriesXAverage}</td><td>The average x value of all the points within this series.</td>
-</tr>
-<tr>
-<td>{%seriesXAxisName}</td><td>The title text of the X Axis.</td>
 </tr>
 <tr>
 <td>{%seriesXMax}</td><td>The maximal x value of all the elements within this series (Scatter plot charts).</td>
@@ -152,9 +146,6 @@ The full list of tokens is available in API: {api:anychart.enums.Statistics}anyc
 </tr>
 <tr>
 <td>{%seriesXSum}</td><td>The sum of all the points x values (Scatter plot charts).</td>
-</tr>
-<tr>
-<td>{%seriesYAxisName}</td><td>The title text of the Y Axis.</td>
 </tr>
 <tr>
 <td>{%name}</td><td>The name of this point.</td>
@@ -253,19 +244,10 @@ The full list of tokens is available in API: {api:anychart.enums.Statistics}anyc
 <td>{%dataPlotYRangeSum}</td><td>The sum of the ranges of the points within the chart.</td>
 </tr>
 <tr>
-<td>{%axisName}</td><td>The name of the axis.</td>
-</tr>
-<tr>
-<td>{%axisScaleMax}</td><td>The maximum value on the axis.</td>
-</tr>
-<tr>
-<td>{%axisScaleMin}</td><td>The minimum value on the axis.</td>
-</tr>
-<tr>
 <td>{%categoryName}</td><td>The name of the category.</td>
 </tr>
 <tr>
-<td>{%categoryYAverage}</td><td>The name of the category.</td>
+<td>{%categoryYAverage}</td><td>The average of all the points within this category.</td>
 </tr>
 <tr>
 <td>{%categoryYMedian}</td><td>The median of all the points within this category.</td>
@@ -304,16 +286,10 @@ The full list of tokens is available in API: {api:anychart.enums.Statistics}anyc
 <td>{%dataPlotMaxYSumSeriesName}</td><td>The name of the series with a maximal sum of the points y values.</td>
 </tr>
 <tr>
-<td>{%dataPlotMaxYValuePointName}</td><td>The name of the point with a maximal of all the points y values.</td>
-</tr>
-<tr>
 <td>{%dataPlotMaxYValuePointSeriesName}</td><td>The name of the series with a maximal of all the points y values.</td>
 </tr>
 <tr>
 <td>{%dataPlotMinYSumSeriesName}</td><td>The name of the series with a minimal sum of the points y values.</td>
-</tr>
-<tr>
-<td>{%dataPlotMinYValuePointName}</td><td>The name of the point with a minimal of all the points y values.</td>
 </tr>
 <tr>
 <td>{%dataPlotMinYValuePointSeriesName}</td><td>The name of the series with a minimal of all the points y values.</td>
@@ -359,16 +335,19 @@ Here is the list of formatting parameters that allow organizing your data presen
 <th>Description</th>
 </tr>
 <tr>
-<td>decimalsCount</td><td>numeric</td><td>The number of visible decimal characters (including characters for the integer values).</td>
+<td>decimalsCount</td><td>numeric</td><td>The maximum number of digits after the decimal point; the value is rounded to it. Trailing zeros are added only when zeroFillDecimals is true.</td>
 </tr>
 <tr>
-<td>decimalPoint</td><td>boolean</td><td>Sets a character for separating decimal part of a number.</td>
+<td>decimalPoint</td><td>string</td><td>Sets a character for separating decimal part of a number.</td>
 </tr>
 <tr>
 <td>groupsSeparator</td><td>string</td><td>Sets a character for separating thousands of an integer number.</td>
 </tr>
 <tr>
-<td>useBracketsForNegativeuseNegativeSign</td><td>boolean</td><td>Controls the "-" sign.</td>
+<td>useBracketsForNegative</td><td>boolean</td><td>Shows negative numbers in brackets instead of the "-" sign.</td>
+</tr>
+<tr>
+<td>useNegativeSign</td><td>boolean</td><td>Controls the "-" sign: false shows negative numbers in brackets.</td>
 </tr>
 <tr>
 <td>zeroFillDecimals</td><td>boolean</td><td>Hides or displays decimal characters for integer values.</td>
@@ -519,7 +498,7 @@ There are some standard fields available in formatters depending on a chart type
 <td>x<br>value<br>seriesName<br>index</td>
 </tr>
 <tr>
-<td>Range Line<br>Range Spline Area<br>Range Column<br>Range Bar</td>
+<td>Range Area<br>Range Spline Area<br>Range Step Area<br>Range Column<br>Range Bar</td>
 <td>x<br>seriesName<br>index<br>high<br>low</td>
 </tr>
 <tr>
@@ -545,7 +524,7 @@ x<br>seriesName<br>index<br>value<br>valueLowerError<br>valueUpperError<br>xLowe
 <tr>
 <td>Pie/Donut<br>Funnel<br>Pyramid
 </td>
-<td>**Note!** As those types have an only series by default,<br> you should use the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with chart.label().<br>x<br>value<br>index</td>
+<td>**Note!** As those types have an only series by default,<br> you should use the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with chart.labels().<br>x<br>value<br>index</td>
 </tr>
 </table>
 

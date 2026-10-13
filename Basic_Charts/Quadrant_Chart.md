@@ -11,7 +11,7 @@ This article explains how to create a basic Quadrant chart as well as configure 
 
 ## Modules
 
-The Quadrant chart requires adding the the [Core](../Quick_Start/Modules#core) and [Scatter](../Quick_Start/Modules#basic_cartesian) modules:
+The Quadrant chart requires adding the the [Core](../Quick_Start/Modules#core) and [Scatter](../Quick_Start/Modules#scatter) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -46,7 +46,7 @@ If you just pass the data to the chart constructor, it creates a Marker series. 
 
 * {api:anychart.charts.Scatter#marker}marker(){api}
 * {api:anychart.charts.Scatter#bubble}bubble(){api}
-* {api:anychart.charts.Scatter#marker}line(){api}
+* {api:anychart.charts.Scatter#line}line(){api}
 
 The following sample demonstrates how a basic Quadrant chart is created:
 
@@ -172,6 +172,7 @@ chart.quarters(
                 fill: "#e6f9ff",
                 corners: 30,
                 cornerType: "cut"
+            }
         }
 );
 ```

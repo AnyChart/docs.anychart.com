@@ -27,7 +27,7 @@ Some modifications can be done very easy, some require understanding how AnyChar
 
 At the moment you can override renderers only for the following series: Area, Area3d, Bar, Bar3d, Box, Bubble, Candlestick, Column, Column3d, JumpLine, Line, Marker, OHLC, RangeArea, RangeBar, RangeColumn, RangeSplineArea, RangeStepArea, Spline, SplineArea, StepArea, StepLine, Stick. 
 
-You can do this in Basic (Cartesian) Charts, [Scatter Charts](Scatter_Plot/Overview) and [Stock Charts](../Stock_Charts), you can't do that in Radar and Polar Charts.
+You can do this in Basic (Cartesian) Charts, [Scatter Charts](Scatter_Plot/Overview), [Stock Charts](../Stock_Charts), Radar Charts and Polar Charts.
 
 If you want something more than what this article offers, please [contact us](http://support.anychart.com/) or you can go ahead and try to create your own series by forking [AnyChart at Github](https://github.com/AnyChart/AnyChart). Note: you still need a license if you are going to use the derivate projects in a commercial application.
 
@@ -47,17 +47,20 @@ renderer = mySeries.rendering();
 Please note that you need to override renderer for **each instance** of the series you want to customize, you can't just tell the component to display all series of the given type in a different way, you need to assign a custom renderer to every instance you create. Having a single renderer object comes in handy in such cases, you just go like this:
 
 ```
-// create some custom drawer
-var customRenderer;
+// create a custom drawer
+function drawer() {
+  // draw the point
+}
+var customRenderer = {point: drawer};
 
 // create a chart
 chart = anychart.cartesian();
 
 // create series and assign drawers
-series_1 = chart.column([["A",1],["B",2],["C",3]])
-series_1.rendering(customRenderingObject);
+series_1 = chart.column([["A",1],["B",2],["C",3]]);
+series_1.rendering(customRenderer);
 
-series_2 = chart.column([["A",2],["B",4],["C",7]])
+series_2 = chart.column([["A",2],["B",4],["C",7]]);
 series_2.rendering(customRenderer);
 ```
 
@@ -96,12 +99,12 @@ series = chart.column([["A",1],["B",2],["C",3]])
 series.rendering().updatePoint(drawer);
 function drawer(){
 	// hover state
-	if (this.pointState==1) then {
+	if (this.pointState == 1) {
 		// draw something in hover state
 	}
 	// selected state
-	if (this.pointState==2) then {
-		// draw something in hover state		
+	if (this.pointState == 2) {
+		// draw something in selected state		
 	}
 }
 ```

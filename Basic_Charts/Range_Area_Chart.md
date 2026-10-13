@@ -118,8 +118,8 @@ Combine them with the following methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
-* {api:anychart.core.StateSettings#fill}lowStroke(){api} to set the low stroke
-* {api:anychart.core.StateSettings#fill}highStroke(){api} to set the high stroke
+* {api:anychart.core.StateSettings#lowStroke}lowStroke(){api} to set the low stroke
+* {api:anychart.core.StateSettings#highStroke}highStroke(){api} to set the high stroke
 
 Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
@@ -141,7 +141,7 @@ series1.hovered().highStroke("#ff6666", 2, "10 5", "round");
 series1.selected().highStroke("#ff6666", 4, "10 5", "round");
 
 // create the second series
-var series2 = chart.rangeAarea(seriesData_2);
+var series2 = chart.rangeArea(seriesData_2);
 // configure the visual settings of the second series
 series2.normal().fill("#0066cc", 0.3);
 series2.hovered().fill("#0066cc", 0.1);

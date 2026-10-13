@@ -185,6 +185,7 @@ Instead of tokens, you can also use [formatting functions](../../Common_Settings
 
 * `level` (shown by default)
 * `levelValue`
+* `isTimeLevel` (`true` for time levels)
 
 ```
 // create a Fibonacci Fan annotation
@@ -198,11 +199,11 @@ var fibonacciFan = controller.fibonacciFan({
 // configure the annotation labels
 fibonacciFan.labels().format(function() {
   var levelValue = this.levelValue.toFixed(1);
-  if (this.level!==undefined) {
+  if (!this.isTimeLevel) {
     return this.level + " (" + levelValue + ")";
   }
   else {
-    return this.timeLevel;
+    return this.level;
   }
 });
 ```

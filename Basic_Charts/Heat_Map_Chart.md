@@ -12,7 +12,7 @@ This article explains how to create a basic Heat Map chart as well as configure 
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.HeatMap}anychart.charts.HeatMap{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, value, heat](../Working_with_Data/Overview)</td></tr>
+<tr><td>Data Fields</td><td>[x, y, heat](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -204,7 +204,7 @@ chart = anychart.heatMap(data);
 
 ### Color Scale
 
-By default, the color scale of a Heat Map chart is ordinal, and cells are colored in the colors of the default [palette](../Appearance_Settings/Palettes). Color ranges are set automatically.
+By default, the color scale of a Heat Map chart is ordinal, and cells are colored in shades from light blue (#90caf9) to dark blue (#01579b), not in the colors of the chart palette. Color ranges are set automatically.
 
 #### Ordinal
 
@@ -236,7 +236,7 @@ chart.colorScale(customColorScale);
 
 To create a **linear color scale**, use the {api:anychart.scales#linearColor}linearColor(){api} constructor.
 
-Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors, the first one indicating 0, and the second one indicating the maximum heat. Cells are colored automatically in different mixtures of these two colors, and if you do not specify them, the default colors of the linear color scale are used.
+Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors, the first one indicating the minimum heat, and the second one indicating the maximum heat. Cells are colored automatically in different mixtures of these two colors, and if you do not specify them, the default colors of the linear color scale are used.
 
 Finally, call {api:anychart.charts.HeatMap#colorScale}colorScale(){api} to set your scale as the color scale of the chart.
 

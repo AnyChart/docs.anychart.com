@@ -15,7 +15,7 @@ This article explains how to add a Horizontal Range and configure its basic and 
 
 To add a Horizontal Range annotation to a chart, call the {api:anychart.core.annotations.PlotController#horizontalRange}horizontalRange(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
-Next, use the {api:anychart.core.annotations.HorizontalRange##valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.HorizontalRange#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the horizontal channel. Usually, the most convenient way to do this is object notation:
+Next, use the {api:anychart.core.annotations.HorizontalRange#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.HorizontalRange#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the horizontal channel. Usually, the most convenient way to do this is object notation:
 
 ```
 // create a stock chart
@@ -40,7 +40,7 @@ This is how it looks like:
 
 ## Appearance
 
-The [appearance settings](../../../Appearance_Settings) of a Horizontal Channel annotation can be configured in three [states](../../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the following methods:
+The [appearance settings](../../Appearance_Settings) of a Horizontal Channel annotation can be configured in three [states](../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the following methods:
 
 * {api:anychart.core.annotations.Base#normal}normal(){api} 
 * {api:anychart.core.annotations.Base#selected}selected(){api} 
