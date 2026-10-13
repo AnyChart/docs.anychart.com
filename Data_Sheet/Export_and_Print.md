@@ -37,8 +37,9 @@ A JSON row holds only the fields that have a column. The grid drops the data pro
 * `title` - a heading above the table
 * `orientation` - `'landscape'`. Any other value gives portrait
 * `pageSize` - `'A4'`, `'Letter'` and so on. The grid checks only the characters. If a value holds anything but letters, digits and spaces, the grid uses A4 instead. If a value looks correct, the grid passes it to the browser. A browser that does not know that size then uses its own default page size
+* `includeFiltered` - false by default. When true, the grid prints every row of the source data in its original order and ignores the sorting and the filter
 
-The printed table always follows the current [sorting](Sorting) and [filtering](Filtering_and_Search).
+By default the printed table follows the current [sorting](Sorting) and [filtering](Filtering_and_Search).
 
 ## SVG Export Methods
 

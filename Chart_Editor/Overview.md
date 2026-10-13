@@ -35,22 +35,22 @@ If you want to use [themes](../Appearance_Settings/Themes), you need to include 
 
 ```
 <!-- themes -->
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/coffee.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/dark_blue.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/dark_earth.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/dark_glamour.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/dark_provence.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/dark_turquoise.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/light_blue.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/light_earth.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/light_glamour.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/light_provence.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/light_turquoise.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/monochrome.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/morning.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/pastel.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/sea.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/wines.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-coffee.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-dark-blue.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-dark-earth.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-dark-glamour.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-dark-provence.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-dark-turquoise.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-light-blue.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-light-earth.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-light-glamour.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-light-provence.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-light-turquoise.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-monochrome.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-morning.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-pastel.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-sea.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-wines.min.js"></script>
 ```
 
 ## Files

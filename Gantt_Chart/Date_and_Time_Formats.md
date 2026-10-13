@@ -258,8 +258,8 @@ These formats are determined by the [output locale](#outputlocale\(\)) you use -
 To customize a format, pass a string with the [date/time pattern](../Common_Settings/Text_Formatters#date/time_syntax) you wish to use to one of these methods:
 
 * {api:anychart.format#outputDateTimeFormat}outputDateTimeFormat(){api}
-* {api:anychart.format#DateTimeFormat}outputDateFormat(){api}
-* {api:anychart.format#TimeFormat}outputTimeFormat(){api}
+* {api:anychart.format#outputDateFormat}outputDateFormat(){api}
+* {api:anychart.format#outputTimeFormat}outputTimeFormat(){api}
 
 
 ```

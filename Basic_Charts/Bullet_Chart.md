@@ -126,7 +126,7 @@ Below this you can see a demonstration of a horizontal bullet chart with inverte
 By default AnyChart html5 charting library calculates axis minimum and maximum automatically, as you can see on the scale inversion chart sample above: minimal value on the Y-Axis is 0, and maximum is 15. You can change these values by setting them for the {api:anychart.scales.Linear#maximum}maximum(){api} and {api:anychart.scales.Linear#minimum}minimum(){api} parameters:
 
 ```
-chart.yScale().minimum(-5).maximum(20);
+chart.scale().minimum(-5).maximum(20);
 ```
 
 Look at the demonstration of maximum and minimum values in the Single-series sample:
@@ -155,7 +155,7 @@ For clearer distinction between markers it is very useful to adjust style settin
 Here is the sample of an ellipse sharped marker with blue stroke, gold inner color and a size 0.7 size of a chart.
 
 ```
-chart = anychart.bulletChart([
+chart = anychart.bullet([
   {value: 225},
   {value: 290,          // set marker position
     type: 'ellipse',    // set ellipse as marker type

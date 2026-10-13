@@ -217,7 +217,7 @@ The `type` field of a data item picks the layout of its card. Three types are bu
 
 The details of the department and agent cards carry their own labels, such as "Headcount:" and "Owner:". A card without a `type` shows the `name` and `title` fields, like the cards in the rest of this article. A field that an item does not have is left out of its card.
 
-To change a type or add your own, call {api:anychart.charts.OrgChart#nodeTypes}nodeTypes(){api} with an object keyed by the type name. For each part of the card — `image`, `title`, `subtitle`, `details`, `badge` — give the data field to read, or `null` to hide the part. A type also takes the style settings that `level()` takes, and they apply to every card of that type.
+To change a type or add your own, call {api:anychart.charts.OrgChart#nodeTypes}nodeTypes(){api} with an object keyed by the type name. For each part of the card — `image`, `title`, `subtitle`, `details`, `badge` — give the data field to read, or `null` to hide the part. A type also takes the style settings that `level()` takes, except the connector markers, and they apply to every card of that type.
 
 ```
 // give the department cards their own fill

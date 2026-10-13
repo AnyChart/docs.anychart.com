@@ -10,7 +10,7 @@ Create an HTML file and give it the *index.htm* name if you want to make a new w
 ## Include AnyChart
 
 Reference the JavaScript file in the *head* section of your web page.  
-You can use the link as shown below or download anychart.min.js from the [download page](./Downloading_AnyChart) and then put it into any folder of your site (you have to use your own link in this case). 
+You can use the link as shown below or download anychart-bundle.min.js from the [download page](./Downloading_AnyChart) and then put it into any folder of your site (you have to use your own link in this case). 
 
 ```
 <head>

@@ -44,7 +44,7 @@ preloader.visible(true);
 // do something
 
 // hide preloader
-preloader.visible(true);
+preloader.visible(false);
 ```
 
 Here is a basic sample with chart hidden by preloader for some time, see the code to learn more:

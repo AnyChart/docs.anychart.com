@@ -123,7 +123,7 @@ And here is a sample of rotated labels put on top of columns:
 labels = chart.getSeries(0).labels();
 labels.enabled(true);
 labels.position("center-top");
-labels.anchor("left");
+labels.anchor("left-center");
 labels.offsetY(-10);
 labels.rotation(-90);
 ```
@@ -140,7 +140,7 @@ series.labels().width(200);
 series.labels().height(80);
 ```
 
-In the sample below we have also used {api:anychart.standalones.LabelsFactory#vAlign}vAilgn(){api} and {api:anychart.standalones.LabelsFactory#hAlign}hAlign(){api} methods to set proper text placement:
+In the sample below we have also used {api:anychart.standalones.LabelsFactory#vAlign}vAlign(){api} and {api:anychart.standalones.LabelsFactory#hAlign}hAlign(){api} methods to set proper text placement:
 
 {sample}CS\_Labels\_07{sample}
 

@@ -281,11 +281,11 @@ series.selected().risingStroke("#0066cc", 4);
 
 #### Connectors
 
-A connector is a line connecting two columns of a Waterfall chart. To configure the stroke of connectors, use the {api:anychart.charts.Waterfall#connectorStroke}connectorStroke(){api} method:
+A connector is a line connecting two columns of a Waterfall chart. To configure the stroke of connectors, call the {api:anychart.charts.Waterfall#connectors}connectors(){api} method and then {api:anychart.core.waterfall.Connectors#stroke}stroke(){api}:
 
 ```
 // configure connectors
-chart.connectorStroke("#ff6666", 2, "2 2", "round");
+chart.connectors().stroke("#ff6666", 2, "2 2", "round");
 ```
 
 {sample}BCT\_Waterfall\_Chart\_05{sample}

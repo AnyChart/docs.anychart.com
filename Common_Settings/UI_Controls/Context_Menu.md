@@ -148,7 +148,7 @@ You can adjust behavior of any element in {api:anychart.ui.ContextMenu#itemsForm
 chart.contextMenu().itemsFormatter(function(items){
 
   // modify print item action
-  items["print"].action = function() {
+  items["print-chart"].action = function() {
     alert('Custom action');
   };
 
@@ -253,7 +253,7 @@ This section lists all keys and describes when the elements with such keys can a
   - `'save-chart-as-svg'`
 - `'exporting-separator'`
 - `'save-data-as'`
-  - `'save-as-text'`
+  - `'save-data-as-text'`
   - `'save-data-as-xlsx'`
 - `'share-with'`
   - `'share-with-facebook'`
@@ -261,12 +261,14 @@ This section lists all keys and describes when the elements with such keys can a
   - `'share-with-linkedin'`
   - `'share-with-pinterest'`
 - `'print-chart'`
+- `'full-screen-enter'` (or `'full-screen-exit'` while the chart is in full screen)
+- `'full-screen-separator'`
 - `'about'`
 
 ### Basic Cartesian Charts
 
 - `'exclude-points-list'`
-- `'exclude-points-point*'`
+- `'exclude-points-point-N'` (N is the position of the point in the list of excluded points: 0, 1, 2 ...)
 - `'exclude-points-point'`
 - `'exclude-points-keep-only'`
 - `'exclude-points-include-all'`

@@ -27,10 +27,10 @@ You have a full control over the axis labels in {api:anychart.core.ui.LabelsFact
   
 It's possible to make text formatting easier by using tokens - special substrings that represent each a label parameter. A token looks like *{%keywordName}*, for example `{%value}` or `{%axisName}`. Before displaying each token is being replaced by a corresponding value. In the [Text Formatters article](../Common_Settings/Text_Formatters#tokens_list) you can find the list of available tokens.
 
-format works with function or with a string with or without tokens. A default axis label shows the axis value and the default label's format looks like the following:
+Format works with a function or with a string, with or without tokens. By default, an axis label shows the axis value, which corresponds to the following function:
 
 ```
-chart.axis().format(function() {
+chart.xAxis().labels().format(function() {
   return this.value
 });
 ```
@@ -38,7 +38,7 @@ chart.axis().format(function() {
 The following code sample demonstrates setting the same parameter to show using tokens:
 
 ```
-chart.axis().format("{%value}");
+chart.xAxis().labels().format("{%value}");
 ```
 
 Tokens can be also used in xml and json, unlike other formatting methods. Setting tokens through the json format looks like the following:
@@ -109,7 +109,7 @@ Another way to limit the labels' length is to use the {api:anychart.core.ui.Labe
 // format labels
 chart.xAxis().labels().width(45);
 chart.xAxis().labels().height(50);
-chart.xAxis().labels().textOverflow(anychart.graphics.vector.Text.TextOverflow.ELLIPSIS);
+chart.xAxis().labels().textOverflow("ellipsis");
 ```
 
 {sample}AGST\_Labels\_Formatting\_05{sample}

@@ -39,7 +39,7 @@ anychart.exports.filename('custom_name');
 After you do so, all files, images, pdf and data, will be saved under this name, unless you override it when calling specific methods or for the specific chart. To set how a specific chart should be named when exporting set:
 
 ```
-chart.exports.filename('custom_name');
+chart.exports().filename('custom_name');
 ```
 
 ## Image
@@ -121,7 +121,7 @@ chart.saveAsPdf();
 
 AnyChart provides several methods for saving current chart's data. Output formats are {api:anychart.core.Chart#saveAsCsv}CSV{api} and {api:anychart.core.Chart#saveAsXlsx}saveAsXlsx(){api} (Excel file).
 
-{api:anychart.enums.ChartDataExportMode}ChartDataExportMode{api} parameter defines what data is exported: only the data used by chart (`"specific"`), all data in the data set (`"raw"`) and a special mode for stock charts allows to export grouped data (`"grouped"`).
+{api:anychart.enums.ChartDataExportMode}ChartDataExportMode{api} parameter defines what data is exported: only the data used by chart (`"default"`), all data in the data set (`"raw"`) and a special mode for stock charts allows to export grouped data (`"grouped"`).
 
 ### CSV
 
@@ -131,7 +131,7 @@ With {api:anychart.core.Chart#saveAsCsv}saveAsCsv(){api} you can set how you exp
 saveAsCsv("raw",
           {"rowsSeparator": "\n",
           "columnsSeparator": ","},
-          filename: "csv_file");
+          "csv_file");
 ```
 
 CSV has several export modes that depend on chart type, see {api:anychart.enums.ChartDataExportMode}anychart.enums.ChartDataExportMode{api} to learn more.

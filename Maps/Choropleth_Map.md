@@ -97,7 +97,7 @@ ordinalScale = anychart.scales.ordinalColor([
 ]);            
 ```
 
-To set the colors for each range use the {api:anychart.palettes.RangeColors}colors(){api} method. The number of colors you define should be the same as the number of ranges you have defined before:
+To set the colors for each range use the {api:anychart.scales.OrdinalColor#colors}colors(){api} method. The number of colors you define should be the same as the number of ranges you have defined before:
 
 ```
 ordinalScale.colors(['rgb(253,225,86)','rgb(248,196,57)', 'rgb(244,168,19)', 'rgb(198,109,1)', 'rgb(152,58,0)']);

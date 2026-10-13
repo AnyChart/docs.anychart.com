@@ -51,7 +51,7 @@ The key is `1vLGbBZoBDXVT3IaykMb4HhvfXgoAOzEM3Rrk1xLN5aU`, it should be passed a
 By default the {api:anychart.data#loadGoogleSpreadsheet}loadGoogleSpreadsheet(){api} method loads the default sheet, to load any other sheet you need to pass either the index of the sheet:
 
 ```
-anychart.data.loadGoogleSpreadsheet({key: 1vLGbBZoBDXVT3IaykMb4HhvfXgoAOzEM3Rrk1xLN5aU', sheet: '2'}, function(data) {
+anychart.data.loadGoogleSpreadsheet({key: '1vLGbBZoBDXVT3IaykMb4HhvfXgoAOzEM3Rrk1xLN5aU', sheet: '2'}, function(data) {
 	// the data from the sheet #2 is loaded into the "data" variable
 });
 ```
@@ -80,7 +80,7 @@ https://spreadsheets.google.com/feeds/worksheets/1vLGbBZoBDXVT3IaykMb4HhvfXgoAOz
 Which means that sheet unique identifier is `obqmz8q` and it can be loaded like that:
 
 ```
-anychart.data.loadGoogleSpreadsheet({key: 1vLGbBZoBDXVT3IaykMb4HhvfXgoAOzEM3Rrk1xLN5aU', sheet: 'obqmz8q'}, function(data) {
+anychart.data.loadGoogleSpreadsheet({key: '1vLGbBZoBDXVT3IaykMb4HhvfXgoAOzEM3Rrk1xLN5aU', sheet: 'obqmz8q'}, function(data) {
 	// the data from the sheet with 'obqmz8q' id is loaded into the "data" variable
 });
 ```

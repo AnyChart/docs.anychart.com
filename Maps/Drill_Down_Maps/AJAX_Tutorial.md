@@ -58,7 +58,7 @@ var dataSetFL = [
     {'id': 'US.FL.091', 'value': 170498},
     {'id': 'US.FL.077', 'value': 7021},
     {'id': 'US.FL.079', 'value': 18733},
-};
+];
 ```
 
 When the data is defined, it's time to create series.
@@ -69,7 +69,7 @@ The [Choropleth Map](../Choropleth_Map) is used in this sample, as it is one of 
 
 ```
 // create series for the USA map
-usaSeries = map.choropleth(usaDataSet);
+usaSeries = map.choropleth(dataSetUSA);
 ```
 
 Now, it's time to enable the drill down interactivity in the map.
@@ -134,7 +134,7 @@ function loadMap(id, url, map){
     var drillMap = anychart.map();
     // put the data into the map
     drillMap.geoData(data);
-    drillMapSeries = drillMap.choropleth(drillMap.choropleth(dataSets[id])); 
+    drillMapSeries = drillMap.choropleth(dataSets[id]); 
     map.drillTo(id, drillMap);
 }); 
 }                                                                              

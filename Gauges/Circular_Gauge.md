@@ -20,7 +20,7 @@ The Circular Gauge requires adding the [Core](../Quick_Start/Modules#core) and [
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-circular-gauge.min.js"></script>
 ```
 
-Learn more: [Modules](../../Quick_Start/Modules).
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Chart
 
@@ -42,7 +42,7 @@ gauge = anychart.gauges.circular();
 gauge.data(dataSet);
 ```
 
-If we add a line that draws a chart, we'll see the plain frame with a cap in the center:
+If we add a line that draws a chart, we'll see the plain frame with the axis, without pointers or a cap:
 
 ```
 // draw chart

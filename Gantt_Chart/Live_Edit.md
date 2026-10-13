@@ -56,7 +56,7 @@ A [data tree event](Events#data_tree) and a [connector event](Events#connectors)
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
-<tr><td>treeItemMove</td><td>A data item has been updated.</td></tr>
+<tr><td>treeItemUpdate</td><td>A data item has been updated.</td></tr>
 <tr><td>beforeCreateConnector</td><td>A connector is about to be created.</td></tr>
 </table>
 

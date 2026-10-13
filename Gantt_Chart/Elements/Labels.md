@@ -31,7 +31,7 @@ By default, labels are enabled on Project charts and disabled on Resource charts
 
 ```
 // disable labels of tasks
-var chart.getTimeline().tasks().labels(false);
+chart.getTimeline().tasks().labels(false);
 ```
 
 ```

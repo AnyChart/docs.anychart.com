@@ -7,7 +7,7 @@ ColorRange is a tool that is necessary when we need to identify the value that e
 or like a number of colored boxes, each presenting a range of values.
  
 To create a colorrange, use the {api:anychart.charts.Map#colorRange}colorRange(){api} function. There are a lot of parameters might be adjusted, such as orientation 
-(to change it use the {api:anychart.core.axes.Linear#orientation}orientation(){api} function), size of the color box (use {api:anychart.core.ui.ColorRange#colorLineSize}colorLineSize(){api}) or alignment ({api:anychart.graphics.vector.Image#align}align(){api} in this case). You can find more about visual settings in the end of this article.
+(to change it use the {api:anychart.core.ui.ColorRange#orientation}orientation(){api} function), size of the color box (use {api:anychart.core.ui.ColorRange#colorLineSize}colorLineSize(){api}) or alignment ({api:anychart.core.ui.ColorRange#align}align(){api} in this case). You can find more about visual settings in the end of this article.
 
 However, first of all we need to adjust the map colors and its ColorScale, because the ColorRange type and appearance depend on those settings. Read the article about [ColorScale](Scales) to know, how to set and adjust it according to your needs.
 
@@ -25,7 +25,7 @@ var data = [
     {'id': 'AU.CT'},
     {'id': 'AU.SA'},              
     {'id': 'AU.QL'}               
-]);
+];
 	
 // set the map
 var map = anychart.map();

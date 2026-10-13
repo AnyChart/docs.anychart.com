@@ -36,11 +36,11 @@ Note that in case of adding a point automatically it has to be done as a functio
 ```
 function addPoint() {
   // first index for new point
-  newIndex = (data.mapAs().getRowsCount())+1;
+  var newIndex = (data.mapAs().getRowsCount())+1;
   // append data
-  dataSet.append({
+  data.append({
     // x value
-    x: 'P' + indexSetter,
+    x: 'P' + newIndex,
     // random value from 1 to 100
     value : Math.floor((Math.random() * 100)+ 1)
   });
@@ -77,7 +77,7 @@ Note that this method allows you to show this information in the chart title.
 
 ### Update
 
-Updating the charts' data sets is to be done using {api:anychart.data#set}set(){api} method. That's how a part of a code should look like:
+Updating the charts' data sets is to be done using the {api:anychart.data.View#set}set(){api} method of the view returned by mapAs(). That's how a part of a code should look like:
 
 ```
 function(e) {

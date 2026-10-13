@@ -27,7 +27,7 @@ chart.plot(1).annotations().fromJson(json);
 
 ### XML
 
-To create a list of annotations in XML format, use the {api:anychart.core.annotations.PlotController#toXml}toXml(){api} method.  It has an optional parameter: **asXmlNode**, the parameter determines whether the JSON list is returned as an XML node or as a string.
+To create a list of annotations in XML format, use the {api:anychart.core.annotations.PlotController#toXml}toXml(){api} method.  It has an optional parameter: **asXmlNode**, the parameter determines whether the XML list is returned as an XML node or as a string.
 
 To load the list of annotations, call the {api:anychart.core.annotations.PlotController#fromXml}fromXml(){api} method.
 

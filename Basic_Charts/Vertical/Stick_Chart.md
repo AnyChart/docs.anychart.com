@@ -9,7 +9,7 @@ To learn more about vertical charts in general and how to customize them, see [V
 
 ## Quick Start
 
-To build a Vertical Stick chart, use the {api:anychart#vertical}anychart.vertical(){api} or {api:anychart#vertical}anychart.vertical(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#stick}stick(){api} method to create a Stick series.
+To build a Vertical Stick chart, use the {api:anychart#vertical}anychart.vertical(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#stick}stick(){api} method to create a Stick series.
 
 ```
 // create a chart

@@ -11,10 +11,10 @@ You can control major and minor tick intervals using {api:anychart.scales.GeoTic
 
 ```
 var scale = map.scale();
-scale.xTicks.interval(10);
-scale.yTicks.interval(10);
-scale.xMinorTicks.interval(2);
-scale.yMinorTicks.interval(2);
+scale.xTicks().interval(10);
+scale.yTicks().interval(10);
+scale.xMinorTicks().interval(2);
+scale.yMinorTicks().interval(2);
 ```
 
 {sample}Maps\_Geo\_Scale\_01{sample}

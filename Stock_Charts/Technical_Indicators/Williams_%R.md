@@ -52,7 +52,7 @@ Here is a live sample:
 There are three parameters a Williams %R indicator has, one of them is necessary - the mapping. Two other ones are the period and the series type. The series type can be easily changed any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method. The following code sample demonstrates a Williams %R indicator with parameters set as default.
 
 ```
-var psar = plot.psar(mapping, 10, "line");
+var williamsR = plot.williamsR(mapping, 10, "line");
 ```
 
 ## Visualization

@@ -70,7 +70,7 @@ The following presets are used to apply different formats to dates:
 * `"date-common-log"` - *dd/MMM/yyyy*
 * `"date-dmy-dots"` - *dd.MM.yy*
 * `"date-iso-8601"` - *yyyy-MM-dd*
-* `"date-us-short"` - *d/MM/yyyy*
+* `"date-us-short"` - *M/dd/yyyy*
 
 **Note:** These presets can be applied only to dates set as [Unix timestamps](../Date_and_Time_Formats#unix_timestamp).
 

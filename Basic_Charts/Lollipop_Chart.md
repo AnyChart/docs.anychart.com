@@ -123,7 +123,7 @@ In the sample below, two series set their own stick and head colors in all three
 
 #### Head
 
-The head of a point is the marker of its series, and it is set per state. Call {api:anychart.core.cartesian.series.Lollipop#normal}normal(){api}, {api:anychart.core.cartesian.series.Lollipop#hovered}hovered(){api} or {api:anychart.core.cartesian.series.Lollipop#selected}selected(){api}, then {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} of that state: {api:anychart.core.ui.MarkersFactory#type}type(){api} sets the shape of the head and {api:anychart.core.ui.MarkersFactory#size}size(){api} its size. A state that sets no shape or size of its own keeps the normal ones. Give two series different head shapes and they stay apart without color.
+The head of a point is the marker of its series, and it is set per state. Call {api:anychart.core.cartesian.series.Lollipop#normal}normal(){api}, {api:anychart.core.cartesian.series.Lollipop#hovered}hovered(){api} or {api:anychart.core.cartesian.series.Lollipop#selected}selected(){api}, then {api:anychart.core.cartesian.series.Lollipop#markers}markers(){api} of that state: {api:anychart.core.ui.MarkersFactory#type}type(){api} sets the shape of the head and {api:anychart.core.ui.MarkersFactory#size}size(){api} its size. A state that sets no shape of its own keeps the normal shape. A state that sets no size of its own uses the default state size (6), or the normal size if that is larger, so by default the head grows when hovered or selected. Give two series different head shapes and they stay apart without color.
 
 ```
 // set the shape and the size of the heads

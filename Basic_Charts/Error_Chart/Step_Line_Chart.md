@@ -9,7 +9,7 @@ To learn more about error charts in general and how to customize them, see [Erro
 
 ## Quick Start
 
-To build a Step Line chart, use the {api:anychart#line}anychart.stepLine(){api} chart constructor, then create a Step Line series with the {api:anychart.charts.Cartesian#stepLine}stepLine(){api} method. To add error bars, call {api:anychart.core.cartesian.series.StepLine#error}error(){api}.
+To build a Step Line chart, use the {api:anychart#stepLine}anychart.stepLine(){api} chart constructor, then create a Step Line series with the {api:anychart.charts.Cartesian#stepLine}stepLine(){api} method. To add error bars, call {api:anychart.core.cartesian.series.StepLine#error}error(){api}.
 
 ```
 // create a chart
