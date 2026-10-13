@@ -61,11 +61,11 @@ secondValueAnchor: 14.18
     // configure the annotation labels
     fibonacciFan.labels().format(function() {
       var levelValue = this.levelValue.toFixed(1);
-      if (this.level!==undefined) {
+      if (!this.isTimeLevel) {
 return this.level + " (" + levelValue + ")";
       }
       else {
-return this.timeLevel;
+return this.level;
       }
     });
 
