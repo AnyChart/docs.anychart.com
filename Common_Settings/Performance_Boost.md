@@ -137,7 +137,7 @@ The Canvas renderer has a small repertoire of shapes. Three families come out th
 
 **Refused series** - area-shaped series, box, heat map, the timeline series, polar column and the rest of the list in [When Boost is Skipped](#when_boost_is_skipped) - never reach the renderer at all: boost turns them down up front, so they draw through SVG and there is nothing to switch off by hand.
 
-This sample draws 10000 markers on a single Canvas layer - a marker series is one of the shapes the renderer draws faithfully. Set {api:anychart.charts.Cartesian#boostEnabled}boostEnabled(false){api} in the code to compare: the series falls back to SVG, and decimation - no longer pre-empted by boost - trims it to the default 1500 points:
+This sample draws 40000 markers on a single Canvas layer - a marker series is one of the shapes the renderer draws faithfully. Set {api:anychart.charts.Cartesian#boostEnabled}boostEnabled(false){api} in the code to compare: the series falls back to SVG, and decimation - no longer pre-empted by boost - trims it to the default 1500 points:
 
 {sample}CS\_Boost\_02{sample}
 
@@ -160,6 +160,28 @@ anychart.preload("boost-webgl");
 ```
 
 When the module is not loaded, boost uses Canvas - nothing breaks and no configuration changes are needed.
+
+## Choosing a Renderer
+
+The table shows how long one chart takes to draw, from `draw()` to the second animation frame after it, in headless Chromium on a desktop machine. The absolute numbers depend on the machine and the browser; what carries over is how each mode grows with the point count. Every mode was set explicitly: SVG is `boostEnabled(false)` with `maxPointsRendered()` equal to the point count, decimated SVG is `boostEnabled(false)` with the default 1500 points, Canvas is `boostEnabled(true)`, WebGL is `boostEnabled(true)` after `anychart.loadModule("boost-webgl")`.
+
+| Series | Points | SVG, all points | SVG, decimated | Canvas | WebGL |
+|--------|-------:|----------------:|---------------:|-------:|------:|
+| Marker | 10000 | 408 ms | 184 ms | 198 ms | 190 ms |
+| Marker | 20000 | 881 ms | 211 ms | 319 ms | 252 ms |
+| Marker | 40000 | 1750 ms | 258 ms | 509 ms | 348 ms |
+| Line | 10000 | 187 ms | 159 ms | 173 ms | 180 ms |
+| Line | 40000 | 470 ms | 223 ms | 301 ms | 320 ms |
+| Column | 10000 | 532 ms | 198 ms | 252 ms | 229 ms |
+| Column | 20000 | 974 ms | 211 ms | 382 ms | 287 ms |
+| Column | 40000 | 1877 ms | 280 ms | 611 ms | 415 ms |
+
+Which mode to use:
+
+* **Up to about 5000 points** - plain SVG. It is the default below the boost threshold, keeps every SVG feature and costs little.
+* **When every point must be drawn** - Canvas boost from about 10000 points on markers and columns: 40000 markers draw about 3.5 times faster than in SVG.
+* **When the shape matters more than individual points** - decimated SVG: it draws 1500 points whatever the input size, so it stays flat, but it drops points by design (see [Decimation](#decimation)).
+* **The heaviest datasets and dashboards with many large charts** - WebGL. It grows the slowest; load the module only where it is needed.
 
 ## Chart-Level and Series-Level Settings
 
