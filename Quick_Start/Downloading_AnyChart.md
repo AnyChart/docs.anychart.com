@@ -5,15 +5,14 @@
 
 Downloadable Installation Package contains everything you need to start evaluating AnyChart. It is a zip archive that contains the following:
 
-- All Binary JavaScript files
+- All binary JavaScript files
 - CSS files used in UI elements
 - Themes
-- XML/JSON Schemas
 - AnyChart Font
-- Typescript definition file
-- 196 localization files
+- TypeScript definition file
+- Localization files
 - Geo Map Collection
-- Offline documentation
+- Start page and README
 
 Download the latest installation package at [https://www.anychart.com/download/](https://www.anychart.com/download/)
 
@@ -44,7 +43,7 @@ And this is how you link basic chart and add UI module to access context menu fe
 
 ## Custom Build
 
-AnyChart offers a way to create custom JavaScript binaries containing only the part you need and leaving out the parts you are not going to use. Choose and check modules you want to include in the build, and press a green "Build" button at the bottom to building a custom JavaScript binary.
+AnyChart offers a way to create custom JavaScript binaries containing only the parts you need and leaving out the parts you are not going to use. Check the modules you want to include in the build and press the green "Build" button at the bottom to get your custom JavaScript binary.
 
 Proceed to [Custom Builder](https://www.anychart.com/download/products/#custom-build) and choose the [modules](Modules) you need and build a custom JavaScript file of your choice.
 

@@ -32,6 +32,8 @@ This article explains how to create a basic Line chart as well as configure sett
 <tr><td></td><td>[Jump Line](Jump_Line_Chart)</td></tr>
 <tr><td></td><td>[Line Sparkline](Sparkline_Chart#line_sparkline_chart)</td></tr>
 <tr><td></td><td>[Polyline](Polyline_Chart)</td></tr>
+<tr><td></td><td>[Dumbbell](Dumbbell_Chart)</td></tr>
+<tr><td></td><td>[Lollipop](Lollipop_Chart)</td></tr>
 
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Chartopedia: Line Chart](https://www.anychart.com/chartopedia/chart-types/line-chart/)</td></tr>

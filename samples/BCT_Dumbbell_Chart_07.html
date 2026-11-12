@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Dumbbell Chart 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css"/>
+
+    <style>
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  // create data for the first series
+  var dataLastYear = [
+    {x: "Job A", low: 40000, high: 60000},
+    {x: "Job B", low: 50000, high: 80000},
+    {x: "Job C", low: 35000, high: 55000}
+  ];
+
+  // create data for the second series, with a shape set for one point
+  var dataThisYear = [
+    {x: "Job A", low: 45000, high: 66000},
+    {x: "Job B", low: 54000, high: 86000, marker: {type: "star5"}},
+    {x: "Job C", low: 38000, high: 60000}
+  ];
+
+  // create a chart
+  var chart = anychart.dumbbell();
+
+  // set the chart title
+  chart.title("Dumbbell Chart: Endpoint Shape");
+
+  // create two dumbbell series and set the data
+  var seriesLastYear = chart.dumbbell(dataLastYear).name("Last Year");
+  var seriesThisYear = chart.dumbbell(dataThisYear).name("This Year");
+
+  // set the endpoint shape of each series
+  seriesLastYear.normal().markers().type("circle");
+  seriesThisYear.normal().markers().type("square");
+  // set the endpoint shape in the hovered state
+  seriesLastYear.hovered().markers().type("diamond");
+  // set the endpoint shape in the selected state
+  seriesLastYear.selected().markers().type("cross");
+
+  // set the size of the endpoints
+  seriesLastYear.normal().markers().size(7);
+  seriesThisYear.normal().markers().size(7);
+
+  // set the container id
+  chart.container("container");
+  // initiate drawing the chart
+  chart.draw();
+});
+</script>
+</body>
+</html>

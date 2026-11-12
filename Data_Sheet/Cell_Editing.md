@@ -3,26 +3,19 @@
 
 Cell editing lets the user change a value directly in the grid. A double-click opens an editor inside the cell, and the accepted value goes into the row object you passed to the grid, so the array in your page stays the current copy of the data.
 
-Use cell editing when people correct or enter values in the table instead of only reading them - a price list, a stock count, a review sheet. This article shows how to turn editing on, which editor each column gets, how to check a value before the grid accepts it, how to undo a change, how to read the edited data, and which limits the editor has in this release.
+Use cell editing when people correct or enter values in the table instead of only reading them - a price list, a stock count, a review sheet. This article shows how to turn editing on, which editor each column gets, how to check a value before the grid accepts it, how to undo a change, how to read the edited data, and which limits the editor has.
 
 ## Turning Editing On
 
-Editing needs **two** switches, and one alone does nothing:
-
-* {api:anychart.core.dataSheet.CellEditor#enabled}cellEditor().enabled(true){api} on the grid
-* {api:anychart.core.dataSheet.Column#editable}editable: true{api} on each column you want to edit
-
-Both are off by default. Once both are set, double-click a cell to start editing it. In the code below, only `Product` and `Price` are editable:
+To let the user edit a column, set {api:anychart.core.dataSheet.Column#editable}editable: true{api} on it. A column is not editable until you do. Then double-click a cell to start editing it. To turn editing off for the whole grid, call {api:anychart.core.dataSheet.CellEditor#enabled}cellEditor().enabled(false){api}. In the code below, only `Product` and `Price` are editable:
 
 ```
-// editing needs TWO switches: editable on the column, and cellEditor().enabled() on the grid
+// editable: true lets the user edit the cells of a column
 // declare every column from index 0 up, with no gaps
 chart.column(0, {field: 'product',  title: 'Product',  width: 150, editable: true});
 chart.column(1, {field: 'category', title: 'Category', width: 120});
 chart.column(2, {field: 'price',    title: 'Price',    width: 110, dataType: 'number', editable: true});
 chart.column(3, {field: 'stock',    title: 'Units',    width: 110, dataType: 'number'});
-
-chart.cellEditor().enabled(true);
 ```
 
 ## Editors and Data Types
@@ -31,7 +24,7 @@ The editor element follows the column `dataType`: a number input for `'number'`,
 
 ## Validation
 
-{api:anychart.core.dataSheet.Column#validator}validator(fn){api} checks a value before the grid accepts it. **Set it as a method call.** The column configuration object ignores it, like every other key outside the eleven listed in [Defining Columns](Columns#defining_columns). The function receives `(value, rowData)`. Return `true` to accept the value, or a message string to reject it. If your function rejects a value, the editor stays open and shows your message:
+{api:anychart.core.dataSheet.Column#validator}validator(fn){api} checks a value before the grid accepts it. **Set it as a method call.** The column configuration object ignores it, like every other key outside the eleven listed in [Defining Columns](Columns#defining_columns). The function receives `(value, rowData)`. Return `true` to accept the value, or a message string to reject it. If your function rejects a value, the editor stays open:
 
 ```
 // a validator must be set as a method call - the column configuration object ignores it
@@ -46,11 +39,11 @@ chart.column(2).validator(function (value, rowData) {
 
 ## Committing and Canceling
 
-Enter accepts the value. Esc cancels the edit. A click outside the cell accepts the value as well. {api:anychart.core.dataSheet.CellEditor#commitEdit}commitEdit(){api}, {api:anychart.core.dataSheet.CellEditor#cancelEdit}cancelEdit(){api} and {api:anychart.core.dataSheet.CellEditor#isEditing}isEditing(){api} do the same from your own buttons.
+Enter accepts the value. Esc cancels the edit. A click outside the cell accepts the value as well. Tab accepts the value and opens the next editable cell, and Shift+Tab goes back. {api:anychart.core.dataSheet.CellEditor#commitEdit}commitEdit(){api}, {api:anychart.core.dataSheet.CellEditor#cancelEdit}cancelEdit(){api} and {api:anychart.core.dataSheet.CellEditor#isEditing}isEditing(){api} do the same from your own buttons.
 
 ## Starting an Edit from Code
 
-**Only the user can start an edit.** The API reference lists {api:anychart.core.dataSheet.CellEditor#startEdit}startEdit(){api}, but it wants the internal cell element of the grid, and a data cell has no attribute that a selector can use to find it - see [CSS Classes](Appearance#css_classes). So there is no supported way to open an editor from a button of your own in this release. {api:anychart.core.dataSheet.CellEditor#moveToNextCell}moveToNextCell(){api} fails for the same reason. It is the method the Tab key calls, and it is why Tab closes the editor instead of stepping to the next cell.
+To open an editor from a button of your own, call {api:anychart.core.dataSheet.CellEditor#startEdit}startEdit(){api}. It takes seven arguments: the position of the row on screen, the data index, the column index, the field, the data type, the current value and the cell element. To find the cell element, use its `data-row` and `data-col` attributes - see [CSS Classes](Appearance#css_classes). {api:anychart.core.dataSheet.CellEditor#moveToNextCell}moveToNextCell(){api} accepts the current value and opens the next editable cell, and `moveToNextCell(true)` goes back. It is the method the Tab key calls.
 
 ## Undo
 
@@ -76,17 +69,15 @@ chart.listen('celleditend', function () {
 
 ## Blocking an Edit
 
-To stop an edit from starting, return `false` from a `celleditstart` listener. Do **not** call `e.preventDefault()` on that event - see [Events](Events).
+To stop an edit from starting, return `false` from a `celleditstart` listener, or call `e.preventDefault()` in it - see [Events](Events).
 
 ## Editing Limits
 
-Five things to know before you use cell editing in your own code:
+Three things to know before you use cell editing in your own code:
 
-* **Tab does not move to the next editable cell.** It accepts the value and closes the editor. Shift+Tab does the same. Use the mouse to open the next cell
 * **The `celleditend` event fires just before the grid writes the new value into your row object.** A listener that reads your array at once sees the old value. Read `e.newValue`, or read your array a moment later inside `setTimeout(fn, 0)`, as the code above does
-* **A cell you have just edited shows the raw value.** A number you accept reads `1350`, not `1,350`. The format comes back the next time the grid draws the rows. `undo()` does that, for example
 * **A date edit writes back a string.** The editor is an `<input type="date">`, and the value it commits is the plain `yyyy-mm-dd` text, not a `Date`. A column that held `Date` objects holds strings after the first edit
-* **A number edit with no validator becomes 0.** Text that is not a number is written into your data as `0`, not rejected. Add a validator if that matters
+* **A number edit that is not a number becomes an empty value.** Text that is not a number is written into your data as an empty string, not rejected. Add a validator if that matters
 
 ## Editing in Practice
 

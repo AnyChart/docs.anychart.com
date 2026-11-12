@@ -5,7 +5,7 @@
 
 AnyChart Maps are JavaScript interactive maps, with ability to change color when you move mouse over the element, when you select them or move mouse over the legend or color range item, they have interactive labels and tooltips, but surely one of the most demanded features of interactive maps is an ability to zoom in/zoom out and move the map to provide end-user with ability to dig into the data represented on the map.
 
-By default maps already have keyboard/mouse zoom in/out and pan features enabled, this can be turned on/off or tuned using {api:anychart.charts.Map#interactivity}interactivity(){api} method.
+By default maps already have keyboard zoom in/out, keyboard move and mouse drag features enabled, while zooming with the mouse wheel and on double click is disabled. All of this can be turned on/off or tuned using {api:anychart.charts.Map#interactivity}interactivity(){api} method.
 
 ## Interactivity
 
@@ -13,19 +13,22 @@ AnyChart Maps are JavaScript interactive maps: use mouse and keyboard to manage 
 
 ### Default
 
-Use a keyboard to zoom the map in (press the "Ctrl" + "+" (for Mac: "cmd" + "+")) and out ("Ctrl" + "-" (for Mac: "cmd" + "-")) or use mouse and click twice on the map at the point you want to zoom to, and move map using the arrows on the keyboard or drill the map by mouse buttons. Note that keyboard interactivity works only when the focus is on the map, so it's necessary to click somewhere on the map to activate the keyboard interactivity.
+Use a keyboard to zoom the map in (press the "Ctrl" + "+" (for Mac: "cmd" + "+")) and out ("Ctrl" + "-" (for Mac: "cmd" + "-")), and move the map using the arrows on the keyboard or by dragging it with the mouse. Zooming with the mouse wheel and on double click is disabled by default, see the [Navigational Interactivity](#navigational_interactivity) section to enable it. Note that keyboard interactivity works only when the focus is on the map, so it's necessary to click somewhere on the map to activate the keyboard interactivity.
 
 When there is a point selected or a couple of them, it's possible to copy some information about them. Select the regions you need and use standard hotkeys to copy their data: Ctrl+C in Windows or Cmd+C in Mac. By default, the information you get contains the series number, the selected regions' Id's and indexes. 
 
 ###  Enabling / Disabling
 
-To enable or disable all interactive features, we use the {api:anychart.charts.Map#interactivity}interactivity(){api} method. Set `true` or `false` to the method depending if you'd like to enable the map interactivity or disable. 
-
-**NOTE**: This is a complete interactivity shutdown - you will not see tooltips or be able to hover regions if you disable interactivity in such way.
+To enable or disable all zooming and moving features at once, pass an object with the navigation settings to the {api:anychart.charts.Map#interactivity}interactivity(){api} method. Hovering and selecting regions and tooltips keep working.
 
 ```
-// disable all interactivity
-map.interactivity(false);
+// disable zooming and moving
+map.interactivity({
+    keyboardZoomAndMove: false,
+    drag: false,
+    zoomOnMouseWheel: false,
+    zoomOnDoubleClick: false
+});
 ```
 
 {sample}Maps\_Move\_and\_Zoom\_01{sample}
@@ -38,7 +41,7 @@ To enable or disable a mouse wheel zooming feature use {api:anychart.core.utils.
 
 To enable or disable a keyboard move and zoom feature use {api:anychart.core.utils.MapInteractivity#keyboardZoomAndMove}keyboardZoomAndMove(){api}. Cmd/Ctrl + "+/-/0" and keyboard arrows don't navigate a map when set to false.
 
-To enable or disable zoom on double click behavior use {api:anychart.core.utils.MapInteractivity#zoomOnDoubleClick}zoomOnDoubleClick(){} method.
+To enable or disable zoom on double click behavior use {api:anychart.core.utils.MapInteractivity#zoomOnDoubleClick}zoomOnDoubleClick(){api} method.
 
 ```
 // Disables zoom On Mouse Wheel

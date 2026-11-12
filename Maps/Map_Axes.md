@@ -58,7 +58,7 @@ To override common settings and enable/disable or format labels on selected side
 ```
 map.axes(true);
 map.axes().ticks().stroke("Red");        
-map.axes().top().ticks(false;
+map.axes().top().ticks(false);
 map.axes().top().minorTicks(false);
 ```
 

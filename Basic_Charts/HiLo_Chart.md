@@ -14,7 +14,7 @@ This article explains how to create a basic HiLo chart as well as configure sett
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Hilo}anychart.core.cartesian.series.HiLo{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, high, low](../Working_with_Data/Overview)</td></tr>
+<tr><td>Data Fields</td><td>[x, low, high](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -35,6 +35,7 @@ This article explains how to create a basic HiLo chart as well as configure sett
 <tr><td></td><td>[Range Column](Range_Column_Chart)</td></tr>
 <tr><td></td><td>[Range Spline Area](Range_Spline_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Step Area](Range_Step_Area_Chart)</td></tr>
+<tr><td></td><td>[Dumbbell](Dumbbell_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Chartopedia: HiLo Chart](https://www.anychart.com/chartopedia/chart-types/hilo-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
@@ -106,7 +107,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-The [appearance settings](../Appearance_Settings) of an Area chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Hilo#normal}normal(){api}, {api:anychart.core.cartesian.series.Hilo#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Hilo#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a HiLo chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Hilo#normal}normal(){api}, {api:anychart.core.cartesian.series.Hilo#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Hilo#selected}selected(){api} methods.
 
 Combine them with the {api:anychart.core.StateSettings#stroke}stroke(){api} method. Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
@@ -136,7 +137,35 @@ series2.selected().stroke("#0066cc", 4);
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-A range point is labeled at its high end and shows the high value. Pass `"rangeMode"` to {api:anychart.core.ui.LabelsFactory#position}position(){api} to label both ends instead - the low-end label prints the low value, and a format function tells the two ends apart through `this["rangeEnd"]`: see [Range Column Chart](Range_Column_Chart).
+#### Labels at Both Ends
+
+Pass `"rangeMode"` to {api:anychart.core.ui.LabelsFactory#position}position(){api} to label both ends of a point: the high-end label shows the high value, the low-end label the low value. To give the ends different text, use a format function and check `this["rangeSide"]`: it is `"high"` on the high-end label and `"low"` on the low-end label.
+
+```
+// label both ends of every point
+series.labels().enabled(true);
+series.labels().position("rangeMode");
+// set the text of each end
+series.labels().format(function () {
+  if (this["rangeSide"] == "low") {
+    return "Min " + this["low"];
+  }
+  return "Max " + this["high"];
+});
+```
+
+To set up the labels of one end, call {api:anychart.core.StateSettings#highLabels}highLabels(){api} or {api:anychart.core.StateSettings#lowLabels}lowLabels(){api} on {api:anychart.core.cartesian.series.Hilo#normal}normal(){api}. A setting made there overrides the same setting of `labels()` for that end only; every other setting, the format included, is taken from `labels()`. These methods have no effect unless the position is `"rangeMode"`.
+
+```
+// set the font color of the high-end labels
+series.normal().highLabels({fontColor: "#d84315"});
+// set the font color of the low-end labels
+series.normal().lowLabels({fontColor: "#1565c0"});
+```
+
+In the sample below, both ends of every point are labeled and each end has its own font color:
+
+{sample}BCT\_HiLo\_Chart\_03{sample}
 
 ### Tooltips
 

@@ -11,7 +11,8 @@ Price Indicator is an addition to [Crosshair](Crosshair) that allows to create a
 ```
 // enable price indicator for the first plot
 var chart = anychart.stock();
-var indicator = chart.plot(0).priceIndicator({value: "last-visible"});
+var indicator = chart.plot(0).priceIndicator();
+indicator.value("last-visible");
 ```
 
 {sample}STOCK\_Price\_Indicator\_01{sample}
@@ -62,8 +63,8 @@ var indicator2 = chart.plot(1).priceIndicator({'series': lineSeries});
 There is a shorter way to set this, using object overload:
 
 ```
-var indicator1 = chart.plot(0).priceIndicator({'series': ohlcSeries, valueField: 'high')
-var indicator2 = chart.plot(1).priceIndicator({'series': lineSeries});
+chart.plot(0).priceIndicator({'series': ohlcSeries, 'valueField': 'high'});
+chart.plot(1).priceIndicator({'series': lineSeries});
 ```
 
 Here is a sample showcasing both ways:

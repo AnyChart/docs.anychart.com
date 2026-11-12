@@ -282,7 +282,7 @@ Most types of series can be drawn both in horizontal and vertical orientation. T
 
 ## 3D Charts
 
-Using AnyChart, you can create 3D versions of the following chart types: Area, Bar, Column, and Pie. Read more: [3D Charts](3D/Overview).
+Using AnyChart, you can create 3D versions of the following chart types: Area, Bar, Column, Line, and Pie. Read more: [3D Charts](3D/Overview).
 
 ## Categorized By Series
 

@@ -50,7 +50,7 @@ For example, to create an exportable Pie chart, combine Core with the [Pie and D
 
 The same logic applies to the **Base** module. However, please note that it already includes some chart types, so you have to reference other modules only if you need to add a chart type that is not included or a feature.
 
-As for **Bundle**, it includes all other modules except [Extensions](#extensions), [Data Sheet](#data_sheet) and the [Boost WebGL Renderer](#boost_webgl_renderer). Add those yourself when you need them.
+As for **Bundle**, it includes all other modules except [Extensions](#extensions), the [Boost WebGL Renderer](#boost_webgl_renderer), the [VML Renderer](#vml_renderer) and the [themes](#themes). Add those yourself when you need them.
 
 ## Builder
 
@@ -64,11 +64,33 @@ You can also build a file that contains your license key. See the [Credits](Cred
 
 ## Bundle
 
-The AnyChart Bundle build contains all [chart modules](#chart_modules) and [features](#features). It is the biggest file, use it cautiously.
+The AnyChart Bundle build contains all [chart modules](#chart_modules) and [features](#features), except the [Boost WebGL Renderer](#boost_webgl_renderer) and the [VML Renderer](#vml_renderer). It is the biggest file, use it cautiously.
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
 ```
+
+## Loading Modules on Demand
+
+To load a module at run time, without a script tag, call the {api:anychart#loadModule}loadModule(){api} method with the name of the module. The name is the name of the module file without the `anychart-` prefix and the `.min.js` ending: for example, `anychart-sankey.min.js` is `sankey`. The method returns a Promise that is resolved when the module is ready to use:
+
+```
+anychart.loadModule("sankey").then(function () {
+  var chart = anychart.sankey(data);
+  chart.container("container");
+  chart.draw();
+});
+```
+
+A module that is already on the page is not loaded again, and the Promise is resolved at once. To start loading a module in advance without waiting for the result, call the {api:anychart#preload}preload(){api} method.
+
+The module files are taken from the folder of the AnyChart script that is on the page. If there is no such script, or the module files are stored in another place, set the location first by calling the {api:anychart.loadModule#configure}configure(){api} method:
+
+```
+anychart.loadModule.configure({cdnBase: "https://cdn.anychart.com/releases/{{branch-name}}/"});
+```
+
+Each file is checked against the hash published with the release. A file that does not match is not executed.
 
 ## Chart Modules
 
@@ -154,7 +176,7 @@ A module for creating [Circular Gauges](../Gauges/Circular_Gauge):
 
 ### Data Sheet
 
-A module for creating a [Data Sheet](../Data_Sheet/Overview) - an interactive data grid. Unlike the other modules, it is not a part of **Bundle**, so you always add it next to **Core** or **Bundle**:
+A module for creating a [Data Sheet](../Data_Sheet/Overview) - an interactive data grid:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-data-sheet.min.js"></script>
@@ -323,7 +345,7 @@ A module for creating [Stock](../Stock_Charts/Overview) charts:
 
 ### Stream Graph
 
-A module for creating [Stream Graph](../Basic_Charts/Stream_Graph) charts (requires [Basic Cartesian](#basic_cartesian)):
+A module for creating [Stream Graph](../Basic_Charts/Stream_Graph) charts:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stream.min.js"></script>
@@ -474,6 +496,123 @@ A module that enables VML support for old browsers.
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-vml.min.js"></script>
 ```
+
+## Themes
+
+The out of the box [themes](../Appearance_Settings/Themes#out_of_the_box_themes) are modules too. The theme files are not part of the [Bundle](#bundle): reference a theme file after the bundle or the modules, from the same `https://cdn.anychart.com/releases/{{branch-name}}/js/` folder, and apply the theme by its key.
+
+<table class="dtTABLE" width="700">
+<tbody>
+<tr>
+<th><b>Theme</b></th>
+<th><b>File</b></th>
+<th><b>Key in anychart.themes</b></th>
+<th><b>Description</b></th>
+</tr>
+<tr>
+<td>Coffee</td>
+<td>anychart-theme-coffee.min.js</td>
+<td>coffee</td>
+<td>Brown background, dark brown text, brown palette</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>anychart-theme-contrast.min.js</td>
+<td>contrast</td>
+<td>White background, dark text, 10-color palette safe for color-vision deficiencies, every color at least 4.5:1 against white</td>
+</tr>
+<tr>
+<td>Dark Blue</td>
+<td>anychart-theme-dark-blue.min.js</td>
+<td>darkBlue</td>
+<td>Dark blue-gray background, light gray text, blue palette</td>
+</tr>
+<tr>
+<td>Dark Earth</td>
+<td>anychart-theme-dark-earth.min.js</td>
+<td>darkEarth</td>
+<td>Near-black background, gray text, olive and brown palette</td>
+</tr>
+<tr>
+<td>Dark Glamour</td>
+<td>anychart-theme-dark-glamour.min.js</td>
+<td>darkGlamour</td>
+<td>Dark slate background, light pink text, pink and purple palette</td>
+</tr>
+<tr>
+<td>Dark Provence</td>
+<td>anychart-theme-dark-provence.min.js</td>
+<td>darkProvence</td>
+<td>Dark gray background, light lavender text, lavender, light blue and olive palette</td>
+</tr>
+<tr>
+<td>Dark Turquoise</td>
+<td>anychart-theme-dark-turquoise.min.js</td>
+<td>darkTurquoise</td>
+<td>Dark gray background, light gray text, turquoise palette</td>
+</tr>
+<tr>
+<td>Light Blue</td>
+<td>anychart-theme-light-blue.min.js</td>
+<td>lightBlue</td>
+<td>Light blue-gray background, blue-gray text, blue palette</td>
+</tr>
+<tr>
+<td>Light Earth</td>
+<td>anychart-theme-light-earth.min.js</td>
+<td>lightEarth</td>
+<td>Off-white background, gray text, olive and brown palette</td>
+</tr>
+<tr>
+<td>Light Glamour</td>
+<td>anychart-theme-light-glamour.min.js</td>
+<td>lightGlamour</td>
+<td>White background, dark wine text, pink and purple palette</td>
+</tr>
+<tr>
+<td>Light Provence</td>
+<td>anychart-theme-light-provence.min.js</td>
+<td>lightProvence</td>
+<td>White background, mauve text, lavender, light blue and olive palette</td>
+</tr>
+<tr>
+<td>Light Turquoise</td>
+<td>anychart-theme-light-turquoise.min.js</td>
+<td>lightTurquoise</td>
+<td>Light gray background, dark gray text, turquoise palette</td>
+</tr>
+<tr>
+<td>Monochrome</td>
+<td>anychart-theme-monochrome.min.js</td>
+<td>monochrome</td>
+<td>White background, gray text, black and gray palette</td>
+</tr>
+<tr>
+<td>Morning</td>
+<td>anychart-theme-morning.min.js</td>
+<td>morning</td>
+<td>White background, dark blue-gray text, blue, yellow and pink palette</td>
+</tr>
+<tr>
+<td>Pastel</td>
+<td>anychart-theme-pastel.min.js</td>
+<td>pastel</td>
+<td>Off-white background, taupe text, pastel palette</td>
+</tr>
+<tr>
+<td>Sea</td>
+<td>anychart-theme-sea.min.js</td>
+<td>sea</td>
+<td>Off-white background, gray text, sea green and blue palette</td>
+</tr>
+<tr>
+<td>Wines</td>
+<td>anychart-theme-wines.min.js</td>
+<td>wines</td>
+<td>Brick wall image background, dark brown text, wine red, olive and orange palette</td>
+</tr>
+</tbody>
+</table>
 
 ## Extensions
 

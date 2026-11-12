@@ -109,7 +109,7 @@ In the sample below, there is a 3D Column chart with the Z-aspect set to 100% (t
 
 ```
 // configure the z-aspect of the chart
-chart.zAspect("100%"");
+chart.zAspect("100%");
 ```
 
 {sample}BCT\_3D\_03{sample}

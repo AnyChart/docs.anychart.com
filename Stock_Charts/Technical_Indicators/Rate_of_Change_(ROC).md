@@ -53,7 +53,7 @@ var roc30 = plot.roc(mapping, 30, "column");
 Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where ROC with different parameters and settings is added to different plots:
 
 ```
-// create ROC indicator with period 14 and shown as column on the second plot
+// create ROC indicator with period 14 and shown as line on the second plot
 roc14 = plot_1.roc(mapping, 14).series();
 roc14.stroke('#bf360c');
 

@@ -57,7 +57,7 @@ Here is a sample code that will parse an HTML table shown above into {api:anycha
 var tableData = anychart.data.parseHtmlTable("#htmlTable");
 ```
 
-To set the data obtained like that to a chart you need to use the {anychart.charts.Cartesian#data}data(){api} method:
+To set the data obtained like that to a chart you need to use the {api:anychart.charts.Cartesian#data}data(){api} method:
 
 ```
 // create a chart

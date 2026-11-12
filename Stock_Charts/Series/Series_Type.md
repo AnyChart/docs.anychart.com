@@ -75,3 +75,23 @@ scrollerSeries.seriesType("rangeArea");
 {sample}STOCK\_Series\_Type\_02{sample}
 
 Please note that the Range Area series uses only two values from the data set, but it works because it shares the default names of data fields (`low` and `high`) with Japanese Candlestick and OHLC series. So, series types do not have to use the same number of fields to be convertible to each other.
+
+The Dumbbell series uses the `high` and `low` fields and switches to and from HiLo, OHLC, Japanese Candlestick, and the range series. The Lollipop series uses the `value` field and switches to and from Line, Column, Stick, and other single-value types. The scroller has no Dumbbell or Lollipop series, so switch the plot series only:
+
+```
+// create a dumbbell series on the first plot
+rangeSeries = chart.plot(0).dumbbell(table.mapAs({'open': "o", 'high': "h", 'low': "l", 'close': "c"}));
+
+// create a lollipop series on the second plot
+valueSeries = chart.plot(1).lollipop(table.mapAs({'value': "c"}));
+
+// create a scroller series with close values
+chart.scroller().line(table.mapAs({'value': "c"}));
+
+// switch the type of the dumbbell series
+rangeSeries.seriesType(type);
+```
+
+In the sample below, the series on the first plot switches between Dumbbell and the high/low types, and the series on the second plot switches between Lollipop and the single-value types:
+
+{sample}STOCK\_Series\_Type\_03{sample}

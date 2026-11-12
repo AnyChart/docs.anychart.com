@@ -15,7 +15,7 @@ It requires a mapping with two fields for two stock prices: `"priceA"` and `"pri
 // create data table on loaded data
 var dataTable = anychart.data.table();
 
-table.addData([
+dataTable.addData([
     ['2025-12-25', 511.53, 514.98],
     ['2025-12-26', 512.53, 514.88],
     ['2025-12-27', 511.83, 514.98],
@@ -40,10 +40,8 @@ var chart = anychart.stock();
 var plot_0 = chart.plot(0);
 
 // create a stock series
-plot_0.line(mapping_1);
-plot_0.name('Stock 1');
-plot_0.line(mapping_2);
-plot_0.name('Stock 2');
+plot_0.line(mapping_1).name('Stock 1');
+plot_0.line(mapping_2).name('Stock 2');
 
 // create the second plot on the chart
 var plot_1 = chart.plot(1);
@@ -76,7 +74,7 @@ Vizualization of an indicator depends on the type of series you display it with.
 
 ```
 // create and adjust a RAT indicator
-var rat = plot_1.rat(mapping);
+var rat = plot_1.rat(rat_mapping);
 rat.baseDate('2025-12-28');
 rat.series().stroke("0.5 Red");
 ```

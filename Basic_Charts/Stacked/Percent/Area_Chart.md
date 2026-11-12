@@ -13,7 +13,7 @@ To build a Percent Stacked Area Chart, you should create a multiple-series [Area
 
 ```
 // create a chart
-chart = chart.area();
+var chart = anychart.area();
 
 // enable the percent stacking mode
 chart.yScale().stackMode("percent");

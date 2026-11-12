@@ -176,14 +176,14 @@ There are a lot of event types which are broken to two categories: mouse-oriente
 <td>All browser parameters + point parameters</td>
 </tr>
 <tr>
-<td>draw</td>
+<td>chartDraw</td>
 <td>target</td>
 <td>pointsHover</td>
 <td>All browser parameters + point parameters</td>
 </tr>
 <tr>
-<td>boundsChange</td>
-<td>target, x, y, width, height</td>
+<td></td>
+<td></td>
 <td>pointsSelect</td>
 <td>All browser parameters + point parameters + array of selected points</td>
 </tr>

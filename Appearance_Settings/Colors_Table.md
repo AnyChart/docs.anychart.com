@@ -36,7 +36,7 @@ Here is the list of all web colors supported by AnyChart charting framework and 
 <tr><td>DarkOrchid</td><td bgcolor="DarkOrchid"></td><td>#9932CC</td><td>rgb(153,50,204)</td></tr>
 <tr><td>DarkRed</td><td bgcolor="DarkRed"></td><td>#8B0000</td><td>rgb(139,0,0)</td></tr>
 <tr><td>DarkSalmon</td><td bgcolor="DarkSalmon"></td><td>#E9967A</td><td>rgb(233,150,122)</td></tr>
-<tr><td>DarkSeaGreen</td><td bgcolor="DarkSeaGreen"></td><td>#8FBC8B</td><td>rgb(143,188,139)</td></tr>
+<tr><td>DarkSeaGreen</td><td bgcolor="DarkSeaGreen"></td><td>#8FBC8F</td><td>rgb(143,188,143)</td></tr>
 <tr><td>DarkSlateBlue</td><td bgcolor="DarkSlateBlue"></td><td>#483D8B</td><td>rgb(72,61,139)</td></tr>
 <tr><td>DarkSlateGray</td><td bgcolor="DarkSlateGray"></td><td>#2F4F4F</td><td>rgb(47,79,79)</td></tr>
 <tr><td>DarkTurquoise</td><td bgcolor="DarkTurquoise"></td><td>#00CED1</td><td>rgb(0,206,209)</td></tr>
@@ -136,7 +136,7 @@ Here is the list of all web colors supported by AnyChart charting framework and 
 <tr><td>Teal</td><td bgcolor="Teal"></td><td>#008080</td><td>rgb(0,128,128)</td></tr>
 <tr><td>Thistle</td><td bgcolor="Thistle"></td><td>#D8BFD8</td><td>rgb(216,191,216)</td></tr>
 <tr><td>Tomato</td><td bgcolor="Tomato"></td><td>#FF6347</td><td>rgb(255,99,71)</td></tr>
-<tr><td>Transparent</td><td bgcolor="Transparent"></td><td>#FFFFFF</td><td>rgb(255,255,255)</td></tr>
+<tr><td>Transparent</td><td bgcolor="Transparent"></td><td>#00000000</td><td>rgba(0,0,0,0)</td></tr>
 <tr><td>Turquoise</td><td bgcolor="Turquoise"></td><td>#40E0D0</td><td>rgb(64,224,208)</td></tr>
 <tr><td>Violet</td><td bgcolor="Violet"></td><td>#EE82EE</td><td>rgb(238,130,238)</td></tr>
 <tr><td>Wheat</td><td bgcolor="Wheat"></td><td>#F5DEB3</td><td>rgb(245,222,179)</td></tr>

@@ -34,7 +34,7 @@ chart = anychart.stock();
 var plot = chart.plot(0);
 
 // create stochastic indicator
-var stochastic = plot.stochastic(mapping, 10, "EMA", 10, "SMA", 20);
+var stochastic = plot.stochastic(mapping, 10, 10, 20, "EMA", "SMA");
 stochastic_k = stochastic.kSeries();
 stochastic_k.stroke("#bf360c");
 stochastic_d = stochastic.dSeries();
@@ -50,17 +50,17 @@ Here is a basic sample of stochastic oscillator indicator:
 Stochastic oscillator indicator has a lot of optional parameters:  
 
 - a period for the %K value
-- the moving average type of the indicator for the %K value
 - a period for the smoothed %K value
-- the moving average type of the indicator for the %D value
 - a period for the %D value
+- the moving average type of the indicator for the %K value
+- the moving average type of the indicator for the %D value
 - series type of the %K value
 - series type of the %D value
 
 The following code sample creates a stochastic oscillator indicator with %K value with period of 10 EMA smoothing and %D value with period of 20 and SMA smoothing:
 
 ```
-var stochastic = plot.stochastic(mapping, 10, "EMA", 10, "SMA", 20);
+var stochastic = plot.stochastic(mapping, 10, 10, 20, "EMA", "SMA");
 stochastic_k = stochastic.kSeries();
 stochastic_d = stochastic.dSeries();
 ```
@@ -75,7 +75,7 @@ The following values need to be set to create the Fast Stochastic Oscillator ind
 
 ```
 // create fast stochastic oscillator indicator 
-var stochastic = plot.stochastic(mapping, 14, "SMA", 1, "SMA", 3);
+var stochastic = plot.stochastic(mapping, 14, 1, 3, "SMA", "SMA");
 ```
 
 Fast Stochastic Oscillator is created by default, so the same happens when you set only a mapping:
@@ -93,7 +93,7 @@ The following values need to be set to create the Slow Stochastic Oscillator ind
 
 ```
 // create stochastic indicator of slow type
-var stochastic = plot.stochastic(mapping, 14, "SMA", 3, "SMA", 3);
+var stochastic = plot.stochastic(mapping, 14, 3, 3, "SMA", "SMA");
 ```
 
 {sample}STOCK\_Technical\_Indicators\_Stochastic\_Oscillator\_03{sample}
@@ -104,7 +104,7 @@ There are no default values for creating the Full Stochastic Oscillator. All per
 
 ```
 // create stochastic oscillator indicator of full type
-var stochastic = plot.stochastic(mapping, 30, "EMA", 10, "SMA", 1);
+var stochastic = plot.stochastic(mapping, 30, 10, 1, "EMA", "SMA");
 ```
 
 {sample}STOCK\_Technical\_Indicators\_Stochastic\_Oscillator\_04{sample}
@@ -115,12 +115,12 @@ Stochastic Oscillator indicator visualization adjustment depends on the chosen s
 
 ```
 // create first stochastic oscillator indicator of default series type
-var stochastic_1 = plot_0.stochastic(mapping, 10, "EMA", 10, "SMA", 20);
+var stochastic_1 = plot_0.stochastic(mapping, 10, 10, 20, "EMA", "SMA");
 stochastic_1.kSeries().stroke("#bf360c");
 stochastic_1.dSeries().stroke("#bf309c");
 
 // create second stochastic oscillator indicator of column series
-var stochastic_2 = plot_1.stochastic(mapping, 14, "EMA", 5, "EMA", 5, "spline", "spline");
+var stochastic_2 = plot_1.stochastic(mapping, 14, 5, 5, "EMA", "EMA", "spline", "spline");
 stochastic_2.kSeries().stroke("#ff6d00");
 stochastic_2.dSeries().stroke("#ff6d99");
 ```

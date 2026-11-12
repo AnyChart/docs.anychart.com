@@ -6,7 +6,7 @@ AnyChart html5 charting library allows you to set color of any element of the ch
 
 ## Color Formats
 
-As it is said above AnyChart supports the following color setting notation, which means you can use any of them when setting a value of {api:anychart.color}color(){api}, {api:anychart.graphics.vector.Fill}fill(){api}, and other attributes in any method:
+As it is said above AnyChart supports the following color setting notation, which means you can use any of them when setting a value of {api:anychart.graphics.vector.Fill}fill(){api}, {api:anychart.graphics.vector.Stroke}stroke(){api}, and other color attributes in any method:
 
 * Hexadecimal (html-like)
 * Red Green Blue
@@ -80,8 +80,8 @@ anychart.color.lighten("#FF0000", 0.2)
 <tr>
 <td width="66">#FF0000</td>
 <td width="270" bgcolor="#FF0000">&nbsp;</td>
-<td width="66">#FF5959</td>
-<td width="270" bgcolor="#FF5959">&nbsp;</td>
+<td width="66">#FF3333</td>
+<td width="270" bgcolor="#FF3333">&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -105,8 +105,8 @@ anychart.color.darken("#FF0000", 0.2)
 <tr>
 <td width="66">#FF0000</td>
 <td width="270" bgcolor="#FF0000">&nbsp;</td>
-<td width="66">#A50000</td>
-<td width="270" bgcolor="#A50000">&nbsp;</td>
+<td width="66">#CC0000</td>
+<td width="270" bgcolor="#CC0000">&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -136,7 +136,7 @@ var mixColor1 = anychart.color.blend(color1, color2, 0.2);
 <td width="100" bgcolor="#FF0000">&nbsp;</td>
 <td width="100">#008000</td>
 <td width="100" bgcolor="#008000">&nbsp;</td>
-<td width="100">0 (full mixture) </td>
+<td width="100">0 (blend color only) </td>
 <td width="100">#008000</td>
 <td width="100" bgcolor="#008000">&nbsp;</td>
 </tr>
@@ -146,15 +146,15 @@ var mixColor1 = anychart.color.blend(color1, color2, 0.2);
 <td>#008000</td>
 <td bgcolor="#008000">&nbsp;</td>
 <td>0.5 </td>
-<td>#7F4000</td>
-<td bgcolor="#7F4000">&nbsp;</td>
+<td>#804000</td>
+<td bgcolor="#804000">&nbsp;</td>
 </tr>
 <tr>
 <td>#FF0000</td>
 <td bgcolor="#FF0000">&nbsp;</td>
 <td>#008000</td>
 <td bgcolor="#008000">&nbsp;</td>
-<td>1 (no mixture) </td>
+<td>1 (input color only) </td>
 <td>#FF0000</td>
 <td bgcolor="#FF0000">&nbsp;</td>
 </tr>

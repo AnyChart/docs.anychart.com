@@ -10,7 +10,7 @@ A Stream graph is best for one thing. Use it to show how the parts of a whole ch
 This article shows how to create a basic Stream graph. It also shows how to set the options that are special to this type. You can read the table below for a short overview of the Stream graph's features:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Basic Cartesian](../Quick_Start/Modules#basic_cartesian) + [Stream Graph](../Quick_Start/Modules#stream_graph)</td></tr>
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Stream Graph](../Quick_Start/Modules#stream_graph)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.StreamGraph}anychart.charts.StreamGraph{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -20,7 +20,7 @@ This article shows how to create a basic Stream graph. It also shows how to set 
 <tr><td>Stacked</td><td>Built-in (see [Offset](#offset))</td></tr>
 <tr><td>Vertical</td><td>N/A</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[YES](../Error_Chart/Overview)</td></tr>
+<tr><td>Error Bars</td><td>[YES](Error_Chart/Overview)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
@@ -31,19 +31,16 @@ This article shows how to create a basic Stream graph. It also shows how to set 
 <tr><td></td><td>[Spline Area](Spline_Area_Chart)</td></tr>
 <tr><td></td><td>[Area](Area_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td></td><td>[Chartopedia: Stream Graph](https://www.anychart.com/chartopedia/chart-types/stream-graph/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
 ## Modules
 
-The Stream graph needs the [Core](../Quick_Start/Modules#core), [Basic Cartesian](../Quick_Start/Modules#basic_cartesian), and [Stream Graph](../Quick_Start/Modules#stream_graph) modules:
+The Stream graph needs the [Core](../Quick_Start/Modules#core) and [Stream Graph](../Quick_Start/Modules#stream_graph) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
-```
-
-```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
 ```
 
 ```
@@ -112,10 +109,12 @@ Each layer of a Stream graph is a separate series with two data fields:
 * `x` — the category (usually a point in time)
 * `value` — the value of the layer at that category
 
-Besides plain arrays, a series accepts a mapping of an {api:anychart.data#set}anychart.data.set(){api}. Use it when all layers come in one table with a column per layer: map the columns of each series with {api:anychart.data.Set#mapAs}mapAs(){api}. A missing value is written as `null`: the point is skipped, and the baseline stays unbroken.
+Besides plain arrays, a series accepts a mapping of an {api:anychart.data#set}anychart.data.set(){api}. Use it when all layers come in one table with a column per layer: map the columns of each series with {api:anychart.data.Set#mapAs}mapAs(){api}.
+
+A layer breaks at a category where its value is missing (`null`). To draw it through the gap, call {api:anychart.core.cartesian.series.SplineArea#connectMissingPoints}connectMissingPoints(){api} on the series: the layer takes a value between its neighbors at that category, and the layers above it rest on that value.
 
 ```
-// one data set with a column per channel: [week, search, social]; the social value at W5 is missing
+// one data set with a column per channel: [week, search, social]
 var dataSet = anychart.data.set([
   ["W1", 42, 30],["W2", 45, 33],["W3", 40, 36],["W4", 38, 40],["W5", 44, null],
   ["W6", 50, 35],["W7", 55, 37],["W8", 52, 42],["W9", 48, 46],["W10", 46, 49]
@@ -130,9 +129,11 @@ var series1 = chart.splineArea(searchMapping);
 series1.name("Search");
 var series2 = chart.splineArea(socialMapping);
 series2.name("Social");
+// draw the layer through its missing value
+series2.connectMissingPoints(true);
 ```
 
-In the sample below, the data comes from a shared data set, and the Social layer has no value at "W5": its band shows a gap, and the stream continues:
+In the sample below, both layers are mapped from one shared data set, and the Social layer is drawn through its missing value:
 
 {sample}BCT\_Stream\_Graph\_02{sample}
 

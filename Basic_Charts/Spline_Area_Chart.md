@@ -32,6 +32,7 @@ The Spline Area and Area chart types share all the settings, so this article exp
 <tr><td></td><td>[Range Area](Range_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Spline Area](Range_Spline_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Step Area](Range_Step_Area_Chart)</td></tr>
+<tr><td></td><td>[Stream Graph](Stream_Graph)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Chartopedia: Spline Area Chart](https://www.anychart.com/chartopedia/chart-types/spline-area-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>

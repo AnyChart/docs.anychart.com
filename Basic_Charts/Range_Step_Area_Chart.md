@@ -129,3 +129,37 @@ series.stepDirection("backward");
 ```
 
 {sample}BCT\_Range\_Step\_Area\_Chart\_03{sample}
+
+### Labels
+
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+
+#### Labels at Both Ends
+
+Pass `"rangeMode"` to {api:anychart.core.ui.LabelsFactory#position}position(){api} to label both ends of a point: the high-end label shows the high value, the low-end label the low value. To give the ends different text, use a format function and check `this["rangeSide"]`: it is `"high"` on the high-end label and `"low"` on the low-end label.
+
+```
+// label both ends of every point
+series.labels().enabled(true);
+series.labels().position("rangeMode");
+// set the text of each end
+series.labels().format(function () {
+  if (this["rangeSide"] == "low") {
+    return "Min " + this["low"];
+  }
+  return "Max " + this["high"];
+});
+```
+
+To set up the labels of one end, call {api:anychart.core.StateSettings#highLabels}highLabels(){api} or {api:anychart.core.StateSettings#lowLabels}lowLabels(){api} on {api:anychart.core.cartesian.series.RangeStepArea#normal}normal(){api}. A setting made there overrides the same setting of `labels()` for that end only; every other setting, the format included, is taken from `labels()`. These methods have no effect unless the position is `"rangeMode"`.
+
+```
+// set the font color of the high-end labels
+series.normal().highLabels({fontColor: "#d84315"});
+// set the font color of the low-end labels
+series.normal().lowLabels({fontColor: "#1565c0"});
+```
+
+In the sample below, both ends of every point are labeled and each end has its own font color:
+
+{sample}BCT\_Range\_Step\_Area\_Chart\_04{sample}

@@ -146,13 +146,13 @@ chart.yScale().minimumGap(1);
 chart.yScale().maximumGap(1);
 ```
 
-In the sample below you can see how offsets settings affects js chart. The chart to the left has minimum and maximum offsets set to 0.5, the chart to the right has all the same settings, but offsets are not set. Note that offsets are ignored when maximum or minimum scale values are specified.
+In the sample below you can see how offsets settings affects js chart. The chart to the left has minimum and maximum offsets set to 1, the chart to the right has all the same settings, but offsets are not set. Note that offsets are ignored when maximum or minimum scale values are specified.
 
 {sample}AGST\_Scales\_09{sample}
 
 ## Stick to Zero
 
-{api:anychart.scales.Linear#stickToZero}stickToZero(){api} method allows to disable the default scale autocalculation behavior and always include zero in scale range.
+{api:anychart.scales.Linear#stickToZero}stickToZero(){api} method is enabled by default: when the automatically calculated gap would push the scale across zero, the scale minimum or maximum stops at zero. Set it to `false` to let the scale cross zero.
 
 ## Ticks
 
@@ -255,7 +255,7 @@ Scale calculates values and in many cases it is very useful to adjust settings o
 
 ## Synchronization
 
-Sometimes you may encounter situations when you need to sync minimums and/or maximums of several scales and you don't want to set exact values [minimum and maximum](#minimum_and_maximum). In such cases you need to use several special methods: {api:anychart.charts.Cartesian#getYScales}getYScales{api} and {api:anychart.charts.Cartesian#getYScales}getXScales{api} - the allow you to get a collection of all scales from the chart, and the
+Sometimes you may encounter situations when you need to sync minimums and/or maximums of several scales and you don't want to set exact values [minimum and maximum](#minimum_and_maximum). In such cases you need to use several special methods: {api:anychart.charts.Cartesian#getYScales}getYScales{api} and {api:anychart.charts.Cartesian#getXScales}getXScales{api} - the allow you to get a collection of all scales from the chart, and the
 {api:anychart.core.Chart#getStat}getStat(){api} method that can obtain maximums and minimums of all scales.
 
 Let's see it in a sample: say you have created a [value stacked column chart with two stacked clusters](../Basic_Charts/Stacked/Overview#clustered) and you need scales to be in sync, then you need to do the following:

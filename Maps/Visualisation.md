@@ -108,12 +108,12 @@ Note that you should define as many colors as there are regions you've got on th
 
 ### Range Colors
 
-For using rangeColors you should create a new palette and set colors and number of them to it. Use method {api:anychart.palettes.RangeColors}anychart.palettes.rangeColors(){api} to create the palette.
+For using rangeColors you should create a new palette, set its colors with {api:anychart.palettes.RangeColors#items}items(){api} and their number with {api:anychart.palettes.RangeColors#count}count(){api}. Use method {api:anychart.palettes.RangeColors}anychart.palettes.rangeColors(){api} to create the palette.
 
 ```
 // Creates palette
 var myPalette = anychart.palettes.rangeColors();
-myPalette.colors(["#B2DFDB", "#00796B"]);
+myPalette.items(["#B2DFDB", "#00796B"]);
 myPalette.count(4);
 
 // Sets palette.

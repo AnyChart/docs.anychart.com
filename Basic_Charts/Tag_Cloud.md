@@ -136,7 +136,7 @@ The parsing mode, unlike other settings, must be always specified. There are two
 * **byWord** for parsing text into words
 * **byChar** for parsing text into characters
 
-If the only thing you want to set is the mode, you can use a shortcut from {api:anychart.enums.TextParsingMode}anychart.anychart.enums.TextParsingMode{api}:
+If the only thing you want to set is the mode, you can use a shortcut from {api:anychart.enums.TextParsingMode}anychart.enums.TextParsingMode{api}:
 
 ```
 chart.data("Tyger, tyger, burning bright", "by-char");
@@ -314,7 +314,7 @@ chart.angles([0, 30, 90]);
 
 {sample}BCT\_Tag\_Cloud\_Chart\_08{sample}
 
-There is also another way to configure angles. Call {api:anychart.charts.TagCloud#fromAngle}fromAngle(){api} and {api:anychart.charts.TagCloud#toAngle}toAngle(){api} to set the first and the last angle in a range, then call {api:anychart.charts.TagCloud#anglesCount}anglesCount(){api} to set the total number of angles. The defaults are: 0&deg;, 90&deg;, and 2.
+There is also another way to configure angles. Call {api:anychart.charts.TagCloud#fromAngle}fromAngle(){api} and {api:anychart.charts.TagCloud#toAngle}toAngle(){api} to set the first and the last angle in a range, then call {api:anychart.charts.TagCloud#anglesCount}anglesCount(){api} to set the total number of angles. The defaults are: -90&deg;, 90&deg;, and 7.
 
 In this sample the number of angles is 5, the first angle is 10&deg;, the last is 100&deg;, and 3 angles lying between them are calculated automatically:
 

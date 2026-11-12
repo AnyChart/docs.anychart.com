@@ -5,7 +5,7 @@
    
 Orientation depends on plot type and inversion of axes, below you will find all possible axes {api:anychart.core.axes.Linear#orientation}orientation{api} and {api:anychart.scales.Linear#inverted}inverting{api} JS Settings with demonstration preview.
   
-Though these settings are demonstrated using {api:anychart.core.cartesian.series.Bar}Bar{api}/{api:anychart.core.cartesian.series.Column}Column{api} charts - they work for all other chart types.
+Though these settings are demonstrated using {api:anychart.core.cartesian.series.Bar}Bar{api}/{api:anychart.core.cartesian.series.Column}Column{api} charts - they work for all other chart types with horizontal and vertical axes. Radar and polar axes have no orientation setting.
 
 ## Column Mode
 
@@ -74,8 +74,8 @@ chart.yScale().inverted(false);
 ```
 chart.xAxis().orientation("bottom");
 chart.yAxis().orientation("left");
-chart.xScale().inverted(true);
-chart.yScale().inverted(false);
+chart.xScale().inverted(false);
+chart.yScale().inverted(true);
 ```
 </td>
 </tr>

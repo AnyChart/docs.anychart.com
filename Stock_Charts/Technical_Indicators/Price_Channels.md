@@ -37,9 +37,9 @@ Here is a live sample:
 
 ## Indicator Parameters
 
-There are five parameters a Price Channel indicator has, one of them is necessary - the mapping.
+There are four parameters a Price Channels indicator has, one of them is necessary - the mapping.
 
-The second parameter sets the period, and the next three parameters allow you to set the series type of the middle and range series.
+The second parameter sets the period, and the next two parameters allow you to set the series type of the middle and range series.
 
 The following code sample demonstrates a Price Channels indicator with parameters set as default:
 
@@ -58,7 +58,7 @@ priceChannels_0.middleSeries().stroke("2 #ef6c00");
 priceChannels_0.rangeSeries().fill("#ffd54f 0.2");
 
 // create and adjust a Price Channels indicator
-var priceChannels_1 = plot_1.priceChannels(mapping, 10, "range-step-area", "step-line");
+var priceChannels_1 = plot_1.priceChannels(mapping, 10, "step-line", "range-step-area");
 priceChannels_1.middleSeries().stroke("2 #64b5f6");
 priceChannels_1.rangeSeries().fill("none");
 priceChannels_1.rangeSeries().highStroke("2 #00bfa5");

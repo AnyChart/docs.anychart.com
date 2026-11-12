@@ -31,6 +31,7 @@ This article shows how to make a basic Waffle chart. It also shows how to set op
 <tr><td></td><td>[Doughnut](Doughnut_Chart)</td></tr>
 <tr><td></td><td>[Treemap](Treemap_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td></td><td>[Chartopedia: Waffle Chart](https://www.anychart.com/chartopedia/chart-types/waffle-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
@@ -85,7 +86,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-Each category's color comes from the chart [palette](../Appearance_Settings/Palettes). Set your own with the {api:anychart.charts.Waffle#palette}palette(){api} method. A category is drawn as one block of identical cells, so there is no per-cell styling: every cell in the block shares the same fill and stroke.
+Each category's color comes from the chart [palette](../Appearance_Settings/Palettes). Set your own with the {api:anychart.charts.Waffle#palette}palette(){api} method. A category is drawn as one block of cells; to style the cells one by one, or per state, see [Cell States](#cell_states).
 
 The [appearance settings](../Appearance_Settings) react to the three [states](../Common_Settings/Interactivity/States). Use the {api:anychart.charts.Waffle#normal}normal(){api}, {api:anychart.charts.Waffle#hovered}hovered(){api}, and {api:anychart.charts.Waffle#selected}selected(){api} methods with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}. A category is hovered when you point at it and selected when you click it. By default, hovering lightens the palette color, and selecting darkens it. To change how a state reacts, pass a function to fill() or stroke(): inside it, the palette color is available as `this.sourceColor`:
 
@@ -134,27 +135,28 @@ In the sample below, the sliders set the number of rows and columns of the grid:
 
 ### Cells
 
-The chart draws the cells on its own — you only set how they look. Two groups of settings control them: the shape of a cell and the sizing of the grid.
+The chart draws the cells on its own; you set how they look with the `cell()` method. Its settings fall into three groups: the [shape](#cell_shape) of the cells, the [sizing](#cell_size) of the grid, and the look of the cells in each [state](#cell_states).
 
 #### Cell Shape
 
-Cells are squares by default. To draw them as circles, use the {api:anychart.core.waffle.Cell#shape}cell().shape(){api} method. For square cells, you can round the corners with {api:anychart.core.waffle.Cell#cornerRadius}cell().cornerRadius(){api}; circle cells ignore this setting. The shape name is matched without regard to case; any other value falls back to the default shape and reports a warning in the browser console:
+Cells are squares by default. To draw another shape, pass its name to `shape()` of the normal state: the names are the library's marker shapes, listed in {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}, such as a circle, a triangle, or an arrow; a cell takes every marker shape except the two line shapes. The legend icon repeats the shape you choose. For square cells, `cornerRadius()` rounds the corners; the other shapes ignore it. The shape name is matched without regard to case, and any other value keeps the current shape:
 
 ```
-// draw square cells and round their corners
-chart.cell().shape("square");
-chart.cell().cornerRadius(4);
+// draw round cells
+chart.cell().normal().shape("circle");
+// round the corners of square cells: the other shapes ignore the radius
+chart.cell().normal().cornerRadius(4);
 ```
 
-In the sample below, the radio buttons switch between the two cell shapes, and the slider rounds the corners of the square cells:
+In the sample below, the dropdown switches the shape of the cells through every marker shape a cell accepts; for square cells, a slider rounds the corners:
 
 {sample}BCT\_Waffle\_Chart\_04{sample}
 
 #### Cell Size
 
-By default, the chart fits the cells to the chart area. The {api:anychart.core.waffle.Cell#padding}cell().padding(){api} method sets the gap between cells, and {api:anychart.core.waffle.Cell#aspectRatio}cell().aspectRatio(){api} sets their width-to-height ratio.
+By default, the chart fits the cells to the chart area. The `cell().padding()` method sets the gap between cells, and `cell().aspectRatio()` sets their width-to-height ratio.
 
-To give the cells a fixed size instead, use {api:anychart.core.waffle.Cell#size}cell().size(){api}: each cell is then exactly that many pixels high and `size × aspectRatio` pixels wide. A fixed-size grid does not shrink to fit: if it outgrows the chart area, it stays centered, and its edges are cut off. Set the size back to `0` to return to the automatic fit:
+To give the cells a fixed size instead, use `cell().size()`: each cell is then exactly that many pixels high, and its width is that size multiplied by the aspect ratio. A fixed-size grid does not shrink to fit: if it outgrows the chart area, it stays centered, and its edges are cut off. Set the size back to `0` to return to the automatic fit:
 
 ```
 // widen the gaps between the cells
@@ -169,6 +171,28 @@ In the sample below, the sliders set the gap between the cells, their fixed heig
 
 {sample}BCT\_Waffle\_Chart\_05{sample}
 
+#### Cell States
+
+The cells are styled per state. Call `cell().normal()`, `cell().hovered()`, or `cell().selected()`, then the `fill()`, `stroke()`, `hatchFill()`, or `shape()` method of that state. A setting of a cell state overrides the same setting of the chart state (see [Appearance](#appearance)). The hovered and selected states apply to the whole category of the cell.
+
+To style the cells one by one, pass a function to `fill()`, `stroke()`, or `hatchFill()`. It is called for every cell with `this.cellIndex`, the number of the cell in the grid, `this.row` and `this.column`, its position, `this.state`, its state, and `this.sourceColor`, the palette color of its category:
+
+```
+// cell states: white gaps, round cells under the pointer, a red fill when selected
+chart.cell().normal().stroke("#ffffff", 1);
+chart.cell().hovered().shape("circle");
+chart.cell().selected().fill("#d32f2f");
+
+// a lighter fill for every other cell of a category
+chart.cell().normal().fill(function () {
+  return this.cellIndex % 2 ? anychart.color.lighten(this.sourceColor, 0.4) : this.sourceColor;
+});
+```
+
+In the sample below, every other cell of a category is lighter, the cells of the category under the pointer turn round, and a selected category turns red:
+
+{sample}BCT\_Waffle\_Chart\_06{sample}
+
 ### Fill Direction
 
 The {api:anychart.charts.Waffle#fillDirection}fillDirection(){api} method sets the order in which cells fill the grid:
@@ -180,7 +204,7 @@ The {api:anychart.charts.Waffle#fillDirection}fillDirection(){api} method sets t
 
 Three of the four directions fill the grid row by row. `top-to-bottom` is different on purpose: it is the only direction that fills the grid column by column. Use it when the category blocks should grow from left to right, one column at a time.
 
-Write the names with their hyphens, as above. The case does not matter, but any other spelling falls back to the default direction and reports a warning in the browser console.
+Write the names with their hyphens, as above. The case does not matter, but any other spelling falls back to the default direction.
 
 ```
 // fill the grid from the bottom up
@@ -189,15 +213,15 @@ chart.fillDirection("bottom-to-top");
 
 In the sample below, use the switcher to compare all four directions on the same data:
 
-{sample}BCT\_Waffle\_Chart\_06{sample}
+{sample}BCT\_Waffle\_Chart\_07{sample}
 
 ### Labels
 
 [Labels](../Common_Settings/Labels) are text elements shown directly on the grid: one label per category, at the center of its block of cells.
 
-Labels are off by default. To turn them on, use the {api:anychart.charts.Waffle#labels}labels(){api} method. The default text is the category name and its percent share. To change it, call {api:anychart.core.ui.LabelsFactory#format}format(){api} with a [text formatter](../Common_Settings/Text_Formatters): the `{%name}`, `{%value}`, and `{%percent}` tokens are available.
+Labels are off by default. To turn them on, use the {api:anychart.charts.Waffle#labels}labels(){api} method. The default text is the category name. To change it, call {api:anychart.core.ui.LabelsFactory#format}format(){api} with a [text formatter](../Common_Settings/Text_Formatters): the `{%name}`, `{%value}`, and `{%percent}` tokens are available.
 
-A label is drawn in black directly on the cells of its category, with nothing behind the text. How well it reads depends on your palette, as with any chart type that draws labels over a fill. When a palette mixes light and dark colors, outline the glyphs instead of picking one font color: a white bold font with a dark {api:anychart.core.ui.LabelsFactory#textShadow}textShadow(){api} outline reads on any block, while plain white text is lost on light cells:
+Each label sits on a white plate with rounded corners, so black text reads on any palette. The plate is a [background](../Appearance_Settings/Background): restyle it with {api:anychart.core.ui.LabelsFactory#background}background(){api}, and pick a {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api} that reads on it:
 
 ```
 // enable the labels
@@ -206,17 +230,14 @@ chart.labels().enabled(true);
 // show the name and the value instead
 chart.labels().format("{%name}: {%value}");
 
-// outlined white text: a bold white font ...
+// restyle the label background and the font color on it
+chart.labels().background().fill("#212121");
 chart.labels().fontColor("#ffffff");
-chart.labels().fontWeight(600);
-
-// ... with one dark shadow on each side
-chart.labels().textShadow("-1px -1px #000, 1px -1px #000, -1px 1px #000, 1px 1px #000");
 ```
 
-In the sample below, the labels are outlined white text that reads on light and dark cells alike:
+In the sample below, each label shows the name and the value in white on a dark plate:
 
-{sample}BCT\_Waffle\_Chart\_07{sample}
+{sample}BCT\_Waffle\_Chart\_08{sample}
 
 ### Tooltips
 
@@ -228,7 +249,7 @@ chart.tooltip().titleFormat("Channel: {%name}");
 chart.tooltip().format("{%value} orders - {%percent}{decimalsCount:1}% of the total");
 ```
 
-{sample}BCT\_Waffle\_Chart\_08{sample}
+{sample}BCT\_Waffle\_Chart\_09{sample}
 
 ### Legend
 
@@ -246,4 +267,4 @@ chart.legend().itemsLayout("vertical");
 
 In the sample below, the legend sits to the right of the grid, with its items stacked vertically:
 
-{sample}BCT\_Waffle\_Chart\_09{sample}
+{sample}BCT\_Waffle\_Chart\_10{sample}

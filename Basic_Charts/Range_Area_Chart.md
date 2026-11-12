@@ -33,6 +33,7 @@ This article explains how to create a basic Range Area chart as well as configur
 <tr><td></td><td>[Range Spline Area](Range_Spline_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Step Area](Range_Step_Area_Chart)</td></tr>
 <tr><td></td><td>[HiLo](HiLo_Chart)</td></tr>
+<tr><td></td><td>[Dumbbell](Dumbbell_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Chartopedia: Range Area Chart](https://www.anychart.com/chartopedia/chart-types/range-area-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
@@ -117,8 +118,8 @@ Combine them with the following methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
-* {api:anychart.core.StateSettings#fill}lowStroke(){api} to set the low stroke
-* {api:anychart.core.StateSettings#fill}highStroke(){api} to set the high stroke
+* {api:anychart.core.StateSettings#lowStroke}lowStroke(){api} to set the low stroke
+* {api:anychart.core.StateSettings#highStroke}highStroke(){api} to set the high stroke
 
 Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
@@ -140,7 +141,7 @@ series1.hovered().highStroke("#ff6666", 2, "10 5", "round");
 series1.selected().highStroke("#ff6666", 4, "10 5", "round");
 
 // create the second series
-var series2 = chart.rangeAarea(seriesData_2);
+var series2 = chart.rangeArea(seriesData_2);
 // configure the visual settings of the second series
 series2.normal().fill("#0066cc", 0.3);
 series2.hovered().fill("#0066cc", 0.1);
@@ -162,7 +163,35 @@ series2.selected().highStroke("#ff6666", 4);
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-A range point is labeled at its high end and shows the high value. Pass `"rangeMode"` to {api:anychart.core.ui.LabelsFactory#position}position(){api} to label both ends instead - the low-end label prints the low value, and a format function tells the two ends apart through `this["rangeEnd"]`: see [Range Column Chart](Range_Column_Chart).
+#### Labels at Both Ends
+
+Pass `"rangeMode"` to {api:anychart.core.ui.LabelsFactory#position}position(){api} to label both ends of a point: the high-end label shows the high value, the low-end label the low value. To give the ends different text, use a format function and check `this["rangeSide"]`: it is `"high"` on the high-end label and `"low"` on the low-end label.
+
+```
+// label both ends of every point
+series.labels().enabled(true);
+series.labels().position("rangeMode");
+// set the text of each end
+series.labels().format(function () {
+  if (this["rangeSide"] == "low") {
+    return "Min " + this["low"];
+  }
+  return "Max " + this["high"];
+});
+```
+
+To set up the labels of one end, call {api:anychart.core.StateSettings#highLabels}highLabels(){api} or {api:anychart.core.StateSettings#lowLabels}lowLabels(){api} on {api:anychart.core.cartesian.series.RangeArea#normal}normal(){api}. A setting made there overrides the same setting of `labels()` for that end only; every other setting, the format included, is taken from `labels()`. These methods have no effect unless the position is `"rangeMode"`.
+
+```
+// set the font color of the high-end labels
+series.normal().highLabels({fontColor: "#d84315"});
+// set the font color of the low-end labels
+series.normal().lowLabels({fontColor: "#1565c0"});
+```
+
+In the sample below, both ends of every point are labeled and each end has its own font color:
+
+{sample}BCT\_Range\_Area\_Chart\_04{sample}
 
 ### Tooltips
 

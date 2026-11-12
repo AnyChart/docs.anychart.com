@@ -94,7 +94,7 @@ In the sample below, a listener is used to change the visual settings of annotat
 chart.listen("annotationSelect", function(e){
     var selectedAnnotation = e.annotation;
     // change the annotation stroke
-    selectedAnnotation.selectStroke("#FF0000", 3, "5 2", "round");
+    selectedAnnotation.selected().stroke("#FF0000", 3, "5 2", "round");
     // change the chart title
     chart.title("The " + selectedAnnotation.getType() + " annotation is selected.");
 });
@@ -169,9 +169,9 @@ There are a lot of ways to save annotations to a server or to load them. Below y
 
 The following methods are of a great help:
 
-- the {api:anychart.core.annotations.PlotController#toJson}toJson(){api} method is used for deserialization the list of annotations,
+- the {api:anychart.core.annotations.PlotController#toJson}toJson(){api} method is used for serialization of the list of annotations,
 
-- the {api:anychart.core.annotations.PlotController#fromJson}fromJson(){api} method is used for serialization the list of annotations.
+- the {api:anychart.core.annotations.PlotController#fromJson}fromJson(){api} method is used for deserialization of the list of annotations.
 
 In the following code sample, custom functions *sendAnnotationsToServer()* and *getAnnotationsFromServer()* used, which act like placeholders for functions that would send and receive the annotations from a server.
 

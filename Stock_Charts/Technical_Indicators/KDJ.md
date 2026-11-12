@@ -34,7 +34,7 @@ chart = anychart.stock();
 var plot = chart.plot(0);
 
 // create KDJ indicator
-var kdj = plot.kdj(mapping, 10, "EMA", 10, "SMA", 20);
+var kdj = plot.kdj(mapping, 10, 10, 20, "EMA", "SMA");
 kdj.kSeries().stroke("#bf360c");
 kdj.dSeries().stroke("#02660c");
 kdj.jSeries().stroke("#0228b2");
@@ -48,17 +48,17 @@ Here is a live sample:
 
 KDJ indicator has a lot of optional parameters: 
 - a period for the %K value 
-- the moving average type of the indicator for the %K value
 - a period for the smoothed %K value
-- the moving average type of the indicator for the %D value
 - a period for the %D value
+- the moving average type of the indicator for the %K value
+- the moving average type of the indicator for the %D value
 - multipliers of the %K and %D values for %J value calculating 
 - series types of the %K, %D and %J values. 
 
 The following code shows how to create a KDJ indicator with %K value with period of 10 and EMA smoothing and %D value with period of 20 and SMA smoothing.
 
 ```
-var kdj = plot.kdj(mapping, 10, "EMA", 10, "SMA", 20);
+var kdj = plot.kdj(mapping, 10, 10, 20, "EMA", "SMA");
 ```
 
 There are three series that form the KDJ indicator, so there is a methods for each of them:
@@ -74,13 +74,13 @@ KDJ indicator visualization can be adjusted the same way as the others. It depen
 
 ```
 // create first KDJ indicator of default series type
-var kdj_1 = plot_0.kdj(mapping, 10, "EMA", 10, "SMA", 20);
+var kdj_1 = plot_0.kdj(mapping, 10, 10, 20, "EMA", "SMA");
 kdj_1.kSeries().stroke("#bf360c");
 kdj_1.dSeries().stroke("#02660c");
 kdj_1.jSeries().stroke("#0228b2");
 
 // create second KDJ indicator of column series
-var kdj_2 = plot_1.kdj(mapping, 14, "EMA", 5, "EMA", 5, -2, 3, "spline", "spline", "spline");
+var kdj_2 = plot_1.kdj(mapping, 14, 5, 5, "EMA", "EMA", -2, 3, "spline", "spline", "spline");
 kdj_2.kSeries().stroke("#bf360c");
 kdj_2.dSeries().stroke("#02660c");
 kdj_2.jSeries().stroke("#0228b2");

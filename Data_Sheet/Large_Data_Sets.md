@@ -3,7 +3,7 @@
 
 Virtual scrolling is on by default in the grid. Only the rows in the visible part of the grid exist in the page HTML. The grid also keeps a few extra rows above and below them. Those extra rows are called the buffer. So a grid of 5,000 rows keeps only a few dozen row elements, and more if you raise the buffer.
 
-That is why the grid stays fast with a large data set: the first `draw()` of 5,000 rows takes a few tens of milliseconds. It also means your own code finds far fewer rows in the page than the data holds. This article shows how to size the buffer, how to render every row instead, when these two settings take effect, and how to count rows correctly.
+That is why the grid stays fast with a large data set: the first `draw()` of 5,000 rows takes a few tens of milliseconds. It also means your own code finds far fewer rows in the page than the data holds. This article shows how to size the buffer, how to render every row instead, and how to count rows correctly.
 
 ## Buffer Size and Full Rendering
 
@@ -30,17 +30,12 @@ for (var i = 1; i <= 5000; i++) {
 }
 
 // virtual scrolling is on by default: keep 25 extra rows above and below the visible rows
-// set this before the first draw()
 chart.virtualScroll().bufferSize(25);
 ```
 
-## When the Settings Take Effect
-
-**Set these two options before the first `draw()`.** The controller does not tell the grid that something changed, so a `draw()` on its own after the change does nothing at all. The new value is picked up by the next redraw that something else triggers - a data change, a filter, a sort or a scroll. So it is hard to predict when the change takes effect. This is one of the two exceptions to the redraw rule in [Rules for Every Grid](Overview#rules_for_every_grid); the other one is in [Header](Header).
-
 ## Container Height
 
-Virtual scrolling needs a container with a real height. With a zero-height container the grid builds only the buffer rows - see the size rule in [Rules for Every Grid](Overview#rules_for_every_grid).
+Virtual scrolling needs a container with a real height - see the size rule in [Rules for Every Grid](Overview#rules_for_every_grid).
 
 ## Row Counts in the Page
 

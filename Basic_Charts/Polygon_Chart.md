@@ -34,7 +34,7 @@ This article explains how to create a basic Polygon chart as well as configure s
 
 ## Quick Start
 
-To create a Polylygon chart, use the {api:anychart#polar}anychart.polar(){api} chart constructor. Then call the {api:anychart.charts.Polar#polyline}polygon{api} method to create a Polygon series.
+To create a Polygon chart, use the {api:anychart#polar}anychart.polar(){api} chart constructor. Then call the {api:anychart.charts.Polar#polygon}polygon(){api} method to create a Polygon series.
 
 The following sample demonstrates how a basic Polygon chart is created:
 
@@ -87,7 +87,8 @@ In the sample below, there are two Polygon series with appearance settings confi
 
 ```
 // create the first series
-var series1 = chart.polygon(series1.name("Wizard");
+var series1 = chart.polygon(seriesData_1);
+series1.name("Wizard");
 
 // configure the visual settings of the first series
 series1.normal().fill("#00cc99", 0.3);

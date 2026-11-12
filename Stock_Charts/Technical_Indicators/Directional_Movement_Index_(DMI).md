@@ -2,7 +2,7 @@
 
 ## Overview
 
-Developed by Marc Chaikin, the DMI measures the momentum of the Accumulation Distribution Line using the MACD formula. This makes it an indicator of an indicator. The DMI is the difference between the 3-day EMA of the Accumulation Distribution Line and the 10-day EMA of the Accumulation Distribution Line. Like other momentum indicators, this indicator is designed to anticipate directional changes in the Accumulation Distribution Line by measuring the momentum behind the movements. A momentum change is the first step to a trend change. Anticipating trend changes in the Accumulation Distribution Line can help chartists anticipate trend changes in the underlying security. The Chaikin Oscillator generates signals with crosses above/below the zero line or with bullish/bearish divergences.
+Developed by J. Welles Wilder, the Directional Movement Index (DMI) shows whether a security is trending and how strong the trend is. It consists of three lines calculated from the high, low and close prices: the Plus Directional Indicator (+DI), the Minus Directional Indicator (-DI) and the Average Directional Index (ADX). When +DI is above -DI, upward movement prevails, and when -DI is above +DI, downward movement prevails. ADX measures the strength of the trend regardless of its direction.
 
 Find the mathematical description of the indicator on the [DMI Mathematical Description](Mathematical_Description#directional_movement_indicator) page.
 

@@ -184,10 +184,10 @@ The full list of tokens is available in API: {api:anychart.enums.Statistics}anyc
 <td>{%seriesYMode}</td><td>The mode y value of all the points within this series.</td>
 </tr>
 <tr>
-<td>{%rangeStart}</td><td>The starting value of this point (Range charts).</td>
+<td>{%RangeStart}</td><td>The starting (low) value of this point (Range charts).</td>
 </tr>
 <tr>
-<td>{%rangeEnd}</td><td>The ending value of this point (Range charts).</td>
+<td>{%RangeEnd}</td><td>The ending (high) value of this point (Range charts).</td>
 </tr>
 <tr>
 <td>{%seriesYRangeMax}</td><td>The maximal range in this series (Range charts).</td>
@@ -199,7 +199,7 @@ The full list of tokens is available in API: {api:anychart.enums.Statistics}anyc
 <td>{%seriesYRangeSum}</td><td>The sum of all ranges in this series (Range charts).</td>
 </tr>
 <tr>
-<td>{%range}</td><td>The range of this point (RangeEnd - RangeStart).</td>
+<td>{%Range}</td><td>The range of this point (RangeEnd - RangeStart).</td>
 </tr>
 <tr>
 <td>{%dataPlotYSum}</td><td>The sum of all the points y values.</td>
@@ -548,6 +548,8 @@ x<br>seriesName<br>index<br>value<br>valueLowerError<br>valueUpperError<br>xLowe
 <td>**Note!** As those types have an only series by default,<br> you should use the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with chart.label().<br>x<br>value<br>index</td>
 </tr>
 </table>
+
+In a label format function of a range series whose labels are positioned with `"rangeMode"`, `this["rangeSide"]` is `"high"` on the high-end label and `"low"` on the low-end label: see [Range Column Chart: Labels at Both Ends](../Basic_Charts/Range_Column_Chart#labels_at_both_ends).
 
 First of all, enable the labels. Then set the fields of values you want those labels to show using the {api:anychart.core.ui.LabelsFactory#format}format(){api} function according to the table above.
 

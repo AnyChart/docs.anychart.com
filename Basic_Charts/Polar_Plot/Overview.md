@@ -195,7 +195,7 @@ In this sample cells of the radial and circular grids are filled with color:
 
 ```
 // color the even-odd cells of the x-grid
-polar1.xGrid().palette(["gray 0.05", "gray 0.1"]));
+polar1.xGrid().palette(["gray 0.05", "gray 0.1"]);
 
 // color the even-odd cells of the y-grid 
 polar2.yGrid().palette(["gray 0.05", "gray 0.1"]);

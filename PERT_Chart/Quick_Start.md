@@ -71,7 +71,7 @@ var data = [
 chart = anychart.pert();
 
 // set chart data
-chart.data(data, "asTable");
+chart.data(data, "as-table");
 
 // set the title of the chart
 chart.title("PERT Chart");
@@ -129,7 +129,7 @@ You can copy this to a file on your computer and open it in your browser to disp
 		chart = anychart.pert();
 
 		// set chart data
-		chart.data(data, "asTable");
+		chart.data(data, "as-table");
 
 		// set the title of the chart
 		chart.title("PERT Chart");

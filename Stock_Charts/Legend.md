@@ -37,7 +37,7 @@ var plot1 = chart.plot(0);
 var plot2 = chart.plot(1);
 
 // disable the legend on the first plot
-plot1.legend.enabled(false);
+plot1.legend().enabled(false);
 ```
 
 In the sample below, there is a Stock chart with two plots. The legend of the first plot is disabled by using the {api:anychart.core.stock.Plot#legend}legend(){api} method:
@@ -140,7 +140,7 @@ In formatting functions, the following fields are always available:
 * `series` - the series object, which allows accessing methods of the series
 * `x` - the date (X-value) of the current point
 
-There are also series-specific fields: `value` ([Line](Series/Line)), `{%open}`, `high`, `low`, and `close` ([OHLC](Series/OHLC)), and so on.
+There are also series-specific fields: `value` ([Line](Series/Line)), `open`, `high`, `low`, and `close` ([OHLC](Series/OHLC)), and so on.
 
 Formatting functions allow setting the text format of legend items when there are multiple series of different types on the same plot, like in this sample:
 
@@ -198,7 +198,7 @@ ohlc.legendItem().format(
 
 Stock charts, as well as all other chart types, allow adding custom legend items to the default legend or creating fully custom legends. Read more in the [Custom Items](../Common_Settings/Legend/Individual_Legend_Items#custom_items) section.
 
-To add a custom item, use the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method, which takes a function returning an array of items. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
+To add a custom item, use the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method, which takes a function returning an array of items. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}. You can also set text settings of {api:anychart.core.ui.LegendItem}anychart.core.ui.LegendItem{api}, such as `fontColor`, `fontWeight`, and `fontStyle`, in the item object.
 
 In the following sample, a custom item showing the number of series is added to the default legend:
 

@@ -12,7 +12,7 @@ This article explains how to create a basic Heat Map chart as well as configure 
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.HeatMap}anychart.charts.HeatMap{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, value, heat](../Working_with_Data/Overview)</td></tr>
+<tr><td>Data Fields</td><td>[x, y, heat](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -97,6 +97,8 @@ Use the following data fields:
 
 By default, items are colored automatically according to their values (heats). However, you can set the color of each item manually by adding extra fields to your data, and in this case the `heat` field can be omitted. See the [Appearance](#individual_points) section to learn more.
 
+A cell whose `heat` is `null`, `NaN`, or non-empty text that is not a number is drawn in light gray (`#f8f8f8`) with no label, whatever the color scale. A number written as a string, such as `"7"`, counts as that number.
+
 **Note:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
 This is how working with data fields of the Heat Map chart looks like:
@@ -118,12 +120,12 @@ var data = [
   {x: "2013", y: "C", heat: 38},
   {x: "2010", y: "D", heat: 8},
   {x: "2011", y: "D", heat: 8},
-  {x: "2012", y: "D", heat: 7},
-  {x: "2013", y: "D", heat: 8}
+  {x: "2012", y: "D", heat: "7"},
+  {x: "2013", y: "D", heat: null}
 ];
 
 // create a chart and set the data
-chart = anychart.heatMap(data);
+var chart = anychart.heatMap(data);
 ```
 
 {sample}BCT\_Heat\_Map\_Chart\_02{sample}
@@ -202,7 +204,7 @@ chart = anychart.heatMap(data);
 
 ### Color Scale
 
-By default, the color scale of a Heat Map chart is ordinal, and cells are colored in the colors of the default [palette](../Appearance_Settings/Palettes). Color ranges are set automatically.
+By default, the color scale of a Heat Map chart is ordinal, and cells are colored in graded shades of one color rather than in the colors of the chart [palette](../Appearance_Settings/Palettes); to choose the colors yourself, create the color scale explicitly, as described below. Color ranges are set automatically.
 
 #### Ordinal
 
@@ -234,7 +236,7 @@ chart.colorScale(customColorScale);
 
 To create a **linear color scale**, use the {api:anychart.scales#linearColor}linearColor(){api} constructor.
 
-Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors, the first one indicating 0, and the second one indicating the maximum heat. Cells are colored automatically in different mixtures of these two colors, and if you do not specify them, the default colors of the linear color scale are used.
+Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors, the first one indicating the minimum heat, and the second one indicating the maximum heat. Cells are colored automatically in different mixtures of these two colors, and if you do not specify them, the default colors of the linear color scale are used.
 
 Finally, call {api:anychart.charts.HeatMap#colorScale}colorScale(){api} to set your scale as the color scale of the chart.
 

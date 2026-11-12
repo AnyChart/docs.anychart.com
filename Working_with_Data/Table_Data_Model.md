@@ -101,7 +101,7 @@ var ohlcSeries = chart.plot(0).ohlc(mapping);
 This sample shows how to set data if it is organized as an **array of objects**:
 
 ```
- create a data table
+// create a data table
 var dataTable = anychart.data.table("x");
 
 // add data

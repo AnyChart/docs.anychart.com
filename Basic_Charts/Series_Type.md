@@ -73,8 +73,8 @@ var chart = anychart.cartesian();
 chart.defaultSeriesType("column");
 
 // add a series of the default type
-chart.addSeries(dataSet1);
-chart.addSeries(dataSet2);
-chart.addSeries(dataSet3);
+chart.addSeries(data1);
+chart.addSeries(data2);
+chart.addSeries(data3);
 ```
 

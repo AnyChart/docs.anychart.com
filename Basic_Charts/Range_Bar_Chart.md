@@ -31,6 +31,7 @@ This article explains how to create a basic Range Bar chart as well as configure
 <tr><td></td><td>[Bar](Bar_Chart)</td></tr>
 <tr><td></td><td>[Range Column](Range_Column_Chart)</td></tr>
 <tr><td></td><td>[HiLo](HiLo_Chart)</td></tr>
+<tr><td></td><td>[Dumbbell](Dumbbell_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Chartopedia: Range Bar Chart](https://www.anychart.com/chartopedia/chart-types/range-bar-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
@@ -125,7 +126,7 @@ In the sample below, there are two Range Bar series with appearance settings con
 
 ```
 // create the first series
-var series1 = chart.RangeBar(seriesData_1);
+var series1 = chart.rangeBar(seriesData_1);
 
 // configure the visual settings of the first series
 series1.normal().fill("#00cc99", 0.3);
@@ -136,7 +137,7 @@ series1.hovered().stroke("#00cc99", 2, "10 5", "round");
 series1.selected().stroke("#00cc99", 4, "10 5", "round");
 
 // create the second series
-var series2 = chart.RangeBar(seriesData_2);
+var series2 = chart.rangeBar(seriesData_2);
 
 // configure the visual settings of the second series
 series2.normal().fill("#0066cc", 0.3);
@@ -270,7 +271,35 @@ This chart type allows you to set the size of its points. Read more in the [Poin
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-A range point is labeled at its high end and shows the high value. Pass `"rangeMode"` to {api:anychart.core.ui.LabelsFactory#position}position(){api} to label both ends instead - the low-end label prints the low value, and a format function tells the two ends apart through `this["rangeEnd"]`: see [Range Column Chart](Range_Column_Chart).
+#### Labels at Both Ends
+
+Pass `"rangeMode"` to {api:anychart.core.ui.LabelsFactory#position}position(){api} to label both ends of a point: the high-end label shows the high value, the low-end label the low value. To give the ends different text, use a format function and check `this["rangeSide"]`: it is `"high"` on the high-end label and `"low"` on the low-end label.
+
+```
+// label both ends of every point
+series.labels().enabled(true);
+series.labels().position("rangeMode");
+// set the text of each end
+series.labels().format(function () {
+  if (this["rangeSide"] == "low") {
+    return "Min " + this["low"];
+  }
+  return "Max " + this["high"];
+});
+```
+
+To set up the labels of one end, call {api:anychart.core.StateSettings#highLabels}highLabels(){api} or {api:anychart.core.StateSettings#lowLabels}lowLabels(){api} on {api:anychart.core.cartesian.series.RangeBar#normal}normal(){api}. A setting made there overrides the same setting of `labels()` for that end only; every other setting, the format included, is taken from `labels()`. These methods have no effect unless the position is `"rangeMode"`.
+
+```
+// set the font color of the high-end labels
+series.normal().highLabels({fontColor: "#d84315"});
+// set the font color of the low-end labels
+series.normal().lowLabels({fontColor: "#1565c0"});
+```
+
+In the sample below, both ends of every point are labeled and each end has its own font color:
+
+{sample}BCT\_Range\_Bar\_Chart\_07{sample}
 
 ### Tooltips
 

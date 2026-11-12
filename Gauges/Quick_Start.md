@@ -55,7 +55,7 @@ anychart.onDocumentReady(function () {
   dataSet = anychart.data.set([81, 34.5]);
  
   // chart type
-  gauge = anychart.circularGauge();
+  gauge = anychart.gauges.circular();
  
   //set series padding
   gauge.data(dataSet).padding('4%');
@@ -73,7 +73,7 @@ anychart.onDocumentReady(function () {
       .enabled(true)
       .fill('white')
       .stroke('#888')
-      .type('trapezoid')
+      .type('trapezium')
       .length(20);
  
   //set minor axis ticks
@@ -81,7 +81,7 @@ anychart.onDocumentReady(function () {
       .enabled(true)
       .fill('white')
       .stroke('#ccc')
-      .type('trapezoid')
+      .type('trapezium')
       .length(10);
  
   //set the look of the bar that presents data
@@ -131,7 +131,7 @@ The sample above can be launched and explored in AnyChart PlayGround. You can al
         dataSet = anychart.data.set([81, 34.5]);
        
         // chart type
-        gauge = anychart.circularGauge();
+        gauge = anychart.gauges.circular();
        
         //set series padding
         gauge.data(dataSet).padding('4%');
@@ -149,7 +149,7 @@ The sample above can be launched and explored in AnyChart PlayGround. You can al
             .enabled(true)
             .fill('white')
             .stroke('#888')
-            .type('trapezoid')
+            .type('trapezium')
             .length(20);
        
         //set minor axis ticks
@@ -157,7 +157,7 @@ The sample above can be launched and explored in AnyChart PlayGround. You can al
             .enabled(true)
             .fill('white')
             .stroke('#ccc')
-            .type('trapezoid')
+            .type('trapezium')
             .length(10);
        
         //set the look of the bar that presents data
