@@ -27,6 +27,8 @@ This article explains how to create a basic Marker chart as well as configure se
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Bubble](Bubble_Chart)</td></tr>
 <tr><td></td><td>[Dot (Point) Maps](../Maps/Dot\_\(Point\)\_Map)</td></tr>
+<tr><td></td><td>[Dumbbell](Dumbbell_Chart)</td></tr>
+<tr><td></td><td>[Lollipop](Lollipop_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Chartopedia: Marker Chart](https://www.anychart.com/chartopedia/chart-types/dot-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
@@ -110,7 +112,7 @@ series.selected().size(15);
 
 ### Type
 
-The type (shape) of markers can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Marker#normal}normal(){api}, {api:anychart.core.cartesian.series.Marker#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Marker#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#size}type(){api}:
+The type (shape) of markers can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Marker#normal}normal(){api}, {api:anychart.core.cartesian.series.Marker#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Marker#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#type}type(){api}:
 
 Here is the list of available marker types: {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}.
 

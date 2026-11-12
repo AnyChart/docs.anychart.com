@@ -23,6 +23,13 @@ chart.palette(anychart.palettes.defaultPalette);
 // anychart.palettes.sea
 ```
 
+A built-in palette can also be applied by its name, the key of the palette in {api:anychart.palettes}anychart.palettes{api}, such as `sea` or `coffee`. Pass the name to the {api:anychart.charts.Cartesian#palette}palette(){api} method of a chart. In a [theme](Themes), the name works as the value of the `palette` key: `{"palette": "sea"}`.
+
+```
+// set a palette by name
+chart.palette("sea");
+```
+
 Here is a sample of a Funnel chart. Click slices to change palettes:
 
 {sample}AS\_Palettes\_01{sample}

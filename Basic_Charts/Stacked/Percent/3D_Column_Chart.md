@@ -19,8 +19,8 @@ chart = chart.column3d();
 chart.yScale().stackMode("percent");
 
 // create 3d column series
-var series1 = chart.column3d(seriesData_1);
-var series2 = chart.column3d(seriesData_2);
+var series1 = chart.column(seriesData_1);
+var series2 = chart.column(seriesData_2);
 ```
 
 {sample}BCT\_3D\_Percent\_Stacked\_Column\_Chart{sample}

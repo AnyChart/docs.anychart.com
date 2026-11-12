@@ -89,7 +89,7 @@ There are two options for the LinkedIn sharing:
 <table>
 <tr>
 <td>caption</td>
-<td>Caption is the picture name that is always shown. When not specified, the hostname of the link is used as the caption. If there is no caption, there is no "Edit" button and it is impossible to write the caption manually.</td>
+<td>Caption is the picture name that is always shown. When not specified, "AnyChart" is used as the caption. If there is no caption, there is no "Edit" button and it is impossible to write the caption manually.</td>
 </tr>
 <tr>
 <td>description</td>
@@ -256,7 +256,7 @@ The following sample demonstrates setting defaults for all networks available at
 
 ```
 // this method sets the Facebook export settings
-anychart.exports.facebook({caption: "A sample shared with Facebook", link: "http://anychart.com", height: "600", appID: "1167712323282103"});
+anychart.exports.facebook({caption: "A sample shared with Facebook", link: "http://anychart.com", height: "600", appId: "1167712323282103"});
 
 // this method sets the Twitter export settings
 anychart.exports.twitter("https://export.anychart.com/sharing/twitter", "800", "600");
@@ -276,7 +276,7 @@ chart.listen("pointClick", function(e){
       case "Twitter":
         chart.shareWithTwitter();
         break;
-      case "LinkedId":
+      case "LinkedIn":
         chart.shareWithLinkedIn();
         break;
       case "Pinterest":

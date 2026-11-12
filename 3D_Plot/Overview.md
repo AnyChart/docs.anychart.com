@@ -11,4 +11,4 @@ AnyChart supports 3D versions of the following basic chart types: Area, Bar, Col
 
 ## 3D Pie and Doughnut
 
-AnyChart supports 3D versions of the following basic chart types: Area, Bar, Column, Line. These charts are "pseudo 3D" which means they are three dimensional only for the purposes of  chart decoration and embelishement. Please see [3D Pie Chart](../Basic_Charts/3D/Pie_Chart) and [3D Doughnut Chart](../Basic_Charts/3D/Doughnut_Chart) to learn more.  
+AnyChart supports 3D versions of Pie and Doughnut charts. These charts are "pseudo 3D" which means they are three dimensional only for the purposes of chart decoration and embellishment. Please see [3D Pie Chart](../Basic_Charts/3D/Pie_Chart) and [3D Doughnut Chart](../Basic_Charts/3D/Doughnut_Chart) to learn more.  

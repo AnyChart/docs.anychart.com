@@ -11,7 +11,7 @@ To access the settings of the legend tooltip, combine the {api:?entry=legend}leg
 
 By default, the legend tooltip is disabled. To enable it, pass `true` either directly to {api:anychart.core.ui.Legend#tooltip}tooltip(){api} or to the {api:anychart.core.ui.Tooltip#enabled}enabled(){api} method of the tooltip.
 
-Also, the {api:anychart.core.ui.Tooltip#title}title(){api} and {api:anychart.core.ui.Tooltip#titleFormat}separator(){api} methods of the tooltip allow enabling its title and separator:
+Also, the {api:anychart.core.ui.Tooltip#title}title(){api} and {api:anychart.core.ui.Tooltip#separator}separator(){api} methods of the tooltip allow enabling its title and separator:
 
 ```
 // enable the legend tooltp

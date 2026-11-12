@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Range Step Area Chart 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+
+    <style>
+        html, body, #container { width: 100%; height: 100%; margin: 0; padding: 0; }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  // create data
+  var data = [
+    {x: "2019", low: 0.10, high: 0.16},
+    {x: "2020", low: 0.13, high: 0.21},
+    {x: "2021", low: 0.12, high: 0.19},
+    {x: "2022", low: 0.16, high: 0.24},
+    {x: "2023", low: 0.14, high: 0.22}
+  ];
+  // create a chart
+  var chart = anychart.area();
+  // set the chart title
+  chart.title("Range Step Area Chart: Labels at Both Ends");
+  // create a range step area series and set the data
+  var series = chart.rangeStepArea(data);
+  // label both ends of every point
+  series.labels().enabled(true);
+  series.labels().position("rangeMode");
+  // set the text of each end
+  series.labels().format(function () {
+    if (this["rangeSide"] == "low") {
+      return "Min " + this["low"];
+    }
+    return "Max " + this["high"];
+  });
+  // set the font color of the high-end labels
+  series.normal().highLabels({fontColor: "#d84315"});
+  // set the font color of the low-end labels
+  series.normal().lowLabels({fontColor: "#1565c0"});
+  // leave room for the low-end labels
+  chart.yScale().minimum(0.05);
+  // set the container id
+  chart.container("container");
+  // initiate drawing the chart
+  chart.draw();
+});
+</script>
+</body>
+</html>

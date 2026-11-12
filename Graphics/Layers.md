@@ -37,4 +37,4 @@ By default each layer has no bounds and spans across the parent, you can change 
 
 ## zIndex
 
-You can swap layers using {api:anychart.graphics.vector.Layer#swapChildren}swapChildren(){api} or {api:anychart.graphics.vector.Layer#swapChildrenAt}swapChildrenAt(){api} methods of a parent, or by changing zIndex using {api:anychart.graphics.vector.Layer#swapChildren}zIndex(){api} method.
+You can swap layers using {api:anychart.graphics.vector.Layer#swapChildren}swapChildren(){api} or {api:anychart.graphics.vector.Layer#swapChildrenAt}swapChildrenAt(){api} methods of a parent, or by changing zIndex using {api:anychart.graphics.vector.Layer#zIndex}zIndex(){api} method.

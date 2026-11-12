@@ -3,7 +3,7 @@
 
 The grid is real HTML, not SVG, so it carries ARIA roles and attributes that describe it to assistive software. A screen reader reads it as a table: the rows, the columns, the header cells and the sort state of each column. No SVG chart type can do that.
 
-Read this page when your page has to meet an accessibility requirement, or when you want to know what a screen reader user gets from the grid. It lists the attributes the grid writes, shows how a keyboard user enters the grid, describes the one part that does not work yet, and explains how to check the attributes in a browser.
+Read this page when your page has to meet an accessibility requirement, or when you want to know what a screen reader user gets from the grid. It lists the attributes the grid writes, shows how a keyboard user enters the grid, describes what a screen reader announces, and explains how to check the attributes in a browser.
 
 ## ARIA Roles and Attributes
 
@@ -31,7 +31,7 @@ The grid also adds a "Skip to data" link at the top. A keyboard user can jump pa
 
 ## Screen Reader Announcements
 
-**One part does not work yet.** The grid creates an ARIA live region. That is a hidden element: when its text changes, a screen reader reads the new text out loud. The region is "polite", which means that the screen reader waits until it has finished the current sentence. In this release nothing writes text into that region, so a screen reader does not announce a sort or a filter change. If you need those announcements, write them into a live region of your own from the `sort` and `filter` [events](Events).
+The grid creates an ARIA live region. That is a hidden element: when its text changes, a screen reader reads the new text out loud. The region is "polite", which means that the screen reader waits until it has finished the current sentence. The grid writes a short message into that region when the sorting or the filter changes, such as "Sorted by Price, ascending" or "Showing 3 of 5 rows", so a screen reader announces the change.
 
 ## Inspecting the Attributes
 

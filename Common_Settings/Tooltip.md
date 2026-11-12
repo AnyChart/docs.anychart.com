@@ -274,8 +274,7 @@ And here are the default settings:
   font-size: 12px;
   position: absolute;
   pointer-events: none;
-  white-space: nowrap;
-  margin: 10px;
+  margin: 10px 0px 10px 10px;
 }
 
 .anychart-tooltip-separator {

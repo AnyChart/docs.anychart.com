@@ -224,7 +224,7 @@ column_2.labels().format(function() {
   var parentText = "<span style='color:#dd2c00;font-weight:bold'>" +
                    this.name + ": " + duration + "d</span>";
   var milestoneText = "<span style='color:#ffa000;font-weight:bold'>" + 
-                      customField + this.name + "</span";
+                      customField + this.name + "</span>";
   var taskText = "<span style='color:#64b5f6'>" + customField + 
                  this.name + ": " + progress + "</span>";
 

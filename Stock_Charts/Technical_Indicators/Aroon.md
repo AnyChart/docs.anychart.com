@@ -20,7 +20,7 @@ var dataTable = anychart.data.table();
 dataTable.addData(get_data());
 
 // map loaded data
-var mapping = dataTable.mapAs({'high': 2; 'low': 3});
+var mapping = dataTable.mapAs({'high': 2, 'low': 3});
 
 // create stock chart
 chart = anychart.stock();
@@ -41,7 +41,7 @@ Here is a live sample:
 
 ## Indicator Parameters
 
-Aroon indicator has only one type specific parameter - period: mapping with the `"value"` field in it, period and types of Up and Down series to be displayed as:
+Aroon indicator parameters are: a mapping with the `"high"` and `"low"` fields in it, the period (25 by default), and the types of the Up and Down series to be displayed as:
 
 ```
 var aroon25 = plot.aroon(mapping, 25, "line", "line");

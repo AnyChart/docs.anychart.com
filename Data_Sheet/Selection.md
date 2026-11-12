@@ -51,10 +51,10 @@ chart.listen('rowSelect', function () {
 
 ## Selecting from Code
 
-**Selecting from code is different from a user click, in two ways.** First, it does not fire the `rowSelect` event. Second, it does not repaint the grid on its own, so the highlight and the checkboxes stay as they were until the next `draw()`. A user click fires the event and repaints the grid at the same time. That is why the difference is easy to miss. When you select from code, call `draw()` and refresh your own display straight after the call, as the code below does:
+**Selecting from code is different from a user click: it does not fire the `rowSelect` event.** When you select from code, refresh your own display straight after the call, as the code below does:
 
 ```
-// selecting from code does NOT fire rowSelect, and it needs a redraw to show up,
+// selecting from code does NOT fire rowSelect,
 // so update your own display right after the call
 chart.selection().selectedIndices([0, 1]);
 chart.draw();

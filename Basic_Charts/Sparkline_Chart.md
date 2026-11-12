@@ -118,8 +118,8 @@ An area sparkline is a line sparkline with the area between its points and the h
 
 ```
 //set series type
-chart1.type('area');
-chart2.type('area');
+chart1.seriesType('area');
+chart2.seriesType('area');
 ```
 
 
@@ -127,13 +127,13 @@ chart2.type('area');
 
 ### Column Sparkline Chart
 
-A Column Sparkline is a kind of column chart with minimum number of options enabled by default. This type of spaklines is worth using when we analyze something that might have negative values: for example, profit of a company, or sum of positive and negative review for a product.
+A Column Sparkline is a kind of column chart with minimum number of options enabled by default. This type of sparklines is worth using when we analyze something that might have negative values: for example, profit of a company, or sum of positive and negative review for a product.
 
 You can easily switch types: 
 
 ```
 //set series type
-chart1.type('column');
+chart1.seriesType('column');
 ```
 
 Currency rates are not the best example for Columns, so let's take the sum of positive and negative reviews for an Ebay seller as an example.
@@ -148,7 +148,7 @@ That's how we swap types:
 
 ```
 //set series type
-chart1.type('wl');
+chart1.seriesType('win-loss');
 ```
 
 {sample :width 688 :height 50}BCT\_Sparkline\_Chart\_05{sample}
@@ -448,7 +448,7 @@ Another way to place a lot of sparklines is to use the [AnyChart table](../Dashb
 
 ```
 // create table
-var table = anychart.ui.table();
+var table = anychart.standalones.table();
 
 // set table content
 table.contents([

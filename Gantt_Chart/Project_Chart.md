@@ -599,7 +599,9 @@ There are four connector types, which are listed in {api:anychart.enums.Connecto
 
 To learn how to configure connectors, see the [Elements: Project Chart](Elements/Project_Chart#connectors) article.
 
-Please note that a task can have several predecessors, but only one successor. Also, a task can be at the same time a successor to one task or tasks and a predecessor to another. All these nuances are illustrated by the sample below, which visualizes the following dependencies between tasks:
+With the `connectTo` and `connectorType` fields, a task gets one successor. To connect a task to several successors, set its `connector` field to an array of objects, each with its own `connectTo` and `connectorType` - for example, `connector: [{connectTo: "1_2", connectorType: "finish-start"}, {connectTo: "1_5", connectorType: "start-start"}]`.
+
+Please note that a task can have several predecessors. Also, a task can be at the same time a successor to one task or tasks and a predecessor to another. All these nuances are illustrated by the sample below, which visualizes the following dependencies between tasks:
 
 * Task 1 (predecessor) &#8594; Task 2 (successor) - `"finish-start"`
 * Task 2 (predecessor) &#8594; Task 5 (successor) - `"start-start"`

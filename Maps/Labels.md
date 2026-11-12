@@ -174,7 +174,7 @@ It is possible to adjust positioning of the labels inside the regions or outside
 
 To set the custom position of the labels inside the regions, set "middle-x" and "middle-y" properties through the geo data or data set of a map.
 
-Another property is responsible for positioning around the "middle-x" and "middle-y" coordinates: set "middleXYmode" as relative or absolute. When the "middleXYmode" property is "relative", the default middle-x and middle-y values will be considered as 0.5, so keep it in mind while setting the "middle-x" and "middle-y" properties.
+Another property is responsible for positioning around the "middle-x" and "middle-y" coordinates: set "middleXYMode" as relative or absolute. When the "middleXYMode" property is "relative", the default middle-x and middle-y values will be considered as 0.5, so keep it in mind while setting the "middle-x" and "middle-y" properties.
 
 ```
 // data sets for series
@@ -293,12 +293,12 @@ series_2.labels().connectorStroke("green", 2, "3 3");
 
 In AnyMaps, it is possible not to connect labels to their regions and display them in a row or column, on a side of the map. To create an array of this type use the {api:anychart.charts.Map#callout}callout(){api} method. This will create an entity similar to axis on charts. The callout entity is not being zoomed or moved when map is moved or zoomed.
 
-The code sample below demonstrates creating of two callouts, to the left and to the right of the maps:
+The code sample below demonstrates creating of two callouts, to the right and at the bottom of the map:
 
 ```
 // create callouts
-calloutLeft = map.callout(0);
-calloutRight = map.callout(1);
+calloutRight = map.callout(0);
+calloutBottom = map.callout(1);
 ```
 
 After creating the elements it is necessary to fill in the arrays with regions' IDs that will be demonstrated in those callout elements through the {api:anychart.core.ui.Callout#items}items(){api} method.

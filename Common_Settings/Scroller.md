@@ -58,7 +58,7 @@ The third way of setting the limits is to set the number of points from the begi
 
 ```
 // set limits using a number of points
-chart.xZoom()setToPointsCount(10, true);
+chart.xZoom().setToPointsCount(10, true);
 ```
 
 {sample}CS\_Scroller\_04{sample}
@@ -159,7 +159,7 @@ The scroll bar thumbs can be adjusted too. You change their look, dimensions or 
 ```
 // adjusting the thumbs behavior and look
 chart.xScroller().thumbs().autoHide(true);
-chart.xScroller().thumbs().hoverFill("#FFD700");
+chart.xScroller().thumbs().hovered().fill("#FFD700");
 ```
 
 {sample}CS\_Scroller\_11{sample}
@@ -197,7 +197,7 @@ There are three events which scroller can dispatch:
 - **scrollerchangestart**
 - **scrollerchangefinish**.
 
-These events are dispatched when we drag the scroll bar, click on it or change it's size. All events provide information about the source of changes (thumbDrag, selectedRangeDrag or backgroundClick), the startRatio and endRatio values.
+These events are dispatched when we drag the scroll bar, click on it or change it's size. All events provide information about the source of changes (thumb-drag, selected-range-drag or background-click), the startRatio and endRatio values.
 
 Here is the sample of **scrollerchangefinish** event listener:
 

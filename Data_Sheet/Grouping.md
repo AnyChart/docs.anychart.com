@@ -14,7 +14,7 @@ To group the rows by one field, pass the field name to {api:anychart.charts.Data
 chart.groupBy("category", {aggregates: {price: "sum", stock: "avg"}});
 ```
 
-The grid regroups the rows on the next `draw()`, as the redraw rule from [Rules for Every Grid](Overview#rules_for_every_grid) requires. A change of the grouping fires a `groupchange` event - see [Events](Events).
+A change of the grouping fires a `groupchange` event - see [Events](Events).
 
 ## Group Summaries
 
@@ -30,7 +30,7 @@ The summaries do not line up under their columns. The grid adds each one to the 
 
 To show the zone without grouping anything yourself, call `groupZone(true)` and let the user do the grouping. `groupBy(null)` does **not** switch the zone off again - call {api:anychart.charts.DataSheet#groupZone}groupZone(false){api} for that.
 
-The zone adds one more row above the header. The grid does not make its own height smaller for that row. So give the container a little more height. If you do not, the last rows are cut off.
+The zone adds one more row above the header. The grid keeps the size of its container, and the area with the rows gets shorter by the height of the zone.
 
 ## Grouping and Sorting
 
@@ -50,7 +50,7 @@ chart.hierarchy().collapseAll();
 chart.draw();
 ```
 
-A group key joins the grouped field names down to that level with `/`, then adds `=` and the value. Grouping by `category` alone gives `'category=Tech'`. Grouping by `category` and then `supplier` gives `'category=Tech'` for the outer group and `'category/supplier=Contoso'` for the inner one. {api:anychart.core.dataSheet.Hierarchy#getGroupFields}getGroupFields(){api} returns the fields you grouped by. These methods work for groups. They do not work for [tree data](Data#tree_data).
+A group key is the field name, then `=` and the value. The key of an inner group starts with the key of its parent group and `/`. Grouping by `category` alone gives `'category=Tech'`. Grouping by `category` and then `supplier` gives `'category=Tech'` for the outer group and `'category=Tech/supplier=Contoso'` for the inner one. {api:anychart.core.dataSheet.Hierarchy#getGroupFields}getGroupFields(){api} returns the fields you grouped by. These methods work for [tree data](Data#tree_data) as well. The key of a tree row is its data index as a string: `'0'` for the first row.
 
 Use the buttons in the sample below to open and close the three category groups, each of which carries a summed price and an average stock.
 

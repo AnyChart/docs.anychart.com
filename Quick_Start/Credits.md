@@ -39,7 +39,7 @@ credits.url("https://www.anychart.com/buy/");
 
 ### Logo
 
-Logo picture can be adjusted as well. Use {api:anychart.core.ui.ChartCredits#logoSrc}logoScr(){api} method to set custom image.
+Logo picture can be adjusted as well. Use {api:anychart.core.ui.ChartCredits#logoSrc}logoSrc(){api} method to set custom image.
 
 ```
 var credits = chart.credits();

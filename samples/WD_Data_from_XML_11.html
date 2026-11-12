@@ -27,7 +27,7 @@ anychart.onDocumentReady(function () {
 
   // xml data                                               // JS equivalent
   var xml = '<?xml version="1.0" encoding="utf-8"?>' +
-    '<anychart xmlns="https://cdn.anychart.com/schemas/8.7.1/xml-schema.xsd">' +
+    '<anychart xmlns="https://cdn.anychart.com/schemas/{{branch-name}}/xml-schema.xsd">' +
       // set chart type
       '<chart type="line" '+                                // var chart = anychart.lineChart();
       'container="container">'+                             // chart.container("container");
@@ -87,7 +87,7 @@ anychart.onDocumentReady(function () {
       'maximum="30000"/>'+                                //   .maximum(30000);
       '<x_axes><axis>'+                                   // chart.xAxis()
         '<title enabled="false"/>'+                       //   .title()
-      '</axis><x_axes>'+                                  //     .enabled(false);
+      '</axis></x_axes>'+                                  //     .enabled(false);
       '<y_axes title="Sales"/></chart>'+                  // chart.yAxis().title().text("Sales");
     '</anychart>';
 

@@ -32,6 +32,7 @@ This article shows how to make a basic Dependency wheel. It also shows how to se
 <tr><td></td><td>[Arc Diagram](Arc_Diagram)</td></tr>
 <tr><td></td><td>[Sankey Diagram](Sankey_Diagram)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td></td><td>[Chartopedia: Dependency Wheel](https://www.anychart.com/chartopedia/chart-types/dependency-wheel/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
@@ -142,15 +143,8 @@ chart.nodeWidth(30);
 [Labels](../Common_Settings/Labels) of the nodes are enabled by default and show the node name. Set the base settings with the {api:anychart.core.StateSettings#labels}labels(){api} method of the normal state; the hovered and selected states override the settings you give them and inherit the rest. Font settings and [text formatters](../Common_Settings/Text_Formatters) are available:
 
 ```
-// add the node's share of the total flow to its label
-chart.node().normal().labels().format("{%name} {%percent}{decimalsCount:1}%");
-```
-
-By default, a label is bent along the ring. To draw it as a straight line of text beside the ring instead, call `labels().position()` with the `"tangential"` parameter:
-
-```
-// opt out of the circular default: draw the node labels as straight lines beside the ring
-chart.node().normal().labels().position("tangential");
+// add the weekly flights of the node to its label
+chart.node().normal().labels().format("{%name}: {%weight} flights");
 ```
 
 A label that overlaps an already drawn label is hidden by default. To control this behavior, use the {api:anychart.charts.DependencyWheel#dropOverlappedLabels}dropOverlappedLabels(){api} method:
@@ -159,6 +153,39 @@ A label that overlaps an already drawn label is hidden by default. To control th
 // show every label, even if some of them collide
 chart.dropOverlappedLabels(false);
 ```
+
+In the sample below, the label of each city shows its flights:
+
+{sample}BCT\_Dependency\_Wheel\_04{sample}
+
+#### Label Position
+
+A node label has three positions, set with `labels().position()`: `"circular"`, the default, bends the label along the ring; `"tangential"` draws it as a straight line of text beside the ring; `"radial"` runs it outward from the center, along the ray of its node. A radial label takes room from the ring, so keep its text short:
+
+```
+// run the node labels outward from the center and name the airports by their codes
+chart.node().normal().labels().position("radial");
+chart.node().normal().labels().format(airportCode);
+```
+
+The position works on a chart that is already drawn, so a control can switch it, and the text can follow the position:
+
+```
+// place the node labels and fit the text to the position: the city along the ring or beside it, the airport code outward from the center
+function changeLabelPosition(value) {
+  var labels = chart.node().normal().labels();
+  if (value == "radial") {
+    labels.format(airportCode);
+  } else {
+    labels.format("{%name}");
+  }
+  labels.position(value);
+}
+```
+
+In the sample below, the radios switch the position of the labels: the city along the ring or beside it, the airport code outward from the center:
+
+{sample}BCT\_Dependency\_Wheel\_12{sample}
 
 #### Node Colors
 
@@ -180,21 +207,31 @@ chart.node().selected().fill(function () {
 chart.node().selected().stroke("#0b1220", 3);
 ```
 
+To draw a hatch pattern over the node arcs, use the {api:anychart.core.dependencyWheel.elements.Node#hatchFill}hatchFill(){api} method. With `true`, the nodes take the patterns of the {api:anychart.charts.DependencyWheel#hatchFillPalette}hatchFillPalette(){api} in turn:
+
+```
+// hatch the nodes: each node takes the next pattern of the palette
+chart.hatchFillPalette(["horizontal", "vertical", "grid", "diagonal-cross", "percent50"]);
+chart.node().hatchFill(true);
+```
+
+In the sample below, each node arc carries a pattern of its own; hover and click a node: the fill darkens and the stroke thickens with the state:
+
+{sample}BCT\_Dependency\_Wheel\_13{sample}
+
 #### Node Tooltip
 
 To set the [tooltip](../Common_Settings/Tooltip) of the nodes, use `node().tooltip()`:
 
 ```
 // the tooltip of a city, built from the node tokens
-chart.node().tooltip().titleFormat("{%name}");
-chart.node().tooltip().format(
-  "Routes: {%connections}\nFlights a week: {%weight}\nShare of all flights: {%percent}{decimalsCount:1}%"
-);
+chart.node().tooltip().titleFormat("{%name}: {%weight} flights a week");
+chart.node().tooltip().format("Routes: {%connections}\nShare of all flights: {%percent}{decimalsCount:1}%");
 ```
 
-In the sample below, the labels are straightened out of their default curve, the state fills and strokes are derived from `sourceColor`, and the tooltip shows the node tokens:
+In the sample below, the title of the tooltip carries the flights of the city, and the text its routes and its share of all flights:
 
-{sample}BCT\_Dependency\_Wheel\_04{sample}
+{sample}BCT\_Dependency\_Wheel\_14{sample}
 
 ### Links
 
@@ -216,7 +253,14 @@ chart.link().selected().fill(function () {
 });
 ```
 
-Hover or click a link in the sample below to see how its fill becomes darker:
+To draw a hatch pattern over the links, use the {api:anychart.core.dependencyWheel.elements.Link#hatchFill}hatchFill(){api} method:
+
+```
+// draw a white hatch pattern over the links
+chart.link().hatchFill("backward-diagonal", "#ffffff", 1, 8);
+```
+
+In the sample below, the links carry a white hatch pattern. Hover or click a link to see how its fill becomes darker:
 
 {sample}BCT\_Dependency\_Wheel\_05{sample}
 
@@ -247,7 +291,7 @@ function changeColorMode(value) {
 
 #### Link Tooltip
 
-Links have a [tooltip](../Common_Settings/Tooltip) of their own, but by default it uses the format of the [node tooltip](#node_tooltip), and node tokens show no value for a link. A tooltip set with {api:anychart.core.Chart#tooltip}chart.tooltip(){api} also applies to both nodes and links. To set the link tooltip separately, use `link().tooltip()`:
+Links have a [tooltip](../Common_Settings/Tooltip) of their own. By default, its title names the two end nodes of the link, and its text shows the weight of the link. A tooltip set with {api:anychart.core.Chart#tooltip}chart.tooltip(){api} also applies to both nodes and links. To set the link tooltip separately, use `link().tooltip()`:
 
 ```
 // the tooltip of a link names the route and its weekly flights
@@ -301,7 +345,7 @@ In the sample below, the sliders set the gap between the arcs and the floor unde
 
 #### Radius
 
-The {api:anychart.charts.DependencyWheel#radius}radius(){api} method sets the outer radius of the ring of node arcs. A number is a size in pixels, a percent string is a share of the smaller side of the chart area. The default, `"50%"`, is also the largest ring the chart draws, so larger values change nothing: use this method to make the ring smaller and leave room for long labels or a title.
+The {api:anychart.charts.DependencyWheel#radius}radius(){api} method sets the outer radius of the ring of node arcs. A number is a size in pixels, a percent string is a share of the smaller side of the chart area. The default, `"50%"`, is also the largest ring the chart draws, so larger values change nothing: use this method to make the ring smaller and leave room around it.
 
 ```
 // shrink the ring to leave room around it

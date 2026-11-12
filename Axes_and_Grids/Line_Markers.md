@@ -7,7 +7,7 @@ Line marker is a line that is drawn on chart plot and bound to some value on an 
 
 ## Declare
 
-To create a line marker use the {api:anychart.charts.Cartesian#lineMarker}anychart.charts.Cartesian#lineMarker} method. By default this method creates a marker on a primary Y-axis. You can bind the marker to another axis using {api:anychart.core.axisMarkers.Line#axis}axis(){api} method. To set a position for a marker use {api:anychart.core.axisMarkers.Line#value}value(){api} method.
+To create a line marker use the {api:anychart.charts.Cartesian#lineMarker}lineMarker(){api} method. By default this method creates a marker on a primary Y-axis. You can bind the marker to another axis using {api:anychart.core.axisMarkers.Line#axis}axis(){api} method. To set a position for a marker use {api:anychart.core.axisMarkers.Line#value}value(){api} method.
 
 ```
 var yAxis = chart.yAxis();

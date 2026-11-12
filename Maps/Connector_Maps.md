@@ -26,7 +26,7 @@ var data = [
 ];
 ```
 
-First two values are the longitude and latitude of the start point and the second pair of values are responsible for the end point coordinates.
+First two values are the latitude and longitude of the start point and the second pair of values are responsible for the end point coordinates.
 
 That's how a Connector Map with this dataset will look like:
 

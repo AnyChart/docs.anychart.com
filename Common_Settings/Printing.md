@@ -52,7 +52,7 @@ chart.print(
 
 Here is the list of possible paper formats:
 
-* **usletter** paper size 215.9mm by 279.4mm
+* **us-letter** paper size 215.9mm by 279.4mm
 * **A0** paper size 841mm by 1189mm
 * **A1** paper size 594mm by 841mm
 * **A2** paper size 420mm by 594mm

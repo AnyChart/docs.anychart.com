@@ -67,7 +67,7 @@ We may use quotes or not, because our data is numerical except the dateTime, whi
 [Date.UTC(2025, 11, 25), 511.53, 514.98, 505.79, 506.40],
 ```
 
-After we have set the data, we need to map it using the {api:anychart.data#mapAsTable}mapAs(){api} and {api:anychart.data.TableMapping#addField}addField(){api} methods. We need to define which value we set, then the value itself and the {api:anychart.enums.AggregationType}aggregation type{api}. The last are necessary when you've got loads of information shown on a chart and you want to group it.
+After we have set the data, we need to map it using the {api:anychart.data.Table#mapAs}mapAs(){api} and {api:anychart.data.TableMapping#addField}addField(){api} methods. We need to define which value we set, then the value itself and the {api:anychart.enums.AggregationType}aggregation type{api}. The last are necessary when you've got loads of information shown on a chart and you want to group it.
 
 ```
 mapping = table.mapAs();

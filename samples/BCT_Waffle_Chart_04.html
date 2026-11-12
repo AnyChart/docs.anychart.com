@@ -5,26 +5,49 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
 
-    <script src="https://cdn.anychart.com/releases/staging/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/staging/js/anychart-waffle.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/staging/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/staging/js/anychart-ui.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/staging/css/anychart-ui.min.css"/>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-waffle.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css"/>
 
     <style>
         html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
         body { display: flex; flex-direction: column; }
         #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
         #controls input[type="range"] { width: 90px; vertical-align: middle; }
+        #cornerRadiusControl.off { display: none; }
         #container { flex: 1; }
     </style>
 </head>
 <body>
 <div id="controls">
-    <span>Cell shape:</span>
-    <label><input type="radio" name="cellShape" onclick="changeCellShape('square')" checked> square</label>
-    <label><input type="radio" name="cellShape" onclick="changeCellShape('circle')"> circle</label>
-    <label id="cornerRadiusControl">Corner radius
+    <label>Cell shape
+        <select onchange="changeCellShape(this.value)">
+            <option value="circle" selected>circle</option>
+            <option value="square">square</option>
+            <option value="diamond">diamond</option>
+            <option value="triangle-up">triangle-up</option>
+            <option value="triangle-down">triangle-down</option>
+            <option value="triangle-right">triangle-right</option>
+            <option value="triangle-left">triangle-left</option>
+            <option value="cross">cross</option>
+            <option value="diagonal-cross">diagonal-cross</option>
+            <option value="star4">star4</option>
+            <option value="star5">star5</option>
+            <option value="star6">star6</option>
+            <option value="star7">star7</option>
+            <option value="star10">star10</option>
+            <option value="pentagon">pentagon</option>
+            <option value="trapezium">trapezium</option>
+            <option value="arrowhead">arrowhead</option>
+            <option value="arrow-up">arrow-up</option>
+            <option value="arrow-right">arrow-right</option>
+            <option value="arrow-down">arrow-down</option>
+            <option value="arrow-left">arrow-left</option>
+        </select>
+    </label>
+    <label id="cornerRadiusControl" class="off">Corner radius
         <input type="range" min="0" max="8" step="1" value="4" oninput="changeCellCornerRadius(this.value)">
         <output id="cornerRadiusValue">4</output>
     </label>
@@ -46,12 +69,11 @@ anychart.onDocumentReady(function () {
   // set the chart title
   chart.title("Waffle Chart: Cell Shape");
 
-  // draw square cells and round their corners
-  chart.cell().shape("square");
-  chart.cell().cornerRadius(4);
+  // draw round cells
+  chart.cell().normal().shape("circle");
+  // round the corners of square cells: the other shapes ignore the radius
+  chart.cell().normal().cornerRadius(4);
 
-  // show the default labels: the category name and its percent share
-  chart.labels(true);
 
   // set the container id
   chart.container("container");
@@ -59,15 +81,15 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 
-// switch the shape of the cells: the corner radius applies to squares only, so its slider hides for circles
+// switch the shape of the cells to any marker type the cell accepts: the corner radius applies to squares only, so its slider is shown for squares alone
 function changeCellShape(value) {
-  chart.cell().shape(value);
-  document.getElementById("cornerRadiusControl").style.display = value === "square" ? "" : "none";
+  chart.cell().normal().shape(value);
+  document.getElementById("cornerRadiusControl").className = value === "square" ? "" : "off";
 }
 
-// round the corners of square cells: circle cells ignore the radius
+// round the corners of square cells: the other shapes ignore the radius
 function changeCellCornerRadius(value) {
-  chart.cell().cornerRadius(value);
+  chart.cell().normal().cornerRadius(value);
   document.getElementById("cornerRadiusValue").value = value;
 }
 </script>

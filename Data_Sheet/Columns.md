@@ -55,9 +55,9 @@ A column's `dataType` tells the grid what kind of values the column holds. **Set
 
 Until you set a format of your own, each type renders its values in a way that suits it:
 
-* `'number'` - thousands separators, from `toLocaleString()`
+* `'number'` - a comma between the thousands: `1200` reads `1,200`
 * `'boolean'` - a check mark or a cross
-* `'date'` - a date in the date format of the browser's language. Your value can be a `Date` object, a number of milliseconds, or a text string that `new Date()` can read. The grid shows any other value as it is, and sorts it as January 1, 1970
+* `'date'` - a date as month, day and year: `1/15/2024`. Your value can be a `Date` object, a number of milliseconds, or a text string that `new Date()` can read. The grid shows any other value as it is, and sorts it like an empty cell
 * `'string'` - the plain text
 
 ### Custom Formats
@@ -70,7 +70,7 @@ A format string holds the `{%value}` placeholder: the grid puts the cell value t
 
 **`this.value` is all there is.** The grid calls your function with an object that holds the cell value and nothing else - no row object, no field name, no row index. So a format function cannot look at another column of the same row. If your formatting depends on the whole row, build a ready-made text field in your data first and bind a column to that field.
 
-Both forms replace the default formatting of the type. So a number column with a format loses its thousands separator: `1200` renders as `$1200`, not `$1,200`. The default separator comes from `toLocaleString()`, so a format function can put it back. That is the last column in the block below. A format string cannot do this: `{decimalsCount:N}` sets the decimal places, but it never adds a separator.
+Both forms replace the default formatting of the type. So a number column with a format loses its thousands separator: `1200` renders as `$1200`, not `$1,200`. A format function can put the separator back with `toLocaleString()`. That is the last column in the block below. A format string cannot do this: `{decimalsCount:N}` sets the decimal places, but it never adds a separator.
 
 ```
 // a declared column is a string column unless you say otherwise

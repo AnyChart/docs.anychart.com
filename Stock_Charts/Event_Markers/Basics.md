@@ -346,7 +346,7 @@ In the sample below, there are two series, and you can display markers on either
 
 ## Direction
 
-By default, the direction of markers is adjusted automatically so that they overlap the series as little as possible. To set the direction manually, use the {api:anychart.core.stock.eventMarkers.Controller#direction}direction(){api} method with one of the parameters listed in {api:anychart.enums.EventMarkerDirection}anychart.enums.EventMarkerDirection{api}:
+By default, the direction of markers is adjusted automatically so that they overlap the series as little as possible. To set the direction manually, use the {api:anychart.core.stock.eventMarkers.Controller#direction}direction(){api} method with one of the parameters listed in {api:anychart.enums.Direction}anychart.enums.Direction{api}:
 
 * `"auto"` (default)
 * `"down"`

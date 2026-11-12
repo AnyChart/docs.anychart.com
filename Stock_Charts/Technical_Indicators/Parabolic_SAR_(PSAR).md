@@ -41,10 +41,10 @@ Here is a live sample:
 
 There are five parameters a PSAR indicator has, one of them is necessary - the mapping. Three other ones are the acceleration factor start, acceleration factor increment, acceleration factor maximum, and the series type.
 
-The series type can be easily changed any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method. The following code sample demonstrates a CMF indicator with parameters set as default.
+The series type can be easily changed any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method. The following code sample demonstrates a PSAR indicator with parameters set as default.
 
 ```
-var psar = plot.psar(mapping, 0.02, 0.2, 0.2, "marker");
+var psar = plot.psar(mapping, 0.02, 0.02, 0.2, "marker");
 ```
 
 ## Visualization

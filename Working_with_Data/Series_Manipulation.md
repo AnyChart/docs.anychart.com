@@ -68,7 +68,7 @@ Also, you can get the exact number of series in a chart using {api:anychart.char
 ```
 var seriesIndexes = [];
 for (var i=0; i < chart.getSeriesCount();i++){
-seriesIndexes.push(chart.getSeriesAt(i).index());
+seriesIndexes.push(chart.getSeriesAt(i).getIndex());
 }
 ```
 

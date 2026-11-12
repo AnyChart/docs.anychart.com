@@ -101,7 +101,7 @@ To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesT
 
 ##  Appearance
 
-To change the default colors of the area fill and stroke use {api:anychart.core.stock.series.SplineArea#fill}fill(){api} and {apianychart.core.stock.series.SplineArea#stroke}stroke(){api}. 
+To change the default colors of the area fill and stroke use {api:anychart.core.stock.series.SplineArea#fill}fill(){api} and {api:anychart.core.stock.series.SplineArea#stroke}stroke(){api}. 
 
 Use the {api:anychart.core.stock.series.SplineArea#hatchFill}hatchFill(){api} method to change hatch fill.
 

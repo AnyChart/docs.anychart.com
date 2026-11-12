@@ -7,7 +7,7 @@ AnyChart allows you to create scatter charts by using a special scatter chart co
 
 Scatter charts are used mainly to visualize the results of mathematical calculations or physics experiments.
 
-To learn more about the difference between the scatter and Cartesian constructors, read the [Scatter vs. Cartesian](#) article. See also the [Supported Types](#supported_types) section to find the list of supported series types.
+See the [Supported Types](#supported_types) section to find the list of supported series types.
 
 This article explains how to create and configure scatter charts.
 
@@ -77,7 +77,7 @@ chart.draw();
 
 ## Grids
 
-As a rule, scatter charts look better with grids. Use the {api:anychart.charts.Scatter#xGrid}xGgrid(){api}, {api:anychart.charts.Scatter#yGrid}yGgrid(){api}, {api:anychart.charts.Scatter#xMinorGrid}xMinorGrid(){api} and {api:anychart.charts.Scatter#yMinorGrid}yMinorGrid(){api} methods to create a major and a minor grids. 
+As a rule, scatter charts look better with grids. Use the {api:anychart.charts.Scatter#xGrid}xGrid(){api}, {api:anychart.charts.Scatter#yGrid}yGrid(){api}, {api:anychart.charts.Scatter#xMinorGrid}xMinorGrid(){api} and {api:anychart.charts.Scatter#yMinorGrid}yMinorGrid(){api} methods to create a major and a minor grids. 
 
 The appearance of grids is configured with the {api:anychart.core.grids.Linear#stroke}stroke(){api} and {api:anychart.core.grids.Linear#palette}palette(){api} methods. 
 
@@ -165,6 +165,12 @@ error.xUpperError(0.2);
 Drawing tools provide you with the ability to draw/display custom objects on a chart - in our documentation these objects are usually called annotations. Typically, annotations are used in [stock charts](../../Stock_Charts/Overview). However, sometimes you may need to use hardcoded annotations with a scatter chart to visualize some basic shapes.
 
 To add an annotation to a chart, refer to the {api:anychart.charts.Scatter#annotations}annotations(){api} object and call one of the methods used for creating annotations: {api:anychart.core.annotations.Ellipse}ellipse(){api}, {api:anychart.core.annotations.Rectangle}rectangle(){api}, {api:anychart.core.annotations.Triangle}triangle(){api}, and so on. To learn more, read about [annotations](../../Stock_Charts/Drawing_Tools_and_Annotations/Overview) in AnyStock.
+
+Annotations require the [Annotations](../../Quick_Start/Modules#annotations) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-annotations.min.js"></script>
+```
 
 Here is a sample scatter chart with two annotations, Ellipse and Rectangle. Some of their visual settings are configured:
 

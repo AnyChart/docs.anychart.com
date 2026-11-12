@@ -18,7 +18,7 @@ var data = [
 ];
 
 //create bar chart
-var chart = anychart.barChart();
+var chart = anychart.bar();
 var series = chart.bar(data);
 ```
 
@@ -30,12 +30,11 @@ Visual appearance of bars is defined using [these settings](../Basic_Charts/Bar_
 
 ```
 var series = chart.bar(data);
-series
-    .fill('#6698FF .6')
-        .hoverStroke("#0000A0", 4)
-        .stroke('#56561a', 4)
-        .hatchFill('diagonal-brick', '#348781')
-        .hoverHatchFill('diagonal-brick', '#0000A0')
+series.fill('#6698FF .6');
+series.stroke('#56561a', 4);
+series.hatchFill('diagonal-brick', '#348781');
+series.hovered().stroke('#0000A0', 4);
+series.hovered().hatchFill('diagonal-brick', '#0000A0');
 ```
 
 If you want to configure tooltips for all series - you should use  {api:anychart.charts.Cartesian#tooltip}tooltip(){api} methods, {api:anychart.core.cartesian.series.Base#labels}labels(){api} method configures series labels. Adding attributes with values to these methods, you can change visual appearance, position and format of the same-named elements.

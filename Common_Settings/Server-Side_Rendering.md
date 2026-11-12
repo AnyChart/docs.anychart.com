@@ -208,7 +208,7 @@ The full list of the parameters available:
 
 ## Web Server Mode 
 
-AnyChart Export Server is also used when you use AnyChart [Export](Exports) methods, and by default, AnyChart uses the server hosted at https://www.anychart.com/. Although we do our best to keep AnyChart site up and running 24x7x365, we *do not guarantee* the availability of the export server.
+AnyChart Export Server is also used when you use AnyChart [Export](Exports) methods, and by default, AnyChart uses the server hosted at https://export.anychart.com/. Although we do our best to keep AnyChart site up and running 24x7x365, we *do not guarantee* the availability of the export server.
 
 If you want to have full control over the ability of the component to export images or do not want to use AnyChart Server due to security or accessibility concerns, just run Export Server in Web Server mode on the server you control and trust.
 
@@ -351,7 +351,7 @@ If you want Twitter sharing to work through your server, you should:
 1. Create your own Twitter App and provide `twitter_key`, `twitter_secret` and `twitter_callback` 
 (last path of which is always `/sharing/twitter_oauth`) to the Export Server 
 2. Setup a MySQL database for Twitter sharing using [SQL scheme](https://github.com/AnyChart/export-server/blob/master/src/sql/scheme.sql)
-3. Setup a Twitter sharing URL separately when setting the `anychart.export.server()` URL:
+3. Setup a Twitter sharing URL separately when setting the `anychart.exports.server()` URL:
 
 ```javascript
 anychart.exports.twitter(

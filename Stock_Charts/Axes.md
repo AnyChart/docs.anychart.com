@@ -61,8 +61,8 @@ Finally, as our X-axis is an area, the labels are placed and might be moved only
 ```
 // moving the labels
 xAxis = chart.plot(0).xAxis();
-xAxis.labels().position('right').anchor('left_center');
-xAxis.minorLabels().position('right').anchor('left_center');
+xAxis.labels().position('right').anchor('left-center');
+xAxis.minorLabels().position('right').anchor('left-center');
 ```
 
 {sample}STOCK\_Axes\_03{sample}

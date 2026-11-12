@@ -82,7 +82,7 @@ Use the buttons in the sample below, and click a header, click a row or drag a c
 
 ## Blocking a Cell Edit
 
-To stop a cell edit, return `false` from your `celleditstart` listener. Do not call `e.preventDefault()` on `celleditstart` or `celleditend`. The event object has a property with that name. The property hides the method, so the call fails. Setting `e.preventDefault = true` does nothing either, because the listener gets a copy of the event. See [Cell Editing](Cell_Editing).
+To stop a cell edit, return `false` from your `celleditstart` listener, or call `e.preventDefault()` in it. In a `celleditend` listener the same two ways cancel the edit, and the data keeps the old value. See [Cell Editing](Cell_Editing).
 
 ## Mouse and Hover Events
 

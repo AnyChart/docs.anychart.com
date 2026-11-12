@@ -28,6 +28,8 @@ This article explains how to create a basic Treemap chart in AnyChart as well as
 <tr><td></td><td>[Heat Map](Heat_Map_Chart)</td></tr>
 <tr><td></td><td>[Marimekko](Marimekko_Chart/Mekko_Chart)</td></tr>
 <tr><td></td><td>[Venn](Venn_Diagram)</td></tr>
+<tr><td></td><td>[Org Chart](Org_Chart)</td></tr>
+<tr><td></td><td>[Waffle](Waffle_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Chartopedia: Treemap Chart](https://www.anychart.com/chartopedia/chart-types/treemap/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
@@ -515,9 +517,9 @@ chart = anychart.treeMap(data, "as-tree");
 
 #### Display Mode
 
-By default, the text of a header is not shown if it does not fit its height. However, you can hide such text or always show the text of headers. To set the display mode of headers, call the {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode{api} method with one of the parameters listed in {api:anychart.enums.LabelsDisplayMode}anychart.enums.LabelsDisplayMode{api}:
+By default, the text of a header is always shown, even if it does not fit its height. However, you can clip or hide such text. To set the display mode of headers, call the {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode{api} method with one of the parameters listed in {api:anychart.enums.LabelsDisplayMode}anychart.enums.LabelsDisplayMode{api}:
 
-* `"alwaysShow"` (default)
+* `"always-show"` (default)
 * `"clip"`
 * `"drop"`
 

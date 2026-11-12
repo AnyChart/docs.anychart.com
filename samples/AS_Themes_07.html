@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="AS Themes 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+
+    <style>
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { display: flex; flex-direction: column; }
+        #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
+        #container { flex: 1; }
+    </style>
+</head>
+<body>
+<div id="controls">
+    <span>Theme:</span>
+    <label><input type="radio" name="theme" onclick="changeTheme('coffee')" checked> coffee</label>
+    <label><input type="radio" name="theme" onclick="changeTheme('contrast')"> contrast</label>
+    <label><input type="radio" name="theme" onclick="changeTheme('monochrome')"> monochrome</label>
+    <label><input type="radio" name="theme" onclick="changeTheme('morning')"> morning</label>
+    <label><input type="radio" name="theme" onclick="changeTheme('pastel')"> pastel</label>
+    <label><input type="radio" name="theme" onclick="changeTheme('sea')"> sea</label>
+    <label><input type="radio" name="theme" onclick="changeTheme('wines')"> wines</label>
+</div>
+<div id="container"></div>
+<script>
+var chart;
+
+// data
+var data = [
+  ["Department Stores", 637166],
+  ["Discount Stores", 721630],
+  ["Men's/Women's Specialty Stores", 148662],
+  ["All other outlets", 90000]
+];
+
+anychart.onDocumentReady(function () {
+  // load and apply the Coffee theme, then create the chart
+  anychart.theme.load("coffee").then(createChart);
+});
+
+// create a bar chart in the current theme
+function createChart() {
+  chart = anychart.bar();
+  chart.bar(data);
+  chart.title("Bar Chart: Loading a Theme");
+  chart.container("container");
+  chart.draw();
+}
+
+// load and apply a theme by name, then create the chart again
+function changeTheme(name) {
+  chart.dispose();
+  anychart.theme.load(name).then(createChart);
+}
+</script>
+</body>
+</html>

@@ -45,10 +45,10 @@ var treeData = anychart.data.tree(data, "as-tree");
 var chart = anychart.treeMap(treeData);
 
 // set the container id
-treemap.container("container");
+chart.container("container");
 
 // initiate drawing the chart
-treemap.draw();
+chart.draw();
 ```
 
 The following sample shows how to create different chart types with the same tree-like data:
@@ -303,7 +303,7 @@ To access items at the root level, use the following methods of {api:anychart.da
 * {api:anychart.data.Tree#getChildAt}getChildAt(){api} - returns a root item with a given index
 * {api:anychart.data.Tree#getChildren}getChildren(){api} - returns an array of root items
 * {api:anychart.data.Tree#numChildren}numChildren(){api} - returns the number of roots
-* {api:anychart.data.Tree#indexOfChild}indexOfChild(){api} - returns the index of a given item (or -1 if it is a root)
+* {api:anychart.data.Tree#indexOfChild}indexOfChild(){api} - returns the index of a given root item (or -1 if the item is not a root)
 
 To go deeper, use methods of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}:
 
@@ -349,7 +349,7 @@ var lastChildName = treeData.getChildAt(0).getChildAt(lastChild).get("name");
 
 You can add a root item to your data: call the {api:anychart.data.Tree#addChild}addChild(){api} or {api:anychart.data.Tree#addChildAt}addChildAt(){api} method on the instance of {api:anychart.data.Tree}anychart.data.Tree{api}. Please note that the second method adds an item with a given index.
 
-To add a child element to a data item, [access](#accessing_items) the instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and call {api:anychart.data.Tree.DataItem#addChild}addChild(){api} or {api:anychart.data.Tree.DataItem#addChild}addChildAt(){api} on it:
+To add a child element to a data item, [access](#accessing_items) the instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and call {api:anychart.data.Tree.DataItem#addChild}addChild(){api} or {api:anychart.data.Tree.DataItem#addChildAt}addChildAt(){api} on it:
 
 ```
 // add a new data item
@@ -541,7 +541,7 @@ Some [operations](#data_manipulation) are performed faster on indexed data. To c
 treeData.createIndexOn("value");
 ```
 
-**Note:** You cannot create an index on the `parent` or `child` field.
+**Note:** Do not create an index on the `parent` or `children` field: these fields are not available through the get() method of a data item, so such an index is of no use.
 
 To remove the index on a field, use {api:anychart.data.Tree#removeIndexOn}removeIndexOn(){api} with the name of the field as a parameter:
 

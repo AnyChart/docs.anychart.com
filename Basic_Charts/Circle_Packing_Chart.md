@@ -29,6 +29,7 @@ This article explains how to create a basic Circle Packing chart in AnyChart as 
 <tr><td></td><td>[Treemap](Treemap_Chart)</td></tr>
 <tr><td></td><td>[Venn](Venn_Diagram)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td></td><td>[Chartopedia: Circle Packing Chart](https://www.anychart.com/chartopedia/chart-types/circle-packing-chart/)</td></tr>
 <tr><td></td><td>[Chartopedia: Circle Packing Chart](https://www.anychart.com/products/anychart/gallery/Circle_Packing/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
@@ -167,9 +168,8 @@ chart.selected().stroke("#dd2c00", 4);
 
 #### Fill Functions
 
-Another way to set the colors of a chart is to call the {api:anychart.charts.CirclePacking#fill}fill(){api} method with a function as a parameter. In this function, you can use the following fields:
+Another way to set the colors of a chart is to call the {api:anychart.core.StateSettings#fill}fill(){api} method with a function as a parameter, in the {api:anychart.charts.CirclePacking#normal}normal(){api}, {api:anychart.charts.CirclePacking#hovered}hovered(){api}, or {api:anychart.charts.CirclePacking#selected}selected(){api} state. In this function, you can use the following fields:
 
-* `autoColor` - the default color of a node or its color from the data, if specified
 * `depth` - the depth level of a node
 * `index` - the index of a node in the tree
 * `isLeaf` - a test whether a node is a leaf

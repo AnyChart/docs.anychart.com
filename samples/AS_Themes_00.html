@@ -1,99 +1,128 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="AS Themes 01"/>
+    <meta name="ac:name" content="AS Themes 00"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
-    
+
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
-    
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
 
     <!-- themes -->
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/coffee.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/dark_blue.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/dark_earth.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/dark_glamour.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/dark_provence.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/dark_turquoise.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/light_blue.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/light_earth.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/light_glamour.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/light_provence.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/light_turquoise.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/monochrome.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/morning.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/pastel.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/sea.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/wines.min.js"></script>    
-    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-coffee.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-contrast.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-dark-blue.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-dark-earth.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-dark-glamour.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-dark-provence.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-dark-turquoise.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-light-blue.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-light-earth.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-light-glamour.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-light-provence.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-light-turquoise.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-monochrome.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-morning.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-pastel.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-sea.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-theme-wines.min.js"></script>
+
     <style>
-        html, body {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        select {
-            margin: 10px 0 10px 10px;
-        } 
-        #container {
-            position: absolute;
-            width: 100%;
-            top: 35px;
-            bottom: 0;
-        }
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { display: flex; flex-direction: column; }
+        #controls { padding: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 14px; }
+        #container { flex: 1; }
     </style>
 </head>
 <body>
-<select id="themeSelect" onchange="changeTheme()">
-  <option value="defaultTheme" selected="selected">Default</option>
-  <option value="lightBlue" >Light Blue</option>
-  <option value="darkEarth">Dark Earth</option>
-  <option value="lightEarth">Light Earth</option>
-  <option value="darkGlamour">Dark Glamour</option>
-  <option value="lightGlamour">Light Glamour</option>
-  <option value="darkProvence">Dark Provence</option>
-  <option value="lightProvence">Light Provence</option>
-  <option value="darkTurquoise">Dark Turquoise</option>
-  <option value="lightTurquoise">Light Turquoise</option>
-  <option value="coffee">Coffee</option>
-  <option value="monochrome">Monochrome</option>
-  <option value="morning">Morning</option>
-  <option value="pastel">Pastel</option>
-  <option value="sea">Sea</option>
-  <option value="wines">Wines</option>
-</select>
+<div id="controls">
+    <label>Theme:
+    <select id="theme" onchange="changeTheme(this.value)">
+        <option value="defaultTheme">Default</option>
+        <option value="coffee">Coffee</option>
+        <option value="contrast">Contrast</option>
+        <option value="darkBlue" selected>Dark Blue</option>
+        <option value="darkEarth">Dark Earth</option>
+        <option value="darkGlamour">Dark Glamour</option>
+        <option value="darkProvence">Dark Provence</option>
+        <option value="darkTurquoise">Dark Turquoise</option>
+        <option value="lightBlue">Light Blue</option>
+        <option value="lightEarth">Light Earth</option>
+        <option value="lightGlamour">Light Glamour</option>
+        <option value="lightProvence">Light Provence</option>
+        <option value="lightTurquoise">Light Turquoise</option>
+        <option value="monochrome">Monochrome</option>
+        <option value="morning">Morning</option>
+        <option value="pastel">Pastel</option>
+        <option value="sea">Sea</option>
+        <option value="wines">Wines</option>
+    </select></label>
+    <label>Palette:
+    <select id="palette" onchange="changePalette(this.value)">
+        <option value="">theme palette</option>
+        <option value="defaultPalette">defaultPalette</option>
+        <option value="blue">blue</option>
+        <option value="coffee">coffee</option>
+        <option value="earth">earth</option>
+        <option value="glamour">glamour</option>
+        <option value="monochrome">monochrome</option>
+        <option value="morning">morning</option>
+        <option value="pastel">pastel</option>
+        <option value="provence">provence</option>
+        <option value="sea" selected>sea</option>
+        <option value="turquoise">turquoise</option>
+        <option value="v6">v6</option>
+        <option value="wines">wines</option>
+    </select></label>
+</div>
 <div id="container"></div>
 <script>
 var chart;
-// create a chart when document is ready
-anychart.onDocumentReady(function(){
-  // create chart when document is ready
-  createChart("defaultTheme")
+
+// data
+var data = [
+  ["Department Stores", 637166],
+  ["Discount Stores", 721630],
+  ["Men's/Women's Specialty Stores", 148662],
+  ["All other outlets", 90000]
+];
+
+anychart.onDocumentReady(function () {
+  // apply the Dark Blue theme
+  anychart.theme(anychart.themes.darkBlue);
+
+  // create a bar chart
+  chart = anychart.bar();
+  chart.bar(data);
+  chart.title("Bar Chart: Themes and Palettes");
+
+  // set the palette by name
+  chart.palette("sea");
+
+  // set the container id and draw the chart
+  chart.container("container");
+  chart.draw();
 });
 
-// function to creat a chart
-function createChart(theme) {
-  // dispose chart if there is one already
-  if (chart != null) chart.dispose();
-
-  // set theme
-  anychart.theme(theme);  
-
-  // create chart
-  chart = anychart.column([["Earth", 1], ["Fire", 2], ["Wind", 3], ["Water", 1.5]]);
-  chart.title("Theme: " + theme);
-
-  // set container and draw chart
-  chart.container("container").draw();
+// apply a theme by name: the theme applies to the charts created after it
+function changeTheme(name) {
+  chart.dispose();
+  anychart.theme(name);
+  chart = anychart.bar();
+  chart.bar(data);
+  chart.title("Bar Chart: Themes and Palettes");
+  // the chart takes the palette of the theme
+  document.getElementById("palette").value = "";
+  chart.container("container");
+  chart.draw();
 }
-function changeTheme(){
-  // recreate chart to reset theme
-  var select = document.getElementById("themeSelect");
-  createChart(select.value);
+
+// set a palette by name, or go back to the palette of the theme
+function changePalette(name) {
+  if (name) chart.palette(name);
+  else changeTheme(document.getElementById("theme").value);
 }
 </script>
 </body>

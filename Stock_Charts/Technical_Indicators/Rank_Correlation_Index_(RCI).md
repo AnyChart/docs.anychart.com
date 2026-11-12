@@ -40,7 +40,7 @@ Here is a live sample:
 
 ## Indicator Parameters
 
-There are four parameters the RCI indicator has, one of them is necessary - the mapping.
+There are three parameters the RCI indicator has, one of them is necessary - the mapping.
 
 Then you can set the the period and the series type.
 

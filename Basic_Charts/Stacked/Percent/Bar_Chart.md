@@ -18,7 +18,7 @@ chart = chart.bar();
 // enable the percent stacking mode
 chart.yScale().stackMode("percent");
 
-// create step area series
+// create bar series
 var series1 = chart.bar(seriesData_1);
 var series2 = chart.bar(seriesData_2);
 ```
